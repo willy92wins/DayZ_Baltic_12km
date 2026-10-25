@@ -15,7 +15,32 @@ import census_creases_v31 as crease
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def fair_native_patch(base, prior, free, floor, ceiling, peak_cap, pit_cap, *, bound_witnesses=False, preserve_satisfied_witnesses=False):
+def curvature_constraint(base, free, limits):
+    """Signed EW/NS second-difference limits, including fixed-centre stencils."""
+    lower,upper=map(np.asarray,limits)
+    expected=(2,*base.shape)
+    if lower.shape!=expected or upper.shape!=expected:
+        raise ValueError('Curvature limits must have shape (2, rows, columns)')
+    if not np.isfinite(lower).all() or not np.isfinite(upper).all() or (lower>upper).any():
+        raise ValueError('Curvature limits must be finite ordered bounds')
+    ids=np.full(base.shape,-1,int);ids[free]=np.arange(free.sum())
+    rows=[];lb=[];ub=[]
+    for r in range(1,base.shape[0]-1):
+        for c in range(1,base.shape[1]-1):
+            for axis,(a,b) in enumerate((((r,c-1),(r,c+1)),((r-1,c),(r+1,c)))):
+                row=np.zeros(int(free.sum()));constant=0.
+                for q,weight in (((r,c),1.),(a,-.5),(b,-.5)):
+                    if ids[q]>=0:row[ids[q]]+=weight
+                    else:constant+=base[q]*weight
+                lo,hi=lower[axis,r,c]-constant,upper[axis,r,c]-constant
+                if row.any():rows.append(row);lb.append(lo);ub.append(hi)
+                elif not lo-1e-12<=0<=hi+1e-12:
+                    raise ValueError('Fixed curvature stencil cannot satisfy requested bounds')
+    if not rows:raise ValueError('Curvature constraint has no editable stencil')
+    return LinearConstraint(np.array(rows),np.array(lb),np.array(ub))
+
+
+def fair_native_patch(base, prior, free, floor, ceiling, peak_cap, pit_cap, *, bound_witnesses=False, preserve_satisfied_witnesses=False, curvature_bounds=None):
     """Thin-plate solve with native slope and prominence constraints.
 
     For each small native shape, select a sufficient witness pair for min/max.
@@ -78,6 +103,7 @@ def fair_native_patch(base, prior, free, floor, ceiling, peak_cap, pit_cap, *, b
         return value,gradient[free]
     constraints=[dict(type='ineq',fun=slope_value,jac=slope_jac),crease_constraint(base,free)]
     if rows:constraints.append(LinearConstraint(np.array(rows),-np.inf,np.array(upper)))
+    if curvature_bounds is not None:constraints.append(curvature_constraint(base,free,curvature_bounds))
     result=minimize(objective,np.clip(base[free],lo,hi),method='SLSQP',jac=True,
                     bounds=list(zip(lo,hi)),constraints=constraints,options={'maxiter':300,'ftol':1e-10})
     if not result.success:raise ValueError(('constrained native fairing failed',str(result.message)))

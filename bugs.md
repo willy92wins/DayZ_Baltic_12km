@@ -40,3 +40,7 @@ Pendiente: los 14 cruces longitudinales y #5/#6/#9 (015); excepción de las char
 
 Corrección 11-10: en EV96 la clase 7 es «charca» genérica, no Narva (Narva es la máscara `narva`); la regla B convirtió
 también 603 celdas de charca conectadas a cauces bajos.
+
+### EV112 — piloto rectangular F, 25-10
+
+Caso X2916/Z6834 corregido offline:94 vértices, límite0,30m cumplido (máx0,235m),4rectángulos restantes sin modificar. Agua/bury/P11/triángulos/proteccionesPASS y165tests; D/E exactos. Fuente WRP y59árbolesY contrastados. Bosque completo:2560872sinfallos medidos y3727bordesidénticos INCONCLUSOS. Compilación y motor en curso; no cierre global ni navegación F. Evidencia: `evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/rectangle-pilot-20261025`.
