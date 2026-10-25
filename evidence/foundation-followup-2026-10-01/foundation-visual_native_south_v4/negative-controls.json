@@ -1,0 +1,146 @@
+{
+  "status": "PASS_REAL_CAMERA_METRICS_AND_NEGATIVES",
+  "controls": [
+    {
+      "category": "camera",
+      "name": "wrong_camera",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "SETTLED_0:position"
+      ],
+      "log_sha256": "45e6611e4b47742553960429914440b09ed89fcd371aa48134d27e0e8347cd9d"
+    },
+    {
+      "category": "camera",
+      "name": "wrong_direction",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "SETTLED_0:direction"
+      ],
+      "log_sha256": "c09ddb085c20151a2afbde25bb2871b2774e2a4521db12a23535e228771ba8f3"
+    },
+    {
+      "category": "camera",
+      "name": "wrong_world",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "CAPTURE_REQUEST_0:world"
+      ],
+      "log_sha256": "4b75cb5a2ccf192216e4edf2a10bd3ce46f2daab438753f4f6a0ee75e31adc6a"
+    },
+    {
+      "category": "camera",
+      "name": "rain",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "CAPTURE_REQUEST_0:weather"
+      ],
+      "log_sha256": "511db388dcc7a5e59ce33ea18ce9a0329d7a2e2c9588f4bf945b971e6f695a04"
+    },
+    {
+      "category": "camera",
+      "name": "wrong_nearplane",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "SETTLED_0:nearplane"
+      ],
+      "log_sha256": "7107c78641a43056fe2ac36f53929b5807abd37a75308abdbcf3a4221f10d2e5"
+    },
+    {
+      "category": "camera",
+      "name": "camera_inactive",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "SETTLED_0:camera_active"
+      ],
+      "log_sha256": "5c8a967295b85e2739d42346fa988eb18ef9ce1842b2fffab0a8016b50990678"
+    },
+    {
+      "category": "camera",
+      "name": "restore_pose",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "restoration:position"
+      ],
+      "log_sha256": "9cd63c98faf3401e3ade59ff106c6c7430aee6126e73128cb6fb365618541814"
+    },
+    {
+      "category": "camera",
+      "name": "missing_restoration",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Incomplete/unknown camera markers",
+      "log_sha256": "5eeecdfbc05d41406913e44e627af7eb49e0d4c122c1ae57866939f8f09df19f"
+    },
+    {
+      "category": "camera",
+      "name": "duplicate_marker",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Duplicate camera marker",
+      "log_sha256": "3e005e7d5ae4ff5f9dedccff874bc2a66ce7d64de5664aea25d1bc4b1a4b7f21"
+    },
+    {
+      "category": "camera",
+      "name": "wrong_capture_time",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "CAPTURE_REQUEST_0:capture_time"
+      ],
+      "log_sha256": "e99e3585d5ac6008f790d515d9977b235ca0b4b966ee7dea9677061c36f93cc0"
+    },
+    {
+      "category": "metrics",
+      "name": "missing_phase",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Insufficient client metrics outside capture interval",
+      "log_sha256": "19ada93536c324635747277a2a83ded69e5b44c3996a833dddc71e59cde4c485"
+    },
+    {
+      "category": "metrics",
+      "name": "nonfinite_counter",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Wrong phase or metric clock",
+      "log_sha256": "2378ecfc48922ec90afe5080a50417d0c55e4c924ca7108dd7d1130cbbd5f07e"
+    },
+    {
+      "category": "metrics",
+      "name": "zero_counter",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Native counters failed basic ranges",
+      "log_sha256": "741de1872e6af1a8bd97f8c5f9324f5d51ba56a51cc3e0cf92e27f2cbc87c281"
+    },
+    {
+      "category": "metrics",
+      "name": "wrong_metric_camera",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Metrics came from another camera",
+      "log_sha256": "558abd91db3c78b853add6fb49473ef7984c4487538e0bf8fd52095f15529ff4"
+    },
+    {
+      "category": "metrics",
+      "name": "duplicate_sample",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Wrong phase or metric clock",
+      "log_sha256": "ca58f960de57746246b93641254952b9ee3bb2bd138ae4d4317ba41924a83354"
+    },
+    {
+      "category": "metrics",
+      "name": "before_frozen_metric_window",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Metrics outside frozen window",
+      "log_sha256": "92f9db15b4cd922ef37be830db18440fac374a62a4306440889ec5135d6cddf3"
+    },
+    {
+      "category": "metrics",
+      "name": "after_frozen_metric_window",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Metrics outside frozen window",
+      "log_sha256": "8df190ed65c390741fec1fd9bbd5d38faf80e6d857c33148ca82c8790217d851"
+    }
+  ],
+  "reference_sha256": "92e3af96709cdb0c311b8e837006f889b0e96a5c598dd6e1d55b34e2280c7e59",
+  "source_sha256": {
+    "camera.log": "828235c41b4df533c94e059c82c6302b07039dfddcf26aef743e0bbca9279f6e",
+    "client-metrics.log": "9846706bdad22a8fd979d4973c39489324dc8adb06f781530f555800cd11fb27"
+  },
+  "limit": "Telemetry checks only. These controls do not accept image appearance or performance."
+}

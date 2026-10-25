@@ -1,0 +1,63 @@
+{
+  "status": "OFFLINE_PASS_NATIVE_PENDING",
+  "terrain_sha256": "b54963eb3cf5429c6192fb6f1e8f6d10c9a3cc397fdbabdf5c2f89cbabcf8e36",
+  "pbo": {
+    "narva_trial.pbo": "a08b96a1f952edca98e525221ed48790051291b8fcc9db7cc7661ea8bacc1335",
+    "baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"
+  },
+  "mod": "P:\\Mods\\@DayZ_Baltic_BaseSurfacePreviewV1",
+  "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticBaseSurfaceFullWaterV1.BalticTrial",
+  "runtime_vertices": 4194304,
+  "runtime_points": 1212,
+  "runtime_water_probes": 1205,
+  "checks": [
+    {
+      "path": "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\verification.json",
+      "sha256": "dd004b3a996ed9c0b2edf67fefe864731251c408bb9f3eee714fcd1991601972",
+      "status": "PASS_STRICT_DRY_FLOOR_SOURCE"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\compiled-coverage.json",
+      "sha256": "c9c9293a41ccf89906b82530845015921a5053cecb4e15d08a538d0a803c7418",
+      "status": "PASS_GLOBAL_COMPILED_COVERAGE"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\compiled-exposure.json",
+      "sha256": "8f60512cc837159c2dcf2a20447ef9ba6ebd96b2e2135f732aa654cf950204f4",
+      "status": "PASS_COMPILED_EXPOSURE"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\layer-replay.json",
+      "sha256": "4bbd0f3eabbb22fe47d6042893923c186e29e6523734a6078b9b9a1fb7c13c42",
+      "status": "PASS_EXACT_LAYER_AND_DRY_TARGET_ACCOUNTING"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\risk-census\\verification.json",
+      "sha256": "fc92133fc47d4d6690344bc18d4a267f9928be2b5592beb3e9c3ad4a87610107",
+      "status": "PASS_GEOMETRIC_INDEX_ONLY"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\v30-complete-dry-surface-20261009\\surface-verification.json",
+      "sha256": "e2b041e547480c7eba23a3806582ee97a863687dc78c14bd131760c2e27d3e1c",
+      "status": "PASS_COMPLETE_SURFACE_SOURCE_COMPILED"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\v30-complete-dry-surface-20261009\\changed-mips.json",
+      "sha256": "1fbe3cd4b899d85e060f24b855cda90b6ac88d3efb86f68f80113af1644d0690",
+      "status": "PASS_ALL_CHANGED_MIPS"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\v30-complete-dry-surface-20261009\\probe-lint.json",
+      "sha256": "be556c372138cbd036989393603e7b5054b4a54af61e875bb4dd1d39b24dcd05",
+      "status": "PASS"
+    }
+  ],
+  "native_run_id": null,
+  "native_pass": false,
+  "base_1_0_accepted": false,
+  "limits": [
+    "EV61 remains the last native-verified geometry.",
+    "EV68 is a separate proposal with a pending policy exception; it is not included.",
+    "Global graphical acceptance, remaining contour repairs, reserved lakes and TB/navmesh remain open."
+  ]
+}

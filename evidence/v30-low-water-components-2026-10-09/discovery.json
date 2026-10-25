@@ -1,0 +1,58 @@
+{
+  "status": "READ_ONLY_GLOBAL_PHYSICAL_WATER_CONNECTIVITY",
+  "source_sha256": "fb36ec4c2203b6c936c8823078250f71082fbf43d9b1ba410049f735f890a0e6",
+  "plane_sha256": "d59dcdb908b4381a456629fb080a9769147b6fb1a3e321a6423bc931a0fb8803",
+  "active_triangles": 795917,
+  "positive_width_connections": 1156603,
+  "components": 842,
+  "components_at_least_1m2": 830,
+  "total_wet_area_m2": 12845535.15586437,
+  "bodies_with_bed_below_sea_crest": 98,
+  "standing_only_below_sea_crest": 70,
+  "standing_below_sea_crest_area_m2": 14315.33714923987,
+  "target_probe": [
+    2724,
+    6816
+  ],
+  "target_components": [
+    {
+      "component": 274,
+      "area_m2": 424.28382428937175,
+      "below_sea_crest_m2": 104.65014806159654,
+      "minimum_bed_m": 0.6799442768096924,
+      "level_min_m": 1.125,
+      "level_max_m": 1.125,
+      "classes": "7",
+      "has_flowing": false,
+      "engineering": false,
+      "narva": true,
+      "xmin": 2712.0,
+      "zmin": 6780.0,
+      "xmax": 2736.0,
+      "zmax": 6840.0
+    }
+  ],
+  "target_support_domain": {
+    "label": 185,
+    "cells": 24,
+    "level_min": 1.125,
+    "level_max": 1.125,
+    "whole_map_support_domains": 505
+  },
+  "controls": [
+    "all_wet_connected",
+    "saddle_separated",
+    "zero_depth_line_not_passage",
+    "positive_width_restores_connection",
+    "different_levels_share_wet_edge",
+    "absent_cell_not_connection",
+    "analytic_triangle_area"
+  ],
+  "seconds": 1.062999999994645,
+  "limits": [
+    "Positive-width connectivity of nominal physical planes; visible field and navigation draft remain separate.",
+    "Sea-under-inland-water area is a geometric exposure risk, not a diagnosis of water drawn over dry land.",
+    "No level or terrain changes. Nominal body identifiers from earlier level census are not used as hydraulic components.",
+    "Boundary boxes enclose source cells, not exact clipped shorelines."
+  ]
+}

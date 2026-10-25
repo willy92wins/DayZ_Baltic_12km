@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "scope": "Actual AE helper versus the separate unchanged exporter on the AD final trees; malformed inputs fail before output.",
+  "source_sha256": "0fef87eec16f4a609b33482ac438fc33f07e48c1db3d12810a3d0bd7501c658a",
+  "helper_result": {
+    "path": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-planned-clearings-controls\\positive\\planned-clearings.npy",
+    "sha256": "b11d204cf0fac85005dd25e90c1380b12b42bf1c2ff0a4440d2a43686ef670a3",
+    "points_sha256": "e680e5fbdfcfcb1c779b630549c517a9f27ce7f7b5e34c005a6600f4a5f240e1",
+    "input_sha256": {
+      "slot1m.npy": "9fe60fc70437f2e7d2fb01ed41b6da0b74df0e4df53d01f3203eb514df3dd8d2",
+      "wsea1m.npy": "c86589ac4241a38c2c6196b1273ec781df56c7b1eb38f0b2e77adbba30016981",
+      "moss1m.npy": "225fa4fdc7466da4abc37c77a3c30d356515b50deeecd42a7c9170db58fb6c48"
+    },
+    "minimum_patch_m2": 400,
+    "tree_free_distance_m": 10.0,
+    "blend_margin_m": 3.0,
+    "moss_margin_m": 10.75
+  },
+  "independent_exporter_source_sha256": "59c493791bac9542ccc43bf6c36a08da551e48d54216639ccc1c12d0c1a273d4",
+  "independent_manifest_sha256": "531a39b1376ace7e6a942fba1b98d6634065ebf556bdff301ae96fbf9221e4aa",
+  "expected_mask_sha256": "b11d204cf0fac85005dd25e90c1380b12b42bf1c2ff0a4440d2a43686ef670a3",
+  "positive": 1,
+  "negatives": [
+    {
+      "case": "wrong-tree-hash",
+      "rejected": true,
+      "output_not_created": true,
+      "message": "changed tree guide for planned clearings"
+    },
+    {
+      "case": "malformed-tree-shape",
+      "rejected": true,
+      "output_not_created": true,
+      "message": "invalid tree guide for planned clearings"
+    },
+    {
+      "case": "malformed-moss-shape",
+      "rejected": true,
+      "output_not_created": true,
+      "message": "invalid rasters for planned clearings"
+    }
+  ],
+  "release_acceptance": false
+}

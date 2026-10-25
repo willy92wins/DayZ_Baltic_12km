@@ -1,0 +1,70 @@
+{
+  "frozen_manifest_sha256": "927d3799da4d834427c84db1447bd4595cf79b1f71dd2dfec70a3172606b9dfd",
+  "steps": [
+    {
+      "step": "place",
+      "rc": 0,
+      "seconds": 900.2212872505188,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "51",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\partition-ae250",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "4",
+        "--tile",
+        "250",
+        "--calibration",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ae\\report.json"
+      ]
+    },
+    {
+      "step": "g9",
+      "rc": 0,
+      "seconds": 53.20995116233826,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\g9_seams.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ae\\records.json",
+        "500",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\partition-ae250-g9.json",
+        "--region",
+        "7600,4300,10800,7950",
+        "--compare",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\partition-ae250\\records.json",
+        "--compare-tile",
+        "250"
+      ]
+    }
+  ]
+}

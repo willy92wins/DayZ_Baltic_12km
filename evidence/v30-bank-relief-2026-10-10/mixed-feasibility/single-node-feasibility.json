@@ -1,0 +1,517 @@
+{
+  "status": "NUMERICAL_SINGLE_VERTEX_FEASIBILITY_DIAGNOSTIC",
+  "basis": "EV79 candidate only",
+  "inputs": {
+    "candidate_sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "constraints_sha256": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "plane_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "visible_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "focus_anchors_sha256": "41bcfbfbe1c53cb76cf03fc419e56edcca641b1358c0582f4b5f7f6ac5d187db"
+  },
+  "method": {
+    "variable": "one central dry vertex at a time",
+    "bounds": "h_EV79 \u00b12m and floor=max(min(h_EV79,1.8),max incident P/F/sea+1e-4)",
+    "slope_gate": "each of the six incident native triangles <= max(35deg, its EV79 slope)",
+    "local_objective": "sum of squared dihedral angles over all 40 shared edges of the 5x5-vertex patch",
+    "optimizer": "bounded 1D scalar minimization; endpoints checked",
+    "masks": "exact wet-support and 3x3 engineering halo checked immutable; every other height held fixed"
+  },
+  "focuses": [
+    {
+      "rank": 1,
+      "x_m": 2196,
+      "z_m": 1578,
+      "row": 1784,
+      "col": 366,
+      "h_ev79_m": 5.954403877258301,
+      "height_window_m": [
+        3.954403877258301,
+        7.954403877258301
+      ],
+      "floor": {
+        "min_h_1p8_m": 1.8,
+        "max_incident_P_F_sea_m": 0.85,
+        "water_floor_plus_1e-4_m": 0.8501,
+        "effective_m": 1.8
+      },
+      "slope_interval_intersection_m": [
+        2.7893267674792126,
+        8.024053137599868
+      ],
+      "feasible_height_interval_m": [
+        3.954403877258301,
+        7.954403877258301
+      ],
+      "wet_support_immutable": true,
+      "engineering_halo_immutable": true,
+      "fixed": false,
+      "allowed_under_EV79_selection": false,
+      "incident_slope_triangles": 6,
+      "triangles": [
+        {
+          "cell": [
+            1783,
+            365
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 13.361327551152918,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            0.6549718777573279,
+            8.901792724903803
+          ]
+        },
+        {
+          "cell": [
+            1783,
+            365
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 15.977744068550294,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            0.06921298960122346,
+            8.45204727193442
+          ]
+        },
+        {
+          "cell": [
+            1783,
+            366
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 12.153903286548285,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.7893267674792126,
+            8.478938956702915
+          ]
+        },
+        {
+          "cell": [
+            1784,
+            365
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 15.870525191346667,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.393249947727281,
+            8.024053137599868
+          ]
+        },
+        {
+          "cell": [
+            1784,
+            366
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 10.281942045009496,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.396899568422453,
+            10.582867277280672
+          ]
+        },
+        {
+          "cell": [
+            1784,
+            366
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 6.152990136358971,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.000594550170099,
+            10.312751358948553
+          ]
+        }
+      ],
+      "hinges_5x5": 40,
+      "before": {
+        "sum_squared_deg2": 12477.601193762537,
+        "max_deg": 45.23022456923813,
+        "count_over_30deg": 6,
+        "wet_faces": 0
+      },
+      "status": "FEASIBLE_SINGLE_VERTEX",
+      "focus_hinges": [
+        {
+          "hinge": "vertical",
+          "row": 1784,
+          "col": 366,
+          "before_deg": 31.82382425133297,
+          "after_deg": 31.769073329984547
+        },
+        {
+          "hinge": "horizontal",
+          "row": 1784,
+          "col": 366,
+          "before_deg": 31.59764924714248,
+          "after_deg": 31.542144833751117
+        }
+      ],
+      "incident_slopes_after_deg": [
+        13.404985102933537,
+        16.028630475885205,
+        12.180572465637436,
+        15.915810236262008,
+        10.255446247623887,
+        6.135949561513112
+      ],
+      "h_opt_m": 5.960253062084887,
+      "delta_m": 0.005849184826586473,
+      "after": {
+        "sum_squared_deg2": 12477.558407287643,
+        "reduction_deg2": 0.04278647489445575,
+        "reduction_percent": 0.00034290625441566765,
+        "max_deg": 45.23022456923813,
+        "count_over_30deg": 6,
+        "new_over_30deg": 0,
+        "wet_faces": 0
+      },
+      "gates": {
+        "height_window_floor": true,
+        "all_incident_slopes": true,
+        "wet_faces_unchanged": true,
+        "zero_new_over_30deg": true,
+        "local_max_not_worse": true,
+        "objective_improved": true,
+        "all_requested_conditions": true
+      }
+    },
+    {
+      "rank": 2,
+      "x_m": 5538,
+      "z_m": 3918,
+      "row": 1394,
+      "col": 923,
+      "h_ev79_m": 5.862822532653809,
+      "height_window_m": [
+        3.8628225326538086,
+        7.862822532653809
+      ],
+      "floor": {
+        "min_h_1p8_m": 1.8,
+        "max_incident_P_F_sea_m": 0.85,
+        "water_floor_plus_1e-4_m": 0.8501,
+        "effective_m": 1.8
+      },
+      "slope_interval_intersection_m": [
+        2.9143353732715096,
+        8.375287249848618
+      ],
+      "feasible_height_interval_m": [
+        3.8628225326538086,
+        7.862822532653809
+      ],
+      "wet_support_immutable": true,
+      "engineering_halo_immutable": true,
+      "fixed": false,
+      "allowed_under_EV79_selection": false,
+      "incident_slope_triangles": 6,
+      "triangles": [
+        {
+          "cell": [
+            1393,
+            922
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 11.291438382759605,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.4019192245568943,
+            10.54809965819457
+          ]
+        },
+        {
+          "cell": [
+            1393,
+            922
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 5.45519372008417,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            1.836985163972935,
+            10.165563053800504
+          ]
+        },
+        {
+          "cell": [
+            1393,
+            923
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 8.9418856537625,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.9143353732715096,
+            8.70482146419187
+          ]
+        },
+        {
+          "cell": [
+            1394,
+            922
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 9.12499846211226,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.5350769011523573,
+            8.375287249848618
+          ]
+        },
+        {
+          "cell": [
+            1394,
+            923
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 8.303602411781073,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            0.972802124369931,
+            9.315492667805362
+          ]
+        },
+        {
+          "cell": [
+            1394,
+            923
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 9.36882419688456,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            0.7162286561276883,
+            9.101951428100827
+          ]
+        }
+      ],
+      "hinges_5x5": 40,
+      "before": {
+        "sum_squared_deg2": 11137.264876349785,
+        "max_deg": 44.194816282519774,
+        "count_over_30deg": 5,
+        "wet_faces": 0
+      },
+      "status": "FEASIBLE_SINGLE_VERTEX",
+      "focus_hinges": [
+        {
+          "hinge": "vertical",
+          "row": 1393,
+          "col": 921,
+          "before_deg": 31.414685866029785,
+          "after_deg": 28.918085457340812
+        },
+        {
+          "hinge": "horizontal",
+          "row": 1392,
+          "col": 922,
+          "before_deg": 33.87142348350558,
+          "after_deg": 31.41555738879638
+        }
+      ],
+      "incident_slopes_after_deg": [
+        10.273111577770234,
+        5.424099312900355,
+        9.849234393373981,
+        11.517825749988333,
+        10.402503834259297,
+        11.721888572151833
+      ],
+      "h_opt_m": 6.125428042757001,
+      "delta_m": 0.26260551010319233,
+      "after": {
+        "sum_squared_deg2": 11045.175950245388,
+        "reduction_deg2": 92.08892610439761,
+        "reduction_percent": 0.8268540537268748,
+        "max_deg": 44.194816282519774,
+        "count_over_30deg": 4,
+        "new_over_30deg": 0,
+        "wet_faces": 0
+      },
+      "gates": {
+        "height_window_floor": true,
+        "all_incident_slopes": true,
+        "wet_faces_unchanged": true,
+        "zero_new_over_30deg": true,
+        "local_max_not_worse": true,
+        "objective_improved": true,
+        "all_requested_conditions": true
+      }
+    },
+    {
+      "rank": 3,
+      "x_m": 1140,
+      "z_m": 1002,
+      "row": 1880,
+      "col": 190,
+      "h_ev79_m": 4.905372142791748,
+      "height_window_m": [
+        2.905372142791748,
+        6.905372142791748
+      ],
+      "floor": {
+        "min_h_1p8_m": 1.8,
+        "max_incident_P_F_sea_m": 0.85,
+        "water_floor_plus_1e-4_m": 0.8501,
+        "effective_m": 1.8
+      },
+      "slope_interval_intersection_m": [
+        2.5490830343348363,
+        8.158531125928182
+      ],
+      "feasible_height_interval_m": [
+        2.905372142791748,
+        6.905372142791748
+      ],
+      "wet_support_immutable": true,
+      "engineering_halo_immutable": true,
+      "fixed": false,
+      "allowed_under_EV79_selection": false,
+      "incident_slope_triangles": 6,
+      "triangles": [
+        {
+          "cell": [
+            1879,
+            189
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 7.037155865610725,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            0.22183127142125958,
+            8.556859066713507
+          ]
+        },
+        {
+          "cell": [
+            1879,
+            189
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 7.162891274287118,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            0.32730266934977426,
+            8.636617923911945
+          ]
+        },
+        {
+          "cell": [
+            1879,
+            190
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 14.137717626423107,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.5490830343348363,
+            8.166102607907595
+          ]
+        },
+        {
+          "cell": [
+            1880,
+            189
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 12.147477284771337,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.44891125306962,
+            8.158531125928182
+          ]
+        },
+        {
+          "cell": [
+            1880,
+            190
+          ],
+          "tri": "NW-NE-SE",
+          "slope_before_deg": 13.955302234781648,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            2.149105037460297,
+            10.5025759088898
+          ]
+        },
+        {
+          "cell": [
+            1880,
+            190
+          ],
+          "tri": "NW-SE-SW",
+          "slope_before_deg": 11.731876181990277,
+          "limit_deg": 35.0,
+          "height_interval_m": [
+            1.931848909632286,
+            10.3191152551016
+          ]
+        }
+      ],
+      "hinges_5x5": 40,
+      "before": {
+        "sum_squared_deg2": 12780.376613754974,
+        "max_deg": 46.84059426447254,
+        "count_over_30deg": 5,
+        "wet_faces": 0
+      },
+      "status": "FEASIBLE_SINGLE_VERTEX",
+      "focus_hinges": [
+        {
+          "hinge": "vertical",
+          "row": 1880,
+          "col": 190,
+          "before_deg": 43.49889816369226,
+          "after_deg": 32.94485811044482
+        },
+        {
+          "hinge": "horizontal",
+          "row": 1880,
+          "col": 190,
+          "before_deg": 43.67508383896823,
+          "after_deg": 33.01503623058219
+        }
+      ],
+      "incident_slopes_after_deg": [
+        16.111888664847797,
+        15.619656224154419,
+        15.593127899493279,
+        14.569695214337765,
+        5.1074393571184675,
+        2.5494505979696997
+      ],
+      "h_opt_m": 6.039058317298338,
+      "delta_m": 1.1336861745065896,
+      "after": {
+        "sum_squared_deg2": 11104.591779616703,
+        "reduction_deg2": 1675.7848341382705,
+        "reduction_percent": 13.112170985123356,
+        "max_deg": 46.84059426447254,
+        "count_over_30deg": 5,
+        "new_over_30deg": 0,
+        "wet_faces": 0
+      },
+      "gates": {
+        "height_window_floor": true,
+        "all_incident_slopes": true,
+        "wet_faces_unchanged": true,
+        "zero_new_over_30deg": true,
+        "local_max_not_worse": true,
+        "objective_improved": true,
+        "all_requested_conditions": true
+      }
+    }
+  ],
+  "limits": [
+    "All three anchors are outside the EV79 allowed mask (Narva-only scope); this assesses numeric feasibility only, not EV79 edit authorization.",
+    "Diagnostic only; no NPZ or package produced.",
+    "Numerical one-dimensional optimization, not a formal proof for larger multi-vertex changes.",
+    "A single-node infeasibility does not authorize expanding the neighborhood.",
+    "No DayZ motor, render or visual acceptance."
+  ]
+}

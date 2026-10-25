@@ -1,0 +1,109 @@
+{
+  "status": "OUTLINE_STAGED_FOR_DATA_SERVER_WITH_STALE_NAVIGATION",
+  "terrain_version": "outline-v33",
+  "precision_contract": "native-outline-v33-canonical-water",
+  "asc": "tests\\regional_outline_smoothing_v33\\baltic_outline_smoothing_v33.asc",
+  "asc_sha256": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107",
+  "offline_proof": "tests\\regional_outline_smoothing_v33\\independent-consumer.json",
+  "offline_proof_sha256": "0cf85d0dd9c87c0175d10e51579bc28e6016657fe1f773317a3d5c5af8cfbfa6",
+  "exact_native_persistence": true,
+  "water_pbo_sha256": "f9a5cdf7461ff09e80a102641289513896011a78b090fdbbd1056f9b985898d3",
+  "bootstrap_navmesh_sha256": "eb0f131e5fc0f80d81c60b1f332d8ecfa6396cab9e09ffd36cd1c8504885c496",
+  "limits": [
+    "UI save/close/reopen evidence required in addition to the two exact exports.",
+    "Bootstrap NM is stale; generate fresh navigation before gameplay testing.",
+    "Build inputs are derived: 670 water Y fields restored to V10. Literal exports retain strict FAIL against V10 but persist exactly across reopen."
+  ],
+  "landmarks_proof": "tests\\regional_outline_smoothing_v33\\landmarks-controls-physical-contract.json",
+  "landmarks_proof_sha256": "5f2f6bcbdb943990e57e1efc599a9102760dc711e0fa6028c0952eaa9aef7b36",
+  "build_input_checks": [
+    {
+      "status": "PASS_NATIVE_ROAD_TERRAIN_CONTENT",
+      "checks": {
+        "header_exact": true,
+        "interior_heights_exact": true,
+        "terminal_heights_bounded_1micrometre": true,
+        "all_material_bytes_exact": true,
+        "all_object_ids_unique": true,
+        "all_10161_water_bridge_objects_exact": true
+      },
+      "wrp": "evidence\\foundation-followup-2026-10-01\\outline-v33-native\\canonical-water-build-inputs\\first-derived.wrp",
+      "wrp_sha256": "847bef5cb80f463bff28257a60ad519aec8d945a466a0a506ad09d6870c15d3b",
+      "asc": "tests\\regional_outline_smoothing_v33\\baltic_outline_smoothing_v33.asc",
+      "asc_sha256": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107",
+      "baseline_wrp_sha256": "cdd6838f522a5b66b729db7c6bda39b0a5a41eb256fb26804eb39f5479ef905a",
+      "maximum_height_error_m": 5.960464477539063e-08,
+      "limits": [
+        "Content of one export. Real save/close/reopen provenance and a second matching export are separate.",
+        "Does not accept compiled WRP, new navmesh, rendered pixels or runtime driving."
+      ]
+    },
+    {
+      "status": "PASS_NATIVE_ROAD_TERRAIN_CONTENT",
+      "checks": {
+        "header_exact": true,
+        "interior_heights_exact": true,
+        "terminal_heights_bounded_1micrometre": true,
+        "all_material_bytes_exact": true,
+        "all_object_ids_unique": true,
+        "all_10161_water_bridge_objects_exact": true
+      },
+      "wrp": "evidence\\foundation-followup-2026-10-01\\outline-v33-native\\canonical-water-build-inputs\\reopened-derived.wrp",
+      "wrp_sha256": "2637094a27d1272a3f4d308ab8a90f1a2390c1ae71c77994ff068dd6d1550fd2",
+      "asc": "tests\\regional_outline_smoothing_v33\\baltic_outline_smoothing_v33.asc",
+      "asc_sha256": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107",
+      "baseline_wrp_sha256": "cdd6838f522a5b66b729db7c6bda39b0a5a41eb256fb26804eb39f5479ef905a",
+      "maximum_height_error_m": 5.960464477539063e-08,
+      "limits": [
+        "Content of one export. Real save/close/reopen provenance and a second matching export are separate.",
+        "Does not accept compiled WRP, new navmesh, rendered pixels or runtime driving."
+      ]
+    }
+  ],
+  "literal_native_exports": [
+    {
+      "status": "FAIL_NATIVE_ROAD_TERRAIN_CONTENT",
+      "checks": {
+        "header_exact": true,
+        "interior_heights_exact": true,
+        "terminal_heights_bounded_1micrometre": true,
+        "all_material_bytes_exact": true,
+        "all_object_ids_unique": true,
+        "all_10161_water_bridge_objects_exact": false
+      },
+      "wrp": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tb\\regional_outline_smoothing_v33\\5.wrp",
+      "wrp_sha256": "21144e07da7b09d05b8cd7f48f0d1700b972eb28c6503bd63b3cad98d2baf871",
+      "asc": "tests\\regional_outline_smoothing_v33\\baltic_outline_smoothing_v33.asc",
+      "asc_sha256": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107",
+      "baseline_wrp_sha256": "cdd6838f522a5b66b729db7c6bda39b0a5a41eb256fb26804eb39f5479ef905a",
+      "maximum_height_error_m": 5.960464477539063e-08,
+      "limits": [
+        "Content of one export. Real save/close/reopen provenance and a second matching export are separate.",
+        "Does not accept compiled WRP, new navmesh, rendered pixels or runtime driving."
+      ]
+    },
+    {
+      "status": "FAIL_NATIVE_ROAD_TERRAIN_CONTENT",
+      "checks": {
+        "header_exact": true,
+        "interior_heights_exact": true,
+        "terminal_heights_bounded_1micrometre": true,
+        "all_material_bytes_exact": true,
+        "all_object_ids_unique": true,
+        "all_10161_water_bridge_objects_exact": false
+      },
+      "wrp": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tb\\regional_outline_smoothing_v33\\6.wrp",
+      "wrp_sha256": "cbe04e06043a7136ce754e265d3da04a93257d6b321060fdc79bbb91afb9e492",
+      "asc": "tests\\regional_outline_smoothing_v33\\baltic_outline_smoothing_v33.asc",
+      "asc_sha256": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107",
+      "baseline_wrp_sha256": "cdd6838f522a5b66b729db7c6bda39b0a5a41eb256fb26804eb39f5479ef905a",
+      "maximum_height_error_m": 5.960464477539063e-08,
+      "limits": [
+        "Content of one export. Real save/close/reopen provenance and a second matching export are separate.",
+        "Does not accept compiled WRP, new navmesh, rendered pixels or runtime driving."
+      ]
+    }
+  ],
+  "object_restoration": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\evidence\\foundation-followup-2026-10-01\\outline-v33-native\\canonical-water-build-inputs\\restoration.json",
+  "object_restoration_sha256": "38794f17f47e6603fe0cd3e03ca81520e94e2c60b1cbdccd33ca665797489dfb"
+}

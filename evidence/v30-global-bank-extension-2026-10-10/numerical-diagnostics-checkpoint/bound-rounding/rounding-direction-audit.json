@@ -1,0 +1,45 @@
+{
+  "status": "ROUNDING_DIRECTION_AUDITED_NO_SOLVE",
+  "source_sha256": "4878c338027e6febd9c2f813dc99c5d009d369bc898c370c7153f74635dd7784",
+  "readset_start": {
+    "H": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "B": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "O": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "P": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "F": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "masks": "8f5959308923263538440d29dd93960c5331bc8f13c88b61590380c17d6cdfff",
+    "source": "9b997a3ebf64b78828955476eed4c4c57cfc1ca77d998e407adda17ea5a6bfb7"
+  },
+  "fixtures": {
+    "closest_inward_lower": true,
+    "closest_inward_upper": true,
+    "legacy_lower_violation_detected": true,
+    "legacy_upper_violation_detected": true
+  },
+  "bug": "run-05 inward32 is outward-rounded; run-05 review inward wording is false",
+  "full_grid": {
+    "lower_values_different": 895505,
+    "upper_values_different": 238955,
+    "old_infeasible": 0,
+    "correct_infeasible": 0,
+    "infeasibility_mask_changed": 0
+  },
+  "frozen_domain": {
+    "variables": 2712136,
+    "lower_values_different": 684315,
+    "upper_values_different": 185062,
+    "correct_infeasible_variables": 0,
+    "domain_counts_still_valid": true,
+    "EV95_outside_correct_bounds": 0
+  },
+  "limits": "No new bounds policy, terrain, global solve or mask written. Benchmark may reuse counts only if domain_counts_still_valid.",
+  "readset_end": {
+    "H": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "B": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "O": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "P": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "F": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "masks": "8f5959308923263538440d29dd93960c5331bc8f13c88b61590380c17d6cdfff",
+    "source": "9b997a3ebf64b78828955476eed4c4c57cfc1ca77d998e407adda17ea5a6bfb7"
+  }
+}

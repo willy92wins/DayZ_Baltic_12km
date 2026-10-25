@@ -1,0 +1,48 @@
+{
+  "status": "PASS_LOCAL_OFFLINE_GEOMETRY",
+  "checks": {
+    "finite": true,
+    "asc_matches": true,
+    "candidate_sha": true,
+    "water_and_island_vertices_exact": true,
+    "other_reference_arrays_exact": true,
+    "delta_exact": true,
+    "localized": true,
+    "affected_slope_below_35_01": true,
+    "smooth_approaches": true
+  },
+  "candidate_sha256": "8e25fab25e8f0909fdda302ed4ba3db4c43884c523920f5ef3424db90780eb8b",
+  "changed_vertices": 693,
+  "maximum_affected_slope_degrees": 35.0,
+  "approaches": [
+    {
+      "side": "west",
+      "samples": 40623,
+      "length_m": 307.5,
+      "max_longitudinal_grade": 0.050667449837384027,
+      "max_cross_height_m": 0.007838290397518932,
+      "max_grade_per_actual_lane_length": 0.050667449837360976,
+      "max_sliding_6m_chord_m": 0.011498457435033194,
+      "max_adjacent_6m_grade_change": 0.0075315353638424724,
+      "joint_max_error_m": 0.0,
+      "pass": true
+    },
+    {
+      "side": "east",
+      "samples": 66891,
+      "length_m": 506.3562480925948,
+      "max_longitudinal_grade": 0.04997557227284233,
+      "max_cross_height_m": 0.002176631136669993,
+      "max_grade_per_actual_lane_length": 0.04863993930985745,
+      "max_sliding_6m_chord_m": 0.005951292785710827,
+      "max_adjacent_6m_grade_change": 0.004176117064668028,
+      "joint_max_error_m": 0.0,
+      "pass": true
+    }
+  ],
+  "limits": [
+    "Regional consumer still required.",
+    "No native import, physics, road pieces, wave maximum or navmesh accepted.",
+    "West approach terminates in reserved terrain; western road and base mapping are not designed here."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PREPARED_NATIVE_ORIGIN_CONSUMER_PENDING",
+  "world_sha256": "d82a70a1580a281567820df559a3d1a994efd8526957b19b56e68189dcd49714",
+  "original_csv_sha256": "d19a4bbb92b0997d9a3de6f682f074563d71a6bdc3c41459dd3f79b96f734809",
+  "probe_index": 0,
+  "probe_model": "baltic_water_v30\\edge_00000.p3d",
+  "template": "v30d_edge_00000",
+  "wrp_matrix": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    36.005001068115234,
+    2.6500000953674316,
+    1188.0050048828125
+  ],
+  "raw_bbox_center": [
+    12.005000114440918,
+    0.0,
+    12.005000114440918
+  ],
+  "centre_offset_m": 16.977633978132904,
+  "source_model_sha256": "e2e859a3960c5f975d088a11cb8086f56c87239e73adfa27fcab0c6eb363ce52",
+  "probe_sha256": "1e9bd17fc9a2c8983ca6ab41e28f7d6d0ba5f6c379b183c03be4e2f090a5dfb0",
+  "remaining_sha256": "47de7e9d378935f5c5da0ee22013259c97c3ef1fe739097d1bef3bf532a15d8e",
+  "total_instances": 17637,
+  "remaining_instances": 17636,
+  "procedure": [
+    "Load the complete prepared template library once; import only 01 as absolute elevation in a new layer.",
+    "Export a fresh WRP and compare the one new model and matrix, before bulk import.",
+    "If exact, import 02 in that layer. Do not also import the complete CSV.",
+    "Old water layer must eventually be removed from the isolated project; merely hiding it may still export it.",
+    "All nine bridge records, terrain and surface need their separate final export comparison."
+  ]
+}

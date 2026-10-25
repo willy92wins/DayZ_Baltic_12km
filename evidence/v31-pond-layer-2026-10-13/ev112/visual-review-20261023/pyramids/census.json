@@ -1,0 +1,815 @@
+{
+ "schema": "census-pyramids-v31.v1",
+ "terrain": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\terrain.npz",
+ "terrain_sha256": "07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62",
+ "envelope": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\dam\\envelope-dam.npy",
+ "envelope_sha256": "cc45e2ef667ae2ba78de4c11283c648d2293c53303148f9247361b639a0e73a6",
+ "T": 0.5,
+ "buffers": {
+  "kit": 2,
+  "bridge": 3,
+  "border": 3,
+  "sea_floor": 0.8
+ },
+ "metric": "strict small-shape prominence (single, 3 edge pairs, 2 triangles) on the NW-SE 6-ring",
+ "calibration": {
+  "Chernarus": {
+   "step": 7.5,
+   "land_km2": 179.8,
+   "T0.3": {
+    "peaks": 1898,
+    "pits": 2145,
+    "per_km2": 22.482
+   },
+   "T0.5": {
+    "peaks": 616,
+    "pits": 724,
+    "per_km2": 7.451
+   },
+   "T1.0": {
+    "peaks": 83,
+    "pits": 112,
+    "per_km2": 1.084
+   }
+  },
+  "Livonia": {
+   "step": 6.25,
+   "land_km2": 162.9,
+   "T0.3": {
+    "peaks": 3380,
+    "pits": 3631,
+    "per_km2": 43.044
+   },
+   "T0.5": {
+    "peaks": 889,
+    "pits": 905,
+    "per_km2": 11.014
+   },
+   "T1.0": {
+    "peaks": 30,
+    "pits": 85,
+    "per_km2": 0.706
+   }
+  },
+  "Baltic EV110 land": {
+   "step": 6.0,
+   "land_km2": 114.4,
+   "T0.3": {
+    "peaks": 291,
+    "pits": 22,
+    "per_km2": 2.736
+   },
+   "T0.5": {
+    "peaks": 111,
+    "pits": 5,
+    "per_km2": 1.014
+   },
+   "T1.0": {
+    "peaks": 35,
+    "pits": 1,
+    "per_km2": 0.315
+   }
+  }
+ },
+ "counts": {
+  "all": {
+   "T0.3": {
+    "peaks": 406,
+    "pits": 1731
+   },
+   "T0.5": {
+    "peaks": 141,
+    "pits": 843
+   },
+   "T1.0": {
+    "peaks": 37,
+    "pits": 144
+   }
+  },
+  "land": {
+   "T0.3": {
+    "peaks": 291,
+    "pits": 22
+   },
+   "T0.5": {
+    "peaks": 111,
+    "pits": 5
+   },
+   "T1.0": {
+    "peaks": 35,
+    "pits": 1
+   }
+  },
+  "free_domain": {
+   "T0.3": {
+    "peaks": 88,
+    "pits": 5
+   },
+   "T0.5": {
+    "peaks": 43,
+    "pits": 2
+   },
+   "T1.0": {
+    "peaks": 16,
+    "pits": 1
+   }
+  },
+  "protected": {
+   "frozen": {
+    "T0.3": {
+     "peaks": 165,
+     "pits": 59
+    },
+    "T0.5": {
+     "peaks": 66,
+     "pits": 30
+    },
+    "T1.0": {
+     "peaks": 19,
+     "pits": 7
+    }
+   },
+   "envelope_low": {
+    "T0.3": {
+     "peaks": 81,
+     "pits": 1024
+    },
+    "T0.5": {
+     "peaks": 25,
+     "pits": 531
+    },
+    "T1.0": {
+     "peaks": 0,
+     "pits": 109
+    }
+   },
+   "water": {
+    "T0.3": {
+     "peaks": 63,
+     "pits": 1708
+    },
+    "T0.5": {
+     "peaks": 9,
+     "pits": 837
+    },
+    "T1.0": {
+     "peaks": 2,
+     "pits": 143
+    }
+   },
+   "sea_low": {
+    "T0.3": {
+     "peaks": 3,
+     "pits": 649
+    },
+    "T0.5": {
+     "peaks": 2,
+     "pits": 292
+    },
+    "T1.0": {
+     "peaks": 0,
+     "pits": 33
+    }
+   },
+   "kit": {
+    "T0.3": {
+     "peaks": 56,
+     "pits": 78
+    },
+    "T0.5": {
+     "peaks": 0,
+     "pits": 33
+    },
+    "T1.0": {
+     "peaks": 0,
+     "pits": 6
+    }
+   },
+   "bridge": {
+    "T0.3": {
+     "peaks": 24,
+     "pits": 3
+    },
+    "T0.5": {
+     "peaks": 22,
+     "pits": 2
+    },
+    "T1.0": {
+     "peaks": 12,
+     "pits": 0
+    }
+   },
+   "border": {
+    "T0.3": {
+     "peaks": 1,
+     "pits": 0
+    },
+    "T0.5": {
+     "peaks": 0,
+     "pits": 0
+    },
+    "T1.0": {
+     "peaks": 0,
+     "pits": 0
+    }
+   }
+  }
+ },
+ "attribution_T": {
+  "protected:final": 939,
+  "free:final": 45
+ },
+ "attribution_T_land": {
+  "final": 116
+ },
+ "attribution_check": {
+  "all": 984,
+  "land": 116,
+  "sum_all": 984,
+  "sum_land": 116
+ },
+ "stages": [
+  {
+   "stage": "final",
+   "path": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\terrain.npz",
+   "desc": "census terrain",
+   "sha256": "07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62",
+   "changed_vs_prev": null,
+   "pyramids_T0.3": 2137,
+   "pyramids_T0.5": 984,
+   "pyramids_T1.0": 181,
+   "land_pyramids_T0.3": 313,
+   "land_pyramids_T0.5": 116,
+   "land_pyramids_T1.0": 36
+  }
+ ],
+ "sites_T": {
+  "total": 504,
+  "land": 72,
+  "free": 25,
+  "top20": [
+   {
+    "site": 501,
+    "x": 9834,
+    "z": 222,
+    "r": 2010,
+    "c": 1639,
+    "vertices": 6,
+    "max_prom": 3.688,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "envelope_low|water|"
+   },
+   {
+    "site": 502,
+    "x": 9786,
+    "z": 174,
+    "r": 2018,
+    "c": 1631,
+    "vertices": 4,
+    "max_prom": 3.189,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "envelope_low|water|"
+   },
+   {
+    "site": 267,
+    "x": 2130,
+    "z": 6672,
+    "r": 935,
+    "c": 355,
+    "vertices": 5,
+    "max_prom": 2.67,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": false,
+    "masks": "frozen|narva"
+   },
+   {
+    "site": 109,
+    "x": 10518,
+    "z": 9540,
+    "r": 457,
+    "c": 1753,
+    "vertices": 1,
+    "max_prom": 2.528,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "frozen|water|sea_low|reserve|ev96_converted_to_sea|ev101_sea_bed_smoothed|v31_shore_ramp|v31_causeway"
+   },
+   {
+    "site": 50,
+    "x": 8196,
+    "z": 10560,
+    "r": 287,
+    "c": 1366,
+    "vertices": 1,
+    "max_prom": 2.503,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_causeway"
+   },
+   {
+    "site": 278,
+    "x": 7218,
+    "z": 6606,
+    "r": 946,
+    "c": 1203,
+    "vertices": 4,
+    "max_prom": 2.485,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "envelope_low|water|"
+   },
+   {
+    "site": 58,
+    "x": 8616,
+    "z": 10410,
+    "r": 312,
+    "c": 1436,
+    "vertices": 7,
+    "max_prom": 2.481,
+    "kind": "peak",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "water|v31_causeway"
+   },
+   {
+    "site": 139,
+    "x": 10920,
+    "z": 8916,
+    "r": 561,
+    "c": 1820,
+    "vertices": 1,
+    "max_prom": 2.427,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "frozen|water|reserve|ev96_converted_to_sea"
+   },
+   {
+    "site": 416,
+    "x": 11790,
+    "z": 2400,
+    "r": 1647,
+    "c": 1965,
+    "vertices": 1,
+    "max_prom": 2.396,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 49,
+    "x": 9156,
+    "z": 10578,
+    "r": 284,
+    "c": 1526,
+    "vertices": 3,
+    "max_prom": 2.234,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "water|sea_low|ev96_converted_to_sea"
+   },
+   {
+    "site": 63,
+    "x": 8328,
+    "z": 10368,
+    "r": 319,
+    "c": 1388,
+    "vertices": 1,
+    "max_prom": 2.157,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "water|sea_low|v31_causeway"
+   },
+   {
+    "site": 188,
+    "x": 9030,
+    "z": 7932,
+    "r": 725,
+    "c": 1505,
+    "vertices": 17,
+    "max_prom": 2.132,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "envelope_low|water|"
+   },
+   {
+    "site": 409,
+    "x": 11934,
+    "z": 2676,
+    "r": 1601,
+    "c": 1989,
+    "vertices": 4,
+    "max_prom": 2.05,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 325,
+    "x": 7470,
+    "z": 5310,
+    "r": 1162,
+    "c": 1245,
+    "vertices": 2,
+    "max_prom": 1.949,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": false,
+    "masks": "frozen|bridge|platform|v31_bridge_cut|v31_bridge_fill"
+   },
+   {
+    "site": 47,
+    "x": 9150,
+    "z": 10632,
+    "r": 275,
+    "c": 1525,
+    "vertices": 2,
+    "max_prom": 1.936,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "water|sea_low|ev96_converted_to_sea"
+   },
+   {
+    "site": 283,
+    "x": 3510,
+    "z": 6528,
+    "r": 959,
+    "c": 585,
+    "vertices": 1,
+    "max_prom": 1.93,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 152,
+    "x": 11184,
+    "z": 8712,
+    "r": 595,
+    "c": 1864,
+    "vertices": 2,
+    "max_prom": 1.888,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": false,
+    "masks": "frozen|bridge|platform|reserve|v31_bridge_cut|v31_bridge_fill"
+   },
+   {
+    "site": 305,
+    "x": 11226,
+    "z": 6132,
+    "r": 1025,
+    "c": 1871,
+    "vertices": 2,
+    "max_prom": 1.881,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": false,
+    "masks": "frozen|bridge|platform|reserve|v31_bridge_cut|v31_bridge_fill"
+   },
+   {
+    "site": 130,
+    "x": 8694,
+    "z": 9096,
+    "r": 531,
+    "c": 1449,
+    "vertices": 1,
+    "max_prom": 1.856,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "envelope_low|water|"
+   },
+   {
+    "site": 396,
+    "x": 4122,
+    "z": 3264,
+    "r": 1503,
+    "c": 687,
+    "vertices": 3,
+    "max_prom": 1.83,
+    "kind": "pit",
+    "creator": "final",
+    "land": false,
+    "free": false,
+    "masks": "envelope_low|water|"
+   }
+  ],
+  "top_free20": [
+   {
+    "site": 50,
+    "x": 8196,
+    "z": 10560,
+    "r": 287,
+    "c": 1366,
+    "vertices": 1,
+    "max_prom": 2.503,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_causeway"
+   },
+   {
+    "site": 416,
+    "x": 11790,
+    "z": 2400,
+    "r": 1647,
+    "c": 1965,
+    "vertices": 1,
+    "max_prom": 2.396,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 409,
+    "x": 11934,
+    "z": 2676,
+    "r": 1601,
+    "c": 1989,
+    "vertices": 4,
+    "max_prom": 2.05,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 283,
+    "x": 3510,
+    "z": 6528,
+    "r": 959,
+    "c": 585,
+    "vertices": 1,
+    "max_prom": 1.93,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 398,
+    "x": 12126,
+    "z": 3114,
+    "r": 1528,
+    "c": 2021,
+    "vertices": 1,
+    "max_prom": 1.8,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 407,
+    "x": 12078,
+    "z": 2772,
+    "r": 1585,
+    "c": 2013,
+    "vertices": 3,
+    "max_prom": 1.8,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 237,
+    "x": 3486,
+    "z": 6954,
+    "r": 888,
+    "c": 581,
+    "vertices": 1,
+    "max_prom": 1.781,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_causeway"
+   },
+   {
+    "site": 117,
+    "x": 10476,
+    "z": 9366,
+    "r": 486,
+    "c": 1746,
+    "vertices": 2,
+    "max_prom": 1.574,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_causeway"
+   },
+   {
+    "site": 69,
+    "x": 8688,
+    "z": 10266,
+    "r": 336,
+    "c": 1448,
+    "vertices": 2,
+    "max_prom": 1.334,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_shore_ramp|v31_causeway"
+   },
+   {
+    "site": 405,
+    "x": 9756,
+    "z": 2814,
+    "r": 1578,
+    "c": 1626,
+    "vertices": 2,
+    "max_prom": 1.292,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_causeway"
+   },
+   {
+    "site": 115,
+    "x": 10086,
+    "z": 9372,
+    "r": 485,
+    "c": 1681,
+    "vertices": 7,
+    "max_prom": 1.225,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_causeway"
+   },
+   {
+    "site": 217,
+    "x": 2100,
+    "z": 7314,
+    "r": 828,
+    "c": 350,
+    "vertices": 1,
+    "max_prom": 1.061,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 56,
+    "x": 8268,
+    "z": 10440,
+    "r": 307,
+    "c": 1378,
+    "vertices": 3,
+    "max_prom": 1.009,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "beach|v31_causeway"
+   },
+   {
+    "site": 119,
+    "x": 10506,
+    "z": 9336,
+    "r": 491,
+    "c": 1751,
+    "vertices": 7,
+    "max_prom": 0.953,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_causeway"
+   },
+   {
+    "site": 273,
+    "x": 7518,
+    "z": 6648,
+    "r": 939,
+    "c": 1253,
+    "vertices": 2,
+    "max_prom": 0.895,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 397,
+    "x": 12204,
+    "z": 3240,
+    "r": 1507,
+    "c": 2034,
+    "vertices": 2,
+    "max_prom": 0.858,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 299,
+    "x": 1644,
+    "z": 6276,
+    "r": 1001,
+    "c": 274,
+    "vertices": 1,
+    "max_prom": 0.699,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_shore_ramp"
+   },
+   {
+    "site": 135,
+    "x": 9474,
+    "z": 8988,
+    "r": 549,
+    "c": 1579,
+    "vertices": 2,
+    "max_prom": 0.651,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_despike"
+   },
+   {
+    "site": 225,
+    "x": 8622,
+    "z": 7122,
+    "r": 860,
+    "c": 1437,
+    "vertices": 1,
+    "max_prom": 0.632,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_lagoon"
+   },
+   {
+    "site": 54,
+    "x": 1344,
+    "z": 10452,
+    "r": 305,
+    "c": 224,
+    "vertices": 1,
+    "max_prom": 0.573,
+    "kind": "peak",
+    "creator": "final",
+    "land": true,
+    "free": true,
+    "masks": "v31_shore_ramp"
+   }
+  ]
+ }
+}

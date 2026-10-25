@@ -1,0 +1,90 @@
+{
+  "status": "BUILT_PENDING_GROUPED_GATES",
+  "params": {
+    "nominal_margin_m": 0.201,
+    "full_radius_m": 9.0,
+    "outer_radius_m": 24.0,
+    "max_lower_m": 0.45,
+    "altered_bed_depth_max_m": 1.2,
+    "constrained_minimum_margin_m": 0.181,
+    "solver_iterations_max": 250
+  },
+  "patches": [
+    {
+      "id": 362,
+      "x": 2732.0,
+      "z": 6812.0,
+      "amplitude_m": 0.17774448537824436,
+      "wet_support_weight": 0.6666666666666856,
+      "eligible_vertices": 8,
+      "ground_before_m": 1.0424963235854996,
+      "ground_after_m": 0.92988288402556,
+      "nominal_depth_after_m": 0.19511711597444004
+    },
+    {
+      "id": 363,
+      "x": 2732.0,
+      "z": 6818.0,
+      "amplitude_m": 0.1304270699023948,
+      "wet_support_weight": 0.6666666666666856,
+      "eligible_vertices": 7,
+      "ground_before_m": 1.0109513799349323,
+      "ground_after_m": 0.9313013950983545,
+      "nominal_depth_after_m": 0.19369860490164548
+    },
+    {
+      "id": 416,
+      "x": 2920.0,
+      "z": 6832.0,
+      "amplitude_m": 0.22010238313681174,
+      "wet_support_weight": 0.6666666666666288,
+      "eligible_vertices": 5,
+      "ground_before_m": 1.0457349220911996,
+      "ground_after_m": 0.8990000089010021,
+      "nominal_depth_after_m": 0.20099999109899802
+    }
+  ],
+  "solver": {
+    "iterations": 2,
+    "variables": 13,
+    "point_constraints": 17,
+    "face_constraints": 56,
+    "constant_faces_omitted": 4,
+    "feasible_start_depth_m": 0.19369861616774586,
+    "message": "Optimization terminated successfully",
+    "frozen_dry_reference_sha256": "fd08ec8e41af8275ca83ee388888a83a71be5e3fdfaec3eb0a63bd564e096f18"
+  },
+  "source_sha256": "b2fc42870392735076b6e16a42eef61fc85032592d84d63d24eaf3baa86de45c",
+  "candidate_sha256": "5c2d40c4af5a2f76e827a0bc3f516006513ab5b2ef5054947d9930d74d55fb4c",
+  "asc_sha256": "aad25653ac592c21f9819e1c92738eb1c41e8a65cf548b682791b753729f627f",
+  "changed_vertices": 13,
+  "max_lower_m": 0.22010236978530884,
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-v10\\11\\terrain_v30.npz": "b2fc42870392735076b6e16a42eef61fc85032592d84d63d24eaf3baa86de45c",
+    "E:\\DayZ-Baltic-Build\\v30-water-temporal-v2\\reference.json": "3cecf5ad63ae46380057f835bf9d657b172c153cab341e1d2caf1d0b69cc8a48",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_outline_v1\\reference.npz": "10bd6d9c9b944e2964d72055301101a7014c5bb09ff3ddc298a15897bab5c915",
+    "E:\\DayZ-Baltic-Build\\v30-v10\\design\\water_v3.geojson": "caa333e365c2a4511f839937a9d76a5aa157a0ef925d6ee4b5efcc4ebb38f8a9",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-offline-followup-2026-10-02\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-delta-fairways-2026-10-02\\axes-corridors.geojson": "038470e9e7548aebd25de9bfa73de5782ece1ae8772a1b6e5e84377a2f0b838b",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\deepen_wave_margins_v30.py": "4b27c8a68d8a3972296db9a40e6c213a6669a87b9b7089c9c20e77153a0d580a",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\v30_common.py": "6485307be67bde8ce3f2b37f597a3a1502fbf2ce19e9313b0d071a42468eb53f",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\finish_shores_v30.py": "f7256ca3c876aba01b38ef9f128937711500aa726eebf918466247303c410455"
+  },
+  "limits": [
+    "Local bed authoring only; no whole-map water or visual acceptance.",
+    "No metadata or object change; old frozen findings stay preserved.",
+    "Physical navigation must be regenerated for the changed terrain."
+  ],
+  "moved_points_skipped": [
+    524,
+    548,
+    642,
+    765,
+    882,
+    1176,
+    1185,
+    1224,
+    1274,
+    1312
+  ]
+}

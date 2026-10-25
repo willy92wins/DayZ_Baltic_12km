@@ -1,0 +1,56 @@
+{
+  "status": "RESULT_RECORDED_FROM_ACTIVE_AUDIT_CONTEXT",
+  "caveat": "Original one-off precheck script and exact per-intersection minima were not persisted in the available audit directory/session artifacts. No recomputation performed for this receipt.",
+  "scope": {
+    "changed_unknown_F_triangles": 24847,
+    "changed_unknown_all_nan": 24847,
+    "changed_unknown_partial": 0,
+    "native_triangle_area_m2": 18,
+    "aggregate_domain_area_m2": 447246,
+    "unknown_F_total_all_nan": 7571450,
+    "unknown_F_partial": 0
+  },
+  "footprint": {
+    "no_visible_ODOL_XZ_footprint_triangles": 18468,
+    "visible_XZ_footprint_triangles": 6379,
+    "exact_positive_face_intersection_pieces": 15246,
+    "broadphase_face_triangle_hits": 49221,
+    "candidate_object_instances": 2639,
+    "unique_ODOL_models_hash_verified": 2572,
+    "water_instances": 18024,
+    "projected_union_area_m2": 2.1917286106459573
+  },
+  "burial": {
+    "buried_in_both_B_and_H_triangles": 6379,
+    "potentially_exposed_or_contact_B_only": 0,
+    "potentially_exposed_or_contact_H_only": 0,
+    "potentially_exposed_or_contact_both": 0,
+    "min_ground_minus_face_B_m": "NOT_RECORDED",
+    "min_ground_minus_face_H_m": "NOT_RECORDED",
+    "recorded_aggregate_rule": "For every projected face/triangle intersection polygon, min(ground-face) was reported > 2e-5 m in both B and H; exact numeric minima were not saved.",
+    "threshold_m": 2E-05,
+    "burial_scope": "Compiled visible LOD face planes against offline affine heightfield triangles only."
+  },
+  "transform_comparison": {
+    "current_B_WRP_sha256": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "old_inventory_WRP_sha256": "a845bee (prefix only; full digest not recorded in audit context)",
+    "instances_compared": 18033,
+    "matrix_or_name_deltas": 122,
+    "delta_dimensions": "All 122 reported deltas were Y translation only; names, rotation, and X/Z translation unchanged.",
+    "broadphase_rechecked_with_current_B_transform": true
+  },
+  "input_hashes": {
+    "B_terrain": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "H_terrain": "a7146c27a634d3ee59bc4c2763d71050da3172724c4f2620a17fce0775fcf020",
+    "P": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "F": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "compiled_instance_bounds": "863e9539203e59fe77b9c7d4949da3a69b4991249941e15b887b60ff9e81ee62",
+    "current_B_WRP": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6"
+  },
+  "source_script": {
+    "exact_copy": "NOT_AVAILABLE",
+    "source_script_sha256": "NOT_RECORDED",
+    "explanation": "The live precheck was not preserved as a file; this artifact deliberately does not reconstruct or label a new script as the exact original."
+  },
+  "interpretation": "Static offline geometry discriminator only. Does not assign F values, infer sea/render state, or prove engine visibility/culling."
+}

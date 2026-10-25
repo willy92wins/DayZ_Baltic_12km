@@ -1,0 +1,52 @@
+{
+  "status": "FAILED_CAPTURE_PROVENANCE",
+  "run_id": "867f7ee7-489a-42bd-ac89-2a7687178f6c",
+  "reference_sha256": "63736d0929381deae125e28d7b7ee13d3e483374c35cfa6cdb847009eb374efc",
+  "identity_sha256": "0dbb61d23bce4d70014de96060d6ca7b8d269f61401a65175a2742fd0ac44a98",
+  "images": [],
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 1,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Neva Ladoga player",
+        "samples": 24,
+        "avg64_median": 19.0874,
+        "avg64_range": [
+          18.9742,
+          19.1159
+        ],
+        "native_min64_min": 16.129,
+        "native_max64_max": 21.7391,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Fixed 23-28s capture interval omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "error": "('App not active at capture', 0)",
+  "logs_sha256": {
+    "camera.log": "786dfbe59d09c5ac1ab63e3427e349ace936c2e7d0f9e4c5c5c327b11c797a36",
+    "client-metrics.log": "0b919901bf7f6c32c29d06bb00b75e5acebbe07eb6ad28137953e2fc4498f8f9"
+  },
+  "limit": "File/run/camera provenance only. Actual terrain, water and textures need independent pixel review."
+}

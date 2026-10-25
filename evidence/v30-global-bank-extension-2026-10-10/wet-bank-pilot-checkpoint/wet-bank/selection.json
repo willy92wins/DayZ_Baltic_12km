@@ -1,0 +1,1371 @@
+{
+  "schema": "ev94.wet-bank-pilot-selection.v1",
+  "status": "SELECTED_GEOMETRY_ONLY_NO_TERRAIN_CHANGE",
+  "selection_reason": "Selected Oredezh as the high-water verified fallback to Msta: this location has a measured P/F dry-to-wet crossing on a real compiled visible face, with head sufficient for a 1.0 m bed plus 0.95 m draft at the wet endpoint.",
+  "site": {
+    "water_feature_id": "river_041",
+    "water_feature_properties": {
+      "class": "river",
+      "id": "river_041",
+      "name": "Oredezh",
+      "length_m": 756,
+      "width_median_m": 8.0,
+      "level_drop_m": 1.39,
+      "max_cut_m": 8.26
+    },
+    "water_feature_index": 84,
+    "source": "E:\\DayZ-Baltic-Build\\v30-v11\\design\\water_v3.geojson",
+    "feature_geometry_type": "MultiPolygon",
+    "point_rc": [
+      862,
+      1186
+    ],
+    "world_xz_m": [
+      7116.0,
+      7110.0
+    ],
+    "cell_rc": [
+      862,
+      1186
+    ],
+    "cell_corner_order": "NW,NE,SW,SE; triangulation NW-SE: [NW,NE,SE] + [NW,SE,SW]",
+    "dry_corner_rc": [
+      862,
+      1186
+    ],
+    "wet_corner_rc": [
+      862,
+      1187
+    ],
+    "crossing_edge": "cell top edge NW→NE; F sample indices 0→1"
+  },
+  "terrain_and_surface": {
+    "H_3x3_rc_start": [
+      861,
+      1186
+    ],
+    "H_candidate_EV94_m": [
+      [
+        3.674609899520874,
+        5.206413745880127,
+        8.047933578491211
+      ],
+      [
+        5.575099945068359,
+        3.3240644931793213,
+        6.753785133361816
+      ],
+      [
+        7.2401604652404785,
+        4.539211273193359,
+        5.188582420349121
+      ]
+    ],
+    "H_base_EV93_selected_m": [
+      [
+        3.674609899520874,
+        5.206413745880127,
+        8.047933578491211
+      ],
+      [
+        5.575099945068359,
+        3.3240644931793213,
+        6.753785133361816
+      ],
+      [
+        7.2401604652404785,
+        4.539211273193359,
+        5.188582420349121
+      ]
+    ],
+    "H_base_EV82_B_m": [
+      [
+        3.674609899520874,
+        5.206413745880127,
+        8.047933578491211
+      ],
+      [
+        5.575099945068359,
+        3.3240644931793213,
+        6.753785133361816
+      ],
+      [
+        7.2401604652404785,
+        4.539211273193359,
+        5.188582420349121
+      ]
+    ],
+    "H_EV95_rebase_domain_equal": true,
+    "EV95_rebase_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz",
+    "EV95_rebase_sha256": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "P_cells_2x2_rc_start": [
+      861,
+      1186
+    ],
+    "P_plane_m": [
+      [
+        5.525,
+        5.525
+      ],
+      [
+        5.525,
+        5.525
+      ]
+    ],
+    "crossing_cell_offset_in_P_F_arrays_rc": [
+      1,
+      0
+    ],
+    "F_cells_2x2_corner_order_NW_NE_SW_SE_m": [
+      [
+        [
+          5.525,
+          5.525,
+          5.525000000000001,
+          5.525
+        ],
+        [
+          5.525,
+          5.525,
+          5.525,
+          5.525000000000001
+        ]
+      ],
+      [
+        [
+          5.525000000000001,
+          5.525,
+          5.525,
+          5.525
+        ],
+        [
+          5.525,
+          5.525000000000001,
+          5.525,
+          5.525
+        ]
+      ]
+    ],
+    "crossing": {
+      "P_cell_m": 5.525,
+      "F_dry_m": 5.525000000000001,
+      "F_wet_m": 5.525,
+      "H_dry_m": 5.575099945068359,
+      "H_wet_m": 3.3240644931793213,
+      "H_minus_F_dry_m": 0.05009994506835813,
+      "H_minus_F_wet_m": -2.200935506820679,
+      "linear_zero_fraction_dry_to_wet": 0.02225639983871199,
+      "linear_zero_distance_from_dry_m": 0.13353839903227194,
+      "wet_clearance_F_minus_H_m": 2.200935506820679,
+      "max_bed_raise_while_retaining_0_95m_draft_m": 1.250935506820679,
+      "nominal_1m_bed_elevation_F_minus_1m_m": 4.525,
+      "wet_H_minus_1m_m": 2.3240644931793213,
+      "draft_0_95_contract_applies_here": false,
+      "note": "The .95 m contract is a navigable-corridor requirement; this point is outside the signed corridor. Clearance is reported as geometry, not an added requirement."
+    }
+  },
+  "compiled_faces": {
+    "index_manifest_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json",
+    "manifest_sha256": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "cell_polygon_xz_m": [
+      [
+        7116.0,
+        7110.0
+      ],
+      [
+        7122.0,
+        7110.0
+      ],
+      [
+        7122.0,
+        7104.0
+      ],
+      [
+        7116.0,
+        7104.0
+      ],
+      [
+        7116.0,
+        7110.0
+      ]
+    ],
+    "physical": {
+      "bbox_candidates": 17,
+      "positive_intersecting_faces": 12,
+      "union_overlap_area_xz_m2": 36.0,
+      "face_examples_largest_first": [
+        {
+          "object_id": 16804567,
+          "model_id": 7443,
+          "model": "globalvis_16804567.p3d",
+          "face_id": 3,
+          "overlap_area_xz_m2": 11.999999995413418,
+          "native_face_area_xz_m2": 12.0,
+          "plane_y_xz": [
+            6.166117109466084e-17,
+            4.109562167773391e-17,
+            5.52499995753096
+          ],
+          "vertices_xyz": [
+            [
+              7120.0,
+              5.524999957531691,
+              7104.000117301941
+            ],
+            [
+              7116.0,
+              5.524999957531691,
+              7104.000117301941
+            ],
+            [
+              7116.0,
+              5.524999957531691,
+              7110.000117301941
+            ]
+          ]
+        },
+        {
+          "object_id": 16804567,
+          "model_id": 7443,
+          "model": "globalvis_16804567.p3d",
+          "face_id": 6,
+          "overlap_area_xz_m2": 11.99953079682291,
+          "native_face_area_xz_m2": 32.0,
+          "plane_y_xz": [
+            0.0,
+            -0.0,
+            5.524999957531691
+          ],
+          "vertices_xyz": [
+            [
+              7116.0,
+              5.524999957531691,
+              7110.000117301941
+            ],
+            [
+              7120.0,
+              5.524999957531691,
+              7120.000117301941
+            ],
+            [
+              7120.0,
+              5.524999957531691,
+              7104.000117301941
+            ]
+          ]
+        },
+        {
+          "object_id": 16804567,
+          "model_id": 7443,
+          "model": "globalvis_16804567.p3d",
+          "face_id": 19,
+          "overlap_area_xz_m2": 10.499765396118164,
+          "native_face_area_xz_m2": 64.0,
+          "plane_y_xz": [
+            -2.215353827999292e-17,
+            -1.77646513868386e-17,
+            5.524999957531975
+          ],
+          "vertices_xyz": [
+            [
+              7128.0,
+              5.524999957531691,
+              7110.000117301941
+            ],
+            [
+              7120.0,
+              5.524999957531691,
+              7104.000117301941
+            ],
+            [
+              7120.0,
+              5.524999957531691,
+              7120.000117301941
+            ]
+          ]
+        },
+        {
+          "object_id": 16804567,
+          "model_id": 7443,
+          "model": "globalvis_16804567.p3d",
+          "face_id": 18,
+          "overlap_area_xz_m2": 1.5,
+          "native_face_area_xz_m2": 42.0,
+          "plane_y_xz": [
+            -1.069222522297259e-20,
+            -6.900312517532769e-17,
+            5.524999957532181
+          ],
+          "vertices_xyz": [
+            [
+              7134.0,
+              5.524999957531691,
+              7104.000117301941
+            ],
+            [
+              7120.0,
+              5.524999957531691,
+              7104.000117301941
+            ],
+            [
+              7128.0,
+              5.524999957531691,
+              7110.000117301941
+            ]
+          ]
+        },
+        {
+          "object_id": 16804566,
+          "model_id": 2460,
+          "model": "edge_05964.p3d",
+          "face_id": 2,
+          "overlap_area_xz_m2": 0.020000457763671875,
+          "native_face_area_xz_m2": 0.020000457763671875,
+          "plane_y_xz": [
+            3.62503630190208e-20,
+            4.912693636409239e-15,
+            5.525000095332532
+          ],
+          "vertices_xyz": [
+            [
+              7120.0,
+              5.525000095367432,
+              7104.010000228882
+            ],
+            [
+              7120.0,
+              5.525000095367432,
+              7104.0
+            ],
+            [
+              7116.0,
+              5.525000095367432,
+              7104.010000228882
+            ]
+          ]
+        },
+        {
+          "object_id": 16804566,
+          "model_id": 2460,
+          "model": "edge_05964.p3d",
+          "face_id": 3,
+          "overlap_area_xz_m2": 0.020000457763671875,
+          "native_face_area_xz_m2": 0.020000457763671875,
+          "plane_y_xz": [
+            6.945092458478036e-17,
+            2.776523419319736e-14,
+            5.525000095169693
+          ],
+          "vertices_xyz": [
+            [
+              7116.0,
+              5.525000095367432,
+              7104.0
+            ],
+            [
+              7116.0,
+              5.525000095367432,
+              7104.010000228882
+            ],
+            [
+              7120.0,
+              5.525000095367432,
+              7104.0
+            ]
+          ]
+        },
+        {
+          "object_id": 16804566,
+          "model_id": 2460,
+          "model": "edge_05964.p3d",
+          "face_id": 18,
+          "overlap_area_xz_m2": 0.018571853637695312,
+          "native_face_area_xz_m2": 0.07000160217285156,
+          "plane_y_xz": [
+            -1.729232894734734e-20,
+            4.865362881667043e-15,
+            5.525000095332868
+          ],
+          "vertices_xyz": [
+            [
+              7120.0,
+              5.525000095367432,
+              7104.010000228882
+            ],
+            [
+              7134.0,
+              5.525000095367432,
+              7104.010000228882
+            ],
+            [
+              7120.0,
+              5.525000095367432,
+              7104.0
+            ]
+          ]
+        },
+        {
+          "object_id": 16804566,
+          "model_id": 2460,
+          "model": "edge_05964.p3d",
+          "face_id": 17,
+          "overlap_area_xz_m2": 0.0014286041259765625,
+          "native_face_area_xz_m2": 0.07000160217285156,
+          "plane_y_xz": [
+            -1.729232836660063e-20,
+            3.2062958256251e-14,
+            5.5250000951396565
+          ],
+          "vertices_xyz": [
+            [
+              7134.0,
+              5.525000095367432,
+              7104.0
+            ],
+            [
+              7120.0,
+              5.525000095367432,
+              7104.0
+            ],
+            [
+              7134.0,
+              5.525000095367432,
+              7104.010000228882
+            ]
+          ]
+        }
+      ]
+    },
+    "visible": {
+      "bbox_candidates": 20,
+      "positive_intersecting_faces": 9,
+      "union_overlap_area_xz_m2": 36.0,
+      "face_examples_largest_first": [
+        {
+          "object_id": 16804567,
+          "model_id": 7443,
+          "model": "globalvis_16804567.p3d",
+          "face_id": 46,
+          "overlap_area_xz_m2": 17.999994277954556,
+          "native_face_area_xz_m2": 18.0,
+          "plane_y_xz": [
+            -7.474090516029865e-17,
+            -7.47247806528913e-17,
+            5.524999856949916
+          ],
+          "vertices_xyz": [
+            [
+              7122.0,
+              5.5249998569488525,
+              7104.000000953674
+            ],
+            [
+              7116.0,
+              5.5249998569488525,
+              7110.000000953674
+            ],
+            [
+              7122.0,
+              5.5249998569488525,
+              7110.000000953674
+            ]
+          ]
+        },
+        {
+          "object_id": 16804567,
+          "model_id": 7443,
+          "model": "globalvis_16804567.p3d",
+          "face_id": 47,
+          "overlap_area_xz_m2": 17.99965095519974,
+          "native_face_area_xz_m2": 17.999650955200195,
+          "plane_y_xz": [
+            4.238426813126155e-17,
+            4.2400392638668934e-17,
+            5.5249998569482495
+          ],
+          "vertices_xyz": [
+            [
+              7116.0,
+              5.5249998569488525,
+              7110.000000953674
+            ],
+            [
+              7122.0,
+              5.5249998569488525,
+              7104.000000953674
+            ],
+            [
+              7116.0,
+              5.5249998569488525,
+              7104.000117301941
+            ]
+          ]
+        },
+        {
+          "object_id": 16804566,
+          "model_id": 2460,
+          "model": "edge_05964.p3d",
+          "face_id": 2,
+          "overlap_area_xz_m2": 0.020000457763671875,
+          "native_face_area_xz_m2": 0.020000457763671875,
+          "plane_y_xz": [
+            3.62503630190208e-20,
+            4.912693636409239e-15,
+            5.525000095332532
+          ],
+          "vertices_xyz": [
+            [
+              7120.0,
+              5.525000095367432,
+              7104.010000228882
+            ],
+            [
+              7120.0,
+              5.525000095367432,
+              7104.0
+            ],
+            [
+              7116.0,
+              5.525000095367432,
+              7104.010000228882
+            ]
+          ]
+        },
+        {
+          "object_id": 16804566,
+          "model_id": 2460,
+          "model": "edge_05964.p3d",
+          "face_id": 3,
+          "overlap_area_xz_m2": 0.020000457763671875,
+          "native_face_area_xz_m2": 0.020000457763671875,
+          "plane_y_xz": [
+            6.945092458478036e-17,
+            2.776523419319736e-14,
+            5.525000095169693
+          ],
+          "vertices_xyz": [
+            [
+              7116.0,
+              5.525000095367432,
+              7104.0
+            ],
+            [
+              7116.0,
+              5.525000095367432,
+              7104.010000228882
+            ],
+            [
+              7120.0,
+              5.525000095367432,
+              7104.0
+            ]
+          ]
+        },
+        {
+          "object_id": 16804566,
+          "model_id": 2460,
+          "model": "edge_05964.p3d",
+          "face_id": 18,
+          "overlap_area_xz_m2": 0.018571853637695312,
+          "native_face_area_xz_m2": 0.07000160217285156,
+          "plane_y_xz": [
+            -1.729232894734734e-20,
+            4.865362881667043e-15,
+            5.525000095332868
+          ],
+          "vertices_xyz": [
+            [
+              7120.0,
+              5.525000095367432,
+              7104.010000228882
+            ],
+            [
+              7134.0,
+              5.525000095367432,
+              7104.010000228882
+            ],
+            [
+              7120.0,
+              5.525000095367432,
+              7104.0
+            ]
+          ]
+        },
+        {
+          "object_id": 16804566,
+          "model_id": 2460,
+          "model": "edge_05964.p3d",
+          "face_id": 17,
+          "overlap_area_xz_m2": 0.0014286041259765625,
+          "native_face_area_xz_m2": 0.07000160217285156,
+          "plane_y_xz": [
+            -1.729232836660063e-20,
+            3.2062958256251e-14,
+            5.5250000951396565
+          ],
+          "vertices_xyz": [
+            [
+              7134.0,
+              5.525000095367432,
+              7104.0
+            ],
+            [
+              7120.0,
+              5.525000095367432,
+              7104.0
+            ],
+            [
+              7134.0,
+              5.525000095367432,
+              7104.010000228882
+            ]
+          ]
+        },
+        {
+          "object_id": 16804567,
+          "model_id": 7443,
+          "model": "globalvis_16804567.p3d",
+          "face_id": 48,
+          "overlap_area_xz_m2": 0.0003490447998046875,
+          "native_face_area_xz_m2": 0.0003490447998046875,
+          "plane_y_xz": [
+            -1.3021343213216101e-17,
+            -6.706701742472339e-13,
+            5.524999861713386
+          ],
+          "vertices_xyz": [
+            [
+              7116.0,
+              5.5249998569488525,
+              7104.000000953674
+            ],
+            [
+              7116.0,
+              5.5249998569488525,
+              7104.000117301941
+            ],
+            [
+              7122.0,
+              5.5249998569488525,
+              7104.000000953674
+            ]
+          ]
+        },
+        {
+          "object_id": 16804567,
+          "model_id": 7443,
+          "model": "globalvis_16804567.p3d",
+          "face_id": 56,
+          "overlap_area_xz_m2": 5.721769844505616e-06,
+          "native_face_area_xz_m2": 0.029651641845703125,
+          "plane_y_xz": [
+            -1.6124507410766002e-20,
+            2.891394947115945e-14,
+            5.524999856743448
+          ],
+          "vertices_xyz": [
+            [
+              7120.0,
+              5.5249998569488525,
+              7103.990117073059
+            ],
+            [
+              7116.0,
+              5.5249998569488525,
+              7104.000000953674
+            ],
+            [
+              7122.0,
+              5.5249998569488525,
+              7104.000000953674
+            ]
+          ]
+        }
+      ]
+    },
+    "meaning": "EV93 compiled ODOL XZ faces intersect this cell; face planes are static source geometry, not runtime water/depth proof."
+  },
+  "slope_hinge": {
+    "measurement_source": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+    "measurement_source_sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "max_incident_hinge_in_crop": {
+      "kind": "diag",
+      "angle_deg": 47.95252414417777,
+      "index_rc": [
+        861,
+        1186
+      ],
+      "triangle_1": [
+        [
+          861,
+          1186
+        ],
+        [
+          861,
+          1187
+        ],
+        [
+          862,
+          1187
+        ]
+      ],
+      "triangle_2": [
+        [
+          861,
+          1186
+        ],
+        [
+          862,
+          1187
+        ],
+        [
+          862,
+          1186
+        ]
+      ],
+      "cells": [
+        [
+          861,
+          1186
+        ],
+        [
+          861,
+          1186
+        ]
+      ],
+      "shared_edge_nodes": [
+        [
+          861,
+          1186
+        ],
+        [
+          862,
+          1187
+        ]
+      ]
+    },
+    "hinge_vertex_xyz_h": {
+      "(861, 1186)": {
+        "xz_m": [
+          7116.0,
+          7116.0
+        ],
+        "H_m": 3.674609899520874
+      },
+      "(861, 1187)": {
+        "xz_m": [
+          7122.0,
+          7116.0
+        ],
+        "H_m": 5.206413745880127
+      },
+      "(862, 1186)": {
+        "xz_m": [
+          7116.0,
+          7110.0
+        ],
+        "H_m": 5.575099945068359
+      },
+      "(862, 1187)": {
+        "xz_m": [
+          7122.0,
+          7110.0
+        ],
+        "H_m": 3.3240644931793213
+      },
+      "(863, 1186)": {
+        "xz_m": [
+          7116.0,
+          7104.0
+        ],
+        "H_m": 7.2401604652404785
+      },
+      "(863, 1187)": {
+        "xz_m": [
+          7122.0,
+          7104.0
+        ],
+        "H_m": 4.539211273193359
+      }
+    },
+    "all_kind_maxima_in_crop": [
+      {
+        "kind": "diag",
+        "angle_deg": 47.95252414417777,
+        "index_rc": [
+          861,
+          1186
+        ],
+        "triangle_1": [
+          [
+            861,
+            1186
+          ],
+          [
+            861,
+            1187
+          ],
+          [
+            862,
+            1187
+          ]
+        ],
+        "triangle_2": [
+          [
+            861,
+            1186
+          ],
+          [
+            862,
+            1187
+          ],
+          [
+            862,
+            1186
+          ]
+        ],
+        "cells": [
+          [
+            861,
+            1186
+          ],
+          [
+            861,
+            1186
+          ]
+        ],
+        "shared_edge_nodes": [
+          [
+            861,
+            1186
+          ],
+          [
+            862,
+            1187
+          ]
+        ]
+      },
+      {
+        "kind": "vertical",
+        "angle_deg": 26.243854600059382,
+        "index_rc": [
+          862,
+          1186
+        ],
+        "triangle_1": [
+          [
+            862,
+            1186
+          ],
+          [
+            862,
+            1187
+          ],
+          [
+            863,
+            1187
+          ]
+        ],
+        "triangle_2": [
+          [
+            862,
+            1187
+          ],
+          [
+            863,
+            1188
+          ],
+          [
+            863,
+            1187
+          ]
+        ],
+        "cells": [
+          [
+            862,
+            1186
+          ],
+          [
+            862,
+            1187
+          ]
+        ],
+        "shared_edge_nodes": [
+          [
+            862,
+            1187
+          ],
+          [
+            863,
+            1187
+          ]
+        ]
+      },
+      {
+        "kind": "horizontal",
+        "angle_deg": 26.881970031052425,
+        "index_rc": [
+          861,
+          1188
+        ],
+        "triangle_1": [
+          [
+            861,
+            1188
+          ],
+          [
+            862,
+            1189
+          ],
+          [
+            862,
+            1188
+          ]
+        ],
+        "triangle_2": [
+          [
+            862,
+            1188
+          ],
+          [
+            862,
+            1189
+          ],
+          [
+            863,
+            1189
+          ]
+        ],
+        "cells": [
+          [
+            861,
+            1188
+          ],
+          [
+            862,
+            1188
+          ]
+        ],
+        "shared_edge_nodes": [
+          [
+            862,
+            1188
+          ],
+          [
+            862,
+            1189
+          ]
+        ]
+      }
+    ],
+    "local_profile_domain": {
+      "window_rc_half_open": [
+        860,
+        865,
+        1185,
+        1189
+      ],
+      "height_m": [
+        [
+          4.395355701446533,
+          4.297105312347412,
+          6.984076023101807,
+          7.1099138259887695
+        ],
+        [
+          6.3526411056518555,
+          3.674609899520874,
+          5.206413745880127,
+          8.047933578491211
+        ],
+        [
+          6.163753986358643,
+          5.575099945068359,
+          3.3240644931793213,
+          6.753785133361816
+        ],
+        [
+          6.726535797119141,
+          7.2401604652404785,
+          4.539211273193359,
+          5.188582420349121
+        ],
+        [
+          6.608405590057373,
+          6.234043121337891,
+          5.732424736022949,
+          4.5534749031066895
+        ]
+      ],
+      "slope_ring_source_window_rc_half_open": [
+        855,
+        870,
+        1179,
+        1194
+      ],
+      "slope_ring_distance_definition": "Chebyshev node distance from the exact union of crossing-cell and maximum-hinge triangle vertices; orthogonal neighboring-height differences are binned by the smaller endpoint distance.",
+      "slope_ring_abs_neighbor_delta_m": {
+        "0": {
+          "edge_count": 17,
+          "max_abs_delta_m": 3.429720640182495,
+          "median_abs_delta_m": 1.6650605201721191
+        },
+        "1": {
+          "edge_count": 32,
+          "max_abs_delta_m": 3.652777671813965,
+          "median_abs_delta_m": 0.623058557510376
+        },
+        "2": {
+          "edge_count": 48,
+          "max_abs_delta_m": 3.1888585090637207,
+          "median_abs_delta_m": 0.45270490646362305
+        },
+        "3": {
+          "edge_count": 64,
+          "max_abs_delta_m": 3.2882046699523926,
+          "median_abs_delta_m": 0.24248743057250977
+        },
+        "4": {
+          "edge_count": 80,
+          "max_abs_delta_m": 2.951606273651123,
+          "median_abs_delta_m": 0.16028857231140137
+        },
+        "5": {
+          "edge_count": 96,
+          "max_abs_delta_m": 2.6586098670959473,
+          "median_abs_delta_m": 0.221970796585083
+        },
+        "6": {
+          "edge_count": 69,
+          "max_abs_delta_m": 2.6902027130126953,
+          "median_abs_delta_m": 0.24474668502807617
+        }
+      },
+      "center_row_profile_rc_start": [
+        862,
+        1179
+      ],
+      "center_row_heights_m": [
+        6.876589298248291,
+        6.515284061431885,
+        6.259413719177246,
+        6.143404960632324,
+        6.1598310470581055,
+        6.2393341064453125,
+        6.163753986358643,
+        5.575099945068359,
+        3.3240644931793213,
+        6.753785133361816,
+        7.256011486053467,
+        6.282131195068359,
+        6.336269378662109,
+        6.5370659828186035,
+        6.865602493286133
+      ],
+      "center_column_profile_rc_start": [
+        855,
+        1186
+      ],
+      "center_column_heights_m": [
+        6.242250442504883,
+        6.3817572593688965,
+        6.731541156768799,
+        6.227856636047363,
+        6.179112911224365,
+        4.297105312347412,
+        3.674609899520874,
+        5.575099945068359,
+        7.2401604652404785,
+        6.234043121337891,
+        7.208739280700684,
+        7.890912055969238,
+        8.038907051086426,
+        7.791567325592041,
+        8.17615795135498
+      ],
+      "extended_profile_is_measurement_not_smoothing_extent": true,
+      "EV95_equal_to_EV94_in_domain": true,
+      "max_adjacent_horizontal_delta_m": 3.429720640182495,
+      "max_adjacent_vertical_delta_m": 1.9572854042053223,
+      "core_feature_union_rc_half_open": [
+        861,
+        864,
+        1186,
+        1188
+      ],
+      "domain_reason": "Exact union of crossing cell and maximum-hinge triangles, plus one 6 m nodal collar as a minimum stencil/boundary diagnostic. This is not asserted as a sufficient smoothing extent; measured neighboring deltas remain large."
+    },
+    "interpretation": "The 47.95° hinge is the maximum in this bounded crop; the reported triangle vertex lists let the profile include the neighboring facet pair and actual shoreline cell together."
+  },
+  "design_contour": {
+    "nearest_boundary_distance_m": 0.16359528602174156,
+    "nearest_boundary_xz_m": [
+      7116.1405313306195,
+      7110.083751792356
+    ],
+    "minimum_area_pilot_domain_recommendation": {
+      "feature_core_rc_half_open": [
+        861,
+        864,
+        1186,
+        1188
+      ],
+      "first_fixed_collar_probe_rc_half_open": [
+        860,
+        865,
+        1185,
+        1189
+      ],
+      "profile_probe_rc_half_open": [
+        855,
+        870,
+        1179,
+        1194
+      ],
+      "profile_probe_span_m": [
+        84.0,
+        84.0
+      ],
+      "boundary_test": "The 6 m collar is only the topological minimum. The measured max orthogonal height delta is 3.65 m at ring 1 and remains 2.69 m at ring 6 (~36 m from the feature core); no fixed smoothing radius is justified by these measurements.",
+      "recommended_profile": "Use the exact dry-to-wet cross-shore line through row 862 together with the 47.95 degree NW-SE hinge pair, then extend the movable band only until the measured fixed-side shoulder becomes suitable. The 15x15 probe is evidence of slope persistence, not a selected edit radius."
+    }
+  },
+  "protection_and_separation": {
+    "node_masks": {
+      "water_support": true,
+      "engineering_halo": false,
+      "other_fixed": false,
+      "fixed": true,
+      "allowed": false,
+      "EV79_narva": false,
+      "large_lake_banks": false,
+      "terrain_cls": 0,
+      "water": false,
+      "beach": false,
+      "reserve": false,
+      "platform": false,
+      "narva": false
+    },
+    "dry_endpoint_masks": {
+      "terrain_cls": 0,
+      "water": false,
+      "beach": false,
+      "reserve": false,
+      "platform": false,
+      "narva": false,
+      "water_support": true,
+      "engineering_halo": false,
+      "other_fixed": false,
+      "fixed": true,
+      "allowed": false,
+      "EV79_narva": false,
+      "large_lake_banks": false
+    },
+    "wet_endpoint_masks": {
+      "terrain_cls": 5,
+      "water": true,
+      "beach": false,
+      "reserve": false,
+      "platform": false,
+      "narva": false,
+      "water_support": true,
+      "engineering_halo": false,
+      "other_fixed": true,
+      "fixed": true,
+      "allowed": false,
+      "EV79_narva": false,
+      "large_lake_banks": false
+    },
+    "selection_windows": {
+      "retained_units": 499,
+      "overlap_count": 0,
+      "nearest": {
+        "unit_id": "legacy:609",
+        "window_rc_half_open": [
+          837,
+          854,
+          1154,
+          1171
+        ],
+        "linf_gap_nodes": 16,
+        "row_gap": 9,
+        "col_gap": 16
+      },
+      "window_source": "selection units; all retained source result files re-read and SHA-checked before/after window_rc extraction",
+      "window_result_count": 499,
+      "window_result_readset_sha256": "b33843e5a219f7f04cb29df46358b791c70e628938bcdc124ea6061879a7cd8d"
+    },
+    "signed_corridor_distance_m": 2232.743523301373,
+    "signed_corridor_path": "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson",
+    "nearest_road_sample": {
+      "distance_m": 185.73524428883223,
+      "xy": [
+        7083.879564547278,
+        6927.063238802695
+      ],
+      "sample_index": 20102
+    },
+    "road_reference_path": "P:\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz",
+    "nearest_nonwater_WRP_origins": [
+      {
+        "id": 16787377,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4606.036133808359,
+        "origin_xz": [
+          2515.979248046875,
+          6874.6748046875
+        ]
+      },
+      {
+        "id": 16787376,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4630.521354026192,
+        "origin_xz": [
+          2491.270263671875,
+          6878.47705078125
+        ]
+      },
+      {
+        "id": 16787375,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4655.012264651491,
+        "origin_xz": [
+          2466.56103515625,
+          6882.27978515625
+        ]
+      },
+      {
+        "id": 16777219,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4679.50831703987,
+        "origin_xz": [
+          2441.85205078125,
+          6886.08251953125
+        ]
+      },
+      {
+        "id": 16777216,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4704.009693738526,
+        "origin_xz": [
+          2417.14306640625,
+          6889.884765625
+        ]
+      }
+    ],
+    "nonwater_WRP_origin_count_within_500m": 0,
+    "bridge_named_WRP_origins": [
+      {
+        "id": 16787377,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4606.036133808359,
+        "origin_xz": [
+          2515.979248046875,
+          6874.6748046875
+        ]
+      },
+      {
+        "id": 16787376,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4630.521354026192,
+        "origin_xz": [
+          2491.270263671875,
+          6878.47705078125
+        ]
+      },
+      {
+        "id": 16787375,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4655.012264651491,
+        "origin_xz": [
+          2466.56103515625,
+          6882.27978515625
+        ]
+      },
+      {
+        "id": 16777219,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4679.50831703987,
+        "origin_xz": [
+          2441.85205078125,
+          6886.08251953125
+        ]
+      },
+      {
+        "id": 16777216,
+        "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+        "origin_distance_m": 4704.009693738526,
+        "origin_xz": [
+          2417.14306640625,
+          6889.884765625
+        ]
+      }
+    ],
+    "bridge_named_WRP_origin_count_within_500m": 0,
+    "origin_distance_limit": "WRP transform-origin distances only; not a compiled object-bounds clearance test.",
+    "why_dry_pass_froze_node": "EV79 wet_support is true at the dry corner; the point is not in any retained selection window. Other listed local exclusion masks are false."
+  },
+  "water_object_identity": {
+    "base_wrp_path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+    "base_wrp_sha256": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "EV94_staged_wrp_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+    "staged_wrp_sha256": "8bf57d622fb2f01aa491f280f9dcb8cdc9dd8a603ac18995e3e50d21e83e4cb3",
+    "stage_json_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.json",
+    "stage_json_sha256": "cc394869cf45f60315eea5b13a99b2f79d80135bee5ee32879b3900ecaa86610",
+    "stage_status": "STAGED_EV94_HEIGHTS_ONLY",
+    "objects_and_materials_exact": true,
+    "water_object_count_base_and_EV94": 18024,
+    "water_ids_names_and_12-float_matrices_equal": true,
+    "EV94_water_pbo_sha256": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"
+  },
+  "source_readset": {
+    "start": {
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\focus-unit\\author-run-01\\candidate-terrain.npz": "30d0ed33e477846297a17e758e34a51490d54ee809e8b63ec9d69229170d15a1",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\compound-selection\\run-02\\candidate-terrain.npz": "6e27557315eb65ecc69052e1ec387304a19f37eaa4f5167ab82fb607f095461d",
+      "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+      "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+      "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\compound-selection\\run-02\\selection.json": "3b22dcc381b34b8d7c3e6641d3c919658f0fe7377594a859e3d5c064cf92ba0b",
+      "E:\\DayZ-Baltic-Build\\v30-v11\\design\\water_v3.geojson": "caa333e365c2a4511f839937a9d76a5aa157a0ef925d6ee4b5efcc4ebb38f8a9",
+      "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+      "P:\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz": "94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2",
+      "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "8bf57d622fb2f01aa491f280f9dcb8cdc9dd8a603ac18995e3e50d21e83e4cb3",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.json": "cc394869cf45f60315eea5b13a99b2f79d80135bee5ee32879b3900ecaa86610",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+      "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27"
+    },
+    "end": {
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\focus-unit\\author-run-01\\candidate-terrain.npz": "30d0ed33e477846297a17e758e34a51490d54ee809e8b63ec9d69229170d15a1",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\compound-selection\\run-02\\candidate-terrain.npz": "6e27557315eb65ecc69052e1ec387304a19f37eaa4f5167ab82fb607f095461d",
+      "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+      "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+      "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\compound-selection\\run-02\\selection.json": "3b22dcc381b34b8d7c3e6641d3c919658f0fe7377594a859e3d5c064cf92ba0b",
+      "E:\\DayZ-Baltic-Build\\v30-v11\\design\\water_v3.geojson": "caa333e365c2a4511f839937a9d76a5aa157a0ef925d6ee4b5efcc4ebb38f8a9",
+      "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+      "P:\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz": "94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2",
+      "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "8bf57d622fb2f01aa491f280f9dcb8cdc9dd8a603ac18995e3e50d21e83e4cb3",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.json": "cc394869cf45f60315eea5b13a99b2f79d80135bee5ee32879b3900ecaa86610",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+      "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27"
+    },
+    "unchanged": true,
+    "script_sha256": "19a03d1b030536f69733eacefc860bdd34df26ba48249aa8939720a28b29bb9c"
+  },
+  "scope_limits": [
+    "Selection only; no candidate geometry was authored or changed.",
+    "P/F and static face intersections establish geometry, not game runtime wave level or appearance.",
+    "WRP non-water proximity is by object origin only.",
+    "Local domain is a measured geometric footprint, not a tuned smoothing radius."
+  ]
+}

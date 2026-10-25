@@ -1,0 +1,117 @@
+"""Apply the same native road gates to the combined water/terrain candidate."""
+import hashlib,json
+from pathlib import Path
+import numpy as np
+import rasterio
+from scipy.ndimage import distance_transform_edt
+from scipy.sparse import coo_matrix,diags,hstack,vstack,csr_matrix
+from scipy.optimize import linprog
+from fit_road_native_triangles import weights
+ROOT=Path(__file__).resolve().parents[2]
+EV=ROOT/'evidence/regional-foundation-v1'
+OUT=ROOT/'tests/regional_foundation_combined_v2'
+
+
+def main():
+    assert not OUT.exists(),'Fresh output required'
+    data=np.load(ROOT/'tests/regional_foundation_roads_v6/reference.npz')
+    combined=np.load(ROOT/'tests/regional_foundation_combined_v1/reference.npz')
+    h=combined['candidate'];xy=data['xy'];profile=data['profile'].copy()
+    from waterway_common import sample
+    chains=json.loads((EV/'road-grade-chains-v2.json').read_text())['chains']
+    water=combined['wet']|combined['ocean']
+    wet_distance=distance_transform_edt(~water)*6
+    fit=json.loads((ROOT/'evidence/narva/evidence/narva-fit.json').read_text())
+    centre=np.array(fit['bridge_centre_tb'])-[200000,0]
+    rr,cc=np.mgrid[0:2048,0:2048]
+    editable=wet_distance>30
+    radial=np.linalg.norm(xy-centre,axis=1)
+    mix=np.clip((radial-200)/150,0,1)
+    profile=sample(data['base'],xy[:,0]+200000,xy[:,1])*(1-mix)+profile*mix
+    positions=[];targets=[];groups=[];count=0
+    for indices in chains:
+        p=xy[indices]
+        if len(p)<4:continue
+        tangent=np.gradient(p,axis=0);length=np.linalg.norm(tangent,axis=1)
+        if np.any(length<1e-8):continue
+        normal=np.column_stack([-tangent[:,1],tangent[:,0]])/length[:,None]
+        q=np.stack([p-4*normal,p,p+4*normal],axis=1)
+        ix,_=weights(q.reshape(-1,2))
+        valid=np.all(editable.ravel()[ix].reshape(len(p),3,3),axis=(1,2))
+        kept=np.flatnonzero(valid)
+        if not len(kept):continue
+        positions.append(q[kept].reshape(-1,2));targets.append(np.repeat(profile[indices][kept],3))
+        station=np.r_[0,np.cumsum(np.linalg.norm(np.diff(p,axis=0),axis=1))]
+        groups.append((count,kept,station[kept]))
+        count+=len(kept)*3
+    positions=np.concatenate(positions);target=np.concatenate(targets)
+    ix,w=weights(positions);variables=np.unique(ix)
+    mapping=np.full(h.size,-1,int);mapping[variables]=np.arange(len(variables))
+    A=coo_matrix((w.ravel(),(np.repeat(np.arange(len(positions)),3),mapping[ix].ravel())),shape=(len(positions),len(variables))).tocsr()
+    dr=[];dc=[];dv=[];bounds=[]
+    def constraint(cols,values,bound):
+        row=len(bounds);dr.extend([row]*len(cols));dc.extend(cols);dv.extend(values);bounds.append(bound)
+    for start,kept,station in groups:
+        for j in range(len(kept)):
+            mid=start+3*j+1
+            constraint([mid-1,mid],[1,-1],.014)
+            constraint([mid+1,mid],[1,-1],.014)
+            if j and kept[j]-kept[j-1]==1:
+                ds=station[j]-station[j-1]
+                constraint([mid,mid-3],[1,-1],.060*ds)
+            if 0<j<len(kept)-1 and kept[j+1]-kept[j-1]==2:
+                a=station[j]-station[j-1];b=station[j+1]-station[j]
+                constraint([mid,mid-3,mid+3],[1,-b/(a+b),-a/(a+b)],.022)
+    D=coo_matrix((dv,(dr,dc)),shape=(len(bounds),len(positions))).tocsr()
+    B=D@A
+    n=len(variables);m=len(positions)
+    # Bound slopes between native vertices too, so unobserved spaces cannot spike.
+    gr=[];gc=[];gv=[];gb=[]
+    for i,vertex in enumerate(variables):
+        for offset in (1,2048):
+            neighbor=int(vertex)+offset
+            if neighbor>=h.size or (offset==1 and vertex%2048==2047):continue
+            j=int(mapping[neighbor])
+            if j<0:continue
+            row=len(gb);gr.extend([row,row]);gc.extend([i,j]);gv.extend([1,-1]);gb.append(1.8)
+    native_gradient=coo_matrix((gv,(gr,gc)),shape=(len(gb),n)).tocsr()
+    B=vstack([B,native_gradient],format='csr')
+    bounds=np.r_[bounds,gb]
+    prior=h.ravel()[variables].astype(float)
+    # Bound and regularize every vertex, including vertices with tiny/zero
+    # interpolation weights. A fit only at road samples has a dangerous nullspace.
+    soft=vstack([A,diags(np.ones(n))],format='csr')
+    goal=np.r_[target,prior]
+    eye=diags(np.ones(m+n));zeros=csr_matrix((B.shape[0],m+n))
+    constraints=vstack([hstack([soft,-eye]),hstack([-soft,-eye]),hstack([B,zeros]),hstack([-B,zeros])],format='csr')
+    rhs=np.r_[goal,-goal,bounds,bounds]
+    c=np.r_[np.zeros(n),np.ones(m),np.full(n,.1)]
+    print(f'Solving {n} terrain variables, {m} deviation variables, {constraints.shape[0]} inequalities',flush=True)
+    native_bounds=[(1.25,110)]*n
+    result=linprog(c,A_ub=constraints,b_ub=rhs,bounds=native_bounds+[(0,None)]*(m+n),method='highs',
+                   options={'time_limit':300,'dual_feasibility_tolerance':1e-8,'primal_feasibility_tolerance':1e-8})
+    receipt={'status':'SOLVER_ONLY_NOT_ACCEPTED' if result.success else 'INCONCLUSIVE_SOLVER',
+             'success':bool(result.success),'solver_status':int(result.status),'message':result.message,
+             'terrain_variables':n,'constraints':constraints.shape[0]}
+    if result.success:
+        candidate=h.copy();candidate.ravel()[variables]=result.x[:n].astype(np.float32)
+        assert not np.any((candidate!=h)&~editable)
+        assert not np.any((candidate!=h)&water)
+        OUT.mkdir(parents=True)
+        asc=OUT/'baltic_regional_foundation_v2.asc'
+        with asc.open('w',encoding='ascii',newline='\n') as handle:
+            handle.write('ncols 2048\nnrows 2048\nxllcorner 200000\nyllcorner 0\ncellsize 6\nNODATA_value -9999\n')
+            np.savetxt(handle,candidate,fmt='%.9g')
+        with rasterio.open(asc) as ds:assert np.array_equal(ds.read(1),candidate)
+        arrays={key:combined[key] for key in combined.files};arrays['candidate']=candidate;arrays['changed']=candidate!=combined['base'];arrays['road_fixed_vertices']=variables
+        np.savez_compressed(OUT/'reference.npz',**arrays)
+        np.savez_compressed(OUT/'road-solve-input.npz',xy=xy,profile=profile,positions=positions)
+        receipt.update(candidate_sha256=hashlib.sha256(asc.read_bytes()).hexdigest(),
+                       max_adjustment_m=float(abs(candidate-h).max()),
+                       average_profile_deviation_m=float(np.mean(abs(A@result.x[:n]-target))))
+    (EV/'combined-road-constraints-v2.json').write_text(json.dumps(receipt,indent=2)+'\n')
+    print(json.dumps(receipt,indent=2))
+    raise SystemExit(0 if result.success else 1)
+
+
+if __name__=='__main__':main()

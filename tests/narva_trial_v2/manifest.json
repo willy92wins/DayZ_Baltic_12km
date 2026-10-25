@@ -1,0 +1,35 @@
+{
+  "status": "PREPARED_NOT_IMPORTED",
+  "source_sha256": "fa7878e26a63accce0f0a0a55b503ae1125f1fac9caa95fec4168c5d749de7f0",
+  "candidate_sha256": "1326175fa0a53db2c69fba7e13767a57f7cb4475defaa5d32d8e55fe1a2b4856",
+  "modified_nodes": 202,
+  "max_change_m": 2.442200183868408,
+  "outside_48m_unchanged": true,
+  "native_vertex_formula": "x=200000+6*col, north=6*(2047-row)",
+  "native_interpolation": "NW_SE diagonal in row-down array",
+  "water_polygon_buffer_m": 0,
+  "approach_nodes_inside_source_water_raised": 0,
+  "support_vertices_excluded_inside_water": 0,
+  "predicted_bridge_ends": [
+    {
+      "along_m": -12.5,
+      "sample_width_m": 8,
+      "min_m": 2.0,
+      "max_m": 2.0,
+      "max_gap_m": 0.0
+    },
+    {
+      "along_m": 12.5,
+      "sample_width_m": 8,
+      "min_m": 2.0,
+      "max_m": 2.0,
+      "max_gap_m": 0.0
+    }
+  ],
+  "limits": [
+    "Local trial only; engine registration verified only around Narva.",
+    "Original regional terrain is not shifted.",
+    "Predicted endpoints require native re-probe. Water, collision and traversal remain unvalidated.",
+    "Water polygon is unchanged, but sampled shoreline cannot exactly follow sub-cell geometry."
+  ]
+}

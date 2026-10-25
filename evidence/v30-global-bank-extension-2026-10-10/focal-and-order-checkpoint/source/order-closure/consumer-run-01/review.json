@@ -1,0 +1,3013 @@
+{
+  "consumer_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\verify_order_closure.py",
+  "consumer_sha256": "064f67ef4fcf2f33264853d4301f33e79246e2be3297d9f01b0a64bacf9e4e5e",
+  "consumer_sha256_end": "064f67ef4fcf2f33264853d4301f33e79246e2be3297d9f01b0a64bacf9e4e5e",
+  "consumer_sha256_start": "064f67ef4fcf2f33264853d4301f33e79246e2be3297d9f01b0a64bacf9e4e5e",
+  "elapsed_consumer_seconds": 142.86794520000694,
+  "gates": {
+    "P_F_SEA_signs_and_crossings_within_1m": true,
+    "affected_known_P_corridor_depth_ge_0_95m": true,
+    "all_corridor_geometry_covered": false,
+    "bank_interior_p99_and_bracket_counts_nonworse": true,
+    "civil_source_cells_rebuilt_and_fixed": true,
+    "consumer_source_stable": true,
+    "continuation_lineage_exact": true,
+    "fixed_water_civil_P9_exact_B": true,
+    "float32_order_closure_bounds_D8_and_budget": true,
+    "global_slope_and_hinge_nonregression": true,
+    "high_navigable_bed_floor_1m": true,
+    "independent_order_projection_and_receipt_exact": true,
+    "no_new_local_minima": true,
+    "objective_strictly_reduced": true,
+    "pbo_wrp_deployed_identity_stable": true,
+    "physical_bounds_and_float32_admm_kkt": true,
+    "reconstructed_variable_domain_exact": true,
+    "selected_seed_improved": true,
+    "solver_resource_limits": true,
+    "source_readset_stable": true
+  },
+  "index_readset": {
+    "base_identity_checks": {
+      "bounds": true,
+      "compiled_oprw": true,
+      "source_wrp": true,
+      "water_pbo": true,
+      "world_pbo": true
+    },
+    "manifest_sha256": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "models_rehashed": 13128,
+    "record_count": 883308,
+    "shard_count": 9,
+    "shards_sha256": "a92caec2add0c82e7890c614f1cd8738f9c794fb5392afb612b59a9f82ebb7c4"
+  },
+  "information": {
+    "A_nnz": 445632,
+    "A_shape": [
+      167885,
+      40512
+    ],
+    "C_nnz": 80141,
+    "C_shape": [
+      41140,
+      40512
+    ],
+    "affected_corridor_depth": {
+      "by_feature": [
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 0,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_2",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 1,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_3",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 2,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_6",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 3,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_7",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 4,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_8",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 5,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_10",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 6,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_12",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 7,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_13",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 8,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_14",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 9,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_15",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 10,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_16",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 11,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_19",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 12,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_22",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 13,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_23",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 14,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_25",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 15,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_26",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 16,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Narva_27",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 17,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Luga_0",
+          "triangles": []
+        },
+        {
+          "affected_known_area_m2": 0,
+          "affected_known_triangles": 0,
+          "affected_unknown_P_area_m2": 0.0,
+          "feature_index": 18,
+          "minimum_affected_nominal_depth_m": null,
+          "river": "Neva_0",
+          "triangles": []
+        }
+      ],
+      "features_with_affected_known_support": 0,
+      "minimum_affected_known_depth_m": null,
+      "pass": true,
+      "scope": "Only known-P native triangles in corridor geometry intersecting cells incident to changed vertices.",
+      "tested_known_triangles": 0,
+      "unknown_area_in_changed_corridor_support_m2": 0.0
+    },
+    "affected_stencils": 127373,
+    "artifact_hashes_end": {
+      "candidate_local": "ec1df1c7749fe478f4d5fc943acdc74bb498d68123bf568d07f5aa4d88ae21ba",
+      "order_closure_receipt": "19c6cead0b614dd9adb8a4617979e01e6f2fbf0b04357df2a9ed26108914ccf8",
+      "preflight": "bd0f50b709c297cdba1442425e6fc3957b95d67dcc46f7c44d23bd65ae66996d",
+      "prepared": "8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21",
+      "solve03_rejected_result": "8345bd1763af30ed7c06f621ab14cc91b6bb79d8359ec76a146b8ef85d767a0c",
+      "solver_state": "8618d5941d7c8b235bedce6ad5e21a0053ec61a2a32c17532fec98ff9db3dfa9"
+    },
+    "artifact_hashes_start": {
+      "candidate_local": "ec1df1c7749fe478f4d5fc943acdc74bb498d68123bf568d07f5aa4d88ae21ba",
+      "order_closure_receipt": "19c6cead0b614dd9adb8a4617979e01e6f2fbf0b04357df2a9ed26108914ccf8",
+      "preflight": "bd0f50b709c297cdba1442425e6fc3957b95d67dcc46f7c44d23bd65ae66996d",
+      "prepared": "8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21",
+      "solve03_rejected_result": "8345bd1763af30ed7c06f621ab14cc91b6bb79d8359ec76a146b8ef85d767a0c",
+      "solver_state": "8618d5941d7c8b235bedce6ad5e21a0053ec61a2a32c17532fec98ff9db3dfa9"
+    },
+    "changed_vertices": 36539,
+    "civil_reconstruction": {
+      "bridge_cells": 150,
+      "bridge_object_count": 9,
+      "pass": true,
+      "road_cells": 269,
+      "road_sample_metrics": {
+        "cell_rule": "exact owning grid cell; both adjacent cells on an exact grid line",
+        "intersecting_chain_count": 1,
+        "intersecting_chains": [
+          {
+            "chain_id": 71,
+            "chain_length_m": 1154.4623892335992,
+            "cross_samples_in_sector_halo": 11080,
+            "station_count": 1156
+          }
+        ],
+        "lateral_samples_inside_sector_halo": 11080,
+        "native_cells_rc_sorted": [
+          [
+            892,
+            474
+          ],
+          [
+            892,
+            475
+          ],
+          [
+            892,
+            476
+          ],
+          [
+            892,
+            477
+          ],
+          [
+            892,
+            478
+          ],
+          [
+            892,
+            479
+          ],
+          [
+            892,
+            480
+          ],
+          [
+            892,
+            481
+          ],
+          [
+            892,
+            482
+          ],
+          [
+            892,
+            483
+          ],
+          [
+            892,
+            484
+          ],
+          [
+            892,
+            485
+          ],
+          [
+            892,
+            486
+          ],
+          [
+            892,
+            487
+          ],
+          [
+            892,
+            488
+          ],
+          [
+            892,
+            489
+          ],
+          [
+            892,
+            490
+          ],
+          [
+            892,
+            491
+          ],
+          [
+            893,
+            461
+          ],
+          [
+            893,
+            462
+          ],
+          [
+            893,
+            463
+          ],
+          [
+            893,
+            464
+          ],
+          [
+            893,
+            465
+          ],
+          [
+            893,
+            466
+          ],
+          [
+            893,
+            467
+          ],
+          [
+            893,
+            468
+          ],
+          [
+            893,
+            469
+          ],
+          [
+            893,
+            470
+          ],
+          [
+            893,
+            471
+          ],
+          [
+            893,
+            472
+          ],
+          [
+            893,
+            473
+          ],
+          [
+            893,
+            474
+          ],
+          [
+            893,
+            475
+          ],
+          [
+            893,
+            476
+          ],
+          [
+            893,
+            477
+          ],
+          [
+            893,
+            478
+          ],
+          [
+            893,
+            479
+          ],
+          [
+            893,
+            480
+          ],
+          [
+            893,
+            481
+          ],
+          [
+            893,
+            482
+          ],
+          [
+            893,
+            483
+          ],
+          [
+            893,
+            484
+          ],
+          [
+            893,
+            485
+          ],
+          [
+            893,
+            486
+          ],
+          [
+            893,
+            487
+          ],
+          [
+            893,
+            488
+          ],
+          [
+            893,
+            489
+          ],
+          [
+            893,
+            490
+          ],
+          [
+            893,
+            491
+          ],
+          [
+            893,
+            492
+          ],
+          [
+            893,
+            493
+          ],
+          [
+            893,
+            494
+          ],
+          [
+            894,
+            448
+          ],
+          [
+            894,
+            449
+          ],
+          [
+            894,
+            450
+          ],
+          [
+            894,
+            451
+          ],
+          [
+            894,
+            452
+          ],
+          [
+            894,
+            453
+          ],
+          [
+            894,
+            454
+          ],
+          [
+            894,
+            455
+          ],
+          [
+            894,
+            456
+          ],
+          [
+            894,
+            457
+          ],
+          [
+            894,
+            458
+          ],
+          [
+            894,
+            459
+          ],
+          [
+            894,
+            460
+          ],
+          [
+            894,
+            461
+          ],
+          [
+            894,
+            462
+          ],
+          [
+            894,
+            463
+          ],
+          [
+            894,
+            464
+          ],
+          [
+            894,
+            465
+          ],
+          [
+            894,
+            466
+          ],
+          [
+            894,
+            467
+          ],
+          [
+            894,
+            468
+          ],
+          [
+            894,
+            469
+          ],
+          [
+            894,
+            470
+          ],
+          [
+            894,
+            471
+          ],
+          [
+            894,
+            472
+          ],
+          [
+            894,
+            473
+          ],
+          [
+            894,
+            474
+          ],
+          [
+            894,
+            475
+          ],
+          [
+            894,
+            476
+          ],
+          [
+            894,
+            477
+          ],
+          [
+            894,
+            478
+          ],
+          [
+            894,
+            479
+          ],
+          [
+            894,
+            490
+          ],
+          [
+            894,
+            491
+          ],
+          [
+            894,
+            492
+          ],
+          [
+            894,
+            493
+          ],
+          [
+            894,
+            494
+          ],
+          [
+            894,
+            495
+          ],
+          [
+            894,
+            496
+          ],
+          [
+            894,
+            497
+          ],
+          [
+            895,
+            390
+          ],
+          [
+            895,
+            391
+          ],
+          [
+            895,
+            392
+          ],
+          [
+            895,
+            434
+          ],
+          [
+            895,
+            435
+          ],
+          [
+            895,
+            436
+          ],
+          [
+            895,
+            437
+          ],
+          [
+            895,
+            438
+          ],
+          [
+            895,
+            439
+          ],
+          [
+            895,
+            440
+          ],
+          [
+            895,
+            441
+          ],
+          [
+            895,
+            442
+          ],
+          [
+            895,
+            443
+          ],
+          [
+            895,
+            444
+          ],
+          [
+            895,
+            445
+          ],
+          [
+            895,
+            446
+          ],
+          [
+            895,
+            447
+          ],
+          [
+            895,
+            448
+          ],
+          [
+            895,
+            449
+          ],
+          [
+            895,
+            450
+          ],
+          [
+            895,
+            451
+          ],
+          [
+            895,
+            452
+          ],
+          [
+            895,
+            453
+          ],
+          [
+            895,
+            454
+          ],
+          [
+            895,
+            455
+          ],
+          [
+            895,
+            456
+          ],
+          [
+            895,
+            457
+          ],
+          [
+            895,
+            458
+          ],
+          [
+            895,
+            459
+          ],
+          [
+            895,
+            460
+          ],
+          [
+            895,
+            461
+          ],
+          [
+            895,
+            462
+          ],
+          [
+            895,
+            463
+          ],
+          [
+            895,
+            464
+          ],
+          [
+            895,
+            465
+          ],
+          [
+            895,
+            493
+          ],
+          [
+            895,
+            494
+          ],
+          [
+            895,
+            495
+          ],
+          [
+            895,
+            496
+          ],
+          [
+            895,
+            497
+          ],
+          [
+            896,
+            390
+          ],
+          [
+            896,
+            391
+          ],
+          [
+            896,
+            392
+          ],
+          [
+            896,
+            393
+          ],
+          [
+            896,
+            394
+          ],
+          [
+            896,
+            395
+          ],
+          [
+            896,
+            421
+          ],
+          [
+            896,
+            422
+          ],
+          [
+            896,
+            423
+          ],
+          [
+            896,
+            424
+          ],
+          [
+            896,
+            425
+          ],
+          [
+            896,
+            426
+          ],
+          [
+            896,
+            427
+          ],
+          [
+            896,
+            428
+          ],
+          [
+            896,
+            429
+          ],
+          [
+            896,
+            430
+          ],
+          [
+            896,
+            431
+          ],
+          [
+            896,
+            432
+          ],
+          [
+            896,
+            433
+          ],
+          [
+            896,
+            434
+          ],
+          [
+            896,
+            435
+          ],
+          [
+            896,
+            436
+          ],
+          [
+            896,
+            437
+          ],
+          [
+            896,
+            438
+          ],
+          [
+            896,
+            439
+          ],
+          [
+            896,
+            440
+          ],
+          [
+            896,
+            441
+          ],
+          [
+            896,
+            442
+          ],
+          [
+            896,
+            443
+          ],
+          [
+            896,
+            444
+          ],
+          [
+            896,
+            445
+          ],
+          [
+            896,
+            446
+          ],
+          [
+            896,
+            447
+          ],
+          [
+            896,
+            448
+          ],
+          [
+            896,
+            449
+          ],
+          [
+            896,
+            450
+          ],
+          [
+            896,
+            451
+          ],
+          [
+            896,
+            452
+          ],
+          [
+            896,
+            496
+          ],
+          [
+            896,
+            497
+          ],
+          [
+            897,
+            391
+          ],
+          [
+            897,
+            392
+          ],
+          [
+            897,
+            393
+          ],
+          [
+            897,
+            394
+          ],
+          [
+            897,
+            395
+          ],
+          [
+            897,
+            396
+          ],
+          [
+            897,
+            397
+          ],
+          [
+            897,
+            398
+          ],
+          [
+            897,
+            399
+          ],
+          [
+            897,
+            400
+          ],
+          [
+            897,
+            401
+          ],
+          [
+            897,
+            402
+          ],
+          [
+            897,
+            403
+          ],
+          [
+            897,
+            404
+          ],
+          [
+            897,
+            405
+          ],
+          [
+            897,
+            406
+          ],
+          [
+            897,
+            407
+          ],
+          [
+            897,
+            408
+          ],
+          [
+            897,
+            409
+          ],
+          [
+            897,
+            410
+          ],
+          [
+            897,
+            411
+          ],
+          [
+            897,
+            412
+          ],
+          [
+            897,
+            413
+          ],
+          [
+            897,
+            414
+          ],
+          [
+            897,
+            415
+          ],
+          [
+            897,
+            416
+          ],
+          [
+            897,
+            417
+          ],
+          [
+            897,
+            418
+          ],
+          [
+            897,
+            419
+          ],
+          [
+            897,
+            420
+          ],
+          [
+            897,
+            421
+          ],
+          [
+            897,
+            422
+          ],
+          [
+            897,
+            423
+          ],
+          [
+            897,
+            424
+          ],
+          [
+            897,
+            425
+          ],
+          [
+            897,
+            426
+          ],
+          [
+            897,
+            427
+          ],
+          [
+            897,
+            428
+          ],
+          [
+            897,
+            429
+          ],
+          [
+            897,
+            430
+          ],
+          [
+            897,
+            431
+          ],
+          [
+            897,
+            432
+          ],
+          [
+            897,
+            433
+          ],
+          [
+            897,
+            434
+          ],
+          [
+            897,
+            435
+          ],
+          [
+            897,
+            436
+          ],
+          [
+            897,
+            437
+          ],
+          [
+            897,
+            438
+          ],
+          [
+            897,
+            439
+          ],
+          [
+            898,
+            394
+          ],
+          [
+            898,
+            395
+          ],
+          [
+            898,
+            396
+          ],
+          [
+            898,
+            397
+          ],
+          [
+            898,
+            398
+          ],
+          [
+            898,
+            399
+          ],
+          [
+            898,
+            400
+          ],
+          [
+            898,
+            401
+          ],
+          [
+            898,
+            402
+          ],
+          [
+            898,
+            403
+          ],
+          [
+            898,
+            404
+          ],
+          [
+            898,
+            405
+          ],
+          [
+            898,
+            406
+          ],
+          [
+            898,
+            407
+          ],
+          [
+            898,
+            408
+          ],
+          [
+            898,
+            409
+          ],
+          [
+            898,
+            410
+          ],
+          [
+            898,
+            411
+          ],
+          [
+            898,
+            412
+          ],
+          [
+            898,
+            413
+          ],
+          [
+            898,
+            414
+          ],
+          [
+            898,
+            415
+          ],
+          [
+            898,
+            416
+          ],
+          [
+            898,
+            417
+          ],
+          [
+            898,
+            418
+          ],
+          [
+            898,
+            419
+          ],
+          [
+            898,
+            420
+          ],
+          [
+            898,
+            421
+          ],
+          [
+            898,
+            422
+          ],
+          [
+            898,
+            423
+          ],
+          [
+            898,
+            424
+          ],
+          [
+            898,
+            425
+          ],
+          [
+            899,
+            397
+          ],
+          [
+            899,
+            398
+          ],
+          [
+            899,
+            399
+          ],
+          [
+            899,
+            400
+          ],
+          [
+            899,
+            401
+          ],
+          [
+            899,
+            402
+          ],
+          [
+            899,
+            403
+          ],
+          [
+            899,
+            404
+          ],
+          [
+            899,
+            405
+          ],
+          [
+            899,
+            406
+          ],
+          [
+            899,
+            407
+          ],
+          [
+            899,
+            408
+          ],
+          [
+            899,
+            409
+          ],
+          [
+            899,
+            410
+          ],
+          [
+            899,
+            411
+          ],
+          [
+            899,
+            412
+          ]
+        ],
+        "sample_rule": "verify_roads_v30 station interpolation at 1m and offsets -4..4m every 0.5m; no bridge/water station exclusions",
+        "source_chains": 124,
+        "stations_on_intersecting_chains": 1156
+      }
+    },
+    "compiled_cell_freeze": {
+      "exact_B_corners": true,
+      "water_cells": 10121
+    },
+    "continuation_lineage": {
+      "author_receipt_preserves_rejected_parent": true,
+      "continuous_state_hash_and_nodes_exact": true,
+      "parent_diagnostic_still_has_no_candidate": true,
+      "preflight_prepared_bitwise_exact": true,
+      "solve03_rejected_lineage_exact": true
+    },
+    "corridor_depth": {
+      "B": {
+        "all_covered": false,
+        "corridors": [
+          {
+            "area_m2": 414.81657730206723,
+            "coverage_error_m2": 2.8990143619012088e-12,
+            "covered_area_m2": 414.81657730207013,
+            "full_P_coverage": true,
+            "id": "Narva_2",
+            "minimum_nominal_depth_m": 1.625,
+            "native_triangles": 37,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1247,
+                168
+              ],
+              "depth_m": 1.625,
+              "triangle": 0,
+              "xz": [
+                1014.0,
+                4794.189388262637
+              ]
+            }
+          },
+          {
+            "area_m2": 2280.6436977945705,
+            "coverage_error_m2": 4.092726157978177e-12,
+            "covered_area_m2": 2280.6436977945664,
+            "full_P_coverage": true,
+            "id": "Narva_3",
+            "minimum_nominal_depth_m": 1.625,
+            "native_triangles": 166,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1255,
+                173
+              ],
+              "depth_m": 1.625,
+              "triangle": 0,
+              "xz": [
+                1044.0,
+                4746.050132502883
+              ]
+            }
+          },
+          {
+            "area_m2": 31.07753485503781,
+            "coverage_error_m2": 0.0,
+            "covered_area_m2": 31.07753485503781,
+            "full_P_coverage": true,
+            "id": "Narva_6",
+            "minimum_nominal_depth_m": 1.625,
+            "native_triangles": 8,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1233,
+                171
+              ],
+              "depth_m": 1.625,
+              "triangle": 0,
+              "xz": [
+                1032.0,
+                4879.294897285627
+              ]
+            }
+          },
+          {
+            "area_m2": 466.60884881173826,
+            "coverage_error_m2": 1.3642420526593924e-12,
+            "covered_area_m2": 466.6088488117369,
+            "full_P_coverage": true,
+            "id": "Narva_7",
+            "minimum_nominal_depth_m": 1.625,
+            "native_triangles": 42,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1247,
+                178
+              ],
+              "depth_m": 1.625,
+              "triangle": 0,
+              "xz": [
+                1074.0,
+                4794.394759875202
+              ]
+            }
+          },
+          {
+            "area_m2": 301.8510252636645,
+            "coverage_error_m2": 5.684341886080801e-13,
+            "covered_area_m2": 301.8510252636639,
+            "full_P_coverage": true,
+            "id": "Narva_8",
+            "minimum_nominal_depth_m": 1.214208308497291,
+            "native_triangles": 29,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1241,
+                185
+              ],
+              "depth_m": 1.214208308497291,
+              "triangle": 0,
+              "xz": [
+                1111.4343454461525,
+                4834.565654553848
+              ]
+            }
+          },
+          {
+            "area_m2": 4780.647762573456,
+            "coverage_error_m2": 6.366462912410498e-12,
+            "covered_area_m2": 4780.647762573462,
+            "full_P_coverage": true,
+            "id": "Narva_10",
+            "minimum_nominal_depth_m": 1.6,
+            "native_triangles": 337,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1203,
+                194
+              ],
+              "depth_m": 1.6,
+              "triangle": 1,
+              "xz": [
+                1168.2071484105186,
+                5058.349722372589
+              ]
+            }
+          },
+          {
+            "area_m2": 4424.180179286049,
+            "coverage_error_m2": 9.094947017729282e-13,
+            "covered_area_m2": 4424.180179286048,
+            "full_P_coverage": true,
+            "id": "Narva_12",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 321,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1174,
+                203
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 0,
+              "xz": [
+                1224.0,
+                5232.397900370013
+              ]
+            }
+          },
+          {
+            "area_m2": 4742.70593840568,
+            "coverage_error_m2": 6.366462912410498e-12,
+            "covered_area_m2": 4742.705938405674,
+            "full_P_coverage": true,
+            "id": "Narva_13",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 322,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1169,
+                194
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 0,
+              "xz": [
+                1170.0,
+                5263.678136591925
+              ]
+            }
+          },
+          {
+            "area_m2": 308.6821674490084,
+            "coverage_error_m2": 1.3073986337985843e-12,
+            "covered_area_m2": 308.68216744900707,
+            "full_P_coverage": true,
+            "id": "Narva_14",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 27,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1165,
+                200
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 1,
+              "xz": [
+                1200.2716792068468,
+                5286.092698336164
+              ]
+            }
+          },
+          {
+            "area_m2": 2837.527893034918,
+            "coverage_error_m2": 1.3642420526593924e-12,
+            "covered_area_m2": 2837.527893034917,
+            "full_P_coverage": true,
+            "id": "Narva_15",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 197,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1147,
+                209
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 0,
+              "xz": [
+                1260.0,
+                5395.4966035464095
+              ]
+            }
+          },
+          {
+            "area_m2": 3461.2640598924854,
+            "coverage_error_m2": 6.821210263296962e-12,
+            "covered_area_m2": 3461.2640598924786,
+            "full_P_coverage": true,
+            "id": "Narva_16",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 240,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1140,
+                201
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 0,
+              "xz": [
+                1212.0,
+                5437.771396742042
+              ]
+            }
+          },
+          {
+            "area_m2": 27368.281990039806,
+            "coverage_error_m2": 2.9831426218152046e-10,
+            "covered_area_m2": 27368.281990039508,
+            "full_P_coverage": true,
+            "id": "Narva_19",
+            "minimum_nominal_depth_m": 1.475,
+            "native_triangles": 1937,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                998,
+                292
+              ],
+              "depth_m": 1.475,
+              "triangle": 0,
+              "xz": [
+                1757.7917141925818,
+                6290.94989142593
+              ]
+            }
+          },
+          {
+            "area_m2": 8492.553748750215,
+            "coverage_error_m2": 3.637978807091713e-12,
+            "covered_area_m2": 8492.553748750212,
+            "full_P_coverage": true,
+            "id": "Narva_22",
+            "minimum_nominal_depth_m": 1.4499999937061605,
+            "native_triangles": 603,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                967,
+                315
+              ],
+              "depth_m": 1.4499999937061605,
+              "triangle": 0,
+              "xz": [
+                1895.954745810874,
+                6474.045254189126
+              ]
+            }
+          },
+          {
+            "area_m2": 2352.421826605128,
+            "coverage_error_m2": 4.092726157978177e-12,
+            "covered_area_m2": 2352.421826605132,
+            "full_P_coverage": false,
+            "id": "Narva_23",
+            "minimum_nominal_depth_m": 3.497955846786498,
+            "native_triangles": 163,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 238.74576643431396,
+            "unknown_P_area_m2": 238.74576643431396,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                814,
+                325
+              ],
+              "depth_m": 3.497955846786498,
+              "triangle": 0,
+              "xz": [
+                1956.0,
+                7392.0
+              ]
+            }
+          },
+          {
+            "area_m2": 1604.5298540564675,
+            "coverage_error_m2": 3.410605131648481e-12,
+            "covered_area_m2": 1604.529854056464,
+            "full_P_coverage": true,
+            "id": "Narva_25",
+            "minimum_nominal_depth_m": 3.902578956176865,
+            "native_triangles": 118,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                982,
+                341
+              ],
+              "depth_m": 3.902578956176865,
+              "triangle": 0,
+              "xz": [
+                2050.588133308379,
+                6389.848640159914
+              ]
+            }
+          },
+          {
+            "area_m2": 105.04679930643108,
+            "coverage_error_m2": 1.5205614545266144e-12,
+            "covered_area_m2": 105.0467993064326,
+            "full_P_coverage": true,
+            "id": "Narva_26",
+            "minimum_nominal_depth_m": 3.7037190421779087,
+            "native_triangles": 15,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                814,
+                343
+              ],
+              "depth_m": 3.7037190421779087,
+              "triangle": 0,
+              "xz": [
+                2061.567181943228,
+                7397.785044867045
+              ]
+            }
+          },
+          {
+            "area_m2": 91.05296374430796,
+            "coverage_error_m2": 1.3073986337985843e-12,
+            "covered_area_m2": 91.05296374430927,
+            "full_P_coverage": true,
+            "id": "Narva_27",
+            "minimum_nominal_depth_m": 3.5492837393276373,
+            "native_triangles": 12,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                822,
+                333
+              ],
+              "depth_m": 3.5492837393276373,
+              "triangle": 1,
+              "xz": [
+                1998.573499124239,
+                7349.426500875761
+              ]
+            }
+          },
+          {
+            "area_m2": 387689.44733817264,
+            "coverage_error_m2": 8.317874744534492e-08,
+            "covered_area_m2": 387689.44733808946,
+            "full_P_coverage": false,
+            "id": "Luga_0",
+            "minimum_nominal_depth_m": 0.9556089440029383,
+            "native_triangles": 26290,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 752.2621866095913,
+            "unknown_P_area_m2": 752.2621866095913,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1476,
+                1276
+              ],
+              "depth_m": 0.9556089440029383,
+              "triangle": 1,
+              "xz": [
+                7659.43140356522,
+                3422.568596434781
+              ]
+            }
+          },
+          {
+            "area_m2": 82711.18378699783,
+            "coverage_error_m2": 7.130438461899757e-10,
+            "covered_area_m2": 82711.18378699855,
+            "full_P_coverage": true,
+            "id": "Neva_0",
+            "minimum_nominal_depth_m": 0.9749999523162771,
+            "native_triangles": 5630,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                508,
+                1674
+              ],
+              "depth_m": 0.9749999523162771,
+              "triangle": 0,
+              "xz": [
+                10044.0,
+                9234.0
+              ]
+            }
+          }
+        ],
+        "feature_count": 19,
+        "global_minimum_nominal_depth_m": 0.9556089440029383,
+        "meets_0_95_everywhere": true
+      },
+      "H": {
+        "all_covered": false,
+        "corridors": [
+          {
+            "area_m2": 414.81657730206723,
+            "coverage_error_m2": 2.8990143619012088e-12,
+            "covered_area_m2": 414.81657730207013,
+            "full_P_coverage": true,
+            "id": "Narva_2",
+            "minimum_nominal_depth_m": 1.625,
+            "native_triangles": 37,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1247,
+                168
+              ],
+              "depth_m": 1.625,
+              "triangle": 0,
+              "xz": [
+                1014.0,
+                4794.189388262637
+              ]
+            }
+          },
+          {
+            "area_m2": 2280.6436977945705,
+            "coverage_error_m2": 4.092726157978177e-12,
+            "covered_area_m2": 2280.6436977945664,
+            "full_P_coverage": true,
+            "id": "Narva_3",
+            "minimum_nominal_depth_m": 1.625,
+            "native_triangles": 166,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1255,
+                173
+              ],
+              "depth_m": 1.625,
+              "triangle": 0,
+              "xz": [
+                1044.0,
+                4746.050132502883
+              ]
+            }
+          },
+          {
+            "area_m2": 31.07753485503781,
+            "coverage_error_m2": 0.0,
+            "covered_area_m2": 31.07753485503781,
+            "full_P_coverage": true,
+            "id": "Narva_6",
+            "minimum_nominal_depth_m": 1.625,
+            "native_triangles": 8,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1233,
+                171
+              ],
+              "depth_m": 1.625,
+              "triangle": 0,
+              "xz": [
+                1032.0,
+                4879.294897285627
+              ]
+            }
+          },
+          {
+            "area_m2": 466.60884881173826,
+            "coverage_error_m2": 1.3642420526593924e-12,
+            "covered_area_m2": 466.6088488117369,
+            "full_P_coverage": true,
+            "id": "Narva_7",
+            "minimum_nominal_depth_m": 1.625,
+            "native_triangles": 42,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1247,
+                178
+              ],
+              "depth_m": 1.625,
+              "triangle": 0,
+              "xz": [
+                1074.0,
+                4794.394759875202
+              ]
+            }
+          },
+          {
+            "area_m2": 301.8510252636645,
+            "coverage_error_m2": 5.684341886080801e-13,
+            "covered_area_m2": 301.8510252636639,
+            "full_P_coverage": true,
+            "id": "Narva_8",
+            "minimum_nominal_depth_m": 1.214208308497291,
+            "native_triangles": 29,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1241,
+                185
+              ],
+              "depth_m": 1.214208308497291,
+              "triangle": 0,
+              "xz": [
+                1111.4343454461525,
+                4834.565654553848
+              ]
+            }
+          },
+          {
+            "area_m2": 4780.647762573456,
+            "coverage_error_m2": 6.366462912410498e-12,
+            "covered_area_m2": 4780.647762573462,
+            "full_P_coverage": true,
+            "id": "Narva_10",
+            "minimum_nominal_depth_m": 1.6,
+            "native_triangles": 337,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1203,
+                194
+              ],
+              "depth_m": 1.6,
+              "triangle": 1,
+              "xz": [
+                1168.2071484105186,
+                5058.349722372589
+              ]
+            }
+          },
+          {
+            "area_m2": 4424.180179286049,
+            "coverage_error_m2": 9.094947017729282e-13,
+            "covered_area_m2": 4424.180179286048,
+            "full_P_coverage": true,
+            "id": "Narva_12",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 321,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1174,
+                203
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 0,
+              "xz": [
+                1224.0,
+                5232.397900370013
+              ]
+            }
+          },
+          {
+            "area_m2": 4742.70593840568,
+            "coverage_error_m2": 6.366462912410498e-12,
+            "covered_area_m2": 4742.705938405674,
+            "full_P_coverage": true,
+            "id": "Narva_13",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 322,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1169,
+                194
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 0,
+              "xz": [
+                1170.0,
+                5263.678136591925
+              ]
+            }
+          },
+          {
+            "area_m2": 308.6821674490084,
+            "coverage_error_m2": 1.3073986337985843e-12,
+            "covered_area_m2": 308.68216744900707,
+            "full_P_coverage": true,
+            "id": "Narva_14",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 27,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1165,
+                200
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 1,
+              "xz": [
+                1200.2716792068468,
+                5286.092698336164
+              ]
+            }
+          },
+          {
+            "area_m2": 2837.527893034918,
+            "coverage_error_m2": 1.3642420526593924e-12,
+            "covered_area_m2": 2837.527893034917,
+            "full_P_coverage": true,
+            "id": "Narva_15",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 197,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1147,
+                209
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 0,
+              "xz": [
+                1260.0,
+                5395.4966035464095
+              ]
+            }
+          },
+          {
+            "area_m2": 3461.2640598924854,
+            "coverage_error_m2": 6.821210263296962e-12,
+            "covered_area_m2": 3461.2640598924786,
+            "full_P_coverage": true,
+            "id": "Narva_16",
+            "minimum_nominal_depth_m": 1.5750000000000002,
+            "native_triangles": 240,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1140,
+                201
+              ],
+              "depth_m": 1.5750000000000002,
+              "triangle": 0,
+              "xz": [
+                1212.0,
+                5437.771396742042
+              ]
+            }
+          },
+          {
+            "area_m2": 27368.281990039806,
+            "coverage_error_m2": 2.9831426218152046e-10,
+            "covered_area_m2": 27368.281990039508,
+            "full_P_coverage": true,
+            "id": "Narva_19",
+            "minimum_nominal_depth_m": 1.475,
+            "native_triangles": 1937,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                998,
+                292
+              ],
+              "depth_m": 1.475,
+              "triangle": 0,
+              "xz": [
+                1757.7917141925818,
+                6290.94989142593
+              ]
+            }
+          },
+          {
+            "area_m2": 8492.553748750215,
+            "coverage_error_m2": 3.637978807091713e-12,
+            "covered_area_m2": 8492.553748750212,
+            "full_P_coverage": true,
+            "id": "Narva_22",
+            "minimum_nominal_depth_m": 1.4499999937061605,
+            "native_triangles": 603,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                967,
+                315
+              ],
+              "depth_m": 1.4499999937061605,
+              "triangle": 0,
+              "xz": [
+                1895.954745810874,
+                6474.045254189126
+              ]
+            }
+          },
+          {
+            "area_m2": 2352.421826605128,
+            "coverage_error_m2": 4.092726157978177e-12,
+            "covered_area_m2": 2352.421826605132,
+            "full_P_coverage": false,
+            "id": "Narva_23",
+            "minimum_nominal_depth_m": 3.497955846786498,
+            "native_triangles": 163,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 238.74576643431396,
+            "unknown_P_area_m2": 238.74576643431396,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                814,
+                325
+              ],
+              "depth_m": 3.497955846786498,
+              "triangle": 0,
+              "xz": [
+                1956.0,
+                7392.0
+              ]
+            }
+          },
+          {
+            "area_m2": 1604.5298540564675,
+            "coverage_error_m2": 3.410605131648481e-12,
+            "covered_area_m2": 1604.529854056464,
+            "full_P_coverage": true,
+            "id": "Narva_25",
+            "minimum_nominal_depth_m": 3.902578956176865,
+            "native_triangles": 118,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                982,
+                341
+              ],
+              "depth_m": 3.902578956176865,
+              "triangle": 0,
+              "xz": [
+                2050.588133308379,
+                6389.848640159914
+              ]
+            }
+          },
+          {
+            "area_m2": 105.04679930643108,
+            "coverage_error_m2": 1.5205614545266144e-12,
+            "covered_area_m2": 105.0467993064326,
+            "full_P_coverage": true,
+            "id": "Narva_26",
+            "minimum_nominal_depth_m": 3.7037190421779087,
+            "native_triangles": 15,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                814,
+                343
+              ],
+              "depth_m": 3.7037190421779087,
+              "triangle": 0,
+              "xz": [
+                2061.567181943228,
+                7397.785044867045
+              ]
+            }
+          },
+          {
+            "area_m2": 91.05296374430796,
+            "coverage_error_m2": 1.3073986337985843e-12,
+            "covered_area_m2": 91.05296374430927,
+            "full_P_coverage": true,
+            "id": "Narva_27",
+            "minimum_nominal_depth_m": 3.5492837393276373,
+            "native_triangles": 12,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                822,
+                333
+              ],
+              "depth_m": 3.5492837393276373,
+              "triangle": 1,
+              "xz": [
+                1998.573499124239,
+                7349.426500875761
+              ]
+            }
+          },
+          {
+            "area_m2": 387689.44733817264,
+            "coverage_error_m2": 8.317874744534492e-08,
+            "covered_area_m2": 387689.44733808946,
+            "full_P_coverage": false,
+            "id": "Luga_0",
+            "minimum_nominal_depth_m": 0.9556089440029383,
+            "native_triangles": 26290,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 752.2621866095913,
+            "unknown_P_area_m2": 752.2621866095913,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                1476,
+                1276
+              ],
+              "depth_m": 0.9556089440029383,
+              "triangle": 1,
+              "xz": [
+                7659.43140356522,
+                3422.568596434781
+              ]
+            }
+          },
+          {
+            "area_m2": 82711.18378699783,
+            "coverage_error_m2": 7.130438461899757e-10,
+            "covered_area_m2": 82711.18378699855,
+            "full_P_coverage": true,
+            "id": "Neva_0",
+            "minimum_nominal_depth_m": 0.9749999523162771,
+            "native_triangles": 5630,
+            "unknown_P_area_changed_between_pair_m2": 0.0,
+            "unknown_P_area_exact_between_pair_m2": 0.0,
+            "unknown_P_area_m2": 0.0,
+            "unknown_P_max_triangle_vertex_delta_m": 0.0,
+            "worst": {
+              "cell_rc": [
+                508,
+                1674
+              ],
+              "depth_m": 0.9749999523162771,
+              "triangle": 0,
+              "xz": [
+                10044.0,
+                9234.0
+              ]
+            }
+          }
+        ],
+        "feature_count": 19,
+        "global_minimum_nominal_depth_m": 0.9556089440029383,
+        "meets_0_95_everywhere": true
+      }
+    },
+    "deployed_pbo_guard": {
+      "compiled_wrp_payload_sha256": "3b12b21d554c6ab75d76c43b5ba902c9a1d49a26516bdd14b16f1a6048ba2539",
+      "deploy_status": "DEPLOYED_EV82_PREVIEW_NATIVE_READBACK_PENDING",
+      "deployed_oprw_entry_sha256": "3b12b21d554c6ab75d76c43b5ba902c9a1d49a26516bdd14b16f1a6048ba2539",
+      "deployed_oprw_matches_manifest": true,
+      "deployed_water_sha256": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+      "deployed_world_sha256": "b11c825b6c14ecc5649ac668b40c7dc6c9f52c64c26ddfa748983c04b340c36c",
+      "expected_water_exact": true,
+      "expected_world_exact": true,
+      "source_and_compiled_payload_are_distinct_artifacts": true,
+      "staged_source_wrp_identity_exact": true,
+      "staged_wrp_sha256": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6"
+    },
+    "eligible_wet_support_diagnostic": {
+      "B": {
+        "above30": 25,
+        "max": 50.38770653144422,
+        "mean_square": 170.2380881907862,
+        "n": 775,
+        "p99": 37.26717932253201
+      },
+      "B_bracket_counts": [
+        767,
+        768
+      ],
+      "B_p99_brackets_deg": [
+        37.112843225152005,
+        37.7064435996905
+      ],
+      "H": {
+        "above30": 25,
+        "max": 50.38770653144422,
+        "mean_square": 170.2380881907862,
+        "n": 775,
+        "p99": 37.26717932253201
+      },
+      "H_bracket_counts": [
+        767,
+        768
+      ],
+      "above30_nonworse": true,
+      "bracket_counts_nonworse": true,
+      "diagnostic_only": true,
+      "eligible_wet_support_nodes": 65955,
+      "hinges_by_family": {
+        "diag": {
+          "B": {
+            "above30": 22,
+            "max": 50.38770653144422,
+            "mean_square": 242.08347237183625,
+            "n": 318,
+            "p99": 38.57136562192431
+          },
+          "H": {
+            "above30": 22,
+            "max": 50.38770653144422,
+            "mean_square": 242.08347237183625,
+            "n": 318,
+            "p99": 38.57136562192431
+          },
+          "hinges": 318,
+          "new_over30": 0
+        },
+        "horizontal": {
+          "B": {
+            "above30": 2,
+            "max": 45.54796787095637,
+            "mean_square": 102.99771973054696,
+            "n": 217,
+            "p99": 28.925188086371573
+          },
+          "H": {
+            "above30": 2,
+            "max": 45.54796787095637,
+            "mean_square": 102.99771973054696,
+            "n": 217,
+            "p99": 28.925188086371573
+          },
+          "hinges": 217,
+          "new_over30": 0
+        },
+        "vertical": {
+          "B": {
+            "above30": 1,
+            "max": 34.14766893405999,
+            "mean_square": 135.8394539670278,
+            "n": 240,
+            "p99": 29.14679821422728
+          },
+          "H": {
+            "above30": 1,
+            "max": 34.14766893405999,
+            "mean_square": 135.8394539670278,
+            "n": 240,
+            "p99": 29.14679821422728
+          },
+          "hinges": 240,
+          "new_over30": 0
+        }
+      },
+      "new_over30_count": 0,
+      "no_new_over30": true,
+      "p99_nonworse": true,
+      "scope": "eligible intersect wet_support; hinges require all four vertices in population; not full-map or absolute acceptance"
+    },
+    "float32_closure": {
+      "V": 7.271766662597656e-06,
+      "allowance": 5.764634013535516e-05,
+      "b": 3.5762786865234375e-07,
+      "b_plus_V": 7.62939453125e-06,
+      "budget_pass": true,
+      "candidate_within_inward_float32_bounds": true,
+      "final_float32_objective": 576.4634019175598,
+      "increase": 5.640082463287399e-07,
+      "independent_projection_matches": true,
+      "max_abs_correction": 2.0265579223632812e-06,
+      "pass": true,
+      "raw_cast_objective": 576.4634013535516
+    },
+    "global_geometry": {
+      "affected_sector_count": 22,
+      "affected_sector_max_nonworse": true,
+      "new_over30_count_touched": 0,
+      "no_new_hinges_over_30_touched": true,
+      "sectors": [
+        {
+          "B_max_deg": 28.2881769447633,
+          "H_max_deg": 28.2881769447633,
+          "nonworse": true,
+          "sector_rc64": [
+            11,
+            5
+          ]
+        },
+        {
+          "B_max_deg": 40.29394602520787,
+          "H_max_deg": 40.29394602520787,
+          "nonworse": true,
+          "sector_rc64": [
+            11,
+            6
+          ]
+        },
+        {
+          "B_max_deg": 0.653955759866927,
+          "H_max_deg": 0.653955759866927,
+          "nonworse": true,
+          "sector_rc64": [
+            11,
+            7
+          ]
+        },
+        {
+          "B_max_deg": 37.364895324448646,
+          "H_max_deg": 37.364895324448646,
+          "nonworse": true,
+          "sector_rc64": [
+            12,
+            4
+          ]
+        },
+        {
+          "B_max_deg": 61.68735154166901,
+          "H_max_deg": 61.68735154166901,
+          "nonworse": true,
+          "sector_rc64": [
+            12,
+            5
+          ]
+        },
+        {
+          "B_max_deg": 51.00652348628157,
+          "H_max_deg": 51.00652348628157,
+          "nonworse": true,
+          "sector_rc64": [
+            12,
+            6
+          ]
+        },
+        {
+          "B_max_deg": 21.954676163809648,
+          "H_max_deg": 21.954676163809648,
+          "nonworse": true,
+          "sector_rc64": [
+            12,
+            7
+          ]
+        },
+        {
+          "B_max_deg": 16.63127845150427,
+          "H_max_deg": 16.63127845150427,
+          "nonworse": true,
+          "sector_rc64": [
+            13,
+            3
+          ]
+        },
+        {
+          "B_max_deg": 16.300155665850507,
+          "H_max_deg": 16.300155665850507,
+          "nonworse": true,
+          "sector_rc64": [
+            13,
+            4
+          ]
+        },
+        {
+          "B_max_deg": 38.144106489152186,
+          "H_max_deg": 38.144106489152186,
+          "nonworse": true,
+          "sector_rc64": [
+            13,
+            5
+          ]
+        },
+        {
+          "B_max_deg": 39.33310349862282,
+          "H_max_deg": 39.33310349862282,
+          "nonworse": true,
+          "sector_rc64": [
+            13,
+            6
+          ]
+        },
+        {
+          "B_max_deg": 45.96974901442664,
+          "H_max_deg": 45.96974901442664,
+          "nonworse": true,
+          "sector_rc64": [
+            13,
+            7
+          ]
+        },
+        {
+          "B_max_deg": 0.7075933616216533,
+          "H_max_deg": 0.7075933616216533,
+          "nonworse": true,
+          "sector_rc64": [
+            14,
+            3
+          ]
+        },
+        {
+          "B_max_deg": 9.560248835457392,
+          "H_max_deg": 3.5824393998840214,
+          "nonworse": true,
+          "sector_rc64": [
+            14,
+            4
+          ]
+        },
+        {
+          "B_max_deg": 63.45654226669106,
+          "H_max_deg": 63.45654226669106,
+          "nonworse": true,
+          "sector_rc64": [
+            14,
+            5
+          ]
+        },
+        {
+          "B_max_deg": 46.720603309399436,
+          "H_max_deg": 46.720603309399436,
+          "nonworse": true,
+          "sector_rc64": [
+            14,
+            6
+          ]
+        },
+        {
+          "B_max_deg": 42.14382519706707,
+          "H_max_deg": 40.04863068456994,
+          "nonworse": true,
+          "sector_rc64": [
+            14,
+            7
+          ]
+        },
+        {
+          "B_max_deg": 27.866921500713065,
+          "H_max_deg": 27.866921500713065,
+          "nonworse": true,
+          "sector_rc64": [
+            15,
+            3
+          ]
+        },
+        {
+          "B_max_deg": 98.27084005204352,
+          "H_max_deg": 98.27084005204352,
+          "nonworse": true,
+          "sector_rc64": [
+            15,
+            4
+          ]
+        },
+        {
+          "B_max_deg": 57.717114050803026,
+          "H_max_deg": 57.717114050803026,
+          "nonworse": true,
+          "sector_rc64": [
+            15,
+            5
+          ]
+        },
+        {
+          "B_max_deg": 57.027645286381315,
+          "H_max_deg": 57.027645286381315,
+          "nonworse": true,
+          "sector_rc64": [
+            15,
+            6
+          ]
+        },
+        {
+          "B_max_deg": 45.51703804364083,
+          "H_max_deg": 45.51703804364083,
+          "nonworse": true,
+          "sector_rc64": [
+            15,
+            7
+          ]
+        }
+      ],
+      "slope_violation_count_global": 0,
+      "slopes_le_max35_or_B": true
+    },
+    "global_surface_claim": "NOT_RUN: no map-wide verifier; this is a sector/offline consumer only",
+    "high_bed": {
+      "baseline_below_1m": 0,
+      "candidate_below_1m": 0,
+      "high_bed_floor_1m_pass": true,
+      "scope_rule": "cls==3 && level>=2 && distance_to_frozen_Narva_center>620m",
+      "scope_vertices": 15095
+    },
+    "kkt": {
+      "box_feasibility": 5.960464699583667e-08,
+      "box_normal_cone_inf": 0.0,
+      "d8_dual_positive_count": 0,
+      "d8_feasibility": 1.2345735189711604e-07,
+      "d8_normal_cone_inf": 0.0,
+      "eps_dual_reconstructed": 4.312652967931715e-08,
+      "eps_primal_reconstructed": 1.23468312782293e-07,
+      "primal_box_inf": 7.425068093702691e-08,
+      "primal_d8_inf": 1.2345735189711604e-07,
+      "reported_tolerances_match_reconstruction": true,
+      "solver_reported": {
+        "cg_iterations": 174987,
+        "dual": 3.983619656366955e-09,
+        "eps_dual": 4.312652967931715e-08,
+        "eps_primal": 1.23468312782293e-07,
+        "iteration": 10477,
+        "primal": 1.2345735189711604e-07,
+        "rho": 2.0,
+        "stationarity": 3.943364545490324e-09
+      },
+      "stationarity_inf": 3.943364545490324e-09
+    },
+    "local_minima": {
+      "examples": [],
+      "new_minima_count": 0,
+      "no_new_minima": true
+    },
+    "objective": {
+      "B": 1943.8656983828796,
+      "H": 576.4634019175598,
+      "curvature_B": 1943.8656983828796,
+      "curvature_H": 525.3496033109466,
+      "fidelity_B": 0.0,
+      "fidelity_H": 51.113798606625984
+    },
+    "p99": {
+      "by_population": {
+        "bank": {
+          "B": {
+            "above30": 1,
+            "max": 30.073794902808267,
+            "mean_square": 1.4225704642222379,
+            "n": 1591990,
+            "p99": 4.982070186774692
+          },
+          "B_bracket_counts": [
+            1576070,
+            1576071
+          ],
+          "B_p99_brackets_deg": [
+            4.982070186506184,
+            4.982070188947164
+          ],
+          "H": {
+            "above30": 1,
+            "max": 30.073794902808267,
+            "mean_square": 1.4171344760041489,
+            "n": 1591990,
+            "p99": 4.9820699939378414
+          },
+          "H_bracket_counts": [
+            1576159,
+            1576160
+          ],
+          "nonworse": true
+        },
+        "interior": {
+          "B": {
+            "above30": 112,
+            "max": 47.22823023572591,
+            "mean_square": 0.7572896443989299,
+            "n": 7170630,
+            "p99": 3.667753611431574
+          },
+          "B_bracket_counts": [
+            7098923,
+            7098924
+          ],
+          "B_p99_brackets_deg": [
+            3.66773390076148,
+            3.667761662268656
+          ],
+          "H": {
+            "above30": 23,
+            "max": 47.22823023572591,
+            "mean_square": 0.7279456341513547,
+            "n": 7170630,
+            "p99": 3.655402294461849
+          },
+          "H_bracket_counts": [
+            7099456,
+            7099457
+          ],
+          "nonworse": true
+        }
+      },
+      "pass": true
+    },
+    "readset_start": {
+      "C:\\Users\\guill\\.claude\\skills\\dayz-p3d-debinarizer\\scripts\\odol_reader.py": "688aaa90aa3caa1c8d036b6a573babd3d455086bdcd426e6e5ae04e3a93e8d4f",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\regional-foundation-v1\\road-grade-chains-v6.json": "b31fb7d72398981ee98132ce59eab48c4aa404043718475fbb2725b13de1b824",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-navigation-contract-2026-10-08\\decision.json": "d510af67cc4016a0ba7192aa01c070d314b9bc7e49b6256ca6ffaf64fc05b843",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\playtest\\attach_navmesh.py": "717b81469e0a799690d1586cd7a4492f079c3b2db626eec7e2815cd15896e062",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\verify_roads_v30.py": "2be9af6502077230028e5501de3b5c06cb2855c544deebf6147c22ceb9f9b8f8",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\wrp0wzd.py": "8b85cec46ba72851a4ec829c5b0adcc88727ee852c3f699ab7a15e31b50fee2a",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\constrained-pilot\\d8_sparse_pilot.py": "6b5281d9750c30fc5b27171aaec2af59dee88411a66bf5b08e5105866f08252c",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\verify_layer.py": "33050881caaf5e75f288d4122222c15eb326bf146c28a4c723760564457b3dc2",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\PLAN_REAL_SECTOR.md": "14f02179312bc25caf76a087cc873122caed30f6092464f1c01ac7572d519749",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve.py": "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve_resumable.py": "b852af714667e8b07944a97fbdbaba97fe0c2b90c3a555ff9821ef11fe6791d2",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\float32-closure-study\\float32_closure.py": "c0c0cc1998a7cd9974ef884706c57a30ab39217057f675fc805b84c1e1a49d16",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\prototype.py": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\AMENDMENT_CACHED_TELEMETRY.md": "d64ad4441348bb2054800851cf7ef19f5f143143d62b93e0659de804b2565f7a",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\AMENDMENT_CONTINUATION.md": "f4a0a9db38ceb32c95ed75ae2c4920335bf7ceeb485224d04457f1545cd7cbb4",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\PLAN_ORDER_CLOSURE.md": "385a95391eba4be1a2777974f9b7b200c7d9e02770174b60ee9ad922d3cb6738",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01-receipt.json": "bbd51127b6479adc31a79c8932eadf1549be3bd2de19429cbb14998abcd20f01",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01.json": "1f1670961bd89bfe284ac3175201c1dc2529f6c5b13bb7f4796fab4ac382cd53",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil_inventory.py": "60d1beb2a36739a98fc70dc5a3b29033286e14abbc87461247bc87dd6f48c0c3",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\inventory-run-02.json\\domain-reasons.npz": "4a4b3d652c983bc1a6f22dbdf1a359dcb8902591317b5b26126ef02f704abcbf",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\inventory-run-02.json\\inventory.json": "a1d656fff3b0bd7b2435893ff5e57a0ca92df2068f0db024291bc1409b8eb967",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\author_order_closure.py": "b6d70d061425601624baa8bab8825f3d7ca40c01432032123d0b97269e1cb53d",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-02\\preflight.json": "b7f4295d95b9c2038749b1cda3ec636e4449e77a4847fc87ab1bba81cc97a365",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-02\\prepared.npz": "8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-03-continuation\\preflight.json": "bd0f50b709c297cdba1442425e6fc3957b95d67dcc46f7c44d23bd65ae66996d",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-03-continuation\\prepared.npz": "8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\prepare_inventory.py": "239e0632046c84d00f7bcb677a16f7bd5245b10a174c0fe3e99a63d4ff90f6e7",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\prepare_water_footprint.py": "9f5f9952aaa23f5d673ec4c8375a2cc0d0759e0634d3093a08e23c50437728f1",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-02\\solve-result.json": "bb988ab08db0cc141275d27b1e36fb6e44f7ca8168e276ff8003fab0a78bf979",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-02\\solver-state.npz": "edd871719397d957fb61ba08372dd86a0c304c69ce1b87477d794f03f960cd7c",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-03-continuation\\solve-result.json": "8345bd1763af30ed7c06f621ab14cc91b6bb79d8359ec76a146b8ef85d767a0c",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-03-continuation\\solver-state.npz": "8618d5941d7c8b235bedce6ad5e21a0053ec61a2a32c17532fec98ff9db3dfa9",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector_cached.py": "5e75e0e1d3e3c6938679cd31e87f4f317353e64ff919c471d79d1a04d50f98f9",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector_continuation.py": "7a8625a43f1610322f1f32bc1d20bbb5b7fcace1e3259bec7577c0c27660e9cb",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.json": "74bb37147e20047c44f0228d464650fb35fb9e41e71cf541c4e994f1032c55c9",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.npz": "6ce282962602557636bafac40b604caa3001a95234551db1beee67975dcd1edf",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\queue\\queue.json": "cf13887c8de031d65d0a32dab217e8743293103fcd00ea3c07c281c07a6794c9",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\review-independent\\runs\\attempt-01\\verification.json": "b498e7d68835b199399655451e5e01ac81acb3149dbb9bf882b94858141521d4",
+      "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_coverage_contract.py": "214f0eddda08d84ce18c921fcdbe01298f608c9a5c19b7e5246bb9e71df5dc2b",
+      "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+      "E:\\DayZ-Baltic-Build\\v30-low-water-components-20261009\\compiled-instance-bounds.json": "863e9539203e59fe77b9c7d4949da3a69b4991249941e15b887b60ff9e81ee62",
+      "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\author.py": "9b7c5374b7c78c3604bb2763ef8b7b4d16dc4bf18fc57091233ad435876cb74b",
+      "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+      "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\deploy.json": "3c98951f3488eef233d6972621648c84244f9e711c2ff419fd0b8013b427ec00",
+      "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+      "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+      "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+      "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+      "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+      "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+      "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+      "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\consumer\\verify_ev91.py": "5e726b93642f5db531193a8f1d85afabd139c7b9ac3afca4479df793afd53668",
+      "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+      "P:\\DZ\\structures\\roads\\bridges\\bridge_metal_25.p3d": "baf79ddd19e08cdcdbec99b15043a319d6b958a1b7884082c2ae069cf3f3cee2",
+      "P:\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz": "94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2",
+      "P:\\Mods\\@DayZ_Baltic_IncrementalBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+      "P:\\Mods\\@DayZ_Baltic_IncrementalBankPreviewV1\\Addons\\narva_trial.pbo": "b11c825b6c14ecc5649ac668b40c7dc6c9f52c64c26ddfa748983c04b340c36c"
+    },
+    "resource_measurement": {
+      "available_physical_bytes_before_solver": 24783179776,
+      "available_physical_bytes_sampled_unix": 1791642979.4840524,
+      "cumulative_measured_seconds": 284.33343990001595,
+      "elapsed_seconds": 8.51914069999475,
+      "limit_violated": false,
+      "measurement_started_unix": 1791642979.4882374,
+      "peak_working_set_bytes": 1257558016,
+      "prior_attempt_measured_seconds": 275.8142992000212,
+      "solver_pid": 199620,
+      "source": "GetProcessMemoryInfo inside this GIS Python solver interpreter",
+      "working_set_bytes_end": 135835648
+    },
+    "seed_improvement": {
+      "baseline_prominence_m": 0.9648778438568115,
+      "candidate_prominence_m": 0.0,
+      "definition": "EV87 pinned local seed prominence; strictly lower candidate value",
+      "improvement_m": 0.9648778438568115,
+      "pass": true
+    },
+    "selected_seed": {
+      "col": 359,
+      "first_layer_id": 620,
+      "kind": "queue_fallback",
+      "row": 895,
+      "seed_id": 3872
+    },
+    "stencils_by_kind": {
+      "xx": 42032,
+      "xz": 43409,
+      "zz": 41932
+    },
+    "topology": {
+      "crossings_valid_and_within_1m": true,
+      "max_crossing_shift_m": 0.18027480265121182,
+      "original_crossings_count": 278,
+      "sign_violation_count": 0,
+      "signs_preserved": true
+    },
+    "topology_input_contract": {
+      "baseline_storage_dtype": "float32",
+      "candidate_storage_dtype": "float32",
+      "changed_incident_cells": 38312,
+      "evaluated_layers": [
+        "P",
+        "F",
+        "SEA"
+      ],
+      "note": "topology_check receives B and post-cast H promoted from float32; cells are every grid cell incident to changed vertices",
+      "sea_level_m": 0.85
+    },
+    "variables": 40512
+  },
+  "limits": [
+    "No DayZ runtime/render confirmation.",
+    "No full-map/global acceptance.",
+    "Water mask proves changed support disjoint from its verified face-footprint/crossing cells; index is hash-checked, not reloaded."
+  ],
+  "schema": "real-sector-order-closure-consumer.v1",
+  "scope": "order-closure quantizer for one pinned 256x256 sector; offline geometry and parent solver KKT; no DayZ/render/global acceptance",
+  "source_hashes_end": {
+    "C:\\Users\\guill\\.claude\\skills\\dayz-p3d-debinarizer\\scripts\\odol_reader.py": "688aaa90aa3caa1c8d036b6a573babd3d455086bdcd426e6e5ae04e3a93e8d4f",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\regional-foundation-v1\\road-grade-chains-v6.json": "b31fb7d72398981ee98132ce59eab48c4aa404043718475fbb2725b13de1b824",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-navigation-contract-2026-10-08\\decision.json": "d510af67cc4016a0ba7192aa01c070d314b9bc7e49b6256ca6ffaf64fc05b843",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\playtest\\attach_navmesh.py": "717b81469e0a799690d1586cd7a4492f079c3b2db626eec7e2815cd15896e062",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\verify_roads_v30.py": "2be9af6502077230028e5501de3b5c06cb2855c544deebf6147c22ceb9f9b8f8",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\wrp0wzd.py": "8b85cec46ba72851a4ec829c5b0adcc88727ee852c3f699ab7a15e31b50fee2a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\constrained-pilot\\d8_sparse_pilot.py": "6b5281d9750c30fc5b27171aaec2af59dee88411a66bf5b08e5105866f08252c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\verify_layer.py": "33050881caaf5e75f288d4122222c15eb326bf146c28a4c723760564457b3dc2",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\PLAN_REAL_SECTOR.md": "14f02179312bc25caf76a087cc873122caed30f6092464f1c01ac7572d519749",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve.py": "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve_resumable.py": "b852af714667e8b07944a97fbdbaba97fe0c2b90c3a555ff9821ef11fe6791d2",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\float32-closure-study\\float32_closure.py": "c0c0cc1998a7cd9974ef884706c57a30ab39217057f675fc805b84c1e1a49d16",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\prototype.py": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\AMENDMENT_CACHED_TELEMETRY.md": "d64ad4441348bb2054800851cf7ef19f5f143143d62b93e0659de804b2565f7a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\AMENDMENT_CONTINUATION.md": "f4a0a9db38ceb32c95ed75ae2c4920335bf7ceeb485224d04457f1545cd7cbb4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\PLAN_ORDER_CLOSURE.md": "385a95391eba4be1a2777974f9b7b200c7d9e02770174b60ee9ad922d3cb6738",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01-receipt.json": "bbd51127b6479adc31a79c8932eadf1549be3bd2de19429cbb14998abcd20f01",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01.json": "1f1670961bd89bfe284ac3175201c1dc2529f6c5b13bb7f4796fab4ac382cd53",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil_inventory.py": "60d1beb2a36739a98fc70dc5a3b29033286e14abbc87461247bc87dd6f48c0c3",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\inventory-run-02.json\\domain-reasons.npz": "4a4b3d652c983bc1a6f22dbdf1a359dcb8902591317b5b26126ef02f704abcbf",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\inventory-run-02.json\\inventory.json": "a1d656fff3b0bd7b2435893ff5e57a0ca92df2068f0db024291bc1409b8eb967",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\author_order_closure.py": "b6d70d061425601624baa8bab8825f3d7ca40c01432032123d0b97269e1cb53d",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-02\\preflight.json": "b7f4295d95b9c2038749b1cda3ec636e4449e77a4847fc87ab1bba81cc97a365",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-02\\prepared.npz": "8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-03-continuation\\preflight.json": "bd0f50b709c297cdba1442425e6fc3957b95d67dcc46f7c44d23bd65ae66996d",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-03-continuation\\prepared.npz": "8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\prepare_inventory.py": "239e0632046c84d00f7bcb677a16f7bd5245b10a174c0fe3e99a63d4ff90f6e7",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\prepare_water_footprint.py": "9f5f9952aaa23f5d673ec4c8375a2cc0d0759e0634d3093a08e23c50437728f1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-02\\solve-result.json": "bb988ab08db0cc141275d27b1e36fb6e44f7ca8168e276ff8003fab0a78bf979",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-02\\solver-state.npz": "edd871719397d957fb61ba08372dd86a0c304c69ce1b87477d794f03f960cd7c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-03-continuation\\solve-result.json": "8345bd1763af30ed7c06f621ab14cc91b6bb79d8359ec76a146b8ef85d767a0c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-03-continuation\\solver-state.npz": "8618d5941d7c8b235bedce6ad5e21a0053ec61a2a32c17532fec98ff9db3dfa9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector_cached.py": "5e75e0e1d3e3c6938679cd31e87f4f317353e64ff919c471d79d1a04d50f98f9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector_continuation.py": "7a8625a43f1610322f1f32bc1d20bbb5b7fcace1e3259bec7577c0c27660e9cb",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.json": "74bb37147e20047c44f0228d464650fb35fb9e41e71cf541c4e994f1032c55c9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.npz": "6ce282962602557636bafac40b604caa3001a95234551db1beee67975dcd1edf",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\queue\\queue.json": "cf13887c8de031d65d0a32dab217e8743293103fcd00ea3c07c281c07a6794c9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\review-independent\\runs\\attempt-01\\verification.json": "b498e7d68835b199399655451e5e01ac81acb3149dbb9bf882b94858141521d4",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_coverage_contract.py": "214f0eddda08d84ce18c921fcdbe01298f608c9a5c19b7e5246bb9e71df5dc2b",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-low-water-components-20261009\\compiled-instance-bounds.json": "863e9539203e59fe77b9c7d4949da3a69b4991249941e15b887b60ff9e81ee62",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\author.py": "9b7c5374b7c78c3604bb2763ef8b7b4d16dc4bf18fc57091233ad435876cb74b",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\deploy.json": "3c98951f3488eef233d6972621648c84244f9e711c2ff419fd0b8013b427ec00",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\consumer\\verify_ev91.py": "5e726b93642f5db531193a8f1d85afabd139c7b9ac3afca4479df793afd53668",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+    "P:\\DZ\\structures\\roads\\bridges\\bridge_metal_25.p3d": "baf79ddd19e08cdcdbec99b15043a319d6b958a1b7884082c2ae069cf3f3cee2",
+    "P:\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz": "94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2",
+    "P:\\Mods\\@DayZ_Baltic_IncrementalBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "P:\\Mods\\@DayZ_Baltic_IncrementalBankPreviewV1\\Addons\\narva_trial.pbo": "b11c825b6c14ecc5649ac668b40c7dc6c9f52c64c26ddfa748983c04b340c36c"
+  },
+  "source_hashes_start": {
+    "C:\\Users\\guill\\.claude\\skills\\dayz-p3d-debinarizer\\scripts\\odol_reader.py": "688aaa90aa3caa1c8d036b6a573babd3d455086bdcd426e6e5ae04e3a93e8d4f",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\regional-foundation-v1\\road-grade-chains-v6.json": "b31fb7d72398981ee98132ce59eab48c4aa404043718475fbb2725b13de1b824",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-navigation-contract-2026-10-08\\decision.json": "d510af67cc4016a0ba7192aa01c070d314b9bc7e49b6256ca6ffaf64fc05b843",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\playtest\\attach_navmesh.py": "717b81469e0a799690d1586cd7a4492f079c3b2db626eec7e2815cd15896e062",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\verify_roads_v30.py": "2be9af6502077230028e5501de3b5c06cb2855c544deebf6147c22ceb9f9b8f8",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\wrp0wzd.py": "8b85cec46ba72851a4ec829c5b0adcc88727ee852c3f699ab7a15e31b50fee2a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\constrained-pilot\\d8_sparse_pilot.py": "6b5281d9750c30fc5b27171aaec2af59dee88411a66bf5b08e5105866f08252c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\verify_layer.py": "33050881caaf5e75f288d4122222c15eb326bf146c28a4c723760564457b3dc2",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\PLAN_REAL_SECTOR.md": "14f02179312bc25caf76a087cc873122caed30f6092464f1c01ac7572d519749",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve.py": "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve_resumable.py": "b852af714667e8b07944a97fbdbaba97fe0c2b90c3a555ff9821ef11fe6791d2",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\float32-closure-study\\float32_closure.py": "c0c0cc1998a7cd9974ef884706c57a30ab39217057f675fc805b84c1e1a49d16",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\prototype.py": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\AMENDMENT_CACHED_TELEMETRY.md": "d64ad4441348bb2054800851cf7ef19f5f143143d62b93e0659de804b2565f7a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\AMENDMENT_CONTINUATION.md": "f4a0a9db38ceb32c95ed75ae2c4920335bf7ceeb485224d04457f1545cd7cbb4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\PLAN_ORDER_CLOSURE.md": "385a95391eba4be1a2777974f9b7b200c7d9e02770174b60ee9ad922d3cb6738",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01-receipt.json": "bbd51127b6479adc31a79c8932eadf1549be3bd2de19429cbb14998abcd20f01",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01.json": "1f1670961bd89bfe284ac3175201c1dc2529f6c5b13bb7f4796fab4ac382cd53",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil_inventory.py": "60d1beb2a36739a98fc70dc5a3b29033286e14abbc87461247bc87dd6f48c0c3",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\inventory-run-02.json\\domain-reasons.npz": "4a4b3d652c983bc1a6f22dbdf1a359dcb8902591317b5b26126ef02f704abcbf",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\inventory-run-02.json\\inventory.json": "a1d656fff3b0bd7b2435893ff5e57a0ca92df2068f0db024291bc1409b8eb967",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\author_order_closure.py": "b6d70d061425601624baa8bab8825f3d7ca40c01432032123d0b97269e1cb53d",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-02\\preflight.json": "b7f4295d95b9c2038749b1cda3ec636e4449e77a4847fc87ab1bba81cc97a365",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-02\\prepared.npz": "8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-03-continuation\\preflight.json": "bd0f50b709c297cdba1442425e6fc3957b95d67dcc46f7c44d23bd65ae66996d",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\preflight-run-03-continuation\\prepared.npz": "8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\prepare_inventory.py": "239e0632046c84d00f7bcb677a16f7bd5245b10a174c0fe3e99a63d4ff90f6e7",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\prepare_water_footprint.py": "9f5f9952aaa23f5d673ec4c8375a2cc0d0759e0634d3093a08e23c50437728f1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-02\\solve-result.json": "bb988ab08db0cc141275d27b1e36fb6e44f7ca8168e276ff8003fab0a78bf979",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-02\\solver-state.npz": "edd871719397d957fb61ba08372dd86a0c304c69ce1b87477d794f03f960cd7c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-03-continuation\\solve-result.json": "8345bd1763af30ed7c06f621ab14cc91b6bb79d8359ec76a146b8ef85d767a0c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve-run-03-continuation\\solver-state.npz": "8618d5941d7c8b235bedce6ad5e21a0053ec61a2a32c17532fec98ff9db3dfa9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector_cached.py": "5e75e0e1d3e3c6938679cd31e87f4f317353e64ff919c471d79d1a04d50f98f9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector_continuation.py": "7a8625a43f1610322f1f32bc1d20bbb5b7fcace1e3259bec7577c0c27660e9cb",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.json": "74bb37147e20047c44f0228d464650fb35fb9e41e71cf541c4e994f1032c55c9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.npz": "6ce282962602557636bafac40b604caa3001a95234551db1beee67975dcd1edf",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\queue\\queue.json": "cf13887c8de031d65d0a32dab217e8743293103fcd00ea3c07c281c07a6794c9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\review-independent\\runs\\attempt-01\\verification.json": "b498e7d68835b199399655451e5e01ac81acb3149dbb9bf882b94858141521d4",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_coverage_contract.py": "214f0eddda08d84ce18c921fcdbe01298f608c9a5c19b7e5246bb9e71df5dc2b",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-low-water-components-20261009\\compiled-instance-bounds.json": "863e9539203e59fe77b9c7d4949da3a69b4991249941e15b887b60ff9e81ee62",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\author.py": "9b7c5374b7c78c3604bb2763ef8b7b4d16dc4bf18fc57091233ad435876cb74b",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\deploy.json": "3c98951f3488eef233d6972621648c84244f9e711c2ff419fd0b8013b427ec00",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\consumer\\verify_ev91.py": "5e726b93642f5db531193a8f1d85afabd139c7b9ac3afca4479df793afd53668",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+    "P:\\DZ\\structures\\roads\\bridges\\bridge_metal_25.p3d": "baf79ddd19e08cdcdbec99b15043a319d6b958a1b7884082c2ae069cf3f3cee2",
+    "P:\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz": "94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2",
+    "P:\\Mods\\@DayZ_Baltic_IncrementalBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "P:\\Mods\\@DayZ_Baltic_IncrementalBankPreviewV1\\Addons\\narva_trial.pbo": "b11c825b6c14ecc5649ac668b40c7dc6c9f52c64c26ddfa748983c04b340c36c"
+  },
+  "status": "FAIL_ORDER_CLOSURE_SECTOR_OFFLINE"
+}

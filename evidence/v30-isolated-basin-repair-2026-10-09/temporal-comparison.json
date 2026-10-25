@@ -1,0 +1,38 @@
+{
+  "status": "FRESH_CANDIDATE_TEMPORAL_COMPARISON",
+  "results": [
+    {
+      "phase": "A",
+      "threshold": 9.202987469922338,
+      "cohort_dry_samples": 110437,
+      "cohort_quantiles": [
+        1.7748151962934102,
+        6.409713453188925,
+        20.10235203990839,
+        58.649838672499534
+      ],
+      "shared_threshold": 10.416434807735094,
+      "suspect_cohort_samples": 6941,
+      "suspect_fraction": 0.06285031284804911
+    },
+    {
+      "phase": "candidate",
+      "threshold": 10.416434807735094,
+      "cohort_dry_samples": 111041,
+      "cohort_quantiles": [
+        1.465869490725865,
+        3.9748646439824427,
+        7.499740476905416,
+        17.734870736885917
+      ],
+      "shared_threshold": 10.416434807735094,
+      "suspect_cohort_samples": 192,
+      "suspect_fraction": 0.0017290910564566242
+    }
+  ],
+  "limits": [
+    "Different terrain height changes screen-to-ground mapping; cohort fractions use the same world rectangle, not identical screen pixels.",
+    "Native focal measuredEV48; actual camera matrices read back in both runs.",
+    "Temporal changes alone do not identify a shader. This is a local comparison, not global graphical closure."
+  ]
+}

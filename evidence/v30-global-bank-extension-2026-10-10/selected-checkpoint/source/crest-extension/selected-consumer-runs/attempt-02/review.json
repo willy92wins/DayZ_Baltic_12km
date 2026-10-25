@@ -1,0 +1,6 @@
+{
+  "error": "AssertionError('selection changed-node inventory differs legacy:1')",
+  "gates": {},
+  "status": "ERROR_COMPOUND_CONSUMER",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\crest-extension\\verify_selected_composite_v2.py\", line 627, in main\n    try:report=verify_selected(args.pool,args.selection,args.output,args.progress_log)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\crest-extension\\verify_selected_composite_v2.py\", line 505, in verify_selected\n    candidate,owner,changed_nodes_by_uid=compose_retained(base,retained_patches)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\crest-extension\\verify_selected_composite_v2.py\", line 266, in compose_retained\n    raise AssertionError(f'selection changed-node inventory differs {uid}')\nAssertionError: selection changed-node inventory differs legacy:1\n"
+}

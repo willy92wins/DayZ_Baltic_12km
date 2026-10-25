@@ -1,0 +1,1 @@
+The verifier argument support was support & ~dry_support. It verified wet vertices, not every water-support face. Renamed the gate to wet_vertices_exact without changing its predicate or candidate. Originals are retained as .before-label-fix. The candidate remains rejected by the shoreline consumer.

@@ -1,0 +1,13 @@
+# Ejecución única del sector sobre EV94
+
+Alcance aprobado por la petición viva: continuar el suavizado de cauces, orillas y relieve, preservando el fondo y el calado acordados. Este paso materializa el futuro solve descrito en `PLAN_EV94_REBASE.md`; no añade cambios de producto ni modifica el plan congelado del preflight.
+
+Preflight vigente: `preflight-run-05/preflight.json`, SHA `a6ae4b91cf5ebabbfc57352e4f988150eea2a7506b74a610b6aa4ce79a2bf4d7`. Preparado: `2df4ad67280c656025843f6528147a68c03dfcf6ecdfbe9cce2ee4818e15a2eb`. Los anteriores 01–04 conservan sus fallos/limitaciones; ninguno se usará para el solve. La revisión independiente detectó que faltaba el pin del helper `solve_real_sector.py`: el 05 lo añade al inicio/final y serializa el seed. Root cotejó todos los arrays con el 04 revisado: todos idénticos, mismo SHA del NPZ. Evidencia `root-preflight05-review.json`.
+
+Root ha ejecutado `read_inputs` y `unpack` del driver sobre el 04: 1.382 archivos fuente/referencias coincidentes, 40.178 variables, dimensiones y base factible. El 05 añade exactamente una fuente al readset y mantiene idénticos todos los datos. El revisor independiente ha cotejado slice focal, cotas, D8 y proyección sin corrección. Se conserva la base focal `30d0ed33...`, las 499 ventanas aceptadas con halo2, el foco Narva y todas las máscaras de agua/civil/P9. No reutilizar solución ni estado previo.
+
+Una sola llamada nueva al solver original aislado; único parámetro algorítmico modificado: MAX_ITER de 10.000 a 20.000. Límite total numérico 600 s, working set máximo 1,5 GiB, memoria libre inicial mínima 3 GiB. El reloj del módulo añade control de recursos; tolerancias, operador, CG y actualización de rho son los originales. La proyección float32 usa el helper de orden fijado y su propio guard. No continuación ni segundo intento por falta de convergencia.
+
+Revisión de `solve_ev94.py` EBB53986 cerrada por revisor independiente en `review-preflight04.json`, y cinco tests analíticos/negativos pasan en root y revisor. La regla de tentativa única se aplica por el operador: solo `solve-run-01`, sin reintento ni continuación. El driver nunca afirma aceptación geométrica. Solo escribe candidato local si convergencia/KKT, cotas, D8, ausencia de nuevos mínimos, coste menor, corrección acotada, coste del cierre y alturas fijas cumplen. Después lo juzga un consumidor independiente que reconstruye matrices y restricciones; no se prepara mapa global ni PBO mientras ese consumidor no pase.
+
+El defecto heredado de P desconocido se mantiene abierto. El consumidor distingue disponibilidad de P, cobertura geométrica y no regresión del calado conocido; no convierte una incertidumbre en un PASS global. Tampoco hay aceptación visual o dinámica implícita.

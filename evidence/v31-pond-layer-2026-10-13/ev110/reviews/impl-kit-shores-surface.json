@@ -1,0 +1,744 @@
+[
+ {
+  "track": "kit",
+  "impl": {
+   "track": "kit",
+   "summary": "Hecho: streambed_kit_v31.py v8 (retícula) sustituye a v7 en el mismo sitio, con la misma CLI de 10 argumentos y las mismas rutas de salida que el paso 1 de HANDOFF.md. Los 7 gates dan PASS sobre la ejecución final (E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/gates-summary.txt).\n\nParte del prototipo lattice_v8.py y corrige los 6 defectos de la revisión:\n- La geometría real sale del ODOL: caras del LOD roadway con su textura y LOD0 del proxy de agua con los labios. La extrae extract_streambed_geometry_v31.py a streambed_kit_geometry_v31.json; la diferencia máxima con turn-pieces.json es 0,005 m.\n- No hay juntas con hueco: el solape mínimo es max(0,3; labio_a + labio_b − 3,5 m), hasta 5 m, y la unión directa exige el mismo solape. El solape mínimo medido es 1,15 m.\n- Regla de eje sobre todas las muestras del eje, juntas y aristas del anillo 0 incluidas. Usa la cara roadway más alta real y permite bajar el anillo 0 solo cuando ningún otro vértice cuenta. Quedan 0 muestras sin resolver.\n- Las curvas se giran sobre el PI por la mitad del déficit de 44,36/44,53°. Desviación medida de los extremos: 0,046–0,064 m (prototipo: 0,10–0,14).\n- Contadores separados: cover 144/761 y envelope 394/2.201 celdas.\n- Se generaliza probe_points_kit.py a matrices escaladas, curvas y slanted.\n\nMedido en la ejecución final:\n- **kit-118:** 20 piezas, ancho p10/50/90 3,01/3,53/4,12 m, desviación 0,43, borde fuera de banda 6,2 %.\n- **kit-7:** 144 piezas, ancho 3,13/3,49/3,74 m, desviación 0,31, fuera de banda 4,3 %.\n- **Continuidad:** una sola región mojada por cadena, sin manchas sueltas.\n- **Margen del motor:** mínimo 0,112/0,113 m en 1.474 y 9.993 muestras.\n- **Pendientes y congelados:** 0 triángulos por encima del límite y 0 congelados cambiados.\n- **Charcas:** bury no expone bordes nuevos ni cambia alturas. Footprint, cover y envelope son idénticos (array_equal) a los de EV108.\n\nControl negativo: con el prototipo, los mismos gates reproducen los 7 cortes y 8 regiones de la revisión (G3 FAIL) y 30 muestras sin roadway (G4 FAIL).\n\nNo verificado en el motor:\n- El agua del motor sobre los labios concrete_ext: solo el 74–76 % de las muestras del eje cae sobre caras water_ext.\n- Las escalas y el render de curvas y slanted.\n- La sonda de servidor (sin DayZ MCP).",
+   "worktree_files": [
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/streambed_kit_v31.py sha256 4fdd5c522b82dc38c89dc640bae3e6a9f1892f5749ab91399772c7966ca8d48b (51963 B, LF; replaced v7)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/streambed_kit_geometry_v31.json sha256 4868ab02fbf18d45552df4398fadd85986912e41276571017c35517d32509b23 (56552 B, new; leaf/moss/sand x 7 kinds from ODOL)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/extract_streambed_geometry_v31.py sha256 2365b2f3adc3b8f781198752d18036ff15f2d6146919d40e61e585851d54144a (6787 B, new)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/probe_points_kit.py sha256 d1ca6e27a0fbb653b6e9ea4a2eea5c8109486ae12031446e1f78a0ed7cda596e (4595 B, LF; replaced)"
+   ],
+   "gates": [
+    {
+     "name": "G1 CLI idéntica al paso 1 y salidas escritas",
+     "status": "PASS",
+     "evidence": "gate_g1_cli.py extrae el comando del ítem 1 de 'Reconstruir EV108 y EV109' (HANDOFF.md:93-95): 10 argumentos.\nEl bloque Usage es idéntico al de git HEAD (v7).\nEjecuta la herramienta del worktree con cwd=E:/DayZ-Baltic-Build/v31-pond-layer-20261013, las mismas 5 entradas y los mismos 5 nombres de salida en ev110-wip/kit/final/.\nResultado: exit 0; salidas nuevas; claves del npz = entrada + v31_kit, con las mismas formas; cover y envelope de 2047²; registros con matrix de 12 valores; schema streambed-kit-v31.v8.\nEvidencia: final/gate-g1.json.\nSalidas (sha256): terrain-kit.npz 76f166ee…, kit-records.json eb0ac6e3…, kit-report.json e4f1ed4f….\nNota: la primera ejecución completa, en la raíz ev110-wip/kit, dio un FAIL falso por un bug del parser de Usage del propio gate (cortaba a 13 tokens). Corregido el parser, se repitió todo en final/."
+    },
+    {
+     "name": "G2 Ancho visible en rectas y curvas, con labios",
+     "status": "PASS",
+     "evidence": "Cómo se mide (gate_g2_width.py): método de measure_v8.py:118-146, sobre la geometría real del proxy LOD0 con labios.\n- Secciones cada 0,5 m a lo largo de toda la línea central (juntas incluidas).\n- Mojado: la cara de agua más alta de cualquier pieza queda por encima del terreno de su triángulo nativo.\n\nkit-118 (678 secciones, 0 con el centro seco):\n- Ancho p10/50/90: 3,01/3,53/4,12 m.\n- Desviación típica: 0,434.\n- Borde fuera de banda: 0,062.\n\nkit-7 (3.931 secciones, 0 con el centro seco):\n- Ancho p10/50/90: 3,13/3,49/3,74 m.\n- Desviación típica: 0,310.\n- Borde fuera de banda: 0,043.\n\nUmbrales: p50 ≤ 4,0 m, desviación ≤ 1,0 y fuera de banda ≤ 0,20, por sitio.\nEvidencia: final/gate-g2.json."
+    },
+    {
+     "name": "G3 Continuidad de las láminas visibles",
+     "status": "PASS",
+     "evidence": "Cómo se comprueba (gate_g3_continuity.py):\n- Ráster de 0,1 m de las caras del proxy LOD0, con labios; gana la más alta.\n- Terreno interpolado en el triángulo nativo.\n- Se recorre la polilínea de la retícula cada 0,1 m a lo largo de todo el tramo mojado, juntas incluidas.\n\nResultado:\n- kit-118: 2.669 muestras; 0 secas; 1 región en el eje; 1 región mojada en total; 0 manchas sueltas; 967 m².\n- kit-7: 17.755 muestras; 0 secas; 1 región en el eje; 1 en total; 0 sueltas; 6.224 m².\n\nControl negativo con el prototipo v8 (control-v8proto): FAIL con 44 muestras secas y 8 regiones; los cortes en (8396,6; 12021,4) y siguientes coinciden con la revisión.\nEvidencia: final/gate-g3.json."
+    },
+    {
+     "name": "G4 Margen del motor ≥ 0,10 m en el 100 % de las muestras del eje",
+     "status": "PASS",
+     "evidence": "Muestras (gate_g4_engine_margin.py), dentro del tramo mojado:\n- polilínea de la retícula cada 0,5 m, más sus vértices;\n- línea central de cada pieza cada 0,5 m, más todos los puntos de rung (extremos de placa y quiebros de los labios);\n- el punto medio de cada junta.\n\nMargen = cara roadway más alta (cualquier textura) menos el terreno del triángulo nativo.\n\nResultado:\n- kit-118: 1.474 muestras; 0 sin roadway; 0 por debajo de 0,10; mínimo 0,1118 m; p50 0,33.\n- kit-7: 9.993 muestras; 0 sin roadway; 0 por debajo de 0,10; mínimo 0,1133 m; p50 0,33.\n\nControl negativo con el prototipo: FAIL, con 30 muestras sin roadway en kit-7 y 46 por debajo de 0,10 en kit-118 (mínimo −0,079).\nDiagnóstico (no forma parte del gate): las muestras sobre caras water_ext son solo 0,761 y 0,737.\nEvidencia: final/gate-g4.json."
+    },
+    {
+     "name": "G5 Pendientes y vértices congelados",
+     "status": "PASS",
+     "evidence": "gate_g5_slopes.py compara bridges/terrain-ev107.npz con final/terrain-kit.npz.\n\nResultado:\n- 1.012 vértices y 2.702 triángulos cambiados.\n- 0 triángulos por encima de max(35°, antes); pendiente después p50/p90/máx 16,2/18,4/31,0°.\n- 0 vértices de reserve/platform/narva cambiados; máscaras idénticas.\n- Relleno 14.746 m³, desmonte 21.486 m³; subida máxima 3,01 m y bajada máxima 4,46 m.\n- La herramienta informa 0 pasos de la guarda de pendientes y 0 triángulos atascados.\n\nEvidencia: final/gate-g5.json."
+    },
+    {
+     "name": "G6 bury_edges sin bordes nuevos y aserción cover ⊆ envelope",
+     "status": "PASS",
+     "evidence": "gate_g6_pond_layer.py ejecuta bury_edges_v31.py del worktree con los argumentos del paso 2. La aserción de pond_footprint_v31.py:148 se cumple (exit 0).\n\nResultado:\n- Pasada 0: 43 bordes expuestos heredados y 0 nuevos; changed_vs_input 0.\n- 0 celdas de cover fuera del envelope.\n- Vértices de mar del motor (terreno < 0,75 fuera del envelope): 657.455 antes, 657.452 después, 0 nuevos.\n\nAdemás medí (cmp_fp.py) que env_plane, plane, field y visible de final/bury-work/fp0/footprint.npz, y también cover y envelope, son array_equal a fp-ev108 y ev108-kit. El verify_pond_exact de EV108 dio pass: true (ev108w/verify-exact.json, 760.116 medias celdas).\nInferido, sin volver a ejecutarlo: pond_author y verify_pond_exact darían lo mismo.\nEvidencia: final/gate-g6.json."
+    },
+    {
+     "name": "G7 Puntos de sonda en todos los tipos de pieza",
+     "status": "PASS",
+     "evidence": "gate_g7_probe.py ejecuta tools/water/probe_points_kit.py del worktree, como en el paso 7, sobre final/bury-work/fp0 y final/terrain-ev108.npz.\n\nResultado:\n- 1.148 puntos: kit_axis 492, kit_side 328, old_bed 50, más el conjunto del mapa.\n- Cada uno de los 164 registros tiene 3 puntos kit_axis y 2 kit_side.\n- Los 7 tipos presentes tienen puntos: short_straight 111, long_straight 108, long_straight_2 18, long_curve_left 45, long_curve_right 45, short_slanted 87, short_slanted_inv 78.\n- Margen kit_axis mínimo 0,116 m; 0 puntos laterales por debajo del agua.\n\nSolo genera los puntos: la sonda de servidor no se ejecutó.\nEvidencia: final/gate-g7.json."
+    }
+   ],
+   "outputs": [
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/terrain-kit.npz",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/cover-ev108.npy",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/envelope-ev108.npy",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/kit-records.json",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/kit-report.json",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/terrain-ev108.npz (salida de bury, idéntica en alturas a terrain-kit)",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/bury-work/fp0/footprint.npz",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/probe/points.csv y points.json",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/final/gate-g1..g7.json y gates-summary.txt",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-kit/ (gates gate_g1..g7_*.py, gatelib.py, run_gates.py, make_control.py, check_geom_vs_turnpieces.py, render_spots.py, spots_dev1.png, fuentes de los ficheros instalados, install.py)",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/control-v8proto (control negativo: el prototipo en el formato de los gates)"
+   ],
+   "rebuild_commands": [
+    "cd E:/DayZ-Baltic-Build/v31-pond-layer-20261013 && C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I \"C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/streambed_kit_v31.py\" bridges/terrain-ev107.npz bridges/fp-ev107/footprint.npz E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/cover-level-ev98.npy bridges/envelope-ev107.npy ev108-kit/sites.json ev110-wip/kit/final/terrain-kit.npz ev110-wip/kit/final/cover-ev108.npy ev110-wip/kit/final/envelope-ev108.npy ev110-wip/kit/final/kit-records.json ev110-wip/kit/final/kit-report.json",
+    "cd E:/DayZ-Baltic-Build/v31-pond-layer-20261013 && <python GIS> -I <WT>/tools/water/bury_edges_v31.py ev110-wip/kit/final/terrain-kit.npz bridges/terrain-ev107.npz ev110-wip/kit/final/cover-ev108.npy ev110-wip/kit/final/envelope-ev108.npy bridges/fp-ev107/footprint-report.json ev110-wip/kit/final/terrain-ev108.npz ev110-wip/kit/final/bury-work ev110-wip/kit/final/bury-report.json   (después, la última bury-work/fpN es la huella para pond_author, paso 3)",
+    "cd E:/DayZ-Baltic-Build/v31-pond-layer-20261013 && <python GIS> -I <WT>/tools/water/probe_points_kit.py ev110-wip/kit/final/bury-work/fp0/footprint.npz ev110-wip/kit/final/terrain-ev108.npz lagoons-report.json ev110-wip/kit/final/kit-records.json bridges/terrain-ev107.npz bridges/fp-ev107/footprint.npz ev110-wip/kit/final/probe/points.csv ev110-wip/kit/final/probe/points.json [ev108-kit/sites.json]",
+    "Gates sobre una carpeta nueva: <python GIS> -I <scratchpad>/impl-kit/run_gates.py E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/<carpeta nueva>   (G1 ejecuta el paso 1 y G6 el paso 2 dentro de esa carpeta)",
+    "Regenerar la geometría del kit (necesita el subst P: y la skill dayz-p3d-debinarizer): <python GIS> -I <WT>/tools/water/extract_streambed_geometry_v31.py <WT>/tools/water/streambed_kit_geometry_v31.json"
+   ],
+   "review_defects_addressed": [
+    "major: la unión directa admitía huecos positivos de hasta 0,5 m (lattice_v8.py:274, :327). Ahora todas las juntas solapan al menos max(OV_FLOOR 0,3; labio_a + labio_b − DIP_SPAN 3,5) y como mucho OV_MAX 5; la unión directa exige el mismo solape. Solape mínimo medido 1,15/1,16 m. G3 da 1 región sin muestras secas, donde el prototipo da 8 regiones.",
+    "major: el verificador usaba una lámina plana. La geometría real (caras del LOD roadway con su textura y LOD0 del proxy de agua con los labios) sale ahora del ODOL a streambed_kit_geometry_v31.json; coincide con turn-pieces.json con un error máximo de 0,005 m. Herramienta y gates G2–G4 usan esas caras: los gates con su propio código en gatelib.py, la herramienta con KitSurface.",
+    "major: la regla de eje no garantizaba el margen en el anillo 0 ni en las juntas. Ahora las muestras cubren la retícula, la línea central de cada pieza y las juntas, contra la cara roadway real más alta. Cuando ningún otro vértice cuenta se baja el anillo 0, con una bajada limitada a 1 m bajo el objetivo. Quedan 0 sin resolver: mínimo final 0,12 en la herramienta y 0,1118 en G4.",
+    "minor: tolerancia de los extremos de curva. La curva se gira sobre el PI por la mitad del déficit. Desviación lateral medida de los extremos: 0,046–0,064 m, recogida en kit-report.json (curve_ends); el prototipo daba 0,098–0,141 m. Las juntas se comprueban con la geometría real (G3, G4).",
+    "minor: interfaz no compatible. Ahora tiene la misma CLI de 10 argumentos y las mismas rutas que v7. G1 compara el comando de HANDOFF.md con el Usage de git HEAD y ejecuta el comando.",
+    "minor: contador único de celdas. Ahora cover_cells_removed (144/761) y envelope_cells_removed (394/2.201) van por separado; los arrays son idénticos a los de v7."
+   ],
+   "open_issues": [
+    "Nada se ha visto en el motor:\n- Si GetWaterDepth da agua sobre los labios concrete_ext de las juntas: solo el 73,7 % (kit-7) y el 76,1 % (kit-118) de las muestras del eje caen sobre caras water_ext.\n- Las piezas escaladas (curvas a 0,88, slanted a 0,82) y el render de codos y curvas.\n- La convención del frame del proxy de agua, que sigue siendo inferida.\nHay que lanzar la sonda de servidor con final/probe/points.csv (no se usó DayZ MCP).",
+    "Faltan los pasos 3–6 de la cadena EV110:\n- pond_author, pack, stage_pond_pilot y verify_pond_exact no se ejecutaron. Que pasen se infiere de que footprint, cover y envelope son idénticos a los de EV108, que dio pass.\n- No se ejecutaron stage_bridges ni los puentes EV109 sobre el terreno nuevo (el enlace kit-118/carretera es el cruce #6).\n- Tampoco compilado ni empaquetado.",
+    "La regla de eje bajó vértices del anillo 0 (9 en kit-118, 54 en kit-7) y del anillo 1 (2 y 23), hasta 0,32 m (p90 0,29 y 0,14). Ahí la orilla deja de ser exactamente recta: es el precio de tener 0 muestras por debajo de 0,10 m.",
+    "En las juntas la lámina se estrecha (p10 3,0–3,1 m frente a 3,5 en tramo plano); en la vista en planta se nota una pequeña muesca en cada junta. Si en el juego molesta, se puede bajar DIP_SPAN para dar más solape.",
+    "Los gates G2–G4 tienen código propio (gatelib.py), pero usan los mismos datos de geometría y las mismas convenciones inferidas que la herramienta: el reparto de quads (0,1,2)+(0,2,3) y el frame del proxy. Sí son sensibles: el control negativo con el prototipo da G3 y G4 FAIL con los cortes de la revisión.",
+    "Carpetas en ev110-wip/kit:\n- La raíz guarda la primera ejecución completa: mismo terreno y, previsiblemente, la misma salida que final, pero no lo comparé por hash. Su G1 dio un FAIL falso por un bug del gate.\n- dev1, dev2 y control-v8proto son de desarrollo o control.\n- El conjunto validado es final/. No borré nada (regla de no borrado recursivo).",
+    "HANDOFF.md no se ha actualizado: el paso 1 sigue escribiendo en ev108-kit/ y no menciona la v8 ni la nueva geometría JSON.",
+    "extract_streambed_geometry_v31.py depende del subst P: y del odol_reader de la skill dayz-p3d-debinarizer, igual que verify_pond_exact.",
+    "probe_points_kit.py mantiene por defecto las semillas de old_bed de kit-118 y kit-7. Se pueden pasar otras con un 9.º argumento opcional, sites.json.",
+    "Se descartaron 2 grupos de piedras de kit-7 que caían dentro de la lámina visible (en el interior de una curva); quedan 50 grupos en kit-7 y 6 en kit-118.",
+    "Siguen abiertas las preguntas de diseño para Guillermo: la estética de las escaleras NE-SO (elbows slanted en kit-7) y si quiere ancho uniforme (3,5 m) o variable.",
+    "Hay otros ficheros modificados en el worktree que no son míos (tools/terrain/bridges_v31.py, build_surface_v30.py, package_surface_patch_v31.py y patch_surface_v31.py sin seguimiento). No hay commit (no se pidió)."
+   ]
+  },
+  "r1": {
+   "track": "kit",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "[medido] G4 demuestra separación geométrica respecto a roadway, pero no presencia de agua del motor. Las sondas omiten las juntas con concrete_ext. [inferido] El PASS no descarta discontinuidades funcionales; no he observado ese fallo en juego.",
+     "evidence": "SCRATCH/impl-kit/gate_g4_engine_margin.py:33-40 admite cualquier textura. Mi water-material-coverage.json mide ausencia de water_ext en 352/1474 y 2626/9993 muestras, incluidas 145/162 juntas. Las 492 sondas kit_axis caen sobre water_ext. El control negative-no-water-textures.log sigue dando G4 PASS tras sustituir todas las texturas por concrete_ext. Evidencia en SCRATCH/impl-kit-review1/.",
+     "fix": "Separar aceptación geométrica y aceptación en motor. Añadir sondas de labios, juntas y solapes de todos los tipos escalados, con controles líquidos y secos. Mantener pendiente la continuidad funcional hasta obtener esos resultados."
+    },
+    {
+     "severity": "major",
+     "claim": "[medido] G7 confía en las alturas declaradas por el generador sin verificar que correspondan a las coordenadas y piezas exportadas.",
+     "evidence": "SCRATCH/impl-kit/gate_g7_probe.py:25-40. Desplacé los 820 puntos kit_axis/kit_side a (100,100), tanto en JSON como en CSV, conservando sus metadatos: G7 PASS. Repro: PY -I -B SCRATCH/impl-kit-review1/readonly_python.py SCRATCH/impl-kit-review1/negative_control.py probe-coordinates repro-g7. Resultado: negative-probe-coordinates.log.",
+     "fix": "Recalcular independientemente terreno y superficies en las coordenadas exportadas; verificar pertenencia a la pieza concreta, escala, lado y correspondencia CSV/JSON. El control de desplazamiento debe fallar."
+    },
+    {
+     "severity": "minor",
+     "claim": "[medido] G3 acepta agua desconectada porque solo exige una región sobre el eje.",
+     "evidence": "SCRATCH/impl-kit/gate_g3_continuity.py:60-67. Añadí una lámina separada: negative-stray.log registra dos regiones y una isla de 272,65 m², pero G3 PASS. Repro: PY -I -B SCRATCH/impl-kit-review1/readonly_python.py SCRATCH/impl-kit-review1/negative_control.py stray repro-g3. La salida original sí tiene una región por arroyo, confirmado mediante unión geométrica exacta.",
+     "fix": "Exigir una sola región en toda la unión mojada, además de continuidad del eje, conforme al contrato G3."
+    },
+    {
+     "severity": "minor",
+     "claim": "[medido] Una de las 50 sondas old_bed etiquetadas como secas cae dentro de la lámina visible del kit. [inferido] Puede introducir una clasificación engañosa en la prueba posterior.",
+     "evidence": "WT/tools/water/probe_points_kit.py:63 mide distancia a marcadores discretos, no al eje continuo. SCRATCH/impl-kit-review1/probe-independent.json: punto 1141, (8718,11460), terreno 1,838073 m y lámina 2,306982 m, dentro de las piezas 56/57. Distancia al marcador más cercano: 6,001599 m. G7 no verifica old_bed.",
+     "fix": "Seleccionar controles fuera del eje continuo y de la unión mojada del kit y las charcas; verificar también old_bed en G7."
+    },
+    {
+     "severity": "minor",
+     "claim": "[medido] El extractor escribe geometría vacía y termina con éxito cuando P: no está disponible.",
+     "evidence": "WT/tools/water/extract_streambed_geometry_v31.py:117-126 captura FileNotFoundError y escribe sin comprobar integridad. Mi ejecución terminó con código 0 y produjo geometry-reextracted.json: 148 bytes, models={}. Desde la ruta física de DZ extrajo 20 modelos idénticos al JSON entregado.",
+     "fix": "Validar disponibilidad y catálogo requerido antes de escribir; rechazar extracciones vacías o incompletas y preservar cualquier geometría válida existente."
+    }
+   ],
+   "gates_rerun": [
+    "[medido] G1–G7 originales: PASS en SCRATCH/impl-kit-review1/fresh/, con PY -I y bytecode deshabilitado. El veredicto rechaza el contrato de validación; no afirma un fallo observado en juego.",
+    "[medido] Los cuatro SHA256 del worktree coinciden íntegramente con el informe al inicio y al cierre. Los ocho artefactos comparados de raíz/final/fresh también coinciden: hashes.json y worktree-hashes-final.txt.",
+    "[medido] G1 negativo sin salidas: FAIL. G2: 678/3931 secciones, p50 3,53/3,49 m, desviación 0,434/0,310; negativo ensanchado: FAIL.",
+    "[medido] G3: cero muestras secas. Unión geométrica exacta: una región por sitio, 966,91/6224,92 m². Prototipo: FAIL, con 44 muestras secas y ocho regiones en kit-7. Lámina aislada: falso PASS.",
+    "[medido] G4: mínimos 0,1118/0,1133 m. Comprobación cada 1 cm: 60294/402966 muestras, mínimos 0,109434/0,110135 m; cero incumplimientos también con diagonal alternativa de los quads. Prototipo: FAIL. Eliminar water_ext: PASS.",
+    "[medido] G5: 1012 vértices y 2702 triángulos modificados, pendiente máxima 31,04°, cero congelados modificados. Negativos de plataforma alterada y pendiente excesiva: FAIL.",
+    "[medido] G6: cero bordes nuevos, cero cambios del enterrado, cover contenido en envelope y cero nuevos vértices de mar. Huella nueva idéntica a final y EV108. Negativo de envelope incompleta: FAIL.",
+    "[medido] verify_pond_exact_v31.py: PASS contra la huella nueva y los modelos compilados existentes de EV108; 760116 medias celdas, cero faltantes o duplicados. Resultado: verify-pond-exact-reused.json.",
+    "[medido] G7 original: 1148 puntos. Contraste independiente de los 492 ejes y 328 laterales correcto; CSV/JSON alineados. Desplazar los 820 puntos: falso PASS. Un old_bed invade la lámina visible.",
+    "[medido] ODOL reextraído: 20 modelos idénticos; diferencia máxima respecto a turn-pieces: 0,0049 m. Sesenta extremos de curva: desviación 0,046444–0,063669 m. stage_bridges_v31.py conserva 220 registros en un WRP sintético; error máximo de matriz float32: 0,000488115.",
+    "[medido] Dictamen, scripts, resultados, handoff y hashes guardados en SCRATCH/impl-kit-review1/, incluido review-verdict.json."
+   ],
+   "not_checked": [
+    "Motor, render, selección efectiva de superficies en solapes y comportamiento de labios concrete_ext y piezas escaladas. No se utilizó DayZ MCP ni se alteró la sesión viva.",
+    "Convención del marco del proxy en motor. La extracción es reproducible; la diagonal alternativa se probó como sensibilidad, sin determinar cuál utiliza el motor.",
+    "Compilación, empaquetado y despliegue completo EV110; combinación con puentes EV109 y cruce #6. La prueba WRP utilizó una base sintética; verify_pond_exact reutilizó ODOL existentes.",
+    "Aceptación visual de estrechamientos, orillas tras bajar anillos y escaleras NE-SW.",
+    "Sin modificaciones al worktree ni commits. Escrituras limitadas a SCRATCH/impl-kit-review1/."
+   ]
+  },
+  "fix": {
+   "track": "kit",
+   "summary": "Corregidos los 2 defectos mayores y los 3 menores de la revisión Codex. G1–G7 dan PASS sobre una carpeta nueva, E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/r1 (gates-summary.txt). El nuevo G8, la aceptación en motor, queda en NOT_RUN porque no hay log de la sonda de servidor: la continuidad funcional en labios y juntas sigue pendiente.\n\nPor defecto:\n- **Mayor, G4.** Ahora es explícitamente geométrico e informa engine_water_verified=false y las muestras sin water_ext por fuente. La aceptación en motor pasa al nuevo gate_g8_engine_probe.py: clasifica el log de la sonda en tres grupos. «wet» son los controles líquidos (kit_axis). «test» son labios y juntas que solo tienen concrete_ext. «dry» son los controles secos (kit_side, kit_joint_side y old_bed). Sin log imprime NOT_RUN y sale con 3.\n- **Mayor, G7.** Se ha reescrito: recalcula de forma independiente, con gatelib y sin código del generador, cada punto en las coordenadas de points.json y points.csv. Comprueba:\n  - la correspondencia CSV/JSON;\n  - la pertenencia a la pieza concreta (cara water_ext en kit_axis, concrete_ext en kit_lip, roadway de las dos piezas en kit_joint);\n  - escala, tipo, lado y distancia;\n  - terreno, roadway, water_ext y expect;\n  - la sequedad de todos los controles secos.\n\n  El control de desplazamiento del revisor ahora da FAIL.\n- **Menor, G3.** Ahora exige una sola región en toda la unión mojada (gate_g3_continuity.py:63, n == 1).\n- **Menor, old_bed.** Los controles se eligen a más de 6 m de la línea central continua de todas las piezas, fuera de las láminas del kit y fuera del agua visible de la huella nueva (probe_points_kit.py:166-169). G7 verifica también old_bed.\n- **Menor, extractor.** Ahora falla de forma cerrada (extract_streambed_geometry_v31.py:127, :142, :146).\n\nprobe_points_kit.py añade puntos de sonda en todas las juntas. Por cada una de las 162 juntas pone un kit_joint, dos kit_lip y hasta dos kit_joint_side. Total: 1.945 puntos frente a 1.148, y todos los tipos de pieza tienen puntos de labio y de junta.\n\nCambios en streambed_kit_v31.py:\n- La cabecera aclara que el margen es geométrico.\n- El nuevo campo final_axis_water_ext_share del informe vale 0,8142 en kit-118 y 0,7949 en kit-7.\n- Se protege la familia sand, que no tiene long_straight_2 (línea 699; no consume el rng de otra forma).\n- Se quita una línea duplicada.\n\nMedido: terrain-kit, cover, envelope, kit-records, terrain-ev108 y footprint de r1 tienen el mismo SHA256 que los de final/. kit-report solo difiere en el campo nuevo.\n\nControles negativos (negative_controls.py, 19 modos): los 19 dan el veredicto esperado, cada uno por la razón buscada. Detalle en neg-r1/negative-controls-r1.json.",
+   "worktree_files": [
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/streambed_kit_v31.py sha256 a5c1b7e04f6a17c87ab4cad47918de8200c8c5d7e6e14caf7c0605b628fd7b2b (52536 B, LF; escrito una vez, releído y sha igual)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/probe_points_kit.py sha256 2257918e5a454da52c82d3d74d2090db1f3e537a0d66003d4fd80825ba4383e0 (10460 B, LF)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/extract_streambed_geometry_v31.py sha256 5032e2c364b8fdc33dd2821f780db17c93b98b004f42a1425a05c5a6d20d7f1e (8240 B, LF)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/streambed_kit_geometry_v31.json sha256 4868ab02fbf18d45552df4398fadd85986912e41276571017c35517d32509b23 (56552 B; no se ha tocado: el extractor corregido lo regenera byte a byte desde P:)"
+   ],
+   "gates": [
+    {
+     "name": "G1: CLI idéntica al paso 1 y salidas escritas",
+     "status": "PASS",
+     "evidence": "r1/gate-g1.json, exit 0.\n- Usage idéntico al de git HEAD.\n- Ejecuta el paso 1 de HANDOFF con las 5 entradas.\n- Salidas con el mismo SHA256 que final/: terrain-kit 76f166ee…, cover 2f08075d…, envelope b005deaf…, kit-records eb0ac6e3….\n- kit-report (ea66b077…) solo difiere en final_axis_water_ext_share (comparado como dict, cmp_report.py).\n- Control g1-no-output: FAIL."
+    },
+    {
+     "name": "G2: ancho visible con labios",
+     "status": "PASS",
+     "evidence": "r1/gate-g2.json. Medido sobre secciones cada 0,5 m de la línea central.\n- kit-118: 678 secciones, 0 con el centro seco; p10/50/90 3,01/3,53/4,12 m; desviación 0,434; borde fuera de banda 0,062.\n- kit-7: 3.931 secciones, 0 con el centro seco; 3,13/3,49/3,74 m; desviación 0,310; fuera de banda 0,043.\n- Control wide (terreno −50 m): FAIL."
+    },
+    {
+     "name": "G3: continuidad, una sola región en toda la unión mojada",
+     "status": "PASS",
+     "evidence": "r1/gate-g3.json. Ahora también exige wet_regions_total == 1 (gate_g3_continuity.py:63).\n- kit-118: 2.669 muestras de eje, 0 secas, 1 región en total, 0 manchas sueltas, 967,2 m².\n- kit-7: 17.755 muestras, 0 secas, 1 región, 0 sueltas, 6.223,6 m².\n- Control stray (lámina separada del revisor): FAIL, con kit-118 en 2 regiones y 1 suelta."
+    },
+    {
+     "name": "G4: margen geométrico ≥ 0,10 m en el 100 % de las muestras del eje (no demuestra agua del motor)",
+     "status": "PASS",
+     "evidence": "r1/gate-g4.json.\n- kit-118: 1.474 muestras, mínimo 0,1118 m, 0 sin roadway. Sobre water_ext: 0,761. Sin water_ext: joint 19, lattice 85, curvas 36, rectas 171, slanted 41.\n- kit-7: 9.993 muestras, mínimo 0,1133 m. Sobre water_ext: 0,737; juntas sin water_ext: 126.\n- engine_water_verified=false en el JSON.\n- Control no-water-textures-g4: PASS por diseño, porque G4 es geométrico; el mismo control da FAIL en G7."
+    },
+    {
+     "name": "G5: pendientes y congelados",
+     "status": "PASS",
+     "evidence": "r1/gate-g5.json.\n- 1.012 vértices y 2.702 triángulos cambiados; 0 triángulos que incumplen; pendiente máxima 31,04°.\n- 0 vértices congelados cambiados; máscaras idénticas.\n- Controles frozen y steep: FAIL."
+    },
+    {
+     "name": "G6: bury sin bordes nuevos y cover ⊆ envelope",
+     "status": "PASS",
+     "evidence": "r1/gate-g6.json: bury_edges_v31.py del worktree sale con exit 0.\n- footprint fp0 con el mismo SHA256 que final/ (fd0cd90a…). terrain-ev108 coincide con terrain-kit.\n- Control envelope (celda de cover fuera de la envelope): FAIL."
+    },
+    {
+     "name": "G7: sonda verificada de forma independiente en las coordenadas exportadas",
+     "status": "PASS",
+     "evidence": "r1/gate-g7.json: 1.945 puntos.\n- Puntos del kit: kit_axis 492, kit_side 328, kit_lip 324, kit_joint 162, kit_joint_side 316 (156 de las 162 juntas con los dos lados; 8 lados sin punto seco a 6, 8 o 10 m).\n- old_bed 45 (kit-118 20, kit-7 25).\n- expect: wet 588, test 390, dry 689.\n- Recalculados 978 puntos del kit y 689 secos: 0 fallos.\n- Margen mínimo: axis 0,116, lip 0,1195, joint 0,1487.\n- Los 7 tipos tienen puntos de eje, labio y junta.\n- Controles, todos FAIL:\n  - probe-coordinates del revisor: 492 de pertenencia;\n  - desplazar todos los puntos kit_* (coordinates-all);\n  - CSV desplazado 1 m;\n  - lado invertido;\n  - escala falsa;\n  - extremo de labio falso;\n  - old_bed del revisor (8718, 11460): dentro de la lámina y a menos de 6 m del eje;\n  - no-water-textures: 492 de pertenencia a water_ext."
+    },
+    {
+     "name": "G8: aceptación en motor desde el log de la sonda de servidor (nuevo)",
+     "status": "NOT_RUN",
+     "evidence": "r1/gate-g8.json status NOT_RUN: no hay log de la sonda; no se usó DayZ MCP porque hay una sesión de juego activa.\nComprobado solo con logs sintéticos:\n- según lo esperado: PASS;\n- labios y juntas secos: FAIL, 390 lip_joint_dry;\n- old_bed mojado: FAIL, 45 dry_control_wet;\n- sin log: NOT_RUN.\nLa continuidad funcional en labios y juntas queda pendiente, no se da por supuesta."
+    }
+   ],
+   "outputs": [
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/r1/ (conjunto validado de esta ronda: terrain-kit.npz, cover-ev108.npy, envelope-ev108.npy, kit-records.json, kit-report.json, terrain-ev108.npz, bury-work/fp0/footprint.npz, probe/points.csv sha c6887fa6…, probe/points.json sha 37683d9c…, gate-g1..g8.json, gates-summary.txt sha d1209854…)",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/neg-r1/ (19 controles negativos, negative-controls-r1.json y negative.log en cada carpeta)",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/dev-probe-r1, dev-g7 (desarrollo)",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-kit/ (gates: gate_g7_probe.py sha 52f1e0f2…, gate_g8_engine_probe.py ef6a6aa4…, gate_g3_continuity.py d90f324d…, gate_g4_engine_margin.py af85128a…, run_gates.py a8887d5f…, negative_controls.py ee2ae3f7…; r0/ con las versiones anteriores; extract-tests/ con las pruebas del extractor; run-r1.log, neg-r1.log)"
+   ],
+   "rebuild_commands": [
+    "cd E:/DayZ-Baltic-Build/v31-pond-layer-20261013 && C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I \"<WT>/tools/water/streambed_kit_v31.py\" bridges/terrain-ev107.npz bridges/fp-ev107/footprint.npz E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/cover-level-ev98.npy bridges/envelope-ev107.npy ev108-kit/sites.json <out>/terrain-kit.npz <out>/cover-ev108.npy <out>/envelope-ev108.npy <out>/kit-records.json <out>/kit-report.json",
+    "cd E:/DayZ-Baltic-Build/v31-pond-layer-20261013 && <python GIS> -I <WT>/tools/water/bury_edges_v31.py <out>/terrain-kit.npz bridges/terrain-ev107.npz <out>/cover-ev108.npy <out>/envelope-ev108.npy bridges/fp-ev107/footprint-report.json <out>/terrain-ev108.npz <out>/bury-work <out>/bury-report.json",
+    "cd E:/DayZ-Baltic-Build/v31-pond-layer-20261013 && <python GIS> -I <WT>/tools/water/probe_points_kit.py <out>/bury-work/fp0/footprint.npz <out>/terrain-ev108.npz lagoons-report.json <out>/kit-records.json bridges/terrain-ev107.npz bridges/fp-ev107/footprint.npz <out>/probe/points.csv <out>/probe/points.json",
+    "Gates sobre una carpeta nueva: <python GIS> -I -B <scratchpad>/impl-kit/run_gates.py E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/kit/<carpeta nueva>",
+    "Tras la sonda de servidor (points.csv en la misión BalticBridgeProbeV2, solo servidor): copiar baltic_bridge_probe_v2.log a <out>/probe/ y ejecutar <python GIS> -I <scratchpad>/impl-kit/gate_g8_engine_probe.py <out>",
+    "Controles negativos: <python GIS> -I -B <scratchpad>/impl-kit/negative_controls.py <run validado> <carpeta base nueva>",
+    "Geometría: <python GIS> -I <WT>/tools/water/extract_streambed_geometry_v31.py <out.json> [source_dir] (sale con 1 sin escribir nada si falta el origen o algún modelo)"
+   ],
+   "review_defects_addressed": [
+    "major G4 (separación geométrica frente a agua en motor):\n- G4 se declara geométrico: docstring, engine_water_verified=false y off_water_ext por fuente.\n- Nuevo G8 de aceptación en motor sobre el log de la sonda, con controles líquidos (kit_axis), secos (kit_side, kit_joint_side, old_bed) y de prueba (kit_lip y kit_joint con solo concrete_ext).\n- probe_points_kit.py añade labios, juntas y lados de junta en las 162 juntas y en los 7 tipos escalados.\n- La cabecera de la herramienta (streambed_kit_v31.py:64-69) aclara que el margen es geométrico.\n- La continuidad funcional sigue pendiente: G8 NOT_RUN.",
+    "major G7 (confiaba en las alturas declaradas):\n- Recalcula con gatelib terreno, roadway, water_ext y expect en las coordenadas exportadas.\n- Verifica pertenencia a la pieza concreta, escala, tipo, lado, distancia y perpendicularidad, y la correspondencia CSV/JSON.\n- El control de desplazamiento del revisor da FAIL (492 fallos de pertenencia), igual que el desplazamiento de todos los puntos kit_*.",
+    "minor G3: exige una sola región en toda la unión mojada (gate_g3_continuity.py:63); el control stray da FAIL.",
+    "minor old_bed:\n- Se eligen a más de 6 m de la línea central continua, fuera de las láminas del kit y fuera del agua visible de la huella nueva (probe_points_kit.py:166-169). Se rechazaron 331 candidatos cercanos.\n- G7 verifica old_bed: vértice de la retícula, plano EV107, fuera de la charca nueva, distancia y sequedad.\n- Inyectar el punto del revisor (8718, 11460) da FAIL.",
+    "minor extractor:\n- Comprueba que existe el origen y el catálogo REQUIRED de 20 modelos, y que cada uno trae caras roadway water_ext y concrete_ext, agua y línea central.\n- Escribe en .tmp y renombra solo si está completo.\n- Probado: sin origen, exit 1 y el fichero existente intacto (sha comprobado); con un modelo menos, exit 1 y nada escrito; desde P:, byte a byte igual al JSON del worktree; desde la ruta física de DZ, models idénticos."
+   ],
+   "open_issues": [
+    "Funcionamiento en motor sin verificar:\n- G8 NOT_RUN: hay que lanzar la sonda de servidor con r1/probe/points.csv (1.945 puntos) y pasar el log a gate_g8_engine_probe.py.\n- Hasta entonces no se sabe si GetWaterDepth da agua en los 390 puntos «test» (240 kit_lip y 150 kit_joint, sobre labios concrete_ext).\n- Inferido: si fallan, habría que dar más solape (bajar DIP_SPAN) para que el water_ext cubra las juntas; no medido.",
+    "En 6 juntas faltan puntos de control seco a los lados (8 en total) porque a 6, 8 y 10 m caen en la lámina o en una charca: 4 juntas con un lado y 2 sin ninguno. Hay 45 old_bed en lugar de 50: en kit-118 solo 20 vértices del cauce viejo quedan lejos del eje.",
+    "G8 solo se ha probado con logs sintéticos; el formato de fila (P;id;ground;sea;pond;surface;depth;roadY;objects) sale de missions/BalticBridgeProbeV2.BalticTrial/init.c y BalticKitProbeV1.",
+    "Sigue pendiente lo anterior a esta ronda:\n- Pasos 3–6 de EV110: pond_author, pack, stage, verify_pond_exact, puentes EV109 y cruce #6, compilación.\n- HANDOFF.md no está actualizado (el paso 1 sigue escribiendo en ev108-kit/).\n- Preguntas de diseño para Guillermo: escaleras NE-SO y ancho uniforme o variable.",
+    "Hay cambios en el worktree que no son de esta pista: tools/terrain/bridges_v31.py, build_surface_v30.py, probe_points_bridges.py, evidence/…/bridges/ev110/, shore_ramp_v31.py, package_surface_patch_v31.py y patch_surface_v31.py. No se han tocado. Sin commit."
+   ]
+  },
+  "r2": {
+   "track": "kit",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "[medido] G7 permite omitir la validación de los 689 controles secos cambiando o eliminando su etiqueta expect. G8 hereda esa clasificación. [inferido] Una regresión del generador puede obtener aceptación aunque todos esos controles estén mojados.",
+     "evidence": "[medido] SCRATCH/impl-kit/gate_g7_probe.py:84,125 recalcula expect solamente para axis/lip/joint; :186 selecciona los secos por la etiqueta declarada. gate_g8_engine_probe.py:56,64-69 confía en ella. Cambiar dry a test en 328 kit_side, 316 kit_joint_side y 45 old_bed produce G7 PASS con checked_dry_points=0; un log sintético con los 689 mojados produce después G8 PASS. Eliminar expect también produce G7 PASS. Evidencia: REVIEW/dry-expect-test/gate-g7.json, dry-expect-absent/gate-g7.json y g8-no-dry-labels-all-wet/gate-g8.json. Repro: PY -I -B REVIEW/readonly_python.py REVIEW/independent_controls.py REVIEW/repro-nuevo.",
+     "fix": "[inferido] Seleccionar los controles secos por kind y exigir expect=dry; verificar terreno y sequedad independientemente de esa etiqueta. G8 debe rechazar etiquetas ausentes o incompatibles. Ambos controles negativos deben dar FAIL."
+    },
+    {
+     "severity": "major",
+     "claim": "[medido] G8 acepta mediciones no finitas: clasifica profundidad NaN como seca y ground=NaN evita build_mismatch. [inferido] Un log con lecturas inválidas puede cerrar falsamente la aceptación en motor.",
+     "evidence": "[medido] SCRATCH/impl-kit/gate_g8_engine_probe.py:45 convierte a float sin comprobar finitud; :58 usa depth>0 y :62 usa abs(delta)>0.05. Con las etiquetas originales, profundidad NaN en 689/689 controles secos produce G8 PASS. Otro control con ground=NaN en los 1.667 puntos clasificados también pasa. Los controles con secos mojados o terreno desplazado 1 m sí fallan. Evidencia: REVIEW/runtime-replay/g8-dry-depth-nan/gate-g8.json y REVIEW/g8-nonfinite-ground/gate-g8.json. Repro: PY -I -B REVIEW/readonly_python.py REVIEW/runtime_controls.py REVIEW/runtime-nuevo.",
+     "fix": "[inferido] Rechazar valores no finitos en mediciones y referencias requeridas antes de comparar alturas o clasificar agua. Una lectura inválida debe impedir PASS; incorporar ambos controles negativos."
+    }
+   ],
+   "gates_rerun": [
+    "[medido] REVIEW = C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-kit-review2. SCRATCH es su carpeta padre. PY = C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe.",
+    "[medido] G1–G7 repetidos: PASS. G8 real: NOT_RUN, exit 3. Entradas de HANDOFF paso 1; salidas exclusivamente en REVIEW/verified. Scripts congelados en REVIEW/gate-snapshot.",
+    "[medido] G1: CLI de 10 argumentos idéntica. Los nueve artefactos comparados coinciden por SHA256 con r1. Terreno, cover, envelope, records y footprint también coinciden con final; kit-report solo añade final_axis_water_ext_share. Los cuatro archivos del worktree conservan los SHA256 del FIX REPORT.",
+    "[medido] G2: 678/3.931 secciones; p50 3,53/3,49 m; desviación 0,434/0,310; borde fuera de banda 6,2/4,3 %. G3: 2.669/17.755 muestras de eje, cero secas y una región total por sitio. La lámina aislada ahora da FAIL.",
+    "[medido] G4: 1.474/9.993 muestras; mínimos geométricos 0,1118/0,1133 m; cero incumplimientos y cero muestras sin roadway. engine_water_verified=false. La separación entre geometría y motor del mayor de ronda 1 está corregida; la continuidad funcional permanece pendiente.",
+    "[medido] G5: 1.012 vértices y 2.702 triángulos modificados; pendiente máxima 31,04 grados; cero congelados cambiados. G6: cero bordes expuestos nuevos, cero cambios del enterrado, cover contenido en envelope y cero vértices de mar nuevos.",
+    "[medido] G7 original: 1.945 puntos; 492 axis, 328 side, 324 lip, 162 joint, 316 joint_side y 45 old_bed. Recalcula 978 puntos del kit y 689 secos sin fallos. Los siete tipos tienen sondas. Desplazar los 820 puntos de ronda 1 ahora da FAIL, con 492 fallos de pertenencia a water_ext: ese contraejemplo queda cerrado.",
+    "[medido] Los 19 controles del implementador dan el veredicto esperado. Los controles independientes descubren los falsos PASS descritos. REVIEW/review_acceptance.py imprime FAIL por clasificación de secos y mediciones no finitas.",
+    "[medido] Extractor: origen inexistente, catálogo incompleto y P: no disponible terminan con exit 1 y preservan el archivo previo. Desde la ruta física de DZ extrae 20 modelos idénticos. El old_bed invasor de ronda 1 ahora da FAIL; los menores corregidos no se reabren.",
+    "[medido] verify_pond_exact_v31.py: PASS sobre la huella recién generada y ODOL existentes de EV108; 13.508 registros, 8.110 modelos y 760.116 medias celdas; cero faltantes, duplicados o caras fuera de huella.",
+    "[medido] Dictamen, reproductores, hashes y handoff guardados en REVIEW/review-verdict.json, evidence-sha256.txt y HANDOFF-review.md. Los 15 archivos fuente revisados permanecen idénticos al cierre."
+   ],
+   "not_checked": [
+    "[medido] Sin DayZ MCP ni cambios a la sesión viva. No existe log real para G8. Los contraejemplos son sintéticos; no demuestran un fallo observado del kit en juego.",
+    "[medido] Sin compilación, empaquetado o despliegue completo de EV110, integración de puentes EV109 o cruce #6. verify_pond_exact reutiliza ODOL existentes.",
+    "[medido] Permanecen sin verificar render, selección efectiva de superficies en solapes y continuidad funcional de labios y juntas.",
+    "[medido] Se mantienen los ocho controles laterales ausentes en seis juntas, declarados por el implementador; no se elevan a un hallazgo nuevo.",
+    "[medido] No se verificó la procedencia del log respecto al CSV/build desplegado. El control adicional con roadway=ground en 978 puntos también pasa G8; queda documentado como límite, sin afirmar ausencia real del kit.",
+    "[medido] Sin modificaciones al worktree ni commits. Todas las escrituras quedaron en REVIEW. Ronda 2 final: no se inició otra ronda ni se aplicaron correcciones."
+   ]
+  }
+ },
+ {
+  "track": "shores",
+  "impl": {
+   "track": "shores",
+   "summary": "I wrote the production pass tools/water/shore_ramp_v31.py and ran it on the EV109 inputs. All gates G1-G6 print PASS from scripts in impl-shores.\n\nOf 329 stretches in the worklist (threshold: wiggle p90 > 0.15 m), 141 were treated (24.8 km). 131 were rejected (16.3 km): 130 for wiggle, 1 for slope; most are steep pond banks. Another 57 were skipped (4.9 km): 27 Narva and 32 portions with more than 20 % fixed points. All 7 islet stretches (ids 8, 10, 25, 29, 48, 197, 313) were treated and are listed.\n\nThe output changes 16,050 vertices, 1,103 of them reserve-only. Platform, Narva and every other protected vertex changed: 0.\n\nDesign changes from the prototype, all measured on EV109:\n- Stretches end at natural cut points instead of box edges.\n- Side constraints are solved inside the spline as soft pulls; the old 6 m Gaussian bumps were the wiggle left in the target.\n- Defaults changed: SIDE_MARGIN 1.5, W_EDGE 100, SIDE_MAX 6.5.\n- A stretch that fails is retried with up to 3 more parameter variants before final rejection. This raised treated stretches from 85 to 141 and islet stretches from 4 to 7.\n- Wiggle samples start from a canonical point. Without it, the tool and the gate disagreed by up to 0.011 m.\n\nExactness is reported, not gated. Over all changed triangles, the median per-stretch p50 is 0.041 m and median p99 is 0.31 m. In 12 stretches p99 is over 1 m; the worst maximum is 4.87 m (stretch 0, near (10457, 9688)).\n\nNothing has been seen in game, and nothing was committed.",
+   "worktree_files": [
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/shore_ramp_v31.py sha256 738322d1f50073277c30459cc918e7083f163a1e7977fee987ec18f8c524a022 (written once by deliver.py with LF line endings; read back 63,014 bytes, hash MATCH; new and untracked)"
+   ],
+   "gates": [
+    {
+     "name": "G1 arrays and frozen masks",
+     "status": "PASS",
+     "evidence": "g1_arrays.py -> E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final/gates/G1.json. All 17 input arrays are byte-identical except heights (compared with tobytes, which is NaN-safe; 'level' contains NaN). The only extra array is v31_shore_ramp, and it equals the height diff (16,050 vertices). Changed: platform 0, Narva 0. Changed in kit/bridge_cut (dilated 1) or lagoon: 0. Changed within 60 m of the 20 pending 015 crossings: 0. Reserve-only vertices changed: 1,103, matching the report."
+    },
+    {
+     "name": "G2 wiggle on all changed triangles, islet listed",
+     "status": "PASS",
+     "evidence": "g2_wiggle.py -> final/gates/G2.json. The gate regenerates the footprint with pond_footprint_v31.py and uses its own waterline extraction and chaining (gatelib). 141 of 141 treated stretches meet p90 after <= max(0.08, 0.5 x before); worst ratio 0.997. The 7 islet stretches, as before/after/limit in m: 8 0.267/0.108/0.134; 10 0.256/0.079/0.128; 25 0.202/0.097/0.101; 29 0.203/0.092/0.102; 48 0.214/0.051/0.107; 197 0.146/0.030/0.080; 313 0.149/0.078/0.080. Gate and tool p90 agree exactly (0.000 difference over 141 stretches). That match is explained, not a tautology: the extraction and chaining code is separate, but both use the same wiggle definition and the same canonical sampling start."
+    },
+    {
+     "name": "G3 slopes",
+     "status": "PASS",
+     "evidence": "g3_slopes.py -> final/gates/G3.json. Slopes come from triangle normals over every triangle with a changed vertex. New triangles over 35 deg: 0. Worsened triangles over 35 deg: 0."
+    },
+    {
+     "name": "G4 sea/pond topology and envelope",
+     "status": "PASS",
+     "evidence": "g4_topology.py -> final/gates/G4.json. Sea components are built on the native triangle graph (A/B shared diagonal, E and S edges), with identity by shared wet vertices: 0 created, 0 removed, 0 split, 0 merged. Pond cells with a corner under 0.75 after footprint regeneration: 0 before, 0 after. Regenerated footprint cells outside the envelope: 0. Envelope sha256 equals the one the pass read. New pond vertices below their plane on a non-envelope cell: 0."
+    },
+    {
+     "name": "G5 bury_edges_v31 + pond_footprint_v31",
+     "status": "PASS",
+     "evidence": "g5_bury.py ran the real tools/water/bury_edges_v31.py (sha256 66dd7596...). Exit 0, so the pond_footprint assertions passed. Pass 0: 43 exposed, the same as the EV109 reference, with 0 new; changed_vs_input 0; all arrays carried byte-identical. Footprint report: bed under 1 m 0; field corners over 0.35 m: 7 (EV109 had 7)."
+    },
+    {
+     "name": "G6 negative controls",
+     "status": "PASS",
+     "evidence": "g6_negative.py -> final/negative2/G6.json. Each broken copy failed its gate for the intended reason: n1 platform vertex moved (G1); n2 v31_lagoon dropped (G1); n3 sea pocket dug inland (G4 created); n4 smallest sea component filled (G4 removed); n5 pond corner set to 0.5 m (G4 pond over sea); n6 +25 m spike (G3); n7 islet stretch 8 reverted while still claimed treated (G2); n8 envelope-edge border vertex lowered (G5: bury changes heights). Fixtures also pass: the [[-1,1],[1,-1]] NW-SE diagonal is 1 component, the NE-SW diagonal is 2, a cut channel counts as a split and a rejoined one as a merge. A first run (final/negative/) failed on n8 because that control picked a vertex where the envelope can absorb the change; I fixed the control and re-ran it."
+    },
+    {
+     "name": "tool unit checks",
+     "status": "PASS",
+     "evidence": "tool_checks.py against the worktree file. sigma 12 vs 24 changes the target by up to 1.9037 m (the reviewer measured 0 through the prototype's default argument). Two segments sharing an edge key but with points 0.5 m apart become 2 chains, not one averaged point. On the map: 6 discontinuities, giving 1,023 chains instead of the prototype's 1,019."
+    }
+   ],
+   "outputs": [
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final/terrain-shores.npz (sha256 bf72afe056428b6342cd78aeb44a8efa577ad6d28abafce31cb94cd3a4cbf7a4)",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final/shore-report.json (sha256 a8d13c3ded3464bcab2be8296db5b11a0f24462fa0b05b2d7b31e95ff29e1691): status per stretch, rejection reasons and attempts, variant used, wiggle before/after, exactness stats, crossings list, parameters",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final/terrain-shores-work/ (worklist.json reusable with --worklist, owner.npy, targets.json, round0-8 candidate terrains, owners, targets and footprints, fp-input-check)",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final/gates/G1-G5.json plus bury-work-* and g2/g4 footprints",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final/negative2/G6.json and the broken npz files",
+    "Superseded, kept rather than deleted: ev110-wip/shores/terrain-shores.npz, shore-report.json, terrain-shores-work/ and gates/ (the run before canonical sampling, where G2 failed stretch 53 by 0.004 m); shores/dev/ (tuning runs); final/negative/ (G6 run with the weak n8 control)",
+    "Scratch: C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-shores/ (shore_ramp_v31.py dev copy, gatelib.py, g1_arrays.py .. g6_negative.py, run_gates.py, tool_checks.py, deliver.py, render_st.py, renders/)"
+   ],
+   "rebuild_commands": [
+    "PY=C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe; B=E:/DayZ-Baltic-Build/v31-pond-layer-20261013",
+    "$PY -I tools/water/shore_ramp_v31.py $B/ev109/terrain-ev109.npz $B/fp-ev109/footprint.npz $B/ev109/envelope-br.npy $B/ev108-kit/cover-ev108.npy $B/ev110-wip/shores/final/terrain-shores.npz $B/ev110-wip/shores/final/shore-report.json   (defaults: --threshold 0.15 --sigma 12; crossings derived from evidence/v31-pond-layer-2026-10-13/bridges; the output paths and the default work dir <out>-work must not exist)",
+    "On the EV110 chain, replace the first two inputs with that chain's after-bury terrain and its last fpN/footprint.npz. Pass --crossings <json list of {id,x,z}> if more 015 bridges have been built.",
+    "$PY -I tools/water/bury_edges_v31.py <terrain-shores.npz> <ref terrain-ev109.npz> $B/ev108-kit/cover-ev108.npy $B/ev109/envelope-br.npy $B/fp-ev109/footprint-report.json <terrain-ev110.npz> <bury-work> <bury-report.json>; then copy the last bury-work/fpN to fp-ev110 and continue with pond_author_v31 / pack_water_v30.ps1 / stage_pond_pilot_v31 --full / verify_pond_exact_v31 / stage_bridges_v31 (records-ev108 + ev109/bridge-records) / compile / package, as in HANDOFF.md 'Reconstruir EV108 y EV109' steps 3-5",
+    "Gates: $PY -I <impl-shores>/run_gates.py <out.npz> <report.json> <work>/owner.npy <gate_dir>   and   $PY -I <impl-shores>/g6_negative.py <out.npz> <report.json> <work>/owner.npy <fresh_neg_dir>"
+   ],
+   "review_defects_addressed": [
+    "major / exactness claimed: removed. Exactness is measured over ALL changed triangles after footprint regeneration and reported per stretch, never claimed (median p99 0.31 m; worst max 4.87 m). Stretches are accepted or rejected by the executable wiggle guard, which runs on all changed triangles with the regenerated footprint.",
+    "major / guards only reported: they now reject before or inside the solve. Protected vertices within 60 m of the 20 pending 015 crossings (6,289 vertices) are protected before the solver. Portions with more than 20 % fixed points are not treated (32 portions). A slope over 35 deg that is new or worsened rejects the stretch (1). Each validation round rejects or retries stretches that create new exposed edges, pond-over-sea cells, envelope leaks, bed under 1 m, field over 0.35 m, sea topology changes or wiggle failures. The tool writes no output unless a round is clean and every failure is attributable to a stretch.",
+    "major / 4-neighbour pocket count: replaced in the tool with labels over native triangle edges (E, S, NW-SE). The gate uses a separate triangle-graph connectivity with component identity (created, removed, split, merged), and fixtures cover the [[-1,1],[1,-1]] case.",
+    "major / output dropped 13 arrays: all input arrays are copied and only heights is replaced; v31_shore_ramp is added. The input must not already carry that mask. G1 checks byte identity, and G5 checks that bury carries the arrays.",
+    "minor / chains averaged across discontinuities: chain() joins segments only when crossing points coincide within 1e-6 m. 6 map discontinuities now split chains (1,019 -> 1,023), and no averaging remains.",
+    "minor / sigma captured as a default: smooth_pinned takes sigma explicitly at every call. The report records sigma_used. A unit check shows 12 vs 24 differs by 1.9037 m.",
+    "minor / worklist length 60+20(n-1): the report gives per stretch extent_m (window span), covered_m (union of window intervals) and treated_interval_m (between the natural cut points)."
+   ],
+   "open_issues": [
+    "Coverage: 131 stretches rejected (16.3 km), 111 of them steep pond banks of cause 'free'. Their wiggle after/limit ratio has median 1.81, so the pass leaves them as they are. A different pond-bank method would be needed, or Guillermo accepts the residual.",
+    "Exactness residual near protected and fixed vertices: in 12 treated stretches p99 is over 1 m, and in 5 the maximum is over 2 m. The worst is stretch 0, sea at (10457, 9688), max 4.87 m; G2 passes it on wiggle. Look at it in game before declaring the shore straight there.",
+    "G2 margins are thin: worst ratio 0.997. Islet stretch 25 passes at 0.097 against a 0.101 limit, and 29 at 0.092 against 0.102. The result is deterministic, but any upstream change on the EV110 chain can flip these stretches to rejected.",
+    "Parameter choices are mine, tuned on EV109 and not reviewed: SIDE_MARGIN 1.5, W_EDGE 100, SIDE_MAX 6.5 (the prototype used 0.5 / 10 / 4), the soft-pull spline, and the 4 RETRY variants (123 / 9 / 5 / 4 stretches use variants 0 / 1 / 2 / 3). Strict mode moves the shoreline outward up to about one triangle next to frozen ground: causeways get wider.",
+    "Not run: pond_author, pack_water, stage_pond_pilot, verify_pond_exact_v31, stage_bridges, compile, package and server probes. verify_pond_exact_v31 is a project invariant and stays pending until the EV110 chain is assembled. No cross-family review (Codex) of the production code. Nothing seen in game.",
+    "The default crossings come from evidence/v31-pond-layer-2026-10-13/bridges (crossings-ev106 minus pilot and ev109 rollout = 20). They only cover the 31 transverse crossings, not the 14 longitudinal 015 sites. If EV110 builds more bridges, pass --crossings, or the newly built ones stay excluded, which is conservative.",
+    "bury_edges_v31 treats reserve as frozen (bury_edges_v31.py:26, :46). It does nothing here because there are 0 new exposed edges, but a later pass that exposes an edge on a moved reserve-only vertex would make bury revert its neighbours.",
+    "Stale outputs from my earlier runs remain in ev110-wip/shores/ (root terrain-shores*, gates/, dev/, final/negative/). I did not delete them under the no-recursive-delete rule. Use final/.",
+    "The worktree shows changes I did not make (M bridges_v31.py, build_surface_v30.py, probe_points_kit.py, streambed_kit_v31.py; new patch_surface/package_surface/extract_streambed files). Other sessions or tracks are editing in parallel; I wrote only tools/water/shore_ramp_v31.py."
+   ]
+  },
+  "r1": {
+   "track": "shores",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "G2 y la validación de producción convierten orillas no medibles en p90=0 y no cubren todos los triángulos afectados.",
+     "evidence": "tools/water/shore_ramp_v31.py:277-278 y :1013-1031; impl-shores/gatelib.py:135-136; impl-shores/g2_wiggle.py:43-51. Ejecuté PY -I -B R/own_negatives.py y R/production_islet_validate.py. El control crea un islote seco en (5514,9474): altura 1.0014945 -> 2.1750002 m, agua a 2.1500001 m, con owner y report coherentes. G1-G5 imprimen ALL PASS; G2 registra cero muestras válidas antes/después, dos muestras no medidas y p90=0. La función real validate devuelve rejections={} y unattributed=[]. Además, R/coverage_geometry.py identifica en la entrega 304/9056 triángulos de orilla afectados sin muestra finita, equivalentes a 61.5807 m. Resultados: R/own-negatives-results.json, R/production-islet-validation-result.json y R/g2-coverage-results.json.",
+     "fix": "Enumerar los segmentos de cada triángulo afectado y comprobar su cobertura. Tratar ausencia de muestras, cadenas demasiado cortas y geometría nueva o desaparecida como FAIL o INCONCLUSO, nunca como cero. Incorporar el control del islote a producción y G6."
+    },
+    {
+     "severity": "major",
+     "claim": "B-strict no impone en las alturas finales la restricción lateral que calcula junto a vértices protegidos.",
+     "evidence": "tools/water/shore_ramp_v31.py:25-31 y :550-563 describen y construyen las restricciones; :660-690 aplica correcciones suaves al objetivo y cuenta restricciones sin resolver; :778-800 fuerza el signo respecto al objetivo sin comprobar req. Ejecuté PY -I -B R/strict_side.py y R/strict_detail.py. Entre los 16050 vértices modificados hay 277 restricciones incumplidas en 16 tramos; seis son nuevas conversiones seco->mar del tramo 0 junto a plataforma seca protegida. Ejemplo (10614,9846): 0.7664891 -> 0.0914071 m, con mar a 0.75 m y vecinos protegidos a 2.8689277 y 2.9237561 m. La plataforma permanece intacta. Evidencia: R/strict-side-results.json y R/strict-new-violations.json. La clasificación geométrica está medida; el efecto jugable no se comprobó.",
+     "fix": "Comprobar el lado requerido sobre las alturas finales cuantizadas y rechazar o reintentar el tramo cuando se incumpla. Si estas restricciones son únicamente preferencias, corregir explícitamente el contrato B-strict antes de aceptar el resultado."
+    },
+    {
+     "severity": "major",
+     "claim": "G1 valida las exclusiones de cruces contra el propio informe auditado y permite un falso PASS.",
+     "evidence": "impl-shores/g1_arrays.py:51-61 toma las coordenadas de rep.protection.crossings y solo exige 20 entradas. Ejecuté PY -I -B R/own_negatives.py: mover +0.01 m un vértice en (1824,4338), a 54.8293 m del cruce real 015-1, produce G1 PASS si el informe conserva los 20 IDs pero sustituye sus coordenadas por (0,0). La misma NPZ con el informe original produce G1 FAIL, protected vertex changed. Evidencia: R/own-negatives/crossing-substitution.json, R/own-negatives/crossing-honest-report.json y R/crossing-honest.log. La entrega original sí respeta las 20 exclusiones comprobadas.",
+     "fix": "Cargar el inventario autorizado independientemente del informe; verificar identidades, coordenadas, unicidad y procedencia de cualquier override --crossings. Añadir este control a G6."
+    },
+    {
+     "severity": "major",
+     "claim": "La guarda interna de pendientes admite triángulos nuevos sobre 35 grados que G3 rechaza.",
+     "evidence": "tools/water/shore_ramp_v31.py:822 y :1003 aplican SLOPE_EPS=0.01 también al cruce inicial del límite; impl-shores/g3_slopes.py:13 no lo hace. Ejecuté PY -I -B R/slope_finalize.py. Fixture float32: pendiente máxima 34.9990008 -> 35.0050002 grados; slope_guard devuelve cero rechazos, pero g3_slopes.py imprime G3 FAIL, con dos triángulos nuevos sobre 35 entre seis afectados. Evidencia: R/slope-boundary-comparison.json. La entrega real no presenta esta infracción.",
+     "fix": "Rechazar cualquier paso de <=35 a >35 grados. Reservar la tolerancia para triángulos que ya superaban el límite y aplicar el mismo criterio en las guardas local y global."
+    }
+   ],
+   "gates_rerun": [
+    "R = C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-shores-review1. PY = C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe. Todas las ejecuciones usaron -I. Gates ejecutados desde copias byte-identicas en R/gates-src; hashes en R/gate-source-hashes.json. Informe guardado en R/review.json y manifiesto en R/evidence-manifest.json. Sin cambios de worktree, commit ni uso de DayZ MCP.",
+    "SHA256 comprobados antes y despues: shore_ramp_v31.py=738322d1f50073277c30459cc918e7083f163a1e7977fee987ec18f8c524a022; terrain-shores.npz=bf72afe056428b6342cd78aeb44a8efa577ad6d28abafce31cb94cd3a4cbf7a4; shore-report.json=a8d13c3ded3464bcab2be8296db5b11a0f24462fa0b05b2d7b31e95ff29e1691. Coinciden tambien los cinco hashes declarados de entradas y herramienta de huella.",
+    "run_gates.py sobre final/: G1 PASS, G2 PASS, G3 PASS, G4 PASS, G5 PASS; ALL PASS. Registro: R/gates-rerun.log.",
+    "g1_arrays.py: G1 PASS. Comprobacion propia adicional: conserva los 17 arrays originales; los 16 distintos de heights son byte-identicos. Unica alta: v31_shore_ramp, exactamente igual al delta de 16050 vertices; 1103 reserve-only; cero cambios en plataforma, Narva y mascaras protegidas. R/snapshot.json.",
+    "g2_wiggle.py: G2 PASS, 141/141 tramos y los siete del islote; peor razon 0.996626. Sensibilidad adicional: fases desplazadas 0.125/0.25/0.375 m hacen fallar 3/2/2 tramos; muestreo de 0.05 m hace fallar 2/141 por margenes relativos inferiores a 0.001. Esto mide sensibilidad, no incumplimiento de la definicion canonica. R/g2-coverage-results.json.",
+    "g3_slopes.py: G3 PASS; 42774 triangulos afectados, cero nuevos o empeorados sobre 35 grados.",
+    "g4_topology.py: G4 PASS; 82 componentes antes/despues, cero creados, eliminados, divididos o fusionados; cero celdas de charca sobre mar y cero fuera de envolvente.",
+    "g5_bury.py: G5 PASS. Ejecuto realmente bury_edges_v31.py y pond_footprint_v31.py: 43 bordes expuestos de referencia, cero nuevos, cero alturas cambiadas por bury y todos los arrays conservados. No reprodujo reversion de vecinos de reserve-only.",
+    "g6_negative.py: G6 PASS; los ocho controles n1-n8 imprimieron el FAIL esperado con su razon; cuatro fixtures de conectividad correctos. R/g6-rerun.log.",
+    "tool_checks.py: sigma 12 vs 24 max diff m 1.9037 PASS; separacion de cadenas en discontinuidad PASS.",
+    "Precondiciones CLI: salida existente, entrada con v31_shore_ramp y falta de reserve rechazadas con exit 1 y la asercion correspondiente; centinela de salida intacto. R/cli-results.json.",
+    "Reconstruccion completa EV109: exit 0; 329 tramos, 141 tratados, 131 rechazados y 57 omitidos. NPZ identica por SHA256 a la entrega. R/rebuild.log y R/determinism.json.",
+    "Entrada alternativa: intermedio ev110-wip/kit/final/terrain-ev108.npz, SHA256 76f166ee99824fd6d11dc4af22eb3b3f79d75bcb31a3c0d1454dd1facd8ce935, con 1803 alturas distintas de EV109. Pasada completa exit 0; G1-G5 individuales con las entradas correspondientes: PASS; metadatos byte-identicos. R/alternate-result.json.",
+    "Controles propios: bit alterado en level -> G1 FAIL; altura infinita -> G3 FAIL; cruce excluido con coordenadas sustituidas -> G1 PASS indebido; islote nuevo no medible -> ALL PASS indebido; cruce fino de 35 grados -> G3 FAIL frente a cero rechazos internos. R/own-negatives-results.json y R/slope-boundary-comparison.json.",
+    "Exactitud del tramo 0 contrastada mediante distancia geometrica a segmentos objetivo: 711 triangulos, 1422 extremos; p99=2.249089 m, maximo=4.869571 m en (10092,9304.438), coherente con 4.8697 declarado. Ese residuo no se denuncia como incumplimiento: no tenia umbral de aceptacion. R/stretch0-exact-results.json."
+   ],
+   "not_checked": [
+    "No ejecutados pond_author, pack_water, stage_pond_pilot --full, verify_pond_exact_v31, stage_bridges, compilacion, empaquetado ni sondas de juego. Leida la cadena de HANDOFF.md:88-109; G5 no acredita el producto compilado ni la aceptacion visual de Guillermo.",
+    "No reconstruida la cadena EV110 final combinando todos los tracks; solo el intermedio de kit indicado. run_gates.py:15-16 fija EV109, por lo que la prueba alternativa ejecuto cada gate con entradas explicitas.",
+    "No cuantificado el efecto sobre los 14 sitios longitudinales de bugs.md:30. shore_ramp_v31.py:450-462 obtiene los 20 pendientes del inventario de cruces y sitios construidos; no acredita por si mismo proteccion de los otros 14. No se afirma dano no reproducido en ellos.",
+    "No demostrado sobreajuste de los reintentos ni degradacion jugable por los 131 tramos rechazados, el ensanche de calzadas o el residuo de exactitud. Se midio sensibilidad del muestreo, no apariencia en motor.",
+    "No reproducida seleccion accidental de salidas obsoletas: todas las rutas utilizadas fueron explicitas y las salidas nuevas. No probado bury despues de modificaciones posteriores de otros tracks; en la ejecucion actual no altera los 1103 vertices reserve-only movidos."
+   ]
+  },
+  "fix": {
+   "track": "shores",
+   "summary": "I fixed all 4 major defects from the review. The fixed pass ran on EV109, and every gate prints PASS: G1-G5, the new G7 and G6 (13 controls, 4 fixtures). The tool checks also pass.\n\nNew result in ev110-wip/shores/final2/: 154 of 329 stretches treated (27.1 km), up from 141. 118 rejected (14.0 km) and 57 skipped (4.9 km). 17,870 vertices changed, 1,233 of them reserve-only. Platform, Narva and every other protected vertex: 0 changed.\n\nIslet: 6 of 7 stretches treated (8, 10, 25, 29, 48, 197). Stretch 313 is now rejected: its wiggle p90 after is 0.102 m against a 0.080 m limit.\n\nFixes:\n1. G2 and the tool's validation now FAIL a stretch instead of scoring an unmeasurable shore as 0, in four cases:\n   - no finite sample before or after;\n   - a waterline segment on a chain too short to measure, before or after;\n   - the number of chains through the stretch's triangles changes;\n   - a closed chain lying wholly inside the stretch appears or disappears.\n   - A segment shorter than the 0.5 m sample step on a measured chain counts as covered by that chain. The reviewer's 304 triangles (61.6 m) were all of this kind; the longest was 0.47 m.\n   - Stretches 93 and 308 had been \"treated\" with p90 = 0 and are now rejected.\n   - The reviewer's islet control is now rejected by validate in production and fails G2 (G6 n9).\n2. B-strict is a hard rule on the final float32 heights:\n   - After the solve, a changed vertex on the wrong side is set 0.05 m (SIDE_CLR) onto the required side.\n   - Any violation left after the clamps rejects the stretch.\n   - New gate G7 rechecks this independently: 277 violations on the old delivery, 0 of 17,870 now.\n   - To keep the islet I added retry variants 4-6 (larger side margin, reach and iterations).\n   - Re-solving the least squares around the clamped vertices was tried and was worse: 4 of 11 lost stretches passed, against 8 with the plain clamp. It was dropped.\n3. G1 and G7 now take the pending crossings from the evidence inventory, never from the report. The report's ids and coordinates must match it. The tool's --crossings override is checked against the inventory, and a new --built option adds the built sites of a later chain. Coordinate substitution now fails G1 (G6 n10).\n4. Slope:\n   - Going from <=35 to >35 deg is rejected with no tolerance. SLOPE_EPS only applies to triangles already over 35.\n   - The tool counts a triangle within 1e-6 deg of 35 as crossing, a margin for the two slope formulas.\n   - A non-finite height fails G3.\n   - The 34.999 -> 35.005 fixture is now rejected by the tool and by G3.\n\nCost:\n- Exactness got worse because strict mode pushes the shoreline outward. Worst max 7.20 m (stretch 182, pond at (12184, 356)); before it was 4.87 m. p99 is over 1 m in 21 stretches, before 12.\n- The median per-stretch p50 is 0.041 m and the median p99 0.37 m.\n\nThe production run (census, no --worklist) gives the same terrain sha256 as the dev run that used --worklist. Nothing seen in game. No commit.",
+   "worktree_files": [
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/water/shore_ramp_v31.py sha256 a67e9f9387035c9b001d71b2e7e57a3643553605e323f84634fe5b45378adf97 (70,444 bytes, LF line endings, written in one write by deliver.py, read back MATCH; replaces 738322d1...; untracked, not committed)"
+   ],
+   "gates": [
+    {
+     "name": "G1 arrays, frozen masks, independently derived crossings",
+     "status": "PASS",
+     "evidence": "final2/gates/G1.json. 0 arrays missing; the only extra array is v31_shore_ramp; 0 differing arrays (byte compare); mask equals the changed vertices (17,870). platform 0, narva 0, other protected 0, crossing zone 0. The zone covers 6,289 vertices around 20 crossings derived from crossings-ev106.json minus sites-pilot and ev109/sites-rollout. The report's crossings match it: 0 id and 0 coordinate mismatches. reserve_only_changed 1,233, equal to the report."
+    },
+    {
+     "name": "G2 wiggle plus coverage on all changed triangles, islet listed",
+     "status": "PASS",
+     "evidence": "final2/gates/G2.json. 154/154 treated stretches pass. Worst after/limit ratio 0.9975; median p90 0.155 -> 0.0625 m. Coverage: 10,240 affected segments before and 9,996 after; 0 on unmeasurable chains, 0 stretches without samples, 0 chain-count or closed-chain changes. Islet as before/after/limit in m: 8 0.267/0.074/0.134; 10 0.256/0.115/0.128; 25 0.202/0.078/0.101; 29 0.203/0.082/0.102; 48 0.214/0.051/0.107; 197 0.146/0.031/0.080. Islet stretch 313 is rejected by the tool (0.102 > 0.080)."
+    },
+    {
+     "name": "G3 slopes (no tolerance at the 35 deg crossing; finite heights)",
+     "status": "PASS",
+     "evidence": "final2/gates/G3.json. Over 47,348 changed triangles: 0 new over 35, 0 worsened, heights finite. The 36.25 deg maximum is a pre-existing triangle that did not get steeper."
+    },
+    {
+     "name": "G4 sea/pond topology and envelope",
+     "status": "PASS",
+     "evidence": "final2/gates/G4.json. Sea components 82 -> 82 on the triangle graph: 0 created, removed, split or merged. Pond cells over sea: 0 -> 0. Footprint outside the envelope: 0. Pond vertices below their plane on a non-envelope cell: 41 -> 41, 0 new. The envelope sha256 equals the one the pass read."
+    },
+    {
+     "name": "G5 bury_edges_v31 + pond_footprint_v31",
+     "status": "PASS",
+     "evidence": "final2/gates/G5.json. The real bury_edges_v31.py exits 0 (footprint assertions pass): 43 exposed, the same as the EV109 reference, 0 new. changed_vs_input 0; all arrays carried byte-identical. Footprint: 380,010 cells, bed under 1 m 0, field corners over 0.35 m 7 (EV109 had 7)."
+    },
+    {
+     "name": "G6 negative controls",
+     "status": "PASS",
+     "evidence": "final2/negative/G6.json and final2/g6.log. All 13 controls make their gate FAIL for the intended reason:\n- n1-n8 as before.\n- n9: a new unmeasurable islet at (5514, 9474) claimed by stretch 9000 -> G2.\n- n10: a vertex moved 30-55 m from a real crossing, with the report's crossing coordinates zeroed -> G1.\n- n11: a changed sea vertex next to dry platform lowered to 0.70 m -> G7.\n- n12: a triangle going from 34.999 to 35.005 deg -> G3.\n- n13: an infinite height -> G3.\nThe 4 connectivity fixtures are correct."
+    },
+    {
+     "name": "G7 B-strict side on final heights (new)",
+     "status": "PASS",
+     "evidence": "final2/gates/G7.json. 17,870 changed vertices tested in 154 stretches: 0 violations. Own implementation; protection comes from the evidence crossings, never from the report. Run on the old delivery (final/), it reproduces the review: 277 violations in 16 stretches."
+    },
+    {
+     "name": "tool checks (production code)",
+     "status": "PASS",
+     "evidence": "final2/tool-checks/tool-checks.json, run against the worktree tool:\n- sigma 12 vs 24: max diff 1.9037 m.\n- Chain split at a discontinuity.\n- slope_guard rejects the 34.999 -> 35.005 fixture (2 triangles); the tolerance above 35 is kept.\n- --crossings: moved, unknown and duplicate entries are refused; an inventory subset is accepted; 20 pending by default.\n- validate() rejects the reviewer's islet control with 'chain too short', 'no finite sample' and chain-count reasons; 0 unattributed."
+    },
+    {
+     "name": "determinism",
+     "status": "PASS",
+     "evidence": "The final2 run from the worktree (with census) and the dev run (mirror copy of the same bytes, --worklist) produce the same terrain sha256 4904642f..."
+    }
+   ],
+   "outputs": [
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final2/terrain-shores.npz sha256 4904642fa60e063ded1cb62eccef8722f6c3239d71b9a3fbc4af3ced5155360e",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final2/shore-report.json sha256 2156f1d4527dd0c3c46da8abad031b966d5e0ad73ebb210ced5270742c463967. Per stretch: status, reasons, attempts, variant, side_projected, side_violations_final, coverage before/after, wiggle (null when unmeasurable), exactness.",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/shores/final2/terrain-shores-work/ (worklist.json, owner.npy, targets.json, round0-14), shore-run.log, gates/ (G1-G5, G7 json), gates.log, negative/ (G6.json, broken npz files), g6.log, tool-checks/, tool-checks.log",
+    "Superseded and kept, not deleted: ev110-wip/shores/final/ (first delivery, which review 1 rejected), dev/rv1a (strict clamp without the new variants: 133 treated, 2 islet), dev/rv1b (equal to final2), dev/L_*, R_*, I_* (sweeps; R_* = re-solve variant, rejected).",
+    "Scratch C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-shores/:\n- Gates, sha256 prefixes: gatelib.py d9d3e0eb, g1_arrays.py 1684715c, g2_wiggle.py 571b1a1d, g3_slopes.py 4ae858f6, g4_topology.py 4eb06b5a, g5_bury.py f062c2fd, g6_negative.py 8775b7ce, g7_strict_side.py 22be0253, run_gates.py 27a108fe, tool_checks.py ce803da8.\n- Patches: patch_review1.py, patch_retry2.py, patch_g6.py, patch_gatelib2.py.\n- Analysis: ana_rv.py, ana_cov.py.\n- Sweeps: sweep2.sh; mirror/ is a dev copy with the evidence json files.\n- v1/ holds the earlier versions of every script."
+   ],
+   "rebuild_commands": [
+    "PY=C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe; B=E:/DayZ-Baltic-Build/v31-pond-layer-20261013; G=<scratchpad>/impl-shores",
+    "cd <worktree>; $PY -I tools/water/shore_ramp_v31.py $B/ev109/terrain-ev109.npz $B/fp-ev109/footprint.npz $B/ev109/envelope-br.npy $B/ev108-kit/cover-ev108.npy $B/ev110-wip/shores/final2/terrain-shores.npz $B/ev110-wip/shores/final2/shore-report.json   (defaults: --threshold 0.15 --sigma 12; the outputs and <out>-work must not exist; about 4 min)",
+    "On the EV110 chain: replace the first two inputs with that chain's after-bury terrain and its last fpN/footprint.npz. Add --built evidence/v31-pond-layer-2026-10-13/bridges/ev110/sites-ev110.json (or any later built-sites file) when bridges are built there, and pass the same --built to run_gates.py so G1 and G7 derive the same 015 set.",
+    "$PY -I $G/run_gates.py <out.npz> <report.json> <work>/owner.npy <gate_dir> [--in-terrain T --in-fp FP --env E --cover C --ref-fp-report R --built S]   (runs G1, G2, G3, G4, G5, G7)",
+    "$PY -I $G/g6_negative.py <out.npz> <report.json> <work>/owner.npy <fresh_neg_dir>   (inputs are fixed to EV109)",
+    "$PY -I $G/tool_checks.py <worktree>/tools/water/shore_ramp_v31.py <out.npz> <work>/owner.npy <work>/targets.json <fresh_dir>",
+    "Then bury_edges_v31 -> pond_author_v31 -> pack_water_v30.ps1 -> stage_pond_pilot_v31 --full -> verify_pond_exact_v31 -> stage_bridges_v31 -> compile -> package, as in HANDOFF.md 'Reconstruir EV108 y EV109' steps 3-5."
+   ],
+   "review_defects_addressed": [
+    "major / G2 turned unmeasurable shores into p90 = 0:\n- The tool's validate() (shore_ramp_v31.py, chain_coverage and the rejection block in validate) and g2_wiggle.py now map every waterline segment of the affected triangles to its chain.\n- A stretch fails when it has no finite sample, a segment on a chain too short to measure, a change in the number of chains through its triangles, or a closed chain inside it that appears or disappears.\n- p90 is null, never 0, when unmeasurable.\n- Short segments on a measured chain count as covered by that chain (the reviewer's 304 triangles are of this kind; the longest is 0.47 m).\n- The islet control is in production (tool_checks check 5) and in G6 (n9).\n- On final2: 0 unmeasurable segments over 10,240/9,996 affected segments; stretches 93 and 308 are now rejected.",
+    "major / B-strict not enforced on final heights:\n- run_stretch clamps vertices left on the wrong side SIDE_CLR = 0.05 m onto the required side, applies the pond bed rule again, then counts violations on the float32 heights. Any violation rejects the stretch (reason 'strict side').\n- The contract is kept as stated in the design (free neighbours take the protected vertex's side), not demoted to a preference.\n- Independent gate G7: 277 violations on the old delivery, 0 now.\n- Re-solving around clamped vertices was tried and lost: 4/11 lost stretches passed against 8/11 with the clamp.\n- Retry variants 4-6 (side margin 2.5-3.5 m, reach 10-12 m, 30 iterations) recover the islet: 6/7 instead of 2/7 with the clamp alone.",
+    "major / G1 validated crossings against the audited report:\n- gatelib.authorized_crossings derives the 20 pending crossings from the evidence inventory and the built-sites files.\n- G1 and G7 build the 60 m zone from it.\n- G1 FAILS on duplicate, missing or extra ids, or coordinates more than 0.01 m off.\n- The tool's --crossings override must be inventory entries with inventory coordinates and unique ids; --built adds later built sites.\n- G6 n10 reproduces the substitution and now FAILS.",
+    "major / slope tolerance admitted new >35 deg triangles:\n- slope_bad(), used by both the local guard and the global validation, rejects any crossing from <=35 to >35 with no tolerance (plus a 1e-6 deg safety margin) and any non-finite slope.\n- SLOPE_EPS only applies to triangles already over 35.\n- G3 also fails non-finite heights.\n- The fixture is rejected by slope_guard (tool_checks check 3) and by G3 (G6 n12)."
+   ],
+   "open_issues": [
+    "Strict mode costs exactness. Worst max distance to the target is 7.20 m (stretch 182, pond at (12184, 356)); in the first delivery it was 4.87 m. p99 is over 1 m in 21 stretches and the max over 2 m in 10. The causes are the outward pulls (variant 4 allows 12 m) and 73 vertices clamped in 18 stretches. Wiggle passes everywhere. Look at stretches 182, 3, 2 and 274 in game before calling those shores straight.",
+    "Islet stretch 313 is now rejected (wiggle p90 0.102 m against a 0.080 m limit), and so are 61, 121, 222 and 295. 20 others were gained. G2 margins stay thin: worst ratio 0.9975. Stretch 10 passes at 0.115 against 0.128. Any change upstream in the EV110 chain can flip these.",
+    "There are 7 retry variants, tuned on EV109 (variants used by treated stretches: 115 / 6 / 5 / 3 / 11 / 5 / 9). Over-fitting to EV109 is neither shown nor ruled out. Neither the parameters nor the strict-clamp design have had a cross-family review.",
+    "The G2 coverage rule is mine: segments shorter than the 0.5 m sample step on a measured chain count as covered. Phase sensitivity is not addressed: the reviewer's phase shifts fail 3/2/2 stretches. That is a property of the metric, not of the pass.",
+    "bury_edges_v31 treats reserve as frozen (bury_edges_v31.py:26, :46). It does nothing on this output (0 new exposed edges). A later pass that exposes an edge on a moved reserve-only vertex (1,233 now) would make bury revert its neighbours.",
+    "For EV110: evidence/v31-pond-layer-2026-10-13/bridges/ev110/sites-ev110.json exists from another track and is untracked. If those bridges are built in EV110, pass --built to both the tool and the gates. Without it the zones stay excluded, which is conservative. Only the 31 transverse crossings are covered; the 14 longitudinal 015 sites are not.",
+    "Not run: pond_author, pack_water, stage_pond_pilot --full, verify_pond_exact_v31 (a project invariant), stage_bridges, compile, package and probes. G6 inputs are fixed to EV109. Nothing seen in game. No commit.",
+    "Earlier outputs are kept, not deleted (no recursive delete on E:): ev110-wip/shores/final/ (rejected first delivery), the root terrain-shores*, gates/, and dev/. Use final2/. The worktree also shows other tracks' changes; I wrote only tools/water/shore_ramp_v31.py."
+   ]
+  },
+  "r2": {
+   "track": "shores",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "La corrección de G2 todavía permite sustituir una orilla cerrada por otra disjunta: compara cantidades de cadenas, sin verificar su correspondencia espacial.",
+     "evidence": "tools/water/shore_ramp_v31.py:1002-1010 y :1112-1115; OUT/gates-src/g2_wiggle.py:55-58. La condición `if cvb[\"closed_inside\"] != cva[\"closed_inside\"]` solo compara recuentos. Control sintético reproducido con identity_control_v2.py: 45 vértices modificados alrededor de (2172,6378), charca a 2,450000 m; desaparece un islote de 6 vértices secos y aparece otro de 13, sin vértices secos comunes y con 15,70 m entre sus límites en X. Ambas orillas tienen una cadena cerrada; p90 0,523548 -> 0,161437 m, límite 0,261774 m, 123/153 muestras. G1-G5 y G7 imprimen ALL PASS; validate devuelve rejections={} y unattributed=[]. identity_isolation.py confirma que eliminación y creación por separado fallan tanto G2 como validate. Evidencia: OUT/identity-control-v2-result.json, OUT/identity-independent-proof.json y OUT/identity-isolation-result.json (OUT = scratchpad/impl-shores-review2). Es un defecto demostrado del validador; no se observó esta sustitución en final2 (el solver no se ha demostrado que la genere sobre EV109).",
+     "fix": "Verificar correspondencia espacial e identidad de las componentes delimitadas por las cadenas cerradas, conservando el lado seco/mojado; rechazar desapariciones y creaciones aunque sus recuentos se compensen. Incorporar el control combinado a producción y G6, junto con sus dos controles aislados."
+    }
+   ],
+   "gates_rerun": [
+    "Evidencia y review.json escritos exclusivamente en OUT=C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-shores-review2. PY=C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe. Sin modificaciones del worktree, commit ni DayZ MCP.",
+    "PY -I -B OUT/bootstrap.py y OUT/finalize_evidence.py: hashes iniciales/finales idénticos y coincidentes con los declarados. Script a67e9f9387035c9b001d71b2e7e57a3643553605e323f84634fe5b45378adf97, 70.444 bytes, 1.293 LF y cero CR; terreno 4904642fa60e063ded1cb62eccef8722f6c3239d71b9a3fbc4af3ced5155360e; informe 2156f1d4527dd0c3c46da8abad031b966d5e0ad73ebb210ced5270742c463967. Copias de los diez scripts de gates identicas al autor: gate-source-hashes.json y final-verification.json.",
+    "PY -I -B OUT/run_review.py author: G1-G5 y G7 PASS sobre final2; G6 PASS con 13 negativos y 4 fixtures de conectividad; TOOL CHECKS PASS. Bury/footprint real: 43 bordes expuestos heredados, cero nuevos, cero cambios de altura, 18 arrays conservados.",
+    "PY -I -B OUT/run_review.py rebuild: reconstrucciones completas por census y --worklist producen el mismo SHA-256 4904642fa60e063ded1cb62eccef8722f6c3239d71b9a3fbc4af3ced5155360e; informes de los 329 tramos identicos a final2. Evidencia: rebuild-status.json y final-verification.json.",
+    "PY -I -B OUT/audit_numeric.py, sin importar gatelib: reproduce 277 infracciones B-strict en 16 tramos antiguos y cero entre los 17.870 vertices finales; 4.044 restricciones laterales comprobadas. Cero cambios protegidos, 1.233 reserve-only; 47.348 triangulos afectados, cero pendientes nuevas o agravadas sobre 35 grados. Componentes de mar 82 -> 82, sin creacion/eliminacion/division/union. Cero charcas sobre mar, fuera de envolvente o nuevos fondos bajo 1 m. Confirma 73 clamps en 18 tramos.",
+    "PY -I -B OUT/rerun_r1.py: controles originales adaptados unicamente a final2 y nuevas interfaces. El islote en (5514,9474) ahora falla G2 y validate con seis segmentos no medibles y p90 null; la sustitucion de coordenadas falla G1; tambien fallan el bit alterado de metadata y la altura infinita. Evidencia: r1-adaptations.json, own-negatives-results.json y production-islet-validation-result.json.",
+    "PY -I -B OUT/slope_cli.py: fixture float32 34,9990008 -> 35,0050002 rechazado por produccion y G3, dos triangulos. En 20.000 celdas alrededor de 35 grados: cero aceptaciones inseguras frente a normales independientes; 208 rechazos conservadores por el margen. Fixtures NaN/Inf rechazados. Las cinco precondiciones CLI fallan por su causa prevista: salida, informe o work existentes, mascara previa y reserve ausente.",
+    "PY -I -B OUT/geometry_audit.py, geometria independiente: G2 reproducido en 154/154 tramos, incluidos seis del islote. 10.240/9.996 segmentos afectados antes/despues; cero sobre cadenas no medibles. Despues quedan 376 segmentos sin muestra directa, 73,5509 m en total, todos menores de 0,5 m; maximo 0,49453 m. Distancia de extremos a segmentos objetivo: maximo 7,203132 m en tramo 182; p99 >1 m en 21 tramos y maximo >2 m en 10. No constituye por si sola incumplimiento: no hay umbral de exactitud ni violacion medida de envolvente, mar o bordes.",
+    "PY -I -B OUT/review_regressions.py: confirma 20 tramos recien tratados y siete recien rechazados. Recalcula independientemente sus ultimas candidaturas archivadas: 93/308 carecen de muestras; 61/121/222/295/313 exceden su limite. G6 auditado contra las modificaciones materializadas: los 13 controles fallan por la causa declarada y los gates positivos pasan.",
+    "OUT/audit_numeric.py y OUT/slope_cli.py: inventario independiente 31 cruces menos 11 construidos = 20 pendientes, 6.289 vertices excluidos, coincidencia de IDs/coordenadas. Overrides desplazados, desconocidos, duplicados o NaN rechazados. --built probado con el archivo EV110 actual y un fixture que retira 015-4: herramienta y G1/G7 concuerdan. El archivo EV110 actual no anade IDs construidos respecto a EV109.",
+    "PY -I -B OUT/identity_control_v2.py y OUT/identity_isolation.py: falso PASS combinado confirmado e identificado como defecto major; controles aislados FAIL. Reconstruccion triangular independiente en identity-independent-proof.json.",
+    "OUT/review_regressions.py, diagnostico subpaso: dos segmentos analiticos de 0,201 m esconden un pico de 0,20 m entre muestras; chain_coverage informa cero segmentos no medidos. Es un limite del muestreo a 0,5 m, sin reproduccion nativa suficiente para declarar otro defecto bloqueante."
+   ],
+   "not_checked": [
+    "No se ejecutaron pond_author, pack_water, stage_pond_pilot --full, verify_pond_exact_v31, stage_bridges, compilacion, empaquetado ni sondas. No hay validacion visual, fisica, navegacion o rendimiento en juego.",
+    "No se ejecuto la cadena completa EV110: --built se comprobo sobre EV109 con worklist vacio y mediante G1/G7. Tampoco se cuantificaron los 14 sitios longitudinales 015.",
+    "El control de sustitucion demuestra que validate y los gates aceptan una candidata incorrecta; no demuestra que el solver genere esa sustitucion automaticamente sobre EV109.",
+    "No se certifica geometria continua entre muestras de 0,5 m ni exactitud maxima en todos los puntos interiores de cada segmento. El control subpaso es analitico, no un terreno nativo.",
+    "No se demostro generalizacion de las siete variantes fuera de EV109 ni se evaluo el efecto de pases posteriores sobre los vertices reserve-only."
+   ]
+  }
+ },
+ {
+  "track": "surface",
+  "impl": {
+   "track": "surface",
+   "summary": "Las cinco puertas imprimen PASS sobre el terreno EV109. La pintura de carretera bajo los 11 puentes cortados está eliminada en las capas.\n\n**Generador.** `tools/terrain/build_surface_v30.py` tiene la opción `--road-off-lowered <ref.npz>` y `--road-off-min-drop M` (por defecto 0,5 m):\n- Apaga la carretera en toda celda nativa con algún vértice más de M por debajo de la referencia. La regla está en `lowered_cells`, :71, y se aplica en `tile()`, :183. Los vértices elevados no cuentan.\n- Sin la opción, el generador produce los mismos bytes que antes. G1 lo prueba en 42 de 42 PNG de 21 teselas, más una prueba de la opción sin rebaje en 2 teselas.\n\n**Herramienta de parche.** `tools/terrain/patch_surface_v31.py` hace lo siguiente:\n- Celdas afectadas: rebajadas más de 0,5 m respecto a EV95 (40c174e3) y que tenían pintura en las capas enviadas, es decir, un píxel a ≤3,5 m de la cadena que estaba seco con el terreno y el plano de agua de EV95 (768e8e58).\n- Zona: esas celdas más 2 px (Chebyshev), calculada en coordenadas del mundo.\n- Regenera las teselas con los flags de EV95, el plano de agua de destino y la opción nueva.\n- Compone solo dentro de la zona sobre el PNG fuente. El PNG fuente es aquel cuya PAA hermana coincide byte a byte con la entrada del PBO de EV95.\n- Convierte con ImageToPAA y escribe el manifiesto.\n\n**Empaquetado.** `tools/terrain/package_surface_patch_v31.py` sucede a `package_ev109.py`. Copia todas las entradas de EV95 salvo el WRP y las PAA del manifiesto, empaqueta con FileBank y comprueba que las entradas cambiadas sean exactamente las del manifiesto más el WRP. No despliega nada en P:/Mods.\n\n**Resultado en EV109** (fp-ev109, plano b810adc6):\n- 154 celdas afectadas, 21 teselas y 42 entradas PAA.\n- Las teselas (23,4) y (28,15) toman su fuente de EV82. (23,5) sí estaba en el set de EV95, al contrario de lo que decía la investigación.\n- Hay 7 celdas rebajadas 0,50–0,58 m en (4755–4773, 5499–5511). Son un cruce de río convertido en mar en EV96. Ya eran agua en EV95, así que no tenían pintura y quedan fuera.\n\n**Hallazgo nuevo.** `texHeaders.bin` ya está desfasado en B, EV95 y EV109: 1.497 de 2.048 entradas no coinciden con las PAA enviadas. Lo medí con `binarize -texheader`, y el sha 41bd269f es el mismo en los tres PBO. Seguí ese precedente y no lo regenero.\n\n**Defectos de la revisión de Codex que quedan cubiertos:**\n- G2 ya no es tautológico. Compara con una referencia renderizada sin ninguna carretera y tiene tres controles negativos que fallan, uno de ellos con la pintura reintroducida.\n- La PAA decodificada también se comprueba.\n- La regla depende de la altura y no de la máscara `v31_bridge_cut`, así que cubre también las aletas del end-fit.",
+   "worktree_files": [
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/build_surface_v30.py sha256 6f132365c60638ce48c8d7f49b209016b8b4439799a0f36afc30f89dcfffa1f0 (modificado; LF; escrito de una vez y releído)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/patch_surface_v31.py sha256 f2ff5cd23d50d9d702ae8b2cbc509fb831097a9ee6108eebefac6f7b6a93878a (nuevo)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/package_surface_patch_v31.py sha256 d4cc61513082b3c6e04591a89447b9f3a6b657beea93155859f8c8c510808c2a (nuevo)"
+   ],
+   "gates": [
+    {
+     "name": "G1 default byte-identical",
+     "status": "PASS",
+     "evidence": "gates/g1_default_identity.py → E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/gates/patch-ev109-74acdd80ee9f/G1_default_identity.json. El generador del worktree sin la opción, con el terreno 40c174e3, el plano 768e8e58 y los flags de EV95: 42 de 42 PNG idénticos por sha256 al PNG fuente cuya PAA es la entrada enviada (21 teselas, dos de ellas de fuente EV82). Prueba de no-op: con la opción y referencia igual al destino, 4 de 4 idénticos a la ejecución sin opción. Sin control negativo: es una igualdad directa de ficheros."
+    },
+    {
+     "name": "G2 road paint vs independent no-road reference",
+     "status": "PASS",
+     "evidence": "gates/g2_road_paint.py → G2_road_paint.json.\n- Dominio reimplementado en gate_lib: 154 celdas, 8.856 px sumados por tesela.\n- Referencia: tile() con el árbol de carreteras sustituido por un punto lejano; no usa la opción.\n- PNG parcheado: máscara 0 px distintos de 8.856; satélite 0 de 7.301 px comparables. Quedan fuera 1.555 px de banda de blur a ≤3 px de la pintura de los accesos; band_stats.json da L1 medio 7,5 y máx. 74, frente a 83 sin parchear.\n- PAA parcheada decodificada: ranura 0 px distintos (11 px dispensados en bloques DXT con 3 o más ranuras); satélite más cerca de la referencia en 4.161 de 4.161 px discriminantes.\n- Controles negativos, que fallan: PNG fuente sin parchear (4.606 px de máscara mal), PAA enviada de EV109 (4.548) y composición con la pintura reintroducida (3.576).\n- Coherencia: 4.628 px pintados en el dominio con ranura 0 en la fuente y 0 contradicciones."
+    },
+    {
+     "name": "G3 overlap strips",
+     "status": "PASS",
+     "evidence": "gates/g3_overlaps.py → G3_overlaps.json. 155 pares de vecinas (horizontales, verticales y diagonales) y 310 comparaciones s/m: 0 px distintos en PNG. No es vacuo: 26 de las regiones comparadas contienen 5.530 px parcheados. Informativo: PAA decodificadas, 0 px distintos."
+    },
+    {
+     "name": "G4 changes outside affected cells +2 px",
+     "status": "PASS",
+     "evidence": "gates/g4_outside.py → G4_outside_zone.json. PNG: 0 px cambiados fuera de la zona (14.716 dentro, sumados por tesela). PAA decodificadas: 684 px cambiados fuera de la zona, todos en bloques DXT de 4x4 que comparten píxeles con la zona (la compresión va por bloques), y 0 sin explicar. Recodificar las fuentes con ImageToPAA reproduce la PAA enviada en 42 de 42 casos byte a byte."
+    },
+    {
+     "name": "G5 manifest = changed entries",
+     "status": "PASS",
+     "evidence": "gates/g5_manifest.py → G5_manifest.json.\n- 42 entradas en el manifiesto = 42 PAA que difieren del PBO de EV95 = 42 PNG cambiados; los sha de los ficheros coinciden.\n- El PBO empaquetado de prueba (sha 1c5375f3…) difiere de EV95 en exactamente esas 42 entradas más baltic_trial.wrp.\n- Frente al PBO desplegado de EV109 difiere en exactamente las 42 entradas.\n- Mismos nombres de entrada que EV95 y EV109.\n- La capa m_012_017 no cambió y no está en la lista."
+    }
+   ],
+   "outputs": [
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/patch-ev109/manifest.json (sha256 74acdd80ee9fd8abc0f0e2785f42760997a3b054230b5073754f416d3be500d8): 42 entradas data/layers/*.paa, 21 teselas, registros por tesela y hashes de las entradas",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/patch-ev109/layers/ (42 PNG parcheados y 42 PAA), regen/ (generador con la opción), plane.npy (b810adc6…), regen.log",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/package-ev109-test/packed/narva_trial.pbo (sha256 1c5375f3a955fa1a1e922e18487e83da8e6fc4fa2ef04bf524e15f4c10988f05 = EV109 + parche de superficie; NO desplegado) y package.json",
+    "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/gates/patch-ev109-74acdd80ee9f/ (G1…G5 .json, band_stats.json, renders de referencia y de control, PAA decodificadas). Autoritativo; las carpetas gates/g1…g4 y los .json del nivel superior, y dev-smoke1/2, son de ejecuciones previas de desarrollo",
+    "Scripts de las puertas: C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-surface/gates/ (gate_lib.py, g1…g5, run_gates.py, band_stats.py)",
+    "Exploración (texHeaders y umbrales): C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-surface/explore/ (e5.py + texheaders-staleness.json, e7.py, th.py)"
+   ],
+   "rebuild_commands": [
+    "cd C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c",
+    "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B tools/terrain/patch_surface_v31.py E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev109/terrain-ev109.npz E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/patch-ev109 --footprint E:/DayZ-Baltic-Build/v31-pond-layer-20261013/fp-ev109/footprint.npz",
+    "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B tools/terrain/package_surface_patch_v31.py E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/patch-ev109/manifest.json E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/package-ev109-test --wrp-from E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev109/stage/out/narva_trial.pbo",
+    "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-surface/gates/run_gates.py",
+    "EV110 (después de kit, orillas, bridge-end y bury): la misma llamada de patch_surface_v31.py con <terrain-ev110.npz>, una carpeta de salida nueva y --footprint <fp-ev110/footprint.npz>; después package_surface_patch_v31.py con --wrp-from <compilado EV110 narva_trial.pbo>; las puertas se lanzan con SURFACE_PATCH_DIR=<patch dir> SURFACE_PACKAGE_DIR=<package dir>. G5 compara además con el PBO de EV109 y habría que apuntarlo a la base nueva. Despliegue: copiar packed/narva_trial.pbo y la PBO de agua a una carpeta @mod nueva, como package_ev109.py:35-38."
+   ],
+   "review_defects_addressed": [
+    "Mayor (Codex, wf-underdeck-texture review): «324 → 0» era tautológico porque composite.py:102-107 excluía la zona parcheada. Ahora G2 compara contra una referencia independiente sin ninguna carretera (árbol de carreteras vaciado; no usa la opción ni lowered_cells), en máscara exacta y en satélite exacto fuera de la banda de blur. Los tres controles negativos fallan: PNG sin parchear, PAA enviada de EV109 y composición con la pintura reintroducida. También se comprueba la PAA decodificada.",
+    "Mayor (dependencia del end-fit en la revisión): un OR acumulativo sobre v31_bridge_cut conservaría cortes restaurados. La regla nueva compara alturas con el terreno de EV95, no depende de ninguna máscara y solo cuenta los rebajes, así que también cubre las aletas del end-fit y cortes futuros.",
+    "Menor (Chernarus como prueba de suelo natural bajo el tablero): no se usa como criterio de aceptación; la superficie bajo el tablero es la que el generador pinta sin carretera, y su aspecto queda para la vista en juego.",
+    "Riesgo de la investigación, teselas (23,4)/(23,5) sin fuente: (23,5) está en el set de EV95; (23,4) y (28,15) usan el PNG de EV82 (v30-mixed-bank-incremental-fixed). La procedencia se prueba porque la PAA hermana es idéntica a la entrada del PBO y porque ImageToPAA reproduce la PAA enviada en 42 de 42 casos (G4). No hace falta doble compresión.",
+    "Riesgo de la investigación, 35/85 px de ranura distinta en la ida y vuelta por PAA: el criterio de la PAA en G2 dispensa solo los bloques DXT con 3 o más ranuras; quedan 11 px dispensados y 0 distintos fuera de esos bloques.",
+    "La propuesta decía que el stage y el compilado no necesitaban cambios: es correcto para rvmat y WRP, pero texHeaders.bin también indexa las PAA. Medí que ya está desfasado desde B y lo dejo documentado en lugar de ocultarlo."
+   ],
+   "open_issues": [
+    "texHeaders.bin: B, EV95 y EV109 envían el mismo fichero (sha 41bd269f) y, según binarize -texheader, 1.497 de sus 2.048 entradas ya no coinciden con las PAA de capa enviadas (1.479 con distinto tamaño u offsets de mip). El parche mantiene ese precedente para sus 42 entradas. No está verificado qué hace el motor con entradas desfasadas. Alternativa: generar un texHeaders.bin nuevo con `binarize.exe -texheader <distribution> <dst>` (probado: corre y produce 2.048 entradas), lo que añadiría texHeaders.bin a las entradas cambiadas. Decisión del orquestador.",
+    "La regla del generador ve cualquier rebaje de más de 0,5 m, no solo puentes. En EV109 solo 7 celdas fuera de los cortes la cumplen (4755–4773, 5499–5511; 0,50–0,58 m; cruce de río convertido en mar en EV96) y eran agua en EV95, así que el parche las excluye. Con 0,6 m quedarían 153 de las 154 celdas de corte. La pasada de orillas puede mover vértices de reserva: si rebaja más de 0,5 m una carretera en seco, el parche borraría su pintura. Al regenerar sobre EV110, revisar que affected_cells del manifiesto solo caiga en sitios de puente.",
+    "Esto es EV109. EV110 necesita volver a ejecutar el parche, el empaquetado y las puertas con su terreno y su footprint (comandos en rebuild_commands). Nada está desplegado en P:/Mods y no he usado DayZ MCP.",
+    "Banda de blur: 1.555 px (sumados por tesela) a ≤3 px de la pintura conservada de los accesos no se comparan exactos en satélite; band_stats da L1 medio 7,5 y máx. 74 frente a la referencia sin carretera. El corte de la pintura sigue el borde de celda de 6 m en los extremos del tablero. Aspecto en juego y clutter de cp_conifer_common1 bajo los tableros sin ver.",
+    "Dentro de la zona entran el agua y la orilla de EV109 (plano b810adc6); alrededor sigue el agua pintada en EV95. No verifiqué con verify-exact que el plano de fp-ev109 sea el agua empaquetada en EV109 (ya figuraba como no verificado en la investigación).",
+    "Las carpetas de desarrollo dev-smoke1/2 y gates/g1…g4 (nivel superior) siguen en ev110-wip/surface; no he borrado nada (regla de no borrar en E:). Las válidas son patch-ev109, package-ev109-test y gates/patch-ev109-74acdd80ee9f."
+   ]
+  },
+  "r1": {
+   "track": "surface",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "G2 acepta cobertura incompleta: omitir una tesela deja un puente sin parche y las cinco puertas siguen imprimiendo PASS.",
+     "evidence": "G/g2_road_paint.py:80 y :91 inspeccionan únicamente m['tiles']; G/g4_outside.py:28 recorre m['records']. Repro: PY -I -B R/skip_tile.py, usando el empaquetador real. Retiré la tesela (24,9), puente 015-13, y sus dos entradas: ALL GATES: PASS con 40 capas. Quedaron sin examinar 18 celdas/648 px. El PBO conserva la máscara EV95 y 294/648 px decodificados tienen una ranura distinta de la referencia. Evidencia: R/skip-proof.json y R/skip-gates.log.",
+     "fix": "Derivar las teselas y cobertura exigidas desde el dominio independiente completo; comprobar también las capas omitidas leyendo el PBO final. El negativo que omite (24,9) debe imprimir FAIL."
+    },
+    {
+     "severity": "major",
+     "claim": "G5 no vincula las PAA empaquetadas con las PAA validadas: acepta una máscara con carretera reintroducida dentro del PBO.",
+     "evidence": "G/g5_manifest.py:26 comprueba hashes de archivos externos; :40–46 compara únicamente conjuntos de entradas modificadas. G2 lee las PAA externas en G/g2_road_paint.py:108. Repro: PY -I -B R/wrong_payload.py. FileBank empaquetó una máscara road-on válida en data/layers/m_024_009_lca.paa, conservando nombres y propiedades. G5_manifest: PASS pese a que su hash b97c6795... difiere del validado af217d66... y presenta 211/648 px con ranura incorrecta. Hashes completos en R/wrong-payload.json. El paquete original sí coincide.",
+     "fix": "Comparar el SHA-256 de cada entrada extraída del PBO con el manifiesto y los bytes comprobados por G2/G4. Verificar también las propiedades del PBO. Este negativo debe imprimir FAIL."
+    }
+   ],
+   "gates_rerun": [
+    "R = C:/Users/guill/AppData/Local/Temp/claude/C-C824~1/CBD20F~1/SCRATC~1/IMPL-S~3, nombre corto del scratchpad autorizado (impl-surface-review1). G = C:/Users/guill/AppData/Local/Temp/claude/C-C824~1/CBD20F~1/SCRATC~1/IMPL-S~2/gates. PY = C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe.",
+    "PY -I -B R/gates/run_gates.py: G1–G5 y ALL GATES: PASS sobre el original. Hubo fallos iniciales por P: inexistente y rutas largas de ImageToPAA. Solo adapté rutas: PBO host de C: con hashes exactos y nombre corto del mismo scratchpad. Predicados intactos; R/harness-diff.txt y R/baseline-short-run.log.",
+    "G1_default_identity: PASS, 42/42 PNG idénticos y 4/4 del no-op. PY -I -B R/head_identity.py: PASS, 4/4 PNG idénticos también al generador de git HEAD. Las dos teselas contienen 1.753 y 6.834 píxeles de carretera seca; el control no está vacío.",
+    "G2_road_paint: PASS, 154 celdas; máscara 0/8.856 diferencias y satélite 0/7.301. PAA sin fallos fuera de las excepciones declaradas. Sus tres negativos fallan. R/baseline/G2_road_paint.json.",
+    "G3_overlaps: PASS, 155 pares/310 comparaciones, 0 diferencias PNG y PAA decodificada. G4_outside_zone: PASS, 0 cambios PNG fuera; 684 px PAA explicados por bloques DXT y 0 inexplicados. Recodificación de fuentes idéntica en 42/42 casos.",
+    "G5_manifest: PASS sobre el original: exactamente 42 capas más WRP frente a EV95 y 42 capas frente a EV109. Comprobación adicional: propiedades, contenido de las 42 entradas y WRP compilado correctos. Los tres scripts, el manifiesto y el PBO coinciden con todos los SHA-256 del informe; R/inspection.json.",
+    "PY -I -B R/rebuild.py: REBUILD_PATCH: PASS, 42/42 PNG y 42/42 PAA reproducidos desde cero. REBUILD_PACKAGE: PASS, mismas propiedades y contenido de las 6.827 entradas. R/rebuild-comparison.json.",
+    "PY -I -B R/negative_controls.py: restaurar pintura en una celda => G2 FAIL; desplazar 6 px => G2 FAIL y G4 FAIL, con 181 px fuera; quitar una entrada sin corregir el resto => G5 FAIL. La omisión coherente de una tesela y la sustitución del contenido empaquetado escapan, según los defectos.",
+    "R/inspection.py y R/boundary_and_skip.py: 19/19 controles de signo, umbral y dtype; 12/12 casos de bordes/solapes PASS; 10.000 muestras triangulares con error máximo 6,41e-13 m. Las 154 celdas afectadas pertenecen a cortes actuales. Ambos terrenos tienen alturas finitas; lowered_cells no rechaza NaN sintético.",
+    "PY -I -B R/mips.py: PAA_MIPS: PASS, 42 texturas/336 niveles; satélite DXT1, máscara DXT5 y alfa siempre 255. Cero bloques modificados fuera del soporte proyectado de la zona en todos los niveles.",
+    "verify_pond_exact_v31.py sobre fp-ev109: pass=true en 760.550 medias celdas, sin coberturas faltantes ni sobrantes. PY -I -B R/headers_water.py: WATER_BINDING: PASS; plano idéntico y 8.115/8.115 modelos iguales al PBO de agua EV109.",
+    "Worktree sin ediciones ni commit: git status inicial/final iguales y los tres hashes permanecen iguales. Evidencia y dictamen exclusivamente en R; informe guardado en R/review-result.json."
+   ],
+   "not_checked": [
+    "No ejecuté DayZ MCP ni validación visual. Quedan sin confirmar el aspecto de los 1.555 px de blur excluidos de la igualdad exacta del satélite, el clutter y las transiciones visuales.",
+    "No comprobé cómo interpreta el motor texHeaders.bin desfasado. Binarize confirma que las 42 entradas parcheadas ya estaban desfasadas antes; ninguna pasa de correcta a desfasada. Esto no demuestra inocuidad en ejecución.",
+    "No validé EV110 ni terrenos futuros. La regla puede borrar pintura de carreteras secas rebajadas fuera de puentes; EV109 no reproduce ese caso.",
+    "Había otros archivos modificados desde el inicio. Git status no permite atribuirlos a este track; se conservaron intactos."
+   ]
+  },
+  "fix": {
+   "track": "surface",
+   "summary": "Corregidos los dos defectos mayores de la revisión de Codex. Las cinco puertas imprimen PASS sobre el parche EV109 original. Los dos casos del revisor, convertidos en controles negativos, imprimen ALL GATES: FAIL.\n\n**Defecto 1. Cobertura tomada del manifiesto.**\n- Las teselas exigidas salen ahora solo del dominio independiente. Lo calcula `gate_lib.tiles_touched(dom, zone)` a partir de `domain_cells(World)`, sin leer el manifiesto.\n- G2 recorre las 21 teselas del dominio. Una tesela exigida que falta en el manifiesto da FAIL por sí sola (`coverage_ok`), y sus capas se juzgan tal como se enviaron.\n- G2 decodifica el candidato P2 desde la entrada del PBO empaquetado final, no desde las PAA externas.\n- G4 recorre las teselas de la zona más las del manifiesto, compara las entradas del PBO final con EV95 y exige que las otras 6.784 entradas (todas salvo el WRP) sean idénticas byte a byte a EV95.\n- G5 exige que las teselas del manifiesto sean exactamente las de la zona independiente.\n- G1 y G3 usan también la unión de ambos conjuntos.\n\n**Defecto 2. Payload del PBO sin vincular.**\n- G5 comprueba para cada entrada del manifiesto que coinciden cuatro SHA-256: el del PBO, el del manifiesto, el del fichero y el de ImageToPAA aplicado al PNG parcheado.\n- Comprueba también las propiedades del PBO (iguales a EV95 y EV109), que `package.json` nombre ese PBO y ese manifiesto por hash, y que el PBO de EV95 usado sea la base fijada en el manifiesto.\n\n**Caché de decodificación.** Ahora se indexa por el SHA-256 de los bytes y no por nombre, y las carpetas de informes llevan el hash del PBO.\n\n**Menor (NaN).** `lowered_cells` en `build_surface_v30.py:71-77` rechaza terrenos con valores no finitos o de distinta forma. Antes, un NaN daba False y conservaba la pintura de carretera sin avisar. El generador se escribió en el worktree con LF y una sola escritura, y se comprobó el sha releyéndolo. Reconstruir el parche con el generador nuevo reproduce 84 de 84 ficheros (42 PNG y 42 PAA), byte a byte.\n\nSin commit, sin despliegue y sin DayZ MCP.",
+   "worktree_files": [
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/build_surface_v30.py sha256 702b9915cfc83e1651b38ea6891496515003c3484dd33ed1bc2b00ebe1e81904 (reescrito en una sola escritura con LF y releído; la única diferencia con 6f132365 es el guard de valores finitos y de forma en lowered_cells, :71-77)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/patch_surface_v31.py sha256 f2ff5cd23d50d9d702ae8b2cbc509fb831097a9ee6108eebefac6f7b6a93878a (sin cambios)",
+    "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/package_surface_patch_v31.py sha256 d4cc61513082b3c6e04591a89447b9f3a6b657beea93155859f8c8c510808c2a (sin cambios: ya comprobaba propiedades y bytes de su propia salida, :82-85)"
+   ],
+   "gates": [
+    {
+     "name": "G1 default byte-identical",
+     "status": "PASS",
+     "evidence": "g1_default_identity.py (sha 8d560b8c). Regenerado desde cero con el generador nuevo 702b9915; la caché lleva ahora el sha del generador en la clave. Comparadas 42 de 42 PNG idénticas por sha256 en 21 teselas, que son la unión de las del manifiesto y las de la zona independiente. Prueba de no-op en 4 de 4. Informe: E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/gates/patch-ev109-74acdd80ee9f-package-ev109-test-1c5375f3a955/G1_default_identity.json"
+    },
+    {
+     "name": "G2 road paint vs independent no-road reference (cobertura independiente y PAA del PBO final)",
+     "status": "PASS",
+     "evidence": "g2_road_paint.py (sha 04b1d943).\n- Cobertura: 21 teselas exigidas por el dominio (154 celdas, 8.856 px), ninguna fuera del manifiesto, coverage_ok=true.\n- P1, PNG parcheado: máscara 0 px mal; satélite 0 de 7.301.\n- P2, PAA decodificada desde las entradas del PBO final 1c5375f3: máscara 0 px mal (11 px dispensados en bloques DXT de 3 o más ranuras); satélite 0 de 4.161.\n- Controles internos que fallan: N1 (4.606/6.082), N2 (4.548/4.153) y N3 (3.576/4.903).\n- Negativo skip-24-9: FAIL, con coverage_ok=false, tesela [24,9] ausente, 283 px de máscara PAA mal y 293 PNG mal en (24,9).\n- Negativo wrong-payload: FAIL, con P2 de máscara en 210 px."
+    },
+    {
+     "name": "G3 overlap strips",
+     "status": "PASS",
+     "evidence": "g3_overlaps.py (sha 1cfbfbf0). 155 pares de vecinas y 310 comparaciones con centro en la unión manifiesto y zona: 0 px distintos en PNG. No es vacuo: 26 regiones contienen 5.530 px parcheados. Informativo: entradas del PBO final decodificadas, 0 px distintos."
+    },
+    {
+     "name": "G4 changes outside affected cells +2 px (sobre el PBO final)",
+     "status": "PASS",
+     "evidence": "g4_outside.py (sha baeb4964).\n- PNG: 0 px cambiados fuera de la zona (14.716 dentro).\n- PAA del PBO final frente a EV95: 684 px fuera de la zona, todos explicados por bloques DXT de 4x4; 0 sin explicar.\n- Las 6.784 entradas fuera de las teselas examinadas son idénticas a EV95; diferentes: [].\n- Recodificar las fuentes reproduce las PAA enviadas en 42 de 42 casos.\n- Negativo wrong-payload: FAIL, 3.038 px sin explicar fuera de la zona."
+    },
+    {
+     "name": "G5 manifest = changed entries, vinculado al payload del PBO",
+     "status": "PASS",
+     "evidence": "g5_manifest.py (sha 911499cb).\n- a) 42 entradas = 42 PAA distintas de EV95 = 42 PNG cambiados; teselas del manifiesto = zona independiente (21 = 21); PBO de EV95 = base del manifiesto (f1a148ca).\n- b) 42 de 42 entradas con el mismo SHA-256 en PBO, manifiesto, fichero y ImageToPAA del PNG parcheado; package.json coherente.\n- c) Propiedades {product: dayz ugc, prefix: dayz_baltic_12km_dev\\tb\\narva_trial} iguales a EV95 y EV109; cambios frente a EV95 = manifiesto + WRP; frente a EV109 = manifiesto.\n- Negativo skip-24-9: FAIL, tiles_ok=false (20 frente a 21).\n- Negativo wrong-payload: FAIL, binding 41 de 42; m_024_009 tiene b97c6795… en el PBO y af217d66… en el manifiesto."
+    },
+    {
+     "name": "NEGATIVE_CONTROLS (casos de la revisión)",
+     "status": "PASS",
+     "evidence": "neg_controls.py (sha 11f187c1) → E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/negative/negative-controls.json.\n- skip-24-9: patch y empaquetador reales, sin la tesela (24,9) ni sus 2 entradas. Resultado: G2 FAIL, G5 FAIL, ALL GATES FAIL, rc=1.\n- wrong-payload: ImageToPAA de la regeneración con carretera en data/layers/m_024_009_lca.paa, repaquete con FileBank y las propiedades de EV95, y package.json reescrito con el hash nuevo para que solo falle el payload. Mismo sha b97c6795 que en el repro de Codex. Resultado: G2 FAIL, G4 FAIL, G5 FAIL, ALL GATES FAIL, rc=1."
+    },
+    {
+     "name": "NAN_GUARD (menor)",
+     "status": "PASS",
+     "evidence": "nan_guard.py (sha cd6f8587). lowered_cells del worktree rechaza NaN en el terreno, inf en la referencia y formas distintas (3 de 3 ValueError). El caso finito da las mismas celdas (4)."
+    },
+    {
+     "name": "REBUILD con generador nuevo",
+     "status": "PASS",
+     "evidence": "patch_surface_v31.py reejecutado en E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/rebuild-r2/patch-ev109: 84 de 84 ficheros (42 PNG y 42 PAA) idénticos por sha256 a patch-ev109; mismas entradas, sha, teselas y 154 celdas afectadas."
+    }
+   ],
+   "outputs": [
+    "Informes autoritativos de las puertas: E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/gates/patch-ev109-74acdd80ee9f-package-ev109-test-1c5375f3a955/ (G1…G5 .json, band_stats.json). La carpeta patch-ev109-74acdd80ee9f/ y los .json del nivel superior son de la ronda anterior.",
+    "Caché por contenido: E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/gates/cache/ (ref-noroad-<terrain12>-<plane12>, regen-roadon-…, decoded/<sha>.png)",
+    "Controles negativos: E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/negative/ (skip-24-9/, wrong-payload/, negative-controls.json, gates.log por caso); sus informes de puertas están en gates/patch-aa4f4c9dc122-package-f19cea9ca6bf y gates/patch-ev109-74acdd80ee9f-package-8e094f5815ab",
+    "Reconstrucción: E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/rebuild-r2/patch-ev109/",
+    "Sin cambios: patch-ev109/manifest.json (74acdd80…) y package-ev109-test/packed/narva_trial.pbo (1c5375f3…), sin desplegar",
+    "Scripts de las puertas: C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-surface/gates/ (logs run-v2-final.log y neg-controls.log); la versión anterior está en ../gates-v1/"
+   ],
+   "rebuild_commands": [
+    "cd C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c",
+    "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B tools/terrain/patch_surface_v31.py E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev109/terrain-ev109.npz E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/patch-ev109 --footprint E:/DayZ-Baltic-Build/v31-pond-layer-20261013/fp-ev109/footprint.npz",
+    "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B tools/terrain/package_surface_patch_v31.py E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/patch-ev109/manifest.json E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/surface/package-ev109-test --wrp-from E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev109/stage/out/narva_trial.pbo",
+    "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-surface/gates/run_gates.py",
+    "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-surface/gates/neg_controls.py   (solo si no existe ev110-wip/surface/negative; si existe, cambiar la carpeta NEG)",
+    "EV110: la misma llamada de patch_surface_v31.py con <terrain-ev110.npz>, una carpeta de salida nueva y --footprint <fp-ev110/footprint.npz>. Después package_surface_patch_v31.py con --wrp-from <compilado EV110 narva_trial.pbo>. Las puertas se lanzan con SURFACE_PATCH_DIR=<patch> SURFACE_PACKAGE_DIR=<package>; G2–G5 leen <package>/packed/narva_trial.pbo. G2 y G5 comparan también con el PBO de EV109 (N2 y la comprobación c); hay que apuntar EV109_PBO de gate_lib a la base nueva."
+   ],
+   "review_defects_addressed": [
+    "Mayor 1 (G2/G4 aceptaban cobertura incompleta). Corregido:\n- Las teselas exigidas se derivan del dominio independiente (gate_lib.tiles_touched) y no de m['tiles'] ni de m['records'].\n- G2 da FAIL si falta una tesela exigida y juzga la PAA leída del PBO final.\n- G4 examina las teselas de la zona y comprueba que el resto de entradas del PBO final sean idénticas a EV95.\n- G5 exige que las teselas del manifiesto sean las de la zona.\n- El negativo que omite (24,9), empaquetado con la herramienta real, imprime G2 FAIL, G5 FAIL y ALL GATES FAIL.",
+    "Mayor 2 (G5 no vinculaba el payload empaquetado). Corregido:\n- G5 compara el SHA-256 de cada entrada extraída del PBO con el manifiesto, con el fichero y con ImageToPAA del PNG parcheado.\n- Verifica las propiedades del PBO, el recibo package.json y la base EV95 por hash.\n- G2 y G4 decodifican los bytes del PBO final.\n- El negativo wrong-payload (b97c6795 en lugar de af217d66, con un recibo coherente) imprime G2, G4, G5 y ALL GATES en FAIL.",
+    "Menor (lowered_cells no rechazaba NaN sintético): el generador lanza ValueError ante valores no finitos o formas distintas (build_surface_v30.py:71-77) y World del gate lo comprueba con assert. nan_guard.py da PASS; G1 sigue idéntico y la reconstrucción da 84 de 84.",
+    "Robustez adicional: la caché de decodificación PAA se indexa por contenido (antes por nombre, y podía reutilizar una decodificación vieja); las carpetas de informes llevan el hash del manifiesto y del PBO; la regeneración de G1 lleva el sha del generador en la clave."
+   ],
+   "open_issues": [
+    "Siguen abiertos los puntos de la revisión que no son defectos:\n- Sin validación visual ni DayZ MCP, así que no se ha visto el aspecto en juego de los 1.555 px de blur (band_stats: L1 medio 7,5 y máx. 74, frente a 83 sin parchear), del clutter ni de las transiciones.\n- texHeaders.bin desfasado desde B, sin verificar en el motor.\n- La regla puede borrar pintura de carreteras secas rebajadas fuera de los puentes; en EV110, revisar affected_cells.",
+    "Los controles negativos antiguos del revisor (restore-cell, shift-six, omit-entry) no los he vuelto a ejecutar con las puertas nuevas. Las puertas nuevas solo añaden condiciones a las de antes, así que deberían seguir fallando, pero no lo he medido.",
+    "G2 (control N2) y G5 (comprobación c) comparan con el PBO de EV109 fijado en gate_lib (P:/Mods/@DayZ_Baltic_EV109_BridgeRolloutV1). Para EV110 hay que cambiar esa constante. No hay variable de entorno para ella.",
+    "Sin commit. En git status del worktree aparecen archivos de otros tracks (bridges_v31.py, probe_points_bridges.py, evidence/.../bridges/ev110/, tools/water/*); no los he tocado."
+   ]
+  },
+  "r2": {
+   "track": "surface",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "La cobertura sigue sin estar vinculada al terreno empaquetado: un manifiesto regenerado desde otro terreno puede omitir 015-13 y obtener PASS con el WRP original de EV109.",
+     "evidence": "G/g2_road_paint.py:91-96 y G/g5_manifest.py:52-55 calculan el dominio desde m[terrain]. G/gate_lib.py:180-186 comprueba forma y finitud, pero no su correspondencia con el WRP. G/g5_manifest.py:76-82 tampoco vincula ambos. MEDIDO: R/retarget_prepare.py restaura 22 vértices en una copia del terreno, regenera el parche con la herramienta real y lo empaqueta con el WRP original. R/retarget/gates.log:1-6 imprime G1–G5 y ALL GATES PASS. R/retarget/proof.json:6-18 confirma 154→136 celdas, 21→20 teselas y WRP idéntico a EV109. La máscara omitida conserva EV95: 294/648 píxeles tienen una ranura incorrecta frente a la referencia original; 283 descontando excepciones DXT. Los otros 80 archivos coinciden con el parche original.",
+     "fix": "Fijar el terreno objetivo mediante una entrada de confianza independiente del manifiesto y vincularlo al WRP validado que se empaqueta. Para este ensayo, exigir la pareja EV109: terreno SHA256 86c0a85c2b46a65a16e79d450e54473e1593a3db95fe0670c2d5d00561751149 y WRP SHA256 d5f5c8eae280aba6b2ad3b2964f907e79042bbca0632dd4ea8b7ea82a9be789f. El negativo retarget debe imprimir ALL GATES: FAIL."
+    }
+   ],
+   "gates_rerun": [
+    "R = C:/Users/guill/AppData/Local/Temp/claude/C-C824~1/CBD20F~1/SCRATC~1/IM463E~1, nombre corto de impl-surface-review2. G = C:/Users/guill/AppData/Local/Temp/claude/C-C824~1/CBD20F~1/SCRATC~1/impl-surface/gates. PY = C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe. Dictamen guardado en R/review-result.json.",
+    "PY -I -B R/gates/run_gates.py, con SURFACE_GATE_OUT=R/baseline: G1–G5 y ALL GATES PASS sobre el original 1c5375f3. Adapté únicamente rutas de P: a archivos host con hashes verificados y destinos de caché/informes. G1–G5 conservan exactamente sus bytes; la caché de revisión comenzó vacía. Evidencia: R/harness-diff.txt, R/baseline.log y R/preservation.json.",
+    "G1 PASS: 42/42 PNG idénticos y no-op 4/4. G2 PASS: 154 celdas, 21 teselas, 8.856 px de dominio; PNG máscara sin errores y satélite 0/7.301; PAA final máscara sin errores tras 11 excepciones DXT y satélite 0/4.161. N1, N2 y N3 fallan. Los recuentos suman por tesela, incluidos solapes.",
+    "G3 PASS: 155 pares/310 comparaciones, cero diferencias PNG y PAA decodificada. G4 PASS: cero cambios PNG fuera; 684 px PAA explicados por DXT y cero inexplicados; 6.784/6.784 entradas restantes idénticas; recodificación 42/42. G5 PASS: 42/42 vinculaciones entre PBO, manifiesto, fichero y PNG recodificado; propiedades y recibo correctos. Informes en R/baseline/.",
+    "PY -I -B R/gates/neg_controls.py: mayor 1 parcialmente corregido, NO cerrado completamente. Reproduje skip-24-9 con tesela y dos entradas omitidas coherentemente y empaquetador real: G2 FAIL, G5 FAIL, ALL GATES FAIL, rc=1. G2 detecta 283 px de máscara incorrecta. El nuevo bypass retarget mantiene abierto el problema de cobertura. Evidencia: R/negative/skip-24-9/gates.log.",
+    "PY -I -B R/gates/neg_controls.py: mayor 2 CERRADO. Reproduje wrong-payload con FileBank, propiedades conservadas y recibo actualizado: b97c6795 sustituye af217d66 en m_024_009_lca.paa. G2, G4 y G5 FAIL; ALL GATES FAIL, rc=1. G2 detecta 210 px de máscara incorrecta. Evidencia: R/negative/negative-controls.json.",
+    "PY -I -B R/retarget_prepare.py; PY -I -B R/gates/run_gates.py con SURFACE_PATCH_DIR=R/retarget/patch, SURFACE_PACKAGE_DIR=R/retarget/package y SURFACE_GATE_OUT=R/retarget/reports: nuevo bypass reproducido, ALL GATES PASS. PY -I -B R/retarget_proof.py confirma el daño contra EV109 original. PY -I -B R/final_verification.py imprime COVERAGE_BINDING: FAIL. Reproductor conjunto disponible en R/run_retarget_negative.py.",
+    "PY -I -B R/properties_control.py: nuevo negativo con prefijo PBO cambiado, 6.827/6.827 contenidos idénticos y recibo coherente: G5 FAIL; binding 42/42 y properties_ok=false. CHANGED_PROPERTIES_CONTROL PASS. Evidencia: R/properties/proof.json.",
+    "PY -I -B R/run_legacy.py: restore-cell → G2 FAIL; shift-six → G2 y G4 FAIL, 181 px fuera; omit-entry → G5 FAIL. Evidencia: R/legacy-negatives.log.",
+    "PY -I -B R/gates/nan_guard.py: NAN_GUARD PASS, rechaza 3/3 casos inválidos y conserva cuatro celdas en el caso finito. PY -I -B R/rebuild_original.py: REBUILD_ORIGINAL PASS, 84/84 archivos idénticos (42 PNG y 42 PAA), mismas entradas, teselas y celdas.",
+    "PY -I -B R/final_verification.py: 17/17 archivos de entrada revisados conservan sus hashes, incluidos los tres scripts del track, manifiesto y PBO original. Terreno EV109 intacto y git status inicial/final idénticos. Sin edición del worktree, commit, despliegue ni DayZ MCP. Evidencia exclusivamente en R; inventario en R/evidence-sha256.json."
+   ],
+   "not_checked": [
+    "Sin validación visual ni DayZ MCP: siguen pendientes los 1.555 px de blur excluidos de igualdad exacta del satélite, clutter y transiciones en el motor.",
+    "No reabrí los puntos menores aceptados sobre texHeaders.bin ni pintura en carreteras secas rebajadas fuera de puentes. No validé EV110 ni terrenos futuros.",
+    "No repetí verify_pond_exact_v31.py, el inventario de modelos de agua ni todos los mipmaps de la ronda 1. Las mediciones nuevas de imagen corresponden al mip superior.",
+    "El artefacto original pasa G1–G5 y se reconstruye idéntico. El defecto demostrado afecta a las puertas: también aceptan el paquete incoherente construido como control negativo."
+   ]
+  }
+ }
+]

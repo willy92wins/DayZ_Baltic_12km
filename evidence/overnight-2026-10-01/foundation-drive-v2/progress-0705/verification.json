@@ -1,0 +1,123 @@
+{
+  "status": "FAIL_OR_INCOMPLETE",
+  "global_checks": {
+    "header": true,
+    "end": false,
+    "cases": false,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "name": "calibration_west",
+      "reverse": false,
+      "status": "FAIL",
+      "checks": {
+        "one_case": true,
+        "terminal": true,
+        "one_arrival": true,
+        "clock": true,
+        "continuous_motion": true,
+        "spawn": false,
+        "endpoint": true,
+        "inside_corridor": true,
+        "all_waypoints": true,
+        "body_healthy": true,
+        "engine_healthy": true,
+        "wheels_present": true,
+        "wheels_healthy": true,
+        "upright": true,
+        "ground": true,
+        "contact_surface": true,
+        "no_jump": true,
+        "callbacks": true,
+        "cruise": true,
+        "stopped": true,
+        "logged_route": true
+      },
+      "samples": 117,
+      "end": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "duration_s": 23.2,
+      "maximum_step_m": 1.139270036857207,
+      "maximum_dt_s": 0.20000000000000284,
+      "maximum_corridor_m": 0.2426532219509008,
+      "endpoint_distance_m": 2.0123523983101315,
+      "maximum_contact_error_m": 0.002126472300918003,
+      "maximum_ground_error_m": 8.947400831793573e-06,
+      "contact_count_min": 4,
+      "longest_no_contact_s": 0.0,
+      "cruise_duration_s": 12.200000000000003,
+      "stop_duration_s": 5.399999999999999,
+      "speed_m_s": {
+        "p50": 4.31577400252168,
+        "p95": 5.6765064266657745,
+        "max": 5.6976839705428555
+      },
+      "maximum_abs_vertical_speed_m_s": 0.252729,
+      "health_min": 1000.0
+    },
+    {
+      "case": 1,
+      "name": "narva_full",
+      "reverse": false,
+      "status": "FAIL",
+      "checks": {
+        "one_case": true,
+        "terminal": false,
+        "one_arrival": false,
+        "clock": true,
+        "continuous_motion": true,
+        "spawn": false,
+        "endpoint": false,
+        "inside_corridor": true,
+        "all_waypoints": false,
+        "body_healthy": true,
+        "engine_healthy": true,
+        "wheels_present": true,
+        "wheels_healthy": true,
+        "upright": true,
+        "ground": true,
+        "contact_surface": true,
+        "no_jump": true,
+        "callbacks": true,
+        "cruise": true,
+        "stopped": false,
+        "logged_route": true
+      },
+      "samples": 78,
+      "end": null,
+      "duration_s": 15.399999999999995,
+      "maximum_step_m": 1.1630491159092518,
+      "maximum_dt_s": 0.20000000000000284,
+      "maximum_corridor_m": 0.23573473735856068,
+      "endpoint_distance_m": 936.4708129579963,
+      "maximum_contact_error_m": 0.002125959534123645,
+      "maximum_ground_error_m": 7.797688267530134e-06,
+      "contact_count_min": 4,
+      "longest_no_contact_s": 0.0,
+      "cruise_duration_s": 10.800000000000004,
+      "stop_duration_s": 0.1999999999999993,
+      "speed_m_s": {
+        "p50": 5.40484733373664,
+        "p95": 5.799606194208129,
+        "max": 5.816478879238538
+      },
+      "maximum_abs_vertical_speed_m_s": 0.21552,
+      "health_min": 1000.0
+    },
+    {
+      "case": 2,
+      "status": "INCONCLUSIVE",
+      "reason": "Incomplete motion sequence",
+      "end": null
+    }
+  ],
+  "limits": [
+    "Empty vanilla sedan only. Terrain grades before physical road pieces.",
+    "Not human handling, traffic, crew or multiplayer capacity. Engine compilation pending."
+  ],
+  "log_sha256": "528ad63203c501adfd5acd8cc09c02bc2744aa1e9f81fbb5991bcdbcc89bf7e0"
+}

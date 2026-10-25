@@ -1,0 +1,284 @@
+{
+  "schema": "ev95.matrix-free-actions-bench.v1",
+  "status": "PASS_GLOBAL_MATRIX_FREE_ACTION_MEASUREMENT",
+  "solve_executed": false,
+  "terrain_written": false,
+  "input_paths": {
+    "heights": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\terrain.npz",
+    "masks": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-sizing-ev95\\run-05\\masks.npz",
+    "resource_receipt": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-sizing-ev95\\run-05\\preflight.json"
+  },
+  "review": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\measurement-driver-review.json",
+    "sha256": "7e22e2f3365002ee4ec46293238e579ff2c65ddf2228c06e0c533d7208f9394b",
+    "status": "PASS_STRUCTURED_OPERATOR_INDEPENDENT_REVIEW"
+  },
+  "operator_sha256": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+  "fixture_report_sha256": "8b877d0fbce0566b8c6691f75bc7c0b2a0d9c98eeee24deca2bdcd6166833c28",
+  "action_counts": {
+    "A": {
+      "matvec": 1,
+      "rmatvec": 1
+    },
+    "C": {
+      "matvec": 1,
+      "rmatvec": 1
+    },
+    "G": {
+      "matvec": 1,
+      "rmatvec": 1
+    }
+  },
+  "actions": {
+    "A": {
+      "rows": 11095396,
+      "input_y_sha256": "e833694e93c3461353981642781d37a6d4c57e577f69b81b8d51b261379e14bc",
+      "input_y_norm": 1923.6335880410986,
+      "matvec_count": 1,
+      "rmatvec_count": 1,
+      "matvec_seconds": 0.2908582999953069,
+      "matvec_output_sha256": "9bdec6e92e3bf4b6a7e4cc29ca1f804f27feb93a53a8bba9f06bc857e28055bc",
+      "matvec_output_norm": 2799.361482965741,
+      "rmatvec_seconds": 0.46600439999019727,
+      "rmatvec_output_sha256": "ee35f073c060e781799c59bc1a15a10bb8643c482e31f074d1a8fb6a5cd3b33c",
+      "rmatvec_output_norm": 2816.493732017505,
+      "dot_matvec_y": -49476.50255224439,
+      "dot_x_rmatvec": -49476.50255224539,
+      "adjoint_abs_error": 9.968061931431293e-10,
+      "adjoint_relative_error": 2.0147062579666747e-14,
+      "peak_working_set_after_matvec_bytes": 1061040128,
+      "peak_working_set_after_rmatvec_bytes": 1061040128,
+      "available_physical_after_matvec_bytes": 8416485376,
+      "available_physical_after_rmatvec_bytes": 8443506688,
+      "y_definition": "float64: ((arange(m) mod 4093 + 1507) mod 4093 - 2046)/2046"
+    },
+    "C": {
+      "rows": 4182435,
+      "input_y_sha256": "1fe29f62e47aeaf9b2e72f054850fedbd964001a0d38ecc4482e58be59b35378",
+      "input_y_norm": 1181.0725826791554,
+      "matvec_count": 1,
+      "rmatvec_count": 1,
+      "matvec_seconds": 0.04958910000277683,
+      "matvec_output_sha256": "cd029004679bc84391a6c600b0b04d7c89035c9ece8afc7dd67e790db6a65169",
+      "matvec_output_norm": 1532.3434980601635,
+      "rmatvec_seconds": 0.06186320004053414,
+      "rmatvec_output_sha256": "a81e21cb325e6ed1e7d21b0391a80ca8791f696f41919cd8a782e9bab1ad5183",
+      "rmatvec_output_norm": 1667.8266813873472,
+      "dot_matvec_y": -617.4944397145184,
+      "dot_x_rmatvec": -617.4944397145247,
+      "adjoint_abs_error": 6.252776074688882e-12,
+      "adjoint_relative_error": 1.0126044337467423e-14,
+      "peak_working_set_after_matvec_bytes": 1061040128,
+      "peak_working_set_after_rmatvec_bytes": 1061040128,
+      "available_physical_after_matvec_bytes": 8503468032,
+      "available_physical_after_rmatvec_bytes": 8502857728,
+      "y_definition": "float64: ((arange(m) mod 4093 + 3151) mod 4093 - 2046)/2046"
+    },
+    "G": {
+      "rows": 16760836,
+      "input_y_sha256": "9a208c1f5d91832fcc060b0683279c91ef5e44c88151c5b74fa7e3934dfe1cb1",
+      "input_y_norm": 2364.249551264563,
+      "matvec_count": 1,
+      "rmatvec_count": 1,
+      "matvec_seconds": 0.07118929998250678,
+      "matvec_output_sha256": "6e410cd6cdc4d5898aaa18a609c7e3a240812e1e17611e38cc5da43634250d6e",
+      "matvec_output_norm": 2212.5569324901326,
+      "rmatvec_seconds": 0.0986475000390783,
+      "rmatvec_output_sha256": "f957ba3bb50bdd7e7bc467cc6da6dcb45b818fcc6fa2ad96ae99f3319b1410f3",
+      "rmatvec_output_norm": 204.21675137941105,
+      "dot_matvec_y": 48.80908770804169,
+      "dot_x_rmatvec": 48.80908770803297,
+      "adjoint_abs_error": 8.71835936777643e-12,
+      "adjoint_relative_error": 1.7862164152558028e-13,
+      "peak_working_set_after_matvec_bytes": 1061040128,
+      "peak_working_set_after_rmatvec_bytes": 1061040128,
+      "available_physical_after_matvec_bytes": 8401530880,
+      "available_physical_after_rmatvec_bytes": 8401117184,
+      "y_definition": "float64: ((arange(m) mod 4093 + 5069) mod 4093 - 2046)/2046"
+    }
+  },
+  "source_readset_start": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-sizing-ev95\\run-05\\masks.npz": "8f5959308923263538440d29dd93960c5331bc8f13c88b61590380c17d6cdfff",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-sizing-ev95\\run-05\\preflight.json": "b6507c73af2181860c13a04ed1814a1a508d0448cd9b63520854aad029ae0f95",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\structured_operator.py": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\fixture-report.json": "8b877d0fbce0566b8c6691f75bc7c0b2a0d9c98eeee24deca2bdcd6166833c28",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\measurement-driver-review.json": "7e22e2f3365002ee4ec46293238e579ff2c65ddf2228c06e0c533d7208f9394b",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\measure_global_actions.py": "a05a5f47b775567105c3e588e7106b4b365b58d259f018dca4f243f57d2da37b"
+  },
+  "pinned_source_readset_start": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-sizing-ev95\\run-05\\masks.npz": "8f5959308923263538440d29dd93960c5331bc8f13c88b61590380c17d6cdfff",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-sizing-ev95\\run-05\\preflight.json": "b6507c73af2181860c13a04ed1814a1a508d0448cd9b63520854aad029ae0f95",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\structured_operator.py": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\fixture-report.json": "8b877d0fbce0566b8c6691f75bc7c0b2a0d9c98eeee24deca2bdcd6166833c28"
+  },
+  "resource_gate": {
+    "available_before_bytes": 9036173312,
+    "required_free_reserve_bytes": 6442450944,
+    "persistent_arrays_estimate_bytes": 493954896,
+    "persistent_array_bytes": {
+      "base_float64": 33554432,
+      "variable_index_grid_int32": 16777216,
+      "variables_rc_int32": 21697088,
+      "A_anchor_rc_int32": 67066080,
+      "rhs_a_float64": 88763168,
+      "C_centers_witnesses_int32": 33459480,
+      "d_c_float64": 33459480,
+      "k_g_float64": 134086688,
+      "three_diagonals_float64": 65091264
+    },
+    "largest_operator_output_bytes": 134086688,
+    "scratch_reserve_bytes": 536870912,
+    "estimated_peak_increment_bytes": 1354250704,
+    "available_after_estimate_bytes": 7681922608,
+    "gate_pass": true
+  },
+  "operator_counts": {
+    "variables": 2712136,
+    "A": {
+      "rows": 11095396,
+      "nnz": 29833496
+    },
+    "C": {
+      "rows": 4182435,
+      "nnz": 5403177
+    },
+    "G": {
+      "rows": 16760836,
+      "nnz": 21697088
+    },
+    "fixed_vertices": 1482168
+  },
+  "mask_control_checks": {
+    "p9_unknown_nodes": {
+      "count": 64,
+      "variable_overlap": 0
+    },
+    "water_bbox_nodes": {
+      "count": 523044,
+      "variable_overlap": 0
+    },
+    "civil_nodes": {
+      "count": 100215,
+      "variable_overlap": 0
+    },
+    "water_shore_partial_nodes": {
+      "count": 535132,
+      "variable_overlap": 0
+    },
+    "focus_rc": [
+      840,
+      370
+    ],
+    "focus_variable": false,
+    "focus_reason_bit_512": true,
+    "retained_halo_count": 217438,
+    "eligible_before_guards_count": 2988565,
+    "fixed_delta_sensitivity_count": 2676213
+  },
+  "probe_x": {
+    "length": 2712136,
+    "sha256": "e9e5755b5eee0d6a7e0ea33270fabf7ff88465e6ce18f345f1785ba3353b68f1",
+    "norm": 950.8982368491295,
+    "definition": "float64: ((arange(n) mod 4093 + 137) mod 4093 - 2046)/2046"
+  },
+  "resource_watchdog": {
+    "sample_interval_seconds": 0.25,
+    "sample_count": 19,
+    "minimum_available_physical_bytes": 8067399680,
+    "failure": null,
+    "samples": [
+      {
+        "elapsed_seconds": 0.25578239996684715,
+        "available_physical_bytes": 8881573888
+      },
+      {
+        "elapsed_seconds": 0.5200201999978162,
+        "available_physical_bytes": 8689238016
+      },
+      {
+        "elapsed_seconds": 0.784670399967581,
+        "available_physical_bytes": 8470069248
+      },
+      {
+        "elapsed_seconds": 1.0348729999968782,
+        "available_physical_bytes": 8336334848
+      },
+      {
+        "elapsed_seconds": 1.300305099983234,
+        "available_physical_bytes": 8270012416
+      },
+      {
+        "elapsed_seconds": 1.5650868999655358,
+        "available_physical_bytes": 8067399680
+      },
+      {
+        "elapsed_seconds": 1.8290852999780327,
+        "available_physical_bytes": 8567951360
+      },
+      {
+        "elapsed_seconds": 2.0932566999690607,
+        "available_physical_bytes": 8519970816
+      },
+      {
+        "elapsed_seconds": 2.3571728999959305,
+        "available_physical_bytes": 8402817024
+      },
+      {
+        "elapsed_seconds": 2.621972299995832,
+        "available_physical_bytes": 8423161856
+      },
+      {
+        "elapsed_seconds": 2.8839662999962457,
+        "available_physical_bytes": 8314871808
+      },
+      {
+        "elapsed_seconds": 3.1362344999797642,
+        "available_physical_bytes": 8343842816
+      },
+      {
+        "elapsed_seconds": 3.386397599999327,
+        "available_physical_bytes": 8338325504
+      },
+      {
+        "elapsed_seconds": 3.6503559999982826,
+        "available_physical_bytes": 8503164928
+      },
+      {
+        "elapsed_seconds": 3.9135355000034906,
+        "available_physical_bytes": 8453554176
+      },
+      {
+        "elapsed_seconds": 4.177391599980183,
+        "available_physical_bytes": 8404881408
+      },
+      {
+        "elapsed_seconds": 4.42817670002114,
+        "available_physical_bytes": 8405155840
+      },
+      {
+        "elapsed_seconds": 4.692602599970996,
+        "available_physical_bytes": 8398503936
+      },
+      {
+        "elapsed_seconds": 4.943034099997021,
+        "available_physical_bytes": 8369209344
+      }
+    ]
+  },
+  "elapsed_total_seconds": 4.993988099973649,
+  "numeric_budget_seconds": 120.0,
+  "source_readset_end": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-sizing-ev95\\run-05\\masks.npz": "8f5959308923263538440d29dd93960c5331bc8f13c88b61590380c17d6cdfff",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-sizing-ev95\\run-05\\preflight.json": "b6507c73af2181860c13a04ed1814a1a508d0448cd9b63520854aad029ae0f95",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\structured_operator.py": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\fixture-report.json": "8b877d0fbce0566b8c6691f75bc7c0b2a0d9c98eeee24deca2bdcd6166833c28",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\measurement-driver-review.json": "7e22e2f3365002ee4ec46293238e579ff2c65ddf2228c06e0c533d7208f9394b",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\measure_global_actions.py": "a05a5f47b775567105c3e588e7106b4b365b58d259f018dca4f243f57d2da37b"
+  },
+  "source_readset_stable": true,
+  "process_peak_working_set_bytes": 1061040128,
+  "finished_utc": "2026-10-10T18:24:54Z"
+}

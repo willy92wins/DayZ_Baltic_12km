@@ -1,0 +1,41 @@
+{
+  "status": "COMPLETE_DESCRIPTIVE_PAIR_NOT_CAPACITY_BENCHMARK",
+  "variants": {
+    "tile25": {
+      "run_id": "fa666a0b-2ffb-4637-bd72-61b620cb8b35",
+      "pbo_sha256": "2121e876507b5b5045d7bc76d56ea5499e99ae38792acafddf04ea662225c467",
+      "process_log_sha256": "378fc0602edec5a902cf66294db2dfe7a946619d373ca8a90d990b117038dba3",
+      "engine_log_sha256": "3ba284b9d8ee3ade744a5482d5abdf6d0c8f2d271cd3d34f1406e445d636f23e",
+      "steady_process_samples": 87,
+      "steady_process_seconds": 88.4501274,
+      "resident_median_mib": 1444.47265625,
+      "resident_peak_mib": 1444.66796875,
+      "private_median_mib": 1766.01953125,
+      "cpu_fraction_of_one_core": 0.0476963699658843,
+      "mean_update_rate_hz": 9188.480078111334,
+      "max_update_timeslice_ms": 13.0,
+      "updates_over50ms": 0
+    },
+    "tile12p5": {
+      "run_id": "b4c1eaef-b477-423a-a8ab-788cb5178f8a",
+      "pbo_sha256": "55d7163c06b53ebc8a5b9336a8b653e14d78eb06722b232d1a6550cd1581bebc",
+      "process_log_sha256": "19aa345d7f3005ba82170fb47fcd4b0a112ffd06bed93ded249d081afcc55cd7",
+      "engine_log_sha256": "4b7120a67cff89733e03c36d75dd26e89e75efce61efc3f07acd29c42d586a19",
+      "steady_process_samples": 88,
+      "steady_process_seconds": 89.4190409,
+      "resident_median_mib": 2185.08984375,
+      "resident_peak_mib": 2185.328125,
+      "private_median_mib": 2532.2421875,
+      "cpu_fraction_of_one_core": 0.09383488030679604,
+      "mean_update_rate_hz": 9581.440229450633,
+      "max_update_timeslice_ms": 10.0,
+      "updates_over50ms": 0
+    }
+  },
+  "limits": [
+    "One run per variant on a shared desktop; uncontrolled background activity.",
+    "No CE, AI population or clients. No 80-100-player capacity claim.",
+    "Resident memory is not exclusively navmesh memory.",
+    "OnUpdate rate and timeslice are not CPU frame execution timings."
+  ]
+}

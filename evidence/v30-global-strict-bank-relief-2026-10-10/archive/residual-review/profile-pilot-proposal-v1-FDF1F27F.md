@@ -1,0 +1,46 @@
+# Propuesta de piloto local de perfil de ribera — EV88
+
+**Veredicto de diseño: ejecutable como un solo piloto offline, sujeto a congelar la definición del perfil y su consumidor antes de autorizar autoría.** No se ha ejecutado optimizador, motor ni variante. Esto no declara que el resultado vaya a parecer natural ni que la deformación sea factible. La receta siguiente es **[DISEÑO]**, no una implementación ni una API verificada.
+
+## Anclajes y diagnóstico
+
+La base es exclusivamente EV82-B desplegada: `terrain.npz` SHA-256 `f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0`, WRP compilado `3b12b21d554c6ab75d76c43b5ba902c9a1d49a26516bdd14b16f1a6048ba2539`; agua `3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14`. EV87 no es base aceptable. El foco es `(fila 840, columna 370)`, mundo `(x=2220,z=7242)`, B=`3.7361052 m`, clase 0. El ángulo incidente de referencia es `37.3290°`; prominencia axial respecto al vecino cardinal más alto: E–O `1.83230 m`, N–S `1.78729 m`; laplaciano cardinal discreto `8.74958 m`.
+
+El foco está seco según las alturas incidentes: máximo P/F/SEA=`1.125 m`, margen=`2.6111 m`, pese a que `wet_support` y `EV79.fixed` son verdaderos. Esto demuestra que congelar todos los vértices de soporte de caras mojadas bloquearía un nodo seco; **no** demuestra que se pueda mover sin desplazar el cruce. El vecino `(841,370)` solo tiene `0.29055 m` de margen y el primer vértice mojado N–S es `(842,370)`. No se debe deducir una máscara poligonal fija de los signos raster.
+
+El método de ventana 7×7/5×5 deja 16 nodos clase 0, secos y sin protección en el núcleo (11 sin `wet_support`, 5 con soporte pero secos); el seed quedó sin procesar en EV87 por solape de selección, no porque el consumidor demostrara inviabilidad. Ampliar el contexto a 17×17 con núcleo 13×13 deja 98 nodos potencialmente modificables (85 sin soporte, 13 soporte-pero-secos), frente a 168 nodos clase 0 secos no protegidos en la ventana exterior; 70 de estos últimos se fijarían como collar. En el núcleo hay 71 nodos protegidos/mojados por las máscaras reconstruidas; en el exterior, 121. Bajo cotas EV79 y el suelo de signos por P/F/SEA, los 98 tienen intervalo elemental no vacío y 55 admiten al menos 1 m de descenso; esto es solo una comprobación de cotas por vértice, no una prueba de factibilidad conjunta, cruces o ángulos.
+
+Las medidas reproducibles están en [profile-pilot-diagnostic.json](E:/DayZ-Baltic-Build/v30-global-strict-bank-relief-20261010/residual-review/profile-pilot-diagnostic.json), calculadas por [profile_pilot_diagnosis.py](E:/DayZ-Baltic-Build/v30-global-strict-bank-relief-20261010/residual-review/profile_pilot_diagnosis.py). Los conteos de ventanas son por vértice; las puertas de aceptación deben ser por caras, aristas y huellas reales.
+
+## Una intervención propuesta
+
+Probar un único perfil local basado en distancia al contorno de agua actual, no una minimización aislada de ángulos. Extraer por separado los contornos B de cada superficie P y F mediante clipping cara a cara de sus triangulaciones nativas por esquina, conservando geometría, islas y huecos. Para cada punto seco del núcleo, asociar el segmento P/F más cercano y calcular su distancia XZ. Si P y F ofrecen proyecciones incompatibles o segmentos equidistantes con niveles distintos, se rechaza el piloto: no se colapsan ambas superficies en una línea inventada. Definir el perfil objetivo entre el nivel de agua de esa proyección y la altura B del collar exterior a lo largo del mismo rayo, con una única interpolación quintica suave `s(t)=6t^5−15t^4+10t^3`, `t=clamp(d/D,0,1)`. `D` es la distancia desde esa proyección hasta el cruce del mismo rayo con el collar fijo. Si el rayo no llega de forma única al collar o la proyección no es unívoca, se rechaza el piloto; no se rellenan ambigüedades con polígonos o parámetros ad hoc.
+
+Resolver una sola aproximación de mínimos cuadrados a esa superficie objetivo en el núcleo 13×13, con collar fijo de dos celdas (17×17 total). El objetivo y la superficie objetivo son una sola receta congelada antes de autoría; no se ajusta el radio ni se prueban variantes. Los vértices no se fijan por `wet_support` a solas: todo vértice realmente mojado en cualquier muestra incidente se mantiene idéntico; un soporte-seco solo entra en el dominio si queda seco en cada muestra P/F/SEA y supera las puertas exactas de cruce. Cotas inferiores por vértice según EV79: `max(EV79−2 m, min(EV79,1.8 m), min(EV79,max(P,F,0.85 m) incidente + 1e−4 m))`; P NaN no se imputa. Ejecutar una sola resolución, con tope duro de 120 s; sin segunda solución, parámetro alternativo ni ajuste manual. El candidato final se representa en float32 y se valida después del redondeo; no se usa punto medio, reparación ni fallback.
+
+## Contrato físico y de alcance
+
+- Inmutables: P/F, objetos/metadata, reservas, plataformas, `other_fixed`, halo de ingeniería, bancos de grandes lagos y todo nodo realmente mojado. No se sale de la ventana 17×17; el anillo de dos nodos queda byte/altura idéntico a B.
+- Presupuesto acumulado: cada altura final permanece dentro de EV79 ±2 m. Para este piloto se añade `H_final <= B` como elección conservadora para no crear nuevos salientes; no es una ley física del agua. Si impedir subidas hace imposible el perfil objetivo, el piloto falla, no se relaja.
+- Suelo: aplicar exactamente la cota inferior EV79 escrita arriba en cada vértice seco modificado. La prueba de signo y el cruce se hacen por cara/triángulo, no mediante una máscara de agua inferida.
+- El desplazamiento de cada cruce del contorno respecto a B queda limitado a 1 m en XZ; no aparecen caras mojadas nuevas, huecos ni componentes nuevas. Verificar ambos sentidos del delta, cobertura ODOL afectada y cara física/visible, no solo el raster de signos.
+- El canal/corredor navegable conserva el mínimo de 1 m de lecho y 0.95 m de calado donde P9 lo exige; no se consumen sus 24 m útiles protegidos. El foco se encuentra fuera de esa condición salvo que el cruce de máscaras real demuestre lo contrario. La puerta global de corredor se vuelve a ejecutar, no se presupone por distancia visual.
+
+No-raise-B es una restricción de método prudente, no una necesidad para preservar agua. Tampoco son necesidades físicas el orden estricto de alturas entre los ocho vecinos, ni el medio paso B→R: el primero puede conservar una cresta residual y el segundo es amortiguación numérica. Se sustituyen por signos/cruces reales, cotas físicas, ausencia de nuevos extremos y medición explícita de forma. No se congela una región a partir de una etiqueta húmeda ni se conserva un polígono inferido.
+
+## Éxito y rechazo
+
+La propuesta solo cuenta como mejora si, en el candidato float32 y contra B:
+
+1. La prominencia cardinal del foco baja al menos 25% en ambos cortes (E–O y N–S), y el ángulo máximo incidente en el foco baja al menos 2° desde `37.3290°`.
+2. No aparece ningún máximo, mínimo o extremo débil nuevo en núcleo más collar; no aumenta la prominencia axial máxima en ninguna fila o columna del núcleo. Se conservan los cortes cardinales 1:1 de las cuatro direcciones por el foco y una superficie local de alturas para revisión de forma, no solo histogramas de energía.
+3. No se crea una meseta nueva: registrar y comparar parches conectados de gradiente cero en float32 y rechazar cualquier parche plano de 2×2 que no existiera en B. Esta alarma estructural no sustituye la revisión visual posterior.
+4. No hay nuevas bisagras >30°, el máximo angular del sector no empeora, pendientes no superan `max(35°, B)`, los cruces/topología cumplen las puertas anteriores y no se pierde el lecho/calado de P9.
+
+El 25% y 2° son umbrales propuestos para que este piloto pruebe una reducción de forma perceptible y no una mejora energética marginal; no son una regla del producto ya aprobada. Si estos objetivos resultan inviables bajo las puertas duras, se conserva B y se informa el bloqueo exacto. Una aceptación offline solo habilitaría revisión gráfica con cámaras comparables; no confirmaría apariencia natural ni aceptación de producto.
+
+## Evidencia negativa mínima del consumidor
+
+Antes de leer el candidato debe probarse que el consumidor rechaza: (a) un descenso que desplace un cruce 1.01 m; (b) un cambio que convierta una cara seca en mojada o añada componente/hueco; (c) un vértice realmente mojado/protegido modificado aunque conserve la etiqueta de clase; (d) una altura fuera de EV79 ±2 m o bajo el suelo P/F/SEA; (e) un nuevo extremo/meseta o un foco que no alcance los dos umbrales de mejora; (f) cambio de P/F, objetos o metadatos. Un positivo debe demostrar que una modificación interior seca admisible reduce el perfil y conserva la celda de cruce dentro de 1 m. La reconstrucción del consumidor no importa el optimizador ni acepta el informe del autor como prueba.
+
+**Límite:** se ha medido disponibilidad local de grados de libertad, no la solución conjunta del perfil, no el área de cruce tras modificar alturas y no la forma percibida. El foco tiene margen, pero el borde cercano tiene solo `0.29055 m`; los cruces y el anillo fijo pueden reducir sustancialmente la factibilidad. No ejecutar ni empaquetar hasta que receta, umbrales y fixtures queden aprobados y el consumidor independiente esté listo.

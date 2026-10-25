@@ -1,0 +1,53 @@
+{
+  "status": "FAIL_NATIVE_COMPONENT_SPLIT",
+  "before_components": 4,
+  "after_components": 9,
+  "splits": [
+    {
+      "before_id": 1,
+      "before_area_m2": 1938.3220001703862,
+      "bounds": [
+        7180.588992,
+        5568.0,
+        7438.107165,
+        5851.764566
+      ],
+      "after_parts": [
+        {
+          "after_id": 1,
+          "overlap_m2": 398.44884915767074,
+          "after_area_m2": 510.8509463029183
+        },
+        {
+          "after_id": 2,
+          "overlap_m2": 1.8344052260266386,
+          "after_area_m2": 1.8344052260266386
+        },
+        {
+          "after_id": 3,
+          "overlap_m2": 11.592412418648449,
+          "after_area_m2": 11.59241241864845
+        },
+        {
+          "after_id": 4,
+          "overlap_m2": 542.9088498292866,
+          "after_area_m2": 773.6342544372582
+        },
+        {
+          "after_id": 5,
+          "overlap_m2": 35.22965430859271,
+          "after_area_m2": 38.375216269188954
+        },
+        {
+          "after_id": 6,
+          "overlap_m2": 69.39175104704354,
+          "after_area_m2": 69.8579305500793
+        }
+      ]
+    }
+  ],
+  "method": "Native triangle clipping against the frozen stitched water field; same complete domain for source and candidate. Components and overlaps below 1 square metre excluded as numerical/sliver noise.",
+  "limits": [
+    "Only the three pilot domains are measured. Water vertices at exact zero are included. This measures rendered water footprint, not nominal physical pond occupancy."
+  ]
+}

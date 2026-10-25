@@ -1,0 +1,362 @@
+{
+ "status": "BUILT_PENDING_GATES_AND_ENGINE_VIEWS",
+ "params": {
+  "slope": 0.15,
+  "band": 12.0,
+  "sigma": 12.0,
+  "max_shift": 4.0,
+  "min_vertices": 4,
+  "max_raise": 2.0,
+  "max_raise_water": 6.0,
+  "max_lower": 1.5,
+  "bed_floor": 1.0,
+  "bed_min_depth": 0.3,
+  "outline_sd": "E:\\DayZ-Baltic-Build\\v30-v10\\22\\sd_shape.npz",
+  "outline_sd_classes": [
+   2,
+   5,
+   7
+  ],
+  "low_water_bank": true,
+  "low_water_bank_min": 1.0,
+  "narva_radius": 620.0,
+  "sea_cut": 0.51
+ },
+ "components": {
+  "standing": 592,
+  "flowing": 148,
+  "profiled": 690,
+  "skipped_small": 50,
+  "skipped_no_outline": 0,
+  "land_vertices_edited_by_two_or_more": 714
+ },
+ "vertices": {
+  "band": 203435,
+  "editable": 183324,
+  "forced": 117667,
+  "changed": 384633,
+  "forced_at_move_cap": 1910,
+  "kept_by_gate": 0,
+  "bed_raised": 273559,
+  "face_recovery": {
+   "iterations": 22,
+   "reverted_vertices": 2341
+  },
+  "low_water_bank": {
+   "vertices": 727,
+   "below_own_floor": 0
+  }
+ },
+ "by_class": {
+  "2": {
+   "forced": 36861,
+   "changed": 37179,
+   "bed_raised": 271395,
+   "crossing_offset_m_vs_smoothed_outline": {
+    "before": {
+     "edges": 39170,
+     "no_crossing": 0,
+     "p50": 0.075,
+     "p90": 0.901,
+     "p99": 5.357
+    },
+    "after": {
+     "edges": 39170,
+     "no_crossing": 0,
+     "p50": 0.0,
+     "p90": 0.55,
+     "p99": 2.309
+    }
+   }
+  },
+  "3": {
+   "forced": 10410,
+   "changed": 10435,
+   "bed_raised": 0,
+   "crossing_offset_m_vs_smoothed_outline": {
+    "before": {
+     "edges": 16103,
+     "no_crossing": 28,
+     "p50": 1.562,
+     "p90": 3.789,
+     "p99": 5.631
+    },
+    "after": {
+     "edges": 16103,
+     "no_crossing": 28,
+     "p50": 0.536,
+     "p90": 3.612,
+     "p99": 5.261
+    }
+   }
+  },
+  "5": {
+   "forced": 23528,
+   "changed": 23646,
+   "bed_raised": 1371,
+   "crossing_offset_m_vs_smoothed_outline": {
+    "before": {
+     "edges": 28050,
+     "no_crossing": 58,
+     "p50": 0.115,
+     "p90": 1.191,
+     "p99": 3.585
+    },
+    "after": {
+     "edges": 28050,
+     "no_crossing": 91,
+     "p50": 0.0,
+     "p90": 0.742,
+     "p99": 2.882
+    }
+   }
+  },
+  "6": {
+   "forced": 36529,
+   "changed": 36808,
+   "bed_raised": 21,
+   "crossing_offset_m_vs_smoothed_outline": {
+    "before": {
+     "edges": 47087,
+     "no_crossing": 47,
+     "p50": 0.618,
+     "p90": 1.905,
+     "p99": 2.952
+    },
+    "after": {
+     "edges": 47087,
+     "no_crossing": 131,
+     "p50": 0.0,
+     "p90": 0.094,
+     "p99": 1.003
+    }
+   }
+  },
+  "7": {
+   "forced": 10971,
+   "changed": 11027,
+   "bed_raised": 772,
+   "crossing_offset_m_vs_smoothed_outline": {
+    "before": {
+     "edges": 11798,
+     "no_crossing": 0,
+     "p50": 0.083,
+     "p90": 0.727,
+     "p99": 2.879
+    },
+    "after": {
+     "edges": 11798,
+     "no_crossing": 0,
+     "p50": 0.0,
+     "p90": 0.721,
+     "p99": 3.241
+    }
+   }
+  }
+ },
+ "gates": {
+  "water_depth": {
+   "before": 1,
+   "after": 1
+  },
+  "banks": {
+   "before": 0,
+   "after": 0
+  },
+  "land_floor": {
+   "before": 0,
+   "after": 0
+  },
+  "beach_floor": {
+   "before": 0,
+   "after": 0
+  },
+  "slopes": {
+   "before": 0,
+   "after": 0
+  },
+  "pieces": {
+   "before": 21,
+   "after": 21
+  }
+ },
+ "bed_below_0p85": {
+  "2": {
+   "before": 271402,
+   "after": 520
+  },
+  "3": {
+   "before": 29914,
+   "after": 28971
+  },
+  "5": {
+   "before": 1321,
+   "after": 648
+  },
+  "6": {
+   "before": 578,
+   "after": 31
+  },
+  "7": {
+   "before": 767,
+   "after": 674
+  }
+ },
+ "largest_components": [
+  {
+   "id": 273,
+   "vertices": 121898,
+   "cls_counts": {
+    "2": 121898,
+    "7": 0,
+    "3": 0,
+    "5": 0,
+    "6": 0
+   },
+   "level_min": 2.64,
+   "level_max": 2.64,
+   "changed": 5747
+  },
+  {
+   "id": 103,
+   "vertices": 87737,
+   "cls_counts": {
+    "2": 87737,
+    "7": 0,
+    "3": 0,
+    "5": 0,
+    "6": 0
+   },
+   "level_min": 1.43,
+   "level_max": 1.43,
+   "changed": 3108
+  },
+  {
+   "id": 195,
+   "vertices": 51391,
+   "cls_counts": {
+    "2": 51391,
+    "7": 0,
+    "3": 0,
+    "5": 0,
+    "6": 0
+   },
+   "level_min": 2.13,
+   "level_max": 2.13,
+   "changed": 2855
+  },
+  {
+   "id": 643,
+   "vertices": 21194,
+   "cls_counts": {
+    "2": 0,
+    "7": 0,
+    "3": 18995,
+    "5": 348,
+    "6": 1851
+   },
+   "level_min": 0.8,
+   "level_max": 5.188,
+   "changed": 13187
+  },
+  {
+   "id": 647,
+   "vertices": 5730,
+   "cls_counts": {
+    "2": 0,
+    "7": 0,
+    "3": 5730,
+    "5": 0,
+    "6": 0
+   },
+   "level_min": 0.8,
+   "level_max": 3.0,
+   "changed": 0
+  },
+  {
+   "id": 669,
+   "vertices": 3926,
+   "cls_counts": {
+    "2": 0,
+    "7": 0,
+    "3": 3926,
+    "5": 0,
+    "6": 0
+   },
+   "level_min": 2.45,
+   "level_max": 2.65,
+   "changed": 1887
+  },
+  {
+   "id": 707,
+   "vertices": 3786,
+   "cls_counts": {
+    "2": 0,
+    "7": 0,
+    "3": 0,
+    "5": 2098,
+    "6": 1688
+   },
+   "level_min": 1.391,
+   "level_max": 6.29,
+   "changed": 9401
+  },
+  {
+   "id": 611,
+   "vertices": 3679,
+   "cls_counts": {
+    "2": 0,
+    "7": 0,
+    "3": 3590,
+    "5": 88,
+    "6": 1
+   },
+   "level_min": 0.8,
+   "level_max": 1.425,
+   "changed": 1467
+  },
+  {
+   "id": 245,
+   "vertices": 3205,
+   "cls_counts": {
+    "2": 3205,
+    "7": 0,
+    "3": 0,
+    "5": 0,
+    "6": 0
+   },
+   "level_min": 2.46,
+   "level_max": 2.46,
+   "changed": 1197
+  },
+  {
+   "id": 524,
+   "vertices": 2783,
+   "cls_counts": {
+    "2": 2783,
+    "7": 0,
+    "3": 0,
+    "5": 0,
+    "6": 0
+   },
+   "level_min": 4.58,
+   "level_max": 4.58,
+   "changed": 447
+  }
+ ],
+ "change_m": {
+  "raise_max": 7.57,
+  "lower_max": 1.5
+ },
+ "inputs": {
+  "E:\\DayZ-Baltic-Build\\v30-v10\\v6\\terrain_causeway.npz": "8e14cf8f7fb74cf2e4dc58597c124b817efe93e68b4a87a25475678b4a2a6970",
+  "E:\\DayZ-Baltic-Build\\v30-v10\\24\\axes.json": "2b52b6fa36eb73c3b0a05443d6ab40410e5852249410dd1459e6a3e71e6b6cba",
+  "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\profile_inland_v30.py": "9419f3c402c1ee6bf9f7cb5eae23680a4abd1cd92f63e6c0ea54e28be3d6cb1c"
+ },
+ "output_sha256": "bc7d6b7425dc67ef4065d80535de2962d4424094f2656bcf77f789d5b15a3b5a",
+ "seconds": 57.9,
+ "limits": [
+  "Only heights change: classes, levels and the vanilla reach vertices stay as they are.",
+  "Water pieces stay valid (no class or level change); gates and engine views decide acceptance."
+ ]
+}

@@ -1,0 +1,2 @@
+class CfgPatches { class BalticProjectionProbe { units[]={}; weapons[]={}; requiredVersion=0.1; requiredAddons[]={"DZ_Data"}; }; };
+class CfgMods { class BalticProjectionProbe { dir="baltic_projection_probe"; name="Baltic native projection observer"; type="mod"; hideName=1; hidePicture=1; dependencies[]={"Mission"}; class defs { class missionScriptModule { value=""; files[]={"baltic_projection_probe/scripts/5_Mission"}; }; }; }; };

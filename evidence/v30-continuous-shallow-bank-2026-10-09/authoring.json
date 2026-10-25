@@ -1,0 +1,85 @@
+{
+  "status": "REJECTED_CONTINUOUS_SHALLOW_PROFILE",
+  "gates": {
+    "outside_exact": true,
+    "fixed_exact": true,
+    "delta": true,
+    "bed_floor": true,
+    "core_depth": true,
+    "slopes": true,
+    "area_retained": false,
+    "displacement": false,
+    "corner_max": false,
+    "angular_energy": false,
+    "native_rms": true
+  },
+  "source_sha256": "fb36ec4c2203b6c936c8823078250f71082fbf43d9b1ba410049f735f890a0e6",
+  "candidate_sha256": "c2e85b35fc9d5d859e4e3b369be2639f8aa62e70498e5428c916e0b1cb2b10b3",
+  "target_source_sha256": "c3dba755bd3874c73394356983966517fafdd924219df70b0b77fd08d8f60673",
+  "changed_vertices": 142,
+  "class_changes": 1,
+  "maximum_delta_m": 1.500000238418579,
+  "area_before_m2": 304.82762760774864,
+  "area_after_m2": 242.1612483091821,
+  "new_water_m2": 3.4343109410484853,
+  "lost_water_m2": 66.1006902396155,
+  "hausdorff_m": 4.433385000000271,
+  "actual_before": {
+    "corner_count": 42,
+    "corner_max_degrees": 49.34490374895613,
+    "corner_turn_square_sum": 4.0345944222529635,
+    "corner_turn_square_per_m": 0.03186234330284392,
+    "one_metre_turn_square_mean": 3.2823139214507577,
+    "one_metre_phases": [
+      3.3009142530200846,
+      3.5344563890357668,
+      3.099893798232878,
+      3.193991245514301
+    ]
+  },
+  "actual_after": {
+    "corner_count": 38,
+    "corner_max_degrees": 72.39102762898892,
+    "corner_turn_square_sum": 4.709727946129008,
+    "corner_turn_square_per_m": 0.040061686801972446,
+    "one_metre_turn_square_mean": 3.152681061223503,
+    "one_metre_phases": [
+      3.1518628895928726,
+      3.3673855792964718,
+      3.0685825773808504,
+      3.0228931986238172
+    ]
+  },
+  "legacy_before": {
+    "lines": 1,
+    "length_m": 126.62579095031126,
+    "samples": 58,
+    "p90_degrees": 29.32770622848296,
+    "over30_share": 0.10344827586206896,
+    "max_degrees": 110.335749656383
+  },
+  "legacy_after": {
+    "lines": 1,
+    "length_m": 117.56189821485809,
+    "samples": 53,
+    "p90_degrees": 32.098696173832714,
+    "over30_share": 0.1320754716981132,
+    "max_degrees": 119.25020148824636
+  },
+  "native_hinges": [
+    {
+      "rms": 8.581124571166171,
+      "over30": 13,
+      "max": 42.18267979348834
+    },
+    {
+      "rms": 7.396792618028175,
+      "over30": 1,
+      "max": 35.2259949720987
+    }
+  ],
+  "limits": [
+    "No model coverage, package or native game test yet.",
+    "One local pilot, no global smoothing or base acceptance."
+  ]
+}

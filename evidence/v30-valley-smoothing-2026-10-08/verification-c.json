@@ -1,0 +1,227 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "finite": true,
+    "structural_exact": true,
+    "corridors_exact": true,
+    "roads_pass": true,
+    "metadata_outside_local_exact": true,
+    "no_new_floor_exception": true,
+    "legacy_low_not_excavated": true,
+    "no_new_dry_flood": true,
+    "no_new_wet_exposure": true,
+    "slopes": true,
+    "R3_curvature": true,
+    "general_curvature": true,
+    "R1_shore_turns": false,
+    "R1_shore_distance": false,
+    "R2_shore_turns": true,
+    "R2_shore_distance": false,
+    "R3_shore_turns": true,
+    "R3_shore_distance": false,
+    "native_components": true,
+    "component_areas": false,
+    "islands": true
+  },
+  "curvature": {
+    "R3_valley": {
+      "before": 0.022390349713036835,
+      "after": 0.014543934299843395,
+      "reduction": 0.3504373765374842
+    },
+    "general_dry": {
+      "before": 0.014707412339075505,
+      "after": 0.013038926123120156,
+      "reduction": 0.11344525994708254
+    }
+  },
+  "outlines": {
+    "R1": {
+      "before": {
+        "lines": 2,
+        "length_m": 507.20703496792237,
+        "samples": 242,
+        "turn_p50": 3.9519107140018206,
+        "turn_p90": 23.039456892569877,
+        "turn_p95": 28.80583440728418,
+        "turn_over30_share": 0.045454545454545456
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 501.6630779329035,
+        "samples": 240,
+        "turn_p50": 5.300600030050182,
+        "turn_p90": 21.81071652758259,
+        "turn_p95": 30.437442268641835,
+        "turn_over30_share": 0.05416666666666667
+      },
+      "hausdorff_m": 4.876347773902208
+    },
+    "R2": {
+      "before": {
+        "lines": 2,
+        "length_m": 812.7945216624786,
+        "samples": 395,
+        "turn_p50": 5.490514208207124,
+        "turn_p90": 29.632085333337162,
+        "turn_p95": 53.53929375869794,
+        "turn_over30_share": 0.09873417721518987
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 740.9723420725934,
+        "samples": 360,
+        "turn_p50": 3.5204437857508832,
+        "turn_p90": 27.39894360733469,
+        "turn_p95": 45.48937502146268,
+        "turn_over30_share": 0.09166666666666666
+      },
+      "hausdorff_m": 11.282519845805558
+    },
+    "R3": {
+      "before": {
+        "lines": 2,
+        "length_m": 867.1271619719322,
+        "samples": 422,
+        "turn_p50": 10.01427744024578,
+        "turn_p90": 37.68891934544408,
+        "turn_p95": 46.3190495417347,
+        "turn_over30_share": 0.1872037914691943
+      },
+      "after": {
+        "lines": 1,
+        "length_m": 847.7599416298872,
+        "samples": 418,
+        "turn_p50": 8.313192735811503,
+        "turn_p90": 32.39123474859282,
+        "turn_p95": 47.58132181728381,
+        "turn_over30_share": 0.11483253588516747
+      },
+      "hausdorff_m": 4.124912236493423
+    }
+  },
+  "topology": {
+    "before_components": 4,
+    "after_components": 4,
+    "components": [
+      {
+        "before_id": 0,
+        "bounds": [
+          2112.0,
+          7068.390924,
+          2256.0,
+          7332.955183
+        ],
+        "matches": 1,
+        "before_area": 15280.43494691596,
+        "after_area": 14994.519321440372,
+        "area_ratio": 0.9812887770231111,
+        "before_holes": 0,
+        "after_holes": 0
+      },
+      {
+        "before_id": 1,
+        "bounds": [
+          7180.588992,
+          5568.0,
+          7438.107165,
+          5851.764566
+        ],
+        "matches": 1,
+        "before_area": 1938.3220001703862,
+        "after_area": 1957.333412114304,
+        "area_ratio": 1.009808180447958,
+        "before_holes": 0,
+        "after_holes": 0
+      },
+      {
+        "before_id": 2,
+        "bounds": [
+          8205.706084,
+          8930.690011,
+          8280.245835,
+          9264.0
+        ],
+        "matches": 1,
+        "before_area": 3328.4113517268265,
+        "after_area": 3092.6680539382173,
+        "area_ratio": 0.929172427060044,
+        "before_holes": 0,
+        "after_holes": 0
+      },
+      {
+        "before_id": 3,
+        "bounds": [
+          8242.982029,
+          8891.055141,
+          8258.279224,
+          8914.582331
+        ],
+        "matches": 1,
+        "before_area": 152.52619096708423,
+        "after_area": 44.16447481931459,
+        "area_ratio": 0.28955338449935764,
+        "before_holes": 0,
+        "after_holes": 0
+      }
+    ],
+    "no_split_or_missing": true,
+    "area_preserved": false,
+    "islands_preserved": true
+  },
+  "new_dry_flood": 0,
+  "new_wet_exposure": 0,
+  "bad_faces": 0,
+  "reclassified_vertices": 86,
+  "corridor_vertices": 22893,
+  "wet_area_before": 20699.694489780257,
+  "wet_area_after": 20088.685262312207,
+  "roads": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "terrain_sha256": "950b4518fee16448910f729961a656666cbd6096b334e958b558974940e71645",
+  "limits": [
+    "Frozen physical pond planes; class-derived reconstruction is not the deployed water.",
+    "Native whole-domain audit corrects removed-cells clipping in the preliminary metric; no game acceptance."
+  ]
+}

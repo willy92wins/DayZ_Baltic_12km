@@ -1,0 +1,1447 @@
+{
+  "status": "PASS_CURRENT_SHALLOW_WAVE_REPAIR",
+  "checks": {
+    "both_weather_phases_pass": true,
+    "all17_points_302_samples": true,
+    "fixed_points_positive": true,
+    "unchanged_presence_controls": true,
+    "unchanged_dry_stays_dry": true,
+    "baseline_storm_reproduces_two_failures": true,
+    "real_series_negative_controls_rejected": true
+  },
+  "current": {
+    "status": "DIAGNOSTIC_SERIES_COMPLETE",
+    "samples_per_point": 302,
+    "point_count": 17,
+    "results": [
+      {
+        "id": 13,
+        "role": "dry_bank",
+        "x": 704.0,
+        "z": 7112.0,
+        "elapsed_s": 632.266,
+        "pond_true": 0,
+        "sea_true": 0,
+        "positive_depth_samples": 0,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 0.879128,
+            "max": 0.879128
+          },
+          "no_fake": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "with_fake": {
+            "min": 0.584049,
+            "max": 0.822175
+          },
+          "depth_bed": {
+            "min": -0.305079,
+            "max": -0.0669537
+          },
+          "depth_above": {
+            "min": -100.295,
+            "max": -100.057
+          },
+          "depth_plane_minus_1": {
+            "min": 0.933422,
+            "max": 0.972874
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": -0.229128,
+          "max": -0.029128000000000043
+        },
+        "depth_residual_no_fake": {
+          "min": -0.06657799999999994,
+          "max": -0.027127000000000012
+        },
+        "depth_residual_with_fake": {
+          "min": -1.0000000000287557e-06,
+          "max": 1.1102230246251565e-16
+        },
+        "depth_above_minus_bed": {
+          "min": -99.99050000000001,
+          "max": -99.9895
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 22,
+        "role": "deep_pond",
+        "x": 1082.0,
+        "z": 4814.0,
+        "elapsed_s": 632.266,
+        "pond_true": 302,
+        "sea_true": 0,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 1.0,
+            "max": 1.0
+          },
+          "no_fake": {
+            "min": 2.625,
+            "max": 2.625
+          },
+          "with_fake": {
+            "min": 2.57444,
+            "max": 2.71268
+          },
+          "depth_bed": {
+            "min": 1.56444,
+            "max": 1.70268
+          },
+          "depth_above": {
+            "min": -98.4256,
+            "max": -98.2873
+          },
+          "depth_plane_minus_1": {
+            "min": 0.949442,
+            "max": 1.08768
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 1.625,
+          "max": 1.625
+        },
+        "depth_residual_no_fake": {
+          "min": -0.05055999999999994,
+          "max": 0.08767999999999998
+        },
+        "depth_residual_with_fake": {
+          "min": -2.220446049250313e-16,
+          "max": 2.220446049250313e-16
+        },
+        "depth_above_minus_bed": {
+          "min": -99.99005000000001,
+          "max": -99.98995
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 33,
+        "role": "sea",
+        "x": 1244.0,
+        "z": 10604.0,
+        "elapsed_s": 632.256,
+        "pond_true": 0,
+        "sea_true": 302,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": -0.466216,
+            "max": -0.466216
+          },
+          "no_fake": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "with_fake": {
+            "min": 0.586922,
+            "max": 0.852024
+          },
+          "depth_bed": {
+            "min": 1.04314,
+            "max": 1.30824
+          },
+          "depth_above": {
+            "min": -98.9469,
+            "max": -98.6818
+          },
+          "depth_plane_minus_1": {
+            "min": 0.935723,
+            "max": 1.00256
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 1.116216,
+          "max": 1.316216
+        },
+        "depth_residual_no_fake": {
+          "min": -0.06427700000000014,
+          "max": 0.002566999999999986
+        },
+        "depth_residual_with_fake": {
+          "min": -5.000000000032756e-06,
+          "max": 5.000000000032756e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.99005000000001,
+          "max": -99.98995
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 362,
+        "role": "frozen_shallow_failure",
+        "x": 2732.0,
+        "z": 6812.0,
+        "elapsed_s": 632.256,
+        "pond_true": 302,
+        "sea_true": 0,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 0.929891,
+            "max": 0.929891
+          },
+          "no_fake": {
+            "min": 1.125,
+            "max": 1.125
+          },
+          "with_fake": {
+            "min": 1.03991,
+            "max": 1.08504
+          },
+          "depth_bed": {
+            "min": 0.100017,
+            "max": 0.145153
+          },
+          "depth_above": {
+            "min": -99.89,
+            "max": -99.8448
+          },
+          "depth_plane_minus_1": {
+            "min": 0.914908,
+            "max": 0.960044
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 0.19510899999999998,
+          "max": 0.19510899999999998
+        },
+        "depth_residual_no_fake": {
+          "min": -0.08509199999999997,
+          "max": -0.039955999999999964
+        },
+        "depth_residual_with_fake": {
+          "min": -4.000000000087267e-06,
+          "max": 5.000000000143778e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990057,
+          "max": -99.989952
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 363,
+        "role": "frozen_shallow_failure",
+        "x": 2732.0,
+        "z": 6818.0,
+        "elapsed_s": 632.255,
+        "pond_true": 302,
+        "sea_true": 0,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 0.931309,
+            "max": 0.931309
+          },
+          "no_fake": {
+            "min": 1.125,
+            "max": 1.125
+          },
+          "with_fake": {
+            "min": 1.00576,
+            "max": 1.11786
+          },
+          "depth_bed": {
+            "min": 0.0644528,
+            "max": 0.176552
+          },
+          "depth_above": {
+            "min": -99.9256,
+            "max": -99.8135
+          },
+          "depth_plane_minus_1": {
+            "min": 0.880762,
+            "max": 0.992861
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 0.19369099999999995,
+          "max": 0.19369099999999995
+        },
+        "depth_residual_no_fake": {
+          "min": -0.11923819999999993,
+          "max": -0.007138999999999951
+        },
+        "depth_residual_with_fake": {
+          "min": -5.000000000060512e-06,
+          "max": 5.000000000143778e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.9900549,
+          "max": -99.989953
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 416,
+        "role": "frozen_shallow_failure",
+        "x": 2920.0,
+        "z": 6832.0,
+        "elapsed_s": 632.256,
+        "pond_true": 302,
+        "sea_true": 0,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 0.898909,
+            "max": 0.898909
+          },
+          "no_fake": {
+            "min": 1.1,
+            "max": 1.1
+          },
+          "with_fake": {
+            "min": 1.03727,
+            "max": 1.11022
+          },
+          "depth_bed": {
+            "min": 0.128365,
+            "max": 0.201313
+          },
+          "depth_above": {
+            "min": -99.8616,
+            "max": -99.7887
+          },
+          "depth_plane_minus_1": {
+            "min": 0.937274,
+            "max": 1.01022
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 0.20109100000000013,
+          "max": 0.20109100000000013
+        },
+        "depth_residual_no_fake": {
+          "min": -0.06272600000000011,
+          "max": 0.01022199999999987
+        },
+        "depth_residual_with_fake": {
+          "min": -5.000000000143778e-06,
+          "max": 5.000000000060512e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990054,
+          "max": -99.98995000000001
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 524,
+        "role": "frozen_shallow_failure",
+        "x": 3170.2321827410883,
+        "z": 3261.7678172589117,
+        "elapsed_s": 632.255,
+        "pond_true": 302,
+        "sea_true": 0,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 2.35765,
+            "max": 2.35765
+          },
+          "no_fake": {
+            "min": 2.65,
+            "max": 2.65
+          },
+          "with_fake": {
+            "min": 2.59802,
+            "max": 2.73263
+          },
+          "depth_bed": {
+            "min": 0.230374,
+            "max": 0.364978
+          },
+          "depth_above": {
+            "min": -99.7596,
+            "max": -99.625
+          },
+          "depth_plane_minus_1": {
+            "min": 0.948021,
+            "max": 1.08262
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 0.2923499999999999,
+          "max": 0.2923499999999999
+        },
+        "depth_residual_no_fake": {
+          "min": -0.05197599999999988,
+          "max": 0.08262800000000015
+        },
+        "depth_residual_with_fake": {
+          "min": -2.0000000001685336e-06,
+          "max": 8.000000000230045e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990053,
+          "max": -99.989951
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 548,
+        "role": "changed_outline_dry_control",
+        "x": 3466.2279634108813,
+        "z": 2966.5648651473066,
+        "elapsed_s": 632.253,
+        "pond_true": 0,
+        "sea_true": 0,
+        "positive_depth_samples": 0,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 3.82325,
+            "max": 3.82325
+          },
+          "no_fake": {
+            "min": 2.575,
+            "max": 2.575
+          },
+          "with_fake": {
+            "min": 2.48926,
+            "max": 2.54338
+          },
+          "depth_bed": {
+            "min": -1.34399,
+            "max": -1.28987
+          },
+          "depth_above": {
+            "min": -101.334,
+            "max": -101.28
+          },
+          "depth_plane_minus_1": {
+            "min": 0.914262,
+            "max": 0.968384
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": -1.2482499999999996,
+          "max": -1.2482499999999996
+        },
+        "depth_residual_no_fake": {
+          "min": -0.08574000000000037,
+          "max": -0.031620000000000426
+        },
+        "depth_residual_with_fake": {
+          "min": -1.0000000000287557e-05,
+          "max": 0.0
+        },
+        "depth_above_minus_bed": {
+          "min": -99.9905,
+          "max": -99.98949999999999
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 642,
+        "role": "changed_outline_dry_control",
+        "x": 4658.776303145614,
+        "z": 8451.223696854386,
+        "elapsed_s": 632.252,
+        "pond_true": 0,
+        "sea_true": 0,
+        "positive_depth_samples": 0,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 5.62561,
+            "max": 5.62561
+          },
+          "no_fake": {
+            "min": 4.725,
+            "max": 4.725
+          },
+          "with_fake": {
+            "min": 4.59645,
+            "max": 4.72063
+          },
+          "depth_bed": {
+            "min": -1.03916,
+            "max": -0.914981
+          },
+          "depth_above": {
+            "min": -101.029,
+            "max": -100.905
+          },
+          "depth_plane_minus_1": {
+            "min": 0.871452,
+            "max": 0.99563
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": -0.9006100000000004,
+          "max": -0.9006100000000004
+        },
+        "depth_residual_no_fake": {
+          "min": -0.12854999999999972,
+          "max": -0.004370999999999681
+        },
+        "depth_residual_with_fake": {
+          "min": -1.0000000000287557e-05,
+          "max": 4.0000000004480896e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.99049199999999,
+          "max": -99.989506
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 693,
+        "role": "high_deep_pond",
+        "x": 5436.445447472604,
+        "z": 1979.5545525273953,
+        "elapsed_s": 632.249,
+        "pond_true": 0,
+        "sea_true": 0,
+        "positive_depth_samples": 0,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 5.35443,
+            "max": 5.35443
+          },
+          "no_fake": {
+            "min": 4.675,
+            "max": 4.675
+          },
+          "with_fake": {
+            "min": 4.68154,
+            "max": 4.82376
+          },
+          "depth_bed": {
+            "min": -0.682889,
+            "max": -0.540668
+          },
+          "depth_above": {
+            "min": -100.673,
+            "max": -100.531
+          },
+          "depth_plane_minus_1": {
+            "min": 1.00654,
+            "max": 1.14876
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": -0.67943,
+          "max": -0.67943
+        },
+        "depth_residual_no_fake": {
+          "min": 0.006541000000000019,
+          "max": 0.14876199999999995
+        },
+        "depth_residual_with_fake": {
+          "min": -6.000000000616623e-06,
+          "max": 4.000000000226045e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990498,
+          "max": -99.98950099999999
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 765,
+        "role": "frozen_shallow_failure",
+        "x": 6573.035543020511,
+        "z": 6644.964456979489,
+        "elapsed_s": 632.244,
+        "pond_true": 302,
+        "sea_true": 0,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 4.99888,
+            "max": 4.99888
+          },
+          "no_fake": {
+            "min": 5.2,
+            "max": 5.2
+          },
+          "with_fake": {
+            "min": 5.07763,
+            "max": 5.20286
+          },
+          "depth_bed": {
+            "min": 0.0687537,
+            "max": 0.19398
+          },
+          "depth_above": {
+            "min": -99.9212,
+            "max": -99.796
+          },
+          "depth_plane_minus_1": {
+            "min": 0.877631,
+            "max": 1.00286
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 0.2011200000000004,
+          "max": 0.2011200000000004
+        },
+        "depth_residual_no_fake": {
+          "min": -0.1223663000000004,
+          "max": 0.002859999999999613
+        },
+        "depth_residual_with_fake": {
+          "min": -2.3000000000383825e-06,
+          "max": 8.00000000007739e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.9900506,
+          "max": -99.98994950000001
+        },
+        "max_gap_s": 30.007
+      },
+      {
+        "id": 882,
+        "role": "changed_outline_dry_control",
+        "x": 8018.0,
+        "z": 8024.0,
+        "elapsed_s": 632.241,
+        "pond_true": 0,
+        "sea_true": 0,
+        "positive_depth_samples": 0,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 4.15092,
+            "max": 4.15092
+          },
+          "no_fake": {
+            "min": 3.95,
+            "max": 3.95
+          },
+          "with_fake": {
+            "min": 3.84949,
+            "max": 3.96065
+          },
+          "depth_bed": {
+            "min": -0.311429,
+            "max": -0.20027
+          },
+          "depth_above": {
+            "min": -100.301,
+            "max": -100.19
+          },
+          "depth_plane_minus_1": {
+            "min": 0.899495,
+            "max": 1.01065
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": -0.20092,
+          "max": -0.20092
+        },
+        "depth_residual_no_fake": {
+          "min": -0.10050900000000001,
+          "max": 0.010649999999999993
+        },
+        "depth_residual_with_fake": {
+          "min": -8.000000000008e-06,
+          "max": 1.0000000003895781e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990488,
+          "max": -99.98950500000001
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 1176,
+        "role": "frozen_shallow_failure",
+        "x": 10526.17569637136,
+        "z": 10077.82430362864,
+        "elapsed_s": 632.24,
+        "pond_true": 302,
+        "sea_true": 0,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 1.19896,
+            "max": 1.19896
+          },
+          "no_fake": {
+            "min": 1.4,
+            "max": 1.4
+          },
+          "with_fake": {
+            "min": 1.27294,
+            "max": 1.37783
+          },
+          "depth_bed": {
+            "min": 0.0639703,
+            "max": 0.168865
+          },
+          "depth_above": {
+            "min": -99.926,
+            "max": -99.8211
+          },
+          "depth_plane_minus_1": {
+            "min": 0.872935,
+            "max": 0.97783
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 0.20103999999999989,
+          "max": 0.20103999999999989
+        },
+        "depth_residual_no_fake": {
+          "min": -0.1270696999999999,
+          "max": -0.02217499999999989
+        },
+        "depth_residual_with_fake": {
+          "min": -1.0000000000065512e-05,
+          "max": 1.0000000004450893e-07
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990055,
+          "max": -99.98995
+        },
+        "max_gap_s": 30.007
+      },
+      {
+        "id": 1185,
+        "role": "changed_outline_dry_control",
+        "x": 10612.0,
+        "z": 11590.0,
+        "elapsed_s": 632.239,
+        "pond_true": 0,
+        "sea_true": 0,
+        "positive_depth_samples": 0,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 1.45008,
+            "max": 1.45008
+          },
+          "no_fake": {
+            "min": 1.425,
+            "max": 1.425
+          },
+          "with_fake": {
+            "min": 1.34828,
+            "max": 1.40667
+          },
+          "depth_bed": {
+            "min": -0.1118,
+            "max": -0.0534031
+          },
+          "depth_above": {
+            "min": -100.102,
+            "max": -100.043
+          },
+          "depth_plane_minus_1": {
+            "min": 0.923278,
+            "max": 0.981674
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": -0.02507999999999999,
+          "max": -0.02507999999999999
+        },
+        "depth_residual_no_fake": {
+          "min": -0.07672000000000001,
+          "max": -0.01832310000000001
+        },
+        "depth_residual_with_fake": {
+          "min": -2.5000000000580114e-06,
+          "max": 7.500000000132401e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.9905002,
+          "max": -99.9895047
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 1224,
+        "role": "changed_outline_dry_control",
+        "x": 11164.247945864976,
+        "z": 1695.2715454848026,
+        "elapsed_s": 632.238,
+        "pond_true": 0,
+        "sea_true": 0,
+        "positive_depth_samples": 0,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 2.19244,
+            "max": 2.19244
+          },
+          "no_fake": {
+            "min": 2.125,
+            "max": 2.125
+          },
+          "with_fake": {
+            "min": 2.06664,
+            "max": 2.14956
+          },
+          "depth_bed": {
+            "min": -0.1358,
+            "max": -0.0528815
+          },
+          "depth_above": {
+            "min": -100.126,
+            "max": -100.043
+          },
+          "depth_plane_minus_1": {
+            "min": 0.941639,
+            "max": 1.02456
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": -0.06743999999999994,
+          "max": -0.06743999999999994
+        },
+        "depth_residual_no_fake": {
+          "min": -0.058360000000000065,
+          "max": 0.02455849999999994
+        },
+        "depth_residual_with_fake": {
+          "min": -4.000000000184412e-06,
+          "max": 6.2000000000186906e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990494,
+          "max": -99.9895005
+        },
+        "max_gap_s": 30.007
+      },
+      {
+        "id": 1274,
+        "role": "frozen_shallow_failure",
+        "x": 11590.0,
+        "z": 3448.0,
+        "elapsed_s": 632.237,
+        "pond_true": 302,
+        "sea_true": 0,
+        "positive_depth_samples": 302,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 2.15721,
+            "max": 2.15721
+          },
+          "no_fake": {
+            "min": 2.525,
+            "max": 2.525
+          },
+          "with_fake": {
+            "min": 2.3953,
+            "max": 2.57025
+          },
+          "depth_bed": {
+            "min": 0.228096,
+            "max": 0.403042
+          },
+          "depth_above": {
+            "min": -99.7619,
+            "max": -99.587
+          },
+          "depth_plane_minus_1": {
+            "min": 0.870303,
+            "max": 1.04525
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": 0.36778999999999984,
+          "max": 0.36778999999999984
+        },
+        "depth_residual_no_fake": {
+          "min": -0.12969399999999984,
+          "max": 0.04525200000000018
+        },
+        "depth_residual_with_fake": {
+          "min": -2.0000000001130225e-06,
+          "max": 8.000000000285556e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990048,
+          "max": -99.989944
+        },
+        "max_gap_s": 30.008
+      },
+      {
+        "id": 1312,
+        "role": "changed_outline_dry_control",
+        "x": 12028.199731087368,
+        "z": 1639.8002689126324,
+        "elapsed_s": 632.237,
+        "pond_true": 0,
+        "sea_true": 0,
+        "positive_depth_samples": 0,
+        "depth_sign_changes": 0,
+        "ranges": {
+          "ground": {
+            "min": 1.63319,
+            "max": 1.63319
+          },
+          "no_fake": {
+            "min": 1.475,
+            "max": 1.475
+          },
+          "with_fake": {
+            "min": 1.35695,
+            "max": 1.48743
+          },
+          "depth_bed": {
+            "min": -0.286233,
+            "max": -0.155758
+          },
+          "depth_above": {
+            "min": -100.276,
+            "max": -100.146
+          },
+          "depth_plane_minus_1": {
+            "min": 0.881954,
+            "max": 1.01243
+          },
+          "sea_level": {
+            "min": 0.65,
+            "max": 0.85
+          },
+          "sea_wave": {
+            "min": -0.0999997,
+            "max": 0.1
+          },
+          "sea_wave_max": {
+            "min": 0.1,
+            "max": 0.1
+          }
+        },
+        "no_fake_minus_ground": {
+          "min": -0.15818999999999983,
+          "max": -0.15818999999999983
+        },
+        "depth_residual_no_fake": {
+          "min": -0.11804300000000018,
+          "max": 0.012431999999999832
+        },
+        "depth_residual_with_fake": {
+          "min": -2.0000000001130225e-06,
+          "max": 8.000000000063512e-06
+        },
+        "depth_above_minus_bed": {
+          "min": -99.990495,
+          "max": -99.98949800000001
+        },
+        "max_gap_s": 30.007
+      }
+    ],
+    "gate": {
+      "status": "PASS_SHALLOW_DEPTH_BOTH_PHASES",
+      "phases": [
+        {
+          "name": "calm",
+          "weather_reached": true,
+          "wind_mps": {
+            "min": 0.1,
+            "max": 0.1
+          },
+          "overcast": {
+            "min": 0.1,
+            "max": 0.1
+          },
+          "shallow_points": 7,
+          "failing": [],
+          "min_shallow_depth_bed": 0.0639703
+        },
+        {
+          "name": "storm",
+          "weather_reached": true,
+          "wind_mps": {
+            "min": 20.0,
+            "max": 20.0
+          },
+          "overcast": {
+            "min": 1.0,
+            "max": 1.0
+          },
+          "shallow_points": 7,
+          "failing": [],
+          "min_shallow_depth_bed": 0.064074
+        }
+      ]
+    },
+    "limits": [
+      "No terrain, appearance, navigation or boat PASS is awarded.",
+      "A valid time series can contain persistent physical failures.",
+      "Relations between native APIs are empirical observations, not engine source proof."
+    ]
+  },
+  "order": {
+    "status": "ORDER_COMPARISON_COMPLETE",
+    "results": [
+      {
+        "id": 13,
+        "after_presence_minus_before": {
+          "min": 0.0,
+          "max": 0.0
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 22,
+        "after_presence_minus_before": {
+          "min": 1.775,
+          "max": 1.975
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 33,
+        "after_presence_minus_before": {
+          "min": 0.0,
+          "max": 0.0
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 362,
+        "after_presence_minus_before": {
+          "min": 0.275,
+          "max": 0.475
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 363,
+        "after_presence_minus_before": {
+          "min": 0.0,
+          "max": 0.0
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 416,
+        "after_presence_minus_before": {
+          "min": 0.2500000000000001,
+          "max": 0.45000000000000007
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 524,
+        "after_presence_minus_before": {
+          "min": 1.7999999999999998,
+          "max": 2.0
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 548,
+        "after_presence_minus_before": {
+          "min": 1.725,
+          "max": 1.9250000000000003
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 642,
+        "after_presence_minus_before": {
+          "min": 3.8749999999999996,
+          "max": 4.074999999999999
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 693,
+        "after_presence_minus_before": {
+          "min": 3.8249999999999997,
+          "max": 4.0249999999999995
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 765,
+        "after_presence_minus_before": {
+          "min": 4.3500000000000005,
+          "max": 4.55
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 882,
+        "after_presence_minus_before": {
+          "min": 3.1,
+          "max": 3.3000000000000003
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 1176,
+        "after_presence_minus_before": {
+          "min": 0.5499999999999999,
+          "max": 0.7499999999999999
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 1185,
+        "after_presence_minus_before": {
+          "min": 0.5750000000000001,
+          "max": 0.775
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 1224,
+        "after_presence_minus_before": {
+          "min": 1.275,
+          "max": 1.475
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 1274,
+        "after_presence_minus_before": {
+          "min": 1.6749999999999998,
+          "max": 1.875
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "id": 1312,
+        "after_presence_minus_before": {
+          "min": 0.6250000000000001,
+          "max": 0.8250000000000001
+        },
+        "after_depth_minus_after_presence": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    ],
+    "limit": "Before/after API observations; no engine implementation or visual proof."
+  },
+  "baseline_storm": {
+    "name": "storm",
+    "weather_reached": true,
+    "wind_mps": {
+      "min": 20.0,
+      "max": 20.0
+    },
+    "overcast": {
+      "min": 1.0,
+      "max": 1.0
+    },
+    "shallow_points": 7,
+    "failing": [
+      {
+        "id": 765,
+        "pond_false": 0,
+        "non_positive_depth": 58,
+        "min_depth_bed": -0.0397635
+      },
+      {
+        "id": 1176,
+        "pond_false": 0,
+        "non_positive_depth": 24,
+        "min_depth_bed": -0.00675201
+      }
+    ],
+    "min_shallow_depth_bed": -0.0397635
+  },
+  "negative_controls": [
+    "pond_lost",
+    "bed_exposed",
+    "storm_weather_missing"
+  ],
+  "reader_controls": {
+    "status": "PASS_READER_CONTROLS",
+    "positive": 1,
+    "negative": [
+      "missing_end",
+      "wrong_world",
+      "unknown_id",
+      "duplicate_round",
+      "nonfinite",
+      "clock_stall",
+      "wrong_terrain",
+      "missing_sample"
+    ],
+    "v3": {
+      "positive": 1,
+      "gate_controls": [
+        "exposed_bed",
+        "pond_lost",
+        "storm_not_reached"
+      ],
+      "negative": [
+        "short_row",
+        "nan_wind",
+        "v2_schema"
+      ]
+    },
+    "scope": "Synthetic reader controls only"
+  },
+  "files": {
+    "wave-reference.json": "b823d0f167380abe3ca553f4312176fa7323a84d7b92fc436a5b9e072d1b19ad",
+    "wave-runtime.log": "895f236a7b6a8a2f674f1621966b5fd38fdb2cf664a6aad6579b184cd9c0d001",
+    "wave-fixed-reference.json": "8f8e211f17f60758bbce931c653177a97028818d9f916fcf6170da7583e4e02d",
+    "wave-fixed-runtime.log": "3a871b5eba4e629d808d1290ff39898fe3b74cffb469550203f8c3ea8f136fe2",
+    "wave-fixed-order.log": "4cd0e4a591d83dbdeb9ebb6a02be4bfbeca8d9cb2d7468f5aa7303ffb1f2151e"
+  },
+  "limits": [
+    "Two repaired sites and five unchanged current shallow sites; no map-wide visual closure.",
+    "Historical points that became dry before this fix are retained as dry controls, never silently removed.",
+    "BALTIC-012 fairway proposal is not part of this deployed package."
+  ]
+}

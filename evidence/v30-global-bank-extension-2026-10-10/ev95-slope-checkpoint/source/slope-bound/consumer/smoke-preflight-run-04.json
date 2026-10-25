@@ -1,0 +1,76 @@
+{
+  "A_nnz": 441958,
+  "A_shape": [
+    166572,
+    40178
+  ],
+  "C_nnz": 79506,
+  "C_shape": [
+    40841,
+    40178
+  ],
+  "baseline_feasibility": {
+    "baseline_projection_identity": true,
+    "box_feasible": true,
+    "maximum_Cx0_minus_d": 5.827294588088989,
+    "minimum_Cx0_minus_d": 0.0,
+    "pass": true
+  },
+  "consumer_sha256": "d111772e9584f09384e6bb912a55fa6e62cb823c808818fc5a8d9d4328ec38b0",
+  "mutable_nodes": 40178,
+  "preflight_sha256": "ff6ec50041a4c6e41f9faf5046d0bc5b4b55ede08f89ecc50a83b1f8270b3c6d",
+  "prepared_delta": {
+    "baseline_height_m": 2.2943551540374756,
+    "new_solver_lo_m": 2.2943551540374756,
+    "only_lo_entry_changed": 27459,
+    "only_prepared_array_changed": "lo",
+    "previous_solver_lo_m": 1.8000000715255737,
+    "target_variable_index": 27459
+  },
+  "prepared_sha256": "c6e5b05335e6ebf65b38af685dca968e8bfdc14ff9d17ce079369f1f50c2fe2b",
+  "readset_counts": {
+    "consumer_static": 20,
+    "preflight": 51
+  },
+  "readsets_unchanged": true,
+  "scope": "prepared load + independent reconstruction only; no solve/candidate/full geometry",
+  "selected_seed": {
+    "col": 359,
+    "first_layer_id": 620,
+    "kind": "queue_fallback",
+    "row": 895,
+    "seed_id": 3872
+  },
+  "status": "SMOKE_PREFLIGHT_RECONSTRUCTION_PASS",
+  "target": {
+    "base_m": 2.2943551540374756,
+    "fixed_neighbors_rc": [
+      [
+        899,
+        445
+      ],
+      [
+        899,
+        446
+      ]
+    ],
+    "index": 27459,
+    "interval_proof": {
+      "baseline_slope_deg": 35.00000098391883,
+      "lower_m": 2.2943551540374756,
+      "proof": "NE-SE is nonnegative throughout [SE_base, SE_hi], so its squared gradient component is nonincreasing as SE rises.",
+      "slope_at_upper_deg": 34.559701112967105,
+      "upper_m": 2.7943551540374756,
+      "worst_allowed_slope_deg": 35.00000098391883
+    },
+    "physical_lower_m": 1.8000000715255737,
+    "rc": [
+      900,
+      446
+    ],
+    "solver_lower_m": 2.2943551540374756,
+    "solver_upper_m": 2.7943551540374756
+  },
+  "variables": 40178,
+  "witnesses": 42936
+}

@@ -1,0 +1,45 @@
+{
+  "status": "OTHER_SESSION_ADOPTED_AND_CLOSED_OWNERLESS_RUN",
+  "events": [
+    {
+      "event": "lifecycle_adopt",
+      "reason": "identity_match",
+      "decision": "allowed",
+      "timestamp_utc": "2026-10-01T05:54:03.315498Z",
+      "client": {
+        "platform": "claude",
+        "session": "248d4e8c-563",
+        "started_at_utc": "2026-09-29T23:06:52.997317Z",
+        "task_label": ""
+      },
+      "run_id": "1a88b815-4d4c-45a9-a50b-cf30a3b4dcc3"
+    },
+    {
+      "event": "lifecycle_close",
+      "reason": "identity_match",
+      "decision": "allowed",
+      "timestamp_utc": "2026-10-01T05:54:11.898977Z",
+      "client": {
+        "platform": "claude",
+        "session": "248d4e8c-563",
+        "started_at_utc": "2026-09-29T23:06:52.997317Z",
+        "task_label": ""
+      },
+      "run_id": "1a88b815-4d4c-45a9-a50b-cf30a3b4dcc3"
+    },
+    {
+      "event": "run_reaped",
+      "reason": "all_processes_gone_or_foreign",
+      "decision": "reaped",
+      "timestamp_utc": "2026-10-01T05:54:13.532744Z",
+      "client": {
+        "platform": "claude",
+        "session": "248d4e8c-563",
+        "started_at_utc": "2026-09-29T23:06:52.997317Z",
+        "task_label": ""
+      },
+      "run_id": "1a88b815-4d4c-45a9-a50b-cf30a3b4dcc3"
+    }
+  ],
+  "mitigation": "Hold lease only while bounded exclusive fixture is active; heartbeat, release before typed lifecycle."
+}

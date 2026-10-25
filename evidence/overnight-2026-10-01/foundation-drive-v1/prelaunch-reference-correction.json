@@ -1,0 +1,23 @@
+{
+  "status": "PASS_MISSION_IDENTITY_CONTROLS",
+  "recorded_utc": "2026-10-01T06:15:25.934939+00:00",
+  "reference_sha256": "7d2ffc82508dfad2165b61c450cd54ddb0d5ed6cfc7cdce71cd7dc6d2e51bce9",
+  "mission_criteria_unchanged": true,
+  "cases": [
+    {
+      "case": "current frozen mission",
+      "rejected": false,
+      "expected": false
+    },
+    {
+      "case": "old alias conflict",
+      "rejected": true,
+      "expected": true
+    },
+    {
+      "case": "altered mission hash",
+      "rejected": true,
+      "expected": true
+    }
+  ]
+}

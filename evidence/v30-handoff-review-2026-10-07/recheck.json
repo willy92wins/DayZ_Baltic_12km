@@ -1,0 +1,71 @@
+{
+  "reviewed_head": "4382029394f27f7e256fe410eee71285134b449b",
+  "status": "PASS_DELTA_AND_DEPLOY_ONLY",
+  "checks": {
+    "same_fields": true,
+    "finite_heights": true,
+    "all_other_arrays_identical": true,
+    "no_changes_outside_navigable": true,
+    "never_lowered": true,
+    "nonempty_change": true,
+    "changed_vertices_keep_1m_nominal": true,
+    "deployed_hashes_and_sizes_match": true,
+    "v11_terrain_hash_matches_recorded_gate": true,
+    "v12_terrain_hash_matches_recorded_gate": true
+  },
+  "changed_vertices": 21777,
+  "max_raise_m": 7.0126073360443115,
+  "changed_depth_min_median_max": [
+    1.0,
+    1.4500000476837158,
+    2.174999952316284
+  ],
+  "all_inland_navigable_vertices": 31953,
+  "inland_navigable_vertices_below_1m": 4030,
+  "below_1m_vertices_changed_in_v12": 0,
+  "inland_navigable_bed_under_0p85": 14594,
+  "deployed": [
+    {
+      "path": "P:\\Mods\\@DayZ_Baltic_V12Candidate\\Addons\\baltic_water_v30.pbo",
+      "sha256": "07c5295f112746d621e96324467b1d54fccc415a785c227feb245f59adff503f",
+      "matches_receipt": true,
+      "bytes_match": true
+    },
+    {
+      "path": "P:\\Mods\\@DayZ_Baltic_V12Candidate\\Addons\\narva_trial.pbo",
+      "sha256": "f0813174748ef648ccfcfdee82c375a2becf7e1691b6a310c6ef07dcf720cccf",
+      "matches_receipt": true,
+      "bytes_match": true
+    }
+  ],
+  "recorded_reports_not_rerun": {
+    "v11": {
+      "recorded_terrain_status": "FAIL",
+      "recorded_depth_fail": 1,
+      "recorded_piece_fail": 21,
+      "recorded_shore_faces_over_35": 2322,
+      "recorded_roads_status": "PASS",
+      "recorded_roads_samples": 77381
+    },
+    "v12": {
+      "recorded_terrain_status": "FAIL",
+      "recorded_depth_fail": 1,
+      "recorded_piece_fail": 21,
+      "recorded_shore_faces_over_35": 1273,
+      "recorded_roads_status": "PASS",
+      "recorded_roads_samples": 77381
+    }
+  },
+  "source_sha256": {
+    "E:\\DayZ-Baltic-Build\\v30-v11\\inland\\terrain_inland.npz": "6e452bd3ec05182a5ea5cf118d7ad940689fd7c4882e5f2fdefb4f4c077379ba",
+    "E:\\DayZ-Baltic-Build\\v30-v12\\inland\\terrain_inland.npz": "8b3a8c5541403abaf852e14fb4c0651175e6dcaa541f6f8a151f1db04ac7a8a6",
+    "E:\\DayZ-Baltic-Build\\v30-v12\\deploy-receipt.json": "fbfab8840a865a029cddc327aad0e4f5deb42417b4fb0a9bc1959825a78c883f",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-handoff-review-2026-10-07\\recheck.py": "4018811446dda58cb4f35d3075929faf0a47a35ec8f26a081108af84805d705d"
+  },
+  "limits": [
+    "No new in-game run; no rendering or navigation acceptance.",
+    "All navigable-class vertices include banks and excluded Narva; shallow vertices do not by themselves prove a blocked fairway.",
+    "The whole-network minimum depth is not proved by the minimum on changed vertices.",
+    "Recorded gate counts are not proof of identical failing sample identities."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "ORIGINAL_SECTOR_CONSUMER_FAIL_PRESERVED",
+  "report_sha256": "a9112811a7d23fee0fe94735683174d3d3f67e2200a7519b7633c247b82b10fa",
+  "failed_gates": [
+    "all_corridor_geometry_covered"
+  ],
+  "baseline_and_candidate_corridor_records_identical": true,
+  "corridor_unknowns": [
+    {
+      "id": "Narva_23",
+      "unknown_area": 238.74576643431396,
+      "changed_area": 0.0,
+      "max_delta": 0.0
+    },
+    {
+      "id": "Luga_0",
+      "unknown_area": 752.2621866095913,
+      "changed_area": 0.0,
+      "max_delta": 0.0
+    }
+  ],
+  "proposal": "separate incremental nonregression supplement with inherited P9 coverage open; no original report edits",
+  "source_mechanism": [
+    "verify_ev88q.py:773 all_covered includes unavailable P, not only geometry coverage",
+    "verify_ev91.py:803 p9_unknown_preserved is exact unchanged triangle check"
+  ]
+}

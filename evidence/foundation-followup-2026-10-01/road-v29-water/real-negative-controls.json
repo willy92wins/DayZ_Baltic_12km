@@ -1,0 +1,115 @@
+{
+  "status": "PASS_REAL_POSITIVE_AND_18_NEGATIVES",
+  "log_sha256": "655370cbf2393aeae315a90f1f1f62d68a68d2d4c217c75b99f858417ffcdaed",
+  "reference_sha256": "6dd3e26f4e0590aa8e633afc00155f293ce41fe6ecee5a680c36169a5288a1bf",
+  "cases": [
+    {
+      "case": "no_completion",
+      "rejected": true,
+      "reason": "Incomplete bounded measurement window",
+      "mutated_sha256": "cfeea6bf18c749191e601a9f87d4b655e0d7ac4532fa61898ee16e73d5df3740"
+    },
+    {
+      "case": "premature_completion",
+      "rejected": true,
+      "reason": "Incomplete bounded measurement window",
+      "mutated_sha256": "21ef9dc30313808e0ef0862ea36810fa8fe9082d2221d0237272451eded8d841"
+    },
+    {
+      "case": "wrong_world",
+      "rejected": true,
+      "reason": "Missing exact protocol/world header",
+      "mutated_sha256": "ed73ff341853a18a86b7a76a8cd144432bb7f8f3709bcf879d33bd1c8242dd70"
+    },
+    {
+      "case": "missing_point",
+      "rejected": true,
+      "reason": "Wrong epoch/order or duplicate point",
+      "mutated_sha256": "f71d70a5ab579d71d707317afe992ee6999a1c882abf5c1fb89a7514e839e7ca"
+    },
+    {
+      "case": "duplicate_point",
+      "rejected": true,
+      "reason": "Wrong epoch/order or duplicate point",
+      "mutated_sha256": "2f7635a66a80ddd23ef2dde43174e64fa0279272ed485bd572df763287b0abf8"
+    },
+    {
+      "case": "moved_sample",
+      "rejected": true,
+      "reason": "Frozen sample moved",
+      "mutated_sha256": "df34aec09c1c0aa847e2187daa1b65c27177b7cca80d7db88fd810f5cb48e9b1"
+    },
+    {
+      "case": "bad_ground",
+      "rejected": true,
+      "reason": "Unexpected query height",
+      "mutated_sha256": "ab94fd74290bafec268da1e80652aa72795e48c55995908d308ae8f5db121aff"
+    },
+    {
+      "case": "nonfinite",
+      "rejected": true,
+      "reason": "Non-finite protocol data",
+      "mutated_sha256": "f0b504bdbf91e9315211037f195763be149012e6019feb2204378d754f7853a7"
+    },
+    {
+      "case": "bad_vector",
+      "rejected": true,
+      "reason": "Malformed native vector",
+      "mutated_sha256": "53296407f8544148e07c102b8ddb094651f9d67576def17434ab257b9da2c7d8"
+    },
+    {
+      "case": "false_boolean",
+      "rejected": true,
+      "reason": "Malformed water classification",
+      "mutated_sha256": "360bf84fe79540eb1c93a4be2d3dafc3bf7d023e883d29aa49f87d5ca3fc2a58"
+    },
+    {
+      "case": "flooded_dry",
+      "rejected": true,
+      "reason": "Dry sample flooded or dynamic freeboard below 10cm",
+      "mutated_sha256": "fddcf03923d0924cc2c7f96b1b56752eda75ed97905373313ee8f6cc18a5c5a3"
+    },
+    {
+      "case": "insufficient_freeboard",
+      "rejected": true,
+      "reason": "Dry sample flooded or dynamic freeboard below 10cm",
+      "mutated_sha256": "9fa7db1b24829b573efe49cc824f699fb9334d776920e2f6ea859913d5cad146"
+    },
+    {
+      "case": "dry_wet_control",
+      "rejected": true,
+      "reason": "Wet control lost water or 15cm depth",
+      "mutated_sha256": "c78f0b86484ca8f326c96a03c4eb5312029413a2a6fd029e1c89df847b6b234f"
+    },
+    {
+      "case": "shallow_wet_control",
+      "rejected": true,
+      "reason": "Wet control lost water or 15cm depth",
+      "mutated_sha256": "e64375261292e096544462a4bb92c95933e0b70ff9333119e173a1e4d7f3248d"
+    },
+    {
+      "case": "no_sea_epoch",
+      "rejected": true,
+      "reason": "Wrong epoch/order or duplicate point",
+      "mutated_sha256": "bbd47b52cd95e1792ce5bf525ea216256b98af17b2931c752d57133948861abf"
+    },
+    {
+      "case": "reversed_tick",
+      "rejected": true,
+      "reason": "Non-monotone clock or measurement gap",
+      "mutated_sha256": "f42d78d95a8458a45eccce18b98a2786c1295704803743366a2d14cac32231cb"
+    },
+    {
+      "case": "data_after_completion",
+      "rejected": true,
+      "reason": "Data after completion",
+      "mutated_sha256": "02a944c0b4d42f7d2d7eb29d15099468474a01a199cdc5f8ccdd2953a59a333d"
+    },
+    {
+      "case": "early_terminal",
+      "rejected": true,
+      "reason": "Wrong completion time",
+      "mutated_sha256": "7ccc00ea7fbbe012851b900e7d9a7837665177bcab51896b2963a27869784726"
+    }
+  ]
+}

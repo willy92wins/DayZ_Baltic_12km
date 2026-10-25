@@ -1,0 +1,91 @@
+{
+  "result": "PASS",
+  "table": {
+    "version": 32,
+    "stride": 64,
+    "start": 16756919,
+    "end": 181807543,
+    "after": [
+      0,
+      19327115
+    ]
+  },
+  "objects": 2578916,
+  "models": 5308,
+  "staged": {
+    "result": "PASS",
+    "count": 2578916,
+    "position_tolerance": 1e-05,
+    "axis_tolerance": 1e-05,
+    "ids": 0,
+    "models": 0,
+    "axes": 0,
+    "position": 0,
+    "nonfinite": 0,
+    "max_axis": 1.1920928955078125e-07,
+    "max_position": 7.62939453125e-06,
+    "controls": [
+      {
+        "case": "matrix",
+        "detected": true
+      },
+      {
+        "case": "model",
+        "detected": true
+      },
+      {
+        "case": "id",
+        "detected": true
+      },
+      {
+        "case": "nan",
+        "detected": true
+      }
+    ]
+  },
+  "forest": {
+    "result": "PASS",
+    "count": 2561015,
+    "position_tolerance": 0.001,
+    "axis_tolerance": 1e-05,
+    "ids": 0,
+    "models": 0,
+    "axes": 0,
+    "position": 0,
+    "nonfinite": 0,
+    "max_axis": 1.3583197078226306e-07,
+    "max_position": 0.00048828096441866364,
+    "controls": [
+      {
+        "case": "matrix",
+        "detected": true
+      },
+      {
+        "case": "model",
+        "detected": true
+      },
+      {
+        "case": "id",
+        "detected": true
+      },
+      {
+        "case": "nan",
+        "detected": true
+      }
+    ]
+  },
+  "compiled_wrp_sha256": "dd4bec303c72ce33959a9cc824750989984a0d4783d48010a47b97905d432341",
+  "inputs": {
+    "pbo": {
+      "path": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\package-final-ae\\packed\\narva_trial.pbo",
+      "sha256": "bf2627eb7abe95652eb215b27694983252c11d019e147635795b8d4cf114246e"
+    },
+    "staged": {
+      "path": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-forest-ae\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+      "sha256": "f0cb7ba8a15e4c70cac4cb0ae7f7ca14e195cb091bc952c2f47d214d80610e95"
+    }
+  },
+  "legacy_contract_sha256": "c47f28f798aac0c770f7efa9f1263e52f1c3ce2e14114c781eff9433db7e2bd7",
+  "model_reader_sha256": "918562a9a29938774865d9cc76c2fe001b6b06243745aa6583c5d06099b363dc",
+  "scope": "EV112 compiled object audit, retaining EV111's established numerical limits.\n\nVersion-aware table layout and acceptance derive from\nev111/scripts/verify_compiled_ev111.py: v29=60B, v32=64B; staged float32\nmatrices <=1e-5, original forest JSON positions <=1e-3m and axes <=1e-5.\nThis implementation streams staged/JSON inputs and keeps a NumPy compiled\ntable, to avoid millions of Python object dictionaries. Terrain is not decoded.\n"
+}

@@ -1,0 +1,84 @@
+=====================================================================
+== C:\Program Files (x86)\Steam\steamapps\common\DayZ\DayZDiag_x64.exe
+== "C:\Program -server -config=P:\DayZ_MCP_dev\_server\serverDZ.cfg -profiles=P:\DayZ_MCP_dev\_server\profiles "-mission=C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticRegionalDriveV4.BalticTrial" -mod=P:\Mods\@DayZ_MCP;P:\Mods\@DayZ_Baltic_RoadV29;P:\Mods\@BalticDriveInputProbe -port=2302
+=====================================================================
+Exe timestamp: 2026/08/15 04:37:25
+Current time:  2026/10/01 23:05:15
+Version 1.29.163709
+=====================================================================
+
+23:05:15.22  ENGINE    (W): No module info used, trying to identify -> 0xA740000
+23:05:15.25  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+23:05:15.25  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+23:05:15.27  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+23:05:15.29  RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+23:05:15.30  RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+23:05:15.30  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+23:05:15.31  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+23:05:15.34  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/noise.edds) failed
+23:05:15.35  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+23:05:15.37  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_area.dds) failed
+23:05:15.37  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_search.dds) failed
+23:05:15.37  MATERIAL  (E): SMAAEffect area texture not found (system/textures/PP/smaa_area)
+23:05:15.37  MATERIAL  (E): SMAAEffect search texture not found (system/textures/PP/smaa_search)
+23:05:15.38  RESOURCES (E): IRenderer::CreateTextureFromImage(system/system.edds) failed
+23:05:15.38  RESOURCES (E): IRenderer::CreateTextureFromImage(system/systemsmall.edds) failed
+23:05:15.82  [Inputs] Loading inputs default "bin/constants.xml"
+23:05:15.84  [Inputs] Loading inputs default "bin/specific.xml"
+23:05:15.84  [Inputs] Loading inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+23:05:15.86  [Inputs] Exporting inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+23:05:15.492 ANIMATION (E): Can't load P:\Mods\@BalticDriveInputProbe/Anims/cfg/skeletons.anim.xml
+23:05:15.492 ANIMATION (E): Failed to open file, line 0, column 0
+23:05:15.492 ANIMATION (E): Can't load P:\Mods\@DayZ_Baltic_RoadV29/Anims/cfg/skeletons.anim.xml
+23:05:15.492 ANIMATION (E): Failed to open file, line 0, column 0
+23:05:15.492 ANIMATION (E): Can't load P:\Mods\@DayZ_MCP/Anims/cfg/skeletons.anim.xml
+23:05:15.492 ANIMATION (E): Failed to open file, line 0, column 0
+23:05:15.492 ANIMATION (E): Can't load sakhal/Anims/cfg/skeletons.anim.xml
+23:05:15.492 ANIMATION (E): Failed to open file, line 0, column 0
+23:05:21.928 Hostname of server: "DayZ_MCP S0"
+23:05:25.911 !!! File "\cfgenvironment.xml" does not exist...
+23:05:25.912 !!! [ERROR][XML] :: load [\cfgenvironment.xml] failed
+23:05:25.912 !!! [ERROR][XML] :: Failed to open file
+23:05:26.412 NETWORK      : Network simulation
+23:05:26.412  SCRIPT    (E):    -- Stack trace --
+23:05:26.412  SCRIPT    (E):    GetPlugin() scripts/4_World/plugins\pluginmanager.c : 339
+23:05:26.412  SCRIPT    (E):    OnInit() scripts/4_World/plugins\pluginbase\pluginitemdiagnostic.c : 94
+23:05:26.412  SCRIPT    (E):    PluginsInit() scripts/4_World/plugins\pluginmanager.c : 134
+23:05:26.412  SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+23:05:26.412  SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins\pluginmanager.c : 302
+23:05:26.412  SCRIPT    (E):    MissionBase() scripts/5_Mission/mission\missionbase.c : 21
+23:05:26.412  SCRIPT    (E):    CreateCustomMission() C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticRegionalDriveV4.BalticTrial\init.c : 197
+23:05:26.412  SCRIPT    (E):    -----------------
+23:05:26.420  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder
+23:05:26.420  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json
+23:05:26.421  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder
+23:05:26.421  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json
+23:05:26.421 Player connect enabled
+23:05:56.129 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05931.p3d)
+23:05:56.129 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05924.p3d)
+23:05:56.132 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05928.p3d)
+23:05:56.132 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05922.p3d)
+23:05:56.134 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05929.p3d)
+23:05:56.134 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05923.p3d)
+23:05:56.134 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05932.p3d)
+23:05:56.134 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05940.p3d)
+23:05:56.134 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05934.p3d)
+23:05:56.134 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05936.p3d)
+23:05:56.134 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05944.p3d)
+23:10:59.304 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05931.p3d)
+23:10:59.304 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05924.p3d)
+23:11:09.491 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05932.p3d)
+23:11:09.491 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05940.p3d)
+23:11:09.491 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05934.p3d)
+23:11:09.491 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05936.p3d)
+23:11:09.491 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05944.p3d)
+23:11:09.680 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05928.p3d)
+23:11:09.680 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05922.p3d)
+23:11:09.680 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05929.p3d)
+23:11:09.680 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05923.p3d)
+23:12:52.452 ENGINE       : Destroying game
+23:12:52.452  SCRIPT       : Cleaning up script module globals 'Mission'
+23:12:52.453   SCRIPT    (E): Leaked 'MCPPollCallback' script instance (1x)!
+23:12:52.453   SCRIPT    (E): ==== Total Leaks (1x)! ====
+23:12:52.824 RENDER    (W): Render release fix
+23:12:53.155  --- Termination successfully completed --- 

@@ -1,0 +1,37 @@
+{
+  "status": "PASS_FUNCTIONAL_NO_CAPTURES",
+  "run_id": "da0137cc-1c9e-40d5-ac05-7a01eb9402bb",
+  "date_local": "2026-10-02T05:46/05:50",
+  "purpose": "V30 preview 4 in the engine: smooth coast, shared plane rule (Codex review fixes), materials normalised to four surfaces",
+  "package": {
+    "mod": "P:\\Mods\\@DayZ_Baltic_V30",
+    "narva_trial_pbo_sha256": "8b5c9709f102b9f11c07f6c53d3d5a1a3aa5f473ac1a95c40344fa2da16fa75d",
+    "baltic_water_v30_pbo_sha256": "c0e8331c6dffb0c163f89f21910d1527897be6635eadcdb0b3011c05398813e1",
+    "derived_wrp_sha256": "629cb15e88053e0cde0a198cafd32d1737eb777e43bf0e1dc74e81eb38f1c96f",
+    "terrain_asc_sha256": "0683d49b79fd3f574b4f7113e4a542f15889e7cd552ba2e22cd62de4cfddc4b4",
+    "water_objects": 17715,
+    "materials": "4,775: 4,560 V29 full ones reproduced byte for byte, 215 rewritten to the full set",
+    "build": "E:\\DayZ-Baltic-Build\\v30-preview4 with -Layers E:\\DayZ-Baltic-Build\\surface-v30c",
+    "rollback": "E:\\DayZ-Baltic-Build\\v30-preview1..3\\out\\Addons"
+  },
+  "launch": {
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticFoundationSPBBasicV1.BalticTrial",
+    "extra_mods": ["P:\\Mods\\@DayZ_Baltic_V30"],
+    "no_base_mods": true,
+    "no_file_patching": true
+  },
+  "checks": [
+    {"what": "player connects", "result": "16 s after launch"},
+    {"what": "Codex's buried-plane example (9480.5, 9863.5)", "result": "fresh_water_ext at 5.30: water now visible there"},
+    {"what": "stream groove (5028, 4842)", "result": "fresh_water_ext at 2.00"},
+    {"what": "road station chain 74 (6682, 7097.1)", "result": "cp_gravel, y 23.47"},
+    {"what": "St Petersburg built-up (8600, 9950)", "result": "cp_grass, y 1.65"},
+    {"what": "close", "result": "dayz_test_close graceful (client then server), lease released"}
+  ],
+  "not_verified": [
+    "Nothing visual: capture_screenshot frame_client_all_black, display off (user idle since about 04:35).",
+    "Swimming, boats, driving and AI on V30. The navmesh is V29's and stale for V30."
+  ]
+}

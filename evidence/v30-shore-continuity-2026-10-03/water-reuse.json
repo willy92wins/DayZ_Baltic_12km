@@ -1,0 +1,44 @@
+{
+  "status": "PASS_POND_PIECE_GEOMETRY_REUSE",
+  "sources": {
+    "P:\\DayZ_Baltic_12km_dev\\tests\\terrain_v30\\terrain_v30.npz": "365c2a9400be80791e38c0c406152c87247e663205f1bc818604f05ea150c360",
+    "E:\\DayZ-Baltic-Build\\v30-shore-finish-corrected\\terrain_v30.npz": "73b01bb4a6e94e7659c51ae3fd274c72caeb408a11ee3a31560678ba98036dbd",
+    "E:\\DayZ-Baltic-Build\\v30-pond-recovery\\terrain_v30.npz": "2f954ad52893a78181df0f607ddd5e490a470fe9c634bcf30736ed1aef4c179a",
+    "E:\\DayZ-Baltic-Build\\v30-watercourse-continuity\\terrain_v30.npz": "40d8cfd9874e9260464f9e3c38c07d81a15c8aed374083a52c98f042c0161c2e"
+  },
+  "original_preview6_pieces_source_matches": true,
+  "preview6_to_shore_metadata_equal": {
+    "cls": false,
+    "level": false
+  },
+  "metadata_delta_explanation": {
+    "changed_class_vertices": 358,
+    "all_land_to_sea_delta": true,
+    "changed_pond_plane_cells": 0,
+    "cause": "Previously accepted Neva delta opening; sea-class delta does not create pond models."
+  },
+  "pond_to_continuity": {
+    "cls": true,
+    "level": true,
+    "platform": true,
+    "reserve": true,
+    "narva": true,
+    "water": true,
+    "beach": true
+  },
+  "plane_hashes": [
+    "e3106880b93984ff11264484774eda804081f7dc25700ba70617fbf0e5697ed5",
+    "e3106880b93984ff11264484774eda804081f7dc25700ba70617fbf0e5697ed5",
+    "8ead09aa5460efb3e3d7495f0e7cb403006a1c69e1484cfd029d0f9fb00a903b",
+    "8ead09aa5460efb3e3d7495f0e7cb403006a1c69e1484cfd029d0f9fb00a903b"
+  ],
+  "water_pbo_sha256": "371ece8affe420aa5ffde0b0c6da5b69eca5e329fe550cb2ce74ecacba2bcedd",
+  "dependencies_now": {
+    "P:\\DayZ_Baltic_12km_dev\\tools\\terrain\\v30_common.py": "4b53dc2b942aeba9dcd123589f81a175d58fafacf2635e3db3c7d9f168bf2643",
+    "P:\\DayZ_Baltic_12km_dev\\tools\\terrain\\audit_fairway_triangles_v30.py": "1526ff7df8b021ce164c1da42f90c2acf5907c3c537e609d367303f5a1043cf1",
+    "P:\\DayZ_Baltic_12km_dev\\tools\\terrain\\finish_shores_v30.py": "224da898c97c2c527e223918d65812fb206f36ef9bcfb2a820125fb58033fa03",
+    "P:\\DayZ_Baltic_12km_dev\\tools\\water\\build_water_pieces_v30.py": "49160c61fb6d892115d3c6a981e3830dd1dcb6ec770f47f00e155db5e7c75b31",
+    "P:\\DayZ_Baltic_12km_dev\\tools\\navigation\\water_mesh.py": "5fd118e1df1efac3baa28ab802fa47cecf6f67efe6dae29e29864087b1a7ad20"
+  },
+  "limit": "Dependency fingerprints captured after build; exact pond-plane equality is checked now. They are not a retroactive attestation of the original process."
+}

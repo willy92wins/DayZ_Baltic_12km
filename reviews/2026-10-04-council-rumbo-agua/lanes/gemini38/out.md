@@ -1,0 +1,162 @@
+## 0. Crítica del encuadre
+
+El encuadre presentado por el orquestador y los documentos de trabajo adolece de cuatro distorsiones metodológicas y conceptuales que han provocado un bucle de micro-optimizaciones numéricas desconectadas de la experiencia en juego:
+
+1. **La falsa asimetría entre relieve y lámina de agua:** Se ha tratado el relieve V30 como un espacio de rediseño plástico e iterativo al amparo del requisito P12 (`product-spec.md:18,23`), mientras que los niveles de las masas de agua se consideraron restricciones rígidas heredadas directamente de las superficies V29 `contour-v2` (`tools/terrain/build_v30_water.py:45-51`). Al modificar las cotas del terreno circundante sin recalcular la hidrología, el constructor se vio obligado a erigir terraplenes y diques automáticos de +0.35 m en un radio de 8,5 m (`tools/terrain/build_v30.py:40,449-450`) para evitar que el agua se derramase fuera de las compuertas offline (`tools/terrain/verify_terrain_v30.py:31`). El problema no es "cómo sujetar el agua", sino haber roto la concordancia entre la cuenca topográfica y su nivel freático.
+2. **El falso dilema en cauces menores (I3): «escalera o transparencia»:** El orquestador plantea que en arroyos de 1–2 vértices sobre malla de 6 m solo cabe elegir entre el agua escalonada en terrazas o un surco con calado de 0,10 m que se ve transparente (`bugs.md:19`; `evidence/v30-shore-crossing-candidate-2026-10-04/README.md:162-171`). Esta disyuntiva nace de imponer a rajatabla que cualquier escorrentía o arroyo de cabecera detectado en GIS deba renderizarse con geometría de agua física (`cls > 0`, planos pond o láminas inclinadas). En DayZ, cauces no navegables de 1 a 2 metros de ancho no requieren simulación de nado ni planos de colisión de agua: forzarlos sobre una retícula de 6 m genera inevitablemente artefactos de aliasing.
+3. **Inversión del ciclo de verificación («construir a ciegas y teorizar en vacío»):** El estado actual registra un candidato v2 desplegado pero no inspeccionado en motor (`HANDOFF.md:7`; `evidence/v30-polish-candidate-2026-10-04/README.md:54`). Durante el candidato nocturno se generó una hipótesis matemática compleja atribuyendo las costuras de R2 a isolíneas de profundidad bajo láminas inclinadas con proyecciones de focal arbitraria (`evidence/v30-shore-crossing-candidate-2026-10-04/README.md:176-190`), que quedó desmentida en cuanto Guillermo miró las capturas y reconoció simples solapes de colocación de piezas (`bugs.md:27`). La sobreingeniería de herramientas de auditoría no puede sustituir la validación visual y funcional en motor.
+4. **Sobrecarga del requisito P9 en tramos menores:** P9 (`product-spec.md:15`) exige taxativamente continuidad, calado y gálibo para «lancha vanilla y margen para barcos medianos» en ríos navegables y canales principales (Narva, Luga, delta del Neva). Trasladar la problemática de piezas vanilla y continuidad navegable a arroyos secundarios (R2, R3) consume recursos críticos en elementos que no forman parte del alcance de navegación fluvial.
+
+---
+
+## 1. Agua colgada
+
+### Diagnóstico cuantitativo
+De las 631 masas de agua estancada censadas (`evidence/v30-polish-candidate-2026-10-04/census/census.json:12`), **111 lagos (7,00 km²)** tienen su nivel más de 0,30 m por encima del terreno natural medido a 12–36 m de su borde, y **190 masas (10,71 km²)** presentan diques perimetrales de más de 0,50 m (`census.json:14,27`). Los dos mayores lagos del mapa sufren esta anomalía: el lago 269 (oeste, 4,62 km², nivel 2,64 m) tiene un dique de 0,80 m y cuelga 0,33 m sobre el terreno exterior (`census.json:65-83`), mientras que el lago 170 (sureste, 1,96 km², nivel 2,13 m) presenta un dique de 0,55 m (`census.json:86-100`).
+
+La causa raíz es la combinación de dos factores:
+1. Asignación directa de niveles fijos procedentes de V29 (`tools/terrain/build_v30_water.py:45-51`).
+2. La regla perimetral del constructor de terreno, que eleva toda la tierra a distancia ≤ 8,5 m hasta `near_lv + 0.35 m` (`tools/terrain/build_v30.py:449-450`). Al encontrarse con un terreno natural rebajado por el rediseño V30 a cotas inferiores al agua V29, el constructor levantó un muro de contención perimetral, convirtiendo lagos naturales en balsas artificiales elevadas sobre el paisaje.
+
+### Recomendación y criterio por masa
+No debe aplicarse una rebaja ciega ni generalizada. La solución exige discriminar por conectividad hidrológica:
+
+* **Lagos y charcas aislados / endorreicos (sin conexión con ríos):**
+  * *Acción:* **Re-derivar el nivel del agua a partir del terreno natural.** Ajustar la lámina al cuenco real del relieve V30, situándola entre 0,20 m y 0,35 m por debajo de la mediana del terreno perimetral exterior (`ring_median_m`), garantizando calado mínimo ≥ 0,10 m en el centro (`verify_terrain_v30.py:31`).
+  * *Por qué:* Al no alimentar ningún cauce, variar su nivel no propaga perturbaciones aguas abajo. Se eliminan de inmediato los diques artificiales y la masa queda encajada de forma natural en la topografía.
+* **Lagos conectados a la red fluvial (cabeceras o ensanches de ríos navegables, como lake_014 con el Luga):**
+  * *Acción:* **Mantener la cota de agua requerida por el gradiente fluvial y suavizar el terreno exterior en un radio extendido (30–60 m).**
+  * *Por qué y riesgos:* Si se rebaja el nivel de un lago conectado a un río, el algoritmo de corte del constructor (`cap = 0.25 m` por cada 6 m hacia cualquier vecino más bajo, `tools/terrain/build_v30_water.py:224-235`) arrastrará el río en cascada escalonada aguas abajo. Esto ya ocurrió en la cabecera del Luga, donde una charca a 1,85 m arrastró 141 vértices del canal navegable bajándolos hasta 2,10 m (`tools/terrain/build_v30_water.py:224`; `evidence/v30-polish-candidate-2026-10-04/reports/polish-report.json:20-22`). Bajar el agua en un nodo fluvial rompe la profundidad navegable de la lancha vanilla exigida en P9 (`product-spec.md:15`).
+  * *Solución geométrica:* En estos nodos, la tierra circundante debe elevarse con pendientes suaves y continuas (< 10°, dentro del límite de 35° de `verify_terrain_v30.py:31`) distribuidas en 30–60 m mediante el parámetro `valley_reach_m` (`tools/terrain/build_v30.py:35`), en lugar de levantar un escalón abrupto a 8,5 m de la orilla.
+
+---
+
+## 2. Cauces y piezas
+
+### Contraste métrico con Chernarus
+El análisis formal de juntas (`evidence/v30-polish-candidate-2026-10-04/joints/joints.json:11-189`) arroja una divergencia técnica incuestionable:
+
+* **Chernarus:**
+  * Superficie con dos o más láminas solapadas: **0,33 %** en ríos (660 piezas) y **0,49 %** en arroyos (389 piezas) (`joints.json:50,91`).
+  * Desvío de rumbo en juntas (p50): **0,44°** en ríos y **0,69°** en arroyos (`joints.json:26,67`).
+  * Encadenamiento: Canto con canto continuo, con mediana longitudinal de **−0,044 m** en ríos y **−0,045 m** en arroyos (`joints.json:17,58`), absorbiendo las curvas mediante piezas curvas específicas de la biblioteca (`joints.json:27,68`) y permitiendo desviaciones transversales (`across_m`) de ±3,5 m (`joints.json:21-24,62-65`).
+* **Baltic (tramos piloto R1, R2, R3):**
+  * Superficie con dos o más láminas: **58,0 %** en R1, **73,1 %** en R2 y **75,2 %** en R3 (`joints.json:106,147,188`).
+  * Desvío angular en juntas (p50): **8,84°** en R2 y **11,38°** en R3 (`joints.json:123,164`), alcanzando percentiles p90 de 21,99° y 20,58°.
+  * Longitud de solape (p90): **1,73 m** en R2 y **2,27 m** en R3 (`joints.json:137,178`).
+
+La causa en el código es concluyente: `tools/water/fit_channel_pieces_v30.py:263-278` implementa un algoritmo que solo itera sobre tramos rectos (`for k in straights`, línea 264), ignora las piezas curvas, fuerza el solape de faldones completos (`overlap_from=None` en R2/R3, líneas 56, 58; `--overlap-all`, línea 263; avance reducido en línea 278) y orienta cada pieza mediante una rotación angular brusca sobre el eje suavizado (`psi = math.atan2(-tdir[0], -tdir[1])`, línea 274).
+
+### Recomendación y umbral de anchura
+1. **Umbral de anchura:** Utilizar piezas vanilla de cauce únicamente en ríos de anchura **≥ 18–24 m** (correspondiente al ancho nominal de `river_24_*`), orientados a la navegación P9 (`product-spec.md:15`) donde exista una pendiente continua apreciable que desaconseje el uso de planos pond (caso del tramo R1 / Narva_28, pendiente de 1,62 m a 0,95 m, `fit_channel_pieces_v30.py:53`).
+2. **Método de encadenado:** Reescribir el algoritmo de colocación para adoptar el estándar Chernarus:
+   * Empalme canto con canto (tolerancia longitudinal de −0,05 m a 0,00 m), eliminando el solape de faldones.
+   * Empleo obligatorio de piezas curvas (`10°` y `30°`) en los giros para evitar quiebros angulares en las uniones.
+   * Permitir desplazamientos laterales del lecho dentro del margen de ribera (`across_m` controlado), acoplando el terreno a la huella de la pieza.
+3. **Supresión en arroyos:** Prohibir el uso de piezas `stream_14_*` en cauces secundarios estrechos (R2 y R3). No resuelven el problema y multiplican las costuras visibles (`evidence/v30-shore-crossing-candidate-2026-10-04/README.md:93`).
+
+---
+
+## 3. Arroyos estrechos
+
+### La tercera vía
+La alternativa a la «escalera discontinua» y al «agua casi transparente» (`bugs.md:19`) consiste en **desvincular los arroyos menores (anchura 1–2 vértices, 6–12 m de cauce) del sistema de agua física del motor:**
+
+1. **Cauces secos y estacionales de montaña/escorrentía (Orden 1 y 2):**
+   * En la hidrografía báltica y en el diseño de niveles de Bohemia, los arroyos de cabecera estrechos se representan como **lechos de cantos rodados y torrenteras secas**.
+   * Se modelan en el terreno como una vaguada suave excavada entre 0,30 m y 0,60 m respecto al suelo circundante.
+   * Se pintan en la máscara de materiales (`surface/`) con textura de grava y lecho fluvial (`--bed-tone land`, `build_surface_v30.py`), tal y como ya se ensayó en el candidato v2 (`evidence/v30-polish-candidate-2026-10-04/README.md:52`).
+   * En la fase de mapeado posterior (P10, `product-spec.md:16`), estos cauces reciben micro-objetos de decoración (rocas, troncos caídos) y emisores de sonido ambiental 3D (`SoundSet` de agua corriente).
+   * *Ventaja definitiva:* Se elimina el 100 % de los escalones de agua de 90°, el 100 % de las transparencias por calado escaso (`depth < 0.10 m`), las costuras entre piezas y las discontinuidades en la Navmesh provocadas por láminas de agua intransitables.
+2. **Tramos donde el agua superficial sea indispensable:**
+   * En puntos concretos donde el arroyo deba llevar lámina visible antes de desembocar, concentrar la pérdida de cota en **saltos naturales discretos** (pequeños azudes o cascadas de roca) donde un plano pond horizontal entregue en otro plano inferior a través de un obstáculo rocoso colocado en mapeado, en lugar de intentar una rampa continua e inviable sobre la malla de 6 m.
+
+---
+
+## 4. Rumbo fijo
+
+Secuencia estructurada en siete pasos sin regresiones para alcanzar la Base 1.0 congelada:
+
+```mermaid
+flowchart TD
+    P1["1. Inspección en motor candidato v2"] --> P2["2. Hidrografía estancada y agua colgada"]
+    P2 --> P3["3. Reconfiguración cauces vanilla navegables"]
+    P3 --> P4["4. Ajuste global de orillas"]
+    P4 --> P5["5. Compilación y puertas offline"]
+    P5 --> P6["6. Regeneración Navmesh e IA física"]
+    P6 --> P7["7. Congelación Base 1.0 y Terrain Builder"]
+```
+
+### Paso 1: Inspección visual en motor del candidato v2 desplegado
+* **Acción:** Ejecutar la sesión de revisión visual pendiente con Guillermo (`HANDOFF.md:20`) utilizando las cámaras de `evidence/v30-polish-candidate-2026-10-04/camera-poses.json`.
+* **Criterio de salida medible:** Confirmación visual de que las manchas oscuras granuladas en lagos secos y zonas de marea han desaparecido tras aplicar `--bed-tone land` y `--shore-ring flowing` (`evidence/v30-polish-candidate-2026-10-04/README.md:30,52`). Cierre formal de BALTIC-016 en `bugs.md:28`.
+* **Lo que se congela:** El criterio cromático y las reglas de generación de texturas de fondo y orilla en `tools/terrain/build_surface_v30.py`.
+
+### Paso 2: Corrección hidro-topográfica del agua colgada (BALTIC-017)
+* **Acción:** Modificar `tools/terrain/build_v30_water.py` y `tools/terrain/build_v30.py` aplicando la regla de partición: re-derivar niveles de lagos cerrados hacia la mediana del relieve V30 circundante (`ring_median_m`); para lagos conectados a ríos navegables, mantener niveles pero ensanchar la transición topográfica perimetral de 8,5 m a 30–60 m (`valley_reach_m = 45.0`, `build_v30.py:35`).
+* **Criterio de salida medible:** Censo de agua colgada (`tools/water/census_perched_water_v30.py`) con **0 lagos aislados con nivel > 0,30 m sobre el terreno** y **0 diques perimetrales > 0,50 m** en llanura (`evidence/v30-polish-candidate-2026-10-04/census/census.json:14,26`). Cero regresiones en la puerta de calado `depth_min_m >= 0.10` (`verify_terrain_v30.py:31`).
+* **Lo que se congela:** La tabla freática global (`level` y `cls` de clases 2 y 7) y la delimitación de masas de agua estancada.
+
+### Paso 3: Reconfiguración de cauces vanilla en ríos navegables P9 (BALTIC-015)
+* **Acción:** Retirar piezas vanilla de R2 y R3, transformándolos en lechos secos/grava según el Paso 3. En R1 (Narva_28, río navegable en pendiente), aplicar encadenamiento canto con canto con piezas curvas según el estándar Chernarus.
+* **Criterio de salida medible:** En R1, métrica de doble lámina **multi_share < 1,0 %** (frente al 58,0 % actual, `joints.json:106`) y desvío angular p50 < 1,0°; 0 piezas vanilla en R2 y R3; prueba física de lancha vanilla en R1 con lectura PASS y salud 600 constante (`product-spec.md:15`; `bugs.md:27`).
+* **Lo que se congela:** Biblioteca, colocación y geometrías de piezas de agua de cauce (`pieces.json` y `fit_channel_pieces_v30.py`).
+
+### Paso 4: Ajuste global de orillas sobre el contorno de diseño (BALTIC-007)
+* **Acción:** Ejecutar `tools/terrain/fit_shore_crossings_v30.py` (`evidence/v30-shore-crossing-candidate-2026-10-04/README.md:32`) sobre la totalidad del mapa integrado.
+* **Criterio de salida medible:** Desvío de la línea de agua respecto al contorno con mediana p50 ≤ 0,09 m y p90 ≤ 1,60 m sobre las 124.142 aristas nativas (`evidence/v30-shore-crossing-candidate-2026-10-04/README.md:48`); supresión de escalones de 90° en motor en las vistas de control (SHORE4, SHORE6, SHORE7); verificación de carreteras con `verify_roads_v30` en estado PASS sobre las 76.536 estaciones (`README.md:67`).
+* **Lo que se congela:** El modelo digital de elevaciones del terreno (`terrain_shore.npz`).
+
+### Paso 5: Compilación integral del paquete V30 y verificación de compuertas
+* **Acción:** Generar el mundo completo mediante `tools/terrain/build_v30_package.ps1` con `-WaterSource fit-polish/water` (`evidence/v30-polish-candidate-2026-10-04/README.md:31`).
+* **Criterio de salida medible:** `tools/terrain/verify_terrain_v30.py --sea-cut 0.51` en estado **PASS completo** (0 fallos de calado, 0 fallos de orillas `bank_min_m`, 0 taludes > 35° fuera del radio histórico de Narva, `verify_terrain_v30.py:31-33`); hashes SHA-256 inmutables de `narva_trial.pbo` y `baltic_water_v30.pbo`.
+* **Lo que se congela:** Geometría binaria, materiales de superficie y distribución de objetos de agua para el cliente y el servidor.
+
+### Paso 6: Regeneración y validación final de Navmesh e IA física
+* **Acción:** Regenerar la Navmesh estructural completa sobre el terreno congelado (`HANDOFF.md:11,20`) y ejecutar la suite completa de consumidores de navegación e IA física.
+* **Criterio de salida medible:** Cero teselas huérfanas en la Navmesh; suite física de IA (`BALTIC-002`, `BALTIC-003`, `BALTIC-004`, `BALTIC-014`) con **12/12 PASS** (`bugs.md:14-16,26`; `HANDOFF.md:11`); recorrido continuo de lancha sin encallamientos en los canales del Neva, Narva y Luga (`product-spec.md:15`).
+* **Lo que se congela:** La malla de navegación global (`.nm`) y los grafos de tránsito.
+
+### Paso 7: Aceptación formal de Base 1.0 y exportación a Terrain Builder
+* **Acción:** Aprobación definitiva por parte de Guillermo tras recorrido final de supervisión en motor; exportación del proyecto nativo `.tv4p` y capas satélite (`HANDOFF.md:13-14,20`).
+* **Criterio de salida medible:** Exportación limpia de `base_v30_shorefinish.tv4p` sin errores de importación en Terrain Builder; etiquetado git inmutable `v30-base-1.0-frozen`.
+* **Lo que se congela:** La base topográfica e hidrológica de Baltic 12km. Cierre del ciclo de relieve y autorización formal para el inicio del mapeado de objetos (P10).
+
+---
+
+## 5. Fuera de 1.0
+
+Quedan expresamente excluidos de la Base 1.0 los siguientes elementos para blindar el cierre del proyecto y evitar dispersión:
+
+1. **Red ferroviaria de circunvalación y estación de San Petersburgo (P15):** Excluida explícitamente en la especificación de producto (`product-spec.md:21`: *«Alcance futuro: no ejecutar ahora; diseño y colocación física pendientes, respetando P10»*).
+2. **Pruebas de carga y estrés con 80–100 jugadores (P7):** P7 (`product-spec.md:13`) estipula que no es demostrable en fase 0 y requiere separación previa de servidor, persistencia y loot.
+3. **Fixture de carga con deriva de IA (BALTIC-008):** Pospuesto formalmente por decisión de Guillermo a un sector mapeado (`bugs.md:20`; `HANDOFF.md:18`).
+4. **Mapeado de asentamientos, edificios, carreteras físicas y vegetación colocada (P6, P10, P11):** P10 (`product-spec.md:16`) prohíbe taxativamente abordar la población y la decoración antes de congelar relieve, hidrografía y navegación. La vegetación se limitará a las reservas y biomas de fondo (P13, `product-spec.md:19`).
+5. **Navegabilidad para barcos medianos fuera del canal principal:** P9 (`product-spec.md:15`) y BALTIC-013 (`bugs.md:25`) restringen la aceptación de la base a la lancha vanilla; la adaptación a embarcaciones mayores queda aplazada.
+6. **Agua física interactiva en arroyos de orden menor (< 18 m de cauce):** Suprimida en favor de lechos secos y texturas de ribera para garantizar la estabilidad geométrica de la malla.
+7. **Modificaciones adicionales en el relieve regional:** El relieve selectivo P12 está aprobado, implementado y medido (`product-spec.md:23`). No se reabrirá la topografía general salvo las transiciones directas de agua colgada.
+
+---
+
+## 6. Discrepancias con el orquestador
+
+| Punto | Propuesta del orquestador (Claude) | Dictamen de este Consejo | Justificación y evidencia |
+|---|---|---|---|
+| **Causa de agua colgada (I1)** | Asume que nace únicamente de usar niveles V29 sobre relieve V30 rediseñado (`BRIEF.md:87-88`). | **Discrepa parcialmente.** La causa inmediata es la regla ciega de orillas en `tools/terrain/build_v30.py:449-450`, que levanta diques a `near_lv + 0.35 m` en un radio de 8,5 m. | El desajuste V29/V30 creó la diferencia de cota, pero fue el constructor el que materializó muros de contención automáticos para retener el agua en vez de adaptar el relieve con pendiente suave (`census.json:26`). |
+| **Solución de agua colgada (I2b)** | Derivar todos los niveles del terreno natural bajando el agua al entorno (`BRIEF.md:92-93`). | **Discrepa.** Solo debe rebajarse en masas cerradas. En lagos conectados a ríos, se deben mantener los niveles y suavizar el terreno exterior en 30–60 m. | Bajar el nivel en un lago conectado activa el rebaje en cascada de `tools/terrain/build_v30_water.py:224-235`, arrastrando los ríos en escalera (141 vértices en el Luga, `reports/polish-report.json:20-22`) y arruinando el calado navegable P9 (`product-spec.md:15`). |
+| **Arroyos estrechos R2/R3 (I2a, I3)** | Retirar piezas vanilla y devolver R2 y R3 a planos pond horizontales (`BRIEF.md:90-91,95-96`). | **Discrepa radicalmente.** No deben volver a planos pond. Deben convertirse en **cauces secos / lechos de roca y grava**, sin planos de agua de motor. | Devolver arroyos con pendiente a planos pond reintroduce de inmediato el fallo inicial de BALTIC-015: escalones de 90° y huecos secos (el control `bedb362b` dejó 7 huecos en R2, `bugs.md:27`; `HANDOFF.md:12`). |
+| **Secuencia de integración (I2c)** | Propone ciclos repetidos de navmesh e IA física en candidatos intermedios antes de congelar decisiones hidráulicas (`HANDOFF.md:11,20`). | **Discrepa.** La navmesh estructural y las pruebas físicas de IA deben ejecutarse una sola vez al final del flujo (Paso 6). | Ejecutar navmesh parciales sobre candidatos de transición consume horas de cómputo y sesiones de juego (`HANDOFF.md:11`: run interrumpido 4/12 PASS), para luego desecharse al volver a tocar el terreno. |
+| **Diagnóstico de costuras en R2** | Planteó inicialmente la teoría de isolíneas de profundidad bajo lámina inclinada (`evidence/v30-shore-crossing-candidate-2026-10-04/README.md:182-187`). | **Rechaza la hipótesis teórica.** Corrobora la lectura directa de Guillermo: son solapes de colocación. | Confirmado numéricamente por `joints.json:147`: R2 tiene un 73,1 % de superficie con láminas múltiples y giros bruscos en juntas (8,84°, `joints.json:123`), ausentes en Chernarus (`joints.json:26,50`). |
+
+---
+
+## LO_NO_VERIFICADO
+
+* **Comprobación en motor del candidato v2 («pulido»):** El paquete `@DayZ_Baltic_PolishCandidate` está desplegado en disco pero no ha sido visualizado en el cliente (`HANDOFF.md:7`; `evidence/v30-polish-candidate-2026-10-04/README.md:54`), al haber estado ocupada la máquina de pruebas por sesiones de terceros (`@SimpleGroup` y `LFPowerGrid`).
+* **Confirmación visual de Guillermo sobre BALTIC-016:** La verificación de que la sustitución del fondo negro por tono de terreno y la restricción del anillo de grava a ríos y mar (`build_surface_v30.py --bed-tone land --shore-ring flowing`, `evidence/v30-polish-candidate-2026-10-04/README.md:30,52`) resuelve las manchas oscuras que él observó está pendiente de su visto bueno directo en motor (`bugs.md:28`).
+* **Focal real del cliente en el ensayo cenital de R2:** La calibración de focales (850 a 1.760 px) utilizada en `evidence/v30-shore-crossing-candidate-2026-10-04/README.md:176-187` constituye una aproximación teórica sin confirmación interna del ejecutable de DayZ.
+* **Comparación cuantitativa lago a lago entre V29 y V30 [SUPUESTO]:** No existe un registro diferencial pormenorizado que contraste la elevación de cada uno de los 111 lagos en el terreno V29 frente al terreno V30 (`BRIEF.md:88`); la atribución causal se apoya en el análisis estructural del código (`build_v30_water.py:45-51` frente a `build_v30.py:449-450`).
+* **Rendimiento y viabilidad de red con 80–100 jugadores (P7):** No verificado en fase 0 (`product-spec.md:13`; `HANDOFF.md:18`).
+* **Navmesh y respuesta de IA física sobre el candidato v2:** Inexistente por el momento (`evidence/v30-polish-candidate-2026-10-04/README.md:54`).
+
+FIN-DICTAMEN

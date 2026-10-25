@@ -1,0 +1,59 @@
+{
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 2,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Reserve aerial",
+        "samples": 25,
+        "avg64_median": 221.453,
+        "avg64_range": [
+          211.221,
+          229.391
+        ],
+        "native_min64_min": 41.6667,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      },
+      {
+        "phase": 1,
+        "name": "Reserve player",
+        "samples": 25,
+        "avg64_median": 226.148,
+        "avg64_range": [
+          216.216,
+          240.602
+        ],
+        "native_min64_min": 37.037,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Fixed 23-28s capture interval omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "sha256": {
+    "reference.json": "47227c73ba17d637ffef15ea6ddf61261fcaf653063d8690d78db3ddb62b9091",
+    "camera.log": "6847edd52a2bd0f0eefab957976ad0ed537131db47fc55cfc1b079a9b954a301",
+    "client-metrics.log": "92a936e5344959f9d7a58d1f5693c54af7cab0fb39e98c1801e7f628550b402b"
+  }
+}

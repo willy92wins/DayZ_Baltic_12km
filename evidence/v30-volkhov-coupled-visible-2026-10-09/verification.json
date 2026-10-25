@@ -1,0 +1,105 @@
+{
+  "status": "FAIL_NO_PROMOTION",
+  "gates": {
+    "outside_exact": true,
+    "fixed_exact": true,
+    "all_wet_support_exact": true,
+    "max_delta": true,
+    "dry_floor": true,
+    "areas": true,
+    "displacement": true,
+    "visible_contour_topology": true,
+    "angular_energy": true,
+    "corner_max": true,
+    "native_rms": true,
+    "slopes": true,
+    "same_active_triangles": true,
+    "same_connections": true,
+    "solver_converged": false
+  },
+  "changed_vertices": 30,
+  "max_delta": 0.8107905387878418,
+  "physical": {
+    "area_before": 894.9763359903094,
+    "area_after": 894.9763318204582,
+    "displacement_m": 1.2346494521441802,
+    "before": [
+      {
+        "closed": false,
+        "length_m": 261.41642230271395,
+        "energy": 93.26351892367505,
+        "max_corner_degrees": 170.0817594085178
+      },
+      {
+        "closed": true,
+        "length_m": 49.73127155629163,
+        "energy": 32.44458159720578,
+        "max_corner_degrees": 143.05012090246134
+      }
+    ],
+    "after": [
+      {
+        "closed": false,
+        "length_m": 261.4778870230193,
+        "energy": 87.92081653418424,
+        "max_corner_degrees": 169.51226218737565
+      },
+      {
+        "closed": true,
+        "length_m": 48.98096206720409,
+        "energy": 31.331781473445915,
+        "max_corner_degrees": 143.0501368363807
+      }
+    ]
+  },
+  "visible": {
+    "area_before": 894.2697663881831,
+    "area_after": 894.2697735166396,
+    "displacement_m": 1.2346494521441802,
+    "before": [
+      {
+        "closed": false,
+        "length_m": 250.3796097643875,
+        "energy": 58.08863044849466,
+        "max_corner_degrees": 97.5474055872802
+      },
+      {
+        "closed": true,
+        "length_m": 47.625946245621094,
+        "energy": 11.00615590512846,
+        "max_corner_degrees": 96.97623255526982
+      }
+    ],
+    "after": [
+      {
+        "closed": false,
+        "length_m": 250.55145761649104,
+        "energy": 52.27966007502811,
+        "max_corner_degrees": 97.44287481359994
+      },
+      {
+        "closed": true,
+        "length_m": 46.64605976856957,
+        "energy": 9.905437689735916,
+        "max_corner_degrees": 96.97623546340984
+      }
+    ]
+  },
+  "native_hinges": [
+    {
+      "rms": 9.585418737526917,
+      "over30": 28,
+      "maximum": 60.35750424277787
+    },
+    {
+      "rms": 8.673477105807242,
+      "over30": 19,
+      "maximum": 52.30121036323124
+    }
+  ],
+  "terrain_sha256": "3b5fd8a6b1e5efe586a9fb30915269e8769849a76ad4d7327235874db1b663d8",
+  "limits": [
+    "Passing geometry alone does not waive the declared convergence gate.",
+    "Native rendering and compiled water coverage are separate gates."
+  ]
+}

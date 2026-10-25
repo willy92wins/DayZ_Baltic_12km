@@ -1,0 +1,9 @@
+# EV54 - reparacion geometrica de charcas aisladas bajas
+
+Peticion viva: corregir el agua aparente sobre tierra y comprobar toda la superficie. EV49 conserva el defecto sin las cuatro instancias de charca: no retirarlas. EV26, reanalizado con la proyeccion nativaEV48, reduce las alertas en tierra de15.35% a0.107%, proximo a la tasa del control0.1%; es evidencia local, no cierre global ni demostracion del shader.
+
+Preparar una extension revisable de la traslacion conjunta EV26 a los32grupos/45masas estructuralmente aislados del censoEV50. Fondo y agua suben la misma cantidad minima cuantizada a25mm para fondo>=1.001m, con la misma transicion quintica36m. Geometria NaziaEV53r1 se conserva como fuente. Niveles grandes, rios, carreteras, plataformas, playas y otros soportes de agua quedan fijos. Actualizar metadatos de nivel junto con P/F e instancias; nada se regenera desde los metadatos antiguos del diagnosticoEV26.
+
+Cada grupo es una unidad independiente: una sola propuesta derivada, sin barrido. Rechazar si crea soporte compartido, pendientes nuevas>35grados o agua colgada>0.3m sobre los anillos secos12-36 y36-60m (o empeora una excepcion existente), sin modificar su cota para lograrPASS. Combinar solamente las unidades compatibles; usar maximo, no suma, donde coincidan transiciones. Verificar de nuevo el conjunto: todo vertice protegido, profundidades fisicas/visibles, caras activas y conexiones, area por componente, metadatos, dominio y pendientes. UnFAIL conjunto no se promueve. Todo cambio de nivel se lista para su revision; no implica aceptacion de los grandes lagos ni de toda la base.
+
+Despues: WRP con Y traducida exacta por objeto, compilacion nueva, cobertura y lectura del consumidor nativo. No se declara ausencia grafica global a partir de una prueba fisica. Una propuesta por grupo, una combinacion, una reparacion solo ante error reproducible de implementacion.

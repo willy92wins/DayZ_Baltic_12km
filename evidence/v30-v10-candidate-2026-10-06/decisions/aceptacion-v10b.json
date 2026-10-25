@@ -1,0 +1,31 @@
+{
+ "date": "2026-10-06",
+ "by": "Guillermo",
+ "quote": "acepto la v10b y los niveles, redondea el final de los ríos",
+ "accepted": {
+  "shores": {
+   "candidate": "v10b",
+   "terrain_sha256_prefix": "aa1c093c",
+   "world_pbo_sha256_prefix": "f20dea67",
+   "water_pbo_sha256_prefix": "c00e5687",
+   "rule": "profile_inland_v30.py reads the step-20 vector signed distance (--outline-sd <chain>/20/sd_polish.npz) for lakes, ponds and rivers"
+  },
+  "levels": {
+   "list": "evidence/v30-v10-candidate-2026-10-06/levels/bodies-rule.json",
+   "sha256_prefix": "0eafbd5d",
+   "includes": "84 signed levels kept; rule changes 231 (1.76 m), 417 (2.58 m), 432 (1.93 m), 468 (3.20 m), 514 (2.33 m); 216 gone; lake_047 body 165 at 1.37 m; connected_136 at 1.35 m; review_181 at 1.44 m"
+  }
+ },
+ "requested": {
+  "river_ends": "round the straight cut where the 60 m border rule ends a river",
+  "depth": {
+   "quote_1": "hay que meterle algo más de profundidad a ríos y lagos eso sí, se ve todo muy plano",
+   "answers": [
+    "Ríos 1 m, lagos hondos (Recomendado): rivers about 1 m at the centre, streams about 0.4 m, lakes and ponds 1 m at 6 m from the shore, where the level allows (bed floor 1.0 m stays)",
+    "Solo profundidad (Recomendado): no incised banks",
+    "Orilla más inclinada (Recomendado): the shore profile steepens on both sides so the outline of the design stays exact; the first land row next to the water rises 0.2-0.5 m in proportion; roads and bridges to be checked"
+   ],
+   "measured_before": "v10b medians: rivers 0.30 m, streams 0.14 m, lakes 0.40 m within 6 m of the shore (1.13 m inside, the 1.0 m floor ceiling); Chernarus piece centres (survey 03-10): rivers 0.55 m, streams 0.28 m"
+  }
+ }
+}

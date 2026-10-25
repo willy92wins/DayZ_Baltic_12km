@@ -1,0 +1,32 @@
+{
+  "status": "PASS_WATER_AWARE_GRID_COMPONENTS",
+  "definition": "Class 0 land with height >=1 m; excludes inland water above sea level. Eight-neighbour grid topology, not full polygon island certification.",
+  "components_before": 188,
+  "components_after": 189,
+  "disappeared_existing_components": 0,
+  "affected": [
+    {
+      "original_component": 2,
+      "before_vertices": 260741,
+      "after_vertices": 260484,
+      "surviving_components": 2
+    },
+    {
+      "original_component": 21,
+      "before_vertices": 2785868,
+      "after_vertices": 2785768,
+      "surviving_components": 1
+    }
+  ],
+  "new_islands": [
+    {
+      "area_m2": 45828,
+      "core_xz": [
+        8364,
+        10200
+      ],
+      "core_unchanged": true
+    }
+  ],
+  "correction": "Earlier producer/review component counts 61/62 used terrain>=1 alone, including elevated inland beds; retain those as sea-threshold diagnostics only. Terrain bytes unchanged."
+}

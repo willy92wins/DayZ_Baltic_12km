@@ -1,0 +1,157 @@
+{
+  "status": "PASS_BRIDGE_OBJECT_CAUSES_QUERY_SUPPRESSION",
+  "gates": {
+    "all_five_change": true,
+    "no_new_flow_flags": true,
+    "thirteen_controls_exact": true,
+    "wet_in_all_incident_planes": true,
+    "four_million_readback": true,
+    "source_stage_exact": true
+  },
+  "target_points": [
+    {
+      "row": 897,
+      "col": 395,
+      "ground": 1.1449624300003052,
+      "incident_levels": [
+        2.125,
+        2.125,
+        2.125,
+        2.125
+      ],
+      "minimum_nominal_depth_m": 0.9800375699996948,
+      "missing_with_bridge": true,
+      "missing_without_bridge": false
+    },
+    {
+      "row": 898,
+      "col": 394,
+      "ground": 1.7231526374816895,
+      "incident_levels": [
+        2.15,
+        2.125,
+        2.15,
+        2.125
+      ],
+      "minimum_nominal_depth_m": 0.40184736251831055,
+      "missing_with_bridge": true,
+      "missing_without_bridge": false
+    },
+    {
+      "row": 899,
+      "col": 413,
+      "ground": 1.341675043106079,
+      "incident_levels": [
+        2.075,
+        2.075,
+        2.075,
+        2.075
+      ],
+      "minimum_nominal_depth_m": 0.7333249568939211,
+      "missing_with_bridge": true,
+      "missing_without_bridge": false
+    },
+    {
+      "row": 900,
+      "col": 413,
+      "ground": 0.9454275965690613,
+      "incident_levels": [
+        2.075,
+        2.075,
+        2.075,
+        2.075
+      ],
+      "minimum_nominal_depth_m": 1.129572403430939,
+      "missing_with_bridge": true,
+      "missing_without_bridge": false
+    },
+    {
+      "row": 901,
+      "col": 414,
+      "ground": 1.974000096321106,
+      "incident_levels": [
+        2.075,
+        2.075,
+        2.075,
+        2.075
+      ],
+      "minimum_nominal_depth_m": 0.10099990367889422,
+      "missing_with_bridge": true,
+      "missing_without_bridge": false
+    }
+  ],
+  "controls": [
+    [
+      853,
+      471
+    ],
+    [
+      895,
+      395
+    ],
+    [
+      896,
+      394
+    ],
+    [
+      896,
+      412
+    ],
+    [
+      897,
+      393
+    ],
+    [
+      897,
+      394
+    ],
+    [
+      897,
+      413
+    ],
+    [
+      898,
+      393
+    ],
+    [
+      898,
+      414
+    ],
+    [
+      899,
+      393
+    ],
+    [
+      899,
+      414
+    ],
+    [
+      900,
+      414
+    ],
+    [
+      901,
+      402
+    ]
+  ],
+  "negatives": {
+    "four_changes_rejected": true,
+    "an_extra_change_rejected": true
+  },
+  "before_by_class": {
+    "1": 5,
+    "3": 18
+  },
+  "after_by_class": {
+    "1": 8,
+    "3": 13
+  },
+  "source_A_sha256": "0482e83a179a13233a23f615c650c175c333be6155dfe203864af792d7384f24",
+  "source_B_sha256": "89db7647964f271980fa3fb9bf259f1e53d2229cfc8902477fd0ab21d1f8ff60",
+  "limits": [
+    "Only bridge objects differed; the exact native implementation inside the bridge remains opaque.",
+    "These five class anomalies are object-dependent water-query results, not missing water geometry.",
+    "Ocean counts and unflagged scalar queries vary with wave phase and are not an effect-size measure.",
+    "Diagnostic removal is never promoted. The terrain baseline retains all nine bridges."
+  ]
+}

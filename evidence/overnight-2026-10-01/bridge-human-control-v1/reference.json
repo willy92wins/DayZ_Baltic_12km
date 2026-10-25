@@ -1,0 +1,116 @@
+{
+  "status": "FROZEN_NO_INFECTED_HUMAN_CONTROL_PENDING",
+  "parent_reference_sha256": "cb0e1f82c517a7222c5b1db6734018a1645713d44464fba408fe04e1a70d247e",
+  "terrain": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_combined_v10\\baltic_regional_foundation_v10.asc",
+  "terrain_sha256": "8e25fab25e8f0909fdda302ed4ba3db4c43884c523920f5ef3424db90780eb8b",
+  "world_pbo_sha256": "d1008dd6c882193706f06c5e7b8495ee1a357f5819a8574118784f7e90f18577",
+  "water_pbo_sha256": "f9a5cdf7461ff09e80a102641289513896011a78b090fdbbd1056f9b985898d3",
+  "navmesh_sha256": "e8348efc2f361d8aa82cbd69c4fc8ad72470a628abd2a10ca8411d7f40fc313c",
+  "probe_pbo_sha256": "d311c8836f368e7ceb0e0596b190c927f910d7869683689f66bc5cf70b8a51b5",
+  "deployed_mod": "P:\\Mods\\@BalticContinuousPursuitHumanControlV1",
+  "deployed_mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticContinuousPursuitHumanControlV1.BalticTrial",
+  "mission": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\missions\\BalticContinuousPursuitHumanControlV1.BalticTrial\\cases.csv": "bd3649c4eaa11b2108cf69f1b881ac6e3c3a74cb86ada772a4a71982193f3eb1",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\missions\\BalticContinuousPursuitHumanControlV1.BalticTrial\\init.c": "7191d26475695901f55503747bd59248505989490598b806ae5971dc92949a58"
+  },
+  "probe_files": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\packages\\bridge-human-control-v1\\baltic_bridge_human_control_v1\\config.bin": "b03e39c739583a05c767f1600cd784200e41116306a5764185d7557513293c23",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\packages\\bridge-human-control-v1\\baltic_bridge_human_control_v1\\scripts\\4_World\\BalticPursuitPlayer.c": "5ac68e8cf3bc4c992b9fad18f4d822cd1655ae27a3405a70862c8b69853b4d10",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\packages\\bridge-human-control-v1\\baltic_bridge_human_control_v1\\scripts\\5_Mission\\BalticPursuitClient.c": "33badc8b8bf3c15e045a3023cb50c59cb4f88f9d2d16a3911b17c3a887ffb5e9"
+  },
+  "api_sha256": {
+    "P:\\scripts\\3_game\\human.c": "b9d1ed3481bbc9abbd76660597c7dfd2125a0f9bb50559901cdee287e9ad71b1",
+    "P:\\scripts\\3_game\\entities\\entityai.c": "bfe1c36d16c652ad5541fc9083cdf45f2ea6a89566a59217395d3e536e0a2797",
+    "P:\\scripts\\3_game\\entities\\dayzinfectedinputcontroller.c": "152ccfb5f48bddad8df6780354b6419813ffc991b693fe54e6a102369236fbf4",
+    "P:\\scripts\\3_game\\entities\\dayzcreatureaiinputcontroller.c": "3ebf6446112f5a96e690225c83d9c3a98dda65d7014fc8001080cf5fe59bcbfe",
+    "P:\\scripts\\1_core\\proto\\enconvert.c": "abf20b92773a0872eb890f5a36ea3e4a228e4d4724bb9cd3ed86fc534a718cd4"
+  },
+  "cases": [
+    {
+      "case": 0,
+      "name": "moving_local_control",
+      "kind": "ground",
+      "start": [
+        5104.0,
+        81.76558685302734,
+        7644.0
+      ],
+      "prey_start": [
+        5116.0,
+        87.52558135986328,
+        7644.0
+      ],
+      "goal": [
+        5129.0,
+        93.76557159423828,
+        7644.0
+      ],
+      "timeout_s": 90,
+      "route_length_xz_m": 25.0
+    },
+    {
+      "case": 1,
+      "name": "bridge_continuous_east",
+      "kind": "bridge",
+      "start": [
+        2259.004638671875,
+        10.679980278015137,
+        6914.2216796875
+      ],
+      "prey_start": [
+        2270.864990234375,
+        10.892611503601074,
+        6912.396484375
+      ],
+      "goal": [
+        2563.420654296875,
+        10.921005249023438,
+        6867.37353515625
+      ],
+      "timeout_s": 500,
+      "route_length_xz_m": 307.9997714528716
+    }
+  ],
+  "bridge": {
+    "center_xz": [
+      2417.1428225906,
+      6889.8850822322
+    ],
+    "axis_xz": [
+      0.98836436083,
+      -0.15210486594
+    ],
+    "half_length_m": 112.5,
+    "deck_y": 11.0,
+    "max_lateral_m": 6
+  },
+  "criteria": {
+    "settlement_s": 20,
+    "settlement_drift_m": 2,
+    "acquisition_timeout_s": 30,
+    "session_timeout_s": 700,
+    "maximum_gap_s": 1,
+    "actor_goal_radius_m": 4.002,
+    "prey_goal_radius_m": 2.002,
+    "maximum_lateral_m": 4,
+    "physical_y_min_m": -0.2,
+    "physical_y_max_m": 0.5,
+    "maximum_ground_error_m": 0.002,
+    "spawn_xz_error_m": 0.02,
+    "maximum_actor_step_speed_mps": 12,
+    "maximum_prey_step_speed_mps": 4,
+    "path_length_factor": 3,
+    "maximum_bridge_lateral_m": 6
+  },
+  "input_contract": "Same V2 human inputs, no infected creation or noise. Two cases: local and bridge east.",
+  "limits": [
+    "Human controller only; not AI or navmesh acceptance.",
+    "No randomization or causal isolation of native collision/control internals.",
+    "Original pursuit V1/V2 FAILs remain."
+  ],
+  "previous_reference_sha256": "b1b9b22e088b6dfb8205fd04e464a2778a354e9e6760ce89fe2cdd775c0ae9ce",
+  "preflight_revision": "No-infected discriminator; previous pursuit FAILs unchanged.",
+  "preflight_utc": "2026-10-01T09:07:46.816663+00:00",
+  "strict_lane_criterion_m": 4,
+  "roadway_source_sha256": "8b89a852d9160faee24ef00e9f279683e7a1abf60ec660fca668e993ade9fdb1"
+}

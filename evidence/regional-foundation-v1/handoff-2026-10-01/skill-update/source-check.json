@@ -1,0 +1,145 @@
+{
+  "captured_utc": "2026-10-01T02:34:53.493475+00:00",
+  "scope": "Skill documentation only; read-only native artifact verification; no DayZ or GUI actions",
+  "authority": {
+    "map": "C:\\Users\\guill\\DayZ-Modding-Knowledge-Pack\\promotions\\promotion-map.json",
+    "sha256": "dbeba46de5c71ab15327031cd74d46e90fb4a801f06b43a2299b64c9f5771440",
+    "artifacts": 70,
+    "terrain_matches": 0,
+    "editable_source": "C:\\Users\\guill\\.codex\\skills\\dayz-terrain-workflow"
+  },
+  "evidence": {
+    "baseline": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\tb\\regional_outline_v3\\baltic_regional_persisted_v3.wrp",
+      "sha256": "9bf50853799764571d4c3a7ce87c17583019af149bed93ac1e73f2c91c7c8c68",
+      "bytes": 17307994
+    },
+    "first": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\tb\\regional_foundation_v1\\baltic_foundation_heights_v9.wrp",
+      "sha256": "3fd775e0b64b20684e81212b979c0fca24fe3da7c875a358f98a0ee46b00f16d",
+      "bytes": 17307994
+    },
+    "corrected": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\tb\\regional_foundation_v1\\baltic_foundation_bridges_v9.wrp",
+      "sha256": "fe02d6e059e307ffd9ef49af87ee6ccaf264ce0c5f8ca88bde3807b9bdb0ad8b",
+      "bytes": 17307994
+    },
+    "asc": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_combined_v9\\baltic_regional_foundation_v9.asc",
+      "sha256": "335554a6ea06f8546eeac5444aec7597eaf45df18be0c69b0baab48a573947b2",
+      "bytes": 40987152
+    },
+    "gate": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\tools\\navigation\\verify_foundation_native.py",
+      "sha256": "633453b0dab48cecdeeca92c47319638fc0fffe6a188069d7283f3549c9a3f53",
+      "bytes": 4431
+    },
+    "parser": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\tools\\playtest\\verify_texture_grid_change.py",
+      "sha256": "a73326b2fbb2e077c8a9f7dc1f586542dd30acfe12ad4a0996e884d085da67a4",
+      "bytes": 4861
+    },
+    "first_gate": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\native-heights-v9-first.json",
+      "sha256": "a0b48dac9b33b57a71c2e5add3f287487ad099e483a436ef923f36615a93b791",
+      "bytes": 756
+    },
+    "corrected_gate": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\native-bridges-v9-first.json",
+      "sha256": "d70b0365e956f8d93bdbf0ebcb81c9302b32893f87356298171208f6ba1b08fc",
+      "bytes": 730
+    },
+    "first_differences": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\native-heights-v9-first-differences.json",
+      "sha256": "113298ee945e40c454ce0db413f666aa0e46e968b9fdc1ed40875ffce8ea9b7c",
+      "bytes": 9471
+    },
+    "handoff_state": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\handoff-2026-10-01\\state.json",
+      "sha256": "a98edd1f691829e22eb3c47e60836bc921afe6f1bf3f4f8653defd4c1effa68f",
+      "bytes": 11395
+    },
+    "lake_tradeoff": {
+      "path": "P:\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\lake-217-island-tradeoff-v9.json",
+      "sha256": "64dc5de9e484d1730eb1655d42be0025ff81b18ba74129e3764383810576af07",
+      "bytes": 1162
+    }
+  },
+  "verified": {
+    "native_height_differences": 22,
+    "all_at_last_row_or_column": true,
+    "maximum_height_error_m": 5.960464477539063e-08,
+    "heightfields_equal_before_after_bridge_correction": true,
+    "bridges": [
+      {
+        "stage": "after_import_rebuild",
+        "id": 16777216,
+        "vertical_delta_m": 0.0,
+        "other_pose_fields_exact": true
+      },
+      {
+        "stage": "after_import_rebuild",
+        "id": 16777218,
+        "vertical_delta_m": -4.798312246799469,
+        "other_pose_fields_exact": true
+      },
+      {
+        "stage": "after_import_rebuild",
+        "id": 16777219,
+        "vertical_delta_m": -0.43466782569885254,
+        "other_pose_fields_exact": true
+      },
+      {
+        "stage": "after_editor_correction",
+        "id": 16777216,
+        "vertical_delta_m": 0.0,
+        "other_pose_fields_exact": true
+      },
+      {
+        "stage": "after_editor_correction",
+        "id": 16777218,
+        "vertical_delta_m": -5.960464477539063e-08,
+        "other_pose_fields_exact": true
+      },
+      {
+        "stage": "after_editor_correction",
+        "id": 16777219,
+        "vertical_delta_m": 7.152557373046875e-07,
+        "other_pose_fields_exact": true
+      }
+    ],
+    "header_materials_exact": true,
+    "native_object_count": 3,
+    "water_object_count": 0,
+    "strict_gate_status": "FAIL",
+    "lake_217_area_m2": 969.4787463675676,
+    "lake_area_existing_skill_fact_correct": true
+  },
+  "skill_before": {
+    "SKILL.md": "2ac36f464a26701562f22fab12bf02536e55c2c478d40bdbb9e1736f64bb5f35",
+    "references/navigable-rivers.md": "95eb07c22b1baf3d6c755e36ed84f37d2547d624e9961077fe52f759c33f8b49",
+    "references/navmesh-bootstrap.md": "deccf853fe0a816e1bf2060950ccd5262090e456691bccc4dc9d72cea6b7b12a",
+    "references/regional-relief.md": "2127fda3d885c49a2bcdbe871917a2634c4f915f753a6f79fc151365b0ac03f5",
+    "references/terrain-performance.md": "e01c26d2c47deda3f67e2bdac0a1055f5c42834db5ec72e99a39bda131897f26"
+  },
+  "backups": {
+    "SKILL.md": {
+      "source": "C:\\Users\\guill\\.codex\\skills\\dayz-terrain-workflow\\SKILL.md",
+      "sha256": "2ac36f464a26701562f22fab12bf02536e55c2c478d40bdbb9e1736f64bb5f35"
+    },
+    "regional-relief.md": {
+      "source": "C:\\Users\\guill\\.codex\\skills\\dayz-terrain-workflow\\references\\regional-relief.md",
+      "sha256": "2127fda3d885c49a2bcdbe871917a2634c4f915f753a6f79fc151365b0ac03f5"
+    },
+    "handoff.md": {
+      "source": "C:\\Users\\guill\\ObsidianVault\\AI\\30_Sessions\\2026-10-01-dayz-baltic-handoff-terreno-v9.md",
+      "sha256": "1db1afa7adce8e3a283867ad10bd71970c849f77177be2a46bf06c8a5b693ee4"
+    }
+  },
+  "limits": [
+    "No internal Terrain Builder mechanism isolated",
+    "No reopened corrected export",
+    "No new engine run",
+    "No gate or map edits"
+  ]
+}

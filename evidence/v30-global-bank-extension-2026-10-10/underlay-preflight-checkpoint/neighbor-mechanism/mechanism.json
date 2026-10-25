@@ -1,0 +1,271 @@
+{
+  "schema": "ev94.energy-neighbor-v2.mechanism-analysis.v1",
+  "status": "ANALYSIS_ONLY_NO_CANDIDATE",
+  "scope": "two energy-eligible one-node/one-ULP neighbors in the completed 242-row recovery; no solver and no claim about coordinated/multi-node feasibility",
+  "inputs": {
+    "receipt": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\energy-neighbor-polish-v2-recovery\\run-01\\receipt.json",
+      "sha256": "b71fbdab6f545abbf75075c40a7e1623e95969b11295306ce101c6f62d487e34"
+    },
+    "ledger": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\energy-neighbor-polish-v2-recovery\\run-01\\neighbors.jsonl",
+      "sha256": "086eb6741aad7f33e3dfb72fdd4d62d26e94406cecd017a973dde592865ca94a"
+    },
+    "polish_source": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\energy-neighbor-polish-v2-recovery\\energy_neighbor_polish.py",
+      "sha256": "4f40c6c51aaa9db4edeaf7ee27a1a2230cd2cb8ee508cbfe3db7f6c3daf30ba2"
+    },
+    "plan": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\energy-neighbor-polish-v2-recovery\\PLAN.md",
+      "sha256": "db036d21a42026ec24671c618b3c4389ab99a8da173fc7bfe3dd7e99eb1bac5b"
+    },
+    "prepared": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz",
+      "sha256": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f"
+    },
+    "candidate_model_sha256": "23186f47d70730d2f617c0635a7f37b68472d5f287b728811372ae7a47a9e244",
+    "lattice_model_sha256": "2a62d1d73af6d71af97b60b5512787a653a3637d1c54f8eb001c9d905252e396",
+    "readset_stable": true
+  },
+  "enumeration": {
+    "neighbors": 242,
+    "energy_gate_pass": 2,
+    "fully_eligible": 0,
+    "rejection_counts_overlap": {
+      "direct:D8_direct": 23,
+      "direct:PF_signs": 2,
+      "direct:all_116_direct_crossings": 30,
+      "direct:bounds": 25,
+      "direct:closure_energy_and_improvement": 240,
+      "exact:bounds": 25,
+      "exact:crossings": 30,
+      "exact:d8": 23,
+      "exact:fixed": 4,
+      "exact:rows": 79,
+      "exact:signs": 2
+    },
+    "solver_calls": 0,
+    "candidate_artifact_written": false
+  },
+  "energy_cases": [
+    {
+      "variable_index": 14,
+      "global_rc": [
+        858,
+        1184
+      ],
+      "step": 1,
+      "source_height_m": 4.192239284515381,
+      "neighbor_height_m": 4.192239761352539,
+      "ulp_delta_m": 4.76837158203125e-07,
+      "lower_m": 3.692239284515381,
+      "upper_m": 4.692239284515381,
+      "raw_cost": 155.94405102975674,
+      "neighbor_closed_cost": 155.94406631478697,
+      "baseline_cost": 279.1855928129427,
+      "closed_minus_raw": 1.5285030229961194e-05,
+      "allowance": 1.5594405102975674e-05,
+      "energy_gate": true,
+      "exact_rows_pass": false,
+      "exact_row_failure_count": 4,
+      "exact_row_failures": [
+        {
+          "row": 199,
+          "name": "cross:22:((857, 1183), ((858, 1183), (858, 1184)), 'P'):upper:ulp",
+          "lhs": "-6301350809284/4276367",
+          "lower": "-6301348265984/4276367",
+          "upper": "inf"
+        },
+        {
+          "row": 203,
+          "name": "cross:23:((857, 1183), ((858, 1183), (858, 1184)), 'F'):upper:ulp",
+          "lhs": "-1647233782746717845368/1122126652803209",
+          "lower": "-1647233109417321824256/1122126652803209",
+          "upper": "inf"
+        },
+        {
+          "row": 223,
+          "name": "cross:28:((858, 1183), ((858, 1183), (858, 1184)), 'P'):upper:ulp",
+          "lhs": "-1632476453165244560179/1147928525668352",
+          "lower": "-1556850160749773/1094749952",
+          "upper": "inf"
+        },
+        {
+          "row": 227,
+          "name": "cross:29:((858, 1183), ((858, 1183), (858, 1184)), 'F'):upper:ulp",
+          "lhs": "-1647233782746717845368/1122126652803209",
+          "lower": "-1647233109417321824256/1122126652803209",
+          "upper": "inf"
+        }
+      ],
+      "exact_fraction_gates": {
+        "shape": true,
+        "fixed": true,
+        "bounds": true,
+        "signs": true,
+        "crossings": false,
+        "d8": true
+      },
+      "direct_gates": {
+        "bounds": true,
+        "PF_signs": true,
+        "all_116_direct_crossings": false,
+        "D8_direct": true,
+        "face_cones": true,
+        "closure_energy_and_improvement": true
+      }
+    },
+    {
+      "variable_index": 74,
+      "global_rc": [
+        863,
+        1189
+      ],
+      "step": -1,
+      "source_height_m": 8.341360092163086,
+      "neighbor_height_m": 8.34135913848877,
+      "ulp_delta_m": -9.5367431640625e-07,
+      "lower_m": 8.341360092163086,
+      "upper_m": 9.341360092163086,
+      "raw_cost": 155.94405102975674,
+      "neighbor_closed_cost": 155.94405610751153,
+      "baseline_cost": 279.1855928129427,
+      "closed_minus_raw": 5.077754792637279e-06,
+      "allowance": 1.5594405102975674e-05,
+      "energy_gate": true,
+      "exact_rows_pass": false,
+      "exact_row_failure_count": 1,
+      "exact_row_failures": [
+        {
+          "name": "outside_float32_domain_segments",
+          "index": 74,
+          "detail": "lattice value outside segments at 74"
+        }
+      ],
+      "exact_fraction_gates": {
+        "shape": true,
+        "fixed": true,
+        "bounds": false,
+        "signs": true,
+        "crossings": true,
+        "d8": true
+      },
+      "direct_gates": {
+        "bounds": false,
+        "PF_signs": true,
+        "all_116_direct_crossings": true,
+        "D8_direct": true,
+        "face_cones": true,
+        "closure_energy_and_improvement": true
+      }
+    }
+  ],
+  "crossing_mechanism": [
+    {
+      "crossing_id": 22,
+      "source": "((857, 1183), ((858, 1183), (858, 1184)), 'P')",
+      "surface": "P",
+      "edge_local_rc": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "dry_endpoint": 0,
+      "baseline_t": 0.2973669004554567,
+      "candidate_t": 0.2973669699927462,
+      "allowed_t": [
+        0.28033270833930146,
+        0.2973669004554567
+      ],
+      "overshoot_t": 6.953728948211335e-08,
+      "overshoot_m_on_6m_edge": 4.172237368926801e-07,
+      "failed_row": "cross:22:((857, 1183), ((858, 1183), (858, 1184)), 'P'):upper:ulp"
+    },
+    {
+      "crossing_id": 23,
+      "source": "((857, 1183), ((858, 1183), (858, 1184)), 'F')",
+      "surface": "F",
+      "edge_local_rc": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "dry_endpoint": 0,
+      "baseline_t": 0.3000237960390002,
+      "candidate_t": 0.30002386781079493,
+      "allowed_t": [
+        0.28033270833930146,
+        0.3000237960390002
+      ],
+      "overshoot_t": 7.17717947296137e-08,
+      "overshoot_m_on_6m_edge": 4.306307683776822e-07,
+      "failed_row": "cross:23:((857, 1183), ((858, 1183), (858, 1184)), 'F'):upper:ulp"
+    },
+    {
+      "crossing_id": 28,
+      "source": "((858, 1183), ((858, 1183), (858, 1184)), 'P')",
+      "surface": "P",
+      "edge_local_rc": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "dry_endpoint": 0,
+      "baseline_t": 0.32188715327753664,
+      "candidate_t": 0.32188722854872565,
+      "allowed_t": [
+        0.28033270833930146,
+        0.32188715327753664
+      ],
+      "overshoot_t": 7.527118900396701e-08,
+      "overshoot_m_on_6m_edge": 4.5162713402380206e-07,
+      "failed_row": "cross:28:((858, 1183), ((858, 1183), (858, 1184)), 'P'):upper:ulp"
+    },
+    {
+      "crossing_id": 29,
+      "source": "((858, 1183), ((858, 1183), (858, 1184)), 'F')",
+      "surface": "F",
+      "edge_local_rc": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "dry_endpoint": 0,
+      "baseline_t": 0.3000237960390002,
+      "candidate_t": 0.30002386781079493,
+      "allowed_t": [
+        0.28033270833930146,
+        0.3000237960390002
+      ],
+      "overshoot_t": 7.17717947296137e-08,
+      "overshoot_m_on_6m_edge": 4.306307683776822e-07,
+      "failed_row": "cross:29:((858, 1183), ((858, 1183), (858, 1184)), 'F'):upper:ulp"
+    }
+  ],
+  "conclusion": "Both lower objective cost enough to pass the energy allowance, but neither is jointly admissible. Raising (858,1184) by one ULP moves the same edge crossing past its baseline endpoint in four exact P/F interval rows. Lowering (863,1189) by one ULP crosses an active lower bound and leaves its float32 segment. Both pass D8; D8 is not the blocker for these two cases.",
+  "limits": [
+    "This proves only that the enumerated single-node +/-1 ULP neighbors have no admissible candidate.",
+    "No coordinated neighbor, wider local step, or full feasible-set infeasibility was tested."
+  ],
+  "analysis_script_sha256": "80a561fe4235c2487e76a867eece4fc6c01559db53ddb585977fc5a60bf62de4"
+}

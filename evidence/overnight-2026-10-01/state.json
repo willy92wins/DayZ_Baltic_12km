@@ -1,0 +1,418 @@
+{
+  "started_utc": "2026-10-01T02:42:43Z",
+  "deadline_utc": "2026-10-01T10:42:43Z",
+  "timezone": "Europe/Madrid",
+  "automation_id": "baltic-sesi-n-de-8-horas",
+  "status": "SESSION_CLOSED",
+  "plan": "plans/overnight-2026-10-01.md",
+  "reset": {
+    "authorized_uses": 1,
+    "remaining_percent_threshold": 5,
+    "idempotency_key": "70a3ac12-a643-4daa-b9c6-702090f89eab",
+    "result": "reset; usage-reset.json",
+    "consumed": true
+  },
+  "usage_observed": {
+    "weekly_used_percent": 26,
+    "five_hour_window": "not_reported",
+    "available_resets": 1,
+    "observed_utc": "2026-10-01T10:26:59Z"
+  },
+  "next": "plans/foundation-acceptance-next.md",
+  "preflight": {
+    "helper": "SyntaxError unicodeescape at line213 before any probes",
+    "direct_checks": "P:/ mounted, DZ/scripts present, Mods junction correct; AddonBuilder1.0.240.639, TerrainBuilder1.31, DayZDiag1.29, NavMeshGenerator executable present",
+    "dayz_processes": "none found in initial Get-Process lookup; MCP coordination not yet confirmed"
+  },
+  "updated_utc": "2026-10-01T10:42:55.622010+00:00",
+  "coordination": {
+    "self": "none",
+    "run": null,
+    "box_occupied": false,
+    "evidence": "coordination-final.json"
+  },
+  "computer_use": "Released; no active native control session.",
+  "precision_contract": {
+    "mode": "native-v9-micrometre",
+    "controls": "PASS_CONTROLS",
+    "cases": 16,
+    "summary": "evidence/overnight-2026-10-01/precision-contract/controls-v1/summary.json",
+    "strict_v9_status": "FAIL",
+    "native_reopen": "PASS_REOPEN_PERSISTENCE"
+  },
+  "water_native": {
+    "library": "Baltic_Water_V2",
+    "models_in_library": 6187,
+    "import": "water_absolute_v2.txt",
+    "elevation_mode": "Absolute observed",
+    "expected_water_instances": 10152,
+    "stage": "second_export_full_PASS_NATIVE_individual_but_4_water_pose_differences",
+    "first_export_sha256": "a775ea596aad557625594be38504c784db245218b168a673c3400dc76f069f02",
+    "native_count": 10155,
+    "maximum_pose_error_m": 0.000244140625,
+    "evidence": "native-water-first-v9.json",
+    "after_water_backup": "after-water-native/receipt.json",
+    "second_export_sha256": "79d878fc59d0153df4777cfa2f95ff1acdd05187d03636e36befb19eb3a6d425",
+    "persistence_status": "FAIL_EXACT_FIRST_TO_REOPENED",
+    "third_export_placeholder": "01_night_persist_v9.wrp"
+  },
+  "performance_baseline": {
+    "run_id": "a09b88b8-a7b6-4282-b8bb-7edecf18f9ea",
+    "engine": "PASS_COMPLETE_SERVER_BASELINE_MEASUREMENT",
+    "process_samples": 175,
+    "run_state": "EXITED",
+    "stop_method": "forced_kill",
+    "exit_metrics_valid": false,
+    "evidence": "perf-baseline/"
+  },
+  "diagnostic_consumer": {
+    "run_id": "9cf186d0-b103-4f58-a1c8-a0d5a2054027",
+    "run_state": "EXITED",
+    "water_failed": 551,
+    "water_samples": 81212,
+    "terrain_error_max_m": 0.000499,
+    "nav_coverage_failed": 5,
+    "world_pbo_sha256": "b99993dacaa1cfda1c18eeb4cb150d61622e31a2f2fce879833eb10386f00348",
+    "evidence": "diagnostic-consumer-v3/"
+  },
+  "query_order_run": {
+    "run_id": "26a16c8b-adaf-49f8-bad2-5bf7c6ecc29c",
+    "state": "EXITED",
+    "evidence": "water-query-order-v1/",
+    "result": "Query order isolated; third query after classification correct627/627. Under bridge type3D fresh water required."
+  },
+  "consumer_v4": {
+    "run_id": "ed660788-89ed-4274-a789-4172ebc34239",
+    "state": "EXITED",
+    "water_status": "PASS_RUNTIME_WATER_AND_DRY_SAMPLES",
+    "samples": 81212,
+    "minimum_fairway_depth_m": 3.04081,
+    "maximum_height_error_m": 0.000499,
+    "nav_status": "FAIL_5_OF_314_STALE_NAV",
+    "evidence": "diagnostic-consumer-v4/"
+  },
+  "consumer_v4_negative": {
+    "run_id": "1a34d876-45a7-4763-a0ef-95b8fd57fe51",
+    "state": "EXITED",
+    "water_failures": 80629,
+    "status": "EXPECTED_FAIL_OLD_WORLD",
+    "evidence": "consumer-v4-old-world-negative/"
+  },
+  "bridge_correction": {
+    "status": "PASS_OFFLINE_AND_FIRST_NATIVE_V10",
+    "plan": "plans/narva-crossing-foundation-v10.md",
+    "v9_issues": [
+      "clearance below6m at actual water",
+      "old three-span endpoints lie over expanded fairway"
+    ],
+    "candidate_spans": 9,
+    "candidate_deck_m": 11,
+    "candidate": "tests/regional_foundation_combined_v10",
+    "candidate_sha256": "8e25fab25e8f0909fdda302ed4ba3db4c43884c523920f5ef3424db90780eb8b",
+    "changed_vertices": 693
+  },
+  "regional_boat": {
+    "run_id": "1c727b7f-9d62-4f6c-8ad9-091b2934b2be",
+    "state": "EXITED",
+    "reference": "regional-boat-v1/reference.json",
+    "progress": "Complete8cases. Luga2/3 PASS; Narva0/1 timeout. Neva4/5 and delta6/7 motionPASS but SurfaceY FAIL. Precision discriminator isolated in2same-tickrecords. V2vectorlogger controlsPASS, runtime pending.",
+    "evidence": "regional-boat-v1/runtime-complete/verification.json",
+    "stop_method": "forced_kill",
+    "exit_metrics_valid": false
+  },
+  "native_v10": {
+    "first_export": "tb/regional_foundation_v10/01_native_v10.wrp",
+    "first_sha256": "631736b53c0f2c0902e702431dc37d72ed51e62cdbba2dfc480bb08584ac912b",
+    "objects": 10161,
+    "gate": "native-v10-first.json",
+    "reopened": true,
+    "persisted": true,
+    "reopened_sha256": "cdd6838f522a5b66b729db7c6bda39b0a5a41eb256fb26804eb39f5479ef905a",
+    "persistence_gate": "native-v10-persistence-1-2.json",
+    "persistence_status": "PASS_EXACT_NATIVE_PERSISTENCE"
+  },
+  "v10_package": {
+    "status": "DIAGNOSTIC_NATIVE_FIRST_EXPORT_FRESH_NAV",
+    "world_pbo_sha256": "75931541c21aaac4f55e68993be0c94ad581413ab260934f870a268d2bf610d9",
+    "deployed": "P:/Mods/@DayZ_Baltic_FoundationV10NavDiag",
+    "water_pbo_sha256": "f9a5cdf7461ff09e80a102641289513896011a78b090fdbbd1056f9b985898d3"
+  },
+  "navmesh_v10": {
+    "run_id": "6b65fa7a-7ce2-456f-bba2-27f3f781542a",
+    "state": "SAVED_PACKED_CONSUMER_PASS",
+    "generated_observed": 966289,
+    "total": 966289,
+    "tile_width_m": 12.5,
+    "range_ui": [
+      0,
+      12287.5,
+      0,
+      12287.5
+    ],
+    "tile_range_ui": [
+      0,
+      982,
+      0,
+      982
+    ],
+    "generate_all_observed": true,
+    "started_utc": "2026-10-01T07:11:26.97771+02:00",
+    "saved": true,
+    "accepted": false,
+    "expected_path": "tb/regional_foundation_v10/navmesh/baltic_foundation_v10_diag.nm"
+  },
+  "consumer_v5": {
+    "run_id": "01bf2c83-3c06-4a81-82a2-878550ccc9ae",
+    "state": "EXITED",
+    "status": "PASS_RUNTIME_REGIONAL_CONSUMERS",
+    "water_samples": 81212,
+    "water_failures": 0,
+    "nav_samples": 314,
+    "nav_failures": 0,
+    "evidence": "consumer-v5-freshnav/verification.json"
+  },
+  "regional_boat_v2": {
+    "run_id": "1a88b815-4d4c-45a9-a50b-cf30a3b4dcc3",
+    "state": "EXITED_BY_OTHER_SESSION",
+    "reference": "regional-boat-v2/reference.json",
+    "expected_cases": 8,
+    "log": "P:/DayZ_MCP_dev/_server/profiles/baltic_regional_boat_v2.log",
+    "evidence": "regional-boat-v2/runtime-interrupted/verification.json",
+    "reason": "Other Claude session adopted/closed ownerless run; incomplete Neva, Luga both directions PASS."
+  },
+  "narva_boat_v3": {
+    "reference": "narva-boat-v3/reference.json",
+    "state": "PREPARED_DEPLOYED_NOT_RUN"
+  },
+  "regional_chase_v1": {
+    "run_id": "c81c891d-af07-40fc-9371-4c1482799370",
+    "state": "EXITED_ORDERLY",
+    "status": "COMPLETE_10PASS_9FAIL",
+    "verification": "regional-chase-v1/runtime-complete/verification.json",
+    "negatives": "17 rejected on actual passing controlcase0; not whole-run PASS",
+    "limits": "Three regional timeouts and six bridge cases fail corridor/contact/arrival; source records unchanged."
+  },
+  "normal_native_package": {
+    "stage": "packages/baltic-foundation-v10-native",
+    "build": "build-output/regional_foundation_v10_native",
+    "pbo_sha256": "39b67876ef66d725b98aecfffae0b80251b8178a69a0680315b063d95dcade02",
+    "compiled_wrp_sha256": "b46c7fce053171a63a6f2670a56c10452efc049b1d24fbef2494fa79be3bece5",
+    "status": "FINAL_NATIVE_FRESH_NAV_CONSUMER_PASS",
+    "nav_generation_run": "e0696183-51f1-4767-9cda-82bfbbd6f36b",
+    "final_pbo_sha256": "d1008dd6c882193706f06c5e7b8495ee1a357f5819a8574118784f7e90f18577",
+    "navmesh_sha256": "e8348efc2f361d8aa82cbd69c4fc8ad72470a628abd2a10ca8411d7f40fc313c"
+  },
+  "driving": {
+    "status": "HISTORICAL_V2_SUPERSEDED_BY_DRIVING_V3",
+    "mission": "BalticFoundationDriveV1.BalticTrial",
+    "reference_sha256": "7d2ffc82508dfad2165b61c450cd54ddb0d5ed6cfc7cdce71cd7dc6d2e51bce9",
+    "addon_sha256": "4f693887ec4f6fa2670ac4cea6fde6d03e4116a82b7a907bbb26207f20285d80",
+    "active_run": null,
+    "next_reference": "foundation-drive-v3/reference.json",
+    "next_reference_sha256": "9a8b4cdda332265aa267ea309f21536177b99c936a50298b4adf0fb6c7e1794a"
+  },
+  "archive_v10": {
+    "path": "packages/baltic-foundation-v10-native-checkpoint",
+    "status": "PASS_ARCHIVE_BYTES",
+    "zip_sha256": "f96d3d5c11da9c7debcbfe35b8edad3e9ffcf9fbc8d194d999a751762ee3903f"
+  },
+  "visual_v10": {
+    "reference": "foundation-visual-v2/reference.json",
+    "status": "PREPARED_DEPLOYED_ENGINE_PENDING",
+    "poses": 12,
+    "probe_sha256": "fd0473ebee4dcdaa1c2a62cb9ff5feb7697c77123a1fded98e1b524c686989c7"
+  },
+  "final_native_consumer": {
+    "state": "EXITED_ORDERLY",
+    "run": "a1eca3fb-8267-4daf-903e-8e4c90d63240",
+    "water_failures": 0,
+    "routes": 15,
+    "water_samples": 81212,
+    "status": "PASS_RUNTIME_REGIONAL_CONSUMERS",
+    "evidence": "consumer-v5-final-native/verification.json",
+    "nav_samples": 314
+  },
+  "regional_boat_v3": {
+    "run": "769e5935-8bce-4eab-ac8e-6ee3475b97cc",
+    "reference": "regional-boat-v3/reference.json",
+    "cases": 8,
+    "state": "EXITED_ORDERLY",
+    "status": "PASS_8_OF_8_SELECTED_SECTORS_BOTH_DIRECTIONS",
+    "evidence": "regional-boat-v3/runtime-complete/verification.json",
+    "limit": "Arrival and engine release, not zero-speed station-keeping; terminal drift0.31-0.36m/s."
+  },
+  "performance_v10": {
+    "status": "PASS_BOUNDED_ACTIVE_AI_MEASUREMENT",
+    "reference": "foundation-load-v1/reference.json",
+    "sites_reference": "performance-v10-sites.json",
+    "run": "f8c59ee6-9afe-4766-b27b-1c3bbe978318",
+    "state": "EXITED_ORDERLY",
+    "evidence": "foundation-load-v1/runtime-complete/verification.json",
+    "host_samples_per_process": 420
+  },
+  "full_rivers": {
+    "status": "COMPLETE_9_PASS_3_FAIL",
+    "run_id": "61a84a8a-8b50-4529-9241-aa6545a6ba03",
+    "run_state": "EXITED_ORDERLY",
+    "evidence": "full-river-v2/runtime-complete/verification.json",
+    "distinct_selected_channel_m": 26600.55826184677,
+    "all_12_visited_waypoints_without_health_loss": true,
+    "failed_cases": {
+      "6": "targets_in_order",
+      "8": "start_and_endpoint",
+      "10": "start_and_endpoint"
+    },
+    "limits": "Independent overlapping segments, one direction, empty boats. Original aggregate FAIL retained."
+  },
+  "driving_v2": {
+    "run_id": "3dcca48f-0c0c-48dc-84c8-e019efaef5c5",
+    "state": "EXITED_ORDERLY",
+    "status": "FAIL_INITIAL_SPAWN_ONLY_ALL3",
+    "evidence": "foundation-drive-v2/runtime-complete/verification.json",
+    "physical_checks": "3 routes arrived/stopped, no damage, four wheel contacts; spawn criterion failed"
+  },
+  "driving_v3": {
+    "run_id": "7aef7e71-7030-4f62-a56e-1bce374a8d67",
+    "state": "EXITED_ORDERLY",
+    "reference": "foundation-drive-v3/reference.json",
+    "scope": "Explicit initial placement before settlement; no forcing during travel; original criteria unchanged",
+    "result": "PASS_EMPTY_SEDAN_NARVA_GRADES_AND_BRIDGE",
+    "negative_controls": 18,
+    "evidence": "foundation-drive-v3/runtime-complete/verification.json"
+  },
+  "visual_v2": {
+    "run_id": "89e6ae31-c786-4917-b336-c3362e8853e2",
+    "state": "EXITED_ORDERLY",
+    "reference": "foundation-visual-v2/reference.json",
+    "computer_use": "Activated DayZ once; node session reset immediately; no desktop control while tour runs",
+    "result": "FAIL_INSTRUMENTATION_GETFPS_UNLINKED",
+    "evidence": "foundation-visual-v2/failed-attempt01/"
+  },
+  "visual_v3": {
+    "run_id": "c1a53c8c-dc49-4781-ab85-941687b97b4b",
+    "state": "CLIENT_CRASH_SERVER_CLOSED",
+    "evidence": "foundation-visual-v3/crash-attempt01/",
+    "cause": "NOT_ISOLATED: immediate afterPOSE3 Narva aerial toSPB ground,150s"
+  },
+  "visual_v4": {
+    "run_id": "69fc8c8d-7f9e-46d5-8953-a5f6b71292ff",
+    "state": "CLIENT_CRASH_SERVER_CLOSED",
+    "reference": "foundation-visual-v4/reference.json",
+    "control": "same cameras/times/world/player; no native MakeScreenshot; CU frames saved and released between observations",
+    "result": "REPRODUCED_AT_POSE3_WITHOUT_MAKESCREENSHOT",
+    "evidence": "foundation-visual-v4/crash-attempt01/"
+  },
+  "spb_basic_v1": {
+    "run_id": "d671ab2c-0fa2-4bb4-9047-614f812f2ec2",
+    "state": "EXITED_ORDERLY",
+    "first_visual": "SPB loaded normally, initial.jpg and initial-player.json; wait180s from07:38:43UTC",
+    "result": "PASS_DIRECT_SPB_CLIENT_LOAD_OBSERVED_180S",
+    "observed_seconds": 213.029
+  },
+  "visual_groups": {
+    "status": "ALL_7_TELEMETRY_PASS_VISUAL_PARTIAL",
+    "index": "visual-groups-index.json",
+    "groups": 7,
+    "poses": 12,
+    "world_unchanged": true,
+    "scope": "Regional observation; original distant camera crash unresolved.",
+    "runs_closed": true,
+    "review": "visual-review.json",
+    "negative_controls": 14,
+    "repeat_neva": "TelemetryPASS; pixels INCONCLUSIVE; EXITED_ORDERLY"
+  },
+  "bridge_path_v10": {
+    "run_id": "ce9532dc-73e7-487b-8e95-92ab544c6cb7",
+    "state": "EXITED_ORDERLY",
+    "status": "PASS_NATIVE_BRIDGE_GRAPH_QUERIES",
+    "verification": "bridge-path-v10/verification.json",
+    "negative_controls": 7,
+    "limit": "Eight directed routes and negativeNONE; not physical locomotion."
+  },
+  "regional_chase_v2": {
+    "run_id": "61d88529-8876-4375-95c2-144c843ad9b9",
+    "state": "EXITED_ORDERLY",
+    "status": "FAIL_LOCAL_CONTROL_TIMEOUT",
+    "evidence": "regional-chase-v2/failed-control",
+    "limits": "AddNoiseTarget local control stopped14m short; not validated stimulus."
+  },
+  "regional_chase_v3": {
+    "run_id": "578ce28e-7af7-4027-83ef-3d08f6529e91",
+    "state": "EXITED_ORDERLY",
+    "reference": "regional-chase-v3/reference.json",
+    "cases": 26,
+    "limits": "New actors per overlapping short interval, not continuous long pursuit.",
+    "status": "COMPLETE_20PASS_6FAIL",
+    "verification": "regional-chase-v3/runtime-complete/verification.json",
+    "coverage": "Three terrestrial reverse routes PASS short overlapping intervals; bridge coverage FAIL"
+  },
+  "foundation_load_v1": {
+    "run_id": "f8c59ee6-9afe-4766-b27b-1c3bbe978318",
+    "state": "EXITED_ORDERLY",
+    "samples_requested_per_process": 420,
+    "roles": [
+      "server",
+      "client"
+    ],
+    "status": "PASS_BOUNDED_ACTIVE_AI_MEASUREMENT",
+    "verification": "foundation-load-v1/runtime-complete/verification.json",
+    "samples_actual_per_process": 420,
+    "limits": "No100-player/CE/city/renderFPS acceptance; single185ms slice in final empty phase; CPU nonmonotonic."
+  },
+  "full_river_v2": {
+    "run_id": "61a84a8a-8b50-4529-9241-aa6545a6ba03",
+    "state": "EXITED_ORDERLY",
+    "reference": "full-river-v2/reference.json",
+    "cases": 12,
+    "planned_channel_m": 26600.558,
+    "status": "COMPLETE_9_PASS_3_FAIL",
+    "verification": "full-river-v2/runtime-complete/verification.json"
+  },
+  "continuous_pursuit_v1": {
+    "status": "FAIL_OR_INCOMPLETE_CONTINUOUS_PURSUIT",
+    "reference": "continuous-pursuit-v1/reference-r4.json",
+    "reference_sha256": "ca030aa5e164b01cf005bd8170ac5763657de5b31f8fdf05804eda7385f5603d",
+    "input": "Client and server native human controls; untouched infected locomotion",
+    "run_id": "a16867c5-2403-4dd1-908b-8df4f5f9c273",
+    "state": "EXITED_ORDERLY",
+    "verification": "continuous-pursuit-v1/runtime-complete/verification.json",
+    "negative_controls": 15,
+    "scope": "Case0 PASS; case1 stopped prey4.005626m still on deck; case2 not run.",
+    "server_created_utc": "2026-10-01T10:02:38.581774Z",
+    "timestamp_correction": {
+      "removed_stale_latest_start_utc": "2026-10-01T10:17:43Z",
+      "source": "continuous-pursuit-v1/lifecycle-identity.json; runtime logs unchanged"
+    }
+  },
+  "continuous_pursuit_v2": {
+    "status": "FAIL_OR_INCOMPLETE_CONTINUOUS_PURSUIT",
+    "run_id": "15a3c31b-af02-4d32-96c5-0b6c4f196d8c",
+    "reference": "continuous-pursuit-v2/reference.json",
+    "contract": "Deck6m approaches4m; strict4m lane reported separately; V1 FAIL retained.",
+    "state": "EXITED_ORDERLY",
+    "verification": "continuous-pursuit-v2/runtime-complete/verification.json",
+    "scope": "Case0PASS; case1 prey6.003488m lateral, speed9.236822m/s, both healthy/on deck at terminal; case2 not run.",
+    "negative_controls": 15
+  },
+  "human_control_v1": {
+    "status": "PASS_HUMAN_CONTROL_WITHOUT_INFECTED",
+    "run_id": "c8b7bcde-0cb6-4329-9945-f9ae83cd0c21",
+    "reference": "bridge-human-control-v1/reference.json",
+    "limits": "No-infected controller discriminator; not AI acceptance.",
+    "state": "EXITED_ORDERLY",
+    "verification": "bridge-human-control-v1/runtime-complete/verification.json",
+    "negative_controls": 15
+  },
+  "acceptance": "BASE_NOT_FULLY_ACCEPTED_MAP_1_0_NOT_COMPLETE",
+  "ended_utc": "2026-10-01T10:42:55.622010+00:00",
+  "automation": {
+    "id": "baltic-sesi-n-de-8-horas",
+    "status": "PAUSED",
+    "evidence": "automation-closure.json"
+  },
+  "archive_companion": {
+    "manifest": "packages/baltic-foundation-v10-night-evidence/manifest.json",
+    "status": "MANIFEST_IS_AUTHORITY"
+  },
+  "history_note": "Earlier experiment objects are preserved as history. Final authoritative results: normal_native_package.final_pbo_sha256, final_native_consumer, driving_v3, regional_boat_v3, full_rivers, continuous pursuit and human control entries, visual-review.json."
+}

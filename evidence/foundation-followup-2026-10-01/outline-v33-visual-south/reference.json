@@ -1,0 +1,77 @@
+{
+  "status": "FROZEN_V33_VISUAL_PROTOCOL_NOT_RUN",
+  "parent_probe_sha256": "0d8cccf8439ee0a38a03c09aef8c6f16644b31db24bb882b1d3ebc457876b4e9",
+  "terrain_sha256": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107",
+  "probe_pbo_sha256": "15424e5c06df094bf56db3bf92b7cd7d19c04f20b5241f3c7fe11158c77d6298",
+  "mission_sha256": "4cd7c58943ae3753414a337aa6a3bbd2b475e9d979ccfdfa9ccecc768c04e382",
+  "script_sha256": "f2719dc065ee37bd2d6b04194647ee14fd1e696824b9ed0dccaa9d195a7e3bca",
+  "poses": [
+    {
+      "phase": 0,
+      "name": "Southern relief",
+      "start_s": 15,
+      "settled_s": 18,
+      "end_s": 105,
+      "position": [
+        5540,
+        180,
+        250
+      ],
+      "target": [
+        5800,
+        65,
+        522
+      ],
+      "view_requested": 6000,
+      "nearplane_requested": 10,
+      "original_phase": 10
+    }
+  ],
+  "finish_s": 108,
+  "restoration_view_distance": 1600,
+  "limits": [
+    "Same original cameras, probe and mission; V33 terrain/new navigation.",
+    "Telemetry/counters do not establish visual quality, full-map stability or multiplayer capacity.",
+    "Capture through Sky; native DDS may be absent."
+  ],
+  "parent_reference_sha256": "92e3af96709cdb0c311b8e837006f889b0e96a5c598dd6e1d55b34e2280c7e59",
+  "world_pbo_sha256": "38ebe847b5dd553ac31bd0d51bd9d1c192965352a8a04188b7bdcef5c8eaea0c",
+  "capture_api": "MakeScreenshot; focused-app guard, original DDS requires independent pixel review",
+  "metrics_api": "P:/scripts/3_game/global/game.c:868-906; proto/proto.c:145-147",
+  "api_sha256": {
+    "P:\\scripts\\1_core\\proto\\proto.c": "72b2a9695aa43dcdef8d55827802a292122002833e724132a05c7ca18e6e7995",
+    "P:\\scripts\\3_game\\global\\game.c": "cf529055c48596108034ce6b11826b09bbf5d93e6c550e37785947873d8c3158"
+  },
+  "capture_at_phase_s": 60,
+  "metrics_window_phase_s": [
+    10,
+    70
+  ],
+  "metrics_limit": "Native client counters recorded descriptively; confirm runtime behavior, no dedicated-server FPS inference.",
+  "deployed_mod": "P:\\Mods\\@BalticFoundationVisualNativeSouthV4",
+  "deployed_mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticFoundationVisualNativeSouthV4.BalticTrial",
+  "camera_header": "BALTIC_FOUNDATION_VISUAL_NATIVE_SOUTH_V4",
+  "metrics_header": "BALTIC_FOUNDATION_CLIENT_METRICS_NATIVE_SOUTH_V4",
+  "metrics_columns": 9,
+  "capture_name_mode": "Explicit profile root DDS named capture_prefix plus phase",
+  "instrumentation_change": "Same original poses, local timing restarted per group and dry player anchor nearby. No world or rendering material changes.",
+  "capture_change": "Frozen local V1 poses,90s hold; native DDS and grouped observation, unchanged map.",
+  "capture_event": "CAPTURE_REQUEST",
+  "camera_log": "baltic_foundation_visual_native_south_v4.log",
+  "metrics_log": "baltic_foundation_client_metrics_native_south_v4.log",
+  "anchor": {
+    "xz": [
+      5540,
+      250
+    ],
+    "terrain_y": 6.326561133066844,
+    "minimum_water_distance_m": 481.65714635027956,
+    "water_sha256": {
+      "water-surfaces-contour-v2.geojson": "df860f693a1bf0115cb4af65a13cea5f8006a5a21bc9bca1d88276b83802ccdc",
+      "ocean-game.json": "c72aaafd6ee35abfcdec180135571e34b9c5eaefb42d3bca1bfbabad6493f757"
+    }
+  },
+  "capture_prefix": "baltic_foundation_visual_native_south_v4_",
+  "capture_full_path": true,
+  "navmesh_sha256": "425b84885d05a588c4c80e0561eb01d02849816f7ff9c0c61f6b49922a4fc842"
+}

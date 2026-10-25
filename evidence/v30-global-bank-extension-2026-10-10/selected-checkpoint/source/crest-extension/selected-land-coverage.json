@@ -1,0 +1,551 @@
+{
+  "candidate": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\compound-selection\\run-02\\candidate-terrain.npz",
+    "selection_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\compound-selection\\run-02\\selection.json",
+    "selection_sha256": "3b22dcc381b34b8d7c3e6641d3c919658f0fe7377594a859e3d5c064cf92ba0b",
+    "sha256": "6e27557315eb65ecc69052e1ec387304a19f37eaa4f5167ab82fb607f095461d"
+  },
+  "counts": {
+    "B_to_candidate_state_transitions": {
+      "shore_wet_face_support -> shore_wet_face_support": 7943,
+      "unknown_P_or_F -> unknown_P_or_F": 22123
+    },
+    "changed_native_cells_incident": 43050,
+    "changed_vertices": 30066,
+    "changed_vertices_by_B_class": {
+      "0": 30066
+    },
+    "exclusive_local_surface_state_B": {
+      "SEA_envelope_only": 0,
+      "below_local_P_or_F": 0,
+      "dry_known_above_SEA": 0,
+      "shore_wet_face_support": 7943,
+      "unknown_P_or_F": 22123
+    },
+    "exclusive_local_surface_state_candidate": {
+      "SEA_envelope_only": 0,
+      "below_local_P_or_F": 0,
+      "dry_known_above_SEA": 0,
+      "shore_wet_face_support": 7943,
+      "unknown_P_or_F": 22123
+    },
+    "nominal_surface_tags_at_changed_vertices": {
+      "B": {
+        "F_below_at_vertex_sample": 0,
+        "F_unknown_incident": 29950,
+        "F_wet_triangle_support": 7943,
+        "P_below_at_vertex_sample": 0,
+        "P_unknown_incident": 29950,
+        "P_wet_triangle_support": 7943,
+        "SEA_below_0_85m_envelope": 0,
+        "terrain_beach_metadata_flag": 0,
+        "terrain_water_metadata_flag": 0
+      },
+      "candidate": {
+        "F_below_at_vertex_sample": 0,
+        "F_unknown_incident": 29950,
+        "F_wet_triangle_support": 7943,
+        "P_below_at_vertex_sample": 0,
+        "P_unknown_incident": 29950,
+        "P_wet_triangle_support": 7943,
+        "SEA_below_0_85m_envelope": 0,
+        "terrain_beach_metadata_flag": 0,
+        "terrain_water_metadata_flag": 0
+      }
+    }
+  },
+  "definitions": {
+    "F_below_at_vertex_sample": "EV87 signs_for: finite per-corner visible F level > terrain height; native face support additionally requires all three F corners finite.",
+    "P_below_at_vertex_sample": "EV87 signs_for: finite per-cell physical P level > terrain height at that corner sample; unknown P stays separately counted.",
+    "SEA_envelope_only": "EV87 global SEA constant 0.85 m at a vertex, with no P/F wet-triangle support and no local P/F unknown; not proof that a sea object is rendered at that location.",
+    "angle_metrics": "Exact EV87 edge_angles families on the full 2048 grid; >30 degrees and slope >35 degrees are inherited consumer diagnostics, not new acceptance gates.",
+    "shore_mixed_PF_support_hinge": "A hinge whose four native vertices include 1\u20133 vertices in the baseline P/F wet-triangle support mask. This is immediate geometric shoreline support, not a distance-band estimate of all dry hillsides.",
+    "unknown_P_or_F": "Any incident cell P missing or corresponding incident F corner missing, unless known P/F contact has higher-priority class; missing metadata is still reported independently in tags.",
+    "wet_support_warning": "Terrain water metadata flag, nominal P/F/SEA contact, triangle support, and EV91 wet-support population are distinct quantities; none is substituted for another here.",
+    "wet_triangle_support": "EV87 native_face_masks + support_vertices; any triangle with a below-surface corner contributes all its vertices, so this includes dry-side shoreline vertices."
+  },
+  "full_map_hinge_diagnostics_by_family": {
+    "diag": {
+      "SEA_envelope_only_no_PF_support": {
+        "baseline": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "candidate": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "exact_angle_values_changed": 0,
+        "max_abs_delta_deg": null,
+        "new_over30": 0,
+        "resolved_over30": 0
+      },
+      "all_four_PF_supported": {
+        "baseline": {
+          "above30": 2198,
+          "max_deg": 98.27084005204352,
+          "mean_square_deg2": 32.60735598058246,
+          "n": 392701,
+          "p99_deg": 26.406552189897084
+        },
+        "candidate": {
+          "above30": 2002,
+          "max_deg": 98.27084005204352,
+          "mean_square_deg2": 30.72283003013859,
+          "n": 392701,
+          "p99_deg": 25.825634448799022
+        },
+        "exact_angle_values_changed": 8741,
+        "max_abs_delta_deg": 26.59169731087345,
+        "new_over30": 0,
+        "resolved_over30": 196
+      },
+      "all_surface": {
+        "baseline": {
+          "above30": 4569,
+          "max_deg": 98.27084005204352,
+          "mean_square_deg2": 6.738614595209894,
+          "n": 4190209,
+          "p99_deg": 12.414044874841663
+        },
+        "candidate": {
+          "above30": 3619,
+          "max_deg": 98.27084005204352,
+          "mean_square_deg2": 6.10643898803121,
+          "n": 4190209,
+          "p99_deg": 11.807244942588468
+        },
+        "exact_angle_values_changed": 43047,
+        "max_abs_delta_deg": 33.81620945232103,
+        "new_over30": 0,
+        "resolved_over30": 950
+      },
+      "known_dry_no_PF_support_above_SEA": {
+        "baseline": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "candidate": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "exact_angle_values_changed": 0,
+        "max_abs_delta_deg": null,
+        "new_over30": 0,
+        "resolved_over30": 0
+      },
+      "local_PF_support_any": {
+        "baseline": {
+          "above30": 4384,
+          "max_deg": 98.27084005204352,
+          "mean_square_deg2": 50.36161050146643,
+          "n": 477767,
+          "p99_deg": 29.658914986428577
+        },
+        "candidate": {
+          "above30": 3434,
+          "max_deg": 98.27084005204352,
+          "mean_square_deg2": 44.978377138471835,
+          "n": 477767,
+          "p99_deg": 28.399744888754626
+        },
+        "exact_angle_values_changed": 19812,
+        "max_abs_delta_deg": 33.81620945232103,
+        "new_over30": 0,
+        "resolved_over30": 950
+      },
+      "shore_mixed_PF_support": {
+        "baseline": {
+          "above30": 2186,
+          "max_deg": 63.54757919044032,
+          "mean_square_deg2": 132.32283478150376,
+          "n": 85066,
+          "p99_deg": 36.35313899896554
+        },
+        "candidate": {
+          "above30": 1432,
+          "max_deg": 63.54757919044032,
+          "mean_square_deg2": 110.78807319787951,
+          "n": 85066,
+          "p99_deg": 33.30780900875859
+        },
+        "exact_angle_values_changed": 11071,
+        "max_abs_delta_deg": 33.81620945232103,
+        "new_over30": 0,
+        "resolved_over30": 754
+      },
+      "unknown_no_PF_support": {
+        "baseline": {
+          "above30": 185,
+          "max_deg": 62.71452327805487,
+          "mean_square_deg2": 1.1246203873153418,
+          "n": 3712442,
+          "p99_deg": 4.390284986307785
+        },
+        "candidate": {
+          "above30": 185,
+          "max_deg": 62.71452327805487,
+          "mean_square_deg2": 1.1038748336763238,
+          "n": 3712442,
+          "p99_deg": 4.284441198153512
+        },
+        "exact_angle_values_changed": 23235,
+        "max_abs_delta_deg": 12.86378153881925,
+        "new_over30": 0,
+        "resolved_over30": 0
+      }
+    },
+    "horizontal": {
+      "SEA_envelope_only_no_PF_support": {
+        "baseline": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "candidate": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "exact_angle_values_changed": 0,
+        "max_abs_delta_deg": null,
+        "new_over30": 0,
+        "resolved_over30": 0
+      },
+      "all_four_PF_supported": {
+        "baseline": {
+          "above30": 3765,
+          "max_deg": 100.8663801525418,
+          "mean_square_deg2": 37.17630869055024,
+          "n": 385162,
+          "p99_deg": 29.80809184680354
+        },
+        "candidate": {
+          "above30": 3403,
+          "max_deg": 100.8663801525418,
+          "mean_square_deg2": 35.262271328034906,
+          "n": 385162,
+          "p99_deg": 28.809009704236413
+        },
+        "exact_angle_values_changed": 7944,
+        "max_abs_delta_deg": 21.735441742450035,
+        "new_over30": 0,
+        "resolved_over30": 362
+      },
+      "all_surface": {
+        "baseline": {
+          "above30": 4691,
+          "max_deg": 100.8663801525418,
+          "mean_square_deg2": 6.944409929319252,
+          "n": 4188162,
+          "p99_deg": 12.685106943466945
+        },
+        "candidate": {
+          "above30": 4194,
+          "max_deg": 100.8663801525418,
+          "mean_square_deg2": 6.510202451085115,
+          "n": 4188162,
+          "p99_deg": 12.230807697441046
+        },
+        "exact_angle_values_changed": 45969,
+        "max_abs_delta_deg": 25.533119409129313,
+        "new_over30": 0,
+        "resolved_over30": 497
+      },
+      "known_dry_no_PF_support_above_SEA": {
+        "baseline": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "candidate": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "exact_angle_values_changed": 0,
+        "max_abs_delta_deg": null,
+        "new_over30": 0,
+        "resolved_over30": 0
+      },
+      "local_PF_support_any": {
+        "baseline": {
+          "above30": 4519,
+          "max_deg": 100.8663801525418,
+          "mean_square_deg2": 49.45700269369625,
+          "n": 485166,
+          "p99_deg": 29.631360352752207
+        },
+        "candidate": {
+          "above30": 4022,
+          "max_deg": 100.8663801525418,
+          "mean_square_deg2": 45.78938315614635,
+          "n": 485166,
+          "p99_deg": 28.65344207360564
+        },
+        "exact_angle_values_changed": 21042,
+        "max_abs_delta_deg": 25.533119409129313,
+        "new_over30": 0,
+        "resolved_over30": 497
+      },
+      "shore_mixed_PF_support": {
+        "baseline": {
+          "above30": 754,
+          "max_deg": 60.82310674530494,
+          "mean_square_deg2": 96.75567738310595,
+          "n": 100004,
+          "p99_deg": 29.334326405924372
+        },
+        "candidate": {
+          "above30": 619,
+          "max_deg": 60.82310674530494,
+          "mean_square_deg2": 86.3341958230303,
+          "n": 100004,
+          "p99_deg": 28.375957978819667
+        },
+        "exact_angle_values_changed": 13098,
+        "max_abs_delta_deg": 25.533119409129313,
+        "new_over30": 0,
+        "resolved_over30": 135
+      },
+      "unknown_no_PF_support": {
+        "baseline": {
+          "above30": 172,
+          "max_deg": 54.76012446099793,
+          "mean_square_deg2": 1.3744161780103845,
+          "n": 3702996,
+          "p99_deg": 4.969533873733319
+        },
+        "candidate": {
+          "above30": 172,
+          "max_deg": 54.76012446099793,
+          "mean_square_deg2": 1.3638498798288285,
+          "n": 3702996,
+          "p99_deg": 4.929347403453326
+        },
+        "exact_angle_values_changed": 24927,
+        "max_abs_delta_deg": 13.755172285557585,
+        "new_over30": 0,
+        "resolved_over30": 0
+      }
+    },
+    "vertical": {
+      "SEA_envelope_only_no_PF_support": {
+        "baseline": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "candidate": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "exact_angle_values_changed": 0,
+        "max_abs_delta_deg": null,
+        "new_over30": 0,
+        "resolved_over30": 0
+      },
+      "all_four_PF_supported": {
+        "baseline": {
+          "above30": 3904,
+          "max_deg": 90.24533051116292,
+          "mean_square_deg2": 39.343630968114525,
+          "n": 383830,
+          "p99_deg": 30.19665231678609
+        },
+        "candidate": {
+          "above30": 3510,
+          "max_deg": 90.24533051116292,
+          "mean_square_deg2": 37.34204712893637,
+          "n": 383830,
+          "p99_deg": 29.134257106990873
+        },
+        "exact_angle_values_changed": 7892,
+        "max_abs_delta_deg": 24.97126403689237,
+        "new_over30": 0,
+        "resolved_over30": 394
+      },
+      "all_surface": {
+        "baseline": {
+          "above30": 4707,
+          "max_deg": 90.24533051116292,
+          "mean_square_deg2": 7.3598380994619905,
+          "n": 4188162,
+          "p99_deg": 13.483055513509845
+        },
+        "candidate": {
+          "above30": 4165,
+          "max_deg": 90.24533051116292,
+          "mean_square_deg2": 6.906207859115445,
+          "n": 4188162,
+          "p99_deg": 12.937721388664002
+        },
+        "exact_angle_values_changed": 45996,
+        "max_abs_delta_deg": 29.29390747656931,
+        "new_over30": 0,
+        "resolved_over30": 542
+      },
+      "known_dry_no_PF_support_above_SEA": {
+        "baseline": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "candidate": {
+          "above30": 0,
+          "max_deg": null,
+          "mean_square_deg2": null,
+          "n": 0,
+          "p99_deg": null
+        },
+        "exact_angle_values_changed": 0,
+        "max_abs_delta_deg": null,
+        "new_over30": 0,
+        "resolved_over30": 0
+      },
+      "local_PF_support_any": {
+        "baseline": {
+          "above30": 4655,
+          "max_deg": 90.24533051116292,
+          "mean_square_deg2": 52.539999415519624,
+          "n": 486478,
+          "p99_deg": 29.744581513132896
+        },
+        "candidate": {
+          "above30": 4113,
+          "max_deg": 90.24533051116292,
+          "mean_square_deg2": 48.713289713932866,
+          "n": 486478,
+          "p99_deg": 28.825297725385735
+        },
+        "exact_angle_values_changed": 21060,
+        "max_abs_delta_deg": 29.29390747656931,
+        "new_over30": 0,
+        "resolved_over30": 542
+      },
+      "shore_mixed_PF_support": {
+        "baseline": {
+          "above30": 751,
+          "max_deg": 57.15545482332142,
+          "mean_square_deg2": 101.8849657194661,
+          "n": 102648,
+          "p99_deg": 29.258579803159474
+        },
+        "candidate": {
+          "above30": 603,
+          "max_deg": 57.15545482332142,
+          "mean_square_deg2": 91.23359250988798,
+          "n": 102648,
+          "p99_deg": 28.456353866417476
+        },
+        "exact_angle_values_changed": 13168,
+        "max_abs_delta_deg": 29.29390747656931,
+        "new_over30": 0,
+        "resolved_over30": 148
+      },
+      "unknown_no_PF_support": {
+        "baseline": {
+          "above30": 52,
+          "max_deg": 51.80481430400484,
+          "mean_square_deg2": 1.4222284826732317,
+          "n": 3701684,
+          "p99_deg": 4.885196616517909
+        },
+        "candidate": {
+          "above30": 52,
+          "max_deg": 51.80481430400484,
+          "mean_square_deg2": 1.411890795160804,
+          "n": 3701684,
+          "p99_deg": 4.848335499169635
+        },
+        "exact_angle_values_changed": 24936,
+        "max_abs_delta_deg": 10.577710760382883,
+        "new_over30": 0,
+        "resolved_over30": 0
+      }
+    }
+  },
+  "full_map_triangle_slope_diagnostics": {
+    "B": {
+      "max_deg_per_triangle_order": [
+        64.07782536758606,
+        63.16455686969666
+      ],
+      "over35deg_per_triangle_order": [
+        793,
+        796
+      ],
+      "triangle_count": 8380418
+    },
+    "candidate": {
+      "max_deg_per_triangle_order": [
+        64.07782536758606,
+        63.16455686969666
+      ],
+      "over35deg_per_triangle_order": [
+        792,
+        794
+      ],
+      "triangle_count": 8380418
+    }
+  },
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\compound-selection\\run-02\\candidate-terrain.npz": {
+      "sha256": "6e27557315eb65ecc69052e1ec387304a19f37eaa4f5167ab82fb607f095461d"
+    },
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\compound-selection\\run-02\\selection.json": {
+      "sha256": "3b22dcc381b34b8d7c3e6641d3c919658f0fe7377594a859e3d5c064cf92ba0b"
+    },
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\crest-extension\\diagnose_selected_land_coverage.py": {
+      "sha256": "788dbe4794666eee67eebf4789cdcef58c9c01ab9c7a98d953a958e100dbb46c"
+    },
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": {
+      "sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27"
+    },
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\plane.npy": {
+      "sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0"
+    },
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": {
+      "sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    },
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\visible-field.npy": {
+      "sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"
+    }
+  },
+  "limitations": [
+    "Offline geometry/statistics only; no DayZ render or visual acceptance.",
+    "No face-index rescan or exact ODOL exposure rerun; compiled-face coverage remains the existing consumer result.",
+    "SEA is only the pinned nominal 0.85 m global envelope. P/F face masks supply local nominal water support.",
+    "The shore hinge group catches immediate mixed support only; dry slopes farther inland remain in dry/unknown groups, not a shoreline-distance band.",
+    "Wet-support eligibility was not used as a wet/dry classifier."
+  ],
+  "schema": "ev93.selected-land-coverage-diagnostic.v1",
+  "status": "DIAGNOSTIC_ONLY_OFFLINE"
+}

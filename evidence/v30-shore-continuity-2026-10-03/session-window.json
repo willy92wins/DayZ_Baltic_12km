@@ -1,0 +1,77 @@
+{
+  "status": "EIGHT_HOUR_WINDOW_ENDED_WITH_EXTERNAL_BLOCKERS",
+  "requested_start_utc": "2026-10-03T02:52:14Z",
+  "requested_end_utc": "2026-10-03T10:52:14Z",
+  "work_checkpoint_commit": "edea2e7f9159942a210046e7dccdd1ce142add46",
+  "figure_commit": "77f208a38fe7b172a07604fb096682ea37cea2d0",
+  "watch": {
+    "deadline": "2026-10-03T10:52:14Z",
+    "started": "2026-10-03T06:50:27.003Z",
+    "mode": "read-only",
+    "poll_minutes": 15
+  },
+  "last_watch_observation": {
+    "utc": "2026-10-03T10:50:32.046Z",
+    "owner": null,
+    "self": "none",
+    "occupied": true,
+    "foreign": [
+      "@LFRider",
+      "@LFH2R",
+      "@LFH2R_Dev"
+    ],
+    "available": false
+  },
+  "final_session_state": {
+    "utc": "2026-10-03T10:52:42.200Z",
+    "owner": null,
+    "self": {
+      "state": "none",
+      "position": null
+    },
+    "pending_commands": 0,
+    "queue": [],
+    "box": {
+      "occupied": true,
+      "runs": [],
+      "foreign": [
+        {
+          "port": 2302,
+          "mods": [
+            "@LFRider",
+            "@LFH2R",
+            "@LFH2R_Dev"
+          ],
+          "profiles": "profiles_server"
+        },
+        {
+          "port": 2302,
+          "mods": [
+            "@LFRider",
+            "@LFH2R",
+            "@LFH2R_Dev"
+          ],
+          "profiles": "profiles_client"
+        }
+      ],
+      "available_for": {
+        "new_launch": false,
+        "adopt": false
+      },
+      "queue": []
+    }
+  },
+  "native_control": {
+    "state": "Transport closed",
+    "recovered": false,
+    "reason": "Failed to write kernel assets; exact task backend recovery did not reconnect. Client restart requested, still pending."
+  },
+  "own_dayz_runs": 0,
+  "resets_used": 0,
+  "last_observed_weekly_remaining_percent": 81,
+  "limits": [
+    "Eight-hour window includes waiting for availability; it is not eight hours of productive implementation.",
+    "No native ASC import, fresh navmesh, engine readback, visual or actor acceptance of terrain 40d8.",
+    "Old accepted mods retained. Foreign DayZ processes were neither adopted nor stopped."
+  ]
+}

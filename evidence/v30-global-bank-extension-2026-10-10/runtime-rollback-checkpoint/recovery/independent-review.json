@@ -1,0 +1,23 @@
+{
+  "schema": "global-dry-rollback.independent-review.v1",
+  "status": "PASS_GLOBAL_DRY_ROLLBACK_PREFLIGHT",
+  "source_sha256": "434cb69fb8940816812d870d57e1cb7bb13f7530958b3d676bdc3ba911e9cd12",
+  "core_sha256": "de195463fc937986c02a7b1ca3b0b67714760d818e21561093dc90c53c029ec4",
+  "plan_sha256": "b50f2f3be3ff08de8df1f838391568436c77c9606009792df966a12ec4effe55",
+  "tests_sha256": "ef3bb5173a142e6247665af29018e44e6faec50343769e6c0c2da7a51e12023b",
+  "wrapper_tests_sha256": "d232c56be18ce8561cd7112b3e5b887268371dfcc90bb2dfa2b9699e1af61547",
+  "fixture_report_sha256": "508d53ba73c60364d9cdb790ee0b2b085126f9a68d7258fb28faa0a48fb565f6",
+  "review_scope": "Static wrapper/core review plus 15 synthetic fixtures; no global solver, terrain load, candidate or map acceptance.",
+  "checks": {
+    "core_fixtures": "9/9 PASS",
+    "wrapper_fixtures": "6/6 PASS",
+    "source_binding": "PASS",
+    "cleanup_states": "PASS",
+    "terrain_written_tracks_publish_cleanup": "PASS",
+    "source_readset": "PASS",
+    "full_run": "NOT_EXECUTED",
+    "map_acceptance": "NOT_CLAIMED"
+  },
+  "root_integration_correction": "Fixture report status corrected to the exact wrapper contract; all 15 executed tests and source hashes unchanged. First invocation refused before run-01 or map load.",
+  "historical_wrapper_fix_review_sha256": "24fe7e9c0a58a4fa6bbd4d734a5b20bee79a10dbc8668f0499d2e646bf357d97"
+}

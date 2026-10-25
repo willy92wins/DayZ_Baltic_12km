@@ -1,0 +1,57 @@
+{
+  "schema": "ev112-guided-visual-feedback-v1",
+  "date_local": "2026-10-23",
+  "run_id": "6fbc010b-a3d5-44fa-bbe9-9ef967b1df3d",
+  "deployed_world_sha256": "751823ac65cd56c9093de9705ee30b08a448a69606690c1363ecf944a15ac838",
+  "deployed_water_sha256": "97edcafe1fc86d9abb4c3aa591d5081a6dd940b87020069fd45c04f8d0deae43",
+  "overall_visual_acceptance": "REJECTED_GENERAL_RIVER_AND_NARVA_REWORK_REQUIRED",
+  "observations": [
+    {
+      "id": "VIEW-NARVA-01",
+      "site": "Narva dam, seaward side",
+      "site_reference_xz": [
+        2428,
+        6942
+      ],
+      "status": "OPEN_VISUAL_FAIL",
+      "user_report": "el lado del mar no esta bien ajustado al embalse, se ve ademas como un recorte o dos rectangulos de tierra",
+      "observed": "The captured view shows a dry earth shelf on the sea side of Narva dam with two rectangular projections and an irregular fit alongside the wall.",
+      "capture": "captures/capture_20261023_222804_683.jpg",
+      "attribution": "User confirmed native free camera remained at Narva while the server player had been teleported to kit-118. This report is attributed to Narva, not kit-118.",
+      "followup": "After the user disabled free camera, a fresh server query reported player position [2392.987793, 5.084775, 6941.383789], and capture_20261023_223234_842.jpg showed the character on the dam. Teleport to kit-118 was repeated with free camera disabled.",
+      "cause_status": "DRY_OLD_BED_EXPOSURE_MEASURED; EXACT_RECTANGULAR_OUTLINE_ATTRIBUTION_PENDING",
+      "candidate_mechanism": "dam_v31.py removes downstream pond water cells while retaining the old dry bed, except for the 21 approved raised vertices. This may expose the rectilinear shelf; geometry and current final terrain must be compared before claiming root cause.",
+      "constraint": "New finish authorized on 2026-10-23; preserve dam support and upstream pond separation. Prepare a separate exact delta and validate it; do not silently relax the old phase contract.",
+      "fix_applied": false,
+      "diagnostic": "narva-local-diagnostic.json: all 33 removed pond cells have final terrain corners at or above reference sea 0.75 m; local terrain changed at exactly the 21 approved vertices",
+      "new_user_decision": "2026-10-23 picker: Mar hasta el pie de la presa, con tierra solo en los apoyos laterales."
+    },
+    {
+      "id": "VIEW-RIVERS-02",
+      "status": "OPEN_VISUAL_FAIL_GENERAL_RIVER_ALIGNMENT",
+      "user_report": "En general, el rio es muy poligonal (muchas esquina y tramos rectos si lo ves a media y alta altura), y el ultimo tramo no se ve. Al lado de la presa tambien habia bastante terreno con elevaciones en picos / poligonales; hay que hacer un repaso general.",
+      "asked_site": "kit-118",
+      "player_position_after_report": [
+        7502.46728515625,
+        18.166234970092773,
+        7729.765625
+      ],
+      "capture": "captures/capture_20261023_223504_775.jpg",
+      "observed": "Current image shows third-person character in a forest. Current server position is outside kit-118. Do not attribute the defect to kit-118 before user description/localization.",
+      "cause_status": "LATTICE_DIRECTION_CONSTRAINT_VERIFIED; END_COVERAGE_GAP_VERIFIED; VISUAL_ATTRIBUTION_OF_EACH_SITE_PENDING",
+      "fix_applied": false,
+      "clarifications": [
+        "el ultimo extremo de un rio junto a ese kit",
+        "casi todos los rios son angulos rectos practicamente a partir de media altura"
+      ],
+      "evidence": "general-review/geometry-review.json; general-review/kit118-narva-diagnostic.png"
+    }
+  ],
+  "route": {
+    "narva": "LOADED_BUT_VISUAL_FAIL_VIEW-NARVA-01",
+    "kit-118": "VISUAL_FAIL; USER_REPORT_EXPANDS_TO_RIVERS_MAP_WIDE",
+    "remaining_sites": "NOT_REVIEWED"
+  },
+  "performance": "NOT_MEASURED; individual overlay FPS and background captures are not acceptance evidence",
+  "kit118_capture": "captures/capture_20261023_223335_685.jpg"
+}

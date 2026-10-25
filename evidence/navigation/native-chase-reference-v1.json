@@ -1,0 +1,36 @@
+{
+  "status": "FROZEN_BEFORE_RUNTIME",
+  "parent_sha256": "4e3db93c95db9c50e96d169ee73430e1fb2b7cdfb57e113fbbc55eabf77446ea",
+  "mission_sha256": "22ee63151fb01f4e5440902e91c01d1f569918090db378577ab7b901dbc1f9eb",
+  "stages": [
+    {
+      "spawn_axis_m": -80,
+      "goal_axis_m": -55,
+      "reach_axis_m": -65
+    },
+    {
+      "spawn_axis_m": -50,
+      "goal_axis_m": 60,
+      "reach_axis_m": 48
+    },
+    {
+      "spawn_axis_m": 50,
+      "goal_axis_m": -60,
+      "reach_axis_m": -48
+    }
+  ],
+  "stage_timeout_s": 90,
+  "sample_interval_s": 0.2,
+  "requirements": [
+    "Local stimulus control first",
+    "Both crossings beyond +/-48m",
+    "No AI movement or position override after spawn",
+    "Server health stays positive, no swimming/fall below roadway",
+    "Prey position must stay within2m of stated goal",
+    "No gaps>1s after settlement, corridor lateral<=4m"
+  ],
+  "limits": [
+    "One infected and one controlled local client; not multiplayer load.",
+    "Graph 0.8m mismatch remains recorded independently."
+  ]
+}

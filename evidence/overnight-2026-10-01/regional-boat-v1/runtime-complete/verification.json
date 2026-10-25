@@ -1,0 +1,316 @@
+{
+  "status": "FAIL_OR_INCOMPLETE",
+  "global_checks": {
+    "header": true,
+    "all_cases_complete": true,
+    "exact_cases": true,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "river": "Narva",
+      "reverse": false,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": false,
+        "one_arrival": false,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": false,
+        "start_and_endpoint": false,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "TIMEOUT_CONTROL_INCONCLUSIVE"
+      ],
+      "samples": 900,
+      "max_dt_s": 0.5019999999999953,
+      "max_step_m": 0.6952697318307826,
+      "max_corridor_distance_m": 0.931132218590971,
+      "max_waypoint_distance_m": 35.235213243914394,
+      "end_distance_m": 35.236200540296544,
+      "max_ground_error_m": 0.0015494829279134592,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 43.001999999999995
+    },
+    {
+      "case": 1,
+      "river": "Narva",
+      "reverse": true,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": false,
+        "one_arrival": false,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": false,
+        "start_and_endpoint": false,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "TIMEOUT_CONTROL_INCONCLUSIVE"
+      ],
+      "samples": 900,
+      "max_dt_s": 0.5029999999999859,
+      "max_step_m": 0.6603029607686348,
+      "max_corridor_distance_m": 1.3270847429019152,
+      "max_waypoint_distance_m": 53.346673813930465,
+      "end_distance_m": 54.159966022052316,
+      "max_ground_error_m": 0.0015928820475110683,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 21.5
+    },
+    {
+      "case": 2,
+      "river": "Luga",
+      "reverse": false,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 822,
+      "max_dt_s": 0.5020000000000095,
+      "max_step_m": 0.7038465741913824,
+      "max_corridor_distance_m": 3.254862569846013,
+      "max_waypoint_distance_m": 1.0177199982078602,
+      "end_distance_m": 3.254862569846013,
+      "max_ground_error_m": 0.0017496929860154609,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 376.504
+    },
+    {
+      "case": 3,
+      "river": "Luga",
+      "reverse": true,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 821,
+      "max_dt_s": 0.5029999999999859,
+      "max_step_m": 0.7119691004531864,
+      "max_corridor_distance_m": 3.0931668257572253,
+      "max_waypoint_distance_m": 0.7968608792120311,
+      "end_distance_m": 3.0931668257572253,
+      "max_ground_error_m": 0.0015995830143524792,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 376.00699999999995
+    },
+    {
+      "case": 4,
+      "river": "Neva",
+      "reverse": false,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": false,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 803,
+      "max_dt_s": 0.5010000000000332,
+      "max_step_m": 0.7696752561946406,
+      "max_corridor_distance_m": 3.284163983244859,
+      "max_waypoint_distance_m": 0.48604150376645805,
+      "end_distance_m": 3.284163983244859,
+      "max_ground_error_m": 0.00828884793414364,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 366.501
+    },
+    {
+      "case": 5,
+      "river": "Neva",
+      "reverse": true,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": false,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 804,
+      "max_dt_s": 0.5000000000000142,
+      "max_step_m": 0.7615773105867729,
+      "max_corridor_distance_m": 3.075848749895086,
+      "max_waypoint_distance_m": 0.5367447256503702,
+      "end_distance_m": 3.075848749895086,
+      "max_ground_error_m": 0.008552924437060128,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 367.5
+    },
+    {
+      "case": 6,
+      "river": "Delta Neva",
+      "reverse": false,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": false,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 301,
+      "max_dt_s": 0.5020000000000095,
+      "max_step_m": 0.7440430095101255,
+      "max_corridor_distance_m": 3.2956941605685994,
+      "max_waypoint_distance_m": 0.4972803062075515,
+      "end_distance_m": 3.2956941605685994,
+      "max_ground_error_m": 0.01246452897410677,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 115.503
+    },
+    {
+      "case": 7,
+      "river": "Delta Neva",
+      "reverse": true,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": false,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 300,
+      "max_dt_s": 0.5000000000000071,
+      "max_step_m": 0.7158910531631825,
+      "max_corridor_distance_m": 3.1742085627757106,
+      "max_waypoint_distance_m": 0.386742780581616,
+      "end_distance_m": 3.1742085627757106,
+      "max_ground_error_m": 0.012363215433743413,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 115.49999999999999
+    }
+  ],
+  "limits": [
+    "Empty boat only",
+    "Four selected sectors, not whole rivers",
+    "Fresh NM and V10 bridge acceptance are separate"
+  ],
+  "reference_sha256": "a2b77d0fbbd64b0abda36cb322beb51026bd8889ca47b15615c93015da3ce9d2",
+  "log_sha256": "5063c2197cbb52b6cb5451deb035a21bcbc9eb889d094783ba9346c3a2d4a979",
+  "terrain_sha256": "335554a6ea06f8546eeac5444aec7597eaf45df18be0c69b0baab48a573947b2"
+}

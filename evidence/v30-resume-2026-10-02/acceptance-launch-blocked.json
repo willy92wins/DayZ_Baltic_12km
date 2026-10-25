@@ -1,0 +1,45 @@
+{
+  "status": "BLOCKED_SHARED_TEST_BOX",
+  "attempt": {
+    "status": "failed",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "run_id": null,
+    "phase": "executing",
+    "elapsed_s": 45.059,
+    "artifacts_paths": [],
+    "error_code": "takeover_required",
+    "cleanup_degraded": false,
+    "server_alive": null,
+    "client_alive": null,
+    "occupied_by_run_id": "f1afd2c3-b68b-4c32-ad06-09533cc98525",
+    "mod": "@LFPowerGrid",
+    "label": "@LFPowerGrid server",
+    "age_s": 386.321,
+    "foreign": false,
+    "hint": "pass takeover=true to evict occupied_by_run_id=f1afd2c3-b68b-4c32-ad06-09533cc98525; do not dayz_test_stop a run you do not own",
+    "activity_state": "unknown",
+    "last_activity_age_s": null,
+    "queue_offer": {
+      "position_if_joined": 1,
+      "waiters": 0,
+      "occupant": {
+        "run_id": "f1afd2c3-b68b-4c32-ad06-09533cc98525",
+        "state": "RUNNING",
+        "foreign": false,
+        "port": null,
+        "mods": [
+          "@LFPowerGrid"
+        ]
+      },
+      "occupant_age_s": 386.321,
+      "retry": {
+        "tool": "dayz_test_run",
+        "same_args": true,
+        "on_busy": "queue"
+      }
+    },
+    "caller_tool_registry_stale": false
+  },
+  "interpretation": "No Baltic test was launched. This is not a terrain or navigation failure; the foreign LFPowerGrid run was not interrupted."
+}

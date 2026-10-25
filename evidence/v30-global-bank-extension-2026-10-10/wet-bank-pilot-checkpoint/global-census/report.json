@@ -1,0 +1,1875 @@
+{
+  "schema": "ev95.global_native_hinge_census.v1",
+  "status": "COMPLETE_OFFLINE_CENSUS",
+  "claim_limit": "Geometric angle/count census only; not an artistic or in-game quality PASS.",
+  "inputs": {
+    "EV87": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+      "sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27"
+    },
+    "B": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz",
+      "sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    },
+    "EV95": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz",
+      "sha256": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a"
+    },
+    "EV79C": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz",
+      "sha256": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c"
+    },
+    "census_v2_npz": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\surface-census\\v2\\sector-native-curvature-census.npz",
+      "sha256": "ef3db76bb2fa8cb468cc60614eeb36a981e75e7886e6d0181afd2b20e1194935"
+    },
+    "census_v2_summary": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\surface-census\\v2\\summary.json",
+      "sha256": "e555a736c37054fd4aa4ccc3aa699b53e297f017c498527eec68b85a2cd307a3"
+    },
+    "census_script": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev95-global-shape-census\\census_ev95.py",
+      "sha256": "68cf3da832f667e66e9ca4753118ca6d6f1bed990bbda923804c0a0d6d7e3c2a"
+    }
+  },
+  "terrain": {
+    "shape": [
+      2048,
+      2048
+    ],
+    "dtype": "float32",
+    "metadata_keys_equal_except_heights": [
+      "cls",
+      "level",
+      "platform",
+      "reserve",
+      "narva",
+      "water",
+      "beach"
+    ],
+    "B_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "EV95_sha256": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a"
+  },
+  "method": {
+    "angle_source": "verify_ev87.edge_angles recomputed on full B and EV95 grids after promoting native float32 heights to float64 (as in v2); B arrays required exact-equal to pinned v2 baseline",
+    "families": [
+      "diag",
+      "vertical",
+      "horizontal"
+    ],
+    "population_vertex_masks": {
+      "bank": "EV87._ev87_populations on B cls/reserve/platform plus frozen EV79 wet_support",
+      "interior": "same EV87 population complement",
+      "wet_support": "frozen EV79 constraints wet_support"
+    },
+    "incidence": "ANY of the four exact vertices from verify_ev87.edge_vertex_slices; populations overlap at hinge level",
+    "threshold_new_over30_deg": "strict >30.0; this is descriptive, not consumer gate",
+    "improved_worsened": "delta=EV95-B in degrees; improved if delta < -1e-6; worsened if delta > +1e-6; otherwise within tolerance",
+    "energy": "mean(angle_deg squared), reported as mean_square_deg2",
+    "p99": "numpy percentile default linear interpolation on concatenated three family arrays"
+  },
+  "fixture": {
+    "flat_zero_all_families": true,
+    "affine_plane_zero_all_families": true,
+    "pyramid_has_hinges_over_30": true,
+    "single_vertex_perturbation_changes_hinges": true,
+    "family_shapes": {
+      "diag": [
+        6,
+        6
+      ],
+      "vertical": [
+        6,
+        5
+      ],
+      "horizontal": [
+        5,
+        6
+      ]
+    }
+  },
+  "exhaustive": {
+    "all_native_family_shapes": {
+      "diag": [
+        2047,
+        2047
+      ],
+      "vertical": [
+        2047,
+        2046
+      ],
+      "horizontal": [
+        2046,
+        2047
+      ]
+    },
+    "total_hinges": 12566533,
+    "v2_all_family_baseline_reconciled": true,
+    "EV87_B_angles_exact_equal_v2": true,
+    "v2_incidence_flags_reconciled_for_three_populations": {
+      "diag/bank": 655163,
+      "diag/interior": 2507352,
+      "diag/wet_support": 1122951,
+      "vertical/bank": 666991,
+      "vertical/interior": 2516648,
+      "vertical/wet_support": 1131565,
+      "horizontal/bank": 665568,
+      "horizontal/interior": 2515924,
+      "horizontal/wet_support": 1130691
+    },
+    "population_vertex_counts": {
+      "bank": 596545,
+      "interior": 2456109,
+      "wet_support": 1077957
+    },
+    "overlap_hinge_counts": {
+      "diag": {
+        "bank_intersection_interior": 51170,
+        "bank_intersection_wet_support": 58703,
+        "interior_intersection_wet_support": 29815
+      },
+      "vertical": {
+        "bank_intersection_interior": 61602,
+        "bank_intersection_wet_support": 70704,
+        "interior_intersection_wet_support": 35729
+      },
+      "horizontal": {
+        "bank_intersection_interior": 60132,
+        "bank_intersection_wet_support": 69678,
+        "interior_intersection_wet_support": 34649
+      }
+    }
+  },
+  "by_family": {
+    "diag": {
+      "all": {
+        "n": 4190209,
+        "above30_B": 4569,
+        "above30_EV95": 3584,
+        "new_above30": 0,
+        "improved_gt_1e-6": 50545,
+        "worsened_gt_1e-6": 29971,
+        "within_1e-6": 4109693,
+        "max_B_deg": 98.27084005204352,
+        "max_EV95_deg": 98.27084005204352,
+        "p99_B_deg": 12.414044874841663,
+        "p99_EV95_deg": 11.795843509916322,
+        "mean_square_B_deg2": 6.738614595209894,
+        "mean_square_EV95_deg2": 6.090469938857926
+      },
+      "bank": {
+        "n": 655163,
+        "above30_B": 1706,
+        "above30_EV95": 1069,
+        "new_above30": 0,
+        "improved_gt_1e-6": 27333,
+        "worsened_gt_1e-6": 16463,
+        "within_1e-6": 611367,
+        "max_B_deg": 62.00920193701158,
+        "max_EV95_deg": 62.00920193701158,
+        "p99_B_deg": 21.624966235070122,
+        "p99_EV95_deg": 19.06849394479767,
+        "mean_square_B_deg2": 15.057084584529255,
+        "mean_square_EV95_deg2": 12.516717441750764
+      },
+      "interior": {
+        "n": 2507352,
+        "above30_B": 362,
+        "above30_EV95": 214,
+        "new_above30": 0,
+        "improved_gt_1e-6": 17498,
+        "worsened_gt_1e-6": 11788,
+        "within_1e-6": 2478066,
+        "max_B_deg": 60.16704674374723,
+        "max_EV95_deg": 60.16704674374723,
+        "p99_B_deg": 5.024668531371596,
+        "p99_EV95_deg": 4.937751612993128,
+        "mean_square_B_deg2": 1.6545822661996192,
+        "mean_square_EV95_deg2": 1.5294353416515731
+      },
+      "wet_support": {
+        "n": 1122951,
+        "above30_B": 4484,
+        "above30_EV95": 3534,
+        "new_above30": 0,
+        "improved_gt_1e-6": 15557,
+        "worsened_gt_1e-6": 4674,
+        "within_1e-6": 1102720,
+        "max_B_deg": 98.27084005204352,
+        "max_EV95_deg": 98.27084005204352,
+        "p99_B_deg": 24.385663134882797,
+        "p99_EV95_deg": 22.880708312884494,
+        "mean_square_B_deg2": 22.246261291592724,
+        "mean_square_EV95_deg2": 19.95482276093681
+      }
+    },
+    "vertical": {
+      "all": {
+        "n": 4188162,
+        "above30_B": 4707,
+        "above30_EV95": 4160,
+        "new_above30": 0,
+        "improved_gt_1e-6": 50609,
+        "worsened_gt_1e-6": 32377,
+        "within_1e-6": 4105176,
+        "max_B_deg": 90.24533051116292,
+        "max_EV95_deg": 90.24533051116292,
+        "p99_B_deg": 13.483055513509845,
+        "p99_EV95_deg": 12.925196488043106,
+        "mean_square_B_deg2": 7.3598380994619905,
+        "mean_square_EV95_deg2": 6.895769773563816
+      },
+      "bank": {
+        "n": 666991,
+        "above30_B": 438,
+        "above30_EV95": 301,
+        "new_above30": 0,
+        "improved_gt_1e-6": 27790,
+        "worsened_gt_1e-6": 19281,
+        "within_1e-6": 619920,
+        "max_B_deg": 52.55042069662487,
+        "max_EV95_deg": 49.23629178949701,
+        "p99_B_deg": 18.391694788572984,
+        "p99_EV95_deg": 16.91978305602667,
+        "mean_square_B_deg2": 12.964472591943732,
+        "mean_square_EV95_deg2": 11.42963225419119
+      },
+      "interior": {
+        "n": 2516648,
+        "above30_B": 90,
+        "above30_EV95": 74,
+        "new_above30": 0,
+        "improved_gt_1e-6": 17774,
+        "worsened_gt_1e-6": 11689,
+        "within_1e-6": 2487185,
+        "max_B_deg": 53.6456261381394,
+        "max_EV95_deg": 53.6456261381394,
+        "p99_B_deg": 6.092312427901544,
+        "p99_EV95_deg": 6.014301359710602,
+        "mean_square_B_deg2": 1.9841306602687383,
+        "mean_square_EV95_deg2": 1.922011607522506
+      },
+      "wet_support": {
+        "n": 1131565,
+        "above30_B": 4696,
+        "above30_EV95": 4154,
+        "new_above30": 0,
+        "improved_gt_1e-6": 16430,
+        "worsened_gt_1e-6": 5691,
+        "within_1e-6": 1109444,
+        "max_B_deg": 90.24533051116292,
+        "max_EV95_deg": 90.24533051116292,
+        "p99_B_deg": 23.55250518391287,
+        "p99_EV95_deg": 22.57122331911805,
+        "mean_square_B_deg2": 23.948590726626787,
+        "mean_square_EV95_deg2": 22.30061159713034
+      }
+    },
+    "horizontal": {
+      "all": {
+        "n": 4188162,
+        "above30_B": 4691,
+        "above30_EV95": 4146,
+        "new_above30": 0,
+        "improved_gt_1e-6": 50843,
+        "worsened_gt_1e-6": 32114,
+        "within_1e-6": 4105205,
+        "max_B_deg": 100.8663801525418,
+        "max_EV95_deg": 100.8663801525418,
+        "p99_B_deg": 12.685106943466945,
+        "p99_EV95_deg": 12.19956894283492,
+        "mean_square_B_deg2": 6.944409929319252,
+        "mean_square_EV95_deg2": 6.4808438861452595
+      },
+      "bank": {
+        "n": 665568,
+        "above30_B": 465,
+        "above30_EV95": 341,
+        "new_above30": 0,
+        "improved_gt_1e-6": 27513,
+        "worsened_gt_1e-6": 19457,
+        "within_1e-6": 618598,
+        "max_B_deg": 56.231642009695236,
+        "max_EV95_deg": 56.231642009695236,
+        "p99_B_deg": 18.098741743377406,
+        "p99_EV95_deg": 16.649468214233913,
+        "mean_square_B_deg2": 12.534171544081973,
+        "mean_square_EV95_deg2": 11.054813161548942
+      },
+      "interior": {
+        "n": 2515924,
+        "above30_B": 142,
+        "above30_EV95": 84,
+        "new_above30": 0,
+        "improved_gt_1e-6": 18206,
+        "worsened_gt_1e-6": 11257,
+        "within_1e-6": 2486461,
+        "max_B_deg": 53.34239449512883,
+        "max_EV95_deg": 53.34239449512883,
+        "p99_B_deg": 6.144386151641932,
+        "p99_EV95_deg": 6.070236425064046,
+        "mean_square_B_deg2": 1.907799773898807,
+        "mean_square_EV95_deg2": 1.8172688818380403
+      },
+      "wet_support": {
+        "n": 1130691,
+        "above30_B": 4604,
+        "above30_EV95": 4106,
+        "new_above30": 0,
+        "improved_gt_1e-6": 16410,
+        "worsened_gt_1e-6": 5575,
+        "within_1e-6": 1108706,
+        "max_B_deg": 100.8663801525418,
+        "max_EV95_deg": 100.8663801525418,
+        "p99_B_deg": 23.111149996336465,
+        "p99_EV95_deg": 22.14356011709131,
+        "mean_square_B_deg2": 22.194486014972785,
+        "mean_square_EV95_deg2": 20.617969229983657
+      }
+    }
+  },
+  "aggregate_three_families": {
+    "all": {
+      "n": 12566533,
+      "above30_B": 13967,
+      "above30_EV95": 11890,
+      "new_above30": 0,
+      "improved_gt_1e-6": 151997,
+      "worsened_gt_1e-6": 94462,
+      "within_1e-6": 12320074,
+      "max_B_deg": 100.8663801525418,
+      "max_EV95_deg": 100.8663801525418,
+      "p99_B_deg": 12.87552763872157,
+      "p99_EV95_deg": 12.327255287887265,
+      "mean_square_B_deg2": 7.014242636142869,
+      "mean_square_EV95_deg2": 6.48896294390079
+    },
+    "bank": {
+      "n": 1987722,
+      "above30_B": 2609,
+      "above30_EV95": 1711,
+      "new_above30": 0,
+      "improved_gt_1e-6": 82636,
+      "worsened_gt_1e-6": 55201,
+      "within_1e-6": 1849885,
+      "max_B_deg": 62.00920193701158,
+      "max_EV95_deg": 62.00920193701158,
+      "p99_B_deg": 19.144769490563238,
+      "p99_EV95_deg": 17.383081456348226,
+      "mean_square_B_deg2": 13.510126029937101,
+      "mean_square_EV95_deg2": 11.662436639756866
+    },
+    "interior": {
+      "n": 7539924,
+      "above30_B": 594,
+      "above30_EV95": 372,
+      "new_above30": 0,
+      "improved_gt_1e-6": 53478,
+      "worsened_gt_1e-6": 34734,
+      "within_1e-6": 7451712,
+      "max_B_deg": 60.16704674374723,
+      "max_EV95_deg": 60.16704674374723,
+      "p99_B_deg": 5.814388107537555,
+      "p99_EV95_deg": 5.736405125224063,
+      "mean_square_B_deg2": 1.8490714031826754,
+      "mean_square_EV95_deg2": 1.7565123766603676
+    },
+    "wet_support": {
+      "n": 3385207,
+      "above30_B": 13784,
+      "above30_EV95": 11794,
+      "new_above30": 0,
+      "improved_gt_1e-6": 48397,
+      "worsened_gt_1e-6": 15940,
+      "within_1e-6": 3320870,
+      "max_B_deg": 100.8663801525418,
+      "max_EV95_deg": 100.8663801525418,
+      "p99_B_deg": 23.70490783375145,
+      "p99_EV95_deg": 22.539958995386197,
+      "mean_square_B_deg2": 22.798001426792034,
+      "mean_square_EV95_deg2": 20.960441114160226
+    }
+  },
+  "top20_by_family": [
+    {
+      "family": "diag",
+      "largest_worsenings_gt_1e-6": [
+        {
+          "anchor_rc": [
+            1073,
+            1201
+          ],
+          "B_deg": 3.4445367909487463,
+          "EV95_deg": 18.550574406734416,
+          "delta_deg": 15.10603761578567,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1842,
+            983
+          ],
+          "B_deg": 8.044138222150764,
+          "EV95_deg": 21.590942392769126,
+          "delta_deg": 13.546804170618362,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            97,
+            1422
+          ],
+          "B_deg": 0.9194016989861539,
+          "EV95_deg": 13.446407511500418,
+          "delta_deg": 12.527005812514265,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            445,
+            1526
+          ],
+          "B_deg": 2.2843126004874232,
+          "EV95_deg": 14.657861476580605,
+          "delta_deg": 12.373548876093182,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1091,
+            1023
+          ],
+          "B_deg": 2.014216036793957,
+          "EV95_deg": 13.748949970401204,
+          "delta_deg": 11.734733933607247,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            942,
+            897
+          ],
+          "B_deg": 1.7729372490016937,
+          "EV95_deg": 13.345139025345404,
+          "delta_deg": 11.57220177634371,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1318,
+            446
+          ],
+          "B_deg": 1.3038472273801969,
+          "EV95_deg": 12.850186222458776,
+          "delta_deg": 11.546338995078578,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1941,
+            933
+          ],
+          "B_deg": 0.8218426290946227,
+          "EV95_deg": 12.319360681994969,
+          "delta_deg": 11.497518052900347,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1868,
+            208
+          ],
+          "B_deg": 0.19491684888263403,
+          "EV95_deg": 11.664070449690639,
+          "delta_deg": 11.469153600808005,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            959,
+            907
+          ],
+          "B_deg": 0.06860869602332176,
+          "EV95_deg": 11.31174232802399,
+          "delta_deg": 11.243133632000669,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            126,
+            1444
+          ],
+          "B_deg": 0.34843012152633046,
+          "EV95_deg": 11.423292008659846,
+          "delta_deg": 11.074861887133515,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            589,
+            2001
+          ],
+          "B_deg": 0.7847035778080436,
+          "EV95_deg": 11.800202701830385,
+          "delta_deg": 11.015499124022341,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1152,
+            1690
+          ],
+          "B_deg": 0.8484326615224344,
+          "EV95_deg": 11.855968470823557,
+          "delta_deg": 11.007535809301123,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            235,
+            1515
+          ],
+          "B_deg": 0.7036878184392888,
+          "EV95_deg": 11.697775541513865,
+          "delta_deg": 10.994087723074577,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            677,
+            810
+          ],
+          "B_deg": 1.487312983413787,
+          "EV95_deg": 12.375613456451726,
+          "delta_deg": 10.888300473037939,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1721,
+            574
+          ],
+          "B_deg": 2.5858831381428717,
+          "EV95_deg": 13.454864606654827,
+          "delta_deg": 10.868981468511954,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            96,
+            1420
+          ],
+          "B_deg": 3.7249992518838733,
+          "EV95_deg": 14.400458390165277,
+          "delta_deg": 10.675459138281404,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1841,
+            242
+          ],
+          "B_deg": 2.4401696816404126,
+          "EV95_deg": 13.112200609661091,
+          "delta_deg": 10.672030928020678,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1797,
+            591
+          ],
+          "B_deg": 2.0233902808873303,
+          "EV95_deg": 12.584065187493712,
+          "delta_deg": 10.560674906606382,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            634,
+            1686
+          ],
+          "B_deg": 5.940611404250831,
+          "EV95_deg": 16.467454278333097,
+          "delta_deg": 10.526842874082266,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        }
+      ],
+      "largest_remaining_over30": [
+        {
+          "anchor_rc": [
+            983,
+            301
+          ],
+          "B_deg": 98.27084005204352,
+          "EV95_deg": 98.27084005204352,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2009,
+            1639
+          ],
+          "B_deg": 91.09230363998061,
+          "EV95_deg": 91.09230363998061,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2010,
+            1638
+          ],
+          "B_deg": 89.7428590314643,
+          "EV95_deg": 89.7428590314643,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            628,
+            1685
+          ],
+          "B_deg": 88.66726415425074,
+          "EV95_deg": 88.66726415425074,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            984,
+            299
+          ],
+          "B_deg": 85.4537119480673,
+          "EV95_deg": 85.4537119480673,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2007,
+            1642
+          ],
+          "B_deg": 78.30555760591831,
+          "EV95_deg": 78.30555760591831,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1252,
+            843
+          ],
+          "B_deg": 78.23012497862403,
+          "EV95_deg": 78.23012497862403,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            627,
+            1684
+          ],
+          "B_deg": 75.85046057535911,
+          "EV95_deg": 75.85046057535911,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1373,
+            656
+          ],
+          "B_deg": 74.54249238732658,
+          "EV95_deg": 74.54249238732658,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            717,
+            1341
+          ],
+          "B_deg": 72.89320285281097,
+          "EV95_deg": 72.89320285281097,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            878,
+            1429
+          ],
+          "B_deg": 72.19416726459308,
+          "EV95_deg": 72.19416726459308,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            881,
+            1428
+          ],
+          "B_deg": 71.80032047410684,
+          "EV95_deg": 71.80032047410684,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            655,
+            1875
+          ],
+          "B_deg": 71.16842729928035,
+          "EV95_deg": 71.16842729928035,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            882,
+            1428
+          ],
+          "B_deg": 70.64586649578501,
+          "EV95_deg": 70.64586649578501,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            656,
+            1874
+          ],
+          "B_deg": 70.47738041574067,
+          "EV95_deg": 70.47738041574067,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            655,
+            1874
+          ],
+          "B_deg": 69.62861890976151,
+          "EV95_deg": 69.62861890976151,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            743,
+            1329
+          ],
+          "B_deg": 69.48078602419409,
+          "EV95_deg": 69.48078602419409,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            859,
+            1276
+          ],
+          "B_deg": 69.42694019363871,
+          "EV95_deg": 69.42694019363871,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2006,
+            1643
+          ],
+          "B_deg": 69.06452406001713,
+          "EV95_deg": 69.06452406001713,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            980,
+            305
+          ],
+          "B_deg": 68.57495922412963,
+          "EV95_deg": 68.57495922412963,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        }
+      ]
+    },
+    {
+      "family": "vertical",
+      "largest_worsenings_gt_1e-6": [
+        {
+          "anchor_rc": [
+            641,
+            1899
+          ],
+          "B_deg": 3.97254656798767,
+          "EV95_deg": 16.447250486499886,
+          "delta_deg": 12.474703918512215,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            846,
+            1733
+          ],
+          "B_deg": 0.16564712698881678,
+          "EV95_deg": 11.707392239674016,
+          "delta_deg": 11.541745112685199,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            685,
+            2030
+          ],
+          "B_deg": 0.32274175051628995,
+          "EV95_deg": 11.538537970590887,
+          "delta_deg": 11.215796220074598,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1134,
+            1816
+          ],
+          "B_deg": 0.7078729426368249,
+          "EV95_deg": 11.717666421861246,
+          "delta_deg": 11.00979347922442,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1089,
+            1869
+          ],
+          "B_deg": 1.4995099799192644,
+          "EV95_deg": 12.341729011301375,
+          "delta_deg": 10.842219031382111,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1069,
+            1560
+          ],
+          "B_deg": 0.2989545297078256,
+          "EV95_deg": 10.820493117763123,
+          "delta_deg": 10.521538588055297,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            845,
+            1733
+          ],
+          "B_deg": 0.4311285896751769,
+          "EV95_deg": 10.892087639105512,
+          "delta_deg": 10.460959049430334,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1348,
+            529
+          ],
+          "B_deg": 1.7683692064882854,
+          "EV95_deg": 12.12775765537279,
+          "delta_deg": 10.359388448884504,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1957,
+            728
+          ],
+          "B_deg": 1.6148962440432373,
+          "EV95_deg": 11.912863839784164,
+          "delta_deg": 10.297967595740927,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            148,
+            1759
+          ],
+          "B_deg": 3.100593621330481,
+          "EV95_deg": 12.73192247454752,
+          "delta_deg": 9.631328853217038,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            503,
+            1524
+          ],
+          "B_deg": 0.2421203559891093,
+          "EV95_deg": 9.741186522985428,
+          "delta_deg": 9.499066166996318,
+          "any_bank": false,
+          "any_interior": true,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1072,
+            1558
+          ],
+          "B_deg": 0.09946894613932468,
+          "EV95_deg": 9.501978619738365,
+          "delta_deg": 9.40250967359904,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1115,
+            1044
+          ],
+          "B_deg": 3.773705488415335,
+          "EV95_deg": 13.145770724520936,
+          "delta_deg": 9.372065236105602,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1007,
+            928
+          ],
+          "B_deg": 0.8988110336046745,
+          "EV95_deg": 10.22589818983965,
+          "delta_deg": 9.327087156234976,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            642,
+            1899
+          ],
+          "B_deg": 1.7741057698215132,
+          "EV95_deg": 10.953826353932424,
+          "delta_deg": 9.17972058411091,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            625,
+            767
+          ],
+          "B_deg": 3.2726801422830984,
+          "EV95_deg": 12.428933899903097,
+          "delta_deg": 9.156253757619998,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1068,
+            852
+          ],
+          "B_deg": 0.9058307824792057,
+          "EV95_deg": 10.053657648889049,
+          "delta_deg": 9.147826866409844,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            498,
+            1920
+          ],
+          "B_deg": 0.8913195617491377,
+          "EV95_deg": 10.037519730235323,
+          "delta_deg": 9.146200168486185,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            585,
+            1996
+          ],
+          "B_deg": 5.502224025843864,
+          "EV95_deg": 14.599490736618314,
+          "delta_deg": 9.09726671077445,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1310,
+            1563
+          ],
+          "B_deg": 0.3650697027325101,
+          "EV95_deg": 9.410768219698761,
+          "delta_deg": 9.045698516966251,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        }
+      ],
+      "largest_remaining_over30": [
+        {
+          "anchor_rc": [
+            586,
+            1570
+          ],
+          "B_deg": 90.24533051116292,
+          "EV95_deg": 90.24533051116292,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1026,
+            1868
+          ],
+          "B_deg": 86.95577182992335,
+          "EV95_deg": 86.95577182992335,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            882,
+            1428
+          ],
+          "B_deg": 83.04717044960258,
+          "EV95_deg": 83.04717044960258,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1020,
+            1869
+          ],
+          "B_deg": 81.96432861440897,
+          "EV95_deg": 81.96432861440897,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2015,
+            1632
+          ],
+          "B_deg": 78.79137604066959,
+          "EV95_deg": 78.79137604066959,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            979,
+            306
+          ],
+          "B_deg": 77.22728844154577,
+          "EV95_deg": 77.22728844154577,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1041,
+            886
+          ],
+          "B_deg": 74.51884645009667,
+          "EV95_deg": 74.51884645009667,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            751,
+            1723
+          ],
+          "B_deg": 74.28269171135558,
+          "EV95_deg": 74.28269171135558,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2014,
+            1633
+          ],
+          "B_deg": 73.45384178920253,
+          "EV95_deg": 73.45384178920253,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            629,
+            1685
+          ],
+          "B_deg": 70.68948560595628,
+          "EV95_deg": 70.68948560595628,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            860,
+            1506
+          ],
+          "B_deg": 69.40183906489928,
+          "EV95_deg": 69.40183906489928,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1337,
+            1264
+          ],
+          "B_deg": 68.06913962929755,
+          "EV95_deg": 68.06913962929755,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            812,
+            1722
+          ],
+          "B_deg": 68.03613471031535,
+          "EV95_deg": 68.03613471031535,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1101,
+            1919
+          ],
+          "B_deg": 67.83013544470823,
+          "EV95_deg": 67.83013544470823,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1055,
+            881
+          ],
+          "B_deg": 67.76820660445763,
+          "EV95_deg": 67.76820660445763,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1334,
+            307
+          ],
+          "B_deg": 67.53867973533072,
+          "EV95_deg": 67.53867973533072,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1382,
+            1728
+          ],
+          "B_deg": 67.383031555158,
+          "EV95_deg": 67.383031555158,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1054,
+            881
+          ],
+          "B_deg": 67.21652996461657,
+          "EV95_deg": 67.21652996461657,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            591,
+            1849
+          ],
+          "B_deg": 66.60055570807216,
+          "EV95_deg": 66.60055570807216,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1106,
+            1915
+          ],
+          "B_deg": 66.52376426117314,
+          "EV95_deg": 66.52376426117314,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        }
+      ]
+    },
+    {
+      "family": "horizontal",
+      "largest_worsenings_gt_1e-6": [
+        {
+          "anchor_rc": [
+            898,
+            441
+          ],
+          "B_deg": 0.9649189778358567,
+          "EV95_deg": 19.363820455488245,
+          "delta_deg": 18.398901477652387,
+          "any_bank": false,
+          "any_interior": true,
+          "any_wet_support": false
+        },
+        {
+          "anchor_rc": [
+            900,
+            432
+          ],
+          "B_deg": 0.03652264001568924,
+          "EV95_deg": 16.98868485778762,
+          "delta_deg": 16.95216221777193,
+          "any_bank": false,
+          "any_interior": true,
+          "any_wet_support": false
+        },
+        {
+          "anchor_rc": [
+            898,
+            440
+          ],
+          "B_deg": 0.02044326251390396,
+          "EV95_deg": 15.708228353489671,
+          "delta_deg": 15.687785090975767,
+          "any_bank": false,
+          "any_interior": true,
+          "any_wet_support": false
+        },
+        {
+          "anchor_rc": [
+            900,
+            431
+          ],
+          "B_deg": 0.026374166799374633,
+          "EV95_deg": 13.252369275387736,
+          "delta_deg": 13.22599510858836,
+          "any_bank": false,
+          "any_interior": true,
+          "any_wet_support": false
+        },
+        {
+          "anchor_rc": [
+            898,
+            439
+          ],
+          "B_deg": 0.014211907875224505,
+          "EV95_deg": 12.58310739411285,
+          "delta_deg": 12.568895486237626,
+          "any_bank": false,
+          "any_interior": true,
+          "any_wet_support": false
+        },
+        {
+          "anchor_rc": [
+            896,
+            1673
+          ],
+          "B_deg": 0.249682591517907,
+          "EV95_deg": 12.747103420540457,
+          "delta_deg": 12.49742082902255,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1198,
+            354
+          ],
+          "B_deg": 6.055491727855045,
+          "EV95_deg": 18.128390046837247,
+          "delta_deg": 12.072898318982201,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            900,
+            433
+          ],
+          "B_deg": 0.04442140710296848,
+          "EV95_deg": 12.035456240744429,
+          "delta_deg": 11.99103483364146,
+          "any_bank": false,
+          "any_interior": true,
+          "any_wet_support": false
+        },
+        {
+          "anchor_rc": [
+            851,
+            1500
+          ],
+          "B_deg": 4.403234377880255,
+          "EV95_deg": 16.25209786046951,
+          "delta_deg": 11.848863482589255,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            941,
+            897
+          ],
+          "B_deg": 3.0826497286743,
+          "EV95_deg": 14.922472476888096,
+          "delta_deg": 11.839822748213797,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1361,
+            1244
+          ],
+          "B_deg": 1.859076794854751,
+          "EV95_deg": 13.650115269259375,
+          "delta_deg": 11.791038474404624,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            899,
+            437
+          ],
+          "B_deg": 0.017972384671245942,
+          "EV95_deg": 11.564360676562394,
+          "delta_deg": 11.546388291891148,
+          "any_bank": false,
+          "any_interior": true,
+          "any_wet_support": false
+        },
+        {
+          "anchor_rc": [
+            1393,
+            1487
+          ],
+          "B_deg": 2.6110675000316914,
+          "EV95_deg": 13.827464870747587,
+          "delta_deg": 11.216397370715896,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            691,
+            2033
+          ],
+          "B_deg": 0.3413464883489224,
+          "EV95_deg": 11.512590311270925,
+          "delta_deg": 11.171243822922003,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1362,
+            1242
+          ],
+          "B_deg": 1.4152128986631494,
+          "EV95_deg": 12.079317519289852,
+          "delta_deg": 10.664104620626702,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            900,
+            429
+          ],
+          "B_deg": 4.982070847860284,
+          "EV95_deg": 15.532987781551086,
+          "delta_deg": 10.5509169336908,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": false
+        },
+        {
+          "anchor_rc": [
+            1065,
+            859
+          ],
+          "B_deg": 1.409409414109831,
+          "EV95_deg": 11.948513038934928,
+          "delta_deg": 10.539103624825097,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2009,
+            862
+          ],
+          "B_deg": 1.5187130733382934,
+          "EV95_deg": 12.040262398869867,
+          "delta_deg": 10.521549325531574,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            958,
+            906
+          ],
+          "B_deg": 5.792205865635231,
+          "EV95_deg": 16.289660973260876,
+          "delta_deg": 10.497455107625644,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1836,
+            978
+          ],
+          "B_deg": 0.6503090100298043,
+          "EV95_deg": 11.128594014931224,
+          "delta_deg": 10.47828500490142,
+          "any_bank": true,
+          "any_interior": false,
+          "any_wet_support": true
+        }
+      ],
+      "largest_remaining_over30": [
+        {
+          "anchor_rc": [
+            929,
+            1892
+          ],
+          "B_deg": 100.8663801525418,
+          "EV95_deg": 100.8663801525418,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1105,
+            1916
+          ],
+          "B_deg": 91.63632105479242,
+          "EV95_deg": 91.63632105479242,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2021,
+            1621
+          ],
+          "B_deg": 90.64367350606291,
+          "EV95_deg": 90.64367350606291,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            581,
+            1573
+          ],
+          "B_deg": 90.37528294943633,
+          "EV95_deg": 90.37528294943633,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2021,
+            1620
+          ],
+          "B_deg": 87.76422900394523,
+          "EV95_deg": 87.76422900394523,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            929,
+            1891
+          ],
+          "B_deg": 86.15254602377969,
+          "EV95_deg": 86.15254602377969,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2021,
+            1619
+          ],
+          "B_deg": 82.95610353244035,
+          "EV95_deg": 82.95610353244035,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            654,
+            1874
+          ],
+          "B_deg": 81.12667560084863,
+          "EV95_deg": 81.12667560084863,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            2021,
+            1618
+          ],
+          "B_deg": 76.53325674694047,
+          "EV95_deg": 76.53325674694047,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            597,
+            1868
+          ],
+          "B_deg": 73.59038977021838,
+          "EV95_deg": 73.59038977021838,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1335,
+            1269
+          ],
+          "B_deg": 73.04181375464526,
+          "EV95_deg": 73.04181375464526,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            982,
+            302
+          ],
+          "B_deg": 71.68806766467033,
+          "EV95_deg": 71.68806766467033,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1159,
+            1241
+          ],
+          "B_deg": 69.31943959753866,
+          "EV95_deg": 69.31943959753866,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1160,
+            1246
+          ],
+          "B_deg": 68.92039925618177,
+          "EV95_deg": 68.92039925618177,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1061,
+            878
+          ],
+          "B_deg": 67.52147992405088,
+          "EV95_deg": 67.52147992405088,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            924,
+            1894
+          ],
+          "B_deg": 67.51130400067777,
+          "EV95_deg": 67.51130400067777,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1047,
+            884
+          ],
+          "B_deg": 64.58428785752527,
+          "EV95_deg": 64.58428785752527,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            857,
+            1473
+          ],
+          "B_deg": 63.23701483587678,
+          "EV95_deg": 63.23701483587678,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            1063,
+            872
+          ],
+          "B_deg": 62.803556629160994,
+          "EV95_deg": 62.803556629160994,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        },
+        {
+          "anchor_rc": [
+            860,
+            1506
+          ],
+          "B_deg": 62.630110419190366,
+          "EV95_deg": 62.630110419190366,
+          "delta_deg": 0.0,
+          "any_bank": false,
+          "any_interior": false,
+          "any_wet_support": true
+        }
+      ]
+    }
+  ],
+  "source_readset_start": {
+    "EV87": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "B": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "EV95": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "EV79C": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "census_v2_npz": "ef3db76bb2fa8cb468cc60614eeb36a981e75e7886e6d0181afd2b20e1194935",
+    "census_v2_summary": "e555a736c37054fd4aa4ccc3aa699b53e297f017c498527eec68b85a2cd307a3",
+    "census_script": "68cf3da832f667e66e9ca4753118ca6d6f1bed990bbda923804c0a0d6d7e3c2a"
+  },
+  "source_readset_end": {
+    "EV87": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "B": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "EV95": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "EV79C": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "census_v2_npz": "ef3db76bb2fa8cb468cc60614eeb36a981e75e7886e6d0181afd2b20e1194935",
+    "census_v2_summary": "e555a736c37054fd4aa4ccc3aa699b53e297f017c498527eec68b85a2cd307a3",
+    "census_script": "68cf3da832f667e66e9ca4753118ca6d6f1bed990bbda923804c0a0d6d7e3c2a"
+  },
+  "elapsed_seconds": 5.708371899963822
+}

@@ -1,0 +1,1026 @@
+{
+  "scope": "Ten unseen seeds after frozen development/map/partition acceptance; at most three jobs.\n\nEach placement runs a fresh global prepass and fresh nonbush and bush calibration/placement stages.\nStop dispatching on the first failure; already-running seed finishes its own checks.\nNo source, bands, seed selection or acceptance changes during the reserved run.\n",
+  "frozen_manifest_sha256": "927d3799da4d834427c84db1447bd4595cf79b1f71dd2dfec70a3172606b9dfd",
+  "steps": [
+    {
+      "seed": 183,
+      "step": "place",
+      "rc": 0,
+      "seconds": 1610.266235113144,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "183",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 181,
+      "step": "place",
+      "rc": 0,
+      "seconds": 1611.2868275642395,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "181",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 183,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 5.040343761444092,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 181,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 5.0593767166137695,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 182,
+      "step": "place",
+      "rc": 0,
+      "seconds": 1619.766583442688,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "182",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 182,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 6.394361257553101,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 183,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 16.87519073486328,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 181,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 16.894044160842896,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 182,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 13.143999576568604,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 181,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 12.737352848052979,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 183,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 12.744374752044678,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 181,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 4.572404861450195,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed181\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 183,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 4.747811794281006,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed183\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 182,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 12.649542331695557,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 182,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 3.985731601715088,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed182\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 184,
+      "step": "place",
+      "rc": 0,
+      "seconds": 2130.011611700058,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "184",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 184,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 3.8994696140289307,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 185,
+      "step": "place",
+      "rc": 0,
+      "seconds": 2138.539741039276,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "185",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 186,
+      "step": "place",
+      "rc": 0,
+      "seconds": 2134.876425266266,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "186",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 185,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 4.16248083114624,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 186,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 4.036453485488892,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 184,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 10.290639400482178,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 185,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 9.41507887840271,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 186,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 9.618218421936035,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 184,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 9.483172178268433,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 184,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 3.7343177795410156,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed184\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 185,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 10.178590297698975,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 186,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 10.291772842407227,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 185,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 4.558619737625122,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed185\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 186,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 4.361798048019409,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed186\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 189,
+      "step": "place",
+      "rc": 0,
+      "seconds": 1895.5759537220001,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "189",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 189,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 6.186912536621094,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 188,
+      "step": "place",
+      "rc": 0,
+      "seconds": 1910.228301525116,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "188",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 188,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 7.907969236373901,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 189,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 18.69481873512268,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 188,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 21.26803946495056,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 189,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 20.467814922332764,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 189,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 7.240604639053345,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed189\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 188,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 18.009684801101685,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 188,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 6.027737379074097,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed188\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 187,
+      "step": "place",
+      "rc": 0,
+      "seconds": 1975.6165280342102,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "187",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 187,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 4.996060609817505,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 187,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 13.689890146255493,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 187,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 13.930155277252197,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 187,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 4.87037992477417,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed187\\g7r2.json"
+      ]
+    },
+    {
+      "seed": 190,
+      "step": "place",
+      "rc": 0,
+      "seconds": 1822.266613483429,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\forest_v31.py",
+        "--terrain",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "--footprint",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\fp-ev112-c\\footprint.npz",
+        "--stage-wrp",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+        "--pbo",
+        "P:\\Mods\\@DayZ_Baltic_EV110_LatticeShoresV1\\Addons\\narva_trial.pbo",
+        "--exclude",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-exclusions-c.json",
+        "--layer-dir",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\surface\\patch\\layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-complete-dry-surface-20261009/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/surface/layers",
+        "--layer-dir",
+        "E:/DayZ-Baltic-Build/v30-mixed-bank-constrained-20261010/surface/layers",
+        "--cover",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\layers.npz",
+        "--reference",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+        "--seed",
+        "190",
+        "--out",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190",
+        "--region",
+        "7600,4300,10800,7950",
+        "--workers",
+        "2"
+      ]
+    },
+    {
+      "seed": 190,
+      "step": "subset",
+      "rc": 0,
+      "seconds": 3.522170305252075,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\gates\\pilot_subset.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190\\records.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190\\pilot-subset.json"
+      ]
+    },
+    {
+      "seed": 190,
+      "step": "g2r2",
+      "rc": 0,
+      "seconds": 9.098458528518677,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190\\pilot-subset.json",
+        "G2",
+        "--dense",
+        "A-reserva",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190\\g2r2.json"
+      ]
+    },
+    {
+      "seed": 190,
+      "step": "g3r2",
+      "rc": 0,
+      "seconds": 10.3017737865448,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g2_g3.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190\\pilot-subset.json",
+        "G3",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190\\g3r2.json"
+      ]
+    },
+    {
+      "seed": 190,
+      "step": "g7r2",
+      "rc": 0,
+      "seconds": 3.2471985816955566,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae\\r2\\gates\\g7_bog.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190\\pilot-subset.json",
+        "--json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-holdout-ae-seed190\\g7r2.json"
+      ]
+    }
+  ]
+}

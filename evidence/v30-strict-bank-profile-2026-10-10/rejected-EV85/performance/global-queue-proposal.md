@@ -1,0 +1,10 @@
+# Propuesta de una pasada sobre la cola de 806 crestas
+
+**Estado: propuesta, no ejecutada.** El evaluador local de EV85 pasa paridad contra el autor congelado; 100 evaluaciones toman 22.47 ms en el parche de 21 variables (0.225 ms/eval) y 15.10 ms en el de 18 variables (0.151 ms/eval). Esto mide únicamente evaluación geométrica local; no predice el coste ni garantiza convergencia de optimización sobre 806 focos.
+
+1. Congelar antes de correr la lista ordenada de 806 crestas, huella de entradas y reglas de desempate. Construir una sola vez los índices locales de caras/bisagras/slopes/vecinos para cada parche. Detectar solapes antes de optimizar; asignar cada vértice a un único parche con orden estable y deduplicar bisagras en la unión.
+2. Procesar los parches secuencialmente en una sola pasada. Cada parche recibe una sola optimización acotada contra B EV82, las cotas acumuladas EV79, y el estado ya aceptado de los parches anteriores. Rechazar un parche si no converge o si el vector no cumple sus gates; no retocar umbrales ni reintentar con otro parámetro.
+3. Aplicar solo la reparación isotónica numérica previamente explicitada: agrupar igualdades de orden B, redondear cotas hacia dentro, limitar cualquier reparación a 1e-4 m, comprobar que no toca fijos ni supera límites y rechazar si el orden sigue invertido. No usarla como holgura angular, de agua, de presupuesto ni de evaluación.
+4. Después de toda la pasada, recalcular sobre el terreno float32 global los gates EV85 exactos: orden 8-vecinos, límites angulares/pendientes y bisagras nuevas >30, energía, cruces P/F, extremos axiales, máscaras, p99/count completos. Cualquier fallo descarta toda la salida; solo después ejecutar el consumidor independiente/ODOL. El evaluador y el benchmark actuales no validan ni reemplazan esos gates.
+
+La medición disponible respalda precalcular y vectorizar la evaluación local para reducir overhead. No demuestra que SLSQP converja ni que el conjunto global sea compatible: interacciones entre parches y los gates discontinuos p99/count solo se resuelven con la pasada y la comprobación final. No crear ni empaquetar terreno en esta preparación.

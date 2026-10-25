@@ -1,0 +1,83 @@
+{
+  "at_utc": "2026-10-02T21:57:54.963Z",
+  "request": {
+    "project": "DayZ_MCP",
+    "mode": "server",
+    "build": false,
+    "no_base_mods": true,
+    "no_file_patching": true,
+    "extra_mods": [
+      "@DayZ_Baltic_DeltaV30_Nav",
+      "@BalticBoatInputProbe"
+    ],
+    "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticV30LugaCases45V2.BalticTrial",
+    "preflight": true,
+    "takeover": false,
+    "wait_for_box_s": 60
+  },
+  "scope": "One frozen isolation attempt, cases 4 and 5; no concurrent own raster/build/CU",
+  "generic_preflight": {
+    "status": "HELPER_SYNTAX_ERROR_MANUAL_DEPENDENCIES_VERIFIED",
+    "source": "C:/Users/guill/.agents/skills/dayz-preflight/preflight.py:213",
+    "error": "unicodeescape truncated UXXXXXXXX in string literal",
+    "direct_checks": {
+      "P_drive": true,
+      "DZ": true,
+      "scripts": true,
+      "AddonBuilder": true,
+      "TerrainBuilder": true,
+      "DayZDiag": true,
+      "mods_junction_target": "C:/Program Files (x86)/Steam/steamapps/common/DayZ/!Workshop"
+    }
+  },
+  "linter": {
+    "addon_root": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\missions\\BalticV30LugaCases45V2.BalticTrial",
+    "status": "PASS",
+    "errors": [],
+    "warnings": [],
+    "info": {
+      "files_scanned": 1,
+      "elapsed_ms": 1859
+    }
+  },
+  "launcher_preflight": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "server",
+    "run_id": null,
+    "phase": "completed",
+    "elapsed_s": 1.997,
+    "artifacts_paths": [
+      "P:\\DayZ_MCP_dev\\_server\\profiles"
+    ],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": null,
+    "client_alive": null,
+    "process_alive": null,
+    "bridge_ready": null,
+    "reason": null,
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": null,
+    "steam_pid_repair": null,
+    "steam_restarted": null,
+    "client_death_diagnosis": null,
+    "preflight_skipped_checks": [],
+    "caller_tool_registry_stale": false
+  },
+  "reference_sha256": "df205b7ad5ecd068e4601a31962d3cbd69314afa6213856280b42a4dbab8d8a4",
+  "source_and_deployed_init_sha256": "a14680672d8b3eaf63214224c9ae0e1b3cf6913dc78f7b4ebb1e6df5e4c04b66",
+  "source_and_deployed_routes_sha256": "802aa589cc42b6c82ea1a6909b8ab481bc639932b4b24884c3508cb9d6ee96e7",
+  "preexisting_log": false
+}

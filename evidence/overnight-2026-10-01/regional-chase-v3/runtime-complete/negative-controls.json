@@ -1,0 +1,169 @@
+{
+  "status": "PASS_ACTUAL_POSITIVE_AND_NEGATIVE_CONTROLS",
+  "full_run_status": "FAIL_OR_INCOMPLETE",
+  "positive_case": 0,
+  "scope": "Verifier test on actual case0 only; original whole-run failures retained",
+  "reference_sha256": "7d42d548e7737cca37a08fe4787fcf4280928764e43acbca733db7b682abfa0d",
+  "log_sha256": "4c20f04d3f57e1c45e9229efdbc2de50ddebd96c058c461a65618f7669861fe1",
+  "controls": [
+    {
+      "name": "missing_end",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [
+        "end"
+      ],
+      "case0_failures": [],
+      "log_sha256": "3173c57dbbedf9987ad896f9a45263bade13b56e3e9716a7736851d98cedfc6d"
+    },
+    {
+      "name": "wrong_world",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [
+        "header"
+      ],
+      "case0_failures": [],
+      "log_sha256": "41be3577283d40407e6544655aefcb2b04ea984d436994d1200d660198db744f"
+    },
+    {
+      "name": "dead_actor",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "healthy"
+      ],
+      "log_sha256": "4f9cb71d2f808a11c4d0bcd4fcf97598a2a82f3a6bd61cc8f55ce6eaf38c82b1"
+    },
+    {
+      "name": "wrong_ground",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "terrain_consumer"
+      ],
+      "log_sha256": "ac14963eb3db8ac8c1a892b3a5e03bfe9e53962fd1f68f4434c809bca26565e9"
+    },
+    {
+      "name": "nonfinite_ground",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [
+        "no_parse_errors"
+      ],
+      "case0_failures": [],
+      "log_sha256": "53419e3b2a2d6db42f120e421d997f396af8d7fcfbe132d7baafc236bf5979ec"
+    },
+    {
+      "name": "target_moved",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "stable_target"
+      ],
+      "log_sha256": "9283541378697d96b5da29dc7245374db6f034c2a64f0b64abeba793c90fc97b"
+    },
+    {
+      "name": "goal_changed",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "frozen_goal"
+      ],
+      "log_sha256": "cbf23db89ebb3a1b5c7ae5b304b7f83f78e518497e30fc2a685aadecf1cb033d"
+    },
+    {
+      "name": "floating_actor",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "physical_surface"
+      ],
+      "log_sha256": "43e3218a850f9b25f479f5bbf555c07a91292a80e66e0f426c35abfddeea4639"
+    },
+    {
+      "name": "clock_gap",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [
+        "no_parse_errors"
+      ],
+      "case0_failures": [
+        "continuous",
+        "known_mind"
+      ],
+      "log_sha256": "0ffebf4c9039c4939a9ec4a0c830e92da3102788149ce56c9c0ba8ba609530d1"
+    },
+    {
+      "name": "malformed_vector",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [
+        "no_parse_errors"
+      ],
+      "case0_failures": [],
+      "log_sha256": "e399b6c2807f0919d1e9dc7b75035eddd9390e0f39a02c248b4bb7cd6c198139"
+    },
+    {
+      "name": "unknown_event",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [
+        "no_parse_errors"
+      ],
+      "case0_failures": [],
+      "log_sha256": "f5240784021160545b30580b42ea373c229f876a99121e7256a299d022743f16"
+    },
+    {
+      "name": "wrong_spawn",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "spawn_xz_error",
+        "physical_surface",
+        "terrain_consumer"
+      ],
+      "log_sha256": "2994a1fa636f0c0cc8e14fa079f28e2457fcc24002f133cc3a0583e3688b7ca0"
+    },
+    {
+      "name": "duplicate_spawn",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "one_spawn"
+      ],
+      "log_sha256": "58cf00ad13af5b42146040660ccb8b6cef8339f12ea72b7b778f138d642d1a56"
+    },
+    {
+      "name": "missing_case",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [
+        "exact_cases"
+      ],
+      "case0_failures": [],
+      "log_sha256": "121d3fdc48f7f40fe30e04e68fb153cae29b133f50e7cd4ef9d2ed2abfe90b3e"
+    },
+    {
+      "name": "false_arrival",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "actual_goal_distance",
+        "terrain_consumer"
+      ],
+      "log_sha256": "de2b5b9238d848e9e5ab65c3d17f8e504696f193dd08438dd3cedf253fa8f98a"
+    },
+    {
+      "name": "timeout",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "reached_terminal"
+      ],
+      "log_sha256": "a84ffb36ebc25ce896ec52a1a2f0d757987437016ebc0b858604703332a93a5f"
+    },
+    {
+      "name": "no_reaction",
+      "status": "EXPECTED_REJECTION",
+      "global_failures": [],
+      "case0_failures": [
+        "reacted"
+      ],
+      "log_sha256": "f0759fcdc4e8bd1c5ead8437d844773641598ac19d3bc757b02a23c95c104bca"
+    }
+  ]
+}

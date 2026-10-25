@@ -1,0 +1,44 @@
+{
+  "status": "FROZEN_BEFORE_RUNTIME",
+  "parent_sha256": "4c1484fc060004f809bb6ea7339ef34c1f516b6b4c89908c7cd21d67e4726c0e",
+  "mission_sha256": "ef2c46e8127bc3ba125f0bc177b6389f90416b855b06f24d904f219aa2c9b95e",
+  "stages": [
+    {
+      "spawn_axis_m": -80,
+      "goal_axis_m": -55,
+      "reach_axis_m": -65
+    },
+    {
+      "spawn_axis_m": -50,
+      "goal_axis_m": 60,
+      "reach_axis_m": 48
+    },
+    {
+      "spawn_axis_m": 50,
+      "goal_axis_m": -60,
+      "reach_axis_m": -48
+    }
+  ],
+  "stage_timeout_s": 90,
+  "sample_interval_s": 0.2,
+  "requirements": [
+    "Local stimulus control, then both summit traversals; no movement override.",
+    "Server health positive; actor within -0.2/+0.5m of native triangular terrain.",
+    "Same 4m lateral, 2m target drift, 1s sampling gap and 90s stage timeout."
+  ],
+  "limits": [
+    "One summit, one infected and one client; not regional or multiplayer capacity.",
+    "Prior 26 geometric Y discrepancies remain a separate FAIL."
+  ],
+  "target_settlement_s": 20,
+  "center_xz": [
+    5184,
+    7644
+  ],
+  "axis_xz": [
+    1,
+    0
+  ],
+  "height_sha256": "3e2f6a9643ba4a8c58a86534c75de6033b7dbdf7a3de5d09a5ea46ff66680ac6",
+  "human_target_control": "Temporary zero movement-speed override on server and client. No infected movement overrides. Client releases at450s and mission finish."
+}

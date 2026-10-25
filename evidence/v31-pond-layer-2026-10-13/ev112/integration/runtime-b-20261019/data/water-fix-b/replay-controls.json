@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "exact_replay_sha256": "07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62",
+  "source_sha256": "e024c5edea15248c7fffcc3b7555e5107b0b0ac299c1f5f048aaddf784e20743",
+  "controls": [
+    {
+      "control": "overwrite",
+      "rc": 1,
+      "rejected_without_output_change": true,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\apply_engine_water_margins_v31.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\terrain-ev112-c.npz",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\replay-controls\\existing.npz"
+      ]
+    },
+    {
+      "control": "wrong-input",
+      "rc": 1,
+      "rejected_without_output_change": true,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\apply_engine_water_margins_v31.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\replay-controls\\wrong-input.npz",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\replay-controls\\wrong-output.npz"
+      ]
+    },
+    {
+      "control": "reapply",
+      "rc": 1,
+      "rejected_without_output_change": true,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\apply_engine_water_margins_v31.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\terrain.npz",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\replay-controls\\twice.npz"
+      ]
+    }
+  ]
+}

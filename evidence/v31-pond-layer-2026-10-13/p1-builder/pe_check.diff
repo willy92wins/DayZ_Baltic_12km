@@ -1,0 +1,47 @@
+--- E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/pond-edge/pe_check.py	2026-10-12 03:50:31.703528700 +0200
++++ E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder/pe_check.py	2026-10-13 14:12:43.996341700 +0200
+@@ -6,7 +6,7 @@
+ directly (pure function of the base context and the candidate heights). Offender masks are added for repair."""
+ import sys
+ sys.dont_write_bytecode = True
+-sys.path.insert(0, 'E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/pond-edge')
++sys.path.insert(0, 'E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder')
+ import numpy as np
+ from scipy.ndimage import binary_dilation, label, distance_transform_edt
+ import pe_common as C
+@@ -15,8 +15,34 @@
+ V3, V2, EV = C.V3, C.V2, C.EV
+ 
+ 
++def ctx_v3(base, cover):
++    """eval_shore_v3.base_context() (lines 104-128) with base and cover as arguments instead of the frozen EV99/EV98."""
++    import time
++    if C.sha256(base) != C.BASE_SHA or C.sha256(cover) != C.COVER_SHA:
++        raise SystemExit('base or cover hash mismatch')
++    x = V2.base_context(base, cover)
++    t0 = time.time()
++    D0 = ~x.W0t
++    x.Ld0, x.nd0 = label(D0, V3.S8)
++    border = np.unique(np.r_[x.Ld0[0], x.Ld0[-1], x.Ld0[:, 0], x.Ld0[:, -1]])
++    x.ard0 = np.bincount(x.Ld0.ravel(), minlength=x.nd0 + 1)
++    isl = np.ones(x.nd0 + 1, bool); isl[0] = False; isl[border] = False
++    x.isl_all = np.where(isl)[0]
++    x.isl_ids = np.where(isl & (x.ard0 >= V3.ISLAND_MIN_PX))[0]
++    big = np.zeros(x.nd0 + 1, bool); big[x.isl_ids] = True
++    x.islpx = big[x.Ld0]
++    del D0
++    x.s0a, x.s0b = EV.tri_slopes(x.H0)
++    x.d0 = -x.f0
++    x.band0 = x.nav & (x.d0 >= V3.NAVBAND_LO) & (x.d0 < V3.NAVBAND_HI)
++    x.nband0 = int(x.band0.sum())
++    x.covpx = np.repeat(np.repeat(x.covered, V3.K, 0), V3.K, 1)
++    x.ext_runtime_s = round(time.time() - t0, 1)
++    return x
++
++
+ def base_ctx():
+-    x = V3.base_context()            # EV99 + cover, hash-checked by the harness module
++    x = ctx_v3(C.BASE, C.COVER)       # v31 pilot: base EV103, cover = envelope (v3 semantics, see ctx_v3)
+     H0 = x.H0.astype(np.float64)
+     vp = EV.vertex_plane(x.cover)
+     x.v1_wet0 = np.where(np.isfinite(vp), H0 < vp, H0 < EV.SEA)

@@ -1,0 +1,53 @@
+{
+  "schema": "ev94.slope-bound.consumer-review.v1",
+  "status": "NEEDS_SMALL_FIX_BASELINE_D8_AND_PROJECTION_NOT_INDEPENDENTLY_RECHECKED",
+  "pins": {
+    "consumer": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\verify_slope_bound.py",
+      "sha256": "361ad5140ab165ccd2daee2459a9b3215721875913a4922396729a5d803b437f"
+    },
+    "plan": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\PLAN_SLOPE_BOUND.md",
+      "sha256": "5b1ff2818f44975b965958ee89e47a848f381ec94d2611de9def3435f6a43fcb"
+    },
+    "preparer": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\prepare_slope_bound.py",
+      "sha256": "b5fa83b96a561bc56edb8eb1b645e45924bd8743ec133a2b7ecfc3329a15b140"
+    },
+    "solver": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\solve_ev94.py",
+      "sha256": "ebb53986d69e4ec080356883db15091983fef3bb01715714177d2d504283abf0"
+    },
+    "prepared_identity_review": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\prepared-identity-review.json",
+      "sha256": "bbd929842a67238908bdc73b9ebb353d27f2e32ae4a79a8a9586a42df8c198e8"
+    },
+    "smoke": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\consumer\\smoke-preflight-run-03.json",
+      "sha256": "e9c8915afa59e5e7b8d6005f158dfce125e2176dfe396c4d0111da2e320757ad"
+    }
+  },
+  "checks": {
+    "gis_py_compile": "PASS",
+    "consumer_self_test": "PASS",
+    "real_preflight_reconstruction_smoke": "PASS",
+    "readset_and_prepared_identity": "PASS",
+    "A_C_RHS_and_witness_reconstruction": "PASS_BY_SMOKE",
+    "single_scalar_lower_bound_reconstruction": "PASS_BY_SMOKE"
+  },
+  "finding": {
+    "severity": "P2 validation-contract gap before solve",
+    "consumer_locations": [
+      "verify_slope_bound.py:648-675",
+      "verify_slope_bound.py:423-437"
+    ],
+    "plan_requirement": "PLAN_SLOPE_BOUND.md requires independently confirming baseline feasibility and project(base)==base.",
+    "evidence": "Consumer reconstructs C,d and checks x0 byte-equals B, but does not check C@x0 >= d or run project_order_closure(B,lo,hi,edges) and assert byte identity. It independently projects the candidate only.",
+    "existing_non_independent_guards": [
+      "prepare_slope_bound.py:121-123 asserts baseline projection identity",
+      "solve_ev94.py:105 checks baseline D8 feasibility"
+    ],
+    "recommended_fix": "In reconstruct_system, after rebuilding edges and solver bounds, independently assert min(C@x0-d)>=-1e-12 and byte equality of order projection of B to B; add one negative fixture for infeasible baseline/projection drift. Keep solver/candidate unchanged."
+  },
+  "scope": "Static consumer review plus py_compile/self-test only; no solver, candidate evaluation, or full geometry run."
+}

@@ -1,0 +1,57 @@
+{
+  "status": "PASS_REAL_CASE_AND_12_NEGATIVES",
+  "scope_case": 10,
+  "reference_sha256": "bf6cabd243cae0478c975a75d9cfdd8cd95984cf5c995d77cb5a68cbb7807a77",
+  "source_log_sha256": "3051473031e320ac02c29cd92b67783c69ce6ea5e2aadcf3e64486984676d22b",
+  "controls": [
+    {
+      "name": "missing_case",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "missing_terminal",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "nonfinite_position",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "physical_teleport",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "health_loss",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "wrong_ground",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "omitted_transition",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "duplicated_transition",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "skipped_target_index",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "unordered_transition_time",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "arrival_without_motion",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "final_engine_active",
+      "status": "EXPECTED_REJECTION"
+    }
+  ],
+  "limit": "Verifier robustness on the stated real case only; not four-case or whole-map acceptance."
+}

@@ -1,0 +1,189 @@
+{
+  "map_sha256": "ebc60f4f089b3e125426263b456d1f9662bc828c506993bbabbf0e43023a06d4",
+  "tests": [
+    {
+      "name": "noise-v1",
+      "run": {
+        "status": "succeeded",
+        "project": "DayZ_MCP",
+        "mode": "all",
+        "run_id": "aa6ffd15-16b7-477c-bed6-68c718a984de",
+        "phase": "completed",
+        "elapsed_s": 16.189,
+        "artifacts_paths": [
+          "P:\\DayZ_MCP_dev\\_server\\profiles",
+          "P:\\DayZ_MCP_dev\\_client\\profiles"
+        ],
+        "error_code": null,
+        "cleanup_degraded": false,
+        "server_alive": true,
+        "client_alive": true,
+        "process_alive": true,
+        "bridge_ready": false,
+        "reason": "binding_not_ready",
+        "steam_registered_pid": null,
+        "steam_live_pids": null,
+        "remediation": null,
+        "client_terminated": null,
+        "client_relaunched": null,
+        "client_replace_reason": null,
+        "client_last_poll_age_s": null,
+        "client_record_age_s": null,
+        "vpp_missing": [],
+        "vpp_warnings": [
+          "vpp_mod_not_requested"
+        ],
+        "steam_startup": "observed",
+        "steam_pid_repair": null,
+        "steam_restarted": false,
+        "client_death_diagnosis": null,
+        "caller_tool_registry_stale": false
+      },
+      "close": {
+        "run_id": "aa6ffd15-16b7-477c-bed6-68c718a984de",
+        "graceful": false,
+        "stop_method": "orderly_close",
+        "run_retired": true,
+        "stop_required": false,
+        "reason": "timeout",
+        "exit_metrics_valid": false
+      },
+      "result": "CRASH_IN_DIAGNOSTIC_OBJECTGETTYPE"
+    },
+    {
+      "name": "noise-v2",
+      "run": {
+        "status": "succeeded",
+        "project": "DayZ_MCP",
+        "mode": "all",
+        "run_id": "4c577898-084b-4c8c-96f4-895fcb68cf24",
+        "phase": "completed",
+        "elapsed_s": 16.434,
+        "artifacts_paths": [
+          "P:\\DayZ_MCP_dev\\_server\\profiles",
+          "P:\\DayZ_MCP_dev\\_client\\profiles"
+        ],
+        "error_code": null,
+        "cleanup_degraded": false,
+        "server_alive": true,
+        "client_alive": true,
+        "process_alive": true,
+        "bridge_ready": false,
+        "reason": "binding_not_ready",
+        "steam_registered_pid": null,
+        "steam_live_pids": null,
+        "remediation": null,
+        "client_terminated": null,
+        "client_relaunched": null,
+        "client_replace_reason": null,
+        "client_last_poll_age_s": null,
+        "client_record_age_s": null,
+        "vpp_missing": [],
+        "vpp_warnings": [
+          "vpp_mod_not_requested"
+        ],
+        "steam_startup": "observed",
+        "steam_pid_repair": null,
+        "steam_restarted": false,
+        "client_death_diagnosis": null,
+        "caller_tool_registry_stale": false
+      },
+      "close": {
+        "run_id": "4c577898-084b-4c8c-96f4-895fcb68cf24",
+        "graceful": true,
+        "stop_method": "orderly_close",
+        "graceful_wait_s": 4.211947800009511,
+        "exit_metrics_valid": true,
+        "run_retired": true,
+        "stop_required": false,
+        "reason": null,
+        "roles": [
+          {
+            "role": "client",
+            "termination_line": true,
+            "rpt_rotated": false
+          },
+          {
+            "role": "server",
+            "termination_line": true,
+            "rpt_rotated": false
+          }
+        ]
+      },
+      "result": "CONTROL_PASS_CROSSING_TIMEOUT_OUTSIDE_CORRIDOR"
+    },
+    {
+      "name": "chase-v1",
+      "run": {
+        "status": "succeeded",
+        "project": "DayZ_MCP",
+        "mode": "all",
+        "run_id": "796807db-4b78-4b61-a552-1a337ef68ba0",
+        "phase": "completed",
+        "elapsed_s": 16.564,
+        "artifacts_paths": [
+          "P:\\DayZ_MCP_dev\\_server\\profiles",
+          "P:\\DayZ_MCP_dev\\_client\\profiles"
+        ],
+        "error_code": null,
+        "cleanup_degraded": false,
+        "server_alive": true,
+        "client_alive": true,
+        "process_alive": true,
+        "bridge_ready": false,
+        "reason": "binding_not_ready",
+        "steam_registered_pid": null,
+        "steam_live_pids": null,
+        "remediation": null,
+        "client_terminated": null,
+        "client_relaunched": null,
+        "client_replace_reason": null,
+        "client_last_poll_age_s": null,
+        "client_record_age_s": null,
+        "vpp_missing": [],
+        "vpp_warnings": [
+          "vpp_mod_not_requested"
+        ],
+        "steam_startup": "observed",
+        "steam_pid_repair": null,
+        "steam_restarted": false,
+        "client_death_diagnosis": null,
+        "caller_tool_registry_stale": false
+      },
+      "close": {
+        "run_id": "796807db-4b78-4b61-a552-1a337ef68ba0",
+        "graceful": true,
+        "stop_method": "orderly_close",
+        "graceful_wait_s": 5.892385800019838,
+        "exit_metrics_valid": true,
+        "run_retired": true,
+        "stop_required": false,
+        "reason": null,
+        "roles": [
+          {
+            "role": "client",
+            "termination_line": true,
+            "rpt_rotated": false
+          },
+          {
+            "role": "server",
+            "termination_line": true,
+            "rpt_rotated": false
+          }
+        ]
+      },
+      "result": "CONTROL_PASS_ACTOR_DIED_BEFORE_CROSSING_COMPLETE"
+    }
+  ],
+  "cleanup": {
+    "lease": "none",
+    "box_occupied": false,
+    "probes_in_map": false
+  },
+  "acceptance": "NOT_ACCEPTED",
+  "limits": [
+    "No terrain/navmesh edit in these tests.",
+    "Death mechanism and prey settlement not measured; do not attribute to navmesh.",
+    "One native-AI experiment and two scoped repairs ended. Preserve failures."
+  ]
+}

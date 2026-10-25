@@ -1,0 +1,58 @@
+{
+  "purpose": "Disposable consumer test only",
+  "formula": "z=100+(X-200000)/6+Y/12",
+  "tb_vertex_contract": "X=200000+col*6; Y=768-row*6",
+  "source_sample_contract": "X=200003+col*6; Y=765-row*6",
+  "edge_policy": "Top row/left column clamped. Analytic exactness applies to interior only.",
+  "offline_interior_max_error_m": 0.0,
+  "negative_control_uncorrected_error_m": 0.25,
+  "controls": [
+    {
+      "name": "NW",
+      "row": 8,
+      "col": 11,
+      "x": 200066,
+      "y": 720,
+      "z": 171.0,
+      "uncorrected_z": 171.25
+    },
+    {
+      "name": "NE",
+      "row": 17,
+      "col": 112,
+      "x": 200672,
+      "y": 666,
+      "z": 267.5,
+      "uncorrected_z": 267.75
+    },
+    {
+      "name": "SW",
+      "row": 110,
+      "col": 20,
+      "x": 200120,
+      "y": 108,
+      "z": 129.0,
+      "uncorrected_z": 129.25
+    },
+    {
+      "name": "SE",
+      "row": 101,
+      "col": 106,
+      "x": 200636,
+      "y": 162,
+      "z": 219.5,
+      "uncorrected_z": 219.75
+    }
+  ],
+  "terrain_builder_verdict": "NOT_TESTED",
+  "production": "NOT_APPLIED: must assess coastline, nodata, edge and hydrographic constraints separately",
+  "sha256": {
+    "plane_gis_centres.asc": "e2dbc43510cd4530d394f8813e59fbbfc81cf997d87909fad2290ec95b2402ac",
+    "plane_tb_vertices.asc": "d5a4137062f2e9b86c5e21889083cbe7ed2af0a1791f0abacc684064826a7721",
+    "vertex_controls.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "vertex_controls.dbf": "bd6e2af01a2026cd3278e158e84c651b3572261d8b6bba695d28c09c5161f124",
+    "vertex_controls.prj": "20451220b3475131fbfd7cf3983f9fd1fd14bd87e33c6d8190a1cca9b0717808",
+    "vertex_controls.shp": "8dcd67d0cfa396761acd7675fac3e1844d05b1b57a72429716782fed9afe88eb",
+    "vertex_controls.shx": "4629c9a008bad09ecf0249eadb025e7fdf9ee3eecedc7cce417c38a469f24500"
+  }
+}

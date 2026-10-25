@@ -1,0 +1,43 @@
+{
+  "positive": "engine.log",
+  "cases": {
+    "truncated": {
+      "rejected": true,
+      "reason": "Wrong or incomplete load fixture"
+    },
+    "wrong_world": {
+      "rejected": true,
+      "reason": "Wrong or incomplete load fixture"
+    },
+    "nonfinite_cpu_independent_engine_field": {
+      "rejected": true,
+      "reason": "Nonfinite measurement"
+    },
+    "missing_population": {
+      "rejected": true,
+      "reason": [
+        "phase2:population_or_counter_invalid"
+      ]
+    },
+    "asleep_population": {
+      "rejected": true,
+      "reason": [
+        "phase2:insufficient_active_AI"
+      ]
+    },
+    "moved_target": {
+      "rejected": true,
+      "reason": [
+        "phase2:prey_moved"
+      ]
+    },
+    "missing_sample": {
+      "rejected": true,
+      "reason": "Missing/duplicate samples or spawned population"
+    },
+    "duplicate_sample": {
+      "rejected": true,
+      "reason": "Nonmonotonic tick"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+from pathlib import Path
+import hashlib,json,shutil,sys
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+B=Path('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008');E=W/'evidence/v30-valley-smoothing-2026-10-08'
+sys.path.insert(0,str(W/'tools/playtest'))
+from attach_navmesh import read_pbo
+label=sys.argv[1] if len(sys.argv)>1 else 'a'
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+base=Path('P:/Mods/@DayZ_Baltic_StitchedWaterPilot/Addons');world=B/f'world-{label}/out/narva_trial.pbo'
+water=base/'baltic_water_v30.pbo'
+assert sha(water)=='542bd4e85e9f82d9ef373386371168c9b489c0794e3f4bd4773709c680c4b068'
+_,pa,a=read_pbo(base/'narva_trial.pbo');_,pb,b=read_pbo(world)
+assert pa==pb and set(a)==set(b)
+changed=[k for k in a if a[k]!=b[k]];assert changed==['baltic_trial.wrp'],changed
+dest=Path('P:/Mods')/('@DayZ_Baltic_ValleySmooth'+label.upper())/'Addons';dest.mkdir(parents=True,exist_ok=False)
+for p in (world,water):
+ shutil.copyfile(p,dest/p.name);assert sha(p)==sha(dest/p.name)
+out=dict(status='ISOLATED_VALLEY_PREVIEW',destination=str(dest.parent),files={p.name:sha(p) for p in dest.glob('*.pbo')},changed_entries=changed,terrain_sha256=sha(B/f'candidate-{label}/terrain_valley.npz'))
+(E/f'deploy-{label}.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))
+

@@ -1,0 +1,9 @@
+START negatives
+END negatives 1
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\run-ae-resume-after-import.py", line 50, in <module>
+    run('negatives',[wrapper],True)
+  File "E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\run-ae-resume-after-import.py", line 47, in run
+    save('RUNNING',current=name);print('END',name,rc,flush=True);assert rc==0,row
+                                                                        ^^^^^
+AssertionError: {'step': 'negatives', 'rc': 1, 'seconds': 87.6423237323761, 'cmd': ['C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe', '-I', 'E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-final-forest-negatives-ae-importfix.py'], 'continuation': 'E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-resume-after-import.json'}

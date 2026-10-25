@@ -1,0 +1,98 @@
+== A-reserva: analysed 40.5 ha (bog left out 40.5 ha), 10323 instances, context ha {'interior': 37.1, 'edge': 1.3, 'riparian': 1.8, 'open': 0.1}
+  agreement.canopy_on_surface                    0.9844 [0.365, inf] PASS (outside p10-p90)
+  agreement.surface_in_canopy                    0.9806 [0.913, inf] PASS
+  density.interior.broadleaf                    19.9987 [1.9729, 206.3249] PASS
+  density.interior.bush                         35.0584 [9.4566, 87.6048] PASS
+  density.interior.conifer                     185.0347 [0.0376, 230.8064] PASS
+  density.interior.dead                         22.8595 [9.9174, 44.0406] PASS
+  density.interior.reed                             0.0 [0.0, 1.6188] PASS
+  density.interior.trees                       205.0334 [154.03, 248.7999] PASS
+  nn.broadleaf.p5                                 1.393 [0.5292, 2.421] PASS
+  nn.broadleaf.p50                                 5.45 [2.4405, 8.8652] PASS
+  nn.bush.p5                                     0.7018 [0.3909, 0.9759] PASS
+  nn.bush.p50                                    2.9077 [2.1115, 4.4045] PASS
+  nn.conifer.p5                                  1.7519 [0.9171, 3.0476] PASS
+  nn.conifer.p50                                 3.9597 [3.737, 4.9023] PASS (outside p10-p90)
+  nn.dead.p5                                      1.751 [1.1015, 3.6322] PASS
+  nn.dead.p50                                    6.7309 [5.1683, 13.6009] PASS
+  share.interior.broadleaf                       0.0761 [0.0095, 0.7499] PASS
+  share.interior.bush                            0.1333 [0.0453, 0.2973] PASS
+  share.interior.conifer                         0.7037 [0.0002, 0.8046] PASS
+  share.interior.dead                            0.0869 [0.0373, 0.1618] PASS
+  share.interior.reed                               0.0 [0.0, 0.0051] PASS
+  trees.interior.broadleaf_share                 0.0975 [0.0119, 0.9998] PASS
+  trees.interior.size3_share                     0.4075 [0.1478, 0.5978] PASS
+  trees.interior.solitary_share                  0.2132 [0.0776, 0.4288] PASS
+  tvd.interior.broadleaf                         0.0849 [-inf, 0.7561] PASS (outside p10-p90)
+  tvd.interior.bush                              0.0305 [-inf, 0.6003] PASS (outside p10-p90)
+  tvd.interior.conifer                           0.0417 [-inf, 0.3158] PASS (outside p10-p90)
+  tvd.interior.dead                               0.005 [-inf, 1.0] PASS (outside p10-p90)
+  dense rule: density.interior.trees 205.0 >= Livonia p50 186.3303: PASS
+  A-reserva G2: PASS (28 metrics judged, 0 failed, allowed 0; 6 outside p10-p90)
+== B-bosque-carretera-agua: analysed 70.2 ha (bog left out 10.8 ha), 15421 instances, context ha {'interior': 51.4, 'edge': 7.6, 'riparian': 9.6, 'open': 0.6}
+  agreement.canopy_on_surface                    0.9243 [0.365, inf] PASS (outside p10-p90)
+  agreement.surface_in_canopy                    0.9554 [0.913, inf] PASS (outside p10-p90)
+  density.edge.broadleaf                        30.9421 [4.7855, 117.2596] PASS
+  density.edge.bush                             70.3471 [42.2626, 119.3074] PASS
+  density.edge.conifer                          82.1157 [0.6099, 104.3773] PASS
+  density.edge.dead                             17.1901 [3.5453, 30.3525] PASS
+  density.edge.reed                                 0.0 [0.0, 2.1873] PASS
+  density.edge.trees                           113.0579 [93.8864, 125.7004] PASS (outside p10-p90)
+  density.interior.broadleaf                    26.0172 [1.9729, 206.3249] PASS
+  density.interior.bush                         35.6619 [9.4566, 87.6048] PASS
+  density.interior.conifer                     155.0532 [0.0376, 230.8064] PASS
+  density.interior.dead                         24.4033 [9.9174, 44.0406] PASS
+  density.interior.reed                             0.0 [0.0, 1.6188] PASS
+  density.interior.trees                       181.0704 [154.03, 248.7999] PASS
+  density.riparian.broadleaf                    58.2616 [2.46, 172.3711] PASS
+  density.riparian.bush                         55.7557 [6.3961, 211.0014] PASS
+  density.riparian.conifer                      28.7131 [0.0, 155.9656] PASS
+  density.riparian.dead                          3.8632 [0.9223, 16.7282] PASS
+  density.riparian.reed                           5.325 [1.9441, 37.9227] PASS
+  density.riparian.trees                        86.9747 [66.5726, 179.3439] PASS
+  nn.broadleaf.p5                                1.6803 [0.5292, 2.421] PASS (outside p10-p90)
+  nn.broadleaf.p50                               5.7252 [2.4405, 8.8652] PASS
+  nn.bush.p5                                     0.6571 [0.3909, 0.9759] PASS
+  nn.bush.p50                                    2.7157 [2.1115, 4.4045] PASS
+  nn.conifer.p5                                  1.8978 [0.9171, 3.0476] PASS
+  nn.conifer.p50                                 4.2256 [3.737, 4.9023] PASS
+  nn.dead.p5                                     1.8336 [1.1015, 3.6322] PASS
+  nn.dead.p50                                    6.5738 [5.1683, 13.6009] PASS
+  share.edge.broadleaf                           0.1543 [0.0272, 0.6398] PASS
+  share.edge.bush                                0.3507 [0.2693, 0.5127] PASS
+  share.edge.conifer                             0.4094 [0.0033, 0.5942] PASS
+  share.edge.dead                                0.0857 [0.0174, 0.1393] PASS
+  share.edge.reed                                   0.0 [0.0, 0.0105] PASS
+  share.interior.broadleaf                       0.1079 [0.0095, 0.7499] PASS
+  share.interior.bush                            0.1479 [0.0453, 0.2973] PASS
+  share.interior.conifer                          0.643 [0.0002, 0.8046] PASS
+  share.interior.dead                            0.1012 [0.0373, 0.1618] PASS
+  share.interior.reed                               0.0 [0.0, 0.0051] PASS
+  share.riparian.broadleaf                       0.3835 [0.0124, 0.5043] PASS
+  share.riparian.bush                             0.367 [0.0323, 0.7283] PASS
+  share.riparian.conifer                          0.189 [0.0, 0.7886] PASS
+  share.riparian.dead                            0.0254 [0.0051, 0.0846] PASS
+  share.riparian.reed                            0.0351 [0.0063, 0.201] PASS
+  trees.edge.broadleaf_share                     0.2737 [0.0444, 0.9948] PASS
+  trees.edge.size3_share                         0.3544 [0.1702, 0.5601] PASS
+  trees.edge.solitary_share                      0.4468 [0.3007, 0.6878] PASS
+  trees.interior.broadleaf_share                 0.1437 [0.0119, 0.9998] PASS
+  trees.interior.size3_share                     0.4173 [0.1478, 0.5978] PASS
+  trees.interior.solitary_share                  0.2143 [0.0776, 0.4288] PASS
+  trees.riparian.broadleaf_share                 0.6699 [0.0155, 1.0] PASS
+  trees.riparian.size3_share                     0.3241 [0.089, 0.4814] PASS
+  trees.riparian.solitary_share                  0.4454 [0.1584, 0.822] PASS
+  tvd.edge.broadleaf                              0.172 [-inf, 0.7181] PASS (outside p10-p90)
+  tvd.edge.bush                                  0.1317 [-inf, 0.4805] PASS
+  tvd.edge.conifer                               0.0873 [-inf, 0.3967] PASS (outside p10-p90)
+  tvd.edge.dead                                  0.0888 [-inf, 0.9818] PASS (outside p10-p90)
+  tvd.interior.broadleaf                         0.0991 [-inf, 0.7561] PASS (outside p10-p90)
+  tvd.interior.bush                              0.0428 [-inf, 0.6003] PASS (outside p10-p90)
+  tvd.interior.conifer                            0.049 [-inf, 0.3158] PASS (outside p10-p90)
+  tvd.interior.dead                              0.0201 [-inf, 1.0] PASS (outside p10-p90)
+  tvd.riparian.broadleaf                         0.0746 [-inf, 0.588] PASS (outside p10-p90)
+  tvd.riparian.bush                               0.028 [-inf, 0.4036] PASS (outside p10-p90)
+  tvd.riparian.conifer                           0.0832 [None, None] NO_BAND
+  tvd.riparian.reed                                 0.0 [None, None] NO_BAND
+  B-bosque-carretera-agua G2: PASS (62 metrics judged, 0 failed, allowed 0; 13 outside p10-p90)
+G2 PASS

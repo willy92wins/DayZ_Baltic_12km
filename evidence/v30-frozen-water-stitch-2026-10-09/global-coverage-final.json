@@ -1,0 +1,28 @@
+{
+  "status": "PASS_GLOBAL_COMPILED_COVERAGE",
+  "gates": {
+    "all_frozen_water_cells": true,
+    "nominal_wet_coverage": true,
+    "visible_field_footprint_coverage": true
+  },
+  "instances": 17926,
+  "models": 13030,
+  "cells": 404484,
+  "tiles": 33325,
+  "uncovered_physical_m2": 0.0,
+  "uncovered_visible_footprint_m2": 3.846405654494101e-12,
+  "uncovered_cells": [],
+  "uncovered_only_dry_cells": 10598,
+  "max_model_visible_physical_footprint_difference_m2": 1.1105585114717931e-10,
+  "water_sha256": "95ea4c6c54c868743eddc71b0a59ff31c8418a77ee2f2daf95f6b3a2e249de0f",
+  "world_source_sha256": "98b989631bd82588401076d5e54d465fd03acde30511fd3246b321988eed15d0",
+  "elapsed_s": 109.84299999999348,
+  "controls": [
+    "whole_native_cell_36_m2_covered",
+    "one_centimetre_gap_0.06_m2_rejected"
+  ],
+  "limits": [
+    "Coverage gate, not native render acceptance. Visible heights and connectivity have separate gates.",
+    "Every frozen pond cell included; this does not test the native ocean renderer."
+  ]
+}

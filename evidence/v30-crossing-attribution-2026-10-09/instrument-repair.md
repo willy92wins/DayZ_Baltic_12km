@@ -1,0 +1,1 @@
+The original builder expects its output directory to exist. The first replay reached the save and failed because the diagnostic wrapper had not created it. The wrapper now creates the new scratch directory before main(). No source/arguments or production inputs changed; the original builder remains unmodified.

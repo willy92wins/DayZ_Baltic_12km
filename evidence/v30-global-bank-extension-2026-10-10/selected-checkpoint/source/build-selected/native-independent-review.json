@@ -1,0 +1,98 @@
+{
+  "collector_review": {
+    "collector_sha256": "e8a5f34cc17b2ed8b0b3158e52e524b18d65a19d318a0658b7ac119a56b4fcbc",
+    "limitation": "the RPT text itself does not carry the MCP run id; linkage relies on freshness, exact mission/mod, unique matching RPT, and run lifecycle provenance.",
+    "run_binding": "hardcoded run id; source absent before launch; source ctime/mtime after server creation; launch/close run ids agree; one server process; exactly one fresh RPT matching mission+mod and orderly termination; copied/source SHA equality",
+    "semantic_separation": "collector status is CAPTURED_FRESH_CLOSED_SNAPSHOT_NOT_YET_VERIFIED; verify_native.py separately produced PASS_COMPLETE_NATIVE_READBACK"
+  },
+  "crosspins": {
+    "candidate_sha256": true,
+    "collector_sha256": true,
+    "fresh_times_after_server_creation": true,
+    "launch_mission_preview": true,
+    "native_verification_pass": true,
+    "one_server_process": true,
+    "orderly_close_and_retirement": true,
+    "provenance_sha256": true,
+    "reference_sha256": true,
+    "rpt_excerpt_sha256": true,
+    "rpt_sha256": true,
+    "run_id_launch_close_capture": true,
+    "snapshot_absent_before_launch": true,
+    "snapshot_sha256": true
+  },
+  "native": {
+    "errors": [],
+    "max_ground_error_m": 1.52588e-05,
+    "negative_controls": {
+      "duplicate_anomaly": true,
+      "height_mismatch": true,
+      "missing_calibrated_point": true,
+      "missing_end": true,
+      "missing_grid_row": true,
+      "missing_scalar_diagnostic_end": true,
+      "stale_calibrated_height_reference": true,
+      "wrong_translated_water_plane": true
+    },
+    "reference_sha256": "7da6bc6d5cd9da23c882ab35041bd8a0f819191eb5d068842052b8987bdb14b3",
+    "snapshot_sha256": "d8c610f32d3a37b3d16bb5c4cb3ab7734b78b63ee95726e60f768f2a846c239e",
+    "terrain_sha256": "6e27557315eb65ecc69052e1ec387304a19f37eaa4f5167ab82fb607f095461d",
+    "translated_water_probes": 1205,
+    "verification_status": "PASS_COMPLETE_NATIVE_READBACK",
+    "vertices": 4194304
+  },
+  "run_id": "1ed16d48-1352-4216-b5fe-31c77358b9fc",
+  "runtime_comparison": {
+    "classification": "MCPPollCallback/PluginItemDiagnostic and pond warning class are present in EV82 and EV87 baselines. EV93 has no new error signature or pond asset path; the +300 pond-warning occurrence count vs EV87 is not assigned a cause.",
+    "error_signature_sets_equal_after_mission_path_normalization": true,
+    "nonpond_warning_signature_counts_equal": true,
+    "normalization": "timestamps and module base addresses ignored; mission directory identity normalized for errors",
+    "pond_asset_path_sets_equal": true,
+    "pond_warning_occurrence_deltas": {
+      "EV93_minus_EV82": 281,
+      "EV93_minus_EV87": 300
+    },
+    "records": {
+      "EV82": {
+        "error_lines": 32,
+        "error_signatures": 24,
+        "mcp_poll_callback_leak": true,
+        "non_pond_warning_lines": 6,
+        "pluginmanager_getplugin_stack": true,
+        "rpt_path": "P:\\DayZ_MCP_dev\\_server\\profiles\\DayZDiag_x64_2026-10-10_05-20-01.RPT",
+        "rpt_sha256": "83aee4e0b8ef83afb2df3c18b3b25e878abd68c219842f724c829e8b50dcedb0",
+        "unique_unknown_pond_asset_paths": 13128,
+        "unknown_pond_warning_lines": 288450
+      },
+      "EV87": {
+        "error_lines": 32,
+        "error_signatures": 24,
+        "mcp_poll_callback_leak": true,
+        "non_pond_warning_lines": 6,
+        "pluginmanager_getplugin_stack": true,
+        "rpt_path": "P:\\DayZ_MCP_dev\\_server\\profiles\\DayZDiag_x64_2026-10-10_08-58-31.RPT",
+        "rpt_sha256": "62d5b418408bc6f1c05d3bce830d312c2b33d5749409bd059a70ac9235b5be21",
+        "unique_unknown_pond_asset_paths": 13128,
+        "unknown_pond_warning_lines": 288431
+      },
+      "EV93": {
+        "error_lines": 32,
+        "error_signatures": 24,
+        "mcp_poll_callback_leak": true,
+        "non_pond_warning_lines": 6,
+        "pluginmanager_getplugin_stack": true,
+        "rpt_path": "P:\\DayZ_MCP_dev\\_server\\profiles\\DayZDiag_x64_2026-10-10_15-10-25.RPT",
+        "rpt_sha256": "a1a06c69f8dc1ad1edcf601faa5db8a2f1f1e54b8bad91ae1f85d9bec552901e",
+        "unique_unknown_pond_asset_paths": 13128,
+        "unknown_pond_warning_lines": 288731
+      }
+    }
+  },
+  "schema": "ev93.native-independent-review.v1",
+  "scope_limits": [
+    "Native physical readback is not a visual/render PASS.",
+    "No map regression is inferred from warning occurrence-count drift alone.",
+    "Water warning count varies by +300 vs EV87, but all 13,128 asset paths are shared and water PBO SHA is pinned unchanged."
+  ],
+  "status": "PASS_NATIVE_READBACK_PROVENANCE_WITH_INHERITED_RUNTIME_DIAGNOSTICS"
+}

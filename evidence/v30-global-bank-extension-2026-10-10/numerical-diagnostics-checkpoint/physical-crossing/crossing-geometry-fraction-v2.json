@@ -1,0 +1,1517 @@
+{
+  "schema": "ev94.wet-bank-crossing-geometry-fraction.v2",
+  "status": "READ_ONLY_DIRECT_GEOMETRY_DIAGNOSTIC",
+  "inputs_sha256": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solution.npz": "1b7a23ebb3c203427f1c77cb8de6becfca750746e47f5494bba6723b0610eab1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\design\\water_v3.geojson": "caa333e365c2a4511f839937a9d76a5aa157a0ef925d6ee4b5efcc4ebb38f8a9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepare_wet_bank_matrices.py": "65e05a6540026b08df7effa53c58534121bb2fa89e116a2ef07ad46ba0edf286"
+  },
+  "independent_method": "For each recorded P/F edge crossing, reload B, P, F, and water_v3 river_041. Compute signed endpoint distances as exact rationals of their stored binary values; derive t_B and t_H by rational division; recompute the design intersection on each exact native edge with Shapely and preserve its binary64 value as an exact rational. Compare t_H to [min(t_B,t_design),max(...)]. No author matrix builder, solver, candidate mutation, or post-hoc tolerance.",
+  "metadata_alignment": {
+    "source_records": 560,
+    "nonrow_sign_only_summaries_filtered": 32,
+    "C_cross_rows": 528,
+    "aligned": true
+  },
+  "C_cross_arithmetic": {
+    "B_negative_rows_exact_float_eval": 14,
+    "B_min_slack": -8.881784197001252e-16,
+    "B_negative_rows_all_within_1e_15": true,
+    "candidate_negative_rows_exact_float_eval": 23,
+    "candidate_material_rows_below_minus_1e_12": 20,
+    "candidate_min_slack": -1.879736570842283e-07,
+    "candidate_violated_support_rc_from_CSR": [
+      [
+        858,
+        1183
+      ],
+      [
+        858,
+        1184
+      ],
+      [
+        858,
+        1185
+      ],
+      [
+        862,
+        1186
+      ],
+      [
+        862,
+        1187
+      ],
+      [
+        863,
+        1187
+      ],
+      [
+        864,
+        1187
+      ],
+      [
+        865,
+        1187
+      ],
+      [
+        865,
+        1188
+      ],
+      [
+        866,
+        1187
+      ],
+      [
+        866,
+        1188
+      ],
+      [
+        867,
+        1187
+      ],
+      [
+        867,
+        1188
+      ]
+    ],
+    "support_count": 13,
+    "one_ulp_single_row_helpful_nodes_exact_float_rule": [
+      [
+        858,
+        1183
+      ],
+      [
+        858,
+        1184
+      ],
+      [
+        858,
+        1185
+      ],
+      [
+        862,
+        1186
+      ],
+      [
+        864,
+        1187
+      ],
+      [
+        865,
+        1187
+      ],
+      [
+        865,
+        1188
+      ],
+      [
+        866,
+        1188
+      ],
+      [
+        867,
+        1188
+      ]
+    ],
+    "helpful_count": 9,
+    "material_violation_support_rc": [
+      [
+        862,
+        1186
+      ],
+      [
+        862,
+        1187
+      ],
+      [
+        863,
+        1187
+      ],
+      [
+        864,
+        1187
+      ],
+      [
+        865,
+        1187
+      ],
+      [
+        865,
+        1188
+      ],
+      [
+        866,
+        1187
+      ],
+      [
+        866,
+        1188
+      ],
+      [
+        867,
+        1187
+      ],
+      [
+        867,
+        1188
+      ]
+    ],
+    "material_support_count": 10,
+    "material_single_ulp_helpful_count": 6
+  },
+  "physical_crossing": {
+    "unique_cell_edge_surface_checks": 116,
+    "B_direct_failures": 0,
+    "continuous_x64_direct_failures": 41,
+    "continuous_x64_failed_native_edges": 13,
+    "continuous_x64_max_t_interval_excess": 4.87255459743415e-09,
+    "candidate_direct_failures": 20,
+    "candidate_failed_native_edges": [
+      {
+        "edge_rc": [
+          [
+            862,
+            1186
+          ],
+          [
+            862,
+            1187
+          ]
+        ],
+        "cells": [
+          [
+            861,
+            1186
+          ],
+          [
+            862,
+            1186
+          ]
+        ],
+        "surfaces": [
+          "F",
+          "P"
+        ],
+        "rows": [
+          286,
+          290,
+          306,
+          310
+        ],
+        "P_F_pairs": [
+          {
+            "csr_row": 286,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              861,
+              1186
+            ],
+            "edge_rc": [
+              [
+                862,
+                1186
+              ],
+              [
+                862,
+                1187
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              5.575099945068359,
+              3.3240644931793213
+            ],
+            "candidate_endpoint_heights": [
+              5.563718318939209,
+              3.8240644931793213
+            ],
+            "continuous_x64_endpoint_heights": [
+              5.5637184336808,
+              3.8240644931801078
+            ],
+            "t_B_exact_rational": 0.022256399838712373,
+            "t_design_intersection_binary64_exact": 0.03174074835669671,
+            "t_continuous_x64_exact_rational": 0.02225639983872675,
+            "t_H_exact_rational": 0.022256335350106977,
+            "allowed_t_interval": [
+              0.022256399838712373,
+              0.03174074835669671
+            ],
+            "outside_interval_by_t": 6.448860539717388e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 290,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              861,
+              1186
+            ],
+            "edge_rc": [
+              [
+                862,
+                1186
+              ],
+              [
+                862,
+                1187
+              ]
+            ],
+            "endpoint_levels": [
+              5.525000000000001,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              5.575099945068359,
+              3.3240644931793213
+            ],
+            "candidate_endpoint_heights": [
+              5.563718318939209,
+              3.8240644931793213
+            ],
+            "continuous_x64_endpoint_heights": [
+              5.5637184336808,
+              3.8240644931801078
+            ],
+            "t_B_exact_rational": 0.02225639983871199,
+            "t_design_intersection_binary64_exact": 0.03174074835669671,
+            "t_continuous_x64_exact_rational": 0.02225639983872625,
+            "t_H_exact_rational": 0.022256335350106477,
+            "allowed_t_interval": [
+              0.02225639983871199,
+              0.03174074835669671
+            ],
+            "outside_interval_by_t": 6.448860551057707e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 306,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              862,
+              1186
+            ],
+            "edge_rc": [
+              [
+                862,
+                1186
+              ],
+              [
+                862,
+                1187
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              5.575099945068359,
+              3.3240644931793213
+            ],
+            "candidate_endpoint_heights": [
+              5.563718318939209,
+              3.8240644931793213
+            ],
+            "continuous_x64_endpoint_heights": [
+              5.5637184336808,
+              3.8240644931801078
+            ],
+            "t_B_exact_rational": 0.022256399838712373,
+            "t_design_intersection_binary64_exact": 0.03174074835669671,
+            "t_continuous_x64_exact_rational": 0.02225639983872675,
+            "t_H_exact_rational": 0.022256335350106977,
+            "allowed_t_interval": [
+              0.022256399838712373,
+              0.03174074835669671
+            ],
+            "outside_interval_by_t": 6.448860539717388e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 310,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              862,
+              1186
+            ],
+            "edge_rc": [
+              [
+                862,
+                1186
+              ],
+              [
+                862,
+                1187
+              ]
+            ],
+            "endpoint_levels": [
+              5.525000000000001,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              5.575099945068359,
+              3.3240644931793213
+            ],
+            "candidate_endpoint_heights": [
+              5.563718318939209,
+              3.8240644931793213
+            ],
+            "continuous_x64_endpoint_heights": [
+              5.5637184336808,
+              3.8240644931801078
+            ],
+            "t_B_exact_rational": 0.02225639983871199,
+            "t_design_intersection_binary64_exact": 0.03174074835669671,
+            "t_continuous_x64_exact_rational": 0.02225639983872625,
+            "t_H_exact_rational": 0.022256335350106477,
+            "allowed_t_interval": [
+              0.02225639983871199,
+              0.03174074835669671
+            ],
+            "outside_interval_by_t": 6.448860551057707e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          }
+        ],
+        "max_t_violation": 6.448860551057707e-08
+      },
+      {
+        "edge_rc": [
+          [
+            863,
+            1187
+          ],
+          [
+            864,
+            1187
+          ]
+        ],
+        "cells": [
+          [
+            863,
+            1186
+          ],
+          [
+            863,
+            1187
+          ]
+        ],
+        "surfaces": [
+          "F",
+          "P"
+        ],
+        "rows": [
+          342,
+          346,
+          354,
+          358
+        ],
+        "P_F_pairs": [
+          {
+            "csr_row": 342,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              863,
+              1186
+            ],
+            "edge_rc": [
+              [
+                863,
+                1187
+              ],
+              [
+                864,
+                1187
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              4.539211273193359,
+              5.732424736022949
+            ],
+            "candidate_endpoint_heights": [
+              4.8265862464904785,
+              5.671956539154053
+            ],
+            "continuous_x64_endpoint_heights": [
+              4.826586345901758,
+              5.67195670978453
+            ],
+            "t_B_exact_rational": 0.17383707315123753,
+            "t_design_intersection_binary64_exact": 0.20371707045812093,
+            "t_continuous_x64_exact_rational": 0.17383707314928754,
+            "t_H_exact_rational": 0.17383688595328436,
+            "allowed_t_interval": [
+              0.17383707315123753,
+              0.20371707045812093
+            ],
+            "outside_interval_by_t": 1.8719795317213115e-07,
+            "continuous_outside_interval_by_t": 1.9499996653734415e-12,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": true,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 346,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              863,
+              1186
+            ],
+            "edge_rc": [
+              [
+                863,
+                1187
+              ],
+              [
+                864,
+                1187
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525000000000001
+            ],
+            "baseline_endpoint_heights": [
+              4.539211273193359,
+              5.732424736022949
+            ],
+            "candidate_endpoint_heights": [
+              4.8265862464904785,
+              5.671956539154053
+            ],
+            "continuous_x64_endpoint_heights": [
+              4.826586345901758,
+              5.67195670978453
+            ],
+            "t_B_exact_rational": 0.17383707315123692,
+            "t_design_intersection_binary64_exact": 0.20371707045812093,
+            "t_continuous_x64_exact_rational": 0.17383707314928667,
+            "t_H_exact_rational": 0.1738368859532835,
+            "allowed_t_interval": [
+              0.17383707315123692,
+              0.20371707045812093
+            ],
+            "outside_interval_by_t": 1.8719795342516847e-07,
+            "continuous_outside_interval_by_t": 1.950252702441905e-12,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": true,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 354,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              863,
+              1187
+            ],
+            "edge_rc": [
+              [
+                863,
+                1187
+              ],
+              [
+                864,
+                1187
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              4.539211273193359,
+              5.732424736022949
+            ],
+            "candidate_endpoint_heights": [
+              4.8265862464904785,
+              5.671956539154053
+            ],
+            "continuous_x64_endpoint_heights": [
+              4.826586345901758,
+              5.67195670978453
+            ],
+            "t_B_exact_rational": 0.17383707315123753,
+            "t_design_intersection_binary64_exact": 0.20371707045812093,
+            "t_continuous_x64_exact_rational": 0.17383707314928754,
+            "t_H_exact_rational": 0.17383688595328436,
+            "allowed_t_interval": [
+              0.17383707315123753,
+              0.20371707045812093
+            ],
+            "outside_interval_by_t": 1.8719795317213115e-07,
+            "continuous_outside_interval_by_t": 1.9499996653734415e-12,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": true,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 358,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              863,
+              1187
+            ],
+            "edge_rc": [
+              [
+                863,
+                1187
+              ],
+              [
+                864,
+                1187
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525000000000001
+            ],
+            "baseline_endpoint_heights": [
+              4.539211273193359,
+              5.732424736022949
+            ],
+            "candidate_endpoint_heights": [
+              4.8265862464904785,
+              5.671956539154053
+            ],
+            "continuous_x64_endpoint_heights": [
+              4.826586345901758,
+              5.67195670978453
+            ],
+            "t_B_exact_rational": 0.17383707315123692,
+            "t_design_intersection_binary64_exact": 0.20371707045812093,
+            "t_continuous_x64_exact_rational": 0.17383707314928667,
+            "t_H_exact_rational": 0.1738368859532835,
+            "allowed_t_interval": [
+              0.17383707315123692,
+              0.20371707045812093
+            ],
+            "outside_interval_by_t": 1.8719795342516847e-07,
+            "continuous_outside_interval_by_t": 1.950252702441905e-12,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": true,
+            "physical_crossing_fail": true
+          }
+        ],
+        "max_t_violation": 1.8719795342516847e-07
+      },
+      {
+        "edge_rc": [
+          [
+            865,
+            1187
+          ],
+          [
+            865,
+            1188
+          ]
+        ],
+        "cells": [
+          [
+            864,
+            1187
+          ],
+          [
+            865,
+            1187
+          ]
+        ],
+        "surfaces": [
+          "F",
+          "P"
+        ],
+        "rows": [
+          394,
+          398,
+          414,
+          418
+        ],
+        "P_F_pairs": [
+          {
+            "csr_row": 394,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              864,
+              1187
+            ],
+            "edge_rc": [
+              [
+                865,
+                1187
+              ],
+              [
+                865,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              6.682802200317383,
+              4.388468265533447
+            ],
+            "candidate_endpoint_heights": [
+              6.208279609680176,
+              4.836691856384277
+            ],
+            "continuous_x64_endpoint_heights": [
+              6.208279765934397,
+              4.836691872204241
+            ],
+            "t_B_exact_rational": 0.5046354337370755,
+            "t_design_intersection_binary64_exact": 0.4981669560208199,
+            "t_continuous_x64_exact_rational": 0.49816695602070116,
+            "t_H_exact_rational": 0.4981668931049201,
+            "allowed_t_interval": [
+              0.4981669560208199,
+              0.5046354337370755
+            ],
+            "outside_interval_by_t": 6.291589974626105e-08,
+            "continuous_outside_interval_by_t": 1.1872997546986017e-13,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": true,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 398,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              864,
+              1187
+            ],
+            "edge_rc": [
+              [
+                865,
+                1187
+              ],
+              [
+                865,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              6.682802200317383,
+              4.388468265533447
+            ],
+            "candidate_endpoint_heights": [
+              6.208279609680176,
+              4.836691856384277
+            ],
+            "continuous_x64_endpoint_heights": [
+              6.208279765934397,
+              4.836691872204241
+            ],
+            "t_B_exact_rational": 0.5046354337370755,
+            "t_design_intersection_binary64_exact": 0.4981669560208199,
+            "t_continuous_x64_exact_rational": 0.49816695602070116,
+            "t_H_exact_rational": 0.4981668931049201,
+            "allowed_t_interval": [
+              0.4981669560208199,
+              0.5046354337370755
+            ],
+            "outside_interval_by_t": 6.291589974626105e-08,
+            "continuous_outside_interval_by_t": 1.1872997546986017e-13,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": true,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 414,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              865,
+              1187
+            ],
+            "edge_rc": [
+              [
+                865,
+                1187
+              ],
+              [
+                865,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              6.682802200317383,
+              4.388468265533447
+            ],
+            "candidate_endpoint_heights": [
+              6.208279609680176,
+              4.836691856384277
+            ],
+            "continuous_x64_endpoint_heights": [
+              6.208279765934397,
+              4.836691872204241
+            ],
+            "t_B_exact_rational": 0.5046354337370755,
+            "t_design_intersection_binary64_exact": 0.4981669560208199,
+            "t_continuous_x64_exact_rational": 0.49816695602070116,
+            "t_H_exact_rational": 0.4981668931049201,
+            "allowed_t_interval": [
+              0.4981669560208199,
+              0.5046354337370755
+            ],
+            "outside_interval_by_t": 6.291589974626105e-08,
+            "continuous_outside_interval_by_t": 1.1872997546986017e-13,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": true,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 418,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              865,
+              1187
+            ],
+            "edge_rc": [
+              [
+                865,
+                1187
+              ],
+              [
+                865,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              6.682802200317383,
+              4.388468265533447
+            ],
+            "candidate_endpoint_heights": [
+              6.208279609680176,
+              4.836691856384277
+            ],
+            "continuous_x64_endpoint_heights": [
+              6.208279765934397,
+              4.836691872204241
+            ],
+            "t_B_exact_rational": 0.5046354337370755,
+            "t_design_intersection_binary64_exact": 0.4981669560208199,
+            "t_continuous_x64_exact_rational": 0.49816695602070116,
+            "t_H_exact_rational": 0.4981668931049201,
+            "allowed_t_interval": [
+              0.4981669560208199,
+              0.5046354337370755
+            ],
+            "outside_interval_by_t": 6.291589974626105e-08,
+            "continuous_outside_interval_by_t": 1.1872997546986017e-13,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": true,
+            "physical_crossing_fail": true
+          }
+        ],
+        "max_t_violation": 6.291589974626105e-08
+      },
+      {
+        "edge_rc": [
+          [
+            866,
+            1187
+          ],
+          [
+            866,
+            1188
+          ]
+        ],
+        "cells": [
+          [
+            865,
+            1187
+          ],
+          [
+            866,
+            1187
+          ]
+        ],
+        "surfaces": [
+          "F",
+          "P"
+        ],
+        "rows": [
+          422,
+          426,
+          450,
+          454
+        ],
+        "P_F_pairs": [
+          {
+            "csr_row": 422,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              865,
+              1187
+            ],
+            "edge_rc": [
+              [
+                866,
+                1187
+              ],
+              [
+                866,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              7.467208385467529,
+              5.0007853507995605
+            ],
+            "candidate_endpoint_heights": [
+              6.967208385467529,
+              5.155792713165283
+            ],
+            "continuous_x64_endpoint_heights": [
+              6.967208385467668,
+              5.15579253130339
+            ],
+            "t_B_exact_rational": 0.787459555059252,
+            "t_design_intersection_binary64_exact": 0.796177411251089,
+            "t_continuous_x64_exact_rational": 0.7961774112510738,
+            "t_H_exact_rational": 0.7961774911854066,
+            "allowed_t_interval": [
+              0.787459555059252,
+              0.796177411251089
+            ],
+            "outside_interval_by_t": 7.993431763320323e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 426,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              865,
+              1187
+            ],
+            "edge_rc": [
+              [
+                866,
+                1187
+              ],
+              [
+                866,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              7.467208385467529,
+              5.0007853507995605
+            ],
+            "candidate_endpoint_heights": [
+              6.967208385467529,
+              5.155792713165283
+            ],
+            "continuous_x64_endpoint_heights": [
+              6.967208385467668,
+              5.15579253130339
+            ],
+            "t_B_exact_rational": 0.787459555059252,
+            "t_design_intersection_binary64_exact": 0.796177411251089,
+            "t_continuous_x64_exact_rational": 0.7961774112510738,
+            "t_H_exact_rational": 0.7961774911854066,
+            "allowed_t_interval": [
+              0.787459555059252,
+              0.796177411251089
+            ],
+            "outside_interval_by_t": 7.993431763320323e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 450,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              866,
+              1187
+            ],
+            "edge_rc": [
+              [
+                866,
+                1187
+              ],
+              [
+                866,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              7.467208385467529,
+              5.0007853507995605
+            ],
+            "candidate_endpoint_heights": [
+              6.967208385467529,
+              5.155792713165283
+            ],
+            "continuous_x64_endpoint_heights": [
+              6.967208385467668,
+              5.15579253130339
+            ],
+            "t_B_exact_rational": 0.787459555059252,
+            "t_design_intersection_binary64_exact": 0.796177411251089,
+            "t_continuous_x64_exact_rational": 0.7961774112510738,
+            "t_H_exact_rational": 0.7961774911854066,
+            "allowed_t_interval": [
+              0.787459555059252,
+              0.796177411251089
+            ],
+            "outside_interval_by_t": 7.993431763320323e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 454,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              866,
+              1187
+            ],
+            "edge_rc": [
+              [
+                866,
+                1187
+              ],
+              [
+                866,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              7.467208385467529,
+              5.0007853507995605
+            ],
+            "candidate_endpoint_heights": [
+              6.967208385467529,
+              5.155792713165283
+            ],
+            "continuous_x64_endpoint_heights": [
+              6.967208385467668,
+              5.15579253130339
+            ],
+            "t_B_exact_rational": 0.787459555059252,
+            "t_design_intersection_binary64_exact": 0.796177411251089,
+            "t_continuous_x64_exact_rational": 0.7961774112510738,
+            "t_H_exact_rational": 0.7961774911854066,
+            "allowed_t_interval": [
+              0.787459555059252,
+              0.796177411251089
+            ],
+            "outside_interval_by_t": 7.993431763320323e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          }
+        ],
+        "max_t_violation": 7.993431763320323e-08
+      },
+      {
+        "edge_rc": [
+          [
+            867,
+            1187
+          ],
+          [
+            867,
+            1188
+          ]
+        ],
+        "cells": [
+          [
+            866,
+            1187
+          ],
+          [
+            867,
+            1187
+          ]
+        ],
+        "surfaces": [
+          "F",
+          "P"
+        ],
+        "rows": [
+          458,
+          462,
+          482,
+          486
+        ],
+        "P_F_pairs": [
+          {
+            "csr_row": 458,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              866,
+              1187
+            ],
+            "edge_rc": [
+              [
+                867,
+                1187
+              ],
+              [
+                867,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              7.88560676574707,
+              5.426860332489014
+            ],
+            "candidate_endpoint_heights": [
+              7.38560676574707,
+              5.4476470947265625
+            ],
+            "continuous_x64_endpoint_heights": [
+              7.38560676574706,
+              5.447647290515025
+            ],
+            "t_B_exact_rational": 0.9600854865782386,
+            "t_design_intersection_binary64_exact": 0.9769515445917326,
+            "t_continuous_x64_exact_rational": 0.9600854865782404,
+            "t_H_exact_rational": 0.9600853895825888,
+            "allowed_t_interval": [
+              0.9600854865782386,
+              0.9769515445917326
+            ],
+            "outside_interval_by_t": 9.699564975003825e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 462,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              866,
+              1187
+            ],
+            "edge_rc": [
+              [
+                867,
+                1187
+              ],
+              [
+                867,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              7.88560676574707,
+              5.426860332489014
+            ],
+            "candidate_endpoint_heights": [
+              7.38560676574707,
+              5.4476470947265625
+            ],
+            "continuous_x64_endpoint_heights": [
+              7.38560676574706,
+              5.447647290515025
+            ],
+            "t_B_exact_rational": 0.9600854865782386,
+            "t_design_intersection_binary64_exact": 0.9769515445917326,
+            "t_continuous_x64_exact_rational": 0.9600854865782404,
+            "t_H_exact_rational": 0.9600853895825888,
+            "allowed_t_interval": [
+              0.9600854865782386,
+              0.9769515445917326
+            ],
+            "outside_interval_by_t": 9.699564975003825e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 482,
+            "surface": "P",
+            "type": "cross_lower",
+            "cell_rc": [
+              867,
+              1187
+            ],
+            "edge_rc": [
+              [
+                867,
+                1187
+              ],
+              [
+                867,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              7.88560676574707,
+              5.426860332489014
+            ],
+            "candidate_endpoint_heights": [
+              7.38560676574707,
+              5.4476470947265625
+            ],
+            "continuous_x64_endpoint_heights": [
+              7.38560676574706,
+              5.447647290515025
+            ],
+            "t_B_exact_rational": 0.9600854865782386,
+            "t_design_intersection_binary64_exact": 0.9769515445917326,
+            "t_continuous_x64_exact_rational": 0.9600854865782404,
+            "t_H_exact_rational": 0.9600853895825888,
+            "allowed_t_interval": [
+              0.9600854865782386,
+              0.9769515445917326
+            ],
+            "outside_interval_by_t": 9.699564975003825e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          },
+          {
+            "csr_row": 486,
+            "surface": "F",
+            "type": "cross_lower",
+            "cell_rc": [
+              867,
+              1187
+            ],
+            "edge_rc": [
+              [
+                867,
+                1187
+              ],
+              [
+                867,
+                1188
+              ]
+            ],
+            "endpoint_levels": [
+              5.525,
+              5.525
+            ],
+            "baseline_endpoint_heights": [
+              7.88560676574707,
+              5.426860332489014
+            ],
+            "candidate_endpoint_heights": [
+              7.38560676574707,
+              5.4476470947265625
+            ],
+            "continuous_x64_endpoint_heights": [
+              7.38560676574706,
+              5.447647290515025
+            ],
+            "t_B_exact_rational": 0.9600854865782386,
+            "t_design_intersection_binary64_exact": 0.9769515445917326,
+            "t_continuous_x64_exact_rational": 0.9600854865782404,
+            "t_H_exact_rational": 0.9600853895825888,
+            "allowed_t_interval": [
+              0.9600854865782386,
+              0.9769515445917326
+            ],
+            "outside_interval_by_t": 9.699564975003825e-08,
+            "continuous_outside_interval_by_t": 0.0,
+            "baseline_crossing_pass": true,
+            "continuous_x64_crossing_fail": false,
+            "physical_crossing_fail": true
+          }
+        ],
+        "max_t_violation": 9.699564975003825e-08
+      }
+    ],
+    "max_candidate_t_interval_excess": 1.8719795342516847e-07,
+    "interpretation": "The 20 non-roundoff C rows map to direct crossing drift on five native edges; each edge is represented by P and F and by two incident cells. The continuous ADMM x64 iterate is already slightly outside direct intervals on more edges, within its numerical residual scale; float32 makes five material edge groups visible at up to ~1.9e-7 of edge parameter. The three extra negative C rows are only ~1e-15 arithmetic residuals on unchanged B edges and pass direct geometry."
+  },
+  "collapsed_single_variable_intervals": [
+    {
+      "variable_index": 1,
+      "rc": [
+        857,
+        1182
+      ],
+      "active_lower_row": {
+        "row": 10,
+        "surface": "P",
+        "type": "cross_lower",
+        "cell_rc": [
+          856,
+          1181
+        ],
+        "edge_rc": [
+          [
+            856,
+            1182
+          ],
+          [
+            857,
+            1182
+          ]
+        ]
+      },
+      "active_upper_row": {
+        "row": 19,
+        "surface": "P",
+        "type": "cross_upper",
+        "cell_rc": [
+          856,
+          1182
+        ],
+        "edge_rc": [
+          [
+            856,
+            1182
+          ],
+          [
+            857,
+            1182
+          ]
+        ]
+      },
+      "stored_C_lower_float": 6.675186634063721,
+      "stored_C_upper_float": 6.675186634063721,
+      "stored_C_exact_fraction_width": 5.60981754089469e-17,
+      "direct_geometry_lower_row": {
+        "row": 10,
+        "surface": "P",
+        "type": "cross_lower",
+        "cell_rc": [
+          856,
+          1181
+        ],
+        "edge_rc": [
+          [
+            856,
+            1182
+          ],
+          [
+            857,
+            1182
+          ]
+        ]
+      },
+      "direct_geometry_upper_row": {
+        "row": 16,
+        "surface": "P",
+        "type": "cross_sign_dry",
+        "cell_rc": [
+          856,
+          1182
+        ],
+        "edge_rc": [
+          [
+            856,
+            1182
+          ],
+          [
+            857,
+            1182
+          ]
+        ]
+      },
+      "direct_geometry_lower_float": 6.675186634063721,
+      "direct_geometry_upper_float": 6.675186634063721,
+      "direct_geometry_exact_fraction_width": 0.0,
+      "B_value": 6.675186634063721,
+      "B_equals_direct_geometry_point": true
+    },
+    {
+      "variable_index": 3,
+      "rc": [
+        857,
+        1184
+      ],
+      "active_lower_row": {
+        "row": 46,
+        "surface": "F",
+        "type": "cross_lower",
+        "cell_rc": [
+          856,
+          1183
+        ],
+        "edge_rc": [
+          [
+            856,
+            1184
+          ],
+          [
+            857,
+            1184
+          ]
+        ]
+      },
+      "active_upper_row": {
+        "row": 51,
+        "surface": "P",
+        "type": "cross_upper",
+        "cell_rc": [
+          856,
+          1184
+        ],
+        "edge_rc": [
+          [
+            856,
+            1184
+          ],
+          [
+            857,
+            1184
+          ]
+        ]
+      },
+      "stored_C_lower_float": 5.488141059875488,
+      "stored_C_upper_float": 5.488141059875488,
+      "stored_C_exact_fraction_width": -2.0002362498791288e-16,
+      "direct_geometry_lower_row": {
+        "row": 42,
+        "surface": "P",
+        "type": "cross_lower",
+        "cell_rc": [
+          856,
+          1183
+        ],
+        "edge_rc": [
+          [
+            856,
+            1184
+          ],
+          [
+            857,
+            1184
+          ]
+        ]
+      },
+      "direct_geometry_upper_row": {
+        "row": 49,
+        "surface": "P",
+        "type": "cross_sign_wet",
+        "cell_rc": [
+          856,
+          1184
+        ],
+        "edge_rc": [
+          [
+            856,
+            1184
+          ],
+          [
+            857,
+            1184
+          ]
+        ]
+      },
+      "direct_geometry_lower_float": 5.488141059875488,
+      "direct_geometry_upper_float": 5.488141059875488,
+      "direct_geometry_exact_fraction_width": 0.0,
+      "B_value": 5.488141059875488,
+      "B_equals_direct_geometry_point": true
+    }
+  ],
+  "neighborhood_reconciliation": {
+    "old_9_vs_13": "The 13-variable set is now extracted from CSR supports of the 23 strictly negative candidate rows; the nine count means a single \u00b11 ULP move can fix at least one exact-float C row while holding all others fixed. It includes (858,1183), which only fixes two ~1e-15 rows. Restricting to the 20 rows below -1e-12 leaves 10 support variables and six individually helpful variables. The count difference is therefore a definition/roundoff distinction, not proof of joint infeasibility.",
+    "prior_3pow13_zero_result": "INVALIDATED: the prior enumeration required every floating C_cross residual to be >=0, although B itself has 14 residuals in [-8.89e-16,0). It cannot establish mathematical or geometric infeasibility. No exhaustive neighborhood enumeration is performed here."
+  },
+  "source_anchors": {
+    "crossing_row_builder": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepare_wet_bank_matrices.py",
+      "sha256": "65e05a6540026b08df7effa53c58534121bb2fa89e116a2ef07ad46ba0edf286",
+      "lines": "145-256"
+    },
+    "local_incident_level_known_limitation": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepare_wet_bank_matrices.py",
+      "lines": "262-274",
+      "note": "P-NaN fallback also skips F at that corner; attempt-08 has 0 P-NaN/F-finite samples among 121 nodes x 4 incidences, so this does not affect this prepared run but must be corrected before reuse."
+    }
+  },
+  "limitations": [
+    "This diagnoses the frozen candidate only; it neither finds nor rules out a joint feasible f32 neighbor.",
+    "The exact-float C baseline residual is an arithmetic representation issue; physical crossing feasibility is assessed independently from direct geometry."
+  ]
+}

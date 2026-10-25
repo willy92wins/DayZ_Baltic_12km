@@ -1,0 +1,79 @@
+{
+  "schema": "ev94.slope-diagnostic-coordinate-erratum.v1",
+  "status": "ERRATUM_ONLY_ORIGINAL_PRESERVED",
+  "original_diagnostic": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-diagnostic.json",
+    "sha256": "4053a8361a0c4074643e4f9a29d9196ea0b47549d04574fa75c89d08bf16e272",
+    "modified": false
+  },
+  "source_of_correct_coordinate_convention": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+    "sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "anchors": {
+      "Z0": "line 43: Z0=12282.0",
+      "center_coordinate": "line 222: center_z_m=Z0-row*CELL",
+      "vertex_coordinates": "lines 298-299: Z0-r*CELL and Z0-(r+1)*CELL"
+    }
+  },
+  "correction": {
+    "old_formula": "Z=12288-6*row",
+    "correct_formula": "Z=12282-6*row",
+    "vertices_rc": [
+      [
+        899,
+        445
+      ],
+      [
+        899,
+        446
+      ],
+      [
+        900,
+        446
+      ]
+    ],
+    "xyz_old_m": [
+      [
+        2670,
+        7.2344970703125,
+        6894
+      ],
+      [
+        2676,
+        3.1139774322509766,
+        6894
+      ],
+      [
+        2676,
+        2.2569596767425537,
+        6888
+      ]
+    ],
+    "xyz_corrected_m": [
+      [
+        2670,
+        7.2344970703125,
+        6888
+      ],
+      [
+        2676,
+        3.1139774322509766,
+        6888
+      ],
+      [
+        2676,
+        2.2569596767425537,
+        6882
+      ]
+    ],
+    "unchanged": [
+      "RC vertices",
+      "B/H heights",
+      "triangle identity NW-NE-SE",
+      "slope_deg values",
+      "gate failure and scalar-bound argument"
+    ],
+    "reason": "The error is a constant +6 m offset in Z at every vertex; it changes absolute placement only, not face edge vectors, normals, slopes, or the selected cell."
+  },
+  "chronology": "Consumer fix review follows the already completed single solver run; this erratum does not imply a rerun or candidate acceptance."
+}

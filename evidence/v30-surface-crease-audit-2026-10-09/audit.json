@@ -1,0 +1,84 @@
+{
+  "status": "WHOLE_MAP_NATIVE_HINGE_INVENTORY_NOT_ACCEPTANCE",
+  "source_sha256": "70f74c9334620c458880f728d3ff15cec7867ffe2bd8bd2e9d5135e1692b7ed5",
+  "plane_sha256": "d59dcdb908b4381a456629fb080a9769147b6fb1a3e321a6423bc931a0fb8803",
+  "constraints_sha256": "5f6a40ff3281defdd643409bb6a00d2bbaa51f8f9c727603aedcd06e5947df33",
+  "native_triangles": 8380418,
+  "internal_edges": 12566533,
+  "domains": {
+    "all": {
+      "edges": 12566533,
+      "mean": 0.8883083462715149,
+      "p90": 1.3105976581573486,
+      "p99": 18.411083221435547,
+      "maximum": 100.86637878417969,
+      "above10": 316033,
+      "above20": 105908,
+      "above30": 30221
+    },
+    "dry": {
+      "edges": 9414783,
+      "mean": 0.7537249326705933,
+      "p90": 1.2180341482162476,
+      "p99": 14.672533988952637,
+      "maximum": 69.99986267089844,
+      "above10": 174483,
+      "above20": 45924,
+      "above30": 8877
+    },
+    "natural_dry": {
+      "edges": 9159084,
+      "mean": 0.6685518026351929,
+      "p90": 1.1097739934921265,
+      "p99": 12.881413459777832,
+      "maximum": 69.99986267089844,
+      "above10": 135682,
+      "above20": 35415,
+      "above30": 8341
+    },
+    "natural_bank": {
+      "edges": 1558900,
+      "mean": 2.206249952316284,
+      "p90": 7.5277910232543945,
+      "p99": 24.8442440032959,
+      "maximum": 69.99986267089844,
+      "above10": 110564,
+      "above20": 29725,
+      "above30": 7698
+    },
+    "natural_interior": {
+      "edges": 7295342,
+      "mean": 0.352920800447464,
+      "p90": 0.7982221245765686,
+      "p99": 4.166372299194336,
+      "maximum": 57.25836181640625,
+      "above10": 24031,
+      "above20": 5417,
+      "above30": 623
+    },
+    "engineering": {
+      "edges": 135886,
+      "mean": 0.6075711846351624,
+      "p90": 0.3567247986793518,
+      "p99": 17.228788375854492,
+      "maximum": 78.2301254272461,
+      "above10": 2418,
+      "above20": 1109,
+      "above30": 588
+    }
+  },
+  "controls": [
+    "inclined_plane_zero",
+    "known_45_degree_fold",
+    "independent_cross_product_60_faces",
+    "raised_vertex_detected",
+    "exact_four_incident_vertices"
+  ],
+  "seconds": 5.812000000005355,
+  "limits": [
+    "Dihedral angles measure folds between rendered-source triangles, not artistic intent or actual LOD selection.",
+    "Thresholds 10/20/30 degrees are inventory bins, not retroactive acceptance thresholds.",
+    "Domain requires all four unique vertices of the actual incident triangles.",
+    "Fixed means the previous terminal pass protection, not a new immutable product requirement."
+  ]
+}

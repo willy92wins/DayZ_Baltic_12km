@@ -1,0 +1,34 @@
+{
+  "schema": "ev112-c0c1-shores-chain-binding.v1",
+  "gate_sha256": "e099311039b6938976f6c42f995f0b371f186c9413c7a5bf76424defe8ad51de",
+  "scope": "Only the explicit OT7 shores input binding. Frozen census, coordinates, acceptance thresholds, and pending approval state unchanged.",
+  "positive": {
+    "path": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev112-ot4-20261018/gate-c0c1-chain-a.json",
+    "sha256": "2143ca6f9fdc4943b875af8af22ea6d9ab88f820a024933d20ebf187a20b5f4b",
+    "verdict": "PENDING",
+    "fails": [],
+    "pending": [
+      "G8 c2 (road along a sea channel): excluded from the causeway rule, approval not recorded",
+      "G8 c3 (stream crossing): excluded from the causeway rule, approval not recorded",
+      "G8 c4 (road along a sea channel): excluded from the causeway rule, approval not recorded",
+      "G8 c5 (coastal road with a pond inland): excluded from the causeway rule, approval not recorded",
+      "G8 c6 (river junction crossing): excluded from the causeway rule, approval not recorded",
+      "G8 c7 (pond river beside the road): excluded from the causeway rule, approval not recorded"
+    ]
+  },
+  "negative": {
+    "path": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev112-ot4-20261018/c0c1-chain-negative/result.json",
+    "sha256": "de1181959a763810fb87fe38d3080cb02824281d8c20c6aec08763c76077a324",
+    "status": "PASS",
+    "detected": [
+      "G0 EV112 shores chain before_fp hash differs from the frozen input"
+    ]
+  },
+  "input_hashes": {
+    "before": "b6242dce1a6bec491a346914e7ab2e1b2684bba06a55de887f9592db4163a48a",
+    "before_fp": "9874f0605d295d6ec5e4f0cc9e745dc9578415a1036ea9ca99f07f509d64e3ca",
+    "cover": "9253ae323a9f04252604dda33224464e8b1e394c6d4b8c64bcf40782172ee16e",
+    "envelope": "cc45e2ef667ae2ba78de4c11283c648d2293c53303148f9247361b639a0e73a6"
+  },
+  "limitation": "This does not accept c2-c7 or EV112, and no runtime evidence is claimed."
+}

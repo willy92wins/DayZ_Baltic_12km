@@ -1,0 +1,47 @@
+{
+  "schema": "ev94.float32-neighborhood-independent-preflight.v1",
+  "status": "PASS_SINGLE_DIAGNOSTIC_ENUMERATION",
+  "reviewed_sources": {
+    "plan": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\PLAN.md",
+      "sha256": "28165d3d5c5d06dbe4383c5ad1d5f64d4e33f002d77c05873b809a5da470ad7a"
+    },
+    "executor": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\executor.py",
+      "sha256": "bce4f96a8bcf4850a656341f9cc87016f61b04fc568e4931eaf73513db5d2c23"
+    },
+    "tests": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\test_executor.py",
+      "sha256": "4a2579321aa18bdf9ab63d0b0b811edf18663525852fbe82d7e369baab1e562e"
+    }
+  },
+  "scope": {
+    "assignment_count": 59049,
+    "target_node_count": 10,
+    "ulp_steps": [
+      -1,
+      0,
+      1
+    ],
+    "solver_calls": 0,
+    "real_enumeration_executed": false,
+    "output_directory_exists": false
+  },
+  "limits_checked": {
+    "timer_seconds": 120.0,
+    "peak_working_set_bytes": 1073741824,
+    "timer_scope": "numeric enumeration loop; source/input loading and preflight occur before loop timer",
+    "memory_sampling": "process peak checked every 1024 assignments and at completion",
+    "one_shot_output": "fixed real-enumeration-01 directory; existing directory rejects invocation; incomplete run is terminal",
+    "candidate_status": "diagnostic only, unaccepted; independent full geometry/coverage consumer remains required"
+  },
+  "review_basis": {
+    "fixtures": "13 GIS unit tests had already passed in the review turn; not rerun for this receipt",
+    "checks": "target rederived from 5 failed edges/20 rows and exact CSR support; P/F exact signs and 116 direct crossings; D8, face cones, energy and improvement gates; baseline-positive/raw-negative controls"
+  },
+  "limitations": [
+    "This receipt does not report a real enumeration result or establish feasibility.",
+    "The review confirms code/source identity at the recorded hashes; caller must rehash them immediately before the one permitted invocation.",
+    "The 1 GiB threshold is sampled, so an exceedance is detected at the next sample boundary; any run exceeding it must terminate without acceptance."
+  ]
+}

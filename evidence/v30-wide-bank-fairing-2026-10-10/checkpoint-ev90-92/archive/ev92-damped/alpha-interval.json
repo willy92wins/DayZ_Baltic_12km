@@ -1,0 +1,184 @@
+{
+  "status": "PROPOSED_SCALAR_RULE_ONLY_NO_SOLVE_NO_TERRAIN",
+  "scope": "EV92 design proposal from frozen EV91 direction H91-B. This calculation does not authorize, run, or emit a candidate.",
+  "inputs": {
+    "B_path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz",
+    "B_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "H91_direction_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\candidate-terrain.npz",
+    "H91_sha256": "865901ab24aa3736da57847f9112d3c73181085213f89b48ef2e3e7a9f6ee702",
+    "prepared_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\prepared.json",
+    "prepared_sha256": "127b906c1d2a5d2aa09172ed47dac16cd489aae6a2955428a96166a325605877",
+    "consumer_energy_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py",
+    "consumer_energy_sha256": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+    "shape_contract_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-consumer\\shape_contract.py",
+    "shape_contract_sha256": "8cd9d0fbea03c05e5ae53a31676d79ec2364be83c055213446f6c8599245d533",
+    "ev91_plan_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\plan.md",
+    "ev91_plan_sha256": "f06e72d568823c5475c301d9baed851619cf0e0b0b4ee5b42eeb0c7cd5ec953f",
+    "ev91_receipt_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\authoring.json",
+    "ev91_receipt_sha256": "12be9f321eef9ce586e2c6fe43cce3a55cfed83cc9664ea9f14b8747979d5339",
+    "derivation_script_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev92-damped\\derive-alpha-interval.py",
+    "derivation_script_sha256": "f6277f8c7810217d990609c9993662039a59d15c1707466db8cdf5db046c50f1"
+  },
+  "line": "H(alpha)=B+alpha*(H91-B), alpha in [0,1]; coefficients and roots use float64 uncast B,D.",
+  "energy": {
+    "definition": "Independent consumer stencil_records(variables=prepared.variables_rc); exact rational summation of binary float64 B,D values and stencil coefficients/weights (Dxz weight 2), then converted to float64.",
+    "records_count": 350,
+    "quadratic_constant_linear_quadratic": [
+      221.2263916770154,
+      -186.20880690454646,
+      84.52271160360701
+    ],
+    "exact_binary_rational_coefficients_num_den": [
+      [
+        "1992630190242252085",
+        "9007199254740992"
+      ],
+      [
+        "-209652478347105015",
+        "1125899906842624"
+      ],
+      [
+        "23791028280146777",
+        "281474976710656"
+      ]
+    ],
+    "energy_B": 221.2263916770154,
+    "energy_H91": 119.54029637607596,
+    "target_75pct_B": 165.91979375776157,
+    "roots_in_0_1": [
+      0.35384751023735084
+    ],
+    "lower_bound": 0.35384751023735084
+  },
+  "focus_25pct": {
+    "focus_rc": [
+      840,
+      370
+    ],
+    "B_prominence_m": {
+      "east_west": 1.8323014974594116,
+      "north_south": 1.7872881889343262
+    },
+    "linear_constraints": [
+      {
+        "axis": "east_west",
+        "neighbor_rc": [
+          840,
+          369
+        ],
+        "base_center_minus_neighbor_m": 2.8344321846961975,
+        "line_slope_m_per_alpha": -1.9245920181274414,
+        "allowed_center_minus_neighbor_m": 1.3742261230945587,
+        "root_alpha": 0.7587094032647848,
+        "bound_type": "lower"
+      },
+      {
+        "axis": "east_west",
+        "neighbor_rc": [
+          840,
+          371
+        ],
+        "base_center_minus_neighbor_m": 1.8323014974594116,
+        "line_slope_m_per_alpha": -2.0122772455215454,
+        "allowed_center_minus_neighbor_m": 1.3742261230945587,
+        "root_alpha": 0.22764028932113087,
+        "bound_type": "lower"
+      },
+      {
+        "axis": "north_south",
+        "neighbor_rc": [
+          839,
+          370
+        ],
+        "base_center_minus_neighbor_m": 1.7872881889343262,
+        "line_slope_m_per_alpha": -2.025074005126953,
+        "allowed_center_minus_neighbor_m": 1.3404661417007446,
+        "root_alpha": 0.220644799203558,
+        "bound_type": "lower"
+      },
+      {
+        "axis": "north_south",
+        "neighbor_rc": [
+          841,
+          370
+        ],
+        "base_center_minus_neighbor_m": 2.2955548763275146,
+        "line_slope_m_per_alpha": -2.0227298736572266,
+        "allowed_center_minus_neighbor_m": 1.3404661417007446,
+        "root_alpha": 0.4721780931132973,
+        "bound_type": "lower"
+      }
+    ],
+    "axis_first_crossing_roots": {
+      "east_west": 0.22764028932113087,
+      "north_south": 0.220644799203558
+    },
+    "lower_bound": 0.22764028932113087
+  },
+  "material_interval": {
+    "lower_bound": 0.35384751023735084,
+    "upper_bound": 1.0,
+    "midpoint_rule": "alpha_proposed=(lower_bound+upper_bound)/2; this is a deterministic design point, not selected production alpha.",
+    "alpha_proposed": 0.6769237551186754,
+    "interval_length": 0.6461524897626492,
+    "interpretation": "This interval certifies only the scalar energy and cardinal focus 25% materiality inequalities on the uncast line. It is not feasibility for all shape, angle, topology, physical, compiled, corridor, sector, or runtime gates."
+  },
+  "single_point_diagnostic_after_one_float32_cast": {
+    "focus_prominence_m": {
+      "east_west": 0.47014319896698,
+      "north_south": 0.41646742820739746
+    },
+    "focus_reductions_fraction": {
+      "east_west": 0.7434138433992115,
+      "north_south": 0.7669836175352801
+    },
+    "energy_consumer": 133.9077109102506,
+    "energy_reduction_fraction": 0.394702820512696,
+    "collar_energy_B": 1.031951483568104,
+    "collar_energy_point": 1.031951483568104,
+    "quad_836_370_values_m": [
+      [
+        1.8768006563186646,
+        1.9146623611450195
+      ],
+      [
+        1.8165525197982788,
+        1.887260913848877
+      ]
+    ],
+    "quad_range_m": 0.09810984134674072,
+    "quad_exactly_flat": false,
+    "local_shape_gates": {
+      "focus_positive_prominence_reduced_25pct_both_axes": true,
+      "fixed_population_max_prominence_nonworse_both_axes": true,
+      "fixed_population_sum_squares_prominence_nonworse_both_axes": true,
+      "no_new_strict_minima8": true,
+      "no_new_exactly_constant_2x2_windows": true
+    },
+    "focus_angle_B_deg": 29.999999051747967,
+    "focus_angle_mid_deg": 12.99652910123012,
+    "focus_angle_reduction_deg": 17.003469950517847,
+    "note": "In-memory diagnostic only; not a test of the full consumer and not saved as terrain."
+  },
+  "policy_review": {
+    "same_frozen_direction_only": true,
+    "one_candidate_maximum_if_later_authorized": true,
+    "full_independent_consumer_required": true,
+    "if_any_gate_fails": "reject without selecting another alpha or changing thresholds",
+    "criteria_to_retain": [
+      "all EV90 physical/compiled/P9/protection gates",
+      "focus and population shape gates",
+      "energy and collar gates",
+      "angle/sector/p99/count gates",
+      "no new strict minima",
+      "no new exact-flat 2x2 quads",
+      "profile inspection at real scale"
+    ],
+    "limitations": [
+      "EV91 itself remains rejected and unchanged.",
+      "The scalar interval does not show that midpoint passes global gates.",
+      "Any float32 output must be independently rechecked against exact bounds and every frozen contract.",
+      "This is a new EV92 proposal; EV91 plan forbids post-solve repair/damping."
+    ]
+  }
+}

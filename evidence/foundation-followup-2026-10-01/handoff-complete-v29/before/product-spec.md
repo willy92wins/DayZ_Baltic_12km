@@ -1,0 +1,22 @@
+# Producto y aceptación
+
+Fuente de autoridad: peticiones de Guillermo en esta conversación, límites v0 aprobados el 29-09-2026. El handoff heredado se usa como orientación, no como prueba de herramientas o datos.
+
+| ID | Requisito | Criterio de aceptación |
+|---|---|---|
+| P1 | Región condensada, propuesta 12,288 × 12,288 km | 2048² celdas de 6 m; encuadre aprobado completo y orientación norte, confirmado también por Terrain Builder. |
+| P2 | Conservar agua, costa, islas, ríos y zona natural | Geometrías de referencia trazables; posteriormente costas recorribles y agua funcional; no sustituir todos los lagos por mar. |
+| P3 | Conservar íntegro el acercamiento de San Petersburgo | Misma transformación global, sin escalado local. Huella aproximada 4,81 × 3,83 km. Verificar canales y cruces a escala de juego. |
+| P4 | Narva, frontera y territorio occidental | Localidad y ambas riberas presentes; cruce jugable diseñado y probado; futura base/búnker occidental pendiente de ubicación. |
+| P5 | Conexiones principales | Referencia topológica coherente y una selección jugable medida; las vías se construyen con piezas y anchuras humanas. |
+| P6 | Assets vanilla primero | Inventario y medidas reales antes de colocar edificios/puentes; futuros assets distintivos se priorizan después. |
+| P7 | Objetivo 80–100 jugadores, experiencia tipo Chernarus | Ensayo de carga con hardware y escenarios definidos; separar cliente, servidor, IA, loot y persistencia. No demostrado en fase 0. |
+| P8 | Fuentes y generación reproducibles | Originales identificados por hash/fecha/licencia; transformaciones, excepciones, deltas y resultados registrados. |
+| P9 | Ríos navegables y puentes elevados | Petición30-09: lancha vanilla y margen para barcos medianos. Continuidad de agua, anchura útil, profundidad con agua mínima y gálibo con agua máxima; paso real de embarcación por cauce y puente, además de cruce terrestre. El puente de Narva a tablero2m es provisional y no satisface este requisito. |
+| P10 | Terreno y navegación antes del mapeado | Petición30-09: terminar primero relieve, hidrografía, cauces, orillas y navegación base. Posponer población, edificios, vegetación colocada, carreteras físicas y decoración. Los objetos de ensayo solo reservan gálibos y cruces; después del mapeado habrá que regenerar y validar de nuevo la navmesh. |
+| P11 | Carreteras lisas para conducción DayZ | Petición30-09: perfiles longitudinales progresivos, superficie sin baches ni escalones, y empalmes suaves entre terreno, piezas y puentes. Medir cambios de pendiente y caída transversal, además de pendiente máxima; validar después con vehículos vanilla a distintas velocidades, sin saltos, golpes ni encallamientos atribuibles a la vía. Preparar la reserva del terreno ahora; mapeado físico después según P10. |
+| P12 | Relieve selectivo por jugabilidad | Aprobación30-09: exagerar alturas de zonas concretas por encima de ×3 si conviene, sin fidelidad obligatoria a la escala vertical. Conservar XY, agua/islas/closeup, conexiones y P9/P11; medir perfiles, accesos, cobertura y líneas de visión. Cotas y máscaras de diseño en plans/selective-relief.md; aceptación posterior de terreno y navmesh regenerada. |
+| P13 | Reserva natural y variedad de biomas | Petición30-09: conservar la reserva como punto clave, con alta densidad de árboles en ciertos sectores. Reservar ahora terreno, humedales y mosaico de bosque denso/claros; contrastar el perímetro antes de editar Z. Colocar vegetación después según P10, comprobar contraste entre biomas desde jugador, accesos, colisiones/navmesh y rendimiento del sector más denso. No equiparar cobertura WorldCover con densidad de instancias. |
+| P14 | Contorno suave y bajos sin agua indeseada | Petición01-10: suavizar el outline general y corregir el agua que asoma intermitentemente en zonas bajas. Separar forma del terreno, textura y agua dinámica; comprobar margen y transiciones en las orillas, sin sacrificar canales navegables, islas, humedales ni la reserva. Validación visual con cámaras comparables y muestreo entre vértices, además de alturas nativas. |
+
+El criterio de relieve selectivo está aprobado; las cotas regionales y niveles de agua finales siguen por diseñar y validar. No están decididos densidad urbana, número de puentes jugables, economía militar ni ubicación/diseño del búnker. No se cambian silenciosamente para adaptar los datos al motor.

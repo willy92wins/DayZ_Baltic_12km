@@ -1,0 +1,142 @@
+{
+  "status": "HANDOFF_V29_PARTIAL_ACCEPTANCE_NO_OWN_RUNTIME",
+  "started_utc": "2026-10-01T13:29:34.051293+02:00",
+  "plan": "plans/outline-water-smoothing-v1.md",
+  "active_run": null,
+  "computer_use": "Reset/OFF; no further UI work during handoff.",
+  "remaining": [
+    "Visual acceptance on final V29 at frozen local camera groups",
+    "Isolate target drift in load fixture, then repeat controlled load without relaxing criteria",
+    "Close base acceptance and create full V29 recoverable checkpoint; mapping remains later"
+  ],
+  "updated_utc": "2026-10-01T21:40:32.429232+00:00",
+  "utc": "2026-10-01T13:41:50.3768817Z",
+  "run_id": null,
+  "river": "Twelve frozen segments accepted across separate runs,26.600558km selected channels; identical terrain and physical criteria. Delta8/10 and Narva6 each12physical/event negatives+4clock negatives. river-accepted-segment-coverage.json. No fleet or medium vessel.",
+  "roads": "V29 ed6cdaa5:239126 road sections PASS,0cross/grade/chord; full continuous outline13/13PASS,621260shore extrema0violations;81212frozen points. All7land and4joint hydrology negatives PASS.",
+  "pursuit_v3": "Both bridge traversals reached, physical contact/health/corridor pass; strict rate failed on irregular event timestamps and client end absent after lifecycle forced close. Preserve original FAIL.",
+  "own_processes": "None. Baltic load closed orderly and samplers exit0. Another session later launched @LFPowerGrid; leave it untouched.",
+  "pursuit_v4": "PASS control + both continuous crossings;18negatives; all probes closed before forced_kill lifecycle.",
+  "runtime_pending": "No running test. Final visual acceptance and a valid bounded load test remain pending.",
+  "road_diagnostic": "plans/road-network-v24-on-outline-v33.md; same 88452 station samples show7261 cross/147 centre-grade failures on V33 versus1781/1 on V10",
+  "skills": "regional-relief native persistence and consumer specificity updated; latest SHA61e52ae3; no new skill.",
+  "regional_drive": "V1 coast/south4PASS, hills2FAIL terminal. V2 hills2PASS,1648samples,health1000,4contacts,18negatives. Logs closed before managed forced_kill. Lease expired at release; shared runtime free afterward.",
+  "checkpoint": "outline-v33-checkpoint.md",
+  "road_solver": {
+    "session_id": 53494,
+    "folder": "tests/regional_road_network_v29",
+    "max_solver_s": 600,
+    "max_worker_s": 650,
+    "complete": true,
+    "status": "FULL_MATRIX_FEASIBLE_CANDIDATE_NOT_ACCEPTED"
+  },
+  "road_build": {
+    "constraints": "tests/regional_road_network_v29_constraints",
+    "plan": "plans/road-network-v25-continuous-coverage.md",
+    "complete": true
+  },
+  "native_v29": {
+    "first_export": "tb/regional_road_network_v29/r1.wrp",
+    "sha256": "81d46989b15f9f1df912b2d5d9997a0cbd2911a95b9020af51bb87d3286fa721",
+    "heights_materials": "PASS",
+    "first_object_gate": "FAIL: two water Y shifts 0.055003m and 0.061817m beyond inherited 670 microscopic residues",
+    "correction": "road-v29-native/relative-offset-correction.json",
+    "new_layer_sha256": "98a9bed68814603b4f2c2da06b2f5d492526328d2ec0e311b2d8ea89fb1742c8",
+    "native_consumer": "Corrected single export PASS under inherited precision scope; literal strict V10 object FAIL preserved.",
+    "next_export": "tb/regional_road_network_v29/r3.wrp",
+    "next_export_exists": true,
+    "layer_current_sha256": "98a9bed68814603b4f2c2da06b2f5d492526328d2ec0e311b2d8ea89fb1742c8",
+    "source_preservation": "9036 V33 source files unchanged; source-preservation-after-v29-import.json",
+    "corrected_export": "tb/regional_road_network_v29/r2.wrp",
+    "corrected_export_sha256": "1763faccb9e8947027232a3c4f8a5ce91c793c06cb407252849239081ac92824",
+    "corrected_objects": "Both centimetre shifts now exact; all poses equal V33, only inherited 670 water Y residues below1micrometre versus V10.",
+    "persistence": "PASS real close/reopen plus semantic native equality; raw exports retained, explicit 670 submicrometre water-Y restorations only.",
+    "next_export_sha256": "9cd943347729b59c4e9997ca9b9fbd0ff74d194cf0d45359477ee0ef155942b3",
+    "provenance": "road-v29-native/ui-persistence-provenance.json",
+    "restoration": "road-v29-native/canonical-water-build-inputs/restoration.json"
+  },
+  "regional_drive_v29": "Six fixed journeys PASS across V3/V4;18negatives. road-v29-driving-coverage.json; V3 FAIL retained.",
+  "navmesh_v29": {
+    "run_id": "0a773e30-5696-4ed9-a783-8d31c5de343e",
+    "compiled_wrp_sha256": "2c95ab7dde3b353f69ecb929de1b3d413ba0070a5ce8feb4ac6537b87033ec84",
+    "range_tiles": [
+      0,
+      982,
+      0,
+      982
+    ],
+    "total_tiles": 966289,
+    "world_params_received": true,
+    "started": true,
+    "complete": true,
+    "sha256": "facaf1e386c6e19a9253c929ddd829bf93d670542ae8f504ee327c9b1b18ecef",
+    "world_pbo_sha256": "b3418f927f6cc4adf8ba03b86de0ce1491f32adf87f3a124120c62eff20f856e",
+    "generation_cleanup": "orderly_close"
+  },
+  "road_v29_consumer": {
+    "status": "PASS_RUNTIME_REGIONAL_CONSUMERS",
+    "samples": 81212,
+    "nav_samples": 314,
+    "routes": 15,
+    "max_ground_error_m": 0.0004626199999995251,
+    "run_id": "fe6af12e-3b5f-4255-98b3-ba803f2328c9",
+    "cleanup": "orderly_close",
+    "evidence": "road-v29-consumer/acceptance.json"
+  },
+  "road_v29_water": {
+    "status": "PASS_LOCAL_DYNAMIC_WATER",
+    "epochs": 646,
+    "samples": 15504,
+    "first_s": 20.049,
+    "last_s": 189.876,
+    "complete_s": 198.014,
+    "ground_max_error_m": 8.302019737360666e-05,
+    "minimum_dry_freeboard_m": 0.2849499999999998,
+    "minimum_wet_depth_m": 0.48776300000000006,
+    "classes": {
+      "dry_shore_source": 7752,
+      "dry_low_interior": 2584,
+      "dry_high_control": 2584,
+      "wet_control": 2584
+    },
+    "observed_sea_range_m": [
+      0.5,
+      1.0
+    ],
+    "limits": [
+      "Only the frozen 24 local positions and observed time window.",
+      "Not a global ocean/fake-wave maximum, visual acceptance or regional navmesh test."
+    ],
+    "log_sha256": "655370cbf2393aeae315a90f1f1f62d68a68d2d4c217c75b99f858417ffcdaed",
+    "reference_sha256": "6dd3e26f4e0590aa8e633afc00155f293ce41fe6ecee5a680c36169a5288a1bf"
+  },
+  "canonical_handoff": "C:/Users/guill/ObsidianVault/AI/30_Sessions/2026-10-01-dayz-baltic-handoff-base-v29.md",
+  "last_run_closed": "ebffaa12-9252-4a77-88a9-ffb4706dde99",
+  "coordination": {
+    "self_state": "none",
+    "own_runs": [],
+    "box_occupied": true,
+    "other_run": "7e4d808b-0efc-41ea-a978-997303d42a1c",
+    "other_mod": "@LFPowerGrid",
+    "observed_utc": "2026-10-01T21:40:32.429232+00:00",
+    "do_not_adopt_or_close": true,
+    "receipt": "handoff-complete-v29/shared-runtime-at-handoff.json"
+  },
+  "road_v29_load": {
+    "status": "INCONCLUSIVE_ACTIVE_LOAD",
+    "issues": [
+      "phase2:prey_moved",
+      "phase3:prey_moved"
+    ],
+    "prey_drift_max_m": 2.06473,
+    "limit_m": 2,
+    "engine_complete_s": 385.266,
+    "samples_per_phase": 60,
+    "host_samples_each": 420,
+    "sites": 101,
+    "walk_routes": 100,
+    "sites_status": "PASS_LOAD_SITES_WALK_QUERIES",
+    "evidence": "road-v29-load/runtime-complete/verification.json",
+    "cleanup": "orderly_close"
+  }
+}

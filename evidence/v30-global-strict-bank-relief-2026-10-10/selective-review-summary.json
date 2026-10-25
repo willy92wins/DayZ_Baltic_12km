@@ -1,0 +1,96 @@
+{
+  "status": "PASS_INCREMENTAL_NONREGRESSION",
+  "global_representation_status": "FAIL_WITH_INHERITED_OPEN",
+  "full_report": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\selective\\selective-review.json",
+  "full_report_sha256": "cc2b94b1a1b86e8e139edd532be9d77f95edc3526a5af1706c5dc29f2bfc41a0",
+  "gates": {
+    "metadata_exact_vs_EV79_and_B": true,
+    "only_selected_mutable_heights_changed": true,
+    "rejected_and_timeout_patches_exact_B": true,
+    "no_raise_vs_B_on_global_map": true,
+    "EV79_budget_and_physical_floor_on_all_selected_nodes": true,
+    "accepted_patches_reject_unresolved_partial_F": true,
+    "partial_F_patches_rejected_and_unchanged": true,
+    "all_potentially_affected_hinges_covered_once": true,
+    "all_touched_8_neighbor_signs_and_ties_preserved": true,
+    "all_touched_8_neighbor_differences_retain_half_with_measured_rounding": true,
+    "no_new_weak_axial_extrema_global": true,
+    "native_triangle_slopes_le_max_35_or_B": true,
+    "no_new_hinges_over_30_global": true,
+    "no_regression_in_any_affected_sector_max": true,
+    "p99_bracket_counts_and_above30_nonworse_each_patch_bank_interior": true,
+    "full_map_bank_interior_p99_and_above30_nonworse": true,
+    "accepted_patch_focus_descends_ge_0_1m": true,
+    "accepted_patch_focus_energy_reduction_ge_1pct": true,
+    "accepted_patch_union_energy_reduced": true,
+    "accepted_patch_no_new_local_weak_extrema": true,
+    "accepted_patch_no_new_over30": true,
+    "accepted_patch_slopes_respect_cap": true,
+    "P_F_SEA_corner_signs_unchanged": true,
+    "P_F_SEA_native_wet_face_masks_unchanged": true,
+    "wet_components_preserved_by_exact_face_masks": true,
+    "P_F_crossing_topology_identical": true,
+    "P_F_crossing_displacement_le_1m": true,
+    "no_new_compiled_exposure_in_previously_dry_native_faces": true,
+    "no_compiled_gain_without_candidate_P_or_F_design": true,
+    "physical_absolute_support_complete": true,
+    "physical_absolute_face_height_exact": true,
+    "physical_absolute_residual_within_band": true,
+    "visible_absolute_support_complete": true,
+    "visible_absolute_face_height_exact": true,
+    "visible_absolute_residual_within_band": true,
+    "unchanged_frontier_geometry_exact": true,
+    "no_new_or_worsened_face_height_violations_vs_B": true
+  },
+  "information": {
+    "conflict_cells": 1110,
+    "retained_accepted_patches": 334,
+    "changed_vertices": 4987,
+    "modified_cells_plus_frontier": 19076,
+    "geometry_consumer_status": "FAIL_EV87_GLOBAL_CONSUMER",
+    "global_contract_status": "FAIL_WITH_INHERITED_OPEN",
+    "raw_global_report_path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\selective\\_consumer-scratch\\ev87-global-report.json",
+    "raw_global_report_sha256": "d2a12bf395a87ba59b171e2d299bf5502a921f13cfaaefa59761afb8bd98c833"
+  },
+  "global_angular_statistics": {
+    "bank": {
+      "B": {
+        "n": 1591990,
+        "p99": 4.982070186774692,
+        "max": 30.073794902808267,
+        "above30": 1,
+        "mean_square": 1.4225704642222379
+      },
+      "candidate": {
+        "n": 1591990,
+        "p99": 4.982069192694025,
+        "max": 30.073794902808267,
+        "above30": 1,
+        "mean_square": 1.4092949538764783
+      }
+    },
+    "interior": {
+      "B": {
+        "n": 7170630,
+        "p99": 3.667753611431574,
+        "max": 47.22823023572591,
+        "above30": 112,
+        "mean_square": 0.7572896443989299
+      },
+      "candidate": {
+        "n": 7170630,
+        "p99": 3.664824083445407,
+        "max": 47.22823023572591,
+        "above30": 112,
+        "mean_square": 0.7564967775238559
+      }
+    }
+  },
+  "crossing_max_shift_m": 0.46868478235018096,
+  "new_over30_count": 0,
+  "new_weak_extrema_count": 0,
+  "limits": [
+    "Incremental nonregression only. Absolute inherited representation conflicts remain open.",
+    "Static compiled geometry is not renderer or wave-envelope acceptance."
+  ]
+}

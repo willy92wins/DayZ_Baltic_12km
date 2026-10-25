@@ -1,0 +1,58 @@
+{
+  "status": "PASS_EV93_ALL_CHANGED_MIPS",
+  "candidate_sha256": "6e27557315eb65ecc69052e1ec387304a19f37eaa4f5167ab82fb607f095461d",
+  "selection_receipt_sha256": "3b22dcc381b34b8d7c3e6641d3c919658f0fe7377594a859e3d5c064cf92ba0b",
+  "compound_pool_sha256": "4bc16ef8156e4feda5332d8a7917a7b23d2f171a85c4a6002e5f403da95541d5",
+  "selector_source_sha256": "0d29d3979c1f8bc0d3b0b1833edb314a5807fe5b22ba63b43c44080732fe81bc",
+  "consumer_source_sha256": "6e661b073e5f27b2475e6b82d75d6a7722d0503a082dcfd51d8f00bd6de9722b",
+  "consumer_report_sha256": "656e676e38817592ed96d13ddeb1693d2a9bead152770256b0b21e665cedf8ec",
+  "surface_verification_sha256": "019b1cd82f23ba82b52514166bea62656afec533f7f878c0f5a45bc21f6b8e47",
+  "deploy_sha256": "3c8a2d5ec7eaaf62ddd4cd990ea29370649ec88423d8f4a52494db3de3fb450a",
+  "op_rw_verification_sha256": "edb1ae1a7db3778467b300357ae88ac53797ab3717543534424622119721e8bf",
+  "actual_pbo_sha256": "cb4ffc6b7de96c2e9de5c561ac95497b4310ca6f3ae48c6ddab80f6fcd225ab6",
+  "pinned_sources": {
+    "audit_mipmaps_sha256": "2d7912c8ea4411ec07c1ad9def7c21dfa7bb09c9a3bb44739fb55090cb9f28f2",
+    "pbo_reader_sha256": "717b81469e0a799690d1586cd7a4492f079c3b2db626eec7e2815cd15896e062",
+    "paa_decoder_sha256": "0c59c372b21b62cb7c0d7318e8a195e7bd84e3af15558944b41bd5ac05ad812b",
+    "lzo_decoder_sha256": "5ecb852cca9f38258121e2b5246ff8ba438d672b04390442e2e536bc080b8658",
+    "ImageToPAA_sha256": "0b786037fc708931bcc85088ba69648bcf57463bcf3b1d3a21a35f29b9c2344a"
+  },
+  "changed_texture_count": 975,
+  "decoded_mip_count": 7800,
+  "unchanged_entries_exact": 5851,
+  "negative_control": "truncated_changed_texture_rejected",
+  "native_mip_controls": [
+    {
+      "name": "data/layers/m_001_016_lca.paa",
+      "size": 64,
+      "paa_sha256": "d6db188e91dc80ca7f70cac8e3322d1d6e474367192b80bc4fb3eb20dfbc63c1",
+      "native_png_sha256": "64aa513e7ee52da32de3ebae3f2da67a1493ae7cfc7b474773335f2ac4c518c5",
+      "max_decoder_difference": 1
+    },
+    {
+      "name": "data/layers/m_001_016_lca.paa",
+      "size": 4,
+      "paa_sha256": "5f12f24b66eda205828042e3e45c967d1fc9cb1d0319c6547e213378ac6a577d",
+      "native_png_sha256": "64d2fa11984233c0bb677b9bfc3cc12e1f21cfce0eb0c20379771546c9a160f8",
+      "max_decoder_difference": 1
+    },
+    {
+      "name": "data/layers/s_001_016_lco.paa",
+      "size": 64,
+      "paa_sha256": "50b89f5ff13bd6479811203a60727fdcaa0ad6ccc885f539b7bc638f8c15b538",
+      "native_png_sha256": "35a8dde38030d67e44adfd933b42749d57f22abe1ddb46b3b9e4e67be403d818",
+      "max_decoder_difference": 2
+    },
+    {
+      "name": "data/layers/s_001_016_lco.paa",
+      "size": 4,
+      "paa_sha256": "29a17851a18d11a1af81a87573057df281534f9ca9655e39f6b7013bc738e319",
+      "native_png_sha256": "d46a0d8a8d4d83d9a12084ea6a35c3728cef6e2c3ef3155b04a8224ca705df8e",
+      "max_decoder_difference": 1
+    }
+  ],
+  "limits": [
+    "Every package-declared changed PAA is decoded at all eight mip levels; nonchanged PBO entries are checked by verify_packaged_oprw.py.",
+    "This is offline native-tool validation and does not prove GPU streaming, engine loading, or visual acceptance."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS_A_ONLY_FIXTURES",
+  "source_sha256": "f1e8ddd9258f72004ecf34da1284ec0b0c295cb77e5b963ecaf24cf82ff9401f",
+  "driver_sha256": "7e6d199d43e82ad3dfe92122f81b40f59a45cf9a6029d2716a7c60f50bc50304",
+  "plan_sha256": "232f37672ab053894a8058fd2e21a196df4b1e3fa440c83aeae995d57090d644",
+  "fixture_report_sha256": "1c126107b8ea2f70c6a0d384a604fec1c84e0c25cc1df6c2d4d086d8fad7a088",
+  "fixture_source_sha256": "068ed089c36bbe5d2e9c2e7f5f4691a569aaa325b80051ae4e5958634a50a87b",
+  "reviewer": "root independent integration review",
+  "checks": [
+    "Read A-only build, A and transpose against full operator: identical formula, masks, affine RHS, diagonal and row order.",
+    "Root reran all five fixtures with GIS Python; exact operator and fused agreement; invalid inputs reject.",
+    "Fixed preflight: every PINNED hash is now compared to its expected value; stable readset alone was insufficient.",
+    "Driver itself is pinned in review and final readset.",
+    "One-build/one-action only, cap1GiB/floor6GiB/deadline120s; exclusive output after admission, guards at boundaries, terminal receipt and nonzero error exit."
+  ],
+  "scope": "Authorize exactly one build/action memory measurement if admission passes; no PCG or terrain acceptance.",
+  "limitations": [
+    "Peak remains unmeasured; the watchdog latches violations and observes them at safe boundaries, not allocation prevention."
+  ]
+}

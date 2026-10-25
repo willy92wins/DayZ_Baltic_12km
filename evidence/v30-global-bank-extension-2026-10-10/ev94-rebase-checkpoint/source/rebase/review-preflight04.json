@@ -1,0 +1,178 @@
+{
+  "environment": {
+    "numpy": "2.5.3",
+    "python": "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe"
+  },
+  "limitations": [
+    "Preflight JSON omits selected_seed; this review reruns exact helper policy read-only and records the resulting queue fallback.",
+    "solve_real_sector.py is loaded by preflight for metadata equality, P/F levels, civil/P9 masks, seed policy and serialization, but is absent from preflight EXPECTED/STATIC_PATHS. Its current SHA is recorded post hoc; run04 does not prove helper start/end stability.",
+    "Readiness-only local preflight: no solver result or map-wide/visual acceptance."
+  ],
+  "preflight": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\preflight-run-04\\preflight.json",
+    "plan_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\PLAN_EV94_REBASE.md",
+    "plan_sha256": "4ba76f70173ac777d3f4b6ad427062d430aabb75a4bb25f70adf04c231b167fd",
+    "prepared_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\preflight-run-04\\prepared.npz",
+    "prepared_sha256": "2df4ad67280c656025843f6528147a68c03dfcf6ecdfbe9cce2ee4818e15a2eb",
+    "preparer_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\prepare_ev94.py",
+    "preparer_sha256": "601be931559c15429f0fb0e90a02c1d45d584bc45f18e9dc09b7d63e04bbdd6f",
+    "preparer_sha256_start_end": [
+      "601be931559c15429f0fb0e90a02c1d45d584bc45f18e9dc09b7d63e04bbdd6f",
+      "601be931559c15429f0fb0e90a02c1d45d584bc45f18e9dc09b7d63e04bbdd6f"
+    ],
+    "run03_disposition": "obsolete for current source pin; run03 records DE3BB4, run04 records 601BE9.",
+    "sha256": "6b10b907334f12404b15576e86790f7df5102a8ca3262b70a424a77bfa1c1b92",
+    "status": "PREFLIGHT_READY_ONLY"
+  },
+  "preflight_measurements": {
+    "A_nnz": 441958,
+    "A_shape": [
+      166572,
+      40178
+    ],
+    "D8_nnz": 79506,
+    "D8_shape": [
+      40841,
+      40178
+    ],
+    "D8_witnesses": 42936,
+    "base_projection_zero_correction_recorded": true,
+    "base_satisfies_D8_recorded": true,
+    "bounds": {
+      "B_current_plus_0_5_cap_enforced": true,
+      "absolute_EV79_delta_max": 2.0,
+      "absolute_EV79_delta_min": -2.0,
+      "budget_reference": "EV79 original absolute budget \u00b12.0 m; original_budget_interval recomputed relative to focal B",
+      "floor": "min(EV79, max(SEA=.85, P, each incident F corner)+1e-4), plus min(EV79,1.8), as in EV82 original_budget_interval",
+      "hi_ev79_ev82_budget_min": -10.0,
+      "hi_ev82_plus_0_5_min": -11.5,
+      "hi_final_max": 12.025447845458984,
+      "hi_final_min": -11.5,
+      "inward_rounding": "lower/upper to float32 lattice using pinned D8 inward32_lower/upper",
+      "lo_max": 9.525447845458984,
+      "lo_min": -12.0,
+      "physical_cap": "EV82 current-height cap: H <= B_focal + 0.5 m",
+      "upper_limit_counts": {
+        "B_plus_0_5": 65535,
+        "budget": 1,
+        "tie": 0
+      }
+    },
+    "direct_x0_equals_B_and_within_bounds": true,
+    "fixed_reason_counts_overlap": {
+      "499_retained_windows_plus_halo2": 966,
+      "P9_unknown_corridor": 21,
+      "civil_road_or_bridge": 486,
+      "empty_or_invalid_physical_bounds": 0,
+      "explicit_focal_pin_840_370": 1,
+      "not_ev87_eligible": 21072,
+      "water_support_or_contact": 11042
+    },
+    "fixed_union_vertices": 25358,
+    "focus_pin": {
+      "explicitly_fixed": true,
+      "overlap_reasons": [
+        "water_support_or_contact",
+        "explicit_focal_pin_840_370"
+      ],
+      "rc": [
+        840,
+        370
+      ],
+      "value_f32": 3.278029680252075
+    },
+    "future_solver_budget": {
+      "calls": 1,
+      "continuation": false,
+      "max_iterations": 20000,
+      "max_peak_working_set_bytes": 1610612736,
+      "min_free_physical_bytes": 3221225472,
+      "numeric_seconds": 600
+    },
+    "independent_minimum_D8_slack": 0.0,
+    "independent_projection_equals_B": true,
+    "independent_projection_max_correction": 0.0,
+    "local_context_half_open": [
+      710,
+      970,
+      240,
+      500
+    ],
+    "origin_counts": {
+      "crest": 167,
+      "legacy": 332
+    },
+    "pbo_guard_start_end_equal": true,
+    "prepared_variable_count": 40178,
+    "selected_artifact_refs": 1332,
+    "selected_unit_readset_count": 1332,
+    "selected_units": 499,
+    "static_readset_start_equals_end": true,
+    "static_source_readset_count": 44,
+    "stencils": 126394,
+    "window_half_open": [
+      712,
+      968,
+      242,
+      498
+    ]
+  },
+  "schema": "ev94.preflight-independent-review.v1",
+  "scope": "Read-only review; no real solver invocation, no terrain write.",
+  "selected_seed": {
+    "chosen": {
+      "col": 359,
+      "first_layer_id": 620,
+      "kind": "queue_fallback",
+      "row": 895,
+      "seed_id": 3872
+    },
+    "focus_is_variable": false,
+    "policy": "exact helper.choose_seed(queue, final_domain) call; domain reconstructed from prepared.nodes_local with sector-local offset [2,2]",
+    "preflight_json_field_present": false,
+    "prepared_variable_count": 40178,
+    "queue_seed_count": 5450,
+    "reconstructed_from": {
+      "helper_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector.py",
+      "helper_sha256_current": "9f4fc8e5edc2ad7a8276264d4b6fea05ee8682b777d370cb75a283f0cb4d296e",
+      "queue_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\queue\\queue.json",
+      "queue_sha256": "cf13887c8de031d65d0a32dab217e8743293103fcd00ea3c07c281c07a6794c9"
+    }
+  },
+  "solver_review": {
+    "order_closure_author_sha256": "b6d70d061425601624baa8bab8825f3d7ca40c01432032123d0b97269e1cb53d",
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\solve_ev94.py",
+    "projection_sha256": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+    "sha256": "ebb53986d69e4ec080356883db15091983fef3bb01715714177d2d504283abf0",
+    "source_solver_sha256": "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+    "static_findings": [
+      "Fresh input SHA, preflight status/readset equality, focal-base identity, retained count, prepared arrays and pinned solver/closure sources are checked before solve.",
+      "One call path loads the pinned original solver, asserts original MAX_ITER=10000 and original tolerances/rho, overrides only MAX_ITER=20000, then calls solve once from fresh x0; no continuation state.",
+      "Numeric guard 600 s; working-set ceiling 1.5 GiB and free-memory floor 3 GiB. Nonconvergence, KKT, projection, float32, objective, fixed, or focus failure blocks candidate publication.",
+      "Fresh-only is enforced per output directory. The plan-level single-attempt rule still depends on the operator using one authorized invocation; a different output path can be supplied in a later invocation."
+    ],
+    "tests": {
+      "command": "GIS Python -m unittest -v test_solve_ev94.py",
+      "real_map_solver_called": false,
+      "result": "PASS 5/5"
+    }
+  },
+  "source_anchors": {
+    "preparer": {
+      "baseline_D8_and_projection": "prepare_ev94.py:660-694",
+      "domain_masks": "prepare_ev94.py:534-620",
+      "resolver": "prepare_ev94.py:257-393",
+      "selected_artifact_rehash": "prepare_ev94.py:716-728"
+    },
+    "seed_helper": {
+      "chooser": "solve_real_sector.py:246-264",
+      "preparer_helper_load": "prepare_ev94.py:27,425"
+    },
+    "solver": {
+      "KKT_closure_gates_and_candidate_publish": "solve_ev94.py:158-207",
+      "fresh_call_and_maxiter_override": "solve_ev94.py:111-153",
+      "input_pins": "solve_ev94.py:62-84"
+    }
+  },
+  "verdict": "SOUND_PREFLIGHT_READY_ONLY_WITH_SOURCE_PIN_LIMITATION"
+}

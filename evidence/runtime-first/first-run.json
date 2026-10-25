@@ -1,0 +1,88 @@
+{
+  "status": "ACCESS_RECOVERED_FIRST_RUNTIME_ATTEMPT_FAILED_BEFORE_MISSION",
+  "permissions": {
+    "filesystem": "danger-full-access",
+    "network": "enabled",
+    "approval_prompts": "never",
+    "session_status": "PASS",
+    "server_reload": "recycled",
+    "server_modules": "fresh"
+  },
+  "launch": {
+    "run_id": "25d45413-a1d7-465a-98f1-86cf5ce7b14b",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "extra_mods": [
+      "@DayZ_Baltic_12km"
+    ],
+    "no_base_mods": true,
+    "no_file_patching": true,
+    "preflight": "PASS_ONLY",
+    "actual_launch": "succeeded",
+    "mission": "BalticTest.BalticTrial",
+    "server_initially_alive": true,
+    "client_initially_alive": true,
+    "bridge_ready": false,
+    "mission_observer_log_received": false
+  },
+  "observation": {
+    "ui_text": "Unable to load navmesh for 'BalticTrial'.",
+    "ui_source": "native accessibility observation of DayZ dialog 197790138",
+    "server_error_message_minidump": "server/ErrorMessage_DayZDiag_x64_2026-09-29_15-41-18.mdmp",
+    "server_script_modules_observed": [
+      "GameLib",
+      "Game",
+      "World"
+    ],
+    "mission_compilation_confirmed": false,
+    "root_cause": "NOT_ISOLATED"
+  },
+  "cleanup": {
+    "run_id": "25d45413-a1d7-465a-98f1-86cf5ce7b14b",
+    "stop_status": "succeeded",
+    "stop_method": "forced_kill",
+    "exit_metrics_valid": false,
+    "session_state": "none",
+    "box_occupied": false,
+    "pending_commands": 0,
+    "cleanup_degraded": []
+  },
+  "evidence": [
+    {
+      "path": "server/DayZDiag_x64_2026-09-29_15-41-10.RPT",
+      "bytes": 654,
+      "sha256": "199737f1ec829fae198495e8ccc12ce95e52da49166a62bf13577600054f0f6b"
+    },
+    {
+      "path": "server/script_2026-09-29_15-41-12.log",
+      "bytes": 1231,
+      "sha256": "3bd2d8fd8df72abea584d3befac550dc05d283e9d691b95b71fb359b0a55b0ec"
+    },
+    {
+      "path": "server/ErrorMessage_DayZDiag_x64_2026-09-29_15-41-18.mdmp",
+      "bytes": 628976,
+      "sha256": "98485081533e41f5a52cdaba1852c51e905db0dbcf566436c95db1e6711bc026"
+    },
+    {
+      "path": "client/DayZDiag_x64_2026-09-29_15-41-20.RPT",
+      "bytes": 47072,
+      "sha256": "9dcd687f899bd5db1a9ad3f9740775eb9d852be92bb6c14429c064967a4ba654"
+    },
+    {
+      "path": "client/script_2026-09-29_15-41-22.log",
+      "bytes": 3440,
+      "sha256": "d82035ae93e8c3573d503140d8985377df1f399ef5600d9471acc1b2ab9d9f08"
+    },
+    {
+      "path": "client/error.log",
+      "bytes": 41433,
+      "sha256": "49fe26d61cc6b51d05c7788f81fc3aa428c80902227854b85f858db04d093b6e"
+    }
+  ],
+  "limits": [
+    "Launch success means processes started, not a world/mission acceptance.",
+    "Navmesh warning and minidump are observed; exact engine failure mechanism not isolated.",
+    "Official documentation says absence of navmesh can be tolerated; verify config before asserting cause.",
+    "Managed stop was forced, so this does not validate graceful game shutdown."
+  ]
+}

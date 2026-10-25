@@ -1,0 +1,1847 @@
+{
+  "schema": "ev94.unknown-p-corridor-context.v1",
+  "status": "COMPLETE_CONTEXT_ONLY",
+  "identity": {
+    "stage_objects": 18033,
+    "stage_objects_and_materials_exact": true,
+    "index_water_objects": 18024,
+    "index_wrp_source_sha256": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "stage_wrp_source_sha256": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "water_pbo_sha256": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "water_pbo_exact": true,
+    "class_npz_sha256": "657863efc36491dc94f3bf958d9ff95d9e1a66b4992e7e8cca58f3428078915c"
+  },
+  "compiled_face_audit": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\unknown-p-audit\\unknown-p-audit.json",
+    "sha256": "a51f09fabc575866d5b650b572cf22b83c071c1b653a9201d0fc93c146c96c38",
+    "P_unknown_m2": 991.0079530439052,
+    "physical_face_m2": 0.0035190582275390625,
+    "visible_face_m2": 0.0035190582247537436,
+    "no_face_physical_m2": 991.0044339856777,
+    "no_face_visible_m2": 991.0044339856806
+  },
+  "class_rule_source": {
+    "build_water_pieces_v30.py": "75078e291491b813a71ca08ddea0e4c74edd22ff2811c43a0bd1492e832a2a19",
+    "v30_common.py": "6485307be67bde8ce3f2b37f597a3a1502fbf2ce19e9313b0d071a42468eb53f",
+    "rule": "POND_CLASSES=(2,3,5,6,7), cell plane finite iff any corner class is in set and level>0.80m; <=0.80m is excluded from pond pieces/assigned to engine sea per build_water_pieces source text. The class NPZ is a source-metadata diagnostic, not a byte-proven derivation input of deployed PBO."
+  },
+  "water_support_mask": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.npz",
+    "sha256": "6ce282962602557636bafac40b604caa3001a95234551db1beee67975dcd1edf",
+    "json_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.json",
+    "json_sha256": "74bb37147e20047c44f0228d464650fb35fb9e41e71cf541c4e994f1032c55c9",
+    "window_vertex_rc_half_open": [
+      712,
+      968,
+      242,
+      498
+    ],
+    "scope": "Narva sector only; it is a protection/contact mask and explicitly excludes P9 reconstruction and does not declare runtime water."
+  },
+  "civil_inventory": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01.json",
+    "sha256": "1f1670961bd89bfe284ac3175201c1dc2529f6c5b13bb7f4796fab4ac382cd53",
+    "source_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil_inventory.py",
+    "source_sha256": "60d1beb2a36739a98fc70dc5a3b29033286e14abbc87461247bc87dd6f48c0c3",
+    "object_count": 9,
+    "coverage_policy": "union of every face-bearing P3D LOD for every matching WRP object; no LOD labeled as exact collision/physical semantics",
+    "limitations": [
+      "offline projected model-face union; not an in-game collision readback",
+      "union conservatively freezes cell intersections from visual, roadway, shadow, or other face-bearing LODs",
+      "X/Z projection discards Y and can overprotect bridge-deck and support-beam footprints"
+    ],
+    "bridge_model_sha256": "baf79ddd19e08cdcdbec99b15043a319d6b958a1b7884082c2ae069cf3f3cee2",
+    "odol_reader_sha256": "688aaa90aa3caa1c8d036b6a573babd3d455086bdcd426e6e5ae04e3a93e8d4f",
+    "model_all_facebearing_vertex_count": 6140,
+    "model_local_bounds_xyz_m": [
+      [
+        -8.837579727172852,
+        -12.415306091308594,
+        -12.500081062316895
+      ],
+      [
+        8.837579727172852,
+        12.415306091308594,
+        12.500081062316895
+      ]
+    ]
+  },
+  "results": {
+    "Narva_23": {
+      "corridor_feature_properties": {
+        "river": "Narva_23"
+      },
+      "unknown_area_m2": 238.74576643431394,
+      "unknown_cell_count": 11,
+      "unknown_cell_envelope_xz_m": [
+        1908.0,
+        7392.0,
+        1932.0,
+        7422.0
+      ],
+      "area_weighted_corner_class_fraction": {
+        "1": 0.6334210225885365,
+        "3": 0.36657897741146356
+      },
+      "corner_level_range_m": [
+        0.4749999940395355,
+        0.75
+      ],
+      "area_with_any_builder_eligible_wet_corner_m2": 0.0,
+      "area_with_zero_builder_eligible_wet_corners_m2": 238.74576643431396,
+      "area_in_cells_where_exact_v30_common_cell_planes_is_finite_m2": 0.0,
+      "area_by_all4_vertex_flags_m2": {
+        "water": 238.74576643431396,
+        "beach": 0.0,
+        "narva": 0.0,
+        "reserve": 0.0,
+        "platform": 0.0
+      },
+      "area_by_water_support_reason_m2": {
+        "0": 238.74576643431396
+      },
+      "cells": [
+        {
+          "rc": [
+            810,
+            320
+          ],
+          "xy_bbox_m": [
+            1920.0,
+            7416.0,
+            1926.0,
+            7422.0
+          ],
+          "unknown_corridor_area_m2": 4.513610173244562,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.75,
+            0.75,
+            0.4749999940395355
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            810,
+            321
+          ],
+          "xy_bbox_m": [
+            1926.0,
+            7416.0,
+            1932.0,
+            7422.0
+          ],
+          "unknown_corridor_area_m2": 14.800709085628505,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.4749999940395355,
+            0.4749999940395355,
+            0.4749999940395355
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            811,
+            318
+          ],
+          "xy_bbox_m": [
+            1908.0,
+            7410.0,
+            1914.0,
+            7416.0
+          ],
+          "unknown_corridor_area_m2": 16.319665193736533,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            811,
+            319
+          ],
+          "xy_bbox_m": [
+            1914.0,
+            7410.0,
+            1920.0,
+            7416.0
+          ],
+          "unknown_corridor_area_m2": 30.18402268691154,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            811,
+            320
+          ],
+          "xy_bbox_m": [
+            1920.0,
+            7410.0,
+            1926.0,
+            7416.0
+          ],
+          "unknown_corridor_area_m2": 35.97875571302623,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            3,
+            1,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.4749999940395355,
+            0.75,
+            0.4749999940395355
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            812,
+            318
+          ],
+          "xy_bbox_m": [
+            1908.0,
+            7404.0,
+            1914.0,
+            7410.0
+          ],
+          "unknown_corridor_area_m2": 19.54711184079842,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            812,
+            319
+          ],
+          "xy_bbox_m": [
+            1914.0,
+            7404.0,
+            1920.0,
+            7410.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            1,
+            1,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.75,
+            0.75,
+            0.4749999940395355
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            812,
+            320
+          ],
+          "xy_bbox_m": [
+            1920.0,
+            7404.0,
+            1926.0,
+            7410.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.4749999940395355,
+            0.4749999940395355,
+            0.4749999940395355
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            813,
+            318
+          ],
+          "xy_bbox_m": [
+            1908.0,
+            7398.0,
+            1914.0,
+            7404.0
+          ],
+          "unknown_corridor_area_m2": 2.8001583274455615,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.75,
+            0.75,
+            0.75
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            813,
+            319
+          ],
+          "xy_bbox_m": [
+            1914.0,
+            7398.0,
+            1920.0,
+            7404.0
+          ],
+          "unknown_corridor_area_m2": 33.14412125301435,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            3,
+            1,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.4749999940395355,
+            0.75,
+            0.4749999940395355
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        },
+        {
+          "rc": [
+            814,
+            319
+          ],
+          "xy_bbox_m": [
+            1914.0,
+            7392.0,
+            1920.0,
+            7398.0
+          ],
+          "unknown_corridor_area_m2": 9.457612160508246,
+          "corner_classes_NW_NE_SW_SE": [
+            1,
+            3,
+            1,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.75,
+            0.4749999940395355,
+            0.75,
+            0.4749999940395355
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": 0
+        }
+      ],
+      "intersection_with_civil_projected_bridge_cells_rc": [],
+      "bridge_objects": [
+        {
+          "object_id": 16777216,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2403.5756111450746,
+            6879.403201638743,
+            2430.7106811084154,
+            6900.366305241423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 681.2394930190264,
+          "gap_x_m": 471.5756111450746,
+          "gap_z_m": 491.6336947585769
+        },
+        {
+          "object_id": 16777218,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2378.8661384888246,
+            6883.205936013743,
+            2406.0012084521654,
+            6904.169039616423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 661.5651076324056,
+          "gap_x_m": 446.8661384888246,
+          "gap_z_m": 487.8309603835769
+        },
+        {
+          "object_id": 16777219,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2428.2845955200746,
+            6875.600955544993,
+            2455.4196654834154,
+            6896.564059147673
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 701.25257307104,
+          "gap_x_m": 496.2845955200746,
+          "gap_z_m": 495.4359408523269
+        },
+        {
+          "object_id": 16787372,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2304.7389412231996,
+            6894.614139138743,
+            2331.8740111865404,
+            6915.577242741423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 604.9073994737184,
+          "gap_x_m": 372.7389412231996,
+          "gap_z_m": 476.4227572585769
+        },
+        {
+          "object_id": 16787373,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2329.4479255981996,
+            6890.811404763743,
+            2356.5829955615404,
+            6911.774508366423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 623.3629571742474,
+          "gap_x_m": 397.4479255981996,
+          "gap_z_m": 480.2254916335769
+        },
+        {
+          "object_id": 16787374,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2354.1571541138246,
+            6887.008670388743,
+            2381.2922240771654,
+            6907.971773991423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 642.261618300902,
+          "gap_x_m": 422.1571541138246,
+          "gap_z_m": 484.0282260085769
+        },
+        {
+          "object_id": 16787375,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2452.9935798950746,
+            6871.798221169993,
+            2480.1286498584154,
+            6892.761324772673
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 721.5771373419628,
+          "gap_x_m": 520.9935798950746,
+          "gap_z_m": 499.2386752273269
+        },
+        {
+          "object_id": 16787376,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2477.7028084106996,
+            6867.995486794993,
+            2504.8378783740404,
+            6888.958590397673
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 742.1874526573598,
+          "gap_x_m": 545.7028084106996,
+          "gap_z_m": 503.0414096023269
+        },
+        {
+          "object_id": 16787377,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2502.4117927856996,
+            6864.193240701243,
+            2529.5468627490404,
+            6885.156344303923
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 763.0596992820151,
+          "gap_x_m": 570.4117927856996,
+          "gap_z_m": 506.8436556960769
+        }
+      ],
+      "closest_bridge_aabb_gap_m": 604.9073994737184
+    },
+    "Luga_0": {
+      "corridor_feature_properties": {
+        "river": "Luga_0"
+      },
+      "unknown_area_m2": 752.2621866095913,
+      "unknown_cell_count": 29,
+      "unknown_cell_envelope_xz_m": [
+        2724.0,
+        8586.0,
+        2766.0,
+        8622.0
+      ],
+      "area_weighted_corner_class_fraction": {
+        "3": 0.9999999999999996
+      },
+      "corner_level_range_m": [
+        0.44999998807907104,
+        0.4749999940395355
+      ],
+      "area_with_any_builder_eligible_wet_corner_m2": 0.0,
+      "area_with_zero_builder_eligible_wet_corners_m2": 752.2621866095913,
+      "area_in_cells_where_exact_v30_common_cell_planes_is_finite_m2": 0.0,
+      "area_by_all4_vertex_flags_m2": {
+        "water": 752.2621866095913,
+        "beach": 0.0,
+        "narva": 0.0,
+        "reserve": 0.0,
+        "platform": 0.0
+      },
+      "area_by_water_support_reason_m2": {
+        "outside_mask_window": 752.2621866095913
+      },
+      "cells": [
+        {
+          "rc": [
+            610,
+            456
+          ],
+          "xy_bbox_m": [
+            2736.0,
+            8616.0,
+            2742.0,
+            8622.0
+          ],
+          "unknown_corridor_area_m2": 24.3791692101727,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            610,
+            457
+          ],
+          "xy_bbox_m": [
+            2742.0,
+            8616.0,
+            2748.0,
+            8622.0
+          ],
+          "unknown_corridor_area_m2": 18.24611435595159,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            610,
+            458
+          ],
+          "xy_bbox_m": [
+            2748.0,
+            8616.0,
+            2754.0,
+            8622.0
+          ],
+          "unknown_corridor_area_m2": 2.488311982364451,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            611,
+            455
+          ],
+          "xy_bbox_m": [
+            2730.0,
+            8610.0,
+            2736.0,
+            8616.0
+          ],
+          "unknown_corridor_area_m2": 8.548163463149416,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            611,
+            456
+          ],
+          "xy_bbox_m": [
+            2736.0,
+            8610.0,
+            2742.0,
+            8616.0
+          ],
+          "unknown_corridor_area_m2": 35.993012354965856,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            611,
+            457
+          ],
+          "xy_bbox_m": [
+            2742.0,
+            8610.0,
+            2748.0,
+            8616.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            611,
+            458
+          ],
+          "xy_bbox_m": [
+            2748.0,
+            8610.0,
+            2754.0,
+            8616.0
+          ],
+          "unknown_corridor_area_m2": 34.04383359522101,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            611,
+            459
+          ],
+          "xy_bbox_m": [
+            2754.0,
+            8610.0,
+            2760.0,
+            8616.0
+          ],
+          "unknown_corridor_area_m2": 18.804593828051036,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            611,
+            460
+          ],
+          "xy_bbox_m": [
+            2760.0,
+            8610.0,
+            2766.0,
+            8616.0
+          ],
+          "unknown_corridor_area_m2": 0.4023388236311693,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            612,
+            454
+          ],
+          "xy_bbox_m": [
+            2724.0,
+            8604.0,
+            2730.0,
+            8610.0
+          ],
+          "unknown_corridor_area_m2": 0.20938690609744384,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            612,
+            455
+          ],
+          "xy_bbox_m": [
+            2730.0,
+            8604.0,
+            2736.0,
+            8610.0
+          ],
+          "unknown_corridor_area_m2": 27.78273314461947,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            612,
+            456
+          ],
+          "xy_bbox_m": [
+            2736.0,
+            8604.0,
+            2742.0,
+            8610.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            612,
+            457
+          ],
+          "xy_bbox_m": [
+            2742.0,
+            8604.0,
+            2748.0,
+            8610.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            612,
+            458
+          ],
+          "xy_bbox_m": [
+            2748.0,
+            8604.0,
+            2754.0,
+            8610.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            612,
+            459
+          ],
+          "xy_bbox_m": [
+            2754.0,
+            8604.0,
+            2760.0,
+            8610.0
+          ],
+          "unknown_corridor_area_m2": 26.43390463561298,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            613,
+            454
+          ],
+          "xy_bbox_m": [
+            2724.0,
+            8598.0,
+            2730.0,
+            8604.0
+          ],
+          "unknown_corridor_area_m2": 16.421603438533353,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            613,
+            455
+          ],
+          "xy_bbox_m": [
+            2730.0,
+            8598.0,
+            2736.0,
+            8604.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            613,
+            456
+          ],
+          "xy_bbox_m": [
+            2736.0,
+            8598.0,
+            2742.0,
+            8604.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            613,
+            457
+          ],
+          "xy_bbox_m": [
+            2742.0,
+            8598.0,
+            2748.0,
+            8604.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            613,
+            458
+          ],
+          "xy_bbox_m": [
+            2748.0,
+            8598.0,
+            2754.0,
+            8604.0
+          ],
+          "unknown_corridor_area_m2": 35.970422578766204,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            613,
+            459
+          ],
+          "xy_bbox_m": [
+            2754.0,
+            8598.0,
+            2760.0,
+            8604.0
+          ],
+          "unknown_corridor_area_m2": 8.413318787455289,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            614,
+            454
+          ],
+          "xy_bbox_m": [
+            2724.0,
+            8592.0,
+            2730.0,
+            8598.0
+          ],
+          "unknown_corridor_area_m2": 35.65762835256665,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.4749999940395355,
+            0.4749999940395355
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            614,
+            455
+          ],
+          "xy_bbox_m": [
+            2730.0,
+            8592.0,
+            2736.0,
+            8598.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.4749999940395355,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            614,
+            456
+          ],
+          "xy_bbox_m": [
+            2736.0,
+            8592.0,
+            2742.0,
+            8598.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            614,
+            457
+          ],
+          "xy_bbox_m": [
+            2742.0,
+            8592.0,
+            2748.0,
+            8598.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            614,
+            458
+          ],
+          "xy_bbox_m": [
+            2748.0,
+            8592.0,
+            2754.0,
+            8598.0
+          ],
+          "unknown_corridor_area_m2": 24.856308078010066,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            615,
+            456
+          ],
+          "xy_bbox_m": [
+            2736.0,
+            8586.0,
+            2742.0,
+            8592.0
+          ],
+          "unknown_corridor_area_m2": 36.0,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.4749999940395355,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            615,
+            457
+          ],
+          "xy_bbox_m": [
+            2742.0,
+            8586.0,
+            2748.0,
+            8592.0
+          ],
+          "unknown_corridor_area_m2": 33.54226824240291,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        },
+        {
+          "rc": [
+            615,
+            458
+          ],
+          "xy_bbox_m": [
+            2748.0,
+            8586.0,
+            2754.0,
+            8592.0
+          ],
+          "unknown_corridor_area_m2": 4.069074832019655,
+          "corner_classes_NW_NE_SW_SE": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "corner_levels_m_NW_NE_SW_SE": [
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104,
+            0.44999998807907104
+          ],
+          "wet_corner_count_by_builder_cutoff": 0,
+          "cell_planes_finite_by_v30_common": false,
+          "flags_all4corners_true": {
+            "water": true,
+            "beach": false,
+            "narva": false,
+            "reserve": false,
+            "platform": false
+          },
+          "water_support_reason_bits": null
+        }
+      ],
+      "intersection_with_civil_projected_bridge_cells_rc": [],
+      "bridge_objects": [
+        {
+          "object_id": 16777216,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2403.5756111450746,
+            6879.403201638743,
+            2430.7106811084154,
+            6900.366305241423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1710.9586720553307,
+          "gap_x_m": 293.28931889158457,
+          "gap_z_m": 1685.633694758577
+        },
+        {
+          "object_id": 16777218,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2378.8661384888246,
+            6883.205936013743,
+            2406.0012084521654,
+            6904.169039616423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1711.630395479885,
+          "gap_x_m": 317.99879154783457,
+          "gap_z_m": 1681.830960383577
+        },
+        {
+          "object_id": 16777219,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2428.2845955200746,
+            6875.600955544993,
+            2455.4196654834154,
+            6896.564059147673
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1710.6516870282587,
+          "gap_x_m": 268.58033451658457,
+          "gap_z_m": 1689.435940852327
+        },
+        {
+          "object_id": 16787372,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2304.7389412231996,
+            6894.614139138743,
+            2331.8740111865404,
+            6915.577242741423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1715.8306965054214,
+          "gap_x_m": 392.12598881345957,
+          "gap_z_m": 1670.422757258577
+        },
+        {
+          "object_id": 16787373,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2329.4479255981996,
+            6890.811404763743,
+            2356.5829955615404,
+            6911.774508366423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1714.0671667079512,
+          "gap_x_m": 367.41700443845957,
+          "gap_z_m": 1674.225491633577
+        },
+        {
+          "object_id": 16787374,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2354.1571541138246,
+            6887.008670388743,
+            2381.2922240771654,
+            6907.971773991423
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1712.666735520798,
+          "gap_x_m": 342.70777592283457,
+          "gap_z_m": 1678.028226008577
+        },
+        {
+          "object_id": 16787375,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2452.9935798950746,
+            6871.798221169993,
+            2480.1286498584154,
+            6892.761324772673
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1710.710509322215,
+          "gap_x_m": 243.87135014158457,
+          "gap_z_m": 1693.238675227327
+        },
+        {
+          "object_id": 16787376,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2477.7028084106996,
+            6867.995486794993,
+            2504.8378783740404,
+            6888.958590397673
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1711.134588938183,
+          "gap_x_m": 219.16212162595957,
+          "gap_z_m": 1697.041409602327
+        },
+        {
+          "object_id": 16787377,
+          "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+          "world_xz_aabb_all_facebearing_lod_vertices_m": [
+            2502.4117927856996,
+            6864.193240701243,
+            2529.5468627490404,
+            6885.156344303923
+          ],
+          "unknown_cell_envelope_aabb_disjoint": true,
+          "aabb_gap_m": 1711.9232353433185,
+          "gap_x_m": 194.45313725095957,
+          "gap_z_m": 1700.843655696077
+        }
+      ],
+      "closest_bridge_aabb_gap_m": 1710.6516870282587
+    }
+  },
+  "readset_start": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\unknown-p-audit\\unknown-p-audit.json": "a51f09fabc575866d5b650b572cf22b83c071c1b653a9201d0fc93c146c96c38",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\terrain_v30\\terrain_v30.npz": "657863efc36491dc94f3bf958d9ff95d9e1a66b4992e7e8cca58f3428078915c",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01.json": "1f1670961bd89bfe284ac3175201c1dc2529f6c5b13bb7f4796fab4ac382cd53",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.npz": "6ce282962602557636bafac40b604caa3001a95234551db1beee67975dcd1edf",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.json": "74bb37147e20047c44f0228d464650fb35fb9e41e71cf541c4e994f1032c55c9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.json": "cc394869cf45f60315eea5b13a99b2f79d80135bee5ee32879b3900ecaa86610",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\deploy.json": "42630516d0e41cf07050ff2655821c80c40486dd767af8617d03fb7ce91e7b87",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\op_rw_verification.json": "d209c6c3926b0a4d35c8fdef56dfa914309088329bd3b32b7e19cbc116d05090",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "P:\\DZ\\structures\\roads\\bridges\\bridge_metal_25.p3d": "baf79ddd19e08cdcdbec99b15043a319d6b958a1b7884082c2ae069cf3f3cee2",
+    "C:\\Users\\guill\\.claude\\skills\\dayz-p3d-debinarizer\\scripts\\odol_reader.py": "688aaa90aa3caa1c8d036b6a573babd3d455086bdcd426e6e5ae04e3a93e8d4f",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\water\\build_water_pieces_v30.py": "75078e291491b813a71ca08ddea0e4c74edd22ff2811c43a0bd1492e832a2a19",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\v30_common.py": "6485307be67bde8ce3f2b37f597a3a1502fbf2ce19e9313b0d071a42468eb53f",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil_inventory.py": "60d1beb2a36739a98fc70dc5a3b29033286e14abbc87461247bc87dd6f48c0c3",
+    "P:\\Mods\\@DayZ_Baltic_EV94_FocalBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"
+  },
+  "readset_end": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\unknown-p-audit\\unknown-p-audit.json": "a51f09fabc575866d5b650b572cf22b83c071c1b653a9201d0fc93c146c96c38",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\terrain_v30\\terrain_v30.npz": "657863efc36491dc94f3bf958d9ff95d9e1a66b4992e7e8cca58f3428078915c",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil-run-01.json": "1f1670961bd89bfe284ac3175201c1dc2529f6c5b13bb7f4796fab4ac382cd53",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.npz": "6ce282962602557636bafac40b604caa3001a95234551db1beee67975dcd1edf",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.json": "74bb37147e20047c44f0228d464650fb35fb9e41e71cf541c4e994f1032c55c9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.json": "cc394869cf45f60315eea5b13a99b2f79d80135bee5ee32879b3900ecaa86610",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\deploy.json": "42630516d0e41cf07050ff2655821c80c40486dd767af8617d03fb7ce91e7b87",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\op_rw_verification.json": "d209c6c3926b0a4d35c8fdef56dfa914309088329bd3b32b7e19cbc116d05090",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "P:\\DZ\\structures\\roads\\bridges\\bridge_metal_25.p3d": "baf79ddd19e08cdcdbec99b15043a319d6b958a1b7884082c2ae069cf3f3cee2",
+    "C:\\Users\\guill\\.claude\\skills\\dayz-p3d-debinarizer\\scripts\\odol_reader.py": "688aaa90aa3caa1c8d036b6a573babd3d455086bdcd426e6e5ae04e3a93e8d4f",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\water\\build_water_pieces_v30.py": "75078e291491b813a71ca08ddea0e4c74edd22ff2811c43a0bd1492e832a2a19",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\v30_common.py": "6485307be67bde8ce3f2b37f597a3a1502fbf2ce19e9313b0d071a42468eb53f",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\civil_inventory.py": "60d1beb2a36739a98fc70dc5a3b29033286e14abbc87461247bc87dd6f48c0c3",
+    "P:\\Mods\\@DayZ_Baltic_EV94_FocalBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"
+  },
+  "readset_unchanged": true,
+  "elapsed_seconds": 0.6671622999710962,
+  "interpretation_limits": [
+    "P remains NaN/unknown; metadata class and engine sea fallback do not replace P or prove runtime surface/depth.",
+    "A zero compiled-face area is a geometric coverage result only inside these corridor∩unknown-P patches.",
+    "Bridge P3D bounds are all face-bearing LOD vertex AABBs; disjointness excludes these nine objects, not arbitrary runtime water suppression.",
+    "Civil bridge cells are sector-scoped; for Luga the full transformed bridge AABBs, not the cell list, establish separation.",
+    "The 18,024 indexed water objects are the exact name-selected water set; the nine civil bridge WRP records are separate object classes, not a missing water-object count."
+  ]
+}

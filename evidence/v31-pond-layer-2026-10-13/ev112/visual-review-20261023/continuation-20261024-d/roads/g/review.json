@@ -1,0 +1,829 @@
+{
+  "status": "REJECTED_NOT_INTEGRATED",
+  "checks": {
+    "outside_declared_vertices_exact": true,
+    "sea_classification_exact": true,
+    "changed_stars_stay_dry": true,
+    "road_gate": false,
+    "no_regressed_sharp_edges": false
+  },
+  "solver": {
+    "success": false,
+    "message": "Positive directional derivative for linesearch",
+    "iterations": 7,
+    "seconds": 16.171999999904074,
+    "min_constraint": -0.05237895630571743,
+    "jacobian_max_error": 2.866645506041654e-11,
+    "feasibility_slack": 0.9420483813289269
+  },
+  "domain": {
+    "collar_m": 36,
+    "domain_vertices": 317,
+    "free_vertices": 287,
+    "fixed_vertices": 30,
+    "nearest_other_road_m": 975.5718700063909,
+    "dry_legacy_vertices": 11,
+    "reserve_vertices": 52,
+    "footprint_sha256": "95f7a26304e88c726679ec69ef076bb149ec1f1f8bdf4a6cd1e83e40f3b6be83",
+    "records_sha256": "48201e4d5c06a6df80844b6487469fc88f507899c93073af0721703bfbc406dc",
+    "water1m_sha256": "63b948e4877592820e0ca8997533d8e39a07ccdb451bcc3c9de06d3298048432"
+  },
+  "changed_vertices": 47,
+  "delta_range_m": [
+    -0.4108743667602539,
+    1.5641045570373535
+  ],
+  "regressed_sharp_edges": {
+    "diagonal": 3,
+    "east": 7,
+    "south": 2
+  },
+  "road": {
+    "chains": 102,
+    "samples": 77559,
+    "cross_fail": 43,
+    "grade_fail": 0,
+    "chord_fail": 13,
+    "cross_max_m": 0.08352293304360181,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.05626170394892327,
+    "worst": {
+      "cross": {
+        "chain": 49,
+        "station_m": 1687.5656040736264,
+        "x": 5306.6,
+        "z": 6029.9,
+        "value": 0.0835
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 49,
+        "station_m": 1682.566890791418,
+        "x": 5305.4,
+        "z": 6025.0,
+        "value": 0.0563
+      }
+    },
+    "fail_list": [
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1646.6,
+        "x": 5292.0,
+        "z": 5991.6,
+        "value": 0.0418
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1647.6,
+        "x": 5292.4,
+        "z": 5992.6,
+        "value": 0.0342
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1648.6,
+        "x": 5292.9,
+        "z": 5993.5,
+        "value": 0.0351
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1649.6,
+        "x": 5293.3,
+        "z": 5994.4,
+        "value": 0.0535
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1650.6,
+        "x": 5293.7,
+        "z": 5995.3,
+        "value": 0.0482
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1651.6,
+        "x": 5294.1,
+        "z": 5996.2,
+        "value": 0.037
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1652.6,
+        "x": 5294.5,
+        "z": 5997.1,
+        "value": 0.0373
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1653.6,
+        "x": 5294.9,
+        "z": 5998.0,
+        "value": 0.0667
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1654.6,
+        "x": 5295.3,
+        "z": 5999.0,
+        "value": 0.0768
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1655.6,
+        "x": 5295.7,
+        "z": 5999.9,
+        "value": 0.0764
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1656.6,
+        "x": 5296.1,
+        "z": 6000.8,
+        "value": 0.0305
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1657.6,
+        "x": 5296.5,
+        "z": 6001.7,
+        "value": 0.0312
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1658.6,
+        "x": 5296.9,
+        "z": 6002.6,
+        "value": 0.0408
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1659.6,
+        "x": 5297.3,
+        "z": 6003.5,
+        "value": 0.047
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1660.6,
+        "x": 5297.7,
+        "z": 6004.5,
+        "value": 0.043
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1661.6,
+        "x": 5298.1,
+        "z": 6005.4,
+        "value": 0.0365
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1662.6,
+        "x": 5298.5,
+        "z": 6006.3,
+        "value": 0.0414
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1663.6,
+        "x": 5298.9,
+        "z": 6007.2,
+        "value": 0.0586
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1664.6,
+        "x": 5299.3,
+        "z": 6008.1,
+        "value": 0.061
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1665.6,
+        "x": 5299.6,
+        "z": 6009.1,
+        "value": 0.0485
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1666.6,
+        "x": 5300.0,
+        "z": 6010.0,
+        "value": 0.0418
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1667.6,
+        "x": 5300.4,
+        "z": 6010.9,
+        "value": 0.062
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1668.6,
+        "x": 5300.8,
+        "z": 6011.8,
+        "value": 0.0697
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1669.6,
+        "x": 5301.1,
+        "z": 6012.8,
+        "value": 0.0757
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1670.6,
+        "x": 5301.5,
+        "z": 6013.7,
+        "value": 0.0808
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1671.6,
+        "x": 5301.8,
+        "z": 6014.6,
+        "value": 0.0749
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1672.6,
+        "x": 5302.2,
+        "z": 6015.6,
+        "value": 0.0623
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1673.6,
+        "x": 5302.5,
+        "z": 6016.5,
+        "value": 0.0605
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1674.6,
+        "x": 5302.9,
+        "z": 6017.4,
+        "value": 0.0544
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1675.6,
+        "x": 5303.2,
+        "z": 6018.4,
+        "value": 0.0403
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1676.6,
+        "x": 5303.5,
+        "z": 6019.3,
+        "value": 0.0363
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1677.6,
+        "x": 5303.9,
+        "z": 6020.3,
+        "value": 0.0385
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1678.6,
+        "x": 5304.2,
+        "z": 6021.2,
+        "value": 0.0418
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1679.6,
+        "x": 5304.5,
+        "z": 6022.2,
+        "value": 0.04
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1680.6,
+        "x": 5304.8,
+        "z": 6023.1,
+        "value": 0.0344
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1681.6,
+        "x": 5305.1,
+        "z": 6024.1,
+        "value": 0.047
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1682.6,
+        "x": 5305.4,
+        "z": 6025.0,
+        "value": 0.0632
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1683.6,
+        "x": 5305.6,
+        "z": 6026.0,
+        "value": 0.0584
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1684.6,
+        "x": 5305.9,
+        "z": 6027.0,
+        "value": 0.0467
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1685.6,
+        "x": 5306.2,
+        "z": 6027.9,
+        "value": 0.0415
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1686.6,
+        "x": 5306.4,
+        "z": 6028.9,
+        "value": 0.062
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1687.6,
+        "x": 5306.6,
+        "z": 6029.9,
+        "value": 0.0835
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1688.6,
+        "x": 5306.9,
+        "z": 6030.9,
+        "value": 0.0606
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1646.6,
+        "x": 5292.0,
+        "z": 5991.6,
+        "value": 0.042
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1648.6,
+        "x": 5292.9,
+        "z": 5993.5,
+        "value": 0.0307
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1649.6,
+        "x": 5293.3,
+        "z": 5994.4,
+        "value": 0.0518
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1650.6,
+        "x": 5293.7,
+        "z": 5995.3,
+        "value": 0.0547
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1651.6,
+        "x": 5294.1,
+        "z": 5996.2,
+        "value": 0.0455
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1654.6,
+        "x": 5295.3,
+        "z": 5999.0,
+        "value": 0.0345
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1662.6,
+        "x": 5298.5,
+        "z": 6006.3,
+        "value": 0.0377
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1663.6,
+        "x": 5298.9,
+        "z": 6007.2,
+        "value": 0.0563
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1664.6,
+        "x": 5299.3,
+        "z": 6008.1,
+        "value": 0.037
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1672.6,
+        "x": 5302.2,
+        "z": 6015.6,
+        "value": 0.0401
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1673.6,
+        "x": 5302.5,
+        "z": 6016.5,
+        "value": 0.0309
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1681.6,
+        "x": 5305.1,
+        "z": 6024.1,
+        "value": 0.031
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1682.6,
+        "x": 5305.4,
+        "z": 6025.0,
+        "value": 0.0563
+      }
+    ],
+    "status": "FAIL",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "terrain_input_sha256": "bc41bd8314affc5787e827b75fd7d03b7de454c0ffaae3a7476ccc7b609fd508",
+  "terrain_output_sha256": "2bfccdd8d7d4321f2ad9ef2b71afc271aa3c605fa626e61432b58df3d409c5d9",
+  "sources": {
+    "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\solve_visual_road_joint_ev112.py": "f50fe18e35766d75446ff068926fa99443308e863ed9e2d0646f319b576cb31c",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\road-repair-20261024-d\\review.json": "823228f657c118e1463c6107c112bd17814c7d2755ef38231cbc15254ec7a70a",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\repair_roads_v30.py": "133ac4e74c2a468dc3fdbfa0aa2360902292bee0e213f81d52185e91adc98916",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\verify_roads_v30.py": "2be9af6502077230028e5501de3b5c06cb2855c544deebf6147c22ceb9f9b8f8",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\census_creases_v31.py": "816b923e162ee185ea773535defb1ff85580d4c7325b5064b3387d2c97ac65bb"
+  },
+  "changes": [
+    {
+      "row": 1040,
+      "col": 883,
+      "before": 11.077763557434082,
+      "after": 11.107975959777832
+    },
+    {
+      "row": 1040,
+      "col": 884,
+      "before": 11.111366271972656,
+      "after": 11.070359230041504
+    },
+    {
+      "row": 1040,
+      "col": 885,
+      "before": 11.14538860321045,
+      "after": 11.133551597595215
+    },
+    {
+      "row": 1041,
+      "col": 883,
+      "before": 10.80118465423584,
+      "after": 10.800025939941406
+    },
+    {
+      "row": 1041,
+      "col": 884,
+      "before": 10.845780372619629,
+      "after": 10.532317161560059
+    },
+    {
+      "row": 1041,
+      "col": 885,
+      "before": 10.891332626342773,
+      "after": 10.67534351348877
+    },
+    {
+      "row": 1041,
+      "col": 886,
+      "before": 10.927443504333496,
+      "after": 10.836691856384277
+    },
+    {
+      "row": 1042,
+      "col": 883,
+      "before": 10.563234329223633,
+      "after": 10.291807174682617
+    },
+    {
+      "row": 1042,
+      "col": 884,
+      "before": 10.619479179382324,
+      "after": 10.20860481262207
+    },
+    {
+      "row": 1042,
+      "col": 885,
+      "before": 10.668719291687012,
+      "after": 10.317442893981934
+    },
+    {
+      "row": 1042,
+      "col": 886,
+      "before": 8.781105041503906,
+      "after": 10.118027687072754
+    },
+    {
+      "row": 1043,
+      "col": 883,
+      "before": 10.372502326965332,
+      "after": 10.282814025878906
+    },
+    {
+      "row": 1043,
+      "col": 884,
+      "before": 10.427351951599121,
+      "after": 10.21407413482666
+    },
+    {
+      "row": 1043,
+      "col": 885,
+      "before": 10.477402687072754,
+      "after": 10.176628112792969
+    },
+    {
+      "row": 1043,
+      "col": 886,
+      "before": 8.331475257873535,
+      "after": 9.261241912841797
+    },
+    {
+      "row": 1044,
+      "col": 882,
+      "before": 10.170282363891602,
+      "after": 10.211423873901367
+    },
+    {
+      "row": 1044,
+      "col": 883,
+      "before": 10.22071361541748,
+      "after": 10.115307807922363
+    },
+    {
+      "row": 1044,
+      "col": 884,
+      "before": 10.269041061401367,
+      "after": 10.202401161193848
+    },
+    {
+      "row": 1044,
+      "col": 885,
+      "before": 10.317475318908691,
+      "after": 10.272195816040039
+    },
+    {
+      "row": 1045,
+      "col": 882,
+      "before": 10.05850887298584,
+      "after": 9.929740905761719
+    },
+    {
+      "row": 1045,
+      "col": 883,
+      "before": 10.099369049072266,
+      "after": 9.879355430603027
+    },
+    {
+      "row": 1045,
+      "col": 884,
+      "before": 10.143929481506348,
+      "after": 10.045811653137207
+    },
+    {
+      "row": 1045,
+      "col": 885,
+      "before": 10.186667442321777,
+      "after": 10.192870140075684
+    },
+    {
+      "row": 1046,
+      "col": 882,
+      "before": 9.969420433044434,
+      "after": 9.830595970153809
+    },
+    {
+      "row": 1046,
+      "col": 883,
+      "before": 10.003745079040527,
+      "after": 9.812569618225098
+    },
+    {
+      "row": 1046,
+      "col": 884,
+      "before": 10.041481971740723,
+      "after": 9.804861068725586
+    },
+    {
+      "row": 1046,
+      "col": 885,
+      "before": 8.041049003601074,
+      "after": 9.22795295715332
+    },
+    {
+      "row": 1047,
+      "col": 881,
+      "before": 9.875251770019531,
+      "after": 9.708159446716309
+    },
+    {
+      "row": 1047,
+      "col": 882,
+      "before": 9.901528358459473,
+      "after": 9.557826042175293
+    },
+    {
+      "row": 1047,
+      "col": 883,
+      "before": 9.929007530212402,
+      "after": 9.696194648742676
+    },
+    {
+      "row": 1047,
+      "col": 884,
+      "before": 9.959298133850098,
+      "after": 9.837407112121582
+    },
+    {
+      "row": 1048,
+      "col": 881,
+      "before": 9.826634407043457,
+      "after": 9.624391555786133
+    },
+    {
+      "row": 1048,
+      "col": 882,
+      "before": 9.847265243530273,
+      "after": 9.623801231384277
+    },
+    {
+      "row": 1048,
+      "col": 883,
+      "before": 9.870354652404785,
+      "after": 9.587798118591309
+    },
+    {
+      "row": 1048,
+      "col": 884,
+      "before": 7.81395149230957,
+      "after": 9.297680854797363
+    },
+    {
+      "row": 1049,
+      "col": 880,
+      "before": 9.774341583251953,
+      "after": 9.632407188415527
+    },
+    {
+      "row": 1049,
+      "col": 881,
+      "before": 9.788232803344727,
+      "after": 9.410954475402832
+    },
+    {
+      "row": 1049,
+      "col": 882,
+      "before": 9.80460262298584,
+      "after": 9.472518920898438
+    },
+    {
+      "row": 1049,
+      "col": 883,
+      "before": 9.822747230529785,
+      "after": 9.609156608581543
+    },
+    {
+      "row": 1050,
+      "col": 880,
+      "before": 9.748750686645508,
+      "after": 9.732026100158691
+    },
+    {
+      "row": 1050,
+      "col": 881,
+      "before": 9.759199142456055,
+      "after": 9.638993263244629
+    },
+    {
+      "row": 1050,
+      "col": 882,
+      "before": 9.771624565124512,
+      "after": 9.510116577148438
+    },
+    {
+      "row": 1050,
+      "col": 883,
+      "before": 7.677578449249268,
+      "after": 9.241683006286621
+    },
+    {
+      "row": 1051,
+      "col": 880,
+      "before": 9.732683181762695,
+      "after": 9.639694213867188
+    },
+    {
+      "row": 1051,
+      "col": 881,
+      "before": 9.738835334777832,
+      "after": 9.680765151977539
+    },
+    {
+      "row": 1051,
+      "col": 882,
+      "before": 9.74690055847168,
+      "after": 9.73052978515625
+    },
+    {
+      "row": 1052,
+      "col": 880,
+      "before": 9.725167274475098,
+      "after": 9.656698226928711
+    }
+  ],
+  "limits": [
+    "Not integrated: requires independent water/protection, forest support, bury, build and runtime review."
+  ]
+}

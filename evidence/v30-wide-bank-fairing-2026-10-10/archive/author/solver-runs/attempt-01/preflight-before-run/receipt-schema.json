@@ -1,0 +1,33 @@
+{
+  "status": "SCHEMA_ONLY_NO_CANDIDATE",
+  "receipt_path_after_authorization": "E:/DayZ-Baltic-Build/v30-wide-bank-fairing-pilot-20261010/authoring.json",
+  "candidate_path_after_authorization": "E:/DayZ-Baltic-Build/v30-wide-bank-fairing-pilot-20261010/candidate-terrain.npz",
+  "identity_inputs": {
+    "B": {"path": "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/candidate/terrain.npz", "sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"},
+    "EV79_budget": {"path": "E:/DayZ-Baltic-Build/v30-narva-dry-bank-relief-20261010/candidate/terrain.npz", "sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c"},
+    "P": {"path": "E:/DayZ-Baltic-Build/v30-narva-dry-bank-relief-20261010/candidate/plane.npy", "sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0"},
+    "F": {"path": "E:/DayZ-Baltic-Build/v30-narva-dry-bank-relief-20261010/candidate/visible-field.npy", "sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"},
+    "EV79_constraints": {"path": "E:/DayZ-Baltic-Build/v30-narva-dry-bank-relief-20261010/constraints.npz", "sha256": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c"},
+    "prior_lake_constraints": {"path": "E:/DayZ-Baltic-Build/v30-remaining-exact-dry-support-20261009/constraints.npz", "sha256": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370"},
+    "corridor_geometry_19": {"path": "E:/DayZ-Baltic-Build/v30-v11/06-evidence/corridors.geojson", "sha256": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343"},
+    "corridor_decision_user": {"path": "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290/evidence/v30-navigation-contract-2026-10-08/decision.json", "sha256": "d510af67cc4016a0ba7192aa01c070d314b9bc7e49b6256ca6ffaf64fc05b843"},
+    "B_deploy_manifest": {"path": "E:/DayZ-Baltic-Build/v30-mixed-bank-incremental-fixed-20261010/deploy.json", "sha256": "3c98951f3488eef233d6972621648c84244f9e711c2ff419fd0b8013b427ec00"},
+    "B_terrain_pbo": {"path": "P:/Mods/@DayZ_Baltic_IncrementalBankPreviewV1/Addons/narva_trial.pbo", "sha256": "b11c825b6c14ecc5649ac668b40c7dc6c9f52c64c26ddfa748983c04b340c36c"},
+    "B_water_pbo": {"path": "P:/Mods/@DayZ_Baltic_IncrementalBankPreviewV1/Addons/baltic_water_v30.pbo", "sha256": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"},
+    "compiled_WRP_identity": {"path": "embedded in B_terrain_pbo; deploy.json compiled_wrp_sha256", "sha256": "3b12b21d554c6ab75d76c43b5ba902c9a1d49a26516bdd14b16f1a6048ba2539"}
+  },
+  "diagnostic_artifacts_after_preflight": {
+    "domain-diagnostic.json": "mutable coordinate list, reconstructed source masks, row/col bounds; diagnostic only",
+    "frozen-stencils.json": "fixed all-touching stencil set and collar-impact subset; frozen before solve",
+    "crossing-bounds.json": "per-layer/per-cell/per-edge bidirectional scalar bounds; consumer independently reconstructs",
+    "preflight.json": "counts, matrix dimensions, near-flat threshold, hashes of sidecars, solver_invoked=false"
+  },
+  "receipt_fields_after_candidate": [
+    "candidate_sha256", "input_sha256_pre_solver", "input_sha256_post_solver", "solver.method/version/status/nit/cost",
+    "mutable_nodes_sha256_le_i32", "frozen_stencils_sha256", "collar_stencils_sha256", "crossing_records_sha256",
+    "near_flat_threshold_m/source/count", "preflight_artifact_paths_and_sha256", "candidate_output_path", "plan_sha256", "receipt_schema_sha256"
+  ],
+  "consumer_reanchors_independently": [
+    "candidate H hash", "all source hashes above", "corridor geometry and exact P9 source contract", "full B objects/model inventory plus compiled exposure for every intersecting model", "native triangle/crossing implementation and all geometry gates"
+  ]
+}

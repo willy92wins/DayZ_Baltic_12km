@@ -1,0 +1,46 @@
+{
+  "status": "NOT_STARTED_NO_RUNTIME_DATA",
+  "utc": "2026-10-02T17:09:00Z",
+  "launch": {
+    "status": "failed",
+    "project": "DayZ_MCP",
+    "mode": "server",
+    "run_id": null,
+    "phase": "executing",
+    "elapsed_s": 600.451,
+    "artifacts_paths": [],
+    "error_code": "takeover_required",
+    "cleanup_degraded": false,
+    "server_alive": null,
+    "client_alive": null,
+    "occupied_by_run_id": "b573e3af-22b1-40e9-b1d1-9d19106161c0",
+    "mod": "@DayZ_MCP",
+    "label": "@DayZ_MCP server",
+    "age_s": 890.414,
+    "foreign": false,
+    "hint": "pass takeover=true to evict occupied_by_run_id=b573e3af-22b1-40e9-b1d1-9d19106161c0; do not dayz_test_stop a run you do not own",
+    "activity_state": "recent",
+    "last_activity_age_s": 0.347,
+    "queue_offer": {
+      "position_if_joined": 3,
+      "waiters": 2,
+      "occupant": {
+        "run_id": "b573e3af-22b1-40e9-b1d1-9d19106161c0",
+        "state": "RUNNING",
+        "foreign": false,
+        "port": null,
+        "mods": [
+          "@DayZ_MCP"
+        ]
+      },
+      "occupant_age_s": 890.414,
+      "retry": {
+        "tool": "dayz_test_run",
+        "same_args": true,
+        "on_busy": "queue"
+      }
+    },
+    "caller_tool_registry_stale": false
+  },
+  "result": "Queue wait expired; no run created; isolated experiment budget not consumed."
+}

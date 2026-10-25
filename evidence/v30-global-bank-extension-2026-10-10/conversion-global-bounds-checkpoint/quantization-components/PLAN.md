@@ -1,0 +1,29 @@
+# Float32 component conversion over the authorized 121-node wet-bank pilot
+
+State: design and synthetic fixtures only. The real 121-node conversion/search has not run. The original wet-bank solve and `float32-neighborhood-v1/real-enumeration-01` remain rejected and unchanged. A candidate from this diagnostic is always unaccepted; water-topology, outside-channel minima, exposed-area, and visual/deployment acceptance remain separate gates.
+
+## Frozen scope and inputs
+
+Use exactly the existing pilot's 121 variables in `[857,868)×[1181,1192]`, its existing 15×15 context, bounds and P/F/GeoJSON inputs. For every one of the 121 vertices, choices are exactly the adjacent float32 value below raw, raw itself, and the adjacent float32 value above raw; choices outside the inward float32 bounds are unavailable. All other 104 context cells remain bit-identical to the frozen raw grid. No water field, mask, height bound, tolerance, shoreline interval, or design geometry changes. The frozen executor is `float32-neighborhood-v1/executor.py` SHA `9a0dbffc55e9956209083fe4963e2636b6f0174de1dc150bdfa15f070d48149e`; its source pins must still pass at runtime. The compatibility certificate JSON SHA `0cb852c2aa3bdd99e7b1dbdfb079df5f9faa65c3db854a3ff1389b25d8b53da7` is an input fixture/evidence pin, not a candidate.
+
+## Constraint construction
+
+1. Build unary domains from physical bounds, all sign-only P/F samples, and the dry/wet endpoint signs attached to every direct P/F crossing record. Compare float32 endpoint values against the pinned binary64 sample as exact `Fraction`s; do not introduce an extra ULP or tolerance.
+2. For each of the 116 direct P/F/design crossing records, derive a relation over its actual two grid endpoints. If both endpoints are variables, save/test all nine pairs; if one endpoint is fixed raw, derive its three-value unary relation; fixed/fixed records are checked against raw and must pass. Use the frozen exact Fraction crossing test. Never connect vertices by a hand-authored edge list.
+3. Derive the same relation tables for all 150 D8 witness edges, using the frozen direction `H(center) >= H(witness)` and float32 values. Variable/fixed witnesses become unary relations. The edge `(864,1187)–(864,1188)` must connect through the source geometry/table if both endpoints are in the 121-node domain; do not seed or force that vertex into a component manually.
+4. Run AC-3 over all unary/binary domains. Build connected components from non-universal binary relations. Seed conversion only at variables touched by a raw-violated unary/binary relation, then take the full component closure; every other component stays raw. A fixed/fixed failure, empty AC-3 domain, or infeasible searched component is terminal.
+5. Solve each seeded component as a finite CSP with deterministic branch-and-bound. Rank complete local assignments by total absolute ULP steps, then squared distance to the stored continuous `solution_float64`, then the complete row-major step tuple. Independent components are optimized independently; their ordered optima compose to the global lexicographic optimum. The branch order is deterministic. Search cap: 1,000,000 expanded nodes total, 120 seconds for relation construction/propagation/search/final local checks, and 1 GiB peak working set. Any limit is terminal: no widening, retry, or second search.
+6. Assemble from frozen raw, changing only variables in seeded components. Recheck *all* bounds, all sign specs, all 116 direct crossings, all 150 D8 pairs, all 392 face cones, and the inherited objective rule (`new_cost−raw_cost <= 1e-7*max(1,raw_cost)` and `new_cost < baseline_cost`). A failed assembled gate rejects the result without another search. The P/F crossing relation is the physical oracle; the old `C_cross >= 0` matrix residual is retained only as diagnostic because baseline itself has sub-ULP residuals.
+
+## Terminal states and artifacts
+
+The real mode is a single fresh `real-conversion-01` directory, requiring exact approved SHA arguments for this plan and source. It emits constraint tables/component/AC-3/search summaries and a source readset. Any pin/input/integrity failure, fixed-only or unary/AC-3 contradiction, infeasible component, search-node/time/memory limit, or failed assembled local gate is terminal; the receipt records the concrete status from the implementation. An unexpected exception after the output directory is created also persists an `ERROR` receipt before the exception is re-raised; this path must not write a candidate. Only `DIAGNOSTIC_CANDIDATE_UNACCEPTED` may write a separate candidate-context NPZ, and that candidate is never promoted. The consumer still must independently verify the plan's outstanding water connectivity, outside-channel minimum/extrema, exposed area, and complete composition/retained protections before any later acceptance.
+
+## Required fixtures before real invocation
+
+- All nine crossing pairs from a synthetic edge table match an independently written exact Fraction scalar calculation; exact endpoint sign boundaries reject correctly without an arbitrary ULP.
+- D8 table agrees with scalar `float32(center) >= float32(witness)` in all nine pairs and with unary boundary cases.
+- A data-derived three-vertex chain includes a vertex outside the original ten-node set through its actual endpoint edge; no manual component insertion.
+- The real compatibility certificate (pinned JSON) demonstrates the record-76/record-80 contradiction as a pairwise fixture; AC-3 must empty the domain.
+- Two disconnected components prove that a raw-failing component is searched while an independent raw-satisfying component remains byte-identical.
+- Bounds exclusion, fixed/fixed failure, empty unary domain, search-node cap, time cap, and an assembled-gate failure all fail closed without a candidate.

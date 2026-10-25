@@ -1,0 +1,205 @@
+{
+  "status": "OT1_OFFLINE_READY",
+  "passed": true,
+  "checks": {
+    "source_snapshot_current": true,
+    "g0": true,
+    "g1": true,
+    "all_offline_gates": true,
+    "step0": true,
+    "step1": true,
+    "targeted_and_legacy_controls": true,
+    "retained_receiver_negative": true,
+    "runtime_not_claimed": true,
+    "scope_51_attempted_49_built": true,
+    "probe_budget": true
+  },
+  "counts": {
+    "sites": 51,
+    "sites_built": 49,
+    "sites_skipped": 2,
+    "pieces": 6593,
+    "stones": 1014,
+    "objects": 7607,
+    "lattice_km": 60.36,
+    "wet_span_km": 59.62
+  },
+  "skipped": [
+    {
+      "site": "98.0-2",
+      "why": "no piece left after trimming; channel kept as pond"
+    },
+    {
+      "site": "67.0-0",
+      "why": "no piece left after trimming; channel kept as pond"
+    }
+  ],
+  "source_manifest": "checkpoint-l-source.json",
+  "sources": [
+    {
+      "path": "tools/water/kit_worklist_v31.py",
+      "sha256": "d60907f3688d669551ae32b25e586a124bda34dadf9106a1889873ad329e927d"
+    },
+    {
+      "path": "tools/water/streambed_kit_v31.py",
+      "sha256": "61c4e393d0803741da48fd417d5509bc76ab7252ed3684fb5108d3b4976cb3f9"
+    },
+    {
+      "path": "tools/water/extract_stones_geometry_v31.py",
+      "sha256": "6e5813a4ddbca55cbb34af94d0c185df862e839c8fd14d305426cc3e3c45fe8a"
+    },
+    {
+      "path": "tools/water/probe_points_kit.py",
+      "sha256": "97d3206b54a7aeecddf39c629f92cb6730bc246d68ffb96214e4701f758899dd"
+    },
+    {
+      "path": "tools/water/select_kit_probe_v31.py",
+      "sha256": "73476969fb0485a11a23e73db8b2363f3bc4ff6c6d3de6c2a07bd5def1e853b2"
+    },
+    {
+      "path": "tools/water/streambed_kit_geometry_v31.json",
+      "sha256": "4868ab02fbf18d45552df4398fadd85986912e41276571017c35517d32509b23"
+    },
+    {
+      "path": "tools/water/streambed_stones_geometry_v31.json",
+      "sha256": "3d20f390c877926e1b73967f611ac5b510916b9488423f6a7108d65f06c8649f"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/check_native_gate.py",
+      "sha256": "8ab809b4f57e24eb2164a6686972a9df1ea17e1f01a429aa382a72451ea109fe"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g10_stones.py",
+      "sha256": "71b8daec913922de5add9740f1c0a50ae8ebf21557b77ec1ddf65a7ee799685b"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g11_junctions.py",
+      "sha256": "9715c3e8f4d0fef7286686c4312fe1d5bfa62c29ebdffcc60c7bf528bed7f213"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g1_cli.py",
+      "sha256": "335c8f8927629f0c07f656c4ac12f5b9d64714ba5ec114a920718677f41a862c"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g2_width.py",
+      "sha256": "e27f0fe583c19266b66ff8f8368a5635ea3fce2ed211dd9be9d8b7c1b8843433"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g3_continuity.py",
+      "sha256": "9283b3b03ed4082d33813f926e7efd99684a8a107e26b5b71cad6f351a16cfce"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g4_engine_margin.py",
+      "sha256": "282a492d44c149d6fdf15d427e132a905816967c3cf88a331932e4fead8d9c13"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g5_slopes.py",
+      "sha256": "30f4ae34f508e7678f99ec42760862806005fe58890e9df18f468624ed48ed74"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g6_pond_layer.py",
+      "sha256": "d4285608dd706b9feafe6b622564becb6eab4dfd52e47dd9cf8f5f8e07fb85dd"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g7_probe.py",
+      "sha256": "5ed539617b534d7b9df2221abc8665bcdb9f40aa6157219fbbd2fa1721cd8448"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g8_engine_probe.py",
+      "sha256": "b02572de491d00c4c31fbba0ef1ce5fb9c167c6def78eb1de47ef74780dbb253"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gate_g9_mounds.py",
+      "sha256": "755e6f53f897c4a993d955711e27e6c78b6e296d8db3e075393577038127148c"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/gatelib.py",
+      "sha256": "02f8d53ead99c1b0827016b81a738b5faf3d95b3325b8d3cfa284bd0f4b1dcfc"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/junction_native.py",
+      "sha256": "93f7c8066dcb520211c51155ab10dc0d2d88b36fea660a80dd5600f33da3084d"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_confluences.py",
+      "sha256": "586b2c7696f076dc5d0f43538131f52673b3dedff08b0f3caa1fbea19205c4ea"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_controls.py",
+      "sha256": "4b3a308f5e2e37927ed020e64393e3876815c5498ef3507ab9c4d215a7b5f7d6"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_controls_ot1.py",
+      "sha256": "76dc3654d3572d05ff5290479daea0ee55be5d9a8881d29e8399840d39f78d75"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_controls_v9.py",
+      "sha256": "17b24d25d8ff106d7dba725876456cd54decfafc2f336f3dc28f06ee5244af73"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_engine_confluences.py",
+      "sha256": "f19bcd53519e225f68bf7ec099dc37c4675936e82fc5a24eace08441ef2389df"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_junction_cut.py",
+      "sha256": "7dd71cd73e7d5d4e8d98a41c42482a32b73d05026144d443a3394e0c8341d323"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_width_cases.py",
+      "sha256": "3c86604d0dbf6ea29ed39e90359a123e49fed66f5cf13a2b3238aec4269bc6e2"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_width_sign.py",
+      "sha256": "a9e3d343c4f0f590e896c9fe0a3492ac3765ebd40dd62b8e6b51ca7aa627fe89"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/negative_worklist_receiver.py",
+      "sha256": "7ae196dd80d75a7e4dbbadf14314b7f4f7ec798b0355b7bc22ac9e164c7017ae"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/probe_confluence_contract.py",
+      "sha256": "38bbc41174995081542e579a381f566443c35559a87cf7892810e1e92991503b"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/reach_report.py",
+      "sha256": "e8bb1b9668fb7a2bb806a9bff004ec2d30d3cfffb2810e7accb353c9c013e0b0"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/regression_ev110.py",
+      "sha256": "babffccbf72641c839d5af478900aaaa0e4cec6abb56be5e628c92c6f2bce8d5"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/run_gates.py",
+      "sha256": "ad0942dfd5abcb86e410f8ff037f467a89f004562a2f4987a492fee65cd16b34"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/run_negatives.py",
+      "sha256": "3b06f60991cb53e0b700577e660c3dd22f56c8cbe4b5be90727b01b173d8bd97"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/verify_step1.py",
+      "sha256": "b582eb9e005387e37e2f91ba55ff157a8983f25b6a897e4093c1552016bf90a1"
+    },
+    {
+      "path": "evidence/v31-pond-layer-2026-10-13/ev112/ot1/gates/verify_worklist.py",
+      "sha256": "c4e29665d53f9713b0b5873b6ce912730a87b8cf3f4262de5acf9d2823589df4"
+    }
+  ],
+  "outputs": {
+    "terrain-kit.npz": "39ec6b72aa6e1c8e75db457e4fbf7a4feebe7316160b497e109fe70d6a2ec24d",
+    "terrain-ev108.npz": "39ec6b72aa6e1c8e75db457e4fbf7a4feebe7316160b497e109fe70d6a2ec24d",
+    "cover-ev108.npy": "ffcb87c36b32975c5976be7168c429dcda0e5a5e7cae30cbb59916b67f2b54a1",
+    "envelope-ev108.npy": "fc39bfdc4bf012520b03dbe1da7589e1382fc0b7b50662be8ce2f18f9f616cd3",
+    "kit-records.json": "1a383729133c5282b5fa9dbdfc9ef7993a906991a5b381e69fc92d8f10ef2162",
+    "kit-report.json": "f056bd955a39154e9cee7939b48ca4b62f4ed93a44257b8ca6d6fe5a5df00afc"
+  },
+  "probe": {
+    "offline": 66166,
+    "runtime": 3000
+  },
+  "margin_min_m": 0.1027,
+  "max_junction_dry_m": 2.589688426898908,
+  "review_rounds_used": 2,
+  "engine": "NOT_RUN: OT8 required on final package",
+  "visual": "NOT_RUN: personal view to prepare"
+}

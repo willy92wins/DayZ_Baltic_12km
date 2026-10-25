@@ -1,0 +1,53 @@
+{
+  "schema": "global-dry-rollback.fixtures.v1",
+  "status": "PASS_SMALL_MONOTONIC_ROLLBACK_FIXTURES",
+  "execution_scope": "synthetic arrays only; no 2048x2048 terrain or global solver loaded",
+  "source_hashes": {
+    "PLAN.md": "b50f2f3be3ff08de8df1f838391568436c77c9606009792df966a12ec4effe55",
+    "rollback_core.py": "de195463fc937986c02a7b1ca3b0b67714760d818e21561093dc90c53c029ec4",
+    "rollback_once.py": "434cb69fb8940816812d870d57e1cb7bb13f7530958b3d676bdc3ba911e9cd12",
+    "test_rollback_core.py": "ef3bb5173a142e6247665af29018e44e6faec50343769e6c0c2da7a51e12023b",
+    "test_rollback_once_fixture.py": "d232c56be18ce8561cd7112b3e5b887268371dfcc90bb2dfa2b9699e1af61547"
+  },
+  "oracles": {
+    "EV87_source": "E:/DayZ-Baltic-Build/v30-global-strict-bank-relief-20261010/review-independent/verify_ev87.py",
+    "EV87_sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "EV87_functions_loaded_from_ast_without_gis_imports": [
+      "triangle_normals",
+      "edge_angles",
+      "edge_vertex_slices",
+      "incident_any"
+    ],
+    "D8_source": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-structured-operator/structured_operator.py",
+    "D8_sha256": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a"
+  },
+  "fixture_count": 15,
+  "checks": {
+    "angles": "Chunked diag/vertical/horizontal counts and changed-vertex incidences match the pinned EV87 functions over 3x3, 4x7, 9x5 and 13x17 grids; chunk sizes 1, 2, 3 and 8 cover row boundaries.",
+    "D8": "Chunked center/witness arrays exactly match structured_operator.d8_witness_arrays across degenerate, edge, random and tied small grids.",
+    "faces": "Prepared sqrt-of-squares gradients match direct formulas; feasible baseline passes; an over-radius changed cell rolls back only changed corners.",
+    "rollback": "Synthetic spike rollback and a deterministic two-round cascade terminate with strictly decreasing changed count; invalid fixed-only failures reject closed.",
+    "float32": "Clipped values remain within representable inward bounds; infeasible box rejects."
+  },
+  "global_run_executed": false,
+  "terrain_written": false,
+  "acceptance_claim": "None",
+  "fixture_tests": [
+    "test_hinge_chunking_matches_ev87_multiple_shapes_and_boundaries",
+    "test_flat_baseline_has_no_new_hinges_and_spike_is_rolled_back",
+    "test_face_cone_reverts_all_changed_corners_and_baseline_is_feasible",
+    "test_d8_witness_marks_changed_endpoints_and_ignores_fixed_ones",
+    "test_chunked_d8_witnesses_match_pinned_full_operator_ties_and_edges",
+    "test_monotone_round_returns_baseline_when_all_changed_nodes_are_incident",
+    "test_rollback_cascade_rechecks_after_each_monotone_round",
+    "test_constraint_failure_with_only_fixed_incident_vertices_fails_closed",
+    "test_clip_is_inside_inward_float32_box_and_rejects_bad_box",
+    "test_float32_objective_path",
+    "test_solution_lifetime_covers_float32_cost",
+    "test_readset_schema_and_hashes",
+    "test_no_improvement_is_not_pending_acceptance",
+    "test_pending_candidate_is_owned_before_write_or_guard",
+    "test_terrain_written_tracks_publish_and_cleanup"
+  ],
+  "wrapper_fixture_scope": "Synthetic operator and AST lifecycle fixtures only; wrapper.run() and global terrain/solver are not invoked."
+}

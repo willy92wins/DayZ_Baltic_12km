@@ -1,0 +1,97 @@
+{
+  "acceptance_claim": false,
+  "error": "MemoryError: admission requires the 6-GiB reserve plus 3-GiB process allowance",
+  "instrumentation": {
+    "hash_workers": 8,
+    "last_phase": "source_start_set_validated",
+    "phases": [
+      {
+        "bytes_hashed": 97753,
+        "cpu_to_wall_ratio": 0.0,
+        "elapsed_seconds": 0.0107844999874942,
+        "interval_process_cpu_seconds": 0.0,
+        "interval_wall_seconds": 0.0107844999874942,
+        "max_file_seconds": 0.00120749999769032,
+        "median_file_seconds": 0.0011494499922264367,
+        "phase": "discover_ev88_and_memory_source",
+        "process_cpu_seconds": 0.0,
+        "state": "complete",
+        "throughput_bytes_per_second": 50147745.34503849,
+        "unique_paths": 2,
+        "wall_seconds": 0.0019492999999783933,
+        "workers": 8
+      },
+      {
+        "available_physical_bytes": 9783443456,
+        "elapsed_seconds": 0.01631400000769645,
+        "interval_process_cpu_seconds": 0.0,
+        "interval_wall_seconds": 0.005529500020202249,
+        "minimum_required_bytes": 9663676416,
+        "phase": "early_resource_admission",
+        "state": "complete"
+      },
+      {
+        "bytes_hashed": 1160097507,
+        "cpu_to_wall_ratio": 0.4367719186820514,
+        "elapsed_seconds": 20.472482500015758,
+        "interval_process_cpu_seconds": 5.703125,
+        "interval_wall_seconds": 20.45616850000806,
+        "max_file_seconds": 0.8007186999893747,
+        "median_file_seconds": 0.004301049979403615,
+        "phase": "complete_source_start_hash",
+        "process_cpu_seconds": 3.75,
+        "state": "complete",
+        "throughput_bytes_per_second": 135119470.39750788,
+        "unique_paths": 14212,
+        "wall_seconds": 8.585716800007503,
+        "workers": 8
+      },
+      {
+        "elapsed_seconds": 23.867848399968352,
+        "expected_paths": 14212,
+        "hash_metrics": [
+          {
+            "bytes_hashed": 97753,
+            "cpu_to_wall_ratio": 0.0,
+            "max_file_seconds": 0.00120749999769032,
+            "median_file_seconds": 0.0011494499922264367,
+            "phase": "discover_ev88_and_memory_source",
+            "process_cpu_seconds": 0.0,
+            "throughput_bytes_per_second": 50147745.34503849,
+            "unique_paths": 2,
+            "wall_seconds": 0.0019492999999783933,
+            "workers": 8
+          },
+          {
+            "bytes_hashed": 1160097507,
+            "cpu_to_wall_ratio": 0.4367719186820514,
+            "max_file_seconds": 0.8007186999893747,
+            "median_file_seconds": 0.004301049979403615,
+            "phase": "complete_source_start_hash",
+            "process_cpu_seconds": 3.75,
+            "throughput_bytes_per_second": 135119470.39750788,
+            "unique_paths": 14212,
+            "wall_seconds": 8.585716800007503,
+            "workers": 8
+          }
+        ],
+        "interval_process_cpu_seconds": 0.546875,
+        "interval_wall_seconds": 3.395365899952594,
+        "phase": "source_start_set_validated",
+        "state": "complete",
+        "unique_paths": 14212
+      },
+      {
+        "elapsed_seconds": 23.869011699978728,
+        "error": "MemoryError: admission requires the 6-GiB reserve plus 3-GiB process allowance",
+        "interval_process_cpu_seconds": 0.0,
+        "interval_wall_seconds": 0.0011633000103756785,
+        "phase": "source_start_set_validated",
+        "state": "error"
+      }
+    ],
+    "progress_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\instrumented-v2\\runs\\attempt-02\\report.json.progress.json"
+  },
+  "schema": "global-dry-rollback.independent-consumer.v1",
+  "status": "ERROR_INDEPENDENT_CONSUMER"
+}

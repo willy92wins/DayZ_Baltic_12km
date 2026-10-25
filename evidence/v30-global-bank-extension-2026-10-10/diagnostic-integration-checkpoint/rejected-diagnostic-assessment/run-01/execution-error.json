@@ -1,0 +1,12 @@
+{
+  "status": "ERROR_BEFORE_GEOMETRY_EVALUATION",
+  "source_sha256": "324877b27042e4c0c46759f62a620b97c9faba3c562c24cd78150a36576121b5",
+  "tool_chunk_id": "3c0bef",
+  "exit_code": 1,
+  "wall_time_seconds": 1.4974193,
+  "output_report_created": false,
+  "accepted": false,
+  "evidence_origin": "Transcribed from the exec_command result; not a result emitted by the assessment script.",
+  "error": "Stop: receipt approved hash mismatch: approved_control_sha",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\rejected-diagnostic-assessment-v1\\assess_rejected_diagnostic.py\", line 444, in <module>\n    print(json.dumps({'status':assess(a.output)['status'],'accepted':False},allow_nan=False))\n                               ^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\rejected-diagnostic-assessment-v1\\assess_rejected_diagnostic.py\", line 243, in assess\n    require(approved.get(key)==PINNED[path],f'receipt approved hash mismatch: {key}')\n  File \"E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\rejected-diagnostic-assessment-v1\\assess_rejected_diagnostic.py\", line 94, in require\n    if not bool(ok): raise Stop(message)\n                     ^^^^^^^^^^^^^^^^^^^\nStop: receipt approved hash mismatch: approved_control_sha\n"
+}

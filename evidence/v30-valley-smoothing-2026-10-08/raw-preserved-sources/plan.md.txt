@@ -1,0 +1,64 @@
+# Suavizado de valle completo — petición viva de Guillermo
+
+Guillermo pide suavizar todo: giros, cauce, orillas/islas, taludes de subida/bajada y relieve. La captura R3-valley-smoothing-request.png rechaza el resultado anterior. El cambio de alcance está autorizado; no prolonga el piloto de dos sigmas del 07-10 ni reabre las curvas nativas de agua.
+
+## Implementación acotada
+
+1. Fuente congelada: terreno e0d35db0 de FlatWaterPreview; agua StitchedWaterPilot. No tocar fuentes GIS originales ni paquetes anteriores.
+2. Sustituir la exclusión indiscriminada de agua+36 m/reserva natural por restricciones de consumidor: reserva vial, plataformas, puentes, vértices de los corredores y cumbres regionales. Conservar clases, niveles, perímetro y biomas. Narva editable solo junto al R1 ya autorizado, con transición amplia.
+3. Candidato A: difusión de alturas sobre todo el perfil natural con radio efectivo 18 m y desplazamiento máximo 2 m; límites húmedos/secos fijados antes de suavizar. Los fondos existentes de al menos 1 m no bajan de 1 m; fondos excepcionales más bajos no se excavan. El lecho no se eleva, para no perder calado. Tierra lejos de playa/orilla recupera el objetivo aprobado de 1,60 m (plan 05-10); la transición de orilla conserva su margen físico. Conservar escala regional y unir suavemente las zonas fijas.
+4. Independiente del suavizado, comparar el parche de tierra de R1 con cota mínima de 1,60 m y mar normal. Es el mecanismo geométrico ya planteado por el plan original, no un cambio nuevo de oleaje. Su resultado visual debe demostrar el arreglo.
+5. Medir la línea visible real del agua, perfiles completos y curvatura contra fuente; comparar en motor R1/R2/R3 y relieve. Clasificar los quiebros restantes antes de una única corrección fundada. Si cambiar alturas no suaviza la línea por la discretización de máscara, revisar la representación antes de extenderla.
+
+## Puertas y presupuesto
+
+- Fuente/hash y metadatos exactos; carretera/plataforma/corredores exactos.
+- Ningún nuevo fondo bajo 1 m ni menor calado; ninguna esquina seca inundada ni agua expuesta nueva.
+- Sin nuevas caras terrestres por encima de 35 grados o más empinadas que la fuente; verificar también caras mixtas.
+- Medir reducción de curvatura en los taludes del ejemplo y en tierra general, sin sustituirla por una métrica fuera de la zona problemática.
+- La vista R3 debe redondear coronación y pie de talud, y reducir quiebros de cauce. Motor requerido, ninguna aceptación por estadística.
+- Un candidato y una corrección fundada si falla por un mecanismo identificado; sin barrido de parámetros ni declarar éxito al agotar el presupuesto.
+- La reconstrucción final de todas las aguas, finales de río y Terrain Builder/navmesh siguen después de probar esta unidad.
+
+## Revisión de diseño 09-10: A y A1 retirados
+
+A y A1 no convergen: `waterline-a.json` y `waterline-a1.json` empeoran R1/R2. El presupuesto de difusión con clases fijas queda cerrado; no se varía sigma otra vez. La prueba de viabilidad `shore-feasibility-diagnostic.json` libera por separado lecho, márgenes y surcos y tampoco mejora el contorno. No se atribuye el fallo solo a los límites verticales.
+
+Mecanismo leído: `tools/terrain/smooth_shore_outline_v30.py` firma la distancia suavizada con la clase antigua; `profile_inland_v30.py` usa el contorno externo solo donde ese signo coincide. El diagnóstico sobre polígonos de triángulos nativos (`contour-topology.json`) encuentra 25 vértices que deberían pasar a agua y 81 a tierra al redondear hasta 4 m. La regla de clases exactas de esta nota era una restricción de implementación, no un requisito P2/P9/P14 del producto.
+
+### Sustitución propuesta y ejecución acotada B
+
+Petición viva de suavizar giros y permiso local Narva cubren el reperfilado local; no se cambia resolución ni política de niveles. Se ajusta el perfil a una distancia con signo del polígono continuo redondeado, permitiendo cambios de lado dentro de la franja local. Las clases modificadas y sus coordenadas quedan registradas. La lámina física/visual StitchedWaterPilot se mantiene congelada; sus planos son una entrada independiente y no se recalculan por reclasificar una orilla.
+
+- Piloto R1/R2/R3 dentro de la huella de agua ya empaquetada, extremos de cada tramo fijos. Fuera de esos tramos, se conserva la primera banda de orilla y el suavizado de valle se une gradualmente. El contorno redondeado mueve como máximo 4 m; no se acepta una pérdida de conexión/isla ni agua fuera de la huella de piezas.
+- Carreteras, plataformas, corredores de 24 m, controles someros históricos y extremos fijos. Las caras navegables deben conservar exactamente su geometría; por tanto sigue vigente 0,955609 m mínimo medido. Fondo nuevo >=1 m; no excavar las excepciones previas más bajas.
+- Márgenes no navegables: >=0,101 m bajo agua nominal; puntos centrales y controles conservan su calado. Tierra de orilla >=1,40 m o resguardo sobre las láminas; tierra general objetivo 1,60 m fuera de excepciones protegidas. Ningún vértice fijo se fuerza para alcanzar esos objetivos.
+- Mantener los criterios independientes de pendiente y curvatura de A. El contorno nativo debe mejorar los giros >30 grados y p90 en R1/R2/R3; no basta el error algebraico del ajuste. Extremos y sectores fuera del piloto se comparan por separado.
+- Consumidor: WRP con alturas y objetos comprobados, vistas R1/R2/R3 cargadas, consulta de agua en controles nuevos/cambiados y regresión de navegación. No se promueve por estadística offline.
+- Contraejemplos cerrados: cambio en soporte vial/corredor, nuevo fondo <1 m, pieza ausente en una zona nueva húmeda, terreno expuesto en un punto húmedo, inundación fuera de franja autorizada, hueco en conexión y pérdida de marcador terminal. Los comprueba el verificador con mutantes explícitos.
+- Presupuesto B: una construcción y una corrección solo si un defecto concreto reproducible lo justifica. Si falla, retirar B y conservar el resultado como diagnóstico; nada de otra búsqueda de parámetros dentro de este bloque. A/A1 siguen FAIL y no se promueven.
+
+### Resultado B/B1 y control independiente del suelo, 09-10
+
+B retirado: la recuperación posterior de pendientes deja 22 vértices secos inundados y dos húmedos expuestos. B1 sustituye ese postproceso por restricciones conjuntas: elimina esas regresiones, pero el contorno real empeora en R3. `native-components-b1.json` confirma que un componente original de R3 termina dividido en seis; los dominios completos pasan de cuatro a nueve componentes mayores de 1 m². La sonda del eje antiguo solo prueba pérdida de muestras mojadas, no conectividad por sí sola. Ninguno se empaqueta. Presupuesto B+B1 cerrado; hace falta un diseño que preserve el cauce completo.
+
+LAND160 es independiente: parte de e0d35db0 y eleva hasta 0,20 m la tierra baja natural, con transición de 18 m a soportes fijos. Todas las caras nativas que tocan agua, reserva vial, plataformas y playa permanecen exactas. Pasa consumidor vial y cuatro negativos. R1_far cargado mejora, pero Guillermo y las capturas temporales confirman manchas residuales. Estado: mejora parcial, 016 abierto.
+
+Una corrección acotada LAND180 compara objetivo 1,80 m y máximo +0,40 m frente a la misma fuente. Remapeo monótono con transición de altura C1, sin bajar terreno ni alterar mar o agua. No hereda A/A1/B/B1. Mismos gates físicos independientes y lecturas de suelo en motor. La comparación debe usar texturas cargadas y varias fases temporales; ausencia en una sola captura no cierra 016. Si quedan manchas, guardar dónde aparecen y su altura real antes de otro cambio, sin un barrido de cotas. Este control no resuelve el smoothing.
+
+### Revisión de representación C: conexión nativa antes del perfil
+
+`grid-representability.json` aísla el fallo previo al solver: cuatro polígonos vectoriales conectados producen ocho componentes al muestrear su distancia en los vértices de 6 m, sin aplicar límites de fondo ni carreteras. B1 tiene nueve. Por tanto, otra penalización del ajuste no resolvería el problema de diseño de B.
+
+La petición viva reiterada el 09-10 mantiene alcance completo. C conserva la malla de 6 m y el agua congelada, pero fija primero una red conectada de vértices mojados en cada cuerpo original. En los estrechamientos donde el contorno vectorial pierde soportes, una ruta mínima dentro del agua original mantiene la conexión y los extremos. Los soportes de esa ruta no pueden perder su profundidad existente; sus valores de campo aseguran anchura local, en lugar de aceptar un hilo infinitesimal. Después se resuelve la forma y la pendiente conjuntamente. No se cambia sigma ni se reabre B.
+
+Fuente C: LAND180, cuyas caras con agua son exactas frente a e0d35db0. Todas las comparaciones de orilla se hacen contra el mismo campo de agua y dominio completo de la fuente. C conserva la tierra baja elevada; carreteras, plataformas, navegación, mar y puentes siguen fijos. La forma general de valle se toma como objetivo, no como resultado aceptado.
+
+Gates C: conectividad por polígonos nativos, ningún componente o isla perdido, área mojada por componente >=90% de la fuente, desviación de contorno <=4,1 m, giros p90 y >30 grados no peores en cada R1/R2/R3, reducción de curvatura R3 >=15% y general >=10%, además de todos los gates físicos y negativos anteriores. Un candidato y una corrección únicamente ante un defecto concreto. No empaquetar si falla; si no es representable dentro de estas restricciones, registrar la incompatibilidad y trabajar los otros pendientes antes de proponer un cambio de resolución o anchura.
+
+### Resultado C/C1 e integración de la parte válida
+
+C conserva cuatro componentes y mejora R3, pero reduce una masa pequeña a 29% y excede distancias. C1 fija 73 soportes locales identificados por el consumidor: restaura áreas/conexiones, todos los límites físicos y distancia <=4,1 m, pero R1/R2 aún fallan giros. Presupuesto C+C1 terminado; ambos globales FAIL. No se calculan más variantes de ese ajuste.
+
+La integración **C1R3** toma exactamente la geometría ya calculada de R3 y el relieve seco; restaura LAND180 en R1/R2, en sus soportes más 24 m y transición seca de 60 m. No hay otro solver ni búsqueda de parámetros. Esto permite comprobar en motor la parte que sí pasa sin introducir las regresiones R1/R2. Alcanza R3, taludes y relieve general; deja explícitamente pendientes los giros R1/R2 y el resto de orillas. El consumidor compara la geometría integrada completa, los controles históricos y negativos. Si pasa, se empaqueta como preview aislada y se prueba primero en la misma cámara R3 de Guillermo. No aceptación global ni cierre de 007 por conservar R1/R2.
+

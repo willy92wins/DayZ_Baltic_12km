@@ -1,0 +1,51 @@
+{
+  "status": "PASS_OFFLINE_INHERITED_CONTINUOUS_OUTLINE",
+  "checks": {
+    "finite": true,
+    "fairway_vertices_exact": true,
+    "bridge_delta_vertices_exact": true,
+    "map_edge_exact": true,
+    "all_slopes_below_35_01": true,
+    "delta_bounds": true,
+    "dry_native_freeboard": true,
+    "water_and_shore_transition_native_faces_exact": true,
+    "frozen_81212_points": true,
+    "inherited_source_proof": true
+  },
+  "statistics": {
+    "changed_vertices": 3227777,
+    "delta_min_m": -5.1769866943359375,
+    "delta_max_m": 13.92309057712555,
+    "maximum_slope_deg": 35.00000307765221,
+    "dry_native_minimum_m": 1.2700119018554688
+  },
+  "changed_inherited_faces": 0,
+  "inherited_native_cells": 1045873,
+  "source_proof_sha256": "0cf85d0dd9c87c0175d10e51579bc28e6016657fe1f773317a3d5c5af8cfbfa6",
+  "pinned_source": {
+    "reference.npz": "8e84d5ce38da8863116c52ecdf9953d5b201a097459513054eea8e0f0e14c45a",
+    "independent-consumer.json": "0cf85d0dd9c87c0175d10e51579bc28e6016657fe1f773317a3d5c5af8cfbfa6",
+    "shore-transition.json": "15652b897b68e5ab3dc7927db964cae3d732ec42ae7249cbd4204eba61f5c488",
+    "pre-solve.json": "5d16aa9664008555cdc96b58ea74d424256a91fdcb9f5d350ffa7d1cc55ffa31",
+    "baltic_outline_smoothing_v33.asc": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107"
+  },
+  "geometry_sources": {
+    "water-surfaces-contour-v2.geojson": "df860f693a1bf0115cb4af65a13cea5f8006a5a21bc9bca1d88276b83802ccdc",
+    "ocean-game.json": "c72aaafd6ee35abfcdec180135571e34b9c5eaefb42d3bca1bfbabad6493f757"
+  },
+  "candidate_sha256": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107",
+  "frozen_points": {
+    "passed": true,
+    "total": 81212,
+    "failed": 0,
+    "failure_groups": {},
+    "examples": [],
+    "source_sha256": "412b3a4633f766612f2d9f4f3b2af6724642a18ad4198ceb304a759c3db0d0df",
+    "coordinate_class_depth_changes": 0
+  },
+  "limits": [
+    "Exact equality of all vertices of protected native faces transfers the V33 continuous-plane proof; whole-map dry floor, slopes, deltas and 81212 frozen points are checked again.",
+    "Island planes and reserve must also pass the independent road hydrology consumer.",
+    "Offline only; no new native, runtime, wave or performance acceptance."
+  ]
+}

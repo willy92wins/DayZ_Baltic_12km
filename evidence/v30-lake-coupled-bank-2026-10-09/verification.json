@@ -1,0 +1,105 @@
+{
+  "status": "REJECTED_LAKE_COUPLED_BANK_SOURCE",
+  "source_sha256": "fb36ec4c2203b6c936c8823078250f71082fbf43d9b1ba410049f735f890a0e6",
+  "candidate_sha256": "99c3f884057c1fcc9d7bdb3eb22c31dee224dc62a15debfb46e117adb1f09427",
+  "gates": {
+    "finite": true,
+    "outside_scope_exact": true,
+    "fixed_exact": true,
+    "no_raises": true,
+    "lowering_at_most_1_5m": true,
+    "floor": true,
+    "slopes": true,
+    "metadata_exact": true,
+    "both_lake_shapes": true,
+    "physical_visible_signs_exact": true,
+    "max_crossing_displacement": false,
+    "wet_vertices_exact": true
+  },
+  "lakes": [
+    {
+      "name": "southwest",
+      "curvature_before": 0.033011700911362345,
+      "curvature_after": 0.021287442124881872,
+      "curvature_reduction": 0.3551546410153341,
+      "bank_p90_before": 3.794141912460327,
+      "bank_p90_after": 3.390000104904175,
+      "changed_bank_vertices": 4875,
+      "native_before": {
+        "edges": 31516,
+        "rms": 5.868192024351037,
+        "p99": 21.153796915381665,
+        "over30": 61
+      },
+      "native_after": {
+        "edges": 31516,
+        "rms": 2.837685232057566,
+        "p99": 10.850107704274619,
+        "over30": 4
+      },
+      "shape_gate": true
+    },
+    {
+      "name": "southeast",
+      "curvature_before": 0.034479620056835365,
+      "curvature_after": 0.023121035153573066,
+      "curvature_reduction": 0.3294289462743234,
+      "bank_p90_before": 3.630000114440918,
+      "bank_p90_after": 2.938307571411144,
+      "changed_bank_vertices": 2095,
+      "native_before": {
+        "edges": 14244,
+        "rms": 6.863306576075351,
+        "p99": 23.468495220308938,
+        "over30": 32
+      },
+      "native_after": {
+        "edges": 14244,
+        "rms": 3.7206764357162307,
+        "p99": 10.850105508219453,
+        "over30": 1
+      },
+      "shape_gate": true
+    }
+  ],
+  "changed_vertices": 11045,
+  "maximum_lowering_m": 1.5,
+  "controls": [
+    "inclined_plane_zero",
+    "known_45_degree_fold",
+    "independent_cross_product_60_faces",
+    "raised_vertex_detected",
+    "exact_four_incident_vertices",
+    "unchanged_fixture_passes",
+    "outside_mutant_rejected",
+    "protected_mutant_rejected",
+    "water_mutant_rejected",
+    "raise_mutant_rejected",
+    "deep_mutant_rejected",
+    "floor_mutant_rejected",
+    "steep_mutant_rejected"
+  ],
+  "crossings": {
+    "changed_water_cells": 4229,
+    "sign_changes": 0,
+    "maximum_m": 5.859277936722901,
+    "fields": {
+      "physical": {
+        "edges": 11663,
+        "maximum_m": 5.859277936722901,
+        "p90_m": 3.1355291793529037
+      },
+      "visible": {
+        "edges": 11663,
+        "maximum_m": 5.859277936722901,
+        "p90_m": 3.1355291793529037
+      }
+    }
+  },
+  "limits": [
+    "Water levels and bed exact; dry shoreline supports and subcell crossings intentionally change. Coverage is a separate gate.",
+    "Lake-level decision remains pending.",
+    "Source geometry only: native import and visual consumer not yet executed.",
+    "Gate label corrected: only wet vertices were constrained exact; dry water-support vertices intentionally moved. Overall shore acceptance is REJECTED in adjudication.json."
+  ]
+}

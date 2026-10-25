@@ -1,0 +1,33 @@
+{
+  "schema": "optimized-normal.independent-review.v1",
+  "status": "SOUND_WITH_DOCUMENTATION_NOTE",
+  "scope": "Read-only review of fused A.T(Ax) stencil signs, masks, grid borders, and comparison evidence. No benchmark or solver run.",
+  "source_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-structured-operator/optimized-normal/fused_normal.py",
+  "source_sha256": "19a3e3a493f643702e66aaf265c705739535d386412f74659369d7746117ffaa",
+  "operator_reference_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-structured-operator/structured_operator.py",
+  "operator_reference_sha256": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+  "cp_reference_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/face-slope-cone-pilot/pilot.py",
+  "cp_reference_sha256": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a",
+  "fixture_source_sha256": "b1fb0161fa4fadc0070eb9fedba5277e8666487ee9ae3f2413a24d57570584b7",
+  "fixture_report_sha256": "7be436060c506139655a215d20d5a1bad324ed528c60ff1abf0f7bc637b1b79e",
+  "plan_sha256": "70a19038895d1ca949c6a27cf5539ac8c62796be96aa9405d1ee52a6c1a0a62d",
+  "review_findings": {
+    "xx_zz": "Second differences and transpose scatters match the pinned operator coefficients/signs.",
+    "xz": "Row coefficient is sqrt(2)/4 times (-NW+NE+SW-SE); applying its transpose yields 1/8 signed-corner normal stencil.",
+    "masks": "Boolean row masks are built from the operator's unique row-major anchor arrays; the builder derives these via nonzero on boolean incidence masks.",
+    "borders": "Short-width/height cases correctly disable unavailable stencil families; fixtures cover 1x7, 2x4, and 4x2.",
+    "identity_and_total": "Adds 0.25^2*x and retains validated C/G callbacks in the total normal action.",
+    "memory_note": "Documentation undercounts a transient N-vector allocated by 0.0625*x at fused_normal.py line 78; for N=2,712,136 this is about 21,697,088 bytes. This does not affect algebraic correctness."
+  },
+  "verification": {
+    "existing_synthetic_fixture_run": "PASS_FUSED_NORMAL_FIXTURES",
+    "max_fused_vs_csr_error": 2.1316282072803006e-14,
+    "tolerance": 1e-10,
+    "rerun_for_receipt": false,
+    "benchmark_or_solver_run": false
+  },
+  "limitations": [
+    "Synthetic fixtures establish algebraic equivalence for exercised shapes/masks, not global performance or solver convergence.",
+    "No edits were made to source, plan, or tests."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "status": "PASS_MATRIX_FREE_ADMM_ADAPTER_FIXTURE",
+  "pins": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\pilot.py": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\structured_operator.py": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\optimized-normal\\fused_normal.py": "19a3e3a493f643702e66aaf265c705739535d386412f74659369d7746117ffaa",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\optimized-normal\\comparison\\run-01\\comparison.json": "db6fa205e2b2b3d824ac07c1ad52d6c54ae6bf12e8b34d1a7093a701f518a965"
+  },
+  "adapter_source": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-admm-adapter\\matrix_free_admm.py",
+    "sha256": "beb89f58918dbf45def133fb170480887f003b1da39268829932b7c4fd11b769"
+  },
+  "fixture_source": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-admm-adapter\\test_matrix_free_admm.py",
+    "sha256": "f41298dafdbcdfcd03b62c07396d0f2bcb6d342c87b904ad111b02a542ad603d"
+  },
+  "plan": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-admm-adapter\\PLAN.md",
+    "sha256": "801d24d4247a0730eda50294b5e0c71aa1ae8699fc2e4c05d4943b07798a3952"
+  },
+  "shape": [
+    16,
+    16
+  ],
+  "variables": 64,
+  "A_rows": 324,
+  "C_rows": 255,
+  "G_rows": 900,
+  "affine_rhs_max_abs_error": 5.684341886080802e-14,
+  "negative_bad_rhs_rejected": true,
+  "negative_memory_guard_rejected": true,
+  "negative_time_guard_rejected": true,
+  "fixture_process_memory_peak_bytes": 62304256,
+  "checks": {
+    "cp_status": "CONVERGED",
+    "matrix_free_status": "CONVERGED",
+    "normal_operator_vs_CSR_max_abs": 2.6645352591003757e-15,
+    "fused_diagonal_vs_CSR_max_abs": 0.0,
+    "objective_cp": 0.35304209957317434,
+    "objective_matrix_free": 0.35304209957317406,
+    "objective_relative_difference": 2.7755575615628914e-16,
+    "primal_cp": 2.0954371349191092e-08,
+    "primal_matrix_free": 2.0954369350789648e-08,
+    "dual_cp": 3.417836846875133e-10,
+    "dual_matrix_free": 3.4178504471071847e-10,
+    "stationarity_cp": 3.522340058514928e-10,
+    "stationarity_matrix_free": 3.5221775496196983e-10,
+    "normal_cone_projection_residual_cp": 1.1102230246251565e-16,
+    "normal_cone_projection_residual_matrix_free": 0.0,
+    "normal_cone_projection_residual_abs_difference": 1.1102230246251565e-16,
+    "soc_kkt_metric_abs_differences": {
+      "complementarity_max": 0.0,
+      "interior_dual_max": 0.0,
+      "boundary_radial_residual_max": 3.469446951953614e-18,
+      "negative_radial_multiplier_max": 0.0
+    },
+    "solution_max_abs_difference": 1.0658141036401503e-14,
+    "box_violation_cp": 0.0,
+    "box_violation_matrix_free": 0.0,
+    "D8_violation_cp": 0.0,
+    "D8_violation_matrix_free": 0.0,
+    "active_SOC_faces_cp": 1,
+    "active_SOC_faces_matrix_free": 1,
+    "rho_updates_equal": true,
+    "rho_update_count": 3,
+    "iterations_cp": 407,
+    "iterations_matrix_free": 407
+  },
+  "limits": {
+    "budget_seconds": 30.0,
+    "solver_settings_other_than_budget": "pinned CP defaults",
+    "global_solver_called": false,
+    "terrain_written": false,
+    "fixture_peak_includes_both_small_CSR_and_matrix_free_runs": true,
+    "cp_settings_equal": true
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "source_hashes": {
+    "B": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "constraints": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "prior": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+    "P": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "F": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"
+  },
+  "eligible": 2988565,
+  "bank_eligible": 581794,
+  "interior_eligible": 2340816,
+  "eligible_wet_support": 65955,
+  "eligible_outside_bank_interior": 65955,
+  "outside_equals_wet_support_overlap": true,
+  "partition_sums_to_all_eligible": true,
+  "wet_support_eligible_margin_m": {
+    "min": 9.984970092702383e-05,
+    "p01": 0.05010004043579075,
+    "median": 0.9103165626525875,
+    "max": 5.21030158996582,
+    "all_strictly_above_vertex_level": true
+  },
+  "adjacent_native_triangle_signs": {
+    "P": {
+      "triangles_incident": 139532,
+      "buried_strict_all3": 11886,
+      "mixed_crossing": 127646,
+      "water_above_all3": 0,
+      "equality_any": 0,
+      "unknown": 125501
+    },
+    "F": {
+      "triangles_incident": 139532,
+      "buried_strict_all3": 11886,
+      "mixed_crossing": 127646,
+      "water_above_all3": 0,
+      "equality_any": 0,
+      "unknown": 125501
+    },
+    "SEA": {
+      "triangles_incident": 265033,
+      "buried_strict_all3": 254859,
+      "mixed_crossing": 10174,
+      "water_above_all3": 0,
+      "equality_any": 0,
+      "unknown": 0
+    }
+  },
+  "interpretation": "The complement of EV87 bank|interior within eligible is exactly eligible&wet_support: 65,955 nodes. They pass the selector eligibility vertex-level test H>max incident P/F/SEA, but bank/interior population masks explicitly exclude wet_support. Local incident-triangle signs show mixed crossings are common, so do not call the surrounding faces fully buried. EV87 p99 domains cover bank and interior only, not every eligible vertex.",
+  "statistical_scope": {
+    "eligible_total": 2988565,
+    "bank_plus_interior_eligible": 2922610,
+    "eligible_wet_support_omitted_from_both_domains": 65955,
+    "fraction_of_eligible_omitted_percent": 2.206912012956051,
+    "p99_claim_scope": "bank and interior domains only; does not imply p99 over all eligible vertices/map"
+  }
+}

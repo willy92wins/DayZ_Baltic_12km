@@ -1,0 +1,21 @@
+{
+  "status": "PASS_NEGATIVE_REJECTIONS_AND_MISSION_IDENTITY",
+  "negative_cases": [
+    {
+      "case": "truncated_before_END",
+      "exit_code": 1,
+      "rejected_by": [
+        "terminated_record"
+      ]
+    },
+    {
+      "case": "wrong_ASC_identity",
+      "exit_code": 1,
+      "rejected_by": [
+        "correct_ASC_marker"
+      ]
+    }
+  ],
+  "positive_evidence": "runtime-verification.json from unchanged complete engine log",
+  "limits": "Only integrity/completeness gates tested; this does not validate boat motion."
+}

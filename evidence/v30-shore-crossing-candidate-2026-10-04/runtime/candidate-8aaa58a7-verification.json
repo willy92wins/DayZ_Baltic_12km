@@ -1,0 +1,226 @@
+{
+ "status": "PASS_VANILLA_CHANNEL_READBACK",
+ "version": 2,
+ "checks": {
+  "header": true,
+  "end": true,
+  "pieces": true,
+  "engine_rule_agreement": true,
+  "no_hull_holes": true
+ },
+ "pieces_found": 99,
+ "pieces_expected": 99,
+ "worst_pieces": [
+  {
+   "index": 94,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 0.0002532105322589015,
+   "direction_error_deg": 4.4338726831902825e-05,
+   "up_error_deg": 2.0614700166548044e-05,
+   "scale_error": 2.418261243031239e-06
+  },
+  {
+   "index": 83,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 0.0001573420080008967,
+   "direction_error_deg": 4.19393220783133e-05,
+   "up_error_deg": 2.4148365394514843e-05,
+   "scale_error": 2.072684152976123e-06
+  },
+  {
+   "index": 7,
+   "reach": "R1",
+   "found": true,
+   "position_error_m": 0.00012198614953867142,
+   "direction_error_deg": 4.157272783868142e-05,
+   "up_error_deg": 2.7979818039477206e-05,
+   "scale_error": 6.210711549492487e-07
+  },
+  {
+   "index": 29,
+   "reach": "R2",
+   "found": true,
+   "position_error_m": 0.00012310818731313446,
+   "direction_error_deg": 4.034475724753357e-05,
+   "up_error_deg": 2.4979263396123047e-05,
+   "scale_error": 3.901024926644681e-06
+  },
+  {
+   "index": 67,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 8.901991024199962e-05,
+   "direction_error_deg": 1.1131846416284069e-05,
+   "up_error_deg": 3.922715954285103e-05,
+   "scale_error": 1.5263991588465586e-06
+  }
+ ],
+ "max_errors": {
+  "position_error_m": 0.000651,
+  "direction_error_deg": 4.4e-05,
+  "up_error_deg": 3.9e-05,
+  "scale_error": 5e-06
+ },
+ "agreement": {
+  "R1:body": {
+   "counts": {
+    "pond": 1,
+    "match": 298,
+    "miss_value": 1
+   },
+   "agreement": 0.9967
+  },
+  "R1:hull": {
+   "counts": {
+    "pond": 1,
+    "match": 298,
+    "miss_value": 1
+   },
+   "agreement": 0.9967
+  },
+  "R2:body": {
+   "counts": {
+    "match": 614
+   },
+   "agreement": 1.0
+  },
+  "R2:hull": {
+   "counts": {
+    "match": 614
+   },
+   "agreement": 1.0
+  },
+  "R3:body": {
+   "counts": {
+    "match": 387
+   },
+   "agreement": 1.0
+  },
+  "R3:hull": {
+   "counts": {
+    "match": 387
+   },
+   "agreement": 1.0
+  }
+ },
+ "holes": {},
+ "hole_counts": {},
+ "visual_residual_by_zone": {
+  "R1:flat": {
+   "n": 273,
+   "abs_p50_p90_max_m": [
+    0.0,
+    0.0065,
+    0.5069
+   ],
+   "share_le_1cm": 0.93,
+   "signed_p50_m": 0.0
+  },
+  "R1:skirt+z": {
+   "n": 15,
+   "abs_p50_p90_max_m": [
+    0.0976,
+    0.3289,
+    0.5551
+   ],
+   "share_le_1cm": 0.133,
+   "signed_p50_m": 0.0976
+  },
+  "R1:skirt-z": {
+   "n": 11,
+   "abs_p50_p90_max_m": [
+    0.0415,
+    0.4273,
+    0.5083
+   ],
+   "share_le_1cm": 0.091,
+   "signed_p50_m": 0.0308
+  },
+  "R2:flat": {
+   "n": 557,
+   "abs_p50_p90_max_m": [
+    0.0,
+    0.0136,
+    0.0867
+   ],
+   "share_le_1cm": 0.878,
+   "signed_p50_m": 0.0
+  },
+  "R2:skirt+z": {
+   "n": 36,
+   "abs_p50_p90_max_m": [
+    0.0241,
+    0.0686,
+    0.129
+   ],
+   "share_le_1cm": 0.139,
+   "signed_p50_m": 0.0241
+  },
+  "R2:skirt-z": {
+   "n": 21,
+   "abs_p50_p90_max_m": [
+    0.0141,
+    0.0655,
+    0.0784
+   ],
+   "share_le_1cm": 0.381,
+   "signed_p50_m": -0.0091
+  },
+  "R3:flat": {
+   "n": 341,
+   "abs_p50_p90_max_m": [
+    0.0001,
+    0.024,
+    0.1343
+   ],
+   "share_le_1cm": 0.839,
+   "signed_p50_m": 0.0001
+  },
+  "R3:skirt+z": {
+   "n": 28,
+   "abs_p50_p90_max_m": [
+    0.0354,
+    0.0943,
+    0.1172
+   ],
+   "share_le_1cm": 0.25,
+   "signed_p50_m": 0.0354
+  },
+  "R3:skirt-z": {
+   "n": 18,
+   "abs_p50_p90_max_m": [
+    0.0186,
+    0.0698,
+    0.1194
+   ],
+   "share_le_1cm": 0.278,
+   "signed_p50_m": -0.0153
+  }
+ },
+ "misses": {
+  "R1:hull": [
+   {
+    "s": 164.02,
+    "offset": -29.5,
+    "engine": 0.77422,
+    "model": 1.2811408559891069
+   }
+  ],
+  "R1:body": [
+   {
+    "s": 164.02,
+    "offset": -29.5,
+    "engine": 0.774214,
+    "model": 1.2811349385056672
+   }
+  ]
+ },
+ "reference_sha256": "70e07cefeadb3eba2b466f96f656f9bf19b9ce0710f6b5511697bc2cce352ac9",
+ "log_sha256": "6f5ccb28199dc922107a6126b257faa791bff62ec74078d358ba686ae19c2bac",
+ "limits": [
+  "Server readback of native APIs; no visual or boat result.",
+  "V2 prediction: engine rule of tools/water/engine_water_model.py, frozen in the reference before the run."
+ ]
+}

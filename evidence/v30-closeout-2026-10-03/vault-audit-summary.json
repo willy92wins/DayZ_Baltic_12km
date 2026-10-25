@@ -1,0 +1,17 @@
+{
+  "command": "powershell.exe -NoProfile -File AI/20_Runbooks/scripts/vault-link-audit.ps1 -VaultRoot AI -BaselinePath AI/20_Runbooks/scripts/baseline-control.json -RegressionGate -FailOnMissingSessionIndex",
+  "cwd": "C:\\Users\\guill\\ObsidianVault",
+  "exit_code": 1,
+  "status": "FAIL",
+  "markdown_files": 12029,
+  "session_handoffs": 1434,
+  "missing_session_index": 34,
+  "broken_local_links": 18686,
+  "broken_local_links_live": 14,
+  "broken_local_links_live_unique": 5,
+  "baseline_pairs": 0,
+  "new_live_pairs": 5,
+  "removed_baseline_pairs": 0,
+  "new_live_pair_source": "20_Knowledge/prime-agent-package/skills/delegar",
+  "note": "Global audit result preserved. Existing index debt, including historical Baltic entries, not remediated in this map closeout. Local new-link validation is separate; no global PASS claimed."
+}

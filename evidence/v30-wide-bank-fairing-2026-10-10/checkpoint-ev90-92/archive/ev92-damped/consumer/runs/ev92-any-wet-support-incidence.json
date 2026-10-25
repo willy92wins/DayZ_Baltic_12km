@@ -1,0 +1,302 @@
+{
+  "status": "EV92_ANY_WET_SUPPORT_INCIDENCE_DIAGNOSTIC_ONLY",
+  "python": "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "ev92_review_status": "PASS_EV92_OFFLINE_CONSUMER",
+  "input_hashes": {
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev92-damped\\consumer\\analyze_any_wet_support.py": "b50c8b30604a1e0a1ea5e5f047f3f7aba968babbff33b416d6a406f24d3e2941",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\consumer\\verify_ev91.py": "5e726b93642f5db531193a8f1d85afabd139c7b9ac3afca4479df793afd53668",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev92-damped\\consumer\\runs\\attempt-01\\ev92-review.json": "8ade0780b172a61b463e5cccc2b67f15d709613537c33c26cb5b5c603bceb268",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev92-damped\\candidate-terrain.npz": "2f068ce5c4609e551e105b589e93ea8053267c9c307de068716b77221727b60a",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+    "E:\\DayZ-Baltic-Build\\v30-bank-multiscale-census-20261010\\population-reconciliation.json": "4a1adfea02f393c9215e642871b48bfc6babb5be4fd14956096798596b082bad",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-navigation-contract-2026-10-08\\decision.json": "d510af67cc4016a0ba7192aa01c070d314b9bc7e49b6256ca6ffaf64fc05b843"
+  },
+  "population": {
+    "eligible_wet_support": 65955,
+    "eligible_wet_support_union_incident_measured_any": 65955,
+    "eligible_wet_support_union_incident_measured_all_four": 1680,
+    "eligible_wet_support_not_measured_by_any_family": 0,
+    "family_comparison": {
+      "diag": {
+        "any_hinges": 144925,
+        "all_four_hinges": 318,
+        "any_only_hinges": 144607,
+        "any_union_nodes": 204219,
+        "all_four_union_nodes": 1014
+      },
+      "vertical": {
+        "any_hinges": 154612,
+        "all_four_hinges": 240,
+        "any_only_hinges": 154372,
+        "any_union_nodes": 223177,
+        "all_four_union_nodes": 834
+      },
+      "horizontal": {
+        "any_hinges": 153726,
+        "all_four_hinges": 217,
+        "any_only_hinges": 153509,
+        "any_union_nodes": 221627,
+        "all_four_union_nodes": 759
+      },
+      "all_families": {
+        "any_union_nodes": 254253,
+        "all_four_union_nodes": 1680,
+        "any_only_union_nodes": 252573,
+        "any_measured_wet_support_nodes": 65955,
+        "all_four_measured_wet_support_nodes": 1680,
+        "any_union_bank_overlap": 82606,
+        "any_union_interior_overlap": 35455,
+        "all_four_union_bank_overlap": 0,
+        "all_four_union_interior_overlap": 0
+      }
+    }
+  },
+  "any_incident": {
+    "hinges_by_family": {
+      "diag": {
+        "hinges": 144925,
+        "B": {
+          "n": 144925,
+          "p99": 34.86612457275394,
+          "max": 63.456546783447266,
+          "above30": 3298,
+          "mean_square": 128.80843913005893
+        },
+        "H": {
+          "n": 144925,
+          "p99": 34.86612457275394,
+          "max": 63.456546783447266,
+          "above30": 3297,
+          "mean_square": 128.77665331592092
+        },
+        "new_over30": 0,
+        "hinges_touching_bank": 56497,
+        "hinges_touching_interior": 22586,
+        "mixed_wet_bank": 56497,
+        "mixed_wet_interior": 22586
+      },
+      "vertical": {
+        "hinges": 154612,
+        "B": {
+          "n": 154612,
+          "p99": 36.938473815917945,
+          "max": 83.04716491699219,
+          "above30": 3965,
+          "mean_square": 131.68462255777436
+        },
+        "H": {
+          "n": 154612,
+          "p99": 36.938473815917945,
+          "max": 83.04716491699219,
+          "above30": 3965,
+          "mean_square": 131.6721566263529
+        },
+        "new_over30": 0,
+        "hinges_touching_bank": 68029,
+        "hinges_touching_interior": 26338,
+        "mixed_wet_bank": 68029,
+        "mixed_wet_interior": 26338
+      },
+      "horizontal": {
+        "hinges": 153726,
+        "B": {
+          "n": 153726,
+          "p99": 36.713433265686035,
+          "max": 81.12667083740234,
+          "above30": 3778,
+          "mean_square": 126.27536955937549
+        },
+        "H": {
+          "n": 153726,
+          "p99": 36.71071720123291,
+          "max": 81.12667083740234,
+          "above30": 3775,
+          "mean_square": 126.25663736384324
+        },
+        "new_over30": 0,
+        "hinges_touching_bank": 67086,
+        "hinges_touching_interior": 25798,
+        "mixed_wet_bank": 67086,
+        "mixed_wet_interior": 25798
+      }
+    },
+    "B": {
+      "n": 453263,
+      "p99": 36.287959289550784,
+      "max": 83.04716491699219,
+      "above30": 11041,
+      "mean_square": 128.93042971676698
+    },
+    "H": {
+      "n": 453263,
+      "p99": 36.28708656311036,
+      "max": 83.04716491699219,
+      "above30": 11037,
+      "mean_square": 128.90966127285412
+    },
+    "new_over30_count": 0,
+    "measured_node_union": 254253,
+    "measured_wet_support_nodes": 65955,
+    "measured_nodes_by_population": {
+      "wet_support": 65955,
+      "bank": 82606,
+      "interior": 35455
+    },
+    "hinge_count_total": 453263,
+    "p99_nonworse": true,
+    "above30_nonworse": true,
+    "no_new_over30": true
+  },
+  "all_four_incident": {
+    "hinges_by_family": {
+      "diag": {
+        "hinges": 318,
+        "B": {
+          "n": 318,
+          "p99": 38.57136489868164,
+          "max": 50.38770294189453,
+          "above30": 22,
+          "mean_square": 242.08344186783557
+        },
+        "H": {
+          "n": 318,
+          "p99": 38.57136489868164,
+          "max": 50.38770294189453,
+          "above30": 22,
+          "mean_square": 242.08344186783557
+        },
+        "new_over30": 0,
+        "hinges_touching_bank": 0,
+        "hinges_touching_interior": 0,
+        "mixed_wet_bank": 0,
+        "mixed_wet_interior": 0
+      },
+      "vertical": {
+        "hinges": 240,
+        "B": {
+          "n": 240,
+          "p99": 29.146795978546134,
+          "max": 34.147666931152344,
+          "above30": 1,
+          "mean_square": 135.83943926789524
+        },
+        "H": {
+          "n": 240,
+          "p99": 29.146795978546134,
+          "max": 34.147666931152344,
+          "above30": 1,
+          "mean_square": 135.83943926789524
+        },
+        "new_over30": 0,
+        "hinges_touching_bank": 0,
+        "hinges_touching_interior": 0,
+        "mixed_wet_bank": 0,
+        "mixed_wet_interior": 0
+      },
+      "horizontal": {
+        "hinges": 217,
+        "B": {
+          "n": 217,
+          "p99": 28.925185470581056,
+          "max": 45.54796600341797,
+          "above30": 2,
+          "mean_square": 102.99770805124244
+        },
+        "H": {
+          "n": 217,
+          "p99": 28.925185470581056,
+          "max": 45.54796600341797,
+          "above30": 2,
+          "mean_square": 102.99770805124244
+        },
+        "new_over30": 0,
+        "hinges_touching_bank": 0,
+        "hinges_touching_interior": 0,
+        "mixed_wet_bank": 0,
+        "mixed_wet_interior": 0
+      }
+    },
+    "B": {
+      "n": 775,
+      "p99": 37.26717887878417,
+      "max": 50.38770294189453,
+      "above30": 25,
+      "mean_square": 170.2380678521112
+    },
+    "H": {
+      "n": 775,
+      "p99": 37.26717887878417,
+      "max": 50.38770294189453,
+      "above30": 25,
+      "mean_square": 170.2380678521112
+    },
+    "new_over30_count": 0,
+    "measured_node_union": 1680,
+    "measured_wet_support_nodes": 1680,
+    "measured_nodes_by_population": {
+      "wet_support": 1680,
+      "bank": 0,
+      "interior": 0
+    },
+    "hinge_count_total": 775,
+    "p99_nonworse": true,
+    "above30_nonworse": true,
+    "no_new_over30": true
+  },
+  "discrete_four_vertex_fixture": {
+    "single_vertex_incidence": {
+      "diag": {
+        "any_count": 4,
+        "expected_count": 4,
+        "any_exact": true,
+        "all_four_count": 0,
+        "pass": true
+      },
+      "vertical": {
+        "any_count": 4,
+        "expected_count": 4,
+        "any_exact": true,
+        "all_four_count": 0,
+        "pass": true
+      },
+      "horizontal": {
+        "any_count": 4,
+        "expected_count": 4,
+        "any_exact": true,
+        "all_four_count": 0,
+        "pass": true
+      }
+    },
+    "single_hinge_four_vertex_support": {
+      "diag": {
+        "target_any": true,
+        "target_all_four": true,
+        "all_four_count": 1,
+        "pass": true
+      },
+      "vertical": {
+        "target_any": true,
+        "target_all_four": true,
+        "all_four_count": 1,
+        "pass": true
+      },
+      "horizontal": {
+        "target_any": true,
+        "target_all_four": true,
+        "all_four_count": 1,
+        "pass": true
+      }
+    },
+    "pass": true
+  },
+  "scope_limit": "Read-only diagnostic on pinned B/H. ANY means a hinge has at least one eligible wet-support corner; angles are the existing EV87 four-vertex hinge metric. This does not assert water/render acceptance, classify every coastal face, or close remaining surface risk."
+}

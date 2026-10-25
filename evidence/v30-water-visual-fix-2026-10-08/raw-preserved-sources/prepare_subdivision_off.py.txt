@@ -1,0 +1,38 @@
+from pathlib import Path
+import hashlib,json,shutil,subprocess,sys
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-water-visual-fix-2026-10-08'
+B=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008')
+sys.path.insert(0,str(W/'tools/playtest'))
+from attach_navmesh import read_pbo
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+src=B/'subdivision-off/baltic_subdivision_off';src.mkdir(parents=True,exist_ok=False)
+cpp=src/'config.cpp'
+cpp.write_text('class CfgPatches { class BalticSubdivisionOffDiagnostic { units[]={}; weapons[]={}; requiredVersion=0.1; requiredAddons[]={"BalticTrialWorld"}; }; };\nclass CfgWorlds { class CAWorld; class BalticTrial: CAWorld { class Subdivision { class Fractal { rougness=0; maxRoad=0.02; maxTrack=0.5; maxSlopeFactor=0.05; }; class WhiteNoise { rougness=0; maxRoad=0.01; maxTrack=0.05; maxSlopeFactor=0.0025; }; minY=0; minSlope=0.02; }; }; };\n')
+converter=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZ Tools/Bin/CfgConvert/CfgConvert.exe')
+r=subprocess.run([str(converter),'-bin','-dst',str(src/'config.bin'),str(cpp)],capture_output=True)
+(B/'subdivision-off/cfgconvert.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0
+out=B/'subdivision-off/packed';out.mkdir()
+bank=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZ Tools/Bin/PboUtils/FileBank.exe')
+r=subprocess.run([str(bank),'-property','prefix=baltic_subdivision_off','-dst',str(out),str(src)],capture_output=True)
+(B/'subdivision-off/filebank.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0
+_,props,entries=read_pbo(out/'baltic_subdivision_off.pbo');assert entries['config.bin']==(src/'config.bin').read_bytes()
+dest=Path('P:/Mods/@BalticSubdivisionOffDiagnostic/Addons');dest.mkdir(parents=True,exist_ok=False)
+shutil.copyfile(out/'baltic_subdivision_off.pbo',dest/'baltic_subdivision_off.pbo');assert sha(out/'baltic_subdivision_off.pbo')==sha(dest/'baltic_subdivision_off.pbo')
+shutil.copyfile(cpp,E/'subdivision-off-config.cpp')
+old=E/'missions/BalticWaterVisualDiag.BalticTrial/init.c'
+s=old.read_text().replace('BalticWaterVisualDiagMission','BalticWaterSubdivisionDiagMission').replace('baltic_water_visual_diag.log','baltic_water_subdivision_diag.log')
+s=s.replace('        m_NextMs = GetGame().GetTime() + 5000;', '        LogRow("FRACTAL_ROUGHNESS;" + GetGame().ConfigGetFloat("CfgWorlds BalticTrial Subdivision Fractal rougness"));\n        m_NextMs = GetGame().GetTime() + 5000;')
+mission=E/'missions/BalticWaterSubdivisionDiag.BalticTrial';mission.mkdir(parents=True)
+(mission/'init.c').write_text(s)
+deployed=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZServer/mpmissions')/mission.name
+deployed.mkdir(exist_ok=False);shutil.copyfile(mission/'init.c',deployed/'init.c');assert sha(mission/'init.c')==sha(deployed/'init.c')
+lint=subprocess.run([sys.executable,'-X','utf8','C:/Users/guill/DayZ-Modding-Knowledge-Pack/tools/dayz-script-validator/scripts/script_validator.py',str(mission)],capture_output=True,text=True)
+got=json.loads(lint.stdout);assert lint.returncode==0 and not got['errors'] and got['info']['files_scanned']==1
+(E/'subdivision-off-mission-lint.json').write_text(lint.stdout)
+ref=dict(status='DIAGNOSTIC_ONLY',patch=str(dest/'baltic_subdivision_off.pbo'),patch_sha256=sha(dest/'baltic_subdivision_off.pbo'),source_sha256=sha(cpp),expected_sea_range=[.65,.85],fractal_roughness=0,white_noise_roughness=0,
+mission=str(deployed),mission_sha256=sha(mission/'init.c'),source='P:/DZ/data/config.cpp:1672; P:/scripts/3_game/global/game.c:523',base='FlatWaterPreview with exact PBOs from sea-away-reference.json')
+(E/'subdivision-off-reference.json').write_text(json.dumps(ref,indent=2)+'\n')
+print(json.dumps(ref,indent=2))
+
+

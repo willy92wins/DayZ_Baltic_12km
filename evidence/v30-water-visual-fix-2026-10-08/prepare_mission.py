@@ -1,0 +1,41 @@
+from pathlib import Path
+import json,hashlib,shutil
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-water-visual-fix-2026-10-08'
+B=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008')
+old=W/'evidence/v30-curved-channel-pilot-2026-10-08/missions/BalticFlatVisualV1.BalticTrial/init.c'
+diag=json.loads((E/'geometry-diagnostic.json').read_text())
+points=[(p['name'],p['world'][0],p['world'][2]) for p in diag['R1_projected_locations']]
+points += [('R1_water',2202.43,7164.68),('R2_water',8272.52,9041.16)]
+rows=[]
+for name,x,z in points:
+ rows.append(f'        LogSurface("{name}", {x:.6f}, {z:.6f});')
+helper='''    void LogSurface(string label, float x, float z)
+    {
+        float ground = GetGame().SurfaceY(x,z);
+        vector pos = Vector(x,ground+0.01,z);
+        float queried = GetGame().GetWaterSurfaceHeightNoFakeWave(pos);
+        bool pond = GetGame().SurfaceIsPond(x,z);
+        bool sea = GetGame().SurfaceIsSea(x,z);
+        float depth = GetGame().GetWaterDepth(pos);
+        LogRow("DRY;" + m_Sample + ";" + label + ";" + ground + ";" + queried + ";" + pond + ";" + sea + ";" + depth);
+    }
+
+    void LogDiagnostic()
+    {
+'''+ '\n'.join(rows)+'''
+    }
+
+'''
+s=old.read_text().replace('BalticFlatVisualV1Mission','BalticWaterVisualDiagMission').replace('baltic_flat_visual_v1.log','baltic_water_visual_diag.log')
+s=s.replace('    override void OnUpdate(float timeslice)',helper+'    override void OnUpdate(float timeslice)')
+s=s.replace('        m_Sample++;','        if (m_Sample % 4 == 0) LogDiagnostic();\n        m_Sample++;')
+out=E/'missions/BalticWaterVisualDiag.BalticTrial';out.mkdir(parents=True,exist_ok=False)
+(out/'init.c').write_text(s)
+dest=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZServer/mpmissions')/out.name
+dest.mkdir(exist_ok=False);shutil.copyfile(out/'init.c',dest/'init.c')
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+assert sha(out/'init.c')==sha(dest/'init.c')
+(E/'diagnostic-mission.json').write_text(json.dumps(dict(path=str(dest),sha256=sha(dest/'init.c'),points=points,base_sha256=sha(old),source_definitions='P:/scripts/3_game/global/game.c:1174-1187'),indent=2)+'\n')
+shutil.copyfile('P:/DayZ_MCP_dev/_server/profiles/baltic_flat_visual_v1.log',E/'baseline-visual-runtime.log')
+print(out)

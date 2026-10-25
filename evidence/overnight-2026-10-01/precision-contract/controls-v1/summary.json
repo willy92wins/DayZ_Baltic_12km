@@ -1,0 +1,137 @@
+{
+  "status": "PASS_CONTROLS",
+  "gate_sha256": "d2c3243d56e63668248c7d26f1a354e4b6008011eef50fed8835c4db6ba89938",
+  "tests": [
+    {
+      "case": "strict_current",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "fe02d6e059e307ffd9ef49af87ee6ccaf264ce0c5f8ca88bde3807b9bdb0ad8b"
+    },
+    {
+      "case": "bounded_current",
+      "expected_accepted": true,
+      "actual_accepted": true,
+      "matched": true,
+      "exit_code": 0,
+      "fixture_sha256": "fe02d6e059e307ffd9ef49af87ee6ccaf264ce0c5f8ca88bde3807b9bdb0ad8b"
+    },
+    {
+      "case": "old_world",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "9bf50853799764571d4c3a7ce87c17583019af149bed93ac1e73f2c91c7c8c68"
+    },
+    {
+      "case": "displaced_bridges",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "3fd775e0b64b20684e81212b979c0fca24fe3da7c875a358f98a0ee46b00f16d"
+    },
+    {
+      "case": "synthetic_exact_control",
+      "expected_accepted": true,
+      "actual_accepted": true,
+      "matched": true,
+      "exit_code": 0,
+      "fixture_sha256": "3e068177835ab45615e5b3f547c089706f7d8cdb7f60cdb8a5833415b5d12f41"
+    },
+    {
+      "case": "edge_1mm",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "d5458323f42354ba113977b028617818702314fc690bde17dfc6959d842e0fb0"
+    },
+    {
+      "case": "interior_one_ulp",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "aec63cb2b6acafca4797cfc4e74e77f2ac0dafa833e5e27f988a7e8d56c13234"
+    },
+    {
+      "case": "west_y_1mm",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "ed7c2223e24d27a332d59f1e734e33c37090e1074fc2fa68ca3d4a0c8a74fcc3"
+    },
+    {
+      "case": "central_y_one_ulp",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "bcad98bbedef3e25861ba7e40990c6597ee61ee248491ec9e85f103e04d3432e"
+    },
+    {
+      "case": "bridge_x_one_ulp",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "824bcb4fcac747221f955cd1c7d90e8caeebe7b90a03e8cef48009c5f98704a0"
+    },
+    {
+      "case": "bridge_rotation",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "f353cbec8897d29d09bf7b70d2dcce27c4cf0a40c289d83c95343ec3fa4d64ab"
+    },
+    {
+      "case": "nonfinite_bridge",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "4986a7abe4c549824461ec63f37d079f4df77ff124cccc685b466e6d2881f381"
+    },
+    {
+      "case": "material_change",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "93afa1f48d402c9f404687f0fe1c7672f0d47e20d8b83c3ef3b810c71291362b"
+    },
+    {
+      "case": "duplicate_id",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "dfe8cc7e7c11c57c4837263802fee073654914d5acdc587f221879df6b33723f"
+    },
+    {
+      "case": "truncated",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "822eb6ca9f93058578344f0603e181b820b18fab748a164c97ee8f45a40e8800"
+    },
+    {
+      "case": "missing_water_full_scope",
+      "expected_accepted": false,
+      "actual_accepted": false,
+      "matched": true,
+      "exit_code": 1,
+      "fixture_sha256": "fe02d6e059e307ffd9ef49af87ee6ccaf264ce0c5f8ca88bde3807b9bdb0ad8b"
+    }
+  ],
+  "limits": [
+    "Controls of the verifier; not persistence, water integration or runtime acceptance."
+  ]
+}

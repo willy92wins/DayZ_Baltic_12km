@@ -1,0 +1,51 @@
+// Read-only diagnostic, client side. APIs verified in scripts/3_game/global/game.c:523,730,1174-1187.
+// MissionGameplay::OnUpdate: scripts/5_mission/mission/missiongameplay.c:278.
+modded class MissionGameplay
+{
+ protected int m_BalticWaterNext;
+ protected bool m_BalticWaterInit;
+ protected const string BALTIC_WATER_CLIENT_LOG = "$profile:baltic_water_client_observer.log";
+ void BalticWaterLog(string row)
+ {
+  FileHandle file = OpenFile(BALTIC_WATER_CLIENT_LOG, FileMode.APPEND);
+  if (!file) return;
+  FPrintln(file,row);
+  CloseFile(file);
+ }
+ void BalticWaterPoint(string label, float x, float z)
+ {
+  float ground = GetGame().SurfaceY(x,z);
+  vector above = Vector(x,ground+100,z);
+  float water = GetGame().GetWaterSurfaceHeightNoFakeWave(above);
+  bool pond = GetGame().SurfaceIsPond(x,z);
+  bool sea = GetGame().SurfaceIsSea(x,z);
+  float depth = GetGame().GetWaterDepth(Vector(x,ground+0.01,z));
+  BalticWaterLog("P;" + GetGame().GetTime() + ";" + label + ";" + ground + ";" + water + ";" + pond + ";" + sea + ";" + depth);
+ }
+ override void OnUpdate(float timeslice)
+ {
+  super.OnUpdate(timeslice);
+  if (GetGame().IsDedicatedServer() || GetGame().GetWorldName() != "BalticTrial") return;
+  if (!m_BalticWaterInit)
+  {
+   FileHandle file = OpenFile(BALTIC_WATER_CLIENT_LOG,FileMode.WRITE);
+   if (!file) return;
+   FPrintln(file,"BALTIC_WATER_CLIENT_OBSERVER_V1");
+   CloseFile(file);
+   BalticWaterLog("CFG;" + GetGame().ConfigGetFloat("CfgWorlds BalticTrial MaxTide") + ";" + GetGame().ConfigGetFloat("CfgWorlds BalticTrial MaxWave") + ";" + GetGame().ConfigGetFloat("CfgWorlds BalticTrial waveAmplitude") + ";" + GetGame().SurfaceGetSeaLevelMin() + ";" + GetGame().SurfaceGetSeaLevelMax());
+   m_BalticWaterInit = true;
+  }
+  if (GetGame().GetTime() < m_BalticWaterNext) return;
+  m_BalticWaterNext = GetGame().GetTime()+250;
+  int hour;
+  int minute;
+  int second;
+  GetHourMinuteSecond(hour,minute,second);
+  vector cam = GetGame().GetCurrentCameraPosition();
+  BalticWaterLog("SEA;" + GetGame().GetTime() + ";" + hour + ";" + minute + ";" + second + ";" + GetGame().SurfaceGetSeaLevel() + ";" + cam);
+  BalticWaterPoint("land_e",2179.537858,7086.083408);
+  BalticWaterPoint("land_w",2281.835241,7203.550968);
+  BalticWaterPoint("land_n",2210.061284,6866.549706);
+  BalticWaterPoint("R1",2202.43,7164.68);
+ }
+};

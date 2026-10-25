@@ -1,0 +1,114 @@
+{
+  "status": "OT2_DRY_ISLETS_OFFLINE_READY",
+  "passed": true,
+  "checks": {
+    "gates": true,
+    "negatives": true,
+    "islet_negative": true,
+    "twelve_islets": true,
+    "all_islets_dry": true,
+    "identical_sea_vertex_mask": true
+  },
+  "islets": [
+    {
+      "x": 8250,
+      "z": 9870,
+      "before": 1.600000023841858,
+      "after": 1.0499999523162842
+    },
+    {
+      "x": 10122,
+      "z": 9372,
+      "before": 1.5049431324005127,
+      "after": 1.399999976158142
+    },
+    {
+      "x": 2034,
+      "z": 7356,
+      "before": 1.467448353767395,
+      "after": 1.058578610420227
+    },
+    {
+      "x": 2100,
+      "z": 7314,
+      "before": 1.6564857959747314,
+      "after": 1.1749999523162842
+    },
+    {
+      "x": 3510,
+      "z": 6528,
+      "before": 1.6072953939437866,
+      "after": 1.4299999475479126
+    },
+    {
+      "x": 12126,
+      "z": 3114,
+      "before": 2.1283624172210693,
+      "after": 1.2999999523162842
+    },
+    {
+      "x": 12078,
+      "z": 2772,
+      "before": 1.775712013244629,
+      "after": 1.2999999523162842
+    },
+    {
+      "x": 11952,
+      "z": 2700,
+      "before": 2.4193263053894043,
+      "after": 1.4199999570846558
+    },
+    {
+      "x": 11946,
+      "z": 2694,
+      "before": 2.264436721801758,
+      "after": 1.4199999570846558
+    },
+    {
+      "x": 11940,
+      "z": 2688,
+      "before": 2.2854971885681152,
+      "after": 1.4199999570846558
+    },
+    {
+      "x": 11934,
+      "z": 2676,
+      "before": 2.407893657684326,
+      "after": 1.5499999523162842
+    },
+    {
+      "x": 11790,
+      "z": 2400,
+      "before": 2.0874454975128174,
+      "after": 1.8962854146957397
+    }
+  ],
+  "sea_topology_proof": "Every vertex retains its strict engine-sea sign; the native triangle-edge wet graph is identical. Water/level masks and pond footprint also identical by G3/G4.",
+  "gates": {
+    "ok": true,
+    "T0.3": {
+      "before": 4252,
+      "after": 87,
+      "drop": 0.9795
+    },
+    "T0.5": {
+      "before": 2897,
+      "after": 44,
+      "drop": 0.9848
+    },
+    "T1.0": {
+      "before": 1168,
+      "after": 13,
+      "drop": 0.9889
+    }
+  },
+  "files": {
+    "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\despike_v31.py": "cbc15163f6a2fcc8921749aaf2b6b2030dc60ed66c2275b125ee2702399dab08",
+    "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\v31-pond-layer-2026-10-13\\despike\\gate_despike_v31.py": "7aa69efbc3d026e6e8effbf6c1d15c2a549a5a118347c45ff15d59b3488a0adb",
+    "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\v31-pond-layer-2026-10-13\\despike\\neg_controls_despike_v31.py": "2dcb2cf56cb41cfe67c569ef53a41f84a952a2b1ff35247c3684a0ca6848be0d",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot2-20261018\\dry-islets-a\\terrain.npz": "8f206d7ee2f2fda3164ae5ccc35e63589d74844a1bf61b0b0e021a9e4afce4bb",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot2-20261018\\dry-islets-a\\gates\\gates.json": "f7620e6aab09b7346aec0368ddb1e1f5280f664dc0577aecbf41a0d43d9d3455",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot2-20261018\\dry-islets-a\\negative\\negative-controls.json": "946105497730ad3c8ccd89a593f7ec8d3b38a8f5b83ec78cb94cb31a0cc22e1f"
+  },
+  "limitation": "Repeat gates on final EV112 terrain after all causeways."
+}

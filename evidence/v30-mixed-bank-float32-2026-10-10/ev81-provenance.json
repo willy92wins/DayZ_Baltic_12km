@@ -1,0 +1,53 @@
+{
+  "status": "AUTHORING_COMPLETE_PENDING_INDEPENDENT_CONSUMER",
+  "source_terrain": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz",
+    "sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c"
+  },
+  "inputs": {
+    "plan_sha256": "961a7989bd6412b21855dc2653433f4c38d1f3feaadb1253ef5a24e1a5c79aec",
+    "author_sha256": "870a85ce64738fea8153ef73fbc1c486ee8ee729913a74b12da97c82b06e198e",
+    "fixture_sha256": "f702aa1f8cbcf28453f1376b9eedf1f56ebdf33092930af23f355c9a093b3365",
+    "constraints_sha256": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "plane_source_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "visible_field_source_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"
+  },
+  "run": {
+    "status": "CANDIDATE_AUTHORED_PENDING_INDEPENDENT_CONSUMER",
+    "selector_expected": 4329,
+    "selector_processed": 4329,
+    "elapsed_seconds": 81.453,
+    "changed_vertices": 4005,
+    "fallback_counts": {
+      "accepted_original": 2623,
+      "accepted_ulp_1": 1382,
+      "accepted_ulp_2": 0,
+      "fallback_rejected": 0
+    },
+    "rejected_by_reason": {
+      "accepted": 4005,
+      "benefit_below_material_floor": 295,
+      "empty_hinge_component": 29
+    },
+    "all_node_decisions_recorded": true,
+    "all_nonheight_arrays_equal_source_including_nan": true
+  },
+  "outputs": {
+    "candidate_terrain_npz_sha256": "c0bc7cb9793fb9fd28af184cea72bdafcc6667d46e7e67d9389b9b19659a423b",
+    "candidate_plane_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "candidate_visible_field_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "terrain_delta_sha256": "7057c5f672035b9c3d0d3138bf7df75bd4ab22b582e8eaf67bd1aa0276e7515e",
+    "authoring_report_sha256": "1b03c8a73d63e0d0aafbf57ef53f17f9d76da097f7c314cdced1e03ece24b32f",
+    "run_log_sha256": "6c0567a83000bdc52fd98730733adbe65da9974267762f61cc8b03067abe356a",
+    "candidate_files": [
+      "candidate/terrain.npz",
+      "candidate/plane.npy",
+      "candidate/visible-field.npy"
+    ]
+  },
+  "limits": [
+    "Offline authoring only; no independent EV81 consumer run yet.",
+    "No package or DayZ motor run.",
+    "Candidate is not promoted; EV80 remains the deployed terrain."
+  ]
+}

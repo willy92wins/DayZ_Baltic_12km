@@ -1,0 +1,244 @@
+{
+  "status": "DIAGNOSTIC_ONLY_EV91_CANDIDATE_REMAINS_REJECTED_BY_SHAPE_GATE",
+  "scope": "Read-only analysis of the preserved EV91 candidate and the in-memory B-to-H line. No candidate write, no optimizer/solver, no alpha selected for production.",
+  "inputs": {
+    "B_terrain_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "candidate_H_sha256": "865901ab24aa3736da57847f9112d3c73181085213f89b48ef2e3e7a9f6ee702",
+    "authoring_receipt_sha256": "12be9f321eef9ce586e2c6fe43cce3a55cfed83cc9664ea9f14b8747979d5339",
+    "prepared_sha256": "127b906c1d2a5d2aa09172ed47dac16cd489aae6a2955428a96166a325605877",
+    "plan_sha256": "f06e72d568823c5475c301d9baed851619cf0e0b0b4ee5b42eeb0c7cd5ec953f",
+    "root_shape_check_sha256": "2e22615700387e0616f72bc50baef1537006d3ae31371a9c2a51936a0ce4ee10",
+    "shape_contract_sha256": "8cd9d0fbea03c05e5ae53a31676d79ec2364be83c055213446f6c8599245d533",
+    "angle_consumer_helper_sha256": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+    "consumer_energy_helper_sha256": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+    "recompute_script_sha256": "a2ff169c23ca3bf56d77e319ee128208504ef54890ca4e302032accbc55802fc"
+  },
+  "rejected_candidate_state": {
+    "solver": {
+      "status": 0,
+      "success": true,
+      "iterations": 24,
+      "calls": 1,
+      "cost_half_squared_residual": 60.019705501593876
+    },
+    "changed_vertices": 42,
+    "root_shape_gates": {
+      "focus_25_both_axes": true,
+      "population_max_nonworse": true,
+      "population_sum_squares_nonworse": true,
+      "no_new_strict_minima8": true,
+      "no_new_exact_constant_2x2": false
+    },
+    "new_constant_quad_top_left_rc": [
+      836,
+      370
+    ],
+    "grid_cell_size_m": 6.0,
+    "flat_area_m2": 36.0,
+    "focus_hinge_deg": {
+      "B": 29.999999051747967,
+      "H": 4.990077928879733
+    },
+    "collar_energy": {
+      "B": 1.031951483568104,
+      "H": 1.031951483568104
+    },
+    "root_shape_energy_unhalved": {
+      "B": 221.2263916770147,
+      "H": 119.54029637607583
+    }
+  },
+  "quad_causality": {
+    "top_left_rc": [
+      836,
+      370
+    ],
+    "vertices_ordered_rc": [
+      [
+        836,
+        370
+      ],
+      [
+        836,
+        371
+      ],
+      [
+        837,
+        370
+      ],
+      [
+        837,
+        371
+      ]
+    ],
+    "B_float32_m": [
+      1.767622947692871,
+      1.8848143815994263,
+      1.581140398979187,
+      1.7999999523162842
+    ],
+    "H_float32_m": [
+      1.9289079904556274,
+      1.9289079904556274,
+      1.9289079904556274,
+      1.9289079904556274
+    ],
+    "B_range_m": 0.3036739838123321,
+    "height_changes_m": [
+      0.16128504276275635,
+      0.04409360885620117,
+      0.34776759147644043,
+      0.12890803813934326
+    ],
+    "candidate_common_value_float32": 1.9289079904556274,
+    "float32_ulp_at_common_value_m": 1.1920928955078125e-07,
+    "H_pairwise_ulp_distances_from_B": [
+      1352957,
+      369884,
+      2917286,
+      1081359
+    ],
+    "flat_is_not_float32_noise": true,
+    "physical_bounds_m": [
+      [
+        1.767622947692871,
+        2.267622947692871
+      ],
+      [
+        1.8000000715255737,
+        2.3848142623901367
+      ],
+      [
+        1.581140398979187,
+        2.0811402797698975
+      ],
+      [
+        1.7999999523162842,
+        2.299999952316284
+      ]
+    ],
+    "bounds_active_at_H": [],
+    "selected_D8_witness_edges_active_at_H": [
+      {
+        "center_rc": [
+          836,
+          370
+        ],
+        "witness_rc": [
+          837,
+          370
+        ],
+        "row": 29,
+        "slack_m": 0.0
+      },
+      {
+        "center_rc": [
+          836,
+          371
+        ],
+        "witness_rc": [
+          837,
+          370
+        ],
+        "row": 30,
+        "slack_m": 0.0
+      },
+      {
+        "center_rc": [
+          837,
+          371
+        ],
+        "witness_rc": [
+          837,
+          370
+        ],
+        "row": 38,
+        "slack_m": 0.0
+      }
+    ],
+    "target_witness_rc": [
+      837,
+      370
+    ],
+    "target_is_B_strict_minimum_exempt": true,
+    "cycle_forcing_quad_equality": false,
+    "mechanism": "The D8 rows are one-way inequalities toward the inherited strict-minimum node; they do not impose four-way equality. Three rows bind at the SLSQP solution while the exempt target has no outgoing witness row. The convex least-squares second-difference objective then equalizes this free, unbounded-by-active-box patch. This is an objective/active-inequality interaction, not float32 collapse or a D8 cycle."
+  },
+  "B_to_H_scalar_diagnostic": {
+    "definition": "h(alpha)=float32(B + alpha*(H-B)); calculations only in memory. Values below are constraint boundaries/witness diagnostics, not a selected alpha and not a candidate.",
+    "focus_25pct_real_line_thresholds": {
+      "east_west_alpha": 0.22764028932113087,
+      "north_south_alpha": 0.220644799203558,
+      "combined_lower_bound_alpha": 0.22764028932113087,
+      "note": "At the exact EW crossing, one final float32 cast is marginally above the prominence limit; the energy boundary below is stricter and its float32 diagnostic passes both focus gates."
+    },
+    "fixed_stencil_energy_25pct_boundary": {
+      "energy_definition": "Independent consumer verify_ev88q.stencil_energy over stencil_records(variables=prepared.variables_rc); Dxz terms weighted by 2, matching consumer implementation.",
+      "energy_quadratic_constant_linear_quadratic_float64_line": [
+        221.2263916770147,
+        -186.20880690454487,
+        84.52271160360601
+      ],
+      "energies_B_midpoint_H": [
+        221.2263916770147,
+        149.25266612564377,
+        119.54029637607583
+      ],
+      "target_75pct_B": 165.91979375776103,
+      "roots_in_0_1": [
+        0.35384751023735317
+      ],
+      "lower_bound_alpha": 0.35384751023735317,
+      "at_boundary_after_float32_cast": {
+        "shape_gates": {
+          "focus_positive_prominence_reduced_25pct_both_axes": true,
+          "fixed_population_max_prominence_nonworse_both_axes": true,
+          "fixed_population_sum_squares_prominence_nonworse_both_axes": true,
+          "no_new_strict_minima8": true,
+          "no_new_exactly_constant_2x2_windows": true
+        },
+        "focus_hinge_B_deg": 29.999999051747967,
+        "focus_hinge_after_deg": 21.243629856514545,
+        "focus_angle_reduction_deg": 8.756369195233422,
+        "energy_after": 165.91979269725906,
+        "energy_reduction_fraction": 0.25000000479374074,
+        "collar_energy_after": 1.031951483568104,
+        "collar_energy_B": 1.031951483568104,
+        "quad_values_m": [
+          [
+            1.824693202972412,
+            1.9004168510437012
+          ],
+          [
+            1.7041970491409302,
+            1.845613718032837
+          ]
+        ],
+        "quad_range_m": 0.196219801902771,
+        "quad_is_flat": false
+      },
+      "scope_note": "One in-memory line diagnostic only; no candidate, solver call, alpha selection, or full independent consumer run.",
+      "comparison_note": "Esta es la puerta de energía del consumidor independiente; no el coste del autor. El coste del autor multiplicado por 2 difiere de la suma de stencils del consumidor."
+    },
+    "rounding_boundary_for_this_specific_quad_to_candidate_common_float32_value": {
+      "common_value_m": 1.9289079904556274,
+      "alpha_strictly_greater_than": 0.9999998286078224,
+      "interpretation": "For the four affine values approaching the EV91 common value from below, all round to that common float32 value beyond this threshold. This is a near-endpoint quantization interval; no nextafter repair was performed."
+    },
+    "claim_limit": "The energy-boundary point is a single analytically derived diagnostic witness, not a chosen production alpha. It proves the existing shape gates, 25% energy reduction and 2-degree local angle reduction can coexist at one non-flat float32 point on this line. It does not prove every alpha in the scalar-constraint interval passes every global/physical/compiled consumer gate; no full consumer was run."
+  },
+  "plan_authority": {
+    "current_plan_says": "One SLSQP call; after final float32 cast reject if gates fail, no repair; no new exact-flat 2x2 is an independent gate; do not recalibrate thresholds after seeing output.",
+    "line_refs": "plan.md:38-48; author_ev91.py:155-177",
+    "posthoc_damping_allowed_inside_EV91": false,
+    "future_design": "A new pre-solve plan could replace the scalar solve with a deterministic one-dimensional admissible-interval calculation on the frozen B-to-H ray (all existing gates fixed), then test one predeclared interior point once. Compute constraint/event breakpoints algebraically and reject if the admissible set is empty; do not sweep alpha or nudge/nextafter a failed float32 output. Full independent consumer must accept that exact float32 point.",
+    "not_done": "No interval search, no selected alpha, no optimizer/solver, no candidate mutation, no package/runtime."
+  },
+  "source_refs": {
+    "EV90_shape_contract.py": "lines 23-31 prominence; 65-84 changed-center minimum and exact 2x2 test",
+    "author_ev91.py": "lines 25-38 D8 witness selection/exemption; 45-67 guard; 75-81 objective; 155-177 final cast/output assertions",
+    "plan.md": "lines 38-48 single solve/no repair/independent flat gate",
+    "verify_ev88q.py": "lines 618-648 local mesh angles"
+  },
+  "claim_limit": "Un punto de la recta, derivado del umbral de energía del consumidor y evaluado con cast float32, satisface las cinco puertas locales de forma, energía y ángulo. No se derivó el intervalo conectado máximo de todos los gates ni se ejecutó el consumidor físico/global; no es un alpha de producción."
+}

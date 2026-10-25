@@ -1,0 +1,165 @@
+{
+  "status": "OFFLINE_COLLISION_CANDIDATE_ONLY",
+  "model_sha256": "baf79ddd19e08cdcdbec99b15043a319d6b958a1b7884082c2ae069cf3f3cee2",
+  "log_sha256": "5063c2197cbb52b6cb5451deb035a21bcbc9eb889d094783ba9346c3a2d4a979",
+  "world_vertical_slab_m": [
+    1.19807,
+    3.60166
+  ],
+  "method": "Geometry faces clipped to observed boat vertical band; local axes from native WRP poses; projected XZ union",
+  "versions": [
+    {
+      "version": "v9",
+      "obstacle_bounds": [
+        2378.8919861948502,
+        6875.623121688701,
+        2455.3938004967945,
+        6904.1468772431035
+      ],
+      "axis_hits_geometry": true,
+      "axis_min_distance_m": 0.0,
+      "intersection": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              2402.4298322374493,
+              6898.5093484088575
+            ],
+            [
+              2402.432922439822,
+              6898.510314374849
+            ]
+          ],
+          [
+            [
+              2405.9265952428113,
+              6899.3778097349905
+            ],
+            [
+              2405.929619708079,
+              6899.3783244801625
+            ]
+          ],
+          [
+            [
+              2405.985456895072,
+              6899.3878276220075
+            ],
+            [
+              2405.9884779372774,
+              6899.388341784596
+            ]
+          ],
+          [
+            [
+              2408.7690507671477,
+              6899.797276980271
+            ],
+            [
+              2408.772761139336,
+              6899.7975038193035
+            ]
+          ]
+        ]
+      },
+      "cases": [
+        {
+          "case": 0,
+          "final_rounded_xz": [
+            2400.07,
+            6898.69
+          ],
+          "distance_to_projected_collision_m": 2.3598520605349913
+        },
+        {
+          "case": 1,
+          "final_rounded_xz": [
+            2410.62,
+            6901.24
+          ],
+          "distance_to_projected_collision_m": 2.341440239068775
+        }
+      ]
+    },
+    {
+      "version": "v10",
+      "obstacle_bounds": [
+        2304.7622187136476,
+        6864.212590238431,
+        2529.5235712989274,
+        6915.557553626445
+      ],
+      "axis_hits_geometry": true,
+      "axis_min_distance_m": 0.0,
+      "intersection": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              2402.4272609150753,
+              6898.508544639502
+            ],
+            [
+              2402.430351117448,
+              6898.509510605494
+            ]
+          ],
+          [
+            [
+              2405.9291118660853,
+              6899.378238048615
+            ],
+            [
+              2405.932136331353,
+              6899.378752793787
+            ]
+          ],
+          [
+            [
+              2405.9829431200887,
+              6899.387399793145
+            ],
+            [
+              2405.9859641622947,
+              6899.387913955733
+            ]
+          ],
+          [
+            [
+              2408.772138157089,
+              6899.797465732372
+            ],
+            [
+              2408.7758481572278,
+              6899.797692548659
+            ]
+          ]
+        ]
+      },
+      "cases": [
+        {
+          "case": 0,
+          "final_rounded_xz": [
+            2400.07,
+            6898.69
+          ],
+          "distance_to_projected_collision_m": 2.3574329144133155
+        },
+        {
+          "case": 1,
+          "final_rounded_xz": [
+            2410.62,
+            6901.24
+          ],
+          "distance_to_projected_collision_m": 2.3389769824300957
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Projected overlap does not prove an engine contact event.",
+    "Boat reference point is not hull boundary; scalar final coordinates are rounded.",
+    "V9 three span poses derived by undoing the verified +2m V10 change."
+  ]
+}

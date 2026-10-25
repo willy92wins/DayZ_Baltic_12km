@@ -1,0 +1,106 @@
+{
+ "status": "BUILT_PENDING_GATES_AND_ENGINE_VIEWS",
+ "params": {
+  "sea": 0.75,
+  "slope": 0.15,
+  "band": 12.0,
+  "sigma": 12.0,
+  "max_shift": 4.0,
+  "floor": 1.4,
+  "max_raise": 2.0,
+  "max_lower": 1.5,
+  "flat_amp": 0.12,
+  "flat_wavelength": 36.0,
+  "flat_taper": 12.0,
+  "seed": 20261004
+ },
+ "outline": {
+  "lines": 18,
+  "sd_sea_agrees_with_classes": 15217,
+  "shift_m_p95": 4.0
+ },
+ "vertices": {
+  "band": 18898,
+  "editable": 17094,
+  "forced": 9115,
+  "changed": 69539,
+  "to_sea": 399,
+  "to_land": 320,
+  "forced_at_move_cap": 475,
+  "beach_before_after": [
+   2679,
+   3525
+  ],
+  "face_recovery": {
+   "iterations": 3,
+   "reverted_vertices": 17
+  },
+  "flat_micro_relief": 59773
+ },
+ "change_m": {
+  "raise_max": 2.0,
+  "lower_max": 1.571,
+  "abs_p50_p90": [
+   0.048,
+   0.111
+  ]
+ },
+ "crossing_offset_m_vs_smoothed_outline": {
+  "before": {
+   "edges": 10382,
+   "no_crossing": 2053,
+   "p50": 1.438,
+   "p90": 3.638,
+   "p99": 5.371
+  },
+  "after": {
+   "edges": 10382,
+   "no_crossing": 341,
+   "p50": 0.0,
+   "p90": 1.579,
+   "p99": 3.832
+  }
+ },
+ "waterline_turn_deg_per_12m_at_sea": {
+  "before": {
+   "n": 2605,
+   "p50": 13.0,
+   "p90": 35.0,
+   "p95": 47.7
+  },
+  "after": {
+   "n": 2457,
+   "p50": 6.3,
+   "p90": 25.3,
+   "p95": 38.1
+  }
+ },
+ "land_at_floor_vertices": {
+  "before": 69824,
+  "after": 7543
+ },
+ "land_below_m_after": {
+  "0.85": 349,
+  "1.0": 908,
+  "1.1": 1401,
+  "1.25": 2328
+ },
+ "gate_check": {
+  "sea_too_shallow": 0,
+  "beach_below_floor": 0,
+  "land_below_floor_outside_beach": 0
+ },
+ "protected_corridors": 23,
+ "inputs": {
+  "E:\\DayZ-Baltic-Build\\v30-v3\\shore-v3b\\terrain_shore.npz": "fac76aea32c817858d1cb2188a3eee33dc6eec6cfa8efe77e9bbaf6c225b10a3",
+  "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\terrain_v30\\water_v30.npz": "96d4a7ded957d235788574579e0e3fca6257c166aae598e42cf19ded02b1a24b",
+  "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_outline_v1\\reference.npz": "10bd6d9c9b944e2964d72055301101a7014c5bb09ff3ddc298a15897bab5c915",
+  "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\profile_coast_v30.py": "3d1c27fe71ff18f8691367eb8e7f46b9d09a0ee88d648e31ac69e5bfa7e6e8c1"
+ },
+ "output_sha256": "3f889c856109d71cf5e9fa3dea1f8720e87c73367bbefca2a5b6395f0cd76fbc",
+ "seconds": 35.7,
+ "limits": [
+  "Heights, classes and levels inside the coast band; pond-class water untouched.",
+  "Engine views and the grouped gates decide acceptance."
+ ]
+}

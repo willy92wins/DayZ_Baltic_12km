@@ -1,0 +1,1 @@
+The first run saved the candidate, then failed serializing a numpy boolean in its report. The repair converts gate values to Python bool. On rerun it compares every regenerated array to the retained candidate and does not rewrite the NPZ or deltas. No profile, threshold or geometry change.

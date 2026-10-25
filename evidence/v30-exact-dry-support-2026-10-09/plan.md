@@ -1,0 +1,9 @@
+# EV70 — terreno seco con cierre exacto de los triángulos mojados
+
+Objetivo: los2197 bajos secos pendientes deEV61, sin cambiar planos de agua, niveles, metadata ni objetos. Una única ejecución,60 barridos/600s comoEV60; máximo+0,4m y ninguna bajada. Si falla el consumidor global no seleccionar subconjuntos ni volver a optimizar en este ensayo.
+
+Nuevo discriminadorEV69: en las nueve aristas incompatibles al elevar un único objetivo,18 de27 vecinos bloqueados son secos en todos sus triángulos nativos P/F/mar. Los27 estaban protegidos porque pertenecían a la caja de una celda con P finito. Se reconstruyen exactamente las demás proteccionesEV25 y se sustituye exclusivamente ese cierre rectangular por el cierre de todos los triángulos con profundidad positiva. Se conserva cada vértice de cada cara realmente mojada; la elevación unilateral no puede crear nuevas caras mojadas. No se liberan ingeniería, playas, clases de agua, banda de66m, grandes lagos ni protecciones heredadas.
+
+Cambio explícito de verificador: `water_cells_exact` (incluía esquinas totalmente secas) se sustituye por `water_faces_exact`, recalculado por el consumidor a partir de P/F y alturas nativas, junto con `no_lowering` y prueba de exposición de las mallas compiladas si pasa la fuente. Profundidad, huella y continuidad reales siguen invariantes. No se relajan pendiente35grados, percentiles p99 de banco/interior/natural, número de pliegues>30 ni energía incidente.
+
+Validación: controles independientes plano inclinado/pliegue45, mutaciones de agua/carretera/exterior/pendiente/objetivo bajo; comparación global fuenteEV61 frente aNPZ guardado; objetos/P/F/metadata exactos; exposición física y visible compilada contra fuenteEV61 si el primer gate pasa. Después paquete y censo nativo, pendientes de MCP. No aceptación del shader por geometría. El traslado de VolkhovEV68 queda separado y no se aplica por este ensayo.

@@ -1,0 +1,235 @@
+{
+  "status": "PASS_OFFLINE_LAST_NOMINAL_POCKET",
+  "source_sha256": "28325d0605c3561844477ada9b4c5154926782fd4dd13470c9e68cdaa02ca491",
+  "terrain_sha256": "e7daa6c62cde457b666507ec7eae7e6d16015ad714028585fdb352ace678e52c",
+  "checks": {
+    "scope": true,
+    "source_dry_corner": true,
+    "engineering_exact": true,
+    "corridor_support_exact": true,
+    "wet_beds_exact": true,
+    "old_120_controls_exact": true,
+    "slopes": true,
+    "intended_water_topology": true,
+    "roads": true
+  },
+  "negative": {
+    "analytic_triangle_areas": true,
+    "analytic_connected_square": true,
+    "channel_split_rejected": true,
+    "unfixed_pocket_rejected": true,
+    "engineering_change_rejected": true
+  },
+  "change": {
+    "row": 931,
+    "col": 375,
+    "x": 2250,
+    "z": 6696,
+    "before": 2.405587673187256,
+    "after": 3.3499999046325684,
+    "water_plane": 3.0
+  },
+  "predeclared_removable_components": [
+    307
+  ],
+  "removed_components": [
+    {
+      "component": 307,
+      "area_before": 15.310342354483948,
+      "area_after": 0.0,
+      "area_ratio": 0.0,
+      "components_after": 0,
+      "pass_gate": false
+    }
+  ],
+  "protected_components": 830,
+  "navigation": [
+    {
+      "name": "Narva_2",
+      "minimum_before": 1.625,
+      "minimum_after": 1.625,
+      "exact": true
+    },
+    {
+      "name": "Narva_3",
+      "minimum_before": 1.6249999999999998,
+      "minimum_after": 1.6249999999999998,
+      "exact": true
+    },
+    {
+      "name": "Narva_6",
+      "minimum_before": 1.6249999999999998,
+      "minimum_after": 1.6249999999999998,
+      "exact": true
+    },
+    {
+      "name": "Narva_7",
+      "minimum_before": 1.6249999999999998,
+      "minimum_after": 1.6249999999999998,
+      "exact": true
+    },
+    {
+      "name": "Narva_8",
+      "minimum_before": 1.2142083084973714,
+      "minimum_after": 1.2142083084973714,
+      "exact": true
+    },
+    {
+      "name": "Narva_10",
+      "minimum_before": 1.5999999999999999,
+      "minimum_after": 1.5999999999999999,
+      "exact": true
+    },
+    {
+      "name": "Narva_12",
+      "minimum_before": 1.575,
+      "minimum_after": 1.575,
+      "exact": true
+    },
+    {
+      "name": "Narva_13",
+      "minimum_before": 1.575,
+      "minimum_after": 1.575,
+      "exact": true
+    },
+    {
+      "name": "Narva_14",
+      "minimum_before": 1.575,
+      "minimum_after": 1.575,
+      "exact": true
+    },
+    {
+      "name": "Narva_15",
+      "minimum_before": 1.575,
+      "minimum_after": 1.575,
+      "exact": true
+    },
+    {
+      "name": "Narva_16",
+      "minimum_before": 1.575,
+      "minimum_after": 1.575,
+      "exact": true
+    },
+    {
+      "name": "Narva_19",
+      "minimum_before": 1.4749999999999999,
+      "minimum_after": 1.4749999999999999,
+      "exact": true
+    },
+    {
+      "name": "Narva_22",
+      "minimum_before": 1.4499999999995568,
+      "minimum_after": 1.4499999999995568,
+      "exact": true
+    },
+    {
+      "name": "Narva_23",
+      "minimum_before": 3.497955846786499,
+      "minimum_after": 3.497955846786499,
+      "exact": true
+    },
+    {
+      "name": "Narva_25",
+      "minimum_before": 3.9025789561769066,
+      "minimum_after": 3.9025789561769066,
+      "exact": true
+    },
+    {
+      "name": "Narva_26",
+      "minimum_before": 3.7037190421779007,
+      "minimum_after": 3.7037190421779007,
+      "exact": true
+    },
+    {
+      "name": "Narva_27",
+      "minimum_before": 3.549283739327616,
+      "minimum_after": 3.549283739327616,
+      "exact": true
+    },
+    {
+      "name": "Luga_0",
+      "minimum_before": 0.9556089440032698,
+      "minimum_after": 0.9556089440032698,
+      "exact": true
+    },
+    {
+      "name": "Neva_0",
+      "minimum_before": 0.9749999523162753,
+      "minimum_after": 0.9749999523162753,
+      "exact": true
+    },
+    {
+      "name": "Little Neva",
+      "minimum_before": 3.0499999523161274,
+      "minimum_after": 3.0499999523161274,
+      "exact": true
+    },
+    {
+      "name": "Great Neva",
+      "minimum_before": 3.0499999523162833,
+      "minimum_after": 3.0499999523162833,
+      "exact": true
+    },
+    {
+      "name": "Little Neva way/34348577",
+      "minimum_before": 3.0499999523162837,
+      "minimum_after": 3.0499999523162837,
+      "exact": true
+    },
+    {
+      "name": "Neva way/78518216",
+      "minimum_before": 3.0499999523162833,
+      "minimum_after": 3.0499999523162833,
+      "exact": true
+    }
+  ],
+  "roads": {
+    "chains": 100,
+    "samples": 77387,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "metadata_exact": true,
+  "limits": [
+    "One native persistent positive-depth corner, exact compiled coverage and the only source dry corner below a pond plane.",
+    "No change to the 230 intermittent shoreline contacts or the visual-only bridge residual.",
+    "Repeat native census and scalar temporal measurement before acceptance."
+  ]
+}

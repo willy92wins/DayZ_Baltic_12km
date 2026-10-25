@@ -1,0 +1,38 @@
+{
+  "status": "ARCHIVED_TRANSLATION_REVIEW_WITH_NATIVE_CALIBRATION",
+  "results": [
+    {
+      "phase": "A",
+      "threshold": 11.797637850491084,
+      "cohort_dry_samples": 110437,
+      "cohort_quantiles": [
+        3.382220148315767,
+        15.183275169295127,
+        25.412509785870174,
+        48.107125959346206
+      ],
+      "shared_threshold": 11.797637850491084,
+      "suspect_cohort_samples": 16953,
+      "suspect_fraction": 0.1535083350688628
+    },
+    {
+      "phase": "translated",
+      "threshold": 10.354229996465763,
+      "cohort_dry_samples": 111041,
+      "cohort_quantiles": [
+        1.4946514563712086,
+        3.9659103692584523,
+        7.384593926550847,
+        17.901741790561168
+      ],
+      "shared_threshold": 11.797637850491084,
+      "suspect_cohort_samples": 119,
+      "suspect_fraction": 0.0010716762276996785
+    }
+  ],
+  "limits": [
+    "Different terrain height changes screen-to-ground mapping; cohort fractions use the same world rectangle, not identical screen pixels.",
+    "Native focal measuredEV48 with same matrix/FOV/game version; archived frames do not contain native projections themselves.",
+    "This supports a local mitigation; no automatic level-policy promotion or global closure."
+  ]
+}

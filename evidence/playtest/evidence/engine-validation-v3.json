@@ -1,0 +1,70 @@
+{
+  "status": "PASS_NATIVE_HEIGHTS",
+  "checks": {
+    "one_expected_bridge": true,
+    "fixed_registration_grid": true,
+    "fixed_registration_profile": true,
+    "reject_old_ui_northing": true,
+    "deck_at_2m": true,
+    "both_landings_8m": true
+  },
+  "grid_samples": 289,
+  "profile_samples": 289,
+  "grid_max_error_m": 0.004899957084655737,
+  "profile_max_error_m": 0.002518690268467294,
+  "negative_old_registration_max_error_m": 3.9,
+  "endpoints": [
+    {
+      "distance_m": -12.5,
+      "samples": 17,
+      "width_m": 8,
+      "terrain_min_m": 2.0,
+      "terrain_max_m": 2.0,
+      "max_gap_to_deck_m": 0.0,
+      "surface_query_max_error_m": 0.0
+    },
+    {
+      "distance_m": 12.5,
+      "samples": 17,
+      "width_m": 8,
+      "terrain_min_m": 2.0,
+      "terrain_max_m": 2.0,
+      "max_gap_to_deck_m": 0.0,
+      "surface_query_max_error_m": 0.0
+    }
+  ],
+  "water_observation": {
+    "sea_level": "0.54377",
+    "center_is_sea": "true",
+    "center_is_pond": "false",
+    "center_water_depth": "0.54377"
+  },
+  "native_objects": [
+    {
+      "shape": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+      "position": "<2417.143066, -6.054884, 6889.884766>",
+      "orientation": "<98.748924, 0.000000, -0.000000>",
+      "raw_roadway_mid_world": "<2417.143066, 2.000000, 6889.884766>",
+      "raw_roadway_end_negative_world": "<2404.788574, 2.000000, 6891.786133>",
+      "raw_roadway_end_positive_world": "<2429.497559, 2.000000, 6887.983398>"
+    },
+    {
+      "shape": "core\\cursor\\cursor.p3d",
+      "position": "<2417.143066, -0.156838, 6889.884766>",
+      "orientation": "<0.000000, -28.647888, -0.000000>",
+      "raw_roadway_mid_world": "<2417.143066, 6.911987, 6893.746582>",
+      "raw_roadway_end_negative_world": "<2417.143066, 12.904807, 6882.776855>",
+      "raw_roadway_end_positive_world": "<2417.143066, 0.919168, 6904.716309>"
+    }
+  ],
+  "sha256": {
+    "log": "c48891e5038d33141fa14a8012949625b25fec1f73fe818af431647ab3e174ce",
+    "native": "beba1691236f558e6900c99b26e5fb6cc8b248540840a843486d0605d2f6fd8d",
+    "before": "38f090ce2fbd8a65c92260f5e5f8965b6d34ed3f4d3e9dbfe1c4a08ea2dd0519"
+  },
+  "limits": [
+    "Native surface queries, not player traversal or vehicle collision.",
+    "Local Narva registration only; no global terrain correction.",
+    "Pond hidden during observation; no elevated inland-water pass."
+  ]
+}

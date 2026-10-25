@@ -1,0 +1,165 @@
+{
+  "schema": "ev94.wet-bank-preflight-review.v1",
+  "status": "PASS_WET_BANK_PREFLIGHT_ONLY",
+  "ready_for_one_solve": true,
+  "source_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/prepare_wet_bank_matrices.py",
+  "source_sha256": "65e05a6540026b08df7effa53c58534121bb2fa89e116a2ef07ad46ba0edf286",
+  "plan_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/PLAN.md",
+  "plan_sha256": "4ed8c17720d3b7e0773c99b16cc322478cd1ae3f7106157379a128969e48318e",
+  "preparation_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/prepared-runs/attempt-08/preparation.json",
+  "preparation_sha256": "c582f45f0751e8c24db2672405de4b94c136ee16a9c33d5e4c35a8deee2200ed",
+  "prepared_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/prepared-runs/attempt-08/prepared.npz",
+  "prepared_sha256": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+  "checks": {
+    "source_and_plan_pins_verified": true,
+    "preparation_and_prepared_hashes_verified": true,
+    "source_readset_start_end_and_live_hashes_verified": true,
+    "retained_499_unit_artifact_readset_666_files_verified": true,
+    "wrp_ev94_staged_hash_and_inherited_selection_identity_verified": true,
+    "domain_121_exact_with_fixed_two_node_context": true,
+    "other_fixed_ev79_and_halo_rebuilt_exact": true,
+    "no_protected_p9_or_road_node_in_domain": true,
+    "P_F_promoted_float64_equal_pinned_sources": true,
+    "physical_bounds_recomputed_from_EV79_local_and_bed_rules": true,
+    "wet_upper_bounds_below_every_known_incident_P_and_F": true,
+    "inward_float32_bounds_exact_and_baseline_feasible": true,
+    "EV88_objective_matrix_and_rhs_rebuilt_exact": true,
+    "D8_witness_matrix_and_rhs_rebuilt_exact": true,
+    "slope_cone_operator_offsets_radii_and_keys_rebuilt_exact": true,
+    "P_F_sign_and_crossing_rows_rebuilt_exact_separate_samples": true,
+    "baseline_D8_crossing_and_slope_feasible": true,
+    "unknown_P_and_incident_unknown_F_faces_buried_under_B_and_L32": true,
+    "candidate_absent_no_solver_run": true
+  },
+  "metrics": {
+    "variables": 121,
+    "wet_variable_nodes": 15,
+    "dry_variable_nodes": 106,
+    "shore_boundary_variable_nodes": 0,
+    "affected_cells": 144,
+    "A_shape": "576x121",
+    "A_nnz": 1331,
+    "D8_rows": 150,
+    "C_cross_rows": 528,
+    "C_total_shape": "678x121",
+    "C_nnz": 937,
+    "G_shape": "784x121",
+    "G_nnz": 968,
+    "cone_count": 392,
+    "retained_units": 499,
+    "retained_readset_files": 666,
+    "P_unknown_cells_in_affected_set": 105,
+    "F_unknown_triangles_incident_to_variables": 208,
+    "P_unknown_triangles_with_compiled_face_intersection": 8,
+    "F_unknown_triangles_with_compiled_face_intersection": 8,
+    "minimum_P_burial_B_m": 0.15593924000813786,
+    "minimum_P_burial_L32_m": 0.07510008290387304,
+    "minimum_F_burial_L32_m": 0.07510008290387304,
+    "thresholds": {
+      "physical_m": ">=0",
+      "visible_m": ">0.00002"
+    }
+  },
+  "unknown_face_intersections": {
+    "physical_cells_rc_t": [
+      [
+        857,
+        1185,
+        0
+      ],
+      [
+        857,
+        1185,
+        1
+      ],
+      [
+        858,
+        1186,
+        0
+      ],
+      [
+        858,
+        1186,
+        1
+      ],
+      [
+        859,
+        1187,
+        0
+      ],
+      [
+        859,
+        1187,
+        1
+      ],
+      [
+        861,
+        1188,
+        0
+      ],
+      [
+        861,
+        1188,
+        1
+      ]
+    ],
+    "visible_cells_rc_t": [
+      [
+        857,
+        1185,
+        0
+      ],
+      [
+        857,
+        1185,
+        1
+      ],
+      [
+        858,
+        1186,
+        0
+      ],
+      [
+        858,
+        1186,
+        1
+      ],
+      [
+        859,
+        1187,
+        0
+      ],
+      [
+        859,
+        1187,
+        1
+      ],
+      [
+        861,
+        1188,
+        0
+      ],
+      [
+        861,
+        1188,
+        1
+      ]
+    ],
+    "sampled_object_id": 16804567,
+    "minimum_L32_margin_m": 0.07510008290387304,
+    "face_index_query_bbox_cells": [
+      856,
+      867,
+      1180,
+      1191
+    ],
+    "bbox_candidate_rows": 200,
+    "index_reverify_pass": true
+  },
+  "scope_limits": [
+    "No solver, terrain write, package, runtime, or visual acceptance was performed.",
+    "WRP object/material exactness is inherited from the hash-pinned selection receipt; base and staged WRP bytes were rehashed here, but 18,024 objects were not independently decoded in this review.",
+    "Unknown-face burial check is a local exact XZ clipping diagnostic over all compiled face rows queried for the 144 affected cells; candidate H remains B and L32 is the prepared inward lower envelope.",
+    "PASS authorizes only the single planned solve and separate post-solve consumer review."
+  ]
+}

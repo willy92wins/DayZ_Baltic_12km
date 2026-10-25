@@ -1,0 +1,291 @@
+{
+  "status": "PASS_LOCAL_GEOMETRY",
+  "checks": {
+    "nonempty": true,
+    "finite": true,
+    "exact_class_scope": true,
+    "exact_level_scope": true,
+    "exact_water_scope": true,
+    "no_height_change_outside_polygons": true,
+    "narva_unchanged_outside_explicit_pond_exception": true,
+    "all_engineering_and_nature_fixed": true,
+    "ponds_do_not_intersect_fixed_vertices": true,
+    "water_corners_under_all_new_planes": true,
+    "dry_corners_above_all_new_planes": true,
+    "bounded_lowering_only": true,
+    "bed_floor_retained": true,
+    "no_new_or_worsened_steep_faces": true,
+    "all_four_bodies_regain_water": true,
+    "channel_count_retained": true,
+    "all_channel_vertices_fixed": true,
+    "unchanged_platform": true,
+    "unchanged_reserve": true,
+    "unchanged_narva": true,
+    "unchanged_beach": true,
+    "asc_exact": true,
+    "asc_grid_exact": true
+  },
+  "candidate_sha256": "2f954ad52893a78181df0f607ddd5e490a470fe9c634bcf30736ed1aef4c179a",
+  "source_sha256": "73b01bb4a6e94e7659c51ae3fd274c72caeb408a11ee3a31560678ba98036dbd",
+  "changed_vertices": 75,
+  "changed_plane_cells": 166,
+  "new_steep_faces": 0,
+  "new_or_worsened_steep_faces": 0,
+  "ponds": [
+    {
+      "index": 98,
+      "before": {
+        "samples": 763,
+        "sampled_area_m2": 763.0,
+        "wet_fraction": {
+          "0.5": 0.0,
+          "0.75": 0.0,
+          "1.0": 0.0
+        },
+        "pond_plane_fraction": 0.0,
+        "nominal_depth_percentiles_m": {
+          "0": -1.119852215051652,
+          "5": -1.0909860591093679,
+          "50": -0.9131883482138294,
+          "95": -0.8021667569875718
+        },
+        "nominal_depth_at_least_1m_fraction": 0.0,
+        "nominal_depth_at_least_2m_fraction": 0.0
+      },
+      "after": {
+        "samples": 763,
+        "sampled_area_m2": 763.0,
+        "wet_fraction": {
+          "0.5": 0.8650065530799476,
+          "0.75": 0.8650065530799476,
+          "1.0": 0.8650065530799476
+        },
+        "pond_plane_fraction": 0.9973787680209698,
+        "nominal_depth_percentiles_m": {
+          "0": -0.8162527283032728,
+          "5": -0.20378161594271624,
+          "50": 0.36398816605409745,
+          "95": 0.8499975735942672
+        },
+        "nominal_depth_at_least_1m_fraction": 0.0,
+        "nominal_depth_at_least_2m_fraction": 0.0
+      }
+    },
+    {
+      "index": 376,
+      "before": {
+        "samples": 792,
+        "sampled_area_m2": 792.0,
+        "wet_fraction": {
+          "0.5": 0.0,
+          "0.75": 0.0,
+          "1.0": 0.0
+        },
+        "pond_plane_fraction": 0.0,
+        "nominal_depth_percentiles_m": {
+          "0": -0.9454055726528161,
+          "5": -0.8956353510419532,
+          "50": -0.688188686966896,
+          "95": -0.672486620148023
+        },
+        "nominal_depth_at_least_1m_fraction": 0.0,
+        "nominal_depth_at_least_2m_fraction": 0.0
+      },
+      "after": {
+        "samples": 792,
+        "sampled_area_m2": 792.0,
+        "wet_fraction": {
+          "0.5": 0.41414141414141414,
+          "0.75": 0.41414141414141414,
+          "1.0": 0.41414141414141414
+        },
+        "pond_plane_fraction": 0.6603535353535354,
+        "nominal_depth_percentiles_m": {
+          "0": -0.9454055726528161,
+          "5": -0.8956353510419532,
+          "50": -0.13611274709306143,
+          "95": 0.28635981927314985
+        },
+        "nominal_depth_at_least_1m_fraction": 0.0,
+        "nominal_depth_at_least_2m_fraction": 0.0
+      }
+    },
+    {
+      "index": 408,
+      "before": {
+        "samples": 623,
+        "sampled_area_m2": 623.0,
+        "wet_fraction": {
+          "0.5": 0.05778491171749599,
+          "0.75": 0.05778491171749599,
+          "1.0": 0.05778491171749599
+        },
+        "pond_plane_fraction": 0.12680577849117175,
+        "nominal_depth_percentiles_m": {
+          "0": -0.8117054700851434,
+          "5": -0.7709299772977822,
+          "50": -0.6963093280792236,
+          "95": 0.041535492738084545
+        },
+        "nominal_depth_at_least_1m_fraction": 0.0,
+        "nominal_depth_at_least_2m_fraction": 0.0
+      },
+      "after": {
+        "samples": 623,
+        "sampled_area_m2": 623.0,
+        "wet_fraction": {
+          "0.5": 0.7865168539325843,
+          "0.75": 0.7865168539325843,
+          "1.0": 0.7865168539325843
+        },
+        "pond_plane_fraction": 0.9325842696629213,
+        "nominal_depth_percentiles_m": {
+          "0": -0.7948845624923713,
+          "5": -0.7030520339806876,
+          "50": 0.18798617124557393,
+          "95": 0.40508178621526436
+        },
+        "nominal_depth_at_least_1m_fraction": 0.0,
+        "nominal_depth_at_least_2m_fraction": 0.0
+      }
+    },
+    {
+      "index": 409,
+      "before": {
+        "samples": 500,
+        "sampled_area_m2": 500.0,
+        "wet_fraction": {
+          "0.5": 0.0,
+          "0.75": 0.0,
+          "1.0": 0.0
+        },
+        "pond_plane_fraction": 0.0,
+        "nominal_depth_percentiles_m": {
+          "0": -1.9700000286102295,
+          "5": -1.7078889310359955,
+          "50": -0.6561604787906024,
+          "95": -0.6499999761581421
+        },
+        "nominal_depth_at_least_1m_fraction": 0.0,
+        "nominal_depth_at_least_2m_fraction": 0.0
+      },
+      "after": {
+        "samples": 500,
+        "sampled_area_m2": 500.0,
+        "wet_fraction": {
+          "0.5": 0.354,
+          "0.75": 0.354,
+          "1.0": 0.354
+        },
+        "pond_plane_fraction": 0.698,
+        "nominal_depth_percentiles_m": {
+          "0": -1.8600000242391719,
+          "5": -0.7776478409767177,
+          "50": -0.17158504227796045,
+          "95": 0.27460438931978676
+        },
+        "nominal_depth_at_least_1m_fraction": 0.0,
+        "nominal_depth_at_least_2m_fraction": 0.0
+      }
+    }
+  ],
+  "corridors": [
+    {
+      "name": "Narva_2",
+      "identical": true
+    },
+    {
+      "name": "Narva_3",
+      "identical": true
+    },
+    {
+      "name": "Narva_6",
+      "identical": true
+    },
+    {
+      "name": "Narva_7",
+      "identical": true
+    },
+    {
+      "name": "Narva_8",
+      "identical": true
+    },
+    {
+      "name": "Narva_10",
+      "identical": true
+    },
+    {
+      "name": "Narva_12",
+      "identical": true
+    },
+    {
+      "name": "Narva_13",
+      "identical": true
+    },
+    {
+      "name": "Narva_14",
+      "identical": true
+    },
+    {
+      "name": "Narva_15",
+      "identical": true
+    },
+    {
+      "name": "Narva_16",
+      "identical": true
+    },
+    {
+      "name": "Narva_19",
+      "identical": true
+    },
+    {
+      "name": "Narva_22",
+      "identical": true
+    },
+    {
+      "name": "Narva_23",
+      "identical": true
+    },
+    {
+      "name": "Narva_25",
+      "identical": true
+    },
+    {
+      "name": "Narva_26",
+      "identical": true
+    },
+    {
+      "name": "Narva_27",
+      "identical": true
+    },
+    {
+      "name": "Luga_0",
+      "identical": true
+    },
+    {
+      "name": "Neva_0",
+      "identical": true
+    },
+    {
+      "name": "Little Neva",
+      "identical": true
+    },
+    {
+      "name": "Great Neva",
+      "identical": true
+    },
+    {
+      "name": "Little Neva way/34348577",
+      "identical": true
+    },
+    {
+      "name": "Neva way/78518216",
+      "identical": true
+    }
+  ],
+  "limits": [
+    "The legacy full Narva-radius identity test should fail in these declared pond footprints; it has not been weakened.",
+    "Road consumer, regenerated assets, engine loading and navigation remain separate.",
+    "A positive water fraction does not establish complete shoreline or channel continuity."
+  ]
+}

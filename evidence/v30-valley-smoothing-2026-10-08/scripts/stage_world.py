@@ -1,0 +1,27 @@
+"""Stage a terrain-only preview on the proven stitched water package."""
+from pathlib import Path
+import json,hashlib,shutil,sys
+import numpy as np
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+B=Path('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008');E=W/'evidence/v30-valley-smoothing-2026-10-08'
+sys.path.insert(0,str(W/'tools/terrain'))
+from wrp0wzd import read,write
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+label=sys.argv[1] if len(sys.argv)>1 else 'a'
+v=json.loads((E/f'verification-{label}.json').read_text())
+expected='PASS_OFFLINE_LAND_CLEARANCE' if label in ('land160','land180') else 'PASS_OFFLINE_VALLEY'
+assert v['status']==expected,(label,v['status'])
+if label.startswith('c'):
+ assert json.loads((E/f'negative-controls-{label}.json').read_text())['status']=='PASS'
+src=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008/stitched-world/root/dayz_baltic_12km_dev/tb/narva_trial')
+dst=B/f'world-{label}/root/dayz_baltic_12km_dev/tb/narva_trial'
+assert not dst.exists()
+shutil.copytree(src,dst,ignore=shutil.ignore_patterns('baltic_trial.wrp'))
+t=np.load(B/f'candidate-{label}/terrain_valley.npz');base=read(src/'baltic_trial.wrp')
+write(dst/'baltic_trial.wrp',base['header'],t['heights'][::-1],base['materials'],[o['bytes'] for o in base['objects']],base['terminator'])
+after=read(dst/'baltic_trial.wrp')
+assert all(base[k]==after[k] for k in ('header','materials','objects','terminator'))
+assert np.array_equal(after['heights'][::-1],t['heights'])
+report=dict(terrain_sha256=sha(B/f'candidate-{label}/terrain_valley.npz'),source_wrp_sha256=sha(src/'baltic_trial.wrp'),output_wrp_sha256=sha(dst/'baltic_trial.wrp'),object_count=len(after['objects']),water_poses_and_bridges_exact=True,materials_config_exact=True)
+(E/f'world-stage-{label}.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))

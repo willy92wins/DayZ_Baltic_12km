@@ -1,0 +1,9 @@
+# EV82-B — reparación de conformidad del clasificador angular
+
+Se conserva íntegro EV82-A en v30-mixed-bank-incremental-20261010. No se promueve. Su consumidor detecta dos aristas nuevas fuertes, con ángulos EV80 de30.000000013724588 y30.000000015162275°. En author.py solve_node, el clasificador `<=30+EPS_ANGLE` conEPS1e-8 no incluye esas aristas, pero el criterio aprobado del consumidor es `<=30+1e-4`. Por ello omite indebidamente su límite30 y las eleva a31.44166 y36.23217°. El resto de criterios angulares globales EV80 pasa. Este es un incumplimiento de implementación del contrato EV82, no motivo para relajar su consumidor.
+
+Única reparación: usar clasificación de referencia `<=30+1e-4` en los DOS lugares del autor (construcción del intervalo y comprobación float32). Mantener el límite propuesto30°+2e-8 y todas las demás constantes, incluyendo selectororiginalEPS1e-8, p99, masks, EV80angular y EV79presupuesto total±2m. No retocar el terreno fallido ni sumar cambios sobre él: repetir desde EV80 en salida fresca.
+
+Fixture de regresión antes de ejecutar: ambas referencias anteriores quedan clasificadas en el lado protegido por el contrato; el clasificador antiguo no las protegía; el resultado fallido a31.44/36.23 es rechazado sin cambiar la tolerancia del consumidor. El caso fuente30.01° permanece fuera del guard específico; sus otras restricciones siguen vigentes. Revisar diff exacto y exportar nueva procedencia.
+
+Una reparación y un recorrido180s; sin más autorías tras él bajo este plan. Consumidor independiente EV82 conserva TODASsuspuertas; única corrección de metadatos necesaria en el checker: leer el campo real `counts.total_changed_vs_ev79` en lugar del alias mayúsculo erróneo. Esto no cambia un gate geométrico. Cualquier fallo real rechaza el candidato. Después dePASS, pasos de exposición/superficie/PBO/lectura nativa/cierre de planEV82. EV81 y EV82-A permanecen rechazados. No nueva política de agua/terreno ni push.

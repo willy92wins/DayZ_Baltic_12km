@@ -1,0 +1,259 @@
+=====================================================================
+== C:\Program Files (x86)\Steam\steamapps\common\DayZ\DayZDiag_x64.exe
+== "C:\Program -server -config=P:\DayZ_MCP_dev\_server\serverDZ.cfg -profiles=P:\DayZ_MCP_dev\_server\profiles "-mission=C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticFullRiverV3.BalticTrial" -mod=P:\Mods\@DayZ_MCP;P:\Mods\@DayZ_Baltic_FoundationV10Native;P:\Mods\@BalticBoatInputProbe -port=2302
+=====================================================================
+Exe timestamp: 2026/08/15 04:37:25
+Current time:  2026/10/01 13:30:12
+Version 1.29.163709
+=====================================================================
+
+13:30:12.564 ENGINE    (W): No module info used, trying to identify -> 0x6E4E0000
+13:30:12.569 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:30:12.569 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:30:12.569 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:30:12.572 RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+13:30:12.573 RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+13:30:12.574 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:30:12.575 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:30:12.579 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/noise.edds) failed
+13:30:12.580 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:30:12.583 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_area.dds) failed
+13:30:12.583 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_search.dds) failed
+13:30:12.583 MATERIAL  (E): SMAAEffect area texture not found (system/textures/PP/smaa_area)
+13:30:12.583 MATERIAL  (E): SMAAEffect search texture not found (system/textures/PP/smaa_search)
+13:30:12.585 RESOURCES (E): IRenderer::CreateTextureFromImage(system/system.edds) failed
+13:30:12.585 RESOURCES (E): IRenderer::CreateTextureFromImage(system/systemsmall.edds) failed
+13:30:12.638 [Inputs] Loading inputs default "bin/constants.xml"
+13:30:12.640 [Inputs] Loading inputs default "bin/specific.xml"
+13:30:12.642 [Inputs] Loading inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+13:30:12.644 [Inputs] Exporting inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+13:30:13.76  ANIMATION (E): Can't load P:\Mods\@BalticBoatInputProbe/Anims/cfg/skeletons.anim.xml
+13:30:13.76  ANIMATION (E): Failed to open file, line 0, column 0
+13:30:13.76  ANIMATION (E): Can't load P:\Mods\@DayZ_Baltic_FoundationV10Native/Anims/cfg/skeletons.anim.xml
+13:30:13.76  ANIMATION (E): Failed to open file, line 0, column 0
+13:30:13.76  ANIMATION (E): Can't load P:\Mods\@DayZ_MCP/Anims/cfg/skeletons.anim.xml
+13:30:13.76  ANIMATION (E): Failed to open file, line 0, column 0
+13:30:13.76  ANIMATION (E): Can't load sakhal/Anims/cfg/skeletons.anim.xml
+13:30:13.76  ANIMATION (E): Failed to open file, line 0, column 0
+13:30:19.784 Hostname of server: "DayZ_MCP S0"
+13:30:23.698 !!! File "\cfgenvironment.xml" does not exist...
+13:30:23.698 !!! [ERROR][XML] :: load [\cfgenvironment.xml] failed
+13:30:23.698 !!! [ERROR][XML] :: Failed to open file
+13:30:24.180 NETWORK      : Network simulation
+13:30:24.180  SCRIPT    (E):    -- Stack trace --
+13:30:24.180  SCRIPT    (E):    GetPlugin() scripts/4_World/plugins\pluginmanager.c : 339
+13:30:24.180  SCRIPT    (E):    OnInit() scripts/4_World/plugins\pluginbase\pluginitemdiagnostic.c : 94
+13:30:24.180  SCRIPT    (E):    PluginsInit() scripts/4_World/plugins\pluginmanager.c : 134
+13:30:24.180  SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+13:30:24.180  SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins\pluginmanager.c : 302
+13:30:24.180  SCRIPT    (E):    MissionBase() scripts/5_Mission/mission\missionbase.c : 21
+13:30:24.182  SCRIPT    (E):    CreateCustomMission() C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticFullRiverV3.BalticTrial\init.c : 200
+13:30:24.182  SCRIPT    (E):    -----------------
+13:30:24.188  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder
+13:30:24.188  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json
+13:30:24.190  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder
+13:30:24.190  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json
+13:30:24.190 Player connect enabled
+13:30:53.912 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02746.p3d)
+13:30:53.912 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02752.p3d)
+13:30:53.912 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02789.p3d)
+13:30:53.912 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02782.p3d)
+13:30:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02790.p3d)
+13:30:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02755.p3d)
+13:30:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02796.p3d)
+13:30:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02783.p3d)
+13:30:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02797.p3d)
+13:30:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02829.p3d)
+13:30:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02791.p3d)
+13:30:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02798.p3d)
+13:30:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02830.p3d)
+13:30:53.918 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02836.p3d)
+13:30:53.918 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02802.p3d)
+13:30:53.919 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02837.p3d)
+13:30:53.919 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02838.p3d)
+13:31:18.492 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02737.p3d)
+13:31:18.492 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02776.p3d)
+13:31:18.492 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02738.p3d)
+13:31:18.493 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02777.p3d)
+13:31:53.912 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04928.p3d)
+13:31:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04932.p3d)
+13:31:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04929.p3d)
+13:31:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04933.p3d)
+13:31:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04856.p3d)
+13:31:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04936.p3d)
+13:31:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04859.p3d)
+13:31:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04930.p3d)
+13:31:53.913 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02305.p3d)
+13:31:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04934.p3d)
+13:31:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04857.p3d)
+13:31:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04861.p3d)
+13:31:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00862.p3d)
+13:31:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04937.p3d)
+13:31:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00861.p3d)
+13:31:53.914 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04860.p3d)
+13:31:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04927.p3d)
+13:31:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04931.p3d)
+13:31:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04935.p3d)
+13:31:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00864.p3d)
+13:31:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04864.p3d)
+13:31:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00865.p3d)
+13:31:53.915 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04865.p3d)
+13:31:53.917 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00866.p3d)
+13:31:58.302 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02726.p3d)
+13:31:58.302 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02727.p3d)
+13:31:58.302 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02772.p3d)
+13:31:58.303 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02728.p3d)
+13:31:58.303 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02773.p3d)
+13:32:26.399 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01701.p3d)
+13:32:26.399 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02306.p3d)
+13:32:26.399 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01704.p3d)
+13:32:26.399 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04858.p3d)
+13:32:26.399 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04862.p3d)
+13:32:26.399 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00863.p3d)
+13:32:26.399 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04866.p3d)
+13:32:26.399 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00867.p3d)
+13:32:31.684 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04924.p3d)
+13:32:31.684 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04925.p3d)
+13:32:31.684 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04926.p3d)
+13:32:31.684 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02304.p3d)
+13:32:33.680 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02716.p3d)
+13:32:33.680 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02717.p3d)
+13:32:51.156 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02715.p3d)
+13:32:51.156 ENTITY    (W): Unknown object class 'pond' (baltic_water\full_48.p3d)
+13:32:51.157 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02736.p3d)
+13:32:51.157 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02745.p3d)
+13:32:53.908 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02868.p3d)
+13:32:53.908 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02875.p3d)
+13:32:53.908 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02867.p3d)
+13:32:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02874.p3d)
+13:32:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02880.p3d)
+13:32:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02897.p3d)
+13:32:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02899.p3d)
+13:32:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02876.p3d)
+13:32:53.910 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02898.p3d)
+13:32:53.910 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02881.p3d)
+13:32:53.910 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02900.p3d)
+13:32:53.911 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02869.p3d)
+13:32:53.911 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02877.p3d)
+13:32:53.911 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02882.p3d)
+13:32:53.911 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02922.p3d)
+13:32:53.911 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02901.p3d)
+13:33:11.205 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02709.p3d)
+13:33:11.205 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02710.p3d)
+13:33:11.205 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01843.p3d)
+13:33:11.205 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04083.p3d)
+13:33:11.205 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01844.p3d)
+13:33:20.56  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00868.p3d)
+13:33:20.56  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00869.p3d)
+13:33:20.56  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00870.p3d)
+13:33:20.56  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00871.p3d)
+13:33:20.56  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04869.p3d)
+13:33:20.57  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00872.p3d)
+13:33:34.944 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02843.p3d)
+13:33:34.944 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02870.p3d)
+13:33:34.944 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02878.p3d)
+13:33:34.944 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02848.p3d)
+13:33:34.944 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02883.p3d)
+13:33:49.05  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02745.p3d)
+13:33:49.05  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02746.p3d)
+13:33:49.05  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02782.p3d)
+13:33:49.05  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02783.p3d)
+13:33:53.907 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02720.p3d)
+13:33:53.907 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02732.p3d)
+13:33:53.907 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02719.p3d)
+13:33:53.907 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02711.p3d)
+13:33:53.907 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02731.p3d)
+13:33:53.907 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02712.p3d)
+13:33:53.907 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02721.p3d)
+13:33:53.907 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02733.p3d)
+13:33:53.908 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02704.p3d)
+13:33:53.908 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02742.p3d)
+13:33:53.908 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02778.p3d)
+13:33:53.908 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02705.p3d)
+13:33:53.908 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02706.p3d)
+13:33:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02741.p3d)
+13:33:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02704.p3d)
+13:33:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02742.p3d)
+13:33:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02778.p3d)
+13:33:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02705.p3d)
+13:33:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02706.p3d)
+13:33:53.909 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02722.p3d)
+13:33:57.455 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04083.p3d)
+13:33:57.455 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01844.p3d)
+13:34:01.23  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04863.p3d)
+13:34:01.23  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04867.p3d)
+13:34:01.23  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04863.p3d)
+13:34:01.23  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04867.p3d)
+13:34:01.24  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01702.p3d)
+13:34:01.24  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02307.p3d)
+13:34:01.25  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01705.p3d)
+13:34:01.25  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04863.p3d)
+13:34:01.25  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04867.p3d)
+13:34:01.25  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04870.p3d)
+13:34:01.25  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00873.p3d)
+13:34:10.855 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02844.p3d)
+13:34:10.855 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02879.p3d)
+13:34:10.855 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02849.p3d)
+13:34:19.565 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04083.p3d)
+13:34:19.565 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01844.p3d)
+13:34:27.295 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02836.p3d)
+13:34:27.295 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02802.p3d)
+13:34:27.295 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02837.p3d)
+13:34:27.295 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02865.p3d)
+13:34:27.295 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02835.p3d)
+13:34:27.295 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02801.p3d)
+13:34:48.83  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02838.p3d)
+13:34:48.83  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02845.p3d)
+13:34:48.460 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_01706.p3d)
+13:34:48.460 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04868.p3d)
+13:34:48.461 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04871.p3d)
+13:34:49.615 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02698.p3d)
+13:34:49.615 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02699.p3d)
+13:35:20.700 ENTITY    (W): Unknown object class 'pond' (baltic_water\full_48.p3d)
+13:35:20.700 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04873.p3d)
+13:35:20.700 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00876.p3d)
+13:35:20.701 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04874.p3d)
+13:35:20.701 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00877.p3d)
+13:35:20.701 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04875.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05133.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05088.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04974.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04872.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05043.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04938.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05176.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05004.p3d)
+13:35:28.186 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_05205.p3d)
+13:35:28.862 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02695.p3d)
+13:35:32.316 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02755.p3d)
+13:35:32.316 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02796.p3d)
+13:35:32.316 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02797.p3d)
+13:35:32.316 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02829.p3d)
+13:35:32.316 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02798.p3d)
+13:35:32.316 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02830.p3d)
+13:35:32.316 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02795.p3d)
+13:35:32.316 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02754.p3d)
+13:35:44.814 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02696.p3d)
+13:35:44.814 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02700.p3d)
+13:35:44.814 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02723.p3d)
+13:36:02.268 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00881.p3d)
+13:36:02.269 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04876.p3d)
+13:36:02.269 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00882.p3d)
+13:36:02.269 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04877.p3d)
+13:36:02.269 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_00883.p3d)
+13:36:02.269 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_04878.p3d)
+13:36:11.303 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02752.p3d)
+13:36:11.303 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02789.p3d)
+13:36:11.303 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02790.p3d)
+13:36:11.303 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02791.p3d)
+13:36:11.304 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02751.p3d)
+13:36:31.834 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02697.p3d)
+13:36:31.834 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02701.p3d)
+13:36:31.834 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02707.p3d)
+13:36:31.834 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02713.p3d)
+13:36:33.48  ENGINE       : Destroying game
+13:36:33.48   SCRIPT       : Cleaning up script module globals 'Mission'
+13:36:33.48    SCRIPT    (E): Leaked 'MCPPollCallback' script instance (1x)!
+13:36:33.48    SCRIPT    (E): ==== Total Leaks (1x)! ====
+13:36:33.382 RENDER    (W): Render release fix
+13:36:33.702  --- Termination successfully completed --- 

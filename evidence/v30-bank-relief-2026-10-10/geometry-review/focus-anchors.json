@@ -1,0 +1,386 @@
+{
+  "selection": "three spatially separated vertices with at least two >30\u00b0 actual wet/dry hinges converging on the same eligible, nonsupport dry vertex; positive prominence >=0.65m over a 5x5 median; distinct 8-connected class 3/5/6 component labels; >=96m from raster edge; no reserve/platform/water/beach and not EV71 fixed. This is a diagnostic anchor selection, not acceptance or solver result.",
+  "focuses": [
+    {
+      "rank": 1,
+      "x_m": 2196,
+      "z_m": 1578,
+      "height_m": 5.954403877258301,
+      "height_minus_5x5_median_m": 1.980973720550537,
+      "incident_wet_dry_high_hinges": 2,
+      "flow_component_8conn": 136,
+      "flow_class_codes": "6",
+      "target_flags": {
+        "cls": 0,
+        "within_96m_of_cls_3_5_6": true,
+        "actual_wet_support": false,
+        "EV71_fixed": false,
+        "water": false,
+        "beach": false,
+        "reserve": false,
+        "platform": false
+      },
+      "five_by_five_height_m": [
+        [
+          3.152,
+          3.489,
+          3.822,
+          3.877,
+          3.962
+        ],
+        [
+          3.507,
+          3.973,
+          4.778,
+          4.588,
+          4.416
+        ],
+        [
+          4.236,
+          4.261,
+          5.954,
+          6.49,
+          5.408
+        ],
+        [
+          5.28,
+          5.66,
+          6.157,
+          5.542,
+          2.476
+        ],
+        [
+          2.489,
+          2.298,
+          2.373,
+          2.105,
+          2.65
+        ]
+      ],
+      "hinges": [
+        {
+          "hinge": "vertical",
+          "row": 1784,
+          "col": 366,
+          "dihedral_deg": 31.823824251332965,
+          "face_state": "wet-dry",
+          "wet_face_flags": [
+            false,
+            true
+          ],
+          "four_vertices_rc": [
+            [
+              1784,
+              366
+            ],
+            [
+              1784,
+              367
+            ],
+            [
+              1785,
+              367
+            ],
+            [
+              1785,
+              368
+            ]
+          ],
+          "wet_support_vertices": 3,
+          "engineering_vertex_hits": 0
+        },
+        {
+          "hinge": "horizontal",
+          "row": 1784,
+          "col": 366,
+          "dihedral_deg": 31.59764924714248,
+          "face_state": "wet-dry",
+          "wet_face_flags": [
+            false,
+            true
+          ],
+          "four_vertices_rc": [
+            [
+              1784,
+              366
+            ],
+            [
+              1785,
+              366
+            ],
+            [
+              1785,
+              367
+            ],
+            [
+              1786,
+              367
+            ]
+          ],
+          "wet_support_vertices": 3,
+          "engineering_vertex_hits": 0
+        }
+      ],
+      "held_support_corner_count_per_hinge": [
+        3,
+        3
+      ]
+    },
+    {
+      "rank": 2,
+      "x_m": 5538,
+      "z_m": 3918,
+      "height_m": 5.862822532653809,
+      "height_minus_5x5_median_m": 1.1235432624816895,
+      "incident_wet_dry_high_hinges": 2,
+      "flow_component_8conn": 106,
+      "flow_class_codes": "6",
+      "target_flags": {
+        "cls": 0,
+        "within_96m_of_cls_3_5_6": true,
+        "actual_wet_support": false,
+        "EV71_fixed": false,
+        "water": false,
+        "beach": false,
+        "reserve": false,
+        "platform": false
+      },
+      "five_by_five_height_m": [
+        [
+          2.365,
+          2.191,
+          4.661,
+          4.997,
+          5.121
+        ],
+        [
+          1.952,
+          5.445,
+          6.475,
+          5.006,
+          4.778
+        ],
+        [
+          2.054,
+          6.001,
+          5.863,
+          5.144,
+          4.568
+        ],
+        [
+          2.669,
+          5.782,
+          4.909,
+          4.644,
+          4.321
+        ],
+        [
+          3.492,
+          4.739,
+          4.869,
+          4.39,
+          4.113
+        ]
+      ],
+      "hinges": [
+        {
+          "hinge": "vertical",
+          "row": 1393,
+          "col": 921,
+          "dihedral_deg": 31.414685866029792,
+          "face_state": "wet-dry",
+          "wet_face_flags": [
+            true,
+            false
+          ],
+          "four_vertices_rc": [
+            [
+              1393,
+              921
+            ],
+            [
+              1393,
+              922
+            ],
+            [
+              1394,
+              922
+            ],
+            [
+              1394,
+              923
+            ]
+          ],
+          "wet_support_vertices": 3,
+          "engineering_vertex_hits": 0
+        },
+        {
+          "hinge": "horizontal",
+          "row": 1392,
+          "col": 922,
+          "dihedral_deg": 33.87142348350557,
+          "face_state": "wet-dry",
+          "wet_face_flags": [
+            true,
+            false
+          ],
+          "four_vertices_rc": [
+            [
+              1392,
+              922
+            ],
+            [
+              1393,
+              922
+            ],
+            [
+              1393,
+              923
+            ],
+            [
+              1394,
+              923
+            ]
+          ],
+          "wet_support_vertices": 3,
+          "engineering_vertex_hits": 0
+        }
+      ],
+      "held_support_corner_count_per_hinge": [
+        3,
+        3
+      ]
+    },
+    {
+      "rank": 3,
+      "x_m": 1140,
+      "z_m": 1002,
+      "height_m": 4.905372142791748,
+      "height_minus_5x5_median_m": 0.7000823020935059,
+      "incident_wet_dry_high_hinges": 2,
+      "flow_component_8conn": 143,
+      "flow_class_codes": "6",
+      "target_flags": {
+        "cls": 0,
+        "within_96m_of_cls_3_5_6": true,
+        "actual_wet_support": false,
+        "EV71_fixed": false,
+        "water": false,
+        "beach": false,
+        "reserve": false,
+        "platform": false
+      },
+      "five_by_five_height_m": [
+        [
+          3.132,
+          3.422,
+          3.713,
+          4.129,
+          4.616
+        ],
+        [
+          3.521,
+          3.858,
+          4.389,
+          4.5,
+          4.949
+        ],
+        [
+          3.86,
+          4.482,
+          4.905,
+          6.326,
+          4.768
+        ],
+        [
+          4.072,
+          4.527,
+          6.125,
+          5.873,
+          2.368
+        ],
+        [
+          4.205,
+          4.242,
+          4.121,
+          2.092,
+          2.54
+        ]
+      ],
+      "hinges": [
+        {
+          "hinge": "vertical",
+          "row": 1880,
+          "col": 190,
+          "dihedral_deg": 43.49889816369225,
+          "face_state": "wet-dry",
+          "wet_face_flags": [
+            false,
+            true
+          ],
+          "four_vertices_rc": [
+            [
+              1880,
+              190
+            ],
+            [
+              1880,
+              191
+            ],
+            [
+              1881,
+              191
+            ],
+            [
+              1881,
+              192
+            ]
+          ],
+          "wet_support_vertices": 3,
+          "engineering_vertex_hits": 0
+        },
+        {
+          "hinge": "horizontal",
+          "row": 1880,
+          "col": 190,
+          "dihedral_deg": 43.67508383896823,
+          "face_state": "wet-dry",
+          "wet_face_flags": [
+            false,
+            true
+          ],
+          "four_vertices_rc": [
+            [
+              1880,
+              190
+            ],
+            [
+              1881,
+              190
+            ],
+            [
+              1881,
+              191
+            ],
+            [
+              1882,
+              191
+            ]
+          ],
+          "wet_support_vertices": 3,
+          "engineering_vertex_hits": 0
+        }
+      ],
+      "held_support_corner_count_per_hinge": [
+        3,
+        3
+      ]
+    }
+  ],
+  "limitations": [
+    "Component labels are 8-connected geographic buckets on combined cls 3/5/6, not named rivers and not proof of hydrological connectivity.",
+    "A wet/dry face XOR is a geometric shoreline discriminator under P/F source semantics; it is not proof of rendered LOD or appearance.",
+    "The target point is editable under current EV71 fixed mask; changing it alone is not proven to improve aesthetics or meet a slope gate. The wet support corner set is preserved only if no support vertex is changed.",
+    "Prominence is a local numeric screening metric; no visual pyramid recognition was performed."
+  ]
+}

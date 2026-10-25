@@ -1,0 +1,24 @@
+{
+ "decided_by": "Guillermo",
+ "date": "2026-10-04",
+ "question": "Oleaje del Báltico (MaxWave), con la media en 0,75 m",
+ "options": [
+  "±0,10 m (recomendado)",
+  "±0,05 m (probado en motor)",
+  "dejar ±0,25 m"
+ ],
+ "answer": "±0,10 m",
+ "config": {
+  "MaxTide": 1.5,
+  "MaxWave": 0.1
+ },
+ "applied_in": "tools/terrain/derive_world_v30.py (config.cpp de BalticTrial)",
+ "expected_engine": {
+  "sea_min": 0.65,
+  "sea_max": 0.85,
+  "wave_max": 0.1,
+  "probe_row": "CFG;0.65;0.85;0.1"
+ },
+ "verified_in_engine": false,
+ "verify_with": "missions/BalticTideProbeV2 en el próximo paquete (fila CFG)"
+}

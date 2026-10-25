@@ -1,0 +1,37 @@
+{
+  "schema": "ev94.float32-component-conversion-independent-review.v1",
+  "verdict": "SOUND_AFTER_TERMINAL_RECEIPT_FIX",
+  "real_conversion_executed": false,
+  "original_finding": {
+    "fixed": "ERROR receipt is written before re-raise, without candidate output",
+    "location": "unexpected Exception branch, now around lines 656-681",
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\convert_components.py",
+    "issue": "previous path re-raised before common receipt writer"
+  },
+  "backup": {
+    "files": {
+      "test_components.py": "42AF182B064B69357CD27319F163F1057C730737690CFC0B4007153F25E05248",
+      "PLAN.md": "A48961BDD2C11F28BEA88F3984DD0A0B0344C88BAEE8C3F5B9BB90419F6A29C4",
+      "convert_components.py": "28530AA9A24C176AACF88D638F3AE25D13B5982B7D00BB2ED78ADD6897DC5345"
+    },
+    "directory": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\before-terminal-receipt-fix"
+  },
+  "current": {
+    "float32-neighborhood-v1/real-enumeration-01/compatibility-diagnostic.json": "0CB852C2AA3BDD99E7B1DBDFB079DF5F9FAA65C3DB854A3FF1389B25D8B53DA7",
+    "test_components.py": "81062389833BAAC05C1B3D58265C140B16BCA3569A8B71F833E49E5ED51F0A80",
+    "float32-neighborhood-v1/executor.py": "9A0DBFFC55E9956209083FE4963E2636B6F0174DE1DC150BDFA15F070D48149E",
+    "PLAN.md": "82DA5F4A14ABD749A8BD59FD865DFFCA05DBF4BE67DF29DF58CCE105AED2899C",
+    "convert_components.py": "418016B91CFD84D60EB3F95C99CC043EEA164DE1AFA2548F665D68D616AEC876"
+  },
+  "tests": {
+    "negative": "Injected ValueError after output directory creation; receipt status ERROR, source_readset_equal true, no unaccepted candidate; exception propagated",
+    "result": "PASS",
+    "count": "12/12",
+    "command": "GIS Python -m py_compile convert_components.py test_components.py; GIS Python test_components.py"
+  },
+  "scope": "No authoring, solver, real conversion, or physical executor changes",
+  "limitations": [
+    "Fixtures cover local logic, not the 121-node real conversion.",
+    "A diagnostic candidate remains unaccepted and requires independent water/connectivity/coverage/composition verification."
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "status": "PASS_EMPTY_SEDAN_NARVA_GRADES_AND_BRIDGE",
+  "global_checks": {
+    "header": true,
+    "end": true,
+    "cases": true,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "name": "hilly_interior",
+      "reverse": false,
+      "status": "PASS",
+      "checks": {
+        "one_case": true,
+        "terminal": true,
+        "one_arrival": true,
+        "clock": true,
+        "continuous_motion": true,
+        "spawn": true,
+        "endpoint": true,
+        "inside_corridor": true,
+        "all_waypoints": true,
+        "body_healthy": true,
+        "engine_healthy": true,
+        "wheels_present": true,
+        "wheels_healthy": true,
+        "upright": true,
+        "ground": true,
+        "contact_surface": true,
+        "no_jump": true,
+        "callbacks": true,
+        "cruise": true,
+        "stopped": true,
+        "logged_route": true
+      },
+      "samples": 875,
+      "end": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "duration_s": 174.804,
+      "maximum_step_m": 1.903092156984132,
+      "maximum_dt_s": 0.20300000000000296,
+      "maximum_corridor_m": 0.6613236289181049,
+      "endpoint_distance_m": 1.41684849894997,
+      "maximum_contact_error_m": 0.0033317426646348736,
+      "maximum_ground_error_m": 7.933113541014336e-05,
+      "contact_count_min": 4,
+      "longest_no_contact_s": 0.0,
+      "cruise_duration_s": 141.00399999999777,
+      "stop_duration_s": 5.400000000000006,
+      "speed_m_s": {
+        "p50": 6.544754390686101,
+        "p95": 7.5878187138969775,
+        "max": 9.496428490110636
+      },
+      "maximum_abs_vertical_speed_m_s": 0.559423,
+      "health_min": 1000.0
+    },
+    {
+      "case": 1,
+      "name": "hilly_interior",
+      "reverse": true,
+      "status": "PASS",
+      "checks": {
+        "one_case": true,
+        "terminal": true,
+        "one_arrival": true,
+        "clock": true,
+        "continuous_motion": true,
+        "spawn": true,
+        "endpoint": true,
+        "inside_corridor": true,
+        "all_waypoints": true,
+        "body_healthy": true,
+        "engine_healthy": true,
+        "wheels_present": true,
+        "wheels_healthy": true,
+        "upright": true,
+        "ground": true,
+        "contact_surface": true,
+        "no_jump": true,
+        "callbacks": true,
+        "cruise": true,
+        "stopped": true,
+        "logged_route": true
+      },
+      "samples": 773,
+      "end": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "duration_s": 154.406,
+      "maximum_step_m": 1.9709968605192,
+      "maximum_dt_s": 0.2050000000000125,
+      "maximum_corridor_m": 0.6982802073285991,
+      "endpoint_distance_m": 1.4140996445562481,
+      "maximum_contact_error_m": 0.004079001285113293,
+      "maximum_ground_error_m": 8.13537636972228e-05,
+      "contact_count_min": 4,
+      "longest_no_contact_s": 0.0,
+      "cruise_duration_s": 101.20600000000022,
+      "stop_duration_s": 5.400000000000006,
+      "speed_m_s": {
+        "p50": 8.821660210834976,
+        "p95": 9.601093641459737,
+        "max": 9.75868872401026
+      },
+      "maximum_abs_vertical_speed_m_s": 0.591314,
+      "health_min": 1000.0
+    }
+  ],
+  "limits": [
+    "No terrain or input-PBO changes; no post-spawn pose or velocity forcing.",
+    "Two hilly journeys only, empty sedan. No whole-network, physical road pieces or multiplayer claim.",
+    "V1 aggregate FAIL and full-width geometry failure remain preserved."
+  ],
+  "reference_sha256": "f943ddc3dbbe50ab28efa26d85c60b14bc8b23908e3b1647949af49eb5cb2b45",
+  "log_sha256": "4555334b7d82c2bdfb1cd4f49c0a7f5e5e64840e7b217b6aa3f35c3d2fc99ac6"
+}

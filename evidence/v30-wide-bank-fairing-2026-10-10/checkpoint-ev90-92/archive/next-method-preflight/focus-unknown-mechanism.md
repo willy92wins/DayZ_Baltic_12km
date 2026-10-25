@@ -1,0 +1,16 @@
+# EV90: P/F desconocido en el foco (lectura estática)
+
+## Hechos [EXACT]
+
+- `authoring.json:14-20` solo fija las entradas P/F de EV79 y sus SHA. `ev90_preflight.py:17-18,104-114` las vuelve a cargar como raster: P tiene forma `(2047,2047)` (un escalar por celda); F `(2047,2047,4)` (muestras por esquina). NaN es la única codificación de ausencia; no se imputa. El plan `plan.md:18,22` mantiene esa semántica y dice que F parcial que toque una cara/nodo candidato deja el piloto inconcluso.
+- En los bytes actuales de esos dos arrays, P y las cuatro esquinas F son NaN tanto en las celdas `(839,370)` como `(840,370)`. El informe EV90 registra el foco `(840,370)` a altura B `3.7361052 m`, elegible según todas las máscaras semánticas, sin cara sobre P/F confirmada, pero con ambas celdas en `undefined_field_face_cells_touching_node` para física y visible; su intervalo queda exactamente en B.
+- Mecanismo: `ev90_preflight.py:159-260` intersecta triángulos ODOL físicos/visibles transformados con polígonos de celda y evalúa los LOD exactos (física `3e15`, visible `1.0`; hash/modelo y bounds enlazados en 197-209, 261-271). Si la intersección es positiva y P es NaN, registra `P_NaN_domain`; si las esquinas F del triángulo no son todas finitas, registra `F_unknown_triangle`. `reconstruct_domain:306-313` congela los cuatro nodos de cada celda desconocida. El informe dice que fueron congelamientos por conservar B en dominios sin campo, no excesos medidos.
+- Esto sí puede recortar el dominio del suavizado de forma conservadora por soporte celda→cuatro vértices, aunque no demuestra que el terreno sea inseguro ni que el raster sea incorrecto. En `(840,370)` no existe un nivel nominal P/F que esté imponiendo una cota: la cota efectiva es el *fail-closed* por incertidumbre de esas caras/celdas.
+
+## Discriminador [DESIGN]
+
+Mantener intactos alturas, solver, P/F (incluidos NaN), y la unión de protecciones. Como puerta offline adicional para una futura salida candidata: en cada triángulo terrestre tocado por un dominio P/F desconocido, calcular el `max(faceZ-groundZ)` sobre el polígono de intersección usando los triángulos ODOL compilados físicos y visibles del PBO desplegado y transforms ancladas. Para admitir una superficie candidata, exigir que su terreno (o, antes del solve, el límite inferior ya fijado por el plan interpolado en cada triángulo) quede por encima de todas las caras intersectantes con el margen de la puerta; comprobar también que los vértices protegidos siguen byte-identical. No rellenar ni reemplazar ningún campo. Si cobertura/transformación de caras no es completa o alguna comparación cruza margen, conservar el bloqueo como INCONCLUSO. La implementación existente ya calcula la diferencia afín cara−suelo para F desconocido en `ev90_preflight.py:245-254`; el discriminador sería completar la misma comprobación para ambos LOD y el límite inferior del contrato, sin cambiar la autoría.
+
+## Vigencia de evidencia
+
+El JSON existente dice `PREFLIGHT_INCONCLUSIVE` y sus datos de foco son los citados; sin embargo, su `pins.preflight_script_sha256` es `d7fee6a6…e10a`, distinto del SHA actual del script observado (`2b3138a0…95fc`). Por tanto esos resultados describen el reporte fijado, no prueban una ejecución de la versión actual. No se ejecutó el preflight ni se modificaron mapas.

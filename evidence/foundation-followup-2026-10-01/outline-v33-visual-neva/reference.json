@@ -1,0 +1,77 @@
+{
+  "status": "FROZEN_V33_VISUAL_PROTOCOL_NOT_RUN",
+  "parent_probe_sha256": "0d8cccf8439ee0a38a03c09aef8c6f16644b31db24bb882b1d3ebc457876b4e9",
+  "terrain_sha256": "9d2954fc0600272ec72b61149f5df6b7bbbd347e20979000d96d74bd603b0107",
+  "probe_pbo_sha256": "4a786bf4c58e194e9e846f1298e4db45bc4677ee4671680a915c3427a0ec17b4",
+  "mission_sha256": "842c7ba6888ae14fb93b10376c260552aea078aff6410de84d62ac769e915a93",
+  "script_sha256": "aaa201b31bcf96018183a602fe2fc56c040b13c826dd37ca9a2d4ed3e9126f07",
+  "poses": [
+    {
+      "phase": 0,
+      "name": "Neva Ladoga player",
+      "start_s": 15,
+      "settled_s": 18,
+      "end_s": 105,
+      "position": [
+        10758,
+        2.95,
+        10062
+      ],
+      "target": [
+        10950,
+        1,
+        10800
+      ],
+      "view_requested": 1600,
+      "nearplane_requested": "original",
+      "original_phase": 5
+    }
+  ],
+  "finish_s": 108,
+  "restoration_view_distance": 1600,
+  "limits": [
+    "Same original cameras, probe and mission; V33 terrain/new navigation.",
+    "Telemetry/counters do not establish visual quality, full-map stability or multiplayer capacity.",
+    "Capture through Sky; native DDS may be absent."
+  ],
+  "parent_reference_sha256": "b3cfb1a3ae775af2bd67e4fec38e8099ad30192aa2b414f029fd04f2ba0ca4ac",
+  "world_pbo_sha256": "38ebe847b5dd553ac31bd0d51bd9d1c192965352a8a04188b7bdcef5c8eaea0c",
+  "capture_api": "MakeScreenshot; focused-app guard, original DDS requires independent pixel review",
+  "metrics_api": "P:/scripts/3_game/global/game.c:868-906; proto/proto.c:145-147",
+  "api_sha256": {
+    "P:\\scripts\\1_core\\proto\\proto.c": "72b2a9695aa43dcdef8d55827802a292122002833e724132a05c7ca18e6e7995",
+    "P:\\scripts\\3_game\\global\\game.c": "cf529055c48596108034ce6b11826b09bbf5d93e6c550e37785947873d8c3158"
+  },
+  "capture_at_phase_s": 60,
+  "metrics_window_phase_s": [
+    10,
+    70
+  ],
+  "metrics_limit": "Native client counters recorded descriptively; confirm runtime behavior, no dedicated-server FPS inference.",
+  "deployed_mod": "P:\\Mods\\@BalticFoundationVisualNativeNevaV4",
+  "deployed_mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticFoundationVisualNativeNevaV4.BalticTrial",
+  "camera_header": "BALTIC_FOUNDATION_VISUAL_NATIVE_NEVA_V4",
+  "metrics_header": "BALTIC_FOUNDATION_CLIENT_METRICS_NATIVE_NEVA_V4",
+  "metrics_columns": 9,
+  "capture_name_mode": "Explicit profile root DDS named capture_prefix plus phase",
+  "instrumentation_change": "Same original poses, local timing restarted per group and dry player anchor nearby. No world or rendering material changes.",
+  "capture_change": "Frozen local V1 poses,90s hold; native DDS and grouped observation, unchanged map.",
+  "capture_event": "CAPTURE_REQUEST",
+  "camera_log": "baltic_foundation_visual_native_neva_v4.log",
+  "metrics_log": "baltic_foundation_client_metrics_native_neva_v4.log",
+  "anchor": {
+    "xz": [
+      10745,
+      10020
+    ],
+    "terrain_y": 1.4300182660420737,
+    "minimum_water_distance_m": 93.97132653892963,
+    "water_sha256": {
+      "water-surfaces-contour-v2.geojson": "df860f693a1bf0115cb4af65a13cea5f8006a5a21bc9bca1d88276b83802ccdc",
+      "ocean-game.json": "c72aaafd6ee35abfcdec180135571e34b9c5eaefb42d3bca1bfbabad6493f757"
+    }
+  },
+  "capture_prefix": "baltic_foundation_visual_native_neva_v4_",
+  "capture_full_path": true,
+  "navmesh_sha256": "425b84885d05a588c4c80e0561eb01d02849816f7ff9c0c61f6b49922a4fc842"
+}

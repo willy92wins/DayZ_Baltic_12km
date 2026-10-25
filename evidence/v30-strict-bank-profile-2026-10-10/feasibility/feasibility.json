@@ -1,0 +1,9733 @@
+{
+  "status": "FEASIBLE",
+  "scope": "two independent 7x7 patches; outer ring fixed to B; interiors mutable only if dry against all incident finite P/F and sea 0.85, class0, !other_fixed, !engineering_halo, !large_lake_banks; wet_support is deliberately not a veto",
+  "inputs": {
+    "B_terrain": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz",
+      "sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    },
+    "B_P": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\plane.npy",
+      "sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0"
+    },
+    "B_F": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\visible-field.npy",
+      "sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"
+    },
+    "EV79_terrain": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz",
+      "sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c"
+    },
+    "EV79_constraints": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz",
+      "sha256": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c"
+    },
+    "prior_large_lake_mask": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz",
+      "sha256": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370"
+    },
+    "valley_masks": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-valley-smoothing-20261008\\candidate-a\\masks.npz",
+      "sha256": "685b3b9a337bca849f9338a27385ef959ee938fd37ab492d044419d236c64af2"
+    },
+    "EV83_crossing_helper": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wet-support-shore-pilot-20261010\\author_pilot.py",
+      "sha256": "218868df38d0e55eec49a28159fb250c7b4a14860957aa17d77d8cde2c79ce45"
+    },
+    "order_bounds": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-shore-order-pilot-20261010\\order-bounds.json",
+      "sha256": "d98d6d19580aa828ffd04a09e320a22397b0cc3c57062b562f90e522ea1df855"
+    }
+  },
+  "fixtures": {
+    "order_two_node": "PASS",
+    "fixed_lexicographically_previous_neighbor": "PASS",
+    "all_eight_neighbors_deduplicated": "PASS",
+    "zero_objective_requires_feasibility_only": "PASS",
+    "direct_zero_bounds_inequality_equality_positive_negative": "PASS",
+    "fixed_earlier_neighbor_order_row": "PASS",
+    "crossing_interval_6m": [
+      0.5000000000000001,
+      1.9999999999999998
+    ],
+    "direct_crossing_bound": "PASS"
+  },
+  "patches": [
+    {
+      "focus": [
+        1880,
+        191
+      ],
+      "x": 1146,
+      "z": 1002,
+      "interior_nodes": 25,
+      "eligible_mutable_nodes": 21,
+      "wet_support_true_eligible_count": 8,
+      "focus_height_B": 6.325840473175049,
+      "focus_lower_delta_bound_m": -2.0,
+      "focus_upper_delta_bound_m": 0.0,
+      "eligible_nodes": [
+        [
+          1878,
+          189
+        ],
+        [
+          1878,
+          190
+        ],
+        [
+          1878,
+          191
+        ],
+        [
+          1878,
+          192
+        ],
+        [
+          1878,
+          193
+        ],
+        [
+          1879,
+          189
+        ],
+        [
+          1879,
+          190
+        ],
+        [
+          1879,
+          191
+        ],
+        [
+          1879,
+          192
+        ],
+        [
+          1879,
+          193
+        ],
+        [
+          1880,
+          189
+        ],
+        [
+          1880,
+          190
+        ],
+        [
+          1880,
+          191
+        ],
+        [
+          1880,
+          192
+        ],
+        [
+          1880,
+          193
+        ],
+        [
+          1881,
+          189
+        ],
+        [
+          1881,
+          190
+        ],
+        [
+          1881,
+          191
+        ],
+        [
+          1882,
+          189
+        ],
+        [
+          1882,
+          190
+        ],
+        [
+          1882,
+          193
+        ]
+      ]
+    },
+    {
+      "focus": [
+        1785,
+        366
+      ],
+      "x": 2196,
+      "z": 1572,
+      "interior_nodes": 25,
+      "eligible_mutable_nodes": 18,
+      "wet_support_true_eligible_count": 10,
+      "focus_height_B": 6.156672954559326,
+      "focus_lower_delta_bound_m": -1.7237641944509523,
+      "focus_upper_delta_bound_m": 0.0,
+      "eligible_nodes": [
+        [
+          1783,
+          364
+        ],
+        [
+          1783,
+          365
+        ],
+        [
+          1783,
+          366
+        ],
+        [
+          1783,
+          367
+        ],
+        [
+          1783,
+          368
+        ],
+        [
+          1784,
+          364
+        ],
+        [
+          1784,
+          365
+        ],
+        [
+          1784,
+          366
+        ],
+        [
+          1784,
+          367
+        ],
+        [
+          1784,
+          368
+        ],
+        [
+          1785,
+          364
+        ],
+        [
+          1785,
+          365
+        ],
+        [
+          1785,
+          366
+        ],
+        [
+          1785,
+          367
+        ],
+        [
+          1787,
+          365
+        ],
+        [
+          1787,
+          366
+        ],
+        [
+          1787,
+          367
+        ],
+        [
+          1787,
+          368
+        ]
+      ]
+    }
+  ],
+  "eligible_node_count_total": 39,
+  "touched_8_neighbor_edges": 220,
+  "order_constraint_counts": {
+    "inequality": 220,
+    "equality": 0
+  },
+  "baseline_zero_delta_direct_check": {
+    "pass": true,
+    "bounds_contain_zero": true,
+    "max_inequality_violation_m": -0.0021314620971679688,
+    "max_equality_residual_m": 0.0
+  },
+  "false_freeze_negative_fixture": {
+    "stored_EV79_cap_at_focuses": [
+      0.0,
+      0.0
+    ],
+    "stored_constraint_delta_if_mistakenly_used": [
+      0.0,
+      0.0
+    ],
+    "reconstructed_budget_delta_if_correct": [
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ]
+    ],
+    "pass": true,
+    "note": "Stored EV79 constraints encode fixed/wet_support authoring veto and are not physical floor/budget; no solver bound uses them."
+  },
+  "crossing_constraint_count": 222,
+  "crossing_records": [
+    {
+      "vertex": [
+        1879,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.575041770935059,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        3.8097094732655625,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1879,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.575041770935059,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        3.8097094732655625,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1879,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.575041770935059,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        3.8097094732655625,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1879,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.575041770935059,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        3.8097094732655625,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1879,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.575041770935059,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        3.8097094732655625,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1879,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.575041770935059,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        3.8097094732655625,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.325840473175049,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.8582918423239505,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.325840473175049,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.8582918423239505,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.325840473175049,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.8582918423239505,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.325840473175049,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.8582918423239505,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.325840473175049,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.8582918423239505,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.325840473175049,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.8582918423239505,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.359828204921696,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.359828204921696,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.359828204921696,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        3.9640771934396533,
+        6.246581355101796
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        3.9640771934396533,
+        6.246581355101796
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        3.9640771934396533,
+        6.246581355101796
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.359828204921696,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.359828204921696,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.359828204921696,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        3.9640771934396533,
+        6.246581355101796
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        3.9640771934396533,
+        6.246581355101796
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.767662048339844,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        3.9640771934396533,
+        6.246581355101796
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        2.86093052394521,
+        3.51742995003975
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        2.86093052394521,
+        3.51742995003975
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1879,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        2.86093052394521,
+        3.51742995003975
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.7415069976757045,
+        3.5637817892077726
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.7415069976757045,
+        3.5637817892077726
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.7415069976757045,
+        3.5637817892077726
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        2.86093052394521,
+        3.51742995003975
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        2.86093052394521,
+        3.51742995003975
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1880,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.3291876316070557
+      ],
+      "height_interval": [
+        2.86093052394521,
+        3.51742995003975
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.192560911178589
+      ],
+      "height_interval": [
+        2.9041511360149275,
+        3.3161079751292633
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.192560911178589
+      ],
+      "height_interval": [
+        2.9041511360149275,
+        3.3161079751292633
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.192560911178589
+      ],
+      "height_interval": [
+        2.9041511360149275,
+        3.3161079751292633
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.7415069976757045,
+        3.5637817892077726
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.7415069976757045,
+        3.5637817892077726
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.7415069976757045,
+        3.5637817892077726
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.192560911178589
+      ],
+      "height_interval": [
+        2.9041511360149275,
+        3.3161079751292633
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.192560911178589
+      ],
+      "height_interval": [
+        2.9041511360149275,
+        3.3161079751292633
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        194
+      ],
+      "cell": [
+        1880,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.0638909339904785,
+        2.192560911178589
+      ],
+      "height_interval": [
+        2.9041511360149275,
+        3.3161079751292633
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.125482082366943,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        4.269691655010723,
+        29.400456241407348
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.125482082366943,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        4.269691655010723,
+        29.400456241407348
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.125482082366943,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        4.269691655010723,
+        29.400456241407348
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.125482082366943,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        4.269691655010723,
+        29.400456241407348
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.125482082366943,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        4.269691655010723,
+        29.400456241407348
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        6.125482082366943,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        4.269691655010723,
+        29.400456241407348
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.50837173906159,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.50837173906159,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1880,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.50837173906159,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.8673128349205688,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.8673128349205688,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.8673128349205688,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.50837173906159,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.50837173906159,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.368396043777466
+      ],
+      "height_interval": [
+        3.50837173906159,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.539900064468384
+      ],
+      "height_interval": [
+        3.269587348656765,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.539900064468384
+      ],
+      "height_interval": [
+        3.269587348656765,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.539900064468384
+      ],
+      "height_interval": [
+        3.269587348656765,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.8673128349205688,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.8673128349205688,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.8673128349205688,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.539900064468384
+      ],
+      "height_interval": [
+        3.269587348656765,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.539900064468384
+      ],
+      "height_interval": [
+        3.269587348656765,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        191
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        5.872693061828613,
+        2.539900064468384
+      ],
+      "height_interval": [
+        3.269587348656765,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.355286438005578,
+        7.2450924039380515
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.355286438005578,
+        7.2450924039380515
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1881,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.355286438005578,
+        7.2450924039380515
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.355286438005578,
+        7.2450924039380515
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.355286438005578,
+        7.2450924039380515
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1882,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        2.0923242568969727
+      ],
+      "height_interval": [
+        3.355286438005578,
+        7.2450924039380515
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1883,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        1.3292900323867798
+      ],
+      "height_interval": [
+        3.5642503264857384,
+        5.047191819577508
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1883,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        1.3292900323867798
+      ],
+      "height_interval": [
+        3.5642503264857384,
+        5.047191819577508
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1883,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        1.3292900323867798
+      ],
+      "height_interval": [
+        3.5642503264857384,
+        5.047191819577508
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1883,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        1.3292900323867798
+      ],
+      "height_interval": [
+        3.5642503264857384,
+        5.047191819577508
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1883,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        1.3292900323867798
+      ],
+      "height_interval": [
+        3.5642503264857384,
+        5.047191819577508
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "other_fixed": [
+        1883,
+        191
+      ],
+      "cell": [
+        1882,
+        190
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        4.1210103034973145,
+        1.3292900323867798
+      ],
+      "height_interval": [
+        3.5642503264857384,
+        5.047191819577508
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.729939681986285,
+        3.5360876455236414
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.729939681986285,
+        3.5360876455236414
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.729939681986285,
+        3.5360876455236414
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.368396043777466
+      ],
+      "height_interval": [
+        2.8967958584637867,
+        3.3158078371617687
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.368396043777466
+      ],
+      "height_interval": [
+        2.8967958584637867,
+        3.3158078371617687
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.368396043777466
+      ],
+      "height_interval": [
+        2.8967958584637867,
+        3.3158078371617687
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.539900064468384
+      ],
+      "height_interval": [
+        2.8267224387209184,
+        4.718901206872177
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.539900064468384
+      ],
+      "height_interval": [
+        2.8267224387209184,
+        4.718901206872177
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.539900064468384
+      ],
+      "height_interval": [
+        2.8267224387209184,
+        4.718901206872177
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.368396043777466
+      ],
+      "height_interval": [
+        2.8967958584637867,
+        3.3158078371617687
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.368396043777466
+      ],
+      "height_interval": [
+        2.8967958584637867,
+        3.3158078371617687
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        192
+      ],
+      "cell": [
+        1881,
+        192
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.368396043777466
+      ],
+      "height_interval": [
+        2.8967958584637867,
+        3.3158078371617687
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1881,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.729939681986285,
+        3.5360876455236414
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1881,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.729939681986285,
+        3.5360876455236414
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1881,
+        193
+      ],
+      "cell": [
+        1881,
+        193
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        1.2481106519699097
+      ],
+      "height_interval": [
+        2.729939681986285,
+        3.5360876455236414
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1882,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.539900064468384
+      ],
+      "height_interval": [
+        2.8267224387209184,
+        4.718901206872177
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1882,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.539900064468384
+      ],
+      "height_interval": [
+        2.8267224387209184,
+        4.718901206872177
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "other_fixed": [
+        1882,
+        192
+      ],
+      "cell": [
+        1882,
+        192
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.6500000000000004,
+      "level_at_other": 2.6500000000000004,
+      "before_heights": [
+        3.046818971633911,
+        2.539900064468384
+      ],
+      "height_interval": [
+        2.8267224387209184,
+        4.718901206872177
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1784,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.4898834228515625,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.9488151810640293,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.4898834228515625,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.9488151810640293,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.4898834228515625,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.9488151810640293,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.4898834228515625,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.9488151810640293,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.4898834228515625,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.9488151810640293,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.4898834228515625,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.9488151810640293,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.5297764493258255,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.5297764493258255,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.5297764493258255,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        369
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        1.7377667427062988
+      ],
+      "height_interval": [
+        4.309316343039912,
+        8.147329406604559
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        369
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        1.7377667427062988
+      ],
+      "height_interval": [
+        4.309316343039912,
+        8.147329406604559
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        369
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        1.7377667427062988
+      ],
+      "height_interval": [
+        4.309316343039912,
+        8.147329406604559
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.5297764493258255,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.5297764493258255,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.5297764493258255,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        369
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        1.7377667427062988
+      ],
+      "height_interval": [
+        4.309316343039912,
+        8.147329406604559
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        369
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        1.7377667427062988
+      ],
+      "height_interval": [
+        4.309316343039912,
+        8.147329406604559
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "other_fixed": [
+        1785,
+        369
+      ],
+      "cell": [
+        1784,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.408249378204346,
+        1.7377667427062988
+      ],
+      "height_interval": [
+        4.309316343039912,
+        8.147329406604559
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1785,
+        363
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        3.491585243608477,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1785,
+        363
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        3.491585243608477,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1785,
+        363
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        3.491585243608477,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.976233556695372,
+        15.668709625994167
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.976233556695372,
+        15.668709625994167
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.976233556695372,
+        15.668709625994167
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        3.491585243608477,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        3.491585243608477,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        3.491585243608477,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.976233556695372,
+        15.668709625994167
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.976233556695372,
+        15.668709625994167
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.280453205108643,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.976233556695372,
+        15.668709625994167
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.7995312513680433,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.7995312513680433,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.7995312513680433,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.994358165183314,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.994358165183314,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.994358165183314,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.7995312513680433,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.7995312513680433,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.297513246536255
+      ],
+      "height_interval": [
+        3.7995312513680433,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.994358165183314,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.994358165183314,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.659580230712891,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.994358165183314,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.788952696055066,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.788952696055066,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.788952696055066,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        4.432908760108374,
+        17.721472434783394
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        4.432908760108374,
+        17.721472434783394
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        4.432908760108374,
+        17.721472434783394
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.788952696055066,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.788952696055066,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.788952696055066,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        4.432908760108374,
+        17.721472434783394
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        4.432908760108374,
+        17.721472434783394
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        6.156672954559326,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        4.432908760108374,
+        17.721472434783394
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.546599484460917,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.546599484460917,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1784,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.546599484460917,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.925249180926145,
+        32.92829700301145
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.925249180926145,
+        32.92829700301145
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.925249180926145,
+        32.92829700301145
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.546599484460917,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.546599484460917,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1785,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.4757630825042725
+      ],
+      "height_interval": [
+        3.546599484460917,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.306469012005729,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.306469012005729,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.306469012005729,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.925249180926145,
+        32.92829700301145
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.925249180926145,
+        32.92829700301145
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.925249180926145,
+        32.92829700301145
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.306469012005729,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.306469012005729,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1785,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        5.54228401184082,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.306469012005729,
+        "Infinity"
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.8255680849772675,
+        3.1617630326125377
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.8255680849772675,
+        3.1617630326125377
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.8255680849772675,
+        3.1617630326125377
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        2.8727011448480284,
+        3.0760995498981085
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        2.8727011448480284,
+        3.0760995498981085
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        2.8727011448480284,
+        3.0760995498981085
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1787,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.5375616550445557
+      ],
+      "height_interval": [
+        2.850923480753358,
+        3.1540401995749434
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1787,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.5375616550445557
+      ],
+      "height_interval": [
+        2.850923480753358,
+        3.1540401995749434
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1787,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.5375616550445557
+      ],
+      "height_interval": [
+        2.850923480753358,
+        3.1540401995749434
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        2.8727011448480284,
+        3.0760995498981085
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        2.8727011448480284,
+        3.0760995498981085
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        364
+      ],
+      "cell": [
+        1786,
+        364
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.4893887042999268
+      ],
+      "height_interval": [
+        2.8727011448480284,
+        3.0760995498981085
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.8255680849772675,
+        3.1617630326125377
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.8255680849772675,
+        3.1617630326125377
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.8255680849772675,
+        3.1617630326125377
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1787,
+        364
+      ],
+      "cell": [
+        1787,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.5375616550445557
+      ],
+      "height_interval": [
+        2.850923480753358,
+        3.1540401995749434
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1787,
+        364
+      ],
+      "cell": [
+        1787,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.5375616550445557
+      ],
+      "height_interval": [
+        2.850923480753358,
+        3.1540401995749434
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "other_fixed": [
+        1787,
+        364
+      ],
+      "cell": [
+        1787,
+        364
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        2.953075647354126,
+        2.5375616550445557
+      ],
+      "height_interval": [
+        2.850923480753358,
+        3.1540401995749434
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        2.9468095654283175,
+        3.5377223051730757
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        2.9468095654283175,
+        3.5377223051730757
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        2.9468095654283175,
+        3.5377223051730757
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.9896539436052305,
+        3.379894673264226
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.9896539436052305,
+        3.379894673264226
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.9896539436052305,
+        3.379894673264226
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.9896539436052305,
+        3.379894673264226
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.9896539436052305,
+        3.379894673264226
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        365
+      ],
+      "cell": [
+        1786,
+        365
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.297513246536255
+      ],
+      "height_interval": [
+        2.9896539436052305,
+        3.379894673264226
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        2.9468095654283175,
+        3.5377223051730757
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        2.9468095654283175,
+        3.5377223051730757
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.141864776611328,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        2.9468095654283175,
+        3.5377223051730757
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.0866353577472228,
+        4.097396489981462
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.0866353577472228,
+        4.097396489981462
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.0866353577472228,
+        4.097396489981462
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.161965983692523,
+        3.9297464210266395
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.161965983692523,
+        3.9297464210266395
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.161965983692523,
+        3.9297464210266395
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.161965983692523,
+        3.9297464210266395
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.161965983692523,
+        3.9297464210266395
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        366
+      ],
+      "cell": [
+        1786,
+        366
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.3728091716766357
+      ],
+      "height_interval": [
+        3.161965983692523,
+        3.9297464210266395
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.0866353577472228,
+        4.097396489981462
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.0866353577472228,
+        4.097396489981462
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        3.420224666595459,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.0866353577472228,
+        4.097396489981462
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.115507230225641,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F1",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.115507230225641,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.115507230225641,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.8750895651350232,
+        7.119165331077506
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.8750895651350232,
+        7.119165331077506
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        1,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.8750895651350232,
+        7.119165331077506
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.8750895651350232,
+        7.119165331077506
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.8750895651350232,
+        7.119165331077506
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        367
+      ],
+      "cell": [
+        1786,
+        367
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F3",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.1052725315093994
+      ],
+      "height_interval": [
+        3.8750895651350232,
+        7.119165331077506
+      ],
+      "edge_length_m": 8.485281374238571
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1786,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "P",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.115507230225641,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1786,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F0",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.115507230225641,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "other_fixed": [
+        1786,
+        368
+      ],
+      "cell": [
+        1786,
+        368
+      ],
+      "triangle": [
+        0,
+        2,
+        3
+      ],
+      "surface": "F2",
+      "level_at_variable": 2.75,
+      "level_at_other": 2.75,
+      "before_heights": [
+        4.7214436531066895,
+        2.649899959564209
+      ],
+      "height_interval": [
+        3.115507230225641,
+        "Infinity"
+      ],
+      "edge_length_m": 6.0
+    }
+  ],
+  "eligibility_records": [
+    {
+      "patch": 0,
+      "row": 1878,
+      "col": 189,
+      "x": 1134,
+      "z": 1014,
+      "height_B": 3.421762704849243,
+      "height_EV79": 3.421762704849243,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -1.6217627048492431,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1878,
+      "col": 190,
+      "x": 1140,
+      "z": 1014,
+      "height_B": 3.7129275798797607,
+      "height_EV79": 3.7129275798797607,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -1.9129275798797607,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1878,
+      "col": 191,
+      "x": 1146,
+      "z": 1014,
+      "height_B": 4.129004001617432,
+      "height_EV79": 4.129004001617432,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1878,
+      "col": 192,
+      "x": 1152,
+      "z": 1014,
+      "height_B": 4.615838050842285,
+      "height_EV79": 4.615838050842285,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1878,
+      "col": 193,
+      "x": 1158,
+      "z": 1014,
+      "height_B": 4.859462738037109,
+      "height_EV79": 4.396676063537598,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.5372133255004883
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1879,
+      "col": 189,
+      "x": 1134,
+      "z": 1008,
+      "height_B": 3.8580360412597656,
+      "height_EV79": 3.8580360412597656,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1879,
+      "col": 190,
+      "x": 1140,
+      "z": 1008,
+      "height_B": 4.389345169067383,
+      "height_EV79": 4.389345169067383,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1879,
+      "col": 191,
+      "x": 1146,
+      "z": 1008,
+      "height_B": 5.032322883605957,
+      "height_EV79": 4.49992036819458,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.467597484588623
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1879,
+      "col": 192,
+      "x": 1152,
+      "z": 1008,
+      "height_B": 4.949026107788086,
+      "height_EV79": 4.949026107788086,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1879,
+      "col": 193,
+      "x": 1158,
+      "z": 1008,
+      "height_B": 5.575041770935059,
+      "height_EV79": 5.575041770935059,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.6501000000000006,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1880,
+      "col": 189,
+      "x": 1134,
+      "z": 1002,
+      "height_B": 4.481960296630859,
+      "height_EV79": 4.481960296630859,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1880,
+      "col": 190,
+      "x": 1140,
+      "z": 1002,
+      "height_B": 5.356813430786133,
+      "height_EV79": 4.905372142791748,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.5485587120056152
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1880,
+      "col": 191,
+      "x": 1146,
+      "z": 1002,
+      "height_B": 6.325840473175049,
+      "height_EV79": 6.325840473175049,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.6501000000000006,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1880,
+      "col": 192,
+      "x": 1152,
+      "z": 1002,
+      "height_B": 4.767662048339844,
+      "height_EV79": 4.767662048339844,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.6501000000000006,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1880,
+      "col": 193,
+      "x": 1158,
+      "z": 1002,
+      "height_B": 3.0638909339904785,
+      "height_EV79": 3.0638909339904785,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.6501000000000006,
+      "EV79_budget_delta_interval_at_B_m": [
+        -0.41379093399047795,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1881,
+      "col": 189,
+      "x": 1134,
+      "z": 996,
+      "height_B": 4.929781436920166,
+      "height_EV79": 4.527090072631836,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.59730863571167
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1881,
+      "col": 190,
+      "x": 1140,
+      "z": 996,
+      "height_B": 6.125482082366943,
+      "height_EV79": 6.125482082366943,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.6501000000000006,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1881,
+      "col": 191,
+      "x": 1146,
+      "z": 996,
+      "height_B": 5.872693061828613,
+      "height_EV79": 5.872693061828613,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.6501000000000006,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1881,
+      "col": 192,
+      "x": 1152,
+      "z": 996,
+      "height_B": 2.368396043777466,
+      "height_EV79": 2.368396043777466,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.368396043777466,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1881,
+      "col": 193,
+      "x": 1158,
+      "z": 996,
+      "height_B": 1.2481106519699097,
+      "height_EV79": 1.2481106519699097,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 1.2481106519699097,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1882,
+      "col": 189,
+      "x": 1134,
+      "z": 990,
+      "height_B": 4.241639137268066,
+      "height_EV79": 4.241639137268066,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1882,
+      "col": 190,
+      "x": 1140,
+      "z": 990,
+      "height_B": 4.1210103034973145,
+      "height_EV79": 4.1210103034973145,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.6501000000000006,
+      "EV79_budget_delta_interval_at_B_m": [
+        -1.4709103034973139,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1882,
+      "col": 191,
+      "x": 1146,
+      "z": 990,
+      "height_B": 2.0923242568969727,
+      "height_EV79": 2.0923242568969727,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.0923242568969727,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1882,
+      "col": 192,
+      "x": 1152,
+      "z": 990,
+      "height_B": 2.539900064468384,
+      "height_EV79": 2.539900064468384,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.539900064468384,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 0,
+      "row": 1882,
+      "col": 193,
+      "x": 1158,
+      "z": 990,
+      "height_B": 3.046818971633911,
+      "height_EV79": 3.046818971633911,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004,
+        2.6500000000000004
+      ],
+      "EV79_floor_m": 2.6501000000000006,
+      "EV79_budget_delta_interval_at_B_m": [
+        -0.39671897163391057,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1783,
+      "col": 364,
+      "x": 2184,
+      "z": 1584,
+      "height_B": 3.5066726207733154,
+      "height_EV79": 3.5066726207733154,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -1.7066726207733154,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1783,
+      "col": 365,
+      "x": 2190,
+      "z": 1584,
+      "height_B": 3.9734301567077637,
+      "height_EV79": 3.9734301567077637,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1783,
+      "col": 366,
+      "x": 2196,
+      "z": 1584,
+      "height_B": 4.778382301330566,
+      "height_EV79": 4.778382301330566,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1783,
+      "col": 367,
+      "x": 2202,
+      "z": 1584,
+      "height_B": 4.703646659851074,
+      "height_EV79": 4.588150501251221,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.8845038414001465
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1783,
+      "col": 368,
+      "x": 2208,
+      "z": 1584,
+      "height_B": 4.530370235443115,
+      "height_EV79": 4.415970802307129,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.8856005668640137
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1784,
+      "col": 364,
+      "x": 2184,
+      "z": 1578,
+      "height_B": 4.549646377563477,
+      "height_EV79": 4.235648155212402,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.6860017776489258
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1784,
+      "col": 365,
+      "x": 2190,
+      "z": 1578,
+      "height_B": 4.857635974884033,
+      "height_EV79": 4.260630130767822,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.402994155883789
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1784,
+      "col": 366,
+      "x": 2196,
+      "z": 1578,
+      "height_B": 6.1216254234313965,
+      "height_EV79": 5.954403877258301,
+      "wet_support_ignored": false,
+      "water_levels_incident": [
+        0.85
+      ],
+      "EV79_floor_m": 0.8501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        1.8327784538269043
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1784,
+      "col": 367,
+      "x": 2202,
+      "z": 1578,
+      "height_B": 6.4898834228515625,
+      "height_EV79": 6.4898834228515625,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1784,
+      "col": 368,
+      "x": 2208,
+      "z": 1578,
+      "height_B": 5.408249378204346,
+      "height_EV79": 5.408249378204346,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1785,
+      "col": 364,
+      "x": 2184,
+      "z": 1572,
+      "height_B": 5.280453205108643,
+      "height_EV79": 5.280453205108643,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1785,
+      "col": 365,
+      "x": 2190,
+      "z": 1572,
+      "height_B": 5.659580230712891,
+      "height_EV79": 5.659580230712891,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1785,
+      "col": 366,
+      "x": 2196,
+      "z": 1572,
+      "height_B": 6.156672954559326,
+      "height_EV79": 6.156672954559326,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1785,
+      "col": 367,
+      "x": 2202,
+      "z": 1572,
+      "height_B": 5.54228401184082,
+      "height_EV79": 5.54228401184082,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -2.0,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1785,
+      "col": 368,
+      "x": 2208,
+      "z": 1572,
+      "height_B": 2.4757630825042725,
+      "height_EV79": 2.4757630825042725,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.4757630825042725,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1786,
+      "col": 364,
+      "x": 2184,
+      "z": 1566,
+      "height_B": 2.4893887042999268,
+      "height_EV79": 2.4893887042999268,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.4893887042999268,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1786,
+      "col": 365,
+      "x": 2190,
+      "z": 1566,
+      "height_B": 2.297513246536255,
+      "height_EV79": 2.297513246536255,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.297513246536255,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1786,
+      "col": 366,
+      "x": 2196,
+      "z": 1566,
+      "height_B": 2.3728091716766357,
+      "height_EV79": 2.3728091716766357,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.3728091716766357,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1786,
+      "col": 367,
+      "x": 2202,
+      "z": 1566,
+      "height_B": 2.1052725315093994,
+      "height_EV79": 2.1052725315093994,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.1052725315093994,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1786,
+      "col": 368,
+      "x": 2208,
+      "z": 1566,
+      "height_B": 2.649899959564209,
+      "height_EV79": 2.649899959564209,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.649899959564209,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1787,
+      "col": 364,
+      "x": 2184,
+      "z": 1560,
+      "height_B": 2.5375616550445557,
+      "height_EV79": 2.5375616550445557,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.5375616550445557,
+      "EV79_budget_delta_interval_at_B_m": [
+        0.0,
+        2.0
+      ],
+      "eligible": false,
+      "reasons": {
+        "dry_all_P_F_sea085": false,
+        "class0": false,
+        "other_fixed_false": false,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1787,
+      "col": 365,
+      "x": 2190,
+      "z": 1560,
+      "height_B": 2.953075647354126,
+      "height_EV79": 2.953075647354126,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -0.20297564735412577,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1787,
+      "col": 366,
+      "x": 2196,
+      "z": 1560,
+      "height_B": 3.141864776611328,
+      "height_EV79": 3.141864776611328,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -0.3917647766113279,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1787,
+      "col": 367,
+      "x": 2202,
+      "z": 1560,
+      "height_B": 3.420224666595459,
+      "height_EV79": 3.420224666595459,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -0.6701246665954588,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    },
+    {
+      "patch": 1,
+      "row": 1787,
+      "col": 368,
+      "x": 2208,
+      "z": 1560,
+      "height_B": 4.7214436531066895,
+      "height_EV79": 4.7214436531066895,
+      "wet_support_ignored": true,
+      "water_levels_incident": [
+        0.85,
+        2.75,
+        2.75,
+        2.75,
+        2.75
+      ],
+      "EV79_floor_m": 2.7501,
+      "EV79_budget_delta_interval_at_B_m": [
+        -1.9713436531066892,
+        2.0
+      ],
+      "eligible": true,
+      "reasons": {
+        "dry_all_P_F_sea085": true,
+        "class0": true,
+        "other_fixed_false": true,
+        "engineering_halo_false": true,
+        "large_lake_banks_false": true,
+        "inside_7x7_interior": true,
+        "EV79_budget_contains_B": true
+      }
+    }
+  ],
+  "scalar_delta_bounds": [
+    {
+      "vertex": [
+        1878,
+        189
+      ],
+      "delta_bounds": [
+        -1.6217627048492431,
+        0.0
+      ],
+      "height_B": 3.421762704849243,
+      "height_EV79": 3.421762704849243
+    },
+    {
+      "vertex": [
+        1878,
+        190
+      ],
+      "delta_bounds": [
+        -1.9129275798797607,
+        0.0
+      ],
+      "height_B": 3.7129275798797607,
+      "height_EV79": 3.7129275798797607
+    },
+    {
+      "vertex": [
+        1878,
+        191
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.129004001617432,
+      "height_EV79": 4.129004001617432
+    },
+    {
+      "vertex": [
+        1878,
+        192
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.615838050842285,
+      "height_EV79": 4.615838050842285
+    },
+    {
+      "vertex": [
+        1878,
+        193
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.859462738037109,
+      "height_EV79": 4.396676063537598
+    },
+    {
+      "vertex": [
+        1879,
+        189
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 3.8580360412597656,
+      "height_EV79": 3.8580360412597656
+    },
+    {
+      "vertex": [
+        1879,
+        190
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.389345169067383,
+      "height_EV79": 4.389345169067383
+    },
+    {
+      "vertex": [
+        1879,
+        191
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 5.032322883605957,
+      "height_EV79": 4.49992036819458
+    },
+    {
+      "vertex": [
+        1879,
+        192
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.949026107788086,
+      "height_EV79": 4.949026107788086
+    },
+    {
+      "vertex": [
+        1879,
+        193
+      ],
+      "delta_bounds": [
+        -1.765332297669496,
+        0.0
+      ],
+      "height_B": 5.575041770935059,
+      "height_EV79": 5.575041770935059
+    },
+    {
+      "vertex": [
+        1880,
+        189
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.481960296630859,
+      "height_EV79": 4.481960296630859
+    },
+    {
+      "vertex": [
+        1880,
+        190
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 5.356813430786133,
+      "height_EV79": 4.905372142791748
+    },
+    {
+      "vertex": [
+        1880,
+        191
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 6.325840473175049,
+      "height_EV79": 6.325840473175049
+    },
+    {
+      "vertex": [
+        1880,
+        192
+      ],
+      "delta_bounds": [
+        -0.8035848549001905,
+        0.0
+      ],
+      "height_B": 4.767662048339844,
+      "height_EV79": 4.767662048339844
+    },
+    {
+      "vertex": [
+        1880,
+        193
+      ],
+      "delta_bounds": [
+        -0.15973979797555105,
+        0.0
+      ],
+      "height_B": 3.0638909339904785,
+      "height_EV79": 3.0638909339904785
+    },
+    {
+      "vertex": [
+        1881,
+        189
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.929781436920166,
+      "height_EV79": 4.527090072631836
+    },
+    {
+      "vertex": [
+        1881,
+        190
+      ],
+      "delta_bounds": [
+        -1.8557904273562205,
+        0.0
+      ],
+      "height_B": 6.125482082366943,
+      "height_EV79": 6.125482082366943
+    },
+    {
+      "vertex": [
+        1881,
+        191
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 5.872693061828613,
+      "height_EV79": 5.872693061828613
+    },
+    {
+      "vertex": [
+        1882,
+        189
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.241639137268066,
+      "height_EV79": 4.241639137268066
+    },
+    {
+      "vertex": [
+        1882,
+        190
+      ],
+      "delta_bounds": [
+        -0.5567599770115761,
+        0.0
+      ],
+      "height_B": 4.1210103034973145,
+      "height_EV79": 4.1210103034973145
+    },
+    {
+      "vertex": [
+        1882,
+        193
+      ],
+      "delta_bounds": [
+        -0.1500231131701244,
+        0.0
+      ],
+      "height_B": 3.046818971633911,
+      "height_EV79": 3.046818971633911
+    },
+    {
+      "vertex": [
+        1783,
+        364
+      ],
+      "delta_bounds": [
+        -1.7066726207733154,
+        0.0
+      ],
+      "height_B": 3.5066726207733154,
+      "height_EV79": 3.5066726207733154
+    },
+    {
+      "vertex": [
+        1783,
+        365
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 3.9734301567077637,
+      "height_EV79": 3.9734301567077637
+    },
+    {
+      "vertex": [
+        1783,
+        366
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.778382301330566,
+      "height_EV79": 4.778382301330566
+    },
+    {
+      "vertex": [
+        1783,
+        367
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.703646659851074,
+      "height_EV79": 4.588150501251221
+    },
+    {
+      "vertex": [
+        1783,
+        368
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.530370235443115,
+      "height_EV79": 4.415970802307129
+    },
+    {
+      "vertex": [
+        1784,
+        364
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.549646377563477,
+      "height_EV79": 4.235648155212402
+    },
+    {
+      "vertex": [
+        1784,
+        365
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 4.857635974884033,
+      "height_EV79": 4.260630130767822
+    },
+    {
+      "vertex": [
+        1784,
+        366
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 6.1216254234313965,
+      "height_EV79": 5.954403877258301
+    },
+    {
+      "vertex": [
+        1784,
+        367
+      ],
+      "delta_bounds": [
+        -2.0,
+        0.0
+      ],
+      "height_B": 6.4898834228515625,
+      "height_EV79": 6.4898834228515625
+    },
+    {
+      "vertex": [
+        1784,
+        368
+      ],
+      "delta_bounds": [
+        -1.0989330351644337,
+        0.0
+      ],
+      "height_B": 5.408249378204346,
+      "height_EV79": 5.408249378204346
+    },
+    {
+      "vertex": [
+        1785,
+        364
+      ],
+      "delta_bounds": [
+        -1.3042196484132704,
+        0.0
+      ],
+      "height_B": 5.280453205108643,
+      "height_EV79": 5.280453205108643
+    },
+    {
+      "vertex": [
+        1785,
+        365
+      ],
+      "delta_bounds": [
+        -1.6652220655295764,
+        0.0
+      ],
+      "height_B": 5.659580230712891,
+      "height_EV79": 5.659580230712891
+    },
+    {
+      "vertex": [
+        1785,
+        366
+      ],
+      "delta_bounds": [
+        -1.7237641944509523,
+        0.0
+      ],
+      "height_B": 6.156672954559326,
+      "height_EV79": 6.156672954559326
+    },
+    {
+      "vertex": [
+        1785,
+        367
+      ],
+      "delta_bounds": [
+        -1.6170348309146751,
+        0.0
+      ],
+      "height_B": 5.54228401184082,
+      "height_EV79": 5.54228401184082
+    },
+    {
+      "vertex": [
+        1787,
+        365
+      ],
+      "delta_bounds": [
+        -0.08037450250609757,
+        0.0
+      ],
+      "height_B": 2.953075647354126,
+      "height_EV79": 2.953075647354126
+    },
+    {
+      "vertex": [
+        1787,
+        366
+      ],
+      "delta_bounds": [
+        -0.1522108330060976,
+        0.0
+      ],
+      "height_B": 3.141864776611328,
+      "height_EV79": 3.141864776611328
+    },
+    {
+      "vertex": [
+        1787,
+        367
+      ],
+      "delta_bounds": [
+        -0.2582586829029361,
+        0.0
+      ],
+      "height_B": 3.420224666595459,
+      "height_EV79": 3.420224666595459
+    },
+    {
+      "vertex": [
+        1787,
+        368
+      ],
+      "delta_bounds": [
+        -0.8463540879716662,
+        0.0
+      ],
+      "height_B": 4.7214436531066895,
+      "height_EV79": 4.7214436531066895
+    }
+  ],
+  "lp_result": {
+    "status": "FEASIBLE",
+    "witnesses": [
+      {
+        "objective_focus": [
+          1880,
+          191
+        ],
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "focus_height_after_m": 4.610406875610352,
+        "focus_delta_m": -1.7154335975646973,
+        "both_focus_deltas_m": {
+          "(1880, 191)": -1.7154335975646973,
+          "(1785, 366)": -0.1
+        },
+        "max_inequality_violation_m": 0.0,
+        "max_equality_residual_m": 0.0,
+        "nonzero_delta_witness": [
+          {
+            "row": 1878,
+            "col": 189,
+            "x": 1134,
+            "z": 1014,
+            "height_B": 3.421762704849243,
+            "delta_m": -0.08295941352844238,
+            "height_after_m": 3.338803291320801
+          },
+          {
+            "row": 1878,
+            "col": 190,
+            "x": 1140,
+            "z": 1014,
+            "height_B": 3.7129275798797607,
+            "delta_m": -0.015955209732055664,
+            "height_after_m": 3.696972370147705
+          },
+          {
+            "row": 1878,
+            "col": 191,
+            "x": 1146,
+            "z": 1014,
+            "height_B": 4.129004001617432,
+            "delta_m": -0.19413018226623535,
+            "height_after_m": 3.9348738193511963
+          },
+          {
+            "row": 1878,
+            "col": 192,
+            "x": 1152,
+            "z": 1014,
+            "height_B": 4.615838050842285,
+            "delta_m": -0.44341135025024414,
+            "height_after_m": 4.172426700592041
+          },
+          {
+            "row": 1878,
+            "col": 193,
+            "x": 1158,
+            "z": 1014,
+            "height_B": 4.859462738037109,
+            "delta_m": -0.2490558624267578,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1879,
+            "col": 189,
+            "x": 1134,
+            "z": 1008,
+            "height_B": 3.8580360412597656,
+            "delta_m": -0.16106367111206055,
+            "height_after_m": 3.696972370147705
+          },
+          {
+            "row": 1879,
+            "col": 190,
+            "x": 1140,
+            "z": 1008,
+            "height_B": 4.389345169067383,
+            "delta_m": -0.4544713497161865,
+            "height_after_m": 3.9348738193511963
+          },
+          {
+            "row": 1879,
+            "col": 191,
+            "x": 1146,
+            "z": 1008,
+            "height_B": 5.032322883605957,
+            "delta_m": -0.42191600799560547,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1879,
+            "col": 192,
+            "x": 1152,
+            "z": 1008,
+            "height_B": 4.949026107788086,
+            "delta_m": -0.3386192321777344,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1880,
+            "col": 189,
+            "x": 1134,
+            "z": 1002,
+            "height_B": 4.481960296630859,
+            "delta_m": -0.41034746170043945,
+            "height_after_m": 4.07161283493042
+          },
+          {
+            "row": 1880,
+            "col": 190,
+            "x": 1140,
+            "z": 1002,
+            "height_B": 5.356813430786133,
+            "delta_m": -0.7464065551757812,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1880,
+            "col": 191,
+            "x": 1146,
+            "z": 1002,
+            "height_B": 6.325840473175049,
+            "delta_m": -1.7154335975646973,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1880,
+            "col": 192,
+            "x": 1152,
+            "z": 1002,
+            "height_B": 4.767662048339844,
+            "delta_m": -0.8035848549001905,
+            "height_after_m": 3.9640771934396533
+          },
+          {
+            "row": 1881,
+            "col": 189,
+            "x": 1134,
+            "z": 996,
+            "height_B": 4.929781436920166,
+            "delta_m": -0.7244915962219238,
+            "height_after_m": 4.205289840698242
+          },
+          {
+            "row": 1881,
+            "col": 190,
+            "x": 1140,
+            "z": 996,
+            "height_B": 6.125482082366943,
+            "delta_m": -1.5150752067565918,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1881,
+            "col": 191,
+            "x": 1146,
+            "z": 996,
+            "height_B": 5.872693061828613,
+            "delta_m": -1.2622861862182617,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1882,
+            "col": 189,
+            "x": 1134,
+            "z": 990,
+            "height_B": 4.241639137268066,
+            "delta_m": -0.03634929656982422,
+            "height_after_m": 4.205289840698242
+          },
+          {
+            "row": 1882,
+            "col": 190,
+            "x": 1140,
+            "z": 990,
+            "height_B": 4.1210103034973145,
+            "delta_m": -0.5567599770115761,
+            "height_after_m": 3.5642503264857384
+          },
+          {
+            "row": 1783,
+            "col": 364,
+            "x": 2184,
+            "z": 1584,
+            "height_B": 3.5066726207733154,
+            "delta_m": -0.0174713134765625,
+            "height_after_m": 3.489201307296753
+          },
+          {
+            "row": 1783,
+            "col": 365,
+            "x": 2190,
+            "z": 1584,
+            "height_B": 3.9734301567077637,
+            "delta_m": -0.15126252174377441,
+            "height_after_m": 3.8221676349639893
+          },
+          {
+            "row": 1783,
+            "col": 366,
+            "x": 2196,
+            "z": 1584,
+            "height_B": 4.778382301330566,
+            "delta_m": -0.535585880279541,
+            "height_after_m": 4.242796421051025
+          },
+          {
+            "row": 1783,
+            "col": 367,
+            "x": 2202,
+            "z": 1584,
+            "height_B": 4.703646659851074,
+            "delta_m": -0.46085023880004883,
+            "height_after_m": 4.242796421051025
+          },
+          {
+            "row": 1783,
+            "col": 368,
+            "x": 2208,
+            "z": 1584,
+            "height_B": 4.530370235443115,
+            "delta_m": -0.28757381439208984,
+            "height_after_m": 4.242796421051025
+          },
+          {
+            "row": 1784,
+            "col": 364,
+            "x": 2184,
+            "z": 1578,
+            "height_B": 4.549646377563477,
+            "delta_m": -0.21421003341674805,
+            "height_after_m": 4.3354363441467285
+          },
+          {
+            "row": 1784,
+            "col": 365,
+            "x": 2190,
+            "z": 1578,
+            "height_B": 4.857635974884033,
+            "delta_m": -0.5221996307373047,
+            "height_after_m": 4.3354363441467285
+          },
+          {
+            "row": 1784,
+            "col": 366,
+            "x": 2196,
+            "z": 1578,
+            "height_B": 6.1216254234313965,
+            "delta_m": -0.06495246887207032,
+            "height_after_m": 6.0566729545593265
+          },
+          {
+            "row": 1784,
+            "col": 368,
+            "x": 2208,
+            "z": 1578,
+            "height_B": 5.408249378204346,
+            "delta_m": -1.0989330351644337,
+            "height_after_m": 4.309316343039912
+          },
+          {
+            "row": 1785,
+            "col": 366,
+            "x": 2196,
+            "z": 1572,
+            "height_B": 6.156672954559326,
+            "delta_m": -0.1,
+            "height_after_m": 6.0566729545593265
+          }
+        ]
+      },
+      {
+        "objective_focus": [
+          1785,
+          366
+        ],
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "focus_height_after_m": 4.5961012840271,
+        "focus_delta_m": -1.5605716705322266,
+        "both_focus_deltas_m": {
+          "(1880, 191)": -0.1,
+          "(1785, 366)": -1.5605716705322266
+        },
+        "max_inequality_violation_m": 0.0,
+        "max_equality_residual_m": 0.0,
+        "nonzero_delta_witness": [
+          {
+            "row": 1878,
+            "col": 189,
+            "x": 1134,
+            "z": 1014,
+            "height_B": 3.421762704849243,
+            "delta_m": -0.08295941352844238,
+            "height_after_m": 3.338803291320801
+          },
+          {
+            "row": 1878,
+            "col": 190,
+            "x": 1140,
+            "z": 1014,
+            "height_B": 3.7129275798797607,
+            "delta_m": -0.015955209732055664,
+            "height_after_m": 3.696972370147705
+          },
+          {
+            "row": 1878,
+            "col": 191,
+            "x": 1146,
+            "z": 1014,
+            "height_B": 4.129004001617432,
+            "delta_m": -0.19413018226623535,
+            "height_after_m": 3.9348738193511963
+          },
+          {
+            "row": 1878,
+            "col": 192,
+            "x": 1152,
+            "z": 1014,
+            "height_B": 4.615838050842285,
+            "delta_m": -0.44341135025024414,
+            "height_after_m": 4.172426700592041
+          },
+          {
+            "row": 1878,
+            "col": 193,
+            "x": 1158,
+            "z": 1014,
+            "height_B": 4.859462738037109,
+            "delta_m": -0.2490558624267578,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1879,
+            "col": 189,
+            "x": 1134,
+            "z": 1008,
+            "height_B": 3.8580360412597656,
+            "delta_m": -0.16106367111206055,
+            "height_after_m": 3.696972370147705
+          },
+          {
+            "row": 1879,
+            "col": 190,
+            "x": 1140,
+            "z": 1008,
+            "height_B": 4.389345169067383,
+            "delta_m": -0.4544713497161865,
+            "height_after_m": 3.9348738193511963
+          },
+          {
+            "row": 1879,
+            "col": 192,
+            "x": 1152,
+            "z": 1008,
+            "height_B": 4.949026107788086,
+            "delta_m": -0.3386192321777344,
+            "height_after_m": 4.610406875610352
+          },
+          {
+            "row": 1880,
+            "col": 189,
+            "x": 1134,
+            "z": 1002,
+            "height_B": 4.481960296630859,
+            "delta_m": -0.41034746170043945,
+            "height_after_m": 4.07161283493042
+          },
+          {
+            "row": 1880,
+            "col": 191,
+            "x": 1146,
+            "z": 1002,
+            "height_B": 6.325840473175049,
+            "delta_m": -0.1,
+            "height_after_m": 6.225840473175049
+          },
+          {
+            "row": 1880,
+            "col": 192,
+            "x": 1152,
+            "z": 1002,
+            "height_B": 4.767662048339844,
+            "delta_m": -0.8035848549001905,
+            "height_after_m": 3.9640771934396533
+          },
+          {
+            "row": 1881,
+            "col": 189,
+            "x": 1134,
+            "z": 996,
+            "height_B": 4.929781436920166,
+            "delta_m": -0.7244915962219238,
+            "height_after_m": 4.205289840698242
+          },
+          {
+            "row": 1882,
+            "col": 189,
+            "x": 1134,
+            "z": 990,
+            "height_B": 4.241639137268066,
+            "delta_m": -0.03634929656982422,
+            "height_after_m": 4.205289840698242
+          },
+          {
+            "row": 1783,
+            "col": 364,
+            "x": 2184,
+            "z": 1584,
+            "height_B": 3.5066726207733154,
+            "delta_m": -0.0174713134765625,
+            "height_after_m": 3.489201307296753
+          },
+          {
+            "row": 1783,
+            "col": 365,
+            "x": 2190,
+            "z": 1584,
+            "height_B": 3.9734301567077637,
+            "delta_m": -0.15126252174377441,
+            "height_after_m": 3.8221676349639893
+          },
+          {
+            "row": 1783,
+            "col": 366,
+            "x": 2196,
+            "z": 1584,
+            "height_B": 4.778382301330566,
+            "delta_m": -0.535585880279541,
+            "height_after_m": 4.242796421051025
+          },
+          {
+            "row": 1783,
+            "col": 367,
+            "x": 2202,
+            "z": 1584,
+            "height_B": 4.703646659851074,
+            "delta_m": -0.46085023880004883,
+            "height_after_m": 4.242796421051025
+          },
+          {
+            "row": 1783,
+            "col": 368,
+            "x": 2208,
+            "z": 1584,
+            "height_B": 4.530370235443115,
+            "delta_m": -0.28757381439208984,
+            "height_after_m": 4.242796421051025
+          },
+          {
+            "row": 1784,
+            "col": 364,
+            "x": 2184,
+            "z": 1578,
+            "height_B": 4.549646377563477,
+            "delta_m": -0.21421003341674805,
+            "height_after_m": 4.3354363441467285
+          },
+          {
+            "row": 1784,
+            "col": 365,
+            "x": 2190,
+            "z": 1578,
+            "height_B": 4.857635974884033,
+            "delta_m": -0.5221996307373047,
+            "height_after_m": 4.3354363441467285
+          },
+          {
+            "row": 1784,
+            "col": 366,
+            "x": 2196,
+            "z": 1578,
+            "height_B": 6.1216254234313965,
+            "delta_m": -1.5255241394042969,
+            "height_after_m": 4.5961012840271
+          },
+          {
+            "row": 1784,
+            "col": 368,
+            "x": 2208,
+            "z": 1578,
+            "height_B": 5.408249378204346,
+            "delta_m": -1.0989330351644337,
+            "height_after_m": 4.309316343039912
+          },
+          {
+            "row": 1785,
+            "col": 364,
+            "x": 2184,
+            "z": 1572,
+            "height_B": 5.280453205108643,
+            "delta_m": -0.684351921081543,
+            "height_after_m": 4.5961012840271
+          },
+          {
+            "row": 1785,
+            "col": 365,
+            "x": 2190,
+            "z": 1572,
+            "height_B": 5.659580230712891,
+            "delta_m": -1.063478946685791,
+            "height_after_m": 4.5961012840271
+          },
+          {
+            "row": 1785,
+            "col": 366,
+            "x": 2196,
+            "z": 1572,
+            "height_B": 6.156672954559326,
+            "delta_m": -1.5605716705322266,
+            "height_after_m": 4.5961012840271
+          },
+          {
+            "row": 1785,
+            "col": 367,
+            "x": 2202,
+            "z": 1572,
+            "height_B": 5.54228401184082,
+            "delta_m": -1.2329676688009084,
+            "height_after_m": 4.309316343039912
+          }
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "LP feasibility witness only; no terrain NPZ or candidate written.",
+    "No angular gates or energy objective were imposed, per request.",
+    "Continuous double-precision LP, not float32 quantization, consumer, ODOL, package, engine, or visual validation.",
+    "One-metre P/F crossing intervals reuse the scalar formula from EV83 author_pilot.py:38-86; F is independently honored even where P is NaN."
+  ]
+}

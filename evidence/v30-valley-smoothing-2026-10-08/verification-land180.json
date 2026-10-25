@@ -1,0 +1,73 @@
+{
+  "status": "PASS_OFFLINE_LAND_CLEARANCE",
+  "checks": {
+    "protected_exact": true,
+    "water_native_faces_exact": true,
+    "only_raises": true,
+    "target_points": true,
+    "metadata_exact": true,
+    "finite": true,
+    "no_steeper_faces": true,
+    "roads_pass": true,
+    "max_raise_bounded": true,
+    "negative_controls": true
+  },
+  "negative_controls": {
+    "road_or_platform_change": true,
+    "water_face_change": true,
+    "new_lowering": true,
+    "unchanged_input_is_not_fix": true
+  },
+  "changed_vertices": 401710,
+  "water_support_vertices": 1077635,
+  "steep_faces": 0,
+  "roads": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "terrain_sha256": "88914948a3a9a3017b3195642657f0fd4c271475f3dccc1ae751b1f5deb045d1",
+  "interpreter": "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+  "limits": [
+    "No waterline smoothing claimed; original water geometry and all shoreline faces are exact.",
+    "Visual sea-artifact comparison still required; protected low rings may keep patches."
+  ]
+}

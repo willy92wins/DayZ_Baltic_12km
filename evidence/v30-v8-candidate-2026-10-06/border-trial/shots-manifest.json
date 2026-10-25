@@ -1,0 +1,166 @@
+{
+ "runs": {
+  "5175c531": "v8, client fell on camera_set after a teleport to the SE corner (BALTIC-001)",
+  "ae5e7e32": "v8 views NAVFREE_85, RIVER_80, RIVER_8; Guillermo marked RIVER_80 live",
+  "dc99cbeb": "v8b, client fell on camera_set after a teleport to the east border",
+  "3699ae8f": "v8b border with OutsideTerrain without synthesis: flat strip remains after 3 min",
+  "4e842667": "v8c first attempt: pause menu opened, then magenta sky and untextured terrain",
+  "1777a889": "v8c second attempt: textured land beyond the east border, stable at 3 min; retail DayZ started, run left open"
+ },
+ "mods": {
+  "v8": "@DayZ_Baltic_V8Candidate world f6137a05",
+  "v8b": "@DayZ_Baltic_V8bCandidate world 065a9fdd",
+  "v8c": "@DayZ_Baltic_V8cCandidate world e2fc5cc7",
+  "water": "c687a7be"
+ },
+ "poses": {
+  "BORDER_E330": {
+   "cam_pos": [
+    11760,
+    300,
+    4700
+   ],
+   "look_at": [
+    12270,
+    2.37,
+    5200
+   ],
+   "player": [
+    12000,
+    0,
+    4998
+   ]
+  },
+  "NAVFREE_85": {
+   "cam_pos": [
+    972,
+    85,
+    4788
+   ],
+   "look_at": [
+    1032,
+    2.62,
+    4848
+   ],
+   "player": [
+    1002,
+    0,
+    4866
+   ]
+  },
+  "RIVER_80": {
+   "cam_pos": [
+    12012,
+    80,
+    1560
+   ],
+   "look_at": [
+    12072,
+    1.52,
+    1620
+   ],
+   "player": [
+    12090,
+    0,
+    1638
+   ]
+  },
+  "RIVER_8": {
+   "cam_pos": [
+    12046,
+    8,
+    1594
+   ],
+   "look_at": [
+    12072,
+    1.52,
+    1620
+   ],
+   "player": [
+    12090,
+    0,
+    1638
+   ]
+  }
+ },
+ "workaround": "warm-up pose near the west first, then teleport, 20 s, camera_get, camera_set; waits 1-3 min",
+ "shots": [
+  {
+   "folder": "views",
+   "pose": "NAVFREE_85",
+   "name": "capture_20261006_013650_049.jpg",
+   "bytes": 265268,
+   "sha256": "7bb3d74a6e3954bfe917664030f9072f0536e3ce08f7d84b9fc1adf100f3ff9b"
+  },
+  {
+   "folder": "views",
+   "pose": "RIVER_8",
+   "name": "capture_20261006_014157_560.jpg",
+   "bytes": 283683,
+   "sha256": "c44c90ad4813196490d39b7e46d64daeeacf924014c56869d8b473f786809486"
+  },
+  {
+   "folder": "views",
+   "pose": "RIVER_80",
+   "name": "capture_20261006_013927_801.jpg",
+   "bytes": 340289,
+   "sha256": "844566ded4740376cd6c1c18c718aba267f764be751be77bc6d8ee8ccd40739d"
+  },
+  {
+   "folder": "views-b",
+   "pose": "BORDER_E330_1min",
+   "name": "capture_20261006_023731_761.jpg",
+   "bytes": 104392,
+   "sha256": "c45057461d1a3f2edd800204826023b7f174a954dd7534311d32c442155354f0"
+  },
+  {
+   "folder": "views-b",
+   "pose": "BORDER_E330_3min",
+   "name": "capture_20261006_023946_458.jpg",
+   "bytes": 102710,
+   "sha256": "fbfc8beed257cff2c43a477b482c5ed74c31f5b7a73de8cd0968df4132350b98"
+  },
+  {
+   "folder": "views-c",
+   "pose": "BORDER_E330_1min",
+   "name": "capture_20261006_024840_002.jpg",
+   "bytes": 157294,
+   "sha256": "4efdccd0d3fb31d8220500c977d3803c04c95912863ca76f111e0ad304c00a25"
+  },
+  {
+   "folder": "views-c",
+   "pose": "BORDER_E330_3min",
+   "name": "capture_20261006_025005_212.jpg",
+   "bytes": 58091,
+   "sha256": "c72d9c579b27484036091e85852b86a8b32d6eddc684cbde7aec0e7a7d7d9bf8"
+  },
+  {
+   "folder": "views-c",
+   "pose": "BORDER_E330_3min30",
+   "name": "capture_20261006_025101_995.jpg",
+   "bytes": 58517,
+   "sha256": "6b3a0ec74a23c14e00eb701b2a48846111d717bd874b16def0e7d1330f48df47"
+  },
+  {
+   "folder": "views-c2",
+   "pose": "BORDER_E330_1min",
+   "name": "capture_20261006_025847_802.jpg",
+   "bytes": 114969,
+   "sha256": "ae333f8383d63673c8552557c0fabcb5eb4cc91f15124d56033f0b289c8cea2d"
+  },
+  {
+   "folder": "views-c2",
+   "pose": "BORDER_E330_3min",
+   "name": "capture_20261006_030104_987.jpg",
+   "bytes": 53176,
+   "sha256": "c3f15b23f3e113c6917aff518a9b4c086324d0a798f7dcc13ba80ce09c4ea6a8"
+  },
+  {
+   "folder": "views-c2",
+   "pose": "NAVFREE_85",
+   "name": "capture_20261006_025648_783.jpg",
+   "bytes": 309704,
+   "sha256": "d8d43db6a75bf966c03f201d25aa0ae1570047cced531a7bfe67f63755788859"
+  }
+ ]
+}

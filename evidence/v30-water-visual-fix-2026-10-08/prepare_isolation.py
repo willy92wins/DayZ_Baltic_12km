@@ -1,0 +1,58 @@
+"""Component-isolation patch only; no terrain, water-model or base mutation."""
+from pathlib import Path
+import hashlib,json,shutil,subprocess,sys
+import numpy as np
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-water-visual-fix-2026-10-08'
+B=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008')
+B7=Path('E:/DayZ-Baltic-Build/v30-curved-channel-pilot-20261008')
+sys.path[:0]=[str(W/'tools/terrain'),str(W/'tools/playtest')]
+from v30_common import cell_planes,tri_sample
+from attach_navmesh import read_pbo
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+B.mkdir(exist_ok=True)
+src=B/'sea-away/baltic_sea_away';src.mkdir(parents=True,exist_ok=False)
+cpp=src/'config.cpp'
+cpp.write_text('class CfgPatches { class BalticSeaAwayDiagnostic { units[]={}; weapons[]={}; requiredVersion=0.1; requiredAddons[]={"BalticTrialWorld"}; }; };\nclass CfgWorlds { class CAWorld; class BalticTrial: CAWorld { MaxTide=-200; MaxWave=0; }; };\n')
+converter=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZ Tools/Bin/CfgConvert/CfgConvert.exe')
+r=subprocess.run([str(converter),'-bin','-dst',str(src/'config.bin'),str(cpp)],capture_output=True)
+(B/'sea-away/cfgconvert.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0
+assert (src/'config.bin').read_bytes()[:4]==b'\0raP'
+out=B/'sea-away/packed';out.mkdir()
+bank=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZ Tools/Bin/PboUtils/FileBank.exe')
+r=subprocess.run([str(bank),'-property','prefix=baltic_sea_away','-dst',str(out),str(src)],capture_output=True)
+(B/'sea-away/filebank.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0
+_,props,entries=read_pbo(out/'baltic_sea_away.pbo')
+assert entries['config.bin']==(src/'config.bin').read_bytes()
+dest=Path('P:/Mods/@BalticSeaAwayDiagnostic/Addons');dest.mkdir(parents=True,exist_ok=False)
+shutil.copyfile(out/'baltic_sea_away.pbo',dest/'baltic_sea_away.pbo')
+assert sha(out/'baltic_sea_away.pbo')==sha(dest/'baltic_sea_away.pbo')
+shutil.copyfile(cpp,E/'sea-away-config.cpp')
+ref=dict(status='DIAGNOSTIC_ONLY',patch=str(dest/'baltic_sea_away.pbo'),patch_sha256=sha(dest/'baltic_sea_away.pbo'),source_sha256=sha(cpp),expected_sea_level_m=-100,
+ base_files={p.name:sha(p) for p in Path('P:/Mods/@DayZ_Baltic_FlatWaterPreview/Addons').glob('*.pbo')},
+ sources=['P:/DZ/data/config.cpp:1667-1668','https://forums.dayz.com/topic/264080-stable-update-126/?tab=comments'],
+ limits=['Runtime sea level must verify the patch before inferring anything from images.','Never promote the diagnostic sea level.'])
+(E/'sea-away-reference.json').write_text(json.dumps(ref,indent=2)+'\n')
+t=np.load(B7/'r3-transition-proposal/terrain_flat.npz');p=cell_planes(t['cls'],t['level'])
+r0,r1=int((12282-9090)/6),int((12282-8950)/6)
+c0,c1=int(8200/6),int(8340/6)
+a=p[r0:r1,c0:c1]
+edges=[]
+for direction,v1,v2 in [('x',a[:,:-1],a[:,1:]),('z',a[:-1],a[1:])]:
+ valid=np.isfinite(v1)&np.isfinite(v2);delta=np.abs(v1-v2)[valid]
+ edges.append(dict(direction=direction,edges=int(valid.sum()),nonzero=int((delta>1e-5).sum()),maximum_m=float(delta.max()),percentiles_m=np.percentile(delta,[0,50,95,100]).tolist()))
+cam=np.array([2185,280,7350.]);mat=np.array([-0.9967640042,0,-0.08038418,0.06680205,0.55622053,-0.82834548,0.04471134,-0.83103472,-0.55442059]).reshape(3,3)
+locations=[]
+for name,px,py in [('land_reflection_e',1016,407),('land_dark_w',748,608),('land_bright_w',350,300),('land_reflection_n',982,148)]:
+ q=(px-960)/540*np.tan(np.deg2rad(68.5/2));v=(540-py)/540*np.tan(np.deg2rad(68.5/2))
+ d=mat[2]+mat[0]*q+mat[1]*v
+ lo,hi=0.,1500.
+ for _ in range(40):
+  dist=(lo+hi)/2;point=cam+dist*d;h=float(tri_sample(t['heights'],point[0],point[2]))
+  if point[1]>h:lo=dist
+  else:hi=dist
+ point=cam+hi*d;r,c=round((12282-point[2])/6),round(point[0]/6)
+ locations.append(dict(name=name,pixel=[px,py],world=point.tolist(),cell=[r,c],cls=int(t['cls'][r,c]),water_level=float(t['level'][r,c]) if np.isfinite(t['level'][r,c]) else None,
+ ground=float(tri_sample(t['heights'],point[0],point[2]))))
+(E/'geometry-diagnostic.json').write_text(json.dumps(dict(R2_band_edges=edges,R1_projected_locations=locations,projection_limit='Approximate 68.5 degree vertical FOV; verify close-up location before attribution.'),indent=2)+'\n')
+print(json.dumps(dict(patch=ref,geometry=edges,locations=locations),indent=2))

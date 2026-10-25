@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\compound-selection\selector.py", line 895, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\compound-selection\selector.py", line 887, in main
+    result = execute_pool(args.pool, args.output_dir, args.progress_jsonl)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\compound-selection\selector.py", line 651, in execute_pool
+    readset = _source_readset(pool_path, pool, crest_receipt, pool["rows"], vl, ev87,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\compound-selection\selector.py", line 578, in _source_readset
+    expected = vl.expected_dynamic_readset(PREPARED, LEGACY_RECEIPT, prepared, receipt,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\consumer-global\verify_layer.py", line 562, in expected_dynamic_readset
+    for model in index_manifest.get('models', []):
+                 ^^^^^^^^^^^^^^^^^^
+AttributeError: 'WindowsPath' object has no attribute 'get'

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\global-operator-prototype\face-slope-cone-pilot\preflight-recheck-01\pilot.py", line 676, in <module>
+    main()
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\global-operator-prototype\face-slope-cone-pilot\preflight-recheck-01\pilot.py", line 673, in main
+    run_solve_once()
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\global-operator-prototype\face-slope-cone-pilot\preflight-recheck-01\pilot.py", line 569, in run_solve_once
+    closure_mod=load_order_closure();out.mkdir();started=time.perf_counter()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\global-operator-prototype\face-slope-cone-pilot\preflight-recheck-01\pilot.py", line 76, in load_order_closure
+    if sha(ORDER_CLOSURE) != ORDER_CLOSURE_SHA:
+       ^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\v30-global-bank-extension-20261010\global-operator-prototype\face-slope-cone-pilot\preflight-recheck-01\pilot.py", line 44, in sha
+    with Path(path).open('rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\real-sector-preflight\\order-closure\\projection.py'

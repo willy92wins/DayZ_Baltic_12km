@@ -1,0 +1,31 @@
+{
+  "status": "PASS_NAV_VERIFIER_REGRESSION_AND_SEPARATION_CONTROLS",
+  "positives": [
+    "Historical native ten-case log unchanged",
+    "Synthetic empty gap",
+    "Synthetic partial gap"
+  ],
+  "negatives": [
+    "old_missing_end",
+    "old_wrong_world",
+    "old_missing_case",
+    "old_duplicate_query",
+    "old_partial_endpoint",
+    "old_nonfinite_endpoint",
+    "old_none_succeeds",
+    "gap_full_path",
+    "gap_full_path_false_flag",
+    "gap_bad_land_sample",
+    "gap_distant_sample",
+    "gap_found_empty",
+    "gap_wrong_partial_start",
+    "gap_wrong_requested_goal",
+    "gap_missing_end",
+    "unknown_expectation"
+  ],
+  "negative_count": 16,
+  "verifier_sha256": "1e825fba9130621002b6d0ca71a4cb6fe2c051eeaaf2f2f8af465489e8913b75",
+  "limits": [
+    "Offline consumer checks; synthetic gap cases do not prove new terrain navigation."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "scope": "Continue only unfinished AE validation after the isolated recio import failure.\n\nPreserves the failed chain, log and pipeline receipt. No rebuild, regeneration,\nsource change, acceptance change, fresh-seed reservation, promotion or deployment.\n",
+  "runner_sha256": "76e3e8d9cb2206d8ea6a043e7f8042f1eded43990bbb105ebb8b8c93f772a6ca",
+  "original_pipeline_failure": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\pipeline-ae-package.attempt1-import-failure.json",
+  "original_pipeline_failure_sha256": "5476a13cf423b4a23182b61c1ca0e171fce67b6708b783375fcd900a6664d298",
+  "original_chain_failure_sha256": "35db88e9460a47d75f808e0542c297649f301a3b10e31cbc7b4f3a0f054ea8e1",
+  "import_repair_receipt_sha256": "e87a86fa97b33632fa4b31685ea62387fff1b8e94ee83dbb9f8c46d5f9bce581",
+  "wrapper_sha256": "8de465adbd6b3216c0390a886cf340c3fc8aecc66ec0b170cf72ff8070fd2520",
+  "frozen_manifest_sha256": "927d3799da4d834427c84db1447bd4595cf79b1f71dd2dfec70a3172606b9dfd",
+  "runner_bindings_sha256": "e7b1d2bbeaa50ff37133d9471cdd8828a685575a0212474c8730fa92f807e0e2",
+  "source_sha256": "0fef87eec16f4a609b33482ac438fc33f07e48c1db3d12810a3d0bd7501c658a",
+  "records_sha256": "2e86b4a79d243ec43f68ba70dd0492e88a434963814a4b1b47c8965823709b37",
+  "pbo_sha256": "bf2627eb7abe95652eb215b27694983252c11d019e147635795b8d4cf114246e",
+  "successful_prefix_steps": 5,
+  "release_acceptance": false,
+  "status": "FAILED",
+  "steps": [
+    {
+      "step": "negatives",
+      "rc": 1,
+      "seconds": 87.6423237323761,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-final-forest-negatives-ae-importfix.py"
+      ],
+      "continuation": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-resume-after-import.json"
+    }
+  ],
+  "error": "AssertionError({'step': 'negatives', 'rc': 1, 'seconds': 87.6423237323761, 'cmd': ['C:\\\\Users\\\\guill\\\\Documents\\\\Codex\\\\2026-09-29\\\\vamos\\\\work\\\\gis-env\\\\Scripts\\\\python.exe', '-I', 'E:\\\\DayZ-Baltic-Build\\\\v31-pond-layer-20261013\\\\ev112-build-20261018\\\\run-final-forest-negatives-ae-importfix.py'], 'continuation': 'E:\\\\DayZ-Baltic-Build\\\\v31-pond-layer-20261013\\\\ev112-build-20261018\\\\forest-ae-resume-after-import.json'})"
+}

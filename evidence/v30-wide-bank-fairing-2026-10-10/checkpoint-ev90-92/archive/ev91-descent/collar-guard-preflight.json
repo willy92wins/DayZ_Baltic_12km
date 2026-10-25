@@ -1,0 +1,737 @@
+{
+  "status": "PASS_PREFLIGHT_GUARD_AND_FOCUS_BOX_WITNESS",
+  "scope": "Read-only EV91 descent preflight. No author, optimizer, solver, candidate, package, or engine run.",
+  "source_hashes": {
+    "B": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz",
+      "sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    },
+    "preflight": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-preflight\\preflight.json",
+      "sha256": "8c8ec80cbb7029f510c832adf90a8871e385fbd8ec52ee5043d5ea24e1099d63"
+    },
+    "EV90_preflight_script": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-preflight\\ev90_preflight.py",
+      "sha256": "5892e917335ca2d8caa427f04f48ba8acbd8e16a5e1b400be596d5dd636afb7f"
+    },
+    "EV91_plan": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\plan.md",
+      "sha256": "28db80ef21dcd8df59927556830e8cc663c6db7195819ab65e2ff1bccc127586"
+    },
+    "EV91_author_source": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\author_ev91.py",
+      "sha256": "be0c7c72463d5b41544837aa232f678147e21e735e41b8bee1bc5c9639a7ff89"
+    },
+    "EV91_prepared": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\prepared.json",
+      "sha256": "e172719641897ce41a92e7574aab7850d0a6c8298648f26ed2e2fc547d236c4f"
+    },
+    "EV90_report": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-consumer\\runs\\attempt-02\\ev90-review.json",
+      "sha256": "52c1ac1bb76658529899309af7b7fae1160469f8c940f079fff99753f9259c5a"
+    },
+    "EV90_consumer": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-consumer\\verify_ev90.py",
+      "sha256": "ef4056bf186255389a899c193e92bfcb062664d317672bdee634656d89ad0b46"
+    },
+    "EV88_helper": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py",
+      "sha256": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78"
+    },
+    "EV87_helper": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+      "sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27"
+    },
+    "shape_contract": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-consumer\\shape_contract.py",
+      "sha256": "8cd9d0fbea03c05e5ae53a31676d79ec2364be83c055213446f6c8599245d533"
+    }
+  },
+  "geometry": {
+    "window_vertices": [
+      832,
+      849,
+      362,
+      379
+    ],
+    "core_vertices": [
+      834,
+      847,
+      364,
+      377
+    ],
+    "collar_definition": "WINDOW minus CORE; two-node ring; exact EV90 consumer population"
+  },
+  "population": {
+    "domain_variables": 85,
+    "stencils_total": 350,
+    "collar_stencils": 107,
+    "collar_hinges_by_kind": {
+      "diag": 112,
+      "vertical": 108,
+      "horizontal": 108
+    },
+    "collar_angle_masks_crosschecked_against_EV87": {
+      "diag": 112,
+      "vertical": 108,
+      "horizontal": 108
+    }
+  },
+  "guard": {
+    "stencil_guard_count": 43,
+    "hinge_guard_count": 43,
+    "overlap_count": 43,
+    "union_count": 43,
+    "remaining_free_count": 42,
+    "guard_rc": [
+      [
+        834,
+        367
+      ],
+      [
+        834,
+        368
+      ],
+      [
+        834,
+        369
+      ],
+      [
+        834,
+        370
+      ],
+      [
+        834,
+        371
+      ],
+      [
+        834,
+        372
+      ],
+      [
+        834,
+        373
+      ],
+      [
+        834,
+        374
+      ],
+      [
+        834,
+        375
+      ],
+      [
+        834,
+        376
+      ],
+      [
+        835,
+        368
+      ],
+      [
+        835,
+        369
+      ],
+      [
+        835,
+        370
+      ],
+      [
+        835,
+        371
+      ],
+      [
+        835,
+        372
+      ],
+      [
+        835,
+        373
+      ],
+      [
+        835,
+        374
+      ],
+      [
+        835,
+        375
+      ],
+      [
+        835,
+        376
+      ],
+      [
+        836,
+        375
+      ],
+      [
+        836,
+        376
+      ],
+      [
+        837,
+        375
+      ],
+      [
+        837,
+        376
+      ],
+      [
+        838,
+        375
+      ],
+      [
+        838,
+        376
+      ],
+      [
+        839,
+        375
+      ],
+      [
+        839,
+        376
+      ],
+      [
+        840,
+        375
+      ],
+      [
+        840,
+        376
+      ],
+      [
+        841,
+        375
+      ],
+      [
+        841,
+        376
+      ],
+      [
+        842,
+        375
+      ],
+      [
+        842,
+        376
+      ],
+      [
+        843,
+        375
+      ],
+      [
+        843,
+        376
+      ],
+      [
+        844,
+        375
+      ],
+      [
+        844,
+        376
+      ],
+      [
+        845,
+        374
+      ],
+      [
+        845,
+        375
+      ],
+      [
+        845,
+        376
+      ],
+      [
+        846,
+        374
+      ],
+      [
+        846,
+        375
+      ],
+      [
+        846,
+        376
+      ]
+    ],
+    "remaining_rc": [
+      [
+        836,
+        368
+      ],
+      [
+        836,
+        369
+      ],
+      [
+        836,
+        370
+      ],
+      [
+        836,
+        371
+      ],
+      [
+        836,
+        372
+      ],
+      [
+        836,
+        373
+      ],
+      [
+        836,
+        374
+      ],
+      [
+        837,
+        368
+      ],
+      [
+        837,
+        369
+      ],
+      [
+        837,
+        370
+      ],
+      [
+        837,
+        371
+      ],
+      [
+        837,
+        372
+      ],
+      [
+        837,
+        373
+      ],
+      [
+        837,
+        374
+      ],
+      [
+        838,
+        370
+      ],
+      [
+        838,
+        371
+      ],
+      [
+        838,
+        372
+      ],
+      [
+        838,
+        373
+      ],
+      [
+        838,
+        374
+      ],
+      [
+        839,
+        370
+      ],
+      [
+        839,
+        371
+      ],
+      [
+        839,
+        372
+      ],
+      [
+        839,
+        373
+      ],
+      [
+        839,
+        374
+      ],
+      [
+        840,
+        370
+      ],
+      [
+        840,
+        371
+      ],
+      [
+        840,
+        372
+      ],
+      [
+        840,
+        373
+      ],
+      [
+        840,
+        374
+      ],
+      [
+        841,
+        370
+      ],
+      [
+        841,
+        371
+      ],
+      [
+        841,
+        372
+      ],
+      [
+        841,
+        373
+      ],
+      [
+        841,
+        374
+      ],
+      [
+        842,
+        371
+      ],
+      [
+        842,
+        372
+      ],
+      [
+        842,
+        373
+      ],
+      [
+        842,
+        374
+      ],
+      [
+        843,
+        373
+      ],
+      [
+        843,
+        374
+      ],
+      [
+        844,
+        373
+      ],
+      [
+        844,
+        374
+      ]
+    ],
+    "remaining_bounds_rc": [
+      836,
+      844,
+      368,
+      374
+    ],
+    "actual_shared_edge_collar_touch_counts": {
+      "diag": 112,
+      "vertical": 84,
+      "horizontal": 84
+    },
+    "edge_endpoint_touch_dependency_guard_count": 24,
+    "consumer_mask_extra_dependency_guard_count": 19,
+    "all_edge_touch_dependencies_already_in_stencil_guard": true,
+    "conservatism_note": "The guard follows the existing EV90 gate mask: a hinge is measured if any of its four triangle vertices is in collar, then all four vertices are frozen if mutable. This can exceed literal shared-edge endpoint contact, but preserves every measured normal, not only the maximum."
+  },
+  "core9_utility": {
+    "definition": "9x9 centered on (840,370): rows 836..844 and cols 366..374 inclusive",
+    "variable_count": 42,
+    "guard_count": 0,
+    "remaining_free_count": 42,
+    "remaining_free_rc": [
+      [
+        836,
+        368
+      ],
+      [
+        836,
+        369
+      ],
+      [
+        836,
+        370
+      ],
+      [
+        836,
+        371
+      ],
+      [
+        836,
+        372
+      ],
+      [
+        836,
+        373
+      ],
+      [
+        836,
+        374
+      ],
+      [
+        837,
+        368
+      ],
+      [
+        837,
+        369
+      ],
+      [
+        837,
+        370
+      ],
+      [
+        837,
+        371
+      ],
+      [
+        837,
+        372
+      ],
+      [
+        837,
+        373
+      ],
+      [
+        837,
+        374
+      ],
+      [
+        838,
+        370
+      ],
+      [
+        838,
+        371
+      ],
+      [
+        838,
+        372
+      ],
+      [
+        838,
+        373
+      ],
+      [
+        838,
+        374
+      ],
+      [
+        839,
+        370
+      ],
+      [
+        839,
+        371
+      ],
+      [
+        839,
+        372
+      ],
+      [
+        839,
+        373
+      ],
+      [
+        839,
+        374
+      ],
+      [
+        840,
+        370
+      ],
+      [
+        840,
+        371
+      ],
+      [
+        840,
+        372
+      ],
+      [
+        840,
+        373
+      ],
+      [
+        840,
+        374
+      ],
+      [
+        841,
+        370
+      ],
+      [
+        841,
+        371
+      ],
+      [
+        841,
+        372
+      ],
+      [
+        841,
+        373
+      ],
+      [
+        841,
+        374
+      ],
+      [
+        842,
+        371
+      ],
+      [
+        842,
+        372
+      ],
+      [
+        842,
+        373
+      ],
+      [
+        842,
+        374
+      ],
+      [
+        843,
+        373
+      ],
+      [
+        843,
+        374
+      ],
+      [
+        844,
+        373
+      ],
+      [
+        844,
+        374
+      ]
+    ]
+  },
+  "structural_invariance_fixture": {
+    "kind": "diagnostic perturbation of every remaining variable by +0.03125m, no bounds/product claim",
+    "collar_energy_B": 1.031951483568104,
+    "collar_energy_test": 1.031951483568104,
+    "energy_bitwise_equal": true,
+    "collar_hinge_arrays_bitwise_equal_by_kind": {
+      "diag": true,
+      "vertical": true,
+      "horizontal": true
+    },
+    "all_measured_hinges_included": 328
+  },
+  "focus_feasibility": {
+    "focus_rc": [
+      840,
+      370
+    ],
+    "focus_free_after_guard": true,
+    "B_height_m": 3.73610520362854,
+    "float32_inward_interval_after_guard_m": [
+      1.8115131855010986,
+      4.236104965209961
+    ],
+    "axes": {
+      "east_west": {
+        "neighbors_rc": [
+          [
+            840,
+            369
+          ],
+          [
+            840,
+            371
+          ]
+        ],
+        "B_neighbor_heights_m": [
+          0.9016730189323425,
+          1.9038037061691284
+        ],
+        "neighbor_intervals_after_guard_m": [
+          [
+            0.9016730189323425,
+            0.9016730189323425
+          ],
+          [
+            1.8000000715255737,
+            2.403803586959839
+          ]
+        ],
+        "B_prominence_m": 1.8323014974594116,
+        "max_focus_height_for_25pct_m": 3.278029829263687,
+        "box_feasible": true
+      },
+      "north_south": {
+        "neighbors_rc": [
+          [
+            839,
+            370
+          ],
+          [
+            841,
+            370
+          ]
+        ],
+        "B_neighbor_heights_m": [
+          1.9488170146942139,
+          1.4405503273010254
+        ],
+        "neighbor_intervals_after_guard_m": [
+          [
+            1.8000000715255737,
+            2.448817014694214
+          ],
+          [
+            1.4405503273010254,
+            1.6545305252075195
+          ]
+        ],
+        "B_prominence_m": 1.7872881889343262,
+        "max_focus_height_for_25pct_m": 3.2892831563949585,
+        "box_feasible": true
+      }
+    },
+    "focus_descent_witness_rc": [
+      841,
+      369
+    ],
+    "focus_descent_witness_B_m": 0.6567512154579163,
+    "required_lower_from_focus_bound_and_witness_m": 1.8115131855010986,
+    "common_upper_for_both_25pct_targets_m": 3.278029829263687,
+    "focus_only_float32_witness_m": 3.278029680252075,
+    "focus_only_box_witness_feasible": true,
+    "all_EV91_linear_descent_witness_rows_pass": true,
+    "baseline_variables_within_float32_bounds": true,
+    "focus_only_shape_contract_gates": {
+      "focus_positive_prominence_reduced_25pct_both_axes": true,
+      "fixed_population_max_prominence_nonworse_both_axes": true,
+      "fixed_population_sum_squares_prominence_nonworse_both_axes": true,
+      "no_new_strict_minima8": true,
+      "no_new_exactly_constant_2x2_windows": true
+    },
+    "focus_incident_max_hinge_deg_B": 29.999999051747967,
+    "focus_incident_max_hinge_deg_focus_only": 24.523676598861304,
+    "focus_hinge_reduction_deg_focus_only": 5.476322452886663,
+    "focus_hinge_reduction_2deg_gate_focus_only": true,
+    "interpretation": "With every other vertex at B and only focus changed to this float32 value, the two cardinal prominences meet the 25% target and the existing selected descent witness remains satisfied. This is a local box/testigo witness. The focus angle is measured only with the EV90 radius-2 metric; this is not the full EV91 optimization or full consumer evaluation."
+  },
+  "limitations": [
+    "No SLSQP/BVLS/LP was called; no terrain or candidate was written.",
+    "The focus-only scalar witness checks all EV91 linear descent rows, all WINDOW shape predicates, and the radius-2 focus hinge gate; it does not solve the EV91 energy objective or evaluate global sectors, p99, corridor, or compiled representation as a candidate.",
+    "The guard proves unchanged values only for the fixed EV90 collar stencil and hinge populations; it does not guarantee all other EV90 gates.",
+    "The scalar witness reports local focus-angle and WINDOW shape predicates, but does not evaluate global sectors, p99, corridor, or compiled representation as a candidate.",
+    "Existing gate population is preserved in full (350 stencils and all 328 collar hinges); no post-hoc population shrink."
+  ],
+  "script_sha256": "f493d83187749867741fad09476643535974922655d853d6782dc1a40e44b04b"
+}

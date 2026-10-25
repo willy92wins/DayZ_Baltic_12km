@@ -1,0 +1,16 @@
+Revisión independiente Anthropic, SOLO LECTURA. No editar, delegar, usar red, MCP ni procesos. Herramientas Read/Grep/Glob. Devolver informe en la respuesta; el padre lo guarda. Host Windows, sin bindfs. No leer vault, memoria, credenciales, binarios ni datos fuera de los archivos siguientes.
+
+Encargo G7: revisar ae77c9f y la propuesta de restricción de margen vertical. Codex ejecuta y contrastará cada hallazgo. Ruta prevista: Claude CLI 2.1.285 --safe-mode, modelo por defecto de suscripción, sin MCP ni persistencia; requiere autorización del usuario tras bloqueo del auto-review por envío al proveedor.
+
+Únicos archivos autorizados para lectura:
+evidence/v30-luga-navigation-2026-10-07/README.md
+tools/terrain/limit_shore_faces_v30.py
+evidence/v30-luga-navigation-2026-10-07/check_scope.py
+evidence/v30-bounded-integration-2026-10-08/plan.md
+Por símbolo: tools/terrain/v30_common.py (tri_sample, cell_planes), tools/terrain/profile_inland_v30.py (profile), tools/terrain/finish_shores_v30.py (discard_steeper_land_faces), evidence/v30-smoothing-pilot-2026-10-07/scripts/pilot_luga.py y check_luga.py. Perfiles de5375/6730: evidence/v30-luga-navigation-2026-10-07/holdout-diagnosis.json, sin volcar miles de números en el informe.
+
+Historia: sigma18-vector mejora zigzag pero pierde dos cruces dentro de±8m. Guard genérico de celdas con otras clases corrige ambos. Intercalado independiente descubre otros dos nuevos cruces fuera de8m, en contacto con lecho congelado y en una curva. Normales con tangentes de estaciones cada2m pueden ser oblicuas a la orilla efectiva. Distancia sobre normal no equivale a traslación perpendicular. Diseño, geometría y estaciones siguen congelados.
+
+Preguntas: tabla familia×ronda y CONVERGE/NO CONVERGE antes de otro parche. ¿Falla el diseño o la observabilidad? Propuesta DESIGN: delta por vértice limitado a la mitad de su mínima distancia vertical original a cualquier plano incidente, luego protección de caras secas. No lee las estaciones ni altera tolerancias. ¿Es razonable como candidato conservador único, qué NO garantiza y qué contraejemplo lo invalida? ¿Hay falso PASS concreto en el gate actual? Citar path:line y repro ejecutable para un bloqueante; no aprobar sin datos ni pedir rondas infinitas.
+
+Entregable conciso en español con veredicto, tabla familia/ronda, hallazgos reproducibles y límites. No escribir archivos.

@@ -1,0 +1,176 @@
+{
+  "counts": {
+    "F_contact_cells": 2116,
+    "F_partial_cells": 0,
+    "P_contact_cells": 2116,
+    "blocked_vertices_in_window": 11042,
+    "cell_reason_cells": {
+      "F_surface_native_triangle_crossing_or_contact": 2116,
+      "F_triangle_partially_unknown": 0,
+      "P_surface_native_triangle_crossing_or_contact": 2116,
+      "compiled_physical_face_xz_intersection": 10121,
+      "compiled_visible_face_xz_intersection": 10121,
+      "degenerate_physical_face_conservative_bbox_freeze": 0,
+      "degenerate_visible_face_conservative_bbox_freeze": 0
+    },
+    "degenerate_candidate_cells_frozen": {
+      "physical": 0,
+      "visible": 0
+    },
+    "degenerate_faces_bbox_frozen": {
+      "physical": 0,
+      "visible": 0
+    },
+    "face_cell_hits_including_kind_counts": {
+      "physical": 79346,
+      "visible": 150723
+    },
+    "fully_finite_same_sign_P_or_F_cells_not_frozen_by_finiteness_alone": true,
+    "fully_unknown_F_cells_not_frozen_by_unknown_alone": true,
+    "incident_cell_window_shape": [
+      257,
+      257
+    ],
+    "incident_cells_with_any_reason": 10121,
+    "vertex_window_shape": [
+      256,
+      256
+    ]
+  },
+  "exclusions_from_this_mask": [
+    "P9 corridor unknown cells remain governed by the existing P9 protection mask, not recreated here",
+    "SEA floor is a height-bound contract, not a shoreline/contact mask in this artifact",
+    "no water surface is declared safe, dry, or visually correct"
+  ],
+  "grid": {
+    "N": 2048,
+    "Z0_m": 12282.0,
+    "boundary_touch": "topological intersection freezes both incident cells",
+    "cell_m": 6.0,
+    "degenerate_face": "freeze all in-window cells from its validated inclusive bbox; off-map all-minus-one sentinel has no in-window support",
+    "native_corner_order": [
+      "NW",
+      "NE",
+      "SW",
+      "SE"
+    ],
+    "native_triangles": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ]
+    ]
+  },
+  "incident_cell_rc_inclusive": [
+    711,
+    967,
+    241,
+    497
+  ],
+  "index_load": {
+    "approx_arrays_resident_bytes": 118363272,
+    "approximation_note": "sum of row-aligned NumPy array bytes only; excludes Python/allocator overhead and the query result copy",
+    "candidate_face_records": 50155,
+    "complete_face_count": 883308,
+    "loads": 1,
+    "manifest_sha256": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "phase_seconds": {
+      "complete_index_load_once": 0.4462243000161834,
+      "exact_xz_triangle_clipping_and_PF_mask": 11.62676030001603,
+      "index_reverify_and_input_readset": 0.2370084000285715,
+      "single_halo_query": 0.012067399977240711,
+      "source_arrays_and_helpers_read": 0.5936384000233375,
+      "total_before_output_write": 12.915712999994867
+    },
+    "queries": 1,
+    "query_window_inclusive": [
+      711,
+      967,
+      241,
+      497
+    ]
+  },
+  "mask_artifact": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\water-run-01\\water-support-mask.npz",
+    "sha256": "6ce282962602557636bafac40b604caa3001a95234551db1beee67975dcd1edf"
+  },
+  "pins_end": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\PLAN_REAL_SECTOR.md": "14f02179312bc25caf76a087cc873122caed30f6092464f1c01ac7572d519749",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\review-independent\\runs\\attempt-01\\verification.json": "b498e7d68835b199399655451e5e01ac81acb3149dbb9bf882b94858141521d4",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"
+  },
+  "pins_start": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\PLAN_REAL_SECTOR.md": "14f02179312bc25caf76a087cc873122caed30f6092464f1c01ac7572d519749",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\review-independent\\runs\\attempt-01\\verification.json": "b498e7d68835b199399655451e5e01ac81acb3149dbb9bf882b94858141521d4",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"
+  },
+  "reason_bits": {
+    "1": "compiled_physical_face_xz_intersection",
+    "16": "P_surface_native_triangle_crossing_or_contact",
+    "2": "compiled_visible_face_xz_intersection",
+    "32": "F_surface_native_triangle_crossing_or_contact",
+    "4": "degenerate_physical_face_conservative_bbox_freeze",
+    "64": "F_triangle_partially_unknown",
+    "8": "degenerate_visible_face_conservative_bbox_freeze"
+  },
+  "reused_real_direct_vs_index_smoke": [
+    {
+      "cell_rc": [
+        832,
+        362
+      ],
+      "physical_direct_vs_index_symdiff_m2": 0.0,
+      "provenance": "reused from pinned EV93 verification; not rerun in this mask task",
+      "visible_direct_vs_index_symdiff_m2": 0.0
+    },
+    {
+      "cell_rc": [
+        840,
+        362
+      ],
+      "physical_direct_vs_index_symdiff_m2": 0.0,
+      "provenance": "reused from pinned EV93 verification; not rerun in this mask task",
+      "visible_direct_vs_index_symdiff_m2": 0.0
+    },
+    {
+      "cell_rc": [
+        847,
+        362
+      ],
+      "physical_direct_vs_index_symdiff_m2": 0.0,
+      "provenance": "reused from pinned EV93 verification; not rerun in this mask task",
+      "visible_direct_vs_index_symdiff_m2": 0.0
+    }
+  ],
+  "scope": "compiled physical/visible XZ support + P/F crossing/contact/partial cells; no seed/solver/candidate/map verdict",
+  "smoke_source": {
+    "meaning": "existing verified three-cell direct ODOL-vs-index exposure evidence; not rerun here",
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\review-independent\\runs\\attempt-01\\verification.json",
+    "sha256": "b498e7d68835b199399655451e5e01ac81acb3149dbb9bf882b94858141521d4"
+  },
+  "source_sha256_end": "9f5f9952aaa23f5d673ec4c8375a2cc0d0759e0634d3093a08e23c50437728f1",
+  "source_sha256_start": "9f5f9952aaa23f5d673ec4c8375a2cc0d0759e0634d3093a08e23c50437728f1",
+  "status": "WATERSUPPORT_MASK_ONLY",
+  "window_vertex_rc_half_open": [
+    712,
+    968,
+    242,
+    498
+  ]
+}

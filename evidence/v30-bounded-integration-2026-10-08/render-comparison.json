@@ -1,0 +1,217 @@
+{
+  "status": "PASS_MATCHED_VIEWS_AND_HEIGHT_READBACK",
+  "checks": {
+    "near_camera_exact": true,
+    "near_viewport_exact": true,
+    "medium_camera_exact": true,
+    "medium_viewport_exact": true,
+    "far_camera_exact": true,
+    "far_viewport_exact": true,
+    "time_same_noon": true,
+    "height_6060_exact": true,
+    "height_6060_rejects_stale_v12": true,
+    "height_6324_exact": true,
+    "height_6324_rejects_stale_v12": true,
+    "height_9492_exact": true,
+    "height_9492_rejects_stale_v12": true,
+    "remote_camera_exact": true
+  },
+  "samples": [
+    {
+      "x": 6060,
+      "z": 8346,
+      "expected": 58.361595153808594,
+      "engine": 58.361595153808594,
+      "v12": 59.361595153808594
+    },
+    {
+      "x": 6324,
+      "z": 8190,
+      "expected": 17.653690338134766,
+      "engine": 17.653690338134766,
+      "v12": 16.663990020751953
+    },
+    {
+      "x": 9492,
+      "z": 2076,
+      "expected": 3.6440885066986084,
+      "engine": 3.6440885066986084,
+      "v12": 4.138176918029785
+    }
+  ],
+  "focus": {
+    "v12-corrected": {
+      "samples": 136,
+      "window_samples": 121,
+      "focused_samples": 121,
+      "minimized_samples": 0,
+      "observed_pids": [
+        "18228"
+      ],
+      "start_utc": "2026-10-08T02:07:07.2524392Z",
+      "end_utc": "2026-10-08T02:09:56.6826656Z",
+      "max_sample_gap_s": 2.7422142,
+      "sha256": "e4948fb473a921854c35123249150115a5b5e3915652136af02d556b6c0402a1"
+    },
+    "combined": {
+      "samples": 224,
+      "window_samples": 208,
+      "focused_samples": 208,
+      "minimized_samples": 0,
+      "observed_pids": [
+        "47784"
+      ],
+      "start_utc": "2026-10-08T02:10:52.1985710Z",
+      "end_utc": "2026-10-08T02:15:33.4312719Z",
+      "max_sample_gap_s": 1.3581645,
+      "sha256": "cf3d5965b57d1876a6c06b377ba4f79e9c14cf093c8ba367ee95a6ab27e537f0"
+    }
+  },
+  "views": {
+    "near": {
+      "target_distance_m": 70.8802,
+      "roi_pixels": [
+        640,
+        848,
+        1152,
+        1040
+      ],
+      "captures": {
+        "V12": {
+          "full_frame": {
+            "file": "E:\\DayZ-Baltic-Build\\v30-bounded-integration-20261008\\render-v12-near\\capture_20261008_040803_127.jpg",
+            "blocks": 4440,
+            "flat_dark_share": 0.0,
+            "flat_dark_bluish_share": 0.0,
+            "lower_mean_lum": 64.2
+          },
+          "dry_roi": {
+            "file": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-bounded-integration-2026-10-08\\figures\\near-0-land-roi.png",
+            "blocks": 384,
+            "flat_dark_share": 0.0,
+            "flat_dark_bluish_share": 0.0,
+            "lower_mean_lum": 57.9
+          },
+          "file_sha256": "7a389d817ecb8620f72125fe75a8f94c5a297953412bc3c7c90fc5776e182434"
+        },
+        "Preview combinada": {
+          "full_frame": {
+            "file": "E:\\DayZ-Baltic-Build\\v30-bounded-integration-20261008\\render-combined-near\\capture_20261008_041155_337.jpg",
+            "blocks": 4440,
+            "flat_dark_share": 0.0,
+            "flat_dark_bluish_share": 0.0,
+            "lower_mean_lum": 64.5
+          },
+          "dry_roi": {
+            "file": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-bounded-integration-2026-10-08\\figures\\near-1-land-roi.png",
+            "blocks": 384,
+            "flat_dark_share": 0.0,
+            "flat_dark_bluish_share": 0.0,
+            "lower_mean_lum": 58.0
+          },
+          "file_sha256": "5c9c79fff660f70c50c65976e3adb13656c63988951047fa14e003db34a6a674"
+        }
+      }
+    },
+    "medium": {
+      "target_distance_m": 283.5207,
+      "roi_pixels": [
+        640,
+        848,
+        1152,
+        1040
+      ],
+      "captures": {
+        "V12": {
+          "full_frame": {
+            "file": "E:\\DayZ-Baltic-Build\\v30-bounded-integration-20261008\\render-v12-medium\\capture_20261008_040835_099.jpg",
+            "blocks": 4440,
+            "flat_dark_share": 0.0124,
+            "flat_dark_bluish_share": 0.0124,
+            "lower_mean_lum": 91.7
+          },
+          "dry_roi": {
+            "file": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-bounded-integration-2026-10-08\\figures\\medium-0-land-roi.png",
+            "blocks": 384,
+            "flat_dark_share": 0.0,
+            "flat_dark_bluish_share": 0.0,
+            "lower_mean_lum": 84.1
+          },
+          "file_sha256": "a513b2a2cb8ca2af82a88ebe47c50ca52619e2b7b9e976608f7f05b1f50f0424"
+        },
+        "Preview combinada": {
+          "full_frame": {
+            "file": "E:\\DayZ-Baltic-Build\\v30-bounded-integration-20261008\\render-combined-medium\\capture_20261008_041231_105.jpg",
+            "blocks": 4440,
+            "flat_dark_share": 0.0113,
+            "flat_dark_bluish_share": 0.0113,
+            "lower_mean_lum": 91.7
+          },
+          "dry_roi": {
+            "file": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-bounded-integration-2026-10-08\\figures\\medium-1-land-roi.png",
+            "blocks": 384,
+            "flat_dark_share": 0.0,
+            "flat_dark_bluish_share": 0.0,
+            "lower_mean_lum": 84.2
+          },
+          "file_sha256": "e5444f046cc04a6cdce861737df72b19368134628546204a838451c0e7d3d36f"
+        }
+      }
+    },
+    "far": {
+      "target_distance_m": 1134.0828,
+      "roi_pixels": [
+        640,
+        848,
+        1152,
+        1040
+      ],
+      "captures": {
+        "V12": {
+          "full_frame": {
+            "file": "E:\\DayZ-Baltic-Build\\v30-bounded-integration-20261008\\render-v12-far\\capture_20261008_040914_248.jpg",
+            "blocks": 4440,
+            "flat_dark_share": 0.2622,
+            "flat_dark_bluish_share": 0.2606,
+            "lower_mean_lum": 117.2
+          },
+          "dry_roi": {
+            "file": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-bounded-integration-2026-10-08\\figures\\far-0-land-roi.png",
+            "blocks": 384,
+            "flat_dark_share": 0.2396,
+            "flat_dark_bluish_share": 0.2396,
+            "lower_mean_lum": 87.5
+          },
+          "file_sha256": "f7f271f9d9a1241988cfcad1e5a69f475b6be74336e3e80f86d31d262ebc2878"
+        },
+        "Preview combinada": {
+          "full_frame": {
+            "file": "E:\\DayZ-Baltic-Build\\v30-bounded-integration-20261008\\render-combined-far\\capture_20261008_041311_937.jpg",
+            "blocks": 4440,
+            "flat_dark_share": 0.2651,
+            "flat_dark_bluish_share": 0.2635,
+            "lower_mean_lum": 117.3
+          },
+          "dry_roi": {
+            "file": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-bounded-integration-2026-10-08\\figures\\far-1-land-roi.png",
+            "blocks": 384,
+            "flat_dark_share": 0.237,
+            "flat_dark_bluish_share": 0.237,
+            "lower_mean_lum": 87.5
+          },
+          "file_sha256": "5a9dfbdf9630478006e0e366df88a28a272178a45374abc613a015e6890ef6ea"
+        }
+      }
+    }
+  },
+  "requested_fov_radians": 1.1955505,
+  "texture_acceptance": "INCONCLUSIVE_LONG_DISTANCE: far dry ROI exceeds the unchanged historical 0.2 metric in both packages; no threshold adjustment.",
+  "visible_result": "Textured dry terrain at all three distances in both packages and at the remote Luga view before/after player teleport.",
+  "limits": [
+    "FOV request equal; camera_get does not expose native FOV.",
+    "Foreground comparison is not a causal active/inactive focus experiment.",
+    "Texture metrics are diagnostics on observed land ROIs, not whole-map acceptance.",
+    "Surface query at underwater x10290,z3918 returned fresh_water_ext y3.15; excluded from terrain-height proof.",
+    "No claim that the intermittent grey-tile issue is fixed."
+  ]
+}

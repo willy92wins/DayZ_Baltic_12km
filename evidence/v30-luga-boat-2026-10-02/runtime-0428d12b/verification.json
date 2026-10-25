@@ -1,0 +1,93 @@
+{
+  "status": "FAIL_OR_INCOMPLETE",
+  "global_checks": {
+    "header": true,
+    "all_cases_complete": true,
+    "exact_cases": true,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 4,
+      "river": "Luga",
+      "reverse": false,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 553,
+      "max_dt_s": 0.7019999999999982,
+      "max_step_m": 1.0140898858949157,
+      "max_corridor_distance_m": 2.7265531401359335,
+      "max_waypoint_distance_m": 1.6187154072978789,
+      "end_distance_m": 2.7265531401359335,
+      "max_ground_error_m": 0.0001433513409856424,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 248.42100000000002
+    },
+    {
+      "case": 5,
+      "river": "Luga",
+      "reverse": true,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": false,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 529,
+      "max_dt_s": 0.929000000000002,
+      "max_step_m": 1.0248715886711983,
+      "max_corridor_distance_m": 2.6862062015947,
+      "max_waypoint_distance_m": 1.6024929561123429,
+      "end_distance_m": 2.624820191224555,
+      "max_ground_error_m": 0.00014077267237144753,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 180.863
+    }
+  ],
+  "limits": [
+    "Two isolated trips of original cases4/5; same routes and criteria; initial failed recording retained.",
+    "No causal proof of resource contention, no whole river, medium vessel, crew, fleet, AI or load acceptance."
+  ],
+  "reference_sha256": "df205b7ad5ecd068e4601a31962d3cbd69314afa6213856280b42a4dbab8d8a4",
+  "log_sha256": "562b12dcdaa5789d9876e62006d530a407ceb91dfce822358e2fd82dd32a8783",
+  "terrain_sha256": "64d4f160b963c28b519a50c9c29564dbe9727facabf7b52d83970eef5b8e6eb4"
+}

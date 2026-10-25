@@ -1,0 +1,204 @@
+{
+ "status": "BUILT_PENDING_GATES_AND_ENGINE_VIEWS",
+ "params": {
+  "slope": 0.15,
+  "band": 12.0,
+  "sigma": 12.0,
+  "max_shift": 4.0,
+  "min_vertices": 4,
+  "max_raise": 2.0,
+  "max_lower": 1.5,
+  "bed_floor": 1.0,
+  "bed_min_depth": 0.3,
+  "narva_radius": 620.0
+ },
+ "bodies": {
+  "labelled": 624,
+  "profiled": 623,
+  "skipped_small": 0,
+  "skipped_at_or_below_plane_cut": 1,
+  "skipped_no_outline": 0,
+  "claimed_twice_vertices": 7448
+ },
+ "vertices": {
+  "band": 87120,
+  "editable": 69491,
+  "forced": 40899,
+  "changed": 325215,
+  "to_water": 0,
+  "to_land": 0,
+  "forced_at_move_cap": 54,
+  "bed_raised": 285515,
+  "face_recovery": {
+   "iterations": 4,
+   "reverted_vertices": 98
+  }
+ },
+ "crossing_offset_m_vs_smoothed_outline": {
+  "before": {
+   "edges": 54957,
+   "no_crossing": 0,
+   "p50": 0.802,
+   "p90": 2.569,
+   "p99": 4.632
+  },
+  "after": {
+   "edges": 54957,
+   "no_crossing": 0,
+   "p50": 0.0,
+   "p90": 1.213,
+   "p99": 3.988
+  }
+ },
+ "waterline_turn_deg_per_12m": {
+  "before": {
+   "n": 11059,
+   "p50": 14.7,
+   "p90": 76.0,
+   "p95": 99.3
+  },
+  "after": {
+   "n": 10732,
+   "p50": 18.4,
+   "p90": 75.4,
+   "p95": 98.4
+  },
+  "note": "turn per 12 m grows where a staircase becomes a curve; read the crossing offsets for the fit to the outline"
+ },
+ "gates": {
+  "before": {
+   "water_depth": 6,
+   "banks": 0,
+   "land_floor": 0,
+   "beach_floor": 0
+  },
+  "after": {
+   "water_depth": 6,
+   "banks": 0,
+   "land_floor": 0,
+   "beach_floor": 0
+  }
+ },
+ "standing_bed_below_0p85": {
+  "before": 287813,
+  "after": 3167
+ },
+ "largest_bodies": [
+  {
+   "id": 288,
+   "level_m": 2.64,
+   "cls": 2,
+   "vertices": 128410,
+   "forced": 4781,
+   "changed": 4842,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 106,
+   "level_m": 1.43,
+   "cls": 2,
+   "vertices": 93699,
+   "forced": 2098,
+   "changed": 2098,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 202,
+   "level_m": 2.13,
+   "cls": 2,
+   "vertices": 54411,
+   "forced": 2335,
+   "changed": 2374,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 259,
+   "level_m": 2.46,
+   "cls": 2,
+   "vertices": 3205,
+   "forced": 1092,
+   "changed": 1097,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 554,
+   "level_m": 4.58,
+   "cls": 2,
+   "vertices": 2779,
+   "forced": 442,
+   "changed": 463,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 492,
+   "level_m": 3.8,
+   "cls": 2,
+   "vertices": 2577,
+   "forced": 0,
+   "changed": 0,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 510,
+   "level_m": 3.99,
+   "cls": 2,
+   "vertices": 1032,
+   "forced": 589,
+   "changed": 611,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 258,
+   "level_m": 2.46,
+   "cls": 2,
+   "vertices": 1025,
+   "forced": 901,
+   "changed": 904,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 479,
+   "level_m": 3.63,
+   "cls": 2,
+   "vertices": 998,
+   "forced": 498,
+   "changed": 513,
+   "to_water": 0,
+   "to_land": 0
+  },
+  {
+   "id": 403,
+   "level_m": 3.11,
+   "cls": 2,
+   "vertices": 997,
+   "forced": 576,
+   "changed": 587,
+   "to_water": 0,
+   "to_land": 0
+  }
+ ],
+ "change_m": {
+  "raise_max": 7.57,
+  "lower_max": 1.5
+ },
+ "protected_corridors": 23,
+ "inputs": {
+  "E:\\DayZ-Baltic-Build\\v30-v6\\causeway\\terrain_causeway.npz": "e07ee373a1fc7c917b3efd6691b6038feefeb3d0ec4f820436a4ed88bda9c449",
+  "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_outline_v1\\reference.npz": "10bd6d9c9b944e2964d72055301101a7014c5bb09ff3ddc298a15897bab5c915",
+  "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\profile_lakes_v30.py": "ae325a1dbd6d9427e84b9b69573de52fea63d5db30de421efd41959a02a496b3"
+ },
+ "output_sha256": "ee048e5a2f300b1f9ff48c0cace848c350367199cbed9a33dc4983b93ecfdbb3",
+ "seconds": 39.2,
+ "limits": [
+  "Standing bodies above the 0.80 m plane cut; contacts, flowing water and the sea untouched.",
+  "Water tiles must be patched for the changed cells; gates and engine views decide acceptance."
+ ]
+}

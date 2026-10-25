@@ -1,0 +1,36 @@
+{
+  "status": "PASS_REDUNDANT_METADATA_NORMALIZED",
+  "config_before_sha256": "adc7e1115debfae0a8e499fd7859e73c603f152dabf866c1c6fdca17d2dbdcbe",
+  "config_after_sha256": "90d4f214a78d7e109e249b9aadfe3d7651f19ca4e75f11f749512b097b3ce278",
+  "source": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_MCP_dev\\tools\\dayz_mcp\\host_config.py",
+  "source_sha256": "3da419723beb76d8d710b7f8b0eb688586e3e0caa463f3c5cd79aa55514ea28b",
+  "failing_guard": {
+    "code": "daemon_provenance_conflict",
+    "frames": [
+      {
+        "file": "repair_enabled_metadata.py",
+        "line": 20,
+        "function": "<module>"
+      },
+      {
+        "file": "host_config.py",
+        "line": 255,
+        "function": "_registration_from_entry"
+      }
+    ]
+  },
+  "counterfactual_registration_equal": true,
+  "changed_setting": "Removed explicit enabled=true from mcp_servers.dayz-mcp only",
+  "codex_effective_config_exact": true,
+  "codex_effective_enabled": true,
+  "daemon_provenance": "PASS_CANONICAL_REGISTRATIONS_AGREE",
+  "port": 8765,
+  "credential_values_saved": false,
+  "server_source_changed": false,
+  "daemon_started": false,
+  "runtime_started": false,
+  "limits": [
+    "Does not reopen the Codex MCP client or prove tool publication.",
+    "Experimental dayz-mcp-130 registration is outside this repair."
+  ]
+}

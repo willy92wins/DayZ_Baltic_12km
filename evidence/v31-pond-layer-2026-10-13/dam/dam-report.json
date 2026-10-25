@@ -1,0 +1,363 @@
+{
+ "schema": "dam-v31.v1",
+ "inputs": {
+  "terrain": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/terrain-ev110.npz",
+  "terrain_sha256": "d25e9428ed39cebcef0c3b3885e23d8e397b67261846775ecdbc238fdde520e6",
+  "cover": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/kit/cover-ev108.npy",
+  "cover_sha256": "2f08075d87bd62bf2da50bcc4a331c1be401636ec81ec1a42fbab1f2803717ff",
+  "envelope": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/bridges/envelope-br.npy",
+  "envelope_sha256": "e23857cd237ed98c6d1e5306885a2d598c65b47962f15e9d10a7910a9f4d0dc7",
+  "sites": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev112-wip/dam/narva/sites-dam.json",
+  "sites_sha256": "3ab9bd9c350462ca4cb77e402b4155884f2f6bbea3bd5dffe2c281cc3dfb43f4"
+ },
+ "outputs": {
+  "terrain_sha256": "650ec438c8ecb3783f2d2db4926cba37b3de920e09010e8a4d93a14713f351ee",
+  "cover_sha256": "ca1cb059a95daf26d7de0701550dd4890e07028913bb601bb431efd617dcb7b4",
+  "envelope_sha256": "ae8d94df5ef4663beba3688c27250a89160c8456dd71d3ae058995280e3b2ef7",
+  "records_sha256": "270a9a04a76f99412b37043d028866b95db317fd2a316cb96100a207a914b050"
+ },
+ "model": {
+  "path": "dz\\structures\\industrial\\dams\\dam_stone_40.p3d",
+  "top": 4.076775074005127,
+  "notch": 2.4774351119995117,
+  "half_len": 20.02975082397461,
+  "vis_min": [
+   -20.02975082397461,
+   -4.076775550842285,
+   -2.0388801097869873
+  ],
+  "vis_max": [
+   20.02975082397461,
+   4.076775074005127,
+   2.0388801097869873
+  ]
+ },
+ "livonia": {
+  "seats": [
+   {
+    "x": 2160.92,
+    "z": 1366.35,
+    "origin_y": 467.799,
+    "end_exposure": [
+     -0.018,
+     -0.051,
+     -0.035,
+     -0.084,
+     -0.074,
+     0.111
+    ],
+    "bottom_clearance_min": 1.758,
+    "top_burial_max": 0.083,
+    "water_rel": 1.017
+   },
+   {
+    "x": 2099.47,
+    "z": 3557.79,
+    "origin_y": 309.241,
+    "end_exposure": [
+     0.231,
+     0.159,
+     0.117,
+     -0.788,
+     -0.574,
+     -0.339
+    ],
+    "bottom_clearance_min": 2.585,
+    "top_burial_max": 0.773,
+    "water_rel": 0.733
+   },
+   {
+    "x": 11411.71,
+    "z": 3679.62,
+    "origin_y": 251.369,
+    "end_exposure": [
+     -0.531,
+     -0.789,
+     -1.047,
+     -0.105,
+     -0.106,
+     -0.101
+    ],
+    "bottom_clearance_min": 0.107,
+    "top_burial_max": 1.017,
+    "water_rel": 0.907
+   },
+   {
+    "x": 4826.54,
+    "z": 5095.7,
+    "origin_y": 314.499,
+    "end_exposure": [
+     -1.314,
+     -1.408,
+     -1.52,
+     -0.353,
+     -0.525,
+     -0.351
+    ],
+    "bottom_clearance_min": 2.306,
+    "top_burial_max": 1.505,
+    "water_rel": 1.048
+   },
+   {
+    "x": 1135.58,
+    "z": 5163.33,
+    "origin_y": 245.667,
+    "end_exposure": [
+     -0.193,
+     -0.001,
+     0.19,
+     0.39,
+     0.236,
+     0.128
+    ],
+    "bottom_clearance_min": 2.049,
+    "top_burial_max": 0.17,
+    "water_rel": 1.022
+   },
+   {
+    "x": 8499.5,
+    "z": 5136.89,
+    "origin_y": 264.173,
+    "end_exposure": [
+     0.191,
+     -0.029,
+     -0.092,
+     -0.092,
+     -0.107,
+     -0.122
+    ],
+    "bottom_clearance_min": 0.449,
+    "top_burial_max": 0.12,
+    "water_rel": 0.948
+   },
+   {
+    "x": 10337.87,
+    "z": 6034.18,
+    "origin_y": 215.427,
+    "end_exposure": [
+     0.057,
+     0.04,
+     0.024,
+     0.314,
+     0.242,
+     0.189
+    ],
+    "bottom_clearance_min": 1.414,
+    "top_burial_max": -0.026,
+    "water_rel": 1.023
+   }
+  ],
+  "ranges": {
+   "end_exposure": [
+    -1.52,
+    0.39
+   ],
+   "bottom_clearance_min": [
+    0.107,
+    2.585
+   ],
+   "top_burial_max": [
+    -0.026,
+    1.505
+   ],
+   "water_rel": [
+    0.733,
+    1.048
+   ]
+  },
+  "water_rel_median": 1.017
+ },
+ "params": {
+  "EDGE_MARGIN": 0.05,
+  "PAD": 0.01,
+  "BURY_HALF": 1.0,
+  "ABUT_R": 18.0,
+  "ABUT_SLOPE": 0.7002075382097097,
+  "U_MAX": 6.0
+ },
+ "sites": [
+  {
+   "id": "narva-dam",
+   "bearing": 90.0,
+   "pieces": [
+    [
+     2408.0,
+     6942.0
+    ],
+    [
+     2448.0,
+     6942.0
+    ]
+   ],
+   "downstream": 1,
+   "level": 2.0250000953674316,
+   "water_rel": 1.017,
+   "origin_y": 1.008,
+   "roadway_top_y": 5.085,
+   "notch_y": 3.485,
+   "bottom_y": -3.069,
+   "chain_along": [
+    -40.03,
+    40.03
+   ],
+   "cut_cells": 33,
+   "cut_cover_cells": 33,
+   "cut_bbox_xz": [
+    2394.0,
+    2460.0,
+    6942.0,
+    6972.0
+   ],
+   "bury_vertices": [
+    [
+     2394,
+     6942,
+     1.0,
+     2.114
+    ],
+    [
+     2400,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2406,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2412,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2418,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2424,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2430,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2436,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2442,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2448,
+     6942,
+     1.0,
+     2.06
+    ],
+    [
+     2454,
+     6942,
+     1.063,
+     2.085
+    ]
+   ],
+   "unburied_border_vertices": [],
+   "abutment": {
+    "candidates": 67,
+    "rows": 662,
+    "total_raise": 22.678,
+    "target_y": 4.715,
+    "end_exposure_max": 0.39,
+    "vertices": [
+     [
+      2388,
+      6954,
+      -1.043,
+      1.026
+     ],
+     [
+      2382,
+      6948,
+      -0.5,
+      1.026
+     ],
+     [
+      2388,
+      6948,
+      -0.5,
+      3.997
+     ],
+     [
+      2394,
+      6948,
+      1.0,
+      1.026
+     ],
+     [
+      2466,
+      6948,
+      1.904,
+      4.455
+     ],
+     [
+      2388,
+      6942,
+      2.905,
+      5.085
+     ],
+     [
+      2394,
+      6942,
+      1.0,
+      2.114
+     ],
+     [
+      2466,
+      6942,
+      1.904,
+      5.085
+     ],
+     [
+      2472,
+      6942,
+      1.696,
+      4.617
+     ],
+     [
+      2388,
+      6936,
+      2.582,
+      3.997
+     ],
+     [
+      2472,
+      6936,
+      1.8,
+      4.033
+     ]
+    ]
+   },
+   "moved_vertices": 21,
+   "frozen_moved": 21,
+   "frozen_moved_narva": 21,
+   "max_raise": 4.497,
+   "sea_vertices_turned_dry": 3,
+   "budget": 21
+  }
+ ]
+}

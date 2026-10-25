@@ -1,0 +1,47 @@
+{
+ "terrain": "E:\\DayZ-Baltic-Build\\v30-bounded-integration-20261008\\combined\\terrain_inland.npz",
+ "sea_cut": 0.51,
+ "removed_cells": 682,
+ "reach_vertices": 907,
+ "water_depth_fail_outside_reaches": 0,
+ "pieces_fail_outside_removed_cells": {
+  "water_corner": 0,
+  "land_corner": 0
+ },
+ "reach_vertices_under_pieces": 802,
+ "reach_wet_depth_below_piece_m_min": 0.05,
+ "reach_wet_shallower_than_0_02_under_piece": 0,
+ "reach_land_below_piece_surface": 0,
+ "reach_wet_without_piece": 1,
+ "retained_pond_junctions": [
+  {
+   "row": 867,
+   "col": 368,
+   "x": 2208,
+   "z": 7080,
+   "ground_m": 1.349000096321106,
+   "pond_level_m": 1.4500000000000002,
+   "models": [
+    {
+     "model": "baltic_water_v30\\pilot_00001.p3d",
+     "sha256": "9b5bebd91ce4d3baca4cb8ad896fe1755cf5f6d55934996ced42a528e06ee044",
+     "level_m": 1.4500000000000002
+    },
+    {
+     "model": "baltic_water_v30\\pilot_00002.p3d",
+     "sha256": "3d41478319296383d735f77265dc7250f62b44dbee3d62b59e2879ce9e6e60f8",
+     "level_m": 1.4500000000000002
+    }
+   ]
+  }
+ ],
+ "reach_wet_without_water_surface": 0,
+ "missing_water_surface_points": [],
+ "status": "PASS_SCOPED_CHANNEL_WATER_GEOMETRY",
+ "terrain_sha256": "a292b6c39ad5c4fa19936e5498dc0ddaa064ee6ce4ecdb3115a763a3f0bc57c1",
+ "water_manifest_sha256": "b9effd625a36cae7c7918413db2654f9b6b9997281b0d9f3135684b4d44b65e9",
+ "limits": [
+  "Offline nominal water coverage; no wave, visual or boat-motion acceptance.",
+  "reach_wet_without_piece is the historical vanilla-only count, not a hole count."
+ ]
+}

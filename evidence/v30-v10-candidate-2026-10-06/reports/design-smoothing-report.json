@@ -1,0 +1,75 @@
+{
+ "params": {
+  "design": "E:\\DayZ-Baltic-Build\\v30-redesign\\design",
+  "contour": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\water-surfaces-contour-v2.geojson",
+  "sigma_m": 12.0,
+  "max_shift_m": 4.0,
+  "contact_m": 2.0,
+  "narva_center": [
+   2417.1428225906,
+   6889.8850822322
+  ],
+  "narva_radius_m": 600.0
+ },
+ "input_sha256": {
+  "water_v3.geojson": "f960299a4a62be1a4444e46efb09742fa409363bc2fd7773f0a99362da008a5c",
+  "contour": "df860f693a1bf0115cb4af65a13cea5f8006a5a21bc9bca1d88276b83802ccdc",
+  "streams_candidates.geojson": "ad6894fd4013235d7c1b5b9913f0b4d08ee557408e4ad0f528b378e7462a313e"
+ },
+ "kinds": {
+  "lake": {
+   "features": 239,
+   "smoothed": 232,
+   "unchanged_narva": 7,
+   "fallbacks": 0,
+   "shift_p50_p95": [
+    1.43,
+    4.0
+   ],
+   "area_change_p5_p95_pct": [
+    -0.0,
+    0.01
+   ],
+   "turn_gt45_before": 0.183,
+   "turn_gt45_after": 0.076,
+   "turn_gt30_before": 0.291,
+   "turn_gt30_after": 0.113
+  },
+  "pond": {
+   "features": 387,
+   "smoothed": 383,
+   "unchanged_narva": 4,
+   "fallbacks": 0,
+   "shift_p50_p95": [
+    2.5,
+    4.0
+   ],
+   "area_change_p5_p95_pct": [
+    0.0,
+    0.15
+   ],
+   "turn_gt45_before": 0.259,
+   "turn_gt45_after": 0.185,
+   "turn_gt30_before": 0.402,
+   "turn_gt30_after": 0.286
+  },
+  "river": {
+   "features": 44,
+   "smoothed": 44,
+   "unchanged_narva": 0,
+   "fallbacks": 0,
+   "shift_p50_p95": [
+    0.6,
+    3.24
+   ],
+   "area_change_p5_p95_pct": [
+    -0.0,
+    0.0
+   ],
+   "turn_gt45_before": 0.09,
+   "turn_gt45_after": 0.069,
+   "turn_gt30_before": 0.135,
+   "turn_gt30_after": 0.099
+  }
+ }
+}

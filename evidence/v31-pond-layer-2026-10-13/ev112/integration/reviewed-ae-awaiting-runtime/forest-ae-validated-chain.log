@@ -1,0 +1,30 @@
+Waiting for45actual known stages
+START calibration-controls
+END calibration-controls 0
+START halo-control
+END halo-control 0
+START freeze
+END freeze 0
+START bindings
+END bindings 0
+START map
+START guide
+END guide 0
+START partition
+END map 0
+END partition 0
+START nonbush-identity
+END nonbush-identity 0
+START painted-development
+END painted-development 0
+START build-tools-preflight
+END build-tools-preflight 0
+START package
+END package 1
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\run-ae-validated-chain.py", line 90, in <module>
+    serial('package',[O/'run-ae-dependent-pipeline.py','package'])
+  File "E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\run-ae-validated-chain.py", line 48, in serial
+    r=run(name,args);steps.append(r);state('RUNNING',current=name);assert r['rc']==0,r
+                                                                          ^^^^^^^^^^
+AssertionError: {'step': 'package', 'rc': 1, 'seconds': 2552.499171733856, 'cmd': ['C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe', '-I', 'E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-ae-dependent-pipeline.py', 'package']}

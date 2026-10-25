@@ -1,0 +1,116 @@
+{
+  "status": "RISK_INVENTORY_RENDER_GATE_OPEN",
+  "source": "E:\\DayZ-Baltic-Build\\v30-valley-smoothing-20261008\\candidate-c1r3p\\terrain_valley.npz",
+  "source_sha256": "9c3011b8af5279e807630d4e91512d2e95a434463d3523a5b4074e70bc7cc8f6",
+  "grid": {
+    "vertices": 4194304,
+    "faces": 8380418,
+    "cell_m": 6
+  },
+  "thresholds": {
+    "measured_physical_sea_max_m": 0.85,
+    "empirical_m": 1.8
+  },
+  "counts": {
+    "dry_vertices": 3195297,
+    "low_vertices": 30668,
+    "physical_subsea_vertices": 360,
+    "low_away_from_water_faces": 19495,
+    "components": 3890
+  },
+  "faces": {
+    "total": 8380418,
+    "fully_dry": 6305475,
+    "low_fully_dry": 74827,
+    "dry_sea_intersections": 722,
+    "dry_low_area_m2": 900254.2871040781,
+    "dry_below_sea_area_m2": 141.23699415591466
+  },
+  "observations": [
+    {
+      "name": "user_residual_center",
+      "x": 2718.4852495913565,
+      "z": 6812.812873578129,
+      "ground_m": 1.520456666024811,
+      "nearest_vertex_class": 0,
+      "empirical_risk": true,
+      "component": 2510,
+      "vertex_distance_to_water_m": 12.0
+    },
+    {
+      "name": "user_residual_east",
+      "x": 2701.1257855474864,
+      "z": 6811.71253897874,
+      "ground_m": 0.9291366211906599,
+      "nearest_vertex_class": 7,
+      "empirical_risk": false,
+      "component": 0,
+      "vertex_distance_to_water_m": 0.0
+    },
+    {
+      "name": "bridge_left_approach",
+      "x": 2541.9596930382363,
+      "z": 6875.363107717309,
+      "ground_m": 11.0,
+      "nearest_vertex_class": 0,
+      "empirical_risk": false,
+      "component": 0,
+      "vertex_distance_to_water_m": 60.0
+    },
+    {
+      "name": "old_reflection_e",
+      "x": 2177.1781723369904,
+      "z": 7077.359282917886,
+      "ground_m": 1.7812544890542987,
+      "nearest_vertex_class": 0,
+      "empirical_risk": true,
+      "component": 2386,
+      "vertex_distance_to_water_m": 21.633307652783937
+    },
+    {
+      "name": "old_dark_w",
+      "x": 2289.5001910705164,
+      "z": 7207.519517242036,
+      "ground_m": 1.7999999523162842,
+      "nearest_vertex_class": 0,
+      "empirical_risk": false,
+      "component": 0,
+      "vertex_distance_to_water_m": 60.0
+    },
+    {
+      "name": "old_bright_w",
+      "x": 2577.746400714456,
+      "z": 7021.468949094143,
+      "ground_m": 1.7999999523162842,
+      "nearest_vertex_class": 0,
+      "empirical_risk": false,
+      "component": 0,
+      "vertex_distance_to_water_m": 142.23923509355637
+    },
+    {
+      "name": "old_reflection_n",
+      "x": 2211.752525966711,
+      "z": 6817.393868219375,
+      "ground_m": 0.8709199152420637,
+      "nearest_vertex_class": 7,
+      "empirical_risk": false,
+      "component": 0,
+      "vertex_distance_to_water_m": 0.0
+    }
+  ],
+  "analytical_controls": {
+    "half_edge_triangle": true,
+    "complement": true,
+    "full_positive": true,
+    "high_negative": true,
+    "equality_excluded": true,
+    "float32_nominal_target_excluded": true
+  },
+  "limits": [
+    "All source vertices and both native triangles are evaluated; compiled rendering is a separate consumer.",
+    "1.80 m is an empirical screening threshold, not a proven sea-shader upper bound.",
+    "Classified shoreline/engineering risks remain in the census; classification is not acceptance.",
+    "Areas use fully dry source faces. Mixed shore faces remain in the vertex inventory, not the area sum.",
+    "No hypothetical coarse grid is used as a native LOD or as authority to edit heights."
+  ]
+}

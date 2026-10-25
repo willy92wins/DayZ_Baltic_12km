@@ -1,0 +1,161 @@
+{
+  "negative_controls": {
+    "protected_edit_rejected": true,
+    "class_edit_rejected": true
+  },
+  "frozen_source": "E:\\DayZ-Baltic-Build\\v30-v12\\inland\\terrain_inland.npz",
+  "baseline_road": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "variants": {
+    "18-corrected": {
+      "status": "PASS_OFFLINE_DRY_ONLY",
+      "gates": {
+        "unchanged_cls": true,
+        "unchanged_level": true,
+        "unchanged_platform": true,
+        "unchanged_reserve": true,
+        "unchanged_narva": true,
+        "unchanged_water": true,
+        "unchanged_beach": true,
+        "protected_exact": true,
+        "finite": true,
+        "height_cap": true,
+        "no_worsened_steep_faces": true,
+        "macro_cap": true,
+        "curvature_reduction": true,
+        "frozen_road_result_identical": true,
+        "road_pass": true
+      },
+      "curvature": {
+        "all": {
+          "before": {
+            "points": 2494084,
+            "rms": 0.01134326248315454,
+            "p95": 0.020437429183362853
+          },
+          "after": {
+            "points": 2494084,
+            "rms": 0.0089590918351968,
+            "p95": 0.01325422213819155
+          },
+          "reduction": 0.21018385596722144
+        },
+        "uplands": {
+          "before": {
+            "points": 385882,
+            "rms": 0.01556399476527641,
+            "p95": 0.028568478375006413
+          },
+          "after": {
+            "points": 385882,
+            "rms": 0.013974522124312447,
+            "p95": 0.024272052257323436
+          },
+          "reduction": 0.10212497915445895
+        },
+        "plains": {
+          "before": {
+            "points": 2108202,
+            "rms": 0.010386637291224588,
+            "p95": 0.01860017769145439
+          },
+          "after": {
+            "points": 2108202,
+            "rms": 0.007694926247446912,
+            "p95": 0.009565584697609748
+          },
+          "reduction": 0.259151346899524
+        }
+      },
+      "macro_max_change_m": 0.06601260761500685,
+      "worsened_steep_faces": 0,
+      "max_change_m": 1.0000009536743164,
+      "changed_vertices": 2494070,
+      "road": {
+        "chains": 100,
+        "samples": 77381,
+        "cross_fail": 0,
+        "grade_fail": 0,
+        "chord_fail": 0,
+        "cross_max_m": 0.02575704333356299,
+        "grade_max": 0.062467542737979165,
+        "chord_max_m": 0.024596331934844784,
+        "worst": {
+          "cross": {
+            "chain": 43,
+            "station_m": 217.7457156342528,
+            "x": 7527.3,
+            "z": 9023.7,
+            "value": 0.0258
+          },
+          "grade": {
+            "chain": 102,
+            "station_m": 688.4718233811913,
+            "x": 6188.7,
+            "z": 7879.1,
+            "value": 0.0625
+          },
+          "chord": {
+            "chain": 102,
+            "station_m": 1000.2326490632402,
+            "x": 6153.8,
+            "z": 8181.2,
+            "value": 0.0246
+          }
+        },
+        "fail_list": [],
+        "status": "PASS",
+        "limits": {
+          "cross_m": 0.03,
+          "grade": 0.065,
+          "chord_m": 0.03,
+          "water_clear_m": 48.0,
+          "narva_clear_m": 470.0,
+          "end_margin_m": 18.0
+        }
+      },
+      "sha256": "164ad4ffbe4177c7615d18e95d12920d4d332612e596377963a54e0281fc608d"
+    }
+  }
+}

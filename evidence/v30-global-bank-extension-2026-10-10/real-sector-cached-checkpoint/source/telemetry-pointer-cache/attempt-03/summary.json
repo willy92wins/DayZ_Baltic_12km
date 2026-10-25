@@ -1,0 +1,172 @@
+{
+    "schema":  "telemetry-pointer-cache-isolation.v1",
+    "iterations":  10000,
+    "per_worker_seconds":  30,
+    "memory_cap_bytes":  268435456,
+    "solver_path":  "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve.py",
+    "solver_sha256":  "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+    "probe_path":  "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\telemetry_pointer_cache_probe.py",
+    "probe_sha256":  "c5a280f389e199d0808c72fcdb142eebdb66eb02c53efe6963224460474f91da",
+    "runs":  [
+                 {
+                     "mode":  "original",
+                     "pid":  138368,
+                     "launcher_pid":  203456,
+                     "exit_code":  0,
+                     "timed_out":  false,
+                     "memory_exceeded":  false,
+                     "wall_seconds":  1.6794643999999999,
+                     "iterations":  10000,
+                     "external_reader":  "PowerShell Get-Process WorkingSet64 and PrivateMemorySize64, sampled every 20ms",
+                     "baseline_working_set_bytes":  43208704,
+                     "sampled_peak_working_set_bytes":  96870400,
+                     "baseline_private_bytes":  35467264,
+                     "sampled_peak_private_bytes":  89743360,
+                     "cap_bytes":  268435456,
+                     "samples":  [
+                                     {
+                                         "elapsed_ms":  221,
+                                         "working_set_bytes":  43208704,
+                                         "private_bytes":  35467264
+                                     },
+                                     {
+                                         "elapsed_ms":  519,
+                                         "working_set_bytes":  87687168,
+                                         "private_bytes":  81137664
+                                     },
+                                     {
+                                         "elapsed_ms":  818,
+                                         "working_set_bytes":  96866304,
+                                         "private_bytes":  89743360
+                                     },
+                                     {
+                                         "elapsed_ms":  1114,
+                                         "working_set_bytes":  96866304,
+                                         "private_bytes":  89743360
+                                     },
+                                     {
+                                         "elapsed_ms":  1396,
+                                         "working_set_bytes":  96866304,
+                                         "private_bytes":  89743360
+                                     }
+                                 ],
+                     "worker_events":  [
+                                           {
+                                               "event":  "started",
+                                               "mode":  "original",
+                                               "pid":  138368,
+                                               "iterations":  10000,
+                                               "solver_sha256":  "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+                                               "pointer_cache_before":  3
+                                           },
+                                           {
+                                               "api_fields":  [
+                                                                  "method",
+                                                                  "peak_commit_bytes",
+                                                                  "peak_working_set_bytes",
+                                                                  "pid",
+                                                                  "working_set_bytes"
+                                                              ],
+                                               "api_memory_last_call":  {
+                                                                            "method":  "GetProcessMemoryInfo in solver interpreter",
+                                                                            "peak_commit_bytes":  89743360,
+                                                                            "peak_working_set_bytes":  96841728,
+                                                                            "pid":  138368,
+                                                                            "working_set_bytes":  96841728
+                                                                        },
+                                               "api_method":  "GetProcessMemoryInfo in solver interpreter",
+                                               "elapsed_seconds":  0.46850080002332106,
+                                               "event":  "finished",
+                                               "iterations":  10000,
+                                               "mode":  "original",
+                                               "pid":  138368,
+                                               "pointer_cache_after":  10003,
+                                               "pointer_cache_before":  3,
+                                               "pointer_cache_delta":  10000,
+                                               "solver_sha_end":  "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+                                               "solver_sha_start":  "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149"
+                                           }
+                                       ],
+                     "stdout":  "{\"event\": \"started\", \"mode\": \"original\", \"pid\": 138368, \"iterations\": 10000, \"solver_sha256\": \"7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149\", \"pointer_cache_before\": 3}\n{\"api_fields\": [\"method\", \"peak_commit_bytes\", \"peak_working_set_bytes\", \"pid\", \"working_set_bytes\"], \"api_memory_last_call\": {\"method\": \"GetProcessMemoryInfo in solver interpreter\", \"peak_commit_bytes\": 89743360, \"peak_working_set_bytes\": 96841728, \"pid\": 138368, \"working_set_bytes\": 96841728}, \"api_method\": \"GetProcessMemoryInfo in solver interpreter\", \"elapsed_seconds\": 0.46850080002332106, \"event\": \"finished\", \"iterations\": 10000, \"mode\": \"original\", \"pid\": 138368, \"pointer_cache_after\": 10003, \"pointer_cache_before\": 3, \"pointer_cache_delta\": 10000, \"solver_sha_end\": \"7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149\", \"solver_sha_start\": \"7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149\"}\r\n",
+                     "stderr":  ""
+                 },
+                 {
+                     "mode":  "cached",
+                     "pid":  17664,
+                     "launcher_pid":  124404,
+                     "exit_code":  0,
+                     "timed_out":  false,
+                     "memory_exceeded":  false,
+                     "wall_seconds":  1.3443896,
+                     "iterations":  10000,
+                     "external_reader":  "PowerShell Get-Process WorkingSet64 and PrivateMemorySize64, sampled every 20ms",
+                     "baseline_working_set_bytes":  19804160,
+                     "sampled_peak_working_set_bytes":  19828736,
+                     "baseline_private_bytes":  12210176,
+                     "sampled_peak_private_bytes":  12210176,
+                     "cap_bytes":  268435456,
+                     "samples":  [
+                                     {
+                                         "elapsed_ms":  140,
+                                         "working_set_bytes":  19804160,
+                                         "private_bytes":  12210176
+                                     },
+                                     {
+                                         "elapsed_ms":  463,
+                                         "working_set_bytes":  19828736,
+                                         "private_bytes":  12210176
+                                     },
+                                     {
+                                         "elapsed_ms":  778,
+                                         "working_set_bytes":  19828736,
+                                         "private_bytes":  12210176
+                                     },
+                                     {
+                                         "elapsed_ms":  1103,
+                                         "working_set_bytes":  19828736,
+                                         "private_bytes":  12210176
+                                     }
+                                 ],
+                     "worker_events":  [
+                                           {
+                                               "event":  "started",
+                                               "mode":  "cached",
+                                               "pid":  17664,
+                                               "iterations":  10000,
+                                               "solver_sha256":  "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+                                               "pointer_cache_before":  3
+                                           },
+                                           {
+                                               "api_fields":  [
+                                                                  "method",
+                                                                  "peak_commit_bytes",
+                                                                  "peak_working_set_bytes",
+                                                                  "pid",
+                                                                  "working_set_bytes"
+                                                              ],
+                                               "api_memory_last_call":  {
+                                                                            "method":  "GetProcessMemoryInfo in solver interpreter",
+                                                                            "peak_commit_bytes":  12984320,
+                                                                            "peak_working_set_bytes":  20877312,
+                                                                            "pid":  17664,
+                                                                            "working_set_bytes":  19804160
+                                                                        },
+                                               "api_method":  "GetProcessMemoryInfo in solver interpreter",
+                                               "elapsed_seconds":  0.15687369997613132,
+                                               "event":  "finished",
+                                               "iterations":  10000,
+                                               "mode":  "cached",
+                                               "pid":  17664,
+                                               "pointer_cache_after":  4,
+                                               "pointer_cache_before":  3,
+                                               "pointer_cache_delta":  1,
+                                               "solver_sha_end":  "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+                                               "solver_sha_start":  "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149"
+                                           }
+                                       ],
+                     "stdout":  "{\"event\": \"started\", \"mode\": \"cached\", \"pid\": 17664, \"iterations\": 10000, \"solver_sha256\": \"7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149\", \"pointer_cache_before\": 3}\n{\"api_fields\": [\"method\", \"peak_commit_bytes\", \"peak_working_set_bytes\", \"pid\", \"working_set_bytes\"], \"api_memory_last_call\": {\"method\": \"GetProcessMemoryInfo in solver interpreter\", \"peak_commit_bytes\": 12984320, \"peak_working_set_bytes\": 20877312, \"pid\": 17664, \"working_set_bytes\": 19804160}, \"api_method\": \"GetProcessMemoryInfo in solver interpreter\", \"elapsed_seconds\": 0.15687369997613132, \"event\": \"finished\", \"iterations\": 10000, \"mode\": \"cached\", \"pid\": 17664, \"pointer_cache_after\": 4, \"pointer_cache_before\": 3, \"pointer_cache_delta\": 1, \"solver_sha_end\": \"7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149\", \"solver_sha_start\": \"7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149\"}\r\n",
+                     "stderr":  ""
+                 }
+             ],
+    "interpretation":  "The worker executes the frozen helper AST in a fresh GIS Python process; cached differs only by lifting Counters to module scope. External PowerShell sampling is independent of ctypes._pointer_type_cache."
+}

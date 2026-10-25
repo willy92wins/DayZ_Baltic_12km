@@ -1,0 +1,24 @@
+--- E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder/pe_check.py	2026-10-13 14:12:43.996341700 +0200
++++ E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1map-builder/pe_check.py	2026-10-13 14:34:40.824076500 +0200
+@@ -6,7 +6,7 @@
+ directly (pure function of the base context and the candidate heights). Offender masks are added for repair."""
+ import sys
+ sys.dont_write_bytecode = True
+-sys.path.insert(0, 'E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder')
++sys.path.insert(0, 'E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1map-builder')
+ import numpy as np
+ from scipy.ndimage import binary_dilation, label, distance_transform_edt
+ import pe_common as C
+@@ -15,10 +15,10 @@
+ V3, V2, EV = C.V3, C.V2, C.EV
+ 
+ 
+-def ctx_v3(base, cover):
++def ctx_v3(base, cover, cover_sha=None):
+     """eval_shore_v3.base_context() (lines 104-128) with base and cover as arguments instead of the frozen EV99/EV98."""
+     import time
+-    if C.sha256(base) != C.BASE_SHA or C.sha256(cover) != C.COVER_SHA:
++    if C.sha256(base) != C.BASE_SHA or C.sha256(cover) != (cover_sha or C.COVER_SHA):
+         raise SystemExit('base or cover hash mismatch')
+     x = V2.base_context(base, cover)
+     t0 = time.time()

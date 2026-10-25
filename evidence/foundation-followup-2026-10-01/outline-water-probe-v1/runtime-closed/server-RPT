@@ -1,0 +1,60 @@
+=====================================================================
+== C:\Program Files (x86)\Steam\steamapps\common\DayZ\DayZDiag_x64.exe
+== "C:\Program -server -config=P:\DayZ_MCP_dev\_server\serverDZ.cfg -profiles=P:\DayZ_MCP_dev\_server\profiles "-mission=C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticOutlineWaterV1.BalticTrial" -mod=P:\Mods\@DayZ_MCP;P:\Mods\@DayZ_Baltic_FoundationV10Native;P:\Mods\@BalticOutlineWaterV1 -port=2302
+=====================================================================
+Exe timestamp: 2026/08/15 04:37:25
+Current time:  2026/10/01 16:43:47
+Version 1.29.163709
+=====================================================================
+
+16:43:47.389 ENGINE    (W): No module info used, trying to identify -> 0x91BD0000
+16:43:47.395 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+16:43:47.395 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+16:43:47.395 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+16:43:47.401 RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+16:43:47.402 RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+16:43:47.402 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+16:43:47.403 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+16:43:47.405 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/noise.edds) failed
+16:43:47.407 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+16:43:47.411 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_area.dds) failed
+16:43:47.411 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_search.dds) failed
+16:43:47.411 MATERIAL  (E): SMAAEffect area texture not found (system/textures/PP/smaa_area)
+16:43:47.411 MATERIAL  (E): SMAAEffect search texture not found (system/textures/PP/smaa_search)
+16:43:47.413 RESOURCES (E): IRenderer::CreateTextureFromImage(system/system.edds) failed
+16:43:47.414 RESOURCES (E): IRenderer::CreateTextureFromImage(system/systemsmall.edds) failed
+16:43:47.473 [Inputs] Loading inputs default "bin/constants.xml"
+16:43:47.475 [Inputs] Loading inputs default "bin/specific.xml"
+16:43:47.476 [Inputs] Loading inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+16:43:47.479 [Inputs] Exporting inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+16:43:47.971 ANIMATION (E): Can't load P:\Mods\@BalticOutlineWaterV1/Anims/cfg/skeletons.anim.xml
+16:43:47.971 ANIMATION (E): Failed to open file, line 0, column 0
+16:43:47.971 ANIMATION (E): Can't load P:\Mods\@DayZ_Baltic_FoundationV10Native/Anims/cfg/skeletons.anim.xml
+16:43:47.971 ANIMATION (E): Failed to open file, line 0, column 0
+16:43:47.971 ANIMATION (E): Can't load P:\Mods\@DayZ_MCP/Anims/cfg/skeletons.anim.xml
+16:43:47.971 ANIMATION (E): Failed to open file, line 0, column 0
+16:43:47.971 ANIMATION (E): Can't load sakhal/Anims/cfg/skeletons.anim.xml
+16:43:47.971 ANIMATION (E): Failed to open file, line 0, column 0
+16:43:55.551 Hostname of server: "DayZ_MCP S0"
+16:44:01.468 !!! File "\cfgenvironment.xml" does not exist...
+16:44:01.468 !!! [ERROR][XML] :: load [\cfgenvironment.xml] failed
+16:44:01.468 !!! [ERROR][XML] :: Failed to open file
+16:44:01.994 NETWORK      : Network simulation
+16:44:01.994  SCRIPT    (E):    -- Stack trace --
+16:44:01.994  SCRIPT    (E):    GetPlugin() scripts/4_World/plugins\pluginmanager.c : 339
+16:44:01.994  SCRIPT    (E):    OnInit() scripts/4_World/plugins\pluginbase\pluginitemdiagnostic.c : 94
+16:44:01.994  SCRIPT    (E):    PluginsInit() scripts/4_World/plugins\pluginmanager.c : 134
+16:44:01.994  SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+16:44:01.994  SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins\pluginmanager.c : 302
+16:44:01.994  SCRIPT    (E):    MissionBase() scripts/5_Mission/mission\missionbase.c : 21
+16:44:01.994  SCRIPT    (E):    CreateCustomMission() C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticOutlineWaterV1.BalticTrial\init.c : 30
+16:44:01.994  SCRIPT    (E):    -----------------
+16:44:02.03   SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder
+16:44:02.03   SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json
+16:44:02.03   SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder
+16:44:02.03   SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json
+16:44:02.03  Player connect enabled
+16:44:12.548 [Login]: Adding player Dev (12997753) to login queue at position 0
+16:44:12.548 [LoginMachine]: Add player Dev (12997753 127.0.0.1:2316)
+16:44:12.548 [StateMachine]: Player Dev (dpnid 12997753 uid ) Entering AuthPlayerLoginState
+16:44:12.548 [StateMachine]: Player Dev (dpnid 12997753 uid ) Entering WaitAuthPlayerLoginState

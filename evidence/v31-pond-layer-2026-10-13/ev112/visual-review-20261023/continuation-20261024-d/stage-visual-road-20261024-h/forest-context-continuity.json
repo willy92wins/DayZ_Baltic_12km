@@ -1,0 +1,31 @@
+{
+  "status": "CONTEXT_INPUTS_PRESERVED",
+  "checks": {
+    "water_footprint_all_arrays_exact": true,
+    "protected_vertices_exact": true,
+    "nonforest_all_bytes_exact": true,
+    "forest_except_y_exact": true,
+    "old_and_new_changed_stars_above_09": true,
+    "changed_triangles_have_no_pond": true
+  },
+  "source_delta_sha256": "84b02bd4a3ba01d7166e68dd7b89d986ef05f7b59ab98928fc7d0767c8f676d2",
+  "inherited_reports": {
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-visual-consumers-20261024-a\\g2g3_map.json": "9c154029b5f3f9d0ef9d6e02c2550b1470d5b83738dbec993fc220ea36b0a817",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-visual-consumers-20261024-a\\g7_map.json": "c3957f9c9c849f35be314711b22071c2d08e11e31681f800ecbab9a508b9fafe",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-visual-consumers-20261024-a\\g8_agreement.json": "6dfeeac7a2ab98abb6e10e4866c6de6bc53b84b06894e422f6f682dea39fa981",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-visual-consumers-20261024-a\\g2_pilot.json": "d277f5a6fe383b8b876bf8423a04decbd96e9c46aa661653d9d170959bc473e5",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-visual-consumers-20261024-a\\g3_pilot.json": "3b9c83721ab5bb7cae39dd956dd98577b1d3c525b024356dd056b595affa3db6",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-visual-consumers-20261024-a\\inputs.json": "5845c1cd54c316f05ddf39b3c5b653956b54dd33cbe110694ddbf43e1197c719"
+  },
+  "consumers": {
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-water-fix-b\\gates\\glib.py": "4226315f9b255b0ca790bb2c7ac3aad5124befd364b465a8c7df0b1b5a246786",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-water-fix-b\\gates\\g2g3_map.py": "83ffb46813cfe7cd9cbace209d8d80e84f9e8284e61130b09b23f5735021cd76",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-water-fix-b\\gates\\g7_map.py": "496d1ec6119b5b00e7ad67e18adca3a7ef1981676caf8acfd7ff4e758919c430",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-water-fix-b\\gates\\g8_agreement.py": "e71a1bd4f4ac7315e9c69355019e1a0fc66b588459c97d80e311f6d26370199c",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-water-fix-b\\r2\\gates\\gate_common.py": "a28b6d4d6c6c17fdd7b3767dea473d67ae8e8b25b118e7270ffdb6912ff1ef2b"
+  },
+  "explanation": "G2/G3 consume species and XZ/texture/canopy/water context; G7/G8 additionally use scale/rotation. Only forest translation Y changed. Native water is equal over every changed triangle by strict dry height and absent pond; all custom water geometry and masks unchanged. Original verdicts retained, not new statistical runs.",
+  "limits": [
+    "G2/G3 map remain statistical passes, not zero failing windows. Full support/clearance independently rerun on H. No visual/runtime/navigation/performance acceptance."
+  ]
+}

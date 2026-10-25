@@ -1,0 +1,35 @@
+{
+  "status": "DESIGN_COMPARISON_ONLY_NO_TERRAIN_CHANGED",
+  "variants": [
+    {
+      "name": "Escala vertical f\u00edsica",
+      "path": "source\\baltic_physical_2048_6m.asc",
+      "sha256": "fa7878e26a63accce0f0a0a55b503ae1125f1fac9caa95fec4168c5d749de7f0",
+      "min_m": -12.0,
+      "max_m": 10.861900329589844,
+      "positive_percentiles_50_90_99_m": [
+        3.036799907684326,
+        5.611199855804443,
+        8.044435262680063
+      ]
+    },
+    {
+      "name": "Relieve \u00d73",
+      "path": "source\\baltic_relief3x_2048_6m.asc",
+      "sha256": "ecb2bd99a1751362bfcab0c150f10d18649bf3a50b24ea49a3eb0ffdb48bdf1f",
+      "min_m": -12.0,
+      "max_m": 32.58570098876953,
+      "positive_percentiles_50_90_99_m": [
+        9.110300064086914,
+        16.833499908447266,
+        24.133323593139647
+      ]
+    }
+  ],
+  "limits": [
+    "Source variants before water and Narva engineering edits; neither image is a new runtime import.",
+    "Profiles use different vertical and horizontal plot scales; apparent slopes are visually exaggerated.",
+    "Choosing relief does not determine final engineered lake levels or prove connected navigable water.",
+    "Local bridge deck, sea datum, road widths and asset sizes would remain engineering constraints, not multiplied blindly."
+  ]
+}

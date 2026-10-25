@@ -1,0 +1,60 @@
+=====================================================================
+== C:\Program Files (x86)\Steam\steamapps\common\DayZ\DayZDiag_x64.exe
+== "C:\Program -server -config=P:\DayZ_MCP_dev\_server\serverDZ.cfg -profiles=P:\DayZ_MCP_dev\_server\profiles "-mission=C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticAILoad.BalticTrial" -mod=P:\Mods\@DayZ_MCP;P:\Mods\@DayZ_Baltic_NativeTrial -port=2302
+=====================================================================
+Exe timestamp: 2026/08/15 04:37:25
+Current time:  2026/09/30 12:44:24
+Version 1.29.163709
+=====================================================================
+
+12:44:24.756 ENGINE    (W): No module info used, trying to identify -> 0x91CD0000
+12:44:24.760 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+12:44:24.761 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+12:44:24.761 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+12:44:24.764 RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+12:44:24.765 RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+12:44:24.766 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+12:44:24.766 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+12:44:24.770 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/noise.edds) failed
+12:44:24.770 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+12:44:24.774 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_area.dds) failed
+12:44:24.774 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_search.dds) failed
+12:44:24.774 MATERIAL  (E): SMAAEffect area texture not found (system/textures/PP/smaa_area)
+12:44:24.774 MATERIAL  (E): SMAAEffect search texture not found (system/textures/PP/smaa_search)
+12:44:24.776 RESOURCES (E): IRenderer::CreateTextureFromImage(system/system.edds) failed
+12:44:24.777 RESOURCES (E): IRenderer::CreateTextureFromImage(system/systemsmall.edds) failed
+12:44:24.834 [Inputs] Loading inputs default "bin/constants.xml"
+12:44:24.836 [Inputs] Loading inputs default "bin/specific.xml"
+12:44:24.836 [Inputs] Loading inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+12:44:24.839 [Inputs] Exporting inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+12:44:25.356 ANIMATION (E): Can't load P:\Mods\@DayZ_Baltic_NativeTrial/Anims/cfg/skeletons.anim.xml
+12:44:25.356 ANIMATION (E): Failed to open file, line 0, column 0
+12:44:25.356 ANIMATION (E): Can't load P:\Mods\@DayZ_MCP/Anims/cfg/skeletons.anim.xml
+12:44:25.356 ANIMATION (E): Failed to open file, line 0, column 0
+12:44:25.356 ANIMATION (E): Can't load sakhal/Anims/cfg/skeletons.anim.xml
+12:44:25.356 ANIMATION (E): Failed to open file, line 0, column 0
+12:44:32.110 Hostname of server: "DayZ_MCP S0"
+12:44:32.838 !!! File "\cfgenvironment.xml" does not exist...
+12:44:32.838 !!! [ERROR][XML] :: load [\cfgenvironment.xml] failed
+12:44:32.838 !!! [ERROR][XML] :: Failed to open file
+12:44:33.313 NETWORK      : Network simulation
+12:44:33.313  SCRIPT    (E):    -- Stack trace --
+12:44:33.313  SCRIPT    (E):    GetPlugin() scripts/4_World/plugins\pluginmanager.c : 339
+12:44:33.313  SCRIPT    (E):    OnInit() scripts/4_World/plugins\pluginbase\pluginitemdiagnostic.c : 94
+12:44:33.313  SCRIPT    (E):    PluginsInit() scripts/4_World/plugins\pluginmanager.c : 134
+12:44:33.313  SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+12:44:33.313  SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins\pluginmanager.c : 302
+12:44:33.313  SCRIPT    (E):    MissionBase() scripts/5_Mission/mission\missionbase.c : 21
+12:44:33.313  SCRIPT    (E):    CreateCustomMission() C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticAILoad.BalticTrial\init.c : 218
+12:44:33.313  SCRIPT    (E):    -----------------
+12:44:33.320  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder
+12:44:33.320  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json
+12:44:33.320  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder
+12:44:33.320  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json
+12:44:33.321 Player connect enabled
+12:44:47.922 [Login]: Adding player Dev (11397653) to login queue at position 0
+12:44:47.922 [LoginMachine]: Add player Dev (11397653 127.0.0.1:2316)
+12:44:47.922 [StateMachine]: Player Dev (dpnid 11397653 uid ) Entering AuthPlayerLoginState
+12:44:47.922 [StateMachine]: Player Dev (dpnid 11397653 uid ) Entering WaitAuthPlayerLoginState
+12:44:49.379 El jugador Dev se está conectando.
+12:44:49.379 [StateMachine]: Player Dev (dpnid 11397653 uid ) Entering WaitPlayerAssignedLoginState

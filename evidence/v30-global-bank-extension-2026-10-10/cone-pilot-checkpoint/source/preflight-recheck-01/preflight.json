@@ -1,0 +1,128 @@
+{
+  "status": "PREFLIGHT_PASS_NO_SOLVE",
+  "scope": "SYNTHETIC_ONLY_64x128_NO_REAL_BASE_OR_TERRAIN_CANDIDATE",
+  "source_pins_start": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\prototype.py": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve.py": "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\preflight-recheck-01\\PLAN.md": "0558ad350e578903c09ce1488071af8fe09a661ac87ee7f51883e1dcd0c4a94e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\pilot.py": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a"
+  },
+  "source_pins_end": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\prototype.py": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve.py": "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\preflight-recheck-01\\PLAN.md": "0558ad350e578903c09ce1488071af8fe09a661ac87ee7f51883e1dcd0c4a94e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\pilot.py": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a"
+  },
+  "objective": "EV88 exact xx/zz/xz plus 0.25 fidelity; B is baseline and curvature residuals use exact EV88 row records",
+  "constraints": "synthetic B +/-0.5 float32 box; selected deterministic D8 witnesses; all 16,002 native faces constrained by closed discs; exact float32 order closure is pinned and baseline identity-tested",
+  "admm_parameters": {
+    "rho": 1.0,
+    "abs_tol": 1e-10,
+    "rel_tol": 1e-08,
+    "max_iterations": 10000,
+    "cg_rtol": 1e-12,
+    "cg_atol": 1e-13,
+    "cg_max_iterations": 1000,
+    "rho_adaptation": "same as pinned EV88 every25 to2000, factor2, normalized residual ratio10",
+    "numerical_budget_seconds": 120.0,
+    "peak_working_set_limit_bytes": 1610612736
+  },
+  "dimensions": {
+    "shape": [
+      64,
+      128
+    ],
+    "sectors": [
+      64,
+      64
+    ],
+    "variables": 7963,
+    "protected": 229,
+    "stencils": 23439,
+    "objective_rows": 31402,
+    "d8_rows": 8188,
+    "d8_exempt_strict_minima": 4,
+    "faces": 16002,
+    "G_shape": [
+      32004,
+      7963
+    ],
+    "G_nnz": 62200,
+    "C_nnz": 15920,
+    "A_nnz": 84963
+  },
+  "fixtures": {
+    "radial_projection": {
+      "inside_unchanged": true,
+      "outside_radial": true,
+      "boundary_unchanged": true,
+      "zero_radius": true,
+      "nonfinite_and_negative_rejected": true
+    },
+    "soc_kkt": {
+      "outward_boundary_dual_pass": true,
+      "interior_zero_dual_pass": true,
+      "inward_dual_negative_detected": true,
+      "rho": 2.0
+    },
+    "x_step_operator": {
+      "matrix_free_vs_explicit_max_abs": 8.881784197001252e-16,
+      "affine_offset_normal_equation_max_abs": 0.0,
+      "diagonal_preconditioner_finite": true,
+      "rho": 0.75
+    }
+  },
+  "checks": {
+    "baseline_d8_min_slack": 0.0016765594482421875,
+    "baseline_max_disc_violation": 0.0,
+    "G_action_max_abs_error": 0.0,
+    "coordinate_gradient_max_abs_error": 2.042810365310288e-14,
+    "EV87_normal_slope_max_abs_error_degrees": 3.552713678800501e-15,
+    "free_free_seam_stencil": {
+      "stencil": [
+        "xx",
+        0,
+        62
+      ],
+      "left_rc": [
+        0,
+        62
+      ],
+      "right_rc": [
+        0,
+        64
+      ]
+    },
+    "target_face_key": [
+      32,
+      63,
+      0
+    ],
+    "target_B_slope_deg": 35.00000098391883,
+    "target_disc_radius_raw_height_units": 4.201245382811454,
+    "target_objective_gradient_dSE": 0.47352971136569993,
+    "lowering_probe_delta_height": -0.01,
+    "lowering_probe_objective_delta": -0.004107172113663182,
+    "lowering_probe_disc_excess": 0.0019623460735731513,
+    "target_SE_d8_witness_rc": [
+      33,
+      63
+    ]
+  },
+  "float32_order_closure_identity": {
+    "source_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py",
+    "source_sha256": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+    "identity_pass": true,
+    "edge_direction": "(witness,center)"
+  },
+  "prepared_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\preflight-recheck-01\\prepared.npz",
+  "prepared_sha256": "42f3e988e09324af30f338021ab59016b18426912c83811438390f7dd6e54436",
+  "solve_executed": false,
+  "future_acceptance_warning": "Future independent slope consumer must compute coordinate/normal slopes independently; this G operator is not acceptance authority.",
+  "sources_unchanged": true,
+  "preflight_pass": true
+}

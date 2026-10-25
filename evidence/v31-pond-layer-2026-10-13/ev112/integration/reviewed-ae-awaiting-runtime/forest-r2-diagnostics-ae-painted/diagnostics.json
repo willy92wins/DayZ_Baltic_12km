@@ -1,0 +1,237 @@
+{
+  "status": "MEASURED_NOT_A_NEW_ACCEPTANCE_BAND",
+  "scope": "Descriptive R2 measurements from actual consumer records; no new acceptance bands.\nUsage: script run-folder rasters-folder fresh-output-folder\n",
+  "records_sha256": "2e86b4a79d243ec43f68ba70dd0492e88a434963814a4b1b47c8965823709b37",
+  "tree_records_sha256": "4a2dfebaccd7c5a8ff39f3324a15e2363c95309f711ce50ff05bd91381c50401",
+  "tree_xy_float32_sha256": "2a9283fb3bd1dd649a9ef9f6537c80fcbf135af3fbe05abb8aeadf917528f49b",
+  "source_sha256": "0fef87eec16f4a609b33482ac438fc33f07e48c1db3d12810a3d0bd7501c658a",
+  "rasters": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-painted-rasters-ae",
+  "raster_5m_sha256": "2cc661d49ce05faff7fbf54497bfb23e5feaa303fe32fdcbfe30e4eaa5334f9e",
+  "nearest_percentiles": [
+    1,
+    5,
+    50
+  ],
+  "nearest": {
+    "rim_outer": {
+      "points": 89530,
+      "nearest_other_tree_m": [
+        0.8761861118855587,
+        1.351126754729216,
+        3.2591440079658014
+      ]
+    },
+    "rim_inner": {
+      "points": 18134,
+      "nearest_other_tree_m": [
+        0.9400682239935191,
+        1.4640367003743582,
+        3.6986863158816234
+      ]
+    },
+    "core": {
+      "points": 12578,
+      "nearest_other_tree_m": [
+        1.0037217037686161,
+        1.6687748053489444,
+        4.403670518089539
+      ]
+    },
+    "livonia_forest_edge_40m": {
+      "points": 1357411,
+      "nearest_other_tree_m": [
+        0.5601513892991035,
+        1.2690676296837244,
+        3.9762064675092015
+      ],
+      "definition": "abs(signed distance to Livonia forest mask)<=40m and dry; nearest among all conifer+broadleaf trees, excluding self"
+    }
+  },
+  "object_gap_in_bog": {
+    "rim_outer": {
+      "area_m2": 6288552,
+      "object_gap_m2": 74644,
+      "share": 0.011869823132574876
+    },
+    "rim_inner": {
+      "area_m2": 2812035,
+      "object_gap_m2": 22428,
+      "share": 0.00797571865215049
+    },
+    "core": {
+      "area_m2": 3237935,
+      "object_gap_m2": 18353,
+      "share": 0.005668118723816259
+    }
+  },
+  "riparian_bins": [
+    {
+      "distance_m": [
+        0,
+        5
+      ],
+      "forest_floor": true,
+      "area_ha": 41.4075,
+      "trees": 3638,
+      "trees_per_ha": 87.85847974400772
+    },
+    {
+      "distance_m": [
+        0,
+        5
+      ],
+      "forest_floor": false,
+      "area_ha": 96.515,
+      "trees": 1662,
+      "trees_per_ha": 17.220121224680103
+    },
+    {
+      "distance_m": [
+        5,
+        10
+      ],
+      "forest_floor": true,
+      "area_ha": 74.76,
+      "trees": 9037,
+      "trees_per_ha": 120.88014981273407
+    },
+    {
+      "distance_m": [
+        5,
+        10
+      ],
+      "forest_floor": false,
+      "area_ha": 64.8675,
+      "trees": 1925,
+      "trees_per_ha": 29.675877750799703
+    },
+    {
+      "distance_m": [
+        10,
+        15
+      ],
+      "forest_floor": true,
+      "area_ha": 109.7125,
+      "trees": 14371,
+      "trees_per_ha": 130.98780904637118
+    },
+    {
+      "distance_m": [
+        10,
+        15
+      ],
+      "forest_floor": false,
+      "area_ha": 59.4425,
+      "trees": 2368,
+      "trees_per_ha": 39.836817092147875
+    },
+    {
+      "distance_m": [
+        15,
+        20
+      ],
+      "forest_floor": true,
+      "area_ha": 103.135,
+      "trees": 15273,
+      "trees_per_ha": 148.0874581858729
+    },
+    {
+      "distance_m": [
+        15,
+        20
+      ],
+      "forest_floor": false,
+      "area_ha": 42.4575,
+      "trees": 2056,
+      "trees_per_ha": 48.42489548371901
+    },
+    {
+      "distance_m": [
+        20,
+        25
+      ],
+      "forest_floor": true,
+      "area_ha": 138.245,
+      "trees": 21470,
+      "trees_per_ha": 155.30398929436868
+    },
+    {
+      "distance_m": [
+        20,
+        25
+      ],
+      "forest_floor": false,
+      "area_ha": 47.8275,
+      "trees": 2415,
+      "trees_per_ha": 50.49396267837541
+    }
+  ],
+  "views": [
+    {
+      "component": 2381,
+      "ring": {
+        "depth": [
+          12.5,
+          25.0
+        ],
+        "forest_factor": 62.19300639837322,
+        "bog_factor": 2771.723461645395,
+        "live_pixels": 31,
+        "local_sigma_m": 50.0,
+        "forest_integral_before": 913.6542587117783,
+        "forest_integral_after": 913.6542587117782,
+        "pine_integral_before": 70013.82965152887,
+        "pine_integral_after": 70013.82965152887
+      },
+      "bbox": [
+        59,
+        5093,
+        284,
+        5358
+      ],
+      "metres_per_pixel": 0.25,
+      "pixels": [
+        900,
+        1060
+      ],
+      "trees": 1113,
+      "path": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-r2-diagnostics-ae-painted\\rim-component-2381.png",
+      "sha256": "8f58d3d13125fe56536ba100fb113aafa05de5ff8f15485f2a1e32d19d756904",
+      "legend": "Forest floor green; bog pale green; tested ring cyan; moss yellow; actual float32 tree centres dark conifer/brown broadleaf, symbol radius0.40m (not crown). Offline plan, no visual acceptance."
+    },
+    {
+      "component": 4304,
+      "ring": {
+        "depth": [
+          12.5,
+          25.0
+        ],
+        "forest_factor": 59.39505144530981,
+        "bog_factor": 2281.171991639609,
+        "live_pixels": 42,
+        "local_sigma_m": 50.0,
+        "forest_integral_before": 437.308669308494,
+        "forest_integral_after": 437.3086693084941,
+        "pine_integral_before": 39507.65322766024,
+        "pine_integral_after": 39507.653227660245
+      },
+      "bbox": [
+        4353,
+        780,
+        4501,
+        959
+      ],
+      "metres_per_pixel": 0.25,
+      "pixels": [
+        592,
+        716
+      ],
+      "trees": 383,
+      "path": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-r2-diagnostics-ae-painted\\rim-component-4304.png",
+      "sha256": "8f72f3d24a3df22f69970f073296a25e12c294c7bda3e836bbe7b2e94b61f713",
+      "legend": "Forest floor green; bog pale green; tested ring cyan; moss yellow; actual float32 tree centres dark conifer/brown broadleaf, symbol radius0.40m (not crown). Offline plan, no visual acceptance."
+    }
+  ],
+  "seconds": 46.93574666976929,
+  "limits": "No FPS, no in-game or personal visual approval. Livonia edge is a comparison, not a bog equivalent. Riparian calibration150 vs reference231.8 on floor; reference rule-b has only11 windows and upper bound.6993."
+}

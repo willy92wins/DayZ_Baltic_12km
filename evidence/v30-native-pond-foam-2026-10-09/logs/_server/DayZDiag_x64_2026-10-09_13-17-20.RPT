@@ -1,0 +1,412 @@
+=====================================================================
+== C:\Program Files (x86)\Steam\steamapps\common\DayZ\DayZDiag_x64.exe
+== "C:\Program -server -config=P:\DayZ_MCP_dev\_server\serverDZ.cfg -profiles=P:\DayZ_MCP_dev\_server\profiles "-mission=C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticRenderLayerProbeV1.BalticTrial" -mod=P:\Mods\@DayZ_MCP;P:\Mods\@DayZ_Baltic_CurrentSurfaceV1;P:\Mods\@BalticPondFoamProbeV1 -port=2302
+=====================================================================
+Exe timestamp: 2026/08/15 04:37:25
+Current time:  2026/10/09 13:17:23
+Version 1.29.163709
+=====================================================================
+
+13:17:23.02  ENGINE    (W): No module info used, trying to identify -> 0x8D770000
+13:17:23.06  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:17:23.06  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:17:23.06  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:17:23.08  RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+13:17:23.09  RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+13:17:23.09  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:17:23.09  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:17:23.12  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/noise.edds) failed
+13:17:23.12  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+13:17:23.16  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_area.dds) failed
+13:17:23.16  RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_search.dds) failed
+13:17:23.16  MATERIAL  (E): SMAAEffect area texture not found (system/textures/PP/smaa_area)
+13:17:23.16  MATERIAL  (E): SMAAEffect search texture not found (system/textures/PP/smaa_search)
+13:17:23.17  RESOURCES (E): IRenderer::CreateTextureFromImage(system/system.edds) failed
+13:17:23.18  RESOURCES (E): IRenderer::CreateTextureFromImage(system/systemsmall.edds) failed
+13:17:23.80  [Inputs] Loading inputs default "bin/constants.xml"
+13:17:23.82  [Inputs] Loading inputs default "bin/specific.xml"
+13:17:23.83  [Inputs] Loading inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+13:17:23.87  [Inputs] Exporting inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+13:17:23.540 ANIMATION (E): Can't load P:\Mods\@BalticPondFoamProbeV1/Anims/cfg/skeletons.anim.xml
+13:17:23.540 ANIMATION (E): Failed to open file, line 0, column 0
+13:17:23.540 ANIMATION (E): Can't load P:\Mods\@DayZ_Baltic_CurrentSurfaceV1/Anims/cfg/skeletons.anim.xml
+13:17:23.540 ANIMATION (E): Failed to open file, line 0, column 0
+13:17:23.540 ANIMATION (E): Can't load P:\Mods\@DayZ_MCP/Anims/cfg/skeletons.anim.xml
+13:17:23.540 ANIMATION (E): Failed to open file, line 0, column 0
+13:17:23.540 ANIMATION (E): Can't load sakhal/Anims/cfg/skeletons.anim.xml
+13:17:23.540 ANIMATION (E): Failed to open file, line 0, column 0
+13:17:30.323 Hostname of server: "DayZ_MCP S0"
+13:17:34.235 !!! File "\cfgenvironment.xml" does not exist...
+13:17:34.235 !!! [ERROR][XML] :: load [\cfgenvironment.xml] failed
+13:17:34.235 !!! [ERROR][XML] :: Failed to open file
+13:17:34.830 NETWORK      : Network simulation
+13:17:34.830  SCRIPT    (E):    -- Stack trace --
+13:17:34.830  SCRIPT    (E):    GetPlugin() scripts/4_World/plugins\pluginmanager.c : 339
+13:17:34.830  SCRIPT    (E):    OnInit() scripts/4_World/plugins\pluginbase\pluginitemdiagnostic.c : 94
+13:17:34.830  SCRIPT    (E):    PluginsInit() scripts/4_World/plugins\pluginmanager.c : 134
+13:17:34.830  SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+13:17:34.830  SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins\pluginmanager.c : 302
+13:17:34.830  SCRIPT    (E):    MissionBase() scripts/5_Mission/mission\missionbase.c : 21
+13:17:34.830  SCRIPT    (E):    CreateCustomMission() C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticRenderLayerProbeV1.BalticTrial\init.c : 118
+13:17:34.830  SCRIPT    (E):    -----------------
+13:17:34.836  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder
+13:17:34.837  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json
+13:17:34.837  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder
+13:17:34.837  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json
+13:17:34.839 Player connect enabled
+13:17:47.255 [Login]: Adding player Dev (12212805) to login queue at position 0
+13:17:47.255 [LoginMachine]: Add player Dev (12212805 127.0.0.1:2316)
+13:17:47.255 [StateMachine]: Player Dev (dpnid 12212805 uid ) Entering AuthPlayerLoginState
+13:17:47.255 [StateMachine]: Player Dev (dpnid 12212805 uid ) Entering WaitAuthPlayerLoginState
+13:17:48.704 El jugador Dev se está conectando.
+13:17:48.704 [StateMachine]: Player Dev (dpnid 12212805 uid ) Entering WaitPlayerAssignedLoginState
+13:17:48.772 [StateMachine]: Player Dev (dpnid 12212805 uid ) Entering PlayerAssignedLoginState
+13:17:48.772 [StateMachine]: Player Dev (dpnid 12212805 uid HmY1S7eL2O_9JLwh-z8c0b6n30Ngil26ZWZJGYm7QZg=) Entering CreateNetObjectsLoginState
+13:17:48.772 [StateMachine]: Player Dev (dpnid 12212805 uid HmY1S7eL2O_9JLwh-z8c0b6n30Ngil26ZWZJGYm7QZg=) Entering PreloadCamLoginState
+13:17:48.772 [StateMachine]: Player Dev (dpnid 12212805 uid HmY1S7eL2O_9JLwh-z8c0b6n30Ngil26ZWZJGYm7QZg=) Entering WaitPreloadCamLoginState
+13:17:51.38  [StateMachine]: Player Dev (dpnid 12212805 uid HmY1S7eL2O_9JLwh-z8c0b6n30Ngil26ZWZJGYm7QZg=) Entering GetNewCharLoginState
+13:17:51.47  NETWORK      : Network simulation
+13:17:51.47   WORLD        : Create entity type 'SurvivorM_Boris'
+13:17:51.47    MATERIAL  (E): Object dz/characters/bodies/player_testing.xob - cannot load material cross_red.emat
+13:17:52.391  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799903.p3d)
+13:17:52.392  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799902.p3d)
+13:17:52.392  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799905.p3d)
+13:17:52.392  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799907.p3d)
+13:17:52.392  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799906.p3d)
+13:17:52.392  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799904.p3d)
+13:17:52.392  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0823_0353.p3d)
+13:17:52.392  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0358.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0824_0352.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0359.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0357.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0824_0353.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0358.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0356.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0354.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0358.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0830_0356.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0359.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0357.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0356.p3d)
+13:17:52.393  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0355.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0034.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0035.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0036.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0037.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0038.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0360.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0361.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799909.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799908.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799910.p3d)
+13:17:52.394  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0818_0354.p3d)
+13:17:52.395  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0819_0353.p3d)
+13:17:52.395  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0819_0357.p3d)
+13:17:52.395  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0817_0355.p3d)
+13:17:52.395  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0821_0355.p3d)
+13:17:52.395  ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0820_0356.p3d)
+13:17:52.400 El jugador Dev (id=HmY1S7eL2O_9JLwh-z8c0b6n30Ngil26ZWZJGYm7QZg=) se ha conectado.
+13:17:52.400 Player "Dev" (steamID=76561198141021937 pos=<2185.0, 7350.0, 4.5>) is connected
+13:17:52.405 <CREATE NEW CHAR>:
+    charID 0
+    playerID 0
+    dpnid 12212805
+    uid HmY1S7eL2O_9JLwh-z8c0b6n30Ngil26ZWZJGYm7QZg=
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_046_151_0043.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_046_151_0044.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812345.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812343.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812344.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812342.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812346.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0826_0349.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0347.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0349.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0825_0350.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0348.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0351.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0350.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0830_0347.p3d)
+13:17:52.413 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0830_0350.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0037.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0035.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0036.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0038.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0039.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0040.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0041.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0355.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0355.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0358.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0831_0358.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0353.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0355.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0354.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0352.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0357.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0356.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0358.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0359.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0357.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0359.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0357.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0358.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0356.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0357.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0357.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0356.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0358.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0838_0354.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0838_0355.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0355.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0356.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0357.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0359.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0356.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0358.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0358.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0838_0357.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0039.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0038.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0040.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0041.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0042.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0043.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0037.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0044.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0831_0360.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0831_0362.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0363.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0360.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0361.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0365.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0363.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0364.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0364.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0361.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0362.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0361.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0362.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0362.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0363.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0361.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0366.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0364.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0365.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0362.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_046_151_0043.p3d)
+13:17:52.415 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_046_151_0044.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812345.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812343.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812344.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812342.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812346.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0826_0349.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0347.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0349.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0825_0350.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0348.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0351.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0350.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0830_0347.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0830_0350.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812659.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812661.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812663.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812660.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812662.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0831_0345.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0344.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0346.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0349.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0345.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0350.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0345.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0037.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0035.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0036.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0038.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0039.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0040.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_044_151_0041.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0355.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0355.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0358.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0831_0358.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0353.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0355.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0354.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0352.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0357.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0356.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0358.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0359.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0357.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0359.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0357.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0358.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0356.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0357.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0357.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0356.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0358.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0838_0354.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0838_0355.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0355.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0356.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0357.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0359.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0356.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0358.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0358.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0838_0357.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0039.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0038.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0040.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0041.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0042.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0043.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0037.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_151_0044.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0831_0360.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0831_0362.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0363.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0360.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0361.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0365.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0363.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0364.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0835_0364.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0361.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0832_0362.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0833_0361.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0834_0362.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0362.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0363.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0361.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0366.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0364.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0837_0365.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0836_0362.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_046_151_0043.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_046_151_0044.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812345.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812343.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812344.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812342.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812346.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0826_0349.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0347.p3d)
+13:17:52.416 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0349.p3d)
+13:17:52.417 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0825_0350.p3d)
+13:17:52.417 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0348.p3d)
+13:17:52.417 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0351.p3d)
+13:17:52.417 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0350.p3d)
+13:17:52.417 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0830_0347.p3d)
+13:17:52.417 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0830_0350.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799903.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799902.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799905.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799907.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799906.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799904.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0823_0353.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0358.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0824_0352.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0359.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0827_0357.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0824_0353.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0358.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0356.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0354.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0358.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0830_0356.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0359.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0357.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0356.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0828_0355.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0034.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0035.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0036.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0037.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\flatfix_045_152_0038.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0360.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0829_0361.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799909.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799908.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799910.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0818_0354.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0819_0353.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0819_0357.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0817_0355.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0821_0355.p3d)
+13:17:52.418 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0820_0356.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799909.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799908.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799910.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0818_0354.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0819_0353.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0819_0357.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0817_0355.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0821_0355.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0820_0356.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812353.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812351.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812354.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812352.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0811_0347.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0812_0346.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0813_0349.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01056.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812347.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812349.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812348.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812350.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0815_0345.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0816_0345.p3d)
+13:17:52.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0817_0345.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0817_0344.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0822_0349.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0821_0350.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799909.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799908.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16799910.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0818_0354.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0819_0353.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0819_0357.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0817_0355.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0821_0355.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0820_0356.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812353.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812351.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812354.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\globalvis_16812352.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0811_0347.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0812_0346.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\seamfix_0813_0349.p3d)
+13:17:52.420 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01056.p3d)
+13:18:08.408 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_00893.p3d)
+13:18:08.409 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01775.p3d)
+13:18:09.907 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_00893.p3d)
+13:18:09.907 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01775.p3d)
+13:18:11.408 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01775.p3d)
+13:18:11.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_00893.p3d)
+13:18:11.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01775.p3d)
+13:18:11.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01704.p3d)
+13:18:11.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01774.p3d)
+13:18:11.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_00893.p3d)
+13:18:11.419 ENTITY    (W): Unknown object class 'pond' (baltic_water_v30\edge_01775.p3d)
+13:21:15.834 [Disconnect]: Client 12212805 disconnecting
+13:21:15.834 [Disconnect]: Client 12212805 early disconnect
+13:21:15.834 [Disconnect]: Start script disconnect 12212805 (dbCharacterId 0 dbPlayerId 0) logoutTime 15
+13:21:15.834 [Disconnect]: Finish script disconnect 12212805 (HmY1S7eL2O_9JLwh-z8c0b6n30Ngil26ZWZJGYm7QZg=)
+13:21:15.834 [Disconnect]: DisconnectPlayerFinish 12212805
+13:21:15.834 [Disconnect]: Remove player info 12212805
+13:21:15.835 [Disconnect]: Player destroy 12212805 
+13:21:16.721 ENGINE       : Destroying game
+13:21:16.721  SCRIPT       : Cleaning up script module globals 'Mission'
+13:21:16.721   SCRIPT    (E): Leaked 'MCPResultCallback' script instance (1x)!
+13:21:16.721   SCRIPT    (E): Leaked 'MCPPollCallback' script instance (1x)!
+13:21:16.721   SCRIPT    (E): ==== Total Leaks (2x)! ====
+13:21:17.255 RENDER    (W): Render release fix
+13:21:17.627  --- Termination successfully completed --- 

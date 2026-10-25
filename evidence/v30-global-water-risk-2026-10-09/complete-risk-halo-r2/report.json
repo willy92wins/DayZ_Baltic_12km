@@ -1,0 +1,59 @@
+{
+  "status": "RISK_INVENTORY_RENDER_GATE_OPEN",
+  "source": "E:\\DayZ-Baltic-Build\\v30-global-water-risk-20261009\\measured-bank-bed-r1\\terrain.npz",
+  "source_sha256": "28325d0605c3561844477ada9b4c5154926782fd4dd13470c9e68cdaa02ca491",
+  "grid": {
+    "vertices": 4194304,
+    "faces": 8380418,
+    "cell_m": 6
+  },
+  "thresholds": {
+    "measured_physical_sea_max_m": 0.85,
+    "empirical_m": 1.8
+  },
+  "counts": {
+    "dry_vertices": 3195297,
+    "low_vertices": 30662,
+    "physical_subsea_vertices": 360,
+    "low_away_from_water_faces": 19489,
+    "components": 3890
+  },
+  "faces": {
+    "total": 8380418,
+    "fully_dry": 6305475,
+    "low_fully_dry": 74814,
+    "dry_sea_intersections": 722,
+    "dry_low_area_m2": 900017.012448151,
+    "dry_below_sea_area_m2": 141.23699415591466
+  },
+  "observations": [],
+  "analytical_controls": {
+    "half_edge_triangle": true,
+    "complement": true,
+    "full_positive": true,
+    "high_negative": true,
+    "equality_excluded": true,
+    "float32_nominal_target_excluded": true
+  },
+  "limits": [
+    "All source vertices and both native triangles are evaluated; compiled rendering is a separate consumer.",
+    "1.80 m is an empirical screening threshold, not a proven sea-shader upper bound.",
+    "Classified shoreline/engineering risks remain in the census; classification is not acceptance.",
+    "Areas use fully dry source faces. Mixed shore faces remain in the vertex inventory, not the area sum.",
+    "No hypothetical coarse grid is used as a native LOD or as authority to edit heights."
+  ],
+  "ponds": {
+    "water_source": "E:\\DayZ-Baltic-Build\\v30-curved-channel-pilot-20261008\\r3-transition-proposal\\terrain_flat.npz",
+    "water_source_sha256": "e0d35db0a7a26f9ec055d57f0c9573a1dd2c27911ec8b084274283f5884cffd1",
+    "manifest_sha256": "77d030e28a414fa738aa57d452ff56d02c1599811caa9455d2fb23dae1900d62",
+    "sea_cutoff_m": 0.51,
+    "nominally_submerged_dry_vertices": 1,
+    "dry_vertices_within_35cm": 12581,
+    "fully_dry_faces_with_pond_area": 1,
+    "pond_area_on_fully_dry_faces_m2": 15.309827216661985,
+    "limits": [
+      "Frozen source planes; exact compiled footprints and temporal depth remain separate consumers.",
+      "35 cm is a bank-clearance screening value, not a proven wave envelope. Shore contact is not automatically an inland flooding defect."
+    ]
+  }
+}

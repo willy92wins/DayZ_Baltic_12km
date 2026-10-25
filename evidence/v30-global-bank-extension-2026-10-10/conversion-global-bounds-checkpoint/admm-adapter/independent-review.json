@@ -1,0 +1,95 @@
+{
+  "schema": "global-admm-adapter.independent-review.v1",
+  "status": "NEEDS_RUNTIME_GUARD_FIX",
+  "scope": "Independent review of adapter algebra, synthetic fixture, and global resource guards; no global solve or candidate run.",
+  "pins": {
+    "adapter_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-admm-adapter/matrix_free_admm.py",
+    "adapter_sha256": "beb89f58918dbf45def133fb170480887f003b1da39268829932b7c4fd11b769",
+    "plan_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-admm-adapter/PLAN.md",
+    "plan_sha256": "801d24d4247a0730eda50294b5e0c71aa1ae8699fc2e4c05d4943b07798a3952",
+    "fixture_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-admm-adapter/fixture-report-runtime-guards.json",
+    "fixture_sha256": "6208069e3f0befe14716520ca34e275d49f561fdfb06abe02a153d7d55bb9338",
+    "test_source_sha256": "f41298dafdbcdfcd03b62c07396d0f2bcb6d342c87b904ad111b02a542ad603d",
+    "cp_source_sha256": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a",
+    "structured_operator_sha256": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+    "fused_normal_sha256": "19a3e3a493f643702e66aaf265c705739535d386412f74659369d7746117ffaa",
+    "real_normal_comparison_sha256": "db6fa205e2b2b3d824ac07c1ad52d6c54ae6bf12e8b34d1a7093a701f518a965"
+  },
+  "equation_review": {
+    "status": "SOUND_ON_INSPECTED_PATH",
+    "details": [
+      "The x-step uses the fused normal LinearOperator and its diagonal Jacobi preconditioner; A^T rhs is cached once through the pinned adjoint.",
+      "The ADMM RHS, box/D8/SOC projections, scaled-dual updates, primal/dual/stationarity checks, stopping thresholds, and rho schedule match the pinned CP loop.",
+      "Affine d_c and k_g offsets are carried with the same signs as CP. The synthetic fixture compared operator/diagonal and the full solve against CSR/CP."
+    ],
+    "fixture_evidence": {
+      "status": "PASS_MATRIX_FREE_ADMM_ADAPTER_FIXTURE",
+      "shape": [
+        16,
+        16
+      ],
+      "variables": 64,
+      "cp_and_adapter_iterations": 407,
+      "rho_updates_equal": true,
+      "solution_max_abs_difference": 1.0658141036401503E-14,
+      "objective_relative_difference": 2.7755575615628914E-16,
+      "affine_rhs_max_abs_error": 5.684341886080802E-14,
+      "negative_rhs_memory_time_controls": "PASS"
+    }
+  },
+  "resource_contract": {
+    "status": "NOT_DEMONSTRATED_FOR_GLOBAL_RUN",
+    "global_dimensions": {
+      "N": 2712136,
+      "mA": 11095396,
+      "mC": 4182435,
+      "mG": 16760836,
+      "constraint_pairs": 8380418
+    },
+    "memory": {
+      "plan_limit_bytes": 3221225472,
+      "plan_min_free_bytes": 6442450944,
+      "persistent_operator_bytes": 493954896,
+      "ADMM_split_vectors_bytes_approx": 400183600,
+      "review_estimate_peak_bytes_range": [
+        2300000000,
+        3000000000
+      ],
+      "estimate_status": "Approximate array-liveness estimate only; no global process measurement.",
+      "reason": "The post-solve SOC KKT diagnostic constructs several face-sized float64 arrays plus a 2-column radial array. The adapter does not sample or enforce peak memory during that diagnostic, so the recorded peak can omit its largest transient. Python/allocator and overlapping operator temporaries are not bounded by the small fixture."
+    },
+    "time": {
+      "proposed_global_budget_seconds": 1800,
+      "real_fused_normal_action_seconds": 0.4707728,
+      "illustrative_outer_iteration_counts": [
+        407,
+        3430,
+        5926
+      ],
+      "optimistic_minimum_seconds_at_one_CG_action_per_outer": [
+        191.6045296,
+        1614.750704,
+        2789.7996128
+      ],
+      "estimate_status": "Lower-bound illustration, not a convergence prediction.",
+      "reason": "Every CG iteration applies the normal operator; actual CG work is multiple iterations across outer iterations. Thus the 3430 case leaves almost no time for other work even under the unrealistically favorable one-CG-iteration assumption, and 5926 already exceeds 1800 seconds at that lower bound."
+    },
+    "guard_findings": [
+      "The timer starts after input-vector conversion/validation, so setup is outside numeric_budget_seconds.",
+      "The guard is called at outer-loop entry and CG callbacks, but not around/inside the final projection residual, SOC KKT, and saved-stationarity diagnostics; their time and peak memory are not reliably charged or guarded.",
+      "The memory snapshot is sampled at most once per second only when guard executes; postsolve peak can therefore be absent from memory_peak_observed_bytes.",
+      "Progress is emitted at iteration 1 and every 200 iterations, not at the requested 25-iteration/30-second cadence."
+    ],
+    "minimum_changes_before_global_resource_claim": [
+      "Use one deadline that begins before vector conversion and covers all solver and postsolve diagnostics; check it before/after expensive phases.",
+      "Sample and enforce peak working set around postsolve diagnostics, especially SOC KKT; alternatively compute that diagnostic in bounded chunks without changing its formula.",
+      "Emit a cheap progress record at least every 25 outer iterations or 30 seconds, whichever comes first.",
+      "Treat the 1800-second allowance as unproven until a measured representative run or defensible CG-work bound fits it; do not extrapolate from the single normal-action benchmark or 16x16 fixture."
+    ]
+  },
+  "execution_limits": {
+    "global_solver_called": false,
+    "terrain_or_candidate_written": false,
+    "scope_note": "The review found no equation mismatch on the inspected ADMM path; the finding is about global runtime/resource enforcement and scaling evidence."
+  }
+}

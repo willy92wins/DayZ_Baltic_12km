@@ -1,0 +1,162 @@
+{
+  "status": "FAIL_NATIVE_NAV_ACCEPTANCE",
+  "issues": [
+    "east_local: partial or over-snapped endpoints",
+    "west_east: partial or over-snapped endpoints",
+    "west_east: 26 samples fail unchanged 0.8m acceptance",
+    "east_west: partial or over-snapped endpoints",
+    "east_west: 26 samples fail unchanged 0.8m acceptance",
+    "1 of 751 frozen dry-reference points have no walking sample within 2m"
+  ],
+  "routes": {
+    "west_local": {
+      "waypoints": 2,
+      "length_m": 9.999925313921768
+    },
+    "east_local": {
+      "waypoints": 2,
+      "length_m": 10.000034281164659
+    },
+    "west_east": {
+      "waypoints": 2,
+      "length_m": 120.19176043133086,
+      "samples": 121,
+      "failing_indices": [
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "max_roadway_nav_distance_m": 7.278902,
+      "physical_deck_y_range": [
+        9.0,
+        9.0
+      ]
+    },
+    "east_west": {
+      "waypoints": 2,
+      "length_m": 120.19176043133086,
+      "samples": 121,
+      "failing_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "max_roadway_nav_distance_m": 7.278902,
+      "physical_deck_y_range": [
+        9.0,
+        9.0
+      ]
+    }
+  },
+  "regional": {
+    "regional-grid": {
+      "total": 625,
+      "found_within_2m": 625
+    },
+    "Gdov": {
+      "total": 10,
+      "found_within_2m": 10
+    },
+    "Narva": {
+      "total": 14,
+      "found_within_2m": 13
+    },
+    "Kingisepp": {
+      "total": 16,
+      "found_within_2m": 16
+    },
+    "Sosnovy Bor": {
+      "total": 11,
+      "found_within_2m": 11
+    },
+    "Luga": {
+      "total": 13,
+      "found_within_2m": 13
+    },
+    "Mshinskaya": {
+      "total": 19,
+      "found_within_2m": 19
+    },
+    "Gatchina": {
+      "total": 11,
+      "found_within_2m": 11
+    },
+    "San Petersburgo": {
+      "total": 8,
+      "found_within_2m": 8
+    },
+    "Tosno": {
+      "total": 20,
+      "found_within_2m": 20
+    },
+    "Shlisselburg": {
+      "total": 4,
+      "found_within_2m": 4
+    }
+  },
+  "regional_misses": [
+    {
+      "index": 75,
+      "region": "Narva",
+      "requested": [
+        2466.0,
+        4.092501,
+        6906.0
+      ],
+      "success": "true",
+      "error_m": 2.4687970000000004
+    }
+  ],
+  "limits": [
+    "Graph and samples only, no physical actor traversal.",
+    "Dry-reference misses need diagnosis: they do not alone establish a terrain defect."
+  ],
+  "log_sha256": "faaf8088be219ed008370d9f064abd08bab13a4fb59beedfed5375876a717870",
+  "reference_sha256": "25524f3329d1e5aa63002bb3fed5a1522356f1dbdbb1e3cf9943d14fc4ab373c"
+}

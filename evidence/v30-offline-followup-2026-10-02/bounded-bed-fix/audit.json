@@ -1,0 +1,558 @@
+{
+  "status": "FAIL",
+  "limits": {
+    "width_m": 24.0,
+    "depth_m": 3.0,
+    "tolerance_m": 0.01,
+    "sea_min_m": 0.5,
+    "endpoint_margin_m": 24.0,
+    "narva_exclusion_m": 620.0,
+    "repair_target_m": 3.05,
+    "max_lowering_m": 1.55,
+    "bed_floor_m": -12.0
+  },
+  "inputs": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\terrain_v30\\terrain_v30.npz": "365c2a9400be80791e38c0c406152c87247e663205f1bc818604f05ea150c360",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\water_v3\\navigable_samples.npz": "0c0d65c8373b248e34008bc25f8cf0b12c7374ea5ab296cb4f074be84340d9fd",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\water_v3\\water_v3.geojson": "5060aa79f0898074055a217857c76d3f9953252cd850d840c8a55c6796ce764a",
+    "P:\\DayZ_Baltic_12km_dev\\tools\\terrain\\audit_fairway_triangles_v30.py": "3fe4abbb08530bee01e209653cc1f3a2e7c3b983579fd912b3803f2ac5e8dc95"
+  },
+  "method": "Exact intersection extrema on each native triangle; polygon buffer approximates circular joins.",
+  "exclusions": [
+    "24 m per retained axis endpoint; short pieces excluded",
+    "Narva within 620 m",
+    "Outside native vertex extent",
+    "Historical Delta Neva axes discarded in V3; new delta not certified"
+  ],
+  "limitations": [
+    "Offline geometry, not boat motion/collision or engine water rendering.",
+    "Water planes follow the existing V30 cell rule; no new engine verification."
+  ],
+  "rivers": [
+    {
+      "river": "Narva_0",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 15.491367721654008
+    },
+    {
+      "river": "Narva_1",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 9.162035531903875
+    },
+    {
+      "river": "Narva_2",
+      "area_m2": 414.81657730206723,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 37,
+      "intersection_vertices": 176,
+      "failing_faces": 0,
+      "min_depth_m": 3.582497106983758,
+      "worst_xz": [
+        1002.87842388758,
+        4790.968958870243
+      ],
+      "worst_cell_rc": [
+        1248,
+        167
+      ]
+    },
+    {
+      "river": "Narva_3",
+      "area_m2": 2280.6436977945705,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 166,
+      "intersection_vertices": 770,
+      "failing_faces": 0,
+      "min_depth_m": 3.489361486921974,
+      "worst_xz": [
+        1043.6185511104845,
+        4680.0
+      ],
+      "worst_cell_rc": [
+        1266,
+        173
+      ]
+    },
+    {
+      "river": "Narva_4",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 28.857423266021257
+    },
+    {
+      "river": "Narva_5",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 27.73428639372634
+    },
+    {
+      "river": "Narva_6",
+      "area_m2": 31.07753485503781,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 8,
+      "intersection_vertices": 36,
+      "failing_faces": 0,
+      "min_depth_m": 3.881883978843673,
+      "worst_xz": [
+        1026.0,
+        4878.0
+      ],
+      "worst_cell_rc": [
+        1233,
+        171
+      ]
+    },
+    {
+      "river": "Narva_7",
+      "area_m2": 466.60884881173826,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 42,
+      "intersection_vertices": 195,
+      "failing_faces": 0,
+      "min_depth_m": 3.605903406427154,
+      "worst_xz": [
+        1062.8546302404304,
+        4788.0
+      ],
+      "worst_cell_rc": [
+        1248,
+        177
+      ]
+    },
+    {
+      "river": "Narva_8",
+      "area_m2": 301.8510252636645,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 29,
+      "intersection_vertices": 137,
+      "failing_faces": 0,
+      "min_depth_m": 3.073036504455528,
+      "worst_xz": [
+        1111.4343454461525,
+        4834.565654553848
+      ],
+      "worst_cell_rc": [
+        1241,
+        185
+      ]
+    },
+    {
+      "river": "Narva_9",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 7.5
+    },
+    {
+      "river": "Narva_10",
+      "area_m2": 4780.647762573456,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 337,
+      "intersection_vertices": 1540,
+      "failing_faces": 0,
+      "min_depth_m": 3.3765441120177297,
+      "worst_xz": [
+        1133.1830364959467,
+        4896.816963504053
+      ],
+      "worst_cell_rc": [
+        1230,
+        188
+      ]
+    },
+    {
+      "river": "Narva_11",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 7.5
+    },
+    {
+      "river": "Narva_12",
+      "area_m2": 4424.180179286049,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 321,
+      "intersection_vertices": 1499,
+      "failing_faces": 0,
+      "min_depth_m": 3.3836017983829176,
+      "worst_xz": [
+        1229.225146501038,
+        5154.774853498962
+      ],
+      "worst_cell_rc": [
+        1187,
+        204
+      ]
+    },
+    {
+      "river": "Narva_13",
+      "area_m2": 4742.70593840568,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 322,
+      "intersection_vertices": 1467,
+      "failing_faces": 0,
+      "min_depth_m": 3.4038769389062837,
+      "worst_xz": [
+        1152.6586647477247,
+        5201.341335252275
+      ],
+      "worst_cell_rc": [
+        1180,
+        192
+      ]
+    },
+    {
+      "river": "Narva_14",
+      "area_m2": 308.6821674490084,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 27,
+      "intersection_vertices": 127,
+      "failing_faces": 0,
+      "min_depth_m": 4.551778132733579,
+      "worst_xz": [
+        1194.2863597214218,
+        5275.055295138201
+      ],
+      "worst_cell_rc": [
+        1167,
+        199
+      ]
+    },
+    {
+      "river": "Narva_15",
+      "area_m2": 2837.527893034918,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 197,
+      "intersection_vertices": 924,
+      "failing_faces": 0,
+      "min_depth_m": 3.0879459420462156,
+      "worst_xz": [
+        1257.157869680419,
+        5312.842130319581
+      ],
+      "worst_cell_rc": [
+        1161,
+        209
+      ]
+    },
+    {
+      "river": "Narva_16",
+      "area_m2": 3461.2640598924854,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 240,
+      "intersection_vertices": 1094,
+      "failing_faces": 0,
+      "min_depth_m": 3.3950146789226086,
+      "worst_xz": [
+        1212.6482031190662,
+        5405.351796880934
+      ],
+      "worst_cell_rc": [
+        1146,
+        202
+      ]
+    },
+    {
+      "river": "Narva_17",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 15.215238360035062
+    },
+    {
+      "river": "Narva_18",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 7.075485849042453
+    },
+    {
+      "river": "Narva_19",
+      "area_m2": 27368.281990039806,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 1935,
+      "intersection_vertices": 9034,
+      "failing_faces": 0,
+      "min_depth_m": 3.4275153342403484,
+      "worst_xz": [
+        1523.2079877447302,
+        5976.79201225527
+      ],
+      "worst_cell_rc": [
+        1050,
+        253
+      ]
+    },
+    {
+      "river": "Narva_20",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 8.22439207479799
+    },
+    {
+      "river": "Narva_21",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 26.98276575078191
+    },
+    {
+      "river": "Narva_22",
+      "area_m2": 8492.553748750215,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 601,
+      "intersection_vertices": 2833,
+      "failing_faces": 0,
+      "min_depth_m": 3.425378643706181,
+      "worst_xz": [
+        1884.7912712936818,
+        6449.208728706318
+      ],
+      "worst_cell_rc": [
+        972,
+        314
+      ]
+    },
+    {
+      "river": "Narva_23",
+      "area_m2": 2352.421826605128,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 163,
+      "intersection_vertices": 765,
+      "failing_faces": 0,
+      "min_depth_m": 3.446557909507809,
+      "worst_xz": [
+        1956.5457262626007,
+        7392.0
+      ],
+      "worst_cell_rc": [
+        814,
+        326
+      ]
+    },
+    {
+      "river": "Narva_24",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 37.44669250601285
+    },
+    {
+      "river": "Narva_25",
+      "area_m2": 1604.5298540564675,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 118,
+      "intersection_vertices": 566,
+      "failing_faces": 0,
+      "min_depth_m": 3.9025789561769066,
+      "worst_xz": [
+        2050.588133308379,
+        6389.848640159914
+      ],
+      "worst_cell_rc": [
+        982,
+        341
+      ]
+    },
+    {
+      "river": "Narva_26",
+      "area_m2": 105.04679930643108,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 15,
+      "intersection_vertices": 76,
+      "failing_faces": 0,
+      "min_depth_m": 3.4537190421779007,
+      "worst_xz": [
+        2061.567181943228,
+        7397.785044867045
+      ],
+      "worst_cell_rc": [
+        814,
+        343
+      ]
+    },
+    {
+      "river": "Narva_27",
+      "area_m2": 91.05296374430796,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 12,
+      "intersection_vertices": 66,
+      "failing_faces": 0,
+      "min_depth_m": 3.3742837393276157,
+      "worst_xz": [
+        1998.5734991242389,
+        7349.426500875761
+      ],
+      "worst_cell_rc": [
+        822,
+        333
+      ]
+    },
+    {
+      "river": "Narva_28",
+      "excluded": "Outside map or in preserved Narva zone",
+      "length_m": 316.03200454887616
+    },
+    {
+      "river": "Narva_29",
+      "excluded": "Outside map or in preserved Narva zone",
+      "length_m": 49.14017136179674
+    },
+    {
+      "river": "Narva_30",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 42.42640687119285
+    },
+    {
+      "river": "Narva_31",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 20.333856754004053
+    },
+    {
+      "river": "Narva_32",
+      "excluded": "Outside map or in preserved Narva zone",
+      "length_m": 119.60801784537882
+    },
+    {
+      "river": "Narva_33",
+      "excluded": "Outside map or in preserved Narva zone",
+      "length_m": 137.24509328620334
+    },
+    {
+      "river": "Narva_34",
+      "excluded": "Too short for the preserved endpoint margin",
+      "length_m": 33.721321425888185
+    },
+    {
+      "river": "Narva_35",
+      "excluded": "Outside map or in preserved Narva zone",
+      "length_m": 281.09089018843923
+    },
+    {
+      "river": "Narva_36",
+      "excluded": "Outside map or in preserved Narva zone",
+      "length_m": 101.2924179107685
+    },
+    {
+      "river": "Narva_37",
+      "excluded": "Outside map or in preserved Narva zone",
+      "length_m": 50.943441957226895
+    },
+    {
+      "river": "Luga_0",
+      "area_m2": 387689.44733817264,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 26288,
+      "intersection_vertices": 123284,
+      "failing_faces": 43,
+      "min_depth_m": 2.1928660833658276,
+      "worst_xz": [
+        7659.43140356522,
+        3422.568596434781
+      ],
+      "worst_cell_rc": [
+        1476,
+        1276
+      ]
+    },
+    {
+      "river": "Neva_0",
+      "area_m2": 82711.18378699783,
+      "outside_own_approved_polygon_m2": 0.0,
+      "faces": 5630,
+      "intersection_vertices": 25844,
+      "failing_faces": 0,
+      "min_depth_m": 3.2157739427115146,
+      "worst_xz": [
+        9188.283936966563,
+        9630.0
+      ],
+      "worst_cell_rc": [
+        441,
+        1531
+      ]
+    }
+  ],
+  "controls": {
+    "Narva_2": {
+      "affine_max_error_m": 1.7763568394002505e-15,
+      "sampler_max_difference_m": 1.6830981053317373e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_3": {
+      "affine_max_error_m": 3.552713678800501e-15,
+      "sampler_max_difference_m": 1.3855583347321954e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_6": {
+      "affine_max_error_m": 1.7763568394002505e-15,
+      "sampler_max_difference_m": 7.37188088351104e-14,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_7": {
+      "affine_max_error_m": 1.7763568394002505e-15,
+      "sampler_max_difference_m": 1.7275070263167436e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_8": {
+      "affine_max_error_m": 1.7763568394002505e-15,
+      "sampler_max_difference_m": 3.7214675785435247e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_10": {
+      "affine_max_error_m": 3.552713678800501e-15,
+      "sampler_max_difference_m": 1.8540724511240114e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_12": {
+      "affine_max_error_m": 2.6645352591003757e-15,
+      "sampler_max_difference_m": 1.5731860258938468e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_13": {
+      "affine_max_error_m": 2.6645352591003757e-15,
+      "sampler_max_difference_m": 1.6653345369377348e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_14": {
+      "affine_max_error_m": 2.6645352591003757e-15,
+      "sampler_max_difference_m": 1.2434497875801753e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_15": {
+      "affine_max_error_m": 4.440892098500626e-15,
+      "sampler_max_difference_m": 1.5498713423767185e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_16": {
+      "affine_max_error_m": 5.329070518200751e-15,
+      "sampler_max_difference_m": 1.4566126083082054e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_19": {
+      "affine_max_error_m": 5.329070518200751e-15,
+      "sampler_max_difference_m": 2.327027459614328e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_22": {
+      "affine_max_error_m": 4.884981308350689e-15,
+      "sampler_max_difference_m": 3.064215547965432e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_23": {
+      "affine_max_error_m": 3.552713678800501e-15,
+      "sampler_max_difference_m": 2.4158453015843406e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_25": {
+      "affine_max_error_m": 3.9968028886505635e-15,
+      "sampler_max_difference_m": 2.042810365310288e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_26": {
+      "affine_max_error_m": 4.440892098500626e-15,
+      "sampler_max_difference_m": 1.8918200339612667e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Narva_27": {
+      "affine_max_error_m": 3.552713678800501e-15,
+      "sampler_max_difference_m": 1.5898393712632242e-13,
+      "shallow_obstacle_rejected": true
+    },
+    "Luga_0": {
+      "affine_max_error_m": 2.842170943040401e-14,
+      "sampler_max_difference_m": 1.3447021274259896e-12,
+      "shallow_obstacle_rejected": true
+    },
+    "Neva_0": {
+      "affine_max_error_m": 2.842170943040401e-14,
+      "sampler_max_difference_m": 6.679101716144942e-13,
+      "shallow_obstacle_rejected": true
+    }
+  }
+}

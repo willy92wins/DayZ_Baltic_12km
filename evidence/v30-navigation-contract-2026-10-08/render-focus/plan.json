@@ -1,0 +1,75 @@
+{
+  "run": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "run_id": "71f340c9-14e3-4df4-b267-b4c5d4ac25a4",
+    "phase": "completed",
+    "elapsed_s": 16.395,
+    "artifacts_paths": [
+      "P:\\DayZ_MCP_dev\\_server\\profiles",
+      "P:\\DayZ_MCP_dev\\_client\\profiles"
+    ],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": true,
+    "client_alive": true,
+    "process_alive": true,
+    "bridge_ready": false,
+    "reason": "binding_not_ready",
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": "observed",
+    "steam_pid_repair": null,
+    "steam_restarted": false,
+    "client_death_diagnosis": null,
+    "storage_rotated": false,
+    "storage_backup": null,
+    "storage_reset_notice": null,
+    "caller_tool_registry_stale": false
+  },
+  "camera_protocol": "Identical actual camera matrix; fov setter echo only. No OS focus writes.",
+  "steps": [
+    {
+      "step": "foreground_startup",
+      "result": "Textured land and normal sky; focus confirmed in log."
+    },
+    {
+      "step": "unfocused_resident",
+      "result": "Textured near scene unchanged across 69s, camera exact."
+    },
+    {
+      "step": "unfocused_new_site",
+      "position": [
+        7920,
+        155,
+        4940
+      ],
+      "result": "New reserve site untextured at 12:48:59."
+    },
+    {
+      "step": "baseline_wait",
+      "minimum_seconds": 60
+    },
+    {
+      "step": "manual_focus",
+      "seconds": 20,
+      "action": "Keep camera, world, weather and package unchanged; sample focus and images."
+    }
+  ],
+  "limits": [
+    "A single successful switch is scoped evidence of recovery, not the internal native root cause.",
+    "No texture acceptance based on dark_tiles threshold.",
+    "A reload before foreground makes focus effect inconclusive."
+  ]
+}

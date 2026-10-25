@@ -1,0 +1,20 @@
+{
+  "status": "PASS_OFFLINE_CONTRACT",
+  "materials": 367,
+  "changed": 344,
+  "slots": 1378,
+  "engine_tested_candidate_semantic_parity": true,
+  "idempotent": true,
+  "nonmaterial_files_unchanged": 100,
+  "native_wrp_sha256": "bccaa86b926aacbb1e158a1b63c066cd8de5ec29266787f92a9e2ce0cf4f8fd8",
+  "native_asc_sha256": "beba1691236f558e6900c99b26e5fb6cc8b248540840a843486d0605d2f6fd8d",
+  "negative_controls": {
+    "unknown_shader": "Unexpected shader contract: unknown_shader",
+    "foreign_palette": "Palette changed at Stage3: foreign_palette",
+    "missing_stage": "Unexpected stage layout: missing_stage",
+    "duplicate_stage": "Unexpected stage layout: duplicate_stage",
+    "empty_directory": "Rejected before writes",
+    "mixed_invalid_batch": "All original bytes preserved; rejected before backup or edits"
+  },
+  "visual_evidence": "A/B/A/B observed manually in Buldozer; this script is not a visual classifier."
+}

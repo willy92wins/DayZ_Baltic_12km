@@ -1,0 +1,17 @@
+{
+  "status": "PASS_NATIVE_POSITIVE_AND_TWO_REAL_NEGATIVES",
+  "positive_receipt_sha256": "deb4e4045bcdd3df6b6908028b5c2374072f1d7b888f4f88bda2c627c7d2bab3",
+  "bad_export_sha256": "81d46989b15f9f1df912b2d5d9997a0cbd2911a95b9020af51bb87d3286fa721",
+  "tests": [
+    {
+      "name": "centimetre_water_changes",
+      "rejected": true,
+      "reason": "Only sub-micrometre water Y restitution is permitted"
+    },
+    {
+      "name": "unpersisted_pair",
+      "rejected": true,
+      "reason": "Literal object persistence failed"
+    }
+  ]
+}

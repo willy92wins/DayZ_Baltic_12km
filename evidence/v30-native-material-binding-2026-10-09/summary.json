@@ -1,0 +1,91 @@
+{
+  "status": "PASS_POND_MOSS_BINDING_CONTROL_NO_FIX",
+  "phases": [
+    "PHASE;0;22265;untouched",
+    "PHASE;1;83073;marker;returns;true;true;true;true",
+    "PHASE;2;116680;reset_default;requested",
+    "PHASE;3;153808;marker;returns;true;true;true;true",
+    "PHASE;4;171831;reset_default;requested"
+  ],
+  "pixel_marker_counts": [
+    {
+      "phase": "baseline",
+      "magenta": 0,
+      "cyan": 0,
+      "shape": [
+        1080,
+        1920,
+        3
+      ],
+      "file_sha256": "c061c5b30323b4680cfe8f2e3af9f23496f79e8483c885aa73669e1c71a9f459"
+    },
+    {
+      "phase": "baseline-settled",
+      "magenta": 0,
+      "cyan": 0,
+      "shape": [
+        1080,
+        1920,
+        3
+      ],
+      "file_sha256": "62b6a671aaf4b2c8cb464b1d83ef0f878e738f79e1d890a01592f22f591dd3f1"
+    },
+    {
+      "phase": "moss-marker",
+      "magenta": 16864,
+      "cyan": 0,
+      "shape": [
+        1080,
+        1920,
+        3
+      ],
+      "file_sha256": "33cc3803d85ea71179cf2cd885bf7b50c01f985972d8f74d95c7e4316d706835"
+    },
+    {
+      "phase": "reset-moss",
+      "magenta": 0,
+      "cyan": 0,
+      "shape": [
+        1080,
+        1920,
+        3
+      ],
+      "file_sha256": "858e11c6f92731c6fb52989b3f791e567c5fa1ae0dbacf86643720d10be957be"
+    },
+    {
+      "phase": "clear-marker",
+      "magenta": 0,
+      "cyan": 0,
+      "shape": [
+        1080,
+        1920,
+        3
+      ],
+      "file_sha256": "f07699677df42d815c929833a06844395a53157a8333bdf51aba04dacaeea853"
+    },
+    {
+      "phase": "restored",
+      "magenta": 0,
+      "cyan": 0,
+      "shape": [
+        1080,
+        1920,
+        3
+      ],
+      "file_sha256": "126e05721ace2b8af87faa22434bd742651568eefb446181e7535fd3a0888a23"
+    }
+  ],
+  "profile_byte_identical": true,
+  "map_files": {
+    "baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "narva_trial.pbo": "b69265c5feb99d1bda7a5c9f02282818d0ffe4cd26f89f3a095c128e62d374f3"
+  },
+  "run_id": "eecb3880-fce7-4842-8574-49ff8cbdcb57",
+  "limits": [
+    "Moss controls actual rendered ponds, but dry halos are not shown eliminated.",
+    "Clear receives valid indices/returns but no cyan marker in this view: no proof of visible fallback use.",
+    "Initial baseline had some textures still streaming; chromatic positive control is distinct from texture changes.",
+    "All marker parameters reset; no production modification.",
+    "EV33 WetFloor remains no stable suppression; this run confirms consumer binding but is not a synchronized repeat of EV33."
+  ]
+}

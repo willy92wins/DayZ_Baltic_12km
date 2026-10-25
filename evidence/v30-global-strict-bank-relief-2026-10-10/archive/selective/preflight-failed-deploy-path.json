@@ -1,0 +1,8 @@
+{
+  "status": "FAIL_EV87_S_CONSUMER",
+  "verifier": "independent EV87-S consumer",
+  "gates": {},
+  "error": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\DayZ-Baltic-Build\\\\v30-mixed-bank-incremental-fixed-20261010\\\\package\\\\world\\\\root\\\\dayz_baltic_12km_dev\\\\tb\\\\narva_trial\\\\deploy.json'",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\selective\\verify_selective.py\", line 617, in main\n    initial_hashes = {str(Path(x).resolve()): sha(x) for x in all_inputs}\n                                              ^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\selective\\verify_selective.py\", line 58, in sha\n    with Path(path).open(\"rb\") as stream:\n         ^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\guill\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\DayZ-Baltic-Build\\\\v30-mixed-bank-incremental-fixed-20261010\\\\package\\\\world\\\\root\\\\dayz_baltic_12km_dev\\\\tb\\\\narva_trial\\\\deploy.json'\n",
+  "elapsed_seconds": 1.3119999999762513
+}

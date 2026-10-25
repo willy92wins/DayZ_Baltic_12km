@@ -1,0 +1,46 @@
+{
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 1,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Neva Ladoga player",
+        "samples": 25,
+        "avg64_median": 18.9911,
+        "avg64_range": [
+          18.8958,
+          19.1102
+        ],
+        "native_min64_min": 14.4928,
+        "native_max64_max": 28.5714,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Fixed 23-28s capture interval omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "sha256": {
+    "reference.json": "f9d7c45506cc3343834fde63a902e41a3607b10508c5147ab1dcd45cfc730dca",
+    "camera.log": "7906ca9fe4bf2928dc5869b4369c4a6be79c963b44e7ccc645be17ab9b880f14",
+    "client-metrics.log": "e325371e6ffc2473e75a0fb08dcdae77325a3091413a8fc63e31e03bf4a3a60b"
+  }
+}

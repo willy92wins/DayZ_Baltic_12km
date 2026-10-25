@@ -1,0 +1,72 @@
+{
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 3,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "SPB player",
+        "samples": 25,
+        "avg64_median": 29.8229,
+        "avg64_range": [
+          28.4571,
+          30.1318
+        ],
+        "native_min64_min": 11.236,
+        "native_max64_max": 32.2581,
+        "global10_median": null
+      },
+      {
+        "phase": 1,
+        "name": "SPB delta aerial",
+        "samples": 25,
+        "avg64_median": 29.6296,
+        "avg64_range": [
+          29.2505,
+          30.1176
+        ],
+        "native_min64_min": 25.0,
+        "native_max64_max": 31.25,
+        "global10_median": null
+      },
+      {
+        "phase": 2,
+        "name": "Ladoga distant diagnostic",
+        "samples": 25,
+        "avg64_median": 30.0611,
+        "avg64_range": [
+          29.6984,
+          190.476
+        ],
+        "native_min64_min": 27.027,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Fixed 23-28s capture interval omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "sha256": {
+    "reference.json": "c8964047b06f47789dbf87f45df5c0e0e73785a63ad804b95550b74d60f5896f",
+    "camera.log": "68f022097d9f04e355106899f0c3f7d2be38cb066379130e50e172cb30823aed",
+    "client-metrics.log": "f8f7b3ee0e3fbbec390a3cd930d7d0f3d08797c08b326054b9c09be79f49bf0d"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "status": "PASS_ACCEPTED_NATIVE_V10_AND_THREE_NEGATIVES",
+  "positive": {
+    "status": "PASS_NATIVE_ROAD_TERRAIN_CONTENT",
+    "checks": {
+      "header_exact": true,
+      "interior_heights_exact": true,
+      "terminal_heights_bounded_1micrometre": true,
+      "all_material_bytes_exact": true,
+      "all_object_ids_unique": true,
+      "all_10161_water_bridge_objects_exact": true
+    },
+    "wrp": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tb\\regional_foundation_v10\\02_reopened_v10.wrp",
+    "wrp_sha256": "cdd6838f522a5b66b729db7c6bda39b0a5a41eb256fb26804eb39f5479ef905a",
+    "asc": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_combined_v10\\baltic_regional_foundation_v10.asc",
+    "asc_sha256": "8e25fab25e8f0909fdda302ed4ba3db4c43884c523920f5ef3424db90780eb8b",
+    "baseline_wrp_sha256": "cdd6838f522a5b66b729db7c6bda39b0a5a41eb256fb26804eb39f5479ef905a",
+    "maximum_height_error_m": 5.960464477539063e-08,
+    "limits": [
+      "Content of one export. Real save/close/reopen provenance and a second matching export are separate.",
+      "Does not accept compiled WRP, new navmesh, rendered pixels or runtime driving."
+    ]
+  },
+  "negative_controls": [
+    {
+      "name": "changed_native_height",
+      "rejected": true,
+      "failed_checks": [
+        "interior_heights_exact",
+        "terminal_heights_bounded_1micrometre"
+      ]
+    },
+    {
+      "name": "moved_water_object",
+      "rejected": true,
+      "failed_checks": [
+        "all_10161_water_bridge_objects_exact"
+      ]
+    },
+    {
+      "name": "changed_material_assignment",
+      "rejected": true,
+      "failed_checks": [
+        "all_material_bytes_exact"
+      ]
+    }
+  ],
+  "limit": "Consumer validation only; no road candidate has been imported by this test."
+}

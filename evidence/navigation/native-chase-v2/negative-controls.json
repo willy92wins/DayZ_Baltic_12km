@@ -1,0 +1,43 @@
+{
+  "positive_fixture": "engine.log",
+  "negative_controls": {
+    "wrong_world": {
+      "rejected": true,
+      "reason": "Wrong fixture or world"
+    },
+    "truncated": {
+      "rejected": true,
+      "reason": "Incomplete stages"
+    },
+    "nonfinite_health": {
+      "rejected": true,
+      "reason": "Nonfinite or noninteger event"
+    },
+    "dead_actor": {
+      "rejected": true,
+      "reason": [
+        "stage1:positive_health"
+      ]
+    },
+    "below_road": {
+      "rejected": true,
+      "reason": [
+        "stage1:physical_surface"
+      ]
+    },
+    "off_corridor_or_inconsistent_axis": {
+      "rejected": true,
+      "reason": "Recorded axes disagree with world position"
+    },
+    "moved_prey": {
+      "rejected": true,
+      "reason": [
+        "stage1:fixed_prey"
+      ]
+    },
+    "missing_prey": {
+      "rejected": true,
+      "reason": "Prey identity/time mismatch"
+    }
+  }
+}

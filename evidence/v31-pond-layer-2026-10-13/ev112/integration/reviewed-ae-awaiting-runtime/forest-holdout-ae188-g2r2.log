@@ -1,0 +1,99 @@
+== A-reserva: analysed 40.5 ha (bog left out 40.5 ha), 10378 instances, context ha {'interior': 36.7, 'edge': 1.5, 'riparian': 1.8, 'open': 0.1}
+  agreement.canopy_on_surface                    0.9856 [0.365, inf] PASS (outside p10-p90)
+  agreement.surface_in_canopy                    0.9771 [0.913, inf] PASS
+  density.interior.broadleaf                    12.2185 [1.9729, 206.3249] PASS
+  density.interior.bush                         34.7779 [9.4566, 87.6048] PASS
+  density.interior.conifer                     199.4421 [0.0376, 230.8064] PASS (outside p10-p90)
+  density.interior.dead                         21.5525 [9.9174, 44.0406] PASS
+  density.interior.reed                             0.0 [0.0, 1.6188] PASS
+  density.interior.trees                       211.6607 [154.03, 248.7999] PASS
+  nn.broadleaf.p5                                1.4451 [0.5292, 2.421] PASS
+  nn.broadleaf.p50                               6.9474 [2.4405, 8.8652] PASS (outside p10-p90)
+  nn.bush.p5                                     0.6934 [0.3909, 0.9759] PASS
+  nn.bush.p50                                    3.0419 [2.1115, 4.4045] PASS
+  nn.conifer.p5                                  1.6817 [0.9171, 3.0476] PASS
+  nn.conifer.p50                                 3.8668 [3.737, 4.9023] PASS (outside p10-p90)
+  nn.dead.p5                                     1.6198 [1.1015, 3.6322] PASS
+  nn.dead.p50                                     6.543 [5.1683, 13.6009] PASS
+  share.interior.broadleaf                       0.0456 [0.0095, 0.7499] PASS
+  share.interior.bush                            0.1298 [0.0453, 0.2973] PASS
+  share.interior.conifer                         0.7442 [0.0002, 0.8046] PASS
+  share.interior.dead                            0.0804 [0.0373, 0.1618] PASS
+  share.interior.reed                               0.0 [0.0, 0.0051] PASS
+  trees.interior.broadleaf_share                 0.0577 [0.0119, 0.9998] PASS
+  trees.interior.size3_share                     0.4113 [0.1478, 0.5978] PASS
+  trees.interior.solitary_share                   0.213 [0.0776, 0.4288] PASS
+  tvd.interior.broadleaf                         0.1156 [-inf, 0.7561] PASS (outside p10-p90)
+  tvd.interior.bush                              0.0535 [-inf, 0.6003] PASS (outside p10-p90)
+  tvd.interior.conifer                           0.0433 [-inf, 0.3158] PASS (outside p10-p90)
+  tvd.interior.dead                              0.0142 [-inf, 1.0] PASS (outside p10-p90)
+  dense rule: density.interior.trees 211.7 >= Livonia p50 186.3303: PASS
+  A-reserva G2: PASS (28 metrics judged, 0 failed, allowed 0; 8 outside p10-p90)
+== B-bosque-carretera-agua: analysed 70.2 ha (bog left out 10.8 ha), 15723 instances, context ha {'interior': 54.1, 'edge': 5.0, 'riparian': 9.6, 'open': 0.5}
+  agreement.canopy_on_surface                    0.9184 [0.365, inf] PASS (outside p10-p90)
+  agreement.surface_in_canopy                    0.9649 [0.913, inf] PASS (outside p10-p90)
+  density.edge.broadleaf                        30.5847 [4.7855, 117.2596] PASS
+  density.edge.bush                             77.1614 [42.2626, 119.3074] PASS
+  density.edge.conifer                          87.5562 [0.6099, 104.3773] PASS
+  density.edge.dead                             23.1884 [3.5453, 30.3525] PASS (outside p10-p90)
+  density.edge.reed                                 0.0 [0.0, 2.1873] PASS
+  density.edge.trees                           118.1409 [93.8864, 125.7004] PASS (outside p10-p90)
+  density.interior.broadleaf                    27.7947 [1.9729, 206.3249] PASS
+  density.interior.bush                          37.374 [9.4566, 87.6048] PASS
+  density.interior.conifer                     153.5645 [0.0376, 230.8064] PASS
+  density.interior.dead                         21.7661 [9.9174, 44.0406] PASS
+  density.interior.reed                             0.0 [0.0, 1.6188] PASS
+  density.interior.trees                       181.3592 [154.03, 248.7999] PASS
+  density.riparian.broadleaf                    61.2895 [2.46, 172.3711] PASS
+  density.riparian.bush                         60.7674 [6.3961, 211.0014] PASS
+  density.riparian.conifer                      31.5322 [0.0, 155.9656] PASS
+  density.riparian.dead                          5.4294 [0.9223, 16.7282] PASS
+  density.riparian.reed                           5.325 [1.9441, 37.9227] PASS
+  density.riparian.trees                        92.8217 [66.5726, 179.3439] PASS
+  nn.broadleaf.p5                                1.5193 [0.5292, 2.421] PASS
+  nn.broadleaf.p50                               5.3884 [2.4405, 8.8652] PASS
+  nn.bush.p5                                     0.6244 [0.3909, 0.9759] PASS
+  nn.bush.p50                                    2.7501 [2.1115, 4.4045] PASS
+  nn.conifer.p5                                  1.9023 [0.9171, 3.0476] PASS
+  nn.conifer.p50                                  4.265 [3.737, 4.9023] PASS
+  nn.dead.p5                                     1.8806 [1.1015, 3.6322] PASS
+  nn.dead.p50                                     6.808 [5.1683, 13.6009] PASS
+  share.edge.broadleaf                             0.14 [0.0272, 0.6398] PASS
+  share.edge.bush                                0.3532 [0.2693, 0.5127] PASS
+  share.edge.conifer                             0.4007 [0.0033, 0.5942] PASS
+  share.edge.dead                                0.1061 [0.0174, 0.1393] PASS (outside p10-p90)
+  share.edge.reed                                   0.0 [0.0, 0.0105] PASS
+  share.interior.broadleaf                       0.1156 [0.0095, 0.7499] PASS
+  share.interior.bush                            0.1554 [0.0453, 0.2973] PASS
+  share.interior.conifer                         0.6385 [0.0002, 0.8046] PASS
+  share.interior.dead                            0.0905 [0.0373, 0.1618] PASS
+  share.interior.reed                               0.0 [0.0, 0.0051] PASS
+  share.riparian.broadleaf                       0.3729 [0.0124, 0.5043] PASS
+  share.riparian.bush                            0.3698 [0.0323, 0.7283] PASS
+  share.riparian.conifer                         0.1919 [0.0, 0.7886] PASS
+  share.riparian.dead                             0.033 [0.0051, 0.0846] PASS
+  share.riparian.reed                            0.0324 [0.0063, 0.201] PASS
+  trees.edge.broadleaf_share                     0.2589 [0.0444, 0.9948] PASS
+  trees.edge.size3_share                         0.3469 [0.1702, 0.5601] PASS
+  trees.edge.solitary_share                      0.4196 [0.3007, 0.6878] PASS
+  trees.interior.broadleaf_share                 0.1533 [0.0119, 0.9998] PASS
+  trees.interior.size3_share                     0.4166 [0.1478, 0.5978] PASS
+  trees.interior.solitary_share                  0.2242 [0.0776, 0.4288] PASS
+  trees.riparian.broadleaf_share                 0.6603 [0.0155, 1.0] PASS
+  trees.riparian.size3_share                     0.3116 [0.089, 0.4814] PASS
+  trees.riparian.solitary_share                  0.4702 [0.1584, 0.822] PASS
+  tvd.edge.broadleaf                             0.2047 [-inf, 0.7181] PASS
+  tvd.edge.bush                                  0.1379 [-inf, 0.4805] PASS
+  tvd.edge.conifer                               0.0928 [-inf, 0.3967] PASS (outside p10-p90)
+  tvd.edge.dead                                  0.0586 [-inf, 0.9818] PASS (outside p10-p90)
+  tvd.interior.broadleaf                         0.1068 [-inf, 0.7561] PASS (outside p10-p90)
+  tvd.interior.bush                              0.0546 [-inf, 0.6003] PASS (outside p10-p90)
+  tvd.interior.conifer                           0.0475 [-inf, 0.3158] PASS (outside p10-p90)
+  tvd.interior.dead                              0.0066 [-inf, 1.0] PASS (outside p10-p90)
+  tvd.riparian.broadleaf                          0.064 [-inf, 0.588] PASS (outside p10-p90)
+  tvd.riparian.bush                              0.0292 [-inf, 0.4036] PASS (outside p10-p90)
+  tvd.riparian.conifer                            0.096 [None, None] NO_BAND
+  tvd.riparian.dead                              0.1715 [None, None] NO_BAND
+  tvd.riparian.reed                                 0.0 [None, None] NO_BAND
+  B-bosque-carretera-agua G2: PASS (62 metrics judged, 0 failed, allowed 0; 13 outside p10-p90)
+G2 PASS

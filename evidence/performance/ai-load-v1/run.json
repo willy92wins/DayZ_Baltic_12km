@@ -1,0 +1,73 @@
+{
+  "launch": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "run_id": "ea48bc79-7b0d-47dd-b6b1-a959662c253a",
+    "phase": "completed",
+    "elapsed_s": 16.514,
+    "artifacts_paths": [
+      "P:\\DayZ_MCP_dev\\_server\\profiles",
+      "P:\\DayZ_MCP_dev\\_client\\profiles"
+    ],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": true,
+    "client_alive": true,
+    "process_alive": true,
+    "bridge_ready": false,
+    "reason": "binding_not_ready",
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": "observed",
+    "steam_pid_repair": null,
+    "steam_restarted": false,
+    "client_death_diagnosis": null,
+    "caller_tool_registry_stale": true,
+    "warnings": [
+      "tool_registry_stale_reopen_client"
+    ],
+    "tool_registry_stale_hint": "The host must reconnect the dayz-mcp server to list the current tools. The agent cannot do that itself (Claude Code: /mcp, then reconnect dayz-mcp). Hosts that do not re-list after tools/list_changed should be registered with --no-progressive-disclosure."
+  },
+  "processes": [
+    {
+      "pid": 256196,
+      "creation_time_utc": "2026-09-30T10:44:22.549786Z",
+      "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+      "command_line_sha256": "9307fce1e68a2330c12238ce5ff2ce5b4883b8e51e7471a733251a07c543e87c",
+      "role": "server",
+      "identity_scheme": "psutil-argv-v2",
+      "cpu": {
+        "user_100ns": 30468750,
+        "kernel_100ns": 17187500,
+        "created_100ns": 134352386625497860,
+        "sampled_at_ns": 1790765093452536600
+      }
+    },
+    {
+      "pid": 256032,
+      "creation_time_utc": "2026-09-30T10:44:36.404533Z",
+      "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+      "command_line_sha256": "4ca01842927e78bb3493be3ea53926d146a9372b2a6e5c2eafcf2194f0ba05c4",
+      "role": "client",
+      "identity_scheme": "psutil-argv-v2",
+      "cpu": {
+        "user_100ns": 26562500,
+        "kernel_100ns": 1718750,
+        "created_100ns": 134352386764045330,
+        "sampled_at_ns": 1790765093452568000
+      }
+    }
+  ],
+  "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticAILoad.BalticTrial"
+}

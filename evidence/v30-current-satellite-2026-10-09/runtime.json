@@ -1,0 +1,1118 @@
+{
+  "run": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "run_id": "b690cc87-1c6f-465f-adba-ee070db236f4",
+    "phase": "completed",
+    "elapsed_s": 14.141,
+    "artifacts_paths": [
+      "P:\\DayZ_MCP_dev\\_server\\profiles",
+      "P:\\DayZ_MCP_dev\\_client\\profiles"
+    ],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": true,
+    "client_alive": true,
+    "process_alive": true,
+    "bridge_ready": false,
+    "reason": "binding_not_ready",
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": "observed",
+    "steam_pid_repair": null,
+    "steam_restarted": false,
+    "client_death_diagnosis": null,
+    "storage_rotated": false,
+    "storage_backup": null,
+    "storage_reset_notice": null,
+    "storage_recovery_reason": null,
+    "caller_tool_registry_stale": false
+  },
+  "events": [
+    {
+      "kind": "camera",
+      "name": "R1_current",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool camera_set: bad_args: cam_pos None must be a list of 3 finite numbers"
+          },
+          {
+            "type": "text",
+            "text": "lease_ttl_s=96.841"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "kind": "camera",
+      "name": "R1_current_corrected",
+      "result": {
+        "id": 171,
+        "ok": 1,
+        "error": "",
+        "camera": {
+          "ok": 1,
+          "applied_mode": "matrix",
+          "pos": [
+            2185,
+            280,
+            7350
+          ],
+          "matrix": [
+            -0.9967640042304993,
+            0,
+            -0.08038417994976044,
+            0.06680204719305038,
+            0.556220531463623,
+            -0.8283454775810242,
+            0.044711340218782425,
+            -0.8310347199440002,
+            -0.5544205904006958,
+            2185,
+            280,
+            7350
+          ],
+          "dir": [
+            0.044711340218782425,
+            -0.8310347199440002,
+            -0.5544205904006958
+          ],
+          "fov": 0,
+          "interpolation_complete": 0,
+          "viewport_moved": 1,
+          "view": "scripted",
+          "error": ""
+        },
+        "type": "",
+        "found": 0,
+        "object_id": 0,
+        "tick_poll_sent": 1140,
+        "tick_poll_callback": 1143,
+        "tick_dispatch": 1143,
+        "classname": "",
+        "accepted": 0,
+        "_server": {
+          "t_result": 215924.7820708,
+          "t_enqueue": 215922.3405094,
+          "rtt_s": 2.4415613999881316
+        },
+        "suggested_calls": [
+          {
+            "tool": "bridge_status",
+            "args": {}
+          },
+          {
+            "tool": "session_status",
+            "args": {}
+          }
+        ],
+        "next_step": "session_heartbeat",
+        "fov_applied": 1.2870022175865687,
+        "lease_ttl_s": 117.27543599999626
+      }
+    },
+    {
+      "kind": "capture",
+      "name": "R3-near",
+      "meta": {
+        "fullres_path": "E:\\DayZ-Baltic-Build\\v30-current-satellite-20261009\\captures\\R3-near\\capture_20261009_115719_456.jpg",
+        "native_width": 1936,
+        "native_height": 1119,
+        "crop": "",
+        "crop_space": "client",
+        "chrome_excluded": true,
+        "inline_mimeType": "image/jpeg",
+        "inline_base64_len": 484,
+        "window": {
+          "pid": 153004,
+          "class": "DayZ",
+          "title": "DayZ",
+          "left": -2953,
+          "top": 203,
+          "width": 1936,
+          "height": 1119
+        },
+        "backend_sha256": "FA58866D50693E728C99A59C53818CABA2ACF1577219667A5CF7BD41D50A8C96",
+        "frame_sha256": "10fa39235c1c767433d9606f2d1087ce05246db7d8027371a1532274932d22bd",
+        "window_surface": {
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "width": 1936,
+            "height": 1119
+          },
+          "pixel_sha256": "10fa39235c1c767433d9606f2d1087ce05246db7d8027371a1532274932d22bd",
+          "stats": {
+            "width": 1936,
+            "height": 1119,
+            "meanBrightness": 120.05250454213103,
+            "nonBlackRatio": 0.9848595632168627
+          }
+        },
+        "client_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "pixel_sha256": "0d0a196cd737165c2984d6e2806e32591482ffd2ce3101a182f15080d433d55b",
+          "stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 118.42010368441358,
+            "nonBlackRatio": 0.9999913194444444
+          }
+        },
+        "effective_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "native_width": 1920,
+          "native_height": 1080,
+          "native_pixel_sha256": "0d0a196cd737165c2984d6e2806e32591482ffd2ce3101a182f15080d433d55b",
+          "native_stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 118.42010368441358,
+            "nonBlackRatio": 0.9999913194444444
+          },
+          "delivered_width": 14,
+          "delivered_height": 8,
+          "delivered_pixel_sha256": "1e9a19ffcca21f4bfdbdb1ffe643ff2d3b2516feeae4f3872d42015eef2dfbf3",
+          "delivered_stats": {
+            "width": 14,
+            "height": 8,
+            "meanBrightness": 118.5,
+            "nonBlackRatio": 1
+          }
+        },
+        "frame_stale": false,
+        "frame_stale_detail": {
+          "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+          "key_kind": "cmdline",
+          "surface": "client",
+          "current_sha256": "0d0a196cd737165c2984d6e2806e32591482ffd2ce3101a182f15080d433d55b",
+          "previous_sha256": "008ebcf5b261c2d360442c7dade887535ee0a67a22c3df9d379a8938a90c63a6",
+          "same_as_capture_ts": null,
+          "age_s": null,
+          "repeat_count": 1,
+          "frames": 3,
+          "distinct_frames": 3,
+          "max_adjacent_delta": 0.00989592213697073,
+          "requested_frames": 3,
+          "effective_frames": 3,
+          "frame_limit": 5,
+          "state_backend": "sidecar",
+          "state_error": null
+        },
+        "fullres_file_sha256": "3b58a0e198c39d2799a3be745e62e819f11ab7f7528feacb9a890afbf69e0d7e",
+        "lease_ttl_s": 89.33513870000024
+      }
+    },
+    {
+      "kind": "camera",
+      "name": "R3-medium",
+      "result": {
+        "id": 177,
+        "ok": 1,
+        "error": "",
+        "camera": {
+          "ok": 1,
+          "applied_mode": "lookat",
+          "pos": [
+            7120,
+            140,
+            5960
+          ],
+          "matrix": [
+            -0.6225235462188721,
+            0,
+            -0.7826011180877686,
+            0.32430657744407654,
+            0.9100967645645142,
+            -0.2579711377620697,
+            0.7122427225112915,
+            -0.4143957793712616,
+            -0.5665566921234131,
+            7120,
+            140,
+            5960
+          ],
+          "dir": [
+            0.7122427225112915,
+            -0.4143957793712616,
+            -0.5665566921234131
+          ],
+          "fov": 0,
+          "interpolation_complete": 0,
+          "viewport_moved": 1,
+          "view": "scripted",
+          "error": ""
+        },
+        "type": "",
+        "found": 0,
+        "object_id": 0,
+        "tick_poll_sent": 4315,
+        "tick_poll_callback": 4322,
+        "tick_dispatch": 4322,
+        "classname": "",
+        "accepted": 0,
+        "_server": {
+          "t_result": 215980.7748113,
+          "t_enqueue": 215977.6238181,
+          "rtt_s": 3.150993200019002
+        },
+        "suggested_calls": [
+          {
+            "tool": "bridge_status",
+            "args": {}
+          },
+          {
+            "tool": "session_status",
+            "args": {}
+          }
+        ],
+        "next_step": "session_heartbeat",
+        "fov_applied": 1.2870022175865687,
+        "lease_ttl_s": 116.58138740001596
+      }
+    },
+    {
+      "kind": "capture",
+      "name": "R3-medium",
+      "meta": {
+        "fullres_path": "E:\\DayZ-Baltic-Build\\v30-current-satellite-20261009\\captures\\R3-medium\\capture_20261009_115745_847.jpg",
+        "native_width": 1936,
+        "native_height": 1119,
+        "crop": "",
+        "crop_space": "client",
+        "chrome_excluded": true,
+        "inline_mimeType": "image/jpeg",
+        "inline_base64_len": 496,
+        "window": {
+          "pid": 153004,
+          "class": "DayZ",
+          "title": "DayZ",
+          "left": -2953,
+          "top": 203,
+          "width": 1936,
+          "height": 1119
+        },
+        "backend_sha256": "93200E4FCAB67995788AADD7BCD49299885B1CEB673F6FB6A6F82232335CB76F",
+        "frame_sha256": "7392c7d1f4d0945638bece3bff54d49b73bfbb1a990b44067a4588cdecb17223",
+        "window_surface": {
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "width": 1936,
+            "height": 1119
+          },
+          "pixel_sha256": "7392c7d1f4d0945638bece3bff54d49b73bfbb1a990b44067a4588cdecb17223",
+          "stats": {
+            "width": 1936,
+            "height": 1119,
+            "meanBrightness": 131.11429829614696,
+            "nonBlackRatio": 0.9848678719931462
+          }
+        },
+        "client_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "pixel_sha256": "d73f7bf1bce24899fda0743e4f028c003e848f95175c6ef4dd381e3bc12a670d",
+          "stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 129.97686149691359,
+            "nonBlackRatio": 1
+          }
+        },
+        "effective_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "native_width": 1920,
+          "native_height": 1080,
+          "native_pixel_sha256": "d73f7bf1bce24899fda0743e4f028c003e848f95175c6ef4dd381e3bc12a670d",
+          "native_stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 129.97686149691359,
+            "nonBlackRatio": 1
+          },
+          "delivered_width": 23,
+          "delivered_height": 13,
+          "delivered_pixel_sha256": "4abfffe222da836016e9e5ff8653b4e3d46961577384f3bd05415e2419c5423e",
+          "delivered_stats": {
+            "width": 23,
+            "height": 13,
+            "meanBrightness": 130.08026755852842,
+            "nonBlackRatio": 1
+          }
+        },
+        "frame_stale": false,
+        "frame_stale_detail": {
+          "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+          "key_kind": "cmdline",
+          "surface": "client",
+          "current_sha256": "d73f7bf1bce24899fda0743e4f028c003e848f95175c6ef4dd381e3bc12a670d",
+          "previous_sha256": "0d0a196cd737165c2984d6e2806e32591482ffd2ce3101a182f15080d433d55b",
+          "same_as_capture_ts": null,
+          "age_s": null,
+          "repeat_count": 1,
+          "frames": 3,
+          "distinct_frames": 3,
+          "max_adjacent_delta": 0.00002415458937198068,
+          "requested_frames": 3,
+          "effective_frames": 3,
+          "frame_limit": 5,
+          "state_backend": "sidecar",
+          "state_error": null
+        },
+        "fullres_file_sha256": "d9ef3e8ce1bec94e02ee3c85022f4cb663d54b29254323c830740949405b0791",
+        "warnings": [
+          "render_frozen_signal"
+        ],
+        "lease_ttl_s": 93.6795866000175
+      }
+    },
+    {
+      "kind": "camera",
+      "name": "R3-far",
+      "result": {
+        "id": 178,
+        "ok": 1,
+        "error": "",
+        "camera": {
+          "ok": 1,
+          "applied_mode": "lookat",
+          "pos": [
+            6640,
+            440,
+            6340
+          ],
+          "matrix": [
+            -0.6212761998176575,
+            1.4901161193847656e-8,
+            -0.7835916876792908,
+            0.3385733962059021,
+            0.9018358588218689,
+            -0.268440306186676,
+            0.7066709995269775,
+            -0.43207886815071106,
+            -0.5602891445159912,
+            6640,
+            440,
+            6340
+          ],
+          "dir": [
+            0.7066709995269775,
+            -0.43207886815071106,
+            -0.5602891445159912
+          ],
+          "fov": 0,
+          "interpolation_complete": 0,
+          "viewport_moved": 1,
+          "view": "scripted",
+          "error": ""
+        },
+        "type": "",
+        "found": 0,
+        "object_id": 0,
+        "tick_poll_sent": 5910,
+        "tick_poll_callback": 5917,
+        "tick_dispatch": 5917,
+        "classname": "",
+        "accepted": 0,
+        "_server": {
+          "t_result": 216007.3675747,
+          "t_enqueue": 216004.044365,
+          "rtt_s": 3.3232097000000067
+        },
+        "suggested_calls": [
+          {
+            "tool": "bridge_status",
+            "args": {}
+          },
+          {
+            "tool": "session_status",
+            "args": {}
+          }
+        ],
+        "next_step": "session_heartbeat",
+        "fov_applied": 1.2870022175865687,
+        "lease_ttl_s": 116.32951889999094
+      }
+    },
+    {
+      "kind": "capture",
+      "name": "R3-far",
+      "meta": {
+        "fullres_path": "E:\\DayZ-Baltic-Build\\v30-current-satellite-20261009\\captures\\R3-far\\capture_20261009_115814_516.jpg",
+        "native_width": 1936,
+        "native_height": 1119,
+        "crop": "",
+        "crop_space": "client",
+        "chrome_excluded": true,
+        "inline_mimeType": "image/jpeg",
+        "inline_base64_len": 444,
+        "window": {
+          "pid": 153004,
+          "class": "DayZ",
+          "title": "DayZ",
+          "left": -2953,
+          "top": 203,
+          "width": 1936,
+          "height": 1119
+        },
+        "backend_sha256": "80CC1467C119F881938BC9701AB9CE6300E80024376CB3875E270344A9A66380",
+        "frame_sha256": "e0bdf07f30528cee214b6c06142382352aa0551c58a9f96dfdf3789223463dea",
+        "window_surface": {
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "width": 1936,
+            "height": 1119
+          },
+          "pixel_sha256": "e0bdf07f30528cee214b6c06142382352aa0551c58a9f96dfdf3789223463dea",
+          "stats": {
+            "width": 1936,
+            "height": 1119,
+            "meanBrightness": 148.37228395335268,
+            "nonBlackRatio": 0.9848678719931462
+          }
+        },
+        "client_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "pixel_sha256": "b07b880d714ea5ac8fdd9c9e1e1177a97d5988c088879aae286e395366f03ad3",
+          "stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 148.00706211419754,
+            "nonBlackRatio": 1
+          }
+        },
+        "effective_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "native_width": 1920,
+          "native_height": 1080,
+          "native_pixel_sha256": "b07b880d714ea5ac8fdd9c9e1e1177a97d5988c088879aae286e395366f03ad3",
+          "native_stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 148.00706211419754,
+            "nonBlackRatio": 1
+          },
+          "delivered_width": 15,
+          "delivered_height": 8,
+          "delivered_pixel_sha256": "9744f2dac5612db81e1bb60759daff003380ac2e218962e6d040be7498af0f3c",
+          "delivered_stats": {
+            "width": 15,
+            "height": 8,
+            "meanBrightness": 147.85,
+            "nonBlackRatio": 1
+          }
+        },
+        "frame_stale": false,
+        "frame_stale_detail": {
+          "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+          "key_kind": "cmdline",
+          "surface": "client",
+          "current_sha256": "b07b880d714ea5ac8fdd9c9e1e1177a97d5988c088879aae286e395366f03ad3",
+          "previous_sha256": "d73f7bf1bce24899fda0743e4f028c003e848f95175c6ef4dd381e3bc12a670d",
+          "same_as_capture_ts": null,
+          "age_s": null,
+          "repeat_count": 1,
+          "frames": 3,
+          "distinct_frames": 3,
+          "max_adjacent_delta": 0.000020247229326513214,
+          "requested_frames": 3,
+          "effective_frames": 3,
+          "frame_limit": 5,
+          "state_backend": "sidecar",
+          "state_error": null
+        },
+        "fullres_file_sha256": "d13e3837d1deb19356307ed9707bb226dfa020bd37946a1951a0d36e954c0051",
+        "warnings": [
+          "render_frozen_signal"
+        ],
+        "lease_ttl_s": 91.44358779999311
+      }
+    },
+    {
+      "kind": "teleport",
+      "name": "max-change-tile",
+      "result": {
+        "id": 182,
+        "ok": 1,
+        "error": "",
+        "type": "",
+        "pos_real": [
+          10600,
+          3.1345019340515137,
+          4032
+        ],
+        "found": 0,
+        "object_id": 0,
+        "tick_poll_sent": 1375070,
+        "tick_poll_callback": 1375877,
+        "tick_dispatch": 1375877,
+        "classname": "",
+        "accepted": 0,
+        "_server": {
+          "t_result": 216038.6990448,
+          "t_enqueue": 216037.3080164,
+          "rtt_s": 1.3910284000157844
+        },
+        "suggested_calls": [
+          {
+            "tool": "bridge_status",
+            "args": {}
+          },
+          {
+            "tool": "session_status",
+            "args": {}
+          }
+        ],
+        "next_step": "session_heartbeat",
+        "lease_ttl_s": 118.50278799998341
+      }
+    },
+    {
+      "kind": "camera",
+      "name": "max-change-tile",
+      "result": {
+        "id": 183,
+        "ok": 1,
+        "error": "",
+        "camera": {
+          "ok": 1,
+          "applied_mode": "lookat",
+          "pos": [
+            10480,
+            160,
+            3900
+          ],
+          "matrix": [
+            0.8551978468894958,
+            0,
+            -0.5183017253875732,
+            0.3672636151313782,
+            0.7056200504302979,
+            0.6059849858283997,
+            0.3657240867614746,
+            -0.7085903882980347,
+            0.6034447550773621,
+            10480,
+            160,
+            3900
+          ],
+          "dir": [
+            0.3657240867614746,
+            -0.7085903882980347,
+            0.6034447550773621
+          ],
+          "fov": 0,
+          "interpolation_complete": 0,
+          "viewport_moved": 1,
+          "view": "scripted",
+          "error": ""
+        },
+        "type": "",
+        "found": 0,
+        "object_id": 0,
+        "tick_poll_sent": 7949,
+        "tick_poll_callback": 7953,
+        "tick_dispatch": 7953,
+        "classname": "",
+        "accepted": 0,
+        "_server": {
+          "t_result": 216042.438694,
+          "t_enqueue": 216038.9886897,
+          "rtt_s": 3.45000430001528
+        },
+        "suggested_calls": [
+          {
+            "tool": "bridge_status",
+            "args": {}
+          },
+          {
+            "tool": "session_status",
+            "args": {}
+          }
+        ],
+        "next_step": "session_heartbeat",
+        "fov_applied": 1.2870022175865687,
+        "lease_ttl_s": 116.27854840000509
+      }
+    },
+    {
+      "kind": "capture",
+      "name": "max-change-tile",
+      "meta": {
+        "fullres_path": "E:\\DayZ-Baltic-Build\\v30-current-satellite-20261009\\captures\\max-change-tile\\capture_20261009_115848_752.jpg",
+        "native_width": 1936,
+        "native_height": 1119,
+        "crop": "",
+        "crop_space": "client",
+        "chrome_excluded": true,
+        "inline_mimeType": "image/jpeg",
+        "inline_base64_len": 488,
+        "window": {
+          "pid": 153004,
+          "class": "DayZ",
+          "title": "DayZ",
+          "left": -2953,
+          "top": 203,
+          "width": 1936,
+          "height": 1119
+        },
+        "backend_sha256": "8A411BECA36AB02839218297FBACF3129360DDEA4F7CCAD26887DBD7104301FF",
+        "frame_sha256": "8bcd21737e31fe7e343c80d0fbc473e1c83449feb1e86bcf002ac0c91efd9734",
+        "window_surface": {
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "width": 1936,
+            "height": 1119
+          },
+          "pixel_sha256": "8bcd21737e31fe7e343c80d0fbc473e1c83449feb1e86bcf002ac0c91efd9734",
+          "stats": {
+            "width": 1936,
+            "height": 1119,
+            "meanBrightness": 110.73468092452677,
+            "nonBlackRatio": 0.9848678719931462
+          }
+        },
+        "client_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "pixel_sha256": "22c850d64f8b0d13b488bfc0e161b84766297ae31d63f44ab90a0199bf56c19d",
+          "stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 108.68535059799383,
+            "nonBlackRatio": 1
+          }
+        },
+        "effective_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "native_width": 1920,
+          "native_height": 1080,
+          "native_pixel_sha256": "22c850d64f8b0d13b488bfc0e161b84766297ae31d63f44ab90a0199bf56c19d",
+          "native_stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 108.68535059799383,
+            "nonBlackRatio": 1
+          },
+          "delivered_width": 23,
+          "delivered_height": 13,
+          "delivered_pixel_sha256": "d674a85526aa344acba30acdc15a70441674f1f0e69cbeca1cd981b11ad895d0",
+          "delivered_stats": {
+            "width": 23,
+            "height": 13,
+            "meanBrightness": 108.67892976588628,
+            "nonBlackRatio": 1
+          }
+        },
+        "frame_stale": false,
+        "frame_stale_detail": {
+          "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+          "key_kind": "cmdline",
+          "surface": "client",
+          "current_sha256": "22c850d64f8b0d13b488bfc0e161b84766297ae31d63f44ab90a0199bf56c19d",
+          "previous_sha256": "b07b880d714ea5ac8fdd9c9e1e1177a97d5988c088879aae286e395366f03ad3",
+          "same_as_capture_ts": null,
+          "age_s": null,
+          "repeat_count": 1,
+          "frames": 3,
+          "distinct_frames": 3,
+          "max_adjacent_delta": 0.00016695083830633705,
+          "requested_frames": 3,
+          "effective_frames": 3,
+          "frame_limit": 5,
+          "state_backend": "sidecar",
+          "state_error": null
+        },
+        "fullres_file_sha256": "eee5fce239b3a874f1cbe8d2c44933e6fed2f6429f1f977099bc9738a46233c0",
+        "warnings": [
+          "render_frozen_signal"
+        ],
+        "lease_ttl_s": 92.1647132000071
+      }
+    },
+    {
+      "kind": "camera",
+      "name": "max-change-low",
+      "result": {
+        "id": 184,
+        "ok": 1,
+        "error": "",
+        "camera": {
+          "ok": 1,
+          "applied_mode": "lookat",
+          "pos": [
+            10525,
+            18,
+            4000
+          ],
+          "matrix": [
+            0.8637788891792297,
+            0,
+            -0.5038710236549377,
+            0.1097363755106926,
+            0.9759964346885681,
+            0.18811950087547302,
+            0.4917762875556946,
+            -0.21778663992881775,
+            0.8430450558662415,
+            10525,
+            18,
+            4000
+          ],
+          "dir": [
+            0.4917762875556946,
+            -0.21778663992881775,
+            0.8430450558662415
+          ],
+          "fov": 0,
+          "interpolation_complete": 0,
+          "viewport_moved": 1,
+          "view": "scripted",
+          "error": ""
+        },
+        "type": "",
+        "found": 0,
+        "object_id": 0,
+        "tick_poll_sent": 10932,
+        "tick_poll_callback": 10939,
+        "tick_dispatch": 10939,
+        "classname": "",
+        "accepted": 0,
+        "_server": {
+          "t_result": 216104.7092236,
+          "t_enqueue": 216101.5220001,
+          "rtt_s": 3.1872234999900684
+        },
+        "suggested_calls": [
+          {
+            "tool": "bridge_status",
+            "args": {}
+          },
+          {
+            "tool": "session_status",
+            "args": {}
+          }
+        ],
+        "next_step": "session_heartbeat",
+        "fov_applied": 1.2870022175865687,
+        "lease_ttl_s": 116.5274153999926
+      }
+    },
+    {
+      "kind": "capture",
+      "name": "max-change-low",
+      "meta": {
+        "fullres_path": "E:\\DayZ-Baltic-Build\\v30-current-satellite-20261009\\captures\\max-change-low\\capture_20261009_115931_461.jpg",
+        "native_width": 1936,
+        "native_height": 1119,
+        "crop": "",
+        "crop_space": "client",
+        "chrome_excluded": true,
+        "inline_mimeType": "image/jpeg",
+        "inline_base64_len": 500,
+        "window": {
+          "pid": 153004,
+          "class": "DayZ",
+          "title": "DayZ",
+          "left": -2953,
+          "top": 203,
+          "width": 1936,
+          "height": 1119
+        },
+        "backend_sha256": "3C340516773A7B9C5B7E6609CB85405C2CC286C9F1FB7BF757661D9E1EC8092C",
+        "frame_sha256": "91005c8a9da324e298ac2247c78d020d0ee311fd1c5ac31de2204f770662e5be",
+        "window_surface": {
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "width": 1936,
+            "height": 1119
+          },
+          "pixel_sha256": "91005c8a9da324e298ac2247c78d020d0ee311fd1c5ac31de2204f770662e5be",
+          "stats": {
+            "width": 1936,
+            "height": 1119,
+            "meanBrightness": 124.76315279285667,
+            "nonBlackRatio": 0.9848678719931462
+          }
+        },
+        "client_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "pixel_sha256": "038518363555a9b038af0269246eb6330c728bcf683a87053c8f4159b462ac9d",
+          "stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 123.34153163580247,
+            "nonBlackRatio": 1
+          }
+        },
+        "effective_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "native_width": 1920,
+          "native_height": 1080,
+          "native_pixel_sha256": "038518363555a9b038af0269246eb6330c728bcf683a87053c8f4159b462ac9d",
+          "native_stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 123.34153163580247,
+            "nonBlackRatio": 1
+          },
+          "delivered_width": 19,
+          "delivered_height": 11,
+          "delivered_pixel_sha256": "1f88b299908c299d59faa1d4938b6f63e99a11e829e183069284a86ede4c73cc",
+          "delivered_stats": {
+            "width": 19,
+            "height": 11,
+            "meanBrightness": 123.22009569377991,
+            "nonBlackRatio": 1
+          }
+        },
+        "frame_stale": false,
+        "frame_stale_detail": {
+          "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+          "key_kind": "cmdline",
+          "surface": "client",
+          "current_sha256": "038518363555a9b038af0269246eb6330c728bcf683a87053c8f4159b462ac9d",
+          "previous_sha256": "22c850d64f8b0d13b488bfc0e161b84766297ae31d63f44ab90a0199bf56c19d",
+          "same_as_capture_ts": null,
+          "age_s": null,
+          "repeat_count": 1,
+          "frames": 3,
+          "distinct_frames": 3,
+          "max_adjacent_delta": 0.001337649190110827,
+          "requested_frames": 3,
+          "effective_frames": 3,
+          "frame_limit": 5,
+          "state_backend": "sidecar",
+          "state_error": null
+        },
+        "fullres_file_sha256": "05bbfc6385a7b8f94b5ae12071b55ed2b0bcc33521c1a303c9fd46188af117a7",
+        "lease_ttl_s": 111.97676849999698
+      }
+    },
+    {
+      "kind": "capture",
+      "name": "R1",
+      "meta": {
+        "fullres_path": "E:\\DayZ-Baltic-Build\\v30-current-satellite-20261009\\captures\\R1\\capture_20261009_115631_603.jpg",
+        "native_width": 1936,
+        "native_height": 1119,
+        "crop": "",
+        "crop_space": "client",
+        "chrome_excluded": true,
+        "inline_mimeType": "image/jpeg",
+        "inline_base64_len": 488,
+        "window": {
+          "pid": 153004,
+          "class": "DayZ",
+          "title": "DayZ",
+          "left": -2953,
+          "top": 203,
+          "width": 1936,
+          "height": 1119
+        },
+        "backend_sha256": "C7A020F74CBBB4DD7780DD0806A2D8D214B1D37FAFC38EA7174F7138552AFBA7",
+        "frame_sha256": "614ce28bffcc7ee99b7674e79063b794927741b98087d92b4944f16ff2493247",
+        "window_surface": {
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "width": 1936,
+            "height": 1119
+          },
+          "pixel_sha256": "614ce28bffcc7ee99b7674e79063b794927741b98087d92b4944f16ff2493247",
+          "stats": {
+            "width": 1936,
+            "height": 1119,
+            "meanBrightness": 111.27028218450653,
+            "nonBlackRatio": 0.9848678719931462
+          }
+        },
+        "client_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "pixel_sha256": "008ebcf5b261c2d360442c7dade887535ee0a67a22c3df9d379a8938a90c63a6",
+          "stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 109.24491753472222,
+            "nonBlackRatio": 1
+          }
+        },
+        "effective_surface": {
+          "rect_window": {
+            "left": 8,
+            "top": 31,
+            "width": 1920,
+            "height": 1080
+          },
+          "native_width": 1920,
+          "native_height": 1080,
+          "native_pixel_sha256": "008ebcf5b261c2d360442c7dade887535ee0a67a22c3df9d379a8938a90c63a6",
+          "native_stats": {
+            "width": 1920,
+            "height": 1080,
+            "meanBrightness": 109.24491753472222,
+            "nonBlackRatio": 1
+          },
+          "delivered_width": 17,
+          "delivered_height": 10,
+          "delivered_pixel_sha256": "1e08981e8a151de9002fbf8f48069dfc4957ddf7f762968e89d641bab1ba147f",
+          "delivered_stats": {
+            "width": 17,
+            "height": 10,
+            "meanBrightness": 109.34705882352941,
+            "nonBlackRatio": 1
+          }
+        },
+        "frame_stale": false,
+        "frame_stale_detail": {
+          "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+          "key_kind": "cmdline",
+          "surface": "client",
+          "current_sha256": "008ebcf5b261c2d360442c7dade887535ee0a67a22c3df9d379a8938a90c63a6",
+          "previous_sha256": "acd984dc2d088064050bb52dcaec26ca6ee01be69447ec3d4b867895889c6afa",
+          "same_as_capture_ts": null,
+          "age_s": null,
+          "repeat_count": 1,
+          "frames": 3,
+          "distinct_frames": 3,
+          "max_adjacent_delta": 0.5000431585677749,
+          "requested_frames": 3,
+          "effective_frames": 3,
+          "frame_limit": 5,
+          "state_backend": "sidecar",
+          "state_error": null
+        },
+        "fullres_file_sha256": "25a4d1e7c2d606589d50931e138b60ce8a67d5cd27761c3e3f92e11dc25ae302",
+        "lease_ttl_s": 112.65727659998811
+      }
+    }
+  ],
+  "close": {
+    "run_id": "b690cc87-1c6f-465f-adba-ee070db236f4",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 3.603234699985478,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "client",
+        "termination_line": true,
+        "rpt_rotated": false
+      },
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "close_order": [
+      "client",
+      "server"
+    ],
+    "logout_wait_s": 2.132214799989015,
+    "logout_players": [
+      {
+        "player": "Dev",
+        "logout_finished": true
+      }
+    ],
+    "lease_ttl_s": 119.61625729998923
+  },
+  "release": {
+    "released": true,
+    "cleanup": {
+      "terminal_safe": true,
+      "runs_released": [],
+      "cancelled": 0,
+      "vehicle_release_enqueued": 0
+    },
+    "cleanup_degraded": [],
+    "ok": true,
+    "next_step": "session_acquire_wait"
+  },
+  "session_end": {
+    "owner": null,
+    "occupied": false,
+    "runs": []
+  },
+  "limits": [
+    "First camera call rejected invalid free/matrix argument combination; no image accepted from it.",
+    "Near R3 frame partly occluded by player; channel centre remains visible.",
+    "Far R3 haze limits distance acceptance.",
+    "No paired frame comparison and no whole-map render acceptance."
+  ]
+}

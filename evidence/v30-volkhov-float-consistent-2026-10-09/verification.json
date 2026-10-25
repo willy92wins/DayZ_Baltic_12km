@@ -1,0 +1,44 @@
+{
+  "perched_failures": [],
+  "policy_rings": 2038,
+  "negatives": {
+    "stale_terrain_rejected": true
+  },
+  "status": "PASS_GEOMETRIC_PROPOSAL_POLICY_PENDING",
+  "gates": {
+    "converged": true,
+    "perched_policy": true,
+    "outside_exact": true,
+    "fixed_exact": true,
+    "metadata_exact": true,
+    "other_arrays_exact": true,
+    "minimum_bed": true,
+    "physical_depth": true,
+    "visible_depth": true,
+    "physical_area": true,
+    "visible_area": true,
+    "components": true,
+    "connections": true,
+    "slopes": true,
+    "core_angles": true,
+    "apron_angle_increment": true,
+    "apron_new_sharp": true
+  },
+  "minimum_bed_m": 1.0104215145111084,
+  "physical_depth_error_m": 1.9073486345888568e-07,
+  "visible_depth_error_m": 1.9073486345888568e-07,
+  "physical_symmetric_difference_m2": 0.0008508368624846309,
+  "visible_symmetric_difference_m2": 0.0008836331652511081,
+  "core_angle_error_degrees": 4.598901708507963e-06,
+  "max_apron_angle_increment_degrees": 1.9999996281691934,
+  "new_sharp_excess_degrees": 5.328940028270779e-05,
+  "terrain_sha256": "1fc4fe267fa100697103ffb8fffd66b4c469cbf9cbd5be58ac33633022627444",
+  "policy_exception_pending": [
+    647,
+    651
+  ],
+  "limits": [
+    "Independent geometry; depth is preserved on actually wet triangles, and dry faces are checked by GEOS/connectivity. Native and graphics pending.",
+    "Prepared proposal; EV61 remains the accepted working baseline pending level-policy exception."
+  ]
+}

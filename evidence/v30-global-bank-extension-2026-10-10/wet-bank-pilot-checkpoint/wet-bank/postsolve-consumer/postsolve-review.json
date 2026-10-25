@@ -1,0 +1,732 @@
+{
+  "schema": "ev94.oredezh-wet-bank-postsolve-review.v1",
+  "status": "FAIL_POSTSOLVE_GATES",
+  "accepted": false,
+  "scope": "isolated Oredezh wet-bank pilot only; not whole-map, packaged, deployed, or visual acceptance",
+  "inputs": {
+    "solve_result": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solve-result.json",
+      "sha256": "35722fa7b8f3235597ed6f82c5263da6320d2d030b3dbef3558728386c4240ca"
+    },
+    "solution_npz": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solution.npz",
+      "sha256": "1b7a23ebb3c203427f1c77cb8de6becfca750746e47f5494bba6723b0610eab1"
+    },
+    "candidate_npz": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\unaccepted-candidate-terrain.npz",
+      "sha256": "1c2a6b8b1dce5ed83c6360705e16c10225aa528c96ac02adcf868c554c019652"
+    },
+    "prepared_npz": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz",
+      "sha256": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f"
+    },
+    "prepared_receipt": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\preparation.json",
+      "sha256": "c582f45f0751e8c24db2672405de4b94c136ee16a9c33d5e4c35a8deee2200ed"
+    },
+    "preflight_review": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\independent-review.json",
+      "sha256": "c9e9946c0ab77bfb090fe1b4ec297a13c52ca8b41926bde8c0275db0feeffaf4"
+    },
+    "coverage_report": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\coverage-consumer\\candidate-run-01.json",
+      "sha256": "f3321ba2b5bb1b551ad931f4d1f01580323410bbb8f8d493514f4c9800c5f6ba"
+    },
+    "coverage_source_sha256": "1dc1464b86c0b0c7cd83b2fe5003de1149773dad7d3b2d1396209736fc383a77",
+    "source_readset_start_end_stable": {
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\independent-review.json": "c9e9946c0ab77bfb090fe1b4ec297a13c52ca8b41926bde8c0275db0feeffaf4",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\preparation.json": "c582f45f0751e8c24db2672405de4b94c136ee16a9c33d5e4c35a8deee2200ed",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepare_wet_bank_matrices.py": "65e05a6540026b08df7effa53c58534121bb2fa89e116a2ef07ad46ba0edf286",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\pilot.py": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\run_once.py": "c1a349fc23b440221d54f3624037785380c62d8e4283d0d29b4ca8842e25766e",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\RUN_PROTOCOL.md": "59a1b3de870b92b33a530582887dafd008c01c3ace0974c619428c1518242b55",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b"
+    }
+  },
+  "solver": {
+    "status": "CONVERGED",
+    "iterations": 3430,
+    "elapsed_numerical_s": 3.293349700048566,
+    "primal": 8.766328996046013e-09,
+    "dual": 1.8221543710338965e-07,
+    "stationarity": 1.8219685848919198e-07,
+    "objective": {
+      "baseline": 279.1855928129427,
+      "raw": 155.94405102975674,
+      "closed": 155.94405102975674
+    },
+    "reported_objective": {
+      "baseline": 279.1855928129427,
+      "raw_float32": 155.94405102975674,
+      "closed_float32": 155.94405102975674
+    },
+    "closure": {
+      "clip_max_abs": 0.0,
+      "raw_order_violation_sum_after_clip": 0.0,
+      "a_priori_correction_bound": 0.0,
+      "max_abs_correction": 0.0,
+      "changed_nodes": 0,
+      "raised_nodes": 0,
+      "lowered_nodes": 0
+    },
+    "closure_energy": {
+      "allowance": 1.5594405102975674e-05,
+      "closure_budget_pass": true,
+      "strict_improvement_vs_baseline": true
+    }
+  },
+  "checks": {
+    "solve_lineage_and_inputs": true,
+    "candidate_is_exact_closed_grid_and_only_variable_nodes_changed": true,
+    "non_height_fields_bit_identical": true,
+    "float32_physical_bounds_exact": true,
+    "D8_constraints_exact": true,
+    "P_F_sign_and_crossing_constraints_exact": false,
+    "native_slope_contract": true,
+    "native_hinge_p99_nonworse": true,
+    "no_new_hinge_over_30deg": true,
+    "focus_hinge_drop_at_least_2deg": true,
+    "EV93_cones_exact": true,
+    "closure_reproduced_and_energy_budget": true,
+    "compiled_water_coverage_report_pass": true
+  },
+  "failed_checks": [
+    "P_F_sign_and_crossing_constraints_exact"
+  ],
+  "constraints": {
+    "D8": {
+      "rows": 150,
+      "min_slack": 0.0,
+      "negative_count_exact": 0
+    },
+    "P_F_sign_and_crossings": {
+      "rows": 528,
+      "min_slack": -1.879736570842283e-07,
+      "negative_count_exact": 23,
+      "negative_by_type": {
+        "cross_upper": 4,
+        "cross_lower": 8,
+        "sign_only_below_a": 2,
+        "sign_only_below_b": 4,
+        "sign_only": 2,
+        "cross_sign_dry": 2,
+        "cross_sign_wet": 1
+      },
+      "negative_by_surface": {
+        "F": 12,
+        "P": 11
+      },
+      "worst_row": {
+        "index": 458,
+        "slack": -1.879736570842283e-07,
+        "metadata": {
+          "cell_rc": [
+            865,
+            1188
+          ],
+          "edge_rc": [
+            [
+              865,
+              1188
+            ],
+            [
+              865,
+              1189
+            ]
+          ],
+          "surface": "F",
+          "t_base": null,
+          "t_bound": null,
+          "t_design": null,
+          "type": "sign_only_below_b"
+        }
+      },
+      "tolerance": 0.0,
+      "tolerance_basis": "PLAN/RUN_PROTOCOL require post-quantization recheck; no C-cross tolerance is declared. The -1e-9 check in preparation source applies to baseline feasibility only."
+    },
+    "all_C_min_slack": -1.879736570842283e-07,
+    "bounds": {
+      "pass": true,
+      "min_lower_slack": 0.0,
+      "min_upper_slack": 0.0
+    },
+    "cones": {
+      "pass": true,
+      "max_norm_excess": -0.7829514973934448,
+      "min_margin": 0.7829514973934448
+    }
+  },
+  "geometry": {
+    "changed_vertices": 114,
+    "affected_cells": 139,
+    "slope_faces": [
+      {
+        "triangle": 0,
+        "affected_faces": 139,
+        "before_max_deg": 34.999987763372616,
+        "after_max_deg": 29.67084064411993,
+        "max_excess_over_max35_or_base_plus_1e4_deg": -5.3292593558800725,
+        "pass": true
+      },
+      {
+        "triangle": 1,
+        "affected_faces": 139,
+        "before_max_deg": 33.51780972970295,
+        "after_max_deg": 26.805593532186087,
+        "max_excess_over_max35_or_base_plus_1e4_deg": -8.194506467813916,
+        "pass": true
+      }
+    ],
+    "hinges": [
+      {
+        "kind": "diag",
+        "affected_edges": 139,
+        "before_p99_deg": 37.79062102358009,
+        "after_p99_deg": 30.406684246788384,
+        "new_edges_over_30deg": 0,
+        "before_max_deg": 47.95252414417777,
+        "after_max_deg": 37.19783447182627
+      },
+      {
+        "kind": "vertical",
+        "affected_edges": 149,
+        "before_p99_deg": 29.009105748571912,
+        "after_p99_deg": 23.969340576517254,
+        "new_edges_over_30deg": 0,
+        "before_max_deg": 35.25248114728849,
+        "after_max_deg": 33.96258167824753
+      },
+      {
+        "kind": "horizontal",
+        "affected_edges": 147,
+        "before_p99_deg": 23.00627116044366,
+        "after_p99_deg": 17.080563326457803,
+        "new_edges_over_30deg": 0,
+        "before_max_deg": 28.673369936196142,
+        "after_max_deg": 21.20655484729373
+      }
+    ],
+    "focus": {
+      "focus_rc": [
+        862,
+        1186
+      ],
+      "target_hinge_kind": "diag",
+      "target_hinge_anchor_rc": [
+        861,
+        1186
+      ],
+      "before_deg": 47.95252414417777,
+      "after_deg": 37.19783447182627,
+      "drop_deg": 10.754689672351503,
+      "required_drop_deg": 2.0
+    },
+    "compiled_water": {
+      "report_status": "PASS_LOCAL_COMPILED_WATER_CANDIDATE",
+      "gates": {
+        "bounds_inventory_identity_exact": true,
+        "deployed_pbo_identity_exact": true,
+        "no_changed_partial_F_triangles": true,
+        "unknown_P_or_F_faces_absent_or_buried_B_H_and_L32_or_P9_exact": true,
+        "no_new_or_worsened_compiled_face_height_violation": true,
+        "physical_support_holes_lt_1e_7m2": true,
+        "visible_support_holes_lt_1e_7m2": true,
+        "physical_residual_outside_band_le_0_002m2": true,
+        "visible_residual_outside_band_le_0_002m2": true,
+        "all_source_pins_stable": true,
+        "candidate_only_inside_core": true,
+        "EV95_objects_and_deployed_water_same_as_indexed_B": true,
+        "nonempty_evaluation_domain": true,
+        "lower_envelope_from_pinned_prepared_bounds": true
+      },
+      "unknown_face_intersections": 418,
+      "physical": {
+        "support_hole_total_m2": {
+          "B": 0.0,
+          "candidate": 0.0
+        },
+        "support_hole_max_cell_m2": {
+          "B": 0.0,
+          "candidate": 0.0
+        },
+        "residual": {
+          "B": {
+            "missing_total_m2": 1.783667716804914e-05,
+            "missing_max_cell_m2": 4.262294810430944e-06,
+            "missing_outside_band_total_m2": 2.6872039412923367e-12,
+            "missing_outside_band_max_cell_m2": 2.2888357875672227e-12,
+            "growth_total_m2": 2.048725576831998e-05,
+            "growth_max_cell_m2": 3.0614652626326233e-06,
+            "growth_outside_band_total_m2": 0.0,
+            "growth_outside_band_max_cell_m2": 0.0,
+            "outside_band_examples": [
+              {
+                "cell": [
+                  862,
+                  1186
+                ],
+                "missing_m2": 5.70571053515323e-07,
+                "missing_out_m2": 2.2888357875672227e-12,
+                "growth_m2": 2.1185801202757196e-09,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  860,
+                  1186
+                ],
+                "missing_m2": 4.67016717270452e-07,
+                "missing_out_m2": 2.6214378860360727e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  857,
+                  1184
+                ],
+                "missing_m2": 3.1194580627964054e-06,
+                "missing_out_m2": 1.362243651215067e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1180
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1181
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 1.6029688518770513e-06,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1182
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 3.0614652626326233e-06,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1183
+                ],
+                "missing_m2": 4.262294810430944e-06,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1184
+                ],
+                "missing_m2": 7.033373018716649e-08,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1185
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1186
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              }
+            ],
+            "unknown_F_cells": 0
+          },
+          "candidate": {
+            "missing_total_m2": 2.0099903050618257e-05,
+            "missing_max_cell_m2": 4.262294810430944e-06,
+            "missing_outside_band_total_m2": 1.362243651215067e-13,
+            "missing_outside_band_max_cell_m2": 1.362243651215067e-13,
+            "growth_total_m2": 2.617203618410509e-05,
+            "growth_max_cell_m2": 3.0614652626326233e-06,
+            "growth_outside_band_total_m2": 0.0,
+            "growth_outside_band_max_cell_m2": 0.0,
+            "outside_band_examples": [
+              {
+                "cell": [
+                  857,
+                  1184
+                ],
+                "missing_m2": 3.1194580627964054e-06,
+                "missing_out_m2": 1.362243651215067e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1180
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1181
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 1.6029688518770513e-06,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1182
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 3.0614652626326233e-06,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1183
+                ],
+                "missing_m2": 4.262294810430944e-06,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1184
+                ],
+                "missing_m2": 7.033373018716649e-08,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1185
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1186
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1187
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1188
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              }
+            ],
+            "unknown_F_cells": 0
+          }
+        },
+        "hole_pass": true,
+        "residual_pass": true
+      },
+      "visible": {
+        "support_hole_total_m2": {
+          "B": 0.0,
+          "candidate": 0.0
+        },
+        "support_hole_max_cell_m2": {
+          "B": 0.0,
+          "candidate": 0.0
+        },
+        "residual": {
+          "B": {
+            "missing_total_m2": 2.0781529239699845e-05,
+            "missing_max_cell_m2": 2.2446731904324224e-06,
+            "missing_outside_band_total_m2": 1.4187093340389811e-12,
+            "missing_outside_band_max_cell_m2": 4.54756024503844e-13,
+            "growth_total_m2": 1.832264930550427e-05,
+            "growth_max_cell_m2": 1.841064348084842e-06,
+            "growth_outside_band_total_m2": 0.0,
+            "growth_outside_band_max_cell_m2": 0.0,
+            "outside_band_examples": [
+              {
+                "cell": [
+                  861,
+                  1186
+                ],
+                "missing_m2": 6.03098071528543e-08,
+                "missing_out_m2": 4.54756024503844e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  861,
+                  1187
+                ],
+                "missing_m2": 1.565527644176876e-06,
+                "missing_out_m2": 4.547473508864641e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  859,
+                  1185
+                ],
+                "missing_m2": 7.576449485590699e-07,
+                "missing_out_m2": 2.2737584384757703e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  857,
+                  1184
+                ],
+                "missing_m2": 1.296996648246393e-06,
+                "missing_out_m2": 1.6814327707947996e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  859,
+                  1186
+                ],
+                "missing_m2": 1.250460377910656e-06,
+                "missing_out_m2": 1.1368683772161603e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1180
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1181
+                ],
+                "missing_m2": 4.234799391335415e-08,
+                "missing_out_m2": 0.0,
+                "growth_m2": 1.555438865288921e-08,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1182
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 1.841064348084842e-06,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1183
+                ],
+                "missing_m2": 8.453456068480136e-07,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1184
+                ],
+                "missing_m2": 8.30420816833044e-08,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              }
+            ],
+            "unknown_F_cells": 105
+          },
+          "candidate": {
+            "missing_total_m2": 2.7859905847980697e-05,
+            "missing_max_cell_m2": 3.269841473973412e-06,
+            "missing_outside_band_total_m2": 1.9499287673779237e-12,
+            "missing_outside_band_max_cell_m2": 9.859667842254067e-13,
+            "growth_total_m2": 2.410891380230963e-05,
+            "growth_max_cell_m2": 2.7858769323459965e-06,
+            "growth_outside_band_total_m2": 0.0,
+            "growth_outside_band_max_cell_m2": 0.0,
+            "outside_band_examples": [
+              {
+                "cell": [
+                  861,
+                  1187
+                ],
+                "missing_m2": 2.0097665053114004e-06,
+                "missing_out_m2": 9.859667842254067e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  861,
+                  1186
+                ],
+                "missing_m2": 8.251150631244688e-08,
+                "missing_out_m2": 4.54756024503844e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  859,
+                  1185
+                ],
+                "missing_m2": 1.1470260625778307e-06,
+                "missing_out_m2": 2.2737584384757703e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  857,
+                  1184
+                ],
+                "missing_m2": 1.296996648246393e-06,
+                "missing_out_m2": 1.6814327707947996e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  859,
+                  1186
+                ],
+                "missing_m2": 1.7874811728546547e-06,
+                "missing_out_m2": 1.1368683772161603e-13,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1180
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1181
+                ],
+                "missing_m2": 4.234799391335415e-08,
+                "missing_out_m2": 0.0,
+                "growth_m2": 1.555438865288921e-08,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1182
+                ],
+                "missing_m2": 0.0,
+                "missing_out_m2": 0.0,
+                "growth_m2": 1.841064348084842e-06,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1183
+                ],
+                "missing_m2": 8.453456068480136e-07,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              },
+              {
+                "cell": [
+                  856,
+                  1184
+                ],
+                "missing_m2": 8.30420816833044e-08,
+                "missing_out_m2": 0.0,
+                "growth_m2": 0.0,
+                "growth_out_m2": 0.0
+              }
+            ],
+            "unknown_F_cells": 105
+          }
+        },
+        "hole_pass": true,
+        "residual_pass": true
+      }
+    }
+  },
+  "limitations": [
+    "The single negative P/F C_cross residual fails the exact prepared inequality; this consumer does not relax it.",
+    "No visual or in-game verification was performed.",
+    "Water component connectivity and outside-channel extrema were not separately recomputed here."
+  ]
+}

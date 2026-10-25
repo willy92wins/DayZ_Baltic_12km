@@ -1,0 +1,26 @@
+{
+  "status": "PASS_REAL_JOINT_HYDROLOGY_AND_FOUR_NEGATIVES",
+  "candidate_sha256": "ed6cdaa5a1b9100a6f74041e9338f1c21f100a6686f596c73f79f33c4b8662c6",
+  "positive_sha256": "eebfbb6df556c34bff335f7b9a07b05fcaa55cf1075d322ff1280bc6a2b05ce8",
+  "tests": [
+    {
+      "name": "changed_wet_vertex",
+      "rejected": true,
+      "physical_guard": "wet_vertices_exact"
+    },
+    {
+      "name": "island_sunk",
+      "rejected": true,
+      "physical_guard": "protected_land_planes"
+    },
+    {
+      "name": "reserve_sunk",
+      "rejected": true,
+      "physical_guard": "reserve_dry_classification_preserved"
+    },
+    {
+      "name": "actual_v24_invalid_shore_proof",
+      "rejected": true
+    }
+  ]
+}

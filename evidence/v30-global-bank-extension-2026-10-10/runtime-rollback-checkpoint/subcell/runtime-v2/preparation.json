@@ -1,0 +1,39 @@
+{
+  "reason": "Prevent measured Formula too complex compile failure; checklist E32/E33; no changed sampling logic",
+  "source_v1_sha256": "0dd6ea5e4672f1330a45264841f4a9f14c7654aea660b77a54ae8fd059b3310b",
+  "source_v2_sha256": "e2988258179ec5e54f17e9b711b8c0f2edfd5eb878a7c38235f7d395b0e4fb83",
+  "points_sha256": "b58fa87e8b8ca462a607f83db9be41b23937125065b1a3bbedc48d4cfb13ab64",
+  "changes": [
+    {
+      "before": "  Emit(\"PHASE_BEGIN;\" + m_PhaseIndex + \";\" + m_PhaseStartMs + \";\" + (m_PhaseStartMs - m_StartMs)\n       + \";\" + GetGame().SurfaceGetSeaLevel() + \";\" + GetGame().SurfaceGetSeaWaveCurrent()\n       + \";\" + GetGame().SurfaceGetSeaWaveMax() + \";\" + GetGame().GetWeather().GetWindSpeed());",
+      "after": "  string logRecord0 = \"PHASE_BEGIN;\";\n  logRecord0 = logRecord0 + m_PhaseIndex;\n  logRecord0 = logRecord0 + \";\";\n  logRecord0 = logRecord0 + m_PhaseStartMs;\n  logRecord0 = logRecord0 + \";\";\n  logRecord0 = logRecord0 + (m_PhaseStartMs - m_StartMs);\n  logRecord0 = logRecord0 + \";\";\n  logRecord0 = logRecord0 + GetGame().SurfaceGetSeaLevel();\n  logRecord0 = logRecord0 + \";\";\n  logRecord0 = logRecord0 + GetGame().SurfaceGetSeaWaveCurrent();\n  logRecord0 = logRecord0 + \";\";\n  logRecord0 = logRecord0 + GetGame().SurfaceGetSeaWaveMax();\n  logRecord0 = logRecord0 + \";\";\n  logRecord0 = logRecord0 + GetGame().GetWeather().GetWindSpeed();\n  Emit(logRecord0);"
+    },
+    {
+      "before": "  string row = \"S;\" + m_PhaseIndex + \";\" + pointIndex + \";\" + m_Fields[0] + \";\" + m_Fields[1] + \";\" + m_Fields[2];",
+      "after": "  string row = \"S;\";\n  row = row + m_PhaseIndex;\n  row = row + \";\";\n  row = row + pointIndex;\n  row = row + \";\";\n  row = row + m_Fields[0];\n  row = row + \";\";\n  row = row + m_Fields[1];\n  row = row + \";\";\n  row = row + m_Fields[2];"
+    },
+    {
+      "before": "  row = row + \";\" + m_Fields[3] + \";\" + m_Fields[4] + \";\" + m_Fields[5] + \";\" + m_Fields[6];",
+      "after": "  row = row;\n  row = row + \";\";\n  row = row + m_Fields[3];\n  row = row + \";\";\n  row = row + m_Fields[4];\n  row = row + \";\";\n  row = row + m_Fields[5];\n  row = row + \";\";\n  row = row + m_Fields[6];"
+    },
+    {
+      "before": "  row = row + \";\" + m_Fields[7] + \";\" + m_Fields[8] + \";\" + x + \";\" + z + \";\" + ground;",
+      "after": "  row = row;\n  row = row + \";\";\n  row = row + m_Fields[7];\n  row = row + \";\";\n  row = row + m_Fields[8];\n  row = row + \";\";\n  row = row + x;\n  row = row + \";\";\n  row = row + z;\n  row = row + \";\";\n  row = row + ground;"
+    },
+    {
+      "before": "  row = row + \";\" + sea + \";\" + pond + \";\" + noFake + \";\" + withFake + \";\" + depth;",
+      "after": "  row = row;\n  row = row + \";\";\n  row = row + sea;\n  row = row + \";\";\n  row = row + pond;\n  row = row + \";\";\n  row = row + noFake;\n  row = row + \";\";\n  row = row + withFake;\n  row = row + \";\";\n  row = row + depth;"
+    },
+    {
+      "before": "  Emit(\"PHASE_END;\" + m_PhaseIndex + \";\" + actualMs + \";\" + (actualMs - m_StartMs)\n       + \";\" + m_Rows.Count() + \";\" + GetGame().SurfaceGetSeaLevel()\n       + \";\" + GetGame().SurfaceGetSeaWaveCurrent() + \";\" + GetGame().SurfaceGetSeaWaveMax()\n       + \";\" + GetGame().GetWeather().GetWindSpeed());",
+      "after": "  string logRecord5 = \"PHASE_END;\";\n  logRecord5 = logRecord5 + m_PhaseIndex;\n  logRecord5 = logRecord5 + \";\";\n  logRecord5 = logRecord5 + actualMs;\n  logRecord5 = logRecord5 + \";\";\n  logRecord5 = logRecord5 + (actualMs - m_StartMs);\n  logRecord5 = logRecord5 + \";\";\n  logRecord5 = logRecord5 + m_Rows.Count();\n  logRecord5 = logRecord5 + \";\";\n  logRecord5 = logRecord5 + GetGame().SurfaceGetSeaLevel();\n  logRecord5 = logRecord5 + \";\";\n  logRecord5 = logRecord5 + GetGame().SurfaceGetSeaWaveCurrent();\n  logRecord5 = logRecord5 + \";\";\n  logRecord5 = logRecord5 + GetGame().SurfaceGetSeaWaveMax();\n  logRecord5 = logRecord5 + \";\";\n  logRecord5 = logRecord5 + GetGame().GetWeather().GetWindSpeed();\n  Emit(logRecord5);"
+    },
+    {
+      "before": "   Emit(\"END;\" + m_PhaseIndex + \";\" + m_TotalSamples + \";\" + (GetGame().GetTime() - m_StartMs));",
+      "after": "   string logRecord6 = \"END;\";\n   logRecord6 = logRecord6 + m_PhaseIndex;\n   logRecord6 = logRecord6 + \";\";\n   logRecord6 = logRecord6 + m_TotalSamples;\n   logRecord6 = logRecord6 + \";\";\n   logRecord6 = logRecord6 + (GetGame().GetTime() - m_StartMs);\n   Emit(logRecord6);"
+    }
+  ],
+  "log_name": "baltic_ev95_subcell_flags_probe_v2_20261010.log",
+  "mission": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\subcell-flag-probe\\runtime-v2\\BalticEV95SubcellFlagsV2.BalticTrial",
+  "runtime_executed": false
+}

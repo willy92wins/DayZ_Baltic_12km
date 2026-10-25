@@ -1,0 +1,115 @@
+{
+ "decisions": {
+  "narva_reference": "V29 (Guillermo, 04-10 morning)",
+  "moats": "with water (Guillermo, 04-10 morning)"
+ },
+ "chain": [
+  {
+   "step": "moats as lakes",
+   "tool": "tools/terrain/narva_moats_v30.py",
+   "in": "v30-shore-sdf/mouths3/terrain_mouths.npz",
+   "out": "v30-narva-shore/mouths-moats/terrain_pilot.npz",
+   "out_sha256": "e9cb9d9c5a213f3c8cecbf6a953b7f82905512706d0a30c261e9761fe9010fac",
+   "moats": {
+    "lake_093": {
+     "level_m": 2.75,
+     "vertices": 65
+    },
+    "lake_096": {
+     "level_m": 4.62,
+     "vertices": 67
+    },
+    "lake_099": {
+     "level_m": 4.61,
+     "vertices": 62
+    }
+   },
+   "separated_to_land": 0
+  },
+  {
+   "step": "water tiles",
+   "tool": "tools/water/patch_water_tiles_v30.py",
+   "out": "v30-narva-shore/water-moats",
+   "result": {
+    "changed_cells": 228,
+    "affected_tiles": 9,
+    "removed_poses": 46,
+    "new_poses": 18
+   }
+  },
+  {
+   "step": "channel fit (same tool d5d494bc as fit3)",
+   "tool": "tools/water/fit_channel_pieces_v30.py --overlap-all --no-pad --sea-cut 0.51",
+   "out": "v30-narva-shore/fit-moats",
+   "differs_from_fit3": "194 moat vertices (class and level); heights identical"
+  },
+  {
+   "step": "V29 outline in 600 m",
+   "tool": "tools/terrain/narva_v29_outline_v30.py",
+   "out": "v30-narva-shore/sd_v29.npz",
+   "out_sha256": "d756a5da5d96e9e90930ae6907a8dd8f1cc54fe4540ff6f53b1c4a6ef381a16f"
+  },
+  {
+   "step": "shore fit",
+   "tool": "tools/terrain/fit_shore_crossings_v30.py --sd-override sd_v29.npz --narva-core-m 0 (+ candidate args)",
+   "out": "v30-narva-shore/shore-narva/terrain_shore.npz",
+   "out_sha256": "6b1d0d78b7ffbfc86f36b101ac9542c0fb13b1dc7dfac9cade29feafe96c1dac",
+   "changed_vertices": 93559,
+   "gate_recheck": {
+    "wet_too_shallow": 0,
+    "wet_raised_where_forbidden": 0,
+    "land_below_floor": 0
+   },
+   "raise_max_m": 1.586,
+   "lower_max_m": 2.656
+  }
+ ],
+ "narva_zone_waterline_offsets_m_vs_v29_outline": {
+  "edges": 1541,
+  "before": {
+   "n": 778,
+   "p50": 1.629,
+   "p90": 3.784,
+   "p99": 5.158,
+   "max": 6.841
+  },
+  "after": {
+   "n": 1514,
+   "p50": 0.11,
+   "p90": 1.062,
+   "p99": 3.522,
+   "max": 5.458
+  }
+ },
+ "gates": {
+  "water_depth_fail": 6,
+  "pieces_fail": 35,
+  "bed_floor_fail": 0,
+  "land_floor_fail": 0,
+  "slopes_fail": 0,
+  "narva_identity": {
+   "vertices": 20109,
+   "identical": false,
+   "max_diff_m": 2.6564042568206787
+  },
+  "roads": "PASS",
+  "note": "identical to the shore candidate except the Narva V29 identity, which fails by design"
+ },
+ "visible_water_audit": {
+  "moat_window_holes_m2": {
+   "candidate": 2936,
+   "narva": 28
+  },
+  "flooded_vs_water_v3_m2": {
+   "added_inside_narva_zone": 4268,
+   "removed_inside_narva_zone": 496,
+   "outside_zone": 0
+  }
+ },
+ "package": {
+  "narva_trial.pbo": "011a4086d78a87301a995da78f9a0a1a227653d869af1aa69e6cba77857d7207",
+  "baltic_water_v30.pbo": "c9ba3bc8ddcfcd0d1987e8ec73249d6f33cbe2bcb5b046b184e87563eb56004b",
+  "deployed": "@DayZ_Baltic_NarvaCandidate (mission BalticShoreSdfCandidateV1), not viewed in engine yet"
+ },
+ "discarded": "shore fit opening Narva against water_v3 (core 0 and 60 m give the same terrain): only -6 % of the Narva bands, which are a 6-10 m one-bank offset between the V29 river and water_v3"
+}

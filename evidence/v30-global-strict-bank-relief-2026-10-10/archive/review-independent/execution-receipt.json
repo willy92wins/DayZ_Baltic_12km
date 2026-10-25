@@ -1,0 +1,51 @@
+{
+  "status": "FAIL_EV87_GLOBAL_CONSUMER",
+  "next_attempt": null,
+  "verifier": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+  "verifier_sha256_before": "3a404f712ddba39f72aa5c5b6f244581ef30c1d5ef906d009e861f489dfed8ca",
+  "self_test_report": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\ev87-review-self-test-final.json",
+  "self_test_report_sha256": "90a4fc3173d18dc317ab49969e76029f9e0448eb970e3950d316103529db5eca",
+  "candidate": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\candidate-terrain.npz",
+  "candidate_sha256": "a7146c27a634d3ee59bc4c2763d71050da3172724c4f2620a17fce0775fcf020",
+  "ledger": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\queue-ledger.jsonl",
+  "ledger_sha256": "ac87b33eb999f1250e2fa34ac9368f30a788fd1110dac9c0d138c7255ab69e76",
+  "directions": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\directions.npz",
+  "directions_sha256": "4ce901a0d43989dd6baeac0c4d2d74c2781b41ce5432fe31032aad0c4924df92",
+  "direction_index": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\direction-index.json",
+  "direction_index_sha256": "c1fb1f6fcc1a576be662579a730347bac1cce43d91d7e83fe549722ce96d5ba3",
+  "normalization_receipt": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\metadata-normalization-receipt.json",
+  "normalization_receipt_sha256": "33eb4ee64731a44fc5ec962b5cebccb7d7d87d8741068ec2e46510ae397350af",
+  "attempts": [
+    {
+      "cause": "independent selector inventory serialization order bug",
+      "report_preserved": false,
+      "stdout_capture": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\attempt1-selector-error.stdout.json",
+      "number": 0,
+      "verifier_sha256": "8fe9c6d20e756a5ce5983c91b08ab3d786aad237e14d4230ef55edb72da5ca09",
+      "status": "ERROR_EV87_REVIEW"
+    },
+    {
+      "cause": "NumPy bool scalar unsupported by JSON encoder",
+      "report_written": false,
+      "geometry_compute_completed": true,
+      "number": 1,
+      "verifier_sha256": "b4e9c578d03a90e93aa1481a315cc0e02780bbc86366d4c3c45f2ed9f19d5fae",
+      "status": "ERROR_REPORT_SERIALIZATION",
+      "error_capture": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\attempt2-serialization-error.txt"
+    }
+  ],
+  "command": "& 'C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe' 'E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py' --candidate 'E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\candidate-terrain.npz' --candidate-sha 'a7146c27a634d3ee59bc4c2763d71050da3172724c4f2620a17fce0775fcf020' --ledger 'E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\queue-ledger.jsonl' --directions 'E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\directions.npz' --direction-index 'E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\direction-index.json' --report 'E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\ev87-review.json'",
+  "verifier_sha256_after": "3a404f712ddba39f72aa5c5b6f244581ef30c1d5ef906d009e861f489dfed8ca",
+  "final_report": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\ev87-review.json",
+  "preserved_report_before_followup": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\ev87-review-fail-before-contract-adjustment.json",
+  "final_report_sha256": "08cef62773f17ea9eba02ef0a0c33aa2455d3adb7f69ec9a52d8d25ca9ad6b25",
+  "final_elapsed_seconds": 222.7215325832367,
+  "final_gates_false": [
+    "no_regression_in_any_affected_sector_max",
+    "p99_bracket_counts_and_above30_nonworse_each_patch_bank_interior",
+    "physical_P_B_and_candidate_design_covered_le_0_002m2",
+    "physical_outside_design_growth_le_0_002m2",
+    "visible_F_B_and_candidate_design_covered_le_0_002m2",
+    "visible_outside_design_growth_le_0_002m2"
+  ]
+}

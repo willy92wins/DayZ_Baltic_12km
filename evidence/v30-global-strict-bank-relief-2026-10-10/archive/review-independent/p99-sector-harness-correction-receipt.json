@@ -1,0 +1,21 @@
+{
+  "status": "HARNESS_CONTRACT_CORRECTED_NO_FULL_RERUN",
+  "original_verifier_path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.pre-p99-sector-fix.py",
+  "original_verifier_sha256": "3a404f712ddba39f72aa5c5b6f244581ef30c1d5ef906d009e861f489dfed8ca",
+  "updated_verifier_path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+  "updated_verifier_sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+  "preserved_fail_path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\ev87-review-fail-before-contract-adjustment.json",
+  "preserved_fail_sha256": "08cef62773f17ea9eba02ef0a0c33aa2455d3adb7f69ec9a52d8d25ca9ad6b25",
+  "fixture_report": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\p99-sector-fixture-report.json",
+  "changes": [
+    "p99 q0/q1 bracket counts now aggregate across angular hinge families per population and patch; above-30 count also aggregates domain and patch. Family-level counts remain diagnostics only.",
+    "Affected-sector gate now compares full-sector maxima, while retaining touched-only maxima as diagnostic fields.",
+    "Added fixtures for cross-family compensation, true aggregate bracket deficit, touched peak rising under an unchanged full-sector maximum, and full-sector regression.",
+    "Report schema keeps prior checks alias, adds explicit per-family diagnostic counters, and aliases before/after_max to full-sector maxima."
+  ],
+  "validation": [
+    "py_compile PASS",
+    "EV87 local fixtures PASS",
+    "No full EV87 consumer rerun; previous FAIL preserved and remains the candidate verdict until recomputed."
+  ]
+}

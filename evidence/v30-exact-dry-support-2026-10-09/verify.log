@@ -1,0 +1,120 @@
+{
+  "status": "PASS_STRICT_DRY_FLOOR_SOURCE",
+  "source_sha256": "7bcfae7662acf3f83ff0f52434a3d9c3f1e8af745574b2fdc3ad689db123a990",
+  "candidate_sha256": "682d5553480e779cda1874725dd6a8a5a3615c356b65c546c77342f251857244",
+  "gates": {
+    "finite": true,
+    "metadata_exact": true,
+    "fixed_exact": true,
+    "outside_exact": true,
+    "water_faces_exact": true,
+    "road_platform_exact": true,
+    "dry_floor": true,
+    "max_change": true,
+    "no_new_steep_faces": true,
+    "all_target_floor_1_8": true,
+    "no_lowering": true,
+    "frozen_fields_exact": true,
+    "natural_bank_p99": true,
+    "natural_bank_over30": true,
+    "natural_interior_p99": true,
+    "natural_interior_over30": true,
+    "natural_dry_p99": true,
+    "natural_dry_over30": true,
+    "editable_energy_reduction": true,
+    "roads_pass": true
+  },
+  "counts": {
+    "bad_faces": 0,
+    "max_slope_excess_degrees": 0.0,
+    "changed_vertices": 23257,
+    "water_support_vertices": 1077957
+  },
+  "angles": {
+    "natural_bank": {
+      "before": {
+        "n": 1558906,
+        "mean_sq_degrees": 12.510092177585468,
+        "p99_degrees": 16.718225558426212,
+        "max_degrees": 57.98325760045909,
+        "above30": 1642
+      },
+      "after": {
+        "n": 1558906,
+        "mean_sq_degrees": 12.502164207104139,
+        "p99_degrees": 16.70260433770203,
+        "max_degrees": 57.98325760045909,
+        "above30": 1636
+      },
+      "reduction": 0.0006337259844922949
+    },
+    "natural_interior": {
+      "before": {
+        "n": 7295342,
+        "mean_sq_degrees": 0.6182084233448131,
+        "p99_degrees": 3.392211024623186,
+        "max_degrees": 47.22823023572591,
+        "above30": 112
+      },
+      "after": {
+        "n": 7295342,
+        "mean_sq_degrees": 0.6181307016606773,
+        "p99_degrees": 3.392091904318393,
+        "max_degrees": 47.22823023572591,
+        "above30": 112
+      },
+      "reduction": 0.000125720843005106
+    },
+    "natural_dry": {
+      "before": {
+        "n": 9159090,
+        "mean_sq_degrees": 2.645313306507151,
+        "p99_degrees": 6.681692888367144,
+        "max_degrees": 57.98325760045909,
+        "above30": 1768
+      },
+      "after": {
+        "n": 9159090,
+        "mean_sq_degrees": 2.64389041432133,
+        "p99_degrees": 6.680274812770026,
+        "max_degrees": 57.98325760045909,
+        "above30": 1762
+      },
+      "reduction": 0.0005378917432278252
+    },
+    "editable_incident": {
+      "before": {
+        "n": 91230,
+        "mean_sq_degrees": 6.364645764701767,
+        "p99_degrees": 9.076936732732738,
+        "max_degrees": 54.67070480690618,
+        "above30": 163
+      },
+      "after": {
+        "n": 91230,
+        "mean_sq_degrees": 5.339757021760018,
+        "p99_degrees": 8.314962080203976,
+        "max_degrees": 49.557300707568984,
+        "above30": 92
+      },
+      "reduction": 0.16102840296717957
+    }
+  },
+  "sectors": 104,
+  "negative": [
+    "inclined_plane_cross_product_zero",
+    "45_degree_fold_cross_product",
+    "water_faces_exact_mutant_rejected",
+    "road_platform_exact_mutant_rejected",
+    "outside_exact_mutant_rejected",
+    "no_new_steep_faces_mutant_rejected",
+    "low_target_mutant_rejected"
+  ],
+  "limits": [
+    "Source geometry verification; native package and loaded views still required.",
+    "All actually wet native triangles retain every support vertex exactly; entirely dry corners of finite P cells may rise. Existing river contour/end/residual graphic defects are not fixed by this dry-surface unit.",
+    "Per-sector increases retained even when whole-map gates pass; artistic acceptance is not inferred from energy."
+  ]
+}
+REGRESSED_SECTORS 49
+TOP_VIEWS [{'kind': 'diagonal', 'x': 2511.0, 'z': 7917.0, 'before': 15.648380719074732, 'after': 6.464969327962095, 'delta': 9.183411391112637}, {'kind': 'diagonal', 'x': 2505.0, 'z': 7923.0, 'before': 15.697065439756528, 'after': 6.521234584545261, 'delta': 9.175830855211267}, {'kind': 'diagonal', 'x': 2517.0, 'z': 7911.0, 'before': 15.875556352370218, 'after': 6.706376183784934, 'delta': 9.169180168585285}, {'kind': 'diagonal', 'x': 8919.0, 'z': 9987.0, 'before': 22.081573540785932, 'after': 13.099629217920494, 'delta': 8.981944322865438}]

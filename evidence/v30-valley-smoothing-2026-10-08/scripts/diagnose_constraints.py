@@ -1,0 +1,30 @@
+from pathlib import Path
+import json
+import numpy as np,shapely
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+B=Path('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008')
+scope={}
+code=(B/'correct_shore.py').read_text()
+exec(code[:code.index("print('SOLVE'")],scope)
+for k in ('E','axes','h','water','ew','el','et','lv','x','z','fixed','lo','hi','local','native','smoothed','lines_for'):globals()[k]=scope[k] if k in scope else globals().get(k)
+axes=json.loads(Path('E:/DayZ-Baltic-Build/v30-continuation-20261008/junction-fix-r2/axes.json').read_text())
+got=np.load(B/'candidate-a1/terrain_valley.npz')['heights'].astype(float)
+mid=(np.column_stack([x.ravel()[ew],z.ravel()[ew]])+np.column_stack([x.ravel()[el],z.ravel()[el]]))/2
+res=(1-et)*got.ravel()[ew]+et*got.ravel()[el]-lv
+out={};fig,axs=plt.subplots(1,3,figsize=(15,6),layout='constrained')
+for ax,(name,a) in zip(axs,axes.items()):
+ cells=a['removed_cells'];r=np.array(cells)[:,0];c=np.array(cells)[:,1]
+ box=(c.min()*6,12282-(r.max()+1)*6,(c.max()+1)*6,12282-r.min()*6)
+ m=(mid[:,0]>=box[0])&(mid[:,0]<=box[2])&(mid[:,1]>=box[1])&(mid[:,1]<=box[3])
+ for col,arr,label in [('#397dba',h,'Fuente'),('#c74945',got,'Corrección')]:
+  for j,g in enumerate(lines_for(arr,cells)):ax.plot(*np.array(g.coords).T,color=col,lw=1.5,label=label if j==0 else None)
+ for j,ln in enumerate(smoothed):ax.plot(*ln.T,color='#338b6b',lw=1,ls='--',label='Objetivo suave' if j==0 else None)
+ inds=np.unique(np.r_[ew[m],el[m]]);locked=inds[fixed.ravel()[inds]]
+ ax.scatter(x.ravel()[locked],z.ravel()[locked],s=14,c='#db9c2c',label='Fijos')
+ ax.set_xlim(box[0]-10,box[2]+10);ax.set_ylim(box[1]-10,box[3]+10);ax.set_aspect('equal');ax.set_title(name);ax.legend(fontsize=7)
+ hitlo=np.abs(got.ravel()[inds]-lo.ravel()[inds])<1e-4;hithi=np.abs(got.ravel()[inds]-hi.ravel()[inds])<1e-4
+ out[name]=dict(edges=int(m.sum()),residual_p50_p95=np.percentile(np.abs(res[m]),[50,95]).tolist(),both_ends_fixed=int((fixed.ravel()[ew[m]]&fixed.ravel()[el[m]]).sum()),bound_ends=dict(low=int(hitlo.sum()),high=int(hithi.sum()),fixed=len(locked),total=len(inds)))
+fig.savefig(E/'constraint-diagnostic.png',dpi=160)
+(E/'constraint-diagnostic.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))

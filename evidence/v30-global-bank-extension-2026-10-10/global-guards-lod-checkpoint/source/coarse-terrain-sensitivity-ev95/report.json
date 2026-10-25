@@ -1,0 +1,2562 @@
+{
+  "schema": "coarse-terrain-sensitivity.ev95.v1",
+  "status": "OFFLINE_SAMPLED_SENSITIVITY_NOT_ENGINE_LOD_OR_CAUSALITY",
+  "source_hashes_start": {
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-water-object-boundaries-20261010\\exact-pairs.json": "3ead735f0008ec8fd7f20aedc0c0980f0e25eaf20061fb3943f71907d9224932"
+  },
+  "source_hashes_end": {
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-water-object-boundaries-20261010\\exact-pairs.json": "3ead735f0008ec8fd7f20aedc0c0980f0e25eaf20061fb3943f71907d9224932"
+  },
+  "source_hashes_unchanged": true,
+  "coordinate_contract": {
+    "world_x": "x=6*c",
+    "world_z": "z=12282-6*r",
+    "native_cell_m": 6.0,
+    "native_and_resampled_triangles": "NW-SE diagonal; sample barycentric interpolation on the selected triangle",
+    "coarse_lattice_anchor": "x=0, z=12282; values resampled from the native triangular B/EV95 surface",
+    "P": "one P value per native cell, selected by half-open cell index; never blended between cells",
+    "F": "NW,NE,SW,SE samples interpolated only within that native cell triangle; no across-cell averaging",
+    "patch_samples": "1.5m grid at x=0.75+1.5k, z=12282-(0.75+1.5j), avoiding native cell seams"
+  },
+  "objects": [
+    {
+      "id": 16812770,
+      "wrp_model": "baltic_water_v30\\globalvis_16812770.p3d",
+      "bbox_world_xz_m": [
+        2351.9998817443848,
+        2400.0098838806152,
+        6834.0,
+        6864.0
+      ],
+      "bbox_visual_local_xz_m": [
+        -24.005001068115234,
+        -15.0,
+        24.005001068115234,
+        15.0
+      ],
+      "wrp_position_xyz": [
+        2376.0048828125,
+        2.200000047683716,
+        6849.0
+      ]
+    },
+    {
+      "id": 16812771,
+      "wrp_model": "baltic_water_v30\\globalvis_16812771.p3d",
+      "bbox_world_xz_m": [
+        2351.9998817443848,
+        2400.0098838806152,
+        6822.0,
+        6846.0
+      ],
+      "bbox_visual_local_xz_m": [
+        -24.005001068115234,
+        -12.0,
+        24.005001068115234,
+        12.0
+      ],
+      "wrp_position_xyz": [
+        2376.0048828125,
+        2.2281250953674316,
+        6834.0
+      ]
+    },
+    {
+      "id": 16812805,
+      "wrp_model": "baltic_water_v30\\globalvis_16812805.p3d",
+      "bbox_world_xz_m": [
+        2399.990117073059,
+        2424.000117301941,
+        6839.999882698059,
+        6864.009882926941
+      ],
+      "bbox_visual_local_xz_m": [
+        -12.005000114440918,
+        -12.005000114440918,
+        12.005000114440918,
+        12.005000114440918
+      ],
+      "wrp_position_xyz": [
+        2411.9951171875,
+        2.159374952316284,
+        6852.0048828125
+      ]
+    },
+    {
+      "id": 16812815,
+      "wrp_model": "baltic_water_v30\\globalvis_16812815.p3d",
+      "bbox_world_xz_m": [
+        2399.990117073059,
+        2424.000117301941,
+        6863.990117073059,
+        6888.000117301941
+      ],
+      "bbox_visual_local_xz_m": [
+        -12.005000114440918,
+        -12.005000114440918,
+        12.005000114440918,
+        12.005000114440918
+      ],
+      "wrp_position_xyz": [
+        2411.9951171875,
+        2.1500048637390137,
+        6875.9951171875
+      ]
+    }
+  ],
+  "roi_envelope_bbox_xz_m": [
+    2351.9998817443848,
+    2424.000117301941,
+    6822.0,
+    6888.000117301941
+  ],
+  "patch_grid_shape_zx": [
+    44,
+    48
+  ],
+  "sample_count_roi_envelope_grid": 2112,
+  "sample_count_union_of_object_bbox_masks": 1408,
+  "object_bbox_sample_counts": {
+    "16812770": 640,
+    "16812771": 512,
+    "16812805": 256,
+    "16812815": 256
+  },
+  "steps_m": [
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0
+  ],
+  "results": {
+    "B": {
+      "objects": {
+        "2.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.909353649616245,
+                "median_m": -4.078025838732708,
+                "p95_m": -0.5427571058273528,
+                "max_m": -0.015940208733075778,
+                "mean_m": -3.9438436424852505
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.913259899616245,
+                "median_m": -4.070724108815182,
+                "p95_m": -0.5476008558273533,
+                "max_m": -0.015940208733075778,
+                "mean_m": -3.9436824120692586
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.909353649616245,
+                "median_m": -4.403892749547921,
+                "p95_m": -0.7957748458347699,
+                "max_m": -0.09453914165502919,
+                "mean_m": -4.166168705511623
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.913259899616245,
+                "median_m": -4.398292070627252,
+                "p95_m": -0.8053060958347701,
+                "max_m": -0.10157039165502901,
+                "mean_m": -4.165688545775314
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.844262582063676,
+                "median_m": -3.595447632670429,
+                "p95_m": -0.4398881122469688,
+                "max_m": -0.03349350690846986,
+                "mean_m": -3.1044733923904637
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.844262582063676,
+                "median_m": -3.5993491262197232,
+                "p95_m": -0.43457561224696867,
+                "max_m": -0.03349350690846986,
+                "mean_m": -3.1049510124778
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.733750140666913,
+                "median_m": -3.2003263369203294,
+                "p95_m": -0.22846150994299136,
+                "max_m": -0.01371330320834252,
+                "mean_m": -2.8751601181444695
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.733750140666913,
+                "median_m": -3.2028964437544736,
+                "p95_m": -0.23505522534252532,
+                "max_m": -0.017535445094097213,
+                "mean_m": -2.887012394286435
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          }
+        },
+        "4.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.0016207455429497568,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.909353649616239,
+                "median_m": -4.088344639539726,
+                "p95_m": -0.5829470628500292,
+                "max_m": 0.025378960867692868,
+                "mean_m": -3.9461045237824277
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.025378960867692868,
+                "median_m": 0.025378960867692868,
+                "p95_m": 0.025378960867692868,
+                "max_m": 0.025378960867692868,
+                "mean_m": 0.025378960867692868
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.0016207455429497568,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.913259899616239,
+                "median_m": -4.086782139539726,
+                "p95_m": -0.573832479516695,
+                "max_m": 0.027722710867692957,
+                "mean_m": -3.945943293366436
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.027722710867692957,
+                "median_m": 0.027722710867692957,
+                "p95_m": 0.027722710867692957,
+                "max_m": 0.027722710867692957,
+                "mean_m": 0.027722710867692957
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.002028397565922921,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.909353649616239,
+                "median_m": -4.403892749547953,
+                "p95_m": -0.8629146635423834,
+                "max_m": 0.025378960867692868,
+                "mean_m": -4.15519210727399
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.025378960867692868,
+                "median_m": 0.025378960867692868,
+                "p95_m": 0.025378960867692868,
+                "max_m": 0.025378960867692868,
+                "mean_m": 0.025378960867692868
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.002028397565922921,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.913259899616239,
+                "median_m": -4.398292070627201,
+                "p95_m": -0.8767688302090499,
+                "max_m": 0.027722710867692957,
+                "mean_m": -4.154711947537681
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.027722710867692957,
+                "median_m": 0.027722710867692957,
+                "p95_m": 0.027722710867692957,
+                "max_m": 0.027722710867692957,
+                "mean_m": 0.027722710867692957
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004366812227074236,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.847131338715553,
+                "median_m": -3.5985678762197697,
+                "p95_m": -0.40599495271842995,
+                "max_m": 0.04468410660816602,
+                "mean_m": -3.0915315060686615
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.04468410660816602,
+                "median_m": 0.04468410660816602,
+                "p95_m": 0.04468410660816602,
+                "max_m": 0.04468410660816602,
+                "mean_m": 0.04468410660816602
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004366812227074236,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.847131338715553,
+                "median_m": -3.5993491262197694,
+                "p95_m": -0.39943245271842986,
+                "max_m": 0.04468410660816602,
+                "mean_m": -3.092009126155998
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.04468410660816602,
+                "median_m": 0.04468410660816602,
+                "p95_m": 0.04468410660816602,
+                "max_m": 0.04468410660816602,
+                "mean_m": 0.04468410660816602
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004291845493562232,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.720208511749815,
+                "median_m": -3.1817127227783506,
+                "p95_m": -0.3089611470699095,
+                "max_m": 0.0791362270712761,
+                "mean_m": -2.850588956128841
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.0791362270712761,
+                "median_m": 0.0791362270712761,
+                "p95_m": 0.0791362270712761,
+                "max_m": 0.0791362270712761,
+                "mean_m": 0.0791362270712761
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004310344827586207,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.720208511749815,
+                "median_m": -3.191215127706549,
+                "p95_m": -0.3277536250650586,
+                "max_m": 0.08147997707127619,
+                "mean_m": -2.862335322089705
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.08147997707127619,
+                "median_m": 0.08147997707127619,
+                "p95_m": 0.08147997707127619,
+                "max_m": 0.08147997707127619,
+                "mean_m": 0.08147997707127619
+              }
+            }
+          }
+        },
+        "8.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 4,
+              "fraction_coarse_above_given_native_below": 0.006482982171799027,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.540058482189959,
+                "median_m": -4.098006029427049,
+                "p95_m": -0.599941151251549,
+                "max_m": 0.08395931050181016,
+                "mean_m": -3.875456770530381
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 4,
+                "min_m": 0.0023378192097909256,
+                "median_m": 0.03321144239162166,
+                "p95_m": 0.07750878110527658,
+                "max_m": 0.08395931050181016,
+                "mean_m": 0.0381800036237111
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 4,
+              "fraction_coarse_above_given_native_below": 0.006482982171799027,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.5408397321899585,
+                "median_m": -4.0995685294270485,
+                "p95_m": -0.5922871116269365,
+                "max_m": 0.07302181050181034,
+                "mean_m": -3.8752955401143896
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 4,
+                "min_m": 0.0023378192097909256,
+                "median_m": 0.02930519239162166,
+                "p95_m": 0.06704003110527673,
+                "max_m": 0.07302181050181034,
+                "mean_m": 0.033492503623711145
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.540058482189959,
+                "median_m": -4.4573025998969795,
+                "p95_m": -0.9158351111109403,
+                "max_m": -0.10168673899025826,
+                "mean_m": -4.0774094187883225
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.5408397321899585,
+                "median_m": -4.44636509989698,
+                "p95_m": -0.9172873510094472,
+                "max_m": -0.11236382232359166,
+                "mean_m": -4.076929259052013
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 4,
+              "fraction_coarse_above_given_native_below": 0.017467248908296942,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.771092876295245,
+                "median_m": -3.40501159628229,
+                "p95_m": -0.2894693523645384,
+                "max_m": 0.17965203225614657,
+                "mean_m": -2.955639658543023
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 4,
+                "min_m": 0.020415133610380387,
+                "median_m": 0.08703279697801136,
+                "p95_m": 0.17335802498275127,
+                "max_m": 0.17965203225614657,
+                "mean_m": 0.09353318995563742
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 4,
+              "fraction_coarse_above_given_native_below": 0.017467248908296942,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.771092876295245,
+                "median_m": -3.397162643478565,
+                "p95_m": -0.29129139452240754,
+                "max_m": 0.17965203225614657,
+                "mean_m": -2.956117278630359
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 4,
+                "min_m": 0.020415133610380387,
+                "median_m": 0.08390779697801154,
+                "p95_m": 0.1731236499827513,
+                "max_m": 0.17965203225614657,
+                "mean_m": 0.09197068995563751
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004291845493562232,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.705312719941139,
+                "median_m": -3.216523744662626,
+                "p95_m": -0.5990877384940657,
+                "max_m": 0.12864393815400765,
+                "mean_m": -2.925878316793429
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.12864393815400765,
+                "median_m": 0.12864393815400765,
+                "p95_m": 0.12864393815400765,
+                "max_m": 0.12864393815400765,
+                "mean_m": 0.12864393815400765
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004310344827586207,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.705312719941139,
+                "median_m": -3.2165335735927334,
+                "p95_m": -0.6413400317976576,
+                "max_m": 0.13098768815400774,
+                "mean_m": -2.936455802557908
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.13098768815400774,
+                "median_m": 0.13098768815400774,
+                "p95_m": 0.13098768815400774,
+                "max_m": 0.13098768815400774,
+                "mean_m": 0.13098768815400774
+              }
+            }
+          }
+        },
+        "16.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 7,
+              "fraction_coarse_above_given_native_below": 0.011345218800648298,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -5.866301400959465,
+                "median_m": -4.34501913040874,
+                "p95_m": -0.58296161964536,
+                "max_m": 0.15271919288788105,
+                "mean_m": -3.787809838715394
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 7,
+                "min_m": 0.09309645810280642,
+                "median_m": 0.12290782549534374,
+                "p95_m": 0.1497380561486273,
+                "max_m": 0.15271919288788105,
+                "mean_m": 0.12290782549534374
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 7,
+              "fraction_coarse_above_given_native_below": 0.011345218800648298,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -5.859270150959464,
+                "median_m": -4.336092342560491,
+                "p95_m": -0.5754934041586273,
+                "max_m": 0.14178169288788123,
+                "mean_m": -3.7876486082994028
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 7,
+                "min_m": 0.09309645810280642,
+                "median_m": 0.12134532549534383,
+                "p95_m": 0.13973805614862744,
+                "max_m": 0.14178169288788123,
+                "mean_m": 0.11933639692391518
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -5.866301400959465,
+                "median_m": -4.324556518084168,
+                "p95_m": -1.2081398202975886,
+                "max_m": -0.161913445038965,
+                "mean_m": -3.9224033909911125
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -5.859270150959464,
+                "median_m": -4.334862880408741,
+                "p95_m": -1.2084523202975883,
+                "max_m": -0.1533196950389648,
+                "mean_m": -3.9219232312548034
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.3118509266525304,
+                "median_m": -2.7416098883375333,
+                "p95_m": -1.2649611323202319,
+                "max_m": -1.063038489657125,
+                "mean_m": -2.687973143529591
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.314975926652529,
+                "median_m": -2.741609888337533,
+                "p95_m": -1.2630861323202318,
+                "max_m": -1.064600989657125,
+                "mean_m": -2.688450763616927
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.577256966320177,
+                "median_m": -3.038169575420501,
+                "p95_m": -0.8249168756727913,
+                "max_m": -0.3561587038759928,
+                "mean_m": -2.858810434151739
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.578038216320177,
+                "median_m": -3.055018077169835,
+                "p95_m": -0.821467821265835,
+                "max_m": -0.3545962038759929,
+                "mean_m": -2.866680641933703
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          }
+        },
+        "32.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -4.624307486104463,
+                "median_m": -3.4273414329160174,
+                "p95_m": -1.4140883733722425,
+                "max_m": -0.8337976495124477,
+                "mean_m": -3.265171188758382
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -4.6250887361044635,
+                "median_m": -3.42249771106,
+                "p95_m": -1.4170401319576498,
+                "max_m": -0.8337976495124477,
+                "mean_m": -3.2650099583423904
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -4.762163136315479,
+                "median_m": -3.173168826391354,
+                "p95_m": -2.2910793807643035,
+                "max_m": -1.4014878059766762,
+                "mean_m": -3.2236200606129177
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -4.76919438631548,
+                "median_m": -3.167349303947418,
+                "p95_m": -2.2921464632154906,
+                "max_m": -1.392894055976676,
+                "mean_m": -3.223139900876609
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.544128948698438,
+                "median_m": -3.010025819639368,
+                "p95_m": -1.5360425735513363,
+                "max_m": -1.0736837810526303,
+                "mean_m": -2.9991887644371134
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.544128948698438,
+                "median_m": -3.010025819639368,
+                "p95_m": -1.5301050735513362,
+                "max_m": -1.0721212810526304,
+                "mean_m": -2.999666384524449
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.695472946483642,
+                "median_m": -3.8988421424291895,
+                "p95_m": -3.2878272734023444,
+                "max_m": -2.8678885269909955,
+                "mean_m": -3.9119318372865686
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.695093230716886,
+                "median_m": -3.904795308830206,
+                "p95_m": -3.2771158301271397,
+                "max_m": -2.8663260269909956,
+                "mean_m": -3.913366849789918
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          }
+        }
+      },
+      "aggregate_unique_bbox_union": {
+        "2.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 0,
+            "fraction_coarse_above_given_native_below": 0.0,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -6.909353649616245,
+              "median_m": -3.8382033526897548,
+              "p95_m": -0.49884892296280836,
+              "max_m": -0.01371330320834252,
+              "mean_m": -3.669089155207176
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 0,
+              "min_m": null,
+              "median_m": null,
+              "p95_m": null,
+              "max_m": null,
+              "mean_m": null
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 0,
+            "fraction_coarse_above_given_native_below": 0.0,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -6.913259899616245,
+              "median_m": -3.836855199933059,
+              "p95_m": -0.5028618763946126,
+              "max_m": -0.015940208733075778,
+              "mean_m": -3.6716707856287805
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 0,
+              "min_m": null,
+              "median_m": null,
+              "p95_m": null,
+              "max_m": null,
+              "mean_m": null
+            }
+          }
+        },
+        "4.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 3,
+            "fraction_coarse_above_given_native_below": 0.0022488755622188904,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -6.909353649616239,
+              "median_m": -3.845154298841925,
+              "p95_m": -0.49677013851704077,
+              "max_m": 0.0791362270712761,
+              "mean_m": -3.6592325235321943
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 3,
+              "min_m": 0.025378960867692868,
+              "median_m": 0.04468410660816602,
+              "p95_m": 0.07569101502496509,
+              "max_m": 0.0791362270712761,
+              "mean_m": 0.04973309818237833
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 3,
+            "fraction_coarse_above_given_native_below": 0.002250562640660165,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -6.913259899616239,
+              "median_m": -3.8471152981122896,
+              "p95_m": -0.49375652049047963,
+              "max_m": 0.08147997707127619,
+              "mean_m": -3.661806759631463
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 3,
+              "min_m": 0.027722710867692957,
+              "median_m": 0.04468410660816602,
+              "p95_m": 0.07780039002496517,
+              "max_m": 0.08147997707127619,
+              "mean_m": 0.05129559818237839
+            }
+          }
+        },
+        "8.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 9,
+            "fraction_coarse_above_given_native_below": 0.006746626686656672,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -6.540058482189959,
+              "median_m": -3.8326385932217937,
+              "p95_m": -0.5618766867363556,
+              "max_m": 0.17965203225614657,
+              "mean_m": -3.594538550149143
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 9,
+              "min_m": 0.0023378192097909256,
+              "median_m": 0.04095578119158638,
+              "p95_m": 0.1628680128604258,
+              "max_m": 0.17965203225614657,
+              "mean_m": 0.07283296805237797
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 9,
+            "fraction_coarse_above_given_native_below": 0.006751687921980495,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -6.5408397321899585,
+              "median_m": -3.838014715572373,
+              "p95_m": -0.5746960526425399,
+              "max_m": 0.17965203225614657,
+              "mean_m": -3.5968043364812634
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 9,
+              "min_m": 0.0023378192097909256,
+              "median_m": 0.03314328119158638,
+              "p95_m": 0.16224301286042583,
+              "max_m": 0.17965203225614657,
+              "mean_m": 0.07031560694126693
+            }
+          }
+        },
+        "16.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 7,
+            "fraction_coarse_above_given_native_below": 0.005247376311844078,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -5.866301400959465,
+              "median_m": -3.6898888971035726,
+              "p95_m": -0.9288245982894076,
+              "max_m": 0.15271919288788105,
+              "mean_m": -3.465410972606268
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 7,
+              "min_m": 0.09309645810280642,
+              "median_m": 0.12290782549534374,
+              "p95_m": 0.1497380561486273,
+              "max_m": 0.15271919288788105,
+              "mean_m": 0.12290782549534374
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 7,
+            "fraction_coarse_above_given_native_below": 0.005251312828207052,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -5.859270150959464,
+              "median_m": -3.689218541731446,
+              "p95_m": -0.9400690695643604,
+              "max_m": 0.14178169288788123,
+              "mean_m": -3.4671590183631102
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 7,
+              "min_m": 0.09309645810280642,
+              "median_m": 0.12134532549534383,
+              "p95_m": 0.13973805614862744,
+              "max_m": 0.14178169288788123,
+              "mean_m": 0.11933639692391518
+            }
+          }
+        },
+        "32.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 0,
+            "fraction_coarse_above_given_native_below": 0.0,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -4.762163136315479,
+              "median_m": -3.448742036276961,
+              "p95_m": -1.6560199644154923,
+              "max_m": -0.8337976495124477,
+              "mean_m": -3.3264729275771696
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 0,
+              "min_m": null,
+              "median_m": null,
+              "p95_m": null,
+              "max_m": null,
+              "mean_m": null
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 0,
+            "fraction_coarse_above_given_native_below": 0.0,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -4.76919438631548,
+              "median_m": -3.445436895479623,
+              "p95_m": -1.6535664787603623,
+              "max_m": -0.8337976495124477,
+              "mean_m": -3.326206701201377
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 0,
+              "min_m": null,
+              "median_m": null,
+              "p95_m": null,
+              "max_m": null,
+              "mean_m": null
+            }
+          }
+        }
+      },
+      "steps": [
+        2.0,
+        4.0,
+        8.0,
+        16.0,
+        32.0
+      ]
+    },
+    "EV95": {
+      "objects": {
+        "2.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.909353649616245,
+                "median_m": -4.078025838732708,
+                "p95_m": -0.5427571058273528,
+                "max_m": -0.015940208733075778,
+                "mean_m": -3.9438436424852505
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.913259899616245,
+                "median_m": -4.070724108815182,
+                "p95_m": -0.5476008558273533,
+                "max_m": -0.015940208733075778,
+                "mean_m": -3.9436824120692586
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.909353649616245,
+                "median_m": -4.403892749547921,
+                "p95_m": -0.7957748458347699,
+                "max_m": -0.09453914165502919,
+                "mean_m": -4.166168705511623
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.913259899616245,
+                "median_m": -4.398292070627252,
+                "p95_m": -0.8053060958347701,
+                "max_m": -0.10157039165502901,
+                "mean_m": -4.165688545775314
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.844262582063676,
+                "median_m": -3.595447632670429,
+                "p95_m": -0.4398881122469688,
+                "max_m": -0.03349350690846986,
+                "mean_m": -3.1044733923904637
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.844262582063676,
+                "median_m": -3.5993491262197232,
+                "p95_m": -0.43457561224696867,
+                "max_m": -0.03349350690846986,
+                "mean_m": -3.1049510124778
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.733750140666913,
+                "median_m": -3.2003263369203294,
+                "p95_m": -0.22846150994299136,
+                "max_m": -0.01371330320834252,
+                "mean_m": -2.8751601181444695
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.733750140666913,
+                "median_m": -3.2028964437544736,
+                "p95_m": -0.23505522534252532,
+                "max_m": -0.017535445094097213,
+                "mean_m": -2.887012394286435
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          }
+        },
+        "4.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.0016207455429497568,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.909353649616239,
+                "median_m": -4.088344639539726,
+                "p95_m": -0.5829470628500292,
+                "max_m": 0.025378960867692868,
+                "mean_m": -3.9461045237824277
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.025378960867692868,
+                "median_m": 0.025378960867692868,
+                "p95_m": 0.025378960867692868,
+                "max_m": 0.025378960867692868,
+                "mean_m": 0.025378960867692868
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.0016207455429497568,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.913259899616239,
+                "median_m": -4.086782139539726,
+                "p95_m": -0.573832479516695,
+                "max_m": 0.027722710867692957,
+                "mean_m": -3.945943293366436
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.027722710867692957,
+                "median_m": 0.027722710867692957,
+                "p95_m": 0.027722710867692957,
+                "max_m": 0.027722710867692957,
+                "mean_m": 0.027722710867692957
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.002028397565922921,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.909353649616239,
+                "median_m": -4.403892749547953,
+                "p95_m": -0.8629146635423834,
+                "max_m": 0.025378960867692868,
+                "mean_m": -4.15519210727399
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.025378960867692868,
+                "median_m": 0.025378960867692868,
+                "p95_m": 0.025378960867692868,
+                "max_m": 0.025378960867692868,
+                "mean_m": 0.025378960867692868
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.002028397565922921,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.913259899616239,
+                "median_m": -4.398292070627201,
+                "p95_m": -0.8767688302090499,
+                "max_m": 0.027722710867692957,
+                "mean_m": -4.154711947537681
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.027722710867692957,
+                "median_m": 0.027722710867692957,
+                "p95_m": 0.027722710867692957,
+                "max_m": 0.027722710867692957,
+                "mean_m": 0.027722710867692957
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004366812227074236,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.847131338715553,
+                "median_m": -3.5985678762197697,
+                "p95_m": -0.40599495271842995,
+                "max_m": 0.04468410660816602,
+                "mean_m": -3.0915315060686615
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.04468410660816602,
+                "median_m": 0.04468410660816602,
+                "p95_m": 0.04468410660816602,
+                "max_m": 0.04468410660816602,
+                "mean_m": 0.04468410660816602
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004366812227074236,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.847131338715553,
+                "median_m": -3.5993491262197694,
+                "p95_m": -0.39943245271842986,
+                "max_m": 0.04468410660816602,
+                "mean_m": -3.092009126155998
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.04468410660816602,
+                "median_m": 0.04468410660816602,
+                "p95_m": 0.04468410660816602,
+                "max_m": 0.04468410660816602,
+                "mean_m": 0.04468410660816602
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004291845493562232,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.720208511749815,
+                "median_m": -3.1817127227783506,
+                "p95_m": -0.3089611470699095,
+                "max_m": 0.0791362270712761,
+                "mean_m": -2.850588956128841
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.0791362270712761,
+                "median_m": 0.0791362270712761,
+                "p95_m": 0.0791362270712761,
+                "max_m": 0.0791362270712761,
+                "mean_m": 0.0791362270712761
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004310344827586207,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.720208511749815,
+                "median_m": -3.191215127706549,
+                "p95_m": -0.3277536250650586,
+                "max_m": 0.08147997707127619,
+                "mean_m": -2.862335322089705
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.08147997707127619,
+                "median_m": 0.08147997707127619,
+                "p95_m": 0.08147997707127619,
+                "max_m": 0.08147997707127619,
+                "mean_m": 0.08147997707127619
+              }
+            }
+          }
+        },
+        "8.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 4,
+              "fraction_coarse_above_given_native_below": 0.006482982171799027,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.540058482189959,
+                "median_m": -4.098006029427049,
+                "p95_m": -0.599941151251549,
+                "max_m": 0.08395931050181016,
+                "mean_m": -3.875456770530381
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 4,
+                "min_m": 0.0023378192097909256,
+                "median_m": 0.03321144239162166,
+                "p95_m": 0.07750878110527658,
+                "max_m": 0.08395931050181016,
+                "mean_m": 0.0381800036237111
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 4,
+              "fraction_coarse_above_given_native_below": 0.006482982171799027,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -6.5408397321899585,
+                "median_m": -4.0995685294270485,
+                "p95_m": -0.5922871116269365,
+                "max_m": 0.07302181050181034,
+                "mean_m": -3.8752955401143896
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 4,
+                "min_m": 0.0023378192097909256,
+                "median_m": 0.02930519239162166,
+                "p95_m": 0.06704003110527673,
+                "max_m": 0.07302181050181034,
+                "mean_m": 0.033492503623711145
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.540058482189959,
+                "median_m": -4.4573025998969795,
+                "p95_m": -0.9158351111109403,
+                "max_m": -0.10168673899025826,
+                "mean_m": -4.0774094187883225
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -6.5408397321899585,
+                "median_m": -4.44636509989698,
+                "p95_m": -0.9172873510094472,
+                "max_m": -0.11236382232359166,
+                "mean_m": -4.076929259052013
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 4,
+              "fraction_coarse_above_given_native_below": 0.017467248908296942,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.771092876295245,
+                "median_m": -3.40501159628229,
+                "p95_m": -0.2894693523645384,
+                "max_m": 0.17965203225614657,
+                "mean_m": -2.955639658543023
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 4,
+                "min_m": 0.020415133610380387,
+                "median_m": 0.08703279697801136,
+                "p95_m": 0.17335802498275127,
+                "max_m": 0.17965203225614657,
+                "mean_m": 0.09353318995563742
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 4,
+              "fraction_coarse_above_given_native_below": 0.017467248908296942,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.771092876295245,
+                "median_m": -3.397162643478565,
+                "p95_m": -0.29129139452240754,
+                "max_m": 0.17965203225614657,
+                "mean_m": -2.956117278630359
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 4,
+                "min_m": 0.020415133610380387,
+                "median_m": 0.08390779697801154,
+                "p95_m": 0.1731236499827513,
+                "max_m": 0.17965203225614657,
+                "mean_m": 0.09197068995563751
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004291845493562232,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.705312719941139,
+                "median_m": -3.216523744662626,
+                "p95_m": -0.5990877384940657,
+                "max_m": 0.12864393815400765,
+                "mean_m": -2.925878316793429
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.12864393815400765,
+                "median_m": 0.12864393815400765,
+                "p95_m": 0.12864393815400765,
+                "max_m": 0.12864393815400765,
+                "mean_m": 0.12864393815400765
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 1,
+              "fraction_coarse_above_given_native_below": 0.004310344827586207,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.705312719941139,
+                "median_m": -3.2165335735927334,
+                "p95_m": -0.6413400317976576,
+                "max_m": 0.13098768815400774,
+                "mean_m": -2.936455802557908
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 1,
+                "min_m": 0.13098768815400774,
+                "median_m": 0.13098768815400774,
+                "p95_m": 0.13098768815400774,
+                "max_m": 0.13098768815400774,
+                "mean_m": 0.13098768815400774
+              }
+            }
+          }
+        },
+        "16.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 7,
+              "fraction_coarse_above_given_native_below": 0.011345218800648298,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -5.866301400959465,
+                "median_m": -4.34501913040874,
+                "p95_m": -0.58296161964536,
+                "max_m": 0.15271919288788105,
+                "mean_m": -3.787809838715394
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 7,
+                "min_m": 0.09309645810280642,
+                "median_m": 0.12290782549534374,
+                "p95_m": 0.1497380561486273,
+                "max_m": 0.15271919288788105,
+                "mean_m": 0.12290782549534374
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 7,
+              "fraction_coarse_above_given_native_below": 0.011345218800648298,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -5.859270150959464,
+                "median_m": -4.336092342560491,
+                "p95_m": -0.5754934041586273,
+                "max_m": 0.14178169288788123,
+                "mean_m": -3.7876486082994028
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 7,
+                "min_m": 0.09309645810280642,
+                "median_m": 0.12134532549534383,
+                "p95_m": 0.13973805614862744,
+                "max_m": 0.14178169288788123,
+                "mean_m": 0.11933639692391518
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -5.866301400959465,
+                "median_m": -4.324556518084168,
+                "p95_m": -1.2081398202975886,
+                "max_m": -0.161913445038965,
+                "mean_m": -3.9224033909911125
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -5.859270150959464,
+                "median_m": -4.334862880408741,
+                "p95_m": -1.2084523202975883,
+                "max_m": -0.1533196950389648,
+                "mean_m": -3.9219232312548034
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.3118509266525304,
+                "median_m": -2.7416098883375333,
+                "p95_m": -1.2649611323202319,
+                "max_m": -1.063038489657125,
+                "mean_m": -2.6879665689615813
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.314975926652529,
+                "median_m": -2.741609888337533,
+                "p95_m": -1.2630861323202318,
+                "max_m": -1.064600989657125,
+                "mean_m": -2.6884441890489175
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.577256966320177,
+                "median_m": -3.038169575420501,
+                "p95_m": -0.8249168756727913,
+                "max_m": -0.3561587038759928,
+                "mean_m": -2.858810434151739
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.578038216320177,
+                "median_m": -3.055018077169835,
+                "p95_m": -0.821467821265835,
+                "max_m": -0.3545962038759929,
+                "mean_m": -2.866680641933703
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          }
+        },
+        "32.0": {
+          "16812770": {
+            "samples_in_visual_bbox": 640,
+            "P_cell_plane": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -4.624307486104463,
+                "median_m": -3.4273414329160174,
+                "p95_m": -1.3819964490192835,
+                "max_m": -0.7753650605378111,
+                "mean_m": -3.258733792632895
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 640,
+              "native_below_surface_samples": 617,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 617,
+                "min_m": -4.6250887361044635,
+                "median_m": -3.42249771106,
+                "p95_m": -1.3827287031072109,
+                "max_m": -0.7753650605378111,
+                "mean_m": -3.2585725622169037
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812771": {
+            "samples_in_visual_bbox": 512,
+            "P_cell_plane": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -4.7619890119007575,
+                "median_m": -3.173168826391354,
+                "p95_m": -2.283959054966907,
+                "max_m": -1.3806101814252199,
+                "mean_m": -3.2217542638781693
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 512,
+              "native_below_surface_samples": 493,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 493,
+                "min_m": -4.769020261900757,
+                "median_m": -3.167349303947418,
+                "p95_m": -2.2863028049669074,
+                "max_m": -1.3720164314252197,
+                "mean_m": -3.2212741041418607
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812805": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.544128948698438,
+                "median_m": -3.010025819639368,
+                "p95_m": -1.5360425735513363,
+                "max_m": -1.0705437462776912,
+                "mean_m": -2.998974858138034
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 229,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 229,
+                "min_m": -4.544128948698438,
+                "median_m": -3.010025819639368,
+                "p95_m": -1.5301050735513362,
+                "max_m": -1.0689812462776913,
+                "mean_m": -2.9994524782253706
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          },
+          "16812815": {
+            "samples_in_visual_bbox": 256,
+            "P_cell_plane": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 233,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 233,
+                "min_m": -4.695472946483642,
+                "median_m": -3.8988421424291895,
+                "p95_m": -3.2878272734023444,
+                "max_m": -2.8678885269909955,
+                "mean_m": -3.9119318372865686
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            },
+            "F_cell_corner_triangles": {
+              "finite_surface_samples": 256,
+              "native_below_surface_samples": 232,
+              "coarse_above_surface_given_native_below": 0,
+              "fraction_coarse_above_given_native_below": 0.0,
+              "coarse_minus_surface_where_native_below_m": {
+                "count": 232,
+                "min_m": -4.695093230716886,
+                "median_m": -3.904795308830206,
+                "p95_m": -3.2771158301271397,
+                "max_m": -2.8663260269909956,
+                "mean_m": -3.913366849789918
+              },
+              "positive_uplift_coarse_minus_surface_m": {
+                "count": 0,
+                "min_m": null,
+                "median_m": null,
+                "p95_m": null,
+                "max_m": null,
+                "mean_m": null
+              }
+            }
+          }
+        }
+      },
+      "aggregate_unique_bbox_union": {
+        "2.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 0,
+            "fraction_coarse_above_given_native_below": 0.0,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -6.909353649616245,
+              "median_m": -3.8382033526897548,
+              "p95_m": -0.49884892296280836,
+              "max_m": -0.01371330320834252,
+              "mean_m": -3.669089155207176
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 0,
+              "min_m": null,
+              "median_m": null,
+              "p95_m": null,
+              "max_m": null,
+              "mean_m": null
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 0,
+            "fraction_coarse_above_given_native_below": 0.0,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -6.913259899616245,
+              "median_m": -3.836855199933059,
+              "p95_m": -0.5028618763946126,
+              "max_m": -0.015940208733075778,
+              "mean_m": -3.6716707856287805
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 0,
+              "min_m": null,
+              "median_m": null,
+              "p95_m": null,
+              "max_m": null,
+              "mean_m": null
+            }
+          }
+        },
+        "4.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 3,
+            "fraction_coarse_above_given_native_below": 0.0022488755622188904,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -6.909353649616239,
+              "median_m": -3.845154298841925,
+              "p95_m": -0.49677013851704077,
+              "max_m": 0.0791362270712761,
+              "mean_m": -3.6592325235321943
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 3,
+              "min_m": 0.025378960867692868,
+              "median_m": 0.04468410660816602,
+              "p95_m": 0.07569101502496509,
+              "max_m": 0.0791362270712761,
+              "mean_m": 0.04973309818237833
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 3,
+            "fraction_coarse_above_given_native_below": 0.002250562640660165,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -6.913259899616239,
+              "median_m": -3.8471152981122896,
+              "p95_m": -0.49375652049047963,
+              "max_m": 0.08147997707127619,
+              "mean_m": -3.661806759631463
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 3,
+              "min_m": 0.027722710867692957,
+              "median_m": 0.04468410660816602,
+              "p95_m": 0.07780039002496517,
+              "max_m": 0.08147997707127619,
+              "mean_m": 0.05129559818237839
+            }
+          }
+        },
+        "8.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 9,
+            "fraction_coarse_above_given_native_below": 0.006746626686656672,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -6.540058482189959,
+              "median_m": -3.8326385932217937,
+              "p95_m": -0.5618766867363556,
+              "max_m": 0.17965203225614657,
+              "mean_m": -3.594538550149143
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 9,
+              "min_m": 0.0023378192097909256,
+              "median_m": 0.04095578119158638,
+              "p95_m": 0.1628680128604258,
+              "max_m": 0.17965203225614657,
+              "mean_m": 0.07283296805237797
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 9,
+            "fraction_coarse_above_given_native_below": 0.006751687921980495,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -6.5408397321899585,
+              "median_m": -3.838014715572373,
+              "p95_m": -0.5746960526425399,
+              "max_m": 0.17965203225614657,
+              "mean_m": -3.5968043364812634
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 9,
+              "min_m": 0.0023378192097909256,
+              "median_m": 0.03314328119158638,
+              "p95_m": 0.16224301286042583,
+              "max_m": 0.17965203225614657,
+              "mean_m": 0.07031560694126693
+            }
+          }
+        },
+        "16.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 7,
+            "fraction_coarse_above_given_native_below": 0.005247376311844078,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -5.866301400959465,
+              "median_m": -3.6898888971035726,
+              "p95_m": -0.9288245982894076,
+              "max_m": 0.15271919288788105,
+              "mean_m": -3.465409843988521
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 7,
+              "min_m": 0.09309645810280642,
+              "median_m": 0.12290782549534374,
+              "p95_m": 0.1497380561486273,
+              "max_m": 0.15271919288788105,
+              "mean_m": 0.12290782549534374
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 7,
+            "fraction_coarse_above_given_native_below": 0.005251312828207052,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -5.859270150959464,
+              "median_m": -3.689218541731446,
+              "p95_m": -0.9400690695643604,
+              "max_m": 0.14178169288788123,
+              "mean_m": -3.4671578888986887
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 7,
+              "min_m": 0.09309645810280642,
+              "median_m": 0.12134532549534383,
+              "p95_m": 0.13973805614862744,
+              "max_m": 0.14178169288788123,
+              "mean_m": 0.11933639692391518
+            }
+          }
+        },
+        "32.0": {
+          "samples_in_visual_bbox": 1408,
+          "P_cell_plane": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1334,
+            "coarse_above_surface_given_native_below": 0,
+            "fraction_coarse_above_given_native_below": 0.0,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1334,
+              "min_m": -4.7619890119007575,
+              "median_m": -3.446859559768949,
+              "p95_m": -1.62915206411695,
+              "max_m": -0.7753650605378111,
+              "mean_m": -3.3231130223848813
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 0,
+              "min_m": null,
+              "median_m": null,
+              "p95_m": null,
+              "max_m": null,
+              "mean_m": null
+            }
+          },
+          "F_cell_corner_triangles": {
+            "finite_surface_samples": 1408,
+            "native_below_surface_samples": 1333,
+            "coarse_above_surface_given_native_below": 0,
+            "fraction_coarse_above_given_native_below": 0.0,
+            "coarse_minus_surface_where_native_below_m": {
+              "count": 1333,
+              "min_m": -4.769020261900757,
+              "median_m": -3.4427131110889855,
+              "p95_m": -1.6303471192131769,
+              "max_m": -0.7753650605378111,
+              "mean_m": -3.322844275450054
+            },
+            "positive_uplift_coarse_minus_surface_m": {
+              "count": 0,
+              "min_m": null,
+              "median_m": null,
+              "p95_m": null,
+              "max_m": null,
+              "mean_m": null
+            }
+          }
+        }
+      },
+      "steps": [
+        2.0,
+        4.0,
+        8.0,
+        16.0,
+        32.0
+      ]
+    }
+  },
+  "interpretation_limits": [
+    "Per-object masks use the reported local visual bbox transformed by the WRP position. A bbox is not an exact P3D face footprint; samples can include empty portions, and separate object summaries may overlap.",
+    "This evaluates sampled height envelopes only. It does not emulate terrain LOD selection, screen-space sampling, Z ordering, material/shader behavior, or runtime water waves.",
+    "B and EV95 are separate numerical baselines; no EV73 screenshot or visual symptom is transferred to either.",
+    "P and F are sampled fields and not exact runtime water intersections. Positive coarse-minus-F means the sampled coarse terrain is higher than that F surface at that point, not proof that the engine renders it in front."
+  ],
+  "validation": {
+    "fixtures": {
+      "affine_native_exact": true,
+      "affine_resampled_coarse_exact": true,
+      "F_cell_seam_not_averaged": true,
+      "outside_grid_rejected": true
+    },
+    "elapsed_seconds": 0.42581950000021607,
+    "time_budget_seconds": 180.0,
+    "memory_working_set_bytes": 67792896,
+    "memory_peak_working_set_bytes": 82120704,
+    "memory_budget_bytes": 536870912,
+    "numeric_status": "PASS_WITHIN_BUDGET"
+  },
+  "samples_path": "E:\\DayZ-Baltic-Build\\v30-water-render-discriminator-20261010\\coarse-terrain-sensitivity-ev95\\samples.npz",
+  "samples_note": "Contains coordinates, cell IDs, P/F and native/coarse H samples for B and EV95.",
+  "source_code_path": "E:\\DayZ-Baltic-Build\\v30-water-render-discriminator-20261010\\coarse-terrain-sensitivity-ev95\\analyze_coarse_terrain.py",
+  "source_code_sha256": "17d5a9473a797fd67029018502ba8849d1d3bfb877acd69281f93fd3e2b08bcf"
+}

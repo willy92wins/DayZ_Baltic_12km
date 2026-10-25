@@ -1,0 +1,22 @@
+--- E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/pond-edge/make_cand.py	2026-10-12 04:15:43.364190200 +0200
++++ E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder/make_cand.py	2026-10-13 14:12:43.984841800 +0200
+@@ -5,8 +5,8 @@
+ import hashlib
+ import numpy as np
+ 
+-BASE = 'E:/DayZ-Baltic-Build/v31-ev99-shore-lakes-20261012/terrain-ev99.npz'
+-BASE_SHA = '8e35c3ab3638ae423728f57d5968e6657efd7d52a4c1d22e980d71e14b4fc5a3'
++BASE = 'E:/DayZ-Baltic-Build/v31-ev103-sills-cones-20261012/terrain-ev103.npz'
++BASE_SHA = 'a1f458efae757cecea3e39973b2c25be65f264f0fe6bb6e3827249fbb3c205cc'
+ 
+ 
+ def sha(path):
+@@ -18,7 +18,7 @@
+ 
+ 
+ if sha(BASE) != BASE_SHA:
+-    raise SystemExit('EV99 sha mismatch')
++    raise SystemExit('EV103 sha mismatch')
+ b = np.load(BASE)
+ H = np.load(sys.argv[1])['heights']
+ assert H.dtype == np.float32 and H.shape == (2048, 2048) and np.isfinite(H).all()

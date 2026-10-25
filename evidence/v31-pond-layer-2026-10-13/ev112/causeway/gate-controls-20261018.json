@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "gate_sha256": "d62de2355260faea45ded8521d4a430525901f83cfe07d7c40a73dcfe6516872",
+  "cases": {
+    "unapproved": {
+      "passed": true,
+      "rc": 2,
+      "verdict": "PENDING",
+      "fails": [],
+      "pending": [
+        "G8 c2 (road along a sea channel): excluded from the causeway rule, approval not recorded",
+        "G8 c3 (stream crossing): excluded from the causeway rule, approval not recorded",
+        "G8 c4 (road along a sea channel): excluded from the causeway rule, approval not recorded",
+        "G8 c5 (coastal road with a pond inland): excluded from the causeway rule, approval not recorded",
+        "G8 c6 (river junction crossing): excluded from the causeway rule, approval not recorded",
+        "G8 c7 (pond river beside the road): excluded from the causeway rule, approval not recorded"
+      ]
+    },
+    "false": {
+      "passed": true,
+      "rc": 2,
+      "verdict": "PENDING",
+      "fails": [],
+      "pending": [
+        "G8 c2 (road along a sea channel): excluded from the causeway rule, approval not recorded",
+        "G8 c3 (stream crossing): excluded from the causeway rule, approval not recorded",
+        "G8 c4 (road along a sea channel): excluded from the causeway rule, approval not recorded",
+        "G8 c5 (coastal road with a pond inland): excluded from the causeway rule, approval not recorded",
+        "G8 c6 (river junction crossing): excluded from the causeway rule, approval not recorded",
+        "G8 c7 (pond river beside the road): excluded from the causeway rule, approval not recorded"
+      ]
+    },
+    "string": {
+      "passed": true,
+      "rc": 2,
+      "verdict": "PENDING",
+      "fails": [],
+      "pending": [
+        "G8 c2 (road along a sea channel): excluded from the causeway rule, approval not recorded",
+        "G8 c3 (stream crossing): excluded from the causeway rule, approval not recorded",
+        "G8 c4 (road along a sea channel): excluded from the causeway rule, approval not recorded",
+        "G8 c5 (coastal road with a pond inland): excluded from the causeway rule, approval not recorded",
+        "G8 c6 (river junction crossing): excluded from the causeway rule, approval not recorded",
+        "G8 c7 (pond river beside the road): excluded from the causeway rule, approval not recorded"
+      ]
+    },
+    "fixture-positive": {
+      "passed": true,
+      "rc": 0,
+      "verdict": "PASS",
+      "fails": [],
+      "pending": []
+    },
+    "shifted-centre": {
+      "passed": true,
+      "rc": 1,
+      "verdict": "FAIL",
+      "fails": [
+        "G0 spec c2: coordinates differ from the frozen inventory (10235, 9398)",
+        "G8 c2: 1 changed vertices within 150.0 m"
+      ],
+      "pending": []
+    }
+  },
+  "note": "Approvals exist only in synthetic fixture specs, not in the production acceptance spec."
+}

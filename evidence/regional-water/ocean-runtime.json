@@ -1,0 +1,79 @@
+{
+  "run": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "run_id": "5230dd02-9ffd-4501-a3b0-8cfa456bbac5",
+    "phase": "completed",
+    "elapsed_s": 16.492,
+    "artifacts_paths": [
+      "P:\\DayZ_MCP_dev\\_server\\profiles",
+      "P:\\DayZ_MCP_dev\\_client\\profiles"
+    ],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": true,
+    "client_alive": true,
+    "process_alive": true,
+    "bridge_ready": false,
+    "reason": "binding_not_ready",
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": "observed",
+    "steam_pid_repair": null,
+    "steam_restarted": false,
+    "client_death_diagnosis": null,
+    "caller_tool_registry_stale": false
+  },
+  "close": {
+    "run_id": "5230dd02-9ffd-4501-a3b0-8cfa456bbac5",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 4.612088499998208,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "client",
+        "termination_line": true,
+        "rpt_rotated": false
+      },
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "warnings": [
+      "player_state_not_saved: wait for the periodic players.db save, or disconnect the client first"
+    ]
+  },
+  "result": "FAIL_EXPLICIT_OCEAN_OVERRIDE",
+  "observations": [
+    "Phase2 settled1600: white arc remains",
+    "Phase3 settled6000: distant stripes remain; sea shade differs"
+  ],
+  "captured_phases": [
+    2,
+    3
+  ],
+  "missed_phases": [
+    0,
+    1
+  ],
+  "transition_capture_not_used": true,
+  "map_sha256": "fd809ae49b3113f38b7cad2478af1e6144c2beab1c74b3738780b58b587cffe2",
+  "restore_baseline": "ebc60f4f089b3e125426263b456d1f9662bc828c506993bbabbf0e43023a06d4"
+}

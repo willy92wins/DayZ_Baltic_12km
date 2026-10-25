@@ -1,0 +1,411 @@
+{
+ "status": "FAIL_OR_INCOMPLETE",
+ "checks": {
+  "header": true,
+  "end": true,
+  "pieces": true,
+  "reach_water": false,
+  "pad": false
+ },
+ "pieces_found": 100,
+ "pieces_expected": 100,
+ "worst_pieces": [
+  {
+   "index": 91,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 0.0002532105322589015,
+   "direction_error_deg": 4.4338726831902825e-05,
+   "up_error_deg": 2.0614700166548044e-05,
+   "scale_error": 2.418261243031239e-06
+  },
+  {
+   "index": 80,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 0.0001573420080008967,
+   "direction_error_deg": 4.19393220783133e-05,
+   "up_error_deg": 2.4148365394514843e-05,
+   "scale_error": 2.072684152976123e-06
+  },
+  {
+   "index": 26,
+   "reach": "R2",
+   "found": true,
+   "position_error_m": 0.00012310818731313446,
+   "direction_error_deg": 4.034475724753357e-05,
+   "up_error_deg": 2.4979263396123047e-05,
+   "scale_error": 3.901024926644681e-06
+  },
+  {
+   "index": 64,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 8.901991024199962e-05,
+   "direction_error_deg": 1.1131846416284069e-05,
+   "up_error_deg": 3.922715954285103e-05,
+   "scale_error": 1.5263991588465586e-06
+  },
+  {
+   "index": 90,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 6.116313202488542e-05,
+   "direction_error_deg": 3.260029328259524e-05,
+   "up_error_deg": 3.8505096792433685e-05,
+   "scale_error": 1.3313296964856391e-06
+  }
+ ],
+ "max_errors": {
+  "position_error_m": 0.000651,
+  "direction_error_deg": 4.4e-05,
+  "up_error_deg": 3.9e-05,
+  "scale_error": 5e-06
+ },
+ "reaches": {
+  "R1:right": {
+   "samples": 100,
+   "missing": 0,
+   "expected_wet": 85,
+   "wet_without_depth": 19,
+   "wet_without_depth_s": [
+    112.0,
+    128.0,
+    130.0,
+    132.0,
+    134.0,
+    138.0,
+    140.0,
+    142.0,
+    146.0,
+    148.0,
+    174.0,
+    198.0,
+    210.0,
+    214.0,
+    216.0,
+    218.0,
+    240.0,
+    244.0,
+    246.0
+   ],
+   "residual_m_p50_max": [
+    0.0004,
+    0.535
+   ],
+   "max_jump_m": 0.7352,
+   "pond_true": 8
+  },
+  "R1:centre": {
+   "samples": 100,
+   "missing": 0,
+   "expected_wet": 94,
+   "wet_without_depth": 0,
+   "wet_without_depth_s": [],
+   "residual_m_p50_max": [
+    0.0003,
+    0.5138
+   ],
+   "max_jump_m": 0.5315,
+   "pond_true": 1
+  },
+  "R1:left": {
+   "samples": 100,
+   "missing": 0,
+   "expected_wet": 66,
+   "wet_without_depth": 16,
+   "wet_without_depth_s": [
+    90.0,
+    92.0,
+    98.0,
+    104.0,
+    106.0,
+    148.0,
+    150.0,
+    158.0,
+    160.0,
+    168.0,
+    202.0,
+    214.0,
+    216.0,
+    220.0,
+    222.0,
+    224.0
+   ],
+   "residual_m_p50_max": [
+    0.0093,
+    0.5551
+   ],
+   "max_jump_m": 0.6763,
+   "pond_true": 8
+  },
+  "R2:right": {
+   "samples": 201,
+   "missing": 0,
+   "expected_wet": 181,
+   "wet_without_depth": 29,
+   "wet_without_depth_s": [
+    24.0,
+    26.0,
+    74.1,
+    84.1,
+    86.1,
+    100.1,
+    110.1,
+    142.1,
+    148.1,
+    238.2,
+    250.2,
+    282.2,
+    308.2,
+    310.2,
+    318.2,
+    322.3,
+    324.3,
+    334.3,
+    336.3,
+    338.3
+   ],
+   "residual_m_p50_max": [
+    0.0153,
+    4.8989
+   ],
+   "max_jump_m": 4.9796,
+   "pond_true": 0
+  },
+  "R2:centre": {
+   "samples": 212,
+   "missing": 0,
+   "expected_wet": 201,
+   "wet_without_depth": 1,
+   "wet_without_depth_s": [
+    56.0
+   ],
+   "residual_m_p50_max": [
+    0.0152,
+    4.9022
+   ],
+   "max_jump_m": 4.9827,
+   "pond_true": 0
+  },
+  "R2:left": {
+   "samples": 201,
+   "missing": 0,
+   "expected_wet": 173,
+   "wet_without_depth": 25,
+   "wet_without_depth_s": [
+    64.0,
+    66.0,
+    68.0,
+    76.1,
+    78.1,
+    80.1,
+    138.1,
+    140.1,
+    192.2,
+    198.2,
+    232.2,
+    236.2,
+    238.2,
+    244.2,
+    286.2,
+    294.2,
+    332.3,
+    340.3,
+    342.3,
+    374.3
+   ],
+   "residual_m_p50_max": [
+    0.015,
+    4.9049
+   ],
+   "max_jump_m": 4.9855,
+   "pond_true": 0
+  },
+  "R3:right": {
+   "samples": 89,
+   "missing": 0,
+   "expected_wet": 83,
+   "wet_without_depth": 3,
+   "wet_without_depth_s": [
+    28.0,
+    30.0,
+    422.1
+   ],
+   "residual_m_p50_max": [
+    0.0959,
+    11.9591
+   ],
+   "max_jump_m": 12.0529,
+   "pond_true": 0
+  },
+  "R3:centre": {
+   "samples": 217,
+   "missing": 0,
+   "expected_wet": 119,
+   "wet_without_depth": 2,
+   "wet_without_depth_s": [
+    214.1,
+    238.1
+   ],
+   "residual_m_p50_max": [
+    0.1001,
+    11.9384
+   ],
+   "max_jump_m": 12.0344,
+   "pond_true": 0
+  },
+  "R3:left": {
+   "samples": 81,
+   "missing": 0,
+   "expected_wet": 72,
+   "wet_without_depth": 2,
+   "wet_without_depth_s": [
+    24.0,
+    32.0
+   ],
+   "residual_m_p50_max": [
+    0.089,
+    11.5989
+   ],
+   "max_jump_m": 11.7003,
+   "pond_true": 0
+  }
+ },
+ "pads": {
+  "PAD0": {
+   "0.0": {
+    "inside": 25,
+    "inside_match": 20,
+    "outside": 4,
+    "outside_dry": 4
+   },
+   "11.5": {
+    "inside": 25,
+    "inside_match": 20,
+    "outside": 4,
+    "outside_dry": 4
+   },
+   "12.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 29,
+    "outside_dry": 29
+   },
+   "-11.5": {
+    "inside": 25,
+    "inside_match": 20,
+    "outside": 4,
+    "outside_dry": 4
+   },
+   "-12.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 29,
+    "outside_dry": 29
+   }
+  },
+  "PAD1": {
+   "0.0": {
+    "inside": 23,
+    "inside_match": 1,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "11.5": {
+    "inside": 23,
+    "inside_match": 1,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "12.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 29,
+    "outside_dry": 29
+   },
+   "-11.5": {
+    "inside": 23,
+    "inside_match": 1,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "-12.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 29,
+    "outside_dry": 29
+   }
+  },
+  "PAD2": {
+   "0.0": {
+    "inside": 11,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "3.0": {
+    "inside": 11,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "4.0": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 17,
+    "outside_dry": 17
+   },
+   "-3.0": {
+    "inside": 11,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "-4.0": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 17,
+    "outside_dry": 17
+   }
+  },
+  "PAD3": {
+   "0.0": {
+    "inside": 47,
+    "inside_match": 36,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "23.5": {
+    "inside": 47,
+    "inside_match": 36,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "24.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 53,
+    "outside_dry": 51
+   },
+   "-23.5": {
+    "inside": 47,
+    "inside_match": 36,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "-24.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 53,
+    "outside_dry": 53
+   }
+  }
+ },
+ "reference_sha256": "219535df43c16ccf98b0755ae112c0a9a7568a909521692aa85b686292131689",
+ "log_sha256": "d9b244ff438d0de49d9f1898f0a7041639b31d5eba012a4fdaa7085e45ea2d00",
+ "limits": [
+  "Server readback of native APIs; no visual or boat result.",
+  "Expected surface = the highest placed vanilla surface (LOD0 triangles) over each sample."
+ ]
+}

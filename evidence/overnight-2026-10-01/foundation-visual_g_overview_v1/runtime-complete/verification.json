@@ -1,0 +1,46 @@
+{
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 1,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Regional overview",
+        "samples": 25,
+        "avg64_median": 127.49,
+        "avg64_range": [
+          89.3855,
+          140.044
+        ],
+        "native_min64_min": 23.8095,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Fixed 23-28s capture interval omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "sha256": {
+    "reference.json": "5f812fabdfee9ff5dacb29253b033f34db0a84b6377f821af919853f89483f77",
+    "camera.log": "e07985eeb83ce63ea9e5f970fddf6afebb658ed3e6a2290c1679e9c0d1026a15",
+    "client-metrics.log": "19a67bd458a701cd368f502d0a28769520f2a0c8e340d247e51a996b688257ea"
+  }
+}

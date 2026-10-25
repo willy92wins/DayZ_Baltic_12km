@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "scope": "Utility and regression protection only; C3 still fails its acceptance threshold",
+  "producer_sha256": "74d2197d7bb4598745ee6c57e430a8434745d0509bd2246db81b32e10d82b7a3",
+  "before_sha256": "60ee853f822bde5840c2441dbb4d9dea74356c4425c9f0b9ed16a544017aeb56",
+  "guard_after_sha256": "26d5544a349f57e26e31803fc55cf129ac96c89817c34d5037a2a036a32b3c64",
+  "unchanged_despike_gate": "PASS",
+  "shoreline_comparisons": {
+    "guard": {
+      "c2": {
+        "endpoints": 320,
+        "changed": 0,
+        "max_shift_m": 0.0
+      },
+      "c3": {
+        "endpoints": 409,
+        "changed": 0,
+        "max_shift_m": 0.0
+      },
+      "c4": {
+        "endpoints": 372,
+        "changed": 0,
+        "max_shift_m": 0.0
+      },
+      "c5": {
+        "endpoints": 191,
+        "changed": 0,
+        "max_shift_m": 0.0
+      },
+      "c6": {
+        "endpoints": 332,
+        "changed": 0,
+        "max_shift_m": 0.0
+      },
+      "c7": {
+        "endpoints": 418,
+        "changed": 0,
+        "max_shift_m": 0.0
+      }
+    },
+    "regression_without_guard": {
+      "c2": {
+        "endpoints": 320,
+        "changed": 3,
+        "max_shift_m": 0.29319200322998284
+      },
+      "c3": {
+        "endpoints": 409,
+        "changed": 10,
+        "max_shift_m": 3.7703743153363787
+      },
+      "c4": {
+        "endpoints": 372,
+        "changed": 9,
+        "max_shift_m": 1.3521474047065567
+      },
+      "c5": {
+        "endpoints": 191,
+        "changed": 4,
+        "max_shift_m": 2.2638829794086632
+      },
+      "c6": {
+        "endpoints": 332,
+        "changed": 6,
+        "max_shift_m": 0.5110862252558945
+      },
+      "c7": {
+        "endpoints": 418,
+        "changed": 5,
+        "max_shift_m": 1.8796843609132248
+      }
+    }
+  },
+  "islets_actual_heights": [
+    1.0499999523162842,
+    1.1742295026779175,
+    1.058578610420227,
+    1.1749999523162842,
+    1.4299999475479126,
+    1.2999999523162842,
+    1.2999999523162842,
+    1.4199999570846558,
+    1.4199999570846558,
+    1.4199999570846558,
+    1.5499999523162842,
+    1.8962854146957397
+  ],
+  "negative_controls": [
+    {
+      "name": "no-mask",
+      "pass_": true,
+      "rc": 1
+    },
+    {
+      "name": "no-footprint",
+      "pass_": true,
+      "rc": 1
+    },
+    {
+      "name": "unknown-mask",
+      "pass_": true,
+      "rc": 1
+    },
+    {
+      "name": "nonboolean-mask",
+      "pass_": true,
+      "rc": 1
+    }
+  ],
+  "promotion": "CORRECTED_SHORE_GUARD_UTILITY_READY",
+  "final_ev112_acceptance": false,
+  "final_chain_repeat_required": true,
+  "production_previous_sha256": "cbc15163f6a2fcc8921749aaf2b6b2030dc60ed66c2275b125ee2702399dab08",
+  "tested_prototype": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot2-20261018\\despike-corrected-shore-guard.py",
+  "production_path": "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\despike_v31.py",
+  "placement_ast_identical_to_tested_prototype": true,
+  "production_sha256": "cc9c9bd84cdea87f11900fd686968cdccf203b1fd874f3a333330c8c91b8620f"
+}

@@ -1,0 +1,509 @@
+{
+  "status": "PASS_OFFLINE_NAVIGATION_CONTRACT",
+  "checks": {
+    "nonempty_19_corridors": true,
+    "depth_0_95": true,
+    "metadata_exact": true,
+    "high_bed_floor": true,
+    "baseline_floor_rejected": true,
+    "only_2_isolated_high_beds": true,
+    "no_lowering": true,
+    "dry_ground_exact": true,
+    "roads_and_platform_vertices_exact": true,
+    "narva_exact": true,
+    "obstacle_0_94_rejected": true,
+    "missing_face_rejected": true,
+    "mixed_steep_faces_not_worsened": true,
+    "roads_pass": true,
+    "previous_vehicle_routes_outside_25m": true,
+    "18_water_observers_exact": true
+  },
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-bug-recheck-20261008\\wave-banks-r1\\terrain_wave_banks.npz": "b363b79dc8b4374a626644da78f110666139d382ee09a38dc7aade46b2e659dc",
+    "E:\\DayZ-Baltic-Build\\v30-navigation-contract-20261008\\terrain_floor.npz": "05a9d6812ba3e3391b8da0d4690e8034ea747a92aa0fdaa96425b58dd78074d3",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-navigation-contract-2026-10-08\\decision.json": "d510af67cc4016a0ba7192aa01c070d314b9bc7e49b6256ca6ffaf64fc05b843",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-navigation-contract-2026-10-08\\verify_contract.py": "3873c05fbdfdd4153e8fcbd76349b0dfa00a6d3c67fa77f9b34810b39cf464db"
+  },
+  "minimum_depth_m": 0.9556089440033495,
+  "native_faces": 36494,
+  "corridors": [
+    {
+      "river": "Narva_2",
+      "faces": 37,
+      "area_m2": 414.81657730206723,
+      "coverage_error_m2": 2.2168933355715126e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.625,
+        "xz": [
+          1014.0,
+          4794.0
+        ],
+        "cell": [
+          1247,
+          168
+        ]
+      }
+    },
+    {
+      "river": "Narva_3",
+      "faces": 166,
+      "area_m2": 2280.6436977945705,
+      "coverage_error_m2": 4.547473508864641e-13,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.625,
+        "xz": [
+          1044.0,
+          4746.0
+        ],
+        "cell": [
+          1255,
+          173
+        ]
+      }
+    },
+    {
+      "river": "Narva_6",
+      "faces": 8,
+      "area_m2": 31.07753485503781,
+      "coverage_error_m2": 0.0,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.625,
+        "xz": [
+          1032.0,
+          4878.0
+        ],
+        "cell": [
+          1233,
+          171
+        ]
+      }
+    },
+    {
+      "river": "Narva_7",
+      "faces": 42,
+      "area_m2": 466.60884881173826,
+      "coverage_error_m2": 2.2737367544323206e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.625,
+        "xz": [
+          1074.0,
+          4794.0
+        ],
+        "cell": [
+          1247,
+          178
+        ]
+      }
+    },
+    {
+      "river": "Narva_8",
+      "faces": 29,
+      "area_m2": 301.8510252636645,
+      "coverage_error_m2": 1.2505552149377763e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.214208308497553,
+        "xz": [
+          1111.4343454461525,
+          4834.565654553848
+        ],
+        "cell": [
+          1241,
+          185
+        ]
+      }
+    },
+    {
+      "river": "Narva_10",
+      "faces": 337,
+      "area_m2": 4780.647762573456,
+      "coverage_error_m2": 2.7284841053187847e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.6,
+        "xz": [
+          1158.0,
+          5052.0
+        ],
+        "cell": [
+          1204,
+          192
+        ]
+      }
+    },
+    {
+      "river": "Narva_12",
+      "faces": 321,
+      "area_m2": 4424.180179286049,
+      "coverage_error_m2": 2.7284841053187847e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.5750000000000002,
+        "xz": [
+          1224.0,
+          5232.0
+        ],
+        "cell": [
+          1174,
+          203
+        ]
+      }
+    },
+    {
+      "river": "Narva_13",
+      "faces": 322,
+      "area_m2": 4742.70593840568,
+      "coverage_error_m2": 4.547473508864641e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.5750000000000002,
+        "xz": [
+          1170.0,
+          5262.0
+        ],
+        "cell": [
+          1169,
+          194
+        ]
+      }
+    },
+    {
+      "river": "Narva_14",
+      "faces": 27,
+      "area_m2": 308.6821674490084,
+      "coverage_error_m2": 7.958078640513122e-13,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.5750000000000002,
+        "xz": [
+          1200.0,
+          5280.0
+        ],
+        "cell": [
+          1166,
+          199
+        ]
+      }
+    },
+    {
+      "river": "Narva_15",
+      "faces": 197,
+      "area_m2": 2837.527893034918,
+      "coverage_error_m2": 4.547473508864641e-13,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.5750000000000002,
+        "xz": [
+          1260.0,
+          5394.0
+        ],
+        "cell": [
+          1147,
+          209
+        ]
+      }
+    },
+    {
+      "river": "Narva_16",
+      "faces": 240,
+      "area_m2": 3461.2640598924854,
+      "coverage_error_m2": 4.092726157978177e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.5750000000000002,
+        "xz": [
+          1212.0,
+          5436.0
+        ],
+        "cell": [
+          1140,
+          201
+        ]
+      }
+    },
+    {
+      "river": "Narva_19",
+      "faces": 1937,
+      "area_m2": 27368.281990039806,
+      "coverage_error_m2": 2.546585164964199e-10,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.475,
+        "xz": [
+          1614.0,
+          6216.0
+        ],
+        "cell": [
+          1010,
+          268
+        ]
+      }
+    },
+    {
+      "river": "Narva_22",
+      "faces": 603,
+      "area_m2": 8492.553748750215,
+      "coverage_error_m2": 1.0913936421275139e-11,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 1.4439036654943835,
+        "xz": [
+          1895.954745810874,
+          6474.045254189126
+        ],
+        "cell": [
+          967,
+          315
+        ]
+      }
+    },
+    {
+      "river": "Narva_23",
+      "faces": 163,
+      "area_m2": 2352.421826605128,
+      "coverage_error_m2": 4.092726157978177e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 3.497955846786499,
+        "xz": [
+          1956.0,
+          7392.0
+        ],
+        "cell": [
+          814,
+          325
+        ]
+      }
+    },
+    {
+      "river": "Narva_25",
+      "faces": 118,
+      "area_m2": 1604.5298540564675,
+      "coverage_error_m2": 2.5011104298755527e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 3.902578956176904,
+        "xz": [
+          2050.588133308379,
+          6389.848640159914
+        ],
+        "cell": [
+          982,
+          341
+        ]
+      }
+    },
+    {
+      "river": "Narva_26",
+      "faces": 15,
+      "area_m2": 105.04679930643108,
+      "coverage_error_m2": 1.5205614545266144e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 3.703719042177922,
+        "xz": [
+          2061.567181943228,
+          7397.785044867045
+        ],
+        "cell": [
+          814,
+          343
+        ]
+      }
+    },
+    {
+      "river": "Narva_27",
+      "faces": 12,
+      "area_m2": 91.05296374430796,
+      "coverage_error_m2": 1.1368683772161603e-12,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 0,
+      "worst": {
+        "depth_m": 3.549283739327665,
+        "xz": [
+          1998.5734991242389,
+          7349.426500875761
+        ],
+        "cell": [
+          822,
+          333
+        ]
+      }
+    },
+    {
+      "river": "Luga_0",
+      "faces": 26290,
+      "area_m2": 387689.44733817264,
+      "coverage_error_m2": 8.591450750827789e-08,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 236,
+      "worst": {
+        "depth_m": 0.9556089440033495,
+        "xz": [
+          7659.43140356522,
+          3422.568596434781
+        ],
+        "cell": [
+          1476,
+          1276
+        ]
+      }
+    },
+    {
+      "river": "Neva_0",
+      "faces": 5630,
+      "area_m2": 82711.18378699783,
+      "coverage_error_m2": 6.548361852765083e-10,
+      "failing_faces": 0,
+      "old_failures_at_0_99": 122,
+      "worst": {
+        "depth_m": 0.9749999523162842,
+        "xz": [
+          10590.0,
+          9870.0
+        ],
+        "cell": [
+          402,
+          1764
+        ]
+      }
+    }
+  ],
+  "floor": {
+    "high_vertices": 15095,
+    "old_below_1": 2,
+    "new_below_1": 0
+  },
+  "steep_faces": [],
+  "roads": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "routes": [
+    {
+      "kind": "car",
+      "case": 0,
+      "distance_m": 5005.586734698653
+    },
+    {
+      "kind": "car",
+      "case": 1,
+      "distance_m": 5005.586734698653
+    },
+    {
+      "kind": "car",
+      "case": 2,
+      "distance_m": 4748.997657920541
+    },
+    {
+      "kind": "car",
+      "case": 3,
+      "distance_m": 4748.997657920541
+    },
+    {
+      "kind": "car",
+      "case": 4,
+      "distance_m": 8906.54798373679
+    },
+    {
+      "kind": "car",
+      "case": 5,
+      "distance_m": 8906.54798373679
+    },
+    {
+      "kind": "boat",
+      "case": 0,
+      "distance_m": 1122.635609493837
+    },
+    {
+      "kind": "boat",
+      "case": 1,
+      "distance_m": 1122.635609493837
+    },
+    {
+      "kind": "boat",
+      "case": 2,
+      "distance_m": 6938.323679629219
+    },
+    {
+      "kind": "boat",
+      "case": 3,
+      "distance_m": 6938.323679629219
+    },
+    {
+      "kind": "boat",
+      "case": 4,
+      "distance_m": 1832.6093312461337
+    },
+    {
+      "kind": "boat",
+      "case": 5,
+      "distance_m": 1832.6093312461337
+    }
+  ],
+  "limits": [
+    "24 m corridor polygons retain their frozen endpoint and Narva exclusions.",
+    "Independent face enumeration, shared native sampler and water-plane rule.",
+    "Nominal geometry only; water response after raising two beds requires engine replay."
+  ]
+}

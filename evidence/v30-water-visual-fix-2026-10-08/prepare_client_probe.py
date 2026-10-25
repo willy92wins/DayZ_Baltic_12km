@@ -1,0 +1,25 @@
+from pathlib import Path
+import hashlib,json,subprocess,shutil,sys
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-water-visual-fix-2026-10-08'
+B=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008')
+src=B/'client-probe/baltic_water_client_probe';out=B/'client-probe/packed';out.mkdir(exist_ok=True)
+assert not list(out.glob('*.pbo'))
+cv=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZ Tools/Bin/CfgConvert/CfgConvert.exe')
+r=subprocess.run([str(cv),'-bin','-dst',str(src/'config.bin'),str(src/'config.cpp')],capture_output=True);assert r.returncode==0
+r=subprocess.run([sys.executable,'C:/Users/guill/DayZ-Modding-Knowledge-Pack/tools/dayz-script-validator/scripts/script_validator.py',str(src)],capture_output=True,text=True)
+got=json.loads(r.stdout);assert r.returncode==0 and not got['errors'] and got['info']['files_scanned']==2
+(E/'client-probe-lint.json').write_text(r.stdout)
+bank=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZ Tools/Bin/PboUtils/FileBank.exe')
+r=subprocess.run([str(bank),'-property','prefix=baltic_water_client_probe','-dst',str(out),str(src)],capture_output=True)
+(B/'client-probe/filebank.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0
+dest=Path('P:/Mods/@BalticWaterClientProbe/Addons');dest.mkdir(parents=True,exist_ok=False)
+p=out/'baltic_water_client_probe.pbo';shutil.copyfile(p,dest/p.name)
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+assert sha(p)==sha(dest/p.name)
+sys.path.insert(0,str(W/'tools/playtest'))
+from attach_navmesh import read_pbo
+_,_,a=read_pbo(dest/p.name);assert a['scripts/5_Mission/BalticWaterClientProbe.c']==(src/'scripts/5_Mission/BalticWaterClientProbe.c').read_bytes()
+shutil.copytree(src,E/'client-probe-source')
+(E/'client-probe-reference.json').write_text(json.dumps(dict(pbo=str(dest/p.name),sha256=sha(p),source_sha256=sha(src/'scripts/5_Mission/BalticWaterClientProbe.c')),indent=2)+'\n')
+print('CLIENT OBSERVER PACKAGED',sha(p))

@@ -1,0 +1,47 @@
+{
+  "status": "INCONCLUSIVE_UNSTABLE_RENDER_BASELINE",
+  "pixels": [
+    {
+      "phase": "baseline",
+      "sky_magenta": 631554,
+      "water_region_magenta": 0
+    },
+    {
+      "phase": "baseline",
+      "sky_magenta": 631551,
+      "water_region_magenta": 0
+    },
+    {
+      "phase": "baseline",
+      "sky_magenta": 631554,
+      "water_region_magenta": 0
+    },
+    {
+      "phase": "foam-marker",
+      "sky_magenta": 631551,
+      "water_region_magenta": 39
+    },
+    {
+      "phase": "reset-marker",
+      "sky_magenta": 631554,
+      "water_region_magenta": 0
+    },
+    {
+      "phase": "foam-zero-invalid-reference",
+      "sky_magenta": 0,
+      "water_region_magenta": 0
+    }
+  ],
+  "run_id": "38475a82-4e64-48bb-b25f-5d812eea9c07",
+  "profile_identical": true,
+  "map_files": {
+    "baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "narva_trial.pbo": "b69265c5feb99d1bda7a5c9f02282818d0ffe4cd26f89f3a095c128e62d374f3"
+  },
+  "limits": [
+    "Sky is already magenta in untouched baseline; it is NOT attributed to FoamColor. Later sky/terrain texture appearance changes during the run.",
+    "FoamColor marks local water, but FoamPower phase lacks a stable matching reference and is not a fix test.",
+    "No engine crash: unstable graphics, then orderly client/server shutdown.",
+    "No production changes; no more parameter mutations in this block."
+  ]
+}

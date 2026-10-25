@@ -1,0 +1,63 @@
+{
+  "status": "PROPOSAL_REJECTED_NOT_FOR_DEPLOYMENT",
+  "gates": {
+    "finite": true,
+    "fixed_exact": true,
+    "scope_exact": true,
+    "no_raises": true,
+    "max_lowering": true,
+    "water_support_exact": true,
+    "slopes": true,
+    "both_lake_shape_gates": false
+  },
+  "changed_vertices": 3299,
+  "bad_faces": 0,
+  "max_slope_excess_deg": 0.0,
+  "lakes": [
+    {
+      "name": "southwest",
+      "anchor_xz": [
+        622.4,
+        840
+      ],
+      "body": 273,
+      "level_m": 2.640000104904175,
+      "target_dry_floor_m": 2.9400001049041746,
+      "bank_vertices": 13992,
+      "fixed_bank_vertices": 6616,
+      "before_curvature": 0.033011700911362345,
+      "before_bank_p90": 3.794141912460327,
+      "after_curvature": 0.03374115779034514,
+      "curvature_reduction": -0.022096918936149734,
+      "after_bank_p90": 3.6522815227508545,
+      "changed_bank_vertices": 1422,
+      "shape_gate": false
+    },
+    {
+      "name": "southeast",
+      "anchor_xz": [
+        10436.5,
+        308.2
+      ],
+      "body": 195,
+      "level_m": 2.130000114440918,
+      "target_dry_floor_m": 2.430000114440918,
+      "bank_vertices": 6627,
+      "fixed_bank_vertices": 3502,
+      "before_curvature": 0.034479620056835365,
+      "before_bank_p90": 3.630000114440918,
+      "after_curvature": 0.035577646837749596,
+      "curvature_reduction": -0.03184567518737946,
+      "after_bank_p90": 3.630000114440918,
+      "changed_bank_vertices": 609,
+      "shape_gate": false
+    }
+  ],
+  "source_sha256": "70f74c9334620c458880f728d3ff15cec7867ffe2bd8bd2e9d5135e1692b7ed5",
+  "candidate_sha256": "fd4fe3db435abf40d2b6c96cfd4cafa30eca85c25e381cdf42b228527d816322",
+  "limits": [
+    "No level change or promotion.",
+    "Water-support vertices exactly fixed, so physical and visible triangle-water intersections are unchanged.",
+    "This constrained proposal cannot remove the parts of the bank whose vertices support the waterline."
+  ]
+}

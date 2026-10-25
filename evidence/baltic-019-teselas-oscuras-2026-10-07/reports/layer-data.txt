@@ -1,0 +1,69 @@
+# Datos de capas del terreno: v11 (narva_trial.pbo, mundo c690879f) frente a Chernarus vanilla (worlds_chernarusplus_data.pbo)
+# 07-10-2026, scripts/pbo_layers_census.py y scripts/paa_mips.py (solo lectura)
+
+P:\Mods\@DayZ_Baltic_V11Candidate\addons\narva_trial.pbo: 6827 entries, 539.7 MiB
+       1 x .nm         419.1 MiB  navmesh
+    2048 x .paa         95.2 MiB  data\layers
+       1 x .wrp         16.0 MiB  
+    4775 x .rvmat        8.9 MiB  data\layers
+       2 x .bin          0.4 MiB  
+  (^|\\)s_\d+_\d+_lco\.paa$: 1024 tiles, size min/median/max 13/73/109 KiB
+    data\layers\s_000_000_lco.paa: {'type': 'DXT1', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+    data\layers\s_010_021_lco.paa: {'type': 'DXT1', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+    data\layers\s_021_010_lco.paa: {'type': 'DXT1', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+  (^|\\)m_\d+_\d+_lca\.paa$: 1024 tiles, size min/median/max 23/28/41 KiB
+    data\layers\m_000_000_lca.paa: {'type': 'DXT5', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+    data\layers\m_010_021_lca.paa: {'type': 'DXT5', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+    data\layers\m_021_010_lca.paa: {'type': 'DXT5', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+  tile rvmats: 4775
+    first: data\layers\p_000-000_l00.rvmat (1963 bytes, binarized)
+
+C:\Program Files (x86)\Steam\steamapps\common\DayZ\Addons\worlds_chernarusplus_data.pbo: 9255 entries, 268.2 MiB
+    2048 x .paa        226.3 MiB  layers
+      14 x .paa         27.2 MiB  
+    7192 x .rvmat       14.3 MiB  layers
+       1 x .bin          0.4 MiB  
+  (^|\\)s_\d+_\d+_lco\.paa$: 1024 tiles, size min/median/max 75/148/161 KiB
+    layers\S_000_000_lco.paa: {'type': 'DXT1', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+    layers\S_010_021_lco.paa: {'type': 'DXT1', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+    layers\S_021_010_lco.paa: {'type': 'DXT1', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'MAXC', 'OFFS']}
+  (^|\\)m_\d+_\d+_lca\.paa$: 1024 tiles, size min/median/max 23/98/127 KiB
+    layers\M_000_000_lca.paa: {'type': 'DXT5', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'FLAG', 'MAXC', 'OFFS']}
+    layers\M_010_021_lca.paa: {'type': 'DXT5', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'FLAG', 'MAXC', 'OFFS']}
+    layers\M_021_010_lca.paa: {'type': 'DXT5', 'w': 512, 'h': 512, 'lzo_top': True, 'mips': 8, 'tags': ['AVGC', 'FLAG', 'MAXC', 'OFFS']}
+  tile rvmats: 7192
+    first: layers\P_000-000_L01_L03_L04_N_L10.rvmat (2025 bytes, binarized)
+
+## Cadena de mipmaps (DXT1 con LZO descomprimido; color medio por nivel)
+data\layers\s_031_022_lco.paa type=0xff01
+   {'w': 512, 'h': 512, 'lzo': True, 'bytes': 46746, 'raw_ok': True, 'mean_rgb': [29.7, 35.6, 18.4]}
+   {'w': 256, 'h': 256, 'lzo': True, 'bytes': 17395, 'raw_ok': True, 'mean_rgb': [29.8, 35.6, 18.5]}
+   {'w': 128, 'h': 128, 'lzo': False, 'bytes': 8192, 'raw_ok': True, 'mean_rgb': [29.8, 35.6, 19.0]}
+   {'w': 64, 'h': 64, 'lzo': False, 'bytes': 2048, 'raw_ok': True, 'mean_rgb': [30.0, 35.9, 19.5]}
+   {'w': 32, 'h': 32, 'lzo': False, 'bytes': 512, 'raw_ok': True, 'mean_rgb': [30.4, 36.0, 20.2]}
+   {'w': 16, 'h': 16, 'lzo': False, 'bytes': 128, 'raw_ok': True, 'mean_rgb': [31.1, 36.3, 20.8]}
+   {'w': 8, 'h': 8, 'lzo': False, 'bytes': 32, 'raw_ok': True, 'mean_rgb': [31.9, 36.9, 21.6]}
+   {'w': 4, 'h': 4, 'lzo': False, 'bytes': 8, 'raw_ok': True, 'mean_rgb': [32.9, 38.5, 20.6]}
+data\layers\s_031_023_lco.paa type=0xff01
+   {'w': 512, 'h': 512, 'lzo': True, 'bytes': 52909, 'raw_ok': True, 'mean_rgb': [34.2, 39.7, 20.5]}
+   {'w': 256, 'h': 256, 'lzo': True, 'bytes': 19053, 'raw_ok': True, 'mean_rgb': [34.2, 39.6, 20.6]}
+   {'w': 128, 'h': 128, 'lzo': False, 'bytes': 8192, 'raw_ok': True, 'mean_rgb': [34.2, 39.6, 21.1]}
+   {'w': 64, 'h': 64, 'lzo': False, 'bytes': 2048, 'raw_ok': True, 'mean_rgb': [34.0, 39.5, 21.3]}
+   {'w': 32, 'h': 32, 'lzo': False, 'bytes': 512, 'raw_ok': True, 'mean_rgb': [34.1, 39.4, 21.6]}
+   {'w': 16, 'h': 16, 'lzo': False, 'bytes': 128, 'raw_ok': True, 'mean_rgb': [33.7, 39.5, 21.8]}
+   {'w': 8, 'h': 8, 'lzo': False, 'bytes': 32, 'raw_ok': True, 'mean_rgb': [36.0, 41.0, 22.6]}
+   {'w': 4, 'h': 4, 'lzo': False, 'bytes': 8, 'raw_ok': True, 'mean_rgb': [32.9, 38.5, 20.6]}
+layers\S_015_015_lco.paa type=0xff01
+   {'w': 512, 'h': 512, 'lzo': True, 'bytes': 115424, 'raw_ok': True, 'mean_rgb': [55.3, 53.9, 25.7]}
+   {'w': 256, 'h': 256, 'lzo': True, 'bytes': 28894, 'raw_ok': True, 'mean_rgb': [54.6, 53.3, 25.6]}
+   {'w': 128, 'h': 128, 'lzo': False, 'bytes': 8192, 'raw_ok': True, 'mean_rgb': [54.1, 52.7, 25.6]}
+   {'w': 64, 'h': 64, 'lzo': False, 'bytes': 2048, 'raw_ok': True, 'mean_rgb': [53.7, 52.2, 25.9]}
+   {'w': 32, 'h': 32, 'lzo': False, 'bytes': 512, 'raw_ok': True, 'mean_rgb': [52.9, 51.6, 25.6]}
+   {'w': 16, 'h': 16, 'lzo': False, 'bytes': 128, 'raw_ok': True, 'mean_rgb': [51.9, 50.3, 25.7]}
+   {'w': 8, 'h': 8, 'lzo': False, 'bytes': 32, 'raw_ok': True, 'mean_rgb': [52.4, 51.6, 25.7]}
+   {'w': 4, 'h': 4, 'lzo': False, 'bytes': 8, 'raw_ok': True, 'mean_rgb': [53.5, 50.6, 24.7]}
+
+## Texturas que referencia un rvmat de tesela (cadenas del binario)
+v11 data\layers\p_031-023_l00_l01_l02_l03.rvmat: dayz_baltic_12km_dev\tb\narva_trial\data\layers\s_031_023_lco.paa, ...\m_031_023_lca.paa, #(rgb,1,1,1)color(0.5,0.5,0.5,1,cdt), dz\surfaces\data\terrain\cp_gravel, cp_conifer_common1, cp_grass, cp_grass_tall (_nopx y _ca)
+Chernarus layers\P_015-015_L03_L04_L12_L01_L14_L13.rvmat: dz\worlds\chernarusplus\data\layers\s_015_015_lco.paa, ...\m_015_015_lca.paa, la misma textura constante, dz\surfaces\data\terrain\cp_* (_nopx y _ca)
+Prefijo del PBO v11: dayz_baltic_12km_dev\tb\narva_trial, así que las rutas de los rvmat resuelven dentro del PBO.

@@ -1,0 +1,649 @@
+{
+  "status": "REJECTED_NOT_INTEGRATED",
+  "checks": {
+    "outside_declared_vertices_exact": true,
+    "sea_classification_exact": true,
+    "changed_stars_stay_dry": true,
+    "road_gate": false,
+    "no_regressed_sharp_edges": false
+  },
+  "solver": {
+    "success": false,
+    "message": "Positive directional derivative for linesearch",
+    "iterations": 24,
+    "seconds": 22.484000000054948,
+    "min_constraint": -0.017357382647131936,
+    "jacobian_max_error": 2.7868160145001764e-11,
+    "feasibility_slack": 0.2893265297834882
+  },
+  "changed_vertices": 55,
+  "delta_range_m": [
+    -0.9416112899780273,
+    1.8852105140686035
+  ],
+  "regressed_sharp_edges": {
+    "diagonal": 1,
+    "east": 3,
+    "south": 0
+  },
+  "road": {
+    "chains": 102,
+    "samples": 77559,
+    "cross_fail": 16,
+    "grade_fail": 7,
+    "chord_fail": 6,
+    "cross_max_m": 0.04436151862545756,
+    "grade_max": 0.07268174127349498,
+    "chord_max_m": 0.03668089738485314,
+    "worst": {
+      "cross": {
+        "chain": 49,
+        "station_m": 1673.5692068834423,
+        "x": 5302.5,
+        "z": 6016.5,
+        "value": 0.0444
+      },
+      "grade": {
+        "chain": 49,
+        "station_m": 1682.566890791418,
+        "x": 5305.4,
+        "z": 6025.0,
+        "value": 0.0727
+      },
+      "chord": {
+        "chain": 49,
+        "station_m": 1658.5730670368166,
+        "x": 5296.9,
+        "z": 6002.6,
+        "value": 0.0367
+      }
+    },
+    "fail_list": [
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1653.6,
+        "x": 5294.9,
+        "z": 5998.0,
+        "value": 0.0354
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1654.6,
+        "x": 5295.3,
+        "z": 5999.0,
+        "value": 0.0444
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1655.6,
+        "x": 5295.7,
+        "z": 5999.9,
+        "value": 0.0403
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1667.6,
+        "x": 5300.4,
+        "z": 6010.9,
+        "value": 0.0336
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1668.6,
+        "x": 5300.8,
+        "z": 6011.8,
+        "value": 0.0368
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1669.6,
+        "x": 5301.1,
+        "z": 6012.8,
+        "value": 0.0387
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1670.6,
+        "x": 5301.5,
+        "z": 6013.7,
+        "value": 0.0406
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1671.6,
+        "x": 5301.8,
+        "z": 6014.6,
+        "value": 0.0435
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1672.6,
+        "x": 5302.2,
+        "z": 6015.6,
+        "value": 0.0434
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1673.6,
+        "x": 5302.5,
+        "z": 6016.5,
+        "value": 0.0444
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1676.6,
+        "x": 5303.5,
+        "z": 6019.3,
+        "value": 0.0431
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1677.6,
+        "x": 5303.9,
+        "z": 6020.3,
+        "value": 0.0429
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1678.6,
+        "x": 5304.2,
+        "z": 6021.2,
+        "value": 0.0419
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1679.6,
+        "x": 5304.5,
+        "z": 6022.2,
+        "value": 0.031
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1684.6,
+        "x": 5305.9,
+        "z": 6027.0,
+        "value": 0.0313
+      },
+      {
+        "check": "cross",
+        "chain": 49,
+        "station_m": 1688.6,
+        "x": 5306.9,
+        "z": 6030.9,
+        "value": 0.0337
+      },
+      {
+        "check": "grade",
+        "chain": 49,
+        "station_m": 1681.6,
+        "x": 5305.1,
+        "z": 6024.1,
+        "value": 0.0726
+      },
+      {
+        "check": "grade",
+        "chain": 49,
+        "station_m": 1682.6,
+        "x": 5305.4,
+        "z": 6025.0,
+        "value": 0.0727
+      },
+      {
+        "check": "grade",
+        "chain": 49,
+        "station_m": 1683.6,
+        "x": 5305.6,
+        "z": 6026.0,
+        "value": 0.0727
+      },
+      {
+        "check": "grade",
+        "chain": 49,
+        "station_m": 1684.6,
+        "x": 5305.9,
+        "z": 6027.0,
+        "value": 0.0726
+      },
+      {
+        "check": "grade",
+        "chain": 49,
+        "station_m": 1685.6,
+        "x": 5306.2,
+        "z": 6027.9,
+        "value": 0.0708
+      },
+      {
+        "check": "grade",
+        "chain": 49,
+        "station_m": 1686.6,
+        "x": 5306.4,
+        "z": 6028.9,
+        "value": 0.0708
+      },
+      {
+        "check": "grade",
+        "chain": 49,
+        "station_m": 1687.6,
+        "x": 5306.6,
+        "z": 6029.9,
+        "value": 0.0724
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1658.6,
+        "x": 5296.9,
+        "z": 6002.6,
+        "value": 0.0367
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1659.6,
+        "x": 5297.3,
+        "z": 6003.5,
+        "value": 0.0365
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1671.6,
+        "x": 5301.8,
+        "z": 6014.6,
+        "value": 0.0351
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1672.6,
+        "x": 5302.2,
+        "z": 6015.6,
+        "value": 0.0367
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1677.6,
+        "x": 5303.9,
+        "z": 6020.3,
+        "value": 0.031
+      },
+      {
+        "check": "chord",
+        "chain": 49,
+        "station_m": 1678.6,
+        "x": 5304.2,
+        "z": 6021.2,
+        "value": 0.0367
+      }
+    ],
+    "status": "FAIL",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "terrain_input_sha256": "bc41bd8314affc5787e827b75fd7d03b7de454c0ffaae3a7476ccc7b609fd508",
+  "terrain_output_sha256": "d698c23265c531f7682f2fa4ab522e76d48b4a6c65ccb7c7f8afe301d1ea1471",
+  "sources": {
+    "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\solve_visual_road_joint_ev112.py": "dba5b422ee6776df3cdf2a103f8c9a955f4271d9b6ea4c98007b6e9d4cf44d1a",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\road-repair-20261024-d\\review.json": "823228f657c118e1463c6107c112bd17814c7d2755ef38231cbc15254ec7a70a",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\repair_roads_v30.py": "133ac4e74c2a468dc3fdbfa0aa2360902292bee0e213f81d52185e91adc98916",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\verify_roads_v30.py": "2be9af6502077230028e5501de3b5c06cb2855c544deebf6147c22ceb9f9b8f8",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\census_creases_v31.py": "816b923e162ee185ea773535defb1ff85580d4c7325b5064b3387d2c97ac65bb"
+  },
+  "changes": [
+    {
+      "row": 1037,
+      "col": 890,
+      "before": 7.278905391693115,
+      "after": 7.2789154052734375
+    },
+    {
+      "row": 1038,
+      "col": 889,
+      "before": 6.783568382263184,
+      "after": 6.783572196960449
+    },
+    {
+      "row": 1039,
+      "col": 884,
+      "before": 11.409174919128418,
+      "after": 11.340078353881836
+    },
+    {
+      "row": 1039,
+      "col": 885,
+      "before": 11.42819881439209,
+      "after": 11.393173217773438
+    },
+    {
+      "row": 1039,
+      "col": 888,
+      "before": 8.468765258789062,
+      "after": 8.467914581298828
+    },
+    {
+      "row": 1040,
+      "col": 884,
+      "before": 11.111366271972656,
+      "after": 10.901599884033203
+    },
+    {
+      "row": 1040,
+      "col": 885,
+      "before": 11.14538860321045,
+      "after": 10.965539932250977
+    },
+    {
+      "row": 1040,
+      "col": 886,
+      "before": 11.16821002960205,
+      "after": 10.970210075378418
+    },
+    {
+      "row": 1040,
+      "col": 887,
+      "before": 9.021678924560547,
+      "after": 9.021666526794434
+    },
+    {
+      "row": 1040,
+      "col": 888,
+      "before": 6.189356327056885,
+      "after": 6.189682960510254
+    },
+    {
+      "row": 1040,
+      "col": 889,
+      "before": 5.924592018127441,
+      "after": 5.924907207489014
+    },
+    {
+      "row": 1041,
+      "col": 883,
+      "before": 10.80118465423584,
+      "after": 10.404742240905762
+    },
+    {
+      "row": 1041,
+      "col": 884,
+      "before": 10.845780372619629,
+      "after": 10.47214412689209
+    },
+    {
+      "row": 1041,
+      "col": 885,
+      "before": 10.891332626342773,
+      "after": 10.548527717590332
+    },
+    {
+      "row": 1041,
+      "col": 886,
+      "before": 10.927443504333496,
+      "after": 10.5509614944458
+    },
+    {
+      "row": 1041,
+      "col": 888,
+      "before": 6.552224159240723,
+      "after": 6.552553653717041
+    },
+    {
+      "row": 1041,
+      "col": 889,
+      "before": 6.397852420806885,
+      "after": 6.3978376388549805
+    },
+    {
+      "row": 1042,
+      "col": 883,
+      "before": 10.563234329223633,
+      "after": 9.841933250427246
+    },
+    {
+      "row": 1042,
+      "col": 884,
+      "before": 10.619479179382324,
+      "after": 10.042536735534668
+    },
+    {
+      "row": 1042,
+      "col": 885,
+      "before": 10.668719291687012,
+      "after": 10.119246482849121
+    },
+    {
+      "row": 1042,
+      "col": 886,
+      "before": 8.781105041503906,
+      "after": 10.145995140075684
+    },
+    {
+      "row": 1042,
+      "col": 888,
+      "before": 6.741959571838379,
+      "after": 6.742325305938721
+    },
+    {
+      "row": 1042,
+      "col": 889,
+      "before": 6.747757911682129,
+      "after": 6.747395992279053
+    },
+    {
+      "row": 1043,
+      "col": 883,
+      "before": 10.372502326965332,
+      "after": 9.560468673706055
+    },
+    {
+      "row": 1043,
+      "col": 884,
+      "before": 10.427351951599121,
+      "after": 9.613995552062988
+    },
+    {
+      "row": 1043,
+      "col": 885,
+      "before": 10.477402687072754,
+      "after": 9.700767517089844
+    },
+    {
+      "row": 1043,
+      "col": 886,
+      "before": 8.331475257873535,
+      "after": 9.913479804992676
+    },
+    {
+      "row": 1043,
+      "col": 887,
+      "before": 7.440066337585449,
+      "after": 7.449693202972412
+    },
+    {
+      "row": 1044,
+      "col": 882,
+      "before": 10.170282363891602,
+      "after": 9.482396125793457
+    },
+    {
+      "row": 1044,
+      "col": 883,
+      "before": 10.22071361541748,
+      "after": 9.279102325439453
+    },
+    {
+      "row": 1044,
+      "col": 884,
+      "before": 10.269041061401367,
+      "after": 9.34511661529541
+    },
+    {
+      "row": 1044,
+      "col": 885,
+      "before": 10.317475318908691,
+      "after": 9.402331352233887
+    },
+    {
+      "row": 1045,
+      "col": 882,
+      "before": 10.05850887298584,
+      "after": 9.173717498779297
+    },
+    {
+      "row": 1045,
+      "col": 883,
+      "before": 10.099369049072266,
+      "after": 9.192593574523926
+    },
+    {
+      "row": 1045,
+      "col": 884,
+      "before": 10.143929481506348,
+      "after": 9.261280059814453
+    },
+    {
+      "row": 1045,
+      "col": 885,
+      "before": 10.186667442321777,
+      "after": 9.327287673950195
+    },
+    {
+      "row": 1046,
+      "col": 882,
+      "before": 9.969420433044434,
+      "after": 9.171024322509766
+    },
+    {
+      "row": 1046,
+      "col": 883,
+      "before": 10.003745079040527,
+      "after": 9.135356903076172
+    },
+    {
+      "row": 1046,
+      "col": 884,
+      "before": 10.041481971740723,
+      "after": 9.181266784667969
+    },
+    {
+      "row": 1046,
+      "col": 885,
+      "before": 8.041049003601074,
+      "after": 8.868054389953613
+    },
+    {
+      "row": 1047,
+      "col": 881,
+      "before": 9.875251770019531,
+      "after": 9.373129844665527
+    },
+    {
+      "row": 1047,
+      "col": 882,
+      "before": 9.901528358459473,
+      "after": 9.238709449768066
+    },
+    {
+      "row": 1047,
+      "col": 883,
+      "before": 9.929007530212402,
+      "after": 9.232430458068848
+    },
+    {
+      "row": 1047,
+      "col": 884,
+      "before": 9.959298133850098,
+      "after": 9.144268989562988
+    },
+    {
+      "row": 1048,
+      "col": 881,
+      "before": 9.826634407043457,
+      "after": 9.52692985534668
+    },
+    {
+      "row": 1048,
+      "col": 882,
+      "before": 9.847265243530273,
+      "after": 9.455574989318848
+    },
+    {
+      "row": 1048,
+      "col": 883,
+      "before": 9.870354652404785,
+      "after": 9.355020523071289
+    },
+    {
+      "row": 1048,
+      "col": 884,
+      "before": 7.81395149230957,
+      "after": 9.122698783874512
+    },
+    {
+      "row": 1048,
+      "col": 885,
+      "before": 6.704929828643799,
+      "after": 6.753603458404541
+    },
+    {
+      "row": 1049,
+      "col": 881,
+      "before": 9.788232803344727,
+      "after": 9.604849815368652
+    },
+    {
+      "row": 1049,
+      "col": 882,
+      "before": 9.80460262298584,
+      "after": 9.564743041992188
+    },
+    {
+      "row": 1049,
+      "col": 883,
+      "before": 9.822747230529785,
+      "after": 9.537899017333984
+    },
+    {
+      "row": 1050,
+      "col": 882,
+      "before": 9.771624565124512,
+      "after": 9.709232330322266
+    },
+    {
+      "row": 1050,
+      "col": 883,
+      "before": 7.677578449249268,
+      "after": 9.562788963317871
+    },
+    {
+      "row": 1050,
+      "col": 884,
+      "before": 7.7376508712768555,
+      "after": 8.358545303344727
+    }
+  ],
+  "limits": [
+    "Not integrated: requires independent water/protection, forest support, bury, build and runtime review."
+  ]
+}

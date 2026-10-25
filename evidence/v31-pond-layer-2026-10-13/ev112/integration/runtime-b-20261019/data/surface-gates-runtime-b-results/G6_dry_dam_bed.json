@@ -1,0 +1,85 @@
+{
+ "gate": "G6_dry_dam_bed",
+ "result": "PASS",
+ "cells": 33,
+ "covered_cells": 33,
+ "negative_corrupt_pixel_rejected": true,
+ "reference_command": [
+  "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+  "-I",
+  "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\build_surface_v30.py",
+  "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\terrain.npz",
+  "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\surface-gates-runtime-b-results\\g6-dam-reference\\render",
+  "--tiles",
+  "6,13;6,14",
+  "--workers",
+  "2",
+  "--bed-tone",
+  "depth-all",
+  "--bed-surface",
+  "gravel",
+  "--shore-ring",
+  "flowing",
+  "--landcover",
+  "smooth",
+  "--landcover-sigma",
+  "1.0",
+  "--water-plane",
+  "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\surface-gates-runtime-b-results\\g6-dam-reference\\plane.npy",
+  "--water-plane-sha256",
+  "253d7360f7a40cc618f0ea7773fce3d3e4cac70d9b73d9d656ce94aa11e62a59",
+  "--road-off-lowered",
+  "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/build-wide-slope/candidate/terrain.npz",
+  "--forest-clearings",
+  "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\clearings-final-ae\\forest-clearings.npy",
+  "--forest-clearings-sha256",
+  "b11d204cf0fac85005dd25e90c1380b12b42bf1c2ff0a4440d2a43686ef670a3"
+ ],
+ "rows": [
+  {
+   "tile": [
+    6,
+    13
+   ],
+   "layer": "s",
+   "domain_pixels": 1188,
+   "wrong_pixels": 0,
+   "unpatched_wrong_pixels": 1166,
+   "in_manifest": true
+  },
+  {
+   "tile": [
+    6,
+    13
+   ],
+   "layer": "m",
+   "domain_pixels": 1188,
+   "wrong_pixels": 0,
+   "unpatched_wrong_pixels": 38,
+   "in_manifest": true
+  },
+  {
+   "tile": [
+    6,
+    14
+   ],
+   "layer": "s",
+   "domain_pixels": 1188,
+   "wrong_pixels": 0,
+   "unpatched_wrong_pixels": 1166,
+   "in_manifest": true
+  },
+  {
+   "tile": [
+    6,
+    14
+   ],
+   "layer": "m",
+   "domain_pixels": 1188,
+   "wrong_pixels": 0,
+   "unpatched_wrong_pixels": 38,
+   "in_manifest": true
+  }
+ ],
+ "scope": "All 33 approved dry-bed cells must carry the final renderer's pixels.\n\nSelection is from the approved dam contract, not the patch's manifest or vertex\nmarks. Reference uses the standard renderer directly with the bound final\nfootprint, without the patch/compositor. G5 separately binds these PNGs to PBO\nbytes through ImageToPAA. This is composition coverage, not independent proof\nof the renderer's colour model.\n"
+}

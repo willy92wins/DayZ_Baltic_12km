@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "template_faces": 6,
+  "template_hinges": 12,
+  "random_patch": "25 heights; five deltas per face",
+  "direct_cross_product_checks": 66,
+  "vectorized_selector_matches_local_template": true,
+  "hinge_interval_fixture_bounds": [
+    -0.3639702342662022,
+    0.36397023426620234
+  ],
+  "slope_interval_fixture_bounds": [
+    -0.3639702342662023,
+    0.3639702342662024
+  ],
+  "bounded_node_fixture": {
+    "max_delta": 0.5,
+    "lower_delta": -0.2,
+    "intervals": 42,
+    "result_reason": "accepted",
+    "accepted": true
+  },
+  "sector_64_boundary_fixture": {
+    "vertical_vertex_col_65_maps_edge_col_64": true,
+    "horizontal_vertex_row_64_maps_edge_row_63": true,
+    "diagonal_63_63_stays_in_sector_0_0": true
+  },
+  "source_clamped_water_floor_fixture": "PASS",
+  "independent_formula": "normalized 3D cross products + atan2"
+}

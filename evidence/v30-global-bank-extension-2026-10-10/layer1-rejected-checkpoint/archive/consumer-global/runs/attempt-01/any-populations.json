@@ -1,0 +1,907 @@
+{
+  "acceptance_gate": false,
+  "baseline_path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz",
+  "baseline_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+  "candidate_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\fairing-layer1\\candidate-terrain.npz",
+  "candidate_sha256": "37e6d4bd195ee8576bc483a6c24e89cede536d916c2b041d8a6bdc98b13269f3",
+  "diagnostic": {
+    "by_population": {
+      "bank": {
+        "ALL_four_comparison": {
+          "aggregate_families_concatenated_once_for_this_population": {
+            "B": {
+              "above30": 1,
+              "max": 30.073793411254883,
+              "mean_square": 1.422570308263872,
+              "n": 1591990,
+              "p99": 4.982069969177246,
+              "p99_q0_deg": 4.982069969177246,
+              "p99_q1_deg": 4.982069969177246
+            },
+            "H": {
+              "above30": 1,
+              "max": 30.073793411254883,
+              "mean_square": 1.3577684932276848,
+              "n": 1591990,
+              "p99": 4.924975547790514,
+              "p99_q0_deg": 4.924964427947998,
+              "p99_q1_deg": 4.925065517425537
+            },
+            "delta_H_minus_B_deg": {
+              "max": 8.63832402229309,
+              "mean": -0.008529782306444692,
+              "min": -11.320889949798584
+            },
+            "hinges": 1591990,
+            "improved_strict_count": 21579,
+            "new_over_30_0001_count": 0,
+            "threshold_deg": 30.0001,
+            "unchanged_exact_count": 1553877,
+            "worsened_strict_count": 16534
+          },
+          "families": {
+            "diag": {
+              "B": {
+                "above30": 1,
+                "max": 30.073793411254883,
+                "mean_square": 1.429787004091158,
+                "n": 538053,
+                "p99": 5.044398136138914,
+                "p99_q0_deg": 5.044331073760986,
+                "p99_q1_deg": 5.04447078704834
+              },
+              "H": {
+                "above30": 1,
+                "max": 30.073793411254883,
+                "mean_square": 1.3366929572127308,
+                "n": 538053,
+                "p99": 4.982069492340088,
+                "p99_q0_deg": 4.982069492340088,
+                "p99_q1_deg": 4.982069492340088
+              },
+              "delta_H_minus_B_deg": {
+                "max": 6.633394718170166,
+                "mean": -0.012858071190639562,
+                "min": -11.320889949798584
+              },
+              "hinges": 538053,
+              "improved_strict_count": 7097,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 526043,
+              "worsened_strict_count": 4913
+            },
+            "horizontal": {
+              "B": {
+                "above30": 0,
+                "max": 26.258079528808594,
+                "mean_square": 1.410078468094107,
+                "n": 527709,
+                "p99": 4.944470672607417,
+                "p99_q0_deg": 4.944166660308838,
+                "p99_q1_deg": 4.944497108459473
+              },
+              "H": {
+                "above30": 0,
+                "max": 26.258079528808594,
+                "mean_square": 1.3585910707461473,
+                "n": 527709,
+                "p99": 4.8118843460082985,
+                "p99_q0_deg": 4.811779499053955,
+                "p99_q1_deg": 4.811893463134766
+              },
+              "delta_H_minus_B_deg": {
+                "max": 5.864027976989746,
+                "mean": -0.00655049252695638,
+                "min": -9.16862177848816
+              },
+              "hinges": 527709,
+              "improved_strict_count": 7200,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 514665,
+              "worsened_strict_count": 5844
+            },
+            "vertical": {
+              "B": {
+                "above30": 0,
+                "max": 28.652856826782227,
+                "mean_square": 1.4277184410963857,
+                "n": 526228,
+                "p99": 4.942568745613097,
+                "p99_q0_deg": 4.942519664764404,
+                "p99_q1_deg": 4.942586898803711
+              },
+              "H": {
+                "above30": 0,
+                "max": 28.652856826782227,
+                "mean_square": 1.3784927302879775,
+                "n": 526228,
+                "p99": 4.81102802753448,
+                "p99_q0_deg": 4.810824394226074,
+                "p99_q1_deg": 4.811103343963623
+              },
+              "delta_H_minus_B_deg": {
+                "max": 8.63832402229309,
+                "mean": -0.006089091600583913,
+                "min": -10.577709436416626
+              },
+              "hinges": 526228,
+              "improved_strict_count": 7282,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 513169,
+              "worsened_strict_count": 5777
+            }
+          },
+          "unique_hinges": 1591990
+        },
+        "ANY": {
+          "aggregate_families_concatenated_once_for_this_population": {
+            "B": {
+              "above30": 2607,
+              "max": 62.00920104980469,
+              "mean_square": 13.510124535008872,
+              "n": 1987722,
+              "p99": 19.14476936340337,
+              "p99_q0_deg": 19.143720626831055,
+              "p99_q1_deg": 19.145048141479492
+            },
+            "H": {
+              "above30": 1948,
+              "max": 62.00920104980469,
+              "mean_square": 12.290290491483201,
+              "n": 1987722,
+              "p99": 18.051178283691414,
+              "p99_q0_deg": 18.051021575927734,
+              "p99_q1_deg": 18.051219940185547
+            },
+            "delta_H_minus_B_deg": {
+              "max": 11.848864078521729,
+              "mean": -0.04532052266736996,
+              "min": -29.919116973876953
+            },
+            "hinges": 1987722,
+            "improved_strict_count": 36818,
+            "new_over_30_0001_count": 0,
+            "threshold_deg": 30.0001,
+            "unchanged_exact_count": 1929542,
+            "worsened_strict_count": 21362
+          },
+          "families": {
+            "diag": {
+              "B": {
+                "above30": 1704,
+                "max": 62.00920104980469,
+                "mean_square": 15.057082917449087,
+                "n": 655163,
+                "p99": 21.624963836669924,
+                "p99_q0_deg": 21.624740600585938,
+                "p99_q1_deg": 21.625328063964844
+              },
+              "H": {
+                "above30": 1194,
+                "max": 62.00920104980469,
+                "mean_square": 13.201855246436121,
+                "n": 655163,
+                "p99": 19.864633331298844,
+                "p99_q0_deg": 19.863454818725586,
+                "p99_q1_deg": 19.86655616760254
+              },
+              "delta_H_minus_B_deg": {
+                "max": 11.734734535217285,
+                "mean": -0.06021005277328924,
+                "min": -29.919116973876953
+              },
+              "hinges": 655163,
+              "improved_strict_count": 11998,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 636926,
+              "worsened_strict_count": 6239
+            },
+            "horizontal": {
+              "B": {
+                "above30": 465,
+                "max": 56.23163604736328,
+                "mean_square": 12.53417014898947,
+                "n": 665568,
+                "p99": 18.098741436004527,
+                "p99_q0_deg": 18.097850799560547,
+                "p99_q1_deg": 18.100549697875977
+              },
+              "H": {
+                "above30": 393,
+                "max": 56.23163604736328,
+                "mean_square": 11.642745860314383,
+                "n": 665568,
+                "p99": 17.223585853576612,
+                "p99_q0_deg": 17.223217010498047,
+                "p99_q1_deg": 17.224334716796875
+              },
+              "delta_H_minus_B_deg": {
+                "max": 11.848864078521729,
+                "mean": -0.03799207948571663,
+                "min": -25.533117294311523
+              },
+              "hinges": 665568,
+              "improved_strict_count": 12368,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 645618,
+              "worsened_strict_count": 7582
+            },
+            "vertical": {
+              "B": {
+                "above30": 438,
+                "max": 52.550418853759766,
+                "mean_square": 12.964471166491885,
+                "n": 666991,
+                "p99": 18.391693496704043,
+                "p99_q0_deg": 18.39144515991211,
+                "p99_q1_deg": 18.39392852783203
+              },
+              "H": {
+                "above30": 361,
+                "max": 52.550418853759766,
+                "mean_square": 12.0410539733421,
+                "n": 666991,
+                "p99": 17.50411205291742,
+                "p99_q0_deg": 17.50385093688965,
+                "p99_q1_deg": 17.50646209716797
+              },
+              "delta_H_minus_B_deg": {
+                "max": 11.21579647064209,
+                "mean": -0.03800784237444584,
+                "min": -29.29390525817871
+              },
+              "hinges": 666991,
+              "improved_strict_count": 12452,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 646998,
+              "worsened_strict_count": 7541
+            }
+          },
+          "unique_hinges": 1987722
+        },
+        "population_vertices": 596545
+      },
+      "interior": {
+        "ALL_four_comparison": {
+          "aggregate_families_concatenated_once_for_this_population": {
+            "B": {
+              "above30": 112,
+              "max": 47.22822952270508,
+              "mean_square": 0.7572895598413321,
+              "n": 7170630,
+              "p99": 3.667754659652709,
+              "p99_q0_deg": 3.667733669281006,
+              "p99_q1_deg": 3.6677632331848145
+            },
+            "H": {
+              "above30": 112,
+              "max": 47.22822952270508,
+              "mean_square": 0.7540333730536637,
+              "n": 7170630,
+              "p99": 3.656461651325225,
+              "p99_q0_deg": 3.6564509868621826,
+              "p99_q1_deg": 3.656466007232666
+            },
+            "delta_H_minus_B_deg": {
+              "max": 5.25226154923439,
+              "mean": -0.0004789897370967758,
+              "min": -7.974956512451172
+            },
+            "hinges": 7170630,
+            "improved_strict_count": 7088,
+            "new_over_30_0001_count": 0,
+            "threshold_deg": 30.0001,
+            "unchanged_exact_count": 7158562,
+            "worsened_strict_count": 4980
+          },
+          "families": {
+            "diag": {
+              "B": {
+                "above30": 58,
+                "max": 47.22822952270508,
+                "mean_square": 0.6147825587111931,
+                "n": 2398189,
+                "p99": 3.199082689285281,
+                "p99_q0_deg": 3.1990795135498047,
+                "p99_q1_deg": 3.199105978012085
+              },
+              "H": {
+                "above30": 58,
+                "max": 47.22822952270508,
+                "mean_square": 0.6113247727331909,
+                "n": 2398189,
+                "p99": 3.1848981952667303,
+                "p99_q0_deg": 3.1848909854888916,
+                "p99_q1_deg": 3.184951066970825
+              },
+              "delta_H_minus_B_deg": {
+                "max": 3.457607388496399,
+                "mean": -0.0006024511137565407,
+                "min": -6.946536064147949
+              },
+              "hinges": 2398189,
+              "improved_strict_count": 2322,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 2394372,
+              "worsened_strict_count": 1495
+            },
+            "horizontal": {
+              "B": {
+                "above30": 48,
+                "max": 35.1874885559082,
+                "mean_square": 0.8668243626485612,
+                "n": 2386444,
+                "p99": 3.9818221092223633,
+                "p99_q0_deg": 3.981656312942505,
+                "p99_q1_deg": 3.981947183609009
+              },
+              "H": {
+                "above30": 48,
+                "max": 35.1874885559082,
+                "mean_square": 0.8636496137434359,
+                "n": 2386444,
+                "p99": 3.9711037039756376,
+                "p99_q0_deg": 3.97096848487854,
+                "p99_q1_deg": 3.971205711364746
+              },
+              "delta_H_minus_B_deg": {
+                "max": 5.25226154923439,
+                "mean": -0.0004044448177328249,
+                "min": -7.974956512451172
+              },
+              "hinges": 2386444,
+              "improved_strict_count": 2388,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 2382305,
+              "worsened_strict_count": 1751
+            },
+            "vertical": {
+              "B": {
+                "above30": 6,
+                "max": 32.68576431274414,
+                "mean_square": 0.7909694217953883,
+                "n": 2385997,
+                "p99": 3.8047345066070566,
+                "p99_q0_deg": 3.8047335147857666,
+                "p99_q1_deg": 3.804758310317993
+              },
+              "H": {
+                "above30": 6,
+                "max": 32.68576431274414,
+                "mean_square": 0.7878344111929791,
+                "n": 2385997,
+                "p99": 3.797890901565557,
+                "p99_q0_deg": 3.7978854179382324,
+                "p99_q1_deg": 3.798022508621216
+              },
+              "delta_H_minus_B_deg": {
+                "max": 5.058773517608643,
+                "mean": -0.00042945638064925283,
+                "min": -7.732314586639404
+              },
+              "hinges": 2385997,
+              "improved_strict_count": 2378,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 2381885,
+              "worsened_strict_count": 1734
+            }
+          },
+          "unique_hinges": 7170630
+        },
+        "ANY": {
+          "aggregate_families_concatenated_once_for_this_population": {
+            "B": {
+              "above30": 594,
+              "max": 60.16704559326172,
+              "mean_square": 1.8490711925851722,
+              "n": 7539924,
+              "p99": 5.814388060569696,
+              "p99_q0_deg": 5.814272403717041,
+              "p99_q1_deg": 5.814422607421875
+            },
+            "H": {
+              "above30": 480,
+              "max": 60.16704559326172,
+              "mean_square": 1.7957930334094543,
+              "n": 7539924,
+              "p99": 5.761942534446716,
+              "p99_q0_deg": 5.761941432952881,
+              "p99_q1_deg": 5.7619428634643555
+            },
+            "delta_H_minus_B_deg": {
+              "max": 9.499063804745674,
+              "mean": -0.002330566318037362,
+              "min": -33.81620740890503
+            },
+            "hinges": 7539924,
+            "improved_strict_count": 10668,
+            "new_over_30_0001_count": 0,
+            "threshold_deg": 30.0001,
+            "unchanged_exact_count": 7523141,
+            "worsened_strict_count": 6115
+          },
+          "families": {
+            "diag": {
+              "B": {
+                "above30": 362,
+                "max": 60.16704559326172,
+                "mean_square": 1.6545820822380977,
+                "n": 2507352,
+                "p99": 5.024668645858741,
+                "p99_q0_deg": 5.0246195793151855,
+                "p99_q1_deg": 5.024719715118408
+              },
+              "H": {
+                "above30": 266,
+                "max": 60.16704559326172,
+                "mean_square": 1.5687164481592462,
+                "n": 2507352,
+                "p99": 4.968435125350913,
+                "p99_q0_deg": 4.968357086181641,
+                "p99_q1_deg": 4.9685163497924805
+              },
+              "delta_H_minus_B_deg": {
+                "max": 6.316688418388367,
+                "mean": -0.00304532687170796,
+                "min": -33.81620740890503
+              },
+              "hinges": 2507352,
+              "improved_strict_count": 3442,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 2502111,
+              "worsened_strict_count": 1799
+            },
+            "horizontal": {
+              "B": {
+                "above30": 142,
+                "max": 53.34239196777344,
+                "mean_square": 1.9077995550342999,
+                "n": 2515924,
+                "p99": 6.144386343955994,
+                "p99_q0_deg": 6.1443705558776855,
+                "p99_q1_deg": 6.144391059875488
+              },
+              "H": {
+                "above30": 134,
+                "max": 53.34239196777344,
+                "mean_square": 1.871139695839712,
+                "n": 2515924,
+                "p99": 6.095335898399354,
+                "p99_q0_deg": 6.095287799835205,
+                "p99_q1_deg": 6.09535026550293
+              },
+              "delta_H_minus_B_deg": {
+                "max": 7.725481986999512,
+                "mean": -0.0019564019290010184,
+                "min": -24.967090606689453
+              },
+              "hinges": 2515924,
+              "improved_strict_count": 3621,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 2510145,
+              "worsened_strict_count": 2158
+            },
+            "vertical": {
+              "B": {
+                "above30": 90,
+                "max": 53.645626068115234,
+                "mean_square": 1.9841304313982673,
+                "n": 2516648,
+                "p99": 6.0923119115829385,
+                "p99_q0_deg": 6.092289924621582,
+                "p99_q1_deg": 6.092331409454346
+              },
+              "H": {
+                "above30": 80,
+                "max": 53.645626068115234,
+                "mean_square": 1.9467058562802317,
+                "n": 2516648,
+                "p99": 6.0427435398101625,
+                "p99_q0_deg": 6.04269552230835,
+                "p99_q1_deg": 6.042786121368408
+              },
+              "delta_H_minus_B_deg": {
+                "max": 9.499063804745674,
+                "mean": -0.001992502696328961,
+                "min": -23.13275909423828
+              },
+              "hinges": 2516648,
+              "improved_strict_count": 3605,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 2510885,
+              "worsened_strict_count": 2158
+            }
+          },
+          "unique_hinges": 7539924
+        },
+        "population_vertices": 2456109
+      },
+      "wet_support_eligible": {
+        "ALL_four_comparison": {
+          "aggregate_families_concatenated_once_for_this_population": {
+            "B": {
+              "above30": 25,
+              "max": 50.38770294189453,
+              "mean_square": 170.2380678521112,
+              "n": 775,
+              "p99": 37.26717887878417,
+              "p99_q0_deg": 37.11284255981445,
+              "p99_q1_deg": 37.706443786621094
+            },
+            "H": {
+              "above30": 18,
+              "max": 45.54796600341797,
+              "mean_square": 145.22558125563648,
+              "n": 775,
+              "p99": 36.27422286987304,
+              "p99_q0_deg": 36.21492385864258,
+              "p99_q1_deg": 36.442996978759766
+            },
+            "delta_H_minus_B_deg": {
+              "max": 4.387409925460815,
+              "mean": -0.6896517645735895,
+              "min": -24.485088348388672
+            },
+            "hinges": 775,
+            "improved_strict_count": 89,
+            "new_over_30_0001_count": 0,
+            "threshold_deg": 30.0001,
+            "unchanged_exact_count": 672,
+            "worsened_strict_count": 14
+          },
+          "families": {
+            "diag": {
+              "B": {
+                "above30": 22,
+                "max": 50.38770294189453,
+                "mean_square": 242.08344186783557,
+                "n": 318,
+                "p99": 38.57136489868164,
+                "p99_q0_deg": 38.18940734863281,
+                "p99_q1_deg": 38.64959716796875
+              },
+              "H": {
+                "above30": 15,
+                "max": 40.04810333251953,
+                "mean_square": 205.2297296372681,
+                "n": 318,
+                "p99": 37.087621154785154,
+                "p99_q0_deg": 36.964481353759766,
+                "p99_q1_deg": 37.11284255981445
+              },
+              "delta_H_minus_B_deg": {
+                "max": 4.387409925460815,
+                "mean": -0.8509146360293874,
+                "min": -24.485088348388672
+              },
+              "hinges": 318,
+              "improved_strict_count": 40,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 273,
+              "worsened_strict_count": 5
+            },
+            "horizontal": {
+              "B": {
+                "above30": 2,
+                "max": 45.54796600341797,
+                "mean_square": 102.99770805124244,
+                "n": 217,
+                "p99": 28.925185470581056,
+                "p99_q0_deg": 28.446462631225586,
+                "p99_q1_deg": 29.01637077331543
+              },
+              "H": {
+                "above30": 2,
+                "max": 45.54796600341797,
+                "mean_square": 88.26751682196186,
+                "n": 217,
+                "p99": 26.499389114379888,
+                "p99_q0_deg": 25.65639305114746,
+                "p99_q1_deg": 26.65995979309082
+              },
+              "delta_H_minus_B_deg": {
+                "max": 2.618922233581543,
+                "mean": -0.49922903369648663,
+                "min": -11.807299613952637
+              },
+              "hinges": 217,
+              "improved_strict_count": 23,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 188,
+              "worsened_strict_count": 6
+            },
+            "vertical": {
+              "B": {
+                "above30": 1,
+                "max": 34.147666931152344,
+                "mean_square": 135.83943926789524,
+                "n": 240,
+                "p99": 29.146795978546134,
+                "p99_q0_deg": 28.79447364807129,
+                "p99_q1_deg": 29.372051239013672
+              },
+              "H": {
+                "above30": 1,
+                "max": 34.147666931152344,
+                "mean_square": 117.21966790875537,
+                "n": 240,
+                "p99": 28.738941078186034,
+                "p99_q0_deg": 28.652082443237305,
+                "p99_q1_deg": 28.79447364807129
+              },
+              "delta_H_minus_B_deg": {
+                "max": 4.310842454433441,
+                "mean": -0.6481523457293709,
+                "min": -14.678230285644531
+              },
+              "hinges": 240,
+              "improved_strict_count": 26,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 211,
+              "worsened_strict_count": 3
+            }
+          },
+          "unique_hinges": 775
+        },
+        "ANY": {
+          "aggregate_families_concatenated_once_for_this_population": {
+            "B": {
+              "above30": 11041,
+              "max": 83.04716491699219,
+              "mean_square": 128.93042971676698,
+              "n": 453263,
+              "p99": 36.287959289550784,
+              "p99_q0_deg": 36.28750991821289,
+              "p99_q1_deg": 36.288692474365234
+            },
+            "H": {
+              "above30": 9771,
+              "max": 83.04716491699219,
+              "mean_square": 120.04402690414717,
+              "n": 453263,
+              "p99": 35.53422157287598,
+              "p99_q0_deg": 35.533973693847656,
+              "p99_q1_deg": 35.53462600708008
+            },
+            "delta_H_minus_B_deg": {
+              "max": 13.546801567077637,
+              "mean": -0.2831219708740302,
+              "min": -33.81620740890503
+            },
+            "hinges": 453263,
+            "improved_strict_count": 30211,
+            "new_over_30_0001_count": 0,
+            "threshold_deg": 30.0001,
+            "unchanged_exact_count": 413402,
+            "worsened_strict_count": 9650
+          },
+          "families": {
+            "diag": {
+              "B": {
+                "above30": 3298,
+                "max": 63.456546783447266,
+                "mean_square": 128.80843913005893,
+                "n": 144925,
+                "p99": 34.86612457275394,
+                "p99_q0_deg": 34.863555908203125,
+                "p99_q1_deg": 34.86693572998047
+              },
+              "H": {
+                "above30": 2552,
+                "max": 63.456546783447266,
+                "mean_square": 115.69480406320787,
+                "n": 144925,
+                "p99": 33.01240402221693,
+                "p99_q0_deg": 33.00178146362305,
+                "p99_q1_deg": 33.0157585144043
+              },
+              "delta_H_minus_B_deg": {
+                "max": 13.546801567077637,
+                "mean": -0.3790164525448061,
+                "min": -33.81620740890503
+              },
+              "hinges": 144925,
+              "improved_strict_count": 10042,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 131972,
+              "worsened_strict_count": 2911
+            },
+            "horizontal": {
+              "B": {
+                "above30": 3778,
+                "max": 81.12667083740234,
+                "mean_square": 126.27536955937549,
+                "n": 153726,
+                "p99": 36.713433265686035,
+                "p99_q0_deg": 36.71076965332031,
+                "p99_q1_deg": 36.71432113647461
+              },
+              "H": {
+                "above30": 3521,
+                "max": 81.12667083740234,
+                "mean_square": 119.46719719009107,
+                "n": 153726,
+                "p99": 36.31712818145752,
+                "p99_q0_deg": 36.3159294128418,
+                "p99_q1_deg": 36.317527770996094
+              },
+              "delta_H_minus_B_deg": {
+                "max": 11.848864078521729,
+                "mean": -0.2372219983361534,
+                "min": -25.533117294311523
+              },
+              "hinges": 153726,
+              "improved_strict_count": 10105,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 140264,
+              "worsened_strict_count": 3357
+            },
+            "vertical": {
+              "B": {
+                "above30": 3965,
+                "max": 83.04716491699219,
+                "mean_square": 131.68462255777436,
+                "n": 154612,
+                "p99": 36.938473815917945,
+                "p99_q0_deg": 36.93693923950195,
+                "p99_q1_deg": 36.938663482666016
+              },
+              "H": {
+                "above30": 3698,
+                "max": 83.04716491699219,
+                "mean_square": 124.69427943853086,
+                "n": 154612,
+                "p99": 36.608289222717275,
+                "p99_q0_deg": 36.60749816894531,
+                "p99_q1_deg": 36.6083869934082
+              },
+              "delta_H_minus_B_deg": {
+                "max": 11.21579647064209,
+                "mean": -0.2388725686427702,
+                "min": -29.29390525817871
+              },
+              "hinges": 154612,
+              "improved_strict_count": 10064,
+              "new_over_30_0001_count": 0,
+              "threshold_deg": 30.0001,
+              "unchanged_exact_count": 141166,
+              "worsened_strict_count": 3382
+            }
+          },
+          "unique_hinges": 453263
+        },
+        "population_vertices": 65955
+      }
+    },
+    "families": [
+      "diag",
+      "vertical",
+      "horizontal"
+    ],
+    "population_membership_overlap": {
+      "ALL_four_comparison": {
+        "by_family": {
+          "diag": {
+            "hinges_by_number_of_populations": {
+              "1": 2936560,
+              "2": 0,
+              "3": 0
+            },
+            "sum_of_per_population_memberships_not_a_disjoint_total": 2936560,
+            "unique_union_hinges": 2936560
+          },
+          "horizontal": {
+            "hinges_by_number_of_populations": {
+              "1": 2914370,
+              "2": 0,
+              "3": 0
+            },
+            "sum_of_per_population_memberships_not_a_disjoint_total": 2914370,
+            "unique_union_hinges": 2914370
+          },
+          "vertical": {
+            "hinges_by_number_of_populations": {
+              "1": 2912465,
+              "2": 0,
+              "3": 0
+            },
+            "sum_of_per_population_memberships_not_a_disjoint_total": 2912465,
+            "unique_union_hinges": 2912465
+          }
+        },
+        "sum_of_population_memberships_not_a_disjoint_total": 8763395,
+        "unique_union_hinges_across_distinct_families": 8763395
+      },
+      "ANY": {
+        "by_family": {
+          "diag": {
+            "hinges_by_number_of_populations": {
+              "1": 3047585,
+              "2": 129602,
+              "3": 217
+            },
+            "sum_of_per_population_memberships_not_a_disjoint_total": 3307440,
+            "unique_union_hinges": 3177404
+          },
+          "horizontal": {
+            "hinges_by_number_of_populations": {
+              "1": 3030020,
+              "2": 152182,
+              "3": 278
+            },
+            "sum_of_per_population_memberships_not_a_disjoint_total": 3335218,
+            "unique_union_hinges": 3182480
+          },
+          "vertical": {
+            "hinges_by_number_of_populations": {
+              "1": 3027111,
+              "2": 155171,
+              "3": 266
+            },
+            "sum_of_per_population_memberships_not_a_disjoint_total": 3338251,
+            "unique_union_hinges": 3182548
+          }
+        },
+        "sum_of_population_memberships_not_a_disjoint_total": 9980909,
+        "unique_union_hinges_across_distinct_families": 9542432
+      }
+    }
+  },
+  "helper_pins": {
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78"
+  },
+  "metrics_scope": "Descriptive per-population metrics only; ANY uses at least one of four hinge vertices; ALL_four is reported only as a scope comparison. Hinge memberships across populations overlap and are not summed as disjoint observations.",
+  "readset_sha256_after": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-navigation-contract-2026-10-08\\decision.json": "d510af67cc4016a0ba7192aa01c070d314b9bc7e49b6256ca6ffaf64fc05b843",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\diagnose_any_populations.py": "5d35cf1a80fa57673a51c404d8a8f3dddb8403f6c86045c2cea3aa2775b6de93",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\fairing-layer1\\candidate-terrain.npz": "37e6d4bd195ee8576bc483a6c24e89cede536d916c2b041d8a6bdc98b13269f3",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78"
+  },
+  "readset_sha256_before": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-navigation-contract-2026-10-08\\decision.json": "d510af67cc4016a0ba7192aa01c070d314b9bc7e49b6256ca6ffaf64fc05b843",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\diagnose_any_populations.py": "5d35cf1a80fa57673a51c404d8a8f3dddb8403f6c86045c2cea3aa2775b6de93",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\fairing-layer1\\candidate-terrain.npz": "37e6d4bd195ee8576bc483a6c24e89cede536d916c2b041d8a6bdc98b13269f3",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78"
+  },
+  "readset_stable": true,
+  "status": "DIAGNOSTIC_ONLY_ANY_POPULATIONS",
+  "thresholds": {
+    "new_over_30_deg": 30.0001,
+    "p99": "frozen EV87 descriptive percentile/brackets; diagnostic only"
+  },
+  "wet_support_eligible_expected_nodes": 65955
+}

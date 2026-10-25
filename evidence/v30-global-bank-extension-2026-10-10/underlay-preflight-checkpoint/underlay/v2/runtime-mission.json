@@ -1,0 +1,10 @@
+{
+  "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticRenderLayerProbeV1.BalticTrial\\init.c",
+  "source_sha256": "1ee48715b476a3cf31684083716b43c8e1b932e12cc1b13d8bb9bc06c5c95be1",
+  "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticUnderlayDiagnosticV1.BalticTrial",
+  "init_sha256": "de2d0e8eefa12e2be49c0289c811034315d66dc8bb2e1e08bb56e7e65fdea03f",
+  "native_probe_vertices": 1225,
+  "same_mission_all_phases": true,
+  "mutable_terrain": false,
+  "liveness_control": "Before each phase translate fixed camera+10m X, capture, restore, capture. Require measurable 3D bridge displacement and exact restored matrix; static low-delta warning alone is not a failed liveness gate (mcp_capture.py:817-828). Then 3 target captures with per-capture readback. No acceptance without reproduced gray ROI in A and A-prime."
+}

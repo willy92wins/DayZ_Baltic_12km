@@ -1,0 +1,41 @@
+{"cells": 0, "total": 48589, "seconds": 0.34399999998277053}
+{"cells": 15000, "total": 48589, "seconds": 3.9219999999913853}
+{"cells": 30000, "total": 48589, "seconds": 7.75}
+{"cells": 45000, "total": 48589, "seconds": 12.85999999998603}
+{
+  "status": "GLOBAL_LOW_DRY_CANDIDATE_INDEX_NOT_RENDER_VERDICT",
+  "native_triangles": 8380418,
+  "candidate_cells": 48589,
+  "active_fragments": 87845,
+  "positive_width_connections": 104167,
+  "components": 423,
+  "components_at_least_1m2": 408,
+  "area_m2": 726892.2515797331,
+  "thresholds": {
+    "lower_sea_crest_m": 0.85,
+    "upper_dry_target_m": 1.79999,
+    "rounding_exclusion_m": 1e-05
+  },
+  "target": {
+    "x": 2718.4852496,
+    "z": 6812.812874,
+    "height_m": 1.8704566895654158,
+    "inside_elevation_risk_band": false
+  },
+  "controls": [
+    "18m2_dry_triangle",
+    "4_5m2_height_band",
+    "16_875m2_sloping_visible_water_excluded",
+    "higher_physical_plane_excludes_triangle",
+    "ocean_submerged_excluded",
+    "zero_width_contact_not_connected",
+    "two_halfplanes_zero_width"
+  ],
+  "seconds": 14.421999999991385,
+  "limits": [
+    "All native faces considered; outputs represent an elevation-risk index, not all possible graphical defects.",
+    "No assertion that every low dry component renders water, nor that higher terrain is immune.",
+    "Engineering/Narva flags mean at least one incident vertex, not that the entire polygon is engineered.",
+    "No terrain, water level, model, package or game process modified."
+  ]
+}

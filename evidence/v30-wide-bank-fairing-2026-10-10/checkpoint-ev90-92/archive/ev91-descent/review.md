@@ -1,0 +1,9 @@
+# EV91 review — no autorizado para solve
+
+**Dictamen: NEEDS-WORK. No ejecutar `--solve` todavía.** La restricción de descenso está bien orientada y el autor implementa el funcional/matriz y cotas EV90, pero la nueva revisión completa EV90 encontró regresiones materiales en los gates de collar: energía `1.0319515 → 1.8826914` y máxima bisagra horizontal `16.93005° → 21.91227°`. El plan EV91 exige conservar ambos criterios; el autor EV91 no los impone durante su única optimización ni los vuelve a comprobar antes de escribir candidato.
+
+**Evidencia.** `ev91-descent/plan.md` dice conservar energía/collar y ángulos y prohíbe ignorar otros fallos. Sin embargo, `author_ev91.py:50-56` minimiza únicamente `0.5*||A*x-rhs||²` con las cotas y las restricciones lineales de descenso. Que la energía global del funcional baje no garantiza que la energía de su subconjunto collar no suba; tampoco limita el máximo de bisagra. Tras resolver, `author_ev91.py:122-129` comprueba cuantización/cotas/testigos y escribe el candidato, sin gates de energía de collar ni máximo angular. Por eso la revisión independiente posterior no basta para autorizar esta llamada: contradice el requisito de no generar candidato si esos fallos materiales siguen sin abordar.
+
+El código y la API SciPy GIS 1.18.1 revisados anteriormente son coherentes para el QP/linealización propuestos, pero no resuelven esta brecha contractual. El cambio necesario es incorporar conservación de energía del collar y del máximo de bisagra horizontal al problema/gate previo a escribir, re-preparar y revisar ese contrato; no se propone recalibrar umbrales ni relajar gates.
+
+`prepared.json` permanece `PREPARED_NO_SOLVE`, `calls=0`; no existen `solve-started.json`, candidato ni recibo. No se ejecutó ningún solver y no se modificó el autor.

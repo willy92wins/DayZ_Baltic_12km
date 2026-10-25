@@ -1,0 +1,49 @@
+{
+  "status": "CLIENT_CRASH_ON_FIRST_CAMERA_SET",
+  "run_id": "db477cf8-ad05-4466-b5fa-317167f5cff1",
+  "date_utc": "2026-10-01T23:03:48Z",
+  "purpose": "Phase B visual review of V29 with player teleports and MCP captures, no Computer Use",
+  "launch": {
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticFoundationSPBBasicV1.BalticTrial",
+    "extra_mods": ["P:\\Mods\\@DayZ_Baltic_RoadV29"],
+    "no_base_mods": true,
+    "no_file_patching": true,
+    "auto_remediate_steam": false,
+    "width": 1600,
+    "height": 900
+  },
+  "identity": {
+    "world_pbo_sha256": "b3418f927f6cc4adf8ba03b86de0ce1491f32adf87f3a124120c62eff20f856e",
+    "water_pbo_sha256": "f9a5cdf7461ff09e80a102641289513896011a78b090fdbbd1056f9b985898d3",
+    "mission_init_sha256_prefix": "1cb2a10ec2bf",
+    "mission_init_matches_repo": true,
+    "server": {"pid": 326948, "creation_time_utc": "2026-10-01T23:03:48.795622Z"},
+    "client": {"pid": 170216, "creation_time_utc": "2026-10-01T23:04:06.922432Z"}
+  },
+  "timeline": [
+    "Lease acquired and run adopted; player connected after 24 s; bridge ready on both peers.",
+    "Weather set to overcast 0, rain 0, fog 0. Player at spawn (8780.5, 10.09, 10121.9), godmode on.",
+    "capture_screenshot from the player view: PASS, native 1600x900 saved as spb-spawn-player-view.jpg.",
+    "player_teleport (8150, 0, 10380) refused clearance_blocked: sea, terrain -5.0 m, water 0.98 m.",
+    "player_teleport (8208, 0, 10590) PASS on dry land at 1.4 m.",
+    "camera_set lookat cam (8175, 24, 10390) -> (8203, 1, 10433), settle_ticks 10: daemon_request_deadline_exceeded.",
+    "Client process gone; its log ends at 'client job queued id=69 kind=camera_set' with no error text.",
+    "Client-only reattach refused with takeover_required; not forced, because takeover would also stop the server.",
+    "dayz_test_close: server termination line written, client already dead, run retired; lease released; no DayZ processes left."
+  ],
+  "observations": [
+    "Camera pose is Codex's frozen V29 water-probe camera, about 200 m from the player: the crash does not need a distant transition.",
+    "The client RPT holds 4203 'Unknown object class pond' warnings; earlier Baltic runs that closed orderly hold thousands too, so the warning alone is not the cause.",
+    "Mechanism not isolated. Until it is, captures use the player view only."
+  ],
+  "files": {
+    "crash-db477cf8-client/DayZDiag_x64_2026-10-02_01-04-06.RPT": "bd13402705c33cf07c53365101ff3ab4e81ea4b64b724ed6c8ac85ef9e1f20e0",
+    "crash-db477cf8-client/error.log": "df333011df8b9b29c0970fc897987f16a3ca875bcf3453581df0b1f9c2664f98",
+    "crash-db477cf8-client/script_2026-10-02_01-04-10.log": "1512c7001e51126f749799b5a798cbf09cd699c2ae23f05b304a8905397bacb0",
+    "crash-db477cf8-client/DayZDiag_x64_2026-10-02_01-04-06_170216.stderr.txt": "f5c3913d288759aaf8ba63f16987e52c51baad7a284964e9e81ec094de96c033",
+    "server-db477cf8.RPT": "c9dbb67cdb23c7be5f5f317612efecf292787f6c7221b8dbb1f31876c716734d",
+    "spb-spawn-player-view.jpg": "014751374fcc221e693d276cbbc35ec90950ec6d10ffa98bd3444cbe683144de"
+  }
+}

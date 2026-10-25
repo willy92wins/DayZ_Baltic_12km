@@ -1,0 +1,12 @@
+# Revisión del integrador y ejecución única
+
+El 10-10-2026 el root autoriza la única ejecución del sector del plan `14f02179312bc25caf76a087cc873122caed30f6092464f1c01ac7572d519749`, dentro del encargo autónomo de suavizado del mapa. No autoriza aceptar o empaquetar una solución sin consumidor.
+
+- Generador: `9f4fc8e5edc2ad7a8276264d4b6fea05ee8682b777d370cb75a283f0cb4d296e`.
+- Preflight: `d782036ebaae76747ef249af1ad83eb44ceae3f6d7c15410cd2eb36d499ccf28`; prepared `8a8a1cf8e9b6906b1aab8053877383d01a92baa5bd2c18b54b1b9e43c8c37a21`.
+- Reconstrucción independiente de las matrices: attempt-03 `d05c8e2dbad5c3265d750e636275ec3a46c4706734a3a0981ef5c08436d3a904`, producido por consumidor `dcf3600d1149b278fba9fcb4dc2d0263fb34b90a0cd5083838d229777e251bab`, archivado antes del siguiente cambio. 40.512 variables, A/rhs/C/d, 127.373 stencils, dominio, cotas y obras civiles exactos.
+- El root leyó los mecanismos de stencils completos, testigos D8, cierre float32, límites EV82 y huella compilada. Se corrigieron previamente firmas, shapes, NaN, pins incompletos, coordenadas D8, cotas finales float32 y alcance de conteos. Los fallos del verificador se conservan en `preflight-independent-review-history.md`; el PASS anterior D7BD carece de fuente recuperable y no se usa como puerta de ejecución.
+- El único cambio posterior de consumidor es reconstruir `eps_primal/eps_dual` desde los vectores reales y cotejar el diagnóstico, en vez de aceptar tolerancias del productor. No cambia el preflight ni las matrices. Consumidor final `703f29380b0359df61a3d699573d68c6abdbe7a9688806e5c09867fd787a343e`, archivado como `verify_real_sector.root-reviewed-703f29380b0359df61a3d699573d68c6abdbe7a9688806e5c09867fd787a343e.py`. Fixture sobre solución49 ya existente: tolerancias reales PASS, infladas×1000 rechazadas, sin solver nuevo. Self-test de helpers SEA/D8 también PASS.
+- Root comprobó además que B es factible en todas las cotas y que el mínimo inferior es 1,413698792 m (>SEA0,85); todos los nodos son únicos y quedan entre2 y257 del contexto260².
+
+Ejecución: `solve-run-01`, una llamada, máximo600s, pico1,5GiB en el intérprete y≥3GiB disponibles antes de resolver. No alphas, segunda ventana ni relajación de protecciones. El foco840,370 queda inmóvil; seed de respaldo3872/q620. El resultado solo puede ser candidato offline pendiente, nunca aceptación global o visual. El cálculo se basa en B; cualquier incorporación posterior a EV93 exige comparación y validación separadas, sin revertir otras mejoras.

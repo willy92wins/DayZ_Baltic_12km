@@ -1,0 +1,9 @@
+# EV61 - composicion explicita de dominios independientes
+
+EV60 permanece FAIL y nunca se empaqueta. Su elevacion resuelve2293objetivos y conserva agua, pero53aristas de banco pasan por encima demax(fuente,p99fuente); algun apoyo es el unico editable y debe subir para alcanzar1.8. El gradiente lineal del autor no controla el angulo exacto de normales. No reoptimizar ni variar parametro alguno.
+
+Composicion determinista para conservar progreso seguro: dividir el dominioEV60 en componentes independientes, cerrados bajo un halo de2vertices que cubre todos los terminos nativos. Comprobar que ninguna arista de medida recibe vertices editables de dos grupos. Para cada grupo, comparar directamente las normales nativas entre fuenteEV57 y el candidatoEV60 guardado. Solo aceptar grupos con todos susobjetivos>=1.8, media angular cuadratica, p99 y numero>30 no mayores en cada dominio natural banco/interior y en todas las aristas incidentes. No borrar ni ocultar el resto: recibo porgrupo y coordenadas de cadaobjetivo pendiente. Sin nuevos solvers ni rondas.
+
+Construir un solo terreno compuesto desdeEV57 con bytes deEV60 en grupos aceptados. Ejecutar de nuevo el consumidor global completo contraEV57, manteniendo los mismos limites fisicos/protecciones y criterios angulares. El gate de elevacion aplica a la lista explicita aceptada; no declarar resueltos los2293 ni el mapa entero. Rechazados necesitan autoria conjunta de orilla/terreno, no una nueva cota o relajacion de controles. Si el compuesto falla globalmente, no otra seleccion.
+
+Si PASS: paquete derivado con agua/P/F/objetos exactos; herencia de cobertura verificable y censo nativo. Actualizar censo de riesgo al terreno realmente incorporado. Fuente de este cambio de alcance: autonomia del usuario para completar toda superficie; preserva regiones comprobadas, no abandona los objetivos restantes.

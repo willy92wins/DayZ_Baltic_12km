@@ -1,0 +1,32 @@
+{
+  "status": "PASS_REAL_CLOCK_AND_FOUR_NEGATIVES",
+  "case": 6,
+  "source_sha256": "f4068e7ab865ef7e5162411fee4fdff573cf67c192bb102934915e1075944f3e",
+  "positive": {
+    "passed": true,
+    "clocks": {
+      "ABS_SPAWN_MS": 42604,
+      "ABS_END_MS": 1799782
+    },
+    "elapsed_s": 1757.178,
+    "errors": []
+  },
+  "controls": [
+    {
+      "name": "missing_end",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "duplicate_spawn",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "end_before_spawn",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "wrong_elapsed",
+      "status": "EXPECTED_REJECTION"
+    }
+  ]
+}

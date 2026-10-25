@@ -1,0 +1,30 @@
+{
+  "status": "FAIL",
+  "terrain_only": true,
+  "checks": {
+    "header_exact": true,
+    "material_grid_and_table_exact": true,
+    "interior_exact_border_within_1micrometre": true,
+    "bridge_records_exact_except_two_y_within_1micrometre": false
+  },
+  "precision_contract": "native-v9-micrometre",
+  "strict_checks": {
+    "all_heights_exact": false,
+    "header_exact": true,
+    "material_grid_and_table_exact": true,
+    "original_bridges_exact": false
+  },
+  "strict_status": "FAIL",
+  "wrp": "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\precision-contract\\controls-v1\\fixtures\\central_y_one_ulp.wrp",
+  "wrp_sha256": "bcad98bbedef3e25861ba7e40990c6597ee61ee248491ec9e85f103e04d3432e",
+  "asc_sha256": "335554a6ea06f8546eeac5444aec7597eaf45df18be0c69b0baab48a573947b2",
+  "differing_vertices": 22,
+  "maximum_height_error_m": 5.960464477539063e-08,
+  "water_objects": 0,
+  "maximum_pose_error_m": 0.0,
+  "pose_mismatches": [],
+  "limits": [
+    "Requires reopened export, compiled parity and runtime consumers before acceptance.",
+    "A bounded precision PASS does not convert the exact comparison into a PASS."
+  ]
+}

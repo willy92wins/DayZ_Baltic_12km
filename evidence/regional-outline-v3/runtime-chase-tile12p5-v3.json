@@ -1,0 +1,111 @@
+{
+  "status": "FAIL_CONSUMER_ACCEPTANCE",
+  "issues": [
+    "stage1:within_road_corridor",
+    "stage2:within_road_corridor"
+  ],
+  "stages": [
+    {
+      "stage": 0,
+      "checks": {
+        "spawn_at_frozen_axis": true,
+        "reached_frozen_axis": true,
+        "positive_health": true,
+        "physical_surface": true,
+        "within_road_corridor": true,
+        "fixed_prey": true,
+        "continuous_samples": true,
+        "within_timeout": true,
+        "known_mind_states_after_first_second": true,
+        "responded_to_stimulus": true,
+        "stable_before_spawn": true
+      },
+      "duration_s": 9.8945,
+      "actor_samples": 55,
+      "max_sample_gap_s": 0.2009000000000043,
+      "axis_range_m": [
+        -80.0,
+        -64.94999999999982
+      ],
+      "maximum_lateral_m": 1.9200000000000728,
+      "health_min": 100.0,
+      "roadway_vertical_difference_m": [
+        0.0013161987305778666,
+        0.04318521423105892
+      ],
+      "prey_max_drift_m": 0.0,
+      "settlement_drift_m": 0.0
+    },
+    {
+      "stage": 1,
+      "checks": {
+        "spawn_at_frozen_axis": true,
+        "reached_frozen_axis": true,
+        "positive_health": true,
+        "physical_surface": true,
+        "within_road_corridor": false,
+        "fixed_prey": true,
+        "continuous_samples": true,
+        "within_timeout": true,
+        "known_mind_states_after_first_second": true,
+        "responded_to_stimulus": true,
+        "stable_before_spawn": true
+      },
+      "duration_s": 46.1233,
+      "actor_samples": 247,
+      "max_sample_gap_s": 0.20600000000000307,
+      "axis_range_m": [
+        -50.0,
+        48.19999999999982
+      ],
+      "maximum_lateral_m": 15.539999999999964,
+      "health_min": 100.0,
+      "roadway_vertical_difference_m": [
+        0.001329931640739801,
+        0.04280659687640309
+      ],
+      "prey_max_drift_m": 0.0,
+      "settlement_drift_m": 0.0
+    },
+    {
+      "stage": 2,
+      "checks": {
+        "spawn_at_frozen_axis": true,
+        "reached_frozen_axis": true,
+        "positive_health": true,
+        "physical_surface": true,
+        "within_road_corridor": false,
+        "fixed_prey": true,
+        "continuous_samples": true,
+        "within_timeout": true,
+        "known_mind_states_after_first_second": true,
+        "responded_to_stimulus": true,
+        "stable_before_spawn": true
+      },
+      "duration_s": 45.015000000000015,
+      "actor_samples": 242,
+      "max_sample_gap_s": 0.20100000000002183,
+      "axis_range_m": [
+        -48.039999999999964,
+        50.0
+      ],
+      "maximum_lateral_m": 4.5,
+      "health_min": 100.0,
+      "roadway_vertical_difference_m": [
+        0.0012681396485163532,
+        0.0430757064817584
+      ],
+      "prey_max_drift_m": 0.0,
+      "settlement_drift_m": 0.0
+    }
+  ],
+  "limits": [
+    "One infected at a time and one client; not player capacity.",
+    "Only the tested summit corridor; no regional route acceptance.",
+    "Position records alone cannot establish movement authority; mission source has been inspected for overrides.",
+    "Graph sample-height validation is a separate gate for each navmesh version."
+  ],
+  "log_sha256": "c71be821b1ca9a51933601e91f821bc937da03ff2d4710943a4ff094a030d093",
+  "reference_sha256": "c6ae44928dc2ad0e53c12b6c22327efbc82ffefd1a6d6d5bf1ccbd60600b1589",
+  "height_sha256": "3e2f6a9643ba4a8c58a86534c75de6033b7dbdf7a3de5d09a5ea46ff66680ac6"
+}

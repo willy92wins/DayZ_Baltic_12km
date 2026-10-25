@@ -1,0 +1,137 @@
+{
+ "cases": [
+  {
+   "case": "n01_base_no_dam",
+   "expected_fail": "G1_seam",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "FAIL",
+    "G2_seat": "FAIL",
+    "G3_water": "FAIL",
+    "G4_frozen": "PASS"
+   },
+   "detected": true
+  },
+  {
+   "case": "n02_cut_without_dam",
+   "expected_fail": "G1_seam",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "FAIL",
+    "G2_seat": "FAIL",
+    "G3_water": "PASS",
+    "G4_frozen": "FAIL"
+   },
+   "detected": true
+  },
+  {
+   "case": "n03_dam_3m_south",
+   "expected_fail": "G1_seam",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "FAIL",
+    "G2_seat": "FAIL",
+    "G3_water": "PASS",
+    "G4_frozen": "PASS"
+   },
+   "detected": true
+  },
+  {
+   "case": "n04_dam_3m_north",
+   "expected_fail": "G1_seam",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "FAIL",
+    "G2_seat": "FAIL",
+    "G3_water": "PASS",
+    "G4_frozen": "PASS"
+   },
+   "detected": true
+  },
+  {
+   "case": "n05_east_piece_missing",
+   "expected_fail": "G1_seam",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "FAIL",
+    "G2_seat": "FAIL",
+    "G3_water": "PASS",
+    "G4_frozen": "FAIL"
+   },
+   "detected": true
+  },
+  {
+   "case": "n06_dam_2m_up_floating",
+   "expected_fail": "G2_seat",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "PASS",
+    "G2_seat": "FAIL",
+    "G3_water": "PASS",
+    "G4_frozen": "PASS"
+   },
+   "detected": true
+  },
+  {
+   "case": "n07_dam_3m_down_buried",
+   "expected_fail": "G2_seat",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "FAIL",
+    "G2_seat": "FAIL",
+    "G3_water": "PASS",
+    "G4_frozen": "PASS"
+   },
+   "detected": true
+  },
+  {
+   "case": "n08_no_abutments",
+   "expected_fail": "G2_seat",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "PASS",
+    "G2_seat": "FAIL",
+    "G3_water": "PASS",
+    "G4_frozen": "PASS"
+   },
+   "detected": true
+  },
+  {
+   "case": "n09_budget_minus_one",
+   "expected_fail": "G4_frozen",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "PASS",
+    "G2_seat": "PASS",
+    "G3_water": "PASS",
+    "G4_frozen": "FAIL"
+   },
+   "detected": true
+  },
+  {
+   "case": "n10_vertex_moved_far",
+   "expected_fail": "G4_frozen",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "PASS",
+    "G2_seat": "PASS",
+    "G3_water": "PASS",
+    "G4_frozen": "FAIL"
+   },
+   "detected": true
+  },
+  {
+   "case": "n11_pond_cell_over_sea",
+   "expected_fail": "G3_water",
+   "rc": 1,
+   "gates": {
+    "G1_seam": "PASS",
+    "G2_seat": "PASS",
+    "G3_water": "FAIL",
+    "G4_frozen": "PASS"
+   },
+   "detected": true
+  }
+ ],
+ "all_detected": true
+}

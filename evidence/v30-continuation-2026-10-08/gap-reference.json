@@ -1,0 +1,50 @@
+{
+  "header": "BALTIC_V30_WATER_TEMPORAL_V3;BalticTrial",
+  "fields": 17,
+  "samples": 62,
+  "interval_s": 2,
+  "points": [
+    {
+      "id": 3001,
+      "x": 2207.64988128585,
+      "z": 7080.7002374283,
+      "expected_ground_m": 1.2287457903218681,
+      "role": "gap_presence_observer"
+    },
+    {
+      "id": 3002,
+      "x": 2207.5,
+      "z": 7080.5,
+      "expected_ground_m": 1.3076992630957762,
+      "role": "gap_presence_observer"
+    },
+    {
+      "id": 3003,
+      "x": 2210.0,
+      "z": 7082.0,
+      "expected_ground_m": 0.7145505398511357,
+      "role": "adjacent_pond_observer"
+    }
+  ],
+  "phase_schedule": [
+    {
+      "name": "calm",
+      "first": 0,
+      "count": 31
+    },
+    {
+      "name": "storm",
+      "first": 31,
+      "count": 31
+    }
+  ],
+  "files": {
+    "init.c": "7991a32459752fa7c25754d9381acb9f708f5f9bb4a8241cb03aaba339e599b6",
+    "points.csv": "8fc68c0d4ebb7239dead3ed97369e420b16ef4cafaa092a985d4221efc7140ad"
+  },
+  "terrain_sha256": "b363b79dc8b4374a626644da78f110666139d382ee09a38dc7aade46b2e659dc",
+  "limits": [
+    "Presence comparison at two gap points and one adjacent pond; depth recorded separately.",
+    "Two weather settings over 62 samples do not define maximum wave envelope."
+  ]
+}

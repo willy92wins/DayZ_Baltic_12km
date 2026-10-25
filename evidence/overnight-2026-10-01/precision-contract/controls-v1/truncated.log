@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\tools\navigation\verify_foundation_native.py", line 102, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\tools\navigation\verify_foundation_native.py", line 56, in main
+    old,new=read(baseline),read(a.wrp)
+                           ^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\tools\playtest\verify_texture_grid_change.py", line 54, in read
+    ident, size = u32(), u32()
+                  ^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\tools\playtest\verify_texture_grid_change.py", line 26, in u32
+    n = struct.unpack_from('<I', b, o)[0]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+struct.error: unpack_from requires a buffer of at least 17307990 bytes for unpacking 4 bytes at offset 17307986 (actual buffer size is 17307974)

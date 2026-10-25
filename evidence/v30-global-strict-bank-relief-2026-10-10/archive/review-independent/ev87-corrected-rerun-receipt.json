@@ -1,0 +1,39 @@
+{
+  "status": "FAIL_EV87_GLOBAL_CONSUMER",
+  "invocation": "python verify_ev87.py --candidate candidate-terrain.npz --candidate-sha a7146c27a634d3ee59bc4c2763d71050da3172724c4f2620a17fce0775fcf020 --ledger queue-ledger.jsonl --directions directions.npz --direction-index direction-index.json --report ev87-review-p99-sector-corrected.json",
+  "verifier_path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+  "verifier_sha256_before": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+  "verifier_sha256_after": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+  "candidate_sha256": "a7146c27a634d3ee59bc4c2763d71050da3172724c4f2620a17fce0775fcf020",
+  "ledger_sha256": "ac87b33eb999f1250e2fa34ac9368f30a788fd1110dac9c0d138c7255ab69e76",
+  "directions_sha256": "4ce901a0d43989dd6baeac0c4d2d74c2781b41ce5432fe31032aad0c4924df92",
+  "direction_index_sha256": "c1fb1f6fcc1a576be662579a730347bac1cce43d91d7e83fe549722ce96d5ba3",
+  "report_path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\ev87-review-p99-sector-corrected.json",
+  "report_sha256": "92aa30ca697547aedb9a515d8441bffebd58b32dae4b1bb179f9ba6adf6987c1",
+  "elapsed_seconds": 225.0486171245575,
+  "false_gates": [
+    "physical_P_B_and_candidate_design_covered_le_0_002m2",
+    "physical_outside_design_growth_le_0_002m2",
+    "visible_F_B_and_candidate_design_covered_le_0_002m2",
+    "visible_outside_design_growth_le_0_002m2"
+  ],
+  "p99": {
+    "bank_before": 4.982070186774692,
+    "bank_after": 4.982067132326998,
+    "interior_before": 3.667753611431574,
+    "interior_after": 3.662581314289733
+  },
+  "coverage_m2": {
+    "physical_B_uncovered": 0.006548757557863082,
+    "physical_candidate_uncovered": 0.006832323743105566,
+    "physical_candidate_outside_growth": 0.00476693203998815,
+    "visible_B_uncovered": 0.005826308021576045,
+    "visible_candidate_uncovered": 0.006044496850289864,
+    "visible_candidate_outside_growth": 0.0035384631538653484
+  },
+  "previous_fail_preserved": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\ev87-review-fail-before-contract-adjustment.json",
+    "sha256": "08cef62773f17ea9eba02ef0a0c33aa2455d3adb7f69ec9a52d8d25ca9ad6b25"
+  },
+  "candidate_verdict_scope": "Only p99 aggregation and sector maximum contracts changed before this rerun. Geometry, coverage gates, tolerances, candidate, and inputs were unchanged."
+}

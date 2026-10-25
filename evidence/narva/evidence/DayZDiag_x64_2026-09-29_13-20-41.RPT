@@ -1,0 +1,57 @@
+=====================================================================
+== C:\Program Files (x86)\Steam\steamapps\common\DayZ\DayZDiag_x64.exe
+== "C:\Program -buldozer -window -nopause -profiles=P:\Buldozer -name=Buldozer -connect=pipe\E8195C,8EDB
+=====================================================================
+Exe timestamp: 2026/08/15 04:37:25
+Current time:  2026/09/29 13:20:44
+Version 1.29.163709
+=====================================================================
+
+13:20:44.74  [Inputs] Loading inputs default "bin/constants.xml"
+13:20:44.77  [Inputs] Loading inputs default "bin/specific.xml"
+13:20:44.77  [Inputs] Loading inputs cfg "P:\Buldozer\Users\Buldozer\guill.core.xml"
+13:20:44.81  [Inputs] Exporting inputs cfg "P:\Buldozer\Users\Buldozer\guill.core.xml"
+13:20:44.907 ANIMATION (E): Can't load sakhal/Anims/cfg/skeletons.anim.xml
+13:20:44.908 ANIMATION (E): Failed to open file, line 0, column 0
+13:20:44.967 RENDER    (E): Cannot find PP effect CloudsEffect, is the name correct?
+13:20:47.866 SCRIPT    (E):    -- Stack trace --
+13:20:47.866 SCRIPT    (E):    GetPlugin() scripts/4_World/plugins/pluginmanager.c : 339
+13:20:47.866 SCRIPT    (E):    OnInit() scripts/4_World/plugins/pluginbase/pluginitemdiagnostic.c : 94
+13:20:47.866 SCRIPT    (E):    PluginsInit() scripts/4_World/plugins/pluginmanager.c : 134
+13:20:47.866 SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins/pluginmanager.c : 302
+13:20:47.866 SCRIPT    (E):    MissionBase() scripts/5_Mission/mission/missionbase.c : 21
+13:20:47.866 SCRIPT    (E):    CreateMission() scripts/5_Mission/somemission.c : 23
+13:20:47.866 SCRIPT    (E):    -----------------
+13:20:48.322 SCRIPT    (E):    -- Stack trace --
+13:20:48.322 SCRIPT    (E):    GetPlugin() scripts/4_World/plugins/pluginmanager.c : 339
+13:20:48.322 SCRIPT    (E):    OnInit() scripts/4_World/plugins/pluginbase/pluginitemdiagnostic.c : 94
+13:20:48.322 SCRIPT    (E):    PluginsInit() scripts/4_World/plugins/pluginmanager.c : 134
+13:20:48.322 SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins/pluginmanager.c : 302
+13:20:48.322 SCRIPT    (E):    MissionBase() scripts/5_Mission/mission/missionbase.c : 21
+13:20:48.322 SCRIPT    (E):    CreateMission() scripts/5_Mission/somemission.c : 23
+13:20:48.322 SCRIPT    (E):    -----------------
+13:20:48.728 ENTITY    (W): Unknown object class 'pond' (dz\water\ponds\pond_50x50.p3d)
+13:23:56.214 ENGINE       : Destroying game
+13:23:56.214  SCRIPT       : Cleaning up script module globals 'Game'
+13:23:56.214   SCRIPT    (E): Leaked 'LOD' script instance (1x)!
+13:23:56.214   SCRIPT    (E): Leaked 'Object' script instance (1x)!
+13:23:56.214   SCRIPT    (E): Leaked 'EntityPlainType' script instance (1x)!
+13:23:56.214   SCRIPT    (E): ==== Total Leaks (3x)! ====
+13:23:56.214 ENGINE    (F): Crashed
+=======================================================
+-------------------------------------------------------
+Time: 13:23:56
+Exception code: C0000005 ACCESS_VIOLATION at 9276610F
+Allocator: system
+graphics:  EnfusionEngineWrapper
+resolution:  3840x2160x32
+Addons:
+  DZ_Scripts in scripts\
+Version 1.29.163709
+Fault address:  9276610F 00:9276610F Unknown module
+file:     
+world:    
+Prev. code bytes: CC 48 89 5C 24 10 48 89 6C 24 18 56 48 83 EC 20
+Fault code bytes: 48 83 B9 38 75 00 00 00 41 8B F0 8B EA 48 8B D9
+=======================================================
+note: Minidump has been generated into the file P:\Buldozer\DayZDiag_x64_2026-09-29_13-23-56.mdmp

@@ -1,0 +1,92 @@
+{
+  "status": "SIX_REGIONAL_JOURNEYS_ACCEPTED_ACROSS_TWO_RUNS",
+  "terrain_sha256": "8e25fab25e8f0909fdda302ed4ba3db4c43884c523920f5ef3424db90780eb8b",
+  "selected": [
+    {
+      "original_case": 0,
+      "name": "coastal_corridor",
+      "reverse": false,
+      "length_m": 641.4215914683776,
+      "source": "v1",
+      "source_case": 0,
+      "source_reference_sha256": "da2ee73678e31ec46c87faaf4e52e5320c4f0f65265e4ff5b9a15db7ccefccad",
+      "source_log_sha256": "895f099428b76d976439cfad03c64735b393393c9f31cc4cb7e1577f2c35998f",
+      "samples": 567,
+      "health_min": 1000.0,
+      "maximum_speed_kmh": 23.58885699914
+    },
+    {
+      "original_case": 1,
+      "name": "coastal_corridor",
+      "reverse": true,
+      "length_m": 641.4215914683776,
+      "source": "v1",
+      "source_case": 1,
+      "source_reference_sha256": "da2ee73678e31ec46c87faaf4e52e5320c4f0f65265e4ff5b9a15db7ccefccad",
+      "source_log_sha256": "895f099428b76d976439cfad03c64735b393393c9f31cc4cb7e1577f2c35998f",
+      "samples": 566,
+      "health_min": 1000.0,
+      "maximum_speed_kmh": 23.661087498961074
+    },
+    {
+      "original_case": 2,
+      "name": "hilly_interior",
+      "reverse": false,
+      "length_m": 1000.0,
+      "source": "v2",
+      "source_case": 0,
+      "source_reference_sha256": "f943ddc3dbbe50ab28efa26d85c60b14bc8b23908e3b1647949af49eb5cb2b45",
+      "source_log_sha256": "4555334b7d82c2bdfb1cd4f49c0a7f5e5e64840e7b217b6aa3f35c3d2fc99ac6",
+      "samples": 875,
+      "health_min": 1000.0,
+      "maximum_speed_kmh": 34.18714256439829
+    },
+    {
+      "original_case": 3,
+      "name": "hilly_interior",
+      "reverse": true,
+      "length_m": 1000.0,
+      "source": "v2",
+      "source_case": 1,
+      "source_reference_sha256": "f943ddc3dbbe50ab28efa26d85c60b14bc8b23908e3b1647949af49eb5cb2b45",
+      "source_log_sha256": "4555334b7d82c2bdfb1cd4f49c0a7f5e5e64840e7b217b6aa3f35c3d2fc99ac6",
+      "samples": 773,
+      "health_min": 1000.0,
+      "maximum_speed_kmh": 35.13127940643694
+    },
+    {
+      "original_case": 4,
+      "name": "southern_corridor",
+      "reverse": false,
+      "length_m": 1000.0,
+      "source": "v1",
+      "source_case": 4,
+      "source_reference_sha256": "da2ee73678e31ec46c87faaf4e52e5320c4f0f65265e4ff5b9a15db7ccefccad",
+      "source_log_sha256": "895f099428b76d976439cfad03c64735b393393c9f31cc4cb7e1577f2c35998f",
+      "samples": 641,
+      "health_min": 1000.0,
+      "maximum_speed_kmh": 32.724510142075324
+    },
+    {
+      "original_case": 5,
+      "name": "southern_corridor",
+      "reverse": true,
+      "length_m": 1000.0,
+      "source": "v1",
+      "source_case": 5,
+      "source_reference_sha256": "da2ee73678e31ec46c87faaf4e52e5320c4f0f65265e4ff5b9a15db7ccefccad",
+      "source_log_sha256": "895f099428b76d976439cfad03c64735b393393c9f31cc4cb7e1577f2c35998f",
+      "samples": 667,
+      "health_min": 1000.0,
+      "maximum_speed_kmh": 30.815382995521063
+    }
+  ],
+  "total_travelled_planned_km": 5.282843182936755,
+  "distinct_corridor_km": 2.6414215914683776,
+  "negative_controls_sha256": "e209843a0fda7ac94fe4e13c73c4ad5f3e6408101b77a0097acf609be245f800",
+  "limits": [
+    "Three frozen corridors both directions, empty vanilla sedan. Not entire road network, driver control, physical road pieces or multiplayer.",
+    "V1 aggregate FAIL remains unchanged; hill cases use separate V2 evidence.",
+    "Physical path acceptance does not erase the separate full-width geometry failure."
+  ]
+}

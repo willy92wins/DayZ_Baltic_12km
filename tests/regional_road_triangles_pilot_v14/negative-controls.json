@@ -1,0 +1,33 @@
+{
+  "status": "PASS_FIVE_EXPECTED_REJECTIONS",
+  "positive": "PASS_OFFLINE_THREE_CORRIDOR_PILOT",
+  "asc_sha256": "9d2c137c358ef60f5282454316974e71b3fdd3f412a55c676836c4327cfce43c",
+  "consumer_sha256": "e7b6d23c1ad0489844b49a7b355f134b341ca82803fddb733353c2f904d20b3f",
+  "tests": [
+    {
+      "test": "untreated_parent",
+      "expected_gate": "routes",
+      "rejected": true
+    },
+    {
+      "test": "protected_water_vertex",
+      "expected_gate": "protected_exact",
+      "rejected": true
+    },
+    {
+      "test": "outside_declared_corridors",
+      "expected_gate": "declared_support_exact",
+      "rejected": true
+    },
+    {
+      "test": "intermediate_road_bump",
+      "expected_gate": "routes",
+      "rejected": true
+    },
+    {
+      "test": "excessive_grading",
+      "expected_gate": "delta_limit",
+      "rejected": true
+    }
+  ]
+}

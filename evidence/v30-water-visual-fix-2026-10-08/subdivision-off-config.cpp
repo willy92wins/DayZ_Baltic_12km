@@ -1,0 +1,2 @@
+class CfgPatches { class BalticSubdivisionOffDiagnostic { units[]={}; weapons[]={}; requiredVersion=0.1; requiredAddons[]={"BalticTrialWorld"}; }; };
+class CfgWorlds { class CAWorld; class BalticTrial: CAWorld { class Subdivision { class Fractal { rougness=0; maxRoad=0.02; maxTrack=0.5; maxSlopeFactor=0.05; }; class WhiteNoise { rougness=0; maxRoad=0.01; maxTrack=0.05; maxSlopeFactor=0.0025; }; minY=0; minSlope=0.02; }; }; };

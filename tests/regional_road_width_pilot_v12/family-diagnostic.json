@@ -1,0 +1,27 @@
+{
+  "status": "CONSTRAINT_FAMILY_DIAGNOSTIC_NO_TERRAIN",
+  "tests": [
+    {
+      "test": "width_only_capped",
+      "success": false,
+      "solver_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "elapsed_s": 0.26600000000325963
+    },
+    {
+      "test": "grade_chord_capped",
+      "success": true,
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "elapsed_s": 0.0470000000204891
+    },
+    {
+      "test": "all_uncapped",
+      "success": true,
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "elapsed_s": 0.28100000001722947
+    }
+  ],
+  "limits": "Uncapped feasibility is not a candidate, optimal grading or permission to alter arbitrary heights."
+}

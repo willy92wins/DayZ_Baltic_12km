@@ -1,0 +1,94 @@
+{
+  "status": "GEOMETRY_SUBSET_DIAGNOSIS",
+  "model_status": "Infeasible",
+  "rows": 1497508,
+  "seconds": 0.7339999999967404,
+  "scope": "No slope rows. A contradiction here also applies to the full system.",
+  "ray_status": "HighsStatus.kOk",
+  "ray_exists": true,
+  "independent_certificate_valid": true,
+  "margin_m": 69.18324930428349,
+  "row_count": 3,
+  "dominant_bounds": [
+    {
+      "xz": [
+        11826,
+        1782
+      ],
+      "coefficient": -1.0,
+      "lower": 1.4,
+      "upper": 8.629999876022339
+    }
+  ],
+  "rows_detail": [
+    {
+      "index": 544678,
+      "kind": "dry",
+      "weight": 151.36679909420985,
+      "rhs": -2.63,
+      "vertices": [
+        {
+          "variable": 280543,
+          "xz": [
+            11826,
+            1788
+          ],
+          "coefficient": -0.5662129941310923,
+          "height": 0.9800000190734863
+        },
+        {
+          "variable": 280853,
+          "xz": [
+            11826,
+            1782
+          ],
+          "coefficient": -0.0066064685649962485,
+          "height": 2.629999876022339
+        },
+        {
+          "variable": 280854,
+          "xz": [
+            11832,
+            1782
+          ],
+          "coefficient": -0.4271805373039115,
+          "height": 0.9800000190734863
+        }
+      ]
+    },
+    {
+      "index": 1496919,
+      "kind": "frozen_point",
+      "weight": 64.66095056703779,
+      "rhs": 2.130001,
+      "vertices": [
+        {
+          "variable": 280854,
+          "xz": [
+            11832,
+            1782
+          ],
+          "coefficient": 1.0,
+          "height": 0.9800000190734863
+        }
+      ]
+    },
+    {
+      "index": 1496920,
+      "kind": "frozen_point",
+      "weight": 85.70584852717207,
+      "rhs": 2.130001,
+      "vertices": [
+        {
+          "variable": 280543,
+          "xz": [
+            11826,
+            1788
+          ],
+          "coefficient": 1.0,
+          "height": 0.9800000190734863
+        }
+      ]
+    }
+  ]
+}

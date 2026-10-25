@@ -1,0 +1,72 @@
+{
+  "checked_at_utc": "2026-10-02 14:20:01 UTC",
+  "commit": "32eb24cdb4ae4d609001d370a3ddb325eb9ff963",
+  "third_launch": {
+    "status": "failed",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "run_id": null,
+    "phase": "executing",
+    "elapsed_s": 45.167,
+    "artifacts_paths": [],
+    "error_code": "takeover_required",
+    "cleanup_degraded": false,
+    "server_alive": null,
+    "client_alive": null,
+    "occupied_by_run_id": "81760064-e673-4f81-8856-782178a0f6f0",
+    "mod": "@DayZ_MCP",
+    "label": "@DayZ_MCP server",
+    "age_s": 97.082,
+    "foreign": false,
+    "hint": "pass takeover=true to evict occupied_by_run_id=81760064-e673-4f81-8856-782178a0f6f0; do not dayz_test_stop a run you do not own",
+    "activity_state": "recent",
+    "last_activity_age_s": 5.361,
+    "queue_offer": {
+      "position_if_joined": 2,
+      "waiters": 1,
+      "occupant": {
+        "run_id": "81760064-e673-4f81-8856-782178a0f6f0",
+        "state": "RUNNING",
+        "foreign": false,
+        "port": null,
+        "mods": [
+          "@DayZ_MCP"
+        ]
+      },
+      "occupant_age_s": 97.082,
+      "retry": {
+        "tool": "dayz_test_run",
+        "same_args": true,
+        "on_busy": "queue"
+      }
+    },
+    "caller_tool_registry_stale": false
+  },
+  "self": {
+    "state": "none",
+    "position": null
+  },
+  "pending_commands": 0,
+  "box": {
+    "occupied": true,
+    "runs": [
+      {
+        "run_id": "81760064-e673-4f81-8856-782178a0f6f0",
+        "state": "RUNNING",
+        "activity_state": "recent"
+      }
+    ],
+    "queue_position": null,
+    "available_for": {
+      "new_launch": false,
+      "adopt": false
+    }
+  },
+  "own_run_started": false,
+  "computer_use": "reset_after_A_B; no active kernel",
+  "bundle": {
+    "path": "E:/DayZ-Baltic-Archive/checkpoint-v30-delta-2026-10-02/baltic-v30-delta-32eb24c.bundle",
+    "sha256": "5139274601bb85830abfa411a375337e0f0c7c8d2c25bcd56cd133fbca06d8c8",
+    "git_bundle_verify": "PASS; complete history; master/v29-base/HEAD"
+  }
+}

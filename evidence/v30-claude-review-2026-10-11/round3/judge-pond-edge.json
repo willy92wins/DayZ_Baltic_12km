@@ -1,0 +1,1148 @@
+{
+ "schema": "shore-eval.v3",
+ "harness": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/harness/eval_shore_v3.py",
+ "harness_sha256": "a3ea2779ac4e175c3743cde23389e8914ac8610d260d3b3c2ff8971e37b26e3d",
+ "v2_harness": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round2/harness/eval_shore_v2.py",
+ "v2_sha256": "422bf8186e0d75f9b6c3aab241bd96eec26c20a501377d7542d10d108aa7b9b4",
+ "v1_sha256": "343f5716aeba0c8eb4e48497c71b8df07f32d058bacf53a65e6b46383f69922e",
+ "candidate": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/pond-edge/cand-pond-edge-3.npz",
+ "candidate_sha256": "0ca0a2b939f9227cdb68684a97b546301733c7a930c7e59db7b1aaefae3ccb86",
+ "base": "E:/DayZ-Baltic-Build/v31-ev99-shore-lakes-20261012/terrain-ev99.npz",
+ "base_sha256": "8e35c3ab3638ae423728f57d5968e6657efd7d52a4c1d22e980d71e14b4fc5a3",
+ "cover": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/cover-level-ev98.npy",
+ "cover_sha256": "7421b17ce8c3ad711c7bf7fa4ee227d98503df4cdf3b63f35798586d22680ba3",
+ "gates_violations": {
+  "frozen": 0,
+  "band": 0,
+  "pond_bed": 0,
+  "piece_edge": 0,
+  "new_sea": 0,
+  "slope": 0,
+  "area_large": 0,
+  "area_mid": 0,
+  "area_total": 0,
+  "topo_vtx_lost": 0,
+  "topo_vtx_split": 0,
+  "topo_vtx_merge": 0,
+  "topo_tri_lost": 0,
+  "topo_tri_split": 0,
+  "topo_tri_merge": 0,
+  "flood": 0,
+  "nav_shallow": 0,
+  "nav_channel_raised": 0,
+  "island_lost": 0,
+  "island_keep_lt80": 0,
+  "nav_dry": 0,
+  "nav_band": 0,
+  "steep_count": 0,
+  "steep_over35": 0
+ },
+ "gates_pass": true,
+ "gate_groups_pass": {
+  "v1": true,
+  "G_area": true,
+  "G_topo": true,
+  "G_flood": true,
+  "G_nav": true,
+  "G_island": true,
+  "G_navdry": true,
+  "G_navband": true,
+  "G_steep": true
+ },
+ "thresholds_v3": {
+  "island_min_m2": 36.0,
+  "island_keep_min_frac": 0.8,
+  "nav_cls": 3,
+  "nav_band_draft_m": [
+   0.95,
+   1.0
+  ],
+  "nav_band_max_increase_pct": 1,
+  "steep_increase_deg": 20.0,
+  "steep_max_new": 50,
+  "steep_ceiling_deg": 35.0
+ },
+ "changed_vertices": 82324,
+ "max_abs_change_m": 1.5,
+ "details_v3": {
+  "island": {
+   "base_islands_ge36": 92,
+   "base_islands_all": 145,
+   "cand_islands_ge36": 94,
+   "cand_islands_all": 102,
+   "lost": 0,
+   "keep_lt80": 0,
+   "keep_lt95": 10,
+   "min_keep_frac": 0.925,
+   "joined_border_land": 1,
+   "worst_x_z_m2_keep": [
+    [
+     8424,
+     4848,
+     160.0,
+     0.925
+    ],
+    [
+     10770,
+     10260,
+     268.0,
+     0.9254
+    ],
+    [
+     4776,
+     1365,
+     164.0,
+     0.9268
+    ],
+    [
+     10957,
+     10674,
+     60.0,
+     0.9333
+    ],
+    [
+     11717,
+     10483,
+     632.0,
+     0.9367
+    ],
+    [
+     11969,
+     1366,
+     356.0,
+     0.9438
+    ],
+    [
+     608,
+     878,
+     1600.0,
+     0.945
+    ],
+    [
+     11964,
+     1356,
+     1448.0,
+     0.9475
+    ]
+   ],
+   "lost_x_z_m2": []
+  },
+  "info_new_tri_water": {
+   "covered_m2": 82660.0,
+   "uncovered_m2": 0.0,
+   "new_dry_m2": 89244.0
+  },
+  "nav_dry": {
+   "navigable_vertices": 36596,
+   "navigable_wet_base": 36348,
+   "turned_dry": 0,
+   "by_bank_dist_m": {
+    "le6": 0,
+    "gt6": 0
+   },
+   "x_z_draft0_dH": []
+  },
+  "nav_band": {
+   "base": 3356,
+   "cand": 2194,
+   "increase": -1162,
+   "allowed_increase": 33,
+   "increase_pct": -34.625,
+   "entered": 0,
+   "left": 1162,
+   "entered_from_ge1p0": 0,
+   "entered_from_lt0p95": 0
+  },
+  "steep": {
+   "steepened": 20,
+   "over35": 0,
+   "in_spb": 0,
+   "underwater": 0,
+   "straddle": 0,
+   "dry": 20,
+   "max_increase_deg": 24.006,
+   "worst_x_z_tri_base_cand": [
+    [
+     3183,
+     4155,
+     "B",
+     0.29,
+     24.3
+    ],
+    [
+     3849,
+     5565,
+     "A",
+     0.37,
+     24.21
+    ],
+    [
+     3237,
+     5463,
+     "A",
+     1.42,
+     25.23
+    ],
+    [
+     11397,
+     8559,
+     "A",
+     0.87,
+     24.68
+    ],
+    [
+     3231,
+     5457,
+     "A",
+     1.44,
+     25.25
+    ],
+    [
+     3855,
+     5571,
+     "B",
+     0.3,
+     23.9
+    ],
+    [
+     10269,
+     5901,
+     "B",
+     0.74,
+     24.33
+    ],
+    [
+     4023,
+     2223,
+     "A",
+     1.91,
+     25.46
+    ],
+    [
+     11031,
+     5007,
+     "B",
+     0.44,
+     23.66
+    ],
+    [
+     4131,
+     2265,
+     "B",
+     1.8,
+     25.0
+    ]
+   ]
+  }
+ },
+ "summary_base_cand": {
+  "tri_map_all": {
+   "length_km": [
+    392.91,
+    380.557
+   ],
+   "sawtooth_per_km": [
+    8.75,
+    5.847
+   ],
+   "corners_per_km": [
+    7.523,
+    6.49
+   ],
+   "grid_aligned_frac": [
+    0.3686,
+    0.2965
+   ]
+  },
+  "tri_map_sea": {
+   "length_km": [
+    85.988,
+    86.197
+   ],
+   "sawtooth_per_km": [
+    2.326,
+    2.309
+   ],
+   "corners_per_km": [
+    3.396,
+    3.33
+   ],
+   "grid_aligned_frac": [
+    0.2656,
+    0.2656
+   ]
+  },
+  "tri_map_pond": {
+   "length_km": [
+    306.922,
+    294.36
+   ],
+   "sawtooth_per_km": [
+    10.55,
+    6.883
+   ],
+   "corners_per_km": [
+    8.68,
+    7.416
+   ],
+   "grid_aligned_frac": [
+    0.3978,
+    0.3056
+   ]
+  },
+  "tri_spb_all": {
+   "length_km": [
+    18.777,
+    18.488
+   ],
+   "sawtooth_per_km": [
+    5.912,
+    3.894
+   ],
+   "corners_per_km": [
+    6.338,
+    6.004
+   ],
+   "grid_aligned_frac": [
+    0.3103,
+    0.2973
+   ]
+  },
+  "tri_spb_sea": {
+   "length_km": [
+    14.411,
+    14.411
+   ],
+   "sawtooth_per_km": [
+    3.47,
+    3.4
+   ],
+   "corners_per_km": [
+    4.58,
+    4.51
+   ],
+   "grid_aligned_frac": [
+    0.2969,
+    0.2978
+   ]
+  },
+  "tri_spb_pond": {
+   "length_km": [
+    4.366,
+    4.077
+   ],
+   "sawtooth_per_km": [
+    13.972,
+    5.642
+   ],
+   "corners_per_km": [
+    12.14,
+    11.284
+   ],
+   "grid_aligned_frac": [
+    0.3558,
+    0.2958
+   ]
+  },
+  "quads_map_all": {
+   "length_km": [
+    428.007,
+    415.622
+   ],
+   "sawtooth_per_km": [
+    3.467,
+    3.349
+   ],
+   "corners_per_km": [
+    5.899,
+    5.582
+   ],
+   "grid_aligned_frac": [
+    0.4114,
+    0.3339
+   ]
+  },
+  "quads_map_sea": {
+   "length_km": [
+    84.778,
+    84.757
+   ],
+   "sawtooth_per_km": [
+    1.533,
+    1.581
+   ],
+   "corners_per_km": [
+    3.114,
+    3.079
+   ],
+   "grid_aligned_frac": [
+    0.269,
+    0.268
+   ]
+  },
+  "quads_map_pond": {
+   "length_km": [
+    343.229,
+    330.865
+   ],
+   "sawtooth_per_km": [
+    3.945,
+    3.802
+   ],
+   "corners_per_km": [
+    6.587,
+    6.223
+   ],
+   "grid_aligned_frac": [
+    0.4467,
+    0.3509
+   ]
+  },
+  "quads_spb_all": {
+   "length_km": [
+    18.64,
+    18.408
+   ],
+   "sawtooth_per_km": [
+    4.292,
+    3.151
+   ],
+   "corners_per_km": [
+    6.116,
+    5.704
+   ],
+   "grid_aligned_frac": [
+    0.3218,
+    0.299
+   ]
+  },
+  "quads_spb_sea": {
+   "length_km": [
+    14.3,
+    14.3
+   ],
+   "sawtooth_per_km": [
+    2.657,
+    2.657
+   ],
+   "corners_per_km": [
+    4.336,
+    4.336
+   ],
+   "grid_aligned_frac": [
+    0.2995,
+    0.2996
+   ]
+  },
+  "quads_spb_pond": {
+   "length_km": [
+    4.34,
+    4.108
+   ],
+   "sawtooth_per_km": [
+    9.677,
+    4.868
+   ],
+   "corners_per_km": [
+    11.981,
+    10.466
+   ],
+   "grid_aligned_frac": [
+    0.3976,
+    0.2966
+   ]
+  }
+ },
+ "v2_sidecar": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/judge/runs/judge-pond-edge.v2.json",
+ "v2": {
+  "schema": "shore-eval.v2",
+  "harness": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round2/harness/eval_shore_v2.py",
+  "harness_sha256": "422bf8186e0d75f9b6c3aab241bd96eec26c20a501377d7542d10d108aa7b9b4",
+  "v1_sha256": "343f5716aeba0c8eb4e48497c71b8df07f32d058bacf53a65e6b46383f69922e",
+  "candidate": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/pond-edge/cand-pond-edge-3.npz",
+  "candidate_sha256": "0ca0a2b939f9227cdb68684a97b546301733c7a930c7e59db7b1aaefae3ccb86",
+  "base": "E:/DayZ-Baltic-Build/v31-ev99-shore-lakes-20261012/terrain-ev99.npz",
+  "base_sha256": "8e35c3ab3638ae423728f57d5968e6657efd7d52a4c1d22e980d71e14b4fc5a3",
+  "cover": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/cover-level-ev98.npy",
+  "cover_sha256": "7421b17ce8c3ad711c7bf7fa4ee227d98503df4cdf3b63f35798586d22680ba3",
+  "gates_violations": {
+   "frozen": 0,
+   "band": 0,
+   "pond_bed": 0,
+   "piece_edge": 0,
+   "new_sea": 0,
+   "slope": 0,
+   "area_large": 0,
+   "area_mid": 0,
+   "area_total": 0,
+   "topo_vtx_lost": 0,
+   "topo_vtx_split": 0,
+   "topo_vtx_merge": 0,
+   "topo_tri_lost": 0,
+   "topo_tri_split": 0,
+   "topo_tri_merge": 0,
+   "flood": 0,
+   "nav_shallow": 0,
+   "nav_channel_raised": 0
+  },
+  "gates_pass": true,
+  "gate_groups_pass": {
+   "v1": true,
+   "G_area": true,
+   "G_topo": true,
+   "G_flood": true,
+   "G_nav": true
+  },
+  "changed_vertices": 82324,
+  "max_abs_change_m": 1.5,
+  "details": {
+   "v1_sidecar": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/judge/runs/judge-pond-edge.v2.v1.json",
+   "v1_gates_pass": true,
+   "candidate_heights_dtype": "float32",
+   "non_height_arrays_identical": {
+    "cls": true,
+    "level": true,
+    "platform": true,
+    "reserve": true,
+    "narva": true,
+    "water": true,
+    "beach": true,
+    "ev96_bed_raised": true,
+    "ev96_converted_to_sea": true,
+    "ev98_bed_raised": true,
+    "v31_lake_rim_lowered": true
+   },
+   "topo_tri": {
+    "base_n": 2636,
+    "cand_n": 2493,
+    "lost": 229,
+    "lost_area_m2": 2340.0,
+    "lost_ge_minpx": 0,
+    "lost_max_m2": 32.0,
+    "new": 91,
+    "new_area_m2": 956.0,
+    "new_ge_minpx": 2,
+    "new_max_m2": 40.0,
+    "split": 96,
+    "split_sig": 0,
+    "merged": 93,
+    "merged_sig": 0,
+    "lost_sig_x_z_m2": [],
+    "split_sig_x_z_m2": [],
+    "merge_sig_x_z_m2": []
+   },
+   "flood": {
+    "new_wet_m2": 82660.0,
+    "new_dry_m2": 89244.0,
+    "new_wet_gt4_m2": 1688.0,
+    "new_wet_gt6_m2": 280.0,
+    "new_wet_gt8_m2": 0.0,
+    "new_wet_gt12_m2": 0.0,
+    "new_wet_gt24_m2": 0.0,
+    "new_wet_max_dist_m": 8.0,
+    "far_clusters_x_z_m2": []
+   },
+   "topo_vtx": {
+    "base_n": 858,
+    "cand_n": 859,
+    "lost": 0,
+    "lost_area_m2": 0.0,
+    "lost_ge_minpx": 0,
+    "lost_max_m2": 0.0,
+    "new": 0,
+    "new_area_m2": 0.0,
+    "new_ge_minpx": 0,
+    "new_max_m2": 0.0,
+    "split": 1,
+    "split_sig": 0,
+    "merged": 0,
+    "merged_sig": 0,
+    "lost_sig_x_z_m2": [],
+    "split_sig_x_z_m2": [],
+    "merge_sig_x_z_m2": []
+   },
+   "area": {
+    "base_total_m2": 35513895.8,
+    "cand_total_m2": 35510391.6,
+    "total_rel_pct": -0.0099,
+    "base_bodies": 858,
+    "classes": {
+     "36-200m2": {
+      "n": 71,
+      "over5": 27,
+      "over10": 6,
+      "p50_abs_pct": 2.65,
+      "worst": -14.43
+     },
+     "200-2000m2": {
+      "n": 455,
+      "over5": 27,
+      "over10": 0,
+      "p50_abs_pct": 2.11,
+      "worst": -8.58
+     },
+     "2000-10000m2": {
+      "n": 109,
+      "over5": 0,
+      "over10": 0,
+      "p50_abs_pct": 0.63,
+      "worst": -4.42
+     },
+     "ge10000m2": {
+      "n": 37,
+      "over5": 0,
+      "over10": 0,
+      "p50_abs_pct": 0.13,
+      "worst": -3.56
+     }
+    },
+    "large_n": 146,
+    "large_over5": 0,
+    "mid_n": 455,
+    "mid_over10": 0,
+    "mid_allowed": 9,
+    "large_offenders_x_z_basem2_relpct": [],
+    "mid_offenders_x_z_basem2_relpct": []
+   },
+   "nav": {
+    "navigable_vertices": 36596,
+    "navigable_wet_vertices": 36348,
+    "channel_vertices": 26297,
+    "new_shallow": 0,
+    "new_shallow_by_bank_dist_m": {
+     "le6": 0,
+     "6-12": 0,
+     "ge12": 0
+    },
+    "new_shallow_now_dry": 0,
+    "channel_raised": 0,
+    "channel_raised_gt_1cm": 0,
+    "channel_max_raise_m": 0.0,
+    "depth_lost_below_1p5": 0
+   }
+  },
+  "metrics": {
+   "engine_tri": {
+    "model": "TRI K=3 cell-centred, primary",
+    "base": {
+     "map": {
+      "all": {
+       "length_km": 392.91,
+       "sawtooth": 3438,
+       "corners": 2956,
+       "sawtooth_per_km": 8.75,
+       "corners_per_km": 7.523,
+       "chords": 129136,
+       "grid_aligned_frac": 0.3686,
+       "short_lines": 1325,
+       "short_len_km": 25.319
+      },
+      "sea": {
+       "length_km": 85.988,
+       "sawtooth": 200,
+       "corners": 292,
+       "sawtooth_per_km": 2.326,
+       "corners_per_km": 3.396,
+       "chords": 28559,
+       "grid_aligned_frac": 0.2656
+      },
+      "pond": {
+       "length_km": 306.922,
+       "sawtooth": 3238,
+       "corners": 2664,
+       "sawtooth_per_km": 10.55,
+       "corners_per_km": 8.68,
+       "chords": 100577,
+       "grid_aligned_frac": 0.3978
+      }
+     },
+     "spb": {
+      "all": {
+       "length_km": 18.777,
+       "sawtooth": 111,
+       "corners": 119,
+       "sawtooth_per_km": 5.912,
+       "corners_per_km": 6.338,
+       "chords": 6187,
+       "grid_aligned_frac": 0.3103,
+       "short_lines": 25,
+       "short_len_km": 0.314
+      },
+      "sea": {
+       "length_km": 14.411,
+       "sawtooth": 50,
+       "corners": 66,
+       "sawtooth_per_km": 3.47,
+       "corners_per_km": 4.58,
+       "chords": 4779,
+       "grid_aligned_frac": 0.2969
+      },
+      "pond": {
+       "length_km": 4.366,
+       "sawtooth": 61,
+       "corners": 53,
+       "sawtooth_per_km": 13.972,
+       "corners_per_km": 12.14,
+       "chords": 1408,
+       "grid_aligned_frac": 0.3558
+      }
+     }
+    },
+    "cand": {
+     "map": {
+      "all": {
+       "length_km": 380.557,
+       "sawtooth": 2225,
+       "corners": 2470,
+       "sawtooth_per_km": 5.847,
+       "corners_per_km": 6.49,
+       "chords": 124995,
+       "grid_aligned_frac": 0.2965,
+       "short_lines": 1187,
+       "short_len_km": 23.905
+      },
+      "sea": {
+       "length_km": 86.197,
+       "sawtooth": 199,
+       "corners": 287,
+       "sawtooth_per_km": 2.309,
+       "corners_per_km": 3.33,
+       "chords": 28550,
+       "grid_aligned_frac": 0.2656
+      },
+      "pond": {
+       "length_km": 294.36,
+       "sawtooth": 2026,
+       "corners": 2183,
+       "sawtooth_per_km": 6.883,
+       "corners_per_km": 7.416,
+       "chords": 96445,
+       "grid_aligned_frac": 0.3056
+      }
+     },
+     "spb": {
+      "all": {
+       "length_km": 18.488,
+       "sawtooth": 72,
+       "corners": 111,
+       "sawtooth_per_km": 3.894,
+       "corners_per_km": 6.004,
+       "chords": 6094,
+       "grid_aligned_frac": 0.2973,
+       "short_lines": 20,
+       "short_len_km": 0.256
+      },
+      "sea": {
+       "length_km": 14.411,
+       "sawtooth": 49,
+       "corners": 65,
+       "sawtooth_per_km": 3.4,
+       "corners_per_km": 4.51,
+       "chords": 4779,
+       "grid_aligned_frac": 0.2978
+      },
+      "pond": {
+       "length_km": 4.077,
+       "sawtooth": 23,
+       "corners": 46,
+       "sawtooth_per_km": 5.642,
+       "corners_per_km": 11.284,
+       "chords": 1315,
+       "grid_aligned_frac": 0.2958
+      }
+     }
+    }
+   },
+   "quads": {
+    "model": "v1 vertex quads, secondary",
+    "base": {
+     "map": {
+      "all": {
+       "length_km": 428.007,
+       "sawtooth": 1484,
+       "corners": 2525,
+       "sawtooth_per_km": 3.467,
+       "corners_per_km": 5.899,
+       "chords": 141639,
+       "grid_aligned_frac": 0.4114,
+       "short_lines": 382,
+       "short_len_km": 5.654
+      },
+      "sea": {
+       "length_km": 84.778,
+       "sawtooth": 130,
+       "corners": 264,
+       "sawtooth_per_km": 1.533,
+       "corners_per_km": 3.114,
+       "chords": 28148,
+       "grid_aligned_frac": 0.269
+      },
+      "pond": {
+       "length_km": 343.229,
+       "sawtooth": 1354,
+       "corners": 2261,
+       "sawtooth_per_km": 3.945,
+       "corners_per_km": 6.587,
+       "chords": 113491,
+       "grid_aligned_frac": 0.4467
+      }
+     },
+     "spb": {
+      "all": {
+       "length_km": 18.64,
+       "sawtooth": 80,
+       "corners": 114,
+       "sawtooth_per_km": 4.292,
+       "corners_per_km": 6.116,
+       "chords": 6149,
+       "grid_aligned_frac": 0.3218,
+       "short_lines": 31,
+       "short_len_km": 0.482
+      },
+      "sea": {
+       "length_km": 14.3,
+       "sawtooth": 38,
+       "corners": 62,
+       "sawtooth_per_km": 2.657,
+       "corners_per_km": 4.336,
+       "chords": 4748,
+       "grid_aligned_frac": 0.2995
+      },
+      "pond": {
+       "length_km": 4.34,
+       "sawtooth": 42,
+       "corners": 52,
+       "sawtooth_per_km": 9.677,
+       "corners_per_km": 11.981,
+       "chords": 1401,
+       "grid_aligned_frac": 0.3976
+      }
+     }
+    },
+    "cand": {
+     "map": {
+      "all": {
+       "length_km": 415.622,
+       "sawtooth": 1392,
+       "corners": 2320,
+       "sawtooth_per_km": 3.349,
+       "corners_per_km": 5.582,
+       "chords": 137143,
+       "grid_aligned_frac": 0.3339,
+       "short_lines": 400,
+       "short_len_km": 6.749
+      },
+      "sea": {
+       "length_km": 84.757,
+       "sawtooth": 134,
+       "corners": 261,
+       "sawtooth_per_km": 1.581,
+       "corners_per_km": 3.079,
+       "chords": 28149,
+       "grid_aligned_frac": 0.268
+      },
+      "pond": {
+       "length_km": 330.865,
+       "sawtooth": 1258,
+       "corners": 2059,
+       "sawtooth_per_km": 3.802,
+       "corners_per_km": 6.223,
+       "chords": 108994,
+       "grid_aligned_frac": 0.3509
+      }
+     },
+     "spb": {
+      "all": {
+       "length_km": 18.408,
+       "sawtooth": 58,
+       "corners": 105,
+       "sawtooth_per_km": 3.151,
+       "corners_per_km": 5.704,
+       "chords": 6074,
+       "grid_aligned_frac": 0.299,
+       "short_lines": 27,
+       "short_len_km": 0.383
+      },
+      "sea": {
+       "length_km": 14.3,
+       "sawtooth": 38,
+       "corners": 62,
+       "sawtooth_per_km": 2.657,
+       "corners_per_km": 4.336,
+       "chords": 4749,
+       "grid_aligned_frac": 0.2996
+      },
+      "pond": {
+       "length_km": 4.108,
+       "sawtooth": 20,
+       "corners": 43,
+       "sawtooth_per_km": 4.868,
+       "corners_per_km": 10.466,
+       "chords": 1325,
+       "grid_aligned_frac": 0.2966
+      }
+     }
+    }
+   },
+   "quads_all_match_v1": true,
+   "v1": {
+    "base_map": {
+     "length_km": 428.007,
+     "sawtooth": 1484,
+     "corners": 2525,
+     "sawtooth_per_km": 3.467,
+     "corners_per_km": 5.899
+    },
+    "cand_map": {
+     "length_km": 415.622,
+     "sawtooth": 1392,
+     "corners": 2320,
+     "sawtooth_per_km": 3.349,
+     "corners_per_km": 5.582
+    },
+    "base_spb": {
+     "length_km": 18.64,
+     "sawtooth": 80,
+     "corners": 114,
+     "sawtooth_per_km": 4.292,
+     "corners_per_km": 6.116
+    },
+    "cand_spb": {
+     "length_km": 18.408,
+     "sawtooth": 58,
+     "corners": 105,
+     "sawtooth_per_km": 3.151,
+     "corners_per_km": 5.704
+    }
+   }
+  },
+  "summary_base_cand": {
+   "tri_map_all": {
+    "length_km": [
+     392.91,
+     380.557
+    ],
+    "sawtooth_per_km": [
+     8.75,
+     5.847
+    ],
+    "corners_per_km": [
+     7.523,
+     6.49
+    ],
+    "grid_aligned_frac": [
+     0.3686,
+     0.2965
+    ]
+   },
+   "tri_map_sea": {
+    "length_km": [
+     85.988,
+     86.197
+    ],
+    "sawtooth_per_km": [
+     2.326,
+     2.309
+    ],
+    "corners_per_km": [
+     3.396,
+     3.33
+    ],
+    "grid_aligned_frac": [
+     0.2656,
+     0.2656
+    ]
+   },
+   "tri_map_pond": {
+    "length_km": [
+     306.922,
+     294.36
+    ],
+    "sawtooth_per_km": [
+     10.55,
+     6.883
+    ],
+    "corners_per_km": [
+     8.68,
+     7.416
+    ],
+    "grid_aligned_frac": [
+     0.3978,
+     0.3056
+    ]
+   },
+   "tri_spb_all": {
+    "length_km": [
+     18.777,
+     18.488
+    ],
+    "sawtooth_per_km": [
+     5.912,
+     3.894
+    ],
+    "corners_per_km": [
+     6.338,
+     6.004
+    ],
+    "grid_aligned_frac": [
+     0.3103,
+     0.2973
+    ]
+   },
+   "tri_spb_sea": {
+    "length_km": [
+     14.411,
+     14.411
+    ],
+    "sawtooth_per_km": [
+     3.47,
+     3.4
+    ],
+    "corners_per_km": [
+     4.58,
+     4.51
+    ],
+    "grid_aligned_frac": [
+     0.2969,
+     0.2978
+    ]
+   },
+   "tri_spb_pond": {
+    "length_km": [
+     4.366,
+     4.077
+    ],
+    "sawtooth_per_km": [
+     13.972,
+     5.642
+    ],
+    "corners_per_km": [
+     12.14,
+     11.284
+    ],
+    "grid_aligned_frac": [
+     0.3558,
+     0.2958
+    ]
+   },
+   "quads_map_all": {
+    "length_km": [
+     428.007,
+     415.622
+    ],
+    "sawtooth_per_km": [
+     3.467,
+     3.349
+    ],
+    "corners_per_km": [
+     5.899,
+     5.582
+    ],
+    "grid_aligned_frac": [
+     0.4114,
+     0.3339
+    ]
+   },
+   "quads_map_sea": {
+    "length_km": [
+     84.778,
+     84.757
+    ],
+    "sawtooth_per_km": [
+     1.533,
+     1.581
+    ],
+    "corners_per_km": [
+     3.114,
+     3.079
+    ],
+    "grid_aligned_frac": [
+     0.269,
+     0.268
+    ]
+   },
+   "quads_map_pond": {
+    "length_km": [
+     343.229,
+     330.865
+    ],
+    "sawtooth_per_km": [
+     3.945,
+     3.802
+    ],
+    "corners_per_km": [
+     6.587,
+     6.223
+    ],
+    "grid_aligned_frac": [
+     0.4467,
+     0.3509
+    ]
+   },
+   "quads_spb_all": {
+    "length_km": [
+     18.64,
+     18.408
+    ],
+    "sawtooth_per_km": [
+     4.292,
+     3.151
+    ],
+    "corners_per_km": [
+     6.116,
+     5.704
+    ],
+    "grid_aligned_frac": [
+     0.3218,
+     0.299
+    ]
+   },
+   "quads_spb_sea": {
+    "length_km": [
+     14.3,
+     14.3
+    ],
+    "sawtooth_per_km": [
+     2.657,
+     2.657
+    ],
+    "corners_per_km": [
+     4.336,
+     4.336
+    ],
+    "grid_aligned_frac": [
+     0.2995,
+     0.2996
+    ]
+   },
+   "quads_spb_pond": {
+    "length_km": [
+     4.34,
+     4.108
+    ],
+    "sawtooth_per_km": [
+     9.677,
+     4.868
+    ],
+    "corners_per_km": [
+     11.981,
+     10.466
+    ],
+    "grid_aligned_frac": [
+     0.3976,
+     0.2966
+    ]
+   }
+  },
+  "runtime_s": {
+   "base_context": 6.1,
+   "candidate": 5.4
+  }
+ },
+ "runtime_s": {
+  "base_context": 6.1,
+  "base_context_v3": 0.5,
+  "v2": 5.4,
+  "v3": 1.2
+ }
+}

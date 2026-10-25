@@ -1,0 +1,56 @@
+{
+  "schema": "global-dry-unconstrained-screen.independent-review.v1",
+  "status": "PASS_ONE_OBJECTIVE_SCREEN",
+  "source_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-dry-unconstrained-screen/screen.py",
+  "source_sha256": "1dd4b4fe3b2c081298639e120e95a0ba278aa23a1d81aae7c80850d688dd6459",
+  "plan_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-dry-unconstrained-screen/PLAN.md",
+  "plan_sha256": "266850183f9c17d54c8454a6118a00c994dcb64f49abf82d24525d244885527d",
+  "source_pins_reviewed": {
+    "EV95_terrain_sha256": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "structured_operator_sha256": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+    "fused_normal_sha256": "19a3e3a493f643702e66aaf265c705739535d386412f74659369d7746117ffaa",
+    "memory_sampler_sha256": "a05a5f47b775567105c3e588e7106b4b365b58d259f018dca4f243f57d2da37b",
+    "prepared_bounds_sha256": "b0c4499776148b080049a528807e31a62d5fd11ba90fcaae5a7881124cde81fb",
+    "prepared_receipt_sha256": "9e55afb4b736a3b558d3e631c62fa94c98a0ae2bb7da4e5513850375758869f3",
+    "prepared_independent_review_sha256": "d454b78bf8721a9f6477001bb1e5ba77ed4716fc1fdd03232a6084cc6612bf85"
+  },
+  "mathematical_review": {
+    "status": "SOUND_FOR_DIAGNOSTIC_ONLY",
+    "objective": "The code forms rhs=A^T rhs_a and solves (A^T A)x=rhs with the pinned matrix-free A normal action and exact diag_a Jacobi preconditioner. A's .25 identity rows make the normal positive definite; its diagonal has a minimum contribution of .0625 per variable.",
+    "scope": "The solve is unconstrained. It does not replace ADMM or authorize a terrain; it reports box, D8, and native face-radius violations for both x64 and direct float32 conversion.",
+    "native_constraint_oracles": {
+      "box": "Compares x values against the prepared inward float32 bounds.",
+      "D8": "Uses the pinned structured operator's center/witness flat indices and reports witness-minus-center violations.",
+      "faces": "Checks every one of 8,380,418 native triangular faces using the two direct raw-height gradient components and its prepared radius; it does not infer water from P/F or emit a candidate."
+    },
+    "small_independent_fixture": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/global-dry-unconstrained-screen/independent_fixture.py",
+      "sha256": "52fef3cb325ba32ff71dfffb8e575c28a2d10175841341a764766562d07a6f27",
+      "status": "PASS_SMALL_SCREEN_FIXTURE",
+      "global_arrays_or_global_cg_loaded": false,
+      "synthetic_spd_variables": 16,
+      "minimum_eigenvalue": 0.06249999999999693,
+      "PCG_vs_dense_max_abs": 7.327471962526033e-15,
+      "direct_constraint_positive_and_negative": "PASS",
+      "pin_tamper_and_time_memory_guard_negatives": "PASS"
+    }
+  },
+  "runtime_review": {
+    "status": "GUARDS_PRESENT_GLOBAL_PEAK_UNMEASURED",
+    "max_seconds": 300,
+    "process_peak_limit_bytes": 3221225472,
+    "minimum_free_physical_bytes": 6442450944,
+    "findings": [
+      "The run timer now starts at function entry and is passed into the watchdog, so input pinning, module loading, PCG, direct postchecks, and final readset hashing share the 300-second deadline.",
+      "The watchdog samples every 0.25 seconds, latches time/memory/free-RAM failures, and the code checks it at solver callbacks, stage boundaries, after output serialization, and around final source rehashing.",
+      "A final guard failure produces a terminal failure status and the CLI returns nonzero; only COMPLETE_OBJECTIVE_DIAGNOSTIC_UNACCEPTED returns zero.",
+      "The actual 2,712,136-variable screen has not been run, so the 3-GiB peak and 6-GiB reserve are enforced caps, not a prediction that the run will fit or converge within 300 seconds."
+    ]
+  },
+  "execution": {
+    "global_screen_run": false,
+    "global_solver_or_candidate_run": false,
+    "terrain_written": false,
+    "acceptance_claim": "None; output is explicitly unaccepted continuous-vector diagnostic only."
+  }
+}

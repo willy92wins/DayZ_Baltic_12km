@@ -1,0 +1,180 @@
+{
+  "status": "FAIL_OR_INCOMPLETE",
+  "cases": [
+    {
+      "case": 8,
+      "status": "PASS",
+      "physical": {
+        "status": "PASS_EMPTY_BOAT_SELECTED_REGIONAL_SECTORS_BOTH_DIRECTIONS",
+        "global_checks": {
+          "header": true,
+          "all_cases_complete": true,
+          "exact_cases": true,
+          "no_parse_errors": true
+        },
+        "parse_errors": [],
+        "cases": [
+          {
+            "case": 8,
+            "river": "Delta norte",
+            "reverse": false,
+            "status": "PASS",
+            "checks": {
+              "one_start_and_finish": true,
+              "one_arrival": true,
+              "monotone_continuous_clock": true,
+              "continuous_motion": true,
+              "no_health_loss": true,
+              "inside_corridor": true,
+              "all_intermediate_points_visited": true,
+              "start_and_endpoint": true,
+              "engine_ground_matches_source": true,
+              "input_callbacks": true,
+              "sustained_powered_motion": true,
+              "engine_route_distance_agrees": true,
+              "targets_in_order": true
+            },
+            "end_reason": [
+              "ARRIVED_AND_STOPPED"
+            ],
+            "samples": 1139,
+            "max_dt_s": 0.5079999999999991,
+            "max_step_m": 0.7184121168266397,
+            "max_corridor_distance_m": 0.8021853423515624,
+            "max_waypoint_distance_m": 0.8936450363822818,
+            "end_distance_m": 3.691948753043058,
+            "max_ground_error_m": 0.00017941137427435194,
+            "health_first_min_last": [
+              600.0,
+              600.0,
+              600.0
+            ],
+            "longest_powered_motion_s": 447.014
+          }
+        ],
+        "limits": [
+          "Four selected original segments only; original V2 failures preserved.",
+          "Empty boats with engine input; no crew or medium-vessel acceptance.",
+          "Legacy ARRIVED_AND_STOPPED means arrival and engine release, not zero speed.",
+          "All previous physical tolerances unchanged; added event checks and tighter arrival control."
+        ]
+      },
+      "events": {
+        "status": "PASS",
+        "checks": {
+          "parse": true,
+          "complete_transition_sequence": true,
+          "transition_clock": true,
+          "transition_geometry": true,
+          "same_tick_physical_witness": true,
+          "physical_targets_match_events": true,
+          "arrival_distance_and_speed": true,
+          "engine_off_observation": true
+        },
+        "parse_errors": [],
+        "transitions": 155,
+        "engine_off_observed_s": 9.600000000000023,
+        "final_speed_mps": 0.200152,
+        "limit": "Engine off and endpoint retained; no stationary-moored claim."
+      },
+      "log_sha256": "b95acca114df609095febd28a5bccd3789e2425ef7b464226c6408693e945e9f"
+    },
+    {
+      "case": 10,
+      "status": "FAIL",
+      "physical": {
+        "status": "FAIL_OR_INCOMPLETE",
+        "global_checks": {
+          "header": true,
+          "all_cases_complete": true,
+          "exact_cases": true,
+          "no_parse_errors": true
+        },
+        "parse_errors": [],
+        "cases": [
+          {
+            "case": 10,
+            "river": "Delta occidental",
+            "reverse": false,
+            "status": "FAIL",
+            "checks": {
+              "one_start_and_finish": false,
+              "one_arrival": false,
+              "monotone_continuous_clock": true,
+              "continuous_motion": true,
+              "no_health_loss": true,
+              "inside_corridor": true,
+              "all_intermediate_points_visited": false,
+              "start_and_endpoint": false,
+              "engine_ground_matches_source": true,
+              "input_callbacks": true,
+              "sustained_powered_motion": true,
+              "engine_route_distance_agrees": true,
+              "targets_in_order": true
+            },
+            "end_reason": [
+              "ABORTED_MISSION_FINISH"
+            ],
+            "samples": 845,
+            "max_dt_s": 0.5019999999999811,
+            "max_step_m": 0.7143823597650601,
+            "max_corridor_distance_m": 0.7628295184479947,
+            "max_waypoint_distance_m": 27.53761561680288,
+            "end_distance_m": 28.08984454419951,
+            "max_ground_error_m": 0.0001961795532530175,
+            "health_first_min_last": [
+              600.0,
+              600.0,
+              600.0
+            ],
+            "longest_powered_motion_s": 348.50300000000004
+          }
+        ],
+        "limits": [
+          "Four selected original segments only; original V2 failures preserved.",
+          "Empty boats with engine input; no crew or medium-vessel acceptance.",
+          "Legacy ARRIVED_AND_STOPPED means arrival and engine release, not zero speed.",
+          "All previous physical tolerances unchanged; added event checks and tighter arrival control."
+        ]
+      },
+      "events": {
+        "status": "FAIL",
+        "checks": {
+          "parse": true,
+          "complete_transition_sequence": false,
+          "transition_clock": true,
+          "transition_geometry": true,
+          "same_tick_physical_witness": true,
+          "physical_targets_match_events": true,
+          "arrival_distance_and_speed": false,
+          "engine_off_observation": false
+        },
+        "parse_errors": [],
+        "transitions": 120,
+        "engine_off_observed_s": 0.0,
+        "final_speed_mps": null,
+        "limit": "Engine off and endpoint retained; no stationary-moored claim."
+      },
+      "log_sha256": "65e5c6d4d091d321d7e720e17e9345545a6978732270e1fa3f0725c5c9cbde1a"
+    }
+  ],
+  "limits": [
+    "Four selected original segments only; original V2 failures preserved.",
+    "Empty boats with engine input; no crew or medium-vessel acceptance.",
+    "Legacy ARRIVED_AND_STOPPED means arrival and engine release, not zero speed.",
+    "All previous physical tolerances unchanged; added event checks and tighter arrival control."
+  ],
+  "clock_schema": true,
+  "isolated": true,
+  "server_clocks_ms": {
+    "8": {
+      "ABS_SPAWN_MS": 42039,
+      "ABS_END_MS": 547932
+    },
+    "10": {
+      "ABS_SPAWN_MS": 578041,
+      "ABS_END_MS": 951823
+    }
+  },
+  "reference_sha256": "1bd84fe36a51076c593b8e8436d9b467e6146f231adbe896acfad6c82d635242"
+}

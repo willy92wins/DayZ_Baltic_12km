@@ -1,0 +1,113 @@
+{
+  "status": "PASS_LOCAL_WAVE_MARGIN_GEOMETRY",
+  "checks": {
+    "nonempty": true,
+    "finite": true,
+    "only_local_water_changed": true,
+    "fixed_terrain_exact": true,
+    "dry_vertices_exact": true,
+    "lowering_within_45cm": true,
+    "altered_depth_within_120cm": true,
+    "all_23_channels_exact": true,
+    "no_new_or_worsened_steep_faces": true,
+    "all_frozen_dry_samples_still_dry": true,
+    "all_13_shallow_samples_deepened": true,
+    "historical_roads_pass": true,
+    "road_provenance_exact": true,
+    "metadata_exact_cls": true,
+    "metadata_exact_level": true,
+    "metadata_exact_platform": true,
+    "metadata_exact_reserve": true,
+    "metadata_exact_narva": true,
+    "metadata_exact_water": true,
+    "metadata_exact_beach": true,
+    "asc_exact": true,
+    "asc_grid_exact": true
+  },
+  "source_sha256": "40d8cfd9874e9260464f9e3c38c07d81a15c8aed374083a52c98f042c0161c2e",
+  "candidate_sha256": "d5dadae846bcc60ecb4e03afbdb8db2e833ca209a54a3228a376682a51482f65",
+  "changed_vertices": 126,
+  "max_lower_m": 0.381866455078125,
+  "new_steep_faces": 0,
+  "new_or_worsened_steep_faces": 0,
+  "shallow": [
+    {
+      "id": 362,
+      "before_m": 0.0825036764145004,
+      "after_m": 0.19511711597444004
+    },
+    {
+      "id": 363,
+      "before_m": 0.11404862006506766,
+      "after_m": 0.19369860490164548
+    },
+    {
+      "id": 416,
+      "before_m": 0.05426507790880053,
+      "after_m": 0.20099999109899802
+    },
+    {
+      "id": 524,
+      "before_m": 0.05893406753935393,
+      "after_m": 0.20100001927701472
+    },
+    {
+      "id": 548,
+      "before_m": 0.06768153772888397,
+      "after_m": 0.20100001443798732
+    },
+    {
+      "id": 642,
+      "before_m": 0.05009991956407056,
+      "after_m": 0.20100010028075044
+    },
+    {
+      "id": 765,
+      "before_m": 0.050100078178223484,
+      "after_m": 0.20100007457617508
+    },
+    {
+      "id": 882,
+      "before_m": 0.10369240442911831,
+      "after_m": 0.2009999275207468
+    },
+    {
+      "id": 1176,
+      "before_m": 0.0884546244333424,
+      "after_m": 0.20099997469635622
+    },
+    {
+      "id": 1185,
+      "before_m": 0.07727361520137022,
+      "after_m": 0.20099998315182388
+    },
+    {
+      "id": 1224,
+      "before_m": 0.050099976149236,
+      "after_m": 0.20099999917548472
+    },
+    {
+      "id": 1274,
+      "before_m": 0.0620315233866946,
+      "after_m": 0.20099999109911293
+    },
+    {
+      "id": 1312,
+      "before_m": 0.11383790774697888,
+      "after_m": 0.20099995926071124
+    }
+  ],
+  "required_nominal_depth_m": 0.181,
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-watercourse-continuity\\terrain_v30.npz": "40d8cfd9874e9260464f9e3c38c07d81a15c8aed374083a52c98f042c0161c2e",
+    "E:\\DayZ-Baltic-Build\\v30-wave-margin-constrained\\terrain_v30.npz": "d5dadae846bcc60ecb4e03afbdb8db2e833ca209a54a3228a376682a51482f65",
+    "E:\\DayZ-Baltic-Build\\v30-continuity-dedup-package\\runtime-fixture\\reference.json": "fd08ec8e41af8275ca83ee388888a83a71be5e3fdfaec3eb0a63bd564e096f18",
+    "E:\\DayZ-Baltic-Build\\v30-water-temporal-v2\\reference.json": "3cecf5ad63ae46380057f835bf9d657b172c153cab341e1d2caf1d0b69cc8a48",
+    "E:\\DayZ-Baltic-Build\\v30-wave-margin-constrained\\road-gates-historical.json": "382dc084f2c66e6587494ab4108c3e1ae06dd3fa29565833feec70b27a5cf8eb",
+    "P:\\DayZ_Baltic_12km_dev\\tools\\terrain\\review_wave_margins_v30.py": "f9bac8456a02334a20eaf7e13beca77ea255e032a89888b2d0bfe4d48ec35727"
+  },
+  "limits": [
+    "No engine, visual or updated navmesh acceptance from this offline review.",
+    "Dry samples keep frozen coordinates and classification; they are not all land pixels."
+  ]
+}

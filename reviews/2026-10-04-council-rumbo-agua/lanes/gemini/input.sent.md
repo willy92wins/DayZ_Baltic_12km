@@ -1,0 +1,1 @@
+Lee con tu herramienta de lectura de ficheros (nunca con comandos de shell) el brief completo en E:\DayZ-Baltic-Build\council-rumbo-2026-10-04\brief\BRIEF.md y cúmplelo al pie de la letra. Tu respuesta final debe ser el dictamen completo en el formato exacto que pide el brief, terminando en FIN-DICTAMEN.

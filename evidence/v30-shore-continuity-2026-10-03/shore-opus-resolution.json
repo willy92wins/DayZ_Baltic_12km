@@ -1,0 +1,37 @@
+{
+  "piece_clearance": {
+    "changed_wet_under_5cm": 49,
+    "new_wet_under_5cm": 49,
+    "changed_dry_under_3cm": 350,
+    "wet_changed_min_m": 0.024999904632568626,
+    "dry_changed_min_m": 0.024999618530273438
+  },
+  "tidal": {
+    "wet_class1or4_above_08": 0,
+    "changed_wet_without_pond_above_05": 7
+  },
+  "mixed_faces": {
+    "new_or_worsened_over35": 157,
+    "new_over35": 53,
+    "improved_under35": 159,
+    "max_worsening_deg": 5.3745473047482335
+  },
+  "native_library_cross_collisions": [],
+  "low_pond_wet_queries": 22,
+  "adjudication": {
+    "piece_margins": "confirmed; restored .05 wet/.03 dry authoring bounds",
+    "face_regressions": "confirmed; reverted offending edits, final gate zero",
+    "low_pond_presence": "verifier now inconclusive if global sea masks an unidentified low pond",
+    "cell_edge_ownership": "vertices retained as height-only controls; triangle interiors test water",
+    "tidal_class1or4_level_assumption": "no contradictory vertices in the actual source",
+    "template_collisions": "none among new templates or against both native peer libraries",
+    "dtype_cutoff": "confirmed 467 cells mismatch in readers; normalized to producer float64 without changing water models"
+  },
+  "final_candidate_sha256": "73b01bb4a6e94e7659c51ae3fd274c72caeb408a11ee3a31560678ba98036dbd",
+  "consumer_dtype_parity": true,
+  "peer_libraries": {
+    "Baltic_Water_V2.tml": 6187,
+    "Narva_Vanilla.tml": 7
+  },
+  "native_consumer_pending": true
+}

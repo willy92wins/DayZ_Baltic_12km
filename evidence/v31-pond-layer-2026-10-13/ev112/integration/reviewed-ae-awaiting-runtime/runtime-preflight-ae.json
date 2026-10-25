@@ -1,0 +1,68 @@
+{
+  "status": "PREFLIGHT_PASS_NOT_RUNTIME",
+  "observed_at_utc": "2026-10-19 18:25:16 UTC",
+  "request": {
+    "project": "DayZ_MCP",
+    "mode": "server",
+    "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticBridgeProbeV2.BalticTrial",
+    "extra_mods": [
+      "P:\\Mods\\@DayZ_Baltic_EV112_LatticeForestV1"
+    ],
+    "no_base_mods": true,
+    "no_file_patching": true,
+    "build": false,
+    "takeover": false,
+    "preflight": true
+  },
+  "tool_result": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "server",
+    "run_id": null,
+    "phase": "validating",
+    "elapsed_s": 0.728,
+    "artifacts_paths": [],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": null,
+    "client_alive": null,
+    "process_alive": null,
+    "bridge_ready": null,
+    "reason": null,
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": null,
+    "steam_pid_repair": null,
+    "steam_restarted": null,
+    "client_death_diagnosis": null,
+    "storage_rotated": null,
+    "storage_backup": null,
+    "storage_reset_notice": null,
+    "storage_recovery_reason": null,
+    "preflight": true,
+    "box_busy": true,
+    "occupied_by_run_id": null,
+    "preflight_skipped_checks": [
+      "process_launch",
+      "readiness",
+      "initialization_evidence"
+    ],
+    "caller_tool_registry_stale": false
+  },
+  "initial_rejection": {
+    "code": "bad_mod",
+    "reason": "Forward slash spelling rejected by normalized Windows path contract.",
+    "source": "P:/DayZ_MCP_dev/tools/dayz_mcp/dayz_test_request.py:256-273"
+  },
+  "limits": "No process launched; final probe CSV not yet installed. Process launch/readiness/initialization skipped. Box was occupied by foreign processes. No invalid_native_launcher_bundle error and no launcher renewal."
+}

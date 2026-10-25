@@ -1,0 +1,913 @@
+{
+  "schema": "ev94.wet-bank-f32-ac3-conflict-certificate.v1",
+  "status": "CERTIFIED_NO_ASSIGNMENT_WITHIN_MINUS_ONE_ZERO_PLUS_ONE_ULP",
+  "conversion_or_search_executed": false,
+  "pinned_conversion_receipt": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\real-conversion-01\\receipt.json",
+    "sha256": "53bd39ddf07e4ffac35a3de7ebdd045970d331ff2f071d2b33a61bf9f61707fb",
+    "status": "NO_FEASIBLE_AC3",
+    "elapsed_seconds": 0.6719999999622814,
+    "peak_working_set_bytes": 158560256,
+    "source_readset_equal": true
+  },
+  "diagnostic_exception": {
+    "status": "NO_FEASIBLE_AC3",
+    "message": "AC-3 emptied domain at var 83 rc=[np.int32(864), np.int32(1187)]"
+  },
+  "focus": {
+    "variable_index": 83,
+    "rc": [
+      864,
+      1187
+    ],
+    "raw_float32_m": 5.671956539154053,
+    "three_options_order_minus1_raw_plus1_m": [
+      5.6719560623168945,
+      5.671956539154053,
+      5.671957015991211
+    ],
+    "initial_unary_domain_options": [
+      0,
+      1,
+      2
+    ],
+    "final_ac3_domain_options": []
+  },
+  "two_relation_certificate": {
+    "crossing_76_forces_focus_plus_one": true,
+    "crossing_80_excludes_focus_plus_one": true,
+    "intersection_of_supported_focus_options": [],
+    "no_endpoint_neighbor_option_in_current_domain_changes_these_sets": true,
+    "records": [
+      {
+        "source": "crossing:76",
+        "relation_index": 38,
+        "surface": "P",
+        "cell_rc": [
+          863,
+          1186
+        ],
+        "edge_rc": [
+          [
+            863,
+            1187
+          ],
+          [
+            864,
+            1187
+          ]
+        ],
+        "endpoint_variable_indices": [
+          72,
+          83
+        ],
+        "endpoint_variable_rc": [
+          [
+            863,
+            1187
+          ],
+          [
+            864,
+            1187
+          ]
+        ],
+        "focus_endpoint_position": 1,
+        "level_endpoints_m": [
+          5.525,
+          5.525
+        ],
+        "t_interval_exact": [
+          "116769745482547/671719463321600",
+          "1834920245208405/9007199254740992"
+        ],
+        "t_interval_decimal": [
+          0.17383707315123753,
+          0.20371707045812093
+        ],
+        "t_width_fraction": 0.029879997306883392,
+        "width_along_6m_edge_m": 0.17927998384130034,
+        "dry_endpoint": 1,
+        "direct_supported_pairs_option_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "focus_supported_option_indices": [
+          2
+        ],
+        "all_direct_fraction_tables_agree": true,
+        "t_values_by_option_pair": [
+          [
+            0.1738363218961341,
+            0.17383678789940119,
+            0.17383725390214255
+          ],
+          [
+            0.17383641994980975,
+            0.17383688595328436,
+            0.1738373519562333
+          ],
+          [
+            0.173836518003596,
+            0.17383698400727818,
+            0.17383745001043463
+          ]
+        ]
+      },
+      {
+        "source": "crossing:80",
+        "relation_index": 42,
+        "surface": "P",
+        "cell_rc": [
+          863,
+          1187
+        ],
+        "edge_rc": [
+          [
+            864,
+            1187
+          ],
+          [
+            864,
+            1188
+          ]
+        ],
+        "endpoint_variable_indices": [
+          83,
+          84
+        ],
+        "endpoint_variable_rc": [
+          [
+            864,
+            1187
+          ],
+          [
+            864,
+            1188
+          ]
+        ],
+        "focus_endpoint_position": 0,
+        "level_endpoints_m": [
+          5.525,
+          5.525
+        ],
+        "t_interval_exact": [
+          "6783059949562539/72057594037927936",
+          "116769745482547/663689753526272"
+        ],
+        "t_interval_decimal": [
+          0.09413386666771355,
+          0.17594025651614145
+        ],
+        "t_width_fraction": 0.08180638984842792,
+        "width_along_6m_edge_m": 0.4908383390905675,
+        "dry_endpoint": 0,
+        "direct_supported_pairs_option_indices": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "focus_supported_option_indices": [
+          0,
+          1
+        ],
+        "all_direct_fraction_tables_agree": true,
+        "t_values_by_option_pair": [
+          [
+            0.17593951396290483,
+            0.1759396144035765,
+            0.17593971484436283
+          ],
+          [
+            0.1759399844035258,
+            0.17594008484440868,
+            0.17594018528540623
+          ],
+          [
+            0.17594045484360962,
+            0.17594055528470373,
+            0.17594065572591253
+          ]
+        ]
+      }
+    ]
+  },
+  "ac3_trace_event_count": 15,
+  "ac3_trace_replay_matches_production": true,
+  "ac3_trace": [
+    {
+      "sequence": 0,
+      "variable_index": 2,
+      "variable_rc": [
+        857,
+        1183
+      ],
+      "against_index": 1,
+      "against_rc": [
+        857,
+        1182
+      ],
+      "relation_index": 0,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:6",
+      "relation_endpoints_rc": [
+        [
+          857,
+          1182
+        ],
+        [
+          857,
+          1183
+        ]
+      ],
+      "removed_options": [
+        0
+      ],
+      "against_domain_options_at_step": [
+        1
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          1
+        ]
+      },
+      "remaining_options": [
+        1,
+        2
+      ]
+    },
+    {
+      "sequence": 1,
+      "variable_index": 2,
+      "variable_rc": [
+        857,
+        1183
+      ],
+      "against_index": 1,
+      "against_rc": [
+        857,
+        1182
+      ],
+      "relation_index": 1,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:7",
+      "relation_endpoints_rc": [
+        [
+          857,
+          1182
+        ],
+        [
+          857,
+          1183
+        ]
+      ],
+      "removed_options": [
+        2
+      ],
+      "against_domain_options_at_step": [
+        1
+      ],
+      "unsupported_by_against_options": {
+        "2": [
+          1
+        ]
+      },
+      "remaining_options": [
+        1
+      ]
+    },
+    {
+      "sequence": 2,
+      "variable_index": 4,
+      "variable_rc": [
+        857,
+        1185
+      ],
+      "against_index": 3,
+      "against_rc": [
+        857,
+        1184
+      ],
+      "relation_index": 2,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:14",
+      "relation_endpoints_rc": [
+        [
+          857,
+          1184
+        ],
+        [
+          857,
+          1185
+        ]
+      ],
+      "removed_options": [
+        0
+      ],
+      "against_domain_options_at_step": [
+        1
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          1
+        ]
+      },
+      "remaining_options": [
+        1,
+        2
+      ]
+    },
+    {
+      "sequence": 3,
+      "variable_index": 13,
+      "variable_rc": [
+        858,
+        1183
+      ],
+      "against_index": 2,
+      "against_rc": [
+        857,
+        1183
+      ],
+      "relation_index": 6,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:18",
+      "relation_endpoints_rc": [
+        [
+          857,
+          1183
+        ],
+        [
+          858,
+          1183
+        ]
+      ],
+      "removed_options": [
+        0
+      ],
+      "against_domain_options_at_step": [
+        1
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          1
+        ]
+      },
+      "remaining_options": [
+        1,
+        2
+      ]
+    },
+    {
+      "sequence": 4,
+      "variable_index": 13,
+      "variable_rc": [
+        858,
+        1183
+      ],
+      "against_index": 2,
+      "against_rc": [
+        857,
+        1183
+      ],
+      "relation_index": 7,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:19",
+      "relation_endpoints_rc": [
+        [
+          857,
+          1183
+        ],
+        [
+          858,
+          1183
+        ]
+      ],
+      "removed_options": [
+        2
+      ],
+      "against_domain_options_at_step": [
+        1
+      ],
+      "unsupported_by_against_options": {
+        "2": [
+          1
+        ]
+      },
+      "remaining_options": [
+        1
+      ]
+    },
+    {
+      "sequence": 5,
+      "variable_index": 14,
+      "variable_rc": [
+        858,
+        1184
+      ],
+      "against_index": 13,
+      "against_rc": [
+        858,
+        1183
+      ],
+      "relation_index": 10,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:22",
+      "relation_endpoints_rc": [
+        [
+          858,
+          1183
+        ],
+        [
+          858,
+          1184
+        ]
+      ],
+      "removed_options": [
+        2
+      ],
+      "against_domain_options_at_step": [
+        1
+      ],
+      "unsupported_by_against_options": {
+        "2": [
+          1
+        ]
+      },
+      "remaining_options": [
+        0,
+        1
+      ]
+    },
+    {
+      "sequence": 6,
+      "variable_index": 4,
+      "variable_rc": [
+        857,
+        1185
+      ],
+      "against_index": 3,
+      "against_rc": [
+        857,
+        1184
+      ],
+      "relation_index": 12,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:24",
+      "relation_endpoints_rc": [
+        [
+          857,
+          1184
+        ],
+        [
+          857,
+          1185
+        ]
+      ],
+      "removed_options": [
+        2
+      ],
+      "against_domain_options_at_step": [
+        1
+      ],
+      "unsupported_by_against_options": {
+        "2": [
+          1
+        ]
+      },
+      "remaining_options": [
+        1
+      ]
+    },
+    {
+      "sequence": 7,
+      "variable_index": 15,
+      "variable_rc": [
+        858,
+        1185
+      ],
+      "against_index": 14,
+      "against_rc": [
+        858,
+        1184
+      ],
+      "relation_index": 14,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:26",
+      "relation_endpoints_rc": [
+        [
+          858,
+          1184
+        ],
+        [
+          858,
+          1185
+        ]
+      ],
+      "removed_options": [
+        0
+      ],
+      "against_domain_options_at_step": [
+        0,
+        1
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          0,
+          1
+        ]
+      },
+      "remaining_options": [
+        1,
+        2
+      ]
+    },
+    {
+      "sequence": 8,
+      "variable_index": 27,
+      "variable_rc": [
+        859,
+        1186
+      ],
+      "against_index": 26,
+      "against_rc": [
+        859,
+        1185
+      ],
+      "relation_index": 20,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:37",
+      "relation_endpoints_rc": [
+        [
+          859,
+          1185
+        ],
+        [
+          859,
+          1186
+        ]
+      ],
+      "removed_options": [
+        0
+      ],
+      "against_domain_options_at_step": [
+        0,
+        1,
+        2
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          0,
+          1,
+          2
+        ]
+      },
+      "remaining_options": [
+        1,
+        2
+      ]
+    },
+    {
+      "sequence": 9,
+      "variable_index": 48,
+      "variable_rc": [
+        861,
+        1185
+      ],
+      "against_index": 49,
+      "against_rc": [
+        861,
+        1186
+      ],
+      "relation_index": 22,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:54",
+      "relation_endpoints_rc": [
+        [
+          861,
+          1185
+        ],
+        [
+          861,
+          1186
+        ]
+      ],
+      "removed_options": [
+        0
+      ],
+      "against_domain_options_at_step": [
+        0,
+        1
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          0,
+          1
+        ]
+      },
+      "remaining_options": [
+        1,
+        2
+      ]
+    },
+    {
+      "sequence": 10,
+      "variable_index": 60,
+      "variable_rc": [
+        862,
+        1186
+      ],
+      "against_index": 61,
+      "against_rc": [
+        862,
+        1187
+      ],
+      "relation_index": 26,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:64",
+      "relation_endpoints_rc": [
+        [
+          862,
+          1186
+        ],
+        [
+          862,
+          1187
+        ]
+      ],
+      "removed_options": [
+        0,
+        1
+      ],
+      "against_domain_options_at_step": [
+        0,
+        1
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          0,
+          1
+        ]
+      },
+      "remaining_options": [
+        2
+      ]
+    },
+    {
+      "sequence": 11,
+      "variable_index": 62,
+      "variable_rc": [
+        862,
+        1188
+      ],
+      "against_index": 61,
+      "against_rc": [
+        862,
+        1187
+      ],
+      "relation_index": 28,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:66",
+      "relation_endpoints_rc": [
+        [
+          862,
+          1187
+        ],
+        [
+          862,
+          1188
+        ]
+      ],
+      "removed_options": [
+        0
+      ],
+      "against_domain_options_at_step": [
+        0,
+        1
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          0,
+          1
+        ]
+      },
+      "remaining_options": [
+        1,
+        2
+      ]
+    },
+    {
+      "sequence": 12,
+      "variable_index": 72,
+      "variable_rc": [
+        863,
+        1187
+      ],
+      "against_index": 71,
+      "against_rc": [
+        863,
+        1186
+      ],
+      "relation_index": 32,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:70",
+      "relation_endpoints_rc": [
+        [
+          863,
+          1186
+        ],
+        [
+          863,
+          1187
+        ]
+      ],
+      "removed_options": [
+        2
+      ],
+      "against_domain_options_at_step": [
+        1,
+        2
+      ],
+      "unsupported_by_against_options": {
+        "2": [
+          1,
+          2
+        ]
+      },
+      "remaining_options": [
+        0,
+        1
+      ]
+    },
+    {
+      "sequence": 13,
+      "variable_index": 83,
+      "variable_rc": [
+        864,
+        1187
+      ],
+      "against_index": 72,
+      "against_rc": [
+        863,
+        1187
+      ],
+      "relation_index": 38,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:76",
+      "relation_endpoints_rc": [
+        [
+          863,
+          1187
+        ],
+        [
+          864,
+          1187
+        ]
+      ],
+      "removed_options": [
+        0,
+        1
+      ],
+      "against_domain_options_at_step": [
+        0,
+        1
+      ],
+      "unsupported_by_against_options": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          0,
+          1
+        ]
+      },
+      "remaining_options": [
+        2
+      ]
+    },
+    {
+      "sequence": 14,
+      "variable_index": 83,
+      "variable_rc": [
+        864,
+        1187
+      ],
+      "against_index": 84,
+      "against_rc": [
+        864,
+        1188
+      ],
+      "relation_index": 42,
+      "relation_kind": "P_F_crossing",
+      "relation_source": "crossing:80",
+      "relation_endpoints_rc": [
+        [
+          864,
+          1187
+        ],
+        [
+          864,
+          1188
+        ]
+      ],
+      "removed_options": [
+        2
+      ],
+      "against_domain_options_at_step": [
+        0,
+        1,
+        2
+      ],
+      "unsupported_by_against_options": {
+        "2": [
+          0,
+          1,
+          2
+        ]
+      },
+      "remaining_options": []
+    }
+  ],
+  "source_readset_start": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\convert_components.py": "418016b91cfd84d60eb3f95c99cc043eea164de1afa2548f665d68d616aec876",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\PLAN.md": "82da5f4a14abd749a8bd59fd865dffca05dbf4be67df29df58cce105aed2899c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\test_components.py": "81062389833baac05c1b3d58265c140b16bca3569a8b71f833e49e5ed51f0a80",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\real-enumeration-01\\compatibility-diagnostic.json": "0cb852c2aa3bdd99e7b1dbdfb079df5f9faa65c3db854a3ff1389b25d8b53da7",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solution.npz": "1b7a23ebb3c203427f1c77cb8de6becfca750746e47f5494bba6723b0610eab1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\design\\water_v3.geojson": "caa333e365c2a4511f839937a9d76a5aa157a0ef925d6ee4b5efcc4ebb38f8a9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\crossing-geometry-fraction-v2.json": "a0331f83ec496d196ba2599eb96d2d0b1861793a871f60e424614326c372b5e8",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\run_once.py": "c1a349fc23b440221d54f3624037785380c62d8e4283d0d29b4ca8842e25766e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepare_wet_bank_matrices.py": "65e05a6540026b08df7effa53c58534121bb2fa89e116a2ef07ad46ba0edf286",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\verify_wet_bank_result.py": "1f3e1fe776bcca2d98a522b9755b9f0c5daa4d6144796d8f16bb8eb8099b4c70",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\PLAN.md": "28165d3d5c5d06dbe4383c5ad1d5f64d4e33f002d77c05873b809a5da470ad7a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\executor.py": "9a0dbffc55e9956209083fe4963e2636b6f0174de1dc150bdfa15f070d48149e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\test_executor.py": "4a2579321aa18bdf9ab63d0b0b811edf18663525852fbe82d7e369baab1e562e"
+  },
+  "source_readset_end": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\convert_components.py": "418016b91cfd84d60eb3f95c99cc043eea164de1afa2548f665d68d616aec876",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\PLAN.md": "82da5f4a14abd749a8bd59fd865dffca05dbf4be67df29df58cce105aed2899c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\test_components.py": "81062389833baac05c1b3d58265c140b16bca3569a8b71f833e49e5ed51f0a80",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\real-enumeration-01\\compatibility-diagnostic.json": "0cb852c2aa3bdd99e7b1dbdfb079df5f9faa65c3db854a3ff1389b25d8b53da7",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solution.npz": "1b7a23ebb3c203427f1c77cb8de6becfca750746e47f5494bba6723b0610eab1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\design\\water_v3.geojson": "caa333e365c2a4511f839937a9d76a5aa157a0ef925d6ee4b5efcc4ebb38f8a9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\crossing-geometry-fraction-v2.json": "a0331f83ec496d196ba2599eb96d2d0b1861793a871f60e424614326c372b5e8",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\projection.py": "a990dc2d33fca4fd2a446b958f0412a2d752a5d3072a85d82058bb634cfaf44b",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\run_once.py": "c1a349fc23b440221d54f3624037785380c62d8e4283d0d29b4ca8842e25766e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepare_wet_bank_matrices.py": "65e05a6540026b08df7effa53c58534121bb2fa89e116a2ef07ad46ba0edf286",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\verify_wet_bank_result.py": "1f3e1fe776bcca2d98a522b9755b9f0c5daa4d6144796d8f16bb8eb8099b4c70",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\PLAN.md": "28165d3d5c5d06dbe4383c5ad1d5f64d4e33f002d77c05873b809a5da470ad7a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\executor.py": "9a0dbffc55e9956209083fe4963e2636b6f0174de1dc150bdfa15f070d48149e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\test_executor.py": "4a2579321aa18bdf9ab63d0b0b811edf18663525852fbe82d7e369baab1e562e"
+  },
+  "source_readset_equal": true,
+  "interpretation": {
+    "finding": "Exact crossing-interval tables disagree on the shared focus value: crossing 76 requires its +1 ULP choice, while crossing 80 forbids that choice for every \u00b11 endpoint combination.",
+    "not_established": "This does not determine whether a larger, mathematically derived representable neighborhood is feasible; it proves only infeasibility of the frozen three-value domain. No \u00b12 or other widened domain was tested.",
+    "interval_scale": "The t intervals are not zero-width; the raw crossings sit within roughly micrometre-scale edge distance of active interval boundaries. Their ULP directions conflict at the shared vertex."
+  },
+  "diagnostic_script_sha256": "9550de052414b1b0088cd19cc837848c055d358a802a3160fcb652c24a1b9075"
+}

@@ -1,0 +1,54 @@
+{
+  "status": "INCONCLUSIVE_OR_FAILED_STAGE",
+  "complete": false,
+  "stages": {
+    "0": {
+      "passed": true,
+      "checks": {
+        "completion_marker": true,
+        "time_order": true,
+        "sample_gap_at_most_0_6s": true,
+        "alive": true,
+        "max_step_2_5m": true,
+        "control_start": true,
+        "control_end": true,
+        "alert": true
+      },
+      "samples": 59,
+      "d_start_end": [
+        -30.002327110023185,
+        -42.07918554363307
+      ],
+      "max_step_m": 1.4693704682281108,
+      "health_min": 100.0
+    },
+    "1": {
+      "passed": false,
+      "checks": {
+        "completion_marker": false,
+        "time_order": true,
+        "sample_gap_at_most_0_6s": true,
+        "alive": false,
+        "max_step_2_5m": true,
+        "start": true,
+        "end": false,
+        "span_sampled": true,
+        "on_deck": true,
+        "within_bridge": false
+      },
+      "samples": 202,
+      "d_start_end": [
+        -30.002327110023185,
+        -25.195482969633183
+      ],
+      "max_step_m": 1.502963738750723,
+      "health_min": 0.0
+    },
+    "2": {
+      "passed": false,
+      "reason": "No trajectory"
+    }
+  },
+  "limit": "One infected per stage in Narva; not regional AI, CE or load acceptance.",
+  "log_sha256": "68d12a12ffc9369504d88137df685443a14d539278f0181de24ce13dbaf26ea4"
+}

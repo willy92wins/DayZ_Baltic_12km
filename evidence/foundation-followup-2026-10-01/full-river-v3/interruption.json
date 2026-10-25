@@ -1,0 +1,90 @@
+{
+  "status": "INCOMPLETE_ORCHESTRATION_LEASE_EXPIRED",
+  "run_id": "47f718bf-c2b2-4578-92f1-d1247ab93c33",
+  "files": {
+    "baltic_fullriver_v3_10.log": "49b61cc2fb351c48cb0842523db69271f47c5ac531d80b00c29c80ed0ddfaf47",
+    "baltic_fullriver_v3_11.log": "66b921a76b93fd2c18ece44a42a36ffe1a00d9397583723c3235ee4255264591",
+    "baltic_fullriver_v3_6.log": "0e4a61482e04aae24fdb13f371fe8a05b50dd7256a5176b0e296cfdaaa528593",
+    "baltic_fullriver_v3_8.log": "09d02535ed5c730310fccd5d2bd7d3bc8a1db45d9acd40516f770cd58415512c"
+  },
+  "audit_events": [
+    {
+      "timestamp_utc": "2026-10-01T11:30:00.523659Z",
+      "event": "session_release_finished",
+      "reason": "owner_release",
+      "decision": "released",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:30:10.963337Z",
+      "event": "session_release_finished",
+      "reason": "owner_release",
+      "decision": "released",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:30:34.374412Z",
+      "event": "session_heartbeat",
+      "reason": "owner_heartbeat",
+      "decision": "renewed",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:31:59.941302Z",
+      "event": "session_heartbeat",
+      "reason": "owner_heartbeat",
+      "decision": "renewed",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:33:25.313419Z",
+      "event": "session_heartbeat",
+      "reason": "owner_heartbeat",
+      "decision": "renewed",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:34:16.211374Z",
+      "event": "session_heartbeat",
+      "reason": "owner_heartbeat",
+      "decision": "renewed",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:36:28.588218Z",
+      "event": "session_expired",
+      "reason": "lease_ttl",
+      "decision": "invalidated",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:36:28.598398Z",
+      "event": "session_release_finished",
+      "reason": "lease_ttl",
+      "decision": "released",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:36:58.224043Z",
+      "event": "run_reaped",
+      "reason": "all_processes_gone_or_foreign",
+      "decision": "reaped",
+      "run_id": "47f718bf-c2b2-4578-92f1-d1247ab93c33"
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:41:54.565024Z",
+      "event": "session_release_finished",
+      "reason": "owner_release",
+      "decision": "released",
+      "run_id": null
+    },
+    {
+      "timestamp_utc": "2026-10-01T11:42:18.238436Z",
+      "event": "session_release_finished",
+      "reason": "owner_release",
+      "decision": "released",
+      "run_id": null
+    }
+  ],
+  "limit": "Case 11 completed; 6/8/10 aborted. No crash claim. Repeat unchanged fixture after pursuit with heartbeat every <=45s."
+}

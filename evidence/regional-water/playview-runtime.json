@@ -1,0 +1,76 @@
+{
+  "run": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "run_id": "34293d71-fb12-4e00-b861-22843f2fec93",
+    "phase": "completed",
+    "elapsed_s": 22.366,
+    "artifacts_paths": [
+      "P:\\DayZ_MCP_dev\\_server\\profiles",
+      "P:\\DayZ_MCP_dev\\_client\\profiles"
+    ],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": true,
+    "client_alive": true,
+    "process_alive": true,
+    "bridge_ready": false,
+    "reason": "binding_not_ready",
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": "observed",
+    "steam_pid_repair": null,
+    "steam_restarted": false,
+    "client_death_diagnosis": null,
+    "caller_tool_registry_stale": false
+  },
+  "close": {
+    "run_id": "34293d71-fb12-4e00-b861-22843f2fec93",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 3.4169850000180304,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "client",
+        "termination_line": true,
+        "rpt_rotated": false
+      },
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ]
+  },
+  "result": "PASS_OBSERVED_REGIONAL_VIEWS_WITH_ONE_OCCLUDED_FIXTURE_VIEW",
+  "map_sha256": "ebc60f4f089b3e125426263b456d1f9662bc828c506993bbabbf0e43023a06d4",
+  "probe_sha256": "308caf03699bb05f28c1ad5ef3b2c8910a68874c26b6cbcbf1e479331879ec26",
+  "observations": {
+    "phase0": "SPB600m,1600view,near0.07: continuous terrain and water, no giant rectangles or white cap in visible region",
+    "phase1": "SPB1300m,12000view,near10: panorama continuous; no stripes or white arc inside map; visible northern map limit",
+    "phase2": "Shlisselburg camera1.7m above ground,1600view,near0.07: shore observed, no striped water",
+    "phase3": "INCONCLUSIVE: free camera overlaps player head and is occluded",
+    "restored_player": "Native player view atSPB dry point, no hair occlusion or terrain patches"
+  },
+  "limits": [
+    "WorldCover art remains provisional/pixelated",
+    "High-camera setup changes inspection parameters, not map geometry or player graphics preferences",
+    "No general fix claimed for white arc at1600view from1300m"
+  ],
+  "profile_unchanged_sha256": "fc71411a298099e31e8a48a29872d9c259bd5af1275d9fb167b041a5e817661c"
+}

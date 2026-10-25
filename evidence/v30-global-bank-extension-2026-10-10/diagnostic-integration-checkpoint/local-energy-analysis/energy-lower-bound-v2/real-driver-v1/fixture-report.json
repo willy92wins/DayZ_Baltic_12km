@@ -1,0 +1,62 @@
+{
+  "schema": "energy-lower-bound-v2.real-driver-review.v1",
+  "status": "PREPARATION_AND_SYNTHETIC_FIXTURES_PASS_REAL_LP_NOT_RUN",
+  "scope": "Exact tangent lower-bound driver prepared for pinned 121-node diagnostic; no real model rows loaded and no LP invoked.",
+  "source": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\diagnostic-polish-consumer-v1\\analysis-v2-recovery\\energy-lower-bound-v2\\real-driver-v1\\real_energy_bound.py",
+    "sha256": "dffca5ca7dffacd45430efc579a63acefa5390a5e0f95211312bd0a5bf7ec7ab"
+  },
+  "tests": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\diagnostic-polish-consumer-v1\\analysis-v2-recovery\\energy-lower-bound-v2\\real-driver-v1\\test_real_energy_bound.py",
+    "sha256": "cb87419a7f1c6acf8b5e91f874af0facadc9ac2154fb2887d2561e73b23d3284",
+    "command": "GIS Python: -m unittest -v test_real_energy_bound",
+    "passed": 10,
+    "fixture_names": [
+      "exact physical rows and local RC; fixed raw indices excluded",
+      "crossing endpoint orientation",
+      "dual residual box support and negative multiplier",
+      "threshold subtraction-rounding conservatism",
+      "global/local RC and shape guard",
+      "nonfinite inputs fail closed",
+      "real-LP entrypoint fails closed",
+      "pre-square overflow guard",
+      "accumulator overflow guard",
+      "physical crossing superset edge cases"
+    ]
+  },
+  "readme": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\diagnostic-polish-consumer-v1\\analysis-v2-recovery\\energy-lower-bound-v2\\real-driver-v1\\README.md",
+    "sha256": "6e02c80b9fa07ed754913b7113072a9c412d0a98c4d9e2ca4ec5be6c242d5f87"
+  },
+  "pinned_inputs": {
+    "v2_helper": "af7b9a28bbfecf935d97f4f6f796b5bee99a7d86484ec29133c5f07fa006c16d",
+    "executor": "9a0dbffc55e9956209083fe4963e2636b6f0174de1dc150bdfa15f070d48149e",
+    "prepared_attempt08": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+    "rejected_diagnostic": "2209df7542098403ceda8e27e87c91935a9832527f04663fdf8f5d8ac70149ae",
+    "diagnostic_receipt": "f540fb0e8672886c8c70a2af7c8d6ae16c3698ce7d0392e97d9ccc2d50e00902",
+    "recovery_v4_assessment": "79a4f1b09b30e98cf210e35bfc12e81388ed977c272dffd44612aec1df013279",
+    "base_ev95": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "lattice_source": "2a62d1d73af6d71af97b60b5512787a653a3637d1c54f8eb001c9d905252e396"
+  },
+  "limits": {
+    "real_lp_enabled": false,
+    "model_load_performed": false,
+    "max_total_seconds": 10,
+    "max_working_set_bytes": 268435456,
+    "lp_call_budget_seconds": 5,
+    "candidate_or_terrain_written": false
+  },
+  "gate": {
+    "raw_cost": 155.94405102975674,
+    "allowance": 1.5594405102975674E-05,
+    "conservative_threshold": 155.94406662416185,
+    "method": "Exact Fraction dual residual bound over reconstructed physical crossing/sign/D8 relaxation; subtracts a certified CSR evaluation error."
+  },
+  "blockers": [
+    "Do not run LP: recovery-v4 reports energy failure and a real compiled-water topology change: physical components 2→1, visible components 1→2, physical union area loss 0.0283188364 m².",
+    "The recovery-v4 protection/civil failure was later attributed as a consumer false failure: 16 cls5/water nodes were intentionally released; effective-fixed/P9/road counts were zero. Keep this attribution distinct from the still-real topology failure.",
+    "The bound would only diagnose whether the pinned diagnostic can meet the energy allowance under the stated physical relaxation; it would not authorize terrain or establish whole-map validity."
+  ],
+  "pinned_inputs_verified": true,
+  "verification_method": "Called real_energy_bound.verify_pins() only; it hashes the pinned files and does not load NPZ arrays or construct the real model."
+}

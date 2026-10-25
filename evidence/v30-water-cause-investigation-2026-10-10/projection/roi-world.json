@@ -1,0 +1,1193 @@
+{
+  "status": "EV73_ROI_RAY_TO_TERRAIN_LINKAGE",
+  "image_used": "E:\\DayZ-Baltic-Build\\v30-base-surface-runtime-20261009\\capture_20261009_233431_541.jpg",
+  "image_sha256": "6c441506e2ae34e4f459e63971c59b0f1d3fd614d68497ece04241d6cfd8885c",
+  "image_size_px": [
+    1920,
+    1080
+  ],
+  "image_is_EV73_not_EV76_magenta": true,
+  "EV74_profile_sha256": "33ccbabd7ab0f3fab014a169d0debf23abcee5d531ac9d537ce2da0a50874703",
+  "camera_pose_fov_viewport_transfer": {
+    "position": [
+      2417,
+      65,
+      6745
+    ],
+    "matrix": [
+      [
+        0.9999999403953552,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.953230619430542,
+        0.3022438585758209
+      ],
+      [
+        0.0,
+        -0.3022438585758209,
+        0.953230619430542
+      ],
+      [
+        2417.0,
+        65.0,
+        6745.0
+      ]
+    ],
+    "native_fov": 1.1,
+    "viewport": [
+      1920,
+      1080
+    ],
+    "match_basis": "EV76 read-only projection pose + native FOV and same EV74 profile; applied retrospectively to EV73 image.",
+    "limitations": [
+      "EV76 capture itself is invalid magenta and not used as visual evidence.",
+      "EV73 screenshot transfer assumes unchanged rendered camera projection/viewport; no per-pixel native query exists for that already captured frame.",
+      "Geometric ray/terrain overlap does not identify the water shader/layer or establish occlusion/visibility."
+    ]
+  },
+  "terrain": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-complete-dry-surface-20261009\\candidate\\terrain.npz",
+    "sha256": "b54963eb3cf5429c6192fb6f1e8f6d10c9a3cc397fdbabdf5c2f89cbabcf8e36",
+    "cell_size_m": 6.0,
+    "z_top_m": 12282.0,
+    "face_diagonal": "NW_NE_SE / NW_SW_SE; terrain heights and F field values interpolated on the actual selected face with barycentric weights.",
+    "P_source": "E:\\DayZ-Baltic-Build\\v30-complete-dry-surface-20261009\\candidate\\plane.npy",
+    "plane_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "F_source": "E:\\DayZ-Baltic-Build\\v30-complete-dry-surface-20261009\\candidate\\visible-field.npy",
+    "F_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "F_definition": "Four corner heights in visible-field.npy order [NW,NE,SW,SE], intersected separately on the native NW_NE_SE / NW_SW_SE triangles; terrain class and Narva/reserve masks are additional face/cell flags."
+  },
+  "geometry_sanity": {
+    "native_probe_point_id": 10,
+    "roundtrip_world_error_m": 8.007190357665633e-06,
+    "native_probe_projected_xy_px": [
+      1018.511072070219,
+      535.9905308054168
+    ],
+    "optical_axis_P_cell": [
+      889,
+      402
+    ],
+    "optical_axis_F_cell": [
+      889,
+      402
+    ],
+    "optical_axis_P_ground_under_m": -2.748500107401142,
+    "optical_axis_F_ground_under_m": -2.7453499405323685,
+    "optical_axis_F_minus_ground_m": 4.728169755190945,
+    "optical_axis_ground_hit": {
+      "t": 228.13774404122108,
+      "point": [
+        2417.0,
+        -3.9532320458016557,
+        6962.4678830678995
+      ],
+      "row": 886,
+      "col": 402,
+      "triangle": "NW_NE_SE",
+      "barycentric": [
+        0.16666666666666663,
+        0.24464717798327204,
+        0.5886861553500613
+      ],
+      "ground_y": -3.9532320458016557,
+      "face_class_codes": [
+        3,
+        3,
+        3
+      ],
+      "face_class_signature": [
+        3
+      ],
+      "face_narva_vertices": [
+        true,
+        true,
+        true
+      ],
+      "face_narva_any": true,
+      "face_narva_all": true,
+      "face_reserve_vertices": [
+        false,
+        false,
+        false
+      ],
+      "face_reserve_any": false,
+      "face_reserve_all": false
+    },
+    "optical_axis_P_point": [
+      2417.0,
+      1.9750000000000014,
+      6943.771151455965
+    ],
+    "optical_axis_F_point": [
+      2417.0,
+      1.9828198146585763,
+      6943.746488963878
+    ]
+  },
+  "rois": {
+    "reported_grey_EV74": {
+      "pixel_box_xyxy_half_open": [
+        770,
+        620,
+        860,
+        680
+      ],
+      "sampling_step_px": 4,
+      "ray_samples": 345,
+      "first_P_plane_intersections": 345,
+      "first_F_surface_intersections": 345,
+      "first_terrain_face_intersections": 345,
+      "F_intersection_pct_of_all_rays": 100.0,
+      "F_face_narva_any_pct_of_F_hits": 100.0,
+      "F_face_narva_all_pct_of_F_hits": 100.0,
+      "F_face_reserve_any_pct_of_F_hits": 20.28985507246377,
+      "F_face_reserve_all_pct_of_F_hits": 6.666666666666667,
+      "ground_hit_class0_pct_of_ground_hits": 0.0,
+      "P_m": {
+        "min": 2.125,
+        "median": 2.1750000000000003,
+        "max": 2.2
+      },
+      "P_minus_ground_m": {
+        "min": 3.8485170120817322,
+        "median": 5.403809705955769,
+        "max": 6.59345945855746
+      },
+      "F_surface_y_m": {
+        "min": 2.1371646811231955,
+        "median": 2.169796154049365,
+        "max": 2.1965678193817837
+      },
+      "F_minus_P_m": {
+        "min": -0.018143016867032014,
+        "median": 0.0013426430535887768,
+        "max": 0.018445166951158942
+      },
+      "F_face_vertex_heights_m": {
+        "[2.13125, 2.125, 2.1375]": 1,
+        "[2.13125, 2.1437500000000003, 2.1375]": 6,
+        "[2.1375, 2.15, 2.1437500000000003]": 8,
+        "[2.1437500000000003, 2.1375, 2.15]": 7,
+        "[2.1437500000000003, 2.15, 2.15]": 13,
+        "[2.15, 2.1437500000000003, 2.15]": 7,
+        "[2.15, 2.1437500000000003, 2.1625]": 1,
+        "[2.15, 2.15, 2.15625]": 7,
+        "[2.15, 2.15, 2.15]": 3,
+        "[2.15, 2.15, 2.1625]": 18,
+        "[2.15, 2.15625, 2.15]": 6,
+        "[2.15, 2.1625, 2.15625]": 7,
+        "[2.15, 2.1625, 2.1625]": 20,
+        "[2.15625, 2.15, 2.1625]": 14,
+        "[2.15625, 2.16875, 2.1625]": 14,
+        "[2.1625, 2.15625, 2.16875]": 14,
+        "[2.1625, 2.1625, 2.1750000000000003]": 12,
+        "[2.1625, 2.1750000000000003, 2.16875]": 13,
+        "[2.1625, 2.1750000000000003, 2.1750000000000003]": 21,
+        "[2.16875, 2.1625, 2.1750000000000003]": 9,
+        "[2.16875, 2.1812500000000004, 2.1750000000000003]": 13,
+        "[2.1750000000000003, 2.16875, 2.1812500000000004]": 9,
+        "[2.1750000000000003, 2.1750000000000003, 2.1812500000000004]": 4,
+        "[2.1750000000000003, 2.1750000000000003, 2.1875]": 13,
+        "[2.1750000000000003, 2.1875, 2.1812500000000004]": 20,
+        "[2.1750000000000003, 2.1875, 2.1875]": 18,
+        "[2.1812500000000004, 2.1750000000000003, 2.1875]": 12,
+        "[2.1812500000000004, 2.19375, 2.1875]": 18,
+        "[2.1875, 2.1812500000000004, 2.19375]": 13,
+        "[2.1875, 2.1875, 2.2]": 6,
+        "[2.1875, 2.2, 2.19375]": 6,
+        "[2.1875, 2.2, 2.2]": 2,
+        "[2.19375, 2.1875, 2.2]": 6,
+        "[2.19375, 2.2, 2.2]": 2,
+        "[2.2, 2.19375, 2.2]": 2
+      },
+      "F_face_class_signatures": {
+        "[3]": 345
+      },
+      "terrain_under_F_y_m": {
+        "min": -4.445361196822934,
+        "median": -3.2318401111239776,
+        "max": -1.6985170120817323
+      },
+      "F_minus_terrain_m": {
+        "min": 3.848517012081731,
+        "median": 5.398130690683367,
+        "max": 6.613806363774093
+      },
+      "ground_under_F_below_0_85_count": 345,
+      "ground_under_F_below_0_65_count": 345,
+      "F_surface_above_0_85_count": 345,
+      "F_before_ground_hit_count": 345,
+      "F_behind_ground_hit_count": 0,
+      "P_before_ground_hit_count": 345,
+      "F_face_narva_any_count": 345,
+      "F_face_narva_all_count": 345,
+      "F_face_reserve_any_count": 70,
+      "F_face_reserve_all_count": 23,
+      "ground_hit_y_m": {
+        "min": -4.378543349316601,
+        "median": -3.129531423481083,
+        "max": -1.4406502163737827
+      },
+      "ground_hit_face_class_signatures": {
+        "[3]": 345
+      },
+      "ground_hit_narva_any_count": 345,
+      "ground_hit_reserve_any_count": 201,
+      "ground_hit_rows_cols": {
+        "897": 4,
+        "898": 63,
+        "899": 62,
+        "900": 72,
+        "901": 83,
+        "902": 60,
+        "903": 1
+      },
+      "center_ray": {
+        "pixel": [
+          814.5,
+          648.5
+        ],
+        "P": {
+          "t": 136.50039810082862,
+          "point": [
+            2386.657101799828,
+            2.17499999999999,
+            6868.277536787266
+          ],
+          "row": 902,
+          "col": 397,
+          "P": 2.1750000000000003,
+          "terrain_at_P": {
+            "triangle": "NW_NE_SE",
+            "vertices_rc": [
+              [
+                902,
+                397
+              ],
+              [
+                902,
+                398
+              ],
+              [
+                903,
+                398
+              ]
+            ],
+            "barycentric": [
+              0.2238163666953028,
+              0.4891064311823925,
+              0.2870772021223047
+            ],
+            "terrain_face_class_codes": [
+              3,
+              3,
+              3
+            ],
+            "terrain_face_all_wet": true,
+            "terrain_face_all_class3": true,
+            "terrain_face_class_signature": [
+              3
+            ],
+            "ground_y": -3.542222967920346,
+            "narva_vertices": [
+              true,
+              true,
+              true
+            ],
+            "narva_any": true,
+            "narva_all": true,
+            "reserve_vertices": [
+              false,
+              false,
+              false
+            ],
+            "reserve_any": false,
+            "reserve_all": false,
+            "water_vertices": [
+              true,
+              true,
+              true
+            ]
+          }
+        },
+        "F": {
+          "t": 136.51677969503692,
+          "point": [
+            2386.653460308284,
+            2.1674602882448966,
+            6868.292331488314
+          ],
+          "row": 902,
+          "col": 397,
+          "triangle": "NW_NE_SE",
+          "F_vertex_heights": [
+            2.16875,
+            2.1625,
+            2.1750000000000003
+          ],
+          "F_barycentric": [
+            0.22442328195265882,
+            0.49096529943290074,
+            0.2846114186144404
+          ],
+          "F_surface_y": 2.1674602882448966,
+          "F_minus_P": -0.007539711755103706,
+          "terrain_under_F": {
+            "triangle": "NW_NE_SE",
+            "vertices_rc": [
+              [
+                902,
+                397
+              ],
+              [
+                902,
+                398
+              ],
+              [
+                903,
+                398
+              ]
+            ],
+            "barycentric": [
+              0.22442328195262462,
+              0.49096529943295764,
+              0.28461141861441774
+            ],
+            "terrain_face_class_codes": [
+              3,
+              3,
+              3
+            ],
+            "terrain_face_all_wet": true,
+            "terrain_face_all_class3": true,
+            "terrain_face_class_signature": [
+              3
+            ],
+            "ground_y": -3.5426394824917207,
+            "narva_vertices": [
+              true,
+              true,
+              true
+            ],
+            "narva_any": true,
+            "narva_all": true,
+            "reserve_vertices": [
+              false,
+              false,
+              false
+            ],
+            "reserve_any": false,
+            "reserve_all": false,
+            "water_vertices": [
+              true,
+              true,
+              true
+            ]
+          },
+          "face_class_codes": [
+            3,
+            3,
+            3
+          ],
+          "face_class_signature": [
+            3
+          ],
+          "face_narva_vertices": [
+            true,
+            true,
+            true
+          ],
+          "face_narva_any": true,
+          "face_narva_all": true,
+          "face_reserve_vertices": [
+            false,
+            false,
+            false
+          ],
+          "face_reserve_any": false,
+          "face_reserve_all": false
+        },
+        "ground": {
+          "t": 148.7036649054605,
+          "point": [
+            2383.9444175328636,
+            -3.441615392100786,
+            6879.29866707966
+          ],
+          "row": 900,
+          "col": 397,
+          "triangle": "NW_SW_SE",
+          "barycentric": [
+            0.5497778466100685,
+            0.12615256457933527,
+            0.3240695888105962
+          ],
+          "ground_y": -3.441615392100786,
+          "face_class_codes": [
+            3,
+            3,
+            3
+          ],
+          "face_class_signature": [
+            3
+          ],
+          "face_narva_vertices": [
+            true,
+            true,
+            true
+          ],
+          "face_narva_any": true,
+          "face_narva_all": true,
+          "face_reserve_vertices": [
+            true,
+            false,
+            false
+          ],
+          "face_reserve_any": true,
+          "face_reserve_all": false
+        }
+      }
+    },
+    "near_ripple_control_EV74": {
+      "pixel_box_xyxy_half_open": [
+        470,
+        845,
+        575,
+        900
+      ],
+      "sampling_step_px": 4,
+      "ray_samples": 378,
+      "first_P_plane_intersections": 378,
+      "first_F_surface_intersections": 378,
+      "first_terrain_face_intersections": 378,
+      "F_intersection_pct_of_all_rays": 100.0,
+      "F_face_narva_any_pct_of_F_hits": 100.0,
+      "F_face_narva_all_pct_of_F_hits": 100.0,
+      "F_face_reserve_any_pct_of_F_hits": 0.0,
+      "F_face_reserve_all_pct_of_F_hits": 0.0,
+      "ground_hit_class0_pct_of_ground_hits": 0.0,
+      "P_m": {
+        "min": 2.3000000000000003,
+        "median": 2.3000000000000003,
+        "max": 2.325
+      },
+      "P_minus_ground_m": {
+        "min": 3.6363377614249295,
+        "median": 5.201164316956345,
+        "max": 6.2777496364287275
+      },
+      "F_surface_y_m": {
+        "min": 2.299238277594249,
+        "median": 2.3091356933956604,
+        "max": 2.320725093744052
+      },
+      "F_minus_P_m": {
+        "min": -0.01791984852001338,
+        "median": 0.00440157123380347,
+        "max": 0.016356266165072686
+      },
+      "F_face_vertex_heights_m": {
+        "[2.3000000000000003, 2.29375, 2.3000000000000003]": 4,
+        "[2.3000000000000003, 2.3000000000000003, 2.3062500000000004]": 19,
+        "[2.3000000000000003, 2.3062500000000004, 2.3000000000000003]": 41,
+        "[2.3000000000000003, 2.3125, 2.3062500000000004]": 41,
+        "[2.3000000000000003, 2.3125, 2.3125]": 20,
+        "[2.3062500000000004, 2.3000000000000003, 2.3125]": 81,
+        "[2.3062500000000004, 2.31875, 2.3125]": 62,
+        "[2.3125, 2.3062500000000004, 2.31875]": 63,
+        "[2.3125, 2.325, 2.31875]": 39,
+        "[2.31875, 2.3125, 2.325]": 8
+      },
+      "F_face_class_signatures": {
+        "[3]": 378
+      },
+      "terrain_under_F_y_m": {
+        "min": -3.977846755501407,
+        "median": -2.89547403269865,
+        "max": -1.3369474834921156
+      },
+      "F_minus_terrain_m": {
+        "min": 3.6468001986335685,
+        "median": 5.204615150613529,
+        "max": 6.279696241654573
+      },
+      "ground_under_F_below_0_85_count": 378,
+      "ground_under_F_below_0_65_count": 378,
+      "F_surface_above_0_85_count": 378,
+      "F_before_ground_hit_count": 378,
+      "F_behind_ground_hit_count": 0,
+      "P_before_ground_hit_count": 378,
+      "F_face_narva_any_count": 378,
+      "F_face_narva_all_count": 378,
+      "F_face_reserve_any_count": 0,
+      "F_face_reserve_all_count": 0,
+      "ground_hit_y_m": {
+        "min": -3.5918156764124944,
+        "median": -1.7642265199918583,
+        "max": -0.773340541066375
+      },
+      "ground_hit_face_class_signatures": {
+        "[3]": 378
+      },
+      "ground_hit_narva_any_count": 378,
+      "ground_hit_reserve_any_count": 0,
+      "ground_hit_rows_cols": {
+        "910": 61,
+        "911": 285,
+        "912": 32
+      },
+      "center_ray": {
+        "pixel": [
+          522.5,
+          869.5
+        ],
+        "P": {
+          "t": 80.13652582297904,
+          "point": [
+            2363.4365284712035,
+            2.3249999999999957,
+            6809.195786249189
+          ],
+          "row": 912,
+          "col": 393,
+          "P": 2.325,
+          "terrain_at_P": {
+            "triangle": "NW_NE_SE",
+            "vertices_rc": [
+              [
+                912,
+                393
+              ],
+              [
+                912,
+                394
+              ],
+              [
+                913,
+                394
+              ]
+            ],
+            "barycentric": [
+              0.09391192146608773,
+              0.7720524533987145,
+              0.13403562513519773
+            ],
+            "terrain_face_class_codes": [
+              3,
+              3,
+              3
+            ],
+            "terrain_face_all_wet": true,
+            "terrain_face_all_class3": true,
+            "terrain_face_class_signature": [
+              3
+            ],
+            "ground_y": -2.9532574789688613,
+            "narva_vertices": [
+              true,
+              true,
+              true
+            ],
+            "narva_any": true,
+            "narva_all": true,
+            "reserve_vertices": [
+              false,
+              false,
+              false
+            ],
+            "reserve_any": false,
+            "reserve_all": false,
+            "water_vertices": [
+              true,
+              true,
+              true
+            ]
+          }
+        },
+        "F": {
+          "t": 80.15763319644583,
+          "point": [
+            2363.4224202454457,
+            2.3084918644345294,
+            6809.212694948705
+          ],
+          "row": 912,
+          "col": 393,
+          "triangle": "NW_NE_SE",
+          "F_vertex_heights": [
+            2.3125,
+            2.3062500000000004,
+            2.31875
+          ],
+          "F_barycentric": [
+            0.09626329242568935,
+            0.7725191990250739,
+            0.13121750854923672
+          ],
+          "F_surface_y": 2.3084918644345294,
+          "F_minus_P": -0.016508135565470816,
+          "terrain_under_F": {
+            "triangle": "NW_NE_SE",
+            "vertices_rc": [
+              [
+                912,
+                393
+              ],
+              [
+                912,
+                394
+              ],
+              [
+                913,
+                394
+              ]
+            ],
+            "barycentric": [
+              0.09626329242570364,
+              0.7725191990251119,
+              0.13121750854918446
+            ],
+            "terrain_face_class_codes": [
+              3,
+              3,
+              3
+            ],
+            "terrain_face_all_wet": true,
+            "terrain_face_all_class3": true,
+            "terrain_face_class_signature": [
+              3
+            ],
+            "ground_y": -2.9493361260088076,
+            "narva_vertices": [
+              true,
+              true,
+              true
+            ],
+            "narva_any": true,
+            "narva_all": true,
+            "reserve_vertices": [
+              false,
+              false,
+              false
+            ],
+            "reserve_any": false,
+            "reserve_all": false,
+            "water_vertices": [
+              true,
+              true,
+              true
+            ]
+          },
+          "face_class_codes": [
+            3,
+            3,
+            3
+          ],
+          "face_class_signature": [
+            3
+          ],
+          "face_narva_vertices": [
+            true,
+            true,
+            true
+          ],
+          "face_narva_any": true,
+          "face_narva_all": true,
+          "face_reserve_vertices": [
+            false,
+            false,
+            false
+          ],
+          "face_reserve_any": false,
+          "face_reserve_all": false
+        },
+        "ground": {
+          "t": 85.45264340191603,
+          "point": [
+            2359.883221041678,
+            -1.8327503621243295,
+            6813.454422922893
+          ],
+          "row": 911,
+          "col": 393,
+          "triangle": "NW_SW_SE",
+          "barycentric": [
+            0.5757371538155764,
+            0.11039267257138258,
+            0.31387017361304087
+          ],
+          "ground_y": -1.8327503621243295,
+          "face_class_codes": [
+            3,
+            3,
+            3
+          ],
+          "face_class_signature": [
+            3
+          ],
+          "face_narva_vertices": [
+            true,
+            true,
+            true
+          ],
+          "face_narva_any": true,
+          "face_narva_all": true,
+          "face_reserve_vertices": [
+            false,
+            false,
+            false
+          ],
+          "face_reserve_any": false,
+          "face_reserve_all": false
+        }
+      }
+    },
+    "dry_control_EV74": {
+      "pixel_box_xyxy_half_open": [
+        1280,
+        775,
+        1450,
+        875
+      ],
+      "sampling_step_px": 4,
+      "ray_samples": 1075,
+      "first_P_plane_intersections": 0,
+      "first_F_surface_intersections": 0,
+      "first_terrain_face_intersections": 1075,
+      "F_intersection_pct_of_all_rays": 0.0,
+      "F_face_narva_any_pct_of_F_hits": null,
+      "F_face_narva_all_pct_of_F_hits": null,
+      "F_face_reserve_any_pct_of_F_hits": null,
+      "F_face_reserve_all_pct_of_F_hits": null,
+      "ground_hit_class0_pct_of_ground_hits": 100.0,
+      "P_m": null,
+      "P_minus_ground_m": null,
+      "F_surface_y_m": null,
+      "F_minus_P_m": null,
+      "F_face_vertex_heights_m": {},
+      "F_face_class_signatures": {},
+      "terrain_under_F_y_m": null,
+      "F_minus_terrain_m": null,
+      "ground_under_F_below_0_85_count": 0,
+      "ground_under_F_below_0_65_count": 0,
+      "F_surface_above_0_85_count": 0,
+      "F_before_ground_hit_count": 0,
+      "F_behind_ground_hit_count": 0,
+      "P_before_ground_hit_count": 0,
+      "F_face_narva_any_count": 0,
+      "F_face_narva_all_count": 0,
+      "F_face_reserve_any_count": 0,
+      "F_face_reserve_all_count": 0,
+      "ground_hit_y_m": {
+        "min": 1.770347729336713,
+        "median": 1.9868084402434292,
+        "max": 2.362007199483344
+      },
+      "ground_hit_face_class_signatures": {
+        "[0]": 1075
+      },
+      "ground_hit_narva_any_count": 1075,
+      "ground_hit_reserve_any_count": 0,
+      "ground_hit_rows_cols": {
+        "909": 301,
+        "910": 301,
+        "911": 387,
+        "912": 86
+      },
+      "center_ray": {
+        "pixel": [
+          1364.5,
+          823.5
+        ],
+        "P": null,
+        "F": null,
+        "ground": {
+          "t": 88.13602203955648,
+          "point": [
+            2471.4668324930935,
+            1.9728855927313376,
+            6817.476124028447
+          ],
+          "row": 910,
+          "col": 411,
+          "triangle": "NW_NE_SE",
+          "barycentric": [
+            0.0888612511510738,
+            0.15715942025682592,
+            0.7539793285921003
+          ],
+          "ground_y": 1.9728855927313376,
+          "face_class_codes": [
+            0,
+            0,
+            0
+          ],
+          "face_class_signature": [
+            0
+          ],
+          "face_narva_vertices": [
+            true,
+            true,
+            true
+          ],
+          "face_narva_any": true,
+          "face_narva_all": true,
+          "face_reserve_vertices": [
+            false,
+            false,
+            false
+          ],
+          "face_reserve_any": false,
+          "face_reserve_all": false
+        }
+      }
+    },
+    "visible_rect_far_center_preselected_from_EV73": {
+      "pixel_box_xyxy_half_open": [
+        918,
+        456,
+        1012,
+        500
+      ],
+      "sampling_step_px": 4,
+      "ray_samples": 264,
+      "first_P_plane_intersections": 200,
+      "first_F_surface_intersections": 200,
+      "first_terrain_face_intersections": 264,
+      "F_intersection_pct_of_all_rays": 75.75757575757575,
+      "F_face_narva_any_pct_of_F_hits": 100.0,
+      "F_face_narva_all_pct_of_F_hits": 100.0,
+      "F_face_reserve_any_pct_of_F_hits": 0.0,
+      "F_face_reserve_all_pct_of_F_hits": 0.0,
+      "ground_hit_class0_pct_of_ground_hits": 23.863636363636363,
+      "P_m": {
+        "min": 1.7750000000000001,
+        "median": 1.8250000000000002,
+        "max": 1.875
+      },
+      "P_minus_ground_m": {
+        "min": -0.47730128056253385,
+        "median": 3.560523145750027,
+        "max": 6.322605253903464
+      },
+      "F_surface_y_m": {
+        "min": 1.7765651773814923,
+        "median": 1.8357044876703306,
+        "max": 1.8746045663191708
+      },
+      "F_minus_P_m": {
+        "min": -0.01337893221770381,
+        "median": 9.769962616701378e-15,
+        "max": 0.01782772709467073
+      },
+      "F_face_vertex_heights_m": {
+        "[1.7750000000000001, 1.7750000000000001, 1.78125]": 3,
+        "[1.7750000000000001, 1.78125, 1.7916666666666667]": 1,
+        "[1.78125, 1.7875, 1.8]": 2,
+        "[1.79375, 1.8, 1.8]": 5,
+        "[1.8, 1.8, 1.8062500000000001]": 6,
+        "[1.8, 1.8, 1.8]": 14,
+        "[1.8, 1.8062500000000001, 1.8125000000000002]": 3,
+        "[1.8, 1.8062500000000001, 1.81875]": 4,
+        "[1.8, 1.8083333333333336, 1.81875]": 1,
+        "[1.8062500000000001, 1.81875, 1.8250000000000002]": 4,
+        "[1.8083333333333336, 1.81875, 1.8250000000000002]": 2,
+        "[1.8083333333333336, 1.8250000000000002, 1.8250000000000002]": 2,
+        "[1.8125000000000002, 1.81875, 1.8250000000000002]": 3,
+        "[1.81875, 1.8250000000000002, 1.8250000000000002]": 11,
+        "[1.8250000000000002, 1.8250000000000002, 1.8250000000000002]": 22,
+        "[1.8250000000000002, 1.8250000000000002, 1.8312500000000003]": 6,
+        "[1.8250000000000002, 1.8250000000000002, 1.8375000000000001]": 1,
+        "[1.8250000000000002, 1.8250000000000002, 1.8375]": 1,
+        "[1.8250000000000002, 1.8312500000000003, 1.8375000000000001]": 2,
+        "[1.8250000000000002, 1.8312500000000003, 1.8375]": 4,
+        "[1.8250000000000002, 1.8312500000000003, 1.84375]": 3,
+        "[1.8250000000000002, 1.8375, 1.8375]": 3,
+        "[1.8250000000000002, 1.8375, 1.84375]": 4,
+        "[1.8312500000000003, 1.8375, 1.85]": 3,
+        "[1.8312500000000003, 1.84375, 1.85]": 3,
+        "[1.8375, 1.84375, 1.85]": 3,
+        "[1.8375, 1.85, 1.85]": 3,
+        "[1.84375, 1.85, 1.85]": 9,
+        "[1.85, 1.85, 1.8562500000000002]": 4,
+        "[1.85, 1.85, 1.85]": 28,
+        "[1.85, 1.85, 1.8625]": 2,
+        "[1.85, 1.8562500000000002, 1.8625]": 7,
+        "[1.85, 1.8625, 1.8625]": 11,
+        "[1.85, 1.8625, 1.86875]": 4,
+        "[1.8562500000000002, 1.86875, 1.875]": 3,
+        "[1.8625, 1.875, 1.875]": 13
+      },
+      "F_face_class_signatures": {
+        "[0, 3]": 24,
+        "[0]": 6,
+        "[3]": 170
+      },
+      "terrain_under_F_y_m": {
+        "min": -4.491446427945179,
+        "median": -1.7243183233695023,
+        "max": 2.302301280562534
+      },
+      "F_minus_terrain_m": {
+        "min": -0.4773012805625241,
+        "median": 3.562707987943412,
+        "max": 6.308006293127037
+      },
+      "ground_under_F_below_0_85_count": 164,
+      "ground_under_F_below_0_65_count": 160,
+      "F_surface_above_0_85_count": 200,
+      "F_before_ground_hit_count": 185,
+      "F_behind_ground_hit_count": 15,
+      "P_before_ground_hit_count": 185,
+      "F_face_narva_any_count": 200,
+      "F_face_narva_all_count": 200,
+      "F_face_reserve_any_count": 0,
+      "F_face_reserve_all_count": 0,
+      "ground_hit_y_m": {
+        "min": -4.420410671426367,
+        "median": 0.06176567871130345,
+        "max": 2.5057363551865492
+      },
+      "ground_hit_face_class_signatures": {
+        "[0, 3]": 35,
+        "[0]": 63,
+        "[3]": 166
+      },
+      "ground_hit_narva_any_count": 264,
+      "ground_hit_reserve_any_count": 0,
+      "ground_hit_rows_cols": {
+        "864": 12,
+        "865": 12,
+        "866": 18,
+        "867": 11,
+        "868": 22,
+        "869": 15,
+        "870": 28,
+        "871": 18,
+        "872": 28,
+        "873": 24,
+        "874": 15,
+        "875": 17,
+        "876": 23,
+        "877": 15,
+        "878": 4,
+        "879": 2
+      },
+      "center_ray": {
+        "pixel": [
+          962.5,
+          476.5
+        ],
+        "P": {
+          "t": 301.1671237674179,
+          "point": [
+            2418.150290991791,
+            1.8249999999999957,
+            7040.912501518519
+          ],
+          "row": 873,
+          "col": 403,
+          "P": 1.8250000000000002,
+          "terrain_at_P": {
+            "triangle": "NW_SW_SE",
+            "vertices_rc": [
+              [
+                873,
+                403
+              ],
+              [
+                874,
+                403
+              ],
+              [
+                874,
+                404
+              ]
+            ],
+            "barycentric": [
+              0.4854169197532201,
+              0.48953458161497565,
+              0.02504849863180425
+            ],
+            "terrain_face_class_codes": [
+              3,
+              3,
+              3
+            ],
+            "terrain_face_all_wet": true,
+            "terrain_face_all_class3": true,
+            "terrain_face_class_signature": [
+              3
+            ],
+            "ground_y": -1.8654930002651096,
+            "narva_vertices": [
+              true,
+              true,
+              true
+            ],
+            "narva_any": true,
+            "narva_all": true,
+            "reserve_vertices": [
+              false,
+              false,
+              false
+            ],
+            "reserve_any": false,
+            "reserve_all": false,
+            "water_vertices": [
+              true,
+              true,
+              true
+            ]
+          }
+        },
+        "F": {
+          "t": 301.1671237674178,
+          "point": [
+            2418.150290991791,
+            1.82500000000001,
+            7040.912501518519
+          ],
+          "row": 873,
+          "col": 403,
+          "triangle": "NW_SW_SE",
+          "F_vertex_heights": [
+            1.8250000000000002,
+            1.8250000000000002,
+            1.8250000000000002
+          ],
+          "F_barycentric": [
+            0.48541691975316137,
+            0.48953458161505636,
+            0.025048498631782285
+          ],
+          "F_surface_y": 1.82500000000001,
+          "F_minus_P": 9.769962616701378e-15,
+          "terrain_under_F": {
+            "triangle": "NW_SW_SE",
+            "vertices_rc": [
+              [
+                873,
+                403
+              ],
+              [
+                874,
+                403
+              ],
+              [
+                874,
+                404
+              ]
+            ],
+            "barycentric": [
+              0.4854169197532201,
+              0.48953458161497565,
+              0.02504849863180425
+            ],
+            "terrain_face_class_codes": [
+              3,
+              3,
+              3
+            ],
+            "terrain_face_all_wet": true,
+            "terrain_face_all_class3": true,
+            "terrain_face_class_signature": [
+              3
+            ],
+            "ground_y": -1.8654930002651096,
+            "narva_vertices": [
+              true,
+              true,
+              true
+            ],
+            "narva_any": true,
+            "narva_all": true,
+            "reserve_vertices": [
+              false,
+              false,
+              false
+            ],
+            "reserve_any": false,
+            "reserve_all": false,
+            "water_vertices": [
+              true,
+              true,
+              true
+            ]
+          },
+          "face_class_codes": [
+            3,
+            3,
+            3
+          ],
+          "face_class_signature": [
+            3
+          ],
+          "face_narva_vertices": [
+            true,
+            true,
+            true
+          ],
+          "face_narva_any": true,
+          "face_narva_all": true,
+          "face_reserve_vertices": [
+            false,
+            false,
+            false
+          ],
+          "face_reserve_any": false,
+          "face_reserve_all": false
+        },
+        "ground": {
+          "t": 313.79577430088483,
+          "point": [
+            2418.1985254164697,
+            -0.824077321161738,
+            7053.32081330041
+          ],
+          "row": 871,
+          "col": 403,
+          "triangle": "NW_SW_SE",
+          "barycentric": [
+            0.5534688834016177,
+            0.4134435471867837,
+            0.033087569411598586
+          ],
+          "ground_y": -0.824077321161738,
+          "face_class_codes": [
+            3,
+            3,
+            3
+          ],
+          "face_class_signature": [
+            3
+          ],
+          "face_narva_vertices": [
+            true,
+            true,
+            true
+          ],
+          "face_narva_any": true,
+          "face_narva_all": true,
+          "face_reserve_vertices": [
+            false,
+            false,
+            false
+          ],
+          "face_reserve_any": false,
+          "face_reserve_all": false
+        }
+      }
+    }
+  },
+  "interpretation_limits": [
+    "ROI color labels come from the EV74 report and visual EV73 boundary selection; they do not classify pixel shader.",
+    "The EV74 near-ripple ROI also maps to deep Narva class-3 water; it is not an independent shallow-water control for the double-water hypothesis.",
+    "P is the frozen per-cell plane. F is the four-corner visible-field mesh, intersected on each NW_NE_SE / NW_SW_SE face. Terrain is the separate native height mesh; each crossing is reported independently.",
+    "Class, Narva, and reserve are face-vertex/cell-grid evidence, not engine draw-call evidence."
+  ]
+}

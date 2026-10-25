@@ -1,0 +1,52 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "continuous_depth": false,
+    "baseline_rejected": true,
+    "shallow_plug_rejected": true,
+    "landings_at_deck": true,
+    "road_grade_le_6_percent": true,
+    "model_clearance_ge_6m": true,
+    "outside_delta_unchanged": true,
+    "delta_records_match": true
+  },
+  "candidate_sha256": "90f922648005d633f9645b4c0eaf441fa205c15bed0dc77fffaa33f090e3ab19",
+  "design_sha256": "52b3fbd8f1bb604a590f298c95fd7f57a0396f5f4d3fffe0d07c5b78da5800a0",
+  "depth": {
+    "triangles": 272,
+    "conservative_depth_min_m": -7.268899917602539,
+    "pass": false
+  },
+  "baseline_depth": {
+    "triangles": 272,
+    "conservative_depth_min_m": -1.5,
+    "pass": false
+  },
+  "negative_plug_depth": {
+    "triangles": 272,
+    "conservative_depth_min_m": -7.268899917602539,
+    "pass": false
+  },
+  "landings": [
+    {
+      "side": -1,
+      "max_deck_gap_m": 0.0018120758063133735
+    },
+    {
+      "side": 1,
+      "max_deck_gap_m": 0.00038332174665711705
+    }
+  ],
+  "ramps": [
+    {
+      "side": -1,
+      "maximum_sampled_road_grade": 0.04905234311489082
+    },
+    {
+      "side": 1,
+      "maximum_sampled_road_grade": 0.05051848497407718
+    }
+  ],
+  "model_central_opening_headroom_m": 6.33820104598999,
+  "limit": "Geometry prediction only. No runtime boat, driver, collision, physics, imported pose or navigation pass."
+}

@@ -1,0 +1,48 @@
+{
+  "state": "BOUNDED_PILOT_COMPLETE_NOT_PRODUCTION",
+  "approved_by": "Guillermo: orillas, cauces y relieve general; adelante; continua, prueba",
+  "source_terrain": "E:/DayZ-Baltic-Build/v30-v12/inland/terrain_inland.npz",
+  "source_sha256": "8b3a8c5541403abaf852e14fb4c0651175e6dcaa541f6f8a151f1db04ac7a8a6",
+  "source_design": "E:\\DayZ-Baltic-Build\\v30-redesign\\design",
+  "input_sha256": {
+    "water_v3.geojson": "f960299a4a62be1a4444e46efb09742fa409363bc2fd7773f0a99362da008a5c",
+    "contour": "df860f693a1bf0115cb4af65a13cea5f8006a5a21bc9bca1d88276b83802ccdc",
+    "streams_candidates.geojson": "ad6894fd4013235d7c1b5b9913f0b4d08ee557408e4ad0f528b378e7462a313e"
+  },
+  "variants_sigma_m": [
+    18,
+    24
+  ],
+  "baseline_sigma_m": 12,
+  "max_final_outline_shift_m": 4.0,
+  "outline_area_relative_tolerance": 0.02,
+  "contact_tolerance_m": 0.05,
+  "dry_height_cap_m": 1.0,
+  "dry_water_exclusion_m": 36.0,
+  "dry_protection_blend_m": 60.0,
+  "dry_preserve_regional_scale_m": 180.0,
+  "dry_macro_change_cap_m": 0.1,
+  "dry_target_curvature_reduction": 0.1,
+  "gates": [
+    "No classes, levels, frozen road samples, corridor vertices or protected terrain changes",
+    "No new or steeper land faces above 35 degrees",
+    "Final outline Hausdorff <=4m, area within 2%, contacts no wider than baseline+0.05m",
+    "Visible native waterline against frozen original: no greater missing share or p90 offset; reduced zigzag in mandatory sectors",
+    "Dry curvature reduces >=10%, regional 180m low-pass max change <=0.10m",
+    "No integration without independent gates; runtime is INCONCLUSIVE until measured"
+  ],
+  "budget": "Baseline plus two variants, one bounded correction maximum; then reconsider mechanism",
+  "client_server": "Offline terrain authoring plus isolated server test missions with direct CreateCharacter and frozen clock; no production script or RPC changes.",
+  "mcp_catalog_fix": {
+    "source": "P:/DayZ_MCP_dev/tools/dayz_mcp/server_cli.py:554",
+    "flag": "--no-progressive-disclosure",
+    "config_sha256": "c13d1cde9b8bc1c3f760b2063f98cb2c78ff82e9728c40dc9cd63adca650ce9c",
+    "status": "Full catalog confirmed after reconnection at21:12; four owned engine runs completed and closed cleanly."
+  },
+  "bounded_correction": {
+    "outline": "sigma18, area-buffer removed in opt-in strict mode; continuous final boundary caps; source islands and contact zones exact; alpha1,.5,.25 then frozen original",
+    "dry": "sigma18; smooth saturation instead of abrupt clipping; remove 180m component after masks; same caps, masks and gates",
+    "selection": "18 has fewer sharp river turns in builder reports and better independently measured dry curvature than24",
+    "stop": "No further tuning after this correction if mandatory gates fail"
+  }
+}

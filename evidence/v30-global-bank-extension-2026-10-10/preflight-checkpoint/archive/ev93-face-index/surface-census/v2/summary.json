@@ -1,0 +1,646 @@
+{
+  "status": "PASS_OFFLINE_CENSUS",
+  "artifact_class": "read-only B baseline census; no candidate comparison or terrain edits",
+  "schema": "ev93.sector-native-curvature-census.v2",
+  "sources": {
+    "paths": {
+      "EV87": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+      "B": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz",
+      "EV79": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz",
+      "EV79_CONSTRAINTS": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz",
+      "PRIOR_CONSTRAINTS": "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz",
+      "P": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy",
+      "F": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy"
+    },
+    "sha256": {
+      "EV87": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+      "B": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+      "EV79": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+      "EV79_CONSTRAINTS": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+      "PRIOR_CONSTRAINTS": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+      "P": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+      "F": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"
+    }
+  },
+  "formulas": {
+    "angles": "exact verify_ev87.edge_angles(B.heights); native diag, vertical, horizontal only",
+    "incidence": "ANY of the four exact vertices returned by verify_ev87.edge_vertex_slices",
+    "sector_assignment": "hinge-array anchor (r,c) belongs to (r//64,c//64); closed partition over each family anchor array; no derived border hinges; a hinge crossing a sector boundary is counted once at its anchor and retains its full four-vertex incidence",
+    "mean_square": "mean(theta_deg**2)",
+    "p99": "numpy percentile default linear interpolation",
+    "angle_units": "degrees"
+  },
+  "scope": {
+    "map_vertices": [
+      2048,
+      2048
+    ],
+    "native_cell_m": 6.0,
+    "sector_anchor_nodes": 64,
+    "sector_size_m": 384.0,
+    "population_vertex_counts": {
+      "eligible": 2988565,
+      "bank": 596545,
+      "interior": 2456109,
+      "wet_support": 1077957,
+      "eligible_bank": 581794,
+      "eligible_interior": 2340816,
+      "eligible_wet_support": 65955,
+      "other_fixed": 1076651,
+      "fixed": 1179270,
+      "protected": 1205739,
+      "all_eligible": 2988565,
+      "engineering_halo": 107047,
+      "large_lake_banks": 212438,
+      "reserve_or_platform": 67786,
+      "waterline_blocked": 999352,
+      "nonclass0": 999007
+    },
+    "incidence_populations": [
+      "all",
+      "any_eligible",
+      "any_bank",
+      "any_interior",
+      "any_wet_support",
+      "any_fixed",
+      "any_protected",
+      "no_eligible",
+      "mixed_eligible",
+      "all_eligible",
+      "any_other_fixed",
+      "any_engineering_halo",
+      "any_large_lake_banks",
+      "any_reserve_or_platform",
+      "any_waterline_blocked",
+      "any_nonclass0",
+      "any_eligible_bank",
+      "any_eligible_interior",
+      "any_eligible_wet_support"
+    ],
+    "incidence_bit_flags": {
+      "any_eligible": 2,
+      "any_bank": 4,
+      "any_interior": 8,
+      "any_wet_support": 16,
+      "any_fixed": 32,
+      "any_protected": 64,
+      "no_eligible": 128,
+      "mixed_eligible": 256,
+      "all_eligible": 512,
+      "any_other_fixed": 1024,
+      "any_engineering_halo": 2048,
+      "any_large_lake_banks": 4096,
+      "any_reserve_or_platform": 8192,
+      "any_waterline_blocked": 16384,
+      "any_nonclass0": 32768,
+      "any_eligible_bank": 65536,
+      "any_eligible_interior": 131072,
+      "any_eligible_wet_support": 262144
+    },
+    "wet_support_is_diagnostic_population_not_selector_veto": true,
+    "separate_3m_grid_input_present": false,
+    "claim": "all native B hinge anchors counted once by family; eligibility/property categories are incidence-ANY, overlapping unless noted"
+  },
+  "family_order": [
+    "diag",
+    "vertical",
+    "horizontal"
+  ],
+  "families": {
+    "diag": {
+      "anchor_shape": [
+        2047,
+        2047
+      ],
+      "hinge_count": 4190209,
+      "sector_shape": [
+        32,
+        32
+      ],
+      "global": {
+        "all": {
+          "n": 4190209,
+          "mean_deg": 0.658358053083587,
+          "mean_square_deg2": 6.738614595209894,
+          "max_deg": 98.27084005204352,
+          "p99_deg": 12.414044874841663
+        },
+        "any_eligible": {
+          "n": 3050841,
+          "mean_deg": 0.6939368874320094,
+          "mean_square_deg2": 6.725162952471518,
+          "max_deg": 63.45654226669106,
+          "p99_deg": 12.689931692531975
+        },
+        "any_bank": {
+          "n": 655163,
+          "mean_deg": 1.3191310980108368,
+          "mean_square_deg2": 15.057084584529255,
+          "max_deg": 62.00920193701158,
+          "p99_deg": 21.624966235070122
+        },
+        "any_interior": {
+          "n": 2507352,
+          "mean_deg": 0.39651108264954243,
+          "mean_square_deg2": 1.6545822661996192,
+          "max_deg": 60.16704674374723,
+          "p99_deg": 5.024668531371596
+        },
+        "any_wet_support": {
+          "n": 1122951,
+          "mean_deg": 1.3878431202061052,
+          "mean_square_deg2": 22.246261291592724,
+          "max_deg": 98.27084005204352,
+          "p99_deg": 24.385663134882797
+        },
+        "any_fixed": {
+          "n": 1239493,
+          "mean_deg": 1.1226466987790629,
+          "mean_square_deg2": 16.82054544876266,
+          "max_deg": 98.27084005204352,
+          "p99_deg": 21.96905240340258
+        },
+        "any_protected": {
+          "n": 1264759,
+          "mean_deg": 1.1438967514885119,
+          "mean_square_deg2": 17.052711376600975,
+          "max_deg": 98.27084005204352,
+          "p99_deg": 21.994952610146832
+        },
+        "no_eligible": {
+          "n": 1139368,
+          "mean_deg": 0.5630900039876191,
+          "mean_square_deg2": 6.774633531307439,
+          "max_deg": 98.27084005204352,
+          "p99_deg": 11.937075347131628
+        },
+        "mixed_eligible": {
+          "n": 125391,
+          "mean_deg": 6.4214096693741425,
+          "mean_square_deg2": 110.44468526975442,
+          "max_deg": 63.45654226669106,
+          "p99_deg": 34.7387173617199
+        },
+        "all_eligible": {
+          "n": 2925450,
+          "mean_deg": 0.44844524012971193,
+          "mean_square_deg2": 2.2795239489382433,
+          "max_deg": 53.95164545168249,
+          "p99_deg": 5.5427151358197415
+        },
+        "any_other_fixed": {
+          "n": 1120749,
+          "mean_deg": 1.0580264840186944,
+          "mean_square_deg2": 17.293208582799696,
+          "max_deg": 98.27084005204352,
+          "p99_deg": 22.719629324975717
+        },
+        "any_engineering_halo": {
+          "n": 126340,
+          "mean_deg": 2.145261737562171,
+          "mean_square_deg2": 26.381920977297256,
+          "max_deg": 88.66726415425074,
+          "p99_deg": 21.46794091462392
+        },
+        "any_large_lake_banks": {
+          "n": 213344,
+          "mean_deg": 0.4888185151706241,
+          "mean_square_deg2": 6.095176927976409,
+          "max_deg": 60.16704674374723,
+          "p99_deg": 12.893961855897052
+        },
+        "any_reserve_or_platform": {
+          "n": 87551,
+          "mean_deg": 2.2027214980884753,
+          "mean_square_deg2": 30.869573738000902,
+          "max_deg": 88.66726415425074,
+          "p99_deg": 22.666076535064867
+        },
+        "any_waterline_blocked": {
+          "n": 1044781,
+          "mean_deg": 1.0544647245869552,
+          "mean_square_deg2": 17.98669611606457,
+          "max_deg": 98.27084005204352,
+          "p99_deg": 23.16489054405412
+        },
+        "any_nonclass0": {
+          "n": 1044435,
+          "mean_deg": 1.0540892762751632,
+          "mean_square_deg2": 17.988225811835076,
+          "max_deg": 98.27084005204352,
+          "p99_deg": 23.167741773311747
+        },
+        "any_eligible_bank": {
+          "n": 639422,
+          "mean_deg": 1.2667979398614957,
+          "mean_square_deg2": 14.420996745689918,
+          "max_deg": 54.30854776460631,
+          "p99_deg": 21.476786366071625
+        },
+        "any_eligible_interior": {
+          "n": 2395054,
+          "mean_deg": 0.32696857661841605,
+          "mean_square_deg2": 0.9847271843887285,
+          "max_deg": 56.960930988805714,
+          "p99_deg": 3.534495317021557
+        },
+        "any_eligible_wet_support": {
+          "n": 144925,
+          "mean_deg": 7.757208070568903,
+          "mean_square_deg2": 128.8084532698814,
+          "max_deg": 63.45654226669106,
+          "p99_deg": 34.86612477600028
+        }
+      },
+      "sector_population_counts_sum": {
+        "all": 4190209,
+        "any_eligible": 3050841,
+        "any_bank": 655163,
+        "any_interior": 2507352,
+        "any_wet_support": 1122951,
+        "any_fixed": 1239493,
+        "any_protected": 1264759,
+        "no_eligible": 1139368,
+        "mixed_eligible": 125391,
+        "all_eligible": 2925450,
+        "any_other_fixed": 1120749,
+        "any_engineering_halo": 126340,
+        "any_large_lake_banks": 213344,
+        "any_reserve_or_platform": 87551,
+        "any_waterline_blocked": 1044781,
+        "any_nonclass0": 1044435,
+        "any_eligible_bank": 639422,
+        "any_eligible_interior": 2395054,
+        "any_eligible_wet_support": 144925
+      }
+    },
+    "vertical": {
+      "anchor_shape": [
+        2047,
+        2046
+      ],
+      "hinge_count": 4188162,
+      "sector_shape": [
+        32,
+        32
+      ],
+      "global": {
+        "all": {
+          "n": 4188162,
+          "mean_deg": 0.7544230704063346,
+          "mean_square_deg2": 7.3598380994619905,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 13.483055513509845
+        },
+        "any_eligible": {
+          "n": 3058022,
+          "mean_deg": 0.7945480910270726,
+          "mean_square_deg2": 7.439233780639319,
+          "max_deg": 83.04717044960258,
+          "p99_deg": 13.374889551571947
+        },
+        "any_bank": {
+          "n": 666991,
+          "mean_deg": 1.409562143573092,
+          "mean_square_deg2": 12.964472591943732,
+          "max_deg": 52.55042069662487,
+          "p99_deg": 18.391694788572984
+        },
+        "any_interior": {
+          "n": 2516648,
+          "mean_deg": 0.485843897845591,
+          "mean_square_deg2": 1.9841306602687383,
+          "max_deg": 53.6456261381394,
+          "p99_deg": 6.092312427901544
+        },
+        "any_wet_support": {
+          "n": 1131565,
+          "mean_deg": 1.5569897164303401,
+          "mean_square_deg2": 23.948590726626787,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 23.55250518391287
+        },
+        "any_fixed": {
+          "n": 1250519,
+          "mean_deg": 1.320694305433104,
+          "mean_square_deg2": 19.36991954334315,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 22.017113028362697
+        },
+        "any_protected": {
+          "n": 1275446,
+          "mean_deg": 1.3360903090628036,
+          "mean_square_deg2": 19.421424046483004,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 22.017113028362697
+        },
+        "no_eligible": {
+          "n": 1130140,
+          "mean_deg": 0.6458496230381587,
+          "mean_square_deg2": 7.145002999611308,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 13.669092536103934
+        },
+        "mixed_eligible": {
+          "n": 145306,
+          "mean_deg": 6.704544529149326,
+          "mean_square_deg2": 114.90319687012126,
+          "max_deg": 83.04717044960258,
+          "p99_deg": 37.26835902744572
+        },
+        "all_eligible": {
+          "n": 2912716,
+          "mean_deg": 0.4997174441539164,
+          "mean_square_deg2": 2.0782035186157417,
+          "max_deg": 42.111272042441456,
+          "p99_deg": 5.725336547393179
+        },
+        "any_other_fixed": {
+          "n": 1128803,
+          "mean_deg": 1.2714016372763393,
+          "mean_square_deg2": 20.149013194956794,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 22.38005165991818
+        },
+        "any_engineering_halo": {
+          "n": 129967,
+          "mean_deg": 2.2146453914709023,
+          "mean_square_deg2": 25.348143491104672,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 22.17022202302026
+        },
+        "any_large_lake_banks": {
+          "n": 213327,
+          "mean_deg": 0.7679181709679405,
+          "mean_square_deg2": 10.293575378687853,
+          "max_deg": 51.64270868400203,
+          "p99_deg": 19.18133005439221
+        },
+        "any_reserve_or_platform": {
+          "n": 91190,
+          "mean_deg": 2.336616387631131,
+          "mean_square_deg2": 29.347770227101652,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 23.48979443462855
+        },
+        "any_waterline_blocked": {
+          "n": 1053888,
+          "mean_deg": 1.2573649569087393,
+          "mean_square_deg2": 20.987724991495856,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 22.91335992540522
+        },
+        "any_nonclass0": {
+          "n": 1053545,
+          "mean_deg": 1.2571525040454372,
+          "mean_square_deg2": 20.991702367069138,
+          "max_deg": 90.24533051116292,
+          "p99_deg": 22.916840896461846
+        },
+        "any_eligible_bank": {
+          "n": 651213,
+          "mean_deg": 1.3595676675039576,
+          "mean_square_deg2": 12.390321854220858,
+          "max_deg": 47.32902081708105,
+          "p99_deg": 18.19940324678221
+        },
+        "any_eligible_interior": {
+          "n": 2405948,
+          "mean_deg": 0.4009308346280688,
+          "mean_square_deg2": 1.1046593757458107,
+          "max_deg": 39.69618818629766,
+          "p99_deg": 4.500612765956731
+        },
+        "any_eligible_wet_support": {
+          "n": 154612,
+          "mean_deg": 8.05064185992994,
+          "mean_square_deg2": 131.68463704283045,
+          "max_deg": 83.04717044960258,
+          "p99_deg": 36.938477630166204
+        }
+      },
+      "sector_population_counts_sum": {
+        "all": 4188162,
+        "any_eligible": 3058022,
+        "any_bank": 666991,
+        "any_interior": 2516648,
+        "any_wet_support": 1131565,
+        "any_fixed": 1250519,
+        "any_protected": 1275446,
+        "no_eligible": 1130140,
+        "mixed_eligible": 145306,
+        "all_eligible": 2912716,
+        "any_other_fixed": 1128803,
+        "any_engineering_halo": 129967,
+        "any_large_lake_banks": 213327,
+        "any_reserve_or_platform": 91190,
+        "any_waterline_blocked": 1053888,
+        "any_nonclass0": 1053545,
+        "any_eligible_bank": 651213,
+        "any_eligible_interior": 2405948,
+        "any_eligible_wet_support": 154612
+      }
+    },
+    "horizontal": {
+      "anchor_shape": [
+        2046,
+        2047
+      ],
+      "hinge_count": 4188162,
+      "sector_shape": [
+        32,
+        32
+      ],
+      "global": {
+        "all": {
+          "n": 4188162,
+          "mean_deg": 0.7314097756423626,
+          "mean_square_deg2": 6.944409929319252,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 12.685106943466945
+        },
+        "any_eligible": {
+          "n": 3058714,
+          "mean_deg": 0.784198829058032,
+          "mean_square_deg2": 7.209288510866376,
+          "max_deg": 81.12667560084863,
+          "p99_deg": 12.98460543160967
+        },
+        "any_bank": {
+          "n": 665568,
+          "mean_deg": 1.372882763024764,
+          "mean_square_deg2": 12.534171544081973,
+          "max_deg": 56.231642009695236,
+          "p99_deg": 18.098741743377406
+        },
+        "any_interior": {
+          "n": 2515924,
+          "mean_deg": 0.48314259888050654,
+          "mean_square_deg2": 1.907799773898807,
+          "max_deg": 53.34239449512883,
+          "p99_deg": 6.144386151641932
+        },
+        "any_wet_support": {
+          "n": 1130691,
+          "mean_deg": 1.4651763992846212,
+          "mean_square_deg2": 22.194486014972785,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 23.111149996336465
+        },
+        "any_fixed": {
+          "n": 1250629,
+          "mean_deg": 1.2547796104420166,
+          "mean_square_deg2": 18.019968639419094,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 21.18398029900894
+        },
+        "any_protected": {
+          "n": 1275593,
+          "mean_deg": 1.267739056420634,
+          "mean_square_deg2": 18.039566540689272,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 21.082920233710183
+        },
+        "no_eligible": {
+          "n": 1129448,
+          "mean_deg": 0.5884491287340897,
+          "mean_square_deg2": 6.2270791396960705,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 12.274103069129154
+        },
+        "mixed_eligible": {
+          "n": 146145,
+          "mean_deg": 6.5174749368524765,
+          "mean_square_deg2": 109.3296569993226,
+          "max_deg": 81.12667560084863,
+          "p99_deg": 36.96427718697987
+        },
+        "all_eligible": {
+          "n": 2912569,
+          "mean_deg": 0.49651821556059417,
+          "mean_square_deg2": 2.0851588326525943,
+          "max_deg": 45.54796787095637,
+          "p99_deg": 5.793965676470673
+        },
+        "any_other_fixed": {
+          "n": 1128542,
+          "mean_deg": 1.1915337088992282,
+          "mean_square_deg2": 18.568986434672084,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 21.907030630043224
+        },
+        "any_engineering_halo": {
+          "n": 130590,
+          "mean_deg": 2.3120167712136066,
+          "mean_square_deg2": 26.976029639254293,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 23.00284693827649
+        },
+        "any_large_lake_banks": {
+          "n": 213422,
+          "mean_deg": 0.5958161851536068,
+          "mean_square_deg2": 7.308601148280775,
+          "max_deg": 56.231642009695236,
+          "p99_deg": 14.022984031847075
+        },
+        "any_reserve_or_platform": {
+          "n": 91795,
+          "mean_deg": 2.4410073440576303,
+          "mean_square_deg2": 31.21971283916715,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 24.388176470468313
+        },
+        "any_waterline_blocked": {
+          "n": 1053075,
+          "mean_deg": 1.1692449151343518,
+          "mean_square_deg2": 19.274644276323375,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 22.450267109880784
+        },
+        "any_nonclass0": {
+          "n": 1052732,
+          "mean_deg": 1.168915241115715,
+          "mean_square_deg2": 19.27756134729434,
+          "max_deg": 100.8663801525418,
+          "p99_deg": 22.45258861745874
+        },
+        "any_eligible_bank": {
+          "n": 649736,
+          "mean_deg": 1.3281834272516195,
+          "mean_square_deg2": 11.963646514028135,
+          "max_deg": 49.23699413617529,
+          "p99_deg": 17.885208643053605
+        },
+        "any_eligible_interior": {
+          "n": 2406026,
+          "mean_deg": 0.404845977488559,
+          "mean_square_deg2": 1.170892263074442,
+          "max_deg": 46.911224164194905,
+          "p99_deg": 4.65520689758978
+        },
+        "any_eligible_wet_support": {
+          "n": 153726,
+          "mean_deg": 7.8366290158380485,
+          "mean_square_deg2": 126.27538349525955,
+          "max_deg": 81.12667560084863,
+          "p99_deg": 36.7134376205324
+        }
+      },
+      "sector_population_counts_sum": {
+        "all": 4188162,
+        "any_eligible": 3058714,
+        "any_bank": 665568,
+        "any_interior": 2515924,
+        "any_wet_support": 1130691,
+        "any_fixed": 1250629,
+        "any_protected": 1275593,
+        "no_eligible": 1129448,
+        "mixed_eligible": 146145,
+        "all_eligible": 2912569,
+        "any_other_fixed": 1128542,
+        "any_engineering_halo": 130590,
+        "any_large_lake_banks": 213422,
+        "any_reserve_or_platform": 91795,
+        "any_waterline_blocked": 1053075,
+        "any_nonclass0": 1052732,
+        "any_eligible_bank": 649736,
+        "any_eligible_interior": 2406026,
+        "any_eligible_wet_support": 153726
+      }
+    }
+  },
+  "hinge_totals": {
+    "diag": 4190209,
+    "vertical": 4188162,
+    "horizontal": 4188162
+  },
+  "reconciliation": {
+    "diag": {
+      "all_hinges": 4190209,
+      "expected_all_hinges": 4190209,
+      "sector_count_reconciliation_all_populations": true
+    },
+    "vertical": {
+      "all_hinges": 4188162,
+      "expected_all_hinges": 4188162,
+      "sector_count_reconciliation_all_populations": true
+    },
+    "horizontal": {
+      "all_hinges": 4188162,
+      "expected_all_hinges": 4188162,
+      "sector_count_reconciliation_all_populations": true
+    }
+  },
+  "fixtures": {
+    "any_incidence_matches_independent_four_vertex_oracle": true,
+    "64_anchor_sector_partition_no_omission_or_double_count": true,
+    "full_incidence_classifier_one_four_zero_eligible_per_family_cases": 9,
+    "any_equals_all_plus_mixed_and_direct_reconciliation": true
+  },
+  "output": {
+    "npz": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\surface-census\\v2\\sector-native-curvature-census.npz",
+    "sha256": "ef3db76bb2fa8cb468cc60614eeb36a981e75e7886e6d0181afd2b20e1194935",
+    "bytes": 75622239,
+    "summary": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\surface-census\\v2\\summary.json"
+  }
+}

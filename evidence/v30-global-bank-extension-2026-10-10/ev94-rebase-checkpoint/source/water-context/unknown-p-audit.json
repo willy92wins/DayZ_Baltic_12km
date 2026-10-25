@@ -1,0 +1,4389 @@
+{
+  "schema": "ev93.unknown-p-corridor-audit.v1",
+  "status": "COMPLETE_STATIC_GEOMETRY_AUDIT",
+  "scope": [
+    "Narva_23",
+    "Luga_0"
+  ],
+  "interpretation": "P NaN is unknown field data; face coverage is independently tested; no P/H is written.",
+  "limits": {
+    "seconds_after_index_load": 300.0,
+    "unique_candidate_faces": 250000
+  },
+  "phase_seconds": {
+    "load_and_build_unknown_masks": 11.577999999979511,
+    "index_load_and_shard_validation": 0.23399999999674037,
+    "exact_clipping_and_overlap": 0.031000000017229468,
+    "total_after_index_load": 0.32900000002700835
+  },
+  "results": {
+    "Narva_23": {
+      "physical": {
+        "unknown_area_m2": 238.74576643431396,
+        "covered_area_m2": 0.001407623291015625,
+        "uncovered_area_m2": 238.74435881102295,
+        "overlap_ge2_area_m2": 0.0,
+        "face_patch_intersections": 7,
+        "degenerate_candidates": 0,
+        "zero_area_contacts": 35,
+        "faces": {
+          "16812296:10665:6": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 6,
+            "patch_intersection_area_sum_m2": 5.159904503670987e-09,
+            "face_y_range_m": [
+              0.500000006519258,
+              0.500000006519258
+            ],
+            "face_minus_ground_range_m": [
+              3.5318532055243566,
+              3.531869292987949
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                810,
+                321,
+                0
+              ],
+              [
+                810,
+                321,
+                1
+              ]
+            ]
+          },
+          "16812296:10665:7": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 7,
+            "patch_intersection_area_sum_m2": 0.0007038064856033088,
+            "face_y_range_m": [
+              0.500000006519258,
+              0.500000006519258
+            ],
+            "face_minus_ground_range_m": [
+              3.531853346291399,
+              4.629019266925752
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                810,
+                321,
+                0
+              ],
+              [
+                810,
+                321,
+                1
+              ]
+            ]
+          },
+          "16812296:10665:2": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 2,
+            "patch_intersection_area_sum_m2": 0.0007038082055711967,
+            "face_y_range_m": [
+              0.500000006519258,
+              0.500000006519258
+            ],
+            "face_minus_ground_range_m": [
+              5.420323083912024,
+              6.393791682086885
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                812,
+                320,
+                0
+              ],
+              [
+                812,
+                320,
+                1
+              ]
+            ]
+          },
+          "16812296:10665:3": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 3,
+            "patch_intersection_area_sum_m2": 3.439936615830079e-09,
+            "face_y_range_m": [
+              0.500000006519258,
+              0.500000006519258
+            ],
+            "face_minus_ground_range_m": [
+              5.420320994220674,
+              5.420330510054839
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                812,
+                320,
+                1
+              ]
+            ]
+          }
+        },
+        "cells": {
+          "810,320": {
+            "row": 810,
+            "col": 320,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 1.0047399565478012,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 1.0047399565478012,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 3.50887021669676,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 3.50887021669676,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "810,321": {
+            "row": 810,
+            "col": 321,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 4.299411678912538,
+                "covered_area_m2": 6.879872658225629e-09,
+                "uncovered_area_m2": 4.299411672032665,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 6,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      6
+                    ],
+                    "intersection_area_m2": 2.9485168535252695e-09,
+                    "face_y_range_m": [
+                      0.500000006519258,
+                      0.500000006519258
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.5318532055243566,
+                      3.5318576586817585
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      7
+                    ],
+                    "intersection_area_m2": 3.931355804700359e-09,
+                    "face_y_range_m": [
+                      0.500000006519258,
+                      0.500000006519258
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.531853346291399,
+                      3.5318635962249516
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 10.501297406715967,
+                "covered_area_m2": 0.0007038047656351543,
+                "uncovered_area_m2": 10.500593601950332,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 3,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      6
+                    ],
+                    "intersection_area_m2": 2.211387650145717e-09,
+                    "face_y_range_m": [
+                      0.500000006519258,
+                      0.500000006519258
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.531853205524385,
+                      3.531869292987949
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      7
+                    ],
+                    "intersection_area_m2": 0.0007038025542475041,
+                    "face_y_range_m": [
+                      0.500000006519258,
+                      0.500000006519258
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.5318576586817017,
+                      4.629019266925752
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "811,318": {
+            "row": 811,
+            "col": 318,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 6.764369033371237,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 6.764369033371237,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 9.555296160365298,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 9.555296160365298,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "811,319": {
+            "row": 811,
+            "col": 319,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 13.483401576911756,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 13.483401576911756,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 16.700621109999783,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.700621109999783,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "811,320": {
+            "row": 811,
+            "col": 320,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 17.983484739936983,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.983484739936983,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 3,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 17.995270973089248,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.995270973089248,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 3,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "812,318": {
+            "row": 812,
+            "col": 318,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 15.87305390422521,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 15.87305390422521,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 3.674057936573208,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 3.674057936573208,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "812,319": {
+            "row": 812,
+            "col": 319,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 2,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "812,320": {
+            "row": 812,
+            "col": 320,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 6.879872671561316e-09,
+                "uncovered_area_m2": 17.999999993120127,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 9,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      2
+                    ],
+                    "intersection_area_m2": 6.879872671561316e-09,
+                    "face_y_range_m": [
+                      0.500000006519258,
+                      0.500000006519258
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.393772553617055,
+                      6.393791682086885
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0007038047656351409,
+                "uncovered_area_m2": 17.999296195234365,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 3,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      2
+                    ],
+                    "intersection_area_m2": 0.0007038013256985251,
+                    "face_y_range_m": [
+                      0.500000006519258,
+                      0.500000006519258
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.420323083912024,
+                      6.393791682086828
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      3
+                    ],
+                    "intersection_area_m2": 3.439936615830079e-09,
+                    "face_y_range_m": [
+                      0.500000006519258,
+                      0.500000006519258
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.420320994220674,
+                      5.420330510054839
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "813,318": {
+            "row": 813,
+            "col": 318,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 2.8001583274455615,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.8001583274455615,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "813,319": {
+            "row": 813,
+            "col": 319,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 15.14412125301435,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 15.14412125301435,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "814,319": {
+            "row": 814,
+            "col": 319,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 9.457612160508246,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 9.457612160508246,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          }
+        }
+      },
+      "visible": {
+        "unknown_area_m2": 238.74576643431396,
+        "covered_area_m2": 0.001407623290958773,
+        "uncovered_area_m2": 238.744358811023,
+        "overlap_ge2_area_m2": 0.0,
+        "face_patch_intersections": 9,
+        "degenerate_candidates": 0,
+        "zero_area_contacts": 66,
+        "faces": {
+          "16812296:10665:20": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 20,
+            "patch_intersection_area_sum_m2": 6.865889190521557e-09,
+            "face_y_range_m": [
+              0.5083330068737268,
+              0.5083333067595959
+            ],
+            "face_minus_ground_range_m": [
+              3.5401865060507873,
+              3.540196596579392
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                810,
+                321,
+                0
+              ]
+            ]
+          },
+          "16812296:10665:21": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 21,
+            "patch_intersection_area_sum_m2": 0.00035119056701660156,
+            "face_y_range_m": [
+              0.5000000065192577,
+              0.5083333067595955
+            ],
+            "face_minus_ground_range_m": [
+              3.5401865060508158,
+              4.629019244447591
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                810,
+                321,
+                0
+              ],
+              [
+                810,
+                321,
+                1
+              ]
+            ]
+          },
+          "16812296:10665:22": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 22,
+            "patch_intersection_area_sum_m2": 0.00035118370112741104,
+            "face_y_range_m": [
+              0.49999990686774254,
+              0.5083331065252423
+            ],
+            "face_minus_ground_range_m": [
+              3.5401966962308506,
+              4.629019244447591
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                810,
+                321,
+                1
+              ]
+            ]
+          },
+          "16812296:10665:27": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 27,
+            "patch_intersection_area_sum_m2": 1.4305114177659561e-06,
+            "face_y_range_m": [
+              0.500000006519258,
+              0.5083333069251657
+            ],
+            "face_minus_ground_range_m": [
+              3.540186505930251,
+              4.629019244447591
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                810,
+                321,
+                1
+              ]
+            ]
+          },
+          "16812296:10665:29": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 29,
+            "patch_intersection_area_sum_m2": 6.8239387474022806e-09,
+            "face_y_range_m": [
+              0.5083330068737268,
+              0.5083333067595954
+            ],
+            "face_minus_ground_range_m": [
+              6.402105753274327,
+              6.4021249823269955
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                812,
+                320,
+                0
+              ]
+            ]
+          },
+          "16812296:10665:30": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 30,
+            "patch_intersection_area_sum_m2": 0.00035190582411811296,
+            "face_y_range_m": [
+              0.5000000065192577,
+              0.5083333067595954
+            ],
+            "face_minus_ground_range_m": [
+              5.420320994220617,
+              6.402124982327223
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                812,
+                320,
+                0
+              ],
+              [
+                812,
+                320,
+                1
+              ]
+            ]
+          },
+          "16812296:10665:31": {
+            "object_id": 16812296,
+            "model_id": 10665,
+            "face_id": 31,
+            "patch_intersection_area_sum_m2": 0.00035189899745094347,
+            "face_y_range_m": [
+              0.49999990686774254,
+              0.508333105200732
+            ],
+            "face_minus_ground_range_m": [
+              5.420320994220617,
+              6.402107838795587
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                812,
+                320,
+                1
+              ]
+            ]
+          }
+        },
+        "cells": {
+          "810,320": {
+            "row": 810,
+            "col": 320,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 1.0047399565478012,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 1.0047399565478012,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 4,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 3.50887021669676,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 3.50887021669676,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "810,321": {
+            "row": 810,
+            "col": 321,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 4.299411678912538,
+                "covered_area_m2": 6.879844249851885e-09,
+                "uncovered_area_m2": 4.299411672032694,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 9,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      20
+                    ],
+                    "intersection_area_m2": 6.865889190521557e-09,
+                    "face_y_range_m": [
+                      0.5083330068737268,
+                      0.5083333067595959
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.5401865060507873,
+                      3.540196596579392
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      21
+                    ],
+                    "intersection_area_m2": 1.3955059330328368e-11,
+                    "face_y_range_m": [
+                      0.5083331065252416,
+                      0.5083333067595955
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.5401865060508158,
+                      3.540196696230936
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 10.501297406715967,
+                "covered_area_m2": 0.0007038047656067192,
+                "uncovered_area_m2": 10.50059360195036,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 5,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      21
+                    ],
+                    "intersection_area_m2": 0.00035119055306154223,
+                    "face_y_range_m": [
+                      0.5000000065192577,
+                      0.50833330642846
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.540186526552816,
+                      4.629019244447591
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      22
+                    ],
+                    "intersection_area_m2": 0.00035118370112741104,
+                    "face_y_range_m": [
+                      0.49999990686774254,
+                      0.5083331065252423
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.5401966962308506,
+                      4.629019244447591
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      27
+                    ],
+                    "intersection_area_m2": 1.4305114177659561e-06,
+                    "face_y_range_m": [
+                      0.500000006519258,
+                      0.5083333069251657
+                    ],
+                    "face_minus_ground_range_m": [
+                      3.540186505930251,
+                      4.629019244447591
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "811,318": {
+            "row": 811,
+            "col": 318,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 6.764369033371237,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 6.764369033371237,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 9.555296160365298,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 9.555296160365298,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "811,319": {
+            "row": 811,
+            "col": 319,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 13.483401576911756,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 13.483401576911756,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 16.700621109999783,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.700621109999783,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "811,320": {
+            "row": 811,
+            "col": 320,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 17.983484739936983,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.983484739936983,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 6,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 17.995270973089248,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.995270973089248,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 3,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "812,318": {
+            "row": 812,
+            "col": 318,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 15.87305390422521,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 15.87305390422521,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 3.674057936573208,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 3.674057936573208,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "812,319": {
+            "row": 812,
+            "col": 319,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 4,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 4,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "812,320": {
+            "row": 812,
+            "col": 320,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 6.879872636216325e-09,
+                "uncovered_area_m2": 17.999999993120127,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 12,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      29
+                    ],
+                    "intersection_area_m2": 6.8239387474022806e-09,
+                    "face_y_range_m": [
+                      0.5083330068737268,
+                      0.5083333067595954
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.402105753274327,
+                      6.4021249823269955
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      30
+                    ],
+                    "intersection_area_m2": 5.5933888814044264e-11,
+                    "face_y_range_m": [
+                      0.5083331052007318,
+                      0.5083333067595954
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.402107822341122,
+                      6.402124982327223
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0007038047656351676,
+                "uncovered_area_m2": 17.999296195234365,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 9,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      30
+                    ],
+                    "intersection_area_m2": 0.00035190576818422414,
+                    "face_y_range_m": [
+                      0.5000000065192577,
+                      0.5083333067595954
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.420320994220617,
+                      6.402124982327223
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812296,
+                      10665,
+                      31
+                    ],
+                    "intersection_area_m2": 0.00035189899745094347,
+                    "face_y_range_m": [
+                      0.49999990686774254,
+                      0.508333105200732
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.420320994220617,
+                      6.402107838795587
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "813,318": {
+            "row": 813,
+            "col": 318,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 2.8001583274455615,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.8001583274455615,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "813,319": {
+            "row": 813,
+            "col": 319,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 7,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 15.14412125301435,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 15.14412125301435,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "814,319": {
+            "row": 814,
+            "col": 319,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 9.457612160508246,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 9.457612160508246,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "Luga_0": {
+      "physical": {
+        "unknown_area_m2": 752.2621866095913,
+        "covered_area_m2": 0.0021114349365234375,
+        "uncovered_area_m2": 752.2600751746547,
+        "overlap_ge2_area_m2": 0.0,
+        "face_patch_intersections": 8,
+        "degenerate_candidates": 0,
+        "zero_area_contacts": 15,
+        "faces": {
+          "16812478:10815:13": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 13,
+            "patch_intersection_area_sum_m2": 0.0013993676327667772,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              4.280175989037502,
+              6.403323190286876
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground",
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                454,
+                0
+              ],
+              [
+                614,
+                454,
+                1
+              ],
+              [
+                614,
+                455,
+                0
+              ],
+              [
+                614,
+                455,
+                1
+              ]
+            ]
+          },
+          "16812478:10815:11": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 11,
+            "patch_intersection_area_sum_m2": 8.255658248847771e-06,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              4.280175989037389,
+              4.306863576731871
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                454,
+                1
+              ]
+            ]
+          },
+          "16812480:10817:2": {
+            "object_id": 16812480,
+            "model_id": 10817,
+            "face_id": 2,
+            "patch_intersection_area_sum_m2": 0.0006996838163834153,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.4168984855400595,
+              6.403323190286869
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                615,
+                456,
+                0
+              ],
+              [
+                615,
+                456,
+                1
+              ]
+            ]
+          },
+          "16812480:10817:4": {
+            "object_id": 16812480,
+            "model_id": 10817,
+            "face_id": 4,
+            "patch_intersection_area_sum_m2": 4.127829124397214e-06,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.416898485539946,
+              5.428491106777528
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                615,
+                456,
+                1
+              ]
+            ]
+          }
+        },
+        "cells": {
+          "610,456": {
+            "row": 610,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 12.667447746417155,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 12.667447746417155,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 11.711721463755547,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 11.711721463755547,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "610,457": {
+            "row": 610,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 2.4104673251520152,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.4104673251520152,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 15.835647030799574,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 15.835647030799574,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "610,458": {
+            "row": 610,
+            "col": 458,
+            "triangles": {
+              "1": {
+                "unknown_area_m2": 2.488311982364451,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.488311982364451,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,455": {
+            "row": 611,
+            "col": 455,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 5.670289890017254,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 5.670289890017254,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 2.8778735731321623,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.8778735731321623,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,456": {
+            "row": 611,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 17.997670784988617,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.997670784988617,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 17.99534156997724,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.99534156997724,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,457": {
+            "row": 611,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,458": {
+            "row": 611,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 16.04383359522101,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.04383359522101,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,459": {
+            "row": 611,
+            "col": 459,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 2.704042719903653,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.704042719903653,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 16.100551108147382,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.100551108147382,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,460": {
+            "row": 611,
+            "col": 460,
+            "triangles": {
+              "1": {
+                "unknown_area_m2": 0.4023388236311693,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 0.4023388236311693,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,454": {
+            "row": 612,
+            "col": 454,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 0.12684572949661096,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 0.12684572949661096,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 0.08254117660083288,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 0.08254117660083288,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,455": {
+            "row": 612,
+            "col": 455,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 15.027364902866307,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 15.027364902866307,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 12.755368241753164,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 12.755368241753164,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,456": {
+            "row": 612,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,457": {
+            "row": 612,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,458": {
+            "row": 612,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,459": {
+            "row": 612,
+            "col": 459,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 11.603452533390444,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 11.603452533390444,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 14.830452102222536,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 14.830452102222536,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,454": {
+            "row": 613,
+            "col": 454,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 9.163787758518685,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 9.163787758518685,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 7.257815680014668,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 7.257815680014668,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,455": {
+            "row": 613,
+            "col": 455,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,456": {
+            "row": 613,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,457": {
+            "row": 613,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,458": {
+            "row": 613,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 17.980788679202906,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.980788679202906,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 17.9896338995633,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.9896338995633,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,459": {
+            "row": 613,
+            "col": 459,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 2.83514494500929,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.83514494500929,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 5.578173842445999,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 5.578173842445999,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,454": {
+            "row": 614,
+            "col": 454,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 17.834336299626422,
+                "covered_area_m2": 6.879872671561316e-09,
+                "uncovered_area_m2": 17.83433629274655,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      13
+                    ],
+                    "intersection_area_m2": 6.879872671561316e-09,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.417121419948558,
+                      5.417158143594861
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 17.823292052940225,
+                "covered_area_m2": 0.0007038047656351409,
+                "uncovered_area_m2": 17.82258824817459,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 2,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      11
+                    ],
+                    "intersection_area_m2": 8.255658248847771e-06,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      4.280175989037389,
+                      4.306863576731871
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      13
+                    ],
+                    "intersection_area_m2": 0.0006955491073862932,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      4.280175989037502,
+                      5.417158143594747
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,455": {
+            "row": 614,
+            "col": 455,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 6.879872671561316e-09,
+                "uncovered_area_m2": 17.999999993120127,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      13
+                    ],
+                    "intersection_area_m2": 6.879872671561316e-09,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.403288453641956,
+                      6.403323190286876
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0007038047656351409,
+                "uncovered_area_m2": 17.999296195234365,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 2,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      13
+                    ],
+                    "intersection_area_m2": 0.0007038047656351409,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.417142686795501,
+                      6.403323190286642
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,456": {
+            "row": 614,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 2,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,457": {
+            "row": 614,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,458": {
+            "row": 614,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 10.995989209981014,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 10.995989209981014,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 13.86031886802905,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 13.86031886802905,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "615,456": {
+            "row": 615,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 6.879872671561316e-09,
+                "uncovered_area_m2": 17.999999993120127,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 2,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      2
+                    ],
+                    "intersection_area_m2": 6.879872671561316e-09,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.40328171264855,
+                      6.403323190286756
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0007038047656351409,
+                "uncovered_area_m2": 17.999296195234365,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 5,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      2
+                    ],
+                    "intersection_area_m2": 0.0006996769365107437,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.4168984855400595,
+                      6.403323190286869
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      4
+                    ],
+                    "intersection_area_m2": 4.127829124397214e-06,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.416898485539946,
+                      5.428491106777528
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "615,457": {
+            "row": 615,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 16.627897370509345,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.627897370509345,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 16.91437087189357,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.91437087189357,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 1,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "615,458": {
+            "row": 615,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 1.606829820213866,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 1.606829820213866,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 2.4622450118057886,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.4622450118057886,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          }
+        }
+      },
+      "visible": {
+        "unknown_area_m2": 752.2621866095913,
+        "covered_area_m2": 0.0021114349337949707,
+        "uncovered_area_m2": 752.2600751746576,
+        "overlap_ge2_area_m2": 0.0,
+        "face_patch_intersections": 18,
+        "degenerate_candidates": 0,
+        "zero_area_contacts": 47,
+        "faces": {
+          "16812478:10815:37": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 37,
+            "patch_intersection_area_sum_m2": 6.768459570594132e-09,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.417121592849867,
+              5.417158017930092
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                454,
+                0
+              ]
+            ]
+          },
+          "16812478:10815:38": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 38,
+            "patch_intersection_area_sum_m2": 0.00034904480071415575,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              4.280190366748343,
+              5.417158017929751
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                454,
+                0
+              ],
+              [
+                614,
+                454,
+                1
+              ]
+            ]
+          },
+          "16812478:10815:39": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 39,
+            "patch_intersection_area_sum_m2": 0.00034903803043564,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              4.280175989037389,
+              5.417121419954242
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                454,
+                1
+              ]
+            ]
+          },
+          "16812478:10815:57": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 57,
+            "patch_intersection_area_sum_m2": 5.721769843931581e-06,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              4.280190366748116,
+              5.417157845520478
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                454,
+                1
+              ]
+            ]
+          },
+          "16812478:10815:58": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 58,
+            "patch_intersection_area_sum_m2": 2.7514505480156663e-10,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.417048620736978,
+              5.417158143594747
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                454,
+                1
+              ]
+            ]
+          },
+          "16812478:10815:40": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 40,
+            "patch_intersection_area_sum_m2": 6.768459570594132e-09,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              6.403288671463002,
+              6.403323125696097
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                455,
+                0
+              ]
+            ]
+          },
+          "16812478:10815:41": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 41,
+            "patch_intersection_area_sum_m2": 0.00034904480071415575,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.417158017929978,
+              6.403323125696147
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                455,
+                0
+              ],
+              [
+                614,
+                455,
+                1
+              ]
+            ]
+          },
+          "16812478:10815:42": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 42,
+            "patch_intersection_area_sum_m2": 0.00034903803043564,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.417142686795501,
+              6.403288453647178
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                455,
+                1
+              ]
+            ]
+          },
+          "16812478:10815:60": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 60,
+            "patch_intersection_area_sum_m2": 5.721769843931509e-06,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.417158017929864,
+              6.4033229083403285
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                455,
+                1
+              ]
+            ]
+          },
+          "16812478:10815:61": {
+            "object_id": 16812478,
+            "model_id": 10815,
+            "face_id": 61,
+            "patch_intersection_area_sum_m2": 2.7514501107198195e-10,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              6.4032281940958455,
+              6.403323190286983
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                614,
+                455,
+                1
+              ]
+            ]
+          },
+          "16812480:10817:3": {
+            "object_id": 16812480,
+            "model_id": 10817,
+            "face_id": 3,
+            "patch_intersection_area_sum_m2": 6.768459570594132e-09,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              6.403281893392432,
+              6.403323033814104
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                615,
+                456,
+                0
+              ]
+            ]
+          },
+          "16812480:10817:4": {
+            "object_id": 16812480,
+            "model_id": 10817,
+            "face_id": 4,
+            "patch_intersection_area_sum_m2": 0.0003490447993499666,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.416920498258037,
+              6.4033230338138765
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground",
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                615,
+                456,
+                0
+              ],
+              [
+                615,
+                456,
+                1
+              ]
+            ]
+          },
+          "16812480:10817:0": {
+            "object_id": 16812480,
+            "model_id": 10817,
+            "face_id": 0,
+            "patch_intersection_area_sum_m2": 5.72176984380096e-06,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.4169204982581505,
+              6.403322853625923
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                615,
+                456,
+                1
+              ]
+            ]
+          },
+          "16812480:10817:1": {
+            "object_id": 16812480,
+            "model_id": 10817,
+            "face_id": 1,
+            "patch_intersection_area_sum_m2": 2.751451420549475e-10,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              6.403228171221258,
+              6.403323190286869
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                615,
+                456,
+                1
+              ]
+            ]
+          },
+          "16812480:10817:5": {
+            "object_id": 16812480,
+            "model_id": 10817,
+            "face_id": 5,
+            "patch_intersection_area_sum_m2": 0.0003490380317998289,
+            "face_y_range_m": [
+              0.5000000167638063,
+              0.5000000167638063
+            ],
+            "face_minus_ground_range_m": [
+              5.4168984855400595,
+              6.40328171265503
+            ],
+            "terrain_relation_by_patch": [
+              "above_ground"
+            ],
+            "participates_in_overlap": false,
+            "cells": [
+              [
+                615,
+                456,
+                1
+              ]
+            ]
+          }
+        },
+        "cells": {
+          "610,456": {
+            "row": 610,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 12.667447746417155,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 12.667447746417155,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 11.711721463755547,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 11.711721463755547,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "610,457": {
+            "row": 610,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 2.4104673251520152,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.4104673251520152,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 15.835647030799574,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 15.835647030799574,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "610,458": {
+            "row": 610,
+            "col": 458,
+            "triangles": {
+              "1": {
+                "unknown_area_m2": 2.488311982364451,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.488311982364451,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,455": {
+            "row": 611,
+            "col": 455,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 5.670289890017254,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 5.670289890017254,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 2.8778735731321623,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.8778735731321623,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,456": {
+            "row": 611,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 17.997670784988617,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.997670784988617,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 17.99534156997724,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.99534156997724,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,457": {
+            "row": 611,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,458": {
+            "row": 611,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 16.04383359522101,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.04383359522101,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,459": {
+            "row": 611,
+            "col": 459,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 2.704042719903653,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.704042719903653,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 16.100551108147382,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.100551108147382,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "611,460": {
+            "row": 611,
+            "col": 460,
+            "triangles": {
+              "1": {
+                "unknown_area_m2": 0.4023388236311693,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 0.4023388236311693,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,454": {
+            "row": 612,
+            "col": 454,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 0.12684572949661096,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 0.12684572949661096,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 0.08254117660083288,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 0.08254117660083288,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,455": {
+            "row": 612,
+            "col": 455,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 15.027364902866307,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 15.027364902866307,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 12.755368241753164,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 12.755368241753164,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,456": {
+            "row": 612,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,457": {
+            "row": 612,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,458": {
+            "row": 612,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "612,459": {
+            "row": 612,
+            "col": 459,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 11.603452533390444,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 11.603452533390444,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 14.830452102222536,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 14.830452102222536,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,454": {
+            "row": 613,
+            "col": 454,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 9.163787758518685,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 9.163787758518685,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 7.257815680014668,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 7.257815680014668,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,455": {
+            "row": 613,
+            "col": 455,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,456": {
+            "row": 613,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,457": {
+            "row": 613,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,458": {
+            "row": 613,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 17.980788679202906,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.980788679202906,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 17.9896338995633,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 17.9896338995633,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "613,459": {
+            "row": 613,
+            "col": 459,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 2.83514494500929,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.83514494500929,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 5.578173842445999,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 5.578173842445999,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,454": {
+            "row": 614,
+            "col": 454,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 17.834336299626422,
+                "covered_area_m2": 6.879417889082279e-09,
+                "uncovered_area_m2": 17.834336292745732,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 7,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      37
+                    ],
+                    "intersection_area_m2": 6.768459570594132e-09,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.417121592849867,
+                      5.417158017930092
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      38
+                    ],
+                    "intersection_area_m2": 1.1095831848814686e-10,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.417121419954356,
+                      5.417158017929751
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 17.823292052940225,
+                "covered_area_m2": 0.0007038047651804637,
+                "uncovered_area_m2": 17.822588248175045,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 7,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      38
+                    ],
+                    "intersection_area_m2": 0.00034904468975583726,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      4.280190366748343,
+                      5.4171578450287825
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      39
+                    ],
+                    "intersection_area_m2": 0.00034903803043564,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      4.280175989037389,
+                      5.417121419954242
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      57
+                    ],
+                    "intersection_area_m2": 5.721769843931581e-06,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      4.280190366748116,
+                      5.417157845520478
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      58
+                    ],
+                    "intersection_area_m2": 2.7514505480156663e-10,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.417048620736978,
+                      5.417158143594747
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,455": {
+            "row": 614,
+            "col": 455,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 6.879417889082279e-09,
+                "uncovered_area_m2": 17.999999993120582,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 4,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      40
+                    ],
+                    "intersection_area_m2": 6.768459570594132e-09,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.403288671463002,
+                      6.403323125696097
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      41
+                    ],
+                    "intersection_area_m2": 1.1095831848814686e-10,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.403288453647342,
+                      6.403323125696147
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0007038047651804198,
+                "uncovered_area_m2": 17.99929619523482,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 6,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      41
+                    ],
+                    "intersection_area_m2": 0.00034904468975583726,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.417158017929978,
+                      6.403322907875122
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      42
+                    ],
+                    "intersection_area_m2": 0.00034903803043564,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.417142686795501,
+                      6.403288453647178
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      60
+                    ],
+                    "intersection_area_m2": 5.721769843931509e-06,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.417158017929864,
+                      6.4033229083403285
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812478,
+                      10815,
+                      61
+                    ],
+                    "intersection_area_m2": 2.7514501107198195e-10,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.4032281940958455,
+                      6.403323190286983
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,456": {
+            "row": 614,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 8,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,457": {
+            "row": 614,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 18.0,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "614,458": {
+            "row": 614,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 10.995989209981014,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 10.995989209981014,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 13.86031886802905,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 13.86031886802905,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "615,456": {
+            "row": 615,
+            "col": 456,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 6.879417941774504e-09,
+                "uncovered_area_m2": 17.999999993121946,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 5,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      3
+                    ],
+                    "intersection_area_m2": 6.768459570594132e-09,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.403281893392432,
+                      6.403323033814104
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      4
+                    ],
+                    "intersection_area_m2": 1.1095837118037244e-10,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.403281712654916,
+                      6.4033230338138765
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 18.0,
+                "covered_area_m2": 0.0007038047651803674,
+                "uncovered_area_m2": 17.99929619523482,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 7,
+                "degenerate_candidates": 0,
+                "faces": [
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      0
+                    ],
+                    "intersection_area_m2": 5.72176984380096e-06,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.4169204982581505,
+                      6.403322853625923
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      1
+                    ],
+                    "intersection_area_m2": 2.751451420549475e-10,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      6.403228171221258,
+                      6.403323190286869
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      4
+                    ],
+                    "intersection_area_m2": 0.0003490446883915954,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.416920498258037,
+                      6.403322853070108
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  },
+                  {
+                    "face_key": [
+                      16812480,
+                      10817,
+                      5
+                    ],
+                    "intersection_area_m2": 0.0003490380317998289,
+                    "face_y_range_m": [
+                      0.5000000167638063,
+                      0.5000000167638063
+                    ],
+                    "face_minus_ground_range_m": [
+                      5.4168984855400595,
+                      6.40328171265503
+                    ],
+                    "terrain_relation": "above_ground",
+                    "participates_in_positive_area_overlap": false
+                  }
+                ],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "615,457": {
+            "row": 615,
+            "col": 457,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 16.627897370509345,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.627897370509345,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 16.91437087189357,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 16.91437087189357,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 3,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          },
+          "615,458": {
+            "row": 615,
+            "col": 458,
+            "triangles": {
+              "0": {
+                "unknown_area_m2": 1.606829820213866,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 1.606829820213866,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              },
+              "1": {
+                "unknown_area_m2": 2.4622450118057886,
+                "covered_area_m2": 0.0,
+                "uncovered_area_m2": 2.4622450118057886,
+                "overlap_ge2_area_m2": 0.0,
+                "zero_area_contacts": 0,
+                "degenerate_candidates": 0,
+                "faces": [],
+                "pairwise_overlaps": []
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "source_hashes_start": {
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ\\!Workshop\\@DayZ_Baltic_EV93_SelectedBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\terrain.npz": "30d0ed33e477846297a17e758e34a51490d54ee809e8b63ec9d69229170d15a1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "8bf57d622fb2f01aa491f280f9dcb8cdc9dd8a603ac18995e3e50d21e83e4cb3",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.json": "cc394869cf45f60315eea5b13a99b2f79d80135bee5ee32879b3900ecaa86610",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.py": "75e9a9003118d3f17795b8767403f057319224ee960e2e645ac1e10e86a6ceff",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\consumer-run-01\\review.json": "a9112811a7d23fee0fe94735683174d3d3f67e2200a7519b7633c247b82b10fa",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78"
+  },
+  "audit_source_sha256_start": "f82544818a7f4966ecddbd5f18c378cc1cfbb14b6d799fbfeca84c6cad48c30e",
+  "ev94_index_identity": {
+    "stage_source_wrps": "same source_wrp_sha256 as face index",
+    "staged_wrp": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+      "sha256": "8bf57d622fb2f01aa491f280f9dcb8cdc9dd8a603ac18995e3e50d21e83e4cb3"
+    },
+    "source_wrp": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+      "sha256": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6"
+    },
+    "staged_object_records": 18033,
+    "indexed_water_objects": 18024,
+    "not_selected_by_water_name_predicate": 9,
+    "selection_rule": "builder selects WRP names containing 'baltic_water_v30' and requires exact bijection with 18,024 bounds records",
+    "water_pbo": {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ\\!Workshop\\@DayZ_Baltic_EV93_SelectedBankPreviewV1\\Addons\\baltic_water_v30.pbo",
+      "sha256": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"
+    },
+    "terrain_sha256": "30d0ed33e477846297a17e758e34a51490d54ee809e8b63ec9d69229170d15a1",
+    "P_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "F_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "stage_source_sha256": "75e9a9003118d3f17795b8767403f057319224ee960e2e645ac1e10e86a6ceff",
+    "stage_source_evidence_lines": [
+      92,
+      99
+    ]
+  },
+  "feature_inputs": {
+    "Narva_23": {
+      "unknown_area_m2": 238.74576643431396,
+      "unknown_cells": [
+        [
+          810,
+          320
+        ],
+        [
+          810,
+          321
+        ],
+        [
+          811,
+          318
+        ],
+        [
+          811,
+          319
+        ],
+        [
+          811,
+          320
+        ],
+        [
+          812,
+          318
+        ],
+        [
+          812,
+          319
+        ],
+        [
+          812,
+          320
+        ],
+        [
+          813,
+          318
+        ],
+        [
+          813,
+          319
+        ],
+        [
+          814,
+          319
+        ]
+      ],
+      "patch_keys": [
+        [
+          "Narva_23",
+          810,
+          320,
+          0
+        ],
+        [
+          "Narva_23",
+          810,
+          320,
+          1
+        ],
+        [
+          "Narva_23",
+          810,
+          321,
+          0
+        ],
+        [
+          "Narva_23",
+          810,
+          321,
+          1
+        ],
+        [
+          "Narva_23",
+          811,
+          318,
+          0
+        ],
+        [
+          "Narva_23",
+          811,
+          318,
+          1
+        ],
+        [
+          "Narva_23",
+          811,
+          319,
+          0
+        ],
+        [
+          "Narva_23",
+          811,
+          319,
+          1
+        ],
+        [
+          "Narva_23",
+          811,
+          320,
+          0
+        ],
+        [
+          "Narva_23",
+          811,
+          320,
+          1
+        ],
+        [
+          "Narva_23",
+          812,
+          318,
+          0
+        ],
+        [
+          "Narva_23",
+          812,
+          318,
+          1
+        ],
+        [
+          "Narva_23",
+          812,
+          319,
+          0
+        ],
+        [
+          "Narva_23",
+          812,
+          319,
+          1
+        ],
+        [
+          "Narva_23",
+          812,
+          320,
+          0
+        ],
+        [
+          "Narva_23",
+          812,
+          320,
+          1
+        ],
+        [
+          "Narva_23",
+          813,
+          318,
+          0
+        ],
+        [
+          "Narva_23",
+          813,
+          319,
+          0
+        ],
+        [
+          "Narva_23",
+          813,
+          319,
+          1
+        ],
+        [
+          "Narva_23",
+          814,
+          319,
+          0
+        ]
+      ]
+    },
+    "Luga_0": {
+      "unknown_area_m2": 752.2621866095913,
+      "unknown_cells": [
+        [
+          610,
+          456
+        ],
+        [
+          610,
+          457
+        ],
+        [
+          610,
+          458
+        ],
+        [
+          611,
+          455
+        ],
+        [
+          611,
+          456
+        ],
+        [
+          611,
+          457
+        ],
+        [
+          611,
+          458
+        ],
+        [
+          611,
+          459
+        ],
+        [
+          611,
+          460
+        ],
+        [
+          612,
+          454
+        ],
+        [
+          612,
+          455
+        ],
+        [
+          612,
+          456
+        ],
+        [
+          612,
+          457
+        ],
+        [
+          612,
+          458
+        ],
+        [
+          612,
+          459
+        ],
+        [
+          613,
+          454
+        ],
+        [
+          613,
+          455
+        ],
+        [
+          613,
+          456
+        ],
+        [
+          613,
+          457
+        ],
+        [
+          613,
+          458
+        ],
+        [
+          613,
+          459
+        ],
+        [
+          614,
+          454
+        ],
+        [
+          614,
+          455
+        ],
+        [
+          614,
+          456
+        ],
+        [
+          614,
+          457
+        ],
+        [
+          614,
+          458
+        ],
+        [
+          615,
+          456
+        ],
+        [
+          615,
+          457
+        ],
+        [
+          615,
+          458
+        ]
+      ],
+      "patch_keys": [
+        [
+          "Luga_0",
+          610,
+          456,
+          0
+        ],
+        [
+          "Luga_0",
+          610,
+          456,
+          1
+        ],
+        [
+          "Luga_0",
+          610,
+          457,
+          0
+        ],
+        [
+          "Luga_0",
+          610,
+          457,
+          1
+        ],
+        [
+          "Luga_0",
+          610,
+          458,
+          1
+        ],
+        [
+          "Luga_0",
+          611,
+          455,
+          0
+        ],
+        [
+          "Luga_0",
+          611,
+          455,
+          1
+        ],
+        [
+          "Luga_0",
+          611,
+          456,
+          0
+        ],
+        [
+          "Luga_0",
+          611,
+          456,
+          1
+        ],
+        [
+          "Luga_0",
+          611,
+          457,
+          0
+        ],
+        [
+          "Luga_0",
+          611,
+          457,
+          1
+        ],
+        [
+          "Luga_0",
+          611,
+          458,
+          0
+        ],
+        [
+          "Luga_0",
+          611,
+          458,
+          1
+        ],
+        [
+          "Luga_0",
+          611,
+          459,
+          0
+        ],
+        [
+          "Luga_0",
+          611,
+          459,
+          1
+        ],
+        [
+          "Luga_0",
+          611,
+          460,
+          1
+        ],
+        [
+          "Luga_0",
+          612,
+          454,
+          0
+        ],
+        [
+          "Luga_0",
+          612,
+          454,
+          1
+        ],
+        [
+          "Luga_0",
+          612,
+          455,
+          0
+        ],
+        [
+          "Luga_0",
+          612,
+          455,
+          1
+        ],
+        [
+          "Luga_0",
+          612,
+          456,
+          0
+        ],
+        [
+          "Luga_0",
+          612,
+          456,
+          1
+        ],
+        [
+          "Luga_0",
+          612,
+          457,
+          0
+        ],
+        [
+          "Luga_0",
+          612,
+          457,
+          1
+        ],
+        [
+          "Luga_0",
+          612,
+          458,
+          0
+        ],
+        [
+          "Luga_0",
+          612,
+          458,
+          1
+        ],
+        [
+          "Luga_0",
+          612,
+          459,
+          0
+        ],
+        [
+          "Luga_0",
+          612,
+          459,
+          1
+        ],
+        [
+          "Luga_0",
+          613,
+          454,
+          0
+        ],
+        [
+          "Luga_0",
+          613,
+          454,
+          1
+        ],
+        [
+          "Luga_0",
+          613,
+          455,
+          0
+        ],
+        [
+          "Luga_0",
+          613,
+          455,
+          1
+        ],
+        [
+          "Luga_0",
+          613,
+          456,
+          0
+        ],
+        [
+          "Luga_0",
+          613,
+          456,
+          1
+        ],
+        [
+          "Luga_0",
+          613,
+          457,
+          0
+        ],
+        [
+          "Luga_0",
+          613,
+          457,
+          1
+        ],
+        [
+          "Luga_0",
+          613,
+          458,
+          0
+        ],
+        [
+          "Luga_0",
+          613,
+          458,
+          1
+        ],
+        [
+          "Luga_0",
+          613,
+          459,
+          0
+        ],
+        [
+          "Luga_0",
+          613,
+          459,
+          1
+        ],
+        [
+          "Luga_0",
+          614,
+          454,
+          0
+        ],
+        [
+          "Luga_0",
+          614,
+          454,
+          1
+        ],
+        [
+          "Luga_0",
+          614,
+          455,
+          0
+        ],
+        [
+          "Luga_0",
+          614,
+          455,
+          1
+        ],
+        [
+          "Luga_0",
+          614,
+          456,
+          0
+        ],
+        [
+          "Luga_0",
+          614,
+          456,
+          1
+        ],
+        [
+          "Luga_0",
+          614,
+          457,
+          0
+        ],
+        [
+          "Luga_0",
+          614,
+          457,
+          1
+        ],
+        [
+          "Luga_0",
+          614,
+          458,
+          0
+        ],
+        [
+          "Luga_0",
+          614,
+          458,
+          1
+        ],
+        [
+          "Luga_0",
+          615,
+          456,
+          0
+        ],
+        [
+          "Luga_0",
+          615,
+          456,
+          1
+        ],
+        [
+          "Luga_0",
+          615,
+          457,
+          0
+        ],
+        [
+          "Luga_0",
+          615,
+          457,
+          1
+        ],
+        [
+          "Luga_0",
+          615,
+          458,
+          0
+        ],
+        [
+          "Luga_0",
+          615,
+          458,
+          1
+        ]
+      ]
+    }
+  },
+  "query": {
+    "unknown_cells": 40,
+    "row_run_queries": 11,
+    "candidate_rows_returned_including_duplicates": 156,
+    "unique_candidate_faces_both_lods": 117,
+    "unique_candidate_faces_by_lod": {
+      "physical": 36,
+      "visible": 81
+    }
+  },
+  "classification": {
+    "P_unknown_total_m2": 991.0079530439052,
+    "physical_compiled_face_union_m2": 0.0035190582275390625,
+    "physical_no_face_gap_m2": 991.0044339856777,
+    "physical_overlap_ge2_m2": 0.0,
+    "visible_compiled_face_union_m2": 0.0035190582247537436,
+    "visible_no_face_gap_m2": 991.0044339856806,
+    "interpretation": "P-unknown area is classified by exact static face footprint and face-vs-H elevation; runtime water behavior remains untested."
+  },
+  "source_hashes_end": {
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ\\!Workshop\\@DayZ_Baltic_EV93_SelectedBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\terrain.npz": "30d0ed33e477846297a17e758e34a51490d54ee809e8b63ec9d69229170d15a1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "8bf57d622fb2f01aa491f280f9dcb8cdc9dd8a603ac18995e3e50d21e83e4cb3",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.json": "cc394869cf45f60315eea5b13a99b2f79d80135bee5ee32879b3900ecaa86610",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\stage.py": "75e9a9003118d3f17795b8767403f057319224ee960e2e645ac1e10e86a6ceff",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\order-closure\\consumer-run-01\\review.json": "a9112811a7d23fee0fe94735683174d3d3f67e2200a7519b7633c247b82b10fa",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78"
+  },
+  "source_hashes_unchanged": true,
+  "audit_source_sha256_end": "f82544818a7f4966ecddbd5f18c378cc1cfbb14b6d799fbfeca84c6cad48c30e",
+  "audit_source_unchanged": true,
+  "elapsed_total_seconds": 12.65700000000652,
+  "report_sha_note": "The report does not include its own hash; hash the emitted file externally."
+}

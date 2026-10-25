@@ -1,0 +1,389 @@
+{
+  "status": "EXACT_PIECEWISE_AFFINE_CLEARANCE_BOUND_FOR_DIAGNOSTIC_TILES",
+  "sources": {
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c"
+  },
+  "world_grid": {
+    "native_spacing_m": 6,
+    "x": "6*c",
+    "z": "12282-6*r",
+    "diagonal": "NW-SE"
+  },
+  "target": {
+    "screen_roi_pixels_half_open": [
+      918,
+      465,
+      1012,
+      500
+    ],
+    "transfer_source": "EV73 image + EV74/EV76 pose/FOV transfer; not per-frame V4 calibrated",
+    "factor32_rows": [
+      864,
+      896
+    ],
+    "factor32_cols": [
+      384,
+      416
+    ],
+    "world_xz_bounds_m": [
+      2304,
+      2496,
+      6906,
+      7098
+    ],
+    "meaning": "one 192 m factor-32 cell; all nested factor grids use vertices inside these aligned bounds"
+  },
+  "method": {
+    "surface_evaluation": "piecewise-affine barycentric interpolation on nested factor grids, all sharing native NW-SE diagonal",
+    "P": "per-cell constant; max(Hfactor-P) occurs at a native-triangle vertex",
+    "F": "per-cell NW_NE_SE and NW_SW_SE affine triangles; max(Hfactor-F) occurs at overlay vertices; the coarse and native/F diagonals coincide inside each native cell",
+    "coverage": "all finite P cells and all finite F triangles in the full one-cell tile; no point sampling",
+    "counts": "one row per factor, with finite-cell/triangle comparison counts and witnesses"
+  },
+  "factors": [
+    {
+      "factor": 1,
+      "spacing_m": 6,
+      "max_h_minus_P_m": 2.3154444694519043,
+      "max_P_witness": [
+        895,
+        393,
+        895,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": 2.3154444694519043,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_NE_SE",
+        895,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 2,
+      "spacing_m": 12,
+      "max_h_minus_P_m": 2.128746509552002,
+      "max_P_witness": [
+        895,
+        393,
+        896,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": 2.128746509552002,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_SW_SE",
+        896,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 4,
+      "spacing_m": 24,
+      "max_h_minus_P_m": 2.159637913107872,
+      "max_P_witness": [
+        895,
+        393,
+        896,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": 2.159637913107872,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_SW_SE",
+        896,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 8,
+      "spacing_m": 48,
+      "max_h_minus_P_m": 2.404170423746109,
+      "max_P_witness": [
+        895,
+        393,
+        896,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": 2.404170423746109,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_SW_SE",
+        896,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 16,
+      "spacing_m": 96,
+      "max_h_minus_P_m": 1.5190914332866667,
+      "max_P_witness": [
+        881,
+        384,
+        882,
+        384,
+        1.7750000000000001
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": 1.5190914332866667,
+      "max_F_witness": [
+        881,
+        384,
+        "NW_SW_SE",
+        882,
+        384,
+        [
+          1.7750000000000001,
+          1.7750000000000001,
+          1.7833333333333334
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 32,
+      "spacing_m": 192,
+      "max_h_minus_P_m": 5.838389612734318,
+      "max_P_witness": [
+        895,
+        393,
+        896,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": 5.838389612734318,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_SW_SE",
+        896,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    }
+  ],
+  "post_float32_diagnostic_factors": [
+    {
+      "factor": 1,
+      "spacing_m": 6,
+      "max_h_minus_P_m": -3.7845555543899536,
+      "max_P_witness": [
+        895,
+        393,
+        895,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": -3.7845555543899536,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_NE_SE",
+        895,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 2,
+      "spacing_m": 12,
+      "max_h_minus_P_m": -3.971253454685211,
+      "max_P_witness": [
+        895,
+        393,
+        896,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": -3.971253454685211,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_SW_SE",
+        896,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 4,
+      "spacing_m": 24,
+      "max_h_minus_P_m": -3.9403620660305023,
+      "max_P_witness": [
+        895,
+        393,
+        896,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": -3.9403620660305023,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_SW_SE",
+        896,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 8,
+      "spacing_m": 48,
+      "max_h_minus_P_m": -3.6958295553922653,
+      "max_P_witness": [
+        895,
+        393,
+        896,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": -3.6958295553922653,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_SW_SE",
+        896,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 16,
+      "spacing_m": 96,
+      "max_h_minus_P_m": -4.580908471345902,
+      "max_P_witness": [
+        881,
+        384,
+        882,
+        384,
+        1.7750000000000001
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": -4.580908471345902,
+      "max_F_witness": [
+        881,
+        384,
+        "NW_SW_SE",
+        882,
+        384,
+        [
+          1.7750000000000001,
+          1.7750000000000001,
+          1.7833333333333334
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    },
+    {
+      "factor": 32,
+      "spacing_m": 192,
+      "max_h_minus_P_m": -0.2616102918982506,
+      "max_P_witness": [
+        895,
+        393,
+        896,
+        393,
+        2.125
+      ],
+      "finite_P_cells": 617,
+      "max_h_minus_F_m": -0.2616102918982506,
+      "max_F_witness": [
+        895,
+        393,
+        "NW_SW_SE",
+        896,
+        393,
+        [
+          2.125,
+          2.125,
+          2.125
+        ]
+      ],
+      "finite_F_triangle_vertex_comparisons": 3702
+    }
+  ],
+  "bound": {
+    "max_excess_over_P_or_F_m": 5.838389612734318,
+    "selected_uniform_drop_m": 6.1,
+    "minimum_nominal_clearance_after_drop_m": 0.26161038726568187,
+    "actual_float32_vertex_drop_m": {
+      "min": 6.099999666213989,
+      "max": 6.100000381469727
+    },
+    "post_float32_max_H_minus_P_or_F_m": -0.2616102918982506,
+    "interpretation": "the ideal uniform drop is 6.10 m; the report also recomputes every factor after storing heights as float32, so quantization is included"
+  },
+  "limits": [
+    "This bounds geometry relative to the pinned nominal P and F fields; it is not a bound on animated/fake waves or the engine's selected LOD.",
+    "The transferred screen ROI is approximate because V4 did not store per-capture camera/FOV readback; the one-cell rectangular coverage is intentionally larger than that projected ROI.",
+    "It is a diagnostic-only deformation that changes terrain and shore geometry over 192 x 384 m; it is not a production terrain proposal."
+  ]
+}

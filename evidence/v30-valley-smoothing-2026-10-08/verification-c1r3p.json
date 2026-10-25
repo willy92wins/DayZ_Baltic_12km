@@ -1,0 +1,227 @@
+{
+  "status": "PASS_OFFLINE_VALLEY",
+  "checks": {
+    "finite": true,
+    "structural_exact": true,
+    "corridors_exact": true,
+    "roads_pass": true,
+    "metadata_outside_local_exact": true,
+    "no_new_floor_exception": true,
+    "legacy_low_not_excavated": true,
+    "no_new_dry_flood": true,
+    "no_new_wet_exposure": true,
+    "slopes": true,
+    "R3_curvature": true,
+    "general_curvature": true,
+    "R1_shore_turns": true,
+    "R1_shore_distance": true,
+    "R2_shore_turns": true,
+    "R2_shore_distance": true,
+    "R3_shore_turns": true,
+    "R3_shore_distance": true,
+    "native_components": true,
+    "component_areas": true,
+    "islands": true
+  },
+  "curvature": {
+    "R3_valley": {
+      "before": 0.022390349713036835,
+      "after": 0.015550926259924446,
+      "reduction": 0.3054630026225146
+    },
+    "general_dry": {
+      "before": 0.014707412339075505,
+      "after": 0.013048057290241295,
+      "reduction": 0.11282440517599002
+    }
+  },
+  "outlines": {
+    "R1": {
+      "before": {
+        "lines": 2,
+        "length_m": 507.20703496792237,
+        "samples": 242,
+        "turn_p50": 3.9519107140018206,
+        "turn_p90": 23.039456892569877,
+        "turn_p95": 28.80583440728418,
+        "turn_over30_share": 0.045454545454545456
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 507.20703496792237,
+        "samples": 242,
+        "turn_p50": 3.9519107140018206,
+        "turn_p90": 23.039456892569877,
+        "turn_p95": 28.80583440728418,
+        "turn_over30_share": 0.045454545454545456
+      },
+      "hausdorff_m": 0.0
+    },
+    "R2": {
+      "before": {
+        "lines": 2,
+        "length_m": 812.7945216624786,
+        "samples": 395,
+        "turn_p50": 5.490514208207124,
+        "turn_p90": 29.632085333337162,
+        "turn_p95": 53.53929375869794,
+        "turn_over30_share": 0.09873417721518987
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 812.7945216624786,
+        "samples": 395,
+        "turn_p50": 5.490514208207124,
+        "turn_p90": 29.632085333337162,
+        "turn_p95": 53.53929375869794,
+        "turn_over30_share": 0.09873417721518987
+      },
+      "hausdorff_m": 0.0
+    },
+    "R3": {
+      "before": {
+        "lines": 2,
+        "length_m": 867.1271619719322,
+        "samples": 422,
+        "turn_p50": 10.01427744024578,
+        "turn_p90": 37.68891934544408,
+        "turn_p95": 46.3190495417347,
+        "turn_over30_share": 0.1872037914691943
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 859.2960103871914,
+        "samples": 418,
+        "turn_p50": 9.64271553806892,
+        "turn_p90": 35.82568667725548,
+        "turn_p95": 43.87123536921621,
+        "turn_over30_share": 0.1507177033492823
+      },
+      "hausdorff_m": 3.603811545065624
+    }
+  },
+  "topology": {
+    "before_components": 4,
+    "after_components": 4,
+    "components": [
+      {
+        "before_id": 0,
+        "bounds": [
+          2112.0,
+          7068.390924,
+          2256.0,
+          7332.955183
+        ],
+        "matches": 1,
+        "before_area": 15280.43494691596,
+        "after_area": 15280.43494691596,
+        "area_ratio": 1.0,
+        "before_holes": 0,
+        "after_holes": 0
+      },
+      {
+        "before_id": 1,
+        "bounds": [
+          7180.588992,
+          5568.0,
+          7438.107165,
+          5851.764566
+        ],
+        "matches": 1,
+        "before_area": 1938.3220001703862,
+        "after_area": 2084.4990060485675,
+        "area_ratio": 1.0754142014924928,
+        "before_holes": 0,
+        "after_holes": 0
+      },
+      {
+        "before_id": 2,
+        "bounds": [
+          8205.706084,
+          8930.690011,
+          8280.245835,
+          9264.0
+        ],
+        "matches": 1,
+        "before_area": 3328.4113517268265,
+        "after_area": 3328.4113517268293,
+        "area_ratio": 1.0000000000000009,
+        "before_holes": 0,
+        "after_holes": 0
+      },
+      {
+        "before_id": 3,
+        "bounds": [
+          8242.982029,
+          8891.055141,
+          8258.279224,
+          8914.582331
+        ],
+        "matches": 1,
+        "before_area": 152.52619096708423,
+        "after_area": 152.52619096708423,
+        "area_ratio": 1.0,
+        "before_holes": 0,
+        "after_holes": 0
+      }
+    ],
+    "no_split_or_missing": true,
+    "area_preserved": true,
+    "islands_preserved": true
+  },
+  "new_dry_flood": 0,
+  "new_wet_exposure": 0,
+  "bad_faces": 0,
+  "reclassified_vertices": 18,
+  "corridor_vertices": 22893,
+  "wet_area_before": 20699.694489780257,
+  "wet_area_after": 20845.871495658444,
+  "roads": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "terrain_sha256": "9c3011b8af5279e807630d4e91512d2e95a434463d3523a5b4074e70bc7cc8f6",
+  "limits": [
+    "Frozen physical pond planes; class-derived reconstruction is not the deployed water.",
+    "Native whole-domain audit corrects removed-cells clipping in the preliminary metric; no game acceptance."
+  ]
+}

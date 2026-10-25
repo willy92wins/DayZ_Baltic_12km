@@ -1,0 +1,36 @@
+{
+  "status": "PASS_SYNTHETIC_CONTINUATION_EQUIVALENCE",
+  "scope": "reference49 only; no sector run or candidate",
+  "continuous_iterations": 177,
+  "cut_iterations": 50,
+  "resumed_final_iteration": 177,
+  "vectors_exact": true,
+  "numerical_diagnostics_exact": true,
+  "rho_updates": [
+    {
+      "iteration": 50,
+      "old_rho": 1.0,
+      "new_rho": 2.0
+    }
+  ],
+  "malformed_state_rejections": {
+    "wrong_dual_shape": true,
+    "nonfinite_x": true,
+    "rho_zero": true,
+    "bool_iteration": true,
+    "negative_cg_count": true,
+    "infeasible_z_box": true,
+    "infeasible_z_d8": true
+  },
+  "production_scale_cg_count_accepted": true,
+  "dual_misconversion_diverged": true,
+  "no_state_extension_rejected": true,
+  "budget_over_600_rejected": true,
+  "continuation_over_300_additional_rejected": true,
+  "original_helper_api_exposed": true,
+  "objective_continuous": 0.06220726744407591,
+  "objective_resumed": 0.06220726744407591,
+  "original_default_max_iter": 10000,
+  "explicit_cumulative_iteration_ceiling": 20000,
+  "cumulative_budget_ceiling_s": 600.0
+}

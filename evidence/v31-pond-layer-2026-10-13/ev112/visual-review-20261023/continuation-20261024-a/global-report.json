@@ -1,0 +1,72 @@
+{
+  "schema": "ev112-global-free-relief-v1",
+  "status": "OFFLINE_PASS",
+  "author_sha256": "d39282b423052d2a390bad488ec621dff1b5f8db1112aa58bfc1ea55c4de8eca",
+  "terrain_input_sha256": "07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62",
+  "terrain_sha256": "cebcc396e763dc9edc2415b1818e0ea2b0e47a8aaf3960b6149704e642ebf4e7",
+  "footprint_sha256": "49ee2a69db85f047425f8e1d31a964f92771ceb19b203c42570b04c3c6207de5",
+  "envelope_sha256": "cc45e2ef667ae2ba78de4c11283c648d2293c53303148f9247361b639a0e73a6",
+  "records_sha256": "48201e4d5c06a6df80844b6487469fc88f507899c93073af0721703bfbc406dc",
+  "checks": {
+    "frozen_exact": true,
+    "shoreline_exact": true,
+    "pond_corners_exact": true,
+    "protected_01545_exact": true,
+    "sea_classification_exact": true,
+    "no_regressed_sharp_edges": true,
+    "pilot_collar_exact": true
+  },
+  "sigma_m": 12,
+  "free_vertices": 2947252,
+  "changed_vertices": 2903159,
+  "change_range_m": [
+    -2.5918807983398438,
+    1.369898796081543
+  ],
+  "native_edges": {
+    "diagonal": {
+      "affected_edges": 2972302,
+      "before_over20": 272,
+      "after_over20": 225,
+      "max_before": 40.80806310407087,
+      "max_after": 39.27098372404686
+    },
+    "east": {
+      "affected_edges": 2986910,
+      "before_over20": 30,
+      "after_over20": 23,
+      "max_before": 29.72737052472487,
+      "max_after": 29.08579341287572
+    },
+    "south": {
+      "affected_edges": 2986354,
+      "before_over20": 51,
+      "after_over20": 42,
+      "max_before": 39.298866404613236,
+      "max_after": 38.48430511580669
+    }
+  },
+  "pullbacks": [
+    {
+      "iteration": 0,
+      "regressed_sharp_edges": 2311
+    },
+    {
+      "iteration": 1,
+      "regressed_sharp_edges": 1
+    },
+    {
+      "iteration": 2,
+      "regressed_sharp_edges": 0
+    }
+  ],
+  "retired_regression_collar_vertices": 14922,
+  "pilot_terrain": {
+    "path": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev112-build-20261018/visual-pilot-20261023-m/terrain.npz",
+    "sha256": "8b5dc6bd5ebfa49cd14bbbd139abefb27aa8ecaf8d56dab710b1380f28f2a8f2"
+  },
+  "limitations": [
+    "Protected defects and kits are still open, not accepted by exclusion.",
+    "Pond regeneration, forest support, build and visual view pending."
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "abi": {
+    "Counters_size": 72,
+    "c_size_t_bytes": 8,
+    "c_ulong_bytes": 4,
+    "field_offsets": {
+      "PageFaultCount": 4,
+      "PagefileUsage": 56,
+      "PeakPagefileUsage": 64,
+      "PeakWorkingSetSize": 8,
+      "QuotaNonPagedPoolUsage": 48,
+      "QuotaPagedPoolUsage": 32,
+      "QuotaPeakNonPagedPoolUsage": 40,
+      "QuotaPeakPagedPoolUsage": 24,
+      "WorkingSetSize": 16,
+      "cb": 0
+    },
+    "pointer_bits": 64
+  },
+  "abi_matches_win32_process_memory_counters": true,
+  "consumer_changed_lines": [
+    "-SOLVE_DRIVER = HERE / 'solve_real_sector.py'",
+    "+SOLVE_DRIVER = HERE / 'solve_real_sector_cached.py'",
+    "-    SOLVE_DRIVER: '9f4fc8e5edc2ad7a8276264d4b6fea05ee8682b777d370cb75a283f0cb4d296e',",
+    "+    SOLVE_DRIVER: '5e75e0e1d3e3c6938679cd31e87f4f317353e64ff919c471d79d1a04d50f98f9',"
+  ],
+  "consumer_diff_lines": [
+    "--- verify_real_sector.py",
+    "+++ verify_real_sector_cached.py",
+    "@@ -31,7 +31,7 @@",
+    " PREP_PATH = HERE / 'prepare_inventory.py'",
+    " WATER_PATH = HERE / 'prepare_water_footprint.py'",
+    " CIVIL_PATH = HERE / 'civil_inventory.py'",
+    "-SOLVE_DRIVER = HERE / 'solve_real_sector.py'",
+    "+SOLVE_DRIVER = HERE / 'solve_real_sector_cached.py'",
+    " PROTO_PATH = G / 'global-operator-prototype/prototype.py'",
+    " D8_PATH = G / 'constrained-pilot/d8_sparse_pilot.py'",
+    " EV82_PATH = ROOT / 'v30-mixed-bank-incremental-fixed-20261010/author.py'",
+    "@@ -89,7 +89,7 @@",
+    "     PROTO_PATH: '5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4',",
+    "     D8_PATH: '6b5281d9750c30fc5b27171aaec2af59dee88411a66bf5b08e5105866f08252c',",
+    "     PBO_READER_PATH: '717b81469e0a799690d1586cd7a4492f079c3b2db626eec7e2815cd15896e062',",
+    "-    SOLVE_DRIVER: '9f4fc8e5edc2ad7a8276264d4b6fea05ee8682b777d370cb75a283f0cb4d296e',",
+    "+    SOLVE_DRIVER: '5e75e0e1d3e3c6938679cd31e87f4f317353e64ff919c471d79d1a04d50f98f9',",
+    "     EV82_PATH: '9b7c5374b7c78c3604bb2763ef8b7b4d16dc4bf18fc57091233ad435876cb74b',",
+    "     B_PATH: 'f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0',",
+    "     O_PATH: 'dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c',"
+  ],
+  "hashes": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\admm-quantized-pilot\\solve.py": "7e8636bf54ba23f7e23bc2f06464100439468da7b4edca85f96c72d0cd40e149",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\AMENDMENT_CACHED_TELEMETRY.md": "d64ad4441348bb2054800851cf7ef19f5f143143d62b93e0659de804b2565f7a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector.py": "9f4fc8e5edc2ad7a8276264d4b6fea05ee8682b777d370cb75a283f0cb4d296e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\solve_real_sector_cached.py": "5e75e0e1d3e3c6938679cd31e87f4f317353e64ff919c471d79d1a04d50f98f9",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\verify_real_sector_cached.py": "3e7a6996f5e4b637ba7d94ad20dd3add6643f52db31d7098c6baa32e238d4799"
+  },
+  "new_driver_snapshot_ast": "FunctionDef(name='_memory_snapshot', args=arguments(posonlyargs=[], args=[arg(arg='solver_module')], kwonlyargs=[], kw_defaults=[], defaults=[]), body=[Return(value=Call(func=Name(id='_cached_process_memory', ctx=Load()), args=[], keywords=[]))], decorator_list=[], type_params=[])",
+  "old_driver_snapshot_ast": "FunctionDef(name='_memory_snapshot', args=arguments(posonlyargs=[], args=[arg(arg='solver_module')], kwonlyargs=[], kw_defaults=[], defaults=[]), body=[Return(value=Call(func=Attribute(value=Name(id='solver_module', ctx=Load()), attr='process_memory', ctx=Load()), args=[], keywords=[]))], decorator_list=[], type_params=[])",
+  "old_nested_class_equals_new_module_class": true,
+  "original_body_without_nested_Counters_equals_cached_helper_body": true,
+  "runtime": {
+    "driver_main_called": false,
+    "elapsed_seconds": 0.19234309997409582,
+    "executable": "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+    "fresh_interpreter": true,
+    "helper_calls": 10000,
+    "helper_result": {
+      "method": "GetProcessMemoryInfo in solver interpreter",
+      "peak_commit_bytes": 19099648,
+      "peak_working_set_bytes": 27312128,
+      "pid": 209924,
+      "working_set_bytes": 25051136
+    },
+    "observed_peak_pagefile_bytes": 19099648,
+    "observed_peak_working_set_bytes": 27312128,
+    "pointer_type_cache_after": 4,
+    "pointer_type_cache_before": 3,
+    "pointer_type_cache_delta": 1,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "solver_called": false,
+    "within_256MiB": true,
+    "within_30_seconds": true
+  },
+  "schema": "cached-helper-review.v1",
+  "status": "PASS_TELEMETRY_HELPER_ONLY"
+}

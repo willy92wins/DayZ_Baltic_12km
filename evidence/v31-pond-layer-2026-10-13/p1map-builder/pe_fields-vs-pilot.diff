@@ -1,0 +1,24 @@
+--- E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder/pe_fields.py	2026-10-13 14:12:43.990837800 +0200
++++ E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1map-builder/pe_fields.py	2026-10-13 14:25:44.417119200 +0200
+@@ -19,10 +19,10 @@
+ from scipy.spatial import cKDTree
+ import contourpy
+ 
+-OUT = 'E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder'
++OUT = 'E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1map-builder'
+ BASE = 'E:/DayZ-Baltic-Build/v31-ev103-sills-cones-20261012/terrain-ev103.npz'
+ COVER = 'E:/DayZ-Baltic-Build/v31-pond-layer-20261013/envelope-ev103.npy'
+-WINDOW = (7776.0, 10224.0, 8976.0, 11040.0)
++WINDOW = (0.0, 12288.0, 0.0, 12288.0)            # full map
+ SEA = 0.75
+ BIG = 50.0
+ K = 3
+@@ -110,7 +110,7 @@
+     bankdist = distance_transform_edt(wet0) * 6.0
+     channel = nav & wet0 & (bankdist >= 12.0)
+     frozen = b['reserve'] | b['platform'] | b['narva']
+-    # v31 pilot: only the San Petersburg window may change (x 7776-10224, z 8976-11040)
++    # v31 full map: the window covers the whole map
+     zz, xx = 6.0 * (2047 - np.arange(2048))[:, None], 6.0 * np.arange(2048)[None, :]
+     frozen = frozen | ~((xx >= WINDOW[0]) & (xx <= WINDOW[1]) & (zz >= WINDOW[2]) & (zz <= WINDOW[3]))
+     return dict(H0=H0, covered=covered, cover=cover, pinc=pinc, inner=inner, bnd=bnd, step=step, vpl=vpl,

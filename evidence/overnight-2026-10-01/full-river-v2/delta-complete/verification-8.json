@@ -1,0 +1,55 @@
+{
+  "status": "FAIL_OR_INCOMPLETE",
+  "global_checks": {
+    "header": true,
+    "all_cases_complete": true,
+    "exact_cases": true,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 8,
+      "river": "Delta norte",
+      "reverse": false,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": false,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 995,
+      "max_dt_s": 0.5180000000000007,
+      "max_step_m": 0.7138920431732316,
+      "max_corridor_distance_m": 3.4613341920923446,
+      "max_waypoint_distance_m": 0.7080937423711869,
+      "end_distance_m": 7.4946203089989,
+      "max_ground_error_m": 0.0002031377288647107,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 463.02
+    }
+  ],
+  "limits": [
+    "Empty independently spawned boats; no crew or medium-vessel acceptance.",
+    "Overlapping continuous segments provide coverage; not one boat traveling end-to-end.",
+    "One direction only; selected main channels and four delta routes, not every side branch.",
+    "Same V3 controller except bounded route-distance scan and timeout; independent whole-route verifier unchanged."
+  ]
+}

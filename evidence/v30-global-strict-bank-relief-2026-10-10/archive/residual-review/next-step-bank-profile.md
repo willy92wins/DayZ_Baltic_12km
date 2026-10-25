@@ -1,0 +1,19 @@
+# Perfil residual de ribera: discovery acotado
+
+Se corrigió la nota anterior: “BALTIC007/011” no identifica aquí cortes geográficos; son IDs de debug y no hay una tabla de coordenadas verificada. No se eligen perfiles por esos IDs. La selección que sigue usa solo las tres anclas de `mesh-comparison.json` y el inventario residual EV87; es un discovery offline, no autoría ni aceptación gráfica.
+
+## Hallazgo de los tres focos
+
+Las anclas del JSON están en formato `[row,col]`, con `x=6·col`, `z=12282−6·row`. Solo la ventana 9×9 de `(844,372)` —mundo `(2232,7218)`— contiene un seed hot/prominent residual: `(840,370)` —mundo `(2220,7242)`—, ángulo incidente 37.329°, prominencia axial 1.8323 m, rechazado del muestreo global por solape de Chebyshev. En esa ventana hay 48 nodos elegibles secos por la semántica EV87, 42 nodos soporte de caras F en B y 7 cambios EV87. Los otros dos focos no contienen ningún seed residual hot/prominent en 9×9: `(1715,1378)` / `(8268,1992)` y `(145,1724)` / `(10344,11412)`.
+
+El corte N–S del residual `(840,370)` muestra un hombro seco acotado: H=1.9488 m en `(839,370)` / z=7248; pico H=3.7361 m en `(840,370)` / z=7242; H=1.4406 m en `(841,370)` / z=7236; H=0.9231 m y mojado en `(842,370)` / z=7230. El pico aún no cambió en EV87. Sus muestras incidentes finitas dan nivel máximo P/F/SEA=1.1333 m, margen vertical H−nivel=2.6028 m, y su distancia XZ al polígono local actualmente mojado es 4.3043 m. Es class0, sin `other_fixed`, halo de ingeniería, gran lago, reserva o plataforma; `wet_support` heredado y `EV79.fixed` son true, pero la regla de elegibilidad EV87 lo clasifica seco/elegible porque H supera cada plano. El ledger lo dejó fuera por solape, no por protección.
+
+El corte E–O a través del mismo pico baja de 3.7361 m en c370 a 1.9038 m en c371 y 1.6498 m en c372, mientras el lado oeste termina en niveles negativos mojados. Es evidencia de hombro/pico seco pegado a ribera, no prueba de forma artística 3D. Las distancias mínimas ancla→polígono mojado en las tres ventanas son 4.4246 m, 4.0889 m y 5.0364 m respectivamente. JSON conserva perfiles 9×9 con alturas B/H, P/F incidentes, clase, protecciones, elegibilidad y cortes reproducibles.
+
+## Qué fija agua y qué no
+
+Congelar literalmente todos los vértices que pertenecen a una cara con agua congelaría también `(840,370)`, aunque el punto esté 2.60 m por encima del mayor P/F/SEA y a 4.30 m del agua geométrica actual. Bajo esa regla rígida, el máximo residual no se puede bajar. Eso es más estricto que preservar la huella/topología P/F: la cara toca el nodo como soporte, pero el nodo sigue seco. EV87 ya permitió alterar nodos de esa clase mientras mantuvo las máscaras de caras mojadas; preservar contorno no exige fijar su altura si permanece al lado seco de cada nivel. Cerca de la orilla hay menos margen: `(841,370)` solo supera los niveles incidentes por 0.2906 m y el agua empieza a 1.9759 m.
+
+Por tanto, este foco parece permitir una intervención confinada a banda seca si “preservar agua” significa mantener P/F y la máscara/topología de signos, no congelar todos los vértices soporte. Eso no conserva exactamente el polígono mojado: al bajar el extremo seco de una cara mixta, el cruce con el plano P/F se desplaza y su movimiento debe medirse contra el presupuesto. No se ha demostrado que el seed pase cotas angulares/p99/pendiente ni el solver de una futura pasada. Si la futura regla exige alturas idénticas en todo vértice soporte, la banda seca por sí sola no puede bajar este pico; eso requeriría cambiar explícitamente el plan. La nota no propone mover una cara realmente mojada ni toca el corredor navegable; calado 0.95 m solo aplica a ese corredor, no a esta ribera por defecto.
+
+El artefacto reproducible del discovery está en `focus-profile-discovery.json`; fuente de métricas de residual: `residual-inventory.json`/`residual-seeds.csv`. No se ejecutó optimizer ni se creó terreno.

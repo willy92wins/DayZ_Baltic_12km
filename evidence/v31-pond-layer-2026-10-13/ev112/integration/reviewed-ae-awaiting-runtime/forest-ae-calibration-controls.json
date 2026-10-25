@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "scope": "One actual report positive and nineteen malformed calibration controls; no production mutation.",
+  "source_sha256": "0fef87eec16f4a609b33482ac438fc33f07e48c1db3d12810a3d0bd7501c658a",
+  "report_sha256": "6f14094c8c08504da2cc130325d17557f81b582e887b33330fcdef4a5b829ba0",
+  "positive": 1,
+  "negatives": 19,
+  "controls": [
+    {
+      "name": "seed",
+      "rejected": true,
+      "error": "calibration seed/source mismatch"
+    },
+    {
+      "name": "source",
+      "rejected": true,
+      "error": "calibration seed/source mismatch"
+    },
+    {
+      "name": "classes",
+      "rejected": true,
+      "error": "calibration class/stratum schema mismatch"
+    },
+    {
+      "name": "strata",
+      "rejected": true,
+      "error": "calibration class/stratum schema mismatch"
+    },
+    {
+      "name": "terrain_hash",
+      "rejected": true,
+      "error": "calibration input mismatch: terrain"
+    },
+    {
+      "name": "missing_exclusion",
+      "rejected": true,
+      "error": "calibration exclusions mismatch"
+    },
+    {
+      "name": "layers",
+      "rejected": true,
+      "error": "calibration layer directories mismatch"
+    },
+    {
+      "name": "tree_shape",
+      "rejected": true,
+      "error": "invalid calibration coefficients: tree_admission"
+    },
+    {
+      "name": "nonfinite",
+      "rejected": true,
+      "error": "invalid calibration coefficients: tree_admission"
+    },
+    {
+      "name": "out_of_range",
+      "rejected": true,
+      "error": "invalid calibration coefficients: bush"
+    },
+    {
+      "name": "tree_points_hash",
+      "rejected": true,
+      "error": "changed accepted-canopy dependency: points"
+    },
+    {
+      "name": "canopy_hash",
+      "rejected": true,
+      "error": "changed accepted-canopy dependency: sd"
+    },
+    {
+      "name": "planned_hash",
+      "rejected": true,
+      "error": "changed planned clearing dependency"
+    },
+    {
+      "name": "planned_points_binding",
+      "rejected": true,
+      "error": "changed planned clearing dependency"
+    },
+    {
+      "name": "planned_patch_contract",
+      "rejected": true,
+      "error": "planned clearing contract mismatch"
+    },
+    {
+      "name": "planned_distance_contract",
+      "rejected": true,
+      "error": "planned clearing contract mismatch"
+    },
+    {
+      "name": "planned_blend_contract",
+      "rejected": true,
+      "error": "planned clearing contract mismatch"
+    },
+    {
+      "name": "planned_moss_contract",
+      "rejected": true,
+      "error": "planned clearing contract mismatch"
+    },
+    {
+      "name": "planned_raster_binding",
+      "rejected": true,
+      "error": "planned clearing raster binding mismatch"
+    }
+  ],
+  "release_acceptance": false
+}

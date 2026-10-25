@@ -1,0 +1,217 @@
+{
+  "status": "FAIL_SHORT_PHYSICAL_AI_COVERAGE",
+  "physical_status": "FAIL_OR_INCOMPLETE",
+  "groups": [
+    {
+      "name": "original_reverse_8",
+      "status": "PASS",
+      "domain_m": [
+        0,
+        120.0
+      ],
+      "actual_intervals_m": [
+        {
+          "case": 1,
+          "lo": 0.0,
+          "hi": 41.10742199999913
+        },
+        {
+          "case": 2,
+          "lo": 40.0,
+          "hi": 81.3447269999997
+        },
+        {
+          "case": 3,
+          "lo": 80.0,
+          "hi": 116.14550799999961
+        }
+      ],
+      "merged_m": [
+        [
+          0.0,
+          116.14550799999961
+        ]
+      ],
+      "failed_cases": []
+    },
+    {
+      "name": "original_reverse_10",
+      "status": "PASS",
+      "domain_m": [
+        0,
+        120.0
+      ],
+      "actual_intervals_m": [
+        {
+          "case": 4,
+          "lo": 0.0,
+          "hi": 41.00976599999922
+        },
+        {
+          "case": 5,
+          "lo": 40.0,
+          "hi": 81.20996100000048
+        },
+        {
+          "case": 6,
+          "lo": 80.0,
+          "hi": 117.19140599999992
+        }
+      ],
+      "merged_m": [
+        [
+          0.0,
+          117.19140599999992
+        ]
+      ],
+      "failed_cases": []
+    },
+    {
+      "name": "original_reverse_12",
+      "status": "PASS",
+      "domain_m": [
+        0,
+        120.0
+      ],
+      "actual_intervals_m": [
+        {
+          "case": 7,
+          "lo": 0.0,
+          "hi": 41.028809000000365
+        },
+        {
+          "case": 8,
+          "lo": 39.99951200000032,
+          "hi": 81.41894500000035
+        },
+        {
+          "case": 9,
+          "lo": 80.0,
+          "hi": 116.11425799999961
+        }
+      ],
+      "merged_m": [
+        [
+          0.0,
+          116.11425799999961
+        ]
+      ],
+      "failed_cases": []
+    },
+    {
+      "name": "bridge_reverse_False",
+      "status": "FAIL",
+      "domain_m": [
+        -135,
+        135
+      ],
+      "actual_intervals_m": [
+        {
+          "case": 10,
+          "lo": -135.00004039222802,
+          "hi": -98.90206158170929
+        },
+        {
+          "case": 16,
+          "lo": -29.999951459354914,
+          "hi": 6.0999624665203
+        },
+        {
+          "case": 18,
+          "lo": 5.000078742442684,
+          "hi": 41.23238263378176
+        },
+        {
+          "case": 20,
+          "lo": 40.0001081079805,
+          "hi": 76.14108839789208
+        },
+        {
+          "case": 22,
+          "lo": 75.0001383097781,
+          "hi": 111.34567000739933
+        },
+        {
+          "case": 24,
+          "lo": 109.99992651441146,
+          "hi": 131.05568746030002
+        }
+      ],
+      "merged_m": [
+        [
+          -135.00004039222802,
+          -98.90206158170929
+        ],
+        [
+          -29.999951459354914,
+          131.05568746030002
+        ]
+      ],
+      "failed_cases": [
+        12,
+        14
+      ]
+    },
+    {
+      "name": "bridge_reverse_True",
+      "status": "FAIL",
+      "domain_m": [
+        -135,
+        135
+      ],
+      "actual_intervals_m": [
+        {
+          "case": 11,
+          "lo": -131.09839649147906,
+          "hi": -94.9999055738013
+        },
+        {
+          "case": 13,
+          "lo": -96.14704397422493,
+          "hi": -59.99987620826317
+        },
+        {
+          "case": 19,
+          "lo": 8.948373381218735,
+          "hi": 44.99989817279084
+        },
+        {
+          "case": 25,
+          "lo": 113.91714024546857,
+          "hi": 134.9999869713353
+        }
+      ],
+      "merged_m": [
+        [
+          -131.09839649147906,
+          -59.99987620826317
+        ],
+        [
+          8.948373381218735,
+          44.99989817279084
+        ],
+        [
+          113.91714024546857,
+          134.9999869713353
+        ]
+      ],
+      "failed_cases": [
+        15,
+        17,
+        21,
+        23
+      ]
+    }
+  ],
+  "source_sha256": {
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\regional-chase-v3\\reference.json": "7d42d548e7737cca37a08fe4787fcf4280928764e43acbca733db7b682abfa0d",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\regional-chase-v1\\reference.json": "cb0e1f82c517a7222c5b1db6734018a1645713d44464fba408fe04e1a70d247e",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\regional-chase-v3\\runtime-complete\\engine.log": "4c20f04d3f57e1c45e9229efdbc2de50ddebd96c058c461a65618f7669861fe1"
+  },
+  "limits": [
+    "Actual samples from independently spawned actors; not one long pursuit.",
+    "Coverage endpoints allow the original4.002m arrival radius; internal intervals must overlap within2mm.",
+    "Original V1/V2 failures remain preserved.",
+    "No ordinary perception or multiplayer capacity claim."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "status": "INTERRUPTED_BY_USER_PHYSICAL_ESCAPE",
+  "run_id": "9dcd12b1-67fd-4f59-a238-2ba4911a4bf7",
+  "stopped_utc": "2026-10-02T11:31:53Z",
+  "close": {
+    "run_id": "9dcd12b1-67fd-4f59-a238-2ba4911a4bf7",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 2.31805440003518,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "client",
+        "termination_line": true,
+        "rpt_rotated": false
+      },
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "close_order": [
+      "client",
+      "server"
+    ],
+    "logout_wait_s": 0.06955350004136562,
+    "logout_players": [
+      {
+        "player": "Dev",
+        "logout_finished": true
+      }
+    ]
+  },
+  "lease_released": true,
+  "own_run_retired": true,
+  "computer_use": "Stopped by the user with physical Escape; no further Computer Use calls made.",
+  "visual_coverage": {
+    "accepted_menu_views": [
+      "narva_south",
+      "stream",
+      "lagoon"
+    ],
+    "delta": "Not archived; initial view was loading/occluded.",
+    "coast": "READY and player position read; capture was interrupted by physical Escape.",
+    "remaining": [
+      "causeway",
+      "hills",
+      "bridge"
+    ]
+  },
+  "limits": [
+    "Tour incomplete; do not declare visual PASS.",
+    "Pause menu obscures part of the three saved views.",
+    "Scripted teleports are not physical traversal.",
+    "Nine positive native path queries and the NONE negative control passed in separate run e6c65771."
+  ]
+}

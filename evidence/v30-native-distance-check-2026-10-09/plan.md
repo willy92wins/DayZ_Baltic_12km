@@ -1,0 +1,11 @@
+# EV31 — distancia nativa, una secuencia acotada
+
+Consumidor: BALTIC-011/015/019, vista lejana R3 limitada por bruma en EV28. EV30 descarta mipmaps ausentes/corruptos en ambos paquetes. El perfil actual declara viewDistance1600 y preferredObjectViewDistance1600; esto no es una lectura del estado nativo. Diagnostico reversible sobre EV28 byte-identico, addon separado, sin tocar preferencias persistentes ni materiales.
+
+Dato/lado: fase y distancia, cliente solamente, archivo local bajo lease; FPS y posicion/direccion de camara, lectura cliente, log local; servidor y estado de mapa, sin cambios. Sin RPC ni sincronizadas. APIs leidas: P:/scripts/3_game/global/world.c SetViewDistance/SetObjectViewDistance, lineas80/82; game.c GetCurrentCameraPosition/Direction730/731 y GetLastFPS872/GetAvgFPS879/GetMinFPS886/GetMaxFPS893. No usar GetFps legado cuya descripcion mezcla unidades. No usar SetPreferredViewDistance, que persiste.
+
+Una secuencia con camara lejana R3 fija, FOV1,2870022rad y clima/hora de BalticRenderLayerProbeV1. Fase0 inicial intacta; fase1 solo ViewDistance5000; fase2 anade ObjectViewDistance5000; fase3 restaura ambas a1600 del perfil de entrada. Capturas y al menos15 muestrasFPS asentadas por fase. Incluir pose lejana R1 y zona de mayor cambio solo despues del discriminador. Preservar respuestas y fases. No nuevo barrido de distancias si no aclara la bruma. Restauracion y cierre ordenado al terminar; verificar las preferencias de entrada y salida.
+
+Salida: mecanismo solo si la diferencia reaparece al restaurar y la camara/tiempo permanecen. Si no, INCONCLUSO y no declarar arreglados streaming/halos. FPS descriptivos del cliente de pruebas, sin benchmark de produccion ni inferir80–100 jugadores; registrar foco si se mide. Shader y todas las geometrías permanecen intactos. Si el addon falla compilacion, una correccion instrumental basada en error; sin modificar la geometria para forzar resultado.
+
+Correccion instrumental 2026-10-09T10:23Z: fase0 y primera fase1 excluidas; UI observada con menu de pausa y retirada mediante ui_click continuebtn. Reinicio de medida unica 3(base1600) -> 1(view5000) -> 2(object5000) -> 3(restaurada1600). La referencia corregida no es estado inicial intacto; es ajuste explicito a valores del perfil. Se conservan logs y captura invalida. No ampliar a otro barrido.

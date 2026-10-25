@@ -1,0 +1,22 @@
+{
+  "status": "PASS_REAL_HYDROLOGY_AND_THREE_NEGATIVES",
+  "asc_sha256": "9d2c137c358ef60f5282454316974e71b3fdd3f412a55c676836c4327cfce43c",
+  "positive_sha256": "5e9e087be796dca570edcb914a3771a9eec9832191eebfc805382b346f27be0d",
+  "controls": [
+    {
+      "name": "changed_water_plane",
+      "status": "EXPECTED_REJECTION",
+      "target_check": "water_native_cells_exact"
+    },
+    {
+      "name": "island_sunk",
+      "status": "EXPECTED_REJECTION",
+      "target_check": "protected_land_planes"
+    },
+    {
+      "name": "reserve_sunk",
+      "status": "EXPECTED_REJECTION",
+      "target_check": "reserve_dry_classification_preserved"
+    }
+  ]
+}

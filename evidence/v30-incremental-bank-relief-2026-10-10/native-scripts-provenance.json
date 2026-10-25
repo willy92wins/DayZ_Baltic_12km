@@ -1,0 +1,80 @@
+{
+  "status": "SCRIPTS_ADAPTED_NOT_PREPARED_NOT_RUN",
+  "source_candidate_sha256": "c2291acac83fa5a1e1bf4bb6a2fd214d2288ce33635de37967df05601616e2c4",
+  "target_candidate_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+  "consumer_status": "PASS_EV82_CONSUMER",
+  "baseline": "EV80 v30-mixed-bank-constrained-20261010",
+  "mod": "P:/Mods/@DayZ_Baltic_IncrementalBankPreviewV1",
+  "mission": "BalticIncrementalBankFullWaterV1.BalticTrial",
+  "files": {
+    "prepare_probe.py": {
+      "source": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-20261010\\prepare_probe.py",
+      "source_sha256": "a62966a0fde510cc52739884af4dca10683173c5e8ff02d642a6ae585778815e",
+      "target": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\prepare_probe.py",
+      "target_sha256": "7748fec21ebca6d3f414a9a2d51669313cd9fb6a6d1c7caa810aa981ca9253f7",
+      "candidate_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    },
+    "verify_native.py": {
+      "source": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-20261010\\verify_native.py",
+      "source_sha256": "bc51a616eaa0384a723ece377534656d5c88e15045f6cc3a88a75693a071e58a",
+      "target": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\verify_native.py",
+      "target_sha256": "675daae3bc1fa5cfa7feecf211132000e91e56e281e86349f1b8f78947da8771",
+      "candidate_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    },
+    "compare_native_inventory.py": {
+      "source": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-20261010\\compare_native_inventory.py",
+      "source_sha256": "0338d8768f389636f4747815480c45613b0bc7d2ed063811d84b95f1b63d96fc",
+      "target": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\compare_native_inventory.py",
+      "target_sha256": "40aceccf9df2676f145fad2641e6147ecd109eb4e5e5bd1ea5b8631988293838",
+      "candidate_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    },
+    "classify_native_differences.py": {
+      "source": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-20261010\\classify_native_differences.py",
+      "source_sha256": "367ac26e172468380ae507c2ceddeda6765cb512f797f07581cc26a20aefe52c",
+      "target": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\classify_native_differences.py",
+      "target_sha256": "578d89c38450a240fe1583f3fa17f2aec1018c98c7fd1045aa76b82a24e404b7",
+      "candidate_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    }
+  },
+  "guard": "prepare_probe.main calls verify_deploy_ready before mission-path creation or writes; deploy gate requires candidate consumer PASS, EV82 deploy manifest identity, and actual deployed PBO SHA256 matches.",
+  "execution": "Only syntax and static checks; prepare_probe.py, native verifier, inventory comparison, and classifier were not executed.",
+  "validation": {
+    "status": "PASS_STATIC_ONLY",
+    "checks": {
+      "prepare_probe.py_only_identity_edits": true,
+      "prepare_probe.py_syntax": true,
+      "verify_native.py_only_identity_edits": true,
+      "verify_native.py_syntax": true,
+      "compare_native_inventory.py_only_identity_edits": true,
+      "compare_native_inventory.py_syntax": true,
+      "classify_native_differences.py_only_identity_edits": true,
+      "classify_native_differences.py_syntax": true,
+      "deploy_gate_first": true,
+      "consumer_and_deployed_pbo_hash_guards": true,
+      "negative_controls_preserved": true,
+      "full_grid_and_probe_counts_preserved": true,
+      "baseline_and_candidate_identity": true,
+      "classifier_identity": true,
+      "provenance_hashes_current": true
+    },
+    "negative_controls": [
+      "wrong_translated_water_plane",
+      "missing_grid_row",
+      "missing_end",
+      "missing_calibrated_point",
+      "missing_scalar_diagnostic_end",
+      "duplicate_anomaly",
+      "height_mismatch"
+    ],
+    "python": "GIS environment Python",
+    "executed_mission_or_engine": false,
+    "mission_files_written": false,
+    "prepare_guard_hardening": {
+      "consumer_gates_all_true": true,
+      "prepared_verifier_sha256": "675daae3bc1fa5cfa7feecf211132000e91e56e281e86349f1b8f78947da8771",
+      "verifier_contract_and_negative_controls_checked": true,
+      "verifier_overwrite_removed": true,
+      "mission_or_engine_executed": false
+    }
+  }
+}

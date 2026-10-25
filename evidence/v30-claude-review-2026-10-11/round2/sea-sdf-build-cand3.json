@@ -1,0 +1,51 @@
+{
+ "candidate": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round2/sea-sdf/cand-sea-sdf-3.npz",
+ "candidate_sha256": "1f32fc999c6bda802c9455c796f9aac3f1f5b353944f1b8fd898e17da1da4f54",
+ "heights_sha256_candidate": "02952e93abdf920149a60d56b2cf2eff57fe6bcc633c51331d6b95f907f5865b",
+ "heights_sha256_rebuilt": "02952e93abdf920149a60d56b2cf2eff57fe6bcc633c51331d6b95f907f5865b",
+ "rebuilt_identical": true,
+ "sea_args": [
+  "rounds=8",
+  "thin_lo=-10",
+  "thin_hi=-5",
+  "extra_grow=0",
+  "extra_taper=3.0",
+  "fix_taper=6.0",
+  "fix_pad=1.0"
+ ],
+ "inputs": {
+  "base": {
+   "path": "E:/DayZ-Baltic-Build/v30-pond-sea-separation-20261011-b/terrain-ev98.npz",
+   "sha256": "483b6ec00ffcb25d7ed47665f9ea96f6268e9d9b59daa07c239292c50bb9cf05"
+  },
+  "cover": {
+   "path": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/cover-level-ev98.npy",
+   "sha256": "7421b17ce8c3ad711c7bf7fa4ee227d98503df4cdf3b63f35798586d22680ba3"
+  },
+  "sdf_it8": {
+   "path": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/sdf/cand-sdf-it8.npz",
+   "sha256": "2c07d7e57bfbd8a68691117d7767a7a30af2dd6cd30e6dfa94ac56eff9363e68"
+  },
+  "harness_v2": {
+   "path": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round2/harness/eval_shore_v2.py",
+   "sha256": "422bf8186e0d75f9b6c3aab241bd96eec26c20a501377d7542d10d108aa7b9b4"
+  }
+ },
+ "scripts": {
+  "sea_fields.py": "8d2466fad47f114774bab94bc8724dda101e865ff4079372568273352b943830",
+  "curve_target.py": "e172d00169aa1f79a165f36dcf73ce7f16cd65f575fdc7bab841930853a8ca4a",
+  "build_sea_sdf.py": "8fd68b5cf2b679cb327a4b4e5cff180cb1a19382475576421339b1b783bfa0cd",
+  "topo_local.py": "8c80dacc020377b1e0910dd78b192da88f52eec3e2bf582665c960b54fa559db",
+  "inner_check.py": "1f53fb27f36e482217624bafeadd3928760faf22aa8cb030dac98bc8e6b6004e",
+  "run_iter.py": "35253ca1df1cd28381acdf6179abff8035992b5af1d565220c8f97fd6dd2859d",
+  "pond_merge.py": "b745aac55f976ed0ead51d27d731d9165d6e2f2bd55d53b6bad53816228a3b63",
+  "make_cand.py": "f135e00b05aa7de255affda37d8552c3cd54599666e104e3e6438adcdf978901",
+  "reproduce.py": "18d90b4850d505d771825457a88c9759c08d586ead0b8d89d1265b3501e44f84"
+ },
+ "harness_runs": [
+  "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round2/sea-sdf/runs/harness-1.json",
+  "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round2/sea-sdf/runs/harness-2.json",
+  "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round2/sea-sdf/runs/harness-3.json"
+ ],
+ "seconds": 175.1
+}

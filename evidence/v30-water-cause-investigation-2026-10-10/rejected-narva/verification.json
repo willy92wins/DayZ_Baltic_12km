@@ -1,0 +1,36 @@
+{
+  "status": "FAIL_DIAGNOSTIC_SOURCE",
+  "gates": {
+    "metadata_exact": true,
+    "reserve_platform_exact": true,
+    "inside_narva_circle": true,
+    "only_class3": true,
+    "only_raise_up_to_1m": true,
+    "shore_geometry_exact": true,
+    "draft_all_changed_faces": true,
+    "no_new_steep_faces": false,
+    "optical_cell_treated": false,
+    "bridge_control_exact": true
+  },
+  "stats": {
+    "changed_faces": 4872,
+    "shore_symmetric_difference_max_m2": 0.0,
+    "bad_draft_faces_representations": 0,
+    "min_draft_changed_faces_m": 0.9528351545333864,
+    "max_slope_before_degrees": 28.98364515915361,
+    "max_slope_after_degrees": 35.00000110181737,
+    "new_steep_faces": 14,
+    "draft_examples": []
+  },
+  "controls": [
+    "analytic_13_5m2_triangle",
+    "shore_mutant_rejected"
+  ],
+  "input_sha256": "b54963eb3cf5429c6192fb6f1e8f6d10c9a3cc397fdbabdf5c2f89cbabcf8e36",
+  "candidate_sha256": "c0e0c2065916383907dfbd334ab1357b1ead4b0fc2cd56b7c2bec53596aa0b27",
+  "limits": [
+    "Not visual acceptance or map promotion.",
+    "Bed slope reported, not artistic acceptance.",
+    "Nominal and visible draft, not worst weather phase."
+  ]
+}

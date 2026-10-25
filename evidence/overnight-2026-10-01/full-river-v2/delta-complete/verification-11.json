@@ -1,0 +1,55 @@
+{
+  "status": "PASS_EMPTY_BOAT_SELECTED_REGIONAL_SECTORS_BOTH_DIRECTIONS",
+  "global_checks": {
+    "header": true,
+    "all_cases_complete": true,
+    "exact_cases": true,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 11,
+      "river": "Delta ramal40",
+      "reverse": false,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 375,
+      "max_dt_s": 0.5000000000000142,
+      "max_step_m": 0.7098966899663985,
+      "max_corridor_distance_m": 5.599743118760271,
+      "max_waypoint_distance_m": 1.2972586003656352,
+      "end_distance_m": 2.0524978079066076,
+      "max_ground_error_m": 0.00015553022817194062,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 152.5
+    }
+  ],
+  "limits": [
+    "Empty independently spawned boats; no crew or medium-vessel acceptance.",
+    "Overlapping continuous segments provide coverage; not one boat traveling end-to-end.",
+    "One direction only; selected main channels and four delta routes, not every side branch.",
+    "Same V3 controller except bounded route-distance scan and timeout; independent whole-route verifier unchanged."
+  ]
+}

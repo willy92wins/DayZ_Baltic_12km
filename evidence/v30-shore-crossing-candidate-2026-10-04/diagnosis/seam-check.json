@@ -1,0 +1,46 @@
+{
+ "terrain_sha256": "e144ad1a131ba90f6b9ccf55d867d45da3b4996e4eb53387bb0a692dba39e0e6",
+ "axes_sha256": "abcdff01c41b9502df13f73a6123561a989d1635455cf5aa85feee1d6275e6ed",
+ "method": "0.25 m grid over each reach: neighbouring visible samples whose top visual surface (engine_water_model.top_visual) comes from different pieces; step = height difference minus the median step between same-piece neighbours on that axis.",
+ "reaches": {
+  "R1": {
+   "pieces": 8,
+   "visible_m2": 15876,
+   "seam_samples": 2334,
+   "seam_length_m": 583.5,
+   "step_m_p50_p90_max": [
+    0.003,
+    0.008,
+    0.012
+   ],
+   "seam_length_step_over_1cm_m": 14.8,
+   "seam_length_step_over_3cm_m": 0.0
+  },
+  "R2": {
+   "pieces": 44,
+   "visible_m2": 3231,
+   "seam_samples": 1569,
+   "seam_length_m": 392.2,
+   "step_m_p50_p90_max": [
+    0.001,
+    0.008,
+    0.064
+   ],
+   "seam_length_step_over_1cm_m": 9.8,
+   "seam_length_step_over_3cm_m": 0.8
+  },
+  "R3": {
+   "pieces": 47,
+   "visible_m2": 1814,
+   "seam_samples": 1018,
+   "seam_length_m": 254.5,
+   "step_m_p50_p90_max": [
+    0.001,
+    0.008,
+    0.016
+   ],
+   "seam_length_step_over_1cm_m": 12.2,
+   "seam_length_step_over_3cm_m": 0.0
+  }
+ }
+}

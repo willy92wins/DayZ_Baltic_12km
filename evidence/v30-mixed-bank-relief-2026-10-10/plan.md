@@ -1,0 +1,25 @@
+# EV80 — quiebros ribereños mixtos, selección global y actualizaciones certificadas
+
+Petición viva: suavizar toda la superficie, incluidos los taludes casi piramidales. Fuente EV79 dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c, ya desplegada y leída por motor en 4.194.304 vértices. EV78 se rechazó: disminuir la energía global no evita crear pliegues locales. EV79 corrige58 crestas secas Narva. Quedan quiebros mixtos mojado/seco y secos cuyos vecinos soportan agua. El estudio de3nudos confirma que mover un vértice libre puede mejorar algunos sin cambiar agua; no todos admiten mejora útil.
+
+## Alcance fijado
+
+Un cálculo offline de todos los vértices clase0, a<=96m de cls3/5/6, fuera de la máscara fixed semántica EV79, que incidan en algún diedro nativo>30° de la fuente. No ampliar por vecindad ni cambiar P/F. Preservar otras claves NPZ, soporte realmente mojado, halo3x3 reserva/plataforma, corridor24, summits, temporal controls, bordes y grandeslagos. Narva ya está autorizada; mantener su mejora EV79 y los mismos invariantes.
+
+Por nodo: cambiar solo su altura (los vecinos se leen en su estado actual), dentro de fuente±2m, suelo>=min(fuente,1.8) y sin bajar del piso min(fuente,max(P,F,0.85) incidente+1e-4 m). Restringir las seis caras incidentes a pendiente<=max(35°,fuente), y todas las bisagras incidentes a: ninguna nueva>30° desde<=30°, ningún aumento del máximo en cada sector64x64 de bisagras que ese nodo toca, y ningún cruce ascendente del p99 fuente banco/interior para aristas originalmente bajo ese percentil. Estas restricciones atacan directamente los fallos EV78; no ajustar umbrales a posteriori.
+
+Método propuesto [DESIGN]: normales de cada cara afines en la altura escalar del nodo. Intersecar intervalo de cota y pendientes con los intervalos de desigualdad angular; se permite usar raíces polinómicas y verificar cada intervalo por la fórmula de ángulo real. Conservar la componente factible que contiene la altura actual. Minimizar suma de ángulos² de las doce bisagras incidentes mediante optimizador escalar acotado e incluir explícitamente no cambiar como opción. Verificar el resultado float32 con los consumidores directos antes de aceptarlo. Exigir reducción local positiva material (>=1e-4 relativa), no movimientos cuyo beneficio sea ruido. Orden determinista por fila/columna, cada nodo a lo sumo una vez. Una ejecución, máximo1200s. El cálculo puede terminar sin candidato aceptable; conservar ese resultado, no variar parámetros ni generar grid de variantes.
+
+Las cotas del sector se toman por nodo/sector sobre sus aristas fuente, de modo que su máximo está incluido en la unión de aristas finalmente modificadas. No usar el máximo de todo el sector para ocultar un nuevo máximo en el subconjunto afectado. Las restricciones siempre se comparan con EV79, no contra un estado degradado intermedio.
+
+## Consumidor independiente antes de empaquetar
+
+Reconstruir selector global y protecciones desde fuente; no importar autoría. Recorrer el mapa completo: identidad de metadatos/P/F/fixed/fuera selector, límites±2m y suelo, caras mojadas exactas/sin nueva exposición, pendientes nativas, carreteras. Normales por cross-product. Repetir gates EV79: energía de bisagras incidentes a cambios reduce>=5%; p99 y cantidad>30 banco/interior no peores; cero aristas nuevas>30; máximo de sectores modificados no peor. Reportar también censo mixto global y tres focos, incluyendo los que permanecen. Positivos de plano/pliegue/fuente; negativos mojado, ingeniería, spike y piso. Si falla, no empaquetar ni relajar tolerancias. Autoría y consumidor son procesos separados.
+
+Si pasa: exposición compilada en celdas modificadas con prueba de identidad fuera, actualizar superficie afectada y su padding/solapes/mips, paquete aislado nuevo con todas las entradas cotejadas, lectura SurfaceY nativa completa y cierre orderly. No declarar resuelto render gris ni aspecto artístico por números; no tocar nivel/fondo/calado/EV68 ni TB/navmesh antes de congelar geometría final. Sin push.
+
+## Aclaración previa al candidato — revisión de implementación
+
+EV80 usa ±2 m constantes dentro del selector, como fija este plan; no hereda el taper quintic EDT de EV79. De constraints EV79 se consumen las protecciones fixed/other_fixed/wet_support/engineering_halo, no el dominio local Narva, allowed, cap ni lower de aquel experimento. El consumidor reconstruye dominio/selector/piso de EV80 desde fuente. Se mantienen el margen de 0,1 mm sobre P/F/mar acotado por la altura fuente y el mismo dominio p99 EV79. No existe todavía resultado de candidato EV80; esta aclaración corrige el harness heredado antes de medirlo.
+
+Revisión root/Luna encontró y debe corregir antes de cálculo: upper bound hi sobrescrito por índice de bisagra; coordenadas de sector V/H desplazadas respecto al array consumidor; margen del piso ausente. Conservar intento inválido, fixtures end-to-end y frontera64. Un fallo inmediato de índice local anterior tampoco produjo candidato. Estas correcciones no son variantes de parámetros ni autorizan relajar las puertas finales.

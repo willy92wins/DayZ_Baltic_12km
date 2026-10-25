@@ -1,0 +1,33 @@
+{
+  "run_id": "16638541-9244-485c-81fe-67aa6fe4a143",
+  "state": "RUNNING_IDLE_WAITING_USER_FOCUS",
+  "release": {
+    "released": true,
+    "cleanup": {
+      "terminal_safe": true,
+      "runs_released": [
+        "16638541-9244-485c-81fe-67aa6fe4a143"
+      ],
+      "cancelled": 0,
+      "vehicle_release_enqueued": 0
+    },
+    "cleanup_degraded": [],
+    "ok": true,
+    "next_step": "session_acquire_wait"
+  },
+  "observed": {
+    "owner": null,
+    "self": {
+      "state": "none",
+      "position": null
+    },
+    "box": {
+      "occupied": true,
+      "available_for": {
+        "new_launch": false,
+        "adopt": true
+      }
+    }
+  },
+  "note": "Client/server deliberately remain open for requested manual focus. No lease held during human wait. Reacquire and inspect ready before wire commands. Only phase0 observed; no graphics verdict."
+}

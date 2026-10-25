@@ -1,0 +1,65 @@
+{
+  "status": "PASS_ISOLATED_TRANSLATION_SOURCE",
+  "source_sha256": "fb36ec4c2203b6c936c8823078250f71082fbf43d9b1ba410049f735f890a0e6",
+  "terrain_sha256": "fe0d077a39ecb729933d3c791138c314618ce96e2f4bd21af2b141a021f2377d",
+  "plane_sha256": "da0afc7de26856d315c7101b98134ec3dbc40b62d67e2c4efb143fa86f823568",
+  "field_sha256": "2cd0fa2ffd363b909911b46875f9effe182303fc3dbf80bd377ffd9843229252",
+  "shift_m": 0.3500000238418579,
+  "object_ids": [
+    16800387,
+    16800388,
+    16800454,
+    16800455
+  ],
+  "physical_components": [
+    273,
+    274,
+    281,
+    288,
+    289,
+    298
+  ],
+  "changed_vertices": 527,
+  "core_vertices": 166,
+  "water_cells": 49,
+  "minimum_bed_m": 1.023335576057434,
+  "physical_depth_max_error_m": 1.1920928955078125e-07,
+  "visible_depth_max_error_m": 1.1920928955078125e-07,
+  "wet_area_difference_m2": 3.322128964011739e-05,
+  "slope_excess_degrees": 0.0,
+  "calibrated_dry_ground_before": 1.520456666024811,
+  "calibrated_dry_ground_after": 1.870456689866669,
+  "gates": {
+    "rigid_core": true,
+    "engineering_exact": true,
+    "outside_exact": true,
+    "other_water_exact": true,
+    "physical_depths": true,
+    "visible_depths": true,
+    "wet_faces_and_connections": true,
+    "wet_area": true,
+    "bed_floor": true,
+    "no_new_steep_faces": true,
+    "wet_shape": true
+  },
+  "controls": {
+    "missing_water_shift_rejected": true,
+    "old_bed_rejected": true,
+    "protected_edit_rejected": true,
+    "outside_edit_rejected": true,
+    "connectivity_controls": [
+      "all_wet_connected",
+      "saddle_separated",
+      "zero_depth_line_not_passage",
+      "positive_width_restores_connection",
+      "different_levels_share_wet_edge",
+      "absent_cell_not_connection",
+      "analytic_triangle_area"
+    ]
+  },
+  "limits": [
+    "Diagnostic only; metadata levels are unchanged and must not feed a regeneration.",
+    "No nominal/visible shape smoothing or global residual closure."
+  ],
+  "wet_shape_symmetric_difference_m2": 3.322130168600352e-05
+}

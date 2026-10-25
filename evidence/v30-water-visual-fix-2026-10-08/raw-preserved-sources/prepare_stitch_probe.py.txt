@@ -1,0 +1,36 @@
+"""Clone the frozen flat physical consumer for the visual-only stitched candidate."""
+from pathlib import Path
+import json,hashlib,shutil,subprocess,sys
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-water-visual-fix-2026-10-08';F=W/'evidence/v30-curved-channel-pilot-2026-10-08'
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+name='BalticStitchedWaterProbeV1.BalticTrial'
+src=F/'missions/BalticFlatWaterProbeV1.BalticTrial';dst=E/'missions'/name
+assert not dst.exists()
+dst.mkdir(parents=True)
+code=(src/'init.c').read_text().replace('flat_probe_v1.log','stitched_probe_v1.log').replace('flat_order_v1.log','stitched_order_v1.log')
+(dst/'init.c').write_text(code,encoding='utf-8',newline='\n')
+shutil.copyfile(src/'points.csv',dst/'points.csv')
+ref=json.loads((F/'flat-probe-reference.json').read_text())
+ref['source_flat_reference_sha256']=sha(F/'flat-probe-reference.json')
+ref['files']={p.name:sha(p) for p in dst.iterdir()}
+water=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008/stitched-water/water/temp')
+for p in ref['points']:
+ for m in p['models']:
+  target=water/Path(m['model'].replace('\\','/'))
+  assert target.is_file(),target
+  m['source_flat_sha256']=m['sha256'];m['sha256']=sha(target)
+ref['deployed']={str(p):sha(p) for p in Path('P:/Mods/@DayZ_Baltic_StitchedWaterPilot/Addons').glob('*.pbo')}
+(E/'stitch-probe-reference.json').write_text(json.dumps(ref,indent=2)+'\n')
+lint=subprocess.run([sys.executable,'-X','utf8','C:/Users/guill/DayZ-Modding-Knowledge-Pack/tools/dayz-script-validator/scripts/script_validator.py',str(dst)],capture_output=True,text=True)
+got=json.loads(lint.stdout);assert lint.returncode==0 and not got['errors'] and got['info']['files_scanned']==1
+(E/'stitch-probe-lint.json').write_text(lint.stdout)
+deployed=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZServer/mpmissions')/name
+shutil.copytree(dst,deployed)
+assert all(sha(deployed/p.name)==sha(p) for p in dst.iterdir())
+verify=(F/'verify_flat_probe.py').read_text().replace("E=W/'evidence/v30-curved-channel-pilot-2026-10-08'","E=W/'evidence/v30-water-visual-fix-2026-10-08'")
+verify=verify.replace('flat-probe-reference.json','stitch-probe-reference.json').replace('flat_probe_v1.log','stitched_probe_v1.log').replace('flat_order_v1.log','stitched_order_v1.log')
+verify=verify.replace('flat-runtime','stitch-runtime').replace('flat-order','stitch-order').replace('PASS_FLAT_WATER_READBACK','PASS_STITCHED_WATER_READBACK')
+(E/'verify_stitch_probe.py').write_text(verify,encoding='utf-8',newline='\n')
+print(json.dumps(dict(mission=str(deployed),points=len(ref['points']),deployed=ref['deployed'])))
+

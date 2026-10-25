@@ -1,0 +1,15 @@
+{
+  "status": "SOURCE_READ_AND_VERSION_VERIFIED",
+  "python": "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe",
+  "scipy_version": "1.18.1",
+  "definition": "C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Lib/site-packages/scipy/optimize/_lsq/lsq_linear.py",
+  "anchors": {
+    "signature": [37, 39],
+    "least_squares_objective": [45, 46],
+    "method_bvls_and_dense_requirement": [68, 79],
+    "max_iter_not_wall_timeout": [109, 112]
+  },
+  "verified_call": "scipy.optimize.lsq_linear(A, b, bounds=(lower, upper), method='bvls', tol=1e-10, max_iter=1000)",
+  "constraints": "BVLS accepts dense linear least squares with scalar bounds; water-crossing inequalities must be reduced to scalar variable intervals before the call.",
+  "timeout": "max_iter is iteration count, not elapsed-time limit; author runs the single call in a child process terminated by parent at 120 seconds."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "FAILED_CAPTURE_PROVENANCE",
+  "run_id": "9897606d-b818-4799-9ef5-4a6043378f16",
+  "reference_sha256": "b3cfb1a3ae775af2bd67e4fec38e8099ad30192aa2b414f029fd04f2ba0ca4ac",
+  "identity_sha256": "04a4d7c4f8bfc5a207ffaa90ea99829681c5c2e3302452c230a400ec175aafca",
+  "images": [],
+  "camera": {
+    "status": "FAIL_CAMERA_TELEMETRY",
+    "issues": [
+      "CAPTURE_REQUEST_0:capture_time"
+    ],
+    "poses": 1,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "error": "Metrics outside frozen window",
+  "logs_sha256": {
+    "camera.log": "a0cd4bb828bf88a462af8fe5cd1c8557ff3e4342cc491d3a17e01d59296cc493",
+    "client-metrics.log": "b1ed819b32ef74950076e4f0a7eab645abb6f608ad92b05df0c2b10ca7b3e704"
+  },
+  "limit": "File/run/camera provenance only. Actual terrain, water and textures need independent pixel review."
+}

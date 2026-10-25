@@ -1,0 +1,163 @@
+{
+  "status": "FAIL_SOURCE_TERRAIN",
+  "gates": {
+    "finite": true,
+    "fixed_exact": true,
+    "outside_scope_exact": true,
+    "height_displacement": true,
+    "visible_signs_exact": true,
+    "bed_floor": true,
+    "no_wet_raise": true,
+    "dry_margin": true,
+    "slopes": false,
+    "metadata_exact": true,
+    "R1_p90": true,
+    "R1_over30": true,
+    "R1_max": true,
+    "R1_distance": true,
+    "R1_islands": true,
+    "R2_p90": true,
+    "R2_over30": true,
+    "R2_max": true,
+    "R2_distance": false,
+    "R2_islands": true,
+    "physical_topology": true,
+    "physical_contacts": true,
+    "physical_dry_flood": true,
+    "visible_topology": true,
+    "visible_contacts": true,
+    "visible_dry_flood": true,
+    "visible_offset": true
+  },
+  "physical": {
+    "changed_vertices": 261,
+    "sign_changes": 0,
+    "floor_violations": 0,
+    "wet_raises": 0,
+    "dry_margin_violations": 0,
+    "max_slope_excess_deg": 0.00024596742053972775,
+    "bad_faces": [
+      {
+        "row": 519,
+        "col": 1369,
+        "tri": 1,
+        "before_deg": 24.202087754964737,
+        "after_deg": 35.00024596742054,
+        "excess_deg": 0.00024596742053972775
+      }
+    ]
+  },
+  "outlines": {
+    "R1": {
+      "before": {
+        "lines": 2,
+        "length_m": 516.5439039937846,
+        "samples": 248,
+        "p90_degrees": 25.32425571326886,
+        "over30_share": 0.04032258064516129,
+        "max_degrees": 80.33902677762977
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 518.8654540256031,
+        "samples": 249,
+        "p90_degrees": 16.92623664731075,
+        "over30_share": 0.008032128514056224,
+        "max_degrees": 39.27160610656644
+      },
+      "hausdorff_m": 2.597348119112929,
+      "islands_before": 0,
+      "islands_after": 0
+    },
+    "R2": {
+      "before": {
+        "lines": 2,
+        "length_m": 814.7945195178435,
+        "samples": 396,
+        "p90_degrees": 25.372347421528758,
+        "over30_share": 0.08838383838383838,
+        "max_degrees": 167.7350866733415
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 814.1418457018481,
+        "samples": 396,
+        "p90_degrees": 17.989321086093838,
+        "over30_share": 0.06818181818181818,
+        "max_degrees": 81.11934474507348
+      },
+      "hausdorff_m": 5.210576532469531,
+      "islands_before": 0,
+      "islands_after": 0
+    }
+  },
+  "global_domains": {
+    "physical": {
+      "topology": {
+        "before_significant": 830,
+        "after_significant": 830,
+        "failed_original": [],
+        "merged": {},
+        "new_significant": [],
+        "pass_gate": true
+      },
+      "contacts": [
+        {
+          "axis": 0,
+          "new": 0,
+          "lost": 0
+        },
+        {
+          "axis": 1,
+          "new": 0,
+          "lost": 0
+        }
+      ],
+      "gained_area_m2": 496.53240189045,
+      "lost_area_m2": 234.45020249974465,
+      "dry_gain_m2": 0.0,
+      "max_visible_offset_m": null
+    },
+    "visible": {
+      "topology": {
+        "before_significant": 830,
+        "after_significant": 830,
+        "failed_original": [],
+        "merged": {},
+        "new_significant": [],
+        "pass_gate": true
+      },
+      "contacts": [
+        {
+          "axis": 0,
+          "new": 0,
+          "lost": 0
+        },
+        {
+          "axis": 1,
+          "new": 0,
+          "lost": 0
+        }
+      ],
+      "gained_area_m2": 493.10939939873316,
+      "lost_area_m2": 233.800870869957,
+      "dry_gain_m2": 0.0,
+      "max_visible_offset_m": 0.26875000000000004
+    }
+  },
+  "controls": [
+    "whole_triangle_18m2",
+    "quarter_triangle_4.5m2",
+    "straight_and_right_angle",
+    "missing_body_rejected",
+    "area_loss_rejected",
+    "bed_raise_sign_slope_inequalities",
+    "fixed_vertex_mutant_rejected"
+  ],
+  "source_sha256": "e7daa6c62cde457b666507ec7eae7e6d16015ad714028585fdb352ace678e52c",
+  "candidate_sha256": "b6ec4b4afed58de642d81143944e2ac49de923867ff7c0e1b143bf754176bae3",
+  "limits": [
+    "Compiled coverage and runtime remain separate.",
+    "Solver iteration limit is not a proof of optimality; candidate assessed by independent geometry."
+  ]
+}

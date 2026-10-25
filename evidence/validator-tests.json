@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "valid",
+      "expected_valid": true,
+      "exit": 0,
+      "errors": []
+    },
+    {
+      "case": "north_south_flip",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "Control 'northwest' at (0,0) z=11.000, expected 91 (tol 0.001)",
+        "Control 'southeast' at (2,2) z=93.000, expected 13 (tol 0.001)"
+      ]
+    },
+    {
+      "case": "one_cell_origin_shift",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "xllcorner mismatch: got 200006.0, expected 200000 (tol 0.001)"
+      ]
+    },
+    {
+      "case": "one_cell_data_shift",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "Control 'northwest' at (0,0) z=93.000, expected 91 (tol 0.001)",
+        "Control 'southeast' at (2,2) z=12.000, expected 13 (tol 0.001)"
+      ]
+    },
+    {
+      "case": "nodata",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "Found 1 declared NoData values in terrain grid",
+        "Min elevation -9999.0 below spec height_min 0"
+      ]
+    },
+    {
+      "case": "nan",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "Found 1 non-finite (NaN/Inf) elevation values"
+      ]
+    },
+    {
+      "case": "truncated",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "Premature EOF: expected 3 rows, stopped at row 2"
+      ]
+    },
+    {
+      "case": "bad_row",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "Row 1 width mismatch: expected 3 samples, got 2"
+      ]
+    },
+    {
+      "case": "extra_data",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "Trailing data: found 1 extra non-empty lines after 3 rows"
+      ]
+    },
+    {
+      "case": "centre_equivalent",
+      "expected_valid": true,
+      "exit": 0,
+      "errors": []
+    },
+    {
+      "case": "centre_half_cell_error",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "xllcorner mismatch: got 199997.0, expected 200000 (tol 0.001)",
+        "yllcorner mismatch: got -3.0, expected 0 (tol 0.001)"
+      ]
+    },
+    {
+      "case": "duplicate_header",
+      "expected_valid": false,
+      "exit": 1,
+      "errors": [
+        "Duplicate header key 'nrows' at line 5",
+        "Missing required header key: 'cellsize'"
+      ]
+    },
+    {
+      "case": "nonfinite_spec",
+      "expected_valid": false,
+      "exit": 1
+    }
+  ]
+}

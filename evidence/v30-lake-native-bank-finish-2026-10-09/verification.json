@@ -1,0 +1,85 @@
+{
+  "status": "REJECTED_LAKE_NATIVE_BANK_SOURCE",
+  "source_sha256": "fb36ec4c2203b6c936c8823078250f71082fbf43d9b1ba410049f735f890a0e6",
+  "candidate_sha256": "f9203b1100bcb1406e5b3f796394c00f9edef3e44240c610cdfb53248bd5858b",
+  "gates": {
+    "finite": true,
+    "outside_scope_exact": true,
+    "fixed_exact": true,
+    "water_faces_exact": true,
+    "no_raises": true,
+    "lowering_at_most_1_5m": true,
+    "floor": true,
+    "slopes": true,
+    "metadata_exact": true,
+    "both_lake_shapes": false
+  },
+  "lakes": [
+    {
+      "name": "southwest",
+      "curvature_before": 0.033011700911362345,
+      "curvature_after": 0.03169890949325082,
+      "curvature_reduction": 0.0397674576549818,
+      "bank_p90_before": 3.794141912460327,
+      "bank_p90_after": 3.594771409034729,
+      "changed_bank_vertices": 2339,
+      "native_before": {
+        "edges": 31516,
+        "rms": 5.868192024351037,
+        "p99": 21.153796915381665,
+        "over30": 61
+      },
+      "native_after": {
+        "edges": 31516,
+        "rms": 5.067986978565633,
+        "p99": 20.537456366537686,
+        "over30": 59
+      },
+      "shape_gate": false
+    },
+    {
+      "name": "southeast",
+      "curvature_before": 0.034479620056835365,
+      "curvature_after": 0.03364198159422961,
+      "curvature_reduction": 0.024293726590519538,
+      "bank_p90_before": 3.630000114440918,
+      "bank_p90_after": 3.630000114440918,
+      "changed_bank_vertices": 645,
+      "native_before": {
+        "edges": 14244,
+        "rms": 6.863306576075351,
+        "p99": 23.468495220308938,
+        "over30": 32
+      },
+      "native_after": {
+        "edges": 14244,
+        "rms": 6.282914789942465,
+        "p99": 22.107947121072286,
+        "over30": 29
+      },
+      "shape_gate": false
+    }
+  ],
+  "changed_vertices": 6783,
+  "maximum_lowering_m": 1.5,
+  "controls": [
+    "inclined_plane_zero",
+    "known_45_degree_fold",
+    "independent_cross_product_60_faces",
+    "raised_vertex_detected",
+    "exact_four_incident_vertices",
+    "unchanged_fixture_passes",
+    "outside_mutant_rejected",
+    "protected_mutant_rejected",
+    "water_mutant_rejected",
+    "raise_mutant_rejected",
+    "deep_mutant_rejected",
+    "floor_mutant_rejected",
+    "steep_mutant_rejected"
+  ],
+  "limits": [
+    "Water levels, bed, outline and all native water support vertices exact.",
+    "Lake-level decision remains pending.",
+    "Source geometry only: native import and visual consumer not yet executed."
+  ]
+}

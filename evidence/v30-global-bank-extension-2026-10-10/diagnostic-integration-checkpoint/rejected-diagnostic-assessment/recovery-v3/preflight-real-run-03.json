@@ -1,0 +1,114 @@
+{
+  "schema": "ev93.rejected-physical-diagnostic-preflight.v1",
+  "status": "PREFLIGHT_ONLY_PASS_NO_GEOMETRY",
+  "accepted": false,
+  "geometry_executed": false,
+  "terrain_written": false,
+  "identity": {
+    "status": "READ_ONLY_IDENTITY_PASS",
+    "geometry_executed": false,
+    "accepted": false,
+    "pins_checked": 31,
+    "approved_links_checked": 4,
+    "rejected_run": {
+      "status": "REJECTED_EXACT_POSTGATES",
+      "sha256": "f540fb0e8672886c8c70a2af7c8d6ae16c3698ce7d0392e97d9ccc2d50e00902",
+      "provenance": {
+        "schema": "candidate-only-f32-lattice.real-run.v1",
+        "status": "REJECTED_EXACT_POSTGATES",
+        "accepted": false,
+        "terrain_written": false,
+        "source_readset_start_count": 12,
+        "source_readset_end_count": 25,
+        "source_readset_added_count": 13,
+        "input_readset_start_count": 14,
+        "source_readset_end_rehashed_count": 25,
+        "readset_semantics": "initial source keys are preserved in the expanded final set; 13 later-read source keys were added, so the maps are not equal"
+      }
+    },
+    "baseline_control": {
+      "status": "BASELINE_CONTROL_PASS",
+      "real_solver_invoked": false,
+      "source_readset_count": 22
+    }
+  },
+  "preflight": {
+    "logical_source_keys": 21,
+    "retained_paths": 666,
+    "retained_units": 499,
+    "variable_count": 121,
+    "prepared_face_count": 200,
+    "prepared_cell_count": 144
+  },
+  "solve_lineage": {
+    "status": "CONVERGED",
+    "readset_paths": 9,
+    "solution_sha256": "1b7a23ebb3c203427f1c77cb8de6becfca750746e47f5494bba6723b0610eab1",
+    "unaccepted_candidate_sha256": "1c2a6b8b1dce5ed83c6360705e16c10225aa528c96ac02adcf868c554c019652"
+  },
+  "diagnostic_structure": {
+    "context_shape": [
+      15,
+      15
+    ],
+    "variables": 121,
+    "changed_vertices": 114,
+    "changed_coordinates_shape": [
+      114,
+      2
+    ],
+    "lattice_shape": [
+      121
+    ]
+  },
+  "source_readset_start_end": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\rejected-diagnostic-assessment-v1\\recovery-v3\\verify_polished_diagnostic.py": "b496f3555b3f6d595954afb3a4f7138ea11048b477aff81f9fc0c74ffc419b4c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\diagnostic-polish-consumer-v1\\test_polished_diagnostic.py": "66ea4c1cd8b491eb83ab425586076215728d44fb9f208d8b7341be55ce0b1e4a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepare_wet_bank_matrices.py": "65e05a6540026b08df7effa53c58534121bb2fa89e116a2ef07ad46ba0edf286",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\verify_layer.py": "33050881caaf5e75f288d4122222c15eb326bf146c28a4c723760564457b3dc2",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\coverage-consumer\\check_coverage.py": "1dc1464b86c0b0c7cd83b2fe5003de1149773dad7d3b2d1396209736fc383a77",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\PLAN.md": "ad1596d1735c938ec7e151f3fc82208b8c2f443e1aa342f21d8c05351e88e3ad",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\candidate_model.py": "23186f47d70730d2f617c0635a7f37b68472d5f287b728811372ae7a47a9e244",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\run_candidate_once.py": "6292685b6a2dcddb69d7fdddb09c30338917ec413afc4626e7283c4485918fbe",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\check_baseline_control.py": "feb34c291d545aee37d908d17a9f147cb8a830915a1298aef550265d720250ae",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\baseline-control.json": "7cf95dd2061efaf6014ed09149388d171c4b6bc021ee2cefa111c2db2206d068",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\real-run-01\\receipt.json": "f540fb0e8672886c8c70a2af7c8d6ae16c3698ce7d0392e97d9ccc2d50e00902",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\real-run-01\\rejected-diagnostic.npz": "2209df7542098403ceda8e27e87c91935a9832527f04663fdf8f5d8ac70149ae",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\preparation.json": "c582f45f0751e8c24db2672405de4b94c136ee16a9c33d5e4c35a8deee2200ed",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\independent-review.json": "c9e9946c0ab77bfb090fe1b4ec297a13c52ca8b41926bde8c0275db0feeffaf4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solution.npz": "1b7a23ebb3c203427f1c77cb8de6becfca750746e47f5494bba6723b0610eab1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solve-result.json": "35722fa7b8f3235597ed6f82c5263da6320d2d030b3dbef3558728386c4240ca",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\unaccepted-candidate-terrain.npz": "1c2a6b8b1dce5ed83c6360705e16c10225aa528c96ac02adcf868c554c019652",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-focal\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\design\\water_v3.geojson": "caa333e365c2a4511f839937a9d76a5aa157a0ef925d6ee4b5efcc4ebb38f8a9",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-civil-ev95\\run-01\\inventory.json": "cdebbbce50644407642e791388e44c40b15499041844607650b885d1bc618856",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ\\!Workshop\\@DayZ_Baltic_EV95_WideBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ\\!Workshop\\@DayZ_Baltic_EV95_WideBankPreviewV1\\Addons\\narva_trial.pbo": "f1a148cab3e7d1d63473f0232a0971d45a9fea04e0fb456f01973235f4644b7d",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\stage.json": "b04b066d99f9c22a4fffd77c66762d3e9e744dfa2bbf20d8508f076845571dda",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\deploy.json": "f5a9c8185812e0b77a804ef9811e0405b5a7969f8ccfc19b85cc29d23cac03ca",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\rejected-diagnostic-assessment-v1\\recovery-v3\\assess_rejected_diagnostic.py": "212a540b48d65c2c51be6dd0fb2d438982abb24de5c26010c1c63a4b401439ef",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\rejected-diagnostic-assessment-v1\\recovery-v3\\PLAN.md": "86b350ec99f5377f911c4f3f1daba6e9a4a7c98096e30dd92c5dab5bba9598e1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\rejected-diagnostic-assessment-v1\\recovery-v3\\test_assess_rejected.py": "56c244e5700121b3ddfd8b094012218a63906ea676b43c99da8f966890295f28",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-neighborhood-v1\\executor.py": "9a0dbffc55e9956209083fe4963e2636b6f0174de1dc150bdfa15f070d48149e"
+  },
+  "source_readset_stable": true,
+  "helper_api_review": {
+    "status": "STATIC_API_REVIEW_NO_MISMATCH_REPORTED",
+    "apis": [
+      "direct_pf",
+      "d8_check",
+      "local_new_minima",
+      "compare_face_inventory",
+      "exposed_topology",
+      "coverage_from_index"
+    ],
+    "scope": "The geometry APIs are not executed by this preflight-only command."
+  }
+}

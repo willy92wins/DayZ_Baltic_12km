@@ -1,0 +1,46 @@
+{
+  "status": "FAIL_GLOBAL_COMPILED_COVERAGE",
+  "gates": {
+    "all_frozen_water_cells": true,
+    "nominal_wet_coverage": false,
+    "visible_field_footprint_coverage": false
+  },
+  "instances": 17926,
+  "models": 13030,
+  "cells": 404484,
+  "tiles": 33325,
+  "uncovered_physical_m2": 0.000157539983105274,
+  "uncovered_visible_footprint_m2": 0.00012167584352429095,
+  "uncovered_cells": [
+    {
+      "row": 509,
+      "col": 1370,
+      "physical_missing_m2": 0.00012076380929013433,
+      "visible_footprint_missing_m2": 0.00012167583967788529,
+      "physical_geometry": "{\"type\":\"Polygon\",\"coordinates\":[[[8226.0,9222.0],[8220.28880405426,9222.0],[8220.28873452438,9222.000117301941],[8224.0,9222.000117301941],[8226.0,9222.000117301941],[8226.0,9222.0]]]}",
+      "visual_geometry": "{\"type\":\"Polygon\",\"coordinates\":[[[8226.0,9222.0],[8224.0,9222.0],[8220.28880405426,9222.0],[8220.28873452438,9222.000117301941],[8224.0,9222.000117301941],[8226.0,9222.000117301941],[8226.0,9222.0]]]}"
+    },
+    {
+      "row": 865,
+      "col": 365,
+      "physical_missing_m2": 3.6776173815139665e-05,
+      "visible_footprint_missing_m2": 0.0,
+      "physical_geometry": "{\"type\":\"Polygon\",\"coordinates\":[[[2190.0,7092.0],[2193.7647140026093,7092.0],[2193.764836869194,7091.999882698059],[2191.999882698059,7091.999882698059],[2190.0,7091.999882698059],[2190.0,7092.0]]]}",
+      "visual_geometry": "{\"type\":\"Polygon\",\"coordinates\":[[]]}"
+    }
+  ],
+  "uncovered_only_dry_cells": 10596,
+  "max_model_visible_physical_footprint_difference_m2": 1.1105585114717931e-10,
+  "terrain_sha256": "cff6d175da46a0080bd761c327babf9c0ef4c53434744ceec9241bc9cc28c82c",
+  "water_sha256": "95ea4c6c54c868743eddc71b0a59ff31c8418a77ee2f2daf95f6b3a2e249de0f",
+  "world_source_sha256": "98b989631bd82588401076d5e54d465fd03acde30511fd3246b321988eed15d0",
+  "elapsed_s": 133.43799999999464,
+  "controls": [
+    "whole_native_cell_36_m2_covered",
+    "one_centimetre_gap_0.06_m2_rejected"
+  ],
+  "limits": [
+    "Coverage gate, not native render acceptance. Visible heights and connectivity have separate gates.",
+    "Every frozen pond cell included; this does not test the native ocean renderer."
+  ]
+}

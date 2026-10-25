@@ -1,0 +1,237 @@
+{
+ "build": {
+  "summary": "EV110 is built, gated and deployed as P:/Mods/@DayZ_Baltic_EV110_LatticeShoresV1/Addons. narva_trial.pbo has sha 226932e3d9346e322b86f5e04958492fe1f417b958e44a3038d7516f051fbb8d and baltic_water_v30.pbo has sha 46e63c70e60a2775781bb5c7b75fa000c2c2897f0712954c06b14b2149c358db. Against the EV95 base (f1a148ca…) exactly 41 entries change: baltic_trial.wrp plus the 40 layer PAAs of the surface patch. The final terrain is ev110/terrain-ev110.npz, sha d25e9428ed39cebcef0c3b3885e23d8e397b67261846775ecdbc238fdde520e6. The compiled WRP entry has sha 792740974101326fbcbd216190f4fcc828e6a1af1b59b30cb8926af2b8929dda.\n\nGates on this chain:\n- Kit: G2–G6 PASS. The fixed G7 also passes on the final terrain.\n- Bridges v5: G1, G3, G4, G6, G7 and G8 PASS. G2 (wood ramp air) and G5 (the inherited v4 corridor) FAIL, as expected. All 22 negative controls FAIL and are detected.\n- Shores: G1–G7 PASS, including G6 with 14 negative controls, and the tool checks PASS. 154 of 329 stretches are treated. On the islet, 6 of 7 stretches are treated; stretch 313 is rejected after all 7 variants (wiggle p90 0.102 > 0.080).\n- Water: verify_pond_exact PASS (760,020 half-cells, 0 missing, duplicated or outside).\n- Surface: G1–G5 PASS, bound to the trusted terrain/WRP pair. The binding controls behave as intended: the original EV109 trial passes, and both the retarget case and a package with the wrong WRP fail.\n\nThe gate fixes of step 11 are done. Each new negative control fails with the fixed gate and passes with the original one (shown on the reviewers' fixtures).\n\nThe server probe was not run: points.csv has 2,881 points (836 bridges + 1,945 kit + 100 shores), and split_log.py maps the probe log back to each family's ids.\n\nOne deviation: the staged records also include the pilot bridge 015-15 (bridges/records.json), as in the HANDOFF recipe. The terrain has carried its channel cut since EV107, so without it the cut would have no bridge.\n\nThere is a new finding: 2 surface cells away from any bridge, at (4779,5517) and (4755,5475), lose road paint because the shore pass lowered reserve-only vertices at the old sea crossing by more than 0.5 m.\n\nFull log: E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/BUILD-EV110.md (sha 10109702…).",
+  "steps": [
+   {
+    "step": "1 Kit v8 (HANDOFF step 1, 10 args from EV107) + kit gates G2-G6",
+    "status": "DONE",
+    "evidence": "ev110/kit: terrain-kit.npz 76f166ee…, kit-records.json eb0ac6e3…, cover 2f08075d…, envelope b005deaf… (same sha as the track's validated r1). G2 PASS (p50 3.53/3.49 m), G3 PASS (1 region per site), G4 PASS (min 0.1118/0.1133 m, geometric only), G5 PASS (0 frozen vertices changed, max 31.04 deg). Logs: ev110/logs/s01-*.log"
+   },
+   {
+    "step": "2 bury_edges_v31 (run through kit G6)",
+    "status": "DONE",
+    "evidence": "G6 PASS: 43 exposed (all inherited), 0 new, 0 heights changed, cover inside envelope, 0 new sea vertices. Last fpN = fp0. Output: ev110/kit/terrain-ev108.npz (= terrain-kit). The ev108 file names inside ev110/kit are the names the kit gates read."
+   },
+   {
+    "step": "3 Bridges v5 on the post-bury kit terrain + kit envelope, sites-ev110, run_gates_v5 with --out ev110/bridges",
+    "status": "DONE",
+    "evidence": "terrain-br 92a6a2d0…, records bbb3d4ca…, report 08a6b5cf…, envelope e23857cd… (records, report and envelope are byte-identical to the track's r4). G1/G3/G4/G6/G7/G8 PASS. G2 FAIL: 14 wood ends, air 0.86–2.31 m; metal PASS, 015-13 0.0100 m. G5 FAIL: 29 frozen vertices outside the footprints, all inherited from v4, 5 wet, max lowering 6.9954 m. 22/22 negative controls FAIL; negatives_all_detected=true. Summary: ev110/bridges/gates/summary.json"
+   },
+   {
+    "step": "4 bury_edges_v31 after the bridges",
+    "status": "DONE",
+    "evidence": "ev110/bury-br: 0 changes, 43 exposed, 0 new; fp0 used"
+   },
+   {
+    "step": "5 Shore ramp with --built sites-ev110 + adapted gates (G1-G5, G7, G6, tool checks)",
+    "status": "DONE",
+    "evidence": "ev110/shores: 154 of 329 stretches treated (27.1 km), 17,870 vertices, 1,233 reserve-only, 0 protected vertices changed. G1–G5 and G7 PASS. G6 PASS: 14 negatives incl. the new n14 (closed-chain substitution) + 4 fixtures. Islet: 8/10/25/29/48/197 treated with G2 p90 under their limits; 313 rejected (wiggle p90 0.102 > 0.080 after 7 variants, cause frozen-platform, centre (7587.7, 10729.0)). Tool checks: the 1st run FAILED check 5 because its inputs were fixed to EV109 (changes not owned by any stretch); with the inputs exposed as arguments, run 2 PASS."
+   },
+   {
+    "step": "6 bury → fp-ev110 → pond_author → pack_water → stage_pond_pilot --full → verify_pond_exact",
+    "status": "DONE",
+    "evidence": "Bury: 0 changes. fp-ev110 footprint de49e940…. Authoring: 13,503 instances, 8,103 models. Water PBO 46e63c70…. Stage checks all true. verify-exact pass=true: 760,020 half-cells, 0 missing/multiple/outside, max error 7.6e-7 m (ev110/ev110w/verify-exact.json)"
+   },
+   {
+    "step": "7 Records + stage_bridges_v31 + compile_world_ev110.ps1",
+    "status": "DONE",
+    "evidence": "records-ev110.json: 239 records = pilot 015-15 + 220 kit + 18 bridges (5 stack-lower, 015-42 wood_50_1). stage-report checks all true; editable WRP f0c257e6…. AddonBuilder 'Build Successful'; compiled narva_trial.pbo d0a8867e…"
+   },
+   {
+    "step": "8 Surface patch (--road-off-lowered vs EV95 40c174e3) + layer PAAs + manifest bound to the terrain and compiled-WRP shas",
+    "status": "DONE",
+    "evidence": "Manifest c41ba509…: 147 cells, 20 tiles, 40 entries. binding.json: bound=true; terrain d25e9428… = stage-report = pond stage-report = manifest; WRP 79274097…. Surface G1–G5 ALL PASS under the trusted pair (ev110/surface/gates/reports-ev110)."
+   },
+   {
+    "step": "9 Package @DayZ_Baltic_EV110_LatticeShoresV1 + deploy.json",
+    "status": "DONE",
+    "evidence": "package_ev110.py: changed entries == manifest entries + baltic_trial.wrp (41) asserted; copies verified by sha; deploy.json sha 4d9e8363…"
+   },
+   {
+    "step": "10 Probe points (not run)",
+    "status": "DONE",
+    "evidence": "ev110/probe/points.csv: 2,881 rows, sha 51579c5a…, format id;x 0 z, ids 0..N-1, bridges first as in EV109. points.json and families.json record each point's family and family_id. Kit points come from probe_points_kit on the final terrain/footprint, re-verified by the fixed G7 (PASS, 1,945 points). Bridges: 836. Shores: 100 = 50 wet/dry pairs at 2 m with |D| >= 0.10 m, 38 pond and 12 sea pairs, 5 pairs on the islet. split_log.py + G8 were tested on a synthetic log only (that result was moved to scripts/, not kept as a real one)."
+   },
+   {
+    "step": "11 Gate fixes from Codex round 2, each with a negative control",
+    "status": "DONE",
+    "evidence": "Kit G7: dry controls by kind with expect=dry required, comparisons fail-closed on non-finite values. Kit G8: classification by kind, labels checked, non-finite readings rejected. 24/24 modes as expected; the original G8 PASSES the 3 new G8 negatives. Shores G2: closed chains matched before/after by space and side; the reviewer's control FAILS and the 154 real stretches still pass. Surface: trusted pair + G5 d); retarget and wrong-WRP FAIL, EV109 trial PASS. Bridges G7/G8: upper_stack feet + finite matrices; the upper-feet and NaN negatives FAIL with the fixed gates and PASS with the originals (on the r4 base)."
+   }
+  ],
+  "gates": [
+   {
+    "name": "Kit G2 width",
+    "status": "PASS",
+    "evidence": "ev110/kit/gate-g2.json: 678/3,931 sections, 0 with a dry centre"
+   },
+   {
+    "name": "Kit G3 continuity",
+    "status": "PASS",
+    "evidence": "gate-g3.json: 1 wet region per site, 0 dry axis samples"
+   },
+   {
+    "name": "Kit G4 geometric margin",
+    "status": "PASS",
+    "evidence": "gate-g4.json: min 0.1118/0.1133 m, engine_water_verified=false"
+   },
+   {
+    "name": "Kit G5 slopes/frozen",
+    "status": "PASS",
+    "evidence": "gate-g5.json: 0 violating triangles, 0 frozen vertices changed"
+   },
+   {
+    "name": "Kit G6 bury/envelope",
+    "status": "PASS",
+    "evidence": "gate-g6.json: 0 new exposed edges, 0 changes, 0 new sea vertices"
+   },
+   {
+    "name": "Kit G7 probe points (fixed)",
+    "status": "PASS",
+    "evidence": "ev110/kit/gate-g7.json and probe/kit-final/gate-g7.json (final terrain): 1,945 points, 0 failures, 689 dry controls checked by kind"
+   },
+   {
+    "name": "Kit G8 engine probe",
+    "status": "NOT_RUN",
+    "evidence": "No server probe log (DayZ MCP not allowed); probe/kit-final/gate-g8.json status NOT_RUN"
+   },
+   {
+    "name": "Kit negative controls (24 modes)",
+    "status": "PASS",
+    "evidence": "ev110/kit/neg2/negative-controls-r1.json: all as expected"
+   },
+   {
+    "name": "Bridges G1",
+    "status": "PASS",
+    "evidence": "ev110/bridges/gates/G1.json"
+   },
+   {
+    "name": "Bridges G2 (wood ramp air)",
+    "status": "FAIL",
+    "evidence": "Expected/documented FAIL: 14 wood ends, air 0.86–2.31 m; metal blocks PASS (015-13 0.0100 m)"
+   },
+   {
+    "name": "Bridges G3",
+    "status": "PASS",
+    "evidence": "Openings = v4 at all 10 sites; max sweep step 0.0"
+   },
+   {
+    "name": "Bridges G4",
+    "status": "PASS",
+    "evidence": "0 lower or upper legs hanging; 015-42: 0/20"
+   },
+   {
+    "name": "Bridges G5 (strict, no corridor exception)",
+    "status": "FAIL",
+    "evidence": "Expected/documented FAIL: 29 frozen vertices outside the footprints, all inherited from v4, 0 new"
+   },
+   {
+    "name": "Bridges G6",
+    "status": "PASS",
+    "evidence": "0 new triangles >55°; >45° 48→78"
+   },
+   {
+    "name": "Bridges G7 (fixed: upper_stack, finite matrices)",
+    "status": "PASS",
+    "evidence": "Legs upper_stack: 0 hanging at all 5 stacks; agreement ok; missing []"
+   },
+   {
+    "name": "Bridges G8 (fixed: finite matrices)",
+    "status": "PASS",
+    "evidence": "invalid_matrices {}"
+   },
+   {
+    "name": "Bridges negative controls (22)",
+    "status": "PASS",
+    "evidence": "summary.json: negatives_all_fail=true, negatives_all_detected=true"
+   },
+   {
+    "name": "Shores G1-G5, G7",
+    "status": "PASS",
+    "evidence": "ev110/shores/gates/*.json: G2 154/154 stretches pass (worst ratio 0.9975); G4 sea components 82→82; G7 0 violations"
+   },
+   {
+    "name": "Shores G6 negatives (fixed G2, n14)",
+    "status": "PASS",
+    "evidence": "ev110/shores/negative/G6.json: 14 controls + 4 fixtures"
+   },
+   {
+    "name": "Shores tool checks",
+    "status": "PASS",
+    "evidence": "ev110/shores/tool-checks-r2; the first run (EV109-fixed inputs) FAILED check 5 and is kept in logs"
+   },
+   {
+    "name": "verify_pond_exact_v31",
+    "status": "PASS",
+    "evidence": "ev110/ev110w/verify-exact.json pass=true"
+   },
+   {
+    "name": "Surface G1-G5 bound to terrain+WRP",
+    "status": "PASS",
+    "evidence": "ev110/surface/gates/reports-ev110: G5 d_ok=true (terrain d25e9428…, WRP 79274097…)"
+   },
+   {
+    "name": "Surface binding controls",
+    "status": "PASS",
+    "evidence": "ev110/surface/binding-controls/surface-binding-controls.json: EV109 trial PASS; retarget FAIL (G2, G5); wrong WRP FAIL (G5)"
+   },
+   {
+    "name": "Package changed-entry list",
+    "status": "PASS",
+    "evidence": "deploy.json changed_entries_n=41 = 40 layer PAAs + baltic_trial.wrp, asserted equal to the manifest"
+   }
+  ],
+  "mod_folder": "P:/Mods/@DayZ_Baltic_EV110_LatticeShoresV1",
+  "deploy_json": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/deploy.json",
+  "probe_points": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/probe/points.csv (2,881 rows, sha 51579c5a14c5c5e433b1fdf57644ade82d4d6c1bd3a984596a136e568fc39003; points.json/families.json alongside; split_log.py to split the BalticBridgeProbeV2 log per family; kit G8 runs on ev110/probe/kit-final with --log)",
+  "worktree_files_changed": [
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/gates_v5.py (sha 88a63cb65624a89d28a364bacfe1389c4753888ce81da1f59a322953f95d8b7b, was ffcb6db0…; one write, LF, read back MATCH)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/run_gates_v5.py (sha 6a999a86d750768ed70e100b502d39afede291f7f2bdc3a96a285b96aaea9a58, was 7ceefd6b…; one write, LF, read back MATCH)"
+  ],
+  "open_issues": [
+   "No engine verification: the server probe has not been run. Kit G8 is NOT_RUN, and engine water at lips and joints, bridge continuity and the shore wet/dry pairs are unmeasured.",
+   "Bridges G2 (wood ramp air 0.86–2.31 m; the deck-flush proposal is pending) and G5 (29 inherited v4 corridor vertices) still FAIL. They need Guillermo's decision.",
+   "Deviation: the records include the pilot bridge 015-15 (bridges/records.json, as in the HANDOFF recipe), because the terrain has carried its cut since EV107. The task text named only the kit and EV110 bridge records.",
+   "The surface patch removes road paint in 2 cells away from any bridge, at (4779,5517) and (4755,5475): sea-edge reserve-only vertices moved more than 0.5 m by shore stretches 122 and 83 at the old EV96 sea crossing. Measured, not seen in game.",
+   "shore_ramp_v31.validate (production) still compares closed-chain counts only; just the gate G2 now checks spatial identity.",
+   "Bridges G7: the escapes found by the reviewer with an underestimated opening or air in the report (-1000) are still open; they were out of this task's scope.",
+   "The fixed kit, shore and surface gates live in the scratchpad (ev110-build/kit-gates, shore-gates, surface-gates), with a copy in E:/…/ev110/scripts. Only the bridge gates were changed in the worktree. Nothing committed; HANDOFF.md not updated.",
+   "texHeaders.bin is not regenerated (stale since B). Islet stretch 313 remains rejected (wiggle p90 0.102 > 0.080)."
+  ]
+ },
+ "v1": {
+  "verdict": "ship_with_fixes",
+  "defects": [
+   {
+    "severity": "minor",
+    "claim": "split_log.py acepta logs incompletos o duplicados y escribe BEGIN/END con recuentos incorrectos. Debe corregirse antes de usar la sonda para aceptación; no invalida los PBO.",
+    "evidence": "Ejecuté C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B ./ev110-verify1/probe_audit.py. Sin id 836: rc=0, 'kit 1944 of 1945'. Con id 0 duplicado: rc=0, 'bridges 837 of 836'. Fuente: E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/probe/split_log.py:21-26. Evidencia: ev110-verify1/probe-audit.json.",
+    "fix": "Exigir exactamente una fila P por id esperado y comprobar los recuentos por familia antes de escribir. Añadir ambos controles negativos y conservar el positivo. No requiere reconstruir el mod. Kit G8 sí comprueba ausencias y duplicados; no demostré un falso PASS suyo."
+   }
+  ],
+  "verified": [
+   "hash_audit.py: recalculé las 195 referencias SHA256 completas o abreviadas del build log y los 16 campos de archivo de deploy.json; todos coinciden. BUILD-EV110.md=10109702c6ca24779c63c34a7566eeb3d41dc1a6cc07f71a6ad00f69005011d9; deploy.json=4d9e83635286c3945c4ad00a5656678c9f79080424d874c5c7244828e9f52734. Evidencia: ev110-verify1/hash-audit.json.",
+   "SHA256 recalculados del despliegue: narva_trial.pbo=226932e3d9346e322b86f5e04958492fe1f417b958e44a3038d7516f051fbb8d; baltic_water_v30.pbo=46e63c70e60a2775781bb5c7b75fa000c2c2897f0712954c06b14b2149c358db. P: no estaba visible; comprobé y utilicé su destino físico documentado.",
+   "chain_audit.py y lectura de comandos/firmas: cadena EV107 -> kit -> bury -> puentes -> bury -> orillas -> bury -> staging -> compilado -> superficie -> paquete consistente en rutas, hashes y arrays. Cambios de altura: 1012, 433 y 17870 vértices respectivamente. Ningún array perdido: 16 -> 17 -> 18 -> 19; ninguna altura no finita.",
+   "Recalculé las tres footprints mediante pond_footprint_v31.py: coincidencia byte a byte con el último fpN, fp0 en los tres casos. Cada etapa conserva 43 bordes expuestos heredados y cero nuevos; los terrenos pre/post-bury son idénticos. Footprint final=de49e9406a3cdf947dffb3115d6e52c02b108b0ea4c7eae301f3cea372a707cf. No detecté un bury necesario omitido ni desajuste footprint/terreno.",
+   "run_samples.py: kit G2/G3/G4 PASS; anchura p50 3.53/3.49 m, una región mojada por sitio y margen geométrico mínimo 0.1118/0.1133 m. Puentes G1/G3/G4 PASS. El negativo G3 falla: abertura 015-25 de 2.9781 a 0 m; la igualdad positiva de aberturas no se tomó como prueba aislada.",
+   "Puentes G2/G5 reejecutados: reproducen exactamente los FAIL autorizados, 14 extremos de madera con aire y 29 vértices congelados heredados. No aparecen discrepancias nuevas frente a los resultados originales.",
+   "Orillas G2/G4 reejecutados: PASS, 154 tramos aceptados, incluidos seis de la isla; 82 componentes de mar antes/después, sin creaciones, eliminaciones, divisiones o fusiones. Comparación del terreno final: cero cambios de orillas dentro de las máscaras del kit/puentes y sus halos de un vértice.",
+   "Surface G2 reejecutado: PASS sobre 147 celdas y 20 tiles; ambos positivos pasan y los tres negativos fallan. Los 12 resultados comparados coinciden con los originales salvo rutas de salida. La excepción inicial de ImageToPAA por ruta larga se resolvió usando la ruta corta del mismo archivo; predicados intactos. Evidencia: gate-agreement.json y verifier-path-adaptations.diff.",
+   "pbo_audit.py: EV95 y EV110 tienen 6827 entradas, sin altas ni bajas; cambian exactamente baltic_trial.wrp y las 40 PAA del manifiesto. Todos sus hashes coinciden con archivos, manifiesto y deploy.json. WRP empaquetado=792740974101326fbcbd216190f4fcc828e6a1af1b59b30cb8926af2b8929dda, idéntico al compilado; terreno vinculado=d25e9428ed39cebcef0c3b3885e23d8e397b67261846775ecdbc238fdde520e6.",
+   "wrp_audit.py: contrasté los 13751 ids y referencias de modelo del WRP editable y compilado. Están los 239 registros añadidos: 220 kit, 18 puentes y piloto 015-15 previsto por HANDOFF; incluidos cinco stack-lower y bridge_wood_50_1 en 015-42. De las matrices nuevas, 206 son exactas y 33 piedras difieren como máximo 4.77e-7. Heightfield editable idéntico al terreno final.",
+   "verify_pond_exact_v31.py: PASS, 760020 medias celdas, cero faltantes/duplicadas/exteriores. Contrasté los 13503 registros con el WRP compilado y los 8103 modelos con el PBO real. Verificación adicional usando posiciones extraídas del compilado: PASS, error máximo roadway 1.52e-6 m y visual 1.31e-6 m, inferiores a 1e-3 m. El 7.63e-7 reportado corresponde a posiciones previas a serialización.",
+   "probe_audit.py/final_checks.py: CSV usable por init.c, 2881 filas id;x 0 z, ids consecutivos, coordenadas finitas y correspondencia CSV/JSON/familias exacta: 836 puentes + 1945 kit + 100 orillas. Kit G7 final PASS y CSV regenerado idéntico. Los 50 pares de orilla pertenecen a tramos tratados, separación 4 m y margen absoluto mínimo 0.1731 m. El split positivo conserva las correspondencias.",
+   "junction_audit.py: inspección sin recursión de stage EV110, source de agua y stage EV103; los 11 junctions apuntan a destinos físicos existentes. P: falta en este proceso también para el stage anterior; no demuestra corrupción de enlaces.",
+   "summarize_checks.py confirmó las celdas adicionales (4779,5517) y (4755,5475), a 813.65/783.56 m del puente más próximo, afectadas por orillas 122/83. Quedan como observación visual, sin fallo de jugabilidad demostrado. Evidencia y handoff completos en ev110-verify1/VERDICT.json, HANDOFF.md y evidence-index.json; 123 archivos de evidencia inventariados."
+  ],
+  "not_checked": [
+   "Motor, agua efectiva en labios/juntas, conducción, colisiones, apariencia y rendimiento: no ejecuté DayZ MCP ni la sonda, conforme a la prohibición.",
+   "Heightfield comprimido del OPRW: no lo descomprimí independientemente; sí comprobé el heightfield editable, los hashes del compilado/despliegue y sus objetos.",
+   "No repetí la integración completa, AddonBuilder ni todas las suites negativas del paso 11. No doy por revalidados los controles restantes ni las debilidades G7 ya declaradas.",
+   "No reconstruí el estado histórico de directorios intermedios ni dispongo de un inventario previo completo de DZ/bin/core para descartar modificaciones históricas. Comprobé enlaces y destinos actuales sin recorrerlos.",
+   "No regeneré ni validé funcionalmente texHeaders.bin; permanece idéntico a EV95 según la comparación PBO. No reproduje las siete variantes rechazadas del tramo 313."
+  ]
+ },
+ "fix": null,
+ "v2": null
+}

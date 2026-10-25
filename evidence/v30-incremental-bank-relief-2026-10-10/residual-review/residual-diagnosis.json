@@ -1,0 +1,617 @@
+{
+  "status": "OFFLINE_RESIDUAL_DIAGNOSIS_EV82B_NOT_NEW_AUTHORING",
+  "candidate_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+  "ev80_sha256": "0a18c5623885eed274cfe7d296e02aba290ed491b835d317213fc7876b2fc45b",
+  "diagnostic_script_sha256": "d247f2373440f81d5403decab2357fd14becbb7d1de54863011a1b7fb6e8e002",
+  "ev80_consumer_candidate_sha256": "0a18c5623885eed274cfe7d296e02aba290ed491b835d317213fc7876b2fc45b",
+  "ev79_source_sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+  "consumer_status": "PASS_EV82_CONSUMER",
+  "consumer_gates_all_true": true,
+  "scope": {
+    "residual": "candidate B hinge >30 degrees and incident_any(EV79-derived bank mask) and incident_any(EV79 native wet_support)",
+    "bank": "class 0, no wet support/source water/beach/reserve/platform, within 96m of classes 3/5/6",
+    "selector": "exact EV82 author.py source_fold_nodes over EV79 domain/fixed masks; corrected diagonal/vertical/horizontal corner incidence",
+    "budget": "EV79 total +/-2m bounds and original lower water/design floor; no cumulative allowance",
+    "visual_limit": "geometry only; no DayZ render/LOD or causal acceptance"
+  },
+  "selector_nodes": 4329,
+  "changed_vertices_vs_ev80": 3046,
+  "residual": {
+    "ev80_count": 3384,
+    "ev82b_count": 2597,
+    "reduction": 787,
+    "by_kind": {
+      "diagonal": {
+        "ev80_over30": 2176,
+        "ev82b_over30": 1697,
+        "reduced": 479,
+        "max_ev80_deg": 62.00920193701158,
+        "max_ev82b_deg": 62.00920193701158
+      },
+      "vertical": {
+        "ev80_over30": 605,
+        "ev82b_over30": 438,
+        "reduced": 167,
+        "max_ev80_deg": 52.55042069662487,
+        "max_ev82b_deg": 52.55042069662487
+      },
+      "horizontal": {
+        "ev80_over30": 603,
+        "ev82b_over30": 462,
+        "reduced": 141,
+        "max_ev80_deg": 56.231642009695236,
+        "max_ev82b_deg": 56.231642009695236
+      }
+    },
+    "participant_state": {
+      "no_selector_corner": 217,
+      "selector_unchanged_only": 625,
+      "selector_changed_only": 1685,
+      "selector_changed_and_unchanged": 70
+    },
+    "decision_reason_hits_nonexclusive": {
+      "benefit_below_material_floor": 660,
+      "accepted": 1755,
+      "empty_hinge_component": 36
+    },
+    "top_sectors_64x64": [
+      {
+        "row": 29,
+        "col": 2,
+        "count": 80
+      },
+      {
+        "row": 16,
+        "col": 15,
+        "count": 49
+      },
+      {
+        "row": 17,
+        "col": 28,
+        "count": 38
+      },
+      {
+        "row": 31,
+        "col": 13,
+        "count": 38
+      },
+      {
+        "row": 28,
+        "col": 3,
+        "count": 37
+      },
+      {
+        "row": 29,
+        "col": 15,
+        "count": 36
+      },
+      {
+        "row": 10,
+        "col": 12,
+        "count": 35
+      },
+      {
+        "row": 6,
+        "col": 23,
+        "count": 34
+      },
+      {
+        "row": 29,
+        "col": 3,
+        "count": 33
+      },
+      {
+        "row": 15,
+        "col": 14,
+        "count": 32
+      }
+    ]
+  },
+  "remaining_scalar_budget_for_unique_selector_vertices_at_residuals": {
+    "count": 2358,
+    "up_m_percentiles_min_25_50_75_95_max": [
+      0.0,
+      1.52782142162323,
+      1.7214629650115967,
+      1.8880149722099304,
+      2.0,
+      2.219374179840088
+    ],
+    "down_m_percentiles_min_25_50_75_95_max": [
+      0.10434889068603459,
+      1.4095526384353634,
+      2.0,
+      2.2664040327072144,
+      2.6085187196731567,
+      3.0709781646728516
+    ],
+    "up_gt_0_1m": 2355,
+    "down_gt_0_1m": 2358,
+    "not_an_angular_feasibility_claim": true
+  },
+  "pyramid_like_convergence_definition": {
+    "bank_vertex": true,
+    "incident_face_slope_threshold_deg": 30.0,
+    "minimum_incident_steep_faces": 4,
+    "positive_peak_over_eight_neighbors_m": 0.5,
+    "minimum_incident_mixed_residual_hinges": 1
+  },
+  "pyramid_like_convergence_count": 0,
+  "pyramid_like_convergence_top_20": [],
+  "pyramid_classifier_interpretation": "0 means no vertex met this exact conjunction (4 incident faces >30 degrees, prominence >=0.5m, residual hinge); it does not establish absence of pyramid-like relief under other definitions.",
+  "focuses": [
+    {
+      "row": 1880,
+      "col": 190,
+      "x_m": 1140,
+      "z_m": 1002,
+      "height_ev79_m": 4.905372142791748,
+      "height_ev80_m": 5.351123332977295,
+      "height_ev82b_m": 5.356813430786133,
+      "delta_ev82b_vs_ev80_m": 0.005690097808837891,
+      "local_energy_reduction_ev79_to_ev80": 0.058670081176683486,
+      "steep_faces_gt30_at_anchor": 0,
+      "prominence8_m_at_anchor": 0.3757612705230713,
+      "residual_hinges_at_anchor": 2,
+      "nearest_residual": {
+        "kind": "vertical",
+        "edge_row": 1880,
+        "edge_col": 190,
+        "x_m": 1146,
+        "z_m": 999,
+        "angle_ev80_deg": 39.417631833483284,
+        "angle_ev82b_deg": 39.36482729208508,
+        "angle_reduction_deg": 0.05280454139820279,
+        "height_range_b_m": 3.957444429397583,
+        "selector_corners": 1,
+        "changed_selector_corners": 1,
+        "unchanged_selector_corners": 0,
+        "decision_reasons": [
+          "accepted"
+        ],
+        "bank_corner_count": 1,
+        "fixed_mask_hits_nonexclusive": {
+          "fixed": 0,
+          "wet_support": 0,
+          "engineering_halo": 0,
+          "narva": 0,
+          "other_fixed": 0
+        },
+        "peak_prominence_m": 1.4283568859100342,
+        "prominence_vertex_rc": [
+          1881,
+          191
+        ],
+        "corner_heights_ev80_m": [
+          5.351123332977295,
+          6.325840473175049,
+          5.872693061828613,
+          2.368396043777466
+        ],
+        "corner_heights_b_m": [
+          5.356813430786133,
+          6.325840473175049,
+          5.872693061828613,
+          2.368396043777466
+        ],
+        "corner_rc": [
+          [
+            1880,
+            190
+          ],
+          [
+            1880,
+            191
+          ],
+          [
+            1881,
+            191
+          ],
+          [
+            1881,
+            192
+          ]
+        ]
+      },
+      "selector_vertex": true,
+      "decision_reason": "accepted"
+    },
+    {
+      "row": 1784,
+      "col": 366,
+      "x_m": 2196,
+      "z_m": 1578,
+      "height_ev79_m": 5.954403877258301,
+      "height_ev80_m": 5.954403877258301,
+      "height_ev82b_m": 6.1216254234313965,
+      "delta_ev82b_vs_ev80_m": 0.1672215461730957,
+      "local_energy_reduction_ev79_to_ev80": 0.0,
+      "steep_faces_gt30_at_anchor": 0,
+      "prominence8_m_at_anchor": 0.9216654300689697,
+      "residual_hinges_at_anchor": 2,
+      "nearest_residual": {
+        "kind": "vertical",
+        "edge_row": 1784,
+        "edge_col": 366,
+        "x_m": 2202,
+        "z_m": 1575,
+        "angle_ev80_deg": 31.82382425133297,
+        "angle_ev82b_deg": 30.255302890614374,
+        "angle_reduction_deg": 1.568521360718595,
+        "height_range_b_m": 4.01412034034729,
+        "selector_corners": 1,
+        "changed_selector_corners": 1,
+        "unchanged_selector_corners": 0,
+        "decision_reasons": [
+          "accepted"
+        ],
+        "bank_corner_count": 1,
+        "fixed_mask_hits_nonexclusive": {
+          "fixed": 0,
+          "wet_support": 0,
+          "engineering_halo": 0,
+          "narva": 0,
+          "other_fixed": 0
+        },
+        "peak_prominence_m": 1.513209342956543,
+        "prominence_vertex_rc": [
+          1785,
+          367
+        ],
+        "corner_heights_ev80_m": [
+          5.954403877258301,
+          6.4898834228515625,
+          5.54228401184082,
+          2.4757630825042725
+        ],
+        "corner_heights_b_m": [
+          6.1216254234313965,
+          6.4898834228515625,
+          5.54228401184082,
+          2.4757630825042725
+        ],
+        "corner_rc": [
+          [
+            1784,
+            366
+          ],
+          [
+            1784,
+            367
+          ],
+          [
+            1785,
+            367
+          ],
+          [
+            1785,
+            368
+          ]
+        ]
+      },
+      "selector_vertex": true,
+      "decision_reason": "accepted"
+    }
+  ],
+  "local_solver_dry_runs": [
+    {
+      "row": 1784,
+      "col": 366,
+      "x_m": 2196,
+      "z_m": 1578,
+      "current_ev82b_m": 6.1216254234313965,
+      "original_ev79_m": 5.954403877258301,
+      "scalar_step_interval_ev79_budget_m": [
+        -2.0,
+        1.8327784538269043
+      ],
+      "solver_proposal_m": null,
+      "solver_reason": "benefit_below_material_floor",
+      "interval_component_count": 28,
+      "intersection_of_recorded_components_m": [
+        -0.1672215461730957,
+        0.9804572756295337
+      ],
+      "decision_trace": null,
+      "candidate_array_unchanged": true,
+      "scope": "solve_node dry-run at this node only; proposal not applied; producer-local diagnostic, not independent consumer proof",
+      "preserve_b_reference_probe": {
+        "angular_reference": "EV82-B current candidate",
+        "p99_bank_cap_deg": 4.982070186774692,
+        "p99_interior_cap_deg": 3.667753611431574,
+        "scalar_step_interval_ev79_budget_m": [
+          -2.0,
+          1.8327784538269043
+        ],
+        "solver_proposal_m": null,
+        "solver_reason": "benefit_below_material_floor",
+        "interval_component_count": 28,
+        "intersection_of_recorded_components_m": [
+          0.0,
+          0.9804572756295337
+        ],
+        "decision_trace": null,
+        "independent_float32_check": null,
+        "candidate_array_unchanged": true,
+        "scope": "producer-local dry-run; proposal not applied"
+      }
+    },
+    {
+      "row": 1394,
+      "col": 923,
+      "x_m": 5538,
+      "z_m": 3918,
+      "current_ev82b_m": 6.08551549911499,
+      "original_ev79_m": 5.862822532653809,
+      "scalar_step_interval_ev79_budget_m": [
+        -2.0,
+        1.7773070335388184
+      ],
+      "solver_proposal_m": 6.234337329864502,
+      "solver_reason": "accepted",
+      "interval_component_count": 28,
+      "intersection_of_recorded_components_m": [
+        -0.08678770065307617,
+        1.3129890790402765
+      ],
+      "decision_trace": {
+        "row": 1394,
+        "col": 923,
+        "original_ev79_m": 5.862822532653809,
+        "height_ev80_before_m": 6.08551549911499,
+        "proposed_height_m": 6.234337329864502,
+        "initial_reason": "accepted",
+        "selected_ulp": 0,
+        "attempts": [
+          {
+            "ulps": 0,
+            "value": 6.234337329864502,
+            "failures": []
+          }
+        ],
+        "accepted_height_m": 6.234337329864502
+      },
+      "candidate_array_unchanged": true,
+      "scope": "solve_node dry-run at this node only; proposal not applied; producer-local diagnostic, not independent consumer proof",
+      "independent_float32_check_ev80_reference": {
+        "float32_height_m": 6.234337329864502,
+        "independent_failures": [],
+        "six_face_slope_reference_deg": [
+          10.707883035437414,
+          5.294540768399862,
+          9.260970494718466,
+          10.293121674665258,
+          9.371956502729937,
+          10.587047942759854
+        ],
+        "six_face_slope_after_deg": [
+          9.995785229911336,
+          5.737925250247923,
+          10.540664463193803,
+          8.276638622546056,
+          11.305547857232904,
+          10.633880344566212
+        ],
+        "twelve_hinge_current_deg": [
+          31.78982147221168,
+          29.297481253928378,
+          12.642330374335115,
+          18.616787884320352,
+          2.950342012605333,
+          11.875127097632198,
+          6.354728371685155,
+          1.0400994313601282,
+          7.872165531585951,
+          2.553086128069409,
+          5.8128029355155,
+          4.123526759401855
+        ],
+        "twelve_hinge_reference_deg": [
+          32.602517575695515,
+          30.122654724682008,
+          13.801864471875447,
+          17.789649346194736,
+          7.826480223690506,
+          15.587578356049592,
+          11.60827120675621,
+          0.2259775162779323,
+          2.466998997252946,
+          7.840650258551516,
+          5.004892114175696,
+          7.85897069796619
+        ],
+        "twelve_hinge_after_deg": [
+          30.392967305132117,
+          27.883452565666733,
+          10.649426152657307,
+          20.020992990599627,
+          0.9781326277078007,
+          13.264630727610129,
+          8.335756459715142,
+          2.430367047138823,
+          9.25422697648231,
+          4.517196641474056,
+          7.189775487166022,
+          5.511334548821065
+        ],
+        "incident_hinge_squared_energy_before": 2685.817396400938,
+        "incident_hinge_squared_energy_after": 2655.881980314783,
+        "independent_pass": true,
+        "method": "direct triangle cross-products and normal-pair dot products; solver topology indices only"
+      },
+      "preserve_b_reference_probe": {
+        "angular_reference": "EV82-B current candidate",
+        "p99_bank_cap_deg": 4.982070186774692,
+        "p99_interior_cap_deg": 3.667753611431574,
+        "scalar_step_interval_ev79_budget_m": [
+          -2.0,
+          1.7773070335388184
+        ],
+        "solver_proposal_m": 6.1774725914001465,
+        "solver_reason": "accepted",
+        "interval_component_count": 31,
+        "intersection_of_recorded_components_m": [
+          0.0,
+          0.09195738695110711
+        ],
+        "decision_trace": {
+          "row": 1394,
+          "col": 923,
+          "original_ev79_m": 5.862822532653809,
+          "height_ev80_before_m": 6.08551549911499,
+          "proposed_height_m": 6.177473068237305,
+          "initial_reason": "float32_bank_p99_rejected",
+          "selected_ulp": 1,
+          "attempts": [
+            {
+              "ulps": 0,
+              "value": 6.177473068237305,
+              "failures": [
+                "float32_bank_p99_rejected"
+              ]
+            },
+            {
+              "ulps": 1,
+              "value": 6.1774725914001465,
+              "failures": []
+            }
+          ],
+          "accepted_height_m": 6.1774725914001465
+        },
+        "independent_float32_check": {
+          "float32_height_m": 6.1774725914001465,
+          "independent_failures": [],
+          "six_face_slope_reference_deg": [
+            10.397685548011376,
+            5.3545578749873,
+            9.636570552226402,
+            6.629922441306361,
+            10.075112743163752,
+            9.650286175195182
+          ],
+          "six_face_slope_after_deg": [
+            10.128844915336238,
+            5.552380599700189,
+            10.160576567763277,
+            7.630289147368094,
+            10.832472264398733,
+            10.247854691194677
+          ],
+          "twelve_hinge_current_deg": [
+            31.78982147221168,
+            29.297481253928378,
+            12.642330374335115,
+            18.616787884320352,
+            2.950342012605333,
+            11.875127097632198,
+            6.354728371685155,
+            1.0400994313601282,
+            7.872165531585951,
+            2.553086128069409,
+            5.8128029355155,
+            4.123526759401855
+          ],
+          "twelve_hinge_reference_deg": [
+            31.78982147221168,
+            29.297481253928378,
+            12.642330374335115,
+            18.616787884320352,
+            2.950342012605333,
+            11.875127097632198,
+            6.354728371685155,
+            1.0400994313601282,
+            7.872165531585951,
+            2.553086128069409,
+            5.8128029355155,
+            4.123526759401855
+          ],
+          "twelve_hinge_after_deg": [
+            30.927112981126708,
+            28.423527242189074,
+            11.411452471392874,
+            19.48675402170382,
+            1.7303840652573488,
+            12.735860603323404,
+            7.580586792850258,
+            1.9001993031013762,
+            8.727987998059325,
+            3.7684943867549086,
+            6.66495986816533,
+            4.982067440810742
+          ],
+          "incident_hinge_squared_energy_before": 2685.817396400938,
+          "incident_hinge_squared_energy_after": 2660.232486346425,
+          "independent_pass": true,
+          "method": "direct triangle cross-products and normal-pair dot products; solver topology indices only"
+        },
+        "candidate_array_unchanged": true,
+        "scope": "producer-local dry-run; proposal not applied"
+      }
+    },
+    {
+      "row": 1880,
+      "col": 190,
+      "x_m": 1140,
+      "z_m": 1002,
+      "current_ev82b_m": 5.356813430786133,
+      "original_ev79_m": 4.905372142791748,
+      "scalar_step_interval_ev79_budget_m": [
+        -2.0,
+        1.5485587120056152
+      ],
+      "solver_proposal_m": null,
+      "solver_reason": "benefit_below_material_floor",
+      "interval_component_count": 30,
+      "intersection_of_recorded_components_m": [
+        -0.005690097808837891,
+        4.4722136771646603e-07
+      ],
+      "decision_trace": null,
+      "candidate_array_unchanged": true,
+      "scope": "solve_node dry-run at this node only; proposal not applied; producer-local diagnostic, not independent consumer proof",
+      "preserve_b_reference_probe": {
+        "angular_reference": "EV82-B current candidate",
+        "p99_bank_cap_deg": 4.982070186774692,
+        "p99_interior_cap_deg": 3.667753611431574,
+        "scalar_step_interval_ev79_budget_m": [
+          -2.0,
+          1.5485587120056152
+        ],
+        "solver_proposal_m": null,
+        "solver_reason": "benefit_below_material_floor",
+        "interval_component_count": 30,
+        "intersection_of_recorded_components_m": [
+          0.0,
+          2.6365922156657007e-07
+        ],
+        "decision_trace": null,
+        "independent_float32_check": null,
+        "candidate_array_unchanged": true,
+        "scope": "producer-local dry-run; proposal not applied"
+      }
+    }
+  ],
+  "figures": {
+    "residual-map.png": "119b1b0e044c721627a5565d8a2e4f924ea38f76d5ba09204fd095cf96cf3cd7",
+    "ev80-to-b-sections.png": "d3d12f95d9fce51fc4b014ad8f2f85e75aa4fbca470a2f65f8cabec90ba38503"
+  },
+  "limits": [
+    "The detector only counts mixed-any hinges >30 degrees; sub-30 faceting and long straight/planar stretches are outside its scope and may still match the visual complaint.",
+    "An unchanged selected corner identifies an unedited EV82 node; its recorded decision reason is not proof that no other value passes.",
+    "A changed corner with residual >30 means this accepted edit did not remove that hinge; it does not prove infeasibility of another locally feasible value.",
+    "Budget headroom is scalar only; angular p99/EV80 cap, sector, water, slope and benefit gates still constrain any future edit.",
+    "The zero strict-convergence count applies only to the exact conjunction in this report and is not evidence that all pyramid-like relief is absent.",
+    "The local solver probes are producer-local diagnostics; proposals were not applied. The direct float32 check independently recomputes 6 face normals and 12 hinges only at these nodes, not the full consumer gates.",
+    "No new terrain, second-pass candidate, package or engine run was made. Profiles show cardinal cuts, not full 3D appearance."
+  ],
+  "bank_distribution_ev80_vs_current_candidate": {
+    "current_candidate_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "report_candidate_label": "ev81",
+    "ev80_mean_square": 1.389476880502946,
+    "current_mean_square": 1.4225704642222379,
+    "mean_square_delta": 0.03309358371929183,
+    "ev80_p99_deg": 4.982071888920388,
+    "current_p99_deg": 4.982070186774692,
+    "note": "El reporte del consumidor etiqueta el lado candidato como ev81, pero inputs.candidate_sha256 coincide con EV82-B; se cita por hash."
+  }
+}

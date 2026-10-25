@@ -1,0 +1,41 @@
+"""Register user crop against saved exact-camera frames; no image modification."""
+from pathlib import Path
+import json
+import numpy as np
+from PIL import Image
+from scipy import ndimage,signal
+B=Path('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008')
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-valley-smoothing-2026-10-08'
+src=Path(r'C:/Users/guill/AppData/Local/Temp/codex-clipboard-d7e17edb-54ef-4c30-ba0b-231f4f9b84aa.png')
+whole=Image.open(src).convert('L')
+crop=(495,147,905,226)
+user=whole.crop(crop)
+refs=[B/'c1r3p-visual/R1-far-calm-focus/capture_20261009_020945_250.jpg']
+refs+=sorted((B/'land180-visual/R1-far').glob('*.jpg'))
+def grad(a):
+    a=ndimage.gaussian_filter(a,1.)
+    return np.hypot(ndimage.sobel(a,0),ndimage.sobel(a,1))
+rows=[]
+# User landmark is the bridge/roads. A translation+scale match is expected for a crop, not assumed.
+for ref in refs:
+    a=grad(np.asarray(Image.open(ref).convert('L').resize((960,540)),float))
+    for scale in np.arange(.7,1.301,.01):
+        t=grad(np.asarray(user.resize((round(user.width*.5*scale),round(user.height*.5*scale))),float))
+        hh,ww=t.shape
+        if hh>a.shape[0] or ww>a.shape[1]:continue
+        n=hh*ww;t=t-t.mean();den=np.sqrt(np.sum(t*t))
+        cross=signal.fftconvolve(a,t[::-1,::-1],mode='valid')
+        integ=np.pad(a,((1,0),(1,0))).cumsum(0).cumsum(1)
+        integ2=np.pad(a*a,((1,0),(1,0))).cumsum(0).cumsum(1)
+        def sums(v):return v[hh:,ww:]-v[:-hh,ww:]-v[hh:,:-ww]+v[:-hh,:-ww]
+        ss=sums(integ);var=np.maximum(0,sums(integ2)-ss*ss/n)
+        score=cross/np.maximum(den*np.sqrt(var),1e-10)
+        y,x=np.unravel_index(np.argmax(score),score.shape)
+        rows.append(dict(reference=str(ref),scale=float(scale),left_full=float(x*2-crop[0]*scale),top_full=float(y*2-crop[1]*scale),correlation=float(score[y,x]),
+            residual_center_full=[float(x*2+(317-crop[0])*scale),float(y*2+(125-crop[1])*scale)]))
+rows.sort(key=lambda r:r['correlation'],reverse=True)
+out=dict(source=str(src),matches=rows[:10],status='REGISTRATION_CANDIDATE_NOT_CONFIRMED',
+    limits=['Residual pixel [317,125] selected from user crop; match needs consistent landmarks.','No automatic defect classification from color.'])
+(E/'user-residual-registration-bridge.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps(out,indent=2))

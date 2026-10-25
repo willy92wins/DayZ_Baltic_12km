@@ -1,0 +1,242 @@
+{
+  "mission": "P:\\DayZ_Baltic_12km_dev\\missions\\BalticV30AcceptanceV1.BalticTrial",
+  "deployed_mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticV30AcceptanceV1.BalticTrial",
+  "code_sha256": "0fea34a51c563d316e4a526efa4f736fc4b140a36c84c54407a838b038932041",
+  "queries_sha256": "f48da7877d08344fe73f0afc66c5b7404a2439469622a62d30024d27d6089e7c",
+  "queries": [
+    {
+      "name": "delta",
+      "start": [
+        8574.0,
+        6.268599605560302,
+        9948.0
+      ],
+      "end": [
+        8622.0,
+        1.6429643392562867,
+        9948.0
+      ]
+    },
+    {
+      "name": "narva_south",
+      "start": [
+        1068.0,
+        3.760329818725586,
+        4848.0
+      ],
+      "end": [
+        1068.0,
+        3.0749999046325684,
+        4896.0
+      ]
+    },
+    {
+      "name": "stream",
+      "start": [
+        3786.0,
+        6.375421619415283,
+        2184.0
+      ],
+      "end": [
+        3786.0,
+        3.118469572067261,
+        2232.0
+      ]
+    },
+    {
+      "name": "lagoon",
+      "start": [
+        5100.0,
+        8.756574249267578,
+        1062.0
+      ],
+      "end": [
+        5100.0,
+        8.492799377441406,
+        1110.0
+      ]
+    },
+    {
+      "name": "coast",
+      "start": [
+        1260.0,
+        1.8499990463256837,
+        10464.0
+      ],
+      "end": [
+        1308.0,
+        2.731103754043579,
+        10464.0
+      ]
+    },
+    {
+      "name": "causeway",
+      "start": [
+        7590.0,
+        3.064674234390259,
+        10746.0
+      ],
+      "end": [
+        7638.0,
+        5.935741996765136,
+        10746.0
+      ]
+    },
+    {
+      "name": "hills",
+      "start": [
+        5442.0,
+        100.3476577758789,
+        7368.0
+      ],
+      "end": [
+        5442.0,
+        100.0984893798828,
+        7416.0
+      ]
+    },
+    {
+      "name": "bridge_out",
+      "start": [
+        2283.71362,
+        11.0351133,
+        6910.41943
+      ],
+      "end": [
+        2550.57202,
+        11.0302658,
+        6869.35107
+      ]
+    },
+    {
+      "name": "bridge_back",
+      "start": [
+        2550.57202,
+        11.0302658,
+        6869.35107
+      ],
+      "end": [
+        2283.71362,
+        11.0351133,
+        6910.41943
+      ]
+    },
+    {
+      "name": "negative",
+      "start": [
+        8574.0,
+        6.268599605560302,
+        9948.0
+      ],
+      "end": [
+        8622.0,
+        1.6429643392562867,
+        9948.0
+      ]
+    }
+  ],
+  "acceptance": {
+    "positive_paths": 9,
+    "negative_filter": 1,
+    "sample_radius_m": 2,
+    "endpoint_error_m": 2.1
+  },
+  "api_anchors": [
+    "P:/scripts/3_game/ai/aiworld.c:65",
+    "P:/scripts/3_game/ai/aiworld.c:98",
+    "P:/scripts/3_game/ai/aiworld.c:122"
+  ],
+  "limits": [
+    "Graph queries only; no physical actor traversal.",
+    "Points frozen before loading the new navmesh.",
+    "Dry-land probes are offset from water review targets; offsets are recorded and do not certify the target water itself."
+  ],
+  "site_selection": [
+    {
+      "name": "delta",
+      "requested_visual_site": [
+        8600,
+        9950
+      ],
+      "path_midpoint": [
+        8598.0,
+        9948.0
+      ],
+      "offset_m": 2.8284271247461903
+    },
+    {
+      "name": "narva_south",
+      "requested_visual_site": [
+        1062,
+        4812
+      ],
+      "path_midpoint": [
+        1068.0,
+        4872.0
+      ],
+      "offset_m": 60.29925372672534
+    },
+    {
+      "name": "stream",
+      "requested_visual_site": [
+        3768,
+        2226
+      ],
+      "path_midpoint": [
+        3786.0,
+        2208.0
+      ],
+      "offset_m": 25.45584412271571
+    },
+    {
+      "name": "lagoon",
+      "requested_visual_site": [
+        5118,
+        1086
+      ],
+      "path_midpoint": [
+        5100.0,
+        1086.0
+      ],
+      "offset_m": 18.0
+    },
+    {
+      "name": "coast",
+      "requested_visual_site": [
+        1354,
+        10244
+      ],
+      "path_midpoint": [
+        1284.0,
+        10464.0
+      ],
+      "offset_m": 230.8679276123039
+    },
+    {
+      "name": "causeway",
+      "requested_visual_site": [
+        7364,
+        10706
+      ],
+      "path_midpoint": [
+        7614.0,
+        10746.0
+      ],
+      "offset_m": 253.17977802344325
+    },
+    {
+      "name": "hills",
+      "requested_visual_site": [
+        5478,
+        7344
+      ],
+      "path_midpoint": [
+        5442.0,
+        7392.0
+      ],
+      "offset_m": 60.0
+    }
+  ],
+  "queries_lf_normalized_sha256": "3a770cc7ba25e7ee9f62220c242324454bd07c4e2e10605041fb121afd6a3dd2",
+  "queries_hash_note": "Corrected receipt to actual CRLF bytes before first execution. Coordinates unchanged."
+}

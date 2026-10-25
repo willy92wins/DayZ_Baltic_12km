@@ -1,0 +1,64 @@
+{
+  "status": "PASS_NATIVE_HEIGHT_IMPORT",
+  "checks": {
+    "all_1242_edits_equal_frozen_delta": true,
+    "finite_heights": true,
+    "untouched_vertices_equal_baseline": true,
+    "native_header_unchanged": true,
+    "texture_grid_materials_unchanged": true
+  },
+  "wrp": "P:\\DayZ_Baltic_12km_dev\\tb\\narva_navigation_v3\\baltic_navigation_native_heights_v1.wrp",
+  "wrp_sha256": "321a9cccee934f3835b09fbb3480324ee5fc3cd2579a5671c56b9922dd2b20e3",
+  "asc_sha256": "c1f23f24808cb6f1ff858f47a378f6bdf8211387f63c110a12ff72fd3bd82d3c",
+  "baseline_wrp_sha256": "313600cbbe77f161368133acfd9c7347a683dacadc695bc2149db6388a0552ef",
+  "delta_sha256": "2bfe335babc7bfd01c89d9b381117ef4f5fc463a0e565182dc915547077ebe22",
+  "samples": 4194304,
+  "intended_changed_vertices": 1242,
+  "differing_from_ASC": 4,
+  "max_height_error_m": 2.9802322387695312e-08,
+  "strict_ASC_equality": false,
+  "ASCII_difference_note": "Four eastern edge float32 values differ by 2.98e-8m from ASC; those native values are unchanged from the canonical baseline. Acceptance uses the frozen 1242-edit ledger and exact preservation of every other native vertex, without a relaxed tolerance.",
+  "original_object_records_exact": false,
+  "objects": [
+    {
+      "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+      "id": 16777216,
+      "matrix": [
+        -0.15210489928722382,
+        0.0,
+        -0.9883643388748169,
+        0.0,
+        1.0,
+        0.0,
+        0.9883643388748169,
+        0.0,
+        -0.15210489928722382,
+        2417.14306640625,
+        -7.549289703369141,
+        6889.884765625
+      ]
+    },
+    {
+      "name": "dz\\water\\ponds\\pond_50x50.p3d",
+      "id": 16777217,
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2417.14306640625,
+        -1.5297056436538696,
+        6889.884765625
+      ]
+    }
+  ],
+  "limits": [
+    "Intermediate height gate only; object replacement and save/reopen proof are separate.",
+    "No compiled world, render, navmesh or regional boat acceptance implied."
+  ]
+}

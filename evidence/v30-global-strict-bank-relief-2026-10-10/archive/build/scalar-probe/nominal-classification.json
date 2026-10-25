@@ -1,0 +1,4434 @@
+{
+  "status": "COMPLETE_READ_ONLY_POINT_CLASSIFICATION",
+  "scope": "22 H-positive and 12 B-query-positive points among 162 changed probes (union of IDs); exact source-side ODOL LOD point-face tests, no engine/build; not a visual diagnosis.",
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\scalar-probe\\nominal-classification.py": "33310f99f9689360a4dccc4737797e25104bd95968234821e94f504d59a0f5d0",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\scalar-probe\\reference.json": "2f3ba3a87d38928ab5398336d315f1344242f4538ae36cfdfe494b8fcb9aa2c9",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\scalar-probe\\series-review.json": "36e65b7b29e324975f6d491774b489b23aeec745fd7b8577717e0598bc06ca08",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\scalar-probe\\snapshot.log": "27575a64c5e448c44fe14f86fb7b80dc976fbcaa7402b5a427f68f9be070a526",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\deploy.json": "d1a3ae5dd53b4cded23897a18eabe4e90efcf2543611c48a7a99f01a4d5116a6",
+    "P:\\Mods\\@DayZ_Baltic_StrictBankPreviewV1\\Addons\\narva_trial.pbo": "727fadeaf1a26fb4ae8362cc894e80e83194c64d5062ac7c2512b79879721420",
+    "P:\\Mods\\@DayZ_Baltic_StrictBankPreviewV1\\Addons\\baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\candidate\\terrain.npz": "8e239f8e2815b61a920421af1dfbb1b64f353ab4978d633eb39fe74f04946d1b",
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\build\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "48cb42a4f66a52b791d96a3e2627efb557d4f386ee615e7a8a8970c83e0f0e19",
+    "E:\\DayZ-Baltic-Build\\v30-low-water-components-20261009\\compiled-instance-bounds.json": "863e9539203e59fe77b9c7d4949da3a69b4991249941e15b887b60ff9e81ee62"
+  },
+  "pbo": {
+    "narva_trial.pbo": "727fadeaf1a26fb4ae8362cc894e80e83194c64d5062ac7c2512b79879721420",
+    "baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"
+  },
+  "source_wrp_sha256": "48cb42a4f66a52b791d96a3e2627efb557d4f386ee615e7a8a8970c83e0f0e19",
+  "source_wrp_objects": 18033,
+  "water_objects": 18024,
+  "bounds_inventory_world_sha256": "a845bee973c2db1c94acf39758358dfcfb5967770e3879263ecf1a1bc4f66fd2",
+  "bounds_inventory_water_sha256": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+  "deployed_compiled_wrp_payload_sha256": "dcdd41ebe2839d1a19ee08c71126dca2f23e9a81b4d8f6ba81f5fb536a195541",
+  "compiled_ODOL_models_sha256": {
+    "edge_00453.p3d": "2a60c69f12d78b031aecb6015be2bde0a7efeb48f4ade55b559c20603b89b85f",
+    "edge_00770.p3d": "e46fe7095f494a76a299e49effc884ca28415eb471adb1ce30c1051ac6d56861",
+    "edge_01560.p3d": "472cf48aad88f84d37b15903084e64aeac44854a7caa8d5ac45883e313a46126",
+    "edge_02353.p3d": "10a9c08f5689c464d23dbf071c2a0ef4d0008bba237fd979d9c63cd442b8149b",
+    "edge_03224.p3d": "b5094306d2ab4b5779243e0b90d05a651368961e5182a683138cd988b3e32620",
+    "edge_03412.p3d": "21d1128d7247bd38ad90d89a46f6f7bb3df6588461b3c6d7581dac5604d8c489",
+    "edge_03498.p3d": "df63ada868c3e54b57efea0e47890ae66b1a621f059bb4a454abe2cf9272681a",
+    "edge_03971.p3d": "816d3ac8bc4d66261835e9a70f1394bfece68010e1115e3253568a39bcb3401d",
+    "edge_05200.p3d": "15df0f685de18da3c56efd784e9fad0d6c2d4a225d365f27c2d72e5b2c3aeca5",
+    "edge_05201.p3d": "17019e8f7d5e8381f791bc30236ee45746ab8a1687d144ef0555e223940ffe74",
+    "edge_05888.p3d": "380b0961a36f15f5b4b5b42338ba21d3310f1403044a385f7fd2162a43d516f5",
+    "edge_06441.p3d": "80ba2169300aa40bddf2952617d238600870f768f1f789e3e04fb60d204f4abc",
+    "edge_06442.p3d": "99a31d56b8cfe3336e117ff1ce90da35d4e8fa3f4f343ff3fcb6f19e40343207",
+    "edge_07807.p3d": "44a29bc16cda731a954c7d84bd0e705e145a064ef9fb4b1a1617879c498fb000",
+    "edge_07808.p3d": "6e2dc140899249528fe85e0550f97f6557da2e253a4965c52b0e6f95d6f31380",
+    "edge_09029.p3d": "ea9cebb5a81dc066c36a73aac527e6af2ef48c3353e7cb432aa6a81d515f7a57",
+    "edge_10124.p3d": "cad4d4839267552363e575a86dae91dee063cb02af3e1ee0c254cfa8b63f1382",
+    "flatfix_150_121_0795.p3d": "f5e681b9f1329de9a91bda21b03219643119522241eeeeb471dc37591e2c5b92",
+    "flatfix_150_121_0809.p3d": "f9c9516b52139e165c699ffa84fb3ec4a8e3981be3d673f5441c9068c9fc62ac",
+    "flatfix_150_121_0815.p3d": "62cb0e2ff6a274a5247ee3bf444b1215bb3ca28828cb0d1f8091fc0412d3e308",
+    "globalvis_16800855.p3d": "540299d7f404cf90f16c3df1df45d71b54da4c9f134ef67c82ece2ceed9950b5",
+    "globalvis_16802114.p3d": "f4e4fa583f2722093e6865dab0d3c19a58f2b51386e51666ddd2f36a02cf0a35",
+    "globalvis_16803307.p3d": "e4ca6a15ff0edce308d3c18dd37d512da9106276404e15b1cb5843992def559e",
+    "globalvis_16803313.p3d": "4e30d7e7425c9cf8f757dc9906e026c453b7cc791c381e50335d118403a39035",
+    "globalvis_16804488.p3d": "5258ab2f979a8732b88587c157fdc0e9bcf1342b22dea9fa00ca426160b56f87",
+    "globalvis_16804841.p3d": "530c2dacc9e0d151dbe0ec83ead6ef0123518282cf6d2ee5c40bc993e3c17a5c",
+    "globalvis_16804921.p3d": "4df1d61cd1bc8610b7825e782b64030e850ee0d579369d419ed0b5e1250ceb89",
+    "globalvis_16805000.p3d": "65814110ba0990d803d5e44cf98d31256b21371ad44c0241f43e2206f3461be6",
+    "patch_00716.p3d": "de919da272dfdb2403a129d0f0205a4e2fbe9d27b06210c32fdbf0de8da4f6ad",
+    "patch_00892.p3d": "a11b8cb8a81e7d81600bd7e4f10726a3daab7ae603eed7d0ce04a94575425f23",
+    "patch_00893.p3d": "b50d552cbed46d19b722ad2d83afdb9cda082e185ed1d66b8073711c22901081"
+  },
+  "terrain_candidate_sha256": "8e239f8e2815b61a920421af1dfbb1b64f353ab4978d633eb39fe74f04946d1b",
+  "B_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+  "P_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+  "F_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+  "positive_H_ids": [
+    0,
+    4,
+    33,
+    41,
+    49,
+    63,
+    64,
+    75,
+    90,
+    94,
+    97,
+    101,
+    104,
+    106,
+    108,
+    109,
+    110,
+    116,
+    130,
+    142,
+    148,
+    158
+  ],
+  "positive_B_query_ids": [
+    0,
+    33,
+    41,
+    49,
+    90,
+    97,
+    101,
+    106,
+    108,
+    116,
+    130,
+    158
+  ],
+  "H_positive_no_B_query_ids": [
+    4,
+    63,
+    64,
+    75,
+    94,
+    104,
+    109,
+    110,
+    142,
+    148
+  ],
+  "B_query_positive_no_H_ids": [],
+  "unique_ODOL_models_loaded": 31,
+  "rows": [
+    {
+      "id": 0,
+      "row": 103,
+      "col": 1379,
+      "x_m": 8274.0,
+      "z_m": 11664.0,
+      "H_m": 2.97510027885437,
+      "H_grid_m": 2.97510027885437,
+      "B_m": 3.0001003742218018,
+      "B_grid_m": 3.0001003742218018,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.95,
+        2.95
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.011560000000000237,
+        0.09716999999999976
+      ],
+      "fake_above_ground_max_m": 0.07207000000000008,
+      "depth_H_min_max_m": [
+        -0.0466621,
+        0.0620744
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0716622,
+        0.0370743
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        2.95,
+        2.95,
+        2.95
+      ],
+      "incident_F_values_m": [
+        2.9500000000000006,
+        2.9500000000000006,
+        2.9500000000000006
+      ],
+      "H_minus_maxP_m": 0.025100231170654297,
+      "B_minus_maxP_m": 0.05010032653808594,
+      "H_minus_maxF_m": 0.025100231170654297,
+      "B_minus_maxF_m": 0.05010032653808594,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 3,
+      "top_physical_engine_level_m": 2.950000047683716,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 3,
+      "top_visible_surface_y_m": 2.950000047683716,
+      "candidate_water_objects_bbox_contains_xy": 2,
+      "candidate_models_bbox_contains_xy": [
+        "edge_07807.p3d",
+        "edge_07808.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16806126,
+          "model": "edge_07807.p3d",
+          "face_index": 26,
+          "face_vertex_indices": [
+            10,
+            28,
+            26
+          ],
+          "level_at_xy_m": 2.950000047683716,
+          "engine_face_level_m": 2.950000047683716,
+          "object_position_y_m": 2.950000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            5.8650970458984375e-05,
+            0.999941349029541,
+            -0.0
+          ],
+          "bbox": [
+            8255.990116119385,
+            11615.989999771118,
+            8298.000118255615,
+            11664.010000228882
+          ]
+        },
+        {
+          "object_id": 16806126,
+          "model": "edge_07807.p3d",
+          "face_index": 28,
+          "face_vertex_indices": [
+            28,
+            10,
+            29
+          ],
+          "level_at_xy_m": 2.950000047683716,
+          "engine_face_level_m": 2.950000047683716,
+          "object_position_y_m": 2.950000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.999941349029541,
+            5.8650970458984375e-05,
+            -0.0
+          ],
+          "bbox": [
+            8255.990116119385,
+            11615.989999771118,
+            8298.000118255615,
+            11664.010000228882
+          ]
+        },
+        {
+          "object_id": 16806127,
+          "model": "edge_07808.p3d",
+          "face_index": 9,
+          "face_vertex_indices": [
+            10,
+            8,
+            11
+          ],
+          "level_at_xy_m": 2.950000047683716,
+          "engine_face_level_m": 2.950000047683716,
+          "object_position_y_m": 2.950000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0014589093305809042,
+            0.010271016284524996,
+            0.9882700743848941
+          ],
+          "bbox": [
+            8255.990116119385,
+            11663.990117073059,
+            8292.000118255615,
+            11676.000117301941
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16806126,
+          "model": "edge_07807.p3d",
+          "face_index": 26,
+          "face_vertex_indices": [
+            10,
+            28,
+            26
+          ],
+          "level_at_xy_m": 2.950000047683716,
+          "engine_face_level_m": 2.950000047683716,
+          "object_position_y_m": 2.950000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            5.8650970458984375e-05,
+            0.999941349029541,
+            -0.0
+          ],
+          "bbox": [
+            8255.990116119385,
+            11615.989999771118,
+            8298.000118255615,
+            11664.010000228882
+          ]
+        },
+        {
+          "object_id": 16806126,
+          "model": "edge_07807.p3d",
+          "face_index": 28,
+          "face_vertex_indices": [
+            28,
+            10,
+            29
+          ],
+          "level_at_xy_m": 2.950000047683716,
+          "engine_face_level_m": 2.950000047683716,
+          "object_position_y_m": 2.950000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.999941349029541,
+            5.8650970458984375e-05,
+            -0.0
+          ],
+          "bbox": [
+            8255.990116119385,
+            11615.989999771118,
+            8298.000118255615,
+            11664.010000228882
+          ]
+        },
+        {
+          "object_id": 16806127,
+          "model": "edge_07808.p3d",
+          "face_index": 9,
+          "face_vertex_indices": [
+            10,
+            8,
+            11
+          ],
+          "level_at_xy_m": 2.950000047683716,
+          "engine_face_level_m": 2.950000047683716,
+          "object_position_y_m": 2.950000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0014589093305809042,
+            0.010271016284524996,
+            0.9882700743848941
+          ],
+          "bbox": [
+            8255.990116119385,
+            11663.990117073059,
+            8292.000118255615,
+            11676.000117301941
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "row": 136,
+      "col": 1567,
+      "x_m": 9402.0,
+      "z_m": 11466.0,
+      "H_m": 4.4533867835998535,
+      "H_grid_m": 4.4533867835998535,
+      "B_m": 4.4726881980896,
+      "B_grid_m": 4.4726881980896,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        4.4,
+        4.4
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.09360000000000035,
+        0.09790999999999972
+      ],
+      "fake_above_ground_max_m": 0.04452000000000034,
+      "depth_H_min_max_m": [
+        -0.156988,
+        0.0345206
+      ],
+      "depth_B_query_min_max_m": [
+        -0.176289,
+        0.0152197
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        4.4,
+        4.4,
+        4.4,
+        4.4
+      ],
+      "incident_F_values_m": [
+        4.4,
+        4.4,
+        4.4,
+        4.4
+      ],
+      "H_minus_maxP_m": 0.053386688232421875,
+      "B_minus_maxP_m": 0.07268810272216797,
+      "H_minus_maxF_m": 0.053386688232421875,
+      "B_minus_maxF_m": 0.07268810272216797,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 4.400000095367432,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 1,
+      "top_visible_surface_y_m": 4.400000095367432,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_09029.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16807180,
+          "model": "edge_09029.p3d",
+          "face_index": 24,
+          "face_vertex_indices": [
+            24,
+            19,
+            23
+          ],
+          "level_at_xy_m": 4.400000095367432,
+          "engine_face_level_m": 4.400000095367432,
+          "object_position_y_m": 4.400000095367432,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.12499022483825684,
+            0.375,
+            0.5000097751617432
+          ],
+          "bbox": [
+            9359.989999771118,
+            11441.999882698059,
+            9408.010000228882,
+            11472.009882926941
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16807180,
+          "model": "edge_09029.p3d",
+          "face_index": 24,
+          "face_vertex_indices": [
+            24,
+            19,
+            23
+          ],
+          "level_at_xy_m": 4.400000095367432,
+          "engine_face_level_m": 4.400000095367432,
+          "object_position_y_m": 4.400000095367432,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.12499022483825684,
+            0.375,
+            0.5000097751617432
+          ],
+          "bbox": [
+            9359.989999771118,
+            11441.999882698059,
+            9408.010000228882,
+            11472.009882926941
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "row": 997,
+      "col": 307,
+      "x_m": 1842.0,
+      "z_m": 6300.0,
+      "H_m": 2.5175366401672363,
+      "H_grid_m": 2.5175366401672363,
+      "B_m": 2.551389694213867,
+      "B_grid_m": 2.551389694213867,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.45,
+        2.45
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.04222000000000037,
+        0.1552199999999999
+      ],
+      "fake_above_ground_max_m": 0.0876800000000002,
+      "depth_H_min_max_m": [
+        -0.119755,
+        0.077683
+      ],
+      "depth_B_query_min_max_m": [
+        -0.153608,
+        0.0438299
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        2.45,
+        2.45,
+        2.45,
+        2.45
+      ],
+      "incident_F_values_m": [
+        2.45,
+        2.45,
+        2.45,
+        2.45
+      ],
+      "H_minus_maxP_m": 0.06753659248352051,
+      "B_minus_maxP_m": 0.10138964653015137,
+      "H_minus_maxF_m": 0.06753659248352051,
+      "B_minus_maxF_m": 0.10138964653015137,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 2.450000047683716,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 1,
+      "top_visible_surface_y_m": 2.450000047683716,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_00770.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16799693,
+          "model": "edge_00770.p3d",
+          "face_index": 22,
+          "face_vertex_indices": [
+            15,
+            21,
+            10
+          ],
+          "level_at_xy_m": 2.450000047683716,
+          "engine_face_level_m": 2.450000047683716,
+          "object_position_y_m": 2.450000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.625,
+            0.125,
+            0.25
+          ],
+          "bbox": [
+            1823.9899997711182,
+            6287.989999771118,
+            1872.0100002288818,
+            6336.010000228882
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16799693,
+          "model": "edge_00770.p3d",
+          "face_index": 22,
+          "face_vertex_indices": [
+            15,
+            21,
+            10
+          ],
+          "level_at_xy_m": 2.450000047683716,
+          "engine_face_level_m": 2.450000047683716,
+          "object_position_y_m": 2.450000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.625,
+            0.125,
+            0.25
+          ],
+          "bbox": [
+            1823.9899997711182,
+            6287.989999771118,
+            1872.0100002288818,
+            6336.010000228882
+          ]
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "row": 1073,
+      "col": 1202,
+      "x_m": 7212.0,
+      "z_m": 5844.0,
+      "H_m": 20.400188446044922,
+      "H_grid_m": 20.400188446044922,
+      "B_m": 20.425277709960938,
+      "B_grid_m": 20.425277709960938,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        20.375,
+        20.375
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.013000000000001677,
+        0.10099999999999909
+      ],
+      "fake_above_ground_max_m": 0.07579999999999742,
+      "depth_H_min_max_m": [
+        -0.0482044,
+        0.0657864
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0732937,
+        0.0406971
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        20.375,
+        19.875,
+        20.225
+      ],
+      "incident_F_values_m": [
+        20.158333333333335,
+        20.158333333333335,
+        20.158333333333335
+      ],
+      "H_minus_maxP_m": 0.025188446044921875,
+      "B_minus_maxP_m": 0.0502777099609375,
+      "H_minus_maxF_m": 0.24185562133789062,
+      "B_minus_maxF_m": 0.26694488525390625,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 4,
+      "top_physical_engine_level_m": 20.375000908970833,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 4,
+      "top_visible_surface_y_m": 20.158334210515022,
+      "candidate_water_objects_bbox_contains_xy": 3,
+      "candidate_models_bbox_contains_xy": [
+        "flatfix_150_121_0795.p3d",
+        "flatfix_150_121_0809.p3d",
+        "flatfix_150_121_0815.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16813921,
+          "model": "flatfix_150_121_0795.p3d",
+          "face_index": 1,
+          "face_vertex_indices": [
+            3,
+            2,
+            0
+          ],
+          "level_at_xy_m": 19.87499976158142,
+          "engine_face_level_m": 19.87499976158142,
+          "object_position_y_m": 19.954166412353516,
+          "face_first_local_y_m": -0.07916665077209473,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            7212.0,
+            5844.0,
+            7218.0,
+            5856.0
+          ]
+        },
+        {
+          "object_id": 16813923,
+          "model": "flatfix_150_121_0809.p3d",
+          "face_index": 0,
+          "face_vertex_indices": [
+            1,
+            0,
+            2
+          ],
+          "level_at_xy_m": 20.224999614059925,
+          "engine_face_level_m": 20.224999614059925,
+          "object_position_y_m": 20.196874618530273,
+          "face_first_local_y_m": 0.028124995529651642,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7206.0,
+            5844.0,
+            7212.0,
+            5850.0
+          ]
+        },
+        {
+          "object_id": 16813923,
+          "model": "flatfix_150_121_0809.p3d",
+          "face_index": 1,
+          "face_vertex_indices": [
+            3,
+            2,
+            0
+          ],
+          "level_at_xy_m": 20.224999614059925,
+          "engine_face_level_m": 20.224999614059925,
+          "object_position_y_m": 20.196874618530273,
+          "face_first_local_y_m": 0.028124995529651642,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7206.0,
+            5844.0,
+            7212.0,
+            5850.0
+          ]
+        },
+        {
+          "object_id": 16813925,
+          "model": "flatfix_150_121_0815.p3d",
+          "face_index": 2,
+          "face_vertex_indices": [
+            4,
+            1,
+            5
+          ],
+          "level_at_xy_m": 20.375000908970833,
+          "engine_face_level_m": 20.375000908970833,
+          "object_position_y_m": 20.285417556762695,
+          "face_first_local_y_m": 0.08958335220813751,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            7206.0,
+            5838.0,
+            7212.0,
+            5844.0
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16813921,
+          "model": "flatfix_150_121_0795.p3d",
+          "face_index": 4,
+          "face_vertex_indices": [
+            6,
+            4,
+            7
+          ],
+          "level_at_xy_m": 20.15833306312561,
+          "engine_face_level_m": 20.15833306312561,
+          "object_position_y_m": 19.954166412353516,
+          "face_first_local_y_m": 0.20416665077209473,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            7212.0,
+            5844.0,
+            7218.0,
+            5856.0
+          ]
+        },
+        {
+          "object_id": 16813923,
+          "model": "flatfix_150_121_0809.p3d",
+          "face_index": 0,
+          "face_vertex_indices": [
+            1,
+            0,
+            2
+          ],
+          "level_at_xy_m": 20.158332914114,
+          "engine_face_level_m": 20.268749609589577,
+          "object_position_y_m": 20.196874618530273,
+          "face_first_local_y_m": 0.07187499105930328,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7206.0,
+            5844.0,
+            7212.0,
+            5850.0
+          ]
+        },
+        {
+          "object_id": 16813923,
+          "model": "flatfix_150_121_0809.p3d",
+          "face_index": 1,
+          "face_vertex_indices": [
+            1,
+            2,
+            3
+          ],
+          "level_at_xy_m": 20.158332914114,
+          "engine_face_level_m": 20.268749609589577,
+          "object_position_y_m": 20.196874618530273,
+          "face_first_local_y_m": 0.07187499105930328,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7206.0,
+            5844.0,
+            7212.0,
+            5850.0
+          ]
+        },
+        {
+          "object_id": 16813925,
+          "model": "flatfix_150_121_0815.p3d",
+          "face_index": 1,
+          "face_vertex_indices": [
+            3,
+            2,
+            0
+          ],
+          "level_at_xy_m": 20.158334210515022,
+          "engine_face_level_m": 20.158334210515022,
+          "object_position_y_m": 20.285417556762695,
+          "face_first_local_y_m": -0.12708334624767303,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            7206.0,
+            5838.0,
+            7212.0,
+            5844.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "row": 1150,
+      "col": 215,
+      "x_m": 1290.0,
+      "z_m": 5382.0,
+      "H_m": 2.6097888946533203,
+      "H_grid_m": 2.6097888946533203,
+      "B_m": 2.6251001358032227,
+      "B_grid_m": 2.6251001358032227,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.575,
+        2.575
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.08904000000000023,
+        0.12736999999999998
+      ],
+      "fake_above_ground_max_m": 0.09258000000000033,
+      "depth_H_min_max_m": [
+        -0.133828,
+        0.0825791
+      ],
+      "depth_B_query_min_max_m": [
+        -0.149139,
+        0.0672679
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        2.575,
+        2.575,
+        2.575
+      ],
+      "incident_F_values_m": [
+        2.575,
+        2.575,
+        2.575
+      ],
+      "H_minus_maxP_m": 0.03478884696960449,
+      "B_minus_maxP_m": 0.050100088119506836,
+      "H_minus_maxF_m": 0.03478884696960449,
+      "B_minus_maxF_m": 0.050100088119506836,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 4,
+      "top_physical_engine_level_m": 2.575000047683716,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 4,
+      "top_visible_surface_y_m": 2.575000047683716,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_00453.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16799388,
+          "model": "edge_00453.p3d",
+          "face_index": 32,
+          "face_vertex_indices": [
+            26,
+            24,
+            27
+          ],
+          "level_at_xy_m": 2.575000047683716,
+          "engine_face_level_m": 2.575000047683716,
+          "object_position_y_m": 2.575000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            1247.9899997711182,
+            5375.989999771118,
+            1296.0100002288818,
+            5424.010000228882
+          ]
+        },
+        {
+          "object_id": 16799388,
+          "model": "edge_00453.p3d",
+          "face_index": 33,
+          "face_vertex_indices": [
+            20,
+            28,
+            27
+          ],
+          "level_at_xy_m": 2.575000047683716,
+          "engine_face_level_m": 2.575000047683716,
+          "object_position_y_m": 2.575000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            1247.9899997711182,
+            5375.989999771118,
+            1296.0100002288818,
+            5424.010000228882
+          ]
+        },
+        {
+          "object_id": 16799388,
+          "model": "edge_00453.p3d",
+          "face_index": 34,
+          "face_vertex_indices": [
+            24,
+            18,
+            27
+          ],
+          "level_at_xy_m": 2.575000047683716,
+          "engine_face_level_m": 2.575000047683716,
+          "object_position_y_m": 2.575000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            1247.9899997711182,
+            5375.989999771118,
+            1296.0100002288818,
+            5424.010000228882
+          ]
+        },
+        {
+          "object_id": 16799388,
+          "model": "edge_00453.p3d",
+          "face_index": 35,
+          "face_vertex_indices": [
+            27,
+            18,
+            20
+          ],
+          "level_at_xy_m": 2.575000047683716,
+          "engine_face_level_m": 2.575000047683716,
+          "object_position_y_m": 2.575000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            1247.9899997711182,
+            5375.989999771118,
+            1296.0100002288818,
+            5424.010000228882
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16799388,
+          "model": "edge_00453.p3d",
+          "face_index": 32,
+          "face_vertex_indices": [
+            26,
+            24,
+            27
+          ],
+          "level_at_xy_m": 2.575000047683716,
+          "engine_face_level_m": 2.575000047683716,
+          "object_position_y_m": 2.575000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            1247.9899997711182,
+            5375.989999771118,
+            1296.0100002288818,
+            5424.010000228882
+          ]
+        },
+        {
+          "object_id": 16799388,
+          "model": "edge_00453.p3d",
+          "face_index": 33,
+          "face_vertex_indices": [
+            20,
+            28,
+            27
+          ],
+          "level_at_xy_m": 2.575000047683716,
+          "engine_face_level_m": 2.575000047683716,
+          "object_position_y_m": 2.575000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            1247.9899997711182,
+            5375.989999771118,
+            1296.0100002288818,
+            5424.010000228882
+          ]
+        },
+        {
+          "object_id": 16799388,
+          "model": "edge_00453.p3d",
+          "face_index": 34,
+          "face_vertex_indices": [
+            24,
+            18,
+            27
+          ],
+          "level_at_xy_m": 2.575000047683716,
+          "engine_face_level_m": 2.575000047683716,
+          "object_position_y_m": 2.575000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            1247.9899997711182,
+            5375.989999771118,
+            1296.0100002288818,
+            5424.010000228882
+          ]
+        },
+        {
+          "object_id": 16799388,
+          "model": "edge_00453.p3d",
+          "face_index": 35,
+          "face_vertex_indices": [
+            27,
+            18,
+            20
+          ],
+          "level_at_xy_m": 2.575000047683716,
+          "engine_face_level_m": 2.575000047683716,
+          "object_position_y_m": 2.575000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            1247.9899997711182,
+            5375.989999771118,
+            1296.0100002288818,
+            5424.010000228882
+          ]
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "row": 1270,
+      "col": 702,
+      "x_m": 4212.0,
+      "z_m": 4662.0,
+      "H_m": 4.660050392150879,
+      "H_grid_m": 4.660050392150879,
+      "B_m": 4.744999885559082,
+      "B_grid_m": 4.744999885559082,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        4.575,
+        4.575
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.025590000000000224,
+        0.1377499999999996
+      ],
+      "fake_above_ground_max_m": 0.05269999999999975,
+      "depth_H_min_max_m": [
+        -0.120636,
+        0.0427012
+      ],
+      "depth_B_query_min_max_m": [
+        -0.205586,
+        -0.0422482
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        4.575,
+        4.575,
+        4.575
+      ],
+      "incident_F_values_m": [
+        4.575,
+        4.575,
+        4.575
+      ],
+      "H_minus_maxP_m": 0.08505058288574219,
+      "B_minus_maxP_m": 0.1700000762939453,
+      "H_minus_maxF_m": 0.08505058288574219,
+      "B_minus_maxF_m": 0.1700000762939453,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 4.574999809265137,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 1,
+      "top_visible_surface_y_m": 4.574999809265137,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_03412.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16802082,
+          "model": "edge_03412.p3d",
+          "face_index": 29,
+          "face_vertex_indices": [
+            26,
+            16,
+            18
+          ],
+          "level_at_xy_m": 4.574999809265137,
+          "engine_face_level_m": 4.574999809265137,
+          "object_position_y_m": 4.574999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.9999706745147705,
+            2.4437904357910156e-05,
+            4.887580871582031e-06
+          ],
+          "bbox": [
+            4175.990116119385,
+            4655.990117073059,
+            4224.000118255615,
+            4674.000117301941
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16802082,
+          "model": "edge_03412.p3d",
+          "face_index": 29,
+          "face_vertex_indices": [
+            26,
+            16,
+            18
+          ],
+          "level_at_xy_m": 4.574999809265137,
+          "engine_face_level_m": 4.574999809265137,
+          "object_position_y_m": 4.574999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.9999706745147705,
+            2.4437904357910156e-05,
+            4.887580871582031e-06
+          ],
+          "bbox": [
+            4175.990116119385,
+            4655.990117073059,
+            4224.000118255615,
+            4674.000117301941
+          ]
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "row": 1303,
+      "col": 1183,
+      "x_m": 7098.0,
+      "z_m": 4464.0,
+      "H_m": 2.3751001358032227,
+      "H_grid_m": 2.3751001358032227,
+      "B_m": 2.400099992752075,
+      "B_grid_m": 2.400099992752075,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.35,
+        2.35
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.017900000000000027,
+        0.06597000000000008
+      ],
+      "fake_above_ground_max_m": 0.04086999999999996,
+      "depth_H_min_max_m": [
+        -0.0529997,
+        0.030874
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0779996,
+        0.00587416
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        2.35,
+        2.35,
+        2.35
+      ],
+      "incident_F_values_m": [
+        2.35,
+        2.35,
+        2.35
+      ],
+      "H_minus_maxP_m": 0.025100231170654297,
+      "B_minus_maxP_m": 0.050100088119506836,
+      "H_minus_maxF_m": 0.025100231170654297,
+      "B_minus_maxF_m": 0.050100088119506836,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 2,
+      "top_physical_engine_level_m": 2.3499999046325684,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 3,
+      "top_visible_surface_y_m": 2.349999999627471,
+      "candidate_water_objects_bbox_contains_xy": 2,
+      "candidate_models_bbox_contains_xy": [
+        "edge_05888.p3d",
+        "globalvis_16804488.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16804488,
+          "model": "globalvis_16804488.p3d",
+          "face_index": 30,
+          "face_vertex_indices": [
+            25,
+            22,
+            28
+          ],
+          "level_at_xy_m": 2.349999899975955,
+          "engine_face_level_m": 2.3499998999759555,
+          "object_position_y_m": 2.359375,
+          "face_first_local_y_m": -0.009375100024044514,
+          "barycentric": [
+            0.9882582488244984,
+            1.1825560395664177e-05,
+            0.011729925615105856
+          ],
+          "bbox": [
+            7055.990116119385,
+            4433.999882698059,
+            7104.000118255615,
+            4464.009882926941
+          ]
+        },
+        {
+          "object_id": 16804490,
+          "model": "edge_05888.p3d",
+          "face_index": 28,
+          "face_vertex_indices": [
+            25,
+            18,
+            26
+          ],
+          "level_at_xy_m": 2.3499999046325684,
+          "engine_face_level_m": 2.3499999046325684,
+          "object_position_y_m": 2.3499999046325684,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0073820066953137475,
+            0.00444102915518211,
+            0.9881769641495042
+          ],
+          "bbox": [
+            7055.990116119385,
+            4463.990116119385,
+            7104.000118255615,
+            4500.000118255615
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16804488,
+          "model": "globalvis_16804488.p3d",
+          "face_index": 23,
+          "face_vertex_indices": [
+            26,
+            25,
+            27
+          ],
+          "level_at_xy_m": 2.349999999627471,
+          "engine_face_level_m": 2.349999999627471,
+          "object_position_y_m": 2.359375,
+          "face_first_local_y_m": -0.00937500037252903,
+          "barycentric": [
+            0.9999035121574682,
+            -0.0,
+            9.648784253184099e-05
+          ],
+          "bbox": [
+            7055.990116119385,
+            4433.999882698059,
+            7104.000118255615,
+            4464.009882926941
+          ]
+        },
+        {
+          "object_id": 16804488,
+          "model": "globalvis_16804488.p3d",
+          "face_index": 27,
+          "face_vertex_indices": [
+            31,
+            30,
+            28
+          ],
+          "level_at_xy_m": 2.3499998999759555,
+          "engine_face_level_m": 2.3499998999759555,
+          "object_position_y_m": 2.359375,
+          "face_first_local_y_m": -0.009375100024044514,
+          "barycentric": [
+            9.648784253180054e-05,
+            -0.0,
+            0.9999035121574682
+          ],
+          "bbox": [
+            7055.990116119385,
+            4433.999882698059,
+            7104.000118255615,
+            4464.009882926941
+          ]
+        },
+        {
+          "object_id": 16804490,
+          "model": "edge_05888.p3d",
+          "face_index": 28,
+          "face_vertex_indices": [
+            25,
+            18,
+            26
+          ],
+          "level_at_xy_m": 2.3499999046325684,
+          "engine_face_level_m": 2.3499999046325684,
+          "object_position_y_m": 2.3499999046325684,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0073820066953137475,
+            0.00444102915518211,
+            0.9881769641495042
+          ],
+          "bbox": [
+            7055.990116119385,
+            4463.990116119385,
+            7104.000118255615,
+            4500.000118255615
+          ]
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "row": 1386,
+      "col": 713,
+      "x_m": 4278.0,
+      "z_m": 3966.0,
+      "H_m": 4.400099754333496,
+      "H_grid_m": 4.400099754333496,
+      "B_m": 4.425099849700928,
+      "B_grid_m": 4.425099849700928,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        4.375,
+        4.375
+      ],
+      "fake_above_nominal_min_max_m": [
+        0.011829999999999785,
+        0.05527000000000015
+      ],
+      "fake_above_ground_max_m": 0.03017000000000003,
+      "depth_H_min_max_m": [
+        -0.0232725,
+        0.0201659
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0482726,
+        -0.00483418
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        4.375,
+        4.375,
+        4.375
+      ],
+      "incident_F_values_m": [
+        4.375,
+        4.375,
+        4.375
+      ],
+      "H_minus_maxP_m": 0.025099754333496094,
+      "B_minus_maxP_m": 0.050099849700927734,
+      "H_minus_maxF_m": 0.025099754333496094,
+      "B_minus_maxF_m": 0.050099849700927734,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 4.375,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 1,
+      "top_visible_surface_y_m": 4.375,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_03498.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16802170,
+          "model": "edge_03498.p3d",
+          "face_index": 15,
+          "face_vertex_indices": [
+            0,
+            14,
+            12
+          ],
+          "level_at_xy_m": 4.375,
+          "engine_face_level_m": 4.375,
+          "object_position_y_m": 4.375,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            5.865097045942846e-06,
+            0.9999882698059082,
+            5.865097045898438e-06
+          ],
+          "bbox": [
+            4271.989999771118,
+            3935.9901161193848,
+            4320.010000228882,
+            3984.0001182556152
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16802170,
+          "model": "edge_03498.p3d",
+          "face_index": 15,
+          "face_vertex_indices": [
+            0,
+            14,
+            12
+          ],
+          "level_at_xy_m": 4.375,
+          "engine_face_level_m": 4.375,
+          "object_position_y_m": 4.375,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            5.865097045942846e-06,
+            0.9999882698059082,
+            5.865097045898438e-06
+          ],
+          "bbox": [
+            4271.989999771118,
+            3935.9901161193848,
+            4320.010000228882,
+            3984.0001182556152
+          ]
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "row": 1538,
+      "col": 1240,
+      "x_m": 7440.0,
+      "z_m": 3054.0,
+      "H_m": 2.9001002311706543,
+      "H_grid_m": 2.9001002311706543,
+      "B_m": 2.925100088119507,
+      "B_grid_m": 2.925100088119507,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.875,
+        2.875
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.028719999999999857,
+        0.08076999999999979
+      ],
+      "fake_above_ground_max_m": 0.055669999999999664,
+      "depth_H_min_max_m": [
+        -0.0638199,
+        0.0456734
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0888197,
+        0.0206735
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        2.875,
+        2.875,
+        2.875
+      ],
+      "incident_F_values_m": [
+        2.875,
+        2.875,
+        2.875
+      ],
+      "H_minus_maxP_m": 0.025100231170654297,
+      "B_minus_maxP_m": 0.050100088119506836,
+      "H_minus_maxF_m": 0.025100231170654297,
+      "B_minus_maxF_m": 0.050100088119506836,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 3,
+      "top_physical_engine_level_m": 2.8750000782774805,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 17,
+      "top_visible_surface_y_m": 2.8750000782774805,
+      "candidate_water_objects_bbox_contains_xy": 2,
+      "candidate_models_bbox_contains_xy": [
+        "globalvis_16804841.p3d",
+        "globalvis_16804921.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 33,
+          "face_vertex_indices": [
+            27,
+            28,
+            24
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            -3.172138387467355e-17,
+            0.9999916212899345,
+            8.378710065569197e-06
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 41,
+          "face_vertex_indices": [
+            28,
+            34,
+            24
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            0.9999916212899345,
+            -0.0,
+            8.378710065569197e-06
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 6,
+          "face_vertex_indices": [
+            8,
+            6,
+            5
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            0.010337824997876473,
+            0.9881769641495042,
+            0.0014852108526193487
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 47,
+          "face_vertex_indices": [
+            48,
+            17,
+            49
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 50,
+          "face_vertex_indices": [
+            46,
+            17,
+            48
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 51,
+          "face_vertex_indices": [
+            51,
+            48,
+            52
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 52,
+          "face_vertex_indices": [
+            49,
+            52,
+            48
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 70,
+          "face_vertex_indices": [
+            63,
+            46,
+            48
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 72,
+          "face_vertex_indices": [
+            48,
+            51,
+            64
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804841,
+          "model": "globalvis_16804841.p3d",
+          "face_index": 73,
+          "face_vertex_indices": [
+            63,
+            48,
+            64
+          ],
+          "level_at_xy_m": 2.875000035861376,
+          "engine_face_level_m": 2.875000035861376,
+          "object_position_y_m": 2.874993085861206,
+          "face_first_local_y_m": 6.950000170036219e-06,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7391.989999771118,
+            3023.9901161193848,
+            7440.010000228882,
+            3066.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 6,
+          "face_vertex_indices": [
+            9,
+            8,
+            7
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 7,
+          "face_vertex_indices": [
+            7,
+            1,
+            9
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 8,
+          "face_vertex_indices": [
+            9,
+            10,
+            8
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 13,
+          "face_vertex_indices": [
+            13,
+            9,
+            15
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 14,
+          "face_vertex_indices": [
+            16,
+            9,
+            1
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 15,
+          "face_vertex_indices": [
+            15,
+            9,
+            16
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 21,
+          "face_vertex_indices": [
+            9,
+            22,
+            23
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 22,
+          "face_vertex_indices": [
+            23,
+            10,
+            9
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 24,
+          "face_vertex_indices": [
+            25,
+            9,
+            13
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        },
+        {
+          "object_id": 16804921,
+          "model": "globalvis_16804921.p3d",
+          "face_index": 25,
+          "face_vertex_indices": [
+            22,
+            9,
+            25
+          ],
+          "level_at_xy_m": 2.8750000782774805,
+          "engine_face_level_m": 2.8750000782774805,
+          "object_position_y_m": 2.875013828277588,
+          "face_first_local_y_m": -1.3750000107393134e-05,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.990116119385,
+            3023.9901161193848,
+            7488.000118255615,
+            3060.0001182556152
+          ]
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "row": 1550,
+      "col": 677,
+      "x_m": 4062.0,
+      "z_m": 2982.0,
+      "H_m": 5.74279260635376,
+      "H_grid_m": 5.74279260635376,
+      "B_m": 5.763659477233887,
+      "B_grid_m": 5.763659477233887,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        5.7,
+        5.7
+      ],
+      "fake_above_nominal_min_max_m": [
+        0.014070000000000249,
+        0.08889999999999976
+      ],
+      "fake_above_ground_max_m": 0.04610999999999965,
+      "depth_H_min_max_m": [
+        -0.0387211,
+        0.0361075
+      ],
+      "depth_B_query_min_max_m": [
+        -0.059588,
+        0.0152407
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        5.7,
+        5.7,
+        5.7
+      ],
+      "incident_F_values_m": [
+        5.7,
+        5.7,
+        5.7
+      ],
+      "H_minus_maxP_m": 0.04279279708862305,
+      "B_minus_maxP_m": 0.06365966796875,
+      "H_minus_maxF_m": 0.04279279708862305,
+      "B_minus_maxF_m": 0.06365966796875,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 5.699999809265137,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 1,
+      "top_visible_surface_y_m": 5.699999809265137,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_03224.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16801873,
+          "model": "edge_03224.p3d",
+          "face_index": 3,
+          "face_vertex_indices": [
+            2,
+            5,
+            4
+          ],
+          "level_at_xy_m": 5.699999809265137,
+          "engine_face_level_m": 5.699999809265137,
+          "object_position_y_m": 5.699999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.999941349029541,
+            1.4662742614746094e-05,
+            4.398822784423828e-05
+          ],
+          "bbox": [
+            4049.999882698059,
+            2975.990117073059,
+            4080.009882926941,
+            3000.000117301941
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16801873,
+          "model": "edge_03224.p3d",
+          "face_index": 3,
+          "face_vertex_indices": [
+            2,
+            5,
+            4
+          ],
+          "level_at_xy_m": 5.699999809265137,
+          "engine_face_level_m": 5.699999809265137,
+          "object_position_y_m": 5.699999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.999941349029541,
+            1.4662742614746094e-05,
+            4.398822784423828e-05
+          ],
+          "bbox": [
+            4049.999882698059,
+            2975.990117073059,
+            4080.009882926941,
+            3000.000117301941
+          ]
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "row": 1561,
+      "col": 1251,
+      "x_m": 7506.0,
+      "z_m": 2916.0,
+      "H_m": 2.925100326538086,
+      "H_grid_m": 2.925100326538086,
+      "B_m": 2.9501001834869385,
+      "B_grid_m": 2.9501001834869385,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.9,
+        2.9
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.007989999999999942,
+        0.10286000000000017
+      ],
+      "fake_above_ground_max_m": 0.07776000000000005,
+      "depth_H_min_max_m": [
+        -0.0430882,
+        0.0677636
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0680881,
+        0.0427637
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        2.9000000000000004,
+        2.9000000000000004,
+        2.9000000000000004
+      ],
+      "incident_F_values_m": [
+        2.9000000000000004,
+        2.9000000000000004,
+        2.9000000000000004
+      ],
+      "H_minus_maxP_m": 0.025100231170654297,
+      "B_minus_maxP_m": 0.050100088119506836,
+      "H_minus_maxF_m": 0.025100231170654297,
+      "B_minus_maxF_m": 0.050100088119506836,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 2.900000002235174,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 2,
+      "top_visible_surface_y_m": 2.900000002235174,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "globalvis_16805000.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16805000,
+          "model": "globalvis_16805000.p3d",
+          "face_index": 12,
+          "face_vertex_indices": [
+            6,
+            7,
+            16
+          ],
+          "level_at_xy_m": 2.900000002235174,
+          "engine_face_level_m": 2.900000002235174,
+          "object_position_y_m": 2.909374952316284,
+          "face_first_local_y_m": -0.00937495008111,
+          "barycentric": [
+            4.887580871582031e-05,
+            9.775161743164062e-06,
+            0.999941349029541
+          ],
+          "bbox": [
+            7487.990116119385,
+            2903.999882698059,
+            7536.000118255615,
+            2928.009882926941
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16805000,
+          "model": "globalvis_16805000.p3d",
+          "face_index": 61,
+          "face_vertex_indices": [
+            55,
+            41,
+            58
+          ],
+          "level_at_xy_m": 2.8999999025836587,
+          "engine_face_level_m": 2.8999999025836587,
+          "object_position_y_m": 2.909374952316284,
+          "face_first_local_y_m": -0.009375049732625484,
+          "barycentric": [
+            7.947285340925703e-08,
+            -0.0,
+            0.9999999205271466
+          ],
+          "bbox": [
+            7487.990116119385,
+            2903.999882698059,
+            7536.000118255615,
+            2928.009882926941
+          ]
+        },
+        {
+          "object_id": 16805000,
+          "model": "globalvis_16805000.p3d",
+          "face_index": 80,
+          "face_vertex_indices": [
+            72,
+            67,
+            74
+          ],
+          "level_at_xy_m": 2.900000002235174,
+          "engine_face_level_m": 2.900000002235174,
+          "object_position_y_m": 2.909374952316284,
+          "face_first_local_y_m": -0.00937495008111,
+          "barycentric": [
+            0.0,
+            7.947285338458591e-08,
+            0.9999999205271466
+          ],
+          "bbox": [
+            7487.990116119385,
+            2903.999882698059,
+            7536.000118255615,
+            2928.009882926941
+          ]
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "row": 1666,
+      "col": 420,
+      "x_m": 2520.0,
+      "z_m": 2286.0,
+      "H_m": 3.257680654525757,
+      "H_grid_m": 3.257680654525757,
+      "B_m": 3.303513526916504,
+      "B_grid_m": 3.303513526916504,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        3.2,
+        3.2
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.03265000000000029,
+        0.19324999999999992
+      ],
+      "fake_above_ground_max_m": 0.13556999999999997,
+      "depth_H_min_max_m": [
+        -0.100326,
+        0.125566
+      ],
+      "depth_B_query_min_max_m": [
+        -0.146159,
+        0.0797331
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        3.2,
+        3.2,
+        3.2
+      ],
+      "incident_F_values_m": [
+        3.2000000000000006,
+        3.2000000000000006,
+        3.2000000000000006
+      ],
+      "H_minus_maxP_m": 0.057680606842041016,
+      "B_minus_maxP_m": 0.10351347923278809,
+      "H_minus_maxF_m": 0.057680606842041016,
+      "B_minus_maxF_m": 0.10351347923278809,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 3.200000047683716,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 1,
+      "top_visible_surface_y_m": 3.200000047683716,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_01560.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16800243,
+          "model": "edge_01560.p3d",
+          "face_index": 9,
+          "face_vertex_indices": [
+            8,
+            11,
+            10
+          ],
+          "level_at_xy_m": 3.200000047683716,
+          "engine_face_level_m": 3.200000047683716,
+          "object_position_y_m": 3.200000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.9999853372573853,
+            1.099705696105957e-05,
+            3.6656856536865234e-06
+          ],
+          "bbox": [
+            2507.9998817443848,
+            2255.989999771118,
+            2544.0098838806152,
+            2304.010000228882
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16800243,
+          "model": "edge_01560.p3d",
+          "face_index": 9,
+          "face_vertex_indices": [
+            8,
+            11,
+            10
+          ],
+          "level_at_xy_m": 3.200000047683716,
+          "engine_face_level_m": 3.200000047683716,
+          "object_position_y_m": 3.200000047683716,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.9999853372573853,
+            1.099705696105957e-05,
+            3.6656856536865234e-06
+          ],
+          "bbox": [
+            2507.9998817443848,
+            2255.989999771118,
+            2544.0098838806152,
+            2304.010000228882
+          ]
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "row": 1682,
+      "col": 531,
+      "x_m": 3186.0,
+      "z_m": 2190.0,
+      "H_m": 4.275099754333496,
+      "H_grid_m": 4.275099754333496,
+      "B_m": 4.300099849700928,
+      "B_grid_m": 4.300099849700928,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        4.25,
+        4.25
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.10604000000000013,
+        0.07129999999999992
+      ],
+      "fake_above_ground_max_m": 0.0461999999999998,
+      "depth_H_min_max_m": [
+        -0.141135,
+        0.0361962
+      ],
+      "depth_B_query_min_max_m": [
+        -0.166136,
+        0.0111957
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        4.25,
+        4.25,
+        4.25
+      ],
+      "incident_F_values_m": [
+        4.25,
+        4.25,
+        4.25
+      ],
+      "H_minus_maxP_m": 0.025099754333496094,
+      "B_minus_maxP_m": 0.050099849700927734,
+      "H_minus_maxF_m": 0.025099754333496094,
+      "B_minus_maxF_m": 0.050099849700927734,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 2,
+      "top_physical_engine_level_m": 4.2500001192092896,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 2,
+      "top_visible_surface_y_m": 4.2500001192092896,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "globalvis_16800855.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16800855,
+          "model": "globalvis_16800855.p3d",
+          "face_index": 16,
+          "face_vertex_indices": [
+            10,
+            11,
+            15
+          ],
+          "level_at_xy_m": 4.2500001192092896,
+          "engine_face_level_m": 4.2500001192092896,
+          "object_position_y_m": 3.5875000953674316,
+          "face_first_local_y_m": 0.6625000238418579,
+          "barycentric": [
+            0.0,
+            5.8650970458984375e-05,
+            0.999941349029541
+          ],
+          "bbox": [
+            3167.990117073059,
+            2177.999882698059,
+            3198.000117301941,
+            2208.009882926941
+          ]
+        },
+        {
+          "object_id": 16800855,
+          "model": "globalvis_16800855.p3d",
+          "face_index": 17,
+          "face_vertex_indices": [
+            15,
+            11,
+            17
+          ],
+          "level_at_xy_m": 4.2500001192092896,
+          "engine_face_level_m": 4.2500001192092896,
+          "object_position_y_m": 3.5875000953674316,
+          "face_first_local_y_m": 0.6625000238418579,
+          "barycentric": [
+            0.999941349029541,
+            5.8650970458984375e-05,
+            -0.0
+          ],
+          "bbox": [
+            3167.990117073059,
+            2177.999882698059,
+            3198.000117301941,
+            2208.009882926941
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16800855,
+          "model": "globalvis_16800855.p3d",
+          "face_index": 62,
+          "face_vertex_indices": [
+            53,
+            38,
+            39
+          ],
+          "level_at_xy_m": 4.2500001192092896,
+          "engine_face_level_m": 4.2500001192092896,
+          "object_position_y_m": 3.5875000953674316,
+          "face_first_local_y_m": 0.6625000238418579,
+          "barycentric": [
+            0.9999999205271466,
+            7.947285338458591e-08,
+            -0.0
+          ],
+          "bbox": [
+            3167.990117073059,
+            2177.999882698059,
+            3198.000117301941,
+            2208.009882926941
+          ]
+        },
+        {
+          "object_id": 16800855,
+          "model": "globalvis_16800855.p3d",
+          "face_index": 63,
+          "face_vertex_indices": [
+            52,
+            38,
+            53
+          ],
+          "level_at_xy_m": 4.2500001192092896,
+          "engine_face_level_m": 4.2500001192092896,
+          "object_position_y_m": 3.5875000953674316,
+          "face_first_local_y_m": 0.6625000238418579,
+          "barycentric": [
+            0.0,
+            7.947285338458591e-08,
+            0.9999999205271466
+          ],
+          "bbox": [
+            3167.990117073059,
+            2177.999882698059,
+            3198.000117301941,
+            2208.009882926941
+          ]
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "row": 1713,
+      "col": 901,
+      "x_m": 5406.0,
+      "z_m": 2004.0,
+      "H_m": 2.86706805229187,
+      "H_grid_m": 2.86706805229187,
+      "B_m": 2.9090359210968018,
+      "B_grid_m": 2.9090359210968018,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.825,
+        2.825
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.02690999999999999,
+        0.15120999999999984
+      ],
+      "fake_above_ground_max_m": 0.10914000000000001,
+      "depth_H_min_max_m": [
+        -0.0789745,
+        0.0991423
+      ],
+      "depth_B_query_min_max_m": [
+        -0.120942,
+        0.0571744
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        2.825,
+        2.5,
+        2.625
+      ],
+      "incident_F_values_m": [
+        2.65,
+        2.65,
+        2.65
+      ],
+      "H_minus_maxP_m": 0.0420680046081543,
+      "B_minus_maxP_m": 0.08403587341308594,
+      "H_minus_maxF_m": 0.21706795692443848,
+      "B_minus_maxF_m": 0.2590358257293701,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 3,
+      "top_physical_engine_level_m": 2.8250001445412636,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 3,
+      "top_visible_surface_y_m": 2.6500001549720764,
+      "candidate_water_objects_bbox_contains_xy": 2,
+      "candidate_models_bbox_contains_xy": [
+        "globalvis_16803307.p3d",
+        "globalvis_16803313.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16803307,
+          "model": "globalvis_16803307.p3d",
+          "face_index": 0,
+          "face_vertex_indices": [
+            1,
+            0,
+            2
+          ],
+          "level_at_xy_m": 2.625000048428774,
+          "engine_face_level_m": 2.625000048428774,
+          "object_position_y_m": 2.637500047683716,
+          "face_first_local_y_m": -0.01249999925494194,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            5394.0,
+            2004.0,
+            5406.0,
+            2016.0
+          ]
+        },
+        {
+          "object_id": 16803307,
+          "model": "globalvis_16803307.p3d",
+          "face_index": 1,
+          "face_vertex_indices": [
+            3,
+            2,
+            0
+          ],
+          "level_at_xy_m": 2.625000048428774,
+          "engine_face_level_m": 2.625000048428774,
+          "object_position_y_m": 2.637500047683716,
+          "face_first_local_y_m": -0.01249999925494194,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            5394.0,
+            2004.0,
+            5406.0,
+            2016.0
+          ]
+        },
+        {
+          "object_id": 16803313,
+          "model": "globalvis_16803313.p3d",
+          "face_index": 2,
+          "face_vertex_indices": [
+            4,
+            0,
+            5
+          ],
+          "level_at_xy_m": 2.8250001445412636,
+          "engine_face_level_m": 2.8250001445412636,
+          "object_position_y_m": 2.804166793823242,
+          "face_first_local_y_m": 0.020833350718021393,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            5400.0,
+            1998.0,
+            5406.0,
+            2004.0
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16803307,
+          "model": "globalvis_16803307.p3d",
+          "face_index": 2,
+          "face_vertex_indices": [
+            4,
+            1,
+            5
+          ],
+          "level_at_xy_m": 2.650000048801303,
+          "engine_face_level_m": 2.650000048801303,
+          "object_position_y_m": 2.637500047683716,
+          "face_first_local_y_m": 0.01250000111758709,
+          "barycentric": [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          "bbox": [
+            5394.0,
+            2004.0,
+            5406.0,
+            2016.0
+          ]
+        },
+        {
+          "object_id": 16803307,
+          "model": "globalvis_16803307.p3d",
+          "face_index": 3,
+          "face_vertex_indices": [
+            1,
+            4,
+            6
+          ],
+          "level_at_xy_m": 2.650000048801303,
+          "engine_face_level_m": 2.618750048801303,
+          "object_position_y_m": 2.637500047683716,
+          "face_first_local_y_m": -0.01874999888241291,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            5394.0,
+            2004.0,
+            5406.0,
+            2016.0
+          ]
+        },
+        {
+          "object_id": 16803313,
+          "model": "globalvis_16803313.p3d",
+          "face_index": 1,
+          "face_vertex_indices": [
+            3,
+            2,
+            0
+          ],
+          "level_at_xy_m": 2.6500001549720764,
+          "engine_face_level_m": 2.6500001549720764,
+          "object_position_y_m": 2.804166793823242,
+          "face_first_local_y_m": -0.15416663885116577,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            5400.0,
+            1998.0,
+            5406.0,
+            2004.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "row": 1719,
+      "col": 982,
+      "x_m": 5892.0,
+      "z_m": 1968.0,
+      "H_m": 2.5292913913726807,
+      "H_grid_m": 2.5292913913726807,
+      "B_m": 2.550100326538086,
+      "B_grid_m": 2.550100326538086,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.5,
+        2.5
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.11784999999999979,
+        0.13779999999999992
+      ],
+      "fake_above_ground_max_m": 0.10850999999999988,
+      "depth_H_min_max_m": [
+        -0.157145,
+        0.0985091
+      ],
+      "depth_B_query_min_max_m": [
+        -0.177954,
+        0.0777001
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        2.5,
+        2.5,
+        2.5
+      ],
+      "incident_F_values_m": [
+        2.5,
+        2.5,
+        2.5
+      ],
+      "H_minus_maxP_m": 0.029291391372680664,
+      "B_minus_maxP_m": 0.05010032653808594,
+      "H_minus_maxF_m": 0.029291391372680664,
+      "B_minus_maxF_m": 0.05010032653808594,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 2,
+      "top_physical_engine_level_m": 2.5,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 2,
+      "top_visible_surface_y_m": 2.5,
+      "candidate_water_objects_bbox_contains_xy": 2,
+      "candidate_models_bbox_contains_xy": [
+        "edge_05200.p3d",
+        "edge_05201.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16803822,
+          "model": "edge_05200.p3d",
+          "face_index": 24,
+          "face_vertex_indices": [
+            27,
+            25,
+            26
+          ],
+          "level_at_xy_m": 2.5,
+          "engine_face_level_m": 2.5,
+          "object_position_y_m": 2.5,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.8914540507619648e-05,
+            6.357829786591496e-07,
+            0.9999804496765137
+          ],
+          "bbox": [
+            5867.999881744385,
+            1926.0000038146973,
+            5904.009883880615,
+            1968.0100059509277
+          ]
+        },
+        {
+          "object_id": 16803823,
+          "model": "edge_05201.p3d",
+          "face_index": 24,
+          "face_vertex_indices": [
+            22,
+            13,
+            24
+          ],
+          "level_at_xy_m": 2.5,
+          "engine_face_level_m": 2.5,
+          "object_position_y_m": 2.5,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.999970277150472,
+            2.9325485229492188e-05,
+            3.973642985026042e-07
+          ],
+          "bbox": [
+            5855.990116119385,
+            1967.9899950027466,
+            5898.000118255615,
+            1991.9999952316284
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16803822,
+          "model": "edge_05200.p3d",
+          "face_index": 24,
+          "face_vertex_indices": [
+            27,
+            25,
+            26
+          ],
+          "level_at_xy_m": 2.5,
+          "engine_face_level_m": 2.5,
+          "object_position_y_m": 2.5,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.8914540507619648e-05,
+            6.357829786591496e-07,
+            0.9999804496765137
+          ],
+          "bbox": [
+            5867.999881744385,
+            1926.0000038146973,
+            5904.009883880615,
+            1968.0100059509277
+          ]
+        },
+        {
+          "object_id": 16803823,
+          "model": "edge_05201.p3d",
+          "face_index": 24,
+          "face_vertex_indices": [
+            22,
+            13,
+            24
+          ],
+          "level_at_xy_m": 2.5,
+          "engine_face_level_m": 2.5,
+          "object_position_y_m": 2.5,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.999970277150472,
+            2.9325485229492188e-05,
+            3.973642985026042e-07
+          ],
+          "bbox": [
+            5855.990116119385,
+            1967.9899950027466,
+            5898.000118255615,
+            1991.9999952316284
+          ]
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "row": 1720,
+      "col": 809,
+      "x_m": 4854.0,
+      "z_m": 1962.0,
+      "H_m": 5.972728729248047,
+      "H_grid_m": 5.972728729248047,
+      "B_m": 6.012644290924072,
+      "B_grid_m": 6.012644290924072,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        5.925,
+        5.925
+      ],
+      "fake_above_nominal_min_max_m": [
+        0.03608000000000011,
+        0.11302000000000056
+      ],
+      "fake_above_ground_max_m": 0.06529000000000007,
+      "depth_H_min_max_m": [
+        -0.0216503,
+        0.0552945
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0615659,
+        0.015379
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        5.925000000000001,
+        5.925000000000001,
+        5.925000000000001
+      ],
+      "incident_F_values_m": [
+        5.925000000000001,
+        5.925000000000001,
+        5.925000000000001
+      ],
+      "H_minus_maxP_m": 0.047728538513183594,
+      "B_minus_maxP_m": 0.08764410018920898,
+      "H_minus_maxF_m": 0.047728538513183594,
+      "B_minus_maxF_m": 0.08764410018920898,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 4,
+      "top_physical_engine_level_m": 5.925000190734863,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 4,
+      "top_visible_surface_y_m": 5.925000190734863,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_03971.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16802609,
+          "model": "edge_03971.p3d",
+          "face_index": 8,
+          "face_vertex_indices": [
+            3,
+            0,
+            12
+          ],
+          "level_at_xy_m": 5.925000190734863,
+          "engine_face_level_m": 5.925000190734863,
+          "object_position_y_m": 5.925000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            4847.989999771118,
+            1919.9899997711182,
+            4896.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16802609,
+          "model": "edge_03971.p3d",
+          "face_index": 9,
+          "face_vertex_indices": [
+            11,
+            6,
+            12
+          ],
+          "level_at_xy_m": 5.925000190734863,
+          "engine_face_level_m": 5.925000190734863,
+          "object_position_y_m": 5.925000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            4847.989999771118,
+            1919.9899997711182,
+            4896.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16802609,
+          "model": "edge_03971.p3d",
+          "face_index": 10,
+          "face_vertex_indices": [
+            0,
+            13,
+            12
+          ],
+          "level_at_xy_m": 5.925000190734863,
+          "engine_face_level_m": 5.925000190734863,
+          "object_position_y_m": 5.925000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            4847.989999771118,
+            1919.9899997711182,
+            4896.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16802609,
+          "model": "edge_03971.p3d",
+          "face_index": 11,
+          "face_vertex_indices": [
+            12,
+            13,
+            11
+          ],
+          "level_at_xy_m": 5.925000190734863,
+          "engine_face_level_m": 5.925000190734863,
+          "object_position_y_m": 5.925000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            4847.989999771118,
+            1919.9899997711182,
+            4896.010000228882,
+            1968.0100002288818
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16802609,
+          "model": "edge_03971.p3d",
+          "face_index": 8,
+          "face_vertex_indices": [
+            3,
+            0,
+            12
+          ],
+          "level_at_xy_m": 5.925000190734863,
+          "engine_face_level_m": 5.925000190734863,
+          "object_position_y_m": 5.925000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            4847.989999771118,
+            1919.9899997711182,
+            4896.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16802609,
+          "model": "edge_03971.p3d",
+          "face_index": 9,
+          "face_vertex_indices": [
+            11,
+            6,
+            12
+          ],
+          "level_at_xy_m": 5.925000190734863,
+          "engine_face_level_m": 5.925000190734863,
+          "object_position_y_m": 5.925000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            4847.989999771118,
+            1919.9899997711182,
+            4896.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16802609,
+          "model": "edge_03971.p3d",
+          "face_index": 10,
+          "face_vertex_indices": [
+            0,
+            13,
+            12
+          ],
+          "level_at_xy_m": 5.925000190734863,
+          "engine_face_level_m": 5.925000190734863,
+          "object_position_y_m": 5.925000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            4847.989999771118,
+            1919.9899997711182,
+            4896.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16802609,
+          "model": "edge_03971.p3d",
+          "face_index": 11,
+          "face_vertex_indices": [
+            12,
+            13,
+            11
+          ],
+          "level_at_xy_m": 5.925000190734863,
+          "engine_face_level_m": 5.925000190734863,
+          "object_position_y_m": 5.925000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            4847.989999771118,
+            1919.9899997711182,
+            4896.010000228882,
+            1968.0100002288818
+          ]
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "row": 1727,
+      "col": 1245,
+      "x_m": 7470.0,
+      "z_m": 1920.0,
+      "H_m": 4.103703498840332,
+      "H_grid_m": 4.103703498840332,
+      "B_m": 4.152648448944092,
+      "B_grid_m": 4.152648448944092,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        4.0,
+        4.0
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.0016300000000000203,
+        0.13712999999999997
+      ],
+      "fake_above_ground_max_m": 0.03343000000000007,
+      "depth_H_min_max_m": [
+        -0.115338,
+        0.0234222
+      ],
+      "depth_B_query_min_max_m": [
+        -0.164283,
+        -0.0255227
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "incident_F_values_m": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "H_minus_maxP_m": 0.10370349884033203,
+      "B_minus_maxP_m": 0.1526484489440918,
+      "H_minus_maxF_m": 0.10370349884033203,
+      "B_minus_maxF_m": 0.1526484489440918,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 5,
+      "top_physical_engine_level_m": 4.0,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 5,
+      "top_visible_surface_y_m": 4.0,
+      "candidate_water_objects_bbox_contains_xy": 2,
+      "candidate_models_bbox_contains_xy": [
+        "edge_06441.p3d",
+        "edge_06442.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16804910,
+          "model": "edge_06441.p3d",
+          "face_index": 2,
+          "face_vertex_indices": [
+            4,
+            0,
+            5
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            5.835294723510742e-05,
+            2.980232238769531e-07,
+            0.999941349029541
+          ],
+          "bbox": [
+            7463.999882698059,
+            1902.0000047683716,
+            7488.009882926941,
+            1920.0100049972534
+          ]
+        },
+        {
+          "object_id": 16804911,
+          "model": "edge_06442.p3d",
+          "face_index": 15,
+          "face_vertex_indices": [
+            17,
+            16,
+            18
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.989999771118,
+            1919.9899997711182,
+            7488.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16804911,
+          "model": "edge_06442.p3d",
+          "face_index": 18,
+          "face_vertex_indices": [
+            16,
+            17,
+            23
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.989999771118,
+            1919.9899997711182,
+            7488.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16804911,
+          "model": "edge_06442.p3d",
+          "face_index": 19,
+          "face_vertex_indices": [
+            24,
+            22,
+            17
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7439.989999771118,
+            1919.9899997711182,
+            7488.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16804911,
+          "model": "edge_06442.p3d",
+          "face_index": 21,
+          "face_vertex_indices": [
+            17,
+            22,
+            23
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          "bbox": [
+            7439.989999771118,
+            1919.9899997711182,
+            7488.010000228882,
+            1968.0100002288818
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16804910,
+          "model": "edge_06441.p3d",
+          "face_index": 2,
+          "face_vertex_indices": [
+            4,
+            0,
+            5
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            5.835294723510742e-05,
+            2.980232238769531e-07,
+            0.999941349029541
+          ],
+          "bbox": [
+            7463.999882698059,
+            1902.0000047683716,
+            7488.009882926941,
+            1920.0100049972534
+          ]
+        },
+        {
+          "object_id": 16804911,
+          "model": "edge_06442.p3d",
+          "face_index": 15,
+          "face_vertex_indices": [
+            17,
+            16,
+            18
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.989999771118,
+            1919.9899997711182,
+            7488.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16804911,
+          "model": "edge_06442.p3d",
+          "face_index": 18,
+          "face_vertex_indices": [
+            16,
+            17,
+            23
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            7439.989999771118,
+            1919.9899997711182,
+            7488.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16804911,
+          "model": "edge_06442.p3d",
+          "face_index": 19,
+          "face_vertex_indices": [
+            24,
+            22,
+            17
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            7439.989999771118,
+            1919.9899997711182,
+            7488.010000228882,
+            1968.0100002288818
+          ]
+        },
+        {
+          "object_id": 16804911,
+          "model": "edge_06442.p3d",
+          "face_index": 21,
+          "face_vertex_indices": [
+            17,
+            22,
+            23
+          ],
+          "level_at_xy_m": 4.0,
+          "engine_face_level_m": 4.0,
+          "object_position_y_m": 4.0,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          "bbox": [
+            7439.989999771118,
+            1919.9899997711182,
+            7488.010000228882,
+            1968.0100002288818
+          ]
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "row": 1743,
+      "col": 1447,
+      "x_m": 8682.0,
+      "z_m": 1824.0,
+      "H_m": 3.175100088119507,
+      "H_grid_m": 3.175100088119507,
+      "B_m": 3.2000999450683594,
+      "B_grid_m": 3.2000999450683594,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        3.15,
+        3.15
+      ],
+      "fake_above_nominal_min_max_m": [
+        0.03526000000000007,
+        0.08137000000000016
+      ],
+      "fake_above_ground_max_m": 0.05627000000000004,
+      "depth_H_min_max_m": [
+        0.000163555,
+        0.0462704
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0248363,
+        0.0212705
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        3.1500000000000004,
+        3.1500000000000004,
+        3.1500000000000004
+      ],
+      "incident_F_values_m": [
+        3.1500000000000004,
+        3.1500000000000004,
+        3.1500000000000004
+      ],
+      "H_minus_maxP_m": 0.025099992752075195,
+      "B_minus_maxP_m": 0.050099849700927734,
+      "H_minus_maxF_m": 0.025099992752075195,
+      "B_minus_maxF_m": 0.050099849700927734,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 5,
+      "top_physical_engine_level_m": 3.1500000953674316,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 5,
+      "top_visible_surface_y_m": 3.1500000953674316,
+      "candidate_water_objects_bbox_contains_xy": 2,
+      "candidate_models_bbox_contains_xy": [
+        "patch_00892.p3d",
+        "patch_00893.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16813127,
+          "model": "patch_00892.p3d",
+          "face_index": 33,
+          "face_vertex_indices": [
+            29,
+            22,
+            30
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1775.9899997711182,
+            8688.010000228882,
+            1824.0100002288818
+          ]
+        },
+        {
+          "object_id": 16813127,
+          "model": "patch_00892.p3d",
+          "face_index": 34,
+          "face_vertex_indices": [
+            23,
+            30,
+            22
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1775.9899997711182,
+            8688.010000228882,
+            1824.0100002288818
+          ]
+        },
+        {
+          "object_id": 16813127,
+          "model": "patch_00892.p3d",
+          "face_index": 35,
+          "face_vertex_indices": [
+            30,
+            31,
+            29
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1775.9899997711182,
+            8688.010000228882,
+            1824.0100002288818
+          ]
+        },
+        {
+          "object_id": 16813127,
+          "model": "patch_00892.p3d",
+          "face_index": 36,
+          "face_vertex_indices": [
+            30,
+            23,
+            32
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1775.9899997711182,
+            8688.010000228882,
+            1824.0100002288818
+          ]
+        },
+        {
+          "object_id": 16813128,
+          "model": "patch_00893.p3d",
+          "face_index": 25,
+          "face_vertex_indices": [
+            23,
+            21,
+            24
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            7.947285970422158e-07,
+            0.999999205271403,
+            -0.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1823.9899950027466,
+            8688.010000228882,
+            1847.9999952316284
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16813127,
+          "model": "patch_00892.p3d",
+          "face_index": 33,
+          "face_vertex_indices": [
+            29,
+            22,
+            30
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1775.9899997711182,
+            8688.010000228882,
+            1824.0100002288818
+          ]
+        },
+        {
+          "object_id": 16813127,
+          "model": "patch_00892.p3d",
+          "face_index": 34,
+          "face_vertex_indices": [
+            23,
+            30,
+            22
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1775.9899997711182,
+            8688.010000228882,
+            1824.0100002288818
+          ]
+        },
+        {
+          "object_id": 16813127,
+          "model": "patch_00892.p3d",
+          "face_index": 35,
+          "face_vertex_indices": [
+            30,
+            31,
+            29
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1775.9899997711182,
+            8688.010000228882,
+            1824.0100002288818
+          ]
+        },
+        {
+          "object_id": 16813127,
+          "model": "patch_00892.p3d",
+          "face_index": 36,
+          "face_vertex_indices": [
+            30,
+            23,
+            32
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1775.9899997711182,
+            8688.010000228882,
+            1824.0100002288818
+          ]
+        },
+        {
+          "object_id": 16813128,
+          "model": "patch_00893.p3d",
+          "face_index": 25,
+          "face_vertex_indices": [
+            23,
+            21,
+            24
+          ],
+          "level_at_xy_m": 3.1500000953674316,
+          "engine_face_level_m": 3.1500000953674316,
+          "object_position_y_m": 3.1500000953674316,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            7.947285970422158e-07,
+            0.999999205271403,
+            -0.0
+          ],
+          "bbox": [
+            8639.989999771118,
+            1823.9899950027466,
+            8688.010000228882,
+            1847.9999952316284
+          ]
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "row": 1829,
+      "col": 785,
+      "x_m": 4710.0,
+      "z_m": 1308.0,
+      "H_m": 6.081677436828613,
+      "H_grid_m": 6.081677436828613,
+      "B_m": 6.113254547119141,
+      "B_grid_m": 6.113254547119141,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        6.05,
+        6.05
+      ],
+      "fake_above_nominal_min_max_m": [
+        0.00633999999999979,
+        0.11800000000000033
+      ],
+      "fake_above_ground_max_m": 0.08631999999999973,
+      "depth_H_min_max_m": [
+        -0.0353365,
+        0.0763216
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0669136,
+        0.0447445
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        6.050000000000001,
+        6.050000000000001,
+        6.050000000000001
+      ],
+      "incident_F_values_m": [
+        6.050000000000001,
+        6.050000000000001,
+        6.050000000000001
+      ],
+      "H_minus_maxP_m": 0.03167724609375,
+      "B_minus_maxP_m": 0.06325435638427734,
+      "H_minus_maxF_m": 0.03167724609375,
+      "B_minus_maxF_m": 0.06325435638427734,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 6.050000190734863,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 1,
+      "top_visible_surface_y_m": 6.050000190734863,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "patch_00716.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16812924,
+          "model": "patch_00716.p3d",
+          "face_index": 6,
+          "face_vertex_indices": [
+            9,
+            8,
+            10
+          ],
+          "level_at_xy_m": 6.050000190734863,
+          "engine_face_level_m": 6.050000190734863,
+          "object_position_y_m": 6.050000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            7.947284706988356e-07,
+            0.9999992052715293,
+            -0.0
+          ],
+          "bbox": [
+            4703.989999771118,
+            1296.0000038146973,
+            4752.010000228882,
+            1344.0100059509277
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16812924,
+          "model": "patch_00716.p3d",
+          "face_index": 6,
+          "face_vertex_indices": [
+            9,
+            8,
+            10
+          ],
+          "level_at_xy_m": 6.050000190734863,
+          "engine_face_level_m": 6.050000190734863,
+          "object_position_y_m": 6.050000190734863,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            7.947284706988356e-07,
+            0.9999992052715293,
+            -0.0
+          ],
+          "bbox": [
+            4703.989999771118,
+            1296.0000038146973,
+            4752.010000228882,
+            1344.0100059509277
+          ]
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "row": 1916,
+      "col": 708,
+      "x_m": 4248.0,
+      "z_m": 786.0,
+      "H_m": 5.004996299743652,
+      "H_grid_m": 5.004996299743652,
+      "B_m": 5.031153202056885,
+      "B_grid_m": 5.031153202056885,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        4.925,
+        4.925
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.07522999999999946,
+        0.11648000000000014
+      ],
+      "fake_above_ground_max_m": 0.03648000000000007,
+      "depth_H_min_max_m": [
+        -0.165229,
+        0.0264797
+      ],
+      "depth_B_query_min_max_m": [
+        -0.191386,
+        0.000322819
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        4.925000000000001,
+        4.925000000000001,
+        4.925000000000001
+      ],
+      "incident_F_values_m": [
+        4.925000000000001,
+        4.925000000000001,
+        4.925000000000001
+      ],
+      "H_minus_maxP_m": 0.07999610900878906,
+      "B_minus_maxP_m": 0.10615301132202148,
+      "H_minus_maxF_m": 0.07999610900878906,
+      "B_minus_maxF_m": 0.10615301132202148,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 4.925000386312604,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 2,
+      "top_visible_surface_y_m": 4.925000186543912,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "globalvis_16802114.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16802114,
+          "model": "globalvis_16802114.p3d",
+          "face_index": 28,
+          "face_vertex_indices": [
+            27,
+            7,
+            15
+          ],
+          "level_at_xy_m": 4.925000386312604,
+          "engine_face_level_m": 4.925000386312604,
+          "object_position_y_m": 4.918750286102295,
+          "face_first_local_y_m": 0.006250100210309029,
+          "barycentric": [
+            0.9999853372573853,
+            1.2227467128208705e-05,
+            2.435275486537388e-06
+          ],
+          "bbox": [
+            4223.990116119385,
+            767.9899940490723,
+            4272.000118255615,
+            815.9999961853027
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16802114,
+          "model": "globalvis_16802114.p3d",
+          "face_index": 60,
+          "face_vertex_indices": [
+            64,
+            40,
+            65
+          ],
+          "level_at_xy_m": 4.925000186543912,
+          "engine_face_level_m": 4.925000186543912,
+          "object_position_y_m": 4.918750286102295,
+          "face_first_local_y_m": 0.006249900441616774,
+          "barycentric": [
+            5.0291420583548074e-08,
+            -0.0,
+            0.9999999497085794
+          ],
+          "bbox": [
+            4223.990116119385,
+            767.9899940490723,
+            4272.000118255615,
+            815.9999961853027
+          ]
+        },
+        {
+          "object_id": 16802114,
+          "model": "globalvis_16802114.p3d",
+          "face_index": 74,
+          "face_vertex_indices": [
+            82,
+            64,
+            65
+          ],
+          "level_at_xy_m": 4.925000186543912,
+          "engine_face_level_m": 4.925000186543912,
+          "object_position_y_m": 4.918750286102295,
+          "face_first_local_y_m": 0.006249900441616774,
+          "barycentric": [
+            0.0,
+            5.029142049681194e-08,
+            0.9999999497085795
+          ],
+          "bbox": [
+            4223.990116119385,
+            767.9899940490723,
+            4272.000118255615,
+            815.9999961853027
+          ]
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "row": 1947,
+      "col": 549,
+      "x_m": 3294.0,
+      "z_m": 600.0,
+      "H_m": 8.50391674041748,
+      "H_grid_m": 8.50391674041748,
+      "B_m": 8.557732582092285,
+      "B_grid_m": 8.557732582092285,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        8.45,
+        8.45
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.06489000000000011,
+        0.09387000000000079
+      ],
+      "fake_above_ground_max_m": 0.039949999999999264,
+      "depth_H_min_max_m": [
+        -0.128805,
+        0.0299559
+      ],
+      "depth_B_query_min_max_m": [
+        -0.182621,
+        -0.02386
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": false,
+      "incident_P_values_m": [
+        8.450000000000001,
+        8.450000000000001,
+        8.450000000000001
+      ],
+      "incident_F_values_m": [
+        8.450000000000001,
+        8.450000000000001,
+        8.450000000000001
+      ],
+      "H_minus_maxP_m": 0.05391693115234375,
+      "B_minus_maxP_m": 0.10773277282714844,
+      "H_minus_maxF_m": 0.05391693115234375,
+      "B_minus_maxF_m": 0.10773277282714844,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 4,
+      "top_physical_engine_level_m": 8.449999809265137,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 4,
+      "top_visible_surface_y_m": 8.449999809265137,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_02353.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16801002,
+          "model": "edge_02353.p3d",
+          "face_index": 10,
+          "face_vertex_indices": [
+            10,
+            5,
+            12
+          ],
+          "level_at_xy_m": 8.449999809265137,
+          "engine_face_level_m": 8.449999809265137,
+          "object_position_y_m": 8.449999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            3270.0,
+            582.0,
+            3300.0,
+            618.0
+          ]
+        },
+        {
+          "object_id": 16801002,
+          "model": "edge_02353.p3d",
+          "face_index": 11,
+          "face_vertex_indices": [
+            6,
+            13,
+            12
+          ],
+          "level_at_xy_m": 8.449999809265137,
+          "engine_face_level_m": 8.449999809265137,
+          "object_position_y_m": 8.449999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            3270.0,
+            582.0,
+            3300.0,
+            618.0
+          ]
+        },
+        {
+          "object_id": 16801002,
+          "model": "edge_02353.p3d",
+          "face_index": 12,
+          "face_vertex_indices": [
+            12,
+            14,
+            10
+          ],
+          "level_at_xy_m": 8.449999809265137,
+          "engine_face_level_m": 8.449999809265137,
+          "object_position_y_m": 8.449999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            3270.0,
+            582.0,
+            3300.0,
+            618.0
+          ]
+        },
+        {
+          "object_id": 16801002,
+          "model": "edge_02353.p3d",
+          "face_index": 13,
+          "face_vertex_indices": [
+            12,
+            5,
+            6
+          ],
+          "level_at_xy_m": 8.449999809265137,
+          "engine_face_level_m": 8.449999809265137,
+          "object_position_y_m": 8.449999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            3270.0,
+            582.0,
+            3300.0,
+            618.0
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16801002,
+          "model": "edge_02353.p3d",
+          "face_index": 10,
+          "face_vertex_indices": [
+            10,
+            5,
+            12
+          ],
+          "level_at_xy_m": 8.449999809265137,
+          "engine_face_level_m": 8.449999809265137,
+          "object_position_y_m": 8.449999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            3270.0,
+            582.0,
+            3300.0,
+            618.0
+          ]
+        },
+        {
+          "object_id": 16801002,
+          "model": "edge_02353.p3d",
+          "face_index": 11,
+          "face_vertex_indices": [
+            6,
+            13,
+            12
+          ],
+          "level_at_xy_m": 8.449999809265137,
+          "engine_face_level_m": 8.449999809265137,
+          "object_position_y_m": 8.449999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.0,
+            -0.0,
+            1.0
+          ],
+          "bbox": [
+            3270.0,
+            582.0,
+            3300.0,
+            618.0
+          ]
+        },
+        {
+          "object_id": 16801002,
+          "model": "edge_02353.p3d",
+          "face_index": 12,
+          "face_vertex_indices": [
+            12,
+            14,
+            10
+          ],
+          "level_at_xy_m": 8.449999809265137,
+          "engine_face_level_m": 8.449999809265137,
+          "object_position_y_m": 8.449999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "bbox": [
+            3270.0,
+            582.0,
+            3300.0,
+            618.0
+          ]
+        },
+        {
+          "object_id": 16801002,
+          "model": "edge_02353.p3d",
+          "face_index": 13,
+          "face_vertex_indices": [
+            12,
+            5,
+            6
+          ],
+          "level_at_xy_m": 8.449999809265137,
+          "engine_face_level_m": 8.449999809265137,
+          "object_position_y_m": 8.449999809265137,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            1.0,
+            -0.0,
+            -0.0
+          ],
+          "bbox": [
+            3270.0,
+            582.0,
+            3300.0,
+            618.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "row": 1996,
+      "col": 1710,
+      "x_m": 10260.0,
+      "z_m": 306.0,
+      "H_m": 2.1607067584991455,
+      "H_grid_m": 2.1607067584991455,
+      "B_m": 2.1920113563537598,
+      "B_grid_m": 2.1920113563537598,
+      "sea_samples": 0,
+      "pond_samples": 0,
+      "nominal_min_max_m": [
+        2.125,
+        2.125
+      ],
+      "fake_above_nominal_min_max_m": [
+        -0.01855999999999991,
+        0.10580999999999996
+      ],
+      "fake_above_ground_max_m": 0.07010000000000005,
+      "depth_H_min_max_m": [
+        -0.0642662,
+        0.0601046
+      ],
+      "depth_B_query_min_max_m": [
+        -0.0955708,
+        0.0288
+      ],
+      "positive_H_over_2cm": true,
+      "positive_B_query_over_2cm": true,
+      "incident_P_values_m": [
+        2.125,
+        2.125,
+        2.125
+      ],
+      "incident_F_values_m": [
+        2.125,
+        2.125,
+        2.125
+      ],
+      "H_minus_maxP_m": 0.03570675849914551,
+      "B_minus_maxP_m": 0.06701135635375977,
+      "H_minus_maxF_m": 0.03570675849914551,
+      "B_minus_maxF_m": 0.06701135635375977,
+      "roadway_physical_face_contains_xy": true,
+      "physical_face_count_at_xy": 1,
+      "top_physical_engine_level_m": 2.125,
+      "visual_LOD_face_contains_xy": true,
+      "visible_face_count_at_xy": 1,
+      "top_visible_surface_y_m": 2.125,
+      "candidate_water_objects_bbox_contains_xy": 1,
+      "candidate_models_bbox_contains_xy": [
+        "edge_10124.p3d"
+      ],
+      "physical_face_hits": [
+        {
+          "object_id": 16808057,
+          "model": "edge_10124.p3d",
+          "face_index": 35,
+          "face_vertex_indices": [
+            31,
+            22,
+            32
+          ],
+          "level_at_xy_m": 2.125,
+          "engine_face_level_m": 2.125,
+          "object_position_y_m": 2.125,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.9999996594020298,
+            2.5544847760881696e-07,
+            8.514949253627232e-08
+          ],
+          "bbox": [
+            10223.989999771118,
+            287.98999404907227,
+            10272.010000228882,
+            323.99999618530273
+          ]
+        }
+      ],
+      "visible_face_hits": [
+        {
+          "object_id": 16808057,
+          "model": "edge_10124.p3d",
+          "face_index": 35,
+          "face_vertex_indices": [
+            31,
+            22,
+            32
+          ],
+          "level_at_xy_m": 2.125,
+          "engine_face_level_m": 2.125,
+          "object_position_y_m": 2.125,
+          "face_first_local_y_m": 0.0,
+          "barycentric": [
+            0.9999996594020298,
+            2.5544847760881696e-07,
+            8.514949253627232e-08
+          ],
+          "bbox": [
+            10223.989999771118,
+            287.98999404907227,
+            10272.010000228882,
+            323.99999618530273
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation_limits": [
+    "P is a scalar plane per cell; F is per-cell-corner NW/NE/SW/SE data. Reported margins are conservative maxima over up to four incident supports, not a single globally continuous surface.",
+    "The model-surface hit test uses B staged 0WZD source transforms and hash-verified compiled ODOL roadway/visible LOD geometry; the deployed OPRW transforms were not read back from the engine in this task.",
+    "A point hit proves projected face coverage at that coordinate, not a rendered pixel or material identity; bbox-only object matches are explicitly distinguished from face hits.",
+    "The temporal depth metric is GetWaterDepth at H+0.01 or B+0.01 and correlates with fake surface; the B query is a height discriminator in the H world, not a second B-world run. No wave maximum is inferred."
+  ]
+}

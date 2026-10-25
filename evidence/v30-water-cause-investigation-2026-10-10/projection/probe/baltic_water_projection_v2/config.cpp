@@ -1,0 +1,2 @@
+class CfgPatches { class BalticWaterProjectionV2 { units[]={}; weapons[]={}; requiredVersion=0.1; requiredAddons[]={"DZ_Data"}; }; };
+class CfgMods { class BalticWaterProjectionV2 { dir="baltic_water_projection_v2"; name="Baltic native projection observer"; type="mod"; hideName=1; hidePicture=1; dependencies[]={"Mission"}; class defs { class missionScriptModule { value=""; files[]={"baltic_water_projection_v2/scripts/5_Mission"}; }; }; }; };

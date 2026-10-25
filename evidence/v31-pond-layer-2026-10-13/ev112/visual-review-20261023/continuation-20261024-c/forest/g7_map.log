@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "P:\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\vegetation\run_visual_forest_gate_v31.py", line 33, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "P:\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\vegetation\run_visual_forest_gate_v31.py", line 30, in main
+    runpy.run_path(sys.argv[0],run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\forest-water-fix-b\gates\g7_map.py", line 197, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\forest-water-fix-b\gates\g7_map.py", line 42, in main
+    bog1 = R.big("bog1m")
+           ^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\forest-water-fix-b\gates\glib.py", line 72, in big
+    return np.load(self.dir / f"{name}.npy", mmap_mode="r")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\Documents\Codex\2026-09-29\vamos\work\gis-env\Lib\site-packages\numpy\lib\_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-visual-consumers-20261024-a\\bog1m.npy'

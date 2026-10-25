@@ -1,0 +1,45 @@
+{
+  "status": "PASS_DEPLOYED_HEIGHT_AND_MATCHED_POSE_ONLY",
+  "checks": {
+    "v12_sample_0": true,
+    "preview_sample_0": true,
+    "stale_v12_rejected_0": true,
+    "v12_sample_1": true,
+    "preview_sample_1": true,
+    "stale_v12_rejected_1": true,
+    "camera_matrix_same": true,
+    "low_camera_matrix_same": true,
+    "frame_viewport_same": true,
+    "low_frame_viewport_same": true,
+    "fixed_clock_samples": true,
+    "orderly_close": true
+  },
+  "samples": [
+    {
+      "x": 6060,
+      "z": 8346,
+      "v12_y": 59.361595153808594,
+      "preview_y": 58.361595153808594,
+      "delta_m": -1.0,
+      "v12_engine_y": 59.361595153808594,
+      "preview_engine_y": 58.361595153808594,
+      "engine_delta_m": -1.0
+    },
+    {
+      "x": 6324,
+      "z": 8190,
+      "v12_y": 16.663990020751953,
+      "preview_y": 17.653690338134766,
+      "delta_m": 0.9897003173828125,
+      "v12_engine_y": 16.663990020751953,
+      "preview_engine_y": 17.653690338134766,
+      "engine_delta_m": 0.9897003173828125
+    }
+  ],
+  "limits": [
+    "Two changed terrain samples do not certify the whole map.",
+    "FOV request identical; camera_get returns zero, so native FOV readback is unavailable.",
+    "Visual improvement is moderate with a 1m cap; no user acceptance implied.",
+    "Boat navigation, navmesh, shore candidates and all-distance material acceptance remain open."
+  ]
+}

@@ -1,0 +1,17 @@
+# EV68 — propuesta del Volkhov que pasa geometría y compilado
+
+La propuesta eleva 42,5 cm el agua y sus apoyos en el grupo349, conservando profundidades y huellas. Modifica 5188 alturas, 652 niveles de metadata, 1019 celdas P, 4076 valores F y la Y de109 objetos. Fondo mínimo1,0104215m. No se integra aún: las charcas647/651 ya cumplían el fondo y su traslado requiere la excepción de política pendiente. Grandes lagos, puentes, reserva vial y plataformas quedan fuera del cambio. Base1.0 sigue incompleta.
+
+EV66 imponía restricciones continuas exactas incompatibles con algunos apoyos cuantizados a float32. El diagnóstico escalar conserva82 excesos inevitables entre131 bisagras con una variable; máximo5,50e-6grados, todos dentro de la tolerancia del consumidor existente. EV68 utiliza la mitad de esa tolerancia para autoría, sin modificar el consumidor ni el incremento máximo de2grados. Seis grupos convergen en26 iteraciones totales. EV63/65/66 rechazados permanecen conservados.
+
+`verification.json` pasa las puertas de protecciones, profundidades, áreas, componentes, conexiones, pendientes,2038 anillos de nivel y ángulos. Incremento máximo del talud1,999999628grados; precisión residual de pliegue5,32894e-5grados, por debajo de la tolerancia preexistente1e-4. Una prueba con terreno obsoleto es rechazada. No constituye aceptación artística.
+
+`compiled-exposure.json` recorta triángulos reales de115 objetos compilados contra el terreno, incluyendo seis vecinos sin trasladar y extensión fuera de P/F. Diferencia de huella física0,00126022m² y visible0,00127058m² por precisión; cero agua nueva fuera del campo. `compiled-coverage.json` comprueba18024 instancias/13128 modelos/404484 celdas: cero hueco físico y residuo visible3,8464e-12m². Sus controles detectan un hueco de1cm. Oleaje y shader quedan fuera de esta prueba estática.
+
+La primera validación del WRP detectó27 diferencias por calcular la traslación con redondeo prematuro a float32. `stage-serialization-diagnosis.json` y `finalize_stage.py` verifican la escritura real con `struct.pack('<12f', ...)` sin reescribir el WRP. Se corrigió el comprobador para futuras ejecuciones; no se ignoraron bytes distintos.
+
+Paquete construido y desplegado en `P:/Mods/@DayZ_Baltic_VolkhovBedProposalV1`. Mundo `554db04d687834721111f4b6c3804e3ae88c1f39265bcc89b15cff96199b2b9b`; agua `3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14`. WRP compilado `7d8da3df3cc3bd2ae68a9a227375999caa554505acdea42195921d56d36f1124`. Solo cambia WRP respecto a EV67, las otras6826 entradas exactas. Texturas EV67 provisionales: regenerar sobre geometría final si se acepta el traslado.
+
+`proposal-layer.npz` reproduce byte a byte terreno/P/F desde EV61, comprobado en `layer-replay.json`. Terreno `1fc4fe267fa100697103ffb8fffd66b4c469cbf9cbd5be58ac33633022627444`. Trabajo pesado en `E:/DayZ-Baltic-Build/v30-volkhov-float-consistent-20261009`; no borrar sus árboles con junctions.
+
+Misión nueva `BalticVolkhovBedFullWaterV1.BalticTrial` preparada y validada:4194304 vértices,2173 puntos,2166 sondas de agua trasladada. **No ejecutada todavía**. El conector pasó de Transport closed a no publicar herramientas tras reabrirlo en Codex; no se lanzó un cliente alternativo ni se reinició el daemon. Sin run ni lease propios nuevos; la ocupación actual no está verificada. Tras recuperar MCP: verificar hashes, lanzar, leer censo completo y comparar Volkhov a la misma cámara; cerrar orderly y liberar lease. Después resolver excepción647/651 antes de promover.

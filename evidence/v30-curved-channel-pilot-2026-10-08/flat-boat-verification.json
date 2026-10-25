@@ -1,0 +1,101 @@
+{
+  "status": "PASS_EMPTY_BOAT_SELECTED_REGIONAL_SECTORS_BOTH_DIRECTIONS",
+  "global_checks": {
+    "header": true,
+    "all_cases_complete": true,
+    "exact_cases": true,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "river": "Narva_28 (flat R1)",
+      "reverse": false,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 330,
+      "max_dt_s": 0.5000000000000036,
+      "max_step_m": 0.7091159813076783,
+      "max_corridor_distance_m": 3.2732147427889764,
+      "max_waypoint_distance_m": 0.44426794577432144,
+      "end_distance_m": 3.2732147427889764,
+      "max_ground_error_m": 0.0001053267143094061,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 130.0
+    },
+    {
+      "case": 1,
+      "river": "Narva_28 (flat R1)",
+      "reverse": true,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 332,
+      "max_dt_s": 0.5020000000000095,
+      "max_step_m": 0.7010400148476649,
+      "max_corridor_distance_m": 3.252610036606172,
+      "max_waypoint_distance_m": 0.5414584212706435,
+      "end_distance_m": 3.252610036606172,
+      "max_ground_error_m": 0.00010693585965615426,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 131.502
+    }
+  ],
+  "limits": [
+    "Empty boat on one pilot reach, both directions.",
+    "Requires @BalticBoatInputProbe in the run.",
+    "No crew, turn or whole-river acceptance."
+  ],
+  "negative": {
+    "missing_terminal": true,
+    "missing_arrival": true,
+    "ground_offset": true,
+    "health_loss": true
+  },
+  "reference_sha256": "7573c5549392cc67585071efa332ae423fb535634e0461459d1ff47dc3e508e5",
+  "log_sha256": "b008cb3660db9e88f651665a0e52fdc8a027a204fd931fc4becaa070dad57869",
+  "terrain_sha256": "659ee234016bd261e240247fa1afb0cda004006ac5abb1795d38e8a44e412c1f",
+  "boat_input_pbo_sha256": "c5414ffe385eae5b85e1fe6dfef671db568d50a8eb11c74a3f4346f7c6417b2e"
+}

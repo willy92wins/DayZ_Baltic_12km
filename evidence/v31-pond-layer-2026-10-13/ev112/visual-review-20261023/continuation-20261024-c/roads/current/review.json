@@ -1,0 +1,102 @@
+{
+  "status": "FAIL",
+  "scope": "P11 offline terrain reservation; no physical roads or vehicle acceptance",
+  "terrain_sha256": "bc41bd8314affc5787e827b75fd7d03b7de454c0ffaae3a7476ccc7b609fd508",
+  "baseline_sha256": "07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62",
+  "water_sha256": "cad34a5da8a454c6ee5cdfa54ab6d3538fa396e428494774b29ecf6a4870df97",
+  "current": {
+    "chains": 102,
+    "samples": 77559,
+    "cross_fail": 11,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.47255586908123526,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 49,
+        "station_m": 1655.5738390674915,
+        "x": 5295.7,
+        "z": 5999.9,
+        "value": 0.4726
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "status": "FAIL",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "baseline_same_current_mask": {
+    "chains": 102,
+    "samples": 77559,
+    "cross_fail": 11,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.47255586908123526,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 49,
+        "station_m": 1655.5738390674915,
+        "x": 5295.7,
+        "z": 5999.9,
+        "value": 0.4726
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "status": "FAIL",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "sources": {
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-visual-consumers-20261024-a\\water1m.npy": "63b948e4877592820e0ca8997533d8e39a07ccdb451bcc3c9de06d3298048432",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\verify_roads_v30.py": "2be9af6502077230028e5501de3b5c06cb2855c544deebf6147c22ceb9f9b8f8",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tools\\navigation\\waterway_common.py": "9f4877ae80869a72f4a27b441d9cba98138127a29d409e82a15541432c0427a5",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz": "94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\road-grade-chains-v6.json": "b31fb7d72398981ee98132ce59eab48c4aa404043718475fbb2725b13de1b824"
+  },
+  "limits": [
+    "6m vertex distance mask, conservative wet sampling; exact bridge/river overlaps excluded by existing contract.",
+    "Physical mapping, endpoint/junction aprons and wet crossings are outside this gate; no vehicle run."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+ "schema": "causeway-acceptance.v1",
+ "frozen": "2026-10-17",
+ "basis": {
+  "terrain": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/terrain-ev110.npz",
+  "terrain_sha256": "d25e9428ed39cebcef0c3b3885e23d8e397b67261846775ecdbc238fdde520e6",
+  "roads": "verify_roads_v30.road_chains (tests/regional_foundation_roads_v6/reference.npz 94ecbca6..., evidence/regional-foundation-v1/road-grade-chains-v6.json b31fb7d7...)"
+ },
+ "derivation": "The 8 points of the orchestrator's map census (scratchpad causeways.py). Causeway intervals: dry road stations with engine water within 30 m on both sides, 1 m stations, gaps <= 5 m closed, runs >= 60 m, on the basis terrain. Two independent derivations agree: causeway_v31 census (round 1 report) and the review 1 recensus (chain-and-classification.json: c0 chain 104 890-1507, c1 chain 62 87-475). The short runs of c2-c7 are the review 1 recensus on the same terrain.",
+ "clusters": [
+  {"id": "c0", "x": 7286, "z": 10693, "class": "causeway", "chain": 104, "s0": 890.0, "s1": 1507.0,
+   "geometry": "east islet causeway, sea on both sides (617 m)", "rule": "causeway"},
+  {"id": "c1", "x": 6789, "z": 10357, "class": "causeway", "chain": 62, "s0": 87.0, "s1": 475.0,
+   "geometry": "south islet causeway, sea on both sides (388 m)", "rule": "causeway"},
+  {"id": "c2", "x": 10235, "z": 9398, "class": "road along a sea channel",
+   "longest_bilateral_run": {"chain": 3, "s0": 1409.0, "s1": 1444.0, "length_m": 35.0},
+   "geometry": "chain 3 runs beside a sea channel with the far bank within 30 m for 35 m; no embankment between two seas",
+   "rule": "untouched by this pass; shoreline belongs to the shores/streams tracks", "approval": null},
+  {"id": "c3", "x": 8568, "z": 10414, "class": "stream crossing",
+   "longest_bilateral_run": {"chain": 105, "s0": 234.0, "s1": 240.0, "length_m": 6.0},
+   "geometry": "chain 105 crosses a stream channel; water on both sides for 6 m only",
+   "rule": "untouched by this pass; crossings belong to the bridges track (BALTIC-015)", "approval": null},
+  {"id": "c4", "x": 10417, "z": 9426, "class": "road along a sea channel",
+   "longest_bilateral_run": {"chain": 3, "s0": 1623.0, "s1": 1634.0, "length_m": 11.0},
+   "geometry": "chain 3 beside the same sea channel as c2; 11 m bilateral run",
+   "rule": "untouched by this pass; shoreline belongs to the shores/streams tracks", "approval": null},
+  {"id": "c5", "x": 8227, "z": 10468, "class": "coastal road with a pond inland",
+   "longest_bilateral_run": {"chain": 104, "s0": 135.0, "s1": 172.0, "length_m": 37.0, "right_pond_frac": 1.0},
+   "geometry": "sea on one side, a footprint pond on the other for 37 m; an embankment would face a pond",
+   "rule": "untouched by this pass; sea side belongs to the shores track, pond side to the pond layer", "approval": null},
+  {"id": "c6", "x": 3588, "z": 6867, "class": "river junction crossing",
+   "longest_bilateral_run": {"chain": 18, "s0": 54.0, "s1": 86.0, "length_m": 32.0},
+   "geometry": "chain 18 at a river bend and road junction; 32 m bilateral run",
+   "rule": "untouched by this pass; river crossings belong to the bridges and streams tracks", "approval": null},
+  {"id": "c7", "x": 9678, "z": 2661, "class": "pond river beside the road",
+   "longest_bilateral_run": null,
+   "geometry": "a pond river (footprint) runs beside the road; no station with water on both sides",
+   "rule": "untouched by this pass; pond rivers belong to the pond layer ('arroyos pegados a carretera')", "approval": null}
+ ]
+}

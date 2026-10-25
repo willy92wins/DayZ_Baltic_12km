@@ -1,0 +1,5 @@
+# EV32 — detalle nativo, sin arreglo promovido
+
+En EV28 exacto, una secuencia original medio(indice2) -> extremo(4) -> Revert(2) conserva la camara cerca de las charcas residuales. El acceso nativo confirma cambio aplicado, sin reinicio, y restauracion sin estado pendiente. Seis capturas distintas por fase abarcan varios ciclos de ola. El aspecto cambia, pero persisten halos; no se propone subir el detalle del usuario como arreglo del mapa. Las olas no se sincronizan exactamente; summary.json conserva la comparacion de envolventes y un control seco, sin convertir una diferencia de fase en causa aislada.
+
+Perfil completo exacto por SHA, mapa/agua exactos. Cierre orderly y banco libre. No se modifican preferencias persistentes, vanilla, terreno ni materiales. Dos solicitudes iniciales de arranque fueron rechazadas por mission_not_allowed (ruta no normalizada/nombre no alias); se corrigen leyendo dayz_test_request.py y pasando la ruta absoluta Windows canonica. Ninguna de esas solicitudes inicio procesos.

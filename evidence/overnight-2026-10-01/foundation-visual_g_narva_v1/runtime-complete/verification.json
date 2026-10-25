@@ -1,0 +1,72 @@
+{
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 3,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Narva approach player",
+        "samples": 25,
+        "avg64_median": 235.294,
+        "avg64_range": [
+          74.5052,
+          239.7
+        ],
+        "native_min64_min": 7.93651,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      },
+      {
+        "phase": 1,
+        "name": "Narva medium",
+        "samples": 25,
+        "avg64_median": 227.758,
+        "avg64_range": [
+          72.3164,
+          240.602
+        ],
+        "native_min64_min": 30.303,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      },
+      {
+        "phase": 2,
+        "name": "Narva aerial",
+        "samples": 25,
+        "avg64_median": 232.727,
+        "avg64_range": [
+          70.4846,
+          240.602
+        ],
+        "native_min64_min": 18.1818,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Fixed 23-28s capture interval omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "sha256": {
+    "reference.json": "f8dbe2f50aa8a10d0e39f9ab935c76146fefcec722b99999d4b060676f6d34ed",
+    "camera.log": "3062d7607f2aa3c5b7c9c28f153e1c9b046272460b592aaa37c754323d6ac4f4",
+    "client-metrics.log": "b452fc3dda52b55f7e1f117f2ae8f40628dea2d8d969a353cac32702e5085d6c"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "geometry_status": "FAIL_OR_INCOMPLETE",
+  "checks": {
+    "correct_header": true,
+    "correct_ASC_marker": true,
+    "terminated_record": false,
+    "coordinates_exact_and_unique": true,
+    "terrain_error_le_5_1mm": true,
+    "old_terrain_rejected": true,
+    "all_channel_points_flagged_sea": true,
+    "measured_water_range_matches_design": true,
+    "conservative_depth_ge_3m": true,
+    "three_decks_at_9m": true
+  },
+  "log_sha256": "5ac5f30058d7a2ee43f8a174705e97f086f474a3804d8233c0fb1539fbe6df8d",
+  "candidate_sha256": "c1f23f24808cb6f1ff858f47a378f6bdf8211387f63c110a12ff72fd3bd82d3c",
+  "terrain_samples": 172,
+  "max_terrain_error_m": 9.536743172944284e-08,
+  "old_ASC_max_error_m": 4.65,
+  "water_min_max_current": [
+    0.5,
+    1.0,
+    0.98245
+  ],
+  "deck_world_points": [
+    [
+      2392.433594,
+      9.0,
+      6893.6875
+    ],
+    [
+      2417.142822,
+      9.0,
+      6889.885254
+    ],
+    [
+      2441.852051,
+      9.0,
+      6886.08252
+    ]
+  ],
+  "motion": {
+    "status": "INCONCLUSIVE_CONTROL_OR_PHYSICS",
+    "samples": 151,
+    "end_reason": null,
+    "horizontal_distance_from_first_m": 55.8662268280226,
+    "maximum_horizontal_step_m": 0.6389053137992601,
+    "health_first_min_last": [
+      600.0,
+      600.0,
+      600.0
+    ],
+    "engine_on_samples": 131,
+    "max_speed_m_s": 1.26836,
+    "max_reported_throttle": 0.0,
+    "highest_target_index": 8,
+    "first_position": [
+      2429.37,
+      0.512224,
+      6843.32
+    ],
+    "last_position": [
+      2423.25,
+      0.710521,
+      6898.85
+    ]
+  },
+  "limits": [
+    "No native TB persistence proof.",
+    "Ground is measured at channel support vertices; collision mesh was not queried.",
+    "Boat is empty; no crew, return journey, whole-river or AI acceptance.",
+    "Bootstrap navmesh is stale for this geometry."
+  ]
+}

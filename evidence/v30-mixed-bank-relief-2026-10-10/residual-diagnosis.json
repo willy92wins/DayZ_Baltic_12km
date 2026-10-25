@@ -1,0 +1,852 @@
+{
+  "status": "OFFLINE_RESIDUAL_DIAGNOSIS",
+  "source_candidate_sha256": {
+    "ev79_source": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "ev80_candidate": "0a18c5623885eed274cfe7d296e02aba290ed491b835d317213fc7876b2fc45b",
+    "ev80_consumer_report_candidate": "0a18c5623885eed274cfe7d296e02aba290ed491b835d317213fc7876b2fc45b"
+  },
+  "consumer_report_sha256": "1f93c335d78d572de3a5c020c09d0cc397951cdb88b33f45ee1af144f3d0a60e",
+  "scope": {
+    "residual_definition": "candidate dihedral angle >30 degrees AND mixed_any = incident_any(EV80 consumer bank mask) AND incident_any(source-native wet-support mask)",
+    "bank_mask": "cls==0, no wet support/source water/beach/reserve/platform, within 96 m of cls 3/5/6",
+    "editability": "source-reconstructed EV80 selector vertex (class 0, bank-domain, not any EV79 fixed mask, incident to source dihedral >30); selector uses one-pass authored nodal sweep",
+    "mask_causes_are_nonexclusive": true,
+    "river_label_limit": "nearest class 3/5/6 cell only; no hydrological component names inferred"
+  },
+  "counts": {
+    "candidate_mixed_any_over30": 3384,
+    "by_kind": {
+      "diagonal": 2176,
+      "vertical": 605,
+      "horizontal": 603
+    },
+    "with_any_selector_vertex": 3167,
+    "without_selector_vertex": 217,
+    "participant_state": {
+      "no_selector_protected_bank": 217,
+      "selector_no_edit": 1753,
+      "selector_edit_only": 1325,
+      "selector_mixed_edit_unedited": 89
+    },
+    "participant_state_by_kind": {
+      "diagonal": {
+        "no_selector_protected_bank": 90,
+        "selector_no_edit": 1135,
+        "selector_edit_only": 947,
+        "selector_mixed_edit_unedited": 4
+      },
+      "vertical": {
+        "no_selector_protected_bank": 51,
+        "selector_no_edit": 322,
+        "selector_edit_only": 187,
+        "selector_mixed_edit_unedited": 45
+      },
+      "horizontal": {
+        "no_selector_protected_bank": 76,
+        "selector_no_edit": 296,
+        "selector_edit_only": 191,
+        "selector_mixed_edit_unedited": 40
+      }
+    },
+    "selector_vertex_count_across_hinges": 3217,
+    "changed_selector_vertex_count_across_hinges": 1409,
+    "unchanged_selector_vertex_count_across_hinges": 1808,
+    "authoring_rejected_reasons_aggregate_only": {
+      "accepted": 2591,
+      "benefit_below_material_floor": 324,
+      "float32_bank_p99_rejected": 1275,
+      "float32_new_over30_rejected": 82,
+      "empty_hinge_component": 22,
+      "float32_sector_rejected": 34,
+      "float32_slope_rejected": 1
+    },
+    "state_intersections": {
+      "with_unedited_selector_corner": 1842,
+      "with_edited_selector_corner": 1414,
+      "both_edited_and_unedited": 89,
+      "selector_but_no_accepted_edit": 1753
+    },
+    "source_angle_le_30.0001_but_candidate_over30": 2,
+    "selector_but_no_accepted_edit": 1753,
+    "interpretation_of_float32_bank_p99_rejected": {
+      "count": 1275,
+      "meaning": "Post-float32 direct cross-product comparison rejected a proposed nodal value because at least one originally-under-p99 bank hinge exceeded the EV79 p99 cap by more than 2e-8 degrees.",
+      "not_proven": "No per-node margins or alternate nextafter probes were retained in authoring.json; therefore these are not yet classified as quantization-only, and they do not prove geometric infeasibility under another value."
+    },
+    "float32_bank_p99_rejection_probe": {
+      "rejected_originally": 1275,
+      "one_ulp_toward_previous_height_passed_all_local_direct_invariants": 1275,
+      "two_ulp_toward_previous_height_passed_all_local_direct_invariants": 1275,
+      "p99_bank_ev79_deg": 5.004892938026179,
+      "strict_tolerance_deg": 2e-08,
+      "replay_status": "REPLAY_EXACT",
+      "replay_report": "numeric-boundary-replay.json"
+    }
+  },
+  "top_10_connected_areas_8_neighbor": [
+    {
+      "component_id": 425,
+      "hinges": 16,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 732,
+        "edge_col": 1500,
+        "x_m": 9003.0,
+        "z_m": 7887.0,
+        "angle_deg": 46.35371447311574,
+        "nearest_flow_cell": {
+          "row": 732,
+          "col": 1499,
+          "class": 5,
+          "x_m": 8994,
+          "z_m": 7890,
+          "distance_m": 6.0
+        }
+      },
+      "mean_x_m": 9006.375,
+      "mean_z_m": 7888.875,
+      "by_kind": {
+        "diagonal": 6,
+        "vertical": 4,
+        "horizontal": 6
+      },
+      "with_selector": 16,
+      "without_selector": 0
+    },
+    {
+      "component_id": 1846,
+      "hinges": 15,
+      "peak": {
+        "kind": "horizontal",
+        "edge_row": 1907,
+        "edge_col": 149,
+        "x_m": 897.0,
+        "z_m": 834,
+        "angle_deg": 55.21927659730664,
+        "nearest_flow_cell": {
+          "row": 1909,
+          "col": 150,
+          "class": 6,
+          "x_m": 900,
+          "z_m": 828,
+          "distance_m": 6.0
+        }
+      },
+      "mean_x_m": 902.8,
+      "mean_z_m": 837.6,
+      "by_kind": {
+        "diagonal": 5,
+        "vertical": 1,
+        "horizontal": 9
+      },
+      "with_selector": 0,
+      "without_selector": 15
+    },
+    {
+      "component_id": 378,
+      "hinges": 15,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 686,
+        "edge_col": 2036,
+        "x_m": 12219.0,
+        "z_m": 8163.0,
+        "angle_deg": 52.03201453467279,
+        "nearest_flow_cell": {
+          "row": 686,
+          "col": 2035,
+          "class": 6,
+          "x_m": 12210,
+          "z_m": 8166,
+          "distance_m": 6.0
+        }
+      },
+      "mean_x_m": 12216.2,
+      "mean_z_m": 8158.4,
+      "by_kind": {
+        "diagonal": 6,
+        "vertical": 8,
+        "horizontal": 1
+      },
+      "with_selector": 7,
+      "without_selector": 8
+    },
+    {
+      "component_id": 299,
+      "hinges": 14,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 590,
+        "edge_col": 2001,
+        "x_m": 12009.0,
+        "z_m": 8739.0,
+        "angle_deg": 52.373115047071565,
+        "nearest_flow_cell": {
+          "row": 590,
+          "col": 2002,
+          "class": 6,
+          "x_m": 12012,
+          "z_m": 8742,
+          "distance_m": 0.0
+        }
+      },
+      "mean_x_m": 12038.57142857143,
+      "mean_z_m": 8700.42857142857,
+      "by_kind": {
+        "diagonal": 12,
+        "horizontal": 2
+      },
+      "with_selector": 14,
+      "without_selector": 0
+    },
+    {
+      "component_id": 1565,
+      "hinges": 14,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 1739,
+        "edge_col": 989,
+        "x_m": 5937.0,
+        "z_m": 1845.0,
+        "angle_deg": 45.036631447624025,
+        "nearest_flow_cell": {
+          "row": 1741,
+          "col": 990,
+          "class": 5,
+          "x_m": 5940,
+          "z_m": 1836,
+          "distance_m": 6.0
+        }
+      },
+      "mean_x_m": 5931.0,
+      "mean_z_m": 1840.9285714285713,
+      "by_kind": {
+        "diagonal": 5,
+        "vertical": 4,
+        "horizontal": 5
+      },
+      "with_selector": 14,
+      "without_selector": 0
+    },
+    {
+      "component_id": 2012,
+      "hinges": 12,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 2036,
+        "edge_col": 800,
+        "x_m": 4803.0,
+        "z_m": 63.0,
+        "angle_deg": 57.519443113691786,
+        "nearest_flow_cell": {
+          "row": 2036,
+          "col": 799,
+          "class": 6,
+          "x_m": 4794,
+          "z_m": 66,
+          "distance_m": 6.0
+        }
+      },
+      "mean_x_m": 4799.5,
+      "mean_z_m": 60.0,
+      "by_kind": {
+        "diagonal": 4,
+        "vertical": 2,
+        "horizontal": 6
+      },
+      "with_selector": 2,
+      "without_selector": 10
+    },
+    {
+      "component_id": 668,
+      "hinges": 11,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 987,
+        "edge_col": 2037,
+        "x_m": 12225.0,
+        "z_m": 6357.0,
+        "angle_deg": 54.64236360832564,
+        "nearest_flow_cell": {
+          "row": 987,
+          "col": 2036,
+          "class": 6,
+          "x_m": 12216,
+          "z_m": 6360,
+          "distance_m": 13.416407864998739
+        }
+      },
+      "mean_x_m": 12221.727272727272,
+      "mean_z_m": 6358.363636363636,
+      "by_kind": {
+        "diagonal": 6,
+        "vertical": 2,
+        "horizontal": 3
+      },
+      "with_selector": 4,
+      "without_selector": 7
+    },
+    {
+      "component_id": 1894,
+      "hinges": 11,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 1953,
+        "edge_col": 339,
+        "x_m": 2037.0,
+        "z_m": 561.0,
+        "angle_deg": 47.23751758131798,
+        "nearest_flow_cell": {
+          "row": 1953,
+          "col": 338,
+          "class": 5,
+          "x_m": 2028,
+          "z_m": 564,
+          "distance_m": 13.416407864998739
+        }
+      },
+      "mean_x_m": 2032.090909090909,
+      "mean_z_m": 554.1818181818181,
+      "by_kind": {
+        "diagonal": 4,
+        "vertical": 4,
+        "horizontal": 3
+      },
+      "with_selector": 11,
+      "without_selector": 0
+    },
+    {
+      "component_id": 1853,
+      "hinges": 10,
+      "peak": {
+        "kind": "horizontal",
+        "edge_row": 1911,
+        "edge_col": 148,
+        "x_m": 891.0,
+        "z_m": 810,
+        "angle_deg": 56.231642009695236,
+        "nearest_flow_cell": {
+          "row": 1911,
+          "col": 148,
+          "class": 6,
+          "x_m": 888,
+          "z_m": 816,
+          "distance_m": 6.0
+        }
+      },
+      "mean_x_m": 891.6,
+      "mean_z_m": 810.0,
+      "by_kind": {
+        "diagonal": 2,
+        "horizontal": 8
+      },
+      "with_selector": 0,
+      "without_selector": 10
+    },
+    {
+      "component_id": 2001,
+      "hinges": 10,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 2030,
+        "edge_col": 803,
+        "x_m": 4821.0,
+        "z_m": 99.0,
+        "angle_deg": 41.73440181165203,
+        "nearest_flow_cell": {
+          "row": 2031,
+          "col": 805,
+          "class": 6,
+          "x_m": 4830,
+          "z_m": 96,
+          "distance_m": 8.48528137423857
+        }
+      },
+      "mean_x_m": 4831.2,
+      "mean_z_m": 111.6,
+      "by_kind": {
+        "diagonal": 4,
+        "vertical": 4,
+        "horizontal": 2
+      },
+      "with_selector": 10,
+      "without_selector": 0
+    }
+  ],
+  "top_10_64x64_sectors": [
+    {
+      "sector_row": 29,
+      "sector_col": 2,
+      "sector_size_m": 384,
+      "hinges": 82,
+      "peak": {
+        "kind": "horizontal",
+        "edge_row": 1911,
+        "edge_col": 148,
+        "x_m": 891.0,
+        "z_m": 810,
+        "angle_deg": 56.231642009695236,
+        "nearest_flow_cell": {
+          "row": 1911,
+          "col": 148,
+          "class": 6,
+          "x_m": 888,
+          "z_m": 816,
+          "distance_m": 6.0
+        }
+      },
+      "with_selector": 45,
+      "without_selector": 37,
+      "by_kind": {
+        "diagonal": 19,
+        "vertical": 13,
+        "horizontal": 50
+      }
+    },
+    {
+      "sector_row": 16,
+      "sector_col": 15,
+      "sector_size_m": 384,
+      "hinges": 62,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 1083,
+        "edge_col": 1004,
+        "x_m": 6027.0,
+        "z_m": 5781.0,
+        "angle_deg": 49.42196391170036,
+        "nearest_flow_cell": {
+          "row": 1083,
+          "col": 1005,
+          "class": 6,
+          "x_m": 6030,
+          "z_m": 5784,
+          "distance_m": 8.48528137423857
+        }
+      },
+      "with_selector": 62,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 47,
+        "vertical": 5,
+        "horizontal": 10
+      }
+    },
+    {
+      "sector_row": 10,
+      "sector_col": 12,
+      "sector_size_m": 384,
+      "hinges": 50,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 687,
+        "edge_col": 817,
+        "x_m": 4905.0,
+        "z_m": 8157.0,
+        "angle_deg": 46.656966950859285,
+        "nearest_flow_cell": {
+          "row": 687,
+          "col": 818,
+          "class": 6,
+          "x_m": 4908,
+          "z_m": 8160,
+          "distance_m": 6.0
+        }
+      },
+      "with_selector": 50,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 49,
+        "vertical": 1
+      }
+    },
+    {
+      "sector_row": 31,
+      "sector_col": 13,
+      "sector_size_m": 384,
+      "hinges": 50,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 1996,
+        "edge_col": 846,
+        "x_m": 5079.0,
+        "z_m": 303.0,
+        "angle_deg": 44.864481548150756,
+        "nearest_flow_cell": {
+          "row": 1996,
+          "col": 845,
+          "class": 6,
+          "x_m": 5070,
+          "z_m": 306,
+          "distance_m": 6.0
+        }
+      },
+      "with_selector": 50,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 36,
+        "vertical": 7,
+        "horizontal": 7
+      }
+    },
+    {
+      "sector_row": 29,
+      "sector_col": 15,
+      "sector_size_m": 384,
+      "hinges": 47,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 1866,
+        "edge_col": 973,
+        "x_m": 5841.0,
+        "z_m": 1083.0,
+        "angle_deg": 48.60377962755139,
+        "nearest_flow_cell": {
+          "row": 1867,
+          "col": 973,
+          "class": 6,
+          "x_m": 5838,
+          "z_m": 1080,
+          "distance_m": 8.48528137423857
+        }
+      },
+      "with_selector": 47,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 35,
+        "vertical": 7,
+        "horizontal": 5
+      }
+    },
+    {
+      "sector_row": 28,
+      "sector_col": 3,
+      "sector_size_m": 384,
+      "hinges": 42,
+      "peak": {
+        "kind": "vertical",
+        "edge_row": 1830,
+        "edge_col": 249,
+        "x_m": 1500,
+        "z_m": 1299.0,
+        "angle_deg": 43.934379656263665,
+        "nearest_flow_cell": {
+          "row": 1830,
+          "col": 249,
+          "class": 6,
+          "x_m": 1494,
+          "z_m": 1302,
+          "distance_m": 6.0
+        }
+      },
+      "with_selector": 42,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 13,
+        "vertical": 27,
+        "horizontal": 2
+      }
+    },
+    {
+      "sector_row": 17,
+      "sector_col": 28,
+      "sector_size_m": 384,
+      "hinges": 41,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 1133,
+        "edge_col": 1822,
+        "x_m": 10935.0,
+        "z_m": 5481.0,
+        "angle_deg": 45.00748087837594,
+        "nearest_flow_cell": {
+          "row": 1134,
+          "col": 1821,
+          "class": 6,
+          "x_m": 10926,
+          "z_m": 5478,
+          "distance_m": 6.0
+        }
+      },
+      "with_selector": 41,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 22,
+        "vertical": 13,
+        "horizontal": 6
+      }
+    },
+    {
+      "sector_row": 29,
+      "sector_col": 3,
+      "sector_size_m": 384,
+      "hinges": 39,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 1866,
+        "edge_col": 203,
+        "x_m": 1221.0,
+        "z_m": 1083.0,
+        "angle_deg": 47.32439785873653,
+        "nearest_flow_cell": {
+          "row": 1867,
+          "col": 205,
+          "class": 6,
+          "x_m": 1230,
+          "z_m": 1080,
+          "distance_m": 8.48528137423857
+        }
+      },
+      "with_selector": 39,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 11,
+        "vertical": 9,
+        "horizontal": 19
+      }
+    },
+    {
+      "sector_row": 15,
+      "sector_col": 14,
+      "sector_size_m": 384,
+      "hinges": 38,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 964,
+        "edge_col": 910,
+        "x_m": 5463.0,
+        "z_m": 6495.0,
+        "angle_deg": 47.96952333623668,
+        "nearest_flow_cell": {
+          "row": 964,
+          "col": 909,
+          "class": 6,
+          "x_m": 5454,
+          "z_m": 6498,
+          "distance_m": 6.0
+        }
+      },
+      "with_selector": 38,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 37,
+        "vertical": 1
+      }
+    },
+    {
+      "sector_row": 17,
+      "sector_col": 5,
+      "sector_size_m": 384,
+      "hinges": 38,
+      "peak": {
+        "kind": "diagonal",
+        "edge_row": 1114,
+        "edge_col": 350,
+        "x_m": 2103.0,
+        "z_m": 5595.0,
+        "angle_deg": 46.909457379496196,
+        "nearest_flow_cell": {
+          "row": 1116,
+          "col": 351,
+          "class": 5,
+          "x_m": 2106,
+          "z_m": 5586,
+          "distance_m": 13.416407864998739
+        }
+      },
+      "with_selector": 38,
+      "without_selector": 0,
+      "by_kind": {
+        "diagonal": 11,
+        "vertical": 17,
+        "horizontal": 10
+      }
+    }
+  ],
+  "limits": [
+    "Mask causes are reported by endpoint overlap and may overlap; they do not prove a unique root cause.",
+    "Per-node reject reasons were not retained in authoring.json; unchanged selector vertices mean unaccepted in the one-pass sweep, but the exact reject reason is not locatable from current artifacts.",
+    "This reads geometry, masks, and the independent EV80 consumer report only; no candidate or terrain was written.",
+    "A selected vertex is a degree-of-freedom opportunity under the EV80 selector, not proof that a feasible improving change exists under all angular and distribution constraints.",
+    "La sonda de frontera prueba rescate local de los 1275 rechazos p99 con un ULP en el estado secuencial de visita; no prueba aplicar simultaneamente esos cambios ni guarda el margen p99 original por coordenada."
+  ],
+  "figure": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-constrained-20261010\\residual-diagnosis.png",
+    "sha256": "1affbb70e3c74e11bb129677968cc057f3c053c34595fedc13df98c7fa3cfe03",
+    "description": "Plan view; flow classes 3/5/6, 2,591 modified height vertices and 3,384 candidate residual mixed hinges split by source-reconstructed EV80 selector (3,167/217); no vertical exaggeration and not a DayZ render."
+  },
+  "no_selector_bank_corner_status": {
+    "all_bank_corners_protected": 217
+  },
+  "no_selector_bank_mask_hits_nonexclusive": {
+    "border11": 45,
+    "controls": 25,
+    "engineering_halo_only": 90,
+    "large_lakes": 59
+  },
+  "no_selector_full_hinge_context_nonexclusive": {
+    "border11": 45,
+    "class_nonzero": 153,
+    "water_mask": 153,
+    "outside_bank_domain": 153,
+    "wet_support": 217,
+    "controls": 25,
+    "engineering_halo_only": 90,
+    "engineering_core": 64,
+    "corridor24": 14,
+    "large_lakes": 59
+  },
+  "no_selector_bank_mask_combinations": [
+    {
+      "combination": "engineering_halo_only",
+      "hinges": 88
+    },
+    {
+      "combination": "large_lakes",
+      "hinges": 59
+    },
+    {
+      "combination": "border11",
+      "hinges": 45
+    },
+    {
+      "combination": "controls",
+      "hinges": 23
+    },
+    {
+      "combination": "engineering_halo_only + controls",
+      "hinges": 2
+    }
+  ],
+  "no_selector_by_kind_corrected": {
+    "diagonal": {
+      "count": 90,
+      "bank_corner_count_distribution": {
+        "1": 77,
+        "2": 10,
+        "3": 3
+      },
+      "bank_corner_blockers_nonexclusive": {
+        "engineering_core": 0,
+        "engineering_halo_only": 39,
+        "corridor24": 0,
+        "controls": 17,
+        "large_lakes": 19,
+        "border11": 17,
+        "summits": 0,
+        "class_nonzero": 0,
+        "water_mask": 0,
+        "beach": 0,
+        "outside_bank_domain": 0,
+        "wet_support": 0
+      },
+      "full_hinge_context_nonexclusive": {
+        "engineering_core": 21,
+        "engineering_halo_only": 39,
+        "corridor24": 4,
+        "controls": 17,
+        "large_lakes": 19,
+        "border11": 17,
+        "summits": 0,
+        "class_nonzero": 50,
+        "water_mask": 50,
+        "beach": 0,
+        "outside_bank_domain": 50,
+        "wet_support": 90
+      }
+    },
+    "vertical": {
+      "count": 51,
+      "bank_corner_count_distribution": {
+        "1": 46,
+        "2": 4,
+        "3": 1
+      },
+      "bank_corner_blockers_nonexclusive": {
+        "engineering_core": 0,
+        "engineering_halo_only": 26,
+        "corridor24": 0,
+        "controls": 2,
+        "large_lakes": 6,
+        "border11": 17,
+        "summits": 0,
+        "class_nonzero": 0,
+        "water_mask": 0,
+        "beach": 0,
+        "outside_bank_domain": 0,
+        "wet_support": 0
+      },
+      "full_hinge_context_nonexclusive": {
+        "engineering_core": 23,
+        "engineering_halo_only": 26,
+        "corridor24": 5,
+        "controls": 2,
+        "large_lakes": 6,
+        "border11": 17,
+        "summits": 0,
+        "class_nonzero": 41,
+        "water_mask": 41,
+        "beach": 0,
+        "outside_bank_domain": 41,
+        "wet_support": 51
+      }
+    },
+    "horizontal": {
+      "count": 76,
+      "bank_corner_count_distribution": {
+        "1": 66,
+        "2": 3,
+        "3": 7
+      },
+      "bank_corner_blockers_nonexclusive": {
+        "engineering_core": 0,
+        "engineering_halo_only": 25,
+        "corridor24": 0,
+        "controls": 6,
+        "large_lakes": 34,
+        "border11": 11,
+        "summits": 0,
+        "class_nonzero": 0,
+        "water_mask": 0,
+        "beach": 0,
+        "outside_bank_domain": 0,
+        "wet_support": 0
+      },
+      "full_hinge_context_nonexclusive": {
+        "engineering_core": 20,
+        "engineering_halo_only": 25,
+        "corridor24": 5,
+        "controls": 6,
+        "large_lakes": 34,
+        "border11": 11,
+        "summits": 0,
+        "class_nonzero": 62,
+        "water_mask": 62,
+        "beach": 0,
+        "outside_bank_domain": 62,
+        "wet_support": 76
+      }
+    }
+  },
+  "incidence_fixture": {
+    "status": "PASS",
+    "one_hot_masks_four_corners": {
+      "diagonal": true,
+      "vertical": true,
+      "horizontal": true
+    },
+    "vertical_wrong_corner_r_c_plus_2": false,
+    "triangle_pair_direct_check": {
+      "diagonal": true,
+      "vertical": true,
+      "horizontal": true
+    },
+    "notes": "Para cada orientacion se compararon las dos caras que comparten la arista con formula de producto vectorial directo y el mapa edge_angles del consumidor; en vertical la esquina exterior correcta es (r+1,c+2).",
+    "direct_pair_angles_deg": {
+      "diagonal": 56.777769586649484,
+      "vertical": 16.612998887359897,
+      "horizontal": 10.762390309720915
+    },
+    "max_abs_delta_vs_consumer_deg": 0.0
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "status": "PASS_LOCAL_ABOVEP_MECHANISM_AUDIT",
+  "limitations": [
+    "Two targeted examples only; not a census of all aboveP records.",
+    "0WZD transforms are used as serialized source inputs, not DayZ runtime readback.",
+    "Nonvisual MLOD byte equality is independent source-to-generated-MLOD evidence; it does not prove how the engine rasterizes the seam.",
+    "Report-level physical growthoutside totals remain separate and are not attributed entirely to these examples."
+  ],
+  "inputs": {
+    "coverage_report_sha256": "079557bc0419bad0ed35c1472e34fad7e4e27089229c26403d95a7dd498fb2b9",
+    "raw_geometry_report_sha256": "92aa30ca697547aedb9a515d8441bffebd58b32dae4b1bb179f9ba6adf6987c1",
+    "wrp_sha256": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "plane_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "B_candidate_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "H_candidate_sha256": "a7146c27a634d3ee59bc4c2763d71050da3172724c4f2620a17fce0775fcf020",
+    "authoring_ledger_sha256": "d2da36f2f4334cfc68a4088dd12c020eb4b4047dbae555cd87e8ab912fa557b4",
+    "compiled_ODOL_sha256": {
+      "16799644": "304e37d4bd586b99611f8db98d14d30a8eae2f58e23f3e4d83a30196228a2cb4",
+      "16800008": "c06a5a475d5556f6dd5a3e3009b98c767ea9af1e032a640d40fbdec886a93d76"
+    }
+  },
+  "cases": [
+    {
+      "object_id": 16799644,
+      "cell": [
+        1359,
+        300
+      ],
+      "triangle": 0,
+      "face_index_in_ODOL": 6,
+      "vertex_ids": [
+        6,
+        3,
+        0
+      ],
+      "physical_lod_resolution": 3000000028082176.0,
+      "odol_model_path": "E:\\DayZ-Baltic-Build\\v30-native-terminal-finish-20261009\\package\\water\\temp\\baltic_water_v30\\globalvis_16799644.p3d",
+      "odol_sha256": "304e37d4bd586b99611f8db98d14d30a8eae2f58e23f3e4d83a30196228a2cb4",
+      "wrp_matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1800.0,
+        1.4374998807907104,
+        4116.0048828125
+      ],
+      "world_vertices_xyz": [
+        [
+          1806.0,
+          1.4500000309199095,
+          4127.999882698059
+        ],
+        [
+          1792.0,
+          1.4500000309199095,
+          4127.999882698059
+        ],
+        [
+          1792.0,
+          1.4500000309199095,
+          4128.009882926941
+        ]
+      ],
+      "face_footprint_area_in_cell_triangle_m2": 0.0006941731643448185,
+      "cell_bounds_xz": [
+        1800.0,
+        4122.0,
+        1806.0,
+        4128.0
+      ],
+      "target_P_m": 1.425,
+      "neighbor_P_m": {
+        "north": 1.4500000000000002,
+        "south": 1.425,
+        "west": 1.425,
+        "east": 1.4500000000000002
+      },
+      "face_y_range_m": [
+        1.4500000309199095,
+        1.4500000309199095
+      ],
+      "surface_minus_target_P_m": 0.025000030919909433,
+      "expected_report_area_B_m2": 0.0006941731643448185,
+      "expected_report_area_H_m2": 0.0006941731643448185,
+      "expected_report_max_excess_m": 0.0249900309199094,
+      "recomputed_from_ODOL_and_B_H": {
+        "B": {
+          "ground_corner_heights_m": [
+            1.0,
+            1.3393683433532715,
+            1.5344412326812744
+          ],
+          "exposed_area_m2": 0.0006941731643448185,
+          "above_P_area_m2": 0.0006941731643448185,
+          "above_P_max_excess_m": 0.024990030919909433
+        },
+        "H": {
+          "ground_corner_heights_m": [
+            1.0,
+            1.3393683433532715,
+            1.5344412326812744
+          ],
+          "exposed_area_m2": 0.0006941731643448185,
+          "above_P_area_m2": 0.0006941731643448185,
+          "above_P_max_excess_m": 0.024990030919909433
+        }
+      },
+      "source_record": {
+        "old_model": "edge_00722.p3d",
+        "old_mlod_sha256": "f2e007d87dedb6fa12f75ce0a377d4ab2c31554c2aa38a47c053d284d38e4f96",
+        "new_model": "globalvis_16799644.p3d",
+        "new_sha256": "a20137abd94854d39bdd1b5b63e18bc337ad371b5bd0ff0c910c62e9a9656bbc",
+        "origin": [
+          1800.0,
+          1.4500000476837158,
+          4103.999882698059
+        ],
+        "old_center": [
+          0.0,
+          0.0,
+          12.005000114440918
+        ],
+        "nonvisual_mlod_bytes_exact": true,
+        "max_all_geometry_delta_m": 0.025000292062759444,
+        "footprint_error_m2": 0.0
+      },
+      "nonvisual_LODs_exact_after_parser_serialization": [
+        {
+          "lod_index": 3,
+          "resolution": 3000000028082176.0,
+          "bytes_equal": true,
+          "serialized_sha256": "a0ade54e668926974ef7250522ebbdd5e1ab55dbf6ec71193cdfb59f77fa8561"
+        }
+      ]
+    },
+    {
+      "object_id": 16800008,
+      "cell": [
+        1245,
+        371
+      ],
+      "triangle": 1,
+      "face_index_in_ODOL": 8,
+      "vertex_ids": [
+        9,
+        7,
+        4
+      ],
+      "physical_lod_resolution": 3000000028082176.0,
+      "odol_model_path": "E:\\DayZ-Baltic-Build\\v30-native-terminal-finish-20261009\\package\\water\\temp\\baltic_water_v30\\globalvis_16800008.p3d",
+      "odol_sha256": "c06a5a475d5556f6dd5a3e3009b98c767ea9af1e032a640d40fbdec886a93d76",
+      "wrp_matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2232.0,
+        2.218749523162842,
+        4811.9951171875
+      ],
+      "world_vertices_xyz": [
+        [
+          2238.0,
+          2.224999973550439,
+          4806.000117301941
+        ],
+        [
+          2238.0,
+          2.224999973550439,
+          4800.000117301941
+        ],
+        [
+          2224.0,
+          2.224999973550439,
+          4806.000117301941
+        ]
+      ],
+      "face_footprint_area_in_cell_triangle_m2": 0.0007038047656351409,
+      "cell_bounds_xz": [
+        2226.0,
+        4806.0,
+        2232.0,
+        4812.0
+      ],
+      "target_P_m": 2.2,
+      "neighbor_P_m": {
+        "north": 2.1750000000000003,
+        "south": 2.225,
+        "west": 2.2,
+        "east": null
+      },
+      "face_y_range_m": [
+        2.224999973550439,
+        2.224999973550439
+      ],
+      "surface_minus_target_P_m": 0.024999973550438703,
+      "expected_report_area_B_m2": 0.0005341462037399597,
+      "expected_report_area_H_m2": 0.000572381854336714,
+      "expected_report_max_excess_m": 0.0249899735504387,
+      "recomputed_from_ODOL_and_B_H": {
+        "B": {
+          "ground_corner_heights_m": [
+            1.2123627662658691,
+            1.223406195640564,
+            2.543144941329956
+          ],
+          "exposed_area_m2": 0.0005341462037399597,
+          "above_P_area_m2": 0.0005341462037399597,
+          "above_P_max_excess_m": 0.024989973550438704
+        },
+        "H": {
+          "ground_corner_heights_m": [
+            1.2123627662658691,
+            1.223406195640564,
+            2.4549851417541504
+          ],
+          "exposed_area_m2": 0.0005723818543367145,
+          "above_P_area_m2": 0.0005723818543367145,
+          "above_P_max_excess_m": 0.024989973550438704
+        }
+      },
+      "source_record": {
+        "old_model": "edge_01198.p3d",
+        "old_mlod_sha256": "6fbcbd2f6c58aa21ddc990788319cc225d89804c72a978964cd4715a2cde3a49",
+        "new_model": "globalvis_16800008.p3d",
+        "new_sha256": "94221dbb9b0844620a930d9809726d71c6e371657c3b3be6e2b5ad00c746a28b",
+        "origin": [
+          2232.0,
+          2.2249999046325684,
+          4824.000117301941
+        ],
+        "old_center": [
+          0.0,
+          0.0,
+          -12.005000114440918
+        ],
+        "nonvisual_mlod_bytes_exact": true,
+        "max_all_geometry_delta_m": 0.012500963608423898,
+        "footprint_error_m2": 0.0
+      },
+      "nonvisual_LODs_exact_after_parser_serialization": [
+        {
+          "lod_index": 3,
+          "resolution": 3000000028082176.0,
+          "bytes_equal": true,
+          "serialized_sha256": "6347c45d7a734c63821b6aa0b71b04aec49b72937c22e889835ad7f04e23e6c9"
+        }
+      ]
+    }
+  ],
+  "global_raw_context": {
+    "physical_outside_design_growth_B_m2": 0.00344908019811354,
+    "physical_outside_design_growth_H_m2": 0.00355769761298657,
+    "gate_limit_m2": 0.002,
+    "interpretation": "Both B and H fail the raw sum; these two cases establish a plausible inherited neighbor-plane boundary mechanism but do not account for the global excess."
+  }
+}

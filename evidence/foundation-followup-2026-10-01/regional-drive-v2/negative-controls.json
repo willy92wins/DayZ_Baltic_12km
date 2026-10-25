@@ -1,0 +1,176 @@
+{
+  "status": "PASS_REAL_POSITIVE_AND_NEGATIVE_CONTROLS",
+  "source_positive": "PASS_EMPTY_SEDAN_NARVA_GRADES_AND_BRIDGE",
+  "real_log_sha256": "4555334b7d82c2bdfb1cd4f49c0a7f5e5e64840e7b217b6aa3f35c3d2fc99ac6",
+  "reference_sha256": "f943ddc3dbbe50ab28efa26d85c60b14bc8b23908e3b1647949af49eb5cb2b45",
+  "negative_controls": [
+    {
+      "case": "missing_end",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "b004e4928ba41ae9c8607831067a7ce1e6e67dbcf6352867f9d4144453464086",
+      "global_failures": [
+        "end"
+      ],
+      "case0_failures": []
+    },
+    {
+      "case": "damage",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "c1288fc6065dbbe41893043fd2b00ab2943ae213d8d6beabb7d924da2390cbb6",
+      "global_failures": [],
+      "case0_failures": [
+        "body_healthy"
+      ]
+    },
+    {
+      "case": "engine_damage",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "981673486fc99278a3eb04f76ccfb40cb24f0946a0ecd871b45a9bda533e9e7d",
+      "global_failures": [],
+      "case0_failures": [
+        "engine_healthy"
+      ]
+    },
+    {
+      "case": "wrong_ground",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "76620d515e2e3d1ddd1447978b296a079efb266f01d30a793ace05d20bbcd509",
+      "global_failures": [],
+      "case0_failures": [
+        "ground"
+      ]
+    },
+    {
+      "case": "missing_wheel",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "21699e1fc9b23ce63a9ec7086f1f7bea9c0681ab80a0234f7a37dc91254021bb",
+      "global_failures": [],
+      "case0_failures": [
+        "wheels_present"
+      ]
+    },
+    {
+      "case": "ruined_wheel",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "f9f39ce8451056f799a6abf863a3b79d4eb22fd0dc15aa5169f5579a7b848b1c",
+      "global_failures": [],
+      "case0_failures": [
+        "wheels_healthy"
+      ]
+    },
+    {
+      "case": "false_contact_height",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "1ddaa0ff2cde57b2883f604d1de700987979808fd1ab6396378b9cc8c4dfbe18",
+      "global_failures": [],
+      "case0_failures": [
+        "contact_surface"
+      ]
+    },
+    {
+      "case": "teleport",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "f83920297faac6cdecf9ec74c3fa7240eca6a32117e6d079491b468b727ba822",
+      "global_failures": [],
+      "case0_failures": [
+        "continuous_motion",
+        "inside_corridor",
+        "ground",
+        "logged_route"
+      ]
+    },
+    {
+      "case": "sample_gap",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "d9d5d59ee0b6b03e771850cec0b3655c7c97e9f71041b73f8c27f2e7da7fb74d",
+      "global_failures": [],
+      "case0_failures": [
+        "clock"
+      ]
+    },
+    {
+      "case": "tilt",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "2442435c742ca5d904cdd55531b6603746cf10a98d321d42412f930724beaeb0",
+      "global_failures": [],
+      "case0_failures": [
+        "upright"
+      ]
+    },
+    {
+      "case": "nonfinite_rpm",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "a822fa5009dc480a87a4ed9eea54cedc9b4003aabf53e0a52c07b03b88d898ac",
+      "global_failures": [
+        "no_parse_errors"
+      ],
+      "case0_failures": []
+    },
+    {
+      "case": "all_wheels_airborne",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "db8e7dd7197fd7d9eea4a34de3936b2e64b9c092f2c6b33b9218739cfbc3edd8",
+      "global_failures": [],
+      "case0_failures": [
+        "no_jump"
+      ]
+    },
+    {
+      "case": "no_motion",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "28ab5f3b904c6e9c519a98d63b274d7f808cf9b26a68a80d64ffc45ebac28e24",
+      "global_failures": [],
+      "case0_failures": [
+        "cruise"
+      ]
+    },
+    {
+      "case": "no_callbacks",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "15cca14fd7e8102c8f22f3a88d12bd63b97b4ea89c1de73901027ba4247a70c1",
+      "global_failures": [],
+      "case0_failures": [
+        "callbacks"
+      ]
+    },
+    {
+      "case": "neutral_only",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "f3f474f81c426b430cbba4a1c3bffc4909fff5bfa5b7135c3fdbe7e1ccc3a2cd",
+      "global_failures": [],
+      "case0_failures": [
+        "cruise"
+      ]
+    },
+    {
+      "case": "wrong_initial_placement",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "fab0a46a1b99ecf08420085927c37e2e30fac72cdc9f1077f6287641459cf1b9",
+      "global_failures": [],
+      "case0_failures": [
+        "spawn"
+      ]
+    },
+    {
+      "case": "duplicate_case",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "c01cc22c7bf23773567c67da3b51d19bf0c24c837119333ee3a94c4c0f381511",
+      "global_failures": [],
+      "case0_failures": [
+        "one_case"
+      ]
+    },
+    {
+      "case": "false_destination",
+      "status": "EXPECTED_REJECTION",
+      "mutated_log_sha256": "82cc78d1d79885044b9d3694b4a3bb73f44c8ef32b39bc99873a9157f4194cbd",
+      "global_failures": [],
+      "case0_failures": [
+        "endpoint",
+        "all_waypoints",
+        "cruise",
+        "stopped"
+      ]
+    }
+  ]
+}

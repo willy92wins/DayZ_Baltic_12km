@@ -1,0 +1,32 @@
+{
+  "status": "PASS_CLI_EXIT_GATE",
+  "cases": [
+    {
+      "case": "authentic_flooding",
+      "exit_code": 1,
+      "status": "FAIL_DRY_LAND_FLOODING",
+      "is_runtime_observation": true
+    },
+    {
+      "case": "synthetic_zero_depth_low_clearance",
+      "exit_code": 1,
+      "status": "FAIL_DRY_LAND_CLEARANCE",
+      "is_runtime_observation": false
+    },
+    {
+      "case": "synthetic_low_sea_no_depth",
+      "exit_code": 0,
+      "status": "PASS_SAMPLED_DRY_INTERIOR",
+      "is_runtime_observation": false
+    },
+    {
+      "case": "synthetic_incomplete_log",
+      "exit_code": 1,
+      "status": null,
+      "is_runtime_observation": false
+    }
+  ],
+  "limits": [
+    "Synthetic controls exercise process exit codes only; they do not validate corrected terrain in DayZ."
+  ]
+}

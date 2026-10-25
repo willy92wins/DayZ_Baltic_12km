@@ -1,0 +1,31 @@
+# Revisión independiente EV75 — 10-10-2026
+
+**Veredicto: RECHAZAR el candidato actual (`c0e0c206…`).** El consumidor guardado devuelve `FAIL_DIAGNOSTIC_SOURCE`; no se empaqueta ni se lanza. La variante anterior `14c6b0b2…` tampoco debe recuperarse: su propio dominio dejaba caras con calado previo somero, y el candidato corregido la reemplaza.
+
+## Lo que sí queda demostrado en la fuente offline
+
+- `prepare.py:16-34` selecciona solo vértices clase 3, h<1, dentro del círculo de 480 m, fuera de `reserve`/`platform`, y exige para cada cara incidente P/F finitos y superficies totalmente sobre el terreno. Añadió además un filtro de calado previo ≥0,95 m y una transición de pendiente. Esto responde a la objeción de las caras someras. No reutiliza `fixed`/`water_support` como prohibición general de editar agua.
+- `verify.py:22-50` consume todas las caras nativas incidentes a vértices cambiados, recorta polígonos de agua física P y visible F en XZ con GEOS, comprueba área simétrica antes/después, y mide el calado mínimo en los vértices de cada cara. Para superficies lineales, el mínimo de P−h o F−h ocurre en un vértice, así que ese cálculo sí cubre el interior de la cara.
+- En el candidato actual, `verification.json` confirma metadatos exactos, cero cambios en vértices reserve/platform, alcance vertex-wise dentro del círculo, solo clase 3, solo elevaciones, control de puente exacto, huella mojada idéntica y calado mínimo 0,952835 m. Aun así, `no_new_steep_faces=false` y `optical_cell_treated=false`; el estado final es FAIL.
+- Recuento independiente del archivo guardado: 2.238 vértices cambiados y 4.872 caras afectadas; 52 caras afectadas contienen al menos un vértice `reserve` y ninguna toca `platform`. Cero vértices reserve/platform cambiados. La promesa reserve/platform pasa si su contrato es conservar alturas de esos vértices; no se demuestra que cada cara incidente permanezca idéntica.
+
+## Motivos para rechazarlo
+
+1. `prepare.py:47` cuantiza la transición a float32 antes de guardarla. El consumidor mide un máximo de 35,00000110° y 14 caras por encima de su límite estricto (`verify.py:46-50`); no se debe mover el umbral ni rebautizarlo como PASS. La causa probable es la cuantización de la envolvente de 35°, pero el hecho decisivo es que el gate guardado falla.
+2. El candidato tiene 2.123 vértices alzados a 1 m y 115 de transición (`candidate/report.json`). Los cuatro vértices etiquetados `optical_*` cambian, pero quedan en 0,3207; −1,0371; 1; 1 m. El punto de look x=2417,z=6950 pasa de h=−3,3872 a −1,8010 m. La intersección calculada del eje con el plano físico P=1,975 m ocurre aproximadamente en x=2417,z=6943,79,y=1,968; ahí el lecho pasa de −2,751 a 0,618 m, en una cara de transición, no en el núcleo completamente alzado. El gate `optical_cell_treated` que exige que el bloque row889:891/col402:404 esté todo a 1 m falla. Por tanto, el núcleo diagnóstico no queda bajo el punto central de la escena en el sentido que su propio gate exige.
+3. El eje de cámara que termina en el punto de look no intersecta el lecho en ese punto: el primer cruce calculado con el terreno es z≈6962,47, fuera del candidato y sin cambiar. El punto central sí atraviesa el plano de agua sobre terreno tratado; son dos preguntas distintas. En la captura original de 1764×994, la marca blanca central está cerca de (912,504), mientras los parches grises visibles están desplazados, incluido uno grande hacia la parte inferior izquierda. El eje/crosshair no identifica el ROI gris.
+4. El círculo se aplica a vértices; por eso 150 de las 4.872 caras afectadas tienen vértices fuera de 480 m. El extremo llega a radio 488,102 m (8,102 m fuera). Eso es compatible con un límite definido expresamente sobre vértices, pero no con un límite sobre toda la huella de las caras.
+
+## Independencia y límites del consumidor
+
+El consumidor no importa la máscara `allowed` del productor y reconstruye las caras afectadas desde los vértices que difieren; eso reduce el riesgo de un PASS tautológico. Comparten, razonablemente, la diagonal nativa NW-SE, P/F de entrada y la definición de cara del dominio. El control negativo actual solo prueba que `wet_polygon` cambia su propia geometría ante un vértice alterado (`verify.py:58-62`); no introduce esa mutación en `scan` y demuestra que el gate global falla. Para probar el circuito completo, el negativo tendría que recorrer el consumidor y fallar una puerta concreta.
+
+La verificación lee P/F del candidato EV72, pero su salida solo fija SHA del terreno y del candidato (`verify.py:53-64`); el `candidate/report.json` sí registra hashes de P/F. La evidencia es reproducible con esos hashes combinados, pero el JSON del consumidor no queda ligado por sí solo a las versiones de P/F. Tampoco se comparan todavía LODs/P3D/WRP empaquetados, shaders, clima o pantalla; el plan limita expresamente esto a geometría offline.
+
+`shore_geometry_exact=true` demuestra que esta modificación analítica no cambia la huella mojada P/F de las caras examinadas. No demuestra que el lecho alzado explique los rectángulos del render; sí cambia el calado y las pendientes, por lo que un resultado A/B en esta variante habría sido sobre dependencia del conjunto de geometría del lecho, no una identificación del shader ni del mecanismo del rectángulo.
+
+## Discriminador antes de otra propuesta
+
+Primero hay que marcar el ROI gris real en la captura EV73 con coordenadas de píxel (centro y contorno de un parche), aparte del crosshair. Después se proyecta ese contorno con la cámara/FOV exactos contra el WRP y los LOD visibles de agua para obtener los polígonos XZ bajo esos píxeles; se verifica qué objetos `globalvis_*`, `seamfix_*` o `full_48` los cubren y qué cara de terreno queda debajo. Solo entonces se puede saber si el ROI está dentro del núcleo alzado, en la transición o fuera. Mantener separados el cruce de la cámara con P/F, el cruce con el terreno y el área real del rectángulo. La nota previa propone esa proyección geométrica con la captura y los P3D/WRP existentes; no requiere otra variación de alturas.
+
+No se ejecutó juego/MCP ni se generó paquete. El A/B/A presupuestado no se habilita con este FAIL ni con el crosshair como sustituto del ROI gris.

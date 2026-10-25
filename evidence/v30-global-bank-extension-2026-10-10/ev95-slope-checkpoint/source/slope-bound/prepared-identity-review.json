@@ -1,0 +1,124 @@
+{
+  "schema": "ev94.slope-bound.prepared-identity-review.v1",
+  "status": "PASS_PREPARED_DIFF_IS_SINGLE_EXPECTED_LOWER_BOUND",
+  "artifacts": {
+    "original_preflight": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\preflight-run-05\\preflight.json",
+      "sha256": "a6ae4b91cf5ebabbfc57352e4f988150eea2a7506b74a610b6aa4ce79a2bf4d7"
+    },
+    "original_prepared": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\preflight-run-05\\prepared.npz",
+      "sha256": "2df4ad67280c656025843f6528147a68c03dfcf6ecdfbe9cce2ee4818e15a2eb"
+    },
+    "slope_bound_preflight": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\preflight-run-01\\preflight.json",
+      "sha256": "ff6ec50041a4c6e41f9faf5046d0bc5b4b55ede08f89ecc50a83b1f8270b3c6d"
+    },
+    "slope_bound_prepared": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\preflight-run-01\\prepared.npz",
+      "sha256": "c6e5b05335e6ebf65b38af685dca968e8bfdc14ff9d17ce079369f1f50c2fe2b"
+    }
+  },
+  "preflight": {
+    "both_ready_only": true,
+    "selected_seed_equal": true,
+    "selected_unit_count_old": 6,
+    "selected_unit_count_new": 6,
+    "selected_unit_readset_sha256_equal": true,
+    "selected_units_exact_equal": true,
+    "old_source_readset_stable": true,
+    "new_source_readset_stable": true,
+    "shared_source_hash_changes": [],
+    "new_source_paths_added": [
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\consumer\\full-run-02.json",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\preflight-run-05\\preflight.json",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\preflight-run-05\\prepared.npz",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\PLAN_SLOPE_BOUND.md",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\prepare_slope_bound.py",
+      "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\solve_ev94.py"
+    ],
+    "old_source_paths_missing": []
+  },
+  "prepared": {
+    "keys_equal": true,
+    "array_differences": [
+      {
+        "array": "lo",
+        "old_dtype": "float64",
+        "new_dtype": "float64",
+        "old_shape": [
+          40178
+        ],
+        "new_shape": [
+          40178
+        ],
+        "changed_count": 1,
+        "indices": [
+          27459
+        ],
+        "nodes_local": [
+          [
+            190,
+            206
+          ]
+        ],
+        "global_rc": [
+          [
+            900,
+            446
+          ]
+        ],
+        "old_values": [
+          1.8000000715255737
+        ],
+        "new_values": [
+          2.2943551540374756
+        ],
+        "base_values": [
+          2.2943551540374756
+        ]
+      }
+    ],
+    "variable_count": 40178,
+    "base_projection_x0_identity": true
+  },
+  "slope_bound": {
+    "NE_m": 3.1139774322509766,
+    "NW_m": 7.2344970703125,
+    "angular_tolerance_consumed": false,
+    "baseline_SE_m": 2.2943551540374756,
+    "baseline_slope_deg": 35.00000098391883,
+    "changed_entries": 1,
+    "face_cell_rc": [
+      899,
+      445
+    ],
+    "face_kind": "NW_NE_SE",
+    "fixed_neighbors_rc": [
+      [
+        899,
+        445
+      ],
+      [
+        899,
+        446
+      ]
+    ],
+    "interval_slope_cap_deg": 35.00000098391883,
+    "lower_m": 2.2943551540374756,
+    "new_lower_m": 2.2943551540374756,
+    "prepared_arrays_changed": [
+      "lo"
+    ],
+    "previous_lower_m": 1.8000000715255737,
+    "proof": "NE-SE is nonnegative and decreases over the full interval; the other gradient component is fixed.",
+    "target_rc": [
+      900,
+      446
+    ],
+    "upper_endpoint_slope_deg": 34.559701112967105,
+    "upper_m": 2.7943551540374756,
+    "variable_index": 27459
+  },
+  "scope_limit": "Prepared-artifact identity only; no solver or geometry evaluation was run."
+}

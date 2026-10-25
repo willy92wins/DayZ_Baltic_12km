@@ -1,0 +1,55 @@
+{
+  "status": "PASS_SCOPED_CONTINUITY_IMPROVEMENT",
+  "checks": {
+    "nonempty": true,
+    "finite": true,
+    "within_approved_watercourse_support": true,
+    "changed_only_small_water_or_land": true,
+    "all_fixed_heights_exact": true,
+    "border_exact": true,
+    "nature_dry_land_exact": true,
+    "bounded_lowering_only": true,
+    "altered_water_bed_depth_bound": true,
+    "altered_dry_floor": true,
+    "altered_dry_piece_freeboard": true,
+    "no_new_or_worsened_steep_faces": true,
+    "correct_channel_count": true,
+    "profile_axis_coverage_improves": true,
+    "field_cls_exact": true,
+    "field_level_exact": true,
+    "field_platform_exact": true,
+    "field_reserve_exact": true,
+    "field_narva_exact": true,
+    "field_water_exact": true,
+    "field_beach_exact": true,
+    "asc_exact": true,
+    "gate_provenance_matches_candidate": true,
+    "original_76536_road_stations_pass": true,
+    "road_eligibility_source_is_original_v30": true,
+    "legacy_geometry_except_documented_narva_pass": true
+  },
+  "source_sha256": "2f954ad52893a78181df0f607ddd5e490a470fe9c634bcf30736ed1aef4c179a",
+  "candidate_sha256": "40d8cfd9874e9260464f9e3c38c07d81a15c8aed374083a52c98f042c0161c2e",
+  "changed_vertices": 22468,
+  "changed_nature_water_vertices": 712,
+  "new_steep_faces": 0,
+  "new_or_worsened_steep_faces": 0,
+  "diagnostics": {
+    "river": {
+      "before_dry_unreserved_km": 0.381,
+      "after_dry_unreserved_km": 0.03,
+      "remaining_breaks_over_6m": 1
+    },
+    "stream": {
+      "before_dry_unreserved_km": 12.0455,
+      "after_dry_unreserved_km": 0.3995,
+      "remaining_breaks_over_6m": 21
+    }
+  },
+  "limits": [
+    "Residual interruptions are explicit: this is not full watercourse continuity acceptance.",
+    "Old full Narva circle differs only by the separately checked four-pond repair, inherited unchanged here.",
+    "No new water model or level: existing pond recovery pieces remain the geometry source.",
+    "Engine readback, visuals, native import/export and new navmesh remain required."
+  ]
+}

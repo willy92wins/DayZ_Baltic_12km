@@ -1,0 +1,7 @@
+# EV47 — conservación explícita del área nativa del cauce
+
+EV46 queda rechazado. Descubrimiento concreto: su objetivo suave conserva el 90,21% del área dentro de la caja medida, pero su representación por alturas nativas conserva solo el 79,44%. El remuestreo de una franja muy estrecha no conserva área. Además, la mezcla anterior consideraba el radio, pero no la proximidad al perímetro rectangular efectivamente fijo.
+
+Cambios de implementación propuestos: misma geometría objetivo, pendiente0,25, fondo y delta máximo. La mezcla llega a cero en el perímetro real mediante la anchura de transición de12m ya definida. En lugar de aceptar la contracción, resolver una única incógnita: desplazamiento uniforme de la distancia firmada que iguala el área de agua **de los triángulos nativos** a la fuente. Se obtiene por bisección de una función monótona dentro de[0,3]m, no eligiendo valores por la métrica de acabado. Si no hay raíz, no se genera candidato. Ningún giro o pendiente se utiliza para elegir ese valor.
+
+Un candidato con raíz de área; mismos límites de ingeniería, delta1,5m, lecho1m, corredor, pendiente35grados/fuente, desplazamiento4,1m, no aumento del máximo ángulo y reducción>=10% de energía angular a1m. La prueba independiente de contorno determina aceptación/rechazo; no continuar variando parámetros. No cambio de niveles ni despliegue automático. El mecanismo no se extiende a todo el mapa sin pasar este piloto y sus consumidores.

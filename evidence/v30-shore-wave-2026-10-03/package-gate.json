@@ -1,0 +1,50 @@
+{
+ "status": "PASS_PACKAGE_LOCAL_DELTA",
+ "command": "tools/terrain/build_v30_package.ps1 -Build E:\\DayZ-Baltic-Build\\v30-shore-wave-package -Terrain E:\\DayZ-Baltic-Build\\v30-wave-margin-constrained\\terrain_v30.npz -Pieces E:\\DayZ-Baltic-Build\\v30-water-deduplicated -Layers E:\\DayZ-Baltic-Build\\v30-shore-wave-surface",
+ "build_receipt": [
+  {
+   "name": "baltic_water_v30.pbo",
+   "bytes": 24715347,
+   "sha256": "339fa17f26c9ec7a47fca59f621447ef44dbc1212b7c654cc4f88e51dca24b13"
+  },
+  {
+   "name": "narva_trial.pbo",
+   "bytes": 568075674,
+   "sha256": "88c8eac7baaaee9678cbe468e3c379a0fc96ef378a8b8682a40994d5b1145b9f"
+  }
+ ],
+ "stage_wrp_sha256": "7fc1a361417bd473ac4ad74ba487869694128f4c9e131e31e304b5d5fc007460",
+ "derive_checks": {
+  "heights_exact": true,
+  "materials_bytes_identical": true,
+  "header_identical": true,
+  "bridges_identical": true,
+  "object_count": true,
+  "ids_unique": true
+ },
+ "versus_world": "e556f5763c552a890975e57841edc88e1f76406a5840657232030eb16c97159a (@DayZ_Baltic_ContinuityV30)",
+ "pbo_entries": [
+  6827,
+  6827
+ ],
+ "props_equal": true,
+ "differing_entries": 51,
+ "differing_non_layer": [
+  "baltic_trial.wrp",
+  "texHeaders.bin"
+ ],
+ "differing_layers_equal_changed_pngs": true,
+ "source_wrp_vs_dedup_package": {
+  "header_equal": true,
+  "materials_equal": true,
+  "objects_identical_in_order": true,
+  "terminator_equal": true,
+  "heights_changed": 126,
+  "npz_changed": 126,
+  "locations_match": true
+ },
+ "water_pbo_unchanged": true,
+ "limits": [
+  "Offline package identity only; the compiled world still needs its own navmesh and engine readback."
+ ]
+}

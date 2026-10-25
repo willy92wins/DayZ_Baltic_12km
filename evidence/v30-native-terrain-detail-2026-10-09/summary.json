@@ -1,0 +1,143 @@
+{
+  "status": "DETAIL_OPTION_CONSUMED_RESIDUAL_REMAINS",
+  "phases": [
+    "PHASE;0;20408",
+    "PHASE;1;154055;index=4;changed=1;restart=0",
+    "PHASE;2;230932;requested;index=2;changed=0"
+  ],
+  "profile_identical": true,
+  "profile_sha256": "33ccbabd7ab0f3fab014a169d0debf23abcee5d531ac9d537ce2da0a50874703",
+  "map_hashes": {
+    "baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "narva_trial.pbo": "b69265c5feb99d1bda7a5c9f02282818d0ffe4cd26f89f3a095c128e62d374f3"
+  },
+  "rois": {
+    "pond_group": [
+      650,
+      475,
+      1510,
+      680
+    ],
+    "dry_control": [
+      300,
+      850,
+      600,
+      1030
+    ]
+  },
+  "images": {
+    "baseline": {
+      "pond_group": {
+        "frame_mean_rgb_min": 63.18464660644531,
+        "frame_mean_rgb_max": 68.56536102294922,
+        "mean_rgb": 65.66663360595703,
+        "temporal_abs_rgb": 16.832338333129883
+      },
+      "dry_control": {
+        "frame_mean_rgb_min": 60.14146423339844,
+        "frame_mean_rgb_max": 60.79151916503906,
+        "mean_rgb": 60.41014862060547,
+        "temporal_abs_rgb": 18.316802978515625
+      }
+    },
+    "extreme": {
+      "pond_group": {
+        "frame_mean_rgb_min": 64.9228286743164,
+        "frame_mean_rgb_max": 68.88702392578125,
+        "mean_rgb": 66.69639587402344,
+        "temporal_abs_rgb": 10.657483100891113
+      },
+      "dry_control": {
+        "frame_mean_rgb_min": 60.63174819946289,
+        "frame_mean_rgb_max": 60.93798828125,
+        "mean_rgb": 60.769287109375,
+        "temporal_abs_rgb": 15.331562042236328
+      }
+    },
+    "restored": {
+      "pond_group": {
+        "frame_mean_rgb_min": 64.92190551757812,
+        "frame_mean_rgb_max": 69.65711975097656,
+        "mean_rgb": 66.69621276855469,
+        "temporal_abs_rgb": 10.329501152038574
+      },
+      "dry_control": {
+        "frame_mean_rgb_min": 59.58119201660156,
+        "frame_mean_rgb_max": 61.42006301879883,
+        "mean_rgb": 60.21739196777344,
+        "temporal_abs_rgb": 18.71843910217285
+      }
+    }
+  },
+  "pairs": {
+    "baseline_vs_extreme": {
+      "pond_group": {
+        "temporal_envelopes_disjoint_over10_share": 0.00034032898468519567,
+        "median_abs_rgb": 2.325347900390625
+      },
+      "dry_control": {
+        "temporal_envelopes_disjoint_over10_share": 0.006814814814814815,
+        "median_abs_rgb": 6.64765739440918
+      }
+    },
+    "baseline_vs_restored": {
+      "pond_group": {
+        "temporal_envelopes_disjoint_over10_share": 0.0008281338627339762,
+        "median_abs_rgb": 2.5050151348114014
+      },
+      "dry_control": {
+        "temporal_envelopes_disjoint_over10_share": 0.006611111111111111,
+        "median_abs_rgb": 6.87591028213501
+      }
+    }
+  },
+  "run_id": "9842b66c-b512-48f6-8d43-23c333e858a7",
+  "restored_index": 2,
+  "original_index": 2,
+  "changed_index": 4,
+  "limits": [
+    "Six distinct frames spanning multiple waves per phase; not synchronized exact wave phases.",
+    "Texture and water appearance change, but dark halos remain. No map fix promoted.",
+    "Index readback verifies option consumption; it does not expose exact native triangles/LOD.",
+    "Do not infer a whole-map visual PASS or production FPS."
+  ],
+  "close": {
+    "run_id": "9842b66c-b512-48f6-8d43-23c333e858a7",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 2.796014899999136,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "client",
+        "termination_line": true,
+        "rpt_rotated": false
+      },
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "close_order": [
+      "client",
+      "server"
+    ],
+    "logout_wait_s": 2.1559826000011526,
+    "logout_players": [
+      {
+        "player": "Dev",
+        "logout_finished": true
+      }
+    ],
+    "lease_ttl_s": 119.41819689999102
+  },
+  "final_state": {
+    "owner": null,
+    "runs": [],
+    "occupied": false
+  }
+}

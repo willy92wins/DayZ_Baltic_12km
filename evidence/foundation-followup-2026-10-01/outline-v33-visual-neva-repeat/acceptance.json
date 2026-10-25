@@ -1,0 +1,44 @@
+{
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 1,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Neva Ladoga player",
+        "samples": 54,
+        "avg64_median": 19.050449999999998,
+        "avg64_range": [
+          18.9349,
+          66.5973
+        ],
+        "native_min64_min": 13.1579,
+        "native_max64_max": 500.0,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Frozen capture interval (-2 to +3s) omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "run_id": "333442bf-d011-4f71-971f-4d62b1a0656b",
+  "scope": "Neva fixed view only; road build concurrent, no performance acceptance",
+  "pixels": "neva.png original Sky pixels; native capture inactive and no DDS"
+}

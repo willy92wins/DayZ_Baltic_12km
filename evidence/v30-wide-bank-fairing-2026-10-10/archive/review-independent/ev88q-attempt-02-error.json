@@ -1,0 +1,18 @@
+{
+  "status": "ERROR_EV88Q_OFFLINE_CONSUMER",
+  "fixtures": {
+    "crossing_bidirectional": true,
+    "crossing_diagonal": true,
+    "nearflat_tau_edges": true,
+    "stencil_plane_bowl_and_central_xz": true,
+    "nominal_depth_exact_triangle_clip": true,
+    "corridor_area_coverage_and_unknown_P": true,
+    "focus_rowcol_and_local_mesh_geometry": true,
+    "extrema_one_to_one": true,
+    "window_core_dimensions": true
+  },
+  "candidate_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\candidate-terrain.npz",
+  "authoring_receipt_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\authoring.json",
+  "error": "IndexError: index 14 is out of bounds for axis 1 with size 13",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py\", line 916, in main\n    report=evaluate_candidate(args.candidate,args.authoring_receipt)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py\", line 372, in evaluate_candidate\n    for r,c in variables:var_core[r-cr0,c-cc0]=True\n                         ~~~~~~~~^^^^^^^^^^^^^\nIndexError: index 14 is out of bounds for axis 1 with size 13\n"
+}

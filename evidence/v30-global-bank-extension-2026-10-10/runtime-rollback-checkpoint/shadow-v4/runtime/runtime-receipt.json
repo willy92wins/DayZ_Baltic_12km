@@ -1,0 +1,2281 @@
+{
+  "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+  "status": "A_B_A_RESTORED_RECTANGLES_PERSIST_RENDER_ACTIVITY_UNCERTAIN",
+  "limits": [
+    "All captures report render_frozen_signal; no visually confirmed positive shadow control; does not exclude shadow or render-stage causes."
+  ],
+  "Args": {
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticRenderLayerProbeV1.BalticTrial",
+    "extra_mods": [
+      "P:\\Mods\\@DayZ_Baltic_IncrementalBankPreviewV1",
+      "P:\\Mods\\@BalticShadowProbeV4"
+    ],
+    "no_base_mods": true,
+    "no_file_patching": true,
+    "build": false,
+    "clean": false,
+    "width": 1920,
+    "height": 1080,
+    "server_wait_s": 60
+  },
+  "Launch": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+    "phase": "completed",
+    "elapsed_s": 17.091,
+    "artifacts_paths": [
+      "P:\\DayZ_MCP_dev\\_server\\profiles",
+      "P:\\DayZ_MCP_dev\\_client\\profiles"
+    ],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": true,
+    "client_alive": true,
+    "process_alive": true,
+    "bridge_ready": false,
+    "reason": "binding_not_ready",
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": "observed",
+    "steam_pid_repair": null,
+    "steam_restarted": false,
+    "client_death_diagnosis": null,
+    "storage_rotated": false,
+    "storage_backup": null,
+    "storage_reset_notice": null,
+    "storage_recovery_reason": null,
+    "caller_tool_registry_stale": false
+  },
+  "Ready": {
+    "ready": {
+      "ready": true,
+      "reason": "ready",
+      "stale_threshold_s": 15,
+      "server_last_poll_age_s": 0.023456199967768043,
+      "client_last_poll_age_s": 0.17099319997942075,
+      "server_bound_last_poll_age_s": 0.023456199967768043,
+      "client_bound_last_poll_age_s": 0.17099319997942075
+    },
+    "server_peer": {
+      "last_poll_age_s": 0.023456199967768043,
+      "queue_depth": 0,
+      "capabilities": {
+        "state": "match",
+        "reason": "ok",
+        "announced_commands": [
+          "action_cursor_ids",
+          "bot_start",
+          "bot_stop",
+          "entities_query",
+          "exec_enforce",
+          "hands_take",
+          "infected_drive",
+          "inventory_attach",
+          "inventory_give",
+          "notify_players",
+          "object_anim",
+          "object_delete",
+          "object_doors",
+          "object_inspect",
+          "object_resolve",
+          "player_godmode",
+          "player_heal",
+          "player_kill",
+          "player_teleport",
+          "query_all_players",
+          "query_get_in_condition",
+          "query_player_state",
+          "scene_raycast",
+          "surface_query",
+          "telemetry_read",
+          "vehicle_door",
+          "vehicle_enter",
+          "vehicle_prepare_fixture",
+          "weapon_state",
+          "world_spawn",
+          "world_time_get",
+          "world_time_set",
+          "world_weather_set"
+        ],
+        "registered_bridge_tools": [
+          "bot_start",
+          "bot_stop",
+          "entities_query",
+          "hands_take",
+          "infected_drive",
+          "inventory_attach",
+          "inventory_give",
+          "notify_players",
+          "object_anim",
+          "object_delete",
+          "object_doors",
+          "object_inspect",
+          "object_resolve",
+          "player_godmode",
+          "player_heal",
+          "player_kill",
+          "player_teleport",
+          "query_all_players",
+          "query_get_in_condition",
+          "query_player_state",
+          "scene_raycast",
+          "surface_query",
+          "telemetry_read",
+          "vehicle_door",
+          "vehicle_enter",
+          "vehicle_prepare_fixture",
+          "weapon_state",
+          "world_spawn",
+          "world_time_get",
+          "world_time_set",
+          "world_weather_set"
+        ],
+        "announced_without_registered_tool": [],
+        "registered_without_announced_command": [],
+        "unmapped_announced_commands": [],
+        "expected_arg_contract_hash": "421895632da1ef7e",
+        "announced_arg_contract_hash": "421895632da1ef7e"
+      },
+      "version": "12~1.29.163709",
+      "version_state": "ok",
+      "version_detail": "version accepted",
+      "observed_this_generation": true,
+      "binding_state": "BOUND",
+      "instance_prefix": "9bb5507c",
+      "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+      "bound_last_poll_age_s": 0.023456199967768043,
+      "binding_token": "9bb5507c-f26f-4da8-8d40-a4834f9653d0|7|198832|2026-10-10T19:35:55.358205Z"
+    },
+    "client_peer": {
+      "last_poll_age_s": 0.17099319997942075,
+      "queue_depth": 0,
+      "capabilities": {
+        "state": "match",
+        "reason": "ok",
+        "announced_commands": [
+          "action_cursor",
+          "action_hold",
+          "action_hold_cancel",
+          "action_use",
+          "action_use_component",
+          "action_use_door",
+          "action_use_target",
+          "anim_timeline",
+          "camera_get",
+          "camera_set",
+          "engine_set",
+          "input_describe",
+          "input_trigger",
+          "key_press",
+          "player_look_at",
+          "player_look_at_release",
+          "player_move",
+          "player_respawn",
+          "player_trace",
+          "restore_gameplay",
+          "ui_click",
+          "ui_dialog",
+          "ui_focus",
+          "ui_reload_layout",
+          "ui_set_text",
+          "ui_tree",
+          "vehicle_control",
+          "vehicle_get_in_client",
+          "vehicle_release",
+          "vehicle_telemetry",
+          "vehicle_trace",
+          "weapon_aim",
+          "weapon_fire",
+          "weapon_raise",
+          "weapon_sights"
+        ],
+        "registered_bridge_tools": [
+          "action_cursor",
+          "action_hold",
+          "action_use",
+          "anim_timeline",
+          "camera_get",
+          "camera_set",
+          "engine_set",
+          "input_describe",
+          "input_trigger",
+          "key_press",
+          "player_look_at",
+          "player_move",
+          "player_respawn",
+          "player_trace",
+          "restore_gameplay",
+          "ui_click",
+          "ui_dialog",
+          "ui_focus",
+          "ui_reload_layout",
+          "ui_set_text",
+          "ui_tree",
+          "vehicle_control",
+          "vehicle_get_in_client",
+          "vehicle_release",
+          "vehicle_telemetry",
+          "vehicle_trace",
+          "weapon_aim",
+          "weapon_fire",
+          "weapon_raise",
+          "weapon_sights"
+        ],
+        "announced_without_registered_tool": [],
+        "registered_without_announced_command": [],
+        "unmapped_announced_commands": [],
+        "expected_arg_contract_hash": null,
+        "announced_arg_contract_hash": null
+      },
+      "version": "12~1.29.163709",
+      "version_state": "ok",
+      "version_detail": "version accepted",
+      "observed_this_generation": true,
+      "binding_state": "BOUND",
+      "instance_prefix": "e2478e7f",
+      "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+      "bound_last_poll_age_s": 0.17099319997942075,
+      "binding_token": "e2478e7f-d140-46bc-be4c-9712cc8d5f29|8|194784|2026-10-10T19:36:09.375211Z"
+    },
+    "results_pending": 0,
+    "version_state": {
+      "server": "ok",
+      "client": "ok"
+    },
+    "server_version": "12",
+    "expected_game_version": null,
+    "require_version": true,
+    "daemon_generation": "e2824da43e4a4c9790708ea5bd6cb656",
+    "fence": {
+      "mutation_rejects_by_code": {
+        "legacy_unbound": 0,
+        "instance_unknown": 0,
+        "instance_ambiguous": 0,
+        "instance_unattributed": 0,
+        "binding_retired": 0,
+        "instance_role_mismatch": 0,
+        "instance_peer_collision": 0,
+        "binding_not_ready": 0,
+        "creation_time_unreadable": 0
+      },
+      "unaccredited_mutation_enqueues": 0,
+      "unaccredited_polls_by_class": {},
+      "mutation_rejects_meta": {
+        "kind": "historical",
+        "window": "since_daemon_start",
+        "origin": "loopback_enqueue_fence",
+        "blocks_now": false
+      }
+    },
+    "coordination": {
+      "revision": 161,
+      "captured_at_monotonic": 337416.8241821,
+      "active": {
+        "lease_id": "b4b11c604f2540babad941b67d6810ef",
+        "session": "0e6fa5b9-564",
+        "granted_at_monotonic": 337391.1111972,
+        "expires_at_monotonic": 337511.6254038,
+        "ticket": "0bafdc964e0d479ea6d12bb51a0a5dc0",
+        "operation_id": "a690d714-b472-4aa9-bbf3-02f503a051ed"
+      },
+      "releasing": null,
+      "granting": null,
+      "handoff_pending": false,
+      "claimable": true,
+      "audit_fault": null,
+      "operation_tombstones": {
+        "count": 0,
+        "capacity": 128,
+        "saturated": false
+      },
+      "queue": [],
+      "cleanup_workers": {
+        "capacity": 4,
+        "active": 0,
+        "saturated": 0
+      }
+    },
+    "daemon_status": {
+      "schema": "dayz-mcp-daemon-status-v1",
+      "product": "dayz_mcp",
+      "mode": "daemon",
+      "daemon_generation": "e2824da43e4a4c9790708ea5bd6cb656",
+      "coordination_revision": 161
+    },
+    "lifecycle": {
+      "runs": [
+        {
+          "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+          "owner_session_id": "0e6fa5b9-5645-4d54-bcc1-56928485e5ec",
+          "owner_lease_id": "b4b11c604f2540babad941b67d6810ef",
+          "state": "RUNNING",
+          "label": "@DayZ_MCP server",
+          "mod": "@DayZ_MCP",
+          "profiles": "P:\\DayZ_MCP_dev\\_server\\profiles",
+          "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticRenderLayerProbeV1.BalticTrial",
+          "processes": [
+            {
+              "pid": 198832,
+              "creation_time_utc": "2026-10-10T19:35:55.358205Z",
+              "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+              "command_line_sha256": "9b0620f212a1fbe4c73862c01da1d6509d69de54f4a56834ec30e9796216e876",
+              "role": "server",
+              "identity_scheme": "psutil-argv-v2",
+              "cpu": {
+                "user_100ns": 462656250,
+                "kernel_100ns": 153750000,
+                "created_100ns": 134361345553582050,
+                "sampled_at_ns": 1791661279093772300
+              }
+            },
+            {
+              "pid": 194784,
+              "creation_time_utc": "2026-10-10T19:36:09.375211Z",
+              "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+              "command_line_sha256": "3b8f8987d52db46c80ffc0313abf8118224a68617568fd2def0f6013f102d45f",
+              "role": "client",
+              "identity_scheme": "psutil-argv-v2",
+              "cpu": {
+                "user_100ns": 325468750,
+                "kernel_100ns": 51562500,
+                "created_100ns": 134361345693752110,
+                "sampled_at_ns": 1791661279093810200
+              }
+            }
+          ],
+          "launch_operation_id": "30c96843-99c5-434e-a466-e8a151b6399a",
+          "launch_request_sha256": "699db7ec6958280abf918b9477bb644393045d2824981d102652e6be87fec555",
+          "launch_acknowledged": true,
+          "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+          "generation_changed": false,
+          "client_diagnostics": [
+            {
+              "role": "client",
+              "state": "alive",
+              "pid": 194784,
+              "creation_time_utc": "2026-10-10T19:36:09.375211Z",
+              "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+              "command_line_sha256": "3b8f8987d52db46c80ffc0313abf8118224a68617568fd2def0f6013f102d45f",
+              "identity_scheme": "psutil-argv-v2",
+              "observed_at_utc": "2026-10-10T19:41:19.041Z",
+              "first_observed_dead_at_utc": null,
+              "exit_code": null,
+              "exit_time_utc": null,
+              "current": true
+            }
+          ]
+        }
+      ],
+      "runs_retired": 259,
+      "retail_quarantine": false,
+      "retired_run_diagnostics": [
+        {
+          "run_id": "c5b73597-a0dc-4dc5-a94d-0155f9a62759",
+          "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+          "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+          "generation_changed": false,
+          "event": "lifecycle_stop_outcome",
+          "reason": "stopped",
+          "decision": "stopped",
+          "state": "EXITED"
+        },
+        {
+          "run_id": "ebf539c0-ae17-404c-ae41-ff75037ad9f1",
+          "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+          "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+          "generation_changed": false,
+          "event": "run_reaped",
+          "reason": "all_processes_gone_or_foreign",
+          "decision": "reaped",
+          "state": "EXITED"
+        }
+      ],
+      "audit_rows_dropped": 0,
+      "storage_observations": [
+        {
+          "run_id": "0913d0b1-d3fa-488d-b73f-6883758473b9",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "9ced9518-82c0-4e2f-a3c4-f894925b5d35"
+        },
+        {
+          "run_id": "2d301564-1359-48ab-a318-56543708c93b",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "bcc92062-9bbc-4db0-b968-d4d63632dc1d"
+        },
+        {
+          "run_id": "5f62e026-b908-4a7f-8cc4-023372fd1fd1",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "331dbb00-5c72-4e64-a04a-8349dc7529cd"
+        },
+        {
+          "run_id": "eecb3880-fce7-4842-8574-49ff8cbdcb57",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "49bb38e4-590e-4a09-92b2-de9ad1476579"
+        },
+        {
+          "run_id": "38475a82-4e64-48bb-b25f-5d812eea9c07",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "39eeba7b-43e3-48d0-b1cc-6701c8d4159c"
+        },
+        {
+          "run_id": "9d959667-3961-4136-9918-f25d5dcc4117",
+          "storage_rotated": true,
+          "storage_backup": "storage_1.modset-20261009-133909-512f9de5",
+          "storage_reset_notice": "mission_world_and_character_reset",
+          "launch_operation_id": "b1183120-1a7c-4c1c-bb00-75bdf5792718"
+        },
+        {
+          "run_id": "3d5afa6a-4e5b-4af7-b992-60fa460b3167",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "909af099-03e8-4bfb-8f29-cb19ac6f6cf1"
+        },
+        {
+          "run_id": "b960dc7a-0f94-4e92-a0aa-4fee29488cdb",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "87906374-b2c9-45c6-ac84-8999e73f8df2"
+        },
+        {
+          "run_id": "bb4481fd-f496-49a8-9067-42ce17afca5c",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "de27cd0b-b63d-478b-b103-63cd7cdab716"
+        },
+        {
+          "run_id": "56e5b405-ee7e-416b-8b8e-83b3477ec147",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "b5f881bf-94aa-42b8-82c0-1b0f1bae29e2"
+        },
+        {
+          "run_id": "259bc30a-e8d3-495d-adc7-b83ee8195c51",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "ca8e2f0f-1006-4054-81b2-cb4fc42d6ec9"
+        },
+        {
+          "run_id": "58ceb23d-2488-4a4e-8fd1-14dc7555a2d7",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "3ce6f57e-509e-4d38-ade7-40a28dd15127"
+        },
+        {
+          "run_id": "1da582ee-fc5e-476f-9dec-7a0efdd8fb83",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "6065bc68-7b3f-4dcc-b17b-85d274c82b9e"
+        },
+        {
+          "run_id": "1d28de95-045e-4521-b7af-346bd4e618a8",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "5f4509f8-7b6e-4bf4-b6cf-3f07583c4669"
+        },
+        {
+          "run_id": "800d8ccf-9262-4c8b-824b-b9b60219fd14",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "88c1a01a-2dcb-45ba-a7e9-328f7eb5d66f"
+        },
+        {
+          "run_id": "4620146a-09ae-4ed7-9526-391dbdeabe43",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "e7547c92-59ef-4f23-b650-c04e984c94e4"
+        },
+        {
+          "run_id": "701021d8-2c25-4f32-8d61-c135ebff6947",
+          "storage_rotated": true,
+          "storage_backup": "storage_1.modset-20261009-204155-373fc1b9",
+          "storage_reset_notice": "mission_world_and_character_reset",
+          "launch_operation_id": "12394a5b-65d2-4687-9284-2683ba4b2711"
+        },
+        {
+          "run_id": "812ef941-4262-4409-8281-bdcf4276f93f",
+          "storage_rotated": true,
+          "storage_backup": "storage_1.modset-20261009-204543-4229ffc1",
+          "storage_reset_notice": "mission_world_and_character_reset",
+          "launch_operation_id": "7872cc07-3fc7-43f2-a59d-869eacbc5b31"
+        },
+        {
+          "run_id": "ef3f2fe4-98bb-4878-9a06-1f532934f111",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "050d9556-1ce4-4353-92c3-44064fa65b7e"
+        },
+        {
+          "run_id": "8885e257-aede-4d56-9ccf-6354000bc0c8",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "64502a8d-e856-4e75-be48-bc42135f0f08"
+        },
+        {
+          "run_id": "5a503f00-448d-4f73-9a7f-3bcac399c33d",
+          "storage_rotated": true,
+          "storage_backup": "storage_1.modset-20261009-234718-512f9de5",
+          "storage_reset_notice": "mission_world_and_character_reset",
+          "launch_operation_id": "53f1e129-646f-4118-bbf4-aba4daa4b336"
+        },
+        {
+          "run_id": "3b4a4a81-09ea-452f-aaaa-a31917f42f89",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "c98c4e6d-66f2-4c9f-8ffd-95bb2c0b7a4e"
+        },
+        {
+          "run_id": "16638541-9244-485c-81fe-67aa6fe4a143",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "9552a457-592b-4b0b-8b6f-e57c76bebacf"
+        },
+        {
+          "run_id": "0db4e884-97a5-40d2-b414-1366b630b0a3",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "520d24f9-8595-4110-bf35-ce5b94b6086e"
+        },
+        {
+          "run_id": "fea3ba4e-88a5-48ae-92f3-c10732f9e192",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "09c71db2-2308-4ce3-b436-fe582387283f"
+        },
+        {
+          "run_id": "2d06c106-f70d-48ea-aff5-ab17fb42c8f9",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "a10672c2-0d91-49e7-81e9-b527c8b16f70"
+        },
+        {
+          "run_id": "20c41dc7-ac5b-411b-9f9c-04fe28af199d",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "bc25e74f-7bf3-4b45-9d54-697a9fd19254"
+        },
+        {
+          "run_id": "a1f95dd7-d460-43f0-82e8-8410f5e7c37d",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "8dc00225-1f0e-48f1-a064-dac28c1845d3"
+        },
+        {
+          "run_id": "1ed16d48-1352-4216-b5fe-31c77358b9fc",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "38bc017c-a797-4e2e-876c-3b1bc2341e77"
+        },
+        {
+          "run_id": "ebf539c0-ae17-404c-ae41-ff75037ad9f1",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "ffcb433a-0954-4553-99a7-8cb56f2d3bd7"
+        },
+        {
+          "run_id": "c5b73597-a0dc-4dc5-a94d-0155f9a62759",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "61af01b0-e309-4338-85c3-a7ffcfd3625e"
+        },
+        {
+          "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "30c96843-99c5-434e-a466-e8a151b6399a"
+        }
+      ]
+    },
+    "daemon_modules": {
+      "daemon_started_at": 1791659419.7854645,
+      "watched_count": 91,
+      "stale": [],
+      "unreadable": []
+    },
+    "credential_recovery": {
+      "recovered_count": 0,
+      "recent": false,
+      "last_recovered_age_s": null
+    },
+    "tool_registry_fingerprint": "3946610d4fd5dc4951153646c2ee10579f323e50f8143fe2415539dc6e733c8a",
+    "tool_registry_captured_at": "2026-10-09T21:21:11Z",
+    "server_modules": {
+      "server_started_at": 1791580871.3005836,
+      "server_pid": 138384,
+      "watched_count": 94,
+      "stale": [],
+      "unreadable": [],
+      "unreadable_reasons": {},
+      "status": "fresh",
+      "observation_errors": {}
+    },
+    "tool_registry_source_stale": false,
+    "tool_registry_schema_signal": "fresh",
+    "tool_registry_remediation": null,
+    "daemon_source_remediation": null,
+    "lease_ttl_s": 94.55881459999364
+  },
+  "Current": {
+    "ready": {
+      "ready": true,
+      "reason": "ready",
+      "stale_threshold_s": 15,
+      "server_last_poll_age_s": 0.09042749996297061,
+      "client_last_poll_age_s": 0.2569656999548897,
+      "server_bound_last_poll_age_s": 0.09042749996297061,
+      "client_bound_last_poll_age_s": 0.2569656999548897
+    },
+    "server_peer": {
+      "last_poll_age_s": 0.09042749996297061,
+      "queue_depth": 0,
+      "capabilities": {
+        "state": "match",
+        "reason": "ok",
+        "announced_commands": [
+          "action_cursor_ids",
+          "bot_start",
+          "bot_stop",
+          "entities_query",
+          "exec_enforce",
+          "hands_take",
+          "infected_drive",
+          "inventory_attach",
+          "inventory_give",
+          "notify_players",
+          "object_anim",
+          "object_delete",
+          "object_doors",
+          "object_inspect",
+          "object_resolve",
+          "player_godmode",
+          "player_heal",
+          "player_kill",
+          "player_teleport",
+          "query_all_players",
+          "query_get_in_condition",
+          "query_player_state",
+          "scene_raycast",
+          "surface_query",
+          "telemetry_read",
+          "vehicle_door",
+          "vehicle_enter",
+          "vehicle_prepare_fixture",
+          "weapon_state",
+          "world_spawn",
+          "world_time_get",
+          "world_time_set",
+          "world_weather_set"
+        ],
+        "registered_bridge_tools": [
+          "bot_start",
+          "bot_stop",
+          "entities_query",
+          "hands_take",
+          "infected_drive",
+          "inventory_attach",
+          "inventory_give",
+          "notify_players",
+          "object_anim",
+          "object_delete",
+          "object_doors",
+          "object_inspect",
+          "object_resolve",
+          "player_godmode",
+          "player_heal",
+          "player_kill",
+          "player_teleport",
+          "query_all_players",
+          "query_get_in_condition",
+          "query_player_state",
+          "scene_raycast",
+          "surface_query",
+          "telemetry_read",
+          "vehicle_door",
+          "vehicle_enter",
+          "vehicle_prepare_fixture",
+          "weapon_state",
+          "world_spawn",
+          "world_time_get",
+          "world_time_set",
+          "world_weather_set"
+        ],
+        "announced_without_registered_tool": [],
+        "registered_without_announced_command": [],
+        "unmapped_announced_commands": [],
+        "expected_arg_contract_hash": "421895632da1ef7e",
+        "announced_arg_contract_hash": "421895632da1ef7e"
+      },
+      "version": "12~1.29.163709",
+      "version_state": "ok",
+      "version_detail": "version accepted",
+      "observed_this_generation": true,
+      "binding_state": "BOUND",
+      "instance_prefix": "9bb5507c",
+      "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+      "bound_last_poll_age_s": 0.09042749996297061,
+      "binding_token": "9bb5507c-f26f-4da8-8d40-a4834f9653d0|7|198832|2026-10-10T19:35:55.358205Z"
+    },
+    "client_peer": {
+      "last_poll_age_s": 0.2569656999548897,
+      "queue_depth": 0,
+      "capabilities": {
+        "state": "match",
+        "reason": "ok",
+        "announced_commands": [
+          "action_cursor",
+          "action_hold",
+          "action_hold_cancel",
+          "action_use",
+          "action_use_component",
+          "action_use_door",
+          "action_use_target",
+          "anim_timeline",
+          "camera_get",
+          "camera_set",
+          "engine_set",
+          "input_describe",
+          "input_trigger",
+          "key_press",
+          "player_look_at",
+          "player_look_at_release",
+          "player_move",
+          "player_respawn",
+          "player_trace",
+          "restore_gameplay",
+          "ui_click",
+          "ui_dialog",
+          "ui_focus",
+          "ui_reload_layout",
+          "ui_set_text",
+          "ui_tree",
+          "vehicle_control",
+          "vehicle_get_in_client",
+          "vehicle_release",
+          "vehicle_telemetry",
+          "vehicle_trace",
+          "weapon_aim",
+          "weapon_fire",
+          "weapon_raise",
+          "weapon_sights"
+        ],
+        "registered_bridge_tools": [
+          "action_cursor",
+          "action_hold",
+          "action_use",
+          "anim_timeline",
+          "camera_get",
+          "camera_set",
+          "engine_set",
+          "input_describe",
+          "input_trigger",
+          "key_press",
+          "player_look_at",
+          "player_move",
+          "player_respawn",
+          "player_trace",
+          "restore_gameplay",
+          "ui_click",
+          "ui_dialog",
+          "ui_focus",
+          "ui_reload_layout",
+          "ui_set_text",
+          "ui_tree",
+          "vehicle_control",
+          "vehicle_get_in_client",
+          "vehicle_release",
+          "vehicle_telemetry",
+          "vehicle_trace",
+          "weapon_aim",
+          "weapon_fire",
+          "weapon_raise",
+          "weapon_sights"
+        ],
+        "announced_without_registered_tool": [],
+        "registered_without_announced_command": [],
+        "unmapped_announced_commands": [],
+        "expected_arg_contract_hash": null,
+        "announced_arg_contract_hash": null
+      },
+      "version": "12~1.29.163709",
+      "version_state": "ok",
+      "version_detail": "version accepted",
+      "observed_this_generation": true,
+      "binding_state": "BOUND",
+      "instance_prefix": "e2478e7f",
+      "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+      "bound_last_poll_age_s": 0.2569656999548897,
+      "binding_token": "e2478e7f-d140-46bc-be4c-9712cc8d5f29|8|194784|2026-10-10T19:36:09.375211Z"
+    },
+    "results_pending": 0,
+    "version_state": {
+      "server": "ok",
+      "client": "ok"
+    },
+    "server_version": "12",
+    "expected_game_version": null,
+    "require_version": true,
+    "daemon_generation": "e2824da43e4a4c9790708ea5bd6cb656",
+    "fence": {
+      "mutation_rejects_by_code": {
+        "legacy_unbound": 0,
+        "instance_unknown": 0,
+        "instance_ambiguous": 0,
+        "instance_unattributed": 0,
+        "binding_retired": 0,
+        "instance_role_mismatch": 0,
+        "instance_peer_collision": 0,
+        "binding_not_ready": 0,
+        "creation_time_unreadable": 0
+      },
+      "unaccredited_mutation_enqueues": 0,
+      "unaccredited_polls_by_class": {},
+      "mutation_rejects_meta": {
+        "kind": "historical",
+        "window": "since_daemon_start",
+        "origin": "loopback_enqueue_fence",
+        "blocks_now": false
+      }
+    },
+    "coordination": {
+      "revision": 146,
+      "captured_at_monotonic": 337161.5184287,
+      "active": {
+        "lease_id": "9e56d18980ba49e88b3fa2e54b7012c4",
+        "session": "0e6fa5b9-564",
+        "granted_at_monotonic": 337114.94826,
+        "expires_at_monotonic": 337234.9869056,
+        "ticket": "5d9c2098ad6b40a09eaa6ddc7f3c7f98",
+        "operation_id": "ce0525df-6e7a-4435-901b-bb7db8ee8bf1"
+      },
+      "releasing": null,
+      "granting": null,
+      "handoff_pending": false,
+      "claimable": true,
+      "audit_fault": null,
+      "operation_tombstones": {
+        "count": 0,
+        "capacity": 128,
+        "saturated": false
+      },
+      "queue": [],
+      "cleanup_workers": {
+        "capacity": 4,
+        "active": 0,
+        "saturated": 0
+      }
+    },
+    "daemon_status": {
+      "schema": "dayz-mcp-daemon-status-v1",
+      "product": "dayz_mcp",
+      "mode": "daemon",
+      "daemon_generation": "e2824da43e4a4c9790708ea5bd6cb656",
+      "coordination_revision": 146
+    },
+    "lifecycle": {
+      "runs": [
+        {
+          "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+          "owner_session_id": "0e6fa5b9-5645-4d54-bcc1-56928485e5ec",
+          "owner_lease_id": "9e56d18980ba49e88b3fa2e54b7012c4",
+          "state": "RUNNING",
+          "label": "@DayZ_MCP server",
+          "mod": "@DayZ_MCP",
+          "profiles": "P:\\DayZ_MCP_dev\\_server\\profiles",
+          "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticRenderLayerProbeV1.BalticTrial",
+          "processes": [
+            {
+              "pid": 198832,
+              "creation_time_utc": "2026-10-10T19:35:55.358205Z",
+              "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+              "command_line_sha256": "9b0620f212a1fbe4c73862c01da1d6509d69de54f4a56834ec30e9796216e876",
+              "role": "server",
+              "identity_scheme": "psutil-argv-v2",
+              "cpu": {
+                "user_100ns": 99218750,
+                "kernel_100ns": 31093750,
+                "created_100ns": 134361345553582050,
+                "sampled_at_ns": 1791661023766706000
+              }
+            },
+            {
+              "pid": 194784,
+              "creation_time_utc": "2026-10-10T19:36:09.375211Z",
+              "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+              "command_line_sha256": "3b8f8987d52db46c80ffc0313abf8118224a68617568fd2def0f6013f102d45f",
+              "role": "client",
+              "identity_scheme": "psutil-argv-v2",
+              "cpu": {
+                "user_100ns": 80937500,
+                "kernel_100ns": 12500000,
+                "created_100ns": 134361345693752110,
+                "sampled_at_ns": 1791661023766727000
+              }
+            }
+          ],
+          "launch_operation_id": "30c96843-99c5-434e-a466-e8a151b6399a",
+          "launch_request_sha256": "699db7ec6958280abf918b9477bb644393045d2824981d102652e6be87fec555",
+          "launch_acknowledged": true,
+          "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+          "generation_changed": false,
+          "client_diagnostics": [
+            {
+              "role": "client",
+              "state": "alive",
+              "pid": 194784,
+              "creation_time_utc": "2026-10-10T19:36:09.375211Z",
+              "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+              "command_line_sha256": "3b8f8987d52db46c80ffc0313abf8118224a68617568fd2def0f6013f102d45f",
+              "identity_scheme": "psutil-argv-v2",
+              "observed_at_utc": "2026-10-10T19:37:03.724Z",
+              "first_observed_dead_at_utc": null,
+              "exit_code": null,
+              "exit_time_utc": null,
+              "current": true
+            }
+          ]
+        }
+      ],
+      "runs_retired": 259,
+      "retail_quarantine": false,
+      "retired_run_diagnostics": [
+        {
+          "run_id": "c5b73597-a0dc-4dc5-a94d-0155f9a62759",
+          "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+          "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+          "generation_changed": false,
+          "event": "lifecycle_stop_outcome",
+          "reason": "stopped",
+          "decision": "stopped",
+          "state": "EXITED"
+        },
+        {
+          "run_id": "ebf539c0-ae17-404c-ae41-ff75037ad9f1",
+          "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+          "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+          "generation_changed": false,
+          "event": "run_reaped",
+          "reason": "all_processes_gone_or_foreign",
+          "decision": "reaped",
+          "state": "EXITED"
+        }
+      ],
+      "audit_rows_dropped": 0,
+      "storage_observations": [
+        {
+          "run_id": "0913d0b1-d3fa-488d-b73f-6883758473b9",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "9ced9518-82c0-4e2f-a3c4-f894925b5d35"
+        },
+        {
+          "run_id": "2d301564-1359-48ab-a318-56543708c93b",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "bcc92062-9bbc-4db0-b968-d4d63632dc1d"
+        },
+        {
+          "run_id": "5f62e026-b908-4a7f-8cc4-023372fd1fd1",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "331dbb00-5c72-4e64-a04a-8349dc7529cd"
+        },
+        {
+          "run_id": "eecb3880-fce7-4842-8574-49ff8cbdcb57",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "49bb38e4-590e-4a09-92b2-de9ad1476579"
+        },
+        {
+          "run_id": "38475a82-4e64-48bb-b25f-5d812eea9c07",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "39eeba7b-43e3-48d0-b1cc-6701c8d4159c"
+        },
+        {
+          "run_id": "9d959667-3961-4136-9918-f25d5dcc4117",
+          "storage_rotated": true,
+          "storage_backup": "storage_1.modset-20261009-133909-512f9de5",
+          "storage_reset_notice": "mission_world_and_character_reset",
+          "launch_operation_id": "b1183120-1a7c-4c1c-bb00-75bdf5792718"
+        },
+        {
+          "run_id": "3d5afa6a-4e5b-4af7-b992-60fa460b3167",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "909af099-03e8-4bfb-8f29-cb19ac6f6cf1"
+        },
+        {
+          "run_id": "b960dc7a-0f94-4e92-a0aa-4fee29488cdb",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "87906374-b2c9-45c6-ac84-8999e73f8df2"
+        },
+        {
+          "run_id": "bb4481fd-f496-49a8-9067-42ce17afca5c",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "de27cd0b-b63d-478b-b103-63cd7cdab716"
+        },
+        {
+          "run_id": "56e5b405-ee7e-416b-8b8e-83b3477ec147",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "b5f881bf-94aa-42b8-82c0-1b0f1bae29e2"
+        },
+        {
+          "run_id": "259bc30a-e8d3-495d-adc7-b83ee8195c51",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "ca8e2f0f-1006-4054-81b2-cb4fc42d6ec9"
+        },
+        {
+          "run_id": "58ceb23d-2488-4a4e-8fd1-14dc7555a2d7",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "3ce6f57e-509e-4d38-ade7-40a28dd15127"
+        },
+        {
+          "run_id": "1da582ee-fc5e-476f-9dec-7a0efdd8fb83",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "6065bc68-7b3f-4dcc-b17b-85d274c82b9e"
+        },
+        {
+          "run_id": "1d28de95-045e-4521-b7af-346bd4e618a8",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "5f4509f8-7b6e-4bf4-b6cf-3f07583c4669"
+        },
+        {
+          "run_id": "800d8ccf-9262-4c8b-824b-b9b60219fd14",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "88c1a01a-2dcb-45ba-a7e9-328f7eb5d66f"
+        },
+        {
+          "run_id": "4620146a-09ae-4ed7-9526-391dbdeabe43",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "e7547c92-59ef-4f23-b650-c04e984c94e4"
+        },
+        {
+          "run_id": "701021d8-2c25-4f32-8d61-c135ebff6947",
+          "storage_rotated": true,
+          "storage_backup": "storage_1.modset-20261009-204155-373fc1b9",
+          "storage_reset_notice": "mission_world_and_character_reset",
+          "launch_operation_id": "12394a5b-65d2-4687-9284-2683ba4b2711"
+        },
+        {
+          "run_id": "812ef941-4262-4409-8281-bdcf4276f93f",
+          "storage_rotated": true,
+          "storage_backup": "storage_1.modset-20261009-204543-4229ffc1",
+          "storage_reset_notice": "mission_world_and_character_reset",
+          "launch_operation_id": "7872cc07-3fc7-43f2-a59d-869eacbc5b31"
+        },
+        {
+          "run_id": "ef3f2fe4-98bb-4878-9a06-1f532934f111",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "050d9556-1ce4-4353-92c3-44064fa65b7e"
+        },
+        {
+          "run_id": "8885e257-aede-4d56-9ccf-6354000bc0c8",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "64502a8d-e856-4e75-be48-bc42135f0f08"
+        },
+        {
+          "run_id": "5a503f00-448d-4f73-9a7f-3bcac399c33d",
+          "storage_rotated": true,
+          "storage_backup": "storage_1.modset-20261009-234718-512f9de5",
+          "storage_reset_notice": "mission_world_and_character_reset",
+          "launch_operation_id": "53f1e129-646f-4118-bbf4-aba4daa4b336"
+        },
+        {
+          "run_id": "3b4a4a81-09ea-452f-aaaa-a31917f42f89",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "c98c4e6d-66f2-4c9f-8ffd-95bb2c0b7a4e"
+        },
+        {
+          "run_id": "16638541-9244-485c-81fe-67aa6fe4a143",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "9552a457-592b-4b0b-8b6f-e57c76bebacf"
+        },
+        {
+          "run_id": "0db4e884-97a5-40d2-b414-1366b630b0a3",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "520d24f9-8595-4110-bf35-ce5b94b6086e"
+        },
+        {
+          "run_id": "fea3ba4e-88a5-48ae-92f3-c10732f9e192",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "09c71db2-2308-4ce3-b436-fe582387283f"
+        },
+        {
+          "run_id": "2d06c106-f70d-48ea-aff5-ab17fb42c8f9",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "a10672c2-0d91-49e7-81e9-b527c8b16f70"
+        },
+        {
+          "run_id": "20c41dc7-ac5b-411b-9f9c-04fe28af199d",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "bc25e74f-7bf3-4b45-9d54-697a9fd19254"
+        },
+        {
+          "run_id": "a1f95dd7-d460-43f0-82e8-8410f5e7c37d",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "8dc00225-1f0e-48f1-a064-dac28c1845d3"
+        },
+        {
+          "run_id": "1ed16d48-1352-4216-b5fe-31c77358b9fc",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "38bc017c-a797-4e2e-876c-3b1bc2341e77"
+        },
+        {
+          "run_id": "ebf539c0-ae17-404c-ae41-ff75037ad9f1",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "ffcb433a-0954-4553-99a7-8cb56f2d3bd7"
+        },
+        {
+          "run_id": "c5b73597-a0dc-4dc5-a94d-0155f9a62759",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "61af01b0-e309-4338-85c3-a7ffcfd3625e"
+        },
+        {
+          "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+          "storage_rotated": false,
+          "storage_backup": null,
+          "storage_reset_notice": null,
+          "launch_operation_id": "30c96843-99c5-434e-a466-e8a151b6399a"
+        }
+      ]
+    },
+    "daemon_modules": {
+      "daemon_started_at": 1791659419.7854645,
+      "watched_count": 91,
+      "stale": [],
+      "unreadable": []
+    },
+    "credential_recovery": {
+      "recovered_count": 0,
+      "recent": false,
+      "last_recovered_age_s": null
+    },
+    "tool_registry_fingerprint": "3946610d4fd5dc4951153646c2ee10579f323e50f8143fe2415539dc6e733c8a",
+    "tool_registry_captured_at": "2026-10-09T21:21:11Z",
+    "server_modules": {
+      "server_started_at": 1791580871.3005836,
+      "server_pid": 138384,
+      "watched_count": 94,
+      "stale": [],
+      "unreadable": [],
+      "unreadable_reasons": {},
+      "status": "fresh",
+      "observation_errors": {}
+    },
+    "tool_registry_source_stale": false,
+    "tool_registry_schema_signal": "fresh",
+    "tool_registry_remediation": null,
+    "daemon_source_remediation": null,
+    "lease_ttl_s": 73.29408919997513
+  },
+  "BReadback": {
+    "ok": true,
+    "satisfied": true,
+    "condition": "file_matches",
+    "elapsed_s": 1.6975510999909602,
+    "probes": 1,
+    "observed": "PHASE;1;shadow_label=Shadows;shadow_id=160;shadow_desired=1;shadow_readback=1;terrain_label=Terrain shadows;terrain_id=163;terrain_original=0;terrain_readback=0;time=339093",
+    "timed_out": false,
+    "tool": "wait_for",
+    "not_ready_probes": 0,
+    "scanned": {
+      "pattern_kind": "substring",
+      "lookback_from": "lines",
+      "files": [
+        {
+          "name": "_client/baltic_shadow_probe_v4.log",
+          "lines": 7,
+          "readable": true
+        }
+      ],
+      "lines_total": 7,
+      "role": "client",
+      "profile_file": "baltic_shadow_probe_v4.log"
+    },
+    "role": "client",
+    "profile_file": "baltic_shadow_probe_v4.log",
+    "cursor": "{\"C:\\\\Users\\\\guill\\\\OneDrive\\\\Documentos\\\\DayZ Projects\\\\DayZ_MCP_dev\\\\_client\\\\profiles\\\\baltic_shadow_probe_v4.log\":[1055,1055,1239478314]}",
+    "lease_ttl_s": 118.82407400000375
+  },
+  "Restore": {
+    "ok": true,
+    "satisfied": true,
+    "condition": "file_matches",
+    "elapsed_s": 1.7322895999532193,
+    "probes": 1,
+    "observed": "RESTORE;reason=phase0_Aprime;shadow_label=Shadows;shadow_id=160;shadow_before=1;shadow_original=0;shadow_readback=0;terrain_label=Terrain shadows;terrain_id=163;terrain_original=0;terrain_readback=0;time=351239",
+    "timed_out": false,
+    "tool": "wait_for",
+    "not_ready_probes": 0,
+    "scanned": {
+      "pattern_kind": "substring",
+      "lookback_from": "lines",
+      "files": [
+        {
+          "name": "_client/baltic_shadow_probe_v4.log",
+          "lines": 8,
+          "readable": true
+        }
+      ],
+      "lines_total": 8,
+      "role": "client",
+      "profile_file": "baltic_shadow_probe_v4.log"
+    },
+    "role": "client",
+    "profile_file": "baltic_shadow_probe_v4.log",
+    "cursor": "{\"C:\\\\Users\\\\guill\\\\OneDrive\\\\Documentos\\\\DayZ Projects\\\\DayZ_MCP_dev\\\\_client\\\\profiles\\\\baltic_shadow_probe_v4.log\":[1267,1267,1239478314]}",
+    "lease_ttl_s": 118.90779809997184
+  },
+  "FinalCamera": {
+    "id": 4,
+    "ok": 1,
+    "error": "",
+    "camera": {
+      "ok": 1,
+      "applied_mode": "get",
+      "pos": [
+        2417,
+        65,
+        6745
+      ],
+      "matrix": [
+        0.9999999403953552,
+        0,
+        0,
+        0,
+        0.953230619430542,
+        0.3022438585758209,
+        0,
+        -0.3022438585758209,
+        0.953230619430542,
+        2417,
+        65,
+        6745
+      ],
+      "dir": [
+        0,
+        -0.3022438585758209,
+        0.953230619430542
+      ],
+      "fov": 0,
+      "interpolation_complete": 0,
+      "viewport_moved": 1,
+      "view": "scripted",
+      "error": ""
+    },
+    "type": "",
+    "found": 0,
+    "object_id": 0,
+    "tick_poll_sent": 68539,
+    "tick_poll_callback": 68541,
+    "tick_dispatch": 68541,
+    "classname": "",
+    "accepted": 0,
+    "_server": {
+      "t_result": 337476.8081745,
+      "t_enqueue": 337475.5266358,
+      "rtt_s": 1.2815386999864131
+    },
+    "suggested_calls": [
+      {
+        "tool": "bridge_status",
+        "args": {}
+      },
+      {
+        "tool": "session_status",
+        "args": {}
+      }
+    ],
+    "lease_ttl_s": 102.183298799966
+  },
+  "Close": {
+    "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 2.79984550003428,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "client",
+        "termination_line": true,
+        "rpt_rotated": false
+      },
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "close_order": [
+      "client",
+      "server"
+    ],
+    "logout_wait_s": 2.2601684000110254,
+    "logout_players": [
+      {
+        "player": "Dev",
+        "logout_finished": true
+      }
+    ],
+    "lease_ttl_s": 119.37719740002649
+  },
+  "FinalStatus": {
+    "owner": null,
+    "queue": [],
+    "self": {
+      "state": "none",
+      "position": null
+    },
+    "claimable": true,
+    "audit_fault": null,
+    "lifecycle_recovery_fault": null,
+    "operation_tombstones": {
+      "count": 0,
+      "capacity": 128,
+      "saturated": false
+    },
+    "cleanup_degraded": [],
+    "grace": null,
+    "daemon_generation": "e2824da43e4a4c9790708ea5bd6cb656",
+    "pending_commands": 0,
+    "box": {
+      "occupied": true,
+      "runs": [],
+      "foreign": [
+        {
+          "port": 2302,
+          "mods": [
+            "@DayZ_MCP",
+            "@LFSkateboard"
+          ],
+          "profiles": "profiles-130"
+        }
+      ],
+      "ports_in_use": [
+        2302,
+        2304,
+        27016
+      ],
+      "queue": [],
+      "scan_known": true,
+      "port_scan_known": true,
+      "port_scan_reason": null,
+      "foreign_ports": [
+        {
+          "port": 2302,
+          "dayz_relevant": true
+        },
+        {
+          "port": 2304,
+          "dayz_relevant": true
+        },
+        {
+          "port": 27016,
+          "dayz_relevant": true
+        }
+      ],
+      "foreign_ports_all": [
+        {
+          "port": 53,
+          "dayz_relevant": false
+        },
+        {
+          "port": 137,
+          "dayz_relevant": false
+        },
+        {
+          "port": 138,
+          "dayz_relevant": false
+        },
+        {
+          "port": 500,
+          "dayz_relevant": false
+        },
+        {
+          "port": 1900,
+          "dayz_relevant": false
+        },
+        {
+          "port": 2177,
+          "dayz_relevant": false
+        },
+        {
+          "port": 2302,
+          "dayz_relevant": true
+        },
+        {
+          "port": 2304,
+          "dayz_relevant": true
+        },
+        {
+          "port": 3702,
+          "dayz_relevant": false
+        },
+        {
+          "port": 4500,
+          "dayz_relevant": false
+        },
+        {
+          "port": 5050,
+          "dayz_relevant": false
+        },
+        {
+          "port": 5353,
+          "dayz_relevant": false
+        },
+        {
+          "port": 5355,
+          "dayz_relevant": false
+        },
+        {
+          "port": 10010,
+          "dayz_relevant": false
+        },
+        {
+          "port": 10011,
+          "dayz_relevant": false
+        },
+        {
+          "port": 10012,
+          "dayz_relevant": false
+        },
+        {
+          "port": 27016,
+          "dayz_relevant": true
+        },
+        {
+          "port": 27036,
+          "dayz_relevant": false
+        },
+        {
+          "port": 49690,
+          "dayz_relevant": false
+        },
+        {
+          "port": 49691,
+          "dayz_relevant": false
+        },
+        {
+          "port": 51199,
+          "dayz_relevant": false
+        },
+        {
+          "port": 52043,
+          "dayz_relevant": false
+        },
+        {
+          "port": 52257,
+          "dayz_relevant": false
+        },
+        {
+          "port": 52258,
+          "dayz_relevant": false
+        },
+        {
+          "port": 52447,
+          "dayz_relevant": false
+        },
+        {
+          "port": 52448,
+          "dayz_relevant": false
+        },
+        {
+          "port": 52449,
+          "dayz_relevant": false
+        },
+        {
+          "port": 52450,
+          "dayz_relevant": false
+        },
+        {
+          "port": 52667,
+          "dayz_relevant": false
+        },
+        {
+          "port": 53445,
+          "dayz_relevant": false
+        },
+        {
+          "port": 53720,
+          "dayz_relevant": false
+        },
+        {
+          "port": 53721,
+          "dayz_relevant": false
+        },
+        {
+          "port": 56589,
+          "dayz_relevant": false
+        },
+        {
+          "port": 56590,
+          "dayz_relevant": false
+        },
+        {
+          "port": 57181,
+          "dayz_relevant": false
+        },
+        {
+          "port": 57619,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58138,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58681,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58682,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58683,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58684,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58685,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58686,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58687,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58688,
+          "dayz_relevant": false
+        },
+        {
+          "port": 58689,
+          "dayz_relevant": false
+        },
+        {
+          "port": 60347,
+          "dayz_relevant": false
+        },
+        {
+          "port": 61798,
+          "dayz_relevant": false
+        },
+        {
+          "port": 61899,
+          "dayz_relevant": false
+        },
+        {
+          "port": 63414,
+          "dayz_relevant": false
+        },
+        {
+          "port": 63920,
+          "dayz_relevant": false
+        },
+        {
+          "port": 65015,
+          "dayz_relevant": false
+        }
+      ],
+      "foreign_ports_meta": {
+        "count": 3,
+        "count_all": 52,
+        "dayz_related": 3,
+        "kind": "os_socket_table_ignored_for_occupancy",
+        "dayz_relevant": 3
+      },
+      "available_for": {
+        "new_launch": false,
+        "adopt": false
+      },
+      "queue_position": null,
+      "queue_offer": {
+        "position_if_joined": 1,
+        "waiters": 0,
+        "occupant": {
+          "run_id": null,
+          "state": null,
+          "foreign": true,
+          "port": 2302,
+          "mods": [
+            "@DayZ_MCP",
+            "@LFSkateboard"
+          ]
+        },
+        "occupant_age_s": null,
+        "retry": {
+          "tool": "dayz_test_run",
+          "same_args": true,
+          "on_busy": "queue"
+        }
+      }
+    },
+    "blocked_on": "DayZ test box; next: call dayz_test_run(..., on_busy=\"queue\") to join the box FIFO",
+    "runs_retired_recently": [
+      {
+        "run_id": "2f277c6b-2967-4aed-a5b2-175ac712ee21",
+        "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+        "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+        "generation_changed": false,
+        "event": "run_reaped",
+        "reason": "all_processes_gone_or_foreign",
+        "decision": "reaped",
+        "state": "EXITED",
+        "client_death_diagnosis": null
+      },
+      {
+        "run_id": "c5b73597-a0dc-4dc5-a94d-0155f9a62759",
+        "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+        "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+        "generation_changed": false,
+        "event": "lifecycle_stop_outcome",
+        "reason": "stopped",
+        "decision": "stopped",
+        "state": "EXITED",
+        "client_death_diagnosis": null
+      },
+      {
+        "run_id": "ebf539c0-ae17-404c-ae41-ff75037ad9f1",
+        "daemon_generation_at_launch": "e2824da43e4a4c9790708ea5bd6cb656",
+        "daemon_generation_current": "e2824da43e4a4c9790708ea5bd6cb656",
+        "generation_changed": false,
+        "event": "run_reaped",
+        "reason": "all_processes_gone_or_foreign",
+        "decision": "reaped",
+        "state": "EXITED",
+        "client_death_diagnosis": null
+      }
+    ],
+    "ok": true,
+    "next_step": "bridge_status"
+  },
+  "InitialFrame": [
+    {
+      "fullres_path": "E:\\DayZ-Baltic-Build\\v30-water-render-discriminator-20261010\\shadow-runtime-plan\\v4-probe\\runtime\\capture_20261010_213643_582.jpg",
+      "native_width": 1942,
+      "native_height": 1136,
+      "crop": "",
+      "crop_space": "client",
+      "chrome_excluded": true,
+      "inline_mimeType": "image/jpeg",
+      "inline_base64_len": 24524,
+      "window": {
+        "pid": 194784,
+        "class": "DayZ",
+        "title": "DayZ",
+        "left": -2584,
+        "top": 356,
+        "width": 1942,
+        "height": 1136
+      },
+      "backend_sha256": "78ECF9D88F4957126F8DADD01CAEEFD3C49A227F16026A9E797FBC8C01DFB906",
+      "frame_sha256": "82c0c0e5dfca9f1f649096912c728be5a790c82a5447ad9327e9581d45fc13b3",
+      "window_surface": {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "width": 1942,
+          "height": 1136
+        },
+        "pixel_sha256": "82c0c0e5dfca9f1f649096912c728be5a790c82a5447ad9327e9581d45fc13b3",
+        "stats": {
+          "width": 1942,
+          "height": 1136,
+          "meanBrightness": 129.52293219927185,
+          "nonBlackRatio": 0.9794724837179617
+        }
+      },
+      "client_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "pixel_sha256": "02e79069f78ddaa6a1e5ab13671ac67c4373237c445719581e12271765b6ad9d",
+        "stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 127.63781442901235,
+          "nonBlackRatio": 1
+        }
+      },
+      "effective_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "native_width": 1920,
+        "native_height": 1080,
+        "native_pixel_sha256": "02e79069f78ddaa6a1e5ab13671ac67c4373237c445719581e12271765b6ad9d",
+        "native_stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 127.63781442901235,
+          "nonBlackRatio": 1
+        },
+        "delivered_width": 512,
+        "delivered_height": 288,
+        "delivered_pixel_sha256": "b0cb3ffe64529115904e2c783831dd78331ffbf0b4163bb8a49a46e28d92c30d",
+        "delivered_stats": {
+          "width": 512,
+          "height": 288,
+          "meanBrightness": 127.64855278862848,
+          "nonBlackRatio": 1
+        }
+      },
+      "frame_stale": false,
+      "frame_stale_detail": {
+        "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+        "key_kind": "cmdline",
+        "surface": "client",
+        "current_sha256": "02e79069f78ddaa6a1e5ab13671ac67c4373237c445719581e12271765b6ad9d",
+        "previous_sha256": "6a3b1d544901db6942219d5f57e5c220898d80e02cda500ef238879ac6961607",
+        "same_as_capture_ts": null,
+        "age_s": null,
+        "repeat_count": 1,
+        "frames": 2,
+        "distinct_frames": 2,
+        "max_adjacent_delta": 0.0016135620915032679,
+        "requested_frames": 2,
+        "effective_frames": 2,
+        "frame_limit": 5,
+        "state_backend": "sidecar",
+        "state_error": null
+      },
+      "fullres_file_sha256": "1b7f9d2c2ff89a654ae0f63eda2c7986d526d0db6d49a679c5d66683c3bb55d0",
+      "lease_ttl_s": 93.37276370002655
+    },
+    "lease_ttl_s=93.373"
+  ],
+  "A": [
+    {
+      "fullres_path": "E:\\DayZ-Baltic-Build\\v30-water-render-discriminator-20261010\\shadow-runtime-plan\\v4-probe\\runtime\\capture_20261010_214102_468.jpg",
+      "native_width": 1942,
+      "native_height": 1136,
+      "crop": "",
+      "crop_space": "client",
+      "chrome_excluded": true,
+      "inline_mimeType": "image/jpeg",
+      "inline_base64_len": 53492,
+      "window": {
+        "pid": 194784,
+        "class": "DayZ",
+        "title": "DayZ",
+        "left": -2584,
+        "top": 356,
+        "width": 1942,
+        "height": 1136
+      },
+      "backend_sha256": "06A7AD35B1590F4787AF1517D25482A7CFF71CEC41171A5EC132ECE45B063839",
+      "frame_sha256": "53fb2667d7e6b8793ee7c2bb37d09bae8ab2dfc8800200077c1e775c44daab4e",
+      "window_surface": {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "width": 1942,
+          "height": 1136
+        },
+        "pixel_sha256": "53fb2667d7e6b8793ee7c2bb37d09bae8ab2dfc8800200077c1e775c44daab4e",
+        "stats": {
+          "width": 1942,
+          "height": 1136,
+          "meanBrightness": 135.84369515237668,
+          "nonBlackRatio": 0.9794724837179617
+        }
+      },
+      "client_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "pixel_sha256": "24637531e98a38906c24e0627248384aa0e66b3261b0edfa8b4b0211ae8c1288",
+        "stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 134.36250144675927,
+          "nonBlackRatio": 1
+        }
+      },
+      "effective_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "native_width": 1920,
+        "native_height": 1080,
+        "native_pixel_sha256": "24637531e98a38906c24e0627248384aa0e66b3261b0edfa8b4b0211ae8c1288",
+        "native_stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 134.36250144675927,
+          "nonBlackRatio": 1
+        },
+        "delivered_width": 986,
+        "delivered_height": 555,
+        "delivered_pixel_sha256": "ce0151483ea77969bf28f715885845d82a8296bdec7b67425ac4f0f89232dace",
+        "delivered_stats": {
+          "width": 986,
+          "height": 555,
+          "meanBrightness": 134.36994134093524,
+          "nonBlackRatio": 1
+        }
+      },
+      "frame_stale": false,
+      "frame_stale_detail": {
+        "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+        "key_kind": "cmdline",
+        "surface": "client",
+        "current_sha256": "24637531e98a38906c24e0627248384aa0e66b3261b0edfa8b4b0211ae8c1288",
+        "previous_sha256": "02e79069f78ddaa6a1e5ab13671ac67c4373237c445719581e12271765b6ad9d",
+        "same_as_capture_ts": null,
+        "age_s": null,
+        "repeat_count": 1,
+        "frames": 3,
+        "distinct_frames": 3,
+        "max_adjacent_delta": 0.00044404463913224864,
+        "requested_frames": 3,
+        "effective_frames": 3,
+        "frame_limit": 5,
+        "state_backend": "sidecar",
+        "state_error": null
+      },
+      "fullres_file_sha256": "bac269e5a9ee6c51c496b6b80d507292b5f47d5f97a29df6b1ac60538847809e",
+      "warnings": [
+        "render_frozen_signal"
+      ],
+      "lease_ttl_s": 111.1173297999776
+    },
+    "lease_ttl_s=111.117"
+  ],
+  "A2": [
+    {
+      "fullres_path": "E:\\DayZ-Baltic-Build\\v30-water-render-discriminator-20261010\\shadow-runtime-plan\\v4-probe\\runtime\\capture_20261010_214130_034.jpg",
+      "native_width": 1942,
+      "native_height": 1136,
+      "crop": "",
+      "crop_space": "client",
+      "chrome_excluded": true,
+      "inline_mimeType": "image/jpeg",
+      "inline_base64_len": 16000,
+      "window": {
+        "pid": 194784,
+        "class": "DayZ",
+        "title": "DayZ",
+        "left": -2584,
+        "top": 356,
+        "width": 1942,
+        "height": 1136
+      },
+      "backend_sha256": "EBC34F7324C4D2243197A8C78E5AFBA3BF7E315FC90D317BBDC3853423F24633",
+      "frame_sha256": "bf5510ee00ca9d313101ca9ad134f4dc77b6a5d3cc9699f4bce4be9978b9a466",
+      "window_surface": {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "width": 1942,
+          "height": 1136
+        },
+        "pixel_sha256": "bf5510ee00ca9d313101ca9ad134f4dc77b6a5d3cc9699f4bce4be9978b9a466",
+        "stats": {
+          "width": 1942,
+          "height": 1136,
+          "meanBrightness": 135.85496837875866,
+          "nonBlackRatio": 0.9795309576304376
+        }
+      },
+      "client_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "pixel_sha256": "6c3e5112317f529178aa008b4375955186848572d1b2b19fb9f1e3ef95083927",
+        "stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 134.35894241898148,
+          "nonBlackRatio": 1
+        }
+      },
+      "effective_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "native_width": 1920,
+        "native_height": 1080,
+        "native_pixel_sha256": "6c3e5112317f529178aa008b4375955186848572d1b2b19fb9f1e3ef95083927",
+        "native_stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 134.35894241898148,
+          "nonBlackRatio": 1
+        },
+        "delivered_width": 512,
+        "delivered_height": 288,
+        "delivered_pixel_sha256": "8a7dbe1848ee0f4abe12ed9c27e99327e8a1d2db5e70683fa96bf8a404c718ef",
+        "delivered_stats": {
+          "width": 512,
+          "height": 288,
+          "meanBrightness": 134.36058213975696,
+          "nonBlackRatio": 1
+        }
+      },
+      "frame_stale": false,
+      "frame_stale_detail": {
+        "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+        "key_kind": "cmdline",
+        "surface": "client",
+        "current_sha256": "6c3e5112317f529178aa008b4375955186848572d1b2b19fb9f1e3ef95083927",
+        "previous_sha256": "24637531e98a38906c24e0627248384aa0e66b3261b0edfa8b4b0211ae8c1288",
+        "same_as_capture_ts": null,
+        "age_s": null,
+        "repeat_count": 1,
+        "frames": 5,
+        "distinct_frames": 5,
+        "max_adjacent_delta": 0.0005054929773327771,
+        "requested_frames": 5,
+        "effective_frames": 5,
+        "frame_limit": 5,
+        "state_backend": "sidecar",
+        "state_error": null
+      },
+      "fullres_file_sha256": "441c1e3e326b5286d6ea9a6498ef746b9e924e9652de45a58b7030501abc4bfb",
+      "warnings": [
+        "render_frozen_signal"
+      ],
+      "lease_ttl_s": 83.50142390001565
+    },
+    "lease_ttl_s=83.501"
+  ],
+  "B": [
+    {
+      "fullres_path": "E:\\DayZ-Baltic-Build\\v30-water-render-discriminator-20261010\\shadow-runtime-plan\\v4-probe\\runtime\\capture_20261010_214159_815.jpg",
+      "native_width": 1942,
+      "native_height": 1136,
+      "crop": "",
+      "crop_space": "client",
+      "chrome_excluded": true,
+      "inline_mimeType": "image/jpeg",
+      "inline_base64_len": 53436,
+      "window": {
+        "pid": 194784,
+        "class": "DayZ",
+        "title": "DayZ",
+        "left": -2584,
+        "top": 356,
+        "width": 1942,
+        "height": 1136
+      },
+      "backend_sha256": "38175BBB87CC8C11D9596E5105E0FC6138BE79E6F0405886094E7621BB9EF59D",
+      "frame_sha256": "1b22aa2ae2d0d92cd4a8cc44a59d418cbcfd3d14edd01c321b365007a835f97a",
+      "window_surface": {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "width": 1942,
+          "height": 1136
+        },
+        "pixel_sha256": "1b22aa2ae2d0d92cd4a8cc44a59d418cbcfd3d14edd01c321b365007a835f97a",
+        "stats": {
+          "width": 1942,
+          "height": 1136,
+          "meanBrightness": 135.85483511263254,
+          "nonBlackRatio": 0.9795309576304376
+        }
+      },
+      "client_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "pixel_sha256": "a9d794e4462a1878e378f02e293696fad52bdcd80032857da97c04ea0289b08c",
+        "stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 134.35880063657407,
+          "nonBlackRatio": 1
+        }
+      },
+      "effective_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "native_width": 1920,
+        "native_height": 1080,
+        "native_pixel_sha256": "a9d794e4462a1878e378f02e293696fad52bdcd80032857da97c04ea0289b08c",
+        "native_stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 134.35880063657407,
+          "nonBlackRatio": 1
+        },
+        "delivered_width": 988,
+        "delivered_height": 556,
+        "delivered_pixel_sha256": "de9858d541a1efe2f3fe3fffecf9d096ed0b5ae687448f1a022fa34a66a380d9",
+        "delivered_stats": {
+          "width": 988,
+          "height": 556,
+          "meanBrightness": 134.36429601258266,
+          "nonBlackRatio": 1
+        }
+      },
+      "frame_stale": false,
+      "frame_stale_detail": {
+        "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+        "key_kind": "cmdline",
+        "surface": "client",
+        "current_sha256": "a9d794e4462a1878e378f02e293696fad52bdcd80032857da97c04ea0289b08c",
+        "previous_sha256": "6c3e5112317f529178aa008b4375955186848572d1b2b19fb9f1e3ef95083927",
+        "same_as_capture_ts": null,
+        "age_s": null,
+        "repeat_count": 1,
+        "frames": 5,
+        "distinct_frames": 5,
+        "max_adjacent_delta": 0.000503667779168405,
+        "requested_frames": 5,
+        "effective_frames": 5,
+        "frame_limit": 5,
+        "state_backend": "sidecar",
+        "state_error": null
+      },
+      "fullres_file_sha256": "2f729cecd08d8c7e2c41a7ad570a7dc5ef730d56ab9783cde8e2e7770e7891ea",
+      "warnings": [
+        "render_frozen_signal"
+      ],
+      "lease_ttl_s": 109.0595261999988
+    },
+    "lease_ttl_s=109.060"
+  ],
+  "Aprime": [
+    {
+      "fullres_path": "E:\\DayZ-Baltic-Build\\v30-water-render-discriminator-20261010\\shadow-runtime-plan\\v4-probe\\runtime\\capture_20261010_214217_191.jpg",
+      "native_width": 1942,
+      "native_height": 1136,
+      "crop": "",
+      "crop_space": "client",
+      "chrome_excluded": true,
+      "inline_mimeType": "image/jpeg",
+      "inline_base64_len": 53528,
+      "window": {
+        "pid": 194784,
+        "class": "DayZ",
+        "title": "DayZ",
+        "left": -2584,
+        "top": 356,
+        "width": 1942,
+        "height": 1136
+      },
+      "backend_sha256": "D781A2615E3B83E3C8B4909C25FB36753BBA8BA5ECE347798BA6CAB56956364F",
+      "frame_sha256": "a8ad8e090d55ad91d449148eab887778e46ee3ef17257f74b0e6530226ff63b7",
+      "window_surface": {
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "width": 1942,
+          "height": 1136
+        },
+        "pixel_sha256": "a8ad8e090d55ad91d449148eab887778e46ee3ef17257f74b0e6530226ff63b7",
+        "stats": {
+          "width": 1942,
+          "height": 1136,
+          "meanBrightness": 135.8661124185898,
+          "nonBlackRatio": 0.9795309576304376
+        }
+      },
+      "client_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "pixel_sha256": "82ecd93984ccb6cf3728affe82a148d2e20159c5670c24a23a0f20f63fdcf525",
+        "stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 134.3707986111111,
+          "nonBlackRatio": 1
+        }
+      },
+      "effective_surface": {
+        "rect_window": {
+          "left": 11,
+          "top": 45,
+          "width": 1920,
+          "height": 1080
+        },
+        "native_width": 1920,
+        "native_height": 1080,
+        "native_pixel_sha256": "82ecd93984ccb6cf3728affe82a148d2e20159c5670c24a23a0f20f63fdcf525",
+        "native_stats": {
+          "width": 1920,
+          "height": 1080,
+          "meanBrightness": 134.3707986111111,
+          "nonBlackRatio": 1
+        },
+        "delivered_width": 987,
+        "delivered_height": 555,
+        "delivered_pixel_sha256": "47397dcdab54c10665cc47e5fa1145a0f18aeaaf2bbd4eb4751bcab2a317d043",
+        "delivered_stats": {
+          "width": 987,
+          "height": 555,
+          "meanBrightness": 134.3823982036748,
+          "nonBlackRatio": 1
+        }
+      },
+      "frame_stale": false,
+      "frame_stale_detail": {
+        "key": "P:\\DayZ_MCP_dev\\_client\\profiles",
+        "key_kind": "cmdline",
+        "surface": "client",
+        "current_sha256": "82ecd93984ccb6cf3728affe82a148d2e20159c5670c24a23a0f20f63fdcf525",
+        "previous_sha256": "a9d794e4462a1878e378f02e293696fad52bdcd80032857da97c04ea0289b08c",
+        "same_as_capture_ts": null,
+        "age_s": null,
+        "repeat_count": 1,
+        "frames": 5,
+        "distinct_frames": 5,
+        "max_adjacent_delta": 0.0004852419691280767,
+        "requested_frames": 5,
+        "effective_frames": 5,
+        "frame_limit": 5,
+        "state_backend": "sidecar",
+        "state_error": null
+      },
+      "fullres_file_sha256": "0e2d255de900d559377fb88702e03cdc787592a4e4ba70dac918775e6d75d611",
+      "warnings": [
+        "render_frozen_signal"
+      ],
+      "lease_ttl_s": 103.84741210000357
+    },
+    "lease_ttl_s=103.847"
+  ]
+}

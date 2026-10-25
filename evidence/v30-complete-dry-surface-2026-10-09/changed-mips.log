@@ -1,0 +1,42 @@
+{
+  "status": "PASS_ALL_CHANGED_MIPS",
+  "changed_textures": 178,
+  "changed_mips": 1424,
+  "unchanged_entries_exact": 6649,
+  "world_sha256": "a08b96a1f952edca98e525221ed48790051291b8fcc9db7cc7661ea8bacc1335",
+  "negative": "new_payload_truncation_rejected",
+  "native_controls": [
+    {
+      "name": "data/layers/m_000_012_lca.paa",
+      "size": 64,
+      "paa_sha256": "b86772974dfb8c79e25437ed541df22fe281df350a2798bfe861d785713b8ea8",
+      "native_png_sha256": "05f7ccbfe0b51475e909a35b01bc9d7040cdbddb91bf3c0ba072028dd8b695f7",
+      "max_decoder_difference": 1
+    },
+    {
+      "name": "data/layers/m_000_012_lca.paa",
+      "size": 4,
+      "paa_sha256": "59b5a591d0b3dbd21ce250ab9db6a9505e031c16197849adc137f56395a7f4b6",
+      "native_png_sha256": "09dcc4427621dda3d92efb0227b002b5528a98878f912a50489f6579bcf47582",
+      "max_decoder_difference": 1
+    },
+    {
+      "name": "data/layers/s_000_012_lco.paa",
+      "size": 64,
+      "paa_sha256": "59cfd8d6faf2812113baa0d7a5b0711d6b4f2fba53feceeadab999143a68dd85",
+      "native_png_sha256": "e0c038b99c60313f23a39ff2a90b16bdd6688f57d28a9aa2c5a29e68b0fa3ab0",
+      "max_decoder_difference": 1
+    },
+    {
+      "name": "data/layers/s_000_012_lco.paa",
+      "size": 4,
+      "paa_sha256": "cd3f38bcc8ff1c4195824ff744985231728437a95f1004016e948d059cc4b0df",
+      "native_png_sha256": "6e71850a560c9bdd1eca720dae7f34e489bebf4b2c33ad33c87e6c1edc4b0a30",
+      "max_decoder_difference": 1
+    }
+  ],
+  "limits": [
+    "Every newly changed mip is decoded; unchanged textures inherit EV30 through exact PBO-entry identity.",
+    "Does not prove GPU streaming or close BALTIC-019."
+  ]
+}

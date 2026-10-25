@@ -1,0 +1,34 @@
+{
+  "status": "PREPARED_NOT_IMPORTED",
+  "source_sha256": "1326175fa0a53db2c69fba7e13767a57f7cb4475defaa5d32d8e55fe1a2b4856",
+  "candidate_sha256": "2e737eaaf3c0d1a25824c9fa92ecce0530357fe93f2db7fe9c1f77485d0fdff0",
+  "observation_sha256": "ce43d9d98b60cb119b09e07bd661584ed01c25a3558d83ec837bd21be38e7415",
+  "core_local_bounds_m": [
+    1500,
+    6200,
+    3500,
+    8200
+  ],
+  "transition_m": 120,
+  "dry_interior_floor_m": 1.25,
+  "shore_midpoint_m": 0.75,
+  "bank_ramp_m": 12,
+  "changed_vertices": 45370,
+  "maximum_raise_m": 1.0,
+  "water_vertices_unchanged": true,
+  "outside_sector_unchanged": true,
+  "vertices_at_or_above_2m_unchanged": true,
+  "protected_dry_interior_vertices": 70933,
+  "previously_flooded_samples": 44,
+  "previously_flooded_sample_predicted_minimum_m": 1.25,
+  "source_water_shp_sha256": {
+    "ocean": "3ecfdc8338e761612e1df110e239ead5c0b481db93b8305756c3f7d4f74df62a",
+    "water": "7eb8fb8acffe91eb7bfe97ffea2c85dfc24ef4ba7315d44823d432bb651e5b29"
+  },
+  "limits": [
+    "No native import/render/probe yet; no player traversal.",
+    "Only a local height clearance trial, not a final global relief coefficient.",
+    "Source water polygons unchanged; interpolated shoreline still requires comparison.",
+    "WorldCover water exclusion is conservative and may disagree with OSM locally."
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "date": "2026-09-29",
+  "tolerance_m": 0.00501,
+  "tolerance_reason": "TB ASCII export writes two decimal places; allow half of one centimetre plus float epsilon.",
+  "results": [
+    {
+      "label": "probe",
+      "source": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\registration-probe\\probe_128_6m.asc",
+      "export": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tb\\registration_probe\\probe_tb_export.asc",
+      "source_sha256": "2770720af46e15460f1f9bf0f428eb7a2dbc810a251bef4acf11f1c2c4a133d5",
+      "export_sha256": "0d7149e909352e65338a93f739af4b8c1cc508d31c0fe0543c07fc2a4ea2e50e",
+      "source_shape": [
+        128,
+        128
+      ],
+      "export_shape": [
+        128,
+        128
+      ],
+      "source_transform": [
+        6.0,
+        0.0,
+        200000.0,
+        0.0,
+        -6.0,
+        768.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "export_transform": [
+        6.0,
+        0.0,
+        200000.0,
+        0.0,
+        -6.0,
+        768.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "same_grid": true,
+      "export_crs": "EPSG:32631",
+      "crs_note": "TB zone 31N is an engineering wrapper; not Baltic georeferencing.",
+      "samples": 16384,
+      "differing_samples": 0,
+      "max_absolute_error_m": 0.0,
+      "mean_absolute_error_m": 0.0,
+      "samples_over_0_00501m": 0,
+      "rounded_centimetre_equivalent": true,
+      "status": "PASS",
+      "controls": [
+        {
+          "name": "NW",
+          "row": 8,
+          "col": 11,
+          "x": 200069.0,
+          "y": 717.0,
+          "z": 15,
+          "actual": 15.0,
+          "pass_height": true
+        },
+        {
+          "name": "NE",
+          "row": 17,
+          "col": 112,
+          "x": 200675.0,
+          "y": 663.0,
+          "z": 25,
+          "actual": 25.0,
+          "pass_height": true
+        },
+        {
+          "name": "SW",
+          "row": 110,
+          "col": 20,
+          "x": 200123.0,
+          "y": 105.0,
+          "z": 35,
+          "actual": 35.0,
+          "pass_height": true
+        },
+        {
+          "name": "SE",
+          "row": 101,
+          "col": 106,
+          "x": 200639.0,
+          "y": 159.0,
+          "z": 45,
+          "actual": 45.0,
+          "pass_height": true
+        }
+      ],
+      "vertex_registration": "NOT_VERIFIED; raster roundtrip does not prove sample centre versus mesh vertex placement."
+    },
+    {
+      "label": "regional",
+      "source": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\source\\baltic_physical_2048_6m.asc",
+      "export": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tb\\baltic_physical\\baltic_physical_tb_export.asc",
+      "source_sha256": "fa7878e26a63accce0f0a0a55b503ae1125f1fac9caa95fec4168c5d749de7f0",
+      "export_sha256": "1715d694a4531a16bc2d6fc1b4e894c14fc4acfb8e440d6a735faad7ef65c31d",
+      "source_shape": [
+        2048,
+        2048
+      ],
+      "export_shape": [
+        2048,
+        2048
+      ],
+      "source_transform": [
+        6.0,
+        0.0,
+        200000.0,
+        0.0,
+        -6.0,
+        12288.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "export_transform": [
+        6.0,
+        0.0,
+        200000.0,
+        0.0,
+        -6.0,
+        12288.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "same_grid": true,
+      "export_crs": "EPSG:32631",
+      "crs_note": "TB zone 31N is an engineering wrapper; not Baltic georeferencing.",
+      "samples": 4194304,
+      "differing_samples": 3605172,
+      "max_absolute_error_m": 0.005000114440917969,
+      "mean_absolute_error_m": 0.0021911614376451463,
+      "samples_over_0_00501m": 0,
+      "rounded_centimetre_equivalent": false,
+      "status": "PASS",
+      "vertex_registration": "NOT_VERIFIED; raster roundtrip does not prove sample centre versus mesh vertex placement."
+    }
+  ],
+  "status": "PASS"
+}

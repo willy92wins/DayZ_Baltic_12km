@@ -1,0 +1,62 @@
+from pathlib import Path
+import json,hashlib,shutil
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-water-visual-fix-2026-10-08';B=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008')
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+for p in list(B.glob('*.py'))+list(B.glob('*.ps1')):
+ dst=E/p.name
+ if dst.exists(): assert sha(dst)==sha(p),p
+ else: shutil.copyfile(p,dst)
+ assert sha(dst)==sha(p)
+# Immutable capture copies with original path and hash, excluding no diagnostic failures.
+records=[]
+for root in ['baseline','sea-away','waves-off','subdivision-off','stitched','near-plane']:
+ for p in sorted((B/root).rglob('*.jpg')):
+  dst=E/'frames'/p.relative_to(B);dst.parent.mkdir(parents=True,exist_ok=True)
+  if not dst.exists():shutil.copyfile(p,dst)
+  assert sha(dst)==sha(p)
+  records.append(dict(source=str(p),copy=str(dst.relative_to(E)),sha256=sha(dst)))
+for p in sorted((E/'user-images').glob('*.png')):
+ records.append(dict(copy=str(p.relative_to(E)),sha256=sha(p)))
+(E/'frame-manifest.json').write_text(json.dumps(records,indent=2)+'\n')
+p=W/'HANDOFF.md';s=p.read_text(encoding='utf-8')
+start=s.index('<!-- LIVE-STATE:START -->');end=s.index('<!-- LIVE-STATE:END -->')+len('<!-- LIVE-STATE:END -->')
+live="""<!-- LIVE-STATE:START -->
+project: DayZ_Baltic_12km
+updated: 2026-10-08
+owner: Codex, ejecutor/integrador por petición viva; continuar autónomamente. Sin subagentes ni push.
+status: PREVIEW_PLANA_RECHAZADA_VISUALMENTE. Juntas reparadas en piloto local; parches sobre tierra abiertos. Guillermo pide suavizar cauce, giros, taludes, llanura y relieve general.
+plan: plans/v30-rumbo-agua-1.0.md; evidence/v30-water-visual-fix-2026-10-08/plan.md. Conservar fondo 1 m y mínimo nominal 0,95 m; orilla local Narva autorizada. TB antes de navmesh.
+candidate: FlatWaterPreview, terreno e0d35db0; 549 vértices frente a Floor095Preview. Motor 28x62 PASS y lancha R1 2 sentidos PASS; las capturas del usuario rechazan su aspecto. No aceptación por puertas físicas.
+deployed: Piloto @DayZ_Baltic_StitchedWaterPilot: mundo 7d0a165d7eb2369679978fd598a7fa92a9e36a5be5e24b9959eee006829a9b33; agua 542bd4e85e9f82d9ef373386371168c9b489c0794e3f4bd4773709c680c4b068. Ningún parche diagnóstico promovido.
+water: 538 LOD visibles unidos con alturas comunes; roadway/memoria exactos, mismo terreno/máscara. Juntas ausentes en vistas locales R2/R3; prueba física repetida en curso. No extensión global ni aceptación de los bordes.
+land_artifacts: Mar a -100 m elimina reflejos en R1_far. waveAmplitude=0, Subdivision=0 y cámara A/B/A near 0,07->1->0,07 no los eliminan. Cliente y servidor leen puntos secos. Causa componente mar aislada, mecanismo de dibujo pendiente.
+smoothing: La pasada seca anterior excluía 36 m junto al agua y la reserva natural; no resuelve los taludes del ejemplo R3. Nueva petición exige suavizar perfiles completos, con carreteras/puentes/corredores protegidos.
+render: 019 recuperación observada con foco manual, intermitente; mitigación local y causa nativa sin aislar. No confundir con reflejos sobre tierra.
+runtime_lock: Run f20215b7-2fe5-4222-8bb9-f1da4665595d, servidor solo, BalticStitchedWaterProbeV1; lease propio. Heartbeat/adopción antes de tocarlo. Run anterior 0fec16bf cerrado orderly_close y liberado.
+editor: E:/DayZ-Baltic-Build/editor-v30-delta/native-asc/base_v30_shorefinish.tv4p todavía terreno 40d8 + 17.637 aguas dedup + 9 puentes; export 5ccb33dc. No reimportar CSV de agua.
+surface: TB aplazado hasta congelar geometría; máscara y Generate Layers pendientes. Después navmesh/IA.
+bugs: 007 insuficiente según capturas; 015 juntas localmente mejoradas; 016 parches abiertos; 020 finales cuadrados; 017 lagos grandes pendientes. 012 mínimo 0,955609 m en 19 corredores/36.494 caras. Sin cierre global de 20 IDs.
+load: 008 pospuesto al sector mapeado, 80-100 jugadores no verificados.
+backup: Conservar previews anteriores y builds con junctions. No borrar recursivamente. P:/DZ inmutable.
+env: Python GIS C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env; UTF8=1. Productos E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008.
+next: Terminar lectura física de StitchedWaterPilot; construir suavizado de valle completo; resolver parches con geometría/nivel observado, no más parámetros de cámara. Validar visuales, finales/lagos; luego TB y navmesh.
+git: Rama claude/codex-handoff-review-74f290, HEAD 90c4dfc. EV7/EV8 aún sin commit; revisión Claude de 71131f5 no cubre lo posterior.
+handoff: evidence/v30-water-visual-fix-2026-10-08/README.md y sesión 2026-10-08-dayz-baltic-agua-visual-y-valles.md.
+<!-- LIVE-STATE:END -->"""
+p.write_text(s[:start]+live+s[end:],encoding='utf-8',newline='\n')
+p=W/'bugs.md';s=p.read_text(encoding='utf-8');old=s.split('\n\n')[1]
+new="""Actualización visual vigente, 08-10: Narva ya autorizada; FlatWaterPreview pasa 28x62 consultas y lancha local, pero Guillermo la rechaza por agua sobre tierra, juntas y geometría angular. Piloto StitchedWaterPilot elimina juntas en las vistas locales R2/R3; lectura física repetida en curso. 007 requiere suavizar cauces, taludes y relieve completo, incluyendo la reserva. 016 sigue abierto: el control que aleja el mar quita parches; waveAmplitude, Subdivision y near-plane A/B/A no. No se promueve ningún parche diagnóstico. Fuentes: evidence/v30-water-visual-fix-2026-10-08 y evidence/v30-curved-channel-pilot-2026-10-08. Las entradas históricas siguientes no sustituyen este estado."""
+assert old.startswith('Actualización de cauces')
+p.write_text(s.replace(old,new,1),encoding='utf-8',newline='\n')
+p=W/'evidence/v30-curved-channel-pilot-2026-10-08/README.md';s=p.read_text(encoding='utf-8')
+a=s.index('## Próximo trabajo');s=s[:a]+"""## Pruebas realizadas y pendientes
+
+Motor: 28 puntos x 62 muestras en calma/tormenta, controles secos y hueco antiguo: PASS, run 93339a52. Lancha R1: ambos sentidos, 177,9 m cada uno, 662 muestras y salud conservada, run fe128ccc. Ver flat-runtime-verification.json y flat-boat-verification.json.
+
+**Visual FAIL del usuario:** reflejos sobre tierra, juntas en cuadrícula en R2 y cauces/taludes demasiado angulares. Estos resultados físicos no acreditan estética. Continúa en ../v30-water-visual-fix-2026-10-08/README.md; la preview plana no se acepta como base 1.0.
+
+Finales 020, lagos grandes, vistas completas y aceptación de geometría siguen abiertos. Terrain Builder precede a navmesh. Sin nueva variante de curvas nativas ni revisión externa de este piloto.
+"""
+p.write_text(s,encoding='utf-8',newline='\n')
+print(json.dumps(dict(captures=len(records),documentation='updated')))

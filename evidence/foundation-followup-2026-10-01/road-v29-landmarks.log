@@ -1,0 +1,90 @@
+{
+  "status": "PASS_OUTLINE_LANDMARKS_AND_CONTROLS",
+  "candidate_sha256": "ed6cdaa5a1b9100a6f74041e9338f1c21f100a6686f596c73f79f33c4b8662c6",
+  "checks": {
+    "reserve": true,
+    "approaches": true,
+    "negative_controls": true
+  },
+  "reserve": {
+    "dry_area_km2": 5.941332,
+    "minimum_dry_height_m": 2.0651445388793945,
+    "passed": true
+  },
+  "approaches": [
+    {
+      "side": "west",
+      "samples": 40623,
+      "maximum_change_m": 0.0,
+      "all_heights_exact": true,
+      "baseline": {
+        "maximum_grade": 0.050667449837384027,
+        "maximum_lane_grade": 0.050667449837360976,
+        "maximum_cross_height_m": 0.007838290397518932,
+        "maximum_6m_chord_m": 0.011498457435033194,
+        "joint_error_m": 0.0,
+        "passed": true
+      },
+      "candidate": {
+        "maximum_grade": 0.050667449837384027,
+        "maximum_lane_grade": 0.050667449837360976,
+        "maximum_cross_height_m": 0.007838290397518932,
+        "maximum_6m_chord_m": 0.011498457435033194,
+        "joint_error_m": 0.0,
+        "passed": true
+      },
+      "passed": true
+    },
+    {
+      "side": "east",
+      "samples": 66891,
+      "maximum_change_m": 0.0009742748434569126,
+      "all_heights_exact": false,
+      "baseline": {
+        "maximum_grade": 0.04997557227284233,
+        "maximum_lane_grade": 0.04863993930985745,
+        "maximum_cross_height_m": 0.002176631136669993,
+        "maximum_6m_chord_m": 0.005951292785710827,
+        "joint_error_m": 0.0,
+        "passed": true
+      },
+      "candidate": {
+        "maximum_grade": 0.04997557227284233,
+        "maximum_lane_grade": 0.04863993930985745,
+        "maximum_cross_height_m": 0.0021430222202596383,
+        "maximum_6m_chord_m": 0.005951292785710827,
+        "joint_error_m": 0.0,
+        "passed": true
+      },
+      "passed": true
+    }
+  ],
+  "coast_margin_m": {
+    "candidate": -2.6326793189923592e-08,
+    "baseline": -2.5338813839360927,
+    "corrupted": -2.5338813839360927
+  },
+  "fault_controls": {
+    "new_coast_positive": true,
+    "baseline_coast_rejected": true,
+    "restored_old_subcell_rejected": true,
+    "positive_basic_contract": true,
+    "changed_fairway_rejected": true,
+    "changed_map_edge_rejected": true,
+    "excess_delta_rejected": true
+  },
+  "roughness": {
+    "v10": {
+      "rms_half_chord_m": 0.22695755189757882,
+      "p99_half_chord_m": 0.9019483923912048
+    },
+    "candidate": {
+      "rms_half_chord_m": 0.15365527183530617,
+      "p99_half_chord_m": 0.8135499358177185
+    }
+  },
+  "limits": [
+    "Geometry and deliberate corruptions only; no runtime/navmesh/render acceptance.",
+    "Dry curvature statistic includes protected roads and shore neighborhoods; it is not a claim of smooth driving everywhere."
+  ]
+}

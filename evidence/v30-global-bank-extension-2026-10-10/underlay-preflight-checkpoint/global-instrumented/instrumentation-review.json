@@ -1,0 +1,53 @@
+{
+  "schema": "global-dry-rollback.instrumented-v2.review.v2",
+  "status": "PREPARED_NOT_RUN",
+  "source_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\instrumented-v2\\verify_global_dry_rollback_v2.py",
+  "source_sha256": "8ab83e18b9e746e0119f3c22f32c8c4332f277d9128a7edb7252dd108f94e72a",
+  "source_before_testpath_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\instrumented-v2\\verify_global_dry_rollback_v2.py.before-testpath",
+  "source_before_testpath_sha256": "cb1aaa64260c9e87e7c2814c896dd9890d4cc22de1e7e8f1dbdb1efdf5b228b7",
+  "plan_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\instrumented-v2\\PLAN.md",
+  "plan_sha256": "819f3b0177b2a00d7a356fcfda84b8a0412f6acb8ed9bb623e25e40c6c6d14a1",
+  "test_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\instrumented-v2\\test_verify_global_dry_rollback_v2.py",
+  "test_sha256": "28ab2d95c6962d09d06630701f8c065e3c42a5068cca5bb1616605bc8d62208e",
+  "admission_audit_script_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\instrumented-v2\\audit_v2_admission.py",
+  "admission_audit_script_sha256": "b5c162e9138d418f34a9bc1797bd7558da53b32001c6d845fc3a172e6f81e3b2",
+  "admission_audit_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\instrumented-v2\\admission-audit-02.json",
+  "admission_audit_sha256": "07cfd0745e5899d61ca3dbc0dcb08bd46d98659652711d79004f16864810d7dd",
+  "attempt01_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\instrumented-v2\\runs\\attempt-01\\report.json",
+  "attempt01_sha256": "545a8706ed786e757698e882065d91b3da64ae0ea7862f01b0f2ba40dfa58958",
+  "attempt01_status": "ERROR_INDEPENDENT_CONSUMER",
+  "attempt01_failure": "TEST_PATH named nonexistent test_verify_global_dry_rollback.py; failed admission in 0.002 s before calculations",
+  "attempt02_terminal_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-dry-rollback\\postsolve-consumer\\complete-consumer\\runs\\attempt-02\\report.json",
+  "attempt02_terminal_sha256": "a22c229850dedf3818a16495937ee8469c7f39723527a068cfd05f14e66dc94d",
+  "attempt02_status": "ERROR_INDEPENDENT_CONSUMER",
+  "attempt02_reason": "600-second consumer timeout",
+  "validation": {
+    "py_compile": "PASS",
+    "unit_tests": "PASS",
+    "unit_test_count": 16,
+    "real_path_wiring_fixture": "PASS",
+    "admission_path_and_pin_audit": "PASS_ADMISSION_PATHS_AND_PINS_ONLY_NOT_EVALUATION",
+    "admission_unique_paths": 14212,
+    "admission_bytes_hashed": 1160097507,
+    "manifest_models": 13128,
+    "manifest_shards": 9
+  },
+  "hashing": {
+    "workers": 8,
+    "read_block_bytes": 4194304,
+    "deduplicate_within_batch": true,
+    "complete_start_set": true,
+    "complete_end_set": true,
+    "per_batch_metrics": [
+      "unique_paths",
+      "bytes_hashed",
+      "wall_seconds",
+      "process_cpu_seconds",
+      "throughput_bytes_per_second",
+      "max_file_seconds",
+      "median_file_seconds"
+    ]
+  },
+  "gates_changed": false,
+  "candidate_evaluation_run": false
+}

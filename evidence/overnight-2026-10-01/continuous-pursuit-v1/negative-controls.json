@@ -1,0 +1,160 @@
+{
+  "status": "PASS_ACTUAL_PURSUIT_POSITIVE_AND_NEGATIVE_CONTROLS",
+  "full_run_status": "FAIL_OR_INCOMPLETE_CONTINUOUS_PURSUIT",
+  "scope": "actual control case0 only",
+  "limits": "Robustness of verifier only; original bridge failures remain unchanged.",
+  "reference_sha256": "ca030aa5e164b01cf005bd8170ac5763657de5b31f8fdf05804eda7385f5603d",
+  "server_sha256": "9b2908bd777d761b32d0388d6a519c52f78ccb6a02d5892a3f0e213443f22084",
+  "client_sha256": "de638e7450560f2de783e6536db316505a56b657d420253038235a63497a00d6",
+  "controls": [
+    {
+      "name": "dead_actor",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "actor_health"
+      ],
+      "parse_errors": [],
+      "server_sha256": "338c4e3bfdaff505562bbc4cf0a7cc27aa8eb18f8680a09d9b05d949d3481fcc",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "dead_prey",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "prey_conscious_healthy"
+      ],
+      "parse_errors": [],
+      "server_sha256": "50cd3487f1abc3891d524f2ed94d4be19d8d1910ee4010f7e5d8c37153c45bb3",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "unconscious_prey",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "prey_conscious_healthy"
+      ],
+      "parse_errors": [],
+      "server_sha256": "c709e6ebd68ee3c17ba58255d64738ab56a498f573da5dff68e1833791138fe8",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "nonfinite_health",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [],
+      "parse_errors": [
+        "Nonfinite server scalar"
+      ],
+      "server_sha256": "2e405fa312d06c7b574f86035b0943923c7a47267c1297c1b1c4c55b5e9ff7e5",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "wrong_ground",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "actor_terrain"
+      ],
+      "parse_errors": [],
+      "server_sha256": "37c476b650b10c393a8ebca0b8cacb729197a18bb4dd50e23fbf959913c2ff22",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "floating_actor",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "actor_contact"
+      ],
+      "parse_errors": [],
+      "server_sha256": "d85570fd5b2feb368c9e89d787e83ad1f83928f461531d5df26c33405d69084b",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "wrong_goal",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "frozen_goal"
+      ],
+      "parse_errors": [],
+      "server_sha256": "a8d8e657c65e66bee89bf6cda127e41350702f6050e3f27b18e9ba2fb0d3b8be",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "wrong_spawn",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "spawn_xz",
+        "actor_contact",
+        "actor_terrain"
+      ],
+      "parse_errors": [],
+      "server_sha256": "77901caaea7593f00dd4d40465c386dbecb3a926634a2ab246e6b8d597ffd420",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "false_arrival",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "actual_actor_goal",
+        "actor_terrain",
+        "actor_no_teleport",
+        "actor_complete_distance"
+      ],
+      "parse_errors": [],
+      "server_sha256": "9d54620d6c4afe7596b18175a4ac9752f0706acf8299cfa02f3d644226593f4a",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "unknown_marker",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [],
+      "parse_errors": [
+        "Bad server row"
+      ],
+      "server_sha256": "81da94b53c1b24bce4fd4085ec76572c3dabb7468f1c1a7b98c43eba820f7cca",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "clock_backwards",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [],
+      "parse_errors": [
+        "Unordered server records"
+      ],
+      "server_sha256": "f67bb2499d40444e9a7f7561a401310ed8700baa31a2e23c0a25d739dfd1080d",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "missing_spawn",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [],
+      "parse_errors": [],
+      "server_sha256": "628c5a5d4df29830c132a2213090a2fa57ff6eda4c719e8ffbfba2010a06bb94",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "duplicate_spawn",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [],
+      "parse_errors": [],
+      "server_sha256": "281e69be17ddb9e43fde09541a44de03cfa7f3891497427b7fd2d7319d01997e",
+      "client_sha256": "3c25f5339a68c6b82b2c44c53187614a0c4f8d53ebe226ad4b25bcb04bda664f"
+    },
+    {
+      "name": "missing_input",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [
+        "actual_client_input"
+      ],
+      "parse_errors": [],
+      "server_sha256": "7d33b8d136328a1d3a552c11fe7b3869ff1a2b38785d0f1c0eaf916e471ef4b9",
+      "client_sha256": "71a83aaf26dd3d10631a44a2c283f4d5d88ba1cf482f7fd18be7c9cf0a53a990"
+    },
+    {
+      "name": "client_missing_end",
+      "status": "EXPECTED_REJECTION",
+      "control_failures": [],
+      "parse_errors": [],
+      "server_sha256": "7d33b8d136328a1d3a552c11fe7b3869ff1a2b38785d0f1c0eaf916e471ef4b9",
+      "client_sha256": "14d3e7f5646923f2cee3291c0f32b920519cf97db0b9f7d917790c06d500e9c4"
+    }
+  ]
+}

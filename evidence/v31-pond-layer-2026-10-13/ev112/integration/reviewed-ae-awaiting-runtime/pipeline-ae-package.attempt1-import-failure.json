@@ -1,0 +1,72 @@
+[
+  {
+    "step": "surface",
+    "rc": 0,
+    "seconds": 440.5684506893158,
+    "cmd": [
+      "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+      "-I",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-final-surface-ae.py"
+    ]
+  },
+  {
+    "step": "stage-compile",
+    "rc": 0,
+    "seconds": 958.1743550300598,
+    "cmd": [
+      "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+      "-I",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-stage-compile-ae.py"
+    ]
+  },
+  {
+    "step": "package-gates",
+    "rc": 0,
+    "seconds": 838.853319644928,
+    "cmd": [
+      "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+      "-I",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-final-package-gates-ae.py"
+    ]
+  },
+  {
+    "step": "painted",
+    "rc": 0,
+    "seconds": 271.96664690971375,
+    "cmd": [
+      "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+      "-I",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-painted-forest-ae.py"
+    ]
+  },
+  {
+    "step": "wrp-readback",
+    "rc": 0,
+    "seconds": 42.10260343551636,
+    "cmd": [
+      "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+      "-I",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\audit-wrp-readback-v2.py",
+      "--pbo",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\package-final-ae\\packed\\narva_trial.pbo",
+      "--staged",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-forest-ae\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+      "--records",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ae\\records.json",
+      "--forest-report",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ae\\report.json",
+      "--out",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\wrp-readback-ae"
+    ]
+  },
+  {
+    "step": "negatives",
+    "rc": 1,
+    "seconds": 0.7018959522247314,
+    "cmd": [
+      "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+      "-I",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-final-forest-negatives-ae.py"
+    ]
+  }
+]

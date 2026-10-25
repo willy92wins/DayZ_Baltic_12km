@@ -1,0 +1,45 @@
+{
+  "status": "ISOLATION_DIAGNOSTIC_NOT_TERRAIN",
+  "body": "lake_217",
+  "level": 2.19,
+  "bounds_xz": [
+    11669.557261724452,
+    2322.1366114002662,
+    11761.267786082397,
+    2377.3838681962725
+  ],
+  "variables": 193,
+  "selected_rows": 5820,
+  "row_classes": {
+    "dry": 358,
+    "core": 54,
+    "slope": 5408
+  },
+  "experiments": [
+    {
+      "case": "original",
+      "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "success": true,
+      "rows": 5820,
+      "maximum_residual": 4.0900616227190767e-13
+    },
+    {
+      "case": "shore_without_uniform_35cm",
+      "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "success": true,
+      "rows": 5820,
+      "maximum_residual": 3.5349501104064984e-13
+    },
+    {
+      "case": "no_core_depth",
+      "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "success": true,
+      "rows": 5766,
+      "maximum_residual": 4.0900616227190767e-13
+    }
+  ],
+  "limits": [
+    "Subset of full constraints; infeasibility of the subset proves a conflict in the full model, feasibility does not prove global feasibility.",
+    "Uniform shore adjustment is an experiment, not an accepted global terrain change."
+  ]
+}

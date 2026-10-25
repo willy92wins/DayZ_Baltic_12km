@@ -1,0 +1,40 @@
+{
+ "terrain_sha256": "e144ad1a131ba90f6b9ccf55d867d45da3b4996e4eb53387bb0a692dba39e0e6",
+ "axes_sha256": "abcdff01c41b9502df13f73a6123561a989d1635455cf5aa85feee1d6275e6ed",
+ "method": "0.5 m grid over the piece boxes of each reach (+4 m). Footprint: points with a piece visual surface (engine_water_model.top_visual over all 99 pieces). Exposed edge: footprint boundary point whose outside 4-neighbour has terrain (tri_sample) more than 0.01 m below the piece surface and no sea (0.54 m) or remaining pond plane (cell_planes, sea cut 0.51, reach cells removed) above it. Outline: |sd| <= 0.25 m with bilinear sd of tests/terrain_v30/water_v30.npz; visible_outside_design: piece water above the terrain where sd > 1 m. R1 lies in the Narva zone, where sd is undefined.",
+ "reaches": {
+  "R1": {
+   "footprint_m2": 21094,
+   "visible_piece_water_m2": 15876,
+   "design_inside_m2_in_window": 0,
+   "design_inside_not_covered_m2": 0,
+   "footprint_edge_m": 899.0,
+   "exposed_edge_m": 2.0,
+   "outline_px": 0,
+   "outline_covered_frac": 0.0,
+   "visible_outside_design_m2": 0
+  },
+  "R2": {
+   "footprint_m2": 8820,
+   "visible_piece_water_m2": 3233,
+   "design_inside_m2_in_window": 3218,
+   "design_inside_not_covered_m2": 66,
+   "footprint_edge_m": 1168.0,
+   "exposed_edge_m": 1.5,
+   "outline_px": 2061,
+   "outline_covered_frac": 0.977,
+   "visible_outside_design_m2": 24
+  },
+  "R3": {
+   "footprint_m2": 7506,
+   "visible_piece_water_m2": 1817,
+   "design_inside_m2_in_window": 552,
+   "design_inside_not_covered_m2": 17,
+   "footprint_edge_m": 1127.0,
+   "exposed_edge_m": 0.0,
+   "outline_px": 1953,
+   "outline_covered_frac": 0.968,
+   "visible_outside_design_m2": 440
+  }
+ }
+}

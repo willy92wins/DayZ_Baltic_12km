@@ -1,0 +1,55 @@
+{
+  "status": "MEASURED_HEIGHT_CONFLICT_RUNTIME_EXTENT_NOT_VERIFIED",
+  "source": "P:\\DayZ_Baltic_12km_dev\\tb\\narva_trial\\narva_tb_export_v2.asc",
+  "source_sha256": "beba1691236f558e6900c99b26e5fb6cc8b248540840a843486d0605d2f6fd8d",
+  "threshold_scenarios": [
+    {
+      "water_level_scenario_m": 0,
+      "dry_reference_vertices_below_level": 282,
+      "dry_reference_percent": 0.008812020846366479,
+      "dry_interior_over_12m_from_reference_below": 2,
+      "equivalent_grid_area_km2_not_exact_flood_area": 0.010152
+    },
+    {
+      "water_level_scenario_m": 0.25,
+      "dry_reference_vertices_below_level": 686,
+      "dry_reference_percent": 0.021436334399317036,
+      "dry_interior_over_12m_from_reference_below": 28,
+      "equivalent_grid_area_km2_not_exact_flood_area": 0.024696
+    },
+    {
+      "water_level_scenario_m": 0.54377,
+      "dry_reference_vertices_below_level": 60179,
+      "dry_reference_percent": 1.8804914982747813,
+      "dry_interior_over_12m_from_reference_below": 44940,
+      "equivalent_grid_area_km2_not_exact_flood_area": 2.166444
+    },
+    {
+      "water_level_scenario_m": 1.0,
+      "dry_reference_vertices_below_level": 175852,
+      "dry_reference_percent": 5.49507620523134,
+      "dry_interior_over_12m_from_reference_below": 146096,
+      "equivalent_grid_area_km2_not_exact_flood_area": 6.330672
+    },
+    {
+      "water_level_scenario_m": 1.5,
+      "dry_reference_vertices_below_level": 363184,
+      "dry_reference_percent": 11.348882904492068,
+      "dry_interior_over_12m_from_reference_below": 316635,
+      "equivalent_grid_area_km2_not_exact_flood_area": 13.074624
+    }
+  ],
+  "dry_reference_vertices": 3200174,
+  "native_coordinate_assumption": "Narva-measured formula extrapolated to regional risk map only",
+  "source_water_reference_not_modified": true,
+  "dry_floor_in_generator_m": 0.25,
+  "observed_sea_level_single_reading_m": 0.54377,
+  "water_mask_centre_vs_native_disagreements": 33763,
+  "limits": [
+    "Below-level samples are risk, not a measurement of actual runtime flooded surface.",
+    "Single observed sea level is not the maximum; SurfaceGetSeaLevelMin/Max exist and are not yet measured.",
+    "WorldCover and OSM differ locally; plot uses conservative dry classification.",
+    "No interpolation-triangle area integration or water-connectivity inference is claimed.",
+    "The actual water is separate from blue WorldCover placeholder texture; no pond area inference from screenshot."
+  ]
+}

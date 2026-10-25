@@ -1,0 +1,38 @@
+{
+  "pass_gate": false,
+  "errors": [
+    "temporal_timing"
+  ],
+  "points": 784,
+  "wet_level_points": 19,
+  "max_ground_error_m": 6.661227937243552e-06,
+  "unasserted_positive_water_points": [],
+  "temporal_samples": 64,
+  "sea_range": [
+    0.650126,
+    0.849874
+  ],
+  "wind_range": [
+    19.9597,
+    19.9901
+  ],
+  "dry_depth_range": [
+    -0.891142,
+    -0.647391
+  ],
+  "status": "FAIL",
+  "terrain_sha256": "fb36ec4c2203b6c936c8823078250f71082fbf43d9b1ba410049f735f890a0e6",
+  "runtime_sha256": "89433ea778b250fbf87374f0ed2436e886aa0dcda18e43e57af774a28c1bb7ce",
+  "negative": {
+    "missing_point": true,
+    "missing_grid_end": true,
+    "missing_time": true,
+    "missing_end": true,
+    "height_error": true,
+    "wrong_water_level": true
+  },
+  "limits": [
+    "784 local ground queries and 19 interior water-level probes; not whole-map visual acceptance.",
+    "64 temporal samples at the reported physically dry point. Renderer effects do not follow from query flags."
+  ]
+}

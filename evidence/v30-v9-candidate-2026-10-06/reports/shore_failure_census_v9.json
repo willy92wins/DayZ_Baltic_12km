@@ -1,0 +1,131 @@
+{
+ "terrains": {
+  "pre": "E:/DayZ-Baltic-Build/v30-redesign/v6/terrain_causeway.npz",
+  "post": "E:/DayZ-Baltic-Build/v30-redesign/inland/terrain_inland.npz"
+ },
+ "shore_edges": 147948,
+ "by_class": {
+  "2": {
+   "edges": 42453,
+   "moved_share": 0.947,
+   "frozen": 2233,
+   "frozen_by_reason": {
+    "corridor": 2,
+    "narva": 322,
+    "nature": 98,
+    "near_sea": 72,
+    "none": 1362,
+    "reserve": 78,
+    "standing_near_flowing": 299
+   }
+  },
+  "3": {
+   "edges": 16166,
+   "moved_share": 0.663,
+   "frozen": 5441,
+   "frozen_by_reason": {
+    "corridor": 1450,
+    "flowing_near_standing": 4,
+    "narva": 2180,
+    "nature": 42,
+    "near_sea": 21,
+    "none": 1113,
+    "reserve": 631
+   }
+  },
+  "5": {
+   "edges": 28949,
+   "moved_share": 0.959,
+   "frozen": 1188,
+   "frozen_by_reason": {
+    "flowing_near_standing": 183,
+    "nature": 124,
+    "near_sea": 10,
+    "near_vanilla_reach": 278,
+    "none": 432,
+    "reserve": 161
+   }
+  },
+  "6": {
+   "edges": 47254,
+   "moved_share": 0.978,
+   "frozen": 1017,
+   "frozen_by_reason": {
+    "flowing_near_standing": 102,
+    "nature": 286,
+    "near_sea": 6,
+    "none": 244,
+    "reserve": 379
+   }
+  },
+  "7": {
+   "edges": 13126,
+   "moved_share": 0.941,
+   "frozen": 779,
+   "frozen_by_reason": {
+    "narva": 300,
+    "near_sea": 20,
+    "none": 377,
+    "reserve": 30,
+    "standing_near_flowing": 52
+   }
+  }
+ },
+ "planform_sharp_corners": {
+  "reachable_4m": {
+   "2": {
+    "outline_km": 104.2,
+    "sharp_corners": 1501,
+    "per_km": 14.41
+   },
+   "3": {
+    "outline_km": 45.5,
+    "sharp_corners": 131,
+    "per_km": 2.88
+   },
+   "5": {
+    "outline_km": 80.1,
+    "sharp_corners": 392,
+    "per_km": 4.89
+   },
+   "6": {
+    "outline_km": 134.6,
+    "sharp_corners": 390,
+    "per_km": 2.9
+   },
+   "7": {
+    "outline_km": 25.7,
+    "sharp_corners": 958,
+    "per_km": 37.32
+   }
+  },
+  "free_sigma30": {
+   "2": {
+    "outline_km": 40.9,
+    "sharp_corners": 21,
+    "per_km": 0.51
+   },
+   "3": {
+    "outline_km": 20.8,
+    "sharp_corners": 42,
+    "per_km": 2.02
+   },
+   "5": {
+    "outline_km": 0.3,
+    "sharp_corners": 1,
+    "per_km": 2.98
+   },
+   "6": {
+    "outline_km": 0.1,
+    "sharp_corners": 0,
+    "per_km": 0.0
+   },
+   "7": {
+    "outline_km": 0.3,
+    "sharp_corners": 0,
+    "per_km": 0.0
+   }
+  },
+  "note": "turn > 45 degrees within 12 m on the zero line of the smoothed signed distance; reachable = what profile_lakes/profile_rivers can follow; free = what a reshaped design could follow (narrow channels vanish under sigma 30)"
+ }
+}

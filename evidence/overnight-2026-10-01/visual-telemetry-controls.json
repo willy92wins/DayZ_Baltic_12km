@@ -1,0 +1,123 @@
+{
+  "status": "PASS_REAL_CAMERA_METRICS_AND_NEGATIVES",
+  "controls": [
+    {
+      "category": "camera",
+      "name": "wrong_camera",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "SETTLED_0:position"
+      ],
+      "log_sha256": "517fd623f1e8e62f7699a3fda1ebeea4f49808417316ef5762e389023ee4ecf3"
+    },
+    {
+      "category": "camera",
+      "name": "wrong_direction",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "SETTLED_0:direction"
+      ],
+      "log_sha256": "e06f8771d2ccf8472c3aac619428107222b7df7c256f081f5d8eeb34b4f9c9b8"
+    },
+    {
+      "category": "camera",
+      "name": "wrong_world",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "OBSERVATION_READY_0:world"
+      ],
+      "log_sha256": "48cf5219080d908477571cc84275aed849544f381d733fbf5b55cb93ebd6cec4"
+    },
+    {
+      "category": "camera",
+      "name": "rain",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "OBSERVATION_READY_0:weather"
+      ],
+      "log_sha256": "4f89b773f1e83c904bbf1bcc33fb94c2ef991fcc194376600d7e13f29c641dfe"
+    },
+    {
+      "category": "camera",
+      "name": "wrong_nearplane",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "SETTLED_0:nearplane"
+      ],
+      "log_sha256": "a3e1739dfe7b5adc437196ff7b2f86be3208550fa3738b66876419fd08543c2a"
+    },
+    {
+      "category": "camera",
+      "name": "camera_inactive",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "SETTLED_0:camera_active"
+      ],
+      "log_sha256": "8e0fd86b8f47775fd5c28e52ffdedfc55abf2a7bf0d8d15375c3a3abe0d10731"
+    },
+    {
+      "category": "camera",
+      "name": "restore_pose",
+      "status": "EXPECTED_REJECTION",
+      "detail": [
+        "restoration:position"
+      ],
+      "log_sha256": "f60f13ac76087c73dd9e3d6e256e03491ef5cd30b7f696ed4952f7fdd3e4a436"
+    },
+    {
+      "category": "camera",
+      "name": "missing_restoration",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Incomplete/unknown camera markers",
+      "log_sha256": "bdabcba2f8a3beee4ce6558e1892323ec3b2ef37d5a9fb5611a8ea90ae15a7bf"
+    },
+    {
+      "category": "camera",
+      "name": "duplicate_marker",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Duplicate camera marker",
+      "log_sha256": "5be236845530a0c4bffbcfccff359598ce598061a2a7a54a1a63e39aff295068"
+    },
+    {
+      "category": "metrics",
+      "name": "missing_phase",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Insufficient client metrics outside capture interval",
+      "log_sha256": "afcbe1ba770f06e120824ac476d6f5a920aeb4cf85094ea93633f385a2cde74b"
+    },
+    {
+      "category": "metrics",
+      "name": "nonfinite_counter",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Wrong phase or metric clock",
+      "log_sha256": "220ba51e1061bfe5fec040264e4f0c05ebeccbdeace8943061b122abcb032004"
+    },
+    {
+      "category": "metrics",
+      "name": "zero_counter",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Native counters failed basic ranges",
+      "log_sha256": "35ac4d8a89c0b0442769d0d700edf335a5340970a9feb2f34136fd42797b1533"
+    },
+    {
+      "category": "metrics",
+      "name": "wrong_metric_camera",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Metrics came from another camera",
+      "log_sha256": "7e821639f8119b5711d17491aa957f466131cb45ceef8dfc178f1ae7af33cf01"
+    },
+    {
+      "category": "metrics",
+      "name": "duplicate_sample",
+      "status": "EXPECTED_REJECTION",
+      "detail": "Wrong phase or metric clock",
+      "log_sha256": "6911a85067077ebade6c4d2a56a693241151dc3ec2a451e7384f30f6d0d53417"
+    }
+  ],
+  "reference_sha256": "f8dbe2f50aa8a10d0e39f9ab935c76146fefcec722b99999d4b060676f6d34ed",
+  "source_sha256": {
+    "camera.log": "3062d7607f2aa3c5b7c9c28f153e1c9b046272460b592aaa37c754323d6ac4f4",
+    "client-metrics.log": "b452fc3dda52b55f7e1f117f2ae8f40628dea2d8d969a353cac32702e5085d6c"
+  },
+  "limit": "Telemetry checks only. These controls do not accept image appearance or performance."
+}

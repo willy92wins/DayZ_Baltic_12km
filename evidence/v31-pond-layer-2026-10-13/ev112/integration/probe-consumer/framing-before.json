@@ -1,0 +1,25 @@
+{
+  "status": "FAIL",
+  "positive_real_log": "PASS",
+  "tool_sha256": "cd5d0d4ab88c651d85fae51fcd427e00d302aada53071daf46d15404f62c0908",
+  "baseline_sha256": "d30a72b10a2d79aabed450257aff9d687b20b4b786cbf8fad8b47f0c2dc96d3d",
+  "cases": {
+    "rows-before-begin": {
+      "rejected": false
+    },
+    "end-before-rows": {
+      "rejected": false
+    },
+    "row-after-end": {
+      "rejected": false
+    },
+    "duplicate-begin": {
+      "rejected": true,
+      "reason": "incomplete probe framing or ids"
+    },
+    "missing-end": {
+      "rejected": true,
+      "reason": "incomplete probe framing or ids"
+    }
+  }
+}

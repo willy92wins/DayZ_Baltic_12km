@@ -1,0 +1,371 @@
+{
+ "base_input": {
+  "terrain": "E:\\DayZ-Baltic-Build\\v30-shore-sdf\\fit3\\terrain_pilot.npz",
+  "sha256": "ec6aa61a49d7ae1e3c0c45bade9105c67f7f05a60c3f52864133a60490d2cccb"
+ },
+ "common_args": "--channels fit3 --sea-cut 0.51 --reg 0.05 --max-iter 3000 --dry-raise-max 0.4 --corridor-margin 0 (--levee-cap 0.15 except no_levee_cap)",
+ "levee_like_definition": "ring-1 land higher than every outer land neighbour by more than 0.2 m (base d5dadae8: 6162)",
+ "variants": {
+  "candidate": {
+   "label": "Candidate e144ad1a (groove fixed, depth 0.10 m, levee cap 0.15 m)",
+   "dir": "E:\\DayZ-Baltic-Build\\v30-shore-sdf\\shore4",
+   "terrain_sha256": "e144ad1a131ba90f6b9ccf55d867d45da3b4996e4eb53387bb0a692dba39e0e6",
+   "changed_vertices": 91857,
+   "offset_m_p50_p90": {
+    "all": [
+     0.082,
+     1.591
+    ],
+    "channel": [
+     0.106,
+     1.397
+    ],
+    "lake": [
+     0.033,
+     0.666
+    ],
+    "navigable": [
+     0.974,
+     3.892
+    ],
+    "river": [
+     0.082,
+     1.083
+    ],
+    "stream": [
+     0.309,
+     1.521
+    ],
+    "pond": [
+     0.04,
+     0.777
+    ]
+   },
+   "offset_limits": {
+    "edges_over_1m": 20508,
+    "fixed_end": 7897,
+    "wet_at_ceiling": 9692,
+    "land_at_floor": 1354,
+    "unbound": 1565
+   },
+   "gate_recheck": {
+    "wet_too_shallow": 0,
+    "wet_raised_where_forbidden": 0,
+    "land_below_floor": 0
+   },
+   "levee_like": 7045,
+   "verify_terrain": {
+    "water_depth_fail": 6,
+    "pieces_fail": 35,
+    "bed_floor": 0,
+    "slopes": 0
+   },
+   "roads": "PASS",
+   "channel_reaches": {
+    "water_depth_fail_outside_reaches": 0,
+    "pieces_fail_outside_removed_cells": {
+     "water_corner": 0,
+     "land_corner": 0
+    },
+    "reach_wet_shallower_than_0_02_under_piece": 33,
+    "reach_wet_without_piece": 1
+   }
+  },
+  "shallow": {
+   "label": "Depth 0.03 m within 2 m of the outline (breaks the 0.10 m depth gate)",
+   "dir": "E:\\DayZ-Baltic-Build\\v30-shore-sdf\\shore5-shallow-exploratory",
+   "terrain_sha256": "8bb8e4a69e0e15ba0d9a981c6780e79fe597d87949387461a32c4e7feb298706",
+   "changed_vertices": 94910,
+   "offset_m_p50_p90": {
+    "all": [
+     0.061,
+     1.567
+    ],
+    "channel": [
+     0.103,
+     1.238
+    ],
+    "lake": [
+     0.021,
+     0.417
+    ],
+    "navigable": [
+     0.97,
+     3.895
+    ],
+    "river": [
+     0.073,
+     1.057
+    ],
+    "stream": [
+     0.308,
+     1.52
+    ],
+    "pond": [
+     0.018,
+     0.615
+    ]
+   },
+   "offset_limits": {
+    "edges_over_1m": 19895,
+    "fixed_end": 7893,
+    "wet_at_ceiling": 8848,
+    "land_at_floor": 1585,
+    "unbound": 1569
+   },
+   "gate_recheck": {
+    "wet_too_shallow": 0,
+    "wet_raised_where_forbidden": 0,
+    "land_below_floor": 0
+   },
+   "levee_like": 6946,
+   "verify_terrain": {
+    "water_depth_fail": 3683,
+    "pieces_fail": 39,
+    "bed_floor": 0,
+    "slopes": 0
+   },
+   "roads": "PASS",
+   "channel_reaches": {
+    "water_depth_fail_outside_reaches": 3669,
+    "pieces_fail_outside_removed_cells": {
+     "water_corner": 0,
+     "land_corner": 0
+    },
+    "reach_wet_shallower_than_0_02_under_piece": 33,
+    "reach_wet_without_piece": 1
+   },
+   "visible_change_vs_candidate_m2": 5212.0,
+   "max_tile_change_m2": 56.0,
+   "package": {
+    "narva_trial.pbo": "da68a1297c2ba2bfe5a91e149c477550e73c4c498d6a9876dc0c7073043b4fe6",
+    "baltic_water_v30.pbo": "6ebc62cbf29c8399cf45f26432dcb41e57132095b7abdde1b99e78e21dda4eb1",
+    "deployed": false
+   }
+  },
+  "no_levee_cap": {
+   "label": "Candidate without the levee cap",
+   "dir": "E:\\DayZ-Baltic-Build\\v30-shore-sdf\\shore6-nocap-exploratory",
+   "terrain_sha256": "0d0fdc3d86481feafca075430340d607b6e2376a99ff553f218bc31bd453d2c6",
+   "changed_vertices": 92249,
+   "offset_m_p50_p90": {
+    "all": [
+     0.078,
+     1.585
+    ],
+    "channel": [
+     0.106,
+     1.397
+    ],
+    "lake": [
+     0.031,
+     0.647
+    ],
+    "navigable": [
+     0.972,
+     3.917
+    ],
+    "river": [
+     0.081,
+     1.08
+    ],
+    "stream": [
+     0.305,
+     1.509
+    ],
+    "pond": [
+     0.038,
+     0.769
+    ]
+   },
+   "offset_limits": {
+    "edges_over_1m": 20380,
+    "fixed_end": 7905,
+    "wet_at_ceiling": 9572,
+    "land_at_floor": 1343,
+    "unbound": 1560
+   },
+   "gate_recheck": {
+    "wet_too_shallow": 0,
+    "wet_raised_where_forbidden": 0,
+    "land_below_floor": 0
+   },
+   "levee_like": 7928
+  },
+  "groove_free": {
+   "label": "Groove vertices may rise to the 0.10 m depth bound",
+   "dir": "E:\\DayZ-Baltic-Build\\v30-shore-sdf\\shore7-groove-exploratory",
+   "terrain_sha256": "77d7f28d412064fb60eaf9bb6eb16d56f3fc36f7ef1f699542eb578a0e92379e",
+   "changed_vertices": 98395,
+   "offset_m_p50_p90": {
+    "all": [
+     0.046,
+     1.275
+    ],
+    "channel": [
+     0.061,
+     1.24
+    ],
+    "lake": [
+     0.032,
+     0.667
+    ],
+    "navigable": [
+     0.974,
+     3.892
+    ],
+    "river": [
+     0.036,
+     0.746
+    ],
+    "stream": [
+     0.041,
+     0.607
+    ],
+    "pond": [
+     0.04,
+     0.777
+    ]
+   },
+   "offset_limits": {
+    "edges_over_1m": 15253,
+    "fixed_end": 7844,
+    "wet_at_ceiling": 4263,
+    "land_at_floor": 1432,
+    "unbound": 1714
+   },
+   "gate_recheck": {
+    "wet_too_shallow": 0,
+    "wet_raised_where_forbidden": 0,
+    "land_below_floor": 0
+   },
+   "levee_like": 6903,
+   "verify_terrain": {
+    "water_depth_fail": 6,
+    "pieces_fail": 36,
+    "bed_floor": 0,
+    "slopes": 0
+   },
+   "roads": "PASS",
+   "channel_reaches": {
+    "water_depth_fail_outside_reaches": 0,
+    "pieces_fail_outside_removed_cells": {
+     "water_corner": 0,
+     "land_corner": 0
+    },
+    "reach_wet_shallower_than_0_02_under_piece": 33,
+    "reach_wet_without_piece": 1
+   },
+   "visible_change_vs_candidate_m2": 49312.0,
+   "max_tile_change_m2": 328.0,
+   "package": {
+    "narva_trial.pbo": "bd0483a34676f8aeb3c3bdefe49144e042720a63f4d704e9823b44c7599db32f",
+    "baltic_water_v30.pbo": "6ebc62cbf29c8399cf45f26432dcb41e57132095b7abdde1b99e78e21dda4eb1",
+    "deployed": "@DayZ_Baltic_ShoreGrooveCandidate (mission BalticShoreSdfCandidateV1)"
+   },
+   "engine_runs": {
+    "groove": "16aca2e1",
+    "candidate_same_views": "f084ba3d"
+   }
+  },
+  "groove_0.25": {
+   "label": "Groove vertices may rise, not above level - 0.25 m",
+   "dir": "E:\\DayZ-Baltic-Build\\v30-shore-sdf\\shore8-groove0.25-exploratory",
+   "terrain_sha256": "9f345dc29fb9bfbcf3fd8d05268d148d0c47d6d7ec717b01757f1d32e6227f2f",
+   "changed_vertices": 94614,
+   "offset_m_p50_p90": {
+    "all": [
+     0.074,
+     1.416
+    ],
+    "channel": [
+     0.106,
+     1.401
+    ],
+    "lake": [
+     0.033,
+     0.665
+    ],
+    "navigable": [
+     0.974,
+     3.892
+    ],
+    "river": [
+     0.063,
+     0.899
+    ],
+    "stream": [
+     0.239,
+     1.246
+    ],
+    "pond": [
+     0.04,
+     0.777
+    ]
+   },
+   "offset_limits": {
+    "edges_over_1m": 18466,
+    "fixed_end": 7864,
+    "wet_at_ceiling": 7620,
+    "land_at_floor": 1368,
+    "unbound": 1614
+   },
+   "gate_recheck": {
+    "wet_too_shallow": 0,
+    "wet_raised_where_forbidden": 0,
+    "land_below_floor": 0
+   },
+   "levee_like": 7045
+  },
+  "groove_0.40": {
+   "label": "Groove vertices may rise, not above level - 0.40 m",
+   "dir": "E:\\DayZ-Baltic-Build\\v30-shore-sdf\\shore8-groove0.40-exploratory",
+   "terrain_sha256": "7ec30f9a979245d1b2826cb1ddf403226c328eebdf184250ecf4ec83226afdfc",
+   "changed_vertices": 92970,
+   "offset_m_p50_p90": {
+    "all": [
+     0.079,
+     1.508
+    ],
+    "channel": [
+     0.106,
+     1.397
+    ],
+    "lake": [
+     0.033,
+     0.666
+    ],
+    "navigable": [
+     0.974,
+     3.892
+    ],
+    "river": [
+     0.071,
+     0.967
+    ],
+    "stream": [
+     0.289,
+     1.406
+    ],
+    "pond": [
+     0.04,
+     0.777
+    ]
+   },
+   "offset_limits": {
+    "edges_over_1m": 19655,
+    "fixed_end": 7875,
+    "wet_at_ceiling": 8848,
+    "land_at_floor": 1355,
+    "unbound": 1577
+   },
+   "gate_recheck": {
+    "wet_too_shallow": 0,
+    "wet_raised_where_forbidden": 0,
+    "land_below_floor": 0
+   },
+   "levee_like": 7045
+  }
+ },
+ "tool_sha256": "6633f0c75999af7277902dc20b7486084a1b2a9f4e3bc72ea44a5fd651184d8e"
+}

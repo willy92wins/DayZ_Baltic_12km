@@ -1,0 +1,19 @@
+{
+  "status": "ERROR_EV88Q_OFFLINE_CONSUMER",
+  "fixtures": {
+    "crossing_bidirectional": true,
+    "crossing_diagonal": true,
+    "nearflat_tau_edges": true,
+    "stencil_plane_bowl_and_central_xz": true,
+    "nominal_depth_exact_triangle_clip": true,
+    "corridor_area_coverage_and_unknown_P": true,
+    "corridor_row_strip_matches_exhaustive": true,
+    "focus_rowcol_and_local_mesh_geometry": true,
+    "extrema_one_to_one": true,
+    "window_core_dimensions": true
+  },
+  "candidate_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\candidate-terrain.npz",
+  "authoring_receipt_path": "E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\authoring.json",
+  "error": "TypeError: can't multiply sequence by non-int of type 'float'",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py\", line 957, in main\n    report=evaluate_candidate(args.candidate,args.authoring_receipt)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\review-independent\\verify_ev88q.py\", line 413, in evaluate_candidate\n    'fixed_stencil_energy_reduced_at_least_25_percent':bool(energy_h<=0.75*energy_b),\n                                                                      ~~~~^~~~~~~~~\nTypeError: can't multiply sequence by non-int of type 'float'\n"
+}

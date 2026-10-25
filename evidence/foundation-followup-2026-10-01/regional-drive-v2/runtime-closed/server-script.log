@@ -1,0 +1,27 @@
+---------------------------------------------
+Log P:\DayZ_MCP_dev\_server\profiles\script_2026-10-01_15-57-45.log started at 01.10. 15:57:45
+
+SCRIPT       : Module: GameLib; loaded 13x files; 13x classes; used 8/2097 kB (0%) of static memory; defines: "DAYZ_1_29,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,baltic_drive_input,DayZ_MCP,sakhal,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION"; CRC32: 00000000
+SCRIPT       : Registered 315 temporary action enum(s), UAN==315
+SCRIPT       : Module: Game; loaded 416x files; 1392x classes; used 4648/33554 kB (13%) of static memory; defines: "DAYZ_1_29,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,baltic_drive_input,DayZ_MCP,sakhal,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION"; CRC32: 00000000
+SCRIPT       : ... Backlit Effects Enabled
+SCRIPT       : Module: World; loaded 2131x files; 5656x classes; used 11000/33554 kB (32%) of static memory; defines: "DAYZ_1_29,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,baltic_drive_input,DayZ_MCP,sakhal,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION"; CRC32: 00000000
+ SCRIPT       : Module: Mission; loaded 217x files; 537x classes; used 4305/33554 kB (12%) of static memory; defines: "DAYZ_1_29,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,baltic_drive_input,DayZ_MCP,sakhal,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION,ENABLE_CAROUSEL"; CRC32: 00000000
+ SCRIPT       : Module: C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticRegionalDriveV2.BalticTrial\init.c; loaded 1x files; 1x classes; used 18/1048 kB (1%) of static memory; defines: "DAYZ_1_29,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,baltic_drive_input,DayZ_MCP,sakhal,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION"; CRC32: 00000000
+ SCRIPT       : string s =    'Module PluginConfigDebugProfile is not Registred in PluginManager.c!'
+ SCRIPT    (E):    -- Stack trace --
+ SCRIPT    (E):    GetPlugin() scripts/4_World/plugins\pluginmanager.c : 339
+ SCRIPT    (E):    OnInit() scripts/4_World/plugins\pluginbase\pluginitemdiagnostic.c : 94
+ SCRIPT    (E):    PluginsInit() scripts/4_World/plugins\pluginmanager.c : 134
+ SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+ SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins\pluginmanager.c : 302
+ SCRIPT    (E):    MissionBase() scripts/5_Mission/mission\missionbase.c : 21
+ SCRIPT    (E):    CreateCustomMission() C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticRegionalDriveV2.BalticTrial\init.c : 196
+ SCRIPT    (E):    -----------------
+ SCRIPT       : [DayZ_MCP] diag PluginInventoryDebug registered=1
+ SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder
+ SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json
+ SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder
+ SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json
+ SCRIPT       : [DayZ-MCP] config loaded path=$profile:dayz_mcp.json url=http://127.0.0.1:8765/ keylen=43 instlen=36 poll_hz=5
+ SCRIPT       : BALTIC_FOUNDATION_DRIVE_V1

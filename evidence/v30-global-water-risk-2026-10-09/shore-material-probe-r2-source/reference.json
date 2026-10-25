@@ -1,0 +1,11 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NOT_FOR_RELEASE",
+  "mod": "P:\\Mods\\@BalticShoreMarkerR2",
+  "pbo_sha256": "f250af74a9833a2f45b432f3fc4cb0a245fcc407a2d5ff787e046e23a7ef3c98",
+  "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticShoreDiagnosticWind20.BalticTrial",
+  "mission_sha256": "d545a4952313b4d543fe2ac71e12f3989d10529250f74989a263f923d308cbcf",
+  "source": "P:/DZ/data/config.cpp:2098-2135",
+  "reason": "R1 used Terrain shaders in the shore slot and the client crashed. Contract mismatch is a hypothesis; R2 preserves native Shore/ShoreWet shaders and has not run.",
+  "budget": "One contract repair R2; baseline wind20 followed by R2 if baseline reproduces. No material tuning loop.",
+  "gate": "Native readback + visible real-shore marker positive control. No color/no baseline means inconclusive, not cleared."
+}

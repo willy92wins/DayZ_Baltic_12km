@@ -1,0 +1,69 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "header_exact": true,
+    "interior_heights_exact": false,
+    "terminal_heights_bounded_1micrometre": false,
+    "material_grid_and_table_exact": true,
+    "all_object_ids_unique": true,
+    "expected_total_objects": false,
+    "nine_bridge_poses": false,
+    "water_models_exact": true,
+    "all_10152_water_poses": true
+  },
+  "wrp": "P:\\DayZ_Baltic_12km_dev\\tb\\regional_foundation_v1\\00_night_reopen_v9.wrp",
+  "wrp_sha256": "79d878fc59d0153df4777cfa2f95ff1acdd05187d03636e36befb19eb3a6d425",
+  "asc_sha256": "8e25fab25e8f0909fdda302ed4ba3db4c43884c523920f5ef3424db90780eb8b",
+  "bridge_reference_sha256": "3845bcf4b2aef06ad222105fdccebf07184e8f28b8183d8631f0284006a53a86",
+  "water_reference_sha256": "a46e885f5c19f7a0476811675e07da6152e9a11065c4f95845a6bf2671648d7a",
+  "all_heights_exact": false,
+  "maximum_height_error_m": 8.185867190361023,
+  "new_bridge_maximum_pose_error_m": 75.02695097428163,
+  "bridge_mismatches": [
+    {
+      "offset": -100,
+      "id": 16777218,
+      "reason": "pose/model mismatch"
+    },
+    {
+      "offset": -75,
+      "id": 16777216,
+      "reason": "pose/model mismatch"
+    },
+    {
+      "offset": -50,
+      "id": 16777219,
+      "reason": "pose/model mismatch"
+    },
+    {
+      "offset": -25,
+      "reason": "original ID missing"
+    },
+    {
+      "offset": 0,
+      "reason": "original ID missing"
+    },
+    {
+      "offset": 25,
+      "reason": "original ID missing"
+    },
+    {
+      "offset": 50,
+      "reason": "new span missing"
+    },
+    {
+      "offset": 75,
+      "reason": "new span missing"
+    },
+    {
+      "offset": 100,
+      "reason": "new span missing"
+    }
+  ],
+  "water_maximum_pose_error_m": 0.0009765625,
+  "water_mismatches": [],
+  "limits": [
+    "Individual export only. Actual save/reopen and exact canonical persistence remain required.",
+    "No compiled, navigation, collision or runtime acceptance."
+  ]
+}

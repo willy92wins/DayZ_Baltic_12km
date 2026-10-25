@@ -1,0 +1,45 @@
+{
+  "verdict": "SOUND-with-fixes",
+  "critical_major_open": 0,
+  "review_round": 2,
+  "maximum_rounds": 2,
+  "time_utc": "2026-10-19T22:22:44.203880+00:00",
+  "raw_review": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-runtime-b-r2.json",
+  "raw_review_sha256": "4abf64fdc117001e781fac9eabce7a9d3ebcf746a791f4615d2ff05e578b883a",
+  "source_commit": "eb77548bbfe7394db014b3000d9bd45add26a9c4",
+  "source_sha256": "e024c5edea15248c7fffcc3b7555e5107b0b0ac299c1f5f048aaddf784e20743",
+  "deploy_sha256": "ac15131a98d5f7b94784f45c9f694da68e23432e52d987ab2b7e19f624882b86",
+  "world_sha256": "751823ac65cd56c9093de9705ee30b08a448a69606690c1363ecf944a15ac838",
+  "water_sha256": "97edcafe1fc86d9abb4c3aa591d5081a6dd940b87020069fd45c04f8d0deae43",
+  "terrain_sha256": "07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62",
+  "minor_responses": {
+    "F1_source_commit": "Already committed while R2 was reading: eb77548 (producer), f2620a3 (interim HANDOFF). Working producer SHA remains e024c5ed...; close-review verifies the actual committed blob. No package change.",
+    "F2_old_derived_field": "Annotated as historical terrain-C metadata in probe-runtime-b/REFERENCE-NOTES.md and water-temporal-runtime-b/REFERENCE-NOTES.md. Fresh ground is B; historical d_terrain_minus_water_m is not consumed. Bound JSON remains unchanged.",
+    "F3_derived_counts": "close-runtime-b now exports actual probe/temporal/dam/reference/bridge/shore counts and the EV110/current015-18 comparison. Result writer and live-state writer derive their figures from that closure. Python compilation passed; these outputs will be checked after the real probe.",
+    "F4_live_checkpoint": "Both root and worktree LIVE-STATE now state runtimeB deployed, review complete, new probes not run. Backups in review-runtime-b-minor-backups; no historical deletion. Final close will replace only the live/current sections."
+  },
+  "ready_for_server_probe": true,
+  "server_probe": "NOT_RUN_ON_THIS_PACKAGE",
+  "personal_view": "PREPARED_NOT_ACCEPTED",
+  "evidence": {
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-runtime-b-r2.json": "4abf64fdc117001e781fac9eabce7a9d3ebcf746a791f4615d2ff05e578b883a",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-runtime-b-r2-run.json": "26ad9dc49457b38ee459cb217b8595317cb42d5f9aaa947d88b805cd539c7fb7",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-runtime-b-r2-binding.json": "81b596f3964149fdfe3dcdd6974204c5910f403849fc1a17d81a9075f20b6e29",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-runtime-b-r2-prompt.md": "ea1abed99de12ac87ecfa45247f12a4bc70e06c0aff06e2dd2d934117a8c3a5c",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-runtime-b-r2-response.json": "5c2ae40a7e2dea7418168a4c49ebc0a75ea0adf2f51a3b350981cba563312fb9",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\deploy-runtime-b.json": "ac15131a98d5f7b94784f45c9f694da68e23432e52d987ab2b7e19f624882b86",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\capture-runtime-probe-runtime-b.py": "39b0bb1737bd8f5cdd2a50614ead020e7707494f49bd2475dcf544fa83e01aee",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\capture-runtime-b-temporal.py": "1d850acf818d8be34436dc23743195392d3ef4ee4c22020b16abf4e6203641bc",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\evaluate-runtime-probe-runtime-b.py": "75ee4bef6970f35ce54d01037dee2d8a1fd167ed888ef62f29adf61614112ca3",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\evaluate-water-temporal-runtime-b.py": "04722bfb5db8f2657170b87767545002fb97e4e5285ece7eacab48db2b850332",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\prepare-runtime-b-followup.py": "f059dfd8d4941a2df2c77903a3d5e90243e924c18589e5583037a4961efa0251",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\terrain-closure.json": "e47ed3053e3ee460edb91d84607cab0350e57eca751f1743dee95470a4c2016c",
+    "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\apply_engine_water_margins_v31.py": "e024c5edea15248c7fffcc3b7555e5107b0b0ac299c1f5f048aaddf784e20743"
+  },
+  "limits": [
+    "Reviewer executed no tests or hashes; executor freshly verifies bound artifacts.",
+    "Four-point margins are measured only under the observed fixed-weather wave interval, not all weather.",
+    "The submerged one-vertex depression is roughly1.6m below neighbors within a6m radius, max23.14deg; no visual approval.",
+    "All inherited015-45, concrete-joint, central-OT4, forest statistical/domain and phase limits remain unchanged."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "status": "PASS_FUNCTIONAL_NO_CAPTURES",
+  "run_id": "1c716882-3e48-4a3c-9c31-3980cd06a9ea",
+  "date_local": "2026-10-02T04:41/04:50",
+  "purpose": "First V30 package in the engine (preview 1): terrain V30 heights, V30 water pieces, V29 layers and stale V29 navmesh",
+  "package": {
+    "mod": "P:\\Mods\\@DayZ_Baltic_V30",
+    "narva_trial_pbo_sha256": "0628e4c895b7e9cd6a87d85a91870360951bc0318e363e6ac7c1d7b0c8ea3409",
+    "baltic_water_v30_pbo_sha256": "61e16884b6eb51e37b36f64d34b38e041b0da68d77e983a5e9f75b312f2eefae",
+    "build": "E:\\DayZ-Baltic-Build\\v30-preview1 (tools/terrain/build_v30_package.ps1)",
+    "water": "16,975 pieces, 12,770 models"
+  },
+  "launch": {
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticFoundationSPBBasicV1.BalticTrial",
+    "extra_mods": ["P:\\Mods\\@DayZ_Baltic_V30"],
+    "no_base_mods": true,
+    "no_file_patching": true
+  },
+  "timeline": [
+    "Launch succeeded; lease acquired and run adopted; player connected after 13 s; bridge ready on both peers.",
+    "Weather clear, 11:00. Player at the mission spawn (8778, 6.15, 10122).",
+    "capture_screenshot returned frame_client_all_black three times: the display had switched off (user idle 594 s, AC display timeout 300 s, session not locked). A process-level ES_DISPLAY_REQUIRED request did not wake it; no synthetic input was sent.",
+    "surface_query stream (3768, 2226): fresh_water_ext at y 2.625.",
+    "surface_query navigable (1062, 4812): fresh_water_ext at y 2.625; designed level 2.62.",
+    "surface_query pond (5118, 1086): fresh_water_ext at y 7.425; designed level 7.42.",
+    "surface_query bank (3744, 2202): cp_conifer_common1 at y 4.906; V30 vertex height 4.91.",
+    "RPT: no world, model or terrain errors; 3,397 'Unknown object class pond' on the client (known, also in stable V29 runs).",
+    "dayz_test_close: graceful, orderly close of client then server; lease released."
+  ],
+  "verified": [
+    "The engine loads the derived world: V30 heights and V30 water pieces at their design levels.",
+    "The pieces carry the water surface the engine reports (fresh_water_ext)."
+  ],
+  "not_verified": [
+    "Nothing visual: no captures (display off).",
+    "Swimming, boats, driving and AI on V30.",
+    "The navmesh is V29's and stale for V30."
+  ],
+  "observation": "On the stream point the plane sits 0.225 m above the vertex's own level: a cell takes the highest band of its water corners. Changed to the mean band for the next build."
+}

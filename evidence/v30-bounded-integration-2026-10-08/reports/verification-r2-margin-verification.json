@@ -1,0 +1,297 @@
+{
+  "status": "PASS_OFFLINE_SHORE_ONLY",
+  "checks": {
+    "metadata_exact": true,
+    "corridor_exact": true,
+    "outside_allowed_exact": true,
+    "no_expanded_delta": true,
+    "foreign_water_faces_exact": true,
+    "margin_bound": true,
+    "no_steeper_land_faces": true,
+    "frozen_reference_exact": true,
+    "frozen_all_no_new_missing": true,
+    "frozen_all_missing_count": true,
+    "frozen_all_p90": true,
+    "frozen_all_zigzag": true,
+    "frozen_west_no_new_missing": true,
+    "frozen_west_missing_count": true,
+    "frozen_west_p90": true,
+    "frozen_west_zigzag": true,
+    "frozen_central_no_new_missing": true,
+    "frozen_central_missing_count": true,
+    "frozen_central_p90": true,
+    "frozen_central_zigzag": true,
+    "frozen_east_no_new_missing": true,
+    "frozen_east_missing_count": true,
+    "frozen_east_p90": true,
+    "frozen_east_zigzag": true,
+    "interleaved_1m_reference_exact": true,
+    "interleaved_1m_all_no_new_missing": true,
+    "interleaved_1m_all_missing_count": true,
+    "interleaved_1m_all_p90": true,
+    "interleaved_1m_all_zigzag": true,
+    "interleaved_1m_west_no_new_missing": true,
+    "interleaved_1m_west_missing_count": true,
+    "interleaved_1m_west_p90": true,
+    "interleaved_1m_west_zigzag": true,
+    "interleaved_1m_central_no_new_missing": true,
+    "interleaved_1m_central_missing_count": true,
+    "interleaved_1m_central_p90": true,
+    "interleaved_1m_central_zigzag": true,
+    "interleaved_1m_east_no_new_missing": true,
+    "interleaved_1m_east_missing_count": true,
+    "interleaved_1m_east_p90": true,
+    "interleaved_1m_east_zigzag": true
+  },
+  "negative_controls": {
+    "prior_margin_rejected": true,
+    "foreign_face_mutation_rejected": true,
+    "baseline_rejected_by_sector_gate": true
+  },
+  "by_station_set": {
+    "frozen": {
+      "all": {
+        "before": {
+          "stations": 13197,
+          "crossings": 13052,
+          "missing": 145,
+          "offset_p90_m": 2.375,
+          "zigzag_rms_m": 0.6404306646533345,
+          "zigzag_stations": 7312,
+          "turn_gt30_share": 0.07273060364569021,
+          "valid_turn_triples": 10917
+        },
+        "after": {
+          "stations": 13197,
+          "crossings": 13057,
+          "missing": 140,
+          "offset_p90_m": 2.125,
+          "zigzag_rms_m": 0.49721907050010644,
+          "zigzag_stations": 7352,
+          "turn_gt30_share": 0.0637070938215103,
+          "valid_turn_triples": 10925
+        },
+        "checks": {
+          "no_new_missing": true,
+          "missing_count": true,
+          "p90": true,
+          "zigzag": true
+        },
+        "new_missing_indices": []
+      },
+      "west": {
+        "before": {
+          "stations": 5001,
+          "crossings": 4942,
+          "missing": 59,
+          "offset_p90_m": 1.875,
+          "zigzag_rms_m": 0.6089281038863911,
+          "zigzag_stations": 4365,
+          "turn_gt30_share": 0.042256452955870105,
+          "valid_turn_triples": 4804
+        },
+        "after": {
+          "stations": 5001,
+          "crossings": 4944,
+          "missing": 57,
+          "offset_p90_m": 1.375,
+          "zigzag_rms_m": 0.4714608158777499,
+          "zigzag_stations": 4390,
+          "turn_gt30_share": 0.03431780366056572,
+          "valid_turn_triples": 4808
+        },
+        "checks": {
+          "no_new_missing": true,
+          "missing_count": true,
+          "p90": true,
+          "zigzag": true
+        },
+        "new_missing_indices": []
+      },
+      "central": {
+        "before": {
+          "stations": 4372,
+          "crossings": 4354,
+          "missing": 18,
+          "offset_p90_m": 2.625,
+          "zigzag_rms_m": 0.7438437751012481,
+          "zigzag_stations": 1550,
+          "turn_gt30_share": 0.09873188405797101,
+          "valid_turn_triples": 3312
+        },
+        "after": {
+          "stations": 4372,
+          "crossings": 4357,
+          "missing": 15,
+          "offset_p90_m": 2.375,
+          "zigzag_rms_m": 0.5910956587050207,
+          "zigzag_stations": 1565,
+          "turn_gt30_share": 0.08443908323281062,
+          "valid_turn_triples": 3316
+        },
+        "checks": {
+          "no_new_missing": true,
+          "missing_count": true,
+          "p90": true,
+          "zigzag": true
+        },
+        "new_missing_indices": []
+      },
+      "east": {
+        "before": {
+          "stations": 3824,
+          "crossings": 3756,
+          "missing": 68,
+          "offset_p90_m": 2.625,
+          "zigzag_rms_m": 0.6122603631789608,
+          "zigzag_stations": 1303,
+          "turn_gt30_share": 0.09544468546637744,
+          "valid_turn_triples": 2766
+        },
+        "after": {
+          "stations": 3824,
+          "crossings": 3756,
+          "missing": 68,
+          "offset_p90_m": 2.625,
+          "zigzag_rms_m": 0.4563974786624675,
+          "zigzag_stations": 1303,
+          "turn_gt30_share": 0.09074475777295733,
+          "valid_turn_triples": 2766
+        },
+        "checks": {
+          "no_new_missing": true,
+          "missing_count": true,
+          "p90": true,
+          "zigzag": true
+        },
+        "new_missing_indices": []
+      }
+    },
+    "interleaved_1m": {
+      "all": {
+        "before": {
+          "stations": 13180,
+          "crossings": 13036,
+          "missing": 144,
+          "offset_p90_m": 2.375,
+          "zigzag_rms_m": 0.6401308186026465,
+          "zigzag_stations": 7252,
+          "turn_gt30_share": 0.07105432484603365,
+          "valid_turn_triples": 10879
+        },
+        "after": {
+          "stations": 13180,
+          "crossings": 13040,
+          "missing": 140,
+          "offset_p90_m": 2.125,
+          "zigzag_rms_m": 0.48689264178958924,
+          "zigzag_stations": 7270,
+          "turn_gt30_share": 0.06053090842288968,
+          "valid_turn_triples": 10887
+        },
+        "checks": {
+          "no_new_missing": true,
+          "missing_count": true,
+          "p90": true,
+          "zigzag": true
+        },
+        "new_missing_indices": []
+      },
+      "west": {
+        "before": {
+          "stations": 5002,
+          "crossings": 4941,
+          "missing": 61,
+          "offset_p90_m": 1.875,
+          "zigzag_rms_m": 0.6156366454376151,
+          "zigzag_stations": 4415,
+          "turn_gt30_share": 0.04432882414151925,
+          "valid_turn_triples": 4805
+        },
+        "after": {
+          "stations": 5002,
+          "crossings": 4941,
+          "missing": 61,
+          "offset_p90_m": 1.375,
+          "zigzag_rms_m": 0.4627955421013926,
+          "zigzag_stations": 4415,
+          "turn_gt30_share": 0.03204994797086368,
+          "valid_turn_triples": 4805
+        },
+        "checks": {
+          "no_new_missing": true,
+          "missing_count": true,
+          "p90": true,
+          "zigzag": true
+        },
+        "new_missing_indices": []
+      },
+      "central": {
+        "before": {
+          "stations": 4357,
+          "crossings": 4342,
+          "missing": 15,
+          "offset_p90_m": 2.625,
+          "zigzag_rms_m": 0.7448179736187713,
+          "zigzag_stations": 1351,
+          "turn_gt30_share": 0.09282442748091603,
+          "valid_turn_triples": 3275
+        },
+        "after": {
+          "stations": 4357,
+          "crossings": 4346,
+          "missing": 11,
+          "offset_p90_m": 2.375,
+          "zigzag_rms_m": 0.5768811826720835,
+          "zigzag_stations": 1369,
+          "turn_gt30_share": 0.08193725251294548,
+          "valid_turn_triples": 3283
+        },
+        "checks": {
+          "no_new_missing": true,
+          "missing_count": true,
+          "p90": true,
+          "zigzag": true
+        },
+        "new_missing_indices": []
+      },
+      "east": {
+        "before": {
+          "stations": 3821,
+          "crossings": 3753,
+          "missing": 68,
+          "offset_p90_m": 2.625,
+          "zigzag_rms_m": 0.6112124654130981,
+          "zigzag_stations": 1402,
+          "turn_gt30_share": 0.09229098805646037,
+          "valid_turn_triples": 2763
+        },
+        "after": {
+          "stations": 3821,
+          "crossings": 3753,
+          "missing": 68,
+          "offset_p90_m": 2.625,
+          "zigzag_rms_m": 0.467526564689524,
+          "zigzag_stations": 1402,
+          "turn_gt30_share": 0.085052479189287,
+          "valid_turn_triples": 2763
+        },
+        "checks": {
+          "no_new_missing": true,
+          "missing_count": true,
+          "p90": true,
+          "zigzag": true
+        },
+        "new_missing_indices": []
+      }
+    }
+  },
+  "inputs_sha256": {
+    "E:\\DayZ-Baltic-Build\\v30-v12\\inland\\terrain_inland.npz": "8b3a8c5541403abaf852e14fb4c0651175e6dcaa541f6f8a151f1db04ac7a8a6",
+    "E:\\DayZ-Baltic-Build\\v30-bounded-integration-20261008\\luga-margin\\terrain_inland.npz": "68560a0d9848a425c2671f22238eadea39ffcb203d050cc3e46ddee79d5f5b05",
+    "E:\\DayZ-Baltic-Build\\v30-smoothing-pilot-20261007\\luga-frozen-masks.npz": "7ed141c6e8ad9cd1ded8d2179f0641ba8d105090242cfd93b5b5bca2afdc1c27",
+    "E:\\DayZ-Baltic-Build\\v30-luga-navigation-20261007\\luga-scoped\\terrain_inland.npz": "ee56a80296835cb3902c314fbaf9cdb3286d80832e0ae8a797e64c2693b28bc9",
+    "E:\\DayZ-Baltic-Build\\v30-luga-navigation-20261007\\stations-frozen.npz": "e3eabab6a0a3d732cdd58abc44f1c1e6423cd5decc011d7d79ff67124b66f129",
+    "E:\\DayZ-Baltic-Build\\v30-luga-navigation-20261007\\stations-interleaved_1m.npz": "f21827028bb3e4993851f53879f801df282cfc97322682e92f0a99a3e8fe609c"
+  }
+}

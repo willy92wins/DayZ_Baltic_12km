@@ -1,0 +1,480 @@
+{
+  "schema": "matrix-free-operator-independent-review.v1",
+  "status": "PASS_STRUCTURED_OPERATOR_INDEPENDENT_REVIEW",
+  "operator_sha256": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+  "fixture_report_sha256": "8b877d0fbce0566b8c6691f75bc7c0b2a0d9c98eeee24deca2bdcd6166833c28",
+  "references": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\prototype.py": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\pilot.py": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a"
+  },
+  "source_readset_start": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\structured_operator.py": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\prototype.py": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\pilot.py": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\fixture-report.json": "8b877d0fbce0566b8c6691f75bc7c0b2a0d9c98eeee24deca2bdcd6166833c28"
+  },
+  "source_readset_end": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\structured_operator.py": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\prototype.py": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\face-slope-cone-pilot\\pilot.py": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-structured-operator\\fixture-report.json": "8b877d0fbce0566b8c6691f75bc7c0b2a0d9c98eeee24deca2bdcd6166833c28"
+  },
+  "fixtures": {
+    "cp_csr_shapes": [
+      {
+        "shape": [
+          1,
+          7
+        ],
+        "variables": 7,
+        "rows": {
+          "A": 12,
+          "C": 5,
+          "G": 0
+        },
+        "d8_rows": 5,
+        "strict_minimum_exemptions": 2,
+        "max_abs_errors": {
+          "A_matvec": 0.0,
+          "A_rmatvec": 4.440892098500626e-16,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 0.0,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 1.7763568394002505e-15,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          2,
+          4
+        ],
+        "variables": 8,
+        "rows": {
+          "A": 12,
+          "C": 6,
+          "G": 12
+        },
+        "d8_rows": 6,
+        "strict_minimum_exemptions": 2,
+        "max_abs_errors": {
+          "A_matvec": 0.0,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 0.0,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 3.552713678800501e-15,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          2,
+          2
+        ],
+        "variables": 4,
+        "rows": {
+          "A": 4,
+          "C": 3,
+          "G": 4
+        },
+        "d8_rows": 3,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 0.0,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 0.0,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 8.881784197001252e-16,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          3,
+          2
+        ],
+        "variables": 6,
+        "rows": {
+          "A": 8,
+          "C": 5,
+          "G": 8
+        },
+        "d8_rows": 5,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 0.0,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 1.1102230246251565e-16,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 8.881784197001252e-16,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "variables": 9,
+        "rows": {
+          "A": 16,
+          "C": 8,
+          "G": 16
+        },
+        "d8_rows": 8,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 2.7755575615628914e-17,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 4.440892098500626e-16,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 7.105427357601002e-15,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          4,
+          5
+        ],
+        "variables": 15,
+        "rows": {
+          "A": 42,
+          "C": 19,
+          "G": 48
+        },
+        "d8_rows": 19,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 5.551115123125783e-17,
+          "A_rmatvec": 8.881784197001252e-16,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 2.220446049250313e-16,
+          "A_rhs": 2.7755575615628914e-17,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 7.105427357601002e-15,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 8.881784197001252e-16
+        }
+      },
+      {
+        "shape": [
+          5,
+          7
+        ],
+        "variables": 35,
+        "rows": {
+          "A": 96,
+          "C": 34,
+          "G": 96
+        },
+        "d8_rows": 34,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 2.220446049250313e-16,
+          "A_rmatvec": 8.881784197001252e-16,
+          "C_matvec": 0.0,
+          "C_rmatvec": 2.220446049250313e-16,
+          "G_matvec": 0.0,
+          "G_rmatvec": 8.881784197001252e-16,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 7.105427357601002e-15,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 1.3322676295501878e-15
+        }
+      },
+      {
+        "shape": [
+          7,
+          4
+        ],
+        "variables": 19,
+        "rows": {
+          "A": 60,
+          "C": 27,
+          "G": 72
+        },
+        "d8_rows": 27,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 2.220446049250313e-16,
+          "A_rmatvec": 4.440892098500626e-16,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 8.881784197001252e-16,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 5.329070518200751e-15,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 8.881784197001252e-16
+        }
+      },
+      {
+        "shape": [
+          9,
+          11
+        ],
+        "variables": 99,
+        "rows": {
+          "A": 320,
+          "C": 97,
+          "G": 320
+        },
+        "d8_rows": 97,
+        "strict_minimum_exemptions": 2,
+        "max_abs_errors": {
+          "A_matvec": 4.440892098500626e-16,
+          "A_rmatvec": 1.7763568394002505e-15,
+          "C_matvec": 0.0,
+          "C_rmatvec": 2.220446049250313e-16,
+          "G_matvec": 0.0,
+          "G_rmatvec": 8.881784197001252e-16,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 8.881784197001252e-15,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 1.7763568394002505e-15
+        }
+      },
+      {
+        "shape": [
+          6,
+          8
+        ],
+        "variables": 1,
+        "rows": {
+          "A": 4,
+          "C": 47,
+          "G": 140
+        },
+        "d8_rows": 47,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 0.0,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 0.0,
+          "A_rhs": 1.1102230246251565e-16,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 8.881784197001252e-16,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          6,
+          8
+        ],
+        "variables": 2,
+        "rows": {
+          "A": 8,
+          "C": 47,
+          "G": 140
+        },
+        "d8_rows": 47,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 0.0,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 0.0,
+          "A_rhs": 1.1102230246251565e-16,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 0.0,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          6,
+          8
+        ],
+        "variables": 3,
+        "rows": {
+          "A": 15,
+          "C": 47,
+          "G": 140
+        },
+        "d8_rows": 47,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 0.0,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 0.0,
+          "A_rhs": 1.1102230246251565e-16,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 8.881784197001252e-16,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          4,
+          4
+        ],
+        "variables": 3,
+        "rows": {
+          "A": 13,
+          "C": 15,
+          "G": 36
+        },
+        "d8_rows": 15,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 2.7755575615628914e-17,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 5.551115123125783e-17,
+          "A_rhs": 1.1102230246251565e-16,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 1.7763568394002505e-15,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 0.0
+        }
+      },
+      {
+        "shape": [
+          1,
+          5
+        ],
+        "variables": 1,
+        "rows": {
+          "A": 4,
+          "C": 4,
+          "G": 0
+        },
+        "d8_rows": 4,
+        "strict_minimum_exemptions": 1,
+        "max_abs_errors": {
+          "A_matvec": 0.0,
+          "A_rmatvec": 0.0,
+          "C_matvec": 0.0,
+          "C_rmatvec": 0.0,
+          "G_matvec": 0.0,
+          "G_rmatvec": 0.0,
+          "A_rhs": 0.0,
+          "C_rhs": 0.0,
+          "G_affine_k": 0.0,
+          "A_diagonal": 0.0,
+          "C_diagonal": 0.0,
+          "G_diagonal": 0.0,
+          "normal_operator": 0.0,
+          "normal_diagonal": 0.0,
+          "normal_affine_rhs": 1.1102230246251565e-16
+        }
+      }
+    ],
+    "sparse_variable_counts_1_2_3": true,
+    "edge_dimensions_1_2_3": true,
+    "d8_scalar_lex_reference_all_centers": true,
+    "explicit_equal_minimum_tie_chooses_row_major": true,
+    "empty_and_all_fixed_rejected": [
+      {
+        "case": "empty_variables",
+        "rejected": true
+      },
+      {
+        "case": "all_fixed_domain",
+        "rejected": true
+      }
+    ],
+    "max_abs_error": 8.881784197001252e-15
+  },
+  "limitations": [
+    "Synthetic domains only; no global raster action or solver was run.",
+    "Resource use and physical-memory behavior remain unmeasured.",
+    "The normal_rhs interface should document that split variables supplied to it are already adjusted by their duals (z-u)."
+  ]
+}

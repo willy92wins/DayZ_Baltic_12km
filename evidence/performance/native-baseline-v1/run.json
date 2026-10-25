@@ -1,0 +1,64 @@
+{
+  "launch": {
+    "status": "succeeded",
+    "project": "DayZ_MCP",
+    "mode": "server",
+    "run_id": "15985eaf-25bd-4ab4-a69b-fa9bc9d2f671",
+    "phase": "completed",
+    "elapsed_s": 2.331,
+    "artifacts_paths": [
+      "P:\\DayZ_MCP_dev\\_server\\profiles"
+    ],
+    "error_code": null,
+    "cleanup_degraded": false,
+    "server_alive": true,
+    "client_alive": null,
+    "process_alive": null,
+    "bridge_ready": null,
+    "reason": null,
+    "steam_registered_pid": null,
+    "steam_live_pids": null,
+    "remediation": null,
+    "client_terminated": null,
+    "client_relaunched": null,
+    "client_replace_reason": null,
+    "client_last_poll_age_s": null,
+    "client_record_age_s": null,
+    "vpp_missing": [],
+    "vpp_warnings": [
+      "vpp_mod_not_requested"
+    ],
+    "steam_startup": null,
+    "steam_pid_repair": null,
+    "steam_restarted": null,
+    "client_death_diagnosis": null,
+    "caller_tool_registry_stale": true,
+    "warnings": [
+      "tool_registry_stale_reopen_client"
+    ],
+    "tool_registry_stale_hint": "The host must reconnect the dayz-mcp server to list the current tools. The agent cannot do that itself (Claude Code: /mcp, then reconnect dayz-mcp). Hosts that do not re-list after tools/list_changed should be registered with --no-progressive-disclosure."
+  },
+  "run": {
+    "run_id": "15985eaf-25bd-4ab4-a69b-fa9bc9d2f671",
+    "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticTerrainPerf.BalticTrial",
+    "processes": [
+      {
+        "pid": 233016,
+        "creation_time_utc": "2026-09-30T10:20:12.398469Z",
+        "executable_sha256": "da6814194ce677d42d71ebc9171da3cfb709181f9a548c9d2f46429918faa30f",
+        "command_line_sha256": "8ff27e58accb47a9e58e23e8e41cd507e2fd93e1c1bb69834a69d639f90238d7",
+        "role": "server",
+        "identity_scheme": "psutil-argv-v2",
+        "cpu": {
+          "user_100ns": 13593750,
+          "kernel_100ns": 781250,
+          "created_100ns": 134352372123984690,
+          "sampled_at_ns": 1790763622794220800
+        }
+      }
+    ]
+  },
+  "deployed_pbo_sha256": "fd2c70238128657f5b92731396b73e3a961f4fc580c24f6c4671f083153b3d62",
+  "source_mission": "missions/BalticTerrainPerf.BalticTrial/init.c",
+  "measurement_context": "Native generator closed before launch. Terrain Builder closed during first 20 sample intervals; record this context, do not call baseline fully isolated. No clients, CE, AI or mapping."
+}

@@ -1,0 +1,74 @@
+"""Pilot: connect visible pond bands, keeping nonvisual LODs byte-equivalent."""
+from pathlib import Path
+import hashlib,json,io,math,shutil,sys
+import numpy as np
+import shapely
+from shapely.geometry import Polygon,box
+from scipy.ndimage import distance_transform_edt
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+B=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008')
+B7=Path('E:/DayZ-Baltic-Build/v30-curved-channel-pilot-20261008')
+E=W/'evidence/v30-water-visual-fix-2026-10-08'
+sys.path[:0]=[str(W/'tools/terrain'),str(W/'tools/navigation')]
+from v30_common import cell_planes,tri_sample
+from water_mesh import py3d,polygons
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def bytes_lod(lod):
+ b=io.BytesIO();lod.write(b);return b.getvalue()
+t=np.load(B7/'r3-transition-proposal/terrain_flat.npz');plane=cell_planes(t['cls'],t['level'])
+field=np.zeros((2048,2048));count=field.copy()
+for dr in (0,1):
+ for dc in (0,1):
+  field[dr:dr+2047,dc:dc+2047]+=np.nan_to_num(plane,nan=0)
+  count[dr:dr+2047,dc:dc+2047]+=np.isfinite(plane)
+field/=np.maximum(count,1)
+missing=count==0
+indices=distance_transform_edt(missing,return_distances=False,return_indices=True)
+field[missing]=field[tuple(indices[:,missing])]
+author=json.loads((W/'evidence/v30-curved-channel-pilot-2026-10-08/flat-water-authoring.json').read_text())
+src=B/'stitched-water/compile/source/baltic_water_v30';src.mkdir(parents=True,exist_ok=True)
+assert not list(src.glob('*.p3d')), 'Do not overwrite a generated pilot'
+oldsrc=B7/'flat-water/water/source/baltic_water_v30'
+for f in ('config.cpp','$PBOPREFIX$'):shutil.copyfile(oldsrc/f,src/f)
+report=[]
+for i,pose in enumerate(author['new_poses']):
+ name=Path(pose['model'].replace('\\','/')).name
+ with (oldsrc/name).open('rb') as f:model=py3d.P3D(f)
+ frozen=[bytes_lod(l) for l in model.lods[1:]]
+ lod=model.lods[0];ox,oy,oz=pose['origin']
+ g=shapely.union_all([Polygon([(v.point.coords[0]+ox,v.point.coords[2]+oz) for v in f.vertices]) for f in lod.faces])
+ x0,z0,x1,z1=g.bounds
+ triangles=[]
+ for rr in range(max(0,math.floor((12282-z1)/6)),min(2047,math.ceil((12282-z0)/6))):
+  for cc in range(max(0,math.floor(x0/6)),min(2047,math.ceil(x1/6))):
+   nw=(cc*6,12282-rr*6);ne=((cc+1)*6,nw[1]);sw=(nw[0],nw[1]-6);se=(ne[0],sw[1])
+   for tri in (Polygon([nw,se,ne]),Polygon([nw,sw,se])):
+    for part in polygons(g.intersection(tri)):
+     if part.area>1e-10:triangles.extend(shapely.constrained_delaunay_triangles(part).geoms)
+ coverage=shapely.union_all(triangles);err=g.symmetric_difference(coverage).area
+ assert err<1e-4,(name,err)
+ new=py3d.LOD();new.resolution=lod.resolution;new.properties.update(lod.properties)
+ new.facenormals.append((0,-1,0));indexed={};maxdelta=0
+ for tri in triangles:
+  xy=np.asarray(tri.exterior.coords)[:3,:2]
+  v1,v2=xy[1]-xy[0],xy[2]-xy[0]
+  if v1[0]*v2[1]-v1[1]*v2[0]<0:xy=xy[::-1]
+  face=py3d.Face(new.points,new.facenormals);face.texture=lod.faces[0].texture;face.material=lod.faces[0].material
+  for x,z in xy:
+   h=float(tri_sample(field,x,z));maxdelta=max(maxdelta,abs(h-oy))
+   key=(round(x-ox,6),round(h-oy,7),round(z-oz,6))
+   if key not in indexed:
+    indexed[key]=len(new.points);point=py3d.Point();point.coords=key;new.points.append(point)
+   v=py3d.Vertex(new.points,new.facenormals);v.point_index=indexed[key];v.normal_index=0;v.uv=(key[0]/16,key[2]/16);face.vertices.append(v)
+  new.faces.append(face)
+ model.lods[0]=new;model.save(str(src/name))
+ with (src/name).open('rb') as f:got=py3d.P3D(f)
+ assert frozen==[bytes_lod(l) for l in got.lods[1:]],name
+ report.append(dict(model=name,old_sha256=sha(oldsrc/name),new_sha256=sha(src/name),coverage_error_m2=err,visual_max_delta_m=maxdelta,old_faces=len(lod.faces),new_faces=len(new.faces),nonvisual_lods_exact=True))
+ if (i+1)%100==0:print('authored',i+1,flush=True)
+out=dict(status='STITCHED_VISUAL_PILOT_SOURCE',models=report,source_manifest_sha256=sha(B7/'flat-water/water/pieces.json'),terrain_sha256=sha(B7/'r3-transition-proposal/terrain_flat.npz'),maximum_visual_delta_m=max(r['visual_max_delta_m'] for r in report),
+ method='Native 6 m triangles; shared vertex height = mean adjacent horizontal pond planes; roadway/memory/pond properties unchanged.',
+ limits=['Only 538 restored models. Joins to retained unmodified models remain to verify.','Pond engine readback must verify that visual changes do not alter physics.'])
+(E/'stitch-authoring.json').write_text(json.dumps(out,indent=2)+'\n')
+np.save(B/'stitched-water/visual_vertex_levels.npy',field)
+print(json.dumps({k:v for k,v in out.items() if k!='models'},indent=2))

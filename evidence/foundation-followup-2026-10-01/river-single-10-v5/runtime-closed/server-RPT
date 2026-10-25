@@ -1,0 +1,110 @@
+=====================================================================
+== C:\Program Files (x86)\Steam\steamapps\common\DayZ\DayZDiag_x64.exe
+== "C:\Program -server -config=P:\DayZ_MCP_dev\_server\serverDZ.cfg -profiles=P:\DayZ_MCP_dev\_server\profiles "-mission=C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticRiverSingle10V5.BalticTrial" -mod=P:\Mods\@DayZ_MCP;P:\Mods\@DayZ_Baltic_FoundationV10Native;P:\Mods\@BalticBoatInputProbe -port=2302
+=====================================================================
+Exe timestamp: 2026/08/15 04:37:25
+Current time:  2026/10/01 14:49:56
+Version 1.29.163709
+=====================================================================
+
+14:49:56.750 ENGINE    (W): No module info used, trying to identify -> 0x91BD0000
+14:49:56.753 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+14:49:56.754 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+14:49:56.754 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+14:49:56.757 RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+14:49:56.758 RESOURCES (E): IRenderer::CreateTextureFromImage(Graphics/Textures/cammopal.edds) failed
+14:49:56.758 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+14:49:56.759 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+14:49:56.762 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/noise.edds) failed
+14:49:56.763 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/perlin.edds) failed
+14:49:56.767 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_area.dds) failed
+14:49:56.767 RESOURCES (E): IRenderer::CreateTextureFromImage(system/textures/PP/smaa_search.dds) failed
+14:49:56.767 MATERIAL  (E): SMAAEffect area texture not found (system/textures/PP/smaa_area)
+14:49:56.767 MATERIAL  (E): SMAAEffect search texture not found (system/textures/PP/smaa_search)
+14:49:56.768 RESOURCES (E): IRenderer::CreateTextureFromImage(system/system.edds) failed
+14:49:56.769 RESOURCES (E): IRenderer::CreateTextureFromImage(system/systemsmall.edds) failed
+14:49:56.825 [Inputs] Loading inputs default "bin/constants.xml"
+14:49:56.828 [Inputs] Loading inputs default "bin/specific.xml"
+14:49:56.829 [Inputs] Loading inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+14:49:56.833 [Inputs] Exporting inputs cfg "P:\DayZ_MCP_dev\_server\profiles\Users\Survivor\Server.core.xml"
+14:49:57.317 ANIMATION (E): Can't load P:\Mods\@BalticBoatInputProbe/Anims/cfg/skeletons.anim.xml
+14:49:57.317 ANIMATION (E): Failed to open file, line 0, column 0
+14:49:57.317 ANIMATION (E): Can't load P:\Mods\@DayZ_Baltic_FoundationV10Native/Anims/cfg/skeletons.anim.xml
+14:49:57.317 ANIMATION (E): Failed to open file, line 0, column 0
+14:49:57.317 ANIMATION (E): Can't load P:\Mods\@DayZ_MCP/Anims/cfg/skeletons.anim.xml
+14:49:57.317 ANIMATION (E): Failed to open file, line 0, column 0
+14:49:57.317 ANIMATION (E): Can't load sakhal/Anims/cfg/skeletons.anim.xml
+14:49:57.317 ANIMATION (E): Failed to open file, line 0, column 0
+14:50:05.115 Hostname of server: "DayZ_MCP S0"
+14:50:09.669 !!! File "\cfgenvironment.xml" does not exist...
+14:50:09.669 !!! [ERROR][XML] :: load [\cfgenvironment.xml] failed
+14:50:09.669 !!! [ERROR][XML] :: Failed to open file
+14:50:10.177 NETWORK      : Network simulation
+14:50:10.177  SCRIPT    (E):    -- Stack trace --
+14:50:10.177  SCRIPT    (E):    GetPlugin() scripts/4_World/plugins\pluginmanager.c : 339
+14:50:10.177  SCRIPT    (E):    OnInit() scripts/4_World/plugins\pluginbase\pluginitemdiagnostic.c : 94
+14:50:10.177  SCRIPT    (E):    PluginsInit() scripts/4_World/plugins\pluginmanager.c : 134
+14:50:10.177  SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+14:50:10.177  SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins\pluginmanager.c : 302
+14:50:10.177  SCRIPT    (E):    MissionBase() scripts/5_Mission/mission\missionbase.c : 21
+14:50:10.177  SCRIPT    (E):    CreateCustomMission() C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticRiverSingle10V5.BalticTrial\init.c : 211
+14:50:10.177  SCRIPT    (E):    -----------------
+14:50:10.187  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder
+14:50:10.187  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:138 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json
+14:50:10.189  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder
+14:50:10.189  SCRIPT    (W): scripts/5_Mission/mission\missionserver.c:99 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json
+14:50:10.190 Player connect enabled
+14:50:39.920 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02720.p3d)
+14:50:39.920 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02732.p3d)
+14:50:39.920 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02719.p3d)
+14:50:39.920 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02731.p3d)
+14:50:39.921 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02711.p3d)
+14:50:39.921 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02712.p3d)
+14:50:39.921 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02721.p3d)
+14:50:39.921 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02733.p3d)
+14:50:39.925 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02704.p3d)
+14:50:39.925 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02742.p3d)
+14:50:39.925 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02778.p3d)
+14:50:39.925 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02705.p3d)
+14:50:39.925 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02706.p3d)
+14:50:39.926 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02741.p3d)
+14:50:39.926 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02704.p3d)
+14:50:39.926 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02742.p3d)
+14:50:39.926 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02778.p3d)
+14:50:39.926 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02705.p3d)
+14:50:39.926 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02706.p3d)
+14:50:39.926 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02722.p3d)
+14:51:32.636 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02698.p3d)
+14:51:32.636 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02699.p3d)
+14:52:08.44  ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02695.p3d)
+14:52:23.318 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02696.p3d)
+14:52:23.318 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02700.p3d)
+14:52:23.318 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02723.p3d)
+14:53:10.340 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02697.p3d)
+14:53:10.340 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02701.p3d)
+14:53:10.340 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02707.p3d)
+14:53:10.340 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02713.p3d)
+14:53:49.178 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02702.p3d)
+14:53:49.179 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02708.p3d)
+14:54:26.454 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02703.p3d)
+14:54:26.455 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02709.p3d)
+14:54:47.203 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02713.p3d)
+14:54:47.204 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02714.p3d)
+14:54:47.204 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02715.p3d)
+14:55:02.747 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02710.p3d)
+14:55:02.747 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02716.p3d)
+14:55:47.423 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02717.p3d)
+14:55:53.798 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02724.p3d)
+14:55:53.798 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02725.p3d)
+14:55:53.798 ENTITY    (W): Unknown object class 'pond' (baltic_water\full_48.p3d)
+14:55:53.798 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02726.p3d)
+14:55:53.799 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02727.p3d)
+14:55:53.799 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02772.p3d)
+14:56:30.851 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02735.p3d)
+14:56:30.851 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02736.p3d)
+14:56:30.851 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02737.p3d)
+14:56:30.852 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02776.p3d)
+14:56:30.852 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02738.p3d)
+14:57:27.548 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02707.p3d)
+14:57:27.548 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02713.p3d)
+14:57:27.548 ENTITY    (W): Unknown object class 'pond' (baltic_water\edge_02724.p3d)

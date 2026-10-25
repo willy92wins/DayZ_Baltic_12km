@@ -1,0 +1,44 @@
+{
+  "status": "PASS_COMPLETE_NATIVE_READBACK",
+  "errors": [],
+  "terrain_sha256": "9c3011b8af5279e807630d4e91512d2e95a434463d3523a5b4074e70bc7cc8f6",
+  "pbo": {
+    "baltic_water_v30.pbo": "b09b3a7f57c785155021a60f86d00fdcb2eb5a510bd45f6cead0895d1183d3f1",
+    "narva_trial.pbo": "def2d23d4a8c8053a66b2c45b568937575af38fa097228d96345db49735a81a0"
+  },
+  "runtime_sha256": "65fa1780b68cd5e1ad71c6b19259b21af9d5934f594ef8fbc62ee287dd08bee0",
+  "vertices": 4194304,
+  "dry_vertices": 3195297,
+  "wet_vertices": 999007,
+  "max_ground_error_m": 1.52588e-05,
+  "physical_anomalies": 44,
+  "dry_anomalies": 12,
+  "nominal_water_on_dry": 12,
+  "dynamic_water_on_dry": 12,
+  "design_water_without_presence": 32,
+  "missing_by_class": {
+    "3": 18,
+    "5": 9,
+    "6": 5
+  },
+  "dry_nominal_over_1_8": 6,
+  "dry_by_protection": {
+    "reserve": 0,
+    "platform": 0,
+    "beach": 0
+  },
+  "negatives": {
+    "missing_grid_row": true,
+    "missing_end": true,
+    "missing_calibrated_point": true,
+    "duplicate_anomaly": true,
+    "height_mismatch": true
+  },
+  "elapsed_mission_ms": 22258,
+  "limits": [
+    "Complete runtime water queries at every native vertex; subcell continuity and render LOD remain separate.",
+    "Anomalies are differences against source class, requiring classification of intentional coast/shore transitions.",
+    "Dynamic water is sampled at current wave phase, not every tide/wind envelope.",
+    "No visual defect is closed by this physical readback."
+  ]
+}

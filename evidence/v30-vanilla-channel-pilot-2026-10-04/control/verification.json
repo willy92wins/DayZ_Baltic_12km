@@ -1,0 +1,346 @@
+{
+ "status": "FAIL_OR_INCOMPLETE",
+ "checks": {
+  "header": true,
+  "end": true,
+  "pieces": false,
+  "reach_water": false,
+  "pad": false
+ },
+ "pieces_found": 0,
+ "pieces_expected": 100,
+ "worst_pieces": [],
+ "max_errors": {
+  "position_error_m": null,
+  "direction_error_deg": null,
+  "up_error_deg": null,
+  "scale_error": null
+ },
+ "reaches": {
+  "R1:right": {
+   "samples": 100,
+   "missing": 0,
+   "expected_wet": 85,
+   "wet_without_depth": 9,
+   "wet_without_depth_s": [
+    112.0,
+    128.0,
+    130.0,
+    132.0,
+    198.0,
+    210.0,
+    240.0,
+    244.0,
+    246.0
+   ],
+   "residual_m_p50_max": [
+    0.0206,
+    0.5211
+   ],
+   "max_jump_m": 0.1926,
+   "pond_true": 90
+  },
+  "R1:centre": {
+   "samples": 100,
+   "missing": 0,
+   "expected_wet": 94,
+   "wet_without_depth": 0,
+   "wet_without_depth_s": [],
+   "residual_m_p50_max": [
+    0.0211,
+    0.518
+   ],
+   "max_jump_m": 0.1131,
+   "pond_true": 100
+  },
+  "R1:left": {
+   "samples": 100,
+   "missing": 0,
+   "expected_wet": 66,
+   "wet_without_depth": 8,
+   "wet_without_depth_s": [
+    90.0,
+    92.0,
+    98.0,
+    104.0,
+    106.0,
+    202.0,
+    214.0,
+    216.0
+   ],
+   "residual_m_p50_max": [
+    0.0291,
+    0.5551
+   ],
+   "max_jump_m": 0.1871,
+   "pond_true": 89
+  },
+  "R2:right": {
+   "samples": 201,
+   "missing": 0,
+   "expected_wet": 181,
+   "wet_without_depth": 36,
+   "wet_without_depth_s": [
+    26.0,
+    74.1,
+    84.1,
+    86.1,
+    94.1,
+    110.1,
+    146.1,
+    148.1,
+    238.2,
+    240.2,
+    242.2,
+    250.2,
+    280.2,
+    282.2,
+    288.2,
+    290.2,
+    292.2,
+    308.2,
+    310.2,
+    318.2
+   ],
+   "residual_m_p50_max": [
+    0.0273,
+    0.2153
+   ],
+   "max_jump_m": 0.1902,
+   "pond_true": 181
+  },
+  "R2:centre": {
+   "samples": 212,
+   "missing": 0,
+   "expected_wet": 201,
+   "wet_without_depth": 1,
+   "wet_without_depth_s": [
+    234.2
+   ],
+   "residual_m_p50_max": [
+    0.0324,
+    7.3452
+   ],
+   "max_jump_m": 7.459,
+   "pond_true": 202
+  },
+  "R2:left": {
+   "samples": 201,
+   "missing": 0,
+   "expected_wet": 173,
+   "wet_without_depth": 25,
+   "wet_without_depth_s": [
+    62.0,
+    64.0,
+    66.0,
+    76.1,
+    78.1,
+    80.1,
+    138.1,
+    140.1,
+    150.1,
+    192.2,
+    198.2,
+    200.2,
+    236.2,
+    240.2,
+    244.2,
+    286.2,
+    294.2,
+    332.3,
+    340.3,
+    382.3
+   ],
+   "residual_m_p50_max": [
+    0.0294,
+    0.2011
+   ],
+   "max_jump_m": 0.1242,
+   "pond_true": 186
+  },
+  "R3:right": {
+   "samples": 89,
+   "missing": 0,
+   "expected_wet": 83,
+   "wet_without_depth": 2,
+   "wet_without_depth_s": [
+    28.0,
+    422.1
+   ],
+   "residual_m_p50_max": [
+    0.0661,
+    0.2248
+   ],
+   "max_jump_m": 0.3006,
+   "pond_true": 88
+  },
+  "R3:centre": {
+   "samples": 217,
+   "missing": 0,
+   "expected_wet": 119,
+   "wet_without_depth": 1,
+   "wet_without_depth_s": [
+    214.1
+   ],
+   "residual_m_p50_max": [
+    0.082,
+    0.2934
+   ],
+   "max_jump_m": 0.3068,
+   "pond_true": 181
+  },
+  "R3:left": {
+   "samples": 81,
+   "missing": 0,
+   "expected_wet": 72,
+   "wet_without_depth": 3,
+   "wet_without_depth_s": [
+    24.0,
+    32.0,
+    446.1
+   ],
+   "residual_m_p50_max": [
+    0.0852,
+    0.2496
+   ],
+   "max_jump_m": 0.2727,
+   "pond_true": 75
+  }
+ },
+ "pads": {
+  "PAD0": {
+   "0.0": {
+    "inside": 25,
+    "inside_match": 0,
+    "outside": 4,
+    "outside_dry": 4
+   },
+   "11.5": {
+    "inside": 25,
+    "inside_match": 0,
+    "outside": 4,
+    "outside_dry": 4
+   },
+   "12.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 29,
+    "outside_dry": 29
+   },
+   "-11.5": {
+    "inside": 25,
+    "inside_match": 0,
+    "outside": 4,
+    "outside_dry": 4
+   },
+   "-12.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 29,
+    "outside_dry": 29
+   }
+  },
+  "PAD1": {
+   "0.0": {
+    "inside": 23,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "11.5": {
+    "inside": 23,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "12.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 29,
+    "outside_dry": 29
+   },
+   "-11.5": {
+    "inside": 23,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "-12.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 29,
+    "outside_dry": 29
+   }
+  },
+  "PAD2": {
+   "0.0": {
+    "inside": 11,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "3.0": {
+    "inside": 11,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "4.0": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 17,
+    "outside_dry": 17
+   },
+   "-3.0": {
+    "inside": 11,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "-4.0": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 17,
+    "outside_dry": 17
+   }
+  },
+  "PAD3": {
+   "0.0": {
+    "inside": 47,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "23.5": {
+    "inside": 47,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "24.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 53,
+    "outside_dry": 51
+   },
+   "-23.5": {
+    "inside": 47,
+    "inside_match": 0,
+    "outside": 6,
+    "outside_dry": 6
+   },
+   "-24.5": {
+    "inside": 0,
+    "inside_match": 0,
+    "outside": 53,
+    "outside_dry": 53
+   }
+  }
+ },
+ "reference_sha256": "219535df43c16ccf98b0755ae112c0a9a7568a909521692aa85b686292131689",
+ "log_sha256": "cf182800561e8e36d455e7c14064e81d93dfeabead8cea2eb2f0d0af5b6f19f3",
+ "limits": [
+  "Server readback of native APIs; no visual or boat result.",
+  "Expected surface = the highest placed vanilla surface (LOD0 triangles) over each sample."
+ ]
+}

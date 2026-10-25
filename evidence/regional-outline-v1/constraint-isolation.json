@@ -1,0 +1,52 @@
+{
+  "status": "ISOLATION_EXPERIMENT_NOT_TERRAIN",
+  "fixed_parameters": "same baseline, source, target field,330m transition and30m smoothing",
+  "cases": {
+    "v1_all_constraints": {
+      "protected_fraction": 0.6012060642242432,
+      "maximum_m": 85.52306494603592,
+      "south_max_m": 30.09163449194699,
+      "south_p50_p90_p99_m": [
+        4.539999961853027,
+        7.680083412461572,
+        12.041614201094115
+      ],
+      "south_unprotected_distance_p50_p90_p99_m": [
+        18.973665961010276,
+        76.36753236814714,
+        126.57013865837392
+      ]
+    },
+    "remove_road_constraint_only": {
+      "protected_fraction": 0.5914614200592041,
+      "maximum_m": 85.61167937351476,
+      "south_max_m": 30.09163449194699,
+      "south_p50_p90_p99_m": [
+        4.539999961853027,
+        7.680108030016841,
+        12.041614201094115
+      ],
+      "south_unprotected_distance_p50_p90_p99_m": [
+        18.973665961010276,
+        76.36753236814714,
+        126.57013865837392
+      ]
+    },
+    "water_polygons_reserve_spb_narva_only": {
+      "protected_fraction": 0.3901937007904053,
+      "maximum_m": 121.54547680347552,
+      "south_max_m": 117.36521601038514,
+      "south_p50_p90_p99_m": [
+        7.041495723662884,
+        34.64536643262807,
+        94.3987480824408
+      ],
+      "south_unprotected_distance_p50_p90_p99_m": [
+        87.36131867136622,
+        186.29009635512028,
+        268.32815729997475
+      ]
+    }
+  },
+  "limit": "Removing protection here is diagnostic only; not authorization to alter a wetland or water body."
+}

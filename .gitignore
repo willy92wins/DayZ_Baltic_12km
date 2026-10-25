@@ -1,0 +1,51 @@
+__pycache__/
+*.pyc
+.venv/
+raw/
+derived/
+source/*
+!source/layers.cfg
+!source/mapLegend.png
+evidence/mpl-cache/
+*.tmp
+*.part
+
+# Terrain Builder native projects are preserved in the hashed delivery archive.
+tb/
+
+# Heavy Narva fixtures are preserved in the incremental hashed archive.
+tests/narva_trial/*.asc
+tests/narva_trial_v2/*.asc
+tests/narva_water_v1/*.asc
+tests/regional_clearance_v1/*.asc
+tests/regional_clearance_v1/*.npz
+tests/narva_navigation_v*/*.asc
+tests/narva_navigation_v*/*.npz
+evidence/narva/evidence/mpl-cache/
+
+# Isolated builds contain read-only vanilla junctions; never index/copy their trees.
+build-source/
+build-isolated/
+build-temp/
+build-output/
+packages/
+missions/**/storage*/
+
+# Large reproducible diagnostics stay beside their compact verification records.
+evidence/navigation/bridge-verifier-controls/*.wrp
+evidence/navigation/native-tile-comparison-v1.json
+tests/regional_outline_v*/*.asc
+tests/regional_outline_v*/*.npz
+tests/regional_outline_v*/*.tif
+tests/regional_foundation_*/*.asc
+tests/regional_foundation_*/*.npz
+tests/regional_foundation_*/*.tif
+tests/water_geometry_v*/
+tests/water_shape_v*/
+tests/regional_foundation_water_assets_v*/source/
+
+# Relief V30 design rasters (tens of MB) stay beside their JSON stats and in the external checkpoint.
+tests/relief_v30/
+tests/water_v3/
+tests/terrain_v30/
+tests/water_v30_assets/

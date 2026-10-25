@@ -1,0 +1,123 @@
+{
+  "schema": "BALTIC_V30_VISUAL_FOLLOWUP_V1",
+  "world": "BalticTrial",
+  "site_seconds": 90,
+  "settle_seconds": 8,
+  "sites": [
+    {
+      "name": "lagoon",
+      "view": {
+        "xyz": [
+          5142,
+          8.480658531188965,
+          1086
+        ],
+        "terrain_y": 8.480658531188965,
+        "vertex_class": 0,
+        "vertex_water_mask": false,
+        "cell_plane_y": null
+      },
+      "target": {
+        "xyz": [
+          5118,
+          6.220000267028809,
+          1086
+        ],
+        "terrain_y": 6.220000267028809,
+        "vertex_class": 7,
+        "vertex_water_mask": true,
+        "cell_plane_y": 7.425000000000001
+      },
+      "near_water": {
+        "xyz": [
+          5118,
+          6.220000267028809,
+          1086
+        ],
+        "terrain_y": 6.220000267028809,
+        "vertex_class": 7,
+        "vertex_water_mask": true,
+        "cell_plane_y": 7.425000000000001
+      },
+      "focus_xz": [
+        5118,
+        1086
+      ],
+      "orientation_ypr": [
+        -90.0,
+        0,
+        0
+      ],
+      "view_offset_m": 24.0
+    },
+    {
+      "name": "hills_peak",
+      "view": {
+        "xyz": [
+          5478,
+          123.12146759033203,
+          7344
+        ],
+        "terrain_y": 123.12146759033203,
+        "vertex_class": 0,
+        "vertex_water_mask": false,
+        "cell_plane_y": null
+      },
+      "target": {
+        "xyz": [
+          5478,
+          123.12146759033203,
+          7344
+        ],
+        "terrain_y": 123.12146759033203,
+        "vertex_class": 0,
+        "vertex_water_mask": false,
+        "cell_plane_y": null
+      },
+      "near_water": {
+        "xyz": [
+          5418,
+          6.097390651702881,
+          7050
+        ],
+        "terrain_y": 6.097390651702881,
+        "vertex_class": 6,
+        "vertex_water_mask": true,
+        "cell_plane_y": 6.25
+      },
+      "focus_xz": [
+        5478,
+        8044
+      ],
+      "orientation_ypr": [
+        0,
+        0,
+        0
+      ],
+      "view_offset_m": 0
+    }
+  ],
+  "mission_sha256": "21581f1d0d5129e93ea22d90a4ec7465575a2aa62024b2e5fe8749735b8ff094",
+  "sites_sha256": "cb46cd44efdd9b118d0709152f1ca4b8c31c63c0cb0b379c2fbc89792292b4b3",
+  "world_pbo_sha256": "69140d41ef4841078a5c159222814490a85832e319977b8b22c18be940e24811",
+  "water_pbo_sha256": "e9b52b8c4fc07df8bc4854dcd9e144e16875af8006221f16efaa6ab95de56681",
+  "limits": [
+    "Temporary player teleports are visual instrumentation, not traversal evidence.",
+    "The mask/plane samples are integration diagnostics derived from the candidate, not independent water-design acceptance.",
+    "GetWaterSurfaceHeightNoFakeWave can return an object below the query; inspect bridge samples separately.",
+    "A frame is accepted only after verifying its current stage, player position and actual image contents.",
+    "Body yaw does not certify client head orientation. Offshore and small-water offsets are explicit."
+  ],
+  "api_anchors": [
+    "P:/scripts/1_core/proto/enmath.c:427",
+    "P:/scripts/3_game/entities/object.c:293",
+    "P:/scripts/3_game/entities/object.c:300",
+    "P:/scripts/3_game/entities/object.c:317",
+    "P:/scripts/1_core/proto/ensystem.c:382",
+    "P:/scripts/3_game/global/game.c:1162",
+    "P:/scripts/3_game/weather.c:183",
+    "P:/scripts/3_game/weather.c:38"
+  ],
+  "late_observation_seconds": 60,
+  "reason": "Lagoon frame obscured during tour; examine suspected dark patch at 15 and 60 seconds without changing weather. Hill view moved to the already sampled summit, looking north, because previous uphill frame was hidden by grass."
+}

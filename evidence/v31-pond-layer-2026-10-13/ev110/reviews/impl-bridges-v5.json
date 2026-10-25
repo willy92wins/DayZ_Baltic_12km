@@ -1,0 +1,293 @@
+{
+ "impl": {
+  "summary": "bridges_v31.py v5 (esquema bridges-v31.v5) está escrito en el worktree, verificado por sha256 y sin commit. Lo ejecuté sobre las entradas EV108 kit-v7, con salida en E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/bridges/ev108-base/. Resultado: G1, G3, G5, G6, G7 y G8 dan PASS; G2 y G4 dan FAIL; los 12 controles negativos dan FAIL, como deben.\n\nLo que queda resuelto (medido offline sobre triángulos planos):\n- 015-13: la esquina del estribo pasa de 1,171 m descubierta a 0,010 m, con cálculo exacto sobre las caras ODOL reales cortadas por los triángulos.\n- 015-8: el lift de v4 se mantiene (holgura mínima de franja 0,015 m en los 20 extremos).\n- 015-16, 015-18, 015-19, 015-37 y 015-40 llevan copia apilada a STACK_DY = 5,04. Patas inferiores colgando: 0. Pies superiores: 10 a 18 apoyados en la copia (hundidos 0,028–0,096 m en LOD1), 4 en el suelo y 0 colgando. Pares coplanares solapados: 0.\n- 015-42 cambia a bridge_wood_50_1 con la calzada mundial idéntica (desviación 0,0 m).\n- Agua: el conjunto de vértices mojados bajo el tablero no cambia y la abertura es ≥ v4 en los 10 sitios. La regla de protección ya no tiene umbral de W.\n- Se añade v31_bridge_fill.\n- Envolvente byte-idéntica a v4 y registros no apilados idénticos.\n\nDiseño del solver:\n- Un único programa lineal que solo sube cotas, conjunto para todos los sitios y aplicado después de todos los cortes y del guard de v4.\n- Restricciones de pendiente: ningún triángulo nuevo > 55°.\n- Donde una subida estrecha el agua, se rebaja la orilla libre opuesta para compensar; si no basta, se protegen los vértices de orilla de ese sitio y se vuelve a resolver.\n- El guard de pendiente se repite y nunca rompe una restricción ya cumplida.\n\nHay dos conflictos de gates medidos que no he relajado:\n1. **G2 madera contra G1:** con la pose fija de v4, la malla de 6 m y la carretera congelada más allá de la punta, el relleno no puede seguir la rampa (0,30 m/m) sin cubrir la calzada. El aire máximo queda en 0,86–2,31 m (v4: 1,07–2,30). El experimento sin las filas del tablero cumple mejor el aire, pero mete el terreno hasta 1,57 m por encima del tablero y aun así deja 0,14–0,35 m de aire.\n2. **G4 en 015-42 contra G3:** 2 patas cuelgan 0,075 y 0,196 m en el borde del cauce. Sin la protección del agua quedan apoyadas, pero la abertura cae de 3,054 a 2,886 m.",
+  "worktree_files": [
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/bridges_v31.py (v5, sha256 d4d58d106c6d3788e0c51420d6f605cb3fdaa0afea7dc2348bd97afc3efd7021, 53598 B, LF; reemplaza v4 b082c87f sin commitear)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/probe_points_bridges.py (sha256 5743fb0501570a148a36475451932c8b4ca831b3b9659a0ff030f590151949cf; HALF con bridge_wood_50_1 = 25.77 en :11, puntos etiquetados con model/stack, rechaza modelos desconocidos)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/sites-ev110.json (sha256 8b17fcecb9d3567b8e0d3995a3b406039dfd18c5734e465f6d3f1367ba3e66fa; stack en 015-16/18/19/37/40, 015-42 = bridge_wood_50_1, 015-25 sin cambios; ev109/sites-rollout.json intacto, sha256 fadab172…)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/gates_v5.py (sha256 94e6df778a24cbc819536f4fc8314308f99c04d6570c9ed25369273fb3d535ad; G1–G8 independientes del tool)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/run_gates_v5.py (sha256 9bbff7752b2465e60be6870ecf174441cdd2b2f054d7846dea93abca4e5d2849; fixtures + controles negativos)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/experiments_v5.py (sha256 b3c9b75f2cb3d2cb323568125e63e5f61994bf972e7e5648d55350c44978200b; experimentos de conflicto no-deck-rows / no-water-guard)"
+  ],
+  "gates": [
+   {
+    "name": "G1 lift (franjas de 2 m de las caras de calzada en los extremos exteriores: terreno <= tablero - 0,01)",
+    "status": "PASS",
+    "evidence": "gates_v5.py:194 (candidatos exactos: vértices, aristas × líneas de la malla y diagonales, vértices de malla interiores). Holgura mínima 0,015 m (015-19, extremo 0); 015-8 0,042/0,028; todas >= 0,015. El LP limita las subidas a deck − DECK_CLEAR=0,015 (bridges_v31.py:92). JSON: E:/…/ev108-base/gates/G1.json. Negativo: triángulo bajo la franja de 015-8 subido por encima del tablero → FAIL (−0,050), negative/G1.json."
+   },
+   {
+    "name": "G2 estribos (metal <= 0,02 m) y aire bajo rampa (madera <= 0,10 m salvo agua)",
+    "status": "FAIL",
+    "evidence": "Metal PASS: 015-13 extremo 0 pasa de 1,1708 m (v4) a 0,0100 m (exacto); ruta muestreada −0,046; resto enterrado (<= −0,52). Madera FAIL en los 14 extremos: aire máximo v5 / v4 por sitio: 16 1,16/1,82 y 1,17/1,24; 18 0,86/1,18 y 1,08/1,97; 19 1,13/1,78 y 1,19/2,04; 25 1,15/1,15 y 1,01/1,76; 37 1,63/1,63 y 1,21/1,21; 40 1,22/1,54 y 2,31/2,31; 42 1,14/1,14 y 1,04/1,07. Excepciones de agua listadas: 0. Causa medida: el experimento no-deck-rows (experiments/no-deck-rows/G1.json y G2.json) quita los límites del tablero; G1 cae a −1,57 m (terreno sobre la calzada) y el aire aún queda en 0,14–0,35 m. El relleno no puede inclinar los triángulos de 6 m que cruzan la punta sin cubrir el tablero. Negativo: terreno v4 → FAIL. JSON: gates/G2.json."
+   },
+   {
+    "name": "G3 agua (vértices mojados bajo el tablero sin cambio o más, abertura >= v4, W 5,9/6,0/6,1 sin salto)",
+    "status": "PASS",
+    "evidence": "gates_v5.py:270 (abertura exacta cruzando la malla, secciones cada 0,1 m). 0 vértices mojados perdidos en los 10 sitios. Aberturas: 015-13 8,3128→8,3211; 015-25 2,9781→2,9799; el resto iguales. Fixture 015-25: W 5,9 4,000→4,769; 6,0 4,075→4,112; 6,1 4,153→4,232. Negativos: vértice mojado de 015-25 subido → FAIL (0 m); prototipo wf-bridge-end/bridges_v31_final.py: W 6,0 y 6,1 → 1,297 m → FAIL (negative/G3-proto.json)."
+   },
+   {
+    "name": "G4 apilados y swap (0 patas con gap > 0,05 m, contacto por pie en LOD1, sin z-fighting)",
+    "status": "FAIL",
+    "evidence": "PASS en los 5 apilados: patas inferiores colgando 0; pies superiores 18 o 10 sobre la copia (gap LOD1 −0,096..−0,028), 4 en el suelo, 0 colgando; pares coplanares 0 (el detector da 225 con dy=0, así que no es vacío). Reportado por LOD: LOD2 −0,002, LOD3 −0,002..+0,029, geometría (1e13) 0,050–0,083 m, caja de LOD4 separada 0,238 m. Rampas inferiores expuestas con las caras de calzada reales a todo el ancho: 0 m². FAIL en 015-42 (bridge_wood_50_1): 2 patas en el borde del cauce, a 0,075 y 0,196 m. Experimento no-water-guard: 0 patas colgando, pero la abertura cae de 3,054 a 2,886 m (G3 FAIL). Negativos: offset 5,30 → FAIL; registros v4 → FAIL. JSON: gates/G4.json."
+   },
+   {
+    "name": "G5 vértices congelados solo dentro de las huellas de tablero/rampa",
+    "status": "PASS",
+    "evidence": "gates_v5.py:449. 212 congelados cambian respecto a la entrada; 0 fuera de (soporte de la huella LOD1 ∪ corredor v4 rebajado |s| <= flat). 25 congelados difieren de v4, todos dentro del soporte. Negativo: congelado lejano +0,3 m → FAIL."
+   },
+   {
+    "name": "G6 pendientes (ningún triángulo nuevo > 55°; >35 y >45 frente a v4; atascados por triángulo)",
+    "status": "PASS",
+    "evidence": "0 triángulos nuevos > 55° (máximo 61,22° = v4); >35°: 139→171; >45°: 48→76; >55°: 3→3; 98 triángulos más empinados que en v4; atascados por triángulo 86→118 (por celda 64→85). El LP lleva filas de pendiente (bridges_v31.py:809) y la compensación las respeta. Negativo: pico de 20 m → FAIL (6 nuevos)."
+   },
+   {
+    "name": "G7 restricciones recalculadas sobre el terreno final, entre sitios",
+    "status": "PASS",
+    "evidence": "gates_v5.py:500 recalcula G1 y las caras metálicas sobre el terreno final. Diferencia tool/gate 0,0 m. Fixture de solape (015-13 y una copia a +18/+6 m): las 4 caras quedan en 0,010/−0,52/0,010/0,010 y G1 se cumple. Negativos: prototipo sobre el mismo fixture → 2,26 m, FAIL; terreno v4 → FAIL."
+   },
+   {
+    "name": "G8 envolvente y registros",
+    "status": "PASS",
+    "evidence": "envelope-br.npy byte-idéntico a v4 (sha256 e23857cd…). Los 15 arrays del npz salvo heights/v31_bridge_cut/v31_bridge_fill son idénticos (NaN incluidos); v31_bridge_fill es nuevo. Los 12 registros superiores no cambiados son idénticos a v4. 015-42: mismo eje, desviación de calzada mundial 0,0 m. 5 copias apiladas = superior − 5,04·Y. Negativos: registro movido 1 cm → FAIL; celda de envolvente +0,1 → FAIL. Además, el tool ejecutado desde el worktree reproduce las 4 salidas con el mismo sha256 (rerun-worktree/)."
+   }
+  ],
+  "per_site": [
+   "015-8 metal_25 x2: bloques enterrados (−1,16/−1,42 m); holgura de franja 0,042/0,028; abertura 6,173 = v4; sin cambios de terreno respecto a v4.",
+   "015-11 metal_25 x2: enterrado (−0,92/−0,58); holgura 0,020/0,019; abertura 6,518 = v4; sin cambios.",
+   "015-13 metal_25 x2: esquina interior del extremo 0 de 1,171 a 0,010 m (1 vértice, (591,1563), subido 1,92 m; la compensación rebajó (594,1564)); abertura 8,313→8,321; holgura 0,025/0,018.",
+   "015-16 wood_50 + apilado: patas inferiores 0/22 colgando; pies superiores 18 sobre la copia y 4 en el suelo; calzada inferior 4,11 m sobre el agua, expuesta 23,95 m (162,6 m²); aire de rampa 1,16/1,17 m (v4 1,82/1,24); abertura 3,094 = v4.",
+   "015-18 wood_25 + apilado: patas 0 colgando; calzada inferior +3,41 m, expuesta 17,55 m (117,7 m²); aire 0,86/1,08 (v4 1,18/1,97); abertura 1,515 = v4.",
+   "015-19 wood_25 + apilado: patas 0 colgando; calzada inferior +3,94 m, expuesta 14,15 m (108,7 m²); aire 1,13/1,19 (v4 1,78/2,04); abertura 3,045 = v4.",
+   "015-25 wood_25, sin apilar ni cambiar (decide Guillermo): aire 1,15/1,01 (v4 1,15/1,76; el extremo 0 empeora 1 mm por la compensación); abertura 2,978→2,980; las patas siguen colgando como en v4 (sin gate).",
+   "015-37 wood_25 + apilado: patas 0 colgando; calzada inferior +2,81 m, expuesta 16,05 m (122,2 m²); aire 1,63/1,21 = v4 (el relleno estrechaba el agua y se descartó); abertura 3,274 = v4.",
+   "015-40 wood_50 + apilado: patas 0 colgando (entierro mínimo de la inferior 0,19 m); calzada inferior +4,63 m, expuesta 32,25 m (198,4 m²); aire 1,22/2,31 (v4 1,54/2,31); abertura 2,769 = v4.",
+   "015-42 cambiado a wood_50_1 (calzada mundial idéntica): 2 de 20 patas cuelgan 0,075/0,196 m en el borde del cauce (G4 FAIL; arreglarlo estrecha el agua 0,17 m); aire 1,14/1,04 (v4 1,14/1,07); abertura 3,054 = v4."
+  ],
+  "rebuild_commands": [
+   "PY=C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe; B=E:/DayZ-Baltic-Build/v31-pond-layer-20261013; O=$B/ev110-wip/bridges/ev108-base; WT=<worktree>",
+   "Línea base v4 (el fuente v4, sha b082c87f, ya solo existe en scratchpad/impl-bridges/bridges_v31_v4.py y en wf-bridge-end/bridges_v31_base.py): $PY -I bridges_v31_v4.py $B/ev108-kit/terrain-ev108.npz $B/ev108-kit/envelope-ev108.npy $WT/evidence/v31-pond-layer-2026-10-13/bridges/ev109/sites-rollout.json $O/v4-baseline/terrain-br.npz $O/v4-baseline/envelope-br.npy $O/v4-baseline/bridge-records.json $O/v4-baseline/bridge-report.json  (sale igual que wf-bridge-end/base, terreno sha 86c0a85c…)",
+   "v5: $PY -I $WT/tools/terrain/bridges_v31.py $B/ev108-kit/terrain-ev108.npz $B/ev108-kit/envelope-ev108.npy $WT/evidence/v31-pond-layer-2026-10-13/bridges/ev110/sites-ev110.json $O/terrain-br.npz $O/envelope-br.npy $O/bridge-records.json $O/bridge-report.json  (unos 20 s; terreno sha 40243525…, registros bbb3d4ca…, informe 7bdf3c00…)",
+   "Gates + fixtures + negativos: $PY -I $WT/evidence/v31-pond-layer-2026-10-13/bridges/ev110/run_gates_v5.py $O $B/ev108-kit/terrain-ev108.npz $B/ev108-kit/envelope-ev108.npy $WT/evidence/v31-pond-layer-2026-10-13/bridges/ev110/sites-ev110.json $WT/tools/terrain/bridges_v31.py <bridges_v31_v4.py> [<scratchpad>/wf-bridge-end/bridges_v31_final.py]  → $O/gates/summary.json (unos 2 min)",
+   "Un gate suelto: $PY -I $WT/evidence/…/ev110/gates_v5.py G1..G8 --run $O --v4 $O/v4-baseline --input $B/ev108-kit/terrain-ev108.npz --sites $WT/evidence/…/ev110/sites-ev110.json [--fixture …] --out <json>",
+   "Experimentos de conflicto: $PY -I $WT/evidence/…/ev110/experiments_v5.py no-deck-rows|no-water-guard $WT/tools/terrain/bridges_v31.py $B/ev108-kit/terrain-ev108.npz $B/ev108-kit/envelope-ev108.npy $WT/evidence/…/ev110/sites-ev110.json $O/experiments/<mode>",
+   "Puntos de sonda: $PY -I $WT/tools/terrain/probe_points_bridges.py $WT/evidence/…/ev110/sites-ev110.json $O/bridge-report.json $O/probe-points.csv $O/probe-points.json  (836 puntos)",
+   "Más adelante, sobre kit-v8: el mismo comando v5 con el terreno y la envolvente de kit-v8, y después los pasos 2–4 del HANDOFF (bury_edges_v31 → pond_author/pack/stage → stage_bridges_v31 con registros = kit + bridge-records.json; stage_bridges añade las copias apiladas como objetos normales, y el campo role pasa tal cual) más compile/package, todo sin ejecutar todavía."
+  ],
+  "review_defects_addressed": [
+   "End-fit, salto a W = 6 m: la regla ya no tiene umbral de W. Nunca se sube un vértice mojado (agua del sitio, mar o celda de envolvente). Cada abertura se compara con la del terreno v4: primero se compensa rebajando la orilla libre (bridges_v31.py:690) y, si no basta, se protegen los vértices de orilla y se vuelve a resolver (:596). Fixture de W 5,9/6,0/6,1 en PASS; el prototipo da FAIL a 6,0 (1,297 m).",
+   "End-fit, muestras de 0,5 m: las restricciones van sobre las caras ODOL reales del LOD 1, transformadas y cortadas por los planos verticales de las aristas de los triángulos (pieces :280, face_points :303), así que son exactas por pieza. En 015-13 el residuo pasa de 0,049 a 0,010 m (FACE_TOL). El gate lo recalcula de forma independiente con candidatos exactos más una ruta muestreada.",
+   "End-fit, solapes: un único LP conjunto después de todos los cortes y del guard v4 (:552, :596). El guard v5 rechaza bajadas que rompan filas (:335) y todo se mide otra vez sobre el terreno final. El fixture de solape da PASS; con el prototipo da FAIL (2,26 m).",
+   "End-fit, asiento sin verificar: SEATS como lista blanca (:97); lod_exact exige los LOD 3e15 y 1.0 exactos (:107); seat_block y seat_ramp validan techo, largo, ancho, ajuste de la parte inferior (residuo 0,0036–0,0038), pendiente 0,303–0,304 y hueco calzada–parte inferior, y si algo falla se rechaza (:143, :155). Probado: stone_25, metal_25_1 y metal_25 sin LOD1 se rechazan.",
+   "End-fit, atascados por celda: steep_changed (:369) cuenta por triángulo (fila, columna, mitad). El informe da los de v4 (86) y los de v5 (118); el gate, también las celdas (64→85).",
+   "Patas, contacto por pie y por LOD: G4 mide cada pie superior contra la copia (LOD1 visual) o contra el terreno, y reporta los gaps por LOD (2/3/4 visuales y geometría 1e13: 0,050–0,083 m) y la separación de cajas de LOD4 (0,238 m).",
+   "Patas, rampas inferiores expuestas: se miden con las caras de calzada reales a todo el ancho (muestreo de 0,05 m): 0 m² en los 5 sitios apilados. Se reportan también la calzada inferior sobre el agua y la longitud expuesta.",
+   "Patas, Chernarus sin apilados: no se repite esa afirmación en ningún sitio (cabecera, informe ni gates).",
+   "Patas, reemplazo en stage_bridges: no hace falta una acción replace. El registro superior lleva ya el modelo wood_50_1 con la pose desplazada −1,3007·Y (variant_offset :224 comprueba que las calzadas coinciden a 3 mm).",
+   "Diff corrompido del relay (defecto de transporte): no aplica; v5 se escribió completo y se verificó por sha256."
+  ],
+  "open_issues": [
+   "G2 madera FAIL, y no se puede cerrar con terreno sujeto a G1: la pose de v4 es fija, la malla es de 6 m y la carretera está congelada más allá de la punta. El relleno solo devuelve lo que quitó el corte (por ejemplo 015-19 2,04→1,19). Opciones a decidir: aceptar ~1 m de aire (lo que ya había antes del corte), un objeto vanilla de rampa o terraplén, o elevar la pose de las rampas (esto cambiaría G8).",
+   "G4 FAIL en 015-42: con wood_50_1, 2 patas cuelgan 0,075 y 0,196 m sobre el borde mojado. Hay que elegir entre estrechar el agua 0,17 m (falla G3), apilar también ahí (el estudio dio 0 colgando, con el arriostramiento a +0,08 m del agua) o aceptarlo.",
+   "La pendiente empeora sin pasar de 55°: >45° 48→76, >35° 139→171, atascados 86→118. Son paredes del relleno o de la restitución contra el cauce bajo el tablero, que el guard no puede tender porque el vértice alto está sostenido.",
+   "La compensación rebaja 4 vértices por debajo del talud de diseño 1:2 (015-13 uno, 015-25 tres; máximo 0,75 m). En el fixture de W 5,9 la abertura sube a 4,77 m (paso de 0,25 m), por encima de la de v4.",
+   "Las subidas pueden llegar a 4,98 m en un vértice: bancos cortados bajo la punta interior de la rampa, restituidos hacia la parte inferior; OVER_MAX = 1 m por encima de la cota que sirven. Revisarlo en vista.",
+   "El asiento de rampa del tool termina en el primer elemento de caballete (4,04–4,50 m). El gate mide hasta la primera pata (4,18–4,64 m), por eso sus cifras de aire son algo mayores que las del informe.",
+   "Geometría (colisión) de los apilados: los pies superiores quedan 0,050–0,083 m sobre la copia. LOD4 separado 0,238 m: posible rendija visible a distancia. Segunda calzada caminable de 14–32 m expuesta. Nada de esto está visto en el juego.",
+   "Sin verificar en el motor; no usé DayZ MCP. Tampoco ejecuté la cadena bury_edges → autoría de agua → stage → compile → package → sonda: no hay WRP, PBO ni sonda EV110.",
+   "v4 (b082c87f) nunca se commiteó y el worktree ya tiene v5. El fuente v4, que necesitan la línea base y los gates, solo queda en el scratchpad (impl-bridges/bridges_v31_v4.py y wf-bridge-end/bridges_v31_base.py). Conviene guardarlo en evidence o en un commit.",
+   "Ejecuté los gates desde copias del scratchpad, byte-idénticas a las instaladas. La única excepción es run_gates_v5.py, al que después solo añadí sys.dont_write_bytecode. Los controles negativos del prototipo dependen de una ruta del scratchpad.",
+   "Sin commit, como se pidió. En el worktree hay otros cambios ajenos a esta pista (build_surface_v30, streambed_kit_v31, probe_points_kit, patch_surface_v31 y otros) que no he tocado."
+  ]
+ },
+ "r1": {
+  "verdict": "unsound",
+  "defects": [
+   {
+    "severity": "critical",
+    "claim": "G5 PASS permite cambios congelados fuera de las huellas.",
+    "evidence": "MEASURED; RUN inspect_outputs.py: 29 vértices congelados modificados fuera incluso del soporte triangular de las huellas; descenso máximo 6.995454 m. Todos heredan el corte de v4. R/inspection.json:2. EV/gates_v5.py:453-466 introduce una excepción de corredor ausente del contrato solicitado.",
+    "fix": "Aplicar el límite solicitado o acordar explícitamente otra definición de G5. Añadir un negativo fuera de huella pero dentro del corredor."
+   },
+   {
+    "severity": "critical",
+    "claim": "G3 PASS no comprueba la continuidad del barrido W=5.9–6.1.",
+    "evidence": "MEASURED; RUN width_transition.py y RUN width_gate.py: W=5.900390625→5.9005859375 aumenta 0.0001953125 m mientras la abertura cae 4.769990→4.000921 m. El gate oficial devuelve PASS para ambos: R/width-gate/G3.json:3 y :89. EV/gates_v5.py:325-331 compara cada fixture contra v4, nunca contra anchuras vecinas.",
+    "fix": "Comprobar continuidad entre anchuras próximas y corregir la compensación discreta que produce esta caída; conservar también la comparación con v4."
+   },
+   {
+    "severity": "critical",
+    "claim": "G7 acepta informes sin las mediciones finales que afirma contrastar.",
+    "evidence": "MEASURED; RUN mutant_gates.py: borrar todos los fit_ends mantiene G7 PASS, exit 0 y max_tool_vs_gate_diff_m=null. R/mutants-results.json:2. EV/gates_v5.py:505-514 omite mediciones ausentes y acepta diffs vacío. RUN inspect_outputs.py también obtiene G7 PASS con un vértice central de 015-11 elevado a 23.614768 m: R/inspection.json:339.",
+    "fix": "Exigir cobertura completa de mediciones por sitio/extremo y comprobar todas las familias de restricciones finales, incluidas las caras interiores. Incorporar ambos negativos."
+   },
+   {
+    "severity": "critical",
+    "claim": "G8 y G4 no verifican el modelo real de la copia inferior.",
+    "evidence": "MEASURED; RUN mutant_gates.py: cambiar únicamente el modelo inferior de 015-19 a bridge_metal_25 conserva G8 PASS, exit 0, y G4 PASS para ese sitio. R/mutants-results.json:7. EV/gates_v5.py:550-554 omite el modelo inferior; :365-377 calcula su contacto usando la geometría del superior.",
+    "fix": "Comparar el registro inferior completo con la copia esperada, incluido modelo y span; medir contacto usando ambos modelos y matrices reales."
+   },
+   {
+    "severity": "major",
+    "claim": "G4 en 015-42 es corregible sin cambiar modelo ni pose; no es inevitable.",
+    "evidence": "MEASURED; RUN legs42_counterexample.py: elevar [597,1865] 0.092269 m y [599,1867] 0.269100 m deja 0 patas colgantes y holgura máxima 0.040 m. Ambos vértices son secos, congelados y están dentro de la huella. Abertura conservada en 3.0542 m, 0 vértices húmedos perdidos; G1/G3/G5/G6/G7/G8 conservan PASS y las rampas no cambian. R/legs42-counterexample/G4.json:257; R/final-verification.json:173. INFERRED: la protección acumulativa de WT/tools/terrain/bridges_v31.py:638-640 bloquea más vértices de los necesarios.",
+    "fix": "Refinar la protección de orillas mediante recomprobación de abertura y restricciones, e incorporar el contraejemplo. No hace falta apilar 015-42."
+   },
+   {
+    "severity": "major",
+    "claim": "G2 sigue incumplido en los 14 extremos de madera.",
+    "evidence": "MEASURED; RUN canonical_gates.py: aire máximo 0.8639–2.3051 m y 0 excepciones de agua en todos los extremos; R/rerun/gates/G2.json, medición en EV/gates_v5.py:255-262. RUN feasibility.py encuentra inviables las cotas de todas las rampas bajo los bloqueos y límites superiores actuales, aunque permite 282 vértices congelados dentro de huellas. RUN rerun_experiments.py: eliminar deck/strip/cap no resuelve G2 y entierra franjas hasta 1.5748 m; eliminar protección de agua reduce aberturas.",
+    "fix": "Mantener G2 abierto y proponer un cambio concreto de geometría, pose o asiento para validación. La inviabilidad del planteamiento actual no autoriza abandonar ni relajar el gate."
+   }
+  ],
+  "gates_rerun": [
+   "R=REVIEWDIR del encargo; EV=WT/evidence/v31-pond-layer-2026-10-13/bridges/ev110. RUN script.py = C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B R/read_path_wrapper.py R/script.py, desde WT. Dictamen y evidencia guardados en R/review.json y sus archivos asociados.",
+   "MEASURED: P: no estaba montada. El wrapper redirige exclusivamente lecturas P:/DZ a C:/Users/guill/OneDrive/Documentos/DayZ Projects/DZ y desactiva bytecode; no modifica fuentes ni monta unidades.",
+   "MEASURED; RUN reproduce.py y RUN final_verify.py: coinciden todos los hashes publicados de fuentes y sites. Los cuatro artefactos reproducen O byte a byte: terreno 40243525, registros bbb3d4ca, informe 7bdf3c00, envolvente e23857cd. Fuentes, entradas y originales fijados por hash permanecen idénticos. R/reproduction-hashes.json:2; R/final-verification.json:2.",
+   "MEASURED; RUN canonical_gates.py: G1/G3/G5/G6/G7/G8 PASS; G2/G4 FAIL. Los 12 negativos fallan por sus causas previstas. El offset 5.30 añade 6–11 patas colgantes por sitio apilado, independientemente del FAIL previo de 015-42. R/rerun/gates/summary.json.",
+   "MEASURED; RUN prototype_controls.py: SP/wf-bridge-end/bridges_v31_final.py reproduce los cuatro fixtures originales byte a byte. El intento inicial con bridges_v31_r1.py no correspondía al prototipo y no sustenta el resultado canónico. R/prototype-verification.json.",
+   "MEASURED: 015-13 reproduce exposición 1.1708→0.0100 m. Los tres metálicos de dos tramos pasan también la inspección completa de calzada. Swap 015-42: desviación mundial reportada 0.0000 m. Las cinco copias inferiores cumplen superior−5.04*Y; configuración y pose de 015-25 conservadas. R/inspection.json; R/rerun/gates/G8.json.",
+   "MEASURED: W=5.9/6.0/6.1 produce aberturas 4.7694/4.1124/4.2319 m. W=5.95/5.99/5.9999/6.0001/6.01/6.05 produce 4.0555/4.1009/4.1123/4.1126/4.1240/4.1712 m. No aparece salto exactamente en 6.0; el contraejemplo está cerca de 5.9005. R/edges/*/checks.json; R/width-transition.json.",
+   "MEASURED; RUN edge_runs.py: el solape metálico original y su orden invertido pasan. El cruce sintético metal+madera devuelve archivos y exit 0, pero G2/G7 FAIL con exposiciones 2.0926/1.6172 m. Dos fixtures de mar conservan modo sea, sin sellos nuevos y G3/G8 PASS; madera conserva G2 FAIL. R/edges-summary.json.",
+   "MEASURED: apilar wood_50 en 015-42 conserva calzada y elimina patas colgantes; apilar wood_50_1 también pasa G4, pero muestra interpenetración de 2.40–2.70 m. Estos ensayos no validan una alternativa visual. R/edges/stack42-base/checks.json; R/edges/stack42-variant/checks.json.",
+   "MEASURED: máscaras cut/fill originales sin discrepancias frente a la entrada; 18 vértices elevados sobre entrada y 22 sobre v4. HALF difiere del ODOL como máximo 0.001765 m. G6: 0 triángulos nuevos >55°; >35° 139→171; >45° 48→76; stuck por triángulo 86→118. R/inspection.json; R/rerun/gates/G6.json.",
+   "MEASURED/INFERRED: los gates no importan bridges_v31.py, pero comparten odol_reader. FACE_TOL=0.01 y DECK_CLEAR=0.015 son más estrictos que los umbrales del gate; OVER_MAX=1 añade un límite al solver. Las 138 filas superiores omitidas carecen de variable libre y ninguna estaba violada. Las filas inferiores llamadas hard admiten slack penalizado: óptimo LP no garantiza cumplimiento. WT/tools/terrain/bridges_v31.py:92, :95, :860-869; R/feasibility/diagnostic.json:171."
+  ],
+  "not_checked": [
+   "Sin DayZ MCP, motor, colisión, navegación, render ni aceptación visual. Conclusiones offline; sin commit ni cambios en WT/O/E:/P:/DZ.",
+   "No se demuestra imposibilidad global de G2 ni de todos los solapes; la inviabilidad LP medida depende de la topología y restricciones ensayadas.",
+   "Links: 1001 muestras por eje en ocho enlaces no muestran cambios v5 frente a v4. Los ejes de 015-25 y 015-42 contienen puntos secos preexistentes hasta 0.510 y 0.200 m sobre el nivel; conectividad acuática completa en 2D no demostrada. R/inspection.json.",
+   "No se escribió handoff externo en Obsidian: toda escritura está limitada a REVIEWDIR, donde quedan scripts, contrapruebas y dictamen."
+  ]
+ },
+ "fix": {
+  "summary": "Corregí los 4 defectos críticos y el mayor de 015-42. Los gates se volvieron a ejecutar todos desde el worktree en una carpeta nueva: E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110-wip/bridges/ev108-base-r4/.\n\nResultado: G1, G3, G4, G6, G7 y G8 dan PASS. G2 y G5 dan FAIL. Los 19 negativos dan FAIL y los 3 cuyo gate ya fallaba en positivo detectan la mutación concreta.\n\n- **G4 (015-42):** queda en PASS con 0 patas colgando y holgura máxima de 0,040 m. Ningún sitio pierde abertura.\n- **G3:** el barrido de 17 anchuras (W de 5,9 a 6,1, incluidas las dos del contraejemplo) da un exceso constante de +1e-5 m y un salto máximo de 0,0. La v5 anterior salta 0,769 m y da FAIL.\n- **G2:** sigue abierto, como pidió la revisión. Propongo un cambio de pose concreto, «deck-flush»: medido offline, cierra G2 en los 14 extremos, pero exige redefinir G1 y recortar terreno bajo el tablero.\n- **G5:** ahora es estricto, sin la excepción de corredor. Falla por 29 vértices congelados, todos heredados del corte de cauce de v4 (5 de ellos son lecho mojado). Restituirlos crearía presas de hasta 4,5 m en el cauce. Que esa excepción se acepte como documentada o se elimine lo tiene que decidir Guillermo; no la he relajado.\n\nCambios en la herramienta (bridges_v31.py, mismo esquema bridges-v31.v5):\n1. compensate (:740) solo baja cada vértice lo justo para recuperar la abertura (bisección, objetivo v4 + OPEN_MARGIN = 1e-5, :99) y ya no da escalones fijos de 0,25 m.\n2. Ya no se bloquea toda la orilla subida. cap_shore (:702) deshace las subidas de la ventana del sitio, las devuelve de menor a mayor daño hasta donde la abertura lo permite y deja el resto como tope por vértice. solve (:909, :926) respeta esos topes. FIT_ROUNDS pasa a 16 (:98).\n3. El informe por sitio añade deck_min_clear_m (todas las caras del tablero, :684) y capped_vertices.\n\nResultado medido en la herramienta:\n- 015-42: tope en [599,1867] de 0,3183 m (antes subía 0,4025 m).\n- 015-37: [1159,1243] queda limitado a 0,4975 m y [1159,1244] a 0.\n\nLo que no cambia: registros idénticos a la v5 anterior (sha bbb3d4ca) y envolvente idéntica a v4 (e23857cd). El terreno cambia de 40243525 a 52af2b92.",
+  "worktree_files": [
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/tools/terrain/bridges_v31.py (v5 corregida, sha256 f0c9fedf45beec9d776e0310f6ca400a352269c4f31288938e8ceb6e0f14836e; cap_shore :702, compensate :740, solve con tope :909/:926, OPEN_MARGIN :99, FIT_ROUNDS 16 :98, deck_min_clear_m :684; corte de corredor v4 sin cambios :513)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/gates_v5.py (sha256 ffcb6db019ef6646cea59601e08cf0f70016fa97c15b1636d29389c890f44617; G3 continuidad :318 con CONT_TOL 0,05 :26; G4 con modelo y matriz reales del inferior rel_frame/contact/zfight :352-:388, g4 :392; G5 estricto :498; G7 completo deck_clear/leg_gaps/ramp_caps/g7 :559-:607; G8 registro inferior completo :666)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/run_gates_v5.py (sha256 7ceefd6b2c93bd58d53342ac50e78c64f72cf1d63f561c0357d42f0b37d4b21c; argparse, nuevo --sites-v4 obligatorio, barrido de 17 anchuras y 19 negativos con detección)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/experiments_v5.py (sha256 15ad37c0be5b69f3a1eb67768fef19b98d577478c57a603726c16af17f0d6882; añade el modo deck-flush rise|leg para la propuesta de G2)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/bridges_v31_v4.py (NUEVO: copia de la línea base v4, sha256 b082c87fcda8bd875868ed874c90df3b2bc59297666c02508c4ef76d27fdaac1; ya no depende del scratchpad)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/bridges_v31_v5r1.py (NUEVO: la v5 revisada, sha256 d4d58d10…, usada solo como negativo de G3)",
+   "C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c/evidence/v31-pond-layer-2026-10-13/bridges/ev110/bridges_v31_endfit_proto.py (NUEVO: el prototipo, sha256 3a550102…, negativo de G3 y G7)",
+   "Sin cambios: tools/terrain/probe_points_bridges.py (5743fb05…) y ev110/sites-ev110.json (8b17fcec…); ev109/sites-rollout.json intacto.",
+   "Instalación: cada archivo se escribió con un único write por Python (LF) y se leyó de vuelta; el sha256 coincide con la copia de C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-bridges-r2/ (install.py)."
+  ],
+  "gates": [
+   {
+    "name": "G1 franjas de 2 m en los extremos del tablero: terreno <= tablero - 0,01",
+    "status": "PASS",
+    "evidence": "MEDIDO, r4/gates/G1.json: holgura mínima de 0,015 m (015-19, extremo 0); 015-8 da 0,042/0,028. Negativo: franja de 015-8 subida 0,05 m sobre el tablero → FAIL."
+   },
+   {
+    "name": "G2 estribos metálicos <= 0,02 m; aire bajo las rampas de madera <= 0,10 m",
+    "status": "FAIL",
+    "evidence": "MEDIDO, r4/gates/G2.json.\n- Metal en PASS: 015-13 extremo 0 da 0,0100 m exacto (ruta muestreada −0,046); el resto queda enterrado (<= −0,52).\n- Madera en FAIL en los 14 extremos, con 0 excepciones de agua. Aire máximo por sitio: 16 1,16/1,17; 18 0,86/1,08; 19 1,13/1,19; 25 1,15/1,01; 37 1,63/1,21; 40 1,22/2,31; 42 1,14/1,04.\n- Experimento no-deck-rows: el aire baja a 0,14–0,35 m pero el terreno entierra la franja 1,5748 m (G1 FAIL).\n- Propuesta deck-flush 'rise' (r4/experiments/deck-flush-rise/deck-flush.json): G2 madera PASS en los 14 extremos (máximo 0,090 m) y G4 PASS. A cambio, G1 entierra las franjas 2,16–2,20 m y el terreno invade el tablero plano 0,39–1,90 m. Detalle en open_issues.\n- Negativo: terreno v4 → FAIL, y además detecta el bloque descubierto de 015-13."
+   },
+   {
+    "name": "G3 agua: vértices mojados bajo el tablero y abertura >= v4; barrido W 5,9–6,1 sin saltos (CONT_TOL 0,05 m entre anchuras vecinas)",
+    "status": "PASS",
+    "evidence": "MEDIDO, r4/gates/G3.json.\n- Sitios: 0 vértices mojados perdidos; las 10 aberturas son iguales a v4 (015-13 8,3128; 015-25 2,9781; 015-42 3,0542…).\n- Barrido de 17 anchuras: exceso sobre v4 de +1e-5 m en todas; salto máximo 0,0.\n- Negativos: (a) vértice mojado de 015-25 subido → FAIL. (b) La v5 anterior en W 5,900390625/5,9005859375 da 4,76999/4,000921 frente a v4 4,000725/4,000868: salto −0,769 → FAIL (negative/G3-r1.json). (c) El prototipo en 5,9/6,0/6,1 cae a 1,2967 → FAIL."
+   },
+   {
+    "name": "G4 apilados y cambio de modelo: 0 patas con hueco > 0,05 m; contacto por pie con el modelo y la matriz reales del inferior; sin z-fighting",
+    "status": "PASS",
+    "evidence": "MEDIDO, r4/gates/G4.json.\n- Cinco apilados: 0 patas inferiores colgando; pies superiores 18 o 10 sobre la copia (LOD1 −0,096..−0,028) y 4 en el suelo, 0 colgando; 0 pares coplanares.\n- Por LOD: LOD2 −0,002, LOD3 −0,002..+0,029, geometría 0,050–0,083 m; separación de la caja del LOD4: 0,238 m.\n- Rampas inferiores expuestas: 0 m².\n- 015-42: 0 de 20 patas colgando, hueco máximo 0,040.\n- Negativos: offset 5,30 → FAIL; registros v4 → FAIL; inferior de 015-19 con bridge_metal_25 → FAIL (error de modelo); la v5 anterior en 015-42 (0,075/0,196) → FAIL."
+   },
+   {
+    "name": "G5 vértices congelados: solo cambian dentro de las huellas de tablero y rampa (estricto, sin excepción de corredor)",
+    "status": "FAIL",
+    "evidence": "MEDIDO, r4/gates/G5.json: 212 congelados cambian respecto a la entrada.\n- 29 están fuera de las huellas, en 015-42, 015-16, 015-40 y otros; los 29 son herencia de v4 y 0 son nuevos de v5.\n- Bajada máxima: 6,9954 m. 5 de esos vértices son lecho mojado; su cota de entrada estaba 3,08–4,54 m por encima del nivel.\n- Frente a v4: 0 fuera.\n- Negativos (FAIL y detectados por vértice): congelado lejano +0,3; congelado del corredor fuera de la huella en 015-25 [1256,842] bajado 0,3."
+   },
+   {
+    "name": "G6 pendientes: ningún triángulo nuevo > 55°; conteos > 35° y > 45°; atascados por triángulo",
+    "status": "PASS",
+    "evidence": "MEDIDO, r4/gates/G6.json: 0 triángulos nuevos > 55° (máximo 61,22° = v4).\n- > 35°: 139→175; > 45°: 48→78; > 55°: 3→3.\n- Atascados por triángulo: 86→122 (por celda: 64→88).\n- Negativo: pico de 20 m → FAIL."
+   },
+   {
+    "name": "G7 todas las restricciones recalculadas sobre el terreno final, con informe completo y concordante",
+    "status": "PASS",
+    "evidence": "MEDIDO, r4/gates/G7.json.\n- Faltas: 0.\n- Concordancia herramienta/gate en exposición de caras, franja, todas las caras del tablero (0,015–0,037) y patas: diferencia <= 5 mm. Aire de rampa: herramienta <= gate en los 14 extremos.\n- Recálculo independiente:\n  - patas inferiores y de 015-42: <= 0,04;\n  - el relleno nunca supera max(v4, intradós − 0,05);\n  - el fixture de solape cumple franjas, tablero y caras metálicas.\n- Negativos (todos FAIL): informe sin fit_ends (20 faltas); vértice central de 015-11 [880,1429] subido (tablero −12,0); prototipo sobre el solape; terreno v4."
+   },
+   {
+    "name": "G8 envolvente y registros",
+    "status": "PASS",
+    "evidence": "MEDIDO, r4/gates/G8.json.\n- Envolvente byte-idéntica a v4 (e23857cd); los 15 arrays son idénticos y v31_bridge_fill es nuevo.\n- Superiores idénticos en campos, modelo del sitio y matriz.\n- Cambio intencionado en 015-42: mismos ejes, desviación de calzada 0,0.\n- Cada inferior: exactamente {site, span, role, model = superior = modelo del sitio, mismos ejes, posición − 5,04·Y}, uno por tramo y solo en los 5 apilados.\n- Negativos: registro movido 1 cm → FAIL; celda de envolvente +0,1 → FAIL; inferior de 015-19 con bridge_metal_25 → FAIL (dos errores)."
+   }
+  ],
+  "per_site": [
+   "015-8 metal_25 x2: igual que v4. Bloques enterrados (−1,16/−1,42); franja 0,042/0,028; abertura 6,173.",
+   "015-11 metal_25 x2: igual que v4. Enterrado (−0,92/−0,58); franja 0,020/0,019; abertura 6,518.",
+   "015-13 metal_25 x2: la esquina del extremo 0 pasa de 1,1708 (v4) a 0,0100 m; [591,1563] sube 1,918 m y se baja un vértice de compensación. La abertura queda en 8,3128 = v4; antes daba 8,321 por sobrepaso del escalón.",
+   "015-16 wood_50 + apilado: 0/22 patas inferiores colgando; pies superiores 18 en la copia y 4 en el suelo. Calzada inferior a +4,11 m sobre el agua, expuesta 23,95 m (162,6 m²). Aire 1,16/1,17. Abertura 3,094 = v4.",
+   "015-18 wood_25 + apilado: 0 patas colgando. Calzada inferior +3,41 m, expuesta 17,55 m (117,7 m²). Aire 0,86/1,08. Abertura 1,515 = v4.",
+   "015-19 wood_25 + apilado: 0 patas colgando. Calzada inferior +3,94 m, expuesta 14,15 m. Aire 1,13/1,19. Abertura 3,045 = v4.",
+   "015-25 wood_25, sin apilar ni cambiar de modelo (decide Guillermo): aire 1,15/1,01; abertura 2,978 = v4; sin topes en la ejecución real. Sus patas siguen colgando como en v4; G4 no lo cubre. Con deck-flush 'rise' quedan 0 colgando.",
+   "015-37 wood_25 + apilado: 0 patas colgando. Calzada inferior +2,81 m. Aire 1,63/1,21: la subida de 5,34 m en [1159,1244] estrecha el agua, así que su tope es 0 y [1159,1243] queda en 0,4975. Abertura 3,274 = v4.",
+   "015-40 wood_50 + apilado: 0 patas colgando (entierro mínimo de la inferior 0,19 m). Calzada inferior +4,63 m, expuesta 32,25 m. Aire 1,22/2,31. Abertura 2,769 = v4.",
+   "015-42 cambiado a wood_50_1 (calzada mundial idéntica): 0 de 20 patas colgando, hueco máximo 0,040; antes 2 patas con 0,075/0,196. [599,1867] sube hasta su tope de 0,3183 m y se rebaja 1 vértice de compensación. Aire 1,14/1,04. Abertura 3,0542 = v4."
+  ],
+  "rebuild_commands": [
+   "PY=C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe; B=E:/DayZ-Baltic-Build/v31-pond-layer-20261013; WT=<worktree>; EV=$WT/evidence/v31-pond-layer-2026-10-13/bridges/ev110; O=$B/ev110-wip/bridges/ev108-base-r4",
+   "Ejecución v5 completa, línea base v4, barrido W, fixture de solape, gates G1–G8 y 19 negativos (unos 20 min; usar un --out nuevo si cambia alguna herramienta, porque las salidas existentes se reutilizan): $PY -I -B $EV/run_gates_v5.py --out $O --terrain $B/ev108-kit/terrain-ev108.npz --envelope $B/ev108-kit/envelope-ev108.npy --sites $EV/sites-ev110.json --sites-v4 $WT/evidence/v31-pond-layer-2026-10-13/bridges/ev109/sites-rollout.json --tool $WT/tools/terrain/bridges_v31.py --tool-v4 $EV/bridges_v31_v4.py --proto $EV/bridges_v31_endfit_proto.py --tool-r1 $EV/bridges_v31_v5r1.py --r1-run $B/ev110-wip/bridges/ev108-base  → $O/gates/summary.json",
+   "La herramienta sola (unos 16 s): $PY -I -B $WT/tools/terrain/bridges_v31.py $B/ev108-kit/terrain-ev108.npz $B/ev108-kit/envelope-ev108.npy $EV/sites-ev110.json $O/terrain-br.npz $O/envelope-br.npy $O/bridge-records.json $O/bridge-report.json  (terreno 52af2b92…, registros bbb3d4ca…, informe 08a6b5cf…, envolvente e23857cd…; reproducido byte a byte desde la copia del scratchpad)",
+   "Un gate suelto: $PY -I -B $EV/gates_v5.py G1..G8 --run $O --v4 $O/v4-baseline --input $B/ev108-kit/terrain-ev108.npz --sites $EV/sites-ev110.json [--fixture …] --out <json>  (G7 necesita ahora --v4 y --sites)",
+   "Experimentos: $PY -I -B $EV/experiments_v5.py no-deck-rows|no-water-guard $WT/tools/terrain/bridges_v31.py <terreno> <envolvente> $EV/sites-ev110.json $O/experiments/<modo>; propuesta de G2: $PY -I -B $EV/experiments_v5.py deck-flush $O $EV/sites-ev110.json $O/experiments/deck-flush-rise rise (o leg)",
+   "Puntos de sonda (836): $PY -I -B $WT/tools/terrain/probe_points_bridges.py $EV/sites-ev110.json $O/bridge-report.json $O/probe-points.csv $O/probe-points.json",
+   "Más adelante, sobre kit-v8: el mismo comando de la herramienta con el terreno y la envolvente de kit-v8, después los pasos 2–4 del HANDOFF (sin ejecutar)."
+  ],
+  "review_defects_addressed": [
+   "CRÍTICO G5 (corredor): G5 es ahora estricto según el contrato (gates_v5.py:498), sin la excepción de corredor; da FAIL con los 29 vértices listados. Para cada uno se indica su origen (heredado de v4: 29; nuevo: 0), si está mojado (5) y su cota de entrada sobre el nivel. La herramienta no cambia el corte v4 (bridges_v31.py:513), porque restituirlo dejaría presas de 3,1–4,5 m en el lecho mojado; la decisión queda abierta. Añadido el negativo «congelado fuera de huella pero dentro del corredor» (015-25 [1256,842]): FAIL y detectado.",
+   "CRÍTICO G3 (continuidad): (1) compensate (:740) aplica la bajada mínima suficiente por bisección, sin escalón fijo de 0,25 m, con objetivo v4 + 1e-5 (:99). (2) G3 compara el exceso sobre v4 entre anchuras vecinas (CONT_TOL 0,05, gates_v5.py:26/:318) en un barrido de 17 anchuras que incluye 5,900390625 y 5,9005859375: salto máximo 0,0. (3) Negativo con la v5 anterior en esas dos anchuras: salto 0,769 → FAIL. Se conserva la comparación con v4.",
+   "CRÍTICO G7 (mediciones ausentes y caras interiores): G7 (gates_v5.py:607) exige un informe completo por sitio y extremo (fit_ends con su tipo, franja, deck_min_clear_m nuevo, patas con el número correcto, abertura). Recalcula todas las familias: franjas, todas las caras del tablero, caras de bloque (incluidas las interiores), patas inferiores y de cambio de modelo, y topes del relleno bajo la rampa. Exige concordancia de 5 mm. Negativos incorporados: informe sin fit_ends → FAIL (20 faltas); vértice central de 015-11 subido → FAIL (tablero −12,0).",
+   "CRÍTICO G8/G4 (modelo del inferior): G8 (:666) compara cada registro inferior completo (campos, rol, span, modelo = superior = sitio, ejes, posición − 5,04·Y, sin duplicados, uno por tramo apilado). G4 (:352–:392) mide contacto, z-fighting, cajas por LOD, patas y calzada con el modelo y la matriz reales del inferior (rel_frame), y exige que sea el modelo del sitio. Negativo incorporado (015-19 inferior = bridge_metal_25): G4 FAIL y G8 FAIL.",
+   "MAYOR G4 015-42: la protección acumulativa se sustituye por cap_shore (bridges_v31.py:702): revierte las subidas de la ventana y las devuelve de menor a mayor daño hasta donde la abertura lo permite, con tope por vértice (solve :909/:926). Resultado: 015-42 queda con 0 patas colgando (0,040) y abertura 3,0542 = v4. Incorporado como negativo: la v5 anterior en 015-42 → G4 FAIL. Sin apilar en 015-42.",
+   "MAYOR G2: se mantiene en FAIL y no se relaja. Propuesta concreta de pose, medida offline (experiments_v5.py deck-flush): bajar cada registro de madera 2,215 m por su eje Y, de modo que el tablero plano quede donde estaban los extremos de la rampa y las rampas queden enterradas. Ese asiento coincide con el censo de Chernarus: terreno por encima de la calzada de rampa en 65 de 66 extremos de wood_25 (census-vanilla.json). Detalle y coste en open_issues.",
+   "Menor: la fuente v4 (b082c87f), la v5 anterior y el prototipo se guardan en evidence/ev110, así que la línea base ya no depende del scratchpad. run_gates exige --sites-v4: con los sitios EV110, v4 colocaba wood_50_1 sin desplazamiento y G8 lo detectó en la ejecución r2."
+  ],
+  "open_issues": [
+   "Decisión de Guillermo sobre G5 (FAIL): el corte de corredor v4 baja 29 vértices congelados fuera de las huellas en 015-42, 015-16, 015-40 y otros, hasta 6,995 m; 5 son lecho mojado. Opciones: aceptar la excepción de corredor de forma explícita (y documentarla como contrato) o restringir el corte a la huella, lo que deja presas de 3,1–4,5 m sobre el nivel en el cauce. La herramienta y v4 no se han tocado en esto; la otra pista (patch_surface --road-off-lowered) depende de ese corte.",
+   "G2 madera sigue en FAIL. Propuesta deck-flush 'rise' para validar en juego (r4/experiments/deck-flush-rise/deck-flush.json; terreno sin rehacer, todo offline).\n- Gana: aire máximo de rampa <= 0,090 m en 14/14 extremos; patas colgando 0 en todos los sitios, incluido 015-25.\n- Cuesta:\n  1. G1 tendría que redefinirse sobre los extremos del tablero plano (las franjas actuales quedan enterradas 2,16–2,20 m, igual que en Chernarus).\n  2. Hay que recortar terreno bajo el tablero plano, que hoy invade 0,39–1,90 m: el corte |s| <= half − 7,3 m queda dentro de la huella.\n  3. La calzada sobre el agua baja 2,2 m (mínimo 3,91 m en 015-25).\n- La variante 'leg' (1,26–1,28 m) no basta: 015-37 da 0,36 y 015-40 da 1,03 de aire, y 015-25 tiene 1 pata colgando.",
+   "Las pendientes empeoran sin pasar de 55°: > 45° de 48 a 78, > 35° de 139 a 175, atascados de 86 a 122. Son paredes de relleno o restitución contra el cauce bajo el tablero.",
+   "015-37: la subida de rampa de 5,34 m en [1159,1244] queda con tope 0 porque estrecha el agua; por eso su aire del extremo 0 sigue en 1,52 (herramienta) / 1,63 (gate).",
+   "Carpetas en ev110-wip/bridges, ninguna borrada:\n- ev108-base: la v5 revisada; se usa como negativo de G4.\n- ev108-base-r2: obsoleta (línea base v4 mal hecha con los sitios EV110; G8 la detectó).\n- ev108-base-r3: parcial, detenida.\n- ev108-base-r4: la canónica.",
+   "Sin verificar en el motor: no se usó DayZ MCP. No se ejecutó bury_edges, autoría de agua, stage, compile, package ni sonda; no hay WRP ni PBO de EV110. Patas y contacto se midieron sobre LOD y alturas planas; el hueco de 0,24 m en LOD4 y la segunda calzada transitable siguen sin ver en el juego.",
+   "Sin commit. En el worktree siguen los cambios ajenos (build_surface_v30, streambed_kit_v31, probe_points_kit, patch_surface_v31 y otros), sin tocar."
+  ]
+ },
+ "r2": {
+  "verdict": "unsound",
+  "defects": [
+   {
+    "severity": "critical",
+    "claim": "G7 sigue aceptando restricciones finales incumplidas y mediciones falsas o ausentes. La corrección es parcial.",
+    "evidence": "MEASURED; RUN final_counterexamples.py: G7, incluido el fixture oficial de solape, devuelve PASS/exit 0 con 2 patas superiores de 015-19 colgando hasta 0,1738 m. G4 devuelve FAIL/exit 1; las patas inferiores siguen apoyadas. R/counterexamples-execution.json:2; R/counterexamples/upper-feet-final-G4.json:130. RUN mutants.py: G7 también acepta, por separado, abertura=-1000, aire de rampa=-1000 y eliminación de mediciones superiores de los apilados; R/mutants-results.json:429, :856, :1283. INFERRED: EV/gates_v5.py:577 y :633 omiten las patas superiores apiladas; :639 comprueba presencia numérica de abertura, sin concordancia; :628 acepta cualquier subestimación del aire.",
+    "fix": "Cubrir las patas superiores apiladas y contrastar abertura y aire con mediciones del mismo dominio. Incorporar estos contraejemplos antes de declarar completo G7."
+   },
+   {
+    "severity": "minor",
+    "claim": "Nuevo escape de G8: acepta una posición inferior con NaN.",
+    "evidence": "MEASURED; RUN lower_records_full.py: cambiar únicamente matrix[10] del inferior de 015-19 a NaN produce G8 PASS/exit 0. R/nan-lower/G8.json:3; R/nan-lower/execution.json:17. G4 sí falla: R/final-verification.json:128. INFERRED: EV/gates_v5.py:713 no rechaza NaN y falta validación previa de finitud.",
+    "fix": "Validar longitud, tipos y finitud de las matrices antes de comprobar poses. Este escape no produce PASS de la batería completa."
+   }
+  ],
+  "gates_rerun": [
+   "R=C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/impl-bridges-review2. WT=worktree del encargo; EV=WT/evidence/v31-pond-layer-2026-10-13/bridges/ev110. RUN <script> significa C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I -B R/read_path_wrapper.py <script>, desde WT; scripts sin prefijo están en R. Dictamen completo: R/review.json.",
+   "MEASURED; RUN canonical.py: ejecución nueva completa en 219,82 s. G1/G3/G4/G6/G7/G8 PASS; G2/G5 FAIL. Los 19 negativos fallan. RUN inspect_final.py confirma la causa específica de los 19, incluidos los tres cuyo positivo ya fallaba. R/canonical-meta.json:2; R/rerun/gates/summary.json:2; R/inspection.json:150.",
+   "MEASURED; RUN inspect_final.py y final_verify.py: los cuatro artefactos reproducen byte a byte r4: terreno 52af2b92, registros bbb3d4ca, informe 08a6b5cf, envolvente e23857cd. Los 16 archivos fijados antes de las pruebas permanecen idénticos. R/inspection.json:2; R/final-verification.json:2.",
+   "R1 G5 — CORREGIDO el falso PASS; ABIERTO el cumplimiento del terreno. MEASURED: G5 rechaza los 29 congelados fuera del soporte de las huellas, todos heredados de v4; descenso máximo 6,9954 m. Detecta también el negativo dentro del corredor y fuera de huella. R/rerun/gates/G5.json:6; R/rerun/gates/summary.json:38. Sigue pendiente restringir el corte o aprobar expresamente otra excepción. No reproduzco el intervalo 3,08–4,54 m del FIX REPORT: las cotas de entrada sobre el nivel de los cinco mojados abarcan 2,648–5,030 m. R/final-verification.json:75.",
+   "R1 G3 — CORREGIDO en los ensayos ejecutados. MEASURED: las 17 anchuras oficiales incluyen el contraejemplo; exceso redondeado +0,00001 m y salto máximo redondeado 0. La v5 anterior falla con salto 0,769212 m. R/rerun/gates/G3.json:420; R/rerun/negative/G3-r1.json:120. RUN width_extra.py: otras 16 configuraciones de 015-25/37/42, W entre 3,8999 y 8,0, pasan G3; exceso absoluto máximo 0,00001042 m. R/final-verification.json:86.",
+   "R1 G7 — SIGUE ABIERTO. MEASURED: los negativos originales de fit_ends ausentes y pico interior ahora fallan correctamente. También se detectan mutaciones de cara interior, hueco de pata de 015-42 y exceso de relleno bajo rampa. R/inspection.json:150; R/mutants.log. Persisten los escapes del defecto crítico. INFERRED: la familia cobertura/concordancia del verificador no converge entre R1 y R2; esta revisión final no inicia otra implementación.",
+   "R1 G8/G4 modelo inferior — CORREGIDO el defecto original. MEASURED: el inferior bridge_metal_25 falla en ambos gates. Span, role, duplicado, ausente y extra también fallan en ambos. Un desplazamiento vertical adicional de 0,02 m falla en G8, aunque conserva contacto permitido por G4. R/inspection.json:150; R/final-verification.json:104. NaN es el escape nuevo separado.",
+   "R1 G4 015-42 — CORREGIDO en el sitio canónico. MEASURED: 0 patas colgando, hueco máximo 0,040 m y abertura conservada de 3,0542 m; la v5 anterior falla. R/rerun/gates/G4.json:292; R/rerun/gates/G3.json. Con W sintético 5,9/6,1 pasa G3 pero falla G4: no extender la aceptación a otras anchuras. R/width-extra.log:11.",
+   "R1 G2 — ABIERTO, sin relajación. MEASURED: fallan los 14 extremos de madera; aire máximo 0,8639–2,3051 m y 0 excepciones de agua. R/final-verification.json:66. Ejecutar EV/experiments_v5.py deck-flush sobre R/rerun reproduce la propuesta: descenso de 2,215 m, G2 madera/G4 PASS y aire máximo 0,0904 m. Pero G1 FAIL y el terreno atraviesa el tablero plano entre 0,393 y 1,898 m. R/deck-flush-rise/deck-flush.json:5; R/final-verification.json:93. Es una propuesta pendiente de rediseño y aceptación, no una solución validada.",
+   "MEASURED; RUN inspect_final.py: exposición de 015-13 de 1,1707526 a 0,0099994 m. Una resolución independiente del plano coincide con la interpolación del gate hasta 1,2e-12 m en los extremos metálicos. Máscaras cut/fill sin discrepancias. R/inspection.json:24 y :106. G6: 0 triángulos nuevos >55°; >35° 139→175, >45° 48→78, atascados 86→122. R/rerun/gates/G6.json:6.",
+   "MEASURED; RUN overlap_extra.py: invertir el solape metálico conserva terreno idéntico y pasa G1/G2/G3/G4/G7. El cruce metal+madera produce salida, pero G2/G7 fallan. R/overlap-extra.json:2. INFERRED de WT/tools/terrain/bridges_v31.py:629 y :934: terminar el ajuste sin estrechamiento y obtener un óptimo con déficit penalizado no garantiza satisfacer todas las restricciones."
+  ],
+  "not_checked": [
+   "Sin DayZ MCP, motor, colisión, navegación, render, empaquetado ni aceptación visual. No se valida en juego el compromiso de LOD4 ni la segunda calzada.",
+   "No se demuestra viabilidad global de G2, continuidad para todo W, todos los solapes ni una presa continua al restituir los cinco vértices. Estos ensayos no autorizan cambiar G1/G5.",
+   "Productor y gates comparten odol_reader: WT/tools/terrain/bridges_v31.py:91 y EV/gates_v5.py:20. Se contrastó la interpolación mediante ecuaciones de plano, pero no se auditó independientemente el decodificador ODOL. Tampoco se demostró conectividad acuática completa en 2D.",
+   "P: no estaba montada. R/read_path_wrapper.py:7 redirige exclusivamente lecturas P:/DZ a la ruta física DZ y desactiva bytecode. Toda escritura quedó en R; sin modificaciones de fuentes, commit, escrituras en E:/P:/DZ ni handoff externo en Obsidian."
+  ]
+ }
+}

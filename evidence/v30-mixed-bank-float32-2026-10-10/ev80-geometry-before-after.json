@@ -1,0 +1,104 @@
+{
+  "status": "OFFLINE_GEOMETRY_FIGURE",
+  "figure_sha256": "0fa7eb041b9c3972b9a7875665284af1c96df2ad526962e30d6f9fc9dd31ee16",
+  "inputs": {
+    "ev79_terrain_sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "ev80_terrain_sha256": "0a18c5623885eed274cfe7d296e02aba290ed491b835d317213fc7876b2fc45b",
+    "ev79_plane_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "ev79_visible_field_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "ev80_consumer_report_sha256": "1f93c335d78d572de3a5c020c09d0cc397951cdb88b33f45ee1af144f3d0a60e",
+    "consumer_source_sha256": "b53d77e0b5c499dd735306f9fe84b30725a4c5132334bd792ae6d1c4a997cf92"
+  },
+  "camera_and_mesh": {
+    "projection": "orthographic",
+    "elevation_deg": 27,
+    "azimuth_deg": -54,
+    "same_view_all_panels": true,
+    "native_spacing_m": 6,
+    "triangulation": "two faces per cell: NW-NE-SE and NW-SW-SE",
+    "vertical_exaggeration": 1.0,
+    "shared_actual_height_limits_m": [
+      0.13662183284759521,
+      7.4898834228515625
+    ],
+    "shared_xz_crop_width_m": 120.0,
+    "wet_overlay": "consumer wet_faces(source heights, static P/F), cyan outlines"
+  },
+  "selected_foci": [
+    {
+      "label": "Mejora angular EV80",
+      "x_m": 1140,
+      "z_m": 1002,
+      "row": 1880,
+      "col": 190,
+      "window_m": 120.0,
+      "grid_bounds_inclusive": {
+        "row": [
+          1870,
+          1890
+        ],
+        "col": [
+          180,
+          200
+        ]
+      },
+      "evidence_from_consumer": {
+        "source_height_m": 4.905372142791748,
+        "candidate_height_m": 5.351123332977295,
+        "changed": true,
+        "selector": true,
+        "fixed": false,
+        "wet_support": false,
+        "local_edge_count": 85,
+        "local_energy_before": 27558.008209574265,
+        "local_energy_after": 25941.177630850834,
+        "local_energy_reduction": 0.058670081176683486,
+        "local_max_before": 46.84059426447254,
+        "local_max_after": 46.84059426447254,
+        "local_over30_before": 9,
+        "local_over30_after": 9
+      }
+    },
+    {
+      "label": "Foco EV80 persistente",
+      "x_m": 2196,
+      "z_m": 1578,
+      "row": 1784,
+      "col": 366,
+      "window_m": 120.0,
+      "grid_bounds_inclusive": {
+        "row": [
+          1774,
+          1794
+        ],
+        "col": [
+          356,
+          376
+        ]
+      },
+      "evidence_from_consumer": {
+        "source_height_m": 5.954403877258301,
+        "candidate_height_m": 5.954403877258301,
+        "changed": false,
+        "selector": true,
+        "fixed": false,
+        "wet_support": false,
+        "local_edge_count": 85,
+        "local_energy_before": 26022.661599909003,
+        "local_energy_after": 26022.661599909003,
+        "local_energy_reduction": 0.0,
+        "local_max_before": 48.67952449967557,
+        "local_max_after": 48.67952449967557,
+        "local_over30_before": 13,
+        "local_over30_after": 13
+      }
+    }
+  ],
+  "selection_reason": "EV80 consumer mixed_edge_counts_and_focuses.focus_anchors: highest local_energy_reduction among provided anchors (1140,1002) and unchanged reference anchor (2196,1578).",
+  "not_shown": "EV81 candidate; EV81 is rejected/pending consumer and is not represented as an improvement.",
+  "limits": [
+    "Offline native-grid geometry and consumer-classified wet-face overlay only; not a DayZ render/capture.",
+    "P/F is used only to outline the consumer wet-face classification, not drawn as a rendered water surface.",
+    "The strong anchor retains local maximum hinge angle and count >30 unchanged despite lower local energy."
+  ]
+}

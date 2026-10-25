@@ -1,0 +1,91 @@
+{
+  "status": "AUTHOR_COMPLETE_DIAGNOSTICS_ONLY",
+  "terrain_accepted": false,
+  "candidate_sha256": "37e6d4bd195ee8576bc483a6c24e89cede536d916c2b041d8a6bdc98b13269f3",
+  "authoring_sha256": "97165c9a3fe6ec052d8458a636be2fc9d13c6b87b05ce4491ae5123d13ea3c92",
+  "ledger_sha256": "dc0a26cc38f55c1a8bb5709e36cfacd41859c3f901aabed15968a56c44832e85",
+  "changed_vertices": 20201,
+  "result_counts": {
+    "rejected": 311,
+    "accepted": 340,
+    "not_authored": 49,
+    "inconclusive": 3
+  },
+  "rejection_reasons": {
+    "final gate scalar interpolation rule unavailable: baseline focus is not prominent on both axes": 228,
+    "final gate scalar interpolation rule unavailable: direction does not provide the planned energy interval": 38,
+    "final gate scalar interpolation rule unavailable: no focus interval to endpoint": 18,
+    "final gate shape gate failed: {'focus_positive_prominence_reduced_25pct_both_axes': True, 'fixed_population_max_prominence_nonworse_both_axes': False, 'fixed_population_sum_squares_prominence_nonworse_both_axes': True, 'no_new_strict_minima8': True, 'no_new_exactly_constant_2x2_windows': True}": 8,
+    "final gate shape gate failed: {'focus_positive_prominence_reduced_25pct_both_axes': True, 'fixed_population_max_prominence_nonworse_both_axes': False, 'fixed_population_sum_squares_prominence_nonworse_both_axes': False, 'no_new_strict_minima8': True, 'no_new_exactly_constant_2x2_windows': True}": 5,
+    "final gate shape gate failed: {'focus_positive_prominence_reduced_25pct_both_axes': True, 'fixed_population_max_prominence_nonworse_both_axes': True, 'fixed_population_sum_squares_prominence_nonworse_both_axes': False, 'no_new_strict_minima8': True, 'no_new_exactly_constant_2x2_windows': True}": 5,
+    "final gate new native hinge exceeds 30.0001 degrees": 4,
+    "final gate local incident triangle slope exceeds max(35,B)+1e-4 degrees": 2,
+    "final gate focus incident hinge reduction below 2 degrees": 2,
+    "final gate shape gate failed: {'focus_positive_prominence_reduced_25pct_both_axes': True, 'fixed_population_max_prominence_nonworse_both_axes': True, 'fixed_population_sum_squares_prominence_nonworse_both_axes': True, 'no_new_strict_minima8': True, 'no_new_exactly_constant_2x2_windows': False}": 1
+  },
+  "ANY_populations": {
+    "bank": {
+      "hinges": 1987722,
+      "new_over_30_0001_count": 0,
+      "improved_strict_count": 36818,
+      "worsened_strict_count": 21362,
+      "unchanged_exact_count": 1929542,
+      "B": {
+        "p99": 19.14476936340337,
+        "max": 62.00920104980469,
+        "above30": 2607,
+        "mean_square": 13.510124535008872
+      },
+      "H": {
+        "p99": 18.051178283691414,
+        "max": 62.00920104980469,
+        "above30": 1948,
+        "mean_square": 12.290290491483201
+      }
+    },
+    "interior": {
+      "hinges": 7539924,
+      "new_over_30_0001_count": 0,
+      "improved_strict_count": 10668,
+      "worsened_strict_count": 6115,
+      "unchanged_exact_count": 7523141,
+      "B": {
+        "p99": 5.814388060569696,
+        "max": 60.16704559326172,
+        "above30": 594,
+        "mean_square": 1.8490711925851722
+      },
+      "H": {
+        "p99": 5.761942534446716,
+        "max": 60.16704559326172,
+        "above30": 480,
+        "mean_square": 1.7957930334094543
+      }
+    },
+    "wet_support_eligible": {
+      "hinges": 453263,
+      "new_over_30_0001_count": 0,
+      "improved_strict_count": 30211,
+      "worsened_strict_count": 9650,
+      "unchanged_exact_count": 413402,
+      "B": {
+        "p99": 36.287959289550784,
+        "max": 83.04716491699219,
+        "above30": 11041,
+        "mean_square": 128.93042971676698
+      },
+      "H": {
+        "p99": 35.53422157287598,
+        "max": 83.04716491699219,
+        "above30": 9771,
+        "mean_square": 120.04402690414717
+      }
+    }
+  },
+  "diagnostic_sha256": "838048da5f378a85fcee48aa4fda28ccc1dad97eb4495b514173cb40f6a8dff6",
+  "limits": [
+    "Populations share some incident hinges; do not sum as disjoint totals.",
+    "Whole compound water/navigation consumer is a separate gate.",
+    "Inherited absolute defects remain; no engine or artistic acceptance."
+  ]
+}

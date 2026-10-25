@@ -1,0 +1,64 @@
+{
+  "status": "PASS_OFFLINE_THREE_CORRIDOR_PILOT",
+  "checks": {
+    "format": true,
+    "finite": true,
+    "protected_exact": true,
+    "delta_limit": true,
+    "dry_floor": true,
+    "affected_triangles": true,
+    "routes": true
+  },
+  "changed_vertices": 729,
+  "max_delta_m": 1.464066505432129,
+  "max_affected_triangle_degrees": 34.999996185302734,
+  "station_step_m": 0.37,
+  "lateral_step_m": 0.25,
+  "routes": [
+    {
+      "chain": 5,
+      "sections": 1734,
+      "cross_failures": 0,
+      "max_cross_m": 0.024049046900226134,
+      "grade_failures": 0,
+      "max_grade": 0.03925828668539989,
+      "chord_failures": 0,
+      "max_chord_m": 0.0232059653965071,
+      "new_or_worse_cross_outside_core": 0,
+      "examples": [],
+      "pass": true
+    },
+    {
+      "chain": 13,
+      "sections": 2703,
+      "cross_failures": 0,
+      "max_cross_m": 0.025485392084782177,
+      "grade_failures": 0,
+      "max_grade": 0.06000038145945127,
+      "chord_failures": 0,
+      "max_chord_m": 0.023127979835461332,
+      "new_or_worse_cross_outside_core": 0,
+      "examples": [],
+      "pass": true
+    },
+    {
+      "chain": 68,
+      "sections": 2702,
+      "cross_failures": 0,
+      "max_cross_m": 0.017112113822239206,
+      "grade_failures": 0,
+      "max_grade": 0.05999967514164026,
+      "chord_failures": 0,
+      "max_chord_m": 0.018150958598631917,
+      "new_or_worse_cross_outside_core": 0,
+      "examples": [],
+      "pass": true
+    }
+  ],
+  "asc_sha256": "9d2c137c358ef60f5282454316974e71b3fdd3f412a55c676836c4327cfce43c",
+  "limits": [
+    "Three selected corridors only, not whole road network or native import.",
+    "No new/worse width failures permitted on other eligible portions of those chains."
+  ],
+  "maximum_delta_m": 2.05
+}

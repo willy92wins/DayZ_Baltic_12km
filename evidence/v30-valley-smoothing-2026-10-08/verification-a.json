@@ -1,0 +1,135 @@
+{
+  "status": "PASS_OFFLINE_VALLEY",
+  "checks": {
+    "metadata_exact": true,
+    "roads_platforms_exact": true,
+    "corridors_exact": true,
+    "no_bed_shallower": true,
+    "floor_preserved": true,
+    "no_new_dry_flood": true,
+    "no_new_wet_exposure": true,
+    "no_steeper_faces": true,
+    "roads_pass": true,
+    "R3_curvature_improved": true,
+    "general_curvature_improved": true,
+    "finite": true
+  },
+  "curvature": {
+    "R3_valley": {
+      "before": {
+        "n": 2277,
+        "rms": 0.022390349713036835,
+        "p95": 0.05638570909045731
+      },
+      "after": {
+        "n": 2277,
+        "rms": 0.010827913281439857,
+        "p95": 0.02528849445723507
+      },
+      "reduction": 0.5164026725703494
+    },
+    "general_dry": {
+      "before": {
+        "n": 3122927,
+        "rms": 0.014806586137007369,
+        "p95": 0.0287011308877753
+      },
+      "after": {
+        "n": 3122927,
+        "rms": 0.008237755734564887,
+        "p95": 0.010274745493322716
+      },
+      "reduction": 0.4436424670521749
+    }
+  },
+  "roads": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "corridors": 23,
+  "corridor_vertices": 22893,
+  "new_dry_flood_count": 0,
+  "new_wet_exposure_count": 0,
+  "steep_faces": 0,
+  "changed_vertices": 3047590,
+  "regional_180m_max_change": 0.12980427255224225,
+  "R1_land_points": [
+    {
+      "x": 2179.537858,
+      "z": 7086.083408,
+      "before": 1.4528321776320134,
+      "after": 1.5447087553751444
+    },
+    {
+      "x": 2281.835241,
+      "z": 7203.550968,
+      "before": 1.399999976158142,
+      "after": 1.6196650424291494
+    },
+    {
+      "x": 2534.5868,
+      "z": 7037.5396,
+      "before": 1.399999976158142,
+      "after": 1.399999976158142
+    },
+    {
+      "x": 2210.061284,
+      "z": 6866.549706,
+      "before": 1.704681345845339,
+      "after": 1.704681345845339
+    }
+  ],
+  "negative": {
+    "corridor_change_rejected": true,
+    "shallower_bed_rejected": true
+  },
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-curved-channel-pilot-20261008\\r3-transition-proposal\\terrain_flat.npz": "e0d35db0a7a26f9ec055d57f0c9573a1dd2c27911ec8b084274283f5884cffd1",
+    "E:\\DayZ-Baltic-Build\\v30-valley-smoothing-20261008\\candidate-a\\terrain_valley.npz": "d5d29bad9e7c39fea8a71510efc36fad592623d9d2a79e0cb7ccd75c3d06c03a",
+    "E:\\DayZ-Baltic-Build\\v30-v11\\06-evidence\\corridors.geojson": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\evidence\\v30-delta-fairways-2026-10-02\\axes-corridors.geojson": "038470e9e7548aebd25de9bfa73de5782ece1ae8772a1b6e5e84377a2f0b838b"
+  },
+  "limits": [
+    "Heights only; actual waterline and full terrain require game views.",
+    "Regions outside the plotted R3 valley also changed; final coverage not claimed."
+  ]
+}

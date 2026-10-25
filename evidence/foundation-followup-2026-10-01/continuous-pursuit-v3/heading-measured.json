@@ -1,0 +1,33 @@
+{
+  "status": "MEASURED_KINEMATICS_NOT_ENGINE_INTERNAL_CAUSALITY",
+  "samples": 2019,
+  "source_sha256": {
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\foundation-followup-2026-10-01\\continuous-pursuit-v3\\reference.json": "ace9ad37b028db72ea711bd3946d695253b2601e61d8b8562a9b70948debcd7d",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\foundation-followup-2026-10-01\\continuous-pursuit-v3\\runtime-complete\\heading-client.log": "c6c90434bd7f06e112c9929d2f3e3c0e5c7b5bc7ab4d09534a8fa75021069e15"
+  },
+  "commands": [
+    2,
+    3
+  ],
+  "metrics": {
+    "motion_vs_desired": {
+      "0.5": 0.1550081836907964,
+      "0.9": 0.2737456751437094,
+      "0.99": 0.36213685895236425,
+      "1.0": 6.135596432480554
+    },
+    "motion_vs_angle_minus_heading": {
+      "0.5": 0.15487460902579642,
+      "0.9": 0.27374168890025885,
+      "0.99": 0.36214415768533836,
+      "1.0": 6.135309187821065
+    },
+    "motion_vs_angle_plus_heading": {
+      "0.5": 177.04391072519047,
+      "0.9": 177.32248350729486,
+      "0.99": 177.4235856863856,
+      "1.0": 177.5112988075747
+    }
+  },
+  "limits": "Movement samples with nonzero measured native heading. Association of input convention and trajectory, not an AI/Navmesh internal root cause."
+}

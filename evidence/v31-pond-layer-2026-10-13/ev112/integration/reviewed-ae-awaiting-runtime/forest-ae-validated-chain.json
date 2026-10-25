@@ -1,0 +1,129 @@
+{
+  "scope": "Current task: after45 known PASS, freeze and validate full map, partition and compiled surface.\n\nNo fresh holdout reservation, source promotion, review, deployment or DayZ lifecycle.\nEvery dependency remains gated by actual receipts; a failure ends this chain.\n",
+  "status": "FAILED",
+  "source_sha256": "0fef87eec16f4a609b33482ac438fc33f07e48c1db3d12810a3d0bd7501c658a",
+  "steps": [
+    {
+      "step": "calibration-controls",
+      "rc": 0,
+      "seconds": 14.540995121002197,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\check-ae-calibration.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-development-ae-calibrated172",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-candidate-ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-calibration-controls.json"
+      ]
+    },
+    {
+      "step": "halo-control",
+      "rc": 0,
+      "seconds": 1.6048481464385986,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\check-ae-halo-cli.py"
+      ]
+    },
+    {
+      "step": "freeze",
+      "rc": 0,
+      "seconds": 0.8681302070617676,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\prepare-forest-ae-validation.py"
+      ]
+    },
+    {
+      "step": "bindings",
+      "rc": 0,
+      "seconds": 0.15091919898986816,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\audit-forest-runner-bindings.py",
+        "ae"
+      ]
+    },
+    {
+      "step": "guide",
+      "rc": 0,
+      "seconds": 22.93818497657776,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\audit-accepted-canopy-records.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-tools-ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-map-canopy-binding.json"
+      ]
+    },
+    {
+      "step": "partition",
+      "rc": 0,
+      "seconds": 954.1528608798981,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-partition-ae250.py"
+      ]
+    },
+    {
+      "step": "map",
+      "rc": 0,
+      "seconds": 4205.000528812408,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-final-forest-map-ae.py"
+      ]
+    },
+    {
+      "step": "nonbush-identity",
+      "rc": 0,
+      "seconds": 39.65205359458923,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\compare-forest-nonbush-records.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ad",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-map-nonbush-identity.json"
+      ]
+    },
+    {
+      "step": "painted-development",
+      "rc": 0,
+      "seconds": 222.3628203868866,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-ae-painted-development-diagnostic.py"
+      ]
+    },
+    {
+      "step": "build-tools-preflight",
+      "rc": 0,
+      "seconds": 0.10341429710388184,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\refresh-build-tools-preflight.py"
+      ]
+    },
+    {
+      "step": "package",
+      "rc": 1,
+      "seconds": 2552.499171733856,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-ae-dependent-pipeline.py",
+        "package"
+      ]
+    }
+  ],
+  "error": "AssertionError({'step': 'package', 'rc': 1, 'seconds': 2552.499171733856, 'cmd': ['C:\\\\Users\\\\guill\\\\Documents\\\\Codex\\\\2026-09-29\\\\vamos\\\\work\\\\gis-env\\\\Scripts\\\\python.exe', '-I', 'E:\\\\DayZ-Baltic-Build\\\\v31-pond-layer-20261013\\\\ev112-build-20261018\\\\run-ae-dependent-pipeline.py', 'package']})"
+}

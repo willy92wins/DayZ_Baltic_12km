@@ -1,0 +1,74 @@
+{
+  "geometry_status": "PASS_SAMPLED_CHANNEL_AND_DECKS",
+  "checks": {
+    "correct_header": true,
+    "correct_ASC_marker": true,
+    "terminated_record": true,
+    "coordinates_exact_and_unique": true,
+    "terrain_error_le_5_1mm": true,
+    "old_terrain_rejected": true,
+    "all_channel_points_flagged_sea": true,
+    "measured_water_range_matches_design": true,
+    "conservative_depth_ge_3m": true,
+    "three_decks_at_9m": true
+  },
+  "log_sha256": "8ad568ff819fd992d69b5c2d8d21df5fa8842a8a0e8c1edd8966c8bd09bc5ba3",
+  "candidate_sha256": "c1f23f24808cb6f1ff858f47a378f6bdf8211387f63c110a12ff72fd3bd82d3c",
+  "terrain_samples": 172,
+  "max_terrain_error_m": 9.536743172944284e-08,
+  "old_ASC_max_error_m": 4.65,
+  "water_min_max_current": [
+    0.5,
+    1.0,
+    0.984689
+  ],
+  "deck_world_points": [
+    [
+      2392.433594,
+      9.0,
+      6893.6875
+    ],
+    [
+      2417.142822,
+      9.0,
+      6889.885254
+    ],
+    [
+      2441.852051,
+      9.0,
+      6886.08252
+    ]
+  ],
+  "motion": {
+    "status": "EMPTY_BOAT_OUTWARD_ONLY",
+    "samples": 226,
+    "end_reason": "OUTWARD_ROUTE_REACHED_EMPTY_BOAT_ONLY",
+    "horizontal_distance_from_first_m": 97.82764026592962,
+    "maximum_horizontal_step_m": 0.6841052550592993,
+    "health_first_min_last": [
+      600.0,
+      600.0,
+      600.0
+    ],
+    "engine_on_samples": 206,
+    "max_speed_m_s": 1.34501,
+    "max_reported_throttle": 0.0,
+    "highest_target_index": 12,
+    "first_position": [
+      2429.37,
+      0.516,
+      6843.32
+    ],
+    "last_position": [
+      2425.23,
+      0.840693,
+      6941.06
+    ]
+  },
+  "limits": [
+    "No native TB persistence proof.",
+    "Ground is measured at channel support vertices; collision mesh was not queried.",
+    "Boat is empty; no crew, return journey, whole-river or AI acceptance.",
+    "Bootstrap navmesh is stale for this geometry."
+  ]
+}

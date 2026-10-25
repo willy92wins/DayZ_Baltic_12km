@@ -1,0 +1,653 @@
+{
+ "schema": "dam-frozen-exception.v1",
+ "site": "narva-dam",
+ "purpose": "Explicit exception to HANDOFF.md:13 ('reserva, plataformas y Narva fijas') for the Narva dam only. dam_v31.py refuses, and dam_gates_v31.py G4/G3 fail, on any frozen-vertex change outside this list, on any height that differs from old/new here, on any mask change, on any lowering, and on any envelope/cover change other than the cut cells listed here. Changing this file changes its sha256, which both tools pin.",
+ "approval": {
+  "by": "Guillermo",
+  "date": "2026-10-18",
+  "words": "tal cual",
+  "channel": "relayed by the orchestrator in the brief of the EV112 dam track, round 3; the author of this file did not see the approval first-hand",
+  "design": [
+   "21 frozen narva vertices move for the two abutments and the buried cut edge (up to 4.5 m), 0 reserve and 0 platform vertices",
+   "the 33 downstream Narva cells leave the water layer and become a dry old bed at 1.0 m ('cascada de Kreenholm')",
+   "3 sea vertices turn dry (west end)",
+   "the spawn (2392, 6948) ends up on the west abutment slope",
+   "the crest (dam_stone_40 roadway, concrete_ext) is a walkable crossing"
+  ]
+ },
+ "derived_from": {
+  "t_in": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev110/terrain-ev110.npz",
+  "t_in_sha256": "d25e9428ed39cebcef0c3b3885e23d8e397b67261846775ecdbc238fdde520e6",
+  "dam_output": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev112-wip/dam/narva/terrain-dam.npz",
+  "dam_output_sha256": "650ec438c8ecb3783f2d2db4926cba37b3de920e09010e8a4d93a14713f351ee",
+  "cover_in_sha256": "2f08075d87bd62bf2da50bcc4a331c1be401636ec81ec1a42fbab1f2803717ff",
+  "envelope_in_sha256": "e23857cd237ed98c6d1e5306885a2d598c65b47962f15e9d10a7910a9f4d0dc7",
+  "cover_out_sha256": "ca1cb059a95daf26d7de0701550dd4890e07028913bb601bb431efd617dcb7b4",
+  "envelope_out_sha256": "ae8d94df5ef4663beba3688c27250a89160c8456dd71d3ae058995280e3b2ef7",
+  "dam_report_sha256": "f9f8c9422e63527955203cae5dfc406de696c7862c160511cfc5c59ddf18ca7e"
+ },
+ "tolerance": {
+  "old": "exact (float32 equality)",
+  "new_m": 0.0001,
+  "note": "new heights come from a linear programme (HiGHS); 1e-4 m absorbs solver round-off only"
+ },
+ "n_vertices": 21,
+ "n_reserve": 0,
+ "n_platform": 0,
+ "n_narva": 21,
+ "n_sea_to_dry": 3,
+ "max_raise_m": 4.49654,
+ "vertices": [
+  {
+   "r": 888,
+   "c": 398,
+   "x": 2388,
+   "z": 6954,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": -1.043454885482788,
+   "new": 1.0258108377456665,
+   "raise_m": 2.069266,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": true
+  },
+  {
+   "r": 889,
+   "c": 397,
+   "x": 2382,
+   "z": 6948,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": -0.5,
+   "new": 1.0258108377456665,
+   "raise_m": 1.525811,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": true
+  },
+  {
+   "r": 889,
+   "c": 398,
+   "x": 2388,
+   "z": 6948,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": -0.5,
+   "new": 3.996539831161499,
+   "raise_m": 4.49654,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": true
+  },
+  {
+   "r": 889,
+   "c": 399,
+   "x": 2394,
+   "z": 6948,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 1.0258108377456665,
+   "raise_m": 0.025811,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 889,
+   "c": 411,
+   "x": 2466,
+   "z": 6948,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.9037036895751953,
+   "new": 4.454679489135742,
+   "raise_m": 2.550976,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 398,
+   "x": 2388,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 2.9054486751556396,
+   "new": 5.084774971008301,
+   "raise_m": 2.179326,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 399,
+   "x": 2394,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.114046096801758,
+   "raise_m": 1.114046,
+   "roles": [
+    "bury",
+    "abutment"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 400,
+   "x": 2400,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 401,
+   "x": 2406,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 402,
+   "x": 2412,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 403,
+   "x": 2418,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 404,
+   "x": 2424,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 405,
+   "x": 2430,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 406,
+   "x": 2436,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 407,
+   "x": 2442,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 408,
+   "x": 2448,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0,
+   "new": 2.059999942779541,
+   "raise_m": 1.06,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 409,
+   "x": 2454,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.0630000829696655,
+   "new": 2.0850000381469727,
+   "raise_m": 1.022,
+   "roles": [
+    "bury"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 411,
+   "x": 2466,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.9037036895751953,
+   "new": 5.084774971008301,
+   "raise_m": 3.181071,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 890,
+   "c": 412,
+   "x": 2472,
+   "z": 6942,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.6955327987670898,
+   "new": 4.6174726486206055,
+   "raise_m": 2.92194,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 891,
+   "c": 398,
+   "x": 2388,
+   "z": 6936,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 2.581512928009033,
+   "new": 3.996539831161499,
+   "raise_m": 1.415027,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": false
+  },
+  {
+   "r": 891,
+   "c": 412,
+   "x": 2472,
+   "z": 6936,
+   "reserve": false,
+   "platform": false,
+   "narva": true,
+   "old": 1.8001940250396729,
+   "new": 4.033137798309326,
+   "raise_m": 2.232944,
+   "roles": [
+    "abutment"
+   ],
+   "sea_to_dry": false
+  }
+ ],
+ "n_cut_cells": 33,
+ "cut_cells": [
+  {
+   "r": 885,
+   "c": 408,
+   "x0": 2448,
+   "z_north": 6972,
+   "envelope_level": 1.9500000476837158,
+   "cover_level": 1.9500000476837158
+  },
+  {
+   "r": 886,
+   "c": 408,
+   "x0": 2448,
+   "z_north": 6966,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 887,
+   "c": 400,
+   "x0": 2400,
+   "z_north": 6960,
+   "envelope_level": 1.9500000476837158,
+   "cover_level": 1.9500000476837158
+  },
+  {
+   "r": 887,
+   "c": 401,
+   "x0": 2406,
+   "z_north": 6960,
+   "envelope_level": 1.9500000476837158,
+   "cover_level": 1.9500000476837158
+  },
+  {
+   "r": 887,
+   "c": 402,
+   "x0": 2412,
+   "z_north": 6960,
+   "envelope_level": 1.9500000476837158,
+   "cover_level": 1.9500000476837158
+  },
+  {
+   "r": 887,
+   "c": 403,
+   "x0": 2418,
+   "z_north": 6960,
+   "envelope_level": 1.9500000476837158,
+   "cover_level": 1.9500000476837158
+  },
+  {
+   "r": 887,
+   "c": 404,
+   "x0": 2424,
+   "z_north": 6960,
+   "envelope_level": 1.9500000476837158,
+   "cover_level": 1.9500000476837158
+  },
+  {
+   "r": 887,
+   "c": 405,
+   "x0": 2430,
+   "z_north": 6960,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 887,
+   "c": 406,
+   "x0": 2436,
+   "z_north": 6960,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 887,
+   "c": 407,
+   "x0": 2442,
+   "z_north": 6960,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 887,
+   "c": 408,
+   "x0": 2448,
+   "z_north": 6960,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 887,
+   "c": 409,
+   "x0": 2454,
+   "z_north": 6960,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 888,
+   "c": 400,
+   "x0": 2400,
+   "z_north": 6954,
+   "envelope_level": 1.9500000476837158,
+   "cover_level": 1.9500000476837158
+  },
+  {
+   "r": 888,
+   "c": 401,
+   "x0": 2406,
+   "z_north": 6954,
+   "envelope_level": 1.9500000476837158,
+   "cover_level": 1.9500000476837158
+  },
+  {
+   "r": 888,
+   "c": 402,
+   "x0": 2412,
+   "z_north": 6954,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 888,
+   "c": 403,
+   "x0": 2418,
+   "z_north": 6954,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 888,
+   "c": 404,
+   "x0": 2424,
+   "z_north": 6954,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 888,
+   "c": 405,
+   "x0": 2430,
+   "z_north": 6954,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 888,
+   "c": 406,
+   "x0": 2436,
+   "z_north": 6954,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 888,
+   "c": 407,
+   "x0": 2442,
+   "z_north": 6954,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 888,
+   "c": 408,
+   "x0": 2448,
+   "z_north": 6954,
+   "envelope_level": 1.9999998807907104,
+   "cover_level": 1.9999998807907104
+  },
+  {
+   "r": 888,
+   "c": 409,
+   "x0": 2454,
+   "z_north": 6954,
+   "envelope_level": 1.9999998807907104,
+   "cover_level": 1.9999998807907104
+  },
+  {
+   "r": 889,
+   "c": 399,
+   "x0": 2394,
+   "z_north": 6948,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 889,
+   "c": 400,
+   "x0": 2400,
+   "z_north": 6948,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 889,
+   "c": 401,
+   "x0": 2406,
+   "z_north": 6948,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 889,
+   "c": 402,
+   "x0": 2412,
+   "z_north": 6948,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 889,
+   "c": 403,
+   "x0": 2418,
+   "z_north": 6948,
+   "envelope_level": 1.975000023841858,
+   "cover_level": 1.975000023841858
+  },
+  {
+   "r": 889,
+   "c": 404,
+   "x0": 2424,
+   "z_north": 6948,
+   "envelope_level": 2.0,
+   "cover_level": 2.0
+  },
+  {
+   "r": 889,
+   "c": 405,
+   "x0": 2430,
+   "z_north": 6948,
+   "envelope_level": 2.0,
+   "cover_level": 2.0
+  },
+  {
+   "r": 889,
+   "c": 406,
+   "x0": 2436,
+   "z_north": 6948,
+   "envelope_level": 2.0,
+   "cover_level": 2.0
+  },
+  {
+   "r": 889,
+   "c": 407,
+   "x0": 2442,
+   "z_north": 6948,
+   "envelope_level": 2.0,
+   "cover_level": 2.0
+  },
+  {
+   "r": 889,
+   "c": 408,
+   "x0": 2448,
+   "z_north": 6948,
+   "envelope_level": 1.9999998807907104,
+   "cover_level": 1.9999998807907104
+  },
+  {
+   "r": 889,
+   "c": 409,
+   "x0": 2454,
+   "z_north": 6948,
+   "envelope_level": 1.9999998807907104,
+   "cover_level": 1.9999998807907104
+  }
+ ],
+ "spawn": {
+  "x": 2392.0,
+  "z": 6948.0,
+  "before_m": 0.5,
+  "after_m": 2.0161,
+  "note": "planar NW-SE; measured, not gated"
+ }
+}

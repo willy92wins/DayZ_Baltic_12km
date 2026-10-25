@@ -1,0 +1,135 @@
+{
+ "label": "positive",
+ "terrain": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev112-wip/dam/narva/terrain-dam-buried.npz",
+ "footprint": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev112-wip/dam/narva/bury-work/fp0/footprint.npz",
+ "records": "E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev112-wip/dam/narva/dam-records.json",
+ "n_dam_records": 2,
+ "window": [
+  2357.0,
+  2499.0,
+  6909.0,
+  6975.0
+ ],
+ "gates": {
+  "G1_seam": {
+   "status": "PASS",
+   "pond_px": 39938,
+   "pond_hidden_px": 1151,
+   "tide_0.5": {
+    "sea_px": 25213,
+    "sea_hidden_px": 0,
+    "pond_sea_adjacent_px": 0,
+    "exposed_edge_px_near_sea": 0,
+    "adjacent_xz": [],
+    "exposed_xz": []
+   },
+   "tide_0.75": {
+    "sea_px": 26374,
+    "sea_hidden_px": 0,
+    "pond_sea_adjacent_px": 0,
+    "exposed_edge_px_near_sea": 0,
+    "adjacent_xz": [],
+    "exposed_xz": []
+   },
+   "tide_1.0": {
+    "sea_px": 27472,
+    "sea_hidden_px": 0,
+    "pond_sea_adjacent_px": 0,
+    "exposed_edge_px_near_sea": 0,
+    "adjacent_xz": [],
+    "exposed_xz": []
+   },
+   "removed_cell_px": 19008,
+   "new_edge_px": 662,
+   "new_edge_visible_px": 0,
+   "new_edge_visible_xz": []
+  },
+  "G2_seat": {
+   "status": "PASS",
+   "livonia_ranges": {
+    "end_exposure": [
+     -1.52,
+     0.39
+    ],
+    "bottom_clearance_min": [
+     0.107,
+     2.585
+    ],
+    "top_burial_max": [
+     -0.026,
+     1.505
+    ],
+    "water_rel": [
+     0.733,
+     1.048
+    ]
+   },
+   "records": [
+    {
+     "origin_y": 1.008,
+     "end_exposure": [
+      0.37,
+      0.0,
+      0.37
+     ],
+     "bottom_clearance_min": 4.811,
+     "top_burial_max": -0.0,
+     "water_rel": 1.017,
+     "free_ends": [
+      -1
+     ],
+     "upstream_side": -1,
+     "checks": {
+      "water": true,
+      "ends": true,
+      "no_air": true,
+      "top_not_buried": true
+     },
+     "bottom_clearance_vs_livonia": "outside (not gated)"
+    },
+    {
+     "origin_y": 1.008,
+     "end_exposure": [
+      0.37,
+      0.156,
+      0.37
+     ],
+     "bottom_clearance_min": 4.811,
+     "top_burial_max": -0.0,
+     "water_rel": 1.017,
+     "free_ends": [
+      1
+     ],
+     "upstream_side": -1,
+     "checks": {
+      "water": true,
+      "ends": true,
+      "no_air": true,
+      "top_not_buried": true
+     },
+     "bottom_clearance_vs_livonia": "outside (not gated)"
+    }
+   ],
+   "note": "bottom clearance = how deep the base sits under the lowest ground of the footprint; Livonia's ponds are 2.5-5 m deep at the wall, the Narva pond 1 m, so at Livonia's water_rel the base sits deeper than Livonia's; it is invisible and only reported"
+  },
+  "G3_water": {
+   "status": "PASS",
+   "footprint_outside_envelope": 0,
+   "over_sea_window": 0,
+   "over_sea_map": 0,
+   "over_sea_map_base": 0,
+   "new_footprint_cells_vs_base": 0
+  },
+  "G4_frozen": {
+   "status": "PASS",
+   "moved": 21,
+   "frozen_moved": 21,
+   "budget": 21,
+   "moved_far_from_dam": [],
+   "n_far": 0,
+   "max_raise": 4.497,
+   "max_lower": 0.0
+  }
+ },
+ "verdict": "PASS"
+}

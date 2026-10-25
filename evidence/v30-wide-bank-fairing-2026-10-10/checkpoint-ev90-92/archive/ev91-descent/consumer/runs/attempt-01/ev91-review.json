@@ -1,0 +1,6 @@
+{
+  "status": "ERROR_EV91_CONSUMER",
+  "gates": {},
+  "error": "KeyError('counts')",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\consumer\\verify_ev91.py\", line 951, in main\n    report=evaluate(args.candidate,args.receipt)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\consumer\\verify_ev91.py\", line 863, in evaluate\n    wet_support_diag=eligible_wet_support_diagnostic(ev,ev87,bundle,\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\ev91-descent\\consumer\\verify_ev91.py\", line 611, in eligible_wet_support_diagnostic\n    expected=int(reconciliation['counts']['eligible_wet_support'])\n                 ~~~~~~~~~~~~~~^^^^^^^^^^\nKeyError: 'counts'\n"
+}

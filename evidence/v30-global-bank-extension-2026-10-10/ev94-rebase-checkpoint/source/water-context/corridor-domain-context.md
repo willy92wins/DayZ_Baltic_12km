@@ -1,0 +1,25 @@
+# Contexto de los P desconocidos: clases y puentes
+
+**Alcance:** contexto estático de los 40 tiles/celdas ya encontrados en `Narva_23` y `Luga_0`; no recalcula el índice completo ni cambia P, F, H o geometría. Resultado reproducible: `corridor_context.py`; datos: `corridor-domain-context.json` (schema `ev94.unknown-p-corridor-context.v1`, `COMPLETE_CONTEXT_ONLY`). El JSON registra el readset inicial/final y no los trata como gates de runtime.
+
+## Hallazgo
+
+En los 238.745766 m² P-unknown de `Narva_23`, cada celda de soporte tiene las cuatro esquinas marcadas `water=true`, pero los valores de clase se reparten por área en 63.3421% clase 1 (sea) y 36.6579% clase 3 (navigable); las cotas almacenadas van de 0.475 a 0.75 m. En los 752.262187 m² de `Luga_0`, son clase 3 en prácticamente el 100% de las esquinas y los niveles van de 0.45 a 0.475 m. En ambos corredores hay **cero esquinas** que cumplan la regla de pieza de estanque (`class ∈ {2,3,5,6,7}` y `level > 0.80 m`) y `v30_common.cell_planes()` devuelve plano no finito en todas las celdas de esas áreas. `beach`, `narva`, `reserve` y `platform` son falsos en las cuatro esquinas de cada celda registrada.
+
+Eso hace que la ausencia de plano P sea consistente con la regla del constructor: `build_v30_water.py:3-8` define las clases (1=sea, 3=navigable); `build_water_pieces_v30.py:32-47` aplica nivel >0.80 m a las clases de estanque; `v30_common.py:85-104` devuelve NaN donde no hay una esquina elegible. El constructor dice que los canales de mar/delta bajo el corte usan el mar del motor (`build_water_pieces_v30.py:3-7`). **Esto no prueba** que la superficie del mar cubra esos puntos ni su profundidad en runtime. El NPZ de clases es diagnóstico de metadata de V30; no encontramos una prueba byte-a-byte de que ese raster concreto fuera el input de este PBO. La evidencia de geometría compilada está ligada por separado a EV94.
+
+La auditoría XZ previa sigue siendo más estricta que “NaN = seco”: de 991.007953 m² P-unknown, solo 0.003519 m² intersectan caras compiladas físicas, y el resto no tiene cara ODOL compilada dentro de la porción corredor∩celda∩triángulo. Esas pequeñas intersecciones están **sobre** el terreno local (Narva: +3.532 a +6.394 m según cara; Luga: +4.280 a +6.403 m). No son evidencia de una lámina a cota de terreno; tampoco demuestran ausencia de agua de mar runtime.
+
+## Puentes y objetos civiles
+
+`civil-run-01.json` contiene nueve objetos WRP `dz\\structures\\roads\\bridges\\bridge_metal_25.p3d`. El consumidor civil proyectó todos los LOD con caras, sin afirmar cuál es colisión (`civil_inventory.py:167-261`). Comparé los cuatro valores XZ de cada vértice en cada LOD con la matriz/posición WRP exacta; no intersecta el sobre de celdas P-unknown de ninguno de los dos polígonos. Para Narva, además, no hay solapamiento con las celdas que el inventario civil proyectó en su sector. La separación mínima entre el envelope XZ de esas celdas y un AABB conservador de vértices del puente es **604.907 m**. Para Luga es **1710.652 m**; Luga cae fuera de la ventana del inventario civil, así que esta cifra procede del AABB mundial completo de los nueve modelos, no de una lista de celdas sectorial.
+
+Por tanto, los nueve objetos puente no explican estos dos parches ni como huella estática ni como una supresión runtime asociada al puente documentado en EV62. Esto no descarta otra lógica de runtime no ligada a esos objetos.
+
+La diferencia entre 18.033 objetos WRP y 18.024 entradas del índice no es una omisión de nueve objetos de agua: `build_face_index.py:248-255` selecciona nombres `baltic_water_v30`; los nueve elementos civiles son el tipo puente separado. `stage.py:93-111` conserva bytes de objetos/materiales y registra 18.033 objetos para EV94; el WRP fuente coincide con el que ancla el índice. El PBO de agua desplegado es el hash `3946db8b…f02ae14` y el despliegue/op-rw lo declara exacto.
+
+## Conclusión y límite
+
+La evidencia favorece que las áreas P-unknown son zonas de clases agua/sea pero **fuera de la generación de las piezas P de agua interior por su nivel ≤0.80 m**, no un hueco causado por los nueve puentes. En la terminología de la auditoría, “sin caras compiladas” solo describe el contenido estático indexado de los P3D; la posibilidad de agua de mar/runtime sigue abierta y no se rellenó ni se reinterpretó P. No hay aquí una recomendación para editar el lecho ni una aceptación de profundidad.
+
+Artefactos e identidades: `corridor-domain-context.json` SHA `5b8d31799eb492c8377c0c9159de3316d6e9db14c18238a8fc0628220514314e`; script `corridor_context.py` SHA se incluye en el recibo de sesión por calcular tras congelación. Readset clave: auditoría anterior SHA `a51f09fa…146c96c38`, GeoJSON actual SHA `28866a8c…6af343`, índice EV93 completo SHA `c81bfeb9…fad7372c`, stage EV94 SHA `cc394869…0aa86610`, terreno de clases `terrain_v30.npz` SHA `657863ef…078915c`, PBO agua exacto SHA `3946db8b…f02ae14`, inventario civil `civil-run-01.json` y modelo `bridge_metal_25.p3d` SHA `baf79ddd…3f3cee2`.

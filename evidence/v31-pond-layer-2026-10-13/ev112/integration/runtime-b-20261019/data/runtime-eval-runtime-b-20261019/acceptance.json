@@ -1,0 +1,98 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "bridges_shores": true,
+    "no_bridge_regression": true,
+    "kit": false,
+    "dam": true,
+    "commands": false
+  },
+  "steps": [
+    {
+      "step": "split",
+      "rc": 0,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\v31-pond-layer-2026-10-13\\ev110\\probe\\split_log.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019\\baltic_bridge_probe_v2.log",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019"
+      ]
+    },
+    {
+      "step": "bridges-shores",
+      "rc": 0,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\probe\\eval_bridges_shores.py"
+      ]
+    },
+    {
+      "step": "bridge-regression",
+      "rc": 0,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\eval_bridge_regression_ev112.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\probe\\bridges-points.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev110\\probe\\split\\bridges-baltic_bridge_probe_v2.log",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019\\bridges-points.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019\\split\\bridges-baltic_bridge_probe_v2.log",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019\\bridge-regression.json"
+      ]
+    },
+    {
+      "step": "kit",
+      "rc": 1,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\v31-pond-layer-2026-10-13\\ev112\\ot1\\gates\\gate_g8_engine_probe.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\water-fix-b\\kit",
+        "--log",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019\\split\\kit-baltic_bridge_probe_v2.log"
+      ]
+    },
+    {
+      "step": "dam",
+      "rc": 0,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "P:\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\water\\eval_dam_probe_v31.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019\\dam-points.json",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019\\split\\dam-baltic_bridge_probe_v2.log",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-eval-runtime-b-20261019\\dam.json"
+      ]
+    }
+  ],
+  "raw_log_sha256": "030d1ed8c3f28905db1e48c2a37704673bdf4b1a50e29431e7cb205c70bc97ae",
+  "points_sha256": "1a808d4d672433eb6d2aefe92eee63ad1fe6309bbe30918a4ff21e1be48d0545",
+  "terrain_sha256": "07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62",
+  "consumer_sha256": "d84bd3c53cd1a7b1eaea57766d24b681b7d3fa8eb50d0940f8b694d82d1d6d9c",
+  "evaluator_sha256": "75ee4bef6970f35ce54d01037dee2d8a1fd167ed888ef62f29adf61614112ca3",
+  "consumer_controls_sha256": {
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\probe-framing-after\\controls.json": "78b9fc56fdcd85a9cda78449001033ff2038d1898605ba8660031ff16707f39b",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\bridge-regression-framing-controls\\controls.json": "33aa8eaf90b437013bd01ef52318c7bdff96474b86f1b994412fd92d005de839"
+  },
+  "ground_match_diagnostic_by_family": {
+    "bridges": {
+      "points": 836,
+      "maximum": 0.0010975926028455874
+    },
+    "dam": {
+      "points": 178,
+      "maximum": 0.000443215597740243
+    },
+    "kit": {
+      "points": 3000,
+      "maximum": 0.000375542704169618
+    },
+    "shores": {
+      "points": 100,
+      "maximum": 0.00021426782625577623
+    }
+  },
+  "limits": "Server probe only; no personal visual acceptance or FPS result."
+}

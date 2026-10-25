@@ -1,0 +1,6 @@
+{
+  "status": "ERROR_EV90_CONSUMER",
+  "gates": {},
+  "error": "KeyError('B')",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-consumer\\verify_ev90.py\", line 774, in main\n    report=evaluate(args.candidate,args.receipt)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-consumer\\verify_ev90.py\", line 706, in evaluate\n    unknown_certificate=certify_unknown_faces(ev,bundle,pre['scan'],domain,h)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\DayZ-Baltic-Build\\v30-wide-bank-fairing-pilot-20261010\\next-method-consumer\\verify_ev90.py\", line 314, in certify_unknown_faces\n    b = np.asarray(bundle['B']['heights'], dtype=np.float64)\n                   ~~~~~~^^^^^\nKeyError: 'B'\n"
+}

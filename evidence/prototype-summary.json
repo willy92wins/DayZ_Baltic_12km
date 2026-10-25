@@ -1,0 +1,47 @@
+{
+  "terrain_variants": [
+    {
+      "variant": "physical",
+      "z_factor": 0.051660202327529485,
+      "minimum": -12.0,
+      "maximum": 10.861886024475098,
+      "land_floor_cells": 17498,
+      "land_floor_fraction": 0.004171848297119141,
+      "land_slope_degrees_p50_p95_p99": [
+        1.0713767409324646,
+        3.929430735111236,
+        5.571463637351991
+      ],
+      "land_slope_over_30_degrees_cells": 0,
+      "source_dsm_below_zero_land_cells": 292
+    },
+    {
+      "variant": "relief3x",
+      "z_factor": 0.15498060698258845,
+      "minimum": -12.0,
+      "maximum": 32.58565902709961,
+      "land_floor_cells": 3016,
+      "land_floor_fraction": 0.0007190704345703125,
+      "land_slope_degrees_p50_p95_p99": [
+        3.2113670110702515,
+        11.625844430923461,
+        16.247024898529055
+      ],
+      "land_slope_over_30_degrees_cells": 687,
+      "source_dsm_below_zero_land_cells": 292
+    }
+  ],
+  "ocean_cells": 636032,
+  "inland_water_cells": 343502,
+  "worldcover_unclassified_cells": 1582,
+  "worldcover_unclassified_non_ocean_cells": 0,
+  "land_area_km2": 115.549344,
+  "prototype_edits": [
+    "Ocean-only synthetic bathymetry: 0.08 m depth per metre from shore, capped 12 m.",
+    "Dry-land minimum terrain 0.25 m to avoid accidental global-sea flooding in preview; inland water excluded from this floor, per-cell delta rasters retained.",
+    "Inland water surfaces are GIS references only; no terrain-wide sea flattening, no water objects or beds generated."
+  ],
+  "satellite": "Provisional WorldCover colorization, not aerial imagery or final artwork.",
+  "worldcover_zero_policy": "Original zeros preserved in GIS; magenta preview unless covered by a water polygon, gravel in material prototype.",
+  "runtime": "NOT_TESTED"
+}

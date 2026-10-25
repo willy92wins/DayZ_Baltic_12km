@@ -1,0 +1,40 @@
+{
+  "status": "PASS_SERVER_ROUND_TRIP",
+  "checks": {
+    "at_least_80_server_samples": true,
+    "monotonic_time": true,
+    "starts_at_west": true,
+    "both_spans_sampled": true,
+    "bridge_sampling_gaps_under_1_5m": true,
+    "no_teleport_steps_over_2m": true,
+    "lateral_corridor_under_2_5m": true,
+    "feet_on_bridge_1_7_to_2_4m": true,
+    "alive_on_server": true,
+    "no_swimming_on_server": true
+  },
+  "server_samples": 359,
+  "bridge_samples_out_back": [
+    68,
+    68
+  ],
+  "max_sampling_gaps_m": [
+    0.41587672862981184,
+    0.41435567996991707
+  ],
+  "max_step_m": 0.415932686861516,
+  "max_lateral_error_m": 0.08189400950663328,
+  "bridge_y_range_m": [
+    1.99993,
+    2.025
+  ],
+  "server_health_min": 100.0,
+  "server_time_range_s": [
+    30.6459,
+    120.098
+  ],
+  "limit": "Script-driven human locomotion with client and server overrides; not a manual-input, vehicle, AI navigation or load test.",
+  "hashes": {
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\walk\\v3-server.csv": "9554dd956805f540b61a7795d6383c70804b13f9a2f5a6e190c9e07d35af5c26",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\walk\\v3-client.csv": "e63a70b96b2306631d9f95478bf7beb03074212681eaef3795b19586c43a4a55"
+  }
+}

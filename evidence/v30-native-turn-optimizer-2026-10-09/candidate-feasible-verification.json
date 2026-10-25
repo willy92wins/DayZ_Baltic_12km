@@ -1,0 +1,154 @@
+{
+  "status": "PASS_SOURCE_TERRAIN",
+  "gates": {
+    "finite": true,
+    "fixed_exact": true,
+    "outside_scope_exact": true,
+    "height_displacement": true,
+    "visible_signs_exact": true,
+    "bed_floor": true,
+    "no_wet_raise": true,
+    "dry_margin": true,
+    "slopes": true,
+    "metadata_exact": true,
+    "R1_p90": true,
+    "R1_over30": true,
+    "R1_max": true,
+    "R1_distance": true,
+    "R1_islands": true,
+    "R2_p90": true,
+    "R2_over30": true,
+    "R2_max": true,
+    "R2_distance": true,
+    "R2_islands": true,
+    "physical_topology": true,
+    "physical_contacts": true,
+    "physical_dry_flood": true,
+    "visible_topology": true,
+    "visible_contacts": true,
+    "visible_dry_flood": true,
+    "visible_offset": true
+  },
+  "physical": {
+    "changed_vertices": 261,
+    "sign_changes": 0,
+    "floor_violations": 0,
+    "wet_raises": 0,
+    "dry_margin_violations": 0,
+    "max_slope_excess_deg": 0.0,
+    "bad_faces": []
+  },
+  "outlines": {
+    "R1": {
+      "before": {
+        "lines": 2,
+        "length_m": 516.5439039937846,
+        "samples": 248,
+        "p90_degrees": 25.32425571326886,
+        "over30_share": 0.04032258064516129,
+        "max_degrees": 80.33902677762977
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 518.8654540256031,
+        "samples": 249,
+        "p90_degrees": 16.92623664731075,
+        "over30_share": 0.008032128514056224,
+        "max_degrees": 39.27160610656644
+      },
+      "hausdorff_m": 2.597348119112929,
+      "islands_before": 0,
+      "islands_after": 0
+    },
+    "R2": {
+      "before": {
+        "lines": 2,
+        "length_m": 814.7945195178435,
+        "samples": 396,
+        "p90_degrees": 25.372347421528758,
+        "over30_share": 0.08838383838383838,
+        "max_degrees": 167.7350866733415
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 810.0368769482659,
+        "samples": 394,
+        "p90_degrees": 19.659830741531056,
+        "over30_share": 0.06852791878172589,
+        "max_degrees": 117.88294353613252
+      },
+      "hausdorff_m": 4.00135888281584,
+      "islands_before": 0,
+      "islands_after": 0
+    }
+  },
+  "global_domains": {
+    "physical": {
+      "topology": {
+        "before_significant": 830,
+        "after_significant": 830,
+        "failed_original": [],
+        "merged": {},
+        "new_significant": [],
+        "pass_gate": true
+      },
+      "contacts": [
+        {
+          "axis": 0,
+          "new": 0,
+          "lost": 0
+        },
+        {
+          "axis": 1,
+          "new": 0,
+          "lost": 0
+        }
+      ],
+      "gained_area_m2": 303.38970181211823,
+      "lost_area_m2": 217.28140908112533,
+      "dry_gain_m2": 0.0,
+      "max_visible_offset_m": null
+    },
+    "visible": {
+      "topology": {
+        "before_significant": 830,
+        "after_significant": 830,
+        "failed_original": [],
+        "merged": {},
+        "new_significant": [],
+        "pass_gate": true
+      },
+      "contacts": [
+        {
+          "axis": 0,
+          "new": 0,
+          "lost": 0
+        },
+        {
+          "axis": 1,
+          "new": 0,
+          "lost": 0
+        }
+      ],
+      "gained_area_m2": 301.3264304027291,
+      "lost_area_m2": 216.69566088299982,
+      "dry_gain_m2": 0.0,
+      "max_visible_offset_m": 0.26875000000000004
+    }
+  },
+  "controls": [
+    "whole_triangle_18m2",
+    "quarter_triangle_4.5m2",
+    "straight_and_right_angle",
+    "missing_body_rejected",
+    "area_loss_rejected",
+    "bed_raise_sign_slope_inequalities",
+    "fixed_vertex_mutant_rejected"
+  ],
+  "source_sha256": "e7daa6c62cde457b666507ec7eae7e6d16015ad714028585fdb352ace678e52c",
+  "candidate_sha256": "cff6d175da46a0080bd761c327babf9c0ef4c53434744ceec9241bc9cc28c82c",
+  "limits": [
+    "Compiled coverage and runtime remain separate.",
+    "Solver iteration limit is not a proof of optimality; candidate assessed by independent geometry."
+  ]
+}

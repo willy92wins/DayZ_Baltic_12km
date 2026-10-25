@@ -1,0 +1,83 @@
+{
+  "header": "BALTIC_V30_WATER_TEMPORAL_V3;BalticTrial",
+  "fields": 17,
+  "samples": 62,
+  "interval_s": 2,
+  "points": [
+    {
+      "id": 4001,
+      "x": 1992.0,
+      "z": 6432.0,
+      "expected_ground_m": 1.0,
+      "role": "raised_high_bed",
+      "actual_pond_level_m": 2.45,
+      "models": [
+        {
+          "model": "baltic_water_v30\\full_48.p3d",
+          "sha256": "d4ff0b4d96ef965427f640f819f12bc29affff8b28c954c34bba83acacf4ce1e",
+          "level_m": 2.45
+        },
+        {
+          "model": "baltic_water_v30\\edge_00842.p3d",
+          "sha256": "e89ca4b89d5ab98c7196765f0731391fab8fbef04e5e6ebc973901e2925b1a99",
+          "level_m": 2.45
+        }
+      ]
+    },
+    {
+      "id": 4002,
+      "x": 1836.0,
+      "z": 6384.0,
+      "expected_ground_m": 1.0,
+      "role": "raised_high_bed",
+      "actual_pond_level_m": 2.45,
+      "models": [
+        {
+          "model": "baltic_water_v30\\full_48.p3d",
+          "sha256": "d4ff0b4d96ef965427f640f819f12bc29affff8b28c954c34bba83acacf4ce1e",
+          "level_m": 2.45
+        },
+        {
+          "model": "baltic_water_v30\\full_48.p3d",
+          "sha256": "d4ff0b4d96ef965427f640f819f12bc29affff8b28c954c34bba83acacf4ce1e",
+          "level_m": 2.45
+        }
+      ]
+    },
+    {
+      "id": 4003,
+      "x": 2210.0,
+      "z": 7082.0,
+      "expected_ground_m": 0.7145505398511357,
+      "role": "unchanged_pond_control",
+      "actual_pond_level_m": 1.4500000000000002,
+      "models": [
+        {
+          "model": "baltic_water_v30\\pilot_00002.p3d",
+          "sha256": "3d41478319296383d735f77265dc7250f62b44dbee3d62b59e2879ce9e6e60f8",
+          "level_m": 1.4500000000000002
+        }
+      ]
+    }
+  ],
+  "phase_schedule": [
+    {
+      "name": "calm",
+      "first": 0,
+      "count": 31
+    },
+    {
+      "name": "storm",
+      "first": 31,
+      "count": 31
+    }
+  ],
+  "files": {
+    "init.c": "189d7dfadd73eaf0c1073d4fa0edcd2e84cf3a3b96289d1d47fa77eb83a3d252",
+    "points.csv": "98ff80e078d98dee6312399338b47dbfae8369cc9c335bfff4cada0a62ae3986"
+  },
+  "terrain_sha256": "05a9d6812ba3e3391b8da0d4690e8034ea747a92aa0fdaa96425b58dd78074d3",
+  "limits": [
+    "Two repaired high beds and an unchanged pond, 62 samples each; no maximum-wave envelope."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "status": "SEA_LEVEL_DEPENDENCE_REPRODUCED_NOT_ROOT_CAUSE",
+  "native_config": {
+    "MaxTide": 0,
+    "MaxWave": 0.1
+  },
+  "native_samples": 90,
+  "sea_range_m": [
+    -0.09993,
+    0.0999286
+  ],
+  "comparison": {
+    "baseline": "EV14/shore-baseline-wind20, normal map",
+    "diagnostic": "bridge-wind20, MaxTide=0 only",
+    "restored": "bridge-restored, normal map",
+    "positive_control": "EDGE1 shoreline/foam changes and restores",
+    "terrain_and_ponds": "Identical deployed PBO hashes in all runs"
+  },
+  "frames": {
+    "frames\\bridge-restored\\capture_20261009_081638_275.jpg": "feb06d84d191614e783553059c1a739c62f87340974f14b4d13bfe1cb277a12b",
+    "frames\\bridge-wind20\\capture_20261009_081345_763.jpg": "2d3e9fa7c7702dc6eb160e7ac28627ae9e6ae61ab78339648f89c545834e3e61",
+    "frames\\sea-control\\capture_20261009_081428_312.jpg": "c9437cf469d3fee94f241d66d28ed8f1663da22ed6f9a8e2a9fa473f8e66bdbb",
+    "frames\\sea-control-restored\\capture_20261009_081615_605.jpg": "b00adcb1df908932023803001916b24326114c36bf154d8166fe0cc6ffbd36d2"
+  },
+  "observations": [
+    "Several distant glints/halos beside the bridge disappear with the lower sea and return in the restored normal map.",
+    "The visible ocean shoreline changes too, providing a positive response to the factor.",
+    "This repeats the earlier sea-separation dependence on the new GlobalContourV1 package; it does not identify the renderer mechanism."
+  ],
+  "limits": [
+    "Wave phase is not synchronized. Per-frame pixel differences are not an extent/area audit.",
+    "No definitive shore material or terrain LOD causality.",
+    "No production sea-level/config change. All runs closed orderly and leases released.",
+    "Whole-map physical and compiled geometric checks remain EV14; these images cannot certify every dry surface."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "status": "PASS_NATIVE_WRP",
+  "checks": {
+    "all_heights_match_native_asc": true,
+    "bridge_pose_matches_v3": true,
+    "no_unparsed_bytes": true,
+    "materials_in_bounds": true
+  },
+  "source_sha256": "6b0859fd71aeb76182754f3cf14a541beac1568beb8021d5fc337f604db391eb",
+  "terrain_grid": [
+    2048,
+    2048
+  ],
+  "terrain_spacing_m": 6.0,
+  "texture_grid": [
+    1024,
+    1024
+  ],
+  "texture_spacing_m": 12.0,
+  "materials": 368,
+  "height_max_error_m": 0.005000114440917969,
+  "bridge_pose_error_m": 4.062499101564754e-07,
+  "objects": [
+    {
+      "name": "dz\\structures\\roads\\bridges\\bridge_metal_25.p3d",
+      "id": 16777216,
+      "matrix": [
+        -0.15210489928722382,
+        0.0,
+        -0.9883643388748169,
+        0.0,
+        1.0,
+        0.0,
+        0.9883643388748169,
+        0.0,
+        -0.15210489928722382,
+        2417.14306640625,
+        -6.05488395690918,
+        6889.884765625
+      ],
+      "start": 18904951,
+      "end": 18905054
+    },
+    {
+      "name": "dz\\water\\ponds\\pond_50x50.p3d",
+      "id": 16777217,
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2417.14306640625,
+        -0.07535059750080109,
+        6889.884765625
+      ],
+      "start": 18905054,
+      "end": 18905139
+    }
+  ],
+  "limits": [
+    "Export height/pose only; project reopening must be evidenced separately. Not an in-game collision test.",
+    "Height-mode persistence not inspected in UI.",
+    "Hidden diagnostic pond is included by native WRP export."
+  ]
+}

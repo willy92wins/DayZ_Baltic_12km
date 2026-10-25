@@ -1,0 +1,146 @@
+{
+  "status": "FAIL_DIAGNOSTIC_SOURCE",
+  "gates": {
+    "metadata_exact": true,
+    "reserve_platform_exact": true,
+    "inside_narva_circle": true,
+    "only_class3": true,
+    "only_raise_to_1m": true,
+    "shore_geometry_exact": true,
+    "draft_all_changed_faces": false,
+    "optical_cell_treated": true,
+    "bridge_control_exact": true
+  },
+  "stats": {
+    "changed_faces": 5364,
+    "shore_symmetric_difference_max_m2": 0.0,
+    "bad_draft_faces_representations": 904,
+    "min_draft_changed_faces_m": 0.050099945068359464,
+    "max_slope_before_degrees": 37.53520019865357,
+    "max_slope_after_degrees": 57.02764528638131,
+    "new_steep_faces": 115,
+    "draft_examples": [
+      {
+        "row": 886,
+        "col": 407,
+        "face": [
+          0,
+          2,
+          3
+        ],
+        "kind": "physical",
+        "min_draft": 0.5855904579162599
+      },
+      {
+        "row": 886,
+        "col": 407,
+        "face": [
+          0,
+          2,
+          3
+        ],
+        "kind": "visible",
+        "min_draft": 0.5855904579162599
+      },
+      {
+        "row": 887,
+        "col": 407,
+        "face": [
+          0,
+          1,
+          3
+        ],
+        "kind": "physical",
+        "min_draft": 0.5855904579162599
+      },
+      {
+        "row": 887,
+        "col": 407,
+        "face": [
+          0,
+          1,
+          3
+        ],
+        "kind": "visible",
+        "min_draft": 0.5855904579162599
+      },
+      {
+        "row": 887,
+        "col": 408,
+        "face": [
+          0,
+          2,
+          3
+        ],
+        "kind": "physical",
+        "min_draft": 0.10099992752075204
+      },
+      {
+        "row": 887,
+        "col": 408,
+        "face": [
+          0,
+          2,
+          3
+        ],
+        "kind": "visible",
+        "min_draft": 0.113499927520752
+      },
+      {
+        "row": 888,
+        "col": 408,
+        "face": [
+          0,
+          1,
+          3
+        ],
+        "kind": "physical",
+        "min_draft": 0.12599992752075195
+      },
+      {
+        "row": 888,
+        "col": 408,
+        "face": [
+          0,
+          1,
+          3
+        ],
+        "kind": "visible",
+        "min_draft": 0.113499927520752
+      },
+      {
+        "row": 888,
+        "col": 408,
+        "face": [
+          0,
+          2,
+          3
+        ],
+        "kind": "physical",
+        "min_draft": 0.5850791931152344
+      },
+      {
+        "row": 888,
+        "col": 408,
+        "face": [
+          0,
+          2,
+          3
+        ],
+        "kind": "visible",
+        "min_draft": 0.5850791931152344
+      }
+    ]
+  },
+  "controls": [
+    "analytic_13_5m2_triangle",
+    "shore_mutant_rejected"
+  ],
+  "input_sha256": "b54963eb3cf5429c6192fb6f1e8f6d10c9a3cc397fdbabdf5c2f89cbabcf8e36",
+  "candidate_sha256": "14c6b0b285167962d0deb5218a9b484d2ee252a5be371587120d3213e776e2eb",
+  "limits": [
+    "Not visual acceptance or map promotion.",
+    "Bed slope reported, not artistic acceptance.",
+    "Nominal and visible draft, not worst weather phase."
+  ]
+}

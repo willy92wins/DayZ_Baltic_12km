@@ -1,0 +1,830 @@
+{
+  "schema": "ev94.wet-bank-crossing-quantization-diagnostic.v1",
+  "status": "DIAGNOSTIC_ONLY_NO_MUTATION",
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solution.npz": "1b7a23ebb3c203427f1c77cb8de6becfca750746e47f5494bba6723b0610eab1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solve-result.json": "35722fa7b8f3235597ed6f82c5263da6320d2d030b3dbef3558728386c4240ca"
+  },
+  "continuous_float64": {
+    "min_C_cross_slack": -7.883570241062898e-09,
+    "negative_rows_exact": 49
+  },
+  "quantized_raw_float32": {
+    "min_C_cross_slack": -1.879736570842283e-07,
+    "negative_rows_exact": 23
+  },
+  "closure_equal_raw": true,
+  "negative_row_count": 23,
+  "involved_variables": [
+    {
+      "index": 13,
+      "rc": [
+        858,
+        1183
+      ],
+      "closed_f32": 6.231369972229004,
+      "lo_f32": 5.731369972229004,
+      "hi_f32": 6.731369972229004,
+      "one_ulp_choices": [
+        6.231369495391846,
+        6.231369972229004,
+        6.231370449066162
+      ]
+    },
+    {
+      "index": 14,
+      "rc": [
+        858,
+        1184
+      ],
+      "closed_f32": 4.192239284515381,
+      "lo_f32": 3.692239284515381,
+      "hi_f32": 4.692239284515381,
+      "one_ulp_choices": [
+        4.192238807678223,
+        4.192239284515381,
+        4.192239761352539
+      ]
+    },
+    {
+      "index": 15,
+      "rc": [
+        858,
+        1185
+      ],
+      "closed_f32": 5.680939197540283,
+      "lo_f32": 5.600100040435791,
+      "hi_f32": 6.180939197540283,
+      "one_ulp_choices": [
+        5.680938720703125,
+        5.680939197540283,
+        5.680939674377441
+      ]
+    },
+    {
+      "index": 60,
+      "rc": [
+        862,
+        1186
+      ],
+      "closed_f32": 5.563718318939209,
+      "lo_f32": 5.525100231170654,
+      "hi_f32": 6.075099945068359,
+      "one_ulp_choices": [
+        5.563717842102051,
+        5.563718318939209,
+        5.563718795776367
+      ]
+    },
+    {
+      "index": 61,
+      "rc": [
+        862,
+        1187
+      ],
+      "closed_f32": 3.8240644931793213,
+      "lo_f32": 2.8240644931793213,
+      "hi_f32": 3.8240644931793213,
+      "one_ulp_choices": [
+        3.824064254760742,
+        3.8240644931793213,
+        null
+      ]
+    },
+    {
+      "index": 72,
+      "rc": [
+        863,
+        1187
+      ],
+      "closed_f32": 4.8265862464904785,
+      "lo_f32": 4.039211273193359,
+      "hi_f32": 5.039211273193359,
+      "one_ulp_choices": [
+        4.82658576965332,
+        4.8265862464904785,
+        4.826586723327637
+      ]
+    },
+    {
+      "index": 83,
+      "rc": [
+        864,
+        1187
+      ],
+      "closed_f32": 5.671956539154053,
+      "lo_f32": 5.525100231170654,
+      "hi_f32": 6.232424736022949,
+      "one_ulp_choices": [
+        5.6719560623168945,
+        5.671956539154053,
+        5.671957015991211
+      ]
+    },
+    {
+      "index": 94,
+      "rc": [
+        865,
+        1187
+      ],
+      "closed_f32": 6.208279609680176,
+      "lo_f32": 6.182802200317383,
+      "hi_f32": 7.182802200317383,
+      "one_ulp_choices": [
+        6.208279132843018,
+        6.208279609680176,
+        6.208280086517334
+      ]
+    },
+    {
+      "index": 95,
+      "rc": [
+        865,
+        1188
+      ],
+      "closed_f32": 4.836691856384277,
+      "lo_f32": 3.8884682655334473,
+      "hi_f32": 4.888468265533447,
+      "one_ulp_choices": [
+        4.836691379547119,
+        4.836691856384277,
+        4.8366923332214355
+      ]
+    },
+    {
+      "index": 105,
+      "rc": [
+        866,
+        1187
+      ],
+      "closed_f32": 6.967208385467529,
+      "lo_f32": 6.967208385467529,
+      "hi_f32": 7.967208385467529,
+      "one_ulp_choices": [
+        null,
+        6.967208385467529,
+        6.9672088623046875
+      ]
+    },
+    {
+      "index": 106,
+      "rc": [
+        866,
+        1188
+      ],
+      "closed_f32": 5.155792713165283,
+      "lo_f32": 4.5007853507995605,
+      "hi_f32": 5.5007853507995605,
+      "one_ulp_choices": [
+        5.155792236328125,
+        5.155792713165283,
+        5.155793190002441
+      ]
+    },
+    {
+      "index": 116,
+      "rc": [
+        867,
+        1187
+      ],
+      "closed_f32": 7.38560676574707,
+      "lo_f32": 7.38560676574707,
+      "hi_f32": 8.38560676574707,
+      "one_ulp_choices": [
+        null,
+        7.38560676574707,
+        7.3856072425842285
+      ]
+    },
+    {
+      "index": 117,
+      "rc": [
+        867,
+        1188
+      ],
+      "closed_f32": 5.4476470947265625,
+      "lo_f32": 4.926860332489014,
+      "hi_f32": 5.524999618530273,
+      "one_ulp_choices": [
+        5.447646617889404,
+        5.4476470947265625,
+        5.447647571563721
+      ]
+    }
+  ],
+  "negative_rows": [
+    {
+      "row": 95,
+      "slack_f32": -8.881784197001252e-16,
+      "slack_float64": -3.6418690285699995e-10,
+      "metadata": {
+        "cell_rc": [
+          857,
+          1183
+        ],
+        "edge_rc": [
+          [
+            858,
+            1183
+          ],
+          [
+            858,
+            1184
+          ]
+        ],
+        "surface": "F",
+        "t_base": 0.3000237960390002,
+        "t_bound": 0.3000237960390002,
+        "t_design": 0.28033270833930146,
+        "type": "cross_upper"
+      }
+    },
+    {
+      "row": 106,
+      "slack_f32": -8.881784197001252e-16,
+      "slack_float64": -4.2741632455545187e-10,
+      "metadata": {
+        "cell_rc": [
+          857,
+          1184
+        ],
+        "edge_rc": [
+          [
+            858,
+            1184
+          ],
+          [
+            858,
+            1185
+          ]
+        ],
+        "surface": "P",
+        "t_base": 0.05436904834354535,
+        "t_bound": 0.05436904834354535,
+        "t_design": 0.17624473376584626,
+        "type": "cross_lower"
+      }
+    },
+    {
+      "row": 119,
+      "slack_f32": -8.881784197001252e-16,
+      "slack_float64": -3.6418690285699995e-10,
+      "metadata": {
+        "cell_rc": [
+          858,
+          1183
+        ],
+        "edge_rc": [
+          [
+            858,
+            1183
+          ],
+          [
+            858,
+            1184
+          ]
+        ],
+        "surface": "F",
+        "t_base": 0.3000237960390002,
+        "t_bound": 0.3000237960390002,
+        "t_design": 0.28033270833930146,
+        "type": "cross_upper"
+      }
+    },
+    {
+      "row": 286,
+      "slack_f32": -1.1218784923272551e-07,
+      "slack_float64": 2.4868995751603507e-14,
+      "metadata": {
+        "cell_rc": [
+          861,
+          1186
+        ],
+        "edge_rc": [
+          [
+            861,
+            1186
+          ],
+          [
+            862,
+            1186
+          ]
+        ],
+        "surface": "P",
+        "t_base": 0.02636159299320425,
+        "t_bound": 0.02636159299320425,
+        "t_design": 0.052913892716333066,
+        "type": "cross_lower"
+      }
+    },
+    {
+      "row": 290,
+      "slack_f32": -1.1218785012090393e-07,
+      "slack_float64": 2.398081733190338e-14,
+      "metadata": {
+        "cell_rc": [
+          861,
+          1186
+        ],
+        "edge_rc": [
+          [
+            861,
+            1186
+          ],
+          [
+            862,
+            1186
+          ]
+        ],
+        "surface": "F",
+        "t_base": 0.026361592993203797,
+        "t_bound": 0.026361592993203797,
+        "t_design": 0.052913892716333066,
+        "type": "cross_lower"
+      }
+    },
+    {
+      "row": 306,
+      "slack_f32": -1.1218784923272551e-07,
+      "slack_float64": 2.4868995751603507e-14,
+      "metadata": {
+        "cell_rc": [
+          861,
+          1187
+        ],
+        "edge_rc": [
+          [
+            861,
+            1187
+          ],
+          [
+            862,
+            1187
+          ]
+        ],
+        "surface": "P",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "sign_only_below_a"
+      }
+    },
+    {
+      "row": 310,
+      "slack_f32": -1.1218785012090393e-07,
+      "slack_float64": 2.398081733190338e-14,
+      "metadata": {
+        "cell_rc": [
+          861,
+          1187
+        ],
+        "edge_rc": [
+          [
+            861,
+            1187
+          ],
+          [
+            862,
+            1187
+          ]
+        ],
+        "surface": "F",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "sign_only_below_b"
+      }
+    },
+    {
+      "row": 342,
+      "slack_f32": -1.5825158872218026e-07,
+      "slack_float64": -1.6484591469634324e-12,
+      "metadata": {
+        "cell_rc": [
+          862,
+          1187
+        ],
+        "edge_rc": [
+          [
+            862,
+            1187
+          ],
+          [
+            862,
+            1188
+          ]
+        ],
+        "surface": "F",
+        "t_base": 0.3582755746825001,
+        "t_bound": 0.3582755746825001,
+        "t_design": 0.556768917985816,
+        "type": "cross_lower"
+      }
+    },
+    {
+      "row": 346,
+      "slack_f32": -1.5825158872218026e-07,
+      "slack_float64": -1.6484591469634324e-12,
+      "metadata": {
+        "cell_rc": [
+          862,
+          1187
+        ],
+        "delta_a_m": -0.985788726806641,
+        "delta_b_m": -0.33641757965087926,
+        "edge_rc": [
+          [
+            863,
+            1187
+          ],
+          [
+            863,
+            1188
+          ]
+        ],
+        "surface": "P",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": 0.9783309745736611,
+        "type": "sign_only"
+      }
+    },
+    {
+      "row": 354,
+      "slack_f32": -1.5825158872218026e-07,
+      "slack_float64": -1.6484591469634324e-12,
+      "metadata": {
+        "cell_rc": [
+          863,
+          1186
+        ],
+        "edge_rc": [
+          [
+            863,
+            1186
+          ],
+          [
+            863,
+            1187
+          ]
+        ],
+        "surface": "F",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "cross_sign_dry"
+      }
+    },
+    {
+      "row": 358,
+      "slack_f32": -1.5825158872218026e-07,
+      "slack_float64": -1.6484591469634324e-12,
+      "metadata": {
+        "cell_rc": [
+          863,
+          1186
+        ],
+        "edge_rc": [
+          [
+            863,
+            1187
+          ],
+          [
+            864,
+            1187
+          ]
+        ],
+        "surface": "P",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "cross_sign_dry"
+      }
+    },
+    {
+      "row": 394,
+      "slack_f32": -8.629467806997582e-08,
+      "slack_float64": -1.6342482922482304e-13,
+      "metadata": {
+        "cell_rc": [
+          863,
+          1188
+        ],
+        "edge_rc": [
+          [
+            863,
+            1188
+          ],
+          [
+            864,
+            1188
+          ]
+        ],
+        "surface": "P",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "sign_only_below_a"
+      }
+    },
+    {
+      "row": 398,
+      "slack_f32": -8.629467806997582e-08,
+      "slack_float64": -1.6342482922482304e-13,
+      "metadata": {
+        "cell_rc": [
+          863,
+          1188
+        ],
+        "edge_rc": [
+          [
+            863,
+            1188
+          ],
+          [
+            864,
+            1188
+          ]
+        ],
+        "surface": "F",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "sign_only_below_b"
+      }
+    },
+    {
+      "row": 414,
+      "slack_f32": -8.629467806997582e-08,
+      "slack_float64": -1.6342482922482304e-13,
+      "metadata": {
+        "cell_rc": [
+          864,
+          1187
+        ],
+        "edge_rc": [
+          [
+            864,
+            1187
+          ],
+          [
+            864,
+            1188
+          ]
+        ],
+        "surface": "F",
+        "t_base": 0.17594025651614084,
+        "t_bound": 0.09413386666771355,
+        "t_design": 0.09413386666771355,
+        "type": "cross_lower"
+      }
+    },
+    {
+      "row": 418,
+      "slack_f32": -8.629467806997582e-08,
+      "slack_float64": -1.6342482922482304e-13,
+      "metadata": {
+        "cell_rc": [
+          864,
+          1187
+        ],
+        "edge_rc": [
+          [
+            865,
+            1187
+          ],
+          [
+            865,
+            1188
+          ]
+        ],
+        "surface": "P",
+        "t_base": 0.5046354337370755,
+        "t_bound": 0.4981669560208199,
+        "t_design": 0.4981669560208199,
+        "type": "cross_lower"
+      }
+    },
+    {
+      "row": 423,
+      "slack_f32": -1.4479427523639288e-07,
+      "slack_float64": 2.7533531010703882e-14,
+      "metadata": {
+        "cell_rc": [
+          864,
+          1187
+        ],
+        "edge_rc": [
+          [
+            865,
+            1187
+          ],
+          [
+            865,
+            1188
+          ]
+        ],
+        "surface": "F",
+        "t_base": 0.5046354337370755,
+        "t_bound": 0.5046354337370755,
+        "t_design": 0.4981669560208199,
+        "type": "cross_upper"
+      }
+    },
+    {
+      "row": 427,
+      "slack_f32": -1.4479427523639288e-07,
+      "slack_float64": 2.7533531010703882e-14,
+      "metadata": {
+        "cell_rc": [
+          864,
+          1188
+        ],
+        "edge_rc": [
+          [
+            864,
+            1188
+          ],
+          [
+            864,
+            1189
+          ]
+        ],
+        "surface": "P",
+        "t_base": 0.5608717148936315,
+        "t_bound": 0.5608717148936315,
+        "t_design": 0.5586097161673631,
+        "type": "cross_upper"
+      }
+    },
+    {
+      "row": 451,
+      "slack_f32": -1.4479427523639288e-07,
+      "slack_float64": 2.7533531010703882e-14,
+      "metadata": {
+        "cell_rc": [
+          865,
+          1187
+        ],
+        "edge_rc": [
+          [
+            866,
+            1187
+          ],
+          [
+            866,
+            1188
+          ]
+        ],
+        "surface": "F",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "cross_sign_wet"
+      }
+    },
+    {
+      "row": 455,
+      "slack_f32": -1.4479427523639288e-07,
+      "slack_float64": 2.7533531010703882e-14,
+      "metadata": {
+        "cell_rc": [
+          865,
+          1188
+        ],
+        "edge_rc": [
+          [
+            865,
+            1188
+          ],
+          [
+            865,
+            1189
+          ]
+        ],
+        "surface": "P",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "sign_only_below_b"
+      }
+    },
+    {
+      "row": 458,
+      "slack_f32": -1.879736570842283e-07,
+      "slack_float64": 3.552713678800501e-15,
+      "metadata": {
+        "cell_rc": [
+          865,
+          1188
+        ],
+        "edge_rc": [
+          [
+            865,
+            1188
+          ],
+          [
+            865,
+            1189
+          ]
+        ],
+        "surface": "F",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": null,
+        "type": "sign_only_below_b"
+      }
+    },
+    {
+      "row": 462,
+      "slack_f32": -1.879736570842283e-07,
+      "slack_float64": 3.552713678800501e-15,
+      "metadata": {
+        "cell_rc": [
+          865,
+          1188
+        ],
+        "delta_a_m": -0.32561578750610387,
+        "delta_b_m": -1.0898369789123539,
+        "edge_rc": [
+          [
+            865,
+            1189
+          ],
+          [
+            866,
+            1189
+          ]
+        ],
+        "surface": "P",
+        "t_base": null,
+        "t_bound": null,
+        "t_design": 0.6174823096127208,
+        "type": "sign_only"
+      }
+    },
+    {
+      "row": 482,
+      "slack_f32": -1.879736570842283e-07,
+      "slack_float64": 3.552713678800501e-15,
+      "metadata": {
+        "cell_rc": [
+          866,
+          1187
+        ],
+        "edge_rc": [
+          [
+            866,
+            1187
+          ],
+          [
+            866,
+            1188
+          ]
+        ],
+        "surface": "P",
+        "t_base": 0.787459555059252,
+        "t_bound": 0.787459555059252,
+        "t_design": 0.796177411251089,
+        "type": "cross_lower"
+      }
+    },
+    {
+      "row": 486,
+      "slack_f32": -1.879736570842283e-07,
+      "slack_float64": 3.552713678800501e-15,
+      "metadata": {
+        "cell_rc": [
+          866,
+          1187
+        ],
+        "edge_rc": [
+          [
+            866,
+            1187
+          ],
+          [
+            866,
+            1188
+          ]
+        ],
+        "surface": "F",
+        "t_base": 0.787459555059252,
+        "t_bound": 0.787459555059252,
+        "t_design": 0.796177411251089,
+        "type": "cross_lower"
+      }
+    }
+  ],
+  "individual_row_test": "Every negative C_cross row has at least one single-variable one-ULP neighbor within box that fixes that row; this is not a simultaneous-feasibility claim.",
+  "simultaneous_one_ulp_neighborhood": {
+    "variables": 13,
+    "assignments_enumerated": 1594323,
+    "assignments_satisfying_all_C_cross": 0,
+    "assignments_satisfying_all_C_and_box": 0,
+    "choice_order": "minimum L1 ULP steps, then minimum L2 distance to continuous x64, then lexicographic (r,c,step)",
+    "best_all_C_and_box_choice": null
+  },
+  "interpretation": "No values were written or substituted into the candidate. A successful neighbor would still require all independent gates and a separately authorized workflow; this diagnostic does not repair or create a candidate."
+}

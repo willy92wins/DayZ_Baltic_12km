@@ -1,0 +1,33 @@
+{
+  "schema": "ev93.assessment-run-failure-note.v1",
+  "run": "recovery-v3 real assessment, run-01",
+  "status": "ERROR_BEFORE_REPORT_SAVE",
+  "assessment_result": null,
+  "error_type": "IndexError",
+  "error": "index 862 out of bounds for axis 0 of size 15",
+  "elapsed_seconds": 8.2365,
+  "tool_chunk": "6088cb",
+  "failing_callsite": {
+    "path": "recovery-v3/assess_rejected_diagnostic.py",
+    "line": 411,
+    "source_sha256": "212a540b48d65c2c51be6dd0fb2d438982abb24de5c26010c1c63a4b401439ef",
+    "call": "helper.exposed_topology(ev87_loaded, prep, bctx, hctx)"
+  },
+  "failing_helper": {
+    "path": "recovery-v3/verify_polished_diagnostic.py",
+    "line": 726,
+    "source_sha256": "b496f3555b3f6d595954afb3a4f7138ea11048b477aff81f9fc0c74ffc419b4c",
+    "mechanism": "face cell ranges are global; corner_values indexes the supplied terrain grid with global row/column coordinates"
+  },
+  "source_anchor": {
+    "path": "E:/DayZ-Baltic-Build/v30-global-strict-bank-relief-20261010/review-independent/verify_ev87.py",
+    "line": 229,
+    "source_sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+    "mechanism": "corner_values reads the four terrain corners at the supplied global cell index"
+  },
+  "geometric_gate_result": null,
+  "geometry_completed": false,
+  "report_created": false,
+  "candidate_created": false,
+  "evidence_source": "parent-reported tool-output transcript; no assessment JSON was created"
+}

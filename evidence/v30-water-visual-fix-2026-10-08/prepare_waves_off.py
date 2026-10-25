@@ -1,0 +1,36 @@
+from pathlib import Path
+import hashlib,json,shutil,subprocess,sys
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-water-visual-fix-2026-10-08'
+B=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008')
+sys.path.insert(0,str(W/'tools/playtest'))
+from attach_navmesh import read_pbo
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+src=B/'waves-off/baltic_waves_off';src.mkdir(parents=True,exist_ok=False)
+cpp=src/'config.cpp'
+cpp.write_text('class CfgPatches { class BalticWavesOffDiagnostic { units[]={}; weapons[]={}; requiredVersion=0.1; requiredAddons[]={"BalticTrialWorld"}; }; };\nclass CfgWorlds { class CAWorld; class BalticTrial: CAWorld { waveAmplitude=0; }; };\n')
+converter=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZ Tools/Bin/CfgConvert/CfgConvert.exe')
+r=subprocess.run([str(converter),'-bin','-dst',str(src/'config.bin'),str(cpp)],capture_output=True)
+(B/'waves-off/cfgconvert.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0
+out=B/'waves-off/packed';out.mkdir()
+bank=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZ Tools/Bin/PboUtils/FileBank.exe')
+r=subprocess.run([str(bank),'-property','prefix=baltic_waves_off','-dst',str(out),str(src)],capture_output=True)
+(B/'waves-off/filebank.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0
+_,props,entries=read_pbo(out/'baltic_waves_off.pbo');assert entries['config.bin']==(src/'config.bin').read_bytes()
+dest=Path('P:/Mods/@BalticWavesOffDiagnostic/Addons');dest.mkdir(parents=True,exist_ok=False)
+shutil.copyfile(out/'baltic_waves_off.pbo',dest/'baltic_waves_off.pbo');assert sha(out/'baltic_waves_off.pbo')==sha(dest/'baltic_waves_off.pbo')
+shutil.copyfile(cpp,E/'waves-off-config.cpp')
+old=E/'missions/BalticWaterVisualDiag.BalticTrial/init.c'
+s=old.read_text().replace('BalticWaterVisualDiagMission','BalticWaterWavesDiagMission').replace('baltic_water_visual_diag.log','baltic_water_waves_diag.log')
+s=s.replace('        m_NextMs = GetGame().GetTime() + 5000;', '        LogRow("AMPLITUDE;" + GetGame().ConfigGetFloat("CfgWorlds BalticTrial waveAmplitude"));\n        m_NextMs = GetGame().GetTime() + 5000;')
+mission=E/'missions/BalticWaterWavesDiag.BalticTrial';mission.mkdir(parents=True)
+(mission/'init.c').write_text(s)
+deployed=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZServer/mpmissions')/mission.name
+deployed.mkdir(exist_ok=False);shutil.copyfile(mission/'init.c',deployed/'init.c');assert sha(mission/'init.c')==sha(deployed/'init.c')
+lint=subprocess.run([sys.executable,'-X','utf8','C:/Users/guill/DayZ-Modding-Knowledge-Pack/tools/dayz-script-validator/scripts/script_validator.py',str(mission)],capture_output=True,text=True)
+got=json.loads(lint.stdout);assert lint.returncode==0 and not got['errors'] and got['info']['files_scanned']==1
+(E/'waves-off-mission-lint.json').write_text(lint.stdout)
+ref=dict(status='DIAGNOSTIC_ONLY',patch=str(dest/'baltic_waves_off.pbo'),patch_sha256=sha(dest/'baltic_waves_off.pbo'),source_sha256=sha(cpp),expected_sea_range=[.65,.85],waveAmplitude=0,
+mission=str(deployed),mission_sha256=sha(mission/'init.c'),source='P:/DZ/data/config.cpp:1672; P:/scripts/3_game/global/game.c:523',base='FlatWaterPreview with exact PBOs from sea-away-reference.json')
+(E/'waves-off-reference.json').write_text(json.dumps(ref,indent=2)+'\n')
+print(json.dumps(ref,indent=2))

@@ -1,0 +1,176 @@
+{
+  "status": "COMPOSITION_REPAIR_REQUIRES_SAME_CONSUMER",
+  "repro": "verify_global_contours.py against candidate/terrain.npz",
+  "defect": "Local halo area diluted one complete small-body loss; local contour resampling did not bound the global maximum. Float32 exceeded one displacement limit.",
+  "repair": "Restore all previously accepted tiles touching each failed body, complete failing contour chain, or excessive serialized displacement. No new solve and no changed thresholds.",
+  "restored_tiles": 22,
+  "restored_vertices": 735,
+  "remaining_changed_vertices": 53853,
+  "reasons": [
+    {
+      "reason": "physical_body_82",
+      "tiles": [
+        [
+          288,
+          1520
+        ],
+        [
+          304,
+          1520
+        ]
+      ],
+      "failed": {
+        "component": 82,
+        "area": 627.2219914416988,
+        "retained_area": 561.1412934457234,
+        "ratio": 0.8946454383015399,
+        "significant_descendants": [
+          82
+        ]
+      },
+      "bounds_xz": [
+        9156,
+        10398,
+        9180,
+        10470
+      ]
+    },
+    {
+      "reason": "visible_body_82",
+      "tiles": [
+        [
+          288,
+          1520
+        ],
+        [
+          304,
+          1520
+        ]
+      ],
+      "failed": {
+        "component": 82,
+        "area": 627.2219914416988,
+        "retained_area": 561.1412934457235,
+        "ratio": 0.8946454383015401,
+        "significant_descendants": [
+          82
+        ]
+      },
+      "bounds_xz": [
+        9156,
+        10398,
+        9180,
+        10470
+      ]
+    },
+    {
+      "reason": "serialized_contour_displacement",
+      "tiles": [
+        [
+          704,
+          1504
+        ]
+      ]
+    },
+    {
+      "reason": "serialized_contour_displacement",
+      "tiles": [
+        [
+          704,
+          1504
+        ]
+      ]
+    },
+    {
+      "reason": "whole_chain_with_new_global_maximum",
+      "tiles": [
+        [
+          1120,
+          1904
+        ],
+        [
+          1120,
+          1920
+        ],
+        [
+          1136,
+          1920
+        ],
+        [
+          1152,
+          1904
+        ],
+        [
+          1168,
+          1840
+        ],
+        [
+          1168,
+          1856
+        ],
+        [
+          1168,
+          1904
+        ],
+        [
+          1168,
+          1920
+        ],
+        [
+          1184,
+          1856
+        ],
+        [
+          1184,
+          1872
+        ],
+        [
+          1184,
+          1888
+        ],
+        [
+          1184,
+          1904
+        ],
+        [
+          1200,
+          1824
+        ],
+        [
+          1200,
+          1840
+        ],
+        [
+          1216,
+          1824
+        ],
+        [
+          1232,
+          1808
+        ],
+        [
+          1232,
+          1824
+        ],
+        [
+          1248,
+          1792
+        ],
+        [
+          1264,
+          1776
+        ]
+      ],
+      "length_m": 4214.034550529483,
+      "bounds": [
+        10726.808596,
+        4616.38627,
+        11616.51845,
+        5646.198046
+      ],
+      "max_degrees": 178.86213896128257
+    }
+  ],
+  "original_candidate_sha256": "83cdd5cdce9de947490e015ae89a81c15d90c246f3203296c168b85cbe5571ee",
+  "candidate_sha256": "223029dedd7122096bb51c704fc722629b2be549f6c946b9cb89c7d1a8b6d6eb"
+}

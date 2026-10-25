@@ -1,0 +1,37 @@
+{
+  "status": "REJECTED_ACTUAL_ANGULARITY_NOT_DEPLOYED",
+  "candidate_sha256": "ec43ef7d3eb08215b748c960c354ec8d44fe6717af72a70f591a845a015aac29",
+  "actual": {
+    "source": {
+      "corner_count": 42,
+      "corner_max_degrees": 49.34490374895613,
+      "corner_turn_square_sum": 4.0345944222529635,
+      "corner_turn_square_per_m": 0.03186234330284392,
+      "one_metre_turn_square_mean": 3.2823139214507577,
+      "one_metre_phases": [
+        3.3009142530200846,
+        3.5344563890357668,
+        3.099893798232878,
+        3.193991245514301
+      ]
+    },
+    "candidate": {
+      "corner_count": 38,
+      "corner_max_degrees": 92.96710646406682,
+      "corner_turn_square_sum": 6.599484532325073,
+      "corner_turn_square_per_m": 0.05504526208365794,
+      "one_metre_turn_square_mean": 4.357565183480721,
+      "one_metre_phases": [
+        4.298801022441355,
+        3.7004681835589968,
+        4.253547603428122,
+        5.17744392449441
+      ]
+    }
+  },
+  "metric_finding": "The legacy 6 m turn counter rejects a perfect rounded cap; it cannot alone establish angularity. This candidate also worsens actual corners and one-metre energy, so it remains rejected.",
+  "limits": [
+    "No acceptance gate changed retrospectively.",
+    "Future angularity criteria need the square/circle discriminator and an independent native contour consumer."
+  ]
+}

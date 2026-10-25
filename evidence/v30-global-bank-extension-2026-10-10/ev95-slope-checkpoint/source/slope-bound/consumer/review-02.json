@@ -1,0 +1,60 @@
+{
+  "schema": "ev94.slope-bound.consumer-review.v2",
+  "status": "PASS_FIX_CLOSED_READY_FOR_OWNER_DECISION",
+  "consumer": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\verify_slope_bound.py",
+    "sha256": "d111772e9584f09384e6bb912a55fa6e62cb823c808818fc5a8d9d4328ec38b0",
+    "prior_preserved_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\preserved-361ad514\\verify_slope_bound.py",
+    "prior_sha256": "361ad5140ab165ccd2daee2459a9b3215721875913a4922396729a5d803b437f",
+    "diff_summary": "Only adds independent baseline D8/box/order-projection validation, its fixtures, smoke output, and a gate; prior freeze preserved byte-exact.",
+    "unified_diff_lines": 92
+  },
+  "artifacts": {
+    "preflight": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\preflight-run-01\\preflight.json",
+      "sha256": "ff6ec50041a4c6e41f9faf5046d0bc5b4b55ede08f89ecc50a83b1f8270b3c6d"
+    },
+    "prepared": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\preflight-run-01\\prepared.npz",
+      "sha256": "c6e5b05335e6ebf65b38af685dca968e8bfdc14ff9d17ce079369f1f50c2fe2b"
+    },
+    "smoke": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\consumer\\smoke-preflight-run-04.json",
+      "sha256": "12febd94351543c62589ac9acca27f6cce24311604d0b9b3a54a8e5e00ecec2c"
+    },
+    "original_slope_diagnostic": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-diagnostic.json",
+      "sha256": "4053a8361a0c4074643e4f9a29d9196ea0b47549d04574fa75c89d08bf16e272",
+      "modified": false
+    },
+    "coordinate_erratum": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-diagnostic-coordinate-erratum.json",
+      "sha256": "bd1a87b0275d298c7b0116f2c2895cd7985644ee4410fa9ffbea66bd39455b51"
+    },
+    "EV87_coordinate_source": {
+      "path": "E:\\DayZ-Baltic-Build\\v30-global-strict-bank-relief-20261010\\review-independent\\verify_ev87.py",
+      "sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27"
+    }
+  },
+  "fix_review": {
+    "independent_Cx0_ge_d": "PASS; exact slack >= 0 required, smoke min=0 and max=5.827294588088989",
+    "effective_box_bounds": "PASS; x0 within reconstructed solver lo/hi",
+    "projection_identity": "PASS; independent closure projection of full B under reconstructed bounds/witness edges equals B byte-exact",
+    "negative_fixtures": "PASS; Cx0 violation, lower-bound violation, and nonidentity projection are rejected",
+    "smoke_status": "SMOKE_PREFLIGHT_RECONSTRUCTION_PASS",
+    "smoke_scope": "prepared load + independent reconstruction only; no solve/candidate/full geometry",
+    "smoke_consumer_sha256": "d111772e9584f09384e6bb912a55fa6e62cb823c808818fc5a8d9d4328ec38b0",
+    "smoke_preflight_sha256": "ff6ec50041a4c6e41f9faf5046d0bc5b4b55ede08f89ecc50a83b1f8270b3c6d",
+    "smoke_prepared_sha256": "c6e5b05335e6ebf65b38af685dca968e8bfdc14ff9d17ce079369f1f50c2fe2b",
+    "baseline_feasibility": {
+      "baseline_projection_identity": true,
+      "box_feasible": true,
+      "maximum_Cx0_minus_d": 5.827294588088989,
+      "minimum_Cx0_minus_d": 0.0,
+      "pass": true
+    },
+    "self_test": "PASS",
+    "py_compile": "PASS"
+  },
+  "chronology": "The single solver run had already completed before this consumer-fix review. No solver, candidate evaluation, or full geometry was run here; this review alone does not accept the candidate."
+}

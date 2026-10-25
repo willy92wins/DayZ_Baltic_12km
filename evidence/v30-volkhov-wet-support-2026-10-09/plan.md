@@ -1,0 +1,9 @@
+# EV65 — apoyo mojado exacto y transición con bordes fijos
+
+Corrección de mecanismo de EV63, no barrido de cotas ni radios. EV63 elevaba 2448 vértices del cierre de cajas de modelos; solo 1317 sostienen triángulos nativos realmente mojados por P o F. Los 1131 restantes son relleno seco de cajas. Los peores quiebros estaban íntegramente en ese relleno; el núcleo mojado no toca ningún vértice fijo ni su vecindad inmediata.
+
+Se conserva fuente EV61, desplazamiento 0,425 m, dominio exterior de EV63 y todas sus protecciones. Núcleo rígido: tres esquinas de cada triángulo mojado físico o visible. Triángulos secos: desigualdad que garantiza que continúen secos tras subir P/F; no se exige conservar una profundidad negativa sin consumidor. Minimizar la energía cuadrática de saltos de gradiente del desplazamiento, con condiciones fijas 0/0,425 y cotas 0..0,425. No suavizar ni bajar el fondo del río. Se conserva toda orilla y profundidad mojada mediante consumidor GEOS y conectividad independientes.
+
+Una resolución L-BFGS-B, máximo 1000 iteraciones y 120 s, gradiente analítico comprobado por diferencias centrales. Fuente API: scipy/optimize/_lbfgsb_py.py:272-304. Energía y gradiente nativos: EV25 author_hinges.py:18-44. No repetir si falla por geometría o convergencia. Gates EV63: ángulos del núcleo exactos; transición sin aumento >2 grados, sin nuevo quiebro sobre max(original,10 grados), sin pendiente >max(original,35 grados), no agua colgada nueva >0,3 m en anillos locales. Cobertura compilada completa y lector nativo después de PASS geométrico.
+
+Continúa siendo propuesta: los niveles de las dos charcas 647/651, que ya cumplían fondo, cambian por cierre conservador de objetos. La excepción de política sigue pendiente; no reemplazar EV61 automáticamente. Ningún puente se elimina: EV64 es otro diagnóstico separado.

@@ -1,0 +1,118 @@
+{
+ "status": "BUILT_PENDING_GATES_AND_ENGINE_VIEWS",
+ "params": {
+  "sea": 0.75,
+  "crest": 1.7,
+  "half_width": 10.0,
+  "slope": 0.5,
+  "reach": 30.0,
+  "narrow": 24.0,
+  "min_length": 60.0,
+  "ramp": 80.0
+ },
+ "sections": [
+  {
+   "chain": 62,
+   "s0": 75.5,
+   "s1": 479.0,
+   "length_m": 403.5,
+   "ends": [
+    [
+     6742.8,
+     10151.8
+    ],
+    [
+     6844.9,
+     10541.0
+    ]
+   ],
+   "crest_before_p5_p50_p95": [
+    1.45,
+    1.52,
+    5.24
+   ],
+   "crest_after_p5_p50_p95": [
+    1.7,
+    1.7,
+    5.25
+   ]
+  },
+  {
+   "chain": 104,
+   "s0": 889.0,
+   "s1": 1507.5,
+   "length_m": 618.5,
+   "ends": [
+    [
+     7601.7,
+     10750.2
+    ],
+    [
+     6992.0,
+     10651.3
+    ]
+   ],
+   "crest_before_p5_p50_p95": [
+    1.45,
+    1.5,
+    1.84
+   ],
+   "crest_after_p5_p50_p95": [
+    1.7,
+    1.7,
+    1.9
+   ]
+  }
+ ],
+ "vertices": {
+  "rebuild": 1594,
+  "fill": 729,
+  "changed": 1731,
+  "lowered": 748,
+  "lowered_natural_land": 0,
+  "to_sea": 1,
+  "to_land": 270,
+  "face_recovery": {
+   "iterations": 1,
+   "reverted_vertices": 0
+  },
+  "crest": 571
+ },
+ "change_m": {
+  "raise_max": 5.875,
+  "lower_max": 1.403
+ },
+ "waterline_turn_deg_per_12m_near_causeways": {
+  "before": {
+   "n": 192,
+   "p50": 14.0,
+   "p90": 32.8,
+   "p95": 44.7
+  },
+  "after": {
+   "n": 180,
+   "p50": 5.7,
+   "p90": 9.5,
+   "p95": 10.9
+  }
+ },
+ "land_1p40_to_1p60_near_causeways": {
+  "before": 377,
+  "after": 31
+ },
+ "gate_check": {
+  "sea_too_shallow": 0,
+  "beach_below_floor": 0,
+  "land_below_floor_outside_beach": 0
+ },
+ "inputs": {
+  "E:\\DayZ-Baltic-Build\\v30-v5\\coast\\terrain_coast.npz": "62b162cbfdbe71cbcff9bd3ef9c8c61abf49af3891dfffd2d9168f9a8777c2c6",
+  "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\tools\\terrain\\shape_causeways_v30.py": "5afc8f9af157bdbf1fb025789ae549501d6dec6844e0474e0b4af47cf9d1b6fc"
+ },
+ "output_sha256": "e07ee373a1fc7c917b3efd6691b6038feefeb3d0ec4f820436a4ed88bda9c449",
+ "seconds": 22.3,
+ "limits": [
+  "Only road sections with sea on both sides; bridges and river crossings untouched.",
+  "Engine views and the grouped gates decide acceptance."
+ ]
+}

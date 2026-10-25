@@ -1,0 +1,26 @@
+{
+  "status": "FAIL",
+  "errors": [
+    "Control 'northwest' at (0,0) z=11.000, expected 91 (tol 0.001)",
+    "Control 'southeast' at (2,2) z=93.000, expected 13 (tol 0.001)"
+  ],
+  "checks": {
+    "header_syntax": "PASS",
+    "dimensions": "PASS",
+    "headers": "PASS",
+    "finite_and_nodata": "PASS",
+    "height_bounds": "PASS",
+    "controls": "FAIL"
+  },
+  "geometric_orientation": "FAILED",
+  "summary": {
+    "ncols": 3,
+    "nrows": 3,
+    "cellsize": 6.0,
+    "xllcorner": 200000.0,
+    "yllcorner": 0.0,
+    "nodata_value": -9999.0,
+    "min_z": 11.0,
+    "max_z": 93.0
+  }
+}

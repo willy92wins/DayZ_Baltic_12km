@@ -1,0 +1,755 @@
+{
+ "status": "FAIL_OR_INCOMPLETE",
+ "version": 2,
+ "checks": {
+  "header": true,
+  "end": true,
+  "pieces": false,
+  "engine_rule_agreement": false,
+  "no_hull_holes": false
+ },
+ "pieces_found": 0,
+ "pieces_expected": 100,
+ "worst_pieces": [],
+ "max_errors": {
+  "position_error_m": null,
+  "direction_error_deg": null,
+  "up_error_deg": null,
+  "scale_error": null
+ },
+ "agreement": {
+  "PAD:body": {
+   "counts": {
+    "dry": 292,
+    "miss_engine_dry": 277,
+    "pond": 36,
+    "miss_value": 35
+   },
+   "agreement": 0.4834
+  },
+  "PAD:hull": {
+   "counts": {
+    "dry": 291,
+    "miss_engine_dry": 278,
+    "pond": 34,
+    "miss_value": 37
+   },
+   "agreement": 0.4802
+  },
+  "R1:body": {
+   "counts": {
+    "pond": 193,
+    "match": 22,
+    "miss_value": 85
+   },
+   "agreement": 0.2056
+  },
+  "R1:hull": {
+   "counts": {
+    "pond": 193,
+    "match": 22,
+    "miss_value": 85
+   },
+   "agreement": 0.2056
+  },
+  "R2:body": {
+   "counts": {
+    "pond": 417,
+    "miss_engine_dry": 7,
+    "miss_value": 161,
+    "match": 29
+   },
+   "agreement": 0.1472
+  },
+  "R2:hull": {
+   "counts": {
+    "pond": 415,
+    "miss_engine_dry": 7,
+    "miss_value": 162,
+    "match": 30
+   },
+   "agreement": 0.1508
+  },
+  "R3:body": {
+   "counts": {
+    "pond": 282,
+    "miss_value": 102,
+    "match": 3
+   },
+   "agreement": 0.0286
+  },
+  "R3:hull": {
+   "counts": {
+    "pond": 278,
+    "miss_value": 104,
+    "match": 5
+   },
+   "agreement": 0.0459
+  }
+ },
+ "holes": {
+  "R2": [
+   {
+    "s": 30.02,
+    "offset": 0.0,
+    "surface": 7.8746
+   },
+   {
+    "s": 32.03,
+    "offset": 0.0,
+    "surface": 7.7757
+   },
+   {
+    "s": 34.03,
+    "offset": 0.0,
+    "surface": 7.7455
+   },
+   {
+    "s": 36.03,
+    "offset": 0.0,
+    "surface": 7.714
+   },
+   {
+    "s": 38.03,
+    "offset": 0.0,
+    "surface": 7.6248
+   },
+   {
+    "s": 40.03,
+    "offset": 0.0,
+    "surface": 7.4995
+   },
+   {
+    "s": 42.03,
+    "offset": 0.0,
+    "surface": 7.3747
+   }
+  ],
+  "PAD": [
+   {
+    "s": -12.0,
+    "offset": 0.0,
+    "surface": 5.902
+   },
+   {
+    "s": -12.0,
+    "offset": 11.5,
+    "surface": 5.902
+   },
+   {
+    "s": -12.0,
+    "offset": -11.5,
+    "surface": 5.902
+   },
+   {
+    "s": -11.0,
+    "offset": 0.0,
+    "surface": 5.9487
+   },
+   {
+    "s": -11.0,
+    "offset": 11.5,
+    "surface": 5.9487
+   },
+   {
+    "s": -11.0,
+    "offset": -11.5,
+    "surface": 5.9487
+   },
+   {
+    "s": -10.0,
+    "offset": 0.0,
+    "surface": 5.9954
+   },
+   {
+    "s": -10.0,
+    "offset": 11.5,
+    "surface": 5.9954
+   },
+   {
+    "s": -10.0,
+    "offset": -11.5,
+    "surface": 5.9954
+   },
+   {
+    "s": -9.0,
+    "offset": 0.0,
+    "surface": 6.0422
+   },
+   {
+    "s": -9.0,
+    "offset": 11.5,
+    "surface": 6.0422
+   },
+   {
+    "s": -9.0,
+    "offset": -11.5,
+    "surface": 6.0422
+   },
+   {
+    "s": -8.0,
+    "offset": 0.0,
+    "surface": 6.0422
+   },
+   {
+    "s": -8.0,
+    "offset": 11.5,
+    "surface": 6.0422
+   },
+   {
+    "s": -8.0,
+    "offset": -11.5,
+    "surface": 6.0422
+   },
+   {
+    "s": -7.0,
+    "offset": 0.0,
+    "surface": 6.0422
+   },
+   {
+    "s": -7.0,
+    "offset": 11.5,
+    "surface": 6.0422
+   },
+   {
+    "s": -7.0,
+    "offset": -11.5,
+    "surface": 6.0422
+   },
+   {
+    "s": -6.0,
+    "offset": 0.0,
+    "surface": 6.0422
+   },
+   {
+    "s": -6.0,
+    "offset": 11.5,
+    "surface": 6.0422
+   }
+  ]
+ },
+ "hole_counts": {
+  "R2": 7,
+  "PAD": 281
+ },
+ "visual_residual_by_zone": {
+  "PAD:flat": {
+   "n": 30,
+   "abs_p50_p90_max_m": [
+    0.93,
+    1.1324,
+    1.1831
+   ],
+   "share_le_1cm": 0.0,
+   "signed_p50_m": -0.93
+  },
+  "PAD:skirt+z": {
+   "n": 7,
+   "abs_p50_p90_max_m": [
+    1.1417,
+    1.2003,
+    1.2003
+   ],
+   "share_le_1cm": 0.0,
+   "signed_p50_m": -1.1417
+  },
+  "R1:flat": {
+   "n": 90,
+   "abs_p50_p90_max_m": [
+    0.0118,
+    0.0249,
+    0.0324
+   ],
+   "share_le_1cm": 0.433,
+   "signed_p50_m": -0.0107
+  },
+  "R1:skirt+z": {
+   "n": 13,
+   "abs_p50_p90_max_m": [
+    0.2003,
+    0.465,
+    0.5551
+   ],
+   "share_le_1cm": 0.077,
+   "signed_p50_m": 0.2003
+  },
+  "R1:skirt-z": {
+   "n": 4,
+   "abs_p50_p90_max_m": [
+    0.0313,
+    0.1441,
+    0.1898
+   ],
+   "share_le_1cm": 0.0,
+   "signed_p50_m": 0.0313
+  },
+  "R2:flat": {
+   "n": 183,
+   "abs_p50_p90_max_m": [
+    0.0146,
+    0.0389,
+    0.1531
+   ],
+   "share_le_1cm": 0.404,
+   "signed_p50_m": -0.0115
+  },
+  "R2:skirt+z": {
+   "n": 6,
+   "abs_p50_p90_max_m": [
+    0.0365,
+    0.082,
+    0.1096
+   ],
+   "share_le_1cm": 0.167,
+   "signed_p50_m": 0.0147
+  },
+  "R2:skirt-z": {
+   "n": 3,
+   "abs_p50_p90_max_m": [
+    0.0102,
+    0.0257,
+    0.0296
+   ],
+   "share_le_1cm": 0.333,
+   "signed_p50_m": 0.0094
+  },
+  "R3:flat": {
+   "n": 97,
+   "abs_p50_p90_max_m": [
+    0.0321,
+    0.0834,
+    0.1684
+   ],
+   "share_le_1cm": 0.113,
+   "signed_p50_m": -0.0263
+  },
+  "R3:skirt+z": {
+   "n": 10,
+   "abs_p50_p90_max_m": [
+    0.008,
+    0.018,
+    0.0221
+   ],
+   "share_le_1cm": 0.6,
+   "signed_p50_m": 0.006
+  },
+  "R3:skirt-z": {
+   "n": 2,
+   "abs_p50_p90_max_m": [
+    0.0033,
+    0.0052,
+    0.0057
+   ],
+   "share_le_1cm": 1.0,
+   "signed_p50_m": 0.0033
+  }
+ },
+ "misses": {
+  "R1:hull": [
+   {
+    "s": 84.01,
+    "offset": 30.0,
+    "engine": 1.425,
+    "model": 1.4409468091982136
+   },
+   {
+    "s": 86.01,
+    "offset": 30.5,
+    "engine": 1.425,
+    "model": 1.4338915384408042
+   },
+   {
+    "s": 94.01,
+    "offset": 28.5,
+    "engine": 1.4,
+    "model": 1.406702962621505
+   },
+   {
+    "s": 102.01,
+    "offset": -31.5,
+    "engine": 1.35,
+    "model": 1.3764457362459173
+   },
+   {
+    "s": 104.01,
+    "offset": -32.0,
+    "engine": 1.35,
+    "model": 1.372951528457819
+   },
+   {
+    "s": 106.01,
+    "offset": -32.5,
+    "engine": 1.35,
+    "model": 1.370082170171033
+   },
+   {
+    "s": 108.01,
+    "offset": -32.5,
+    "engine": 1.35,
+    "model": 1.3702883722061037
+   },
+   {
+    "s": 110.01,
+    "offset": -32.5,
+    "engine": 1.35,
+    "model": 1.3687071929316403
+   }
+  ],
+  "R1:body": [
+   {
+    "s": 84.01,
+    "offset": 30.0,
+    "engine": 1.425,
+    "model": 1.4409407993376289
+   },
+   {
+    "s": 86.01,
+    "offset": 30.5,
+    "engine": 1.425,
+    "model": 1.4338855285802197
+   },
+   {
+    "s": 94.01,
+    "offset": 28.5,
+    "engine": 1.4,
+    "model": 1.4066969527609203
+   },
+   {
+    "s": 102.01,
+    "offset": -31.5,
+    "engine": 1.35,
+    "model": 1.3764397263853325
+   },
+   {
+    "s": 104.01,
+    "offset": -32.0,
+    "engine": 1.35,
+    "model": 1.3729455185972346
+   },
+   {
+    "s": 106.01,
+    "offset": -32.5,
+    "engine": 1.35,
+    "model": 1.3700761603104485
+   },
+   {
+    "s": 108.01,
+    "offset": -32.5,
+    "engine": 1.35,
+    "model": 1.370282362345519
+   },
+   {
+    "s": 110.01,
+    "offset": -32.5,
+    "engine": 1.35,
+    "model": 1.3687011830710556
+   }
+  ],
+  "R2:hull": [
+   {
+    "s": 30.02,
+    "offset": 0.0,
+    "engine": 0.532453,
+    "model": 7.809194540959411
+   },
+   {
+    "s": 32.03,
+    "offset": 0.0,
+    "engine": 0.532453,
+    "model": 7.732604159724526
+   },
+   {
+    "s": 34.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.874408310775921
+   },
+   {
+    "s": 36.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.749666591579763
+   },
+   {
+    "s": 38.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.625003886549228
+   },
+   {
+    "s": 40.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.499656604394064
+   },
+   {
+    "s": 42.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.37485518793291
+   },
+   {
+    "s": 44.04,
+    "offset": 0.0,
+    "engine": 7.15,
+    "model": 7.303079582844554
+   }
+  ],
+  "R2:body": [
+   {
+    "s": 30.02,
+    "offset": 0.0,
+    "engine": 0.532453,
+    "model": 7.806593911365817
+   },
+   {
+    "s": 32.03,
+    "offset": 0.0,
+    "engine": 0.532453,
+    "model": 7.731819095039653
+   },
+   {
+    "s": 34.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.870320115158617
+   },
+   {
+    "s": 36.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.7455783959624585
+   },
+   {
+    "s": 38.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.620915690931924
+   },
+   {
+    "s": 40.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.495568408776759
+   },
+   {
+    "s": 42.03,
+    "offset": 0.0,
+    "engine": 0.534018,
+    "model": 7.370766992315605
+   },
+   {
+    "s": 44.04,
+    "offset": 0.0,
+    "engine": 7.15,
+    "model": 7.302616567878839
+   }
+  ],
+  "R3:hull": [
+   {
+    "s": 30.01,
+    "offset": 2.5,
+    "engine": 20.35,
+    "model": 20.382096451218562
+   },
+   {
+    "s": 32.01,
+    "offset": -2.5,
+    "engine": 20.125,
+    "model": 20.18399250461585
+   },
+   {
+    "s": 34.01,
+    "offset": -3.0,
+    "engine": 20.175,
+    "model": 20.21949971264666
+   },
+   {
+    "s": 36.01,
+    "offset": 0.0,
+    "engine": 20.175,
+    "model": 20.22260737944234
+   },
+   {
+    "s": 36.01,
+    "offset": 2.0,
+    "engine": 20.175,
+    "model": 20.233679784360515
+   },
+   {
+    "s": 36.01,
+    "offset": -4.0,
+    "engine": 20.125,
+    "model": 20.20046256960599
+   },
+   {
+    "s": 38.01,
+    "offset": -3.5,
+    "engine": 20.125,
+    "model": 20.168060019350868
+   },
+   {
+    "s": 40.01,
+    "offset": 3.0,
+    "engine": 19.95,
+    "model": 19.9992311322251
+   }
+  ],
+  "R3:body": [
+   {
+    "s": 30.01,
+    "offset": 2.5,
+    "engine": 20.35,
+    "model": 20.381660500871632
+   },
+   {
+    "s": 32.01,
+    "offset": -2.5,
+    "engine": 20.125,
+    "model": 20.182499848329897
+   },
+   {
+    "s": 34.01,
+    "offset": -3.0,
+    "engine": 20.175,
+    "model": 20.21698775334968
+   },
+   {
+    "s": 36.01,
+    "offset": 0.0,
+    "engine": 20.175,
+    "model": 20.220095420145363
+   },
+   {
+    "s": 36.01,
+    "offset": 2.0,
+    "engine": 20.175,
+    "model": 20.23116782506354
+   },
+   {
+    "s": 36.01,
+    "offset": -4.0,
+    "engine": 20.125,
+    "model": 20.197950610309015
+   },
+   {
+    "s": 38.01,
+    "offset": -3.5,
+    "engine": 20.125,
+    "model": 20.165548060053894
+   },
+   {
+    "s": 40.01,
+    "offset": 3.0,
+    "engine": 19.95,
+    "model": 19.99671917292812
+   }
+  ],
+  "PAD:hull": [
+   {
+    "s": -12.0,
+    "offset": 0.0,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -12.0,
+    "offset": 11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -12.0,
+    "offset": -11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -11.0,
+    "offset": 0.0,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -11.0,
+    "offset": 11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -11.0,
+    "offset": -11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -10.0,
+    "offset": 0.0,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -10.0,
+    "offset": 11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   }
+  ],
+  "PAD:body": [
+   {
+    "s": -12.0,
+    "offset": 0.0,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -12.0,
+    "offset": 11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -12.0,
+    "offset": -11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -11.0,
+    "offset": 0.0,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -11.0,
+    "offset": 11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -11.0,
+    "offset": -11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -10.0,
+    "offset": 0.0,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   },
+   {
+    "s": -10.0,
+    "offset": 11.5,
+    "engine": 0.555383,
+    "model": 5.901951313018799
+   }
+  ]
+ },
+ "reference_sha256": "38773adc1a49bb21b76958ca08ffbfa6423a0c54cafdfe5bf818da03bb37339a",
+ "log_sha256": "b784e2eae9629b30310c937071dc64a4ae8acd9e1b5859838361574718d1aaef",
+ "limits": [
+  "Server readback of native APIs; no visual or boat result.",
+  "V2 prediction: engine rule of tools/water/engine_water_model.py, frozen in the reference before the run."
+ ]
+}

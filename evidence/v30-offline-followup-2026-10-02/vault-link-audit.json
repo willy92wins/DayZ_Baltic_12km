@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-02",
+  "command": "vault-link-audit.ps1 -VaultRoot AI -BaselinePath AI/20_Runbooks/scripts/baseline-control.json -RegressionGate -FailOnMissingSessionIndex",
+  "exit_code": 1,
+  "status": "FAIL_GLOBAL_VAULT",
+  "new_live_pairs": 5,
+  "new_live_pairs_scope": "20_Knowledge/prime-agent-package/skills/delegar; none in edited Baltic files",
+  "missing_session_index": 23,
+  "current_baltic_session_missing": false,
+  "note": "Global gate is not reported as passed. No unrelated vault links or historical sessions were changed. Current Baltic session has its existing index entry."
+}

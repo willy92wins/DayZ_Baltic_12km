@@ -1,0 +1,99 @@
+{
+  "status": "PROJECTED_ON_ORIGINAL_CONSTRAINTS_REQUIRES_CONSUMER",
+  "repro": "verify_native_turns.py --candidate candidate-native",
+  "defect": "Iteration-limited solve exported its last infeasible iterate; declared displacement gate was not constrained by the author.",
+  "repair": "Analytic maximal ray fraction satisfying native slope discs and sufficient 4.1m point correspondence, from current source. No reoptimization.",
+  "original_candidate_sha256": "b6ec4b4afed58de642d81143944e2ac49de923867ff7c0e1b143bf754176bae3",
+  "candidate_sha256": "cff6d175da46a0080bd761c327babf9c0ef4c53434744ceec9241bc9cc28c82c",
+  "reaches": {
+    "R1": {
+      "alpha": 1.0,
+      "bindings": [],
+      "max_corresponding_contour_displacement_m": 3.647414587195726
+    },
+    "R2": {
+      "alpha": 0.5426161096949701,
+      "bindings": [
+        {
+          "kind": "contour",
+          "node": 30,
+          "limit": 0.9008761956758963,
+          "old_displacement_m": 4.661734234476171
+        },
+        {
+          "kind": "contour",
+          "node": 34,
+          "limit": 0.5426166523116224,
+          "old_displacement_m": 5.616956906805589
+        },
+        {
+          "kind": "contour",
+          "node": 265,
+          "limit": 0.5696265646679297,
+          "old_displacement_m": 5.210576663967492
+        },
+        {
+          "kind": "contour",
+          "node": 270,
+          "limit": 0.8093263291420862,
+          "old_displacement_m": 4.773290882751098
+        },
+        {
+          "kind": "contour",
+          "node": 271,
+          "limit": 0.610217716597444,
+          "old_displacement_m": 6.969498795610499
+        },
+        {
+          "kind": "contour",
+          "node": 273,
+          "limit": 0.9309077893263693,
+          "old_displacement_m": 4.416115858554709
+        },
+        {
+          "kind": "slope",
+          "row": 519,
+          "col": 1369,
+          "tri": 1,
+          "limit": 0.9999745918869409
+        },
+        {
+          "kind": "slope",
+          "row": 556,
+          "col": 1376,
+          "tri": 1,
+          "limit": 0.9999996853377855
+        },
+        {
+          "kind": "slope",
+          "row": 557,
+          "col": 1377,
+          "tri": 0,
+          "limit": 0.9999993617186884
+        },
+        {
+          "kind": "slope",
+          "row": 558,
+          "col": 1376,
+          "tri": 0,
+          "limit": 0.9999998246752794
+        },
+        {
+          "kind": "slope",
+          "row": 562,
+          "col": 1375,
+          "tri": 1,
+          "limit": 0.9999980532795237
+        },
+        {
+          "kind": "slope",
+          "row": 565,
+          "col": 1374,
+          "tri": 1,
+          "limit": 0.9999992636720152
+        }
+      ],
+      "max_corresponding_contour_displacement_m": 4.0999975791043894
+    }
+  }
+}

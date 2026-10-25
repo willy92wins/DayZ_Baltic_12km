@@ -1,0 +1,365 @@
+{
+  "status": "PASS_STRICT_DRY_FLOOR_SOURCE",
+  "source_sha256": "f4600c90a088adf4df2c8f8f2067b03b77ca01aee9f4e9a8f786c0b1ea8cb7ba",
+  "candidate_sha256": "7bcfae7662acf3f83ff0f52434a3d9c3f1e8af745574b2fdc3ad689db123a990",
+  "gates": {
+    "finite": true,
+    "metadata_exact": true,
+    "fixed_exact": true,
+    "outside_exact": true,
+    "water_cells_exact": true,
+    "road_platform_exact": true,
+    "dry_floor": true,
+    "max_change": true,
+    "no_new_steep_faces": true,
+    "all_target_floor_1_8": true,
+    "no_lowering": true,
+    "natural_bank_p99": true,
+    "natural_bank_over30": true,
+    "natural_interior_p99": true,
+    "natural_interior_over30": true,
+    "natural_dry_p99": true,
+    "natural_dry_over30": true,
+    "editable_energy_reduction": true,
+    "roads_pass": true
+  },
+  "counts": {
+    "bad_faces": 0,
+    "max_slope_excess_degrees": 0.0,
+    "changed_vertices": 1883,
+    "water_support_vertices": 447030
+  },
+  "angles": {
+    "natural_bank": {
+      "before": {
+        "n": 1558906,
+        "mean_sq_degrees": 12.511758961224846,
+        "p99_degrees": 16.718225558426212,
+        "max_degrees": 57.98325760045909,
+        "above30": 1642
+      },
+      "after": {
+        "n": 1558906,
+        "mean_sq_degrees": 12.510092177585468,
+        "p99_degrees": 16.718225558426212,
+        "max_degrees": 57.98325760045909,
+        "above30": 1642
+      },
+      "reduction": 0.00013321737131788414
+    },
+    "natural_interior": {
+      "before": {
+        "n": 7295342,
+        "mean_sq_degrees": 0.6182110208458195,
+        "p99_degrees": 3.392211024623186,
+        "max_degrees": 47.22823023572591,
+        "above30": 112
+      },
+      "after": {
+        "n": 7295342,
+        "mean_sq_degrees": 0.6182084233448131,
+        "p99_degrees": 3.392211024623186,
+        "max_degrees": 47.22823023572591,
+        "above30": 112
+      },
+      "reduction": 4.201641379375509e-06
+    },
+    "natural_dry": {
+      "before": {
+        "n": 9159090,
+        "mean_sq_degrees": 2.6455979688800593,
+        "p99_degrees": 6.682437522524751,
+        "max_degrees": 57.98325760045909,
+        "above30": 1768
+      },
+      "after": {
+        "n": 9159090,
+        "mean_sq_degrees": 2.645313306507151,
+        "p99_degrees": 6.681692888367144,
+        "max_degrees": 57.98325760045909,
+        "above30": 1768
+      },
+      "reduction": 0.00010759849994468329
+    },
+    "editable_incident": {
+      "before": {
+        "n": 8085,
+        "mean_sq_degrees": 6.8532773621272325,
+        "p99_degrees": 12.17262006171224,
+        "max_degrees": 36.84421318848362,
+        "above30": 1
+      },
+      "after": {
+        "n": 8085,
+        "mean_sq_degrees": 6.201659693547552,
+        "p99_degrees": 11.40187157506721,
+        "max_degrees": 31.702346463851924,
+        "above30": 1
+      },
+      "reduction": 0.0950811756402371
+    }
+  },
+  "sectors": 17,
+  "regressed_sectors": [
+    {
+      "row": 14,
+      "col": 7,
+      "edges": 111,
+      "before_sum_sq": 701.5828866387984,
+      "after_sum_sq": 705.1684295996478,
+      "before_max": 9.704180621829279,
+      "after_max": 9.481274424616812
+    }
+  ],
+  "largest_improvements": [
+    {
+      "kind": "diagonal",
+      "x": 3057.0,
+      "z": 7119.0,
+      "before": 8.763414229160361,
+      "after": 1.3742000604202638,
+      "delta": 7.389214168740097
+    },
+    {
+      "kind": "diagonal",
+      "x": 3045.0,
+      "z": 7125.0,
+      "before": 7.355812251897737,
+      "after": 0.5107294924811862,
+      "delta": 6.845082759416551
+    },
+    {
+      "kind": "diagonal",
+      "x": 9765.0,
+      "z": 9207.0,
+      "before": 6.938078954515706,
+      "after": 0.4604752006016708,
+      "delta": 6.477603753914035
+    },
+    {
+      "kind": "diagonal",
+      "x": 3045.0,
+      "z": 7131.0,
+      "before": 9.634258775102753,
+      "after": 4.241718742499788,
+      "delta": 5.392540032602964
+    },
+    {
+      "kind": "diagonal",
+      "x": 9765.0,
+      "z": 9213.0,
+      "before": 8.760976170001449,
+      "after": 3.3729932394149453,
+      "delta": 5.387982930586503
+    },
+    {
+      "kind": "diagonal",
+      "x": 3057.0,
+      "z": 7125.0,
+      "before": 8.778833414697996,
+      "after": 3.393159808083671,
+      "delta": 5.385673606614325
+    },
+    {
+      "kind": "horizontal",
+      "x": 3051.0,
+      "z": 7125.0,
+      "before": 5.469624974957923,
+      "after": 0.12527866972523863,
+      "delta": 5.344346305232684
+    },
+    {
+      "kind": "diagonal",
+      "x": 9723.0,
+      "z": 9357.0,
+      "before": 36.84421318848362,
+      "after": 31.702346463851924,
+      "delta": 5.141866724631697
+    },
+    {
+      "kind": "diagonal",
+      "x": 3039.0,
+      "z": 7137.0,
+      "before": 8.41255917186887,
+      "after": 3.4853012238827046,
+      "delta": 4.927257947986165
+    },
+    {
+      "kind": "horizontal",
+      "x": 3063.0,
+      "z": 7119.0,
+      "before": 4.9629241784851486,
+      "after": 0.22284887111945034,
+      "delta": 4.740075307365698
+    },
+    {
+      "kind": "vertical",
+      "x": 3057.0,
+      "z": 7119.0,
+      "before": 5.757172605170329,
+      "after": 1.8602749295053194,
+      "delta": 3.8968976756650093
+    },
+    {
+      "kind": "vertical",
+      "x": 12087.0,
+      "z": 2895.0,
+      "before": 8.238593767415413,
+      "after": 4.420369365947536,
+      "delta": 3.8182244014678766
+    },
+    {
+      "kind": "vertical",
+      "x": 12087.0,
+      "z": 2901.0,
+      "before": 7.949244290478657,
+      "after": 4.131028607701595,
+      "delta": 3.818215682777062
+    },
+    {
+      "kind": "vertical",
+      "x": 12087.0,
+      "z": 2919.0,
+      "before": 7.496644742196397,
+      "after": 3.6800094636555163,
+      "delta": 3.8166352785408804
+    },
+    {
+      "kind": "horizontal",
+      "x": 3063.0,
+      "z": 7125.0,
+      "before": 7.995194782096314,
+      "after": 4.179151442588589,
+      "delta": 3.8160433395077247
+    },
+    {
+      "kind": "horizontal",
+      "x": 3051.0,
+      "z": 7131.0,
+      "before": 5.985489329557513,
+      "after": 2.173258930000411,
+      "delta": 3.812230399557102
+    },
+    {
+      "kind": "vertical",
+      "x": 3051.0,
+      "z": 7125.0,
+      "before": 8.21192320303828,
+      "after": 4.402548045524042,
+      "delta": 3.8093751575142383
+    },
+    {
+      "kind": "vertical",
+      "x": 3045.0,
+      "z": 7125.0,
+      "before": 4.955711802570457,
+      "after": 1.1494492995707604,
+      "delta": 3.806262502999697
+    },
+    {
+      "kind": "vertical",
+      "x": 9765.0,
+      "z": 9207.0,
+      "before": 4.900327543160738,
+      "after": 1.1039502944441366,
+      "delta": 3.7963772487166008
+    },
+    {
+      "kind": "vertical",
+      "x": 12087.0,
+      "z": 2907.0,
+      "before": 7.541606487038314,
+      "after": 3.898551780885441,
+      "delta": 3.6430547061528733
+    },
+    {
+      "kind": "horizontal",
+      "x": 7965.0,
+      "z": 9681.0,
+      "before": 5.228914999750519,
+      "after": 1.6884048767018418,
+      "delta": 3.5405101230486773
+    },
+    {
+      "kind": "horizontal",
+      "x": 9723.0,
+      "z": 9363.0,
+      "before": 7.767211213255256,
+      "after": 4.260408425129437,
+      "delta": 3.5068027881258184
+    },
+    {
+      "kind": "horizontal",
+      "x": 9771.0,
+      "z": 9213.0,
+      "before": 7.7236096353526245,
+      "after": 4.26565552615878,
+      "delta": 3.457954109193844
+    },
+    {
+      "kind": "horizontal",
+      "x": 3069.0,
+      "z": 7125.0,
+      "before": 8.186824835592876,
+      "after": 4.778334235480746,
+      "delta": 3.4084906001121302
+    }
+  ],
+  "roads": {
+    "chains": 100,
+    "samples": 77387,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "negative": [
+    "inclined_plane_cross_product_zero",
+    "45_degree_fold_cross_product",
+    "water_cells_exact_mutant_rejected",
+    "road_platform_exact_mutant_rejected",
+    "outside_exact_mutant_rejected",
+    "no_new_steep_faces_mutant_rejected",
+    "low_target_mutant_rejected"
+  ],
+  "limits": [
+    "Source geometry verification; native package and loaded views still required.",
+    "Water-support cells are byte-identical. Existing river contour/end/residual graphic defects are not fixed by this dry-surface unit.",
+    "Per-sector increases retained even when whole-map gates pass; artistic acceptance is not inferred from energy."
+  ]
+}

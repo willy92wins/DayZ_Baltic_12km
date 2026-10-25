@@ -1,0 +1,68 @@
+"""Whole-valley smoothing pilot; fixed consumer constraints, no class/level edits."""
+from pathlib import Path
+import json,hashlib,sys,time
+import numpy as np
+from scipy import ndimage
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+B=Path('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008');E=W/'evidence/v30-valley-smoothing-2026-10-08'
+sys.path[:0]=[str(W/'tools/terrain')]
+from v30_common import cell_planes,vertex_plane_bounds,grid_xz
+from finish_shores_v30 import protect_corridors,discard_steeper_land_faces
+from smooth_dry_relief_v30 import ease
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+source=Path('E:/DayZ-Baltic-Build/v30-curved-channel-pilot-20261008/r3-transition-proposal/terrain_flat.npz')
+assert sha(source)=='e0d35db0a7a26f9ec055d57f0c9573a1dd2c27911ec8b084274283f5884cffd1'
+out=B/'candidate-a';out.mkdir(parents=True,exist_ok=False);start=time.monotonic()
+t=dict(np.load(source));h=t['heights'].astype(float);cls=t['cls'];x,z=grid_xz()
+planes=cell_planes(cls,t['level']);pmin,pmax=vertex_plane_bounds(planes)
+corridor,_,_,sources=protect_corridors(planes)
+R=W.parents[2]
+nature=np.load(R/'tests/regional_outline_v1/reference.npz')['reserve'].astype(bool)
+high=np.load(R/'tests/relief_v30/relief_v30_mix.npz')['high']
+summits=(high>=.5)&(h==ndimage.maximum_filter(h,size=61,mode='nearest'))
+axes=json.loads(Path('E:/DayZ-Baltic-Build/v30-continuation-20261008/junction-fix-r2/axes.json').read_text())
+r1=np.zeros_like(cls,bool)
+for r,c in axes['R1']['removed_cells']:r1[r:r+2,c:c+2]=True
+r1dist=ndimage.distance_transform_edt(~r1,sampling=6.)
+narva=(np.hypot(x-2417.1428225906,z-6889.8850822322)<=620)|t['narva']
+border=(x<66)|(x>12216)|(z<66)|(z>12216)
+sea=np.isin(cls,(1,4))
+fixed=t['reserve']|t['platform']|corridor|summits|border|sea|t['beach']|(narva&(r1dist>=150))
+wet=np.isin(cls,(2,3,5,6,7));dry=cls==0
+wd=ndimage.distance_transform_edt(~wet,sampling=6.)
+# Smooth boundary to fixed engineering. Narva permission ends at a broad zero-weight boundary.
+weight=ease(ndimage.distance_transform_edt(~fixed,sampling=6.)/36.)
+weight*=np.where(narva,ease((150-r1dist)/60.),1.)
+# Frozen admissible intervals include all current values; no existing failure is hidden.
+lo=h-2*weight;hi=h+2*weight
+lo[wet]=np.maximum(lo[wet],np.minimum(h[wet],1.))
+hi[wet]=h[wet]  # existing measured navigation cannot become shallower
+lower=np.where(t['beach'],.8,1.4)
+lower=np.fmax(lower,np.where(np.isfinite(pmax),pmax+.0501,-np.inf))
+lower=np.minimum(lower,h)
+# Approved general land floor 1.60; no new target at the water edge/engineering.
+targetfloor=1.4+.2*ease((wd-6)/18)
+lower=np.where(dry,np.maximum(lower,np.minimum(targetfloor,h+2*weight)),lower)
+lo[dry]=np.maximum(lo[dry],lower[dry])
+hi=np.maximum(hi,lo)
+lo[fixed]=h[fixed];hi[fixed]=h[fixed]
+# Heat equation, effective sigma=sqrt(2*dt*steps)*6=18 m; projected each step.
+candidate=h.copy();dt=.2;steps=23
+for k in range(steps):
+ candidate+=dt*ndimage.laplace(candidate,mode='nearest')
+ candidate=np.minimum(np.maximum(candidate,lo),hi)
+# Preserve regional shape by subtracting only broad displacement away from new dry-floor requirements.
+delta=candidate-h
+regional=ndimage.gaussian_filter(delta,30.,mode='nearest')
+candidate=np.minimum(np.maximum(candidate-weight*regional,lo),hi)
+candidate,recovery=discard_steeper_land_faces(candidate,h,cls)
+result=dict(t,heights=candidate.astype(t['heights'].dtype));hh=result['heights'].astype(float);m=hh!=h
+assert not np.any(m&fixed)
+assert not np.any(hh[wet]>h[wet]+1e-7)
+assert not np.any(hh[wet&(h>=1)]<1)
+np.savez_compressed(out/'terrain_valley.npz',**result)
+np.savez_compressed(out/'masks.npz',fixed=fixed,corridor=corridor,weight=weight,wet=wet,nature=nature,summits=summits,narva_editable=narva&~fixed)
+report=dict(status='BUILT_PENDING_INDEPENDENT_GATES_AND_VISUAL',source=str(source),source_sha256=sha(source),output_sha256=sha(out/'terrain_valley.npz'),method='Projected heat diffusion, 23 steps dt .2, native 6 m grid; regional displacement compensation',changed_vertices=int(m.sum()),changed_nature=int((m&nature).sum()),changed_narva=int((m&narva).sum()),changed_wet=int((m&wet).sum()),max_lower=float((h-hh).max()),max_raise=float((hh-h).max()),face_recovery=recovery,seconds=time.monotonic()-start)
+(E/'authoring-a.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2),flush=True)
+

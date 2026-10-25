@@ -1,0 +1,286 @@
+{
+  "status": "PASS",
+  "checks": {
+    "approved_recorte-v0.kml": true,
+    "approved_georef-v0.json": true,
+    "physical_ascii_validator": true,
+    "physical_gdal_shape": true,
+    "physical_gdal_bounds": true,
+    "physical_gdal_top_left_center": true,
+    "physical_finite_no_holes": true,
+    "physical_ascii_tiff_roundtrip": true,
+    "relief3x_ascii_validator": true,
+    "relief3x_gdal_shape": true,
+    "relief3x_gdal_bounds": true,
+    "relief3x_gdal_top_left_center": true,
+    "relief3x_finite_no_holes": true,
+    "relief3x_ascii_tiff_roundtrip": true,
+    "vanilla_materials_exist": true,
+    "shape_border": true,
+    "shape_coastline": true,
+    "shape_narva_crossing_detail": true,
+    "shape_ocean": true,
+    "shape_places": true,
+    "shape_rivers": true,
+    "shape_roads": true,
+    "shape_water": true,
+    "shape_water_coverage_union": true,
+    "sat_worldfile_registration": true,
+    "border_uses_country_relation": true,
+    "land_worldcover_no_unknowns": true,
+    "osm_no_missing_geometry_errors": true
+  },
+  "terrain_source_controls": [
+    {
+      "variant": "physical",
+      "controls": [
+        {
+          "name": "Lake Peipus",
+          "longitude": 27.85,
+          "latitude": 58.3,
+          "row": 1922,
+          "col": 228,
+          "source_egm2008_mean_m": 31.86525535583496,
+          "source_file": "Copernicus_DSM_COG_10_N58_00_E027_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 1.6613999605178833,
+          "expected_z": 1.6461655389008267
+        },
+        {
+          "name": "Lake Ladoga",
+          "longitude": 31.35,
+          "latitude": 60.1,
+          "row": 194,
+          "col": 1948,
+          "source_egm2008_mean_m": 3.5,
+          "source_file": "Copernicus_DSM_COG_10_N60_00_E031_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 0.18080000579357147,
+          "expected_z": 0.1808107081463532
+        },
+        {
+          "name": "Lake Ilmen",
+          "longitude": 31.45,
+          "latitude": 58.2,
+          "row": 2015,
+          "col": 1997,
+          "source_egm2008_mean_m": 19.386661529541016,
+          "source_file": "Copernicus_DSM_COG_10_N58_00_E031_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 1.0017000436782837,
+          "expected_z": 1.001518857071421
+        },
+        {
+          "name": "Gatchina",
+          "longitude": 30.1329523,
+          "latitude": 59.5770957,
+          "row": 705,
+          "col": 1350,
+          "source_egm2008_mean_m": 89.45066833496094,
+          "source_file": "Copernicus_DSM_COG_10_N59_00_E030_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 4.628399848937988,
+          "expected_z": 4.621039624516817
+        },
+        {
+          "name": "Luga",
+          "longitude": 29.8496614,
+          "latitude": 58.7377484,
+          "row": 1510,
+          "col": 1211,
+          "source_egm2008_mean_m": 52.04167938232422,
+          "source_file": "Copernicus_DSM_COG_10_N58_00_E029_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 2.7005999088287354,
+          "expected_z": 2.688483686355289
+        },
+        {
+          "name": "Narva",
+          "longitude": 28.1790751,
+          "latitude": 59.3796931,
+          "row": 896,
+          "col": 390,
+          "source_egm2008_mean_m": 28.156177520751953,
+          "source_file": "Copernicus_DSM_COG_10_N59_00_E028_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 1.4577000141143799,
+          "expected_z": 1.4545538274918834
+        }
+      ],
+      "validator_status": "PASS",
+      "errors": []
+    },
+    {
+      "variant": "relief3x",
+      "controls": [
+        {
+          "name": "Lake Peipus",
+          "longitude": 27.85,
+          "latitude": 58.3,
+          "row": 1922,
+          "col": 228,
+          "source_egm2008_mean_m": 31.86525535583496,
+          "source_file": "Copernicus_DSM_COG_10_N58_00_E027_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 4.984099864959717,
+          "expected_z": 4.93849661670248
+        },
+        {
+          "name": "Lake Ladoga",
+          "longitude": 31.35,
+          "latitude": 60.1,
+          "row": 194,
+          "col": 1948,
+          "source_egm2008_mean_m": 3.5,
+          "source_file": "Copernicus_DSM_COG_10_N60_00_E031_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 0.5424000024795532,
+          "expected_z": 0.5424321244390595
+        },
+        {
+          "name": "Lake Ilmen",
+          "longitude": 31.45,
+          "latitude": 58.2,
+          "row": 2015,
+          "col": 1997,
+          "source_egm2008_mean_m": 19.386661529541016,
+          "source_file": "Copernicus_DSM_COG_10_N58_00_E031_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 3.005199909210205,
+          "expected_z": 3.004556571214263
+        },
+        {
+          "name": "Gatchina",
+          "longitude": 30.1329523,
+          "latitude": 59.5770957,
+          "row": 705,
+          "col": 1350,
+          "source_egm2008_mean_m": 89.45066833496094,
+          "source_file": "Copernicus_DSM_COG_10_N59_00_E030_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 13.885100364685059,
+          "expected_z": 13.86311887355045
+        },
+        {
+          "name": "Luga",
+          "longitude": 29.8496614,
+          "latitude": 58.7377484,
+          "row": 1510,
+          "col": 1211,
+          "source_egm2008_mean_m": 52.04167938232422,
+          "source_file": "Copernicus_DSM_COG_10_N58_00_E029_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 8.101699829101562,
+          "expected_z": 8.065451059065866
+        },
+        {
+          "name": "Narva",
+          "longitude": 28.1790751,
+          "latitude": 59.3796931,
+          "row": 896,
+          "col": 390,
+          "source_egm2008_mean_m": 28.156177520751953,
+          "source_file": "Copernicus_DSM_COG_10_N59_00_E028_00_DEM.tif",
+          "method": "Direct source-window mean at independently computed output-cell bounds; 6 real-metre tolerance for footprint weighting/DSM variation.",
+          "actual_z": 4.373199939727783,
+          "expected_z": 4.36366148247565
+        }
+      ],
+      "validator_status": "PASS",
+      "errors": []
+    }
+  ],
+  "shapefile_consumers": [
+    {
+      "name": "border.shp",
+      "features": 21,
+      "bounds": [
+        200000.0,
+        0.0,
+        202435.077925766,
+        8492.225904854204
+      ]
+    },
+    {
+      "name": "coastline.shp",
+      "features": 952,
+      "bounds": [
+        200000.0,
+        6994.999273686662,
+        208403.9247953624,
+        12287.999999999889
+      ]
+    },
+    {
+      "name": "narva_crossing_detail.shp",
+      "features": 1875,
+      "bounds": [
+        202361.33018186703,
+        6822.334208779528,
+        202449.7655697743,
+        6949.645508947915
+      ]
+    },
+    {
+      "name": "ocean.shp",
+      "features": 1,
+      "bounds": [
+        200000.0,
+        6994.99927,
+        208403.9248,
+        12288.0
+      ]
+    },
+    {
+      "name": "places.shp",
+      "features": 2688,
+      "bounds": [
+        200000.2188168245,
+        0.03821591849384963,
+        212283.02310857116,
+        12271.415421914015
+      ]
+    },
+    {
+      "name": "rivers.shp",
+      "features": 3420,
+      "bounds": [
+        200000.0,
+        0.0,
+        212288.0,
+        12287.999999999889
+      ]
+    },
+    {
+      "name": "roads.shp",
+      "features": 33433,
+      "bounds": [
+        200000.0,
+        0.0,
+        212288.0,
+        12287.999999999889
+      ]
+    },
+    {
+      "name": "water.shp",
+      "features": 17310,
+      "bounds": [
+        200000.0,
+        0.0,
+        212288.0,
+        12287.999999999889
+      ]
+    },
+    {
+      "name": "water_coverage_union.shp",
+      "features": 16314,
+      "bounds": [
+        200000.0,
+        0.0,
+        212288.0,
+        12287.999999999889
+      ]
+    }
+  ],
+  "scope": "Offline format, spatial registration and source controls. Runtime, water interaction, navigation, Terrain Builder sampling and 80-100-player performance are not tested."
+}

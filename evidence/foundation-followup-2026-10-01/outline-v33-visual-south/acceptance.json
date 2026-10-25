@@ -1,0 +1,46 @@
+{
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 1,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Southern relief",
+        "samples": 55,
+        "avg64_median": 68.4492,
+        "avg64_range": [
+          51.0367,
+          146.789
+        ],
+        "native_min64_min": 25.0,
+        "native_max64_max": 250.0,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Frozen capture interval (-2 to +3s) omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "sha256": {
+    "reference.json": "5ed4e9c2103d12f7aaa68f5490fc4afa9b78bd03aa5bc7029ee6760e8304c0f1",
+    "camera.log": "5d9b72e7408c79c5e44d8a4ad93ee9179a6dabd7bae4bf2ef065a7c00d72826d",
+    "client-metrics.log": "37c823b0443ce2c4abe5bb18e85f610fb763f227220fef925d6c03284e0ffc96"
+  }
+}

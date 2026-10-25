@@ -1,0 +1,2388 @@
+{
+ "decisions": {
+  "source": "Guillermo, 04-10 (AskUserQuestion): Fondo y anillo; Conectar y liberar tramo; Suavizar esquinas",
+  "base": "Narva candidate chain (V29 rules Narva, moats with water)"
+ },
+ "chain": [
+  {
+   "step": "polish",
+   "tool": "tools/terrain/polish_luga_head_v30.py",
+   "in": "E:\\DayZ-Baltic-Build\\v30-narva-shore\\mouths-moats\\terrain_pilot.npz",
+   "out_terrain_sha256": "931632d6e5b00c923de450a8058587d0ec3d03dc58f881c3c540f30097212b21",
+   "out_sd_sha256": "6817bf78b80f89c5bf52ae42d45e1c0bc0124749dbb00c107f45aa639c933159"
+  },
+  {
+   "step": "water patch",
+   "tool": "tools/water/patch_water_tiles_v30.py --sea-cut-old 0.51 --sea-cut-new 0.51",
+   "out_pieces_sha256": "1e06bc243678167d064894fb012a421252f84d8c4f22e0cc0b754d904bc78b33"
+  },
+  {
+   "step": "channel fit",
+   "tool": "tools/water/fit_channel_pieces_v30.py --overlap-all --no-pad --sea-cut 0.51",
+   "out_terrain_sha256": "b7a5e6a1201b10ff3f7ab3668ae23fb22f8aded24226478458b684ba03e662ac",
+   "out_pieces_sha256": "0907920a24c745a5288c1263dceb37dac1235d4134de3e986d36f85e1719eda7",
+   "status": "FAIL_OFFLINE_FIT"
+  },
+  {
+   "step": "shore fit",
+   "tool": "tools/terrain/fit_shore_crossings_v30.py --reg 0.05 --max-iter 3000 --dry-raise-max 0.4 --levee-cap 0.15 --corridor-margin 0 --sea-cut 0.51 --sd-override sd_polish.npz --narva-core-m 0 --free-corridor-box 10150,3700,10700,4600",
+   "out_terrain_sha256": "88ed02684bef02a21a573460bcfc6993408fe5075bd3906efbdfa6b70ae4a5ef",
+   "gate_recheck": {
+    "wet_too_shallow": 0,
+    "wet_raised_where_forbidden": 0,
+    "land_below_floor": 0
+   },
+   "solver_seconds": 113.0
+  },
+  {
+   "step": "surface",
+   "tool": "tools/terrain/build_surface_v30.py --workers 12 --bed-tone land --shore-ring flowing",
+   "slot_pixels": {
+    "gravel": 64753306,
+    "conifer": 164542942,
+    "grass": 16772871,
+    "grass_tall": 22366337
+   },
+   "seconds": 115.5
+  },
+  {
+   "step": "package",
+   "tool": "tools/terrain/build_v30_package.ps1 (main checkout) -WaterSource fit-polish/water",
+   "narva_trial_pbo_sha256": "f6ca1cb6c689fc8bf0ee6a78bd04bfe03eb75f0a8c5357f869c7ca45273e976d",
+   "baltic_water_v30_pbo_sha256": "0cca78668025d9c3cb8e7dc6d67ffda2c8663750679ba0cedf6e667bd66200af"
+  }
+ ],
+ "deployed": {
+  "mod": "@DayZ_Baltic_PolishCandidate",
+  "mission": "BalticShoreSdfCandidateV1.BalticTrial",
+  "pbo_sha256": {
+   "baltic_water_v30.pbo": "0cca78668025d9c3cb8e7dc6d67ffda2c8663750679ba0cedf6e667bd66200af",
+   "narva_trial.pbo": "f6ca1cb6c689fc8bf0ee6a78bd04bfe03eb75f0a8c5357f869c7ca45273e976d"
+  }
+ },
+ "polish_report": {
+  "box": "10150,3700,10700,4600",
+  "channel": {
+   "axis_m": 219.9,
+   "width_m": 20.0,
+   "lake": "lake_014",
+   "level_start_m": 4.2,
+   "level_lake_m": 4.17,
+   "new_vertices": 92,
+   "from_land": 78,
+   "from_pond": 14,
+   "carved_vertices": 9,
+   "carve_max_m": 1.731,
+   "depth_m_min_max": [
+    0.35,
+    2.95
+   ]
+  },
+  "navigable_levels_restored": {
+   "vertices": 141,
+   "raise_max_m": 2.1
+  },
+  "ponds_to_land": {
+   "replaced_strip_vertices": 17,
+   "replaced_strip_polygons": 1,
+   "separated_vertices": 5
+  },
+  "rounded_lakes": {
+   "lake_014": {
+    "level_m": 4.17,
+    "method": "opening",
+    "r_m": 8.0,
+    "area_m2": [
+     20802,
+     20791
+    ],
+    "hausdorff_m": 1.27,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_038": {
+    "level_m": 4.14,
+    "method": "chaikin",
+    "r_m": 8.0,
+    "area_m2": [
+     7373,
+     7367
+    ],
+    "hausdorff_m": 1.47,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_094": {
+    "level_m": 4.19,
+    "method": "chaikin",
+    "r_m": 8.0,
+    "area_m2": [
+     2410,
+     2379
+    ],
+    "hausdorff_m": 2.24,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_125": {
+    "level_m": 4.16,
+    "method": "chaikin",
+    "r_m": 8.0,
+    "area_m2": [
+     1785,
+     1770
+    ],
+    "hausdorff_m": 1.16,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_138": {
+    "level_m": 4.12,
+    "method": "opening",
+    "r_m": 8.0,
+    "area_m2": [
+     1569,
+     1514
+    ],
+    "hausdorff_m": 3.79,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_150": {
+    "level_m": 4.22,
+    "method": "chaikin",
+    "r_m": 6.86,
+    "area_m2": [
+     1427,
+     1400
+    ],
+    "hausdorff_m": 2.36,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_152": {
+    "level_m": 4.19,
+    "method": "opening",
+    "r_m": 8.0,
+    "area_m2": [
+     1425,
+     1417
+    ],
+    "hausdorff_m": 0.84,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_158": {
+    "level_m": 4.15,
+    "method": "chaikin",
+    "r_m": 8.0,
+    "area_m2": [
+     1368,
+     1354
+    ],
+    "hausdorff_m": 1.25,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_164": {
+    "level_m": 4.14,
+    "method": "opening",
+    "r_m": 8.0,
+    "area_m2": [
+     1329,
+     1277
+    ],
+    "hausdorff_m": 3.4,
+    "outside": 1,
+    "to_land": 0,
+    "kept_touching_other_water": 1,
+    "kept_deep_bed": 0
+   },
+   "lake_165": {
+    "level_m": 4.1,
+    "method": "chaikin",
+    "r_m": 7.97,
+    "area_m2": [
+     1323,
+     1307
+    ],
+    "hausdorff_m": 1.75,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_166": {
+    "level_m": 4.25,
+    "method": "chaikin",
+    "r_m": 6.37,
+    "area_m2": [
+     1318,
+     1297
+    ],
+    "hausdorff_m": 1.89,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_167": {
+    "level_m": 4.12,
+    "method": "chaikin",
+    "r_m": 8.0,
+    "area_m2": [
+     1305,
+     1290
+    ],
+    "hausdorff_m": 1.31,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_171": {
+    "level_m": 4.04,
+    "method": "chaikin",
+    "r_m": 8.0,
+    "area_m2": [
+     1281,
+     1272
+    ],
+    "hausdorff_m": 1.15,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_174": {
+    "level_m": 4.15,
+    "method": "chaikin",
+    "r_m": 8.0,
+    "area_m2": [
+     1214,
+     1197
+    ],
+    "hausdorff_m": 1.71,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_200": {
+    "level_m": 4.11,
+    "method": "chaikin",
+    "r_m": 7.47,
+    "area_m2": [
+     1031,
+     1024
+    ],
+    "hausdorff_m": 1.87,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_215": {
+    "level_m": 4.06,
+    "method": "chaikin",
+    "r_m": 4.77,
+    "area_m2": [
+     973,
+     957
+    ],
+    "hausdorff_m": 1.52,
+    "outside": 0,
+    "to_land": 0,
+    "kept_touching_other_water": 0,
+    "kept_deep_bed": 0
+   },
+   "lake_218": {
+    "level_m": 4.14,
+    "method": "opening",
+    "r_m": 8.0,
+    "area_m2": [
+     969,
+     919
+    ],
+    "hausdorff_m": 3.56,
+    "outside": 1,
+    "to_land": 0,
+    "kept_touching_other_water": 1,
+    "kept_deep_bed": 0
+   }
+  },
+  "banks": {
+   "raised_vertices": 111,
+   "raise_max_m": 2.954
+  },
+  "cap_violations_in_box": 0,
+  "navigable_next_to_standing_over_0_30m": 0,
+  "sd_reproduction": {
+   "vertices": 4510,
+   "max_abs_m": 2e-06,
+   "over_1mm": 0
+  },
+  "sd": {
+   "support_vertices": 4615,
+   "new_support": 105,
+   "changed_vertices": 1605
+  },
+  "changed": {
+   "class": 100,
+   "level": 241,
+   "heights": 120,
+   "outside_box": 0
+  },
+  "inputs": {
+   "terrain_sha256": "e9cb9d9c5a213f3c8cecbf6a953b7f82905512706d0a30c261e9761fe9010fac",
+   "sd_base_sha256": "d756a5da5d96e9e90930ae6907a8dd8f1cc54fe4540ff6f53b1c4a6ef381a16f"
+  },
+  "outputs": {
+   "terrain_sha256": "931632d6e5b00c923de450a8058587d0ec3d03dc58f881c3c540f30097212b21",
+   "sd_sha256": "6817bf78b80f89c5bf52ae42d45e1c0bc0124749dbb00c107f45aa639c933159"
+  },
+  "params": {
+   "channel": "10530,4150;10531,4176;10525,4205;10524,4248;10540,4285;10580,4310;10603,4338",
+   "channel_width_m": 20.0,
+   "bed_depth_m": 0.35,
+   "round_r_m": 8.0,
+   "outside_tol_m": 1.5
+  }
+ },
+ "gates": {
+  "polish": {
+   "status": "FAIL",
+   "water_depth_fail": 6,
+   "water_depth_by_class": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 6,
+    "7": 0
+   },
+   "banks_fail": 0,
+   "pieces_fail": 35,
+   "bed_floor_fail": 0,
+   "land_floor_fail": 0,
+   "beach_fail": 0,
+   "slopes_fail": 0,
+   "narva_identical": false
+  },
+  "narva_candidate": {
+   "status": "FAIL",
+   "water_depth_fail": 6,
+   "water_depth_by_class": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 6,
+    "7": 0
+   },
+   "banks_fail": 0,
+   "pieces_fail": 35,
+   "bed_floor_fail": 0,
+   "land_floor_fail": 0,
+   "beach_fail": 0,
+   "slopes_fail": 0,
+   "narva_identical": false
+  },
+  "roads": {
+   "status": "PASS",
+   "chains": 100,
+   "samples": 76513,
+   "cross_fail": 0,
+   "grade_fail": 0,
+   "chord_fail": 0
+  }
+ },
+ "luga_box_waterline_offsets_m": {
+  "narva": {
+   "edges": 2605,
+   "before_fit": {
+    "n": 2605,
+    "p50": 0.454,
+    "p90": 3.267,
+    "p99": 5.488,
+    "max": 7.502
+   },
+   "after_fit": {
+    "n": 2605,
+    "p50": 0.07,
+    "p90": 2.168,
+    "p99": 4.395,
+    "max": 6.908
+   }
+  },
+  "polish": {
+   "edges": 2644,
+   "before_fit": {
+    "n": 2644,
+    "p50": 0.5,
+    "p90": 3.576,
+    "p99": 5.751,
+    "max": 7.556
+   },
+   "after_fit": {
+    "n": 2644,
+    "p50": 0.076,
+    "p90": 1.918,
+    "p99": 3.885,
+    "max": 6.351
+   }
+  }
+ },
+ "channel_reaches": {
+  "terrain": "E:/DayZ-Baltic-Build/v30-polish/shore-polish/terrain_shore.npz",
+  "sea_cut": 0.51,
+  "removed_cells": 737,
+  "reach_vertices": 975,
+  "water_depth_fail_outside_reaches": 0,
+  "pieces_fail_outside_removed_cells": {
+   "water_corner": 0,
+   "land_corner": 0
+  },
+  "reach_vertices_under_pieces": 874,
+  "reach_wet_depth_below_piece_m_min": -0.294,
+  "reach_wet_shallower_than_0_02_under_piece": 1,
+  "reach_land_below_piece_surface": 0,
+  "reach_wet_without_piece": 1
+ },
+ "zones_polish": {
+  "tool_sha256": "9e5cfde136dd8ce6e2824c540bdc7f60553dc2bcc3f9d01939dc3f70d8d58518",
+  "audit_tool_sha256": "315b7d9f8bf994f048c92ca6fb82bdc784c90d0329ef47eebec356fe4b92d122",
+  "zones_order": [
+   "border",
+   "narva",
+   "delta",
+   "coast",
+   "bank",
+   "inland"
+  ],
+  "audits": {
+   "audit-narva-low": {
+    "terrain": "E:/DayZ-Baltic-Build/v30-narva-shore/shore-narva/terrain_shore.npz",
+    "terrain_sha256": "6b1d0d78b7ffbfc86f36b101ac9542c0fb13b1dc7dfac9cade29feafe96c1dac",
+    "sea_level_m": 0.54,
+    "sea_cut_m": 0.51,
+    "channels": "E:/DayZ-Baltic-Build/v30-narva-shore/fit-moats",
+    "flooded_area_m2": 140732,
+    "holes_area_m2": 16616,
+    "zones": {
+     "border": {
+      "components": 17,
+      "area_m2": 50196,
+      "sea_caused_area_m2": 50096,
+      "in_corridors_m2": 0,
+      "top": [
+       {
+        "zone": "border",
+        "area_m2": 49844.0,
+        "centroid": [
+         5,
+         9790
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.61,
+        "terrain_min_m": -3.07,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 1060.7
+       },
+       {
+        "zone": "border",
+        "area_m2": 188.0,
+        "centroid": [
+         3927,
+         12260
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.65,
+        "terrain_min_m": -1.11,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 486.5
+       },
+       {
+        "zone": "border",
+        "area_m2": 28.0,
+        "centroid": [
+         4322,
+         12278
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.15,
+        "terrain_min_m": -0.61,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 102.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 20.0,
+        "centroid": [
+         12279,
+         10603
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.3,
+        "terrain_min_m": 1.12,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 3917.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 16.0,
+        "centroid": [
+         3454,
+         12276
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.35,
+        "terrain_min_m": 0.19,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 968.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 16.0,
+        "centroid": [
+         12279,
+         10176
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.2,
+        "terrain_min_m": 1.22,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 3886.6,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 16.0,
+        "centroid": [
+         12281,
+         6328
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.19,
+        "terrain_min_m": 1.04,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5347.7,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 12.0,
+        "centroid": [
+         3445,
+         12281
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.77,
+        "terrain_min_m": -0.23,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 978.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 12.0,
+        "centroid": [
+         11869,
+         3
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.3,
+        "terrain_min_m": 1.82,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 10419.4,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 8.0,
+        "centroid": [
+         3466,
+         12269
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.15,
+        "terrain_min_m": 0.39,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 958.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 8.0,
+        "centroid": [
+         12278,
+         8811
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.21,
+        "terrain_min_m": 3.99,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4081.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 8.0,
+        "centroid": [
+         12281,
+         5448
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.16,
+        "terrain_min_m": 1.24,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5955.0,
+        "dist_design_inland_m": 4.0
+       }
+      ]
+     },
+     "narva": {
+      "components": 89,
+      "area_m2": 15776,
+      "sea_caused_area_m2": 6012,
+      "in_corridors_m2": 0,
+      "top": [
+       {
+        "zone": "narva",
+        "area_m2": 3348.0,
+        "centroid": [
+         2345,
+         6867
+        ],
+        "sea_cause_frac": 0.17,
+        "max_depth_m": 3.88,
+        "terrain_min_m": -1.93,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 512.8,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 3320.0,
+        "centroid": [
+         2146,
+         7184
+        ],
+        "sea_cause_frac": 0.64,
+        "max_depth_m": 2.62,
+        "terrain_min_m": -1.87,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 111.9,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 3252.0,
+        "centroid": [
+         2450,
+         6911
+        ],
+        "sea_cause_frac": 0.41,
+        "max_depth_m": 5.23,
+        "terrain_min_m": -3.13,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 526.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 2600.0,
+        "centroid": [
+         2243,
+         7182
+        ],
+        "sea_cause_frac": 0.52,
+        "max_depth_m": 2.26,
+        "terrain_min_m": -0.89,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 260.8,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 1244.0,
+        "centroid": [
+         2404,
+         6810
+        ],
+        "sea_cause_frac": 0.2,
+        "max_depth_m": 3.29,
+        "terrain_min_m": -1.12,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 694.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 976.0,
+        "centroid": [
+         2416,
+         6710
+        ],
+        "sea_cause_frac": 0.27,
+        "max_depth_m": 3.49,
+        "terrain_min_m": -1.04,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 766.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 168.0,
+        "centroid": [
+         2369,
+         7015
+        ],
+        "sea_cause_frac": 0.62,
+        "max_depth_m": 2.14,
+        "terrain_min_m": -0.29,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 569.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 100.0,
+        "centroid": [
+         2185,
+         6633
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.76,
+        "terrain_min_m": 1.69,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 673.5,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 80.0,
+        "centroid": [
+         2374,
+         7027
+        ],
+        "sea_cause_frac": 0.2,
+        "max_depth_m": 1.71,
+        "terrain_min_m": 0.09,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 567.5,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 76.0,
+        "centroid": [
+         2105,
+         6649
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 1.47,
+        "terrain_min_m": 3.16,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 614.5,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 48.0,
+        "centroid": [
+         2566,
+         6493
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.72,
+        "terrain_min_m": 1.73,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 1050.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 28.0,
+        "centroid": [
+         2289,
+         7042
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.2,
+        "terrain_min_m": 1.47,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 492.2,
+        "dist_design_inland_m": 4.0
+       }
+      ]
+     },
+     "delta": {
+      "components": 8,
+      "area_m2": 10060,
+      "sea_caused_area_m2": 10060,
+      "in_corridors_m2": 932,
+      "top": [
+       {
+        "zone": "delta",
+        "area_m2": 2616.0,
+        "centroid": [
+         8358,
+         10324
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 5.0,
+        "terrain_min_m": -4.46,
+        "in_corridors_m2": 932.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 2508.0,
+        "centroid": [
+         8533,
+         10152
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 77.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 2188.0,
+        "centroid": [
+         8589,
+         10135
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 128.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 1716.0,
+        "centroid": [
+         8546,
+         10268
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 103.6,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 592.0,
+        "centroid": [
+         8470,
+         10257
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 104.4,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 420.0,
+        "centroid": [
+         8493,
+         10027
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 84.9,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 16.0,
+        "centroid": [
+         8664,
+         10248
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.85,
+        "terrain_min_m": -0.31,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 305.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 4.0,
+        "centroid": [
+         8553,
+         10437
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.52,
+        "terrain_min_m": 0.02,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 229.2,
+        "dist_design_inland_m": 4.0
+       }
+      ]
+     },
+     "coast": {
+      "components": 524,
+      "area_m2": 37732,
+      "sea_caused_area_m2": 37720,
+      "in_corridors_m2": 0,
+      "top": [
+       {
+        "zone": "coast",
+        "area_m2": 840.0,
+        "centroid": [
+         1905,
+         10657
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.79,
+        "terrain_min_m": -1.25,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 524.8
+       },
+       {
+        "zone": "coast",
+        "area_m2": 752.0,
+        "centroid": [
+         6683,
+         10710
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.79,
+        "terrain_min_m": -1.25,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 565.7
+       },
+       {
+        "zone": "coast",
+        "area_m2": 660.0,
+        "centroid": [
+         3865,
+         12124
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.42,
+        "terrain_min_m": -0.88,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 559.0
+       },
+       {
+        "zone": "coast",
+        "area_m2": 580.0,
+        "centroid": [
+         8369,
+         10006
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.67,
+        "terrain_min_m": -1.13,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "coast",
+        "area_m2": 472.0,
+        "centroid": [
+         6084,
+         11505
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.19,
+        "terrain_min_m": -0.65,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 474.2
+       },
+       {
+        "zone": "coast",
+        "area_m2": 448.0,
+        "centroid": [
+         1299,
+         10724
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.79,
+        "terrain_min_m": -1.25,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 188.0
+       },
+       {
+        "zone": "coast",
+        "area_m2": 448.0,
+        "centroid": [
+         3899,
+         9266
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.24,
+        "terrain_min_m": -0.7,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 83.2
+       },
+       {
+        "zone": "coast",
+        "area_m2": 440.0,
+        "centroid": [
+         4194,
+         9274
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.48,
+        "terrain_min_m": -0.94,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 85.0
+       },
+       {
+        "zone": "coast",
+        "area_m2": 408.0,
+        "centroid": [
+         767,
+         11757
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.79,
+        "terrain_min_m": -1.25,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 1334.1
+       },
+       {
+        "zone": "coast",
+        "area_m2": 396.0,
+        "centroid": [
+         1359,
+         10453
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.07,
+        "terrain_min_m": -0.53,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 14.4
+       },
+       {
+        "zone": "coast",
+        "area_m2": 380.0,
+        "centroid": [
+         4517,
+         12111
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.17,
+        "terrain_min_m": -0.63,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 82.3
+       },
+       {
+        "zone": "coast",
+        "area_m2": 380.0,
+        "centroid": [
+         2968,
+         10687
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.17,
+        "terrain_min_m": -0.63,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 1564.9
+       }
+      ]
+     },
+     "bank": {
+      "components": 3268,
+      "area_m2": 26968,
+      "sea_caused_area_m2": 770,
+      "in_corridors_m2": 0,
+      "top": [
+       {
+        "zone": "bank",
+        "area_m2": 448.0,
+        "centroid": [
+         2063,
+         7332
+        ],
+        "sea_cause_frac": 0.86,
+        "max_depth_m": 2.88,
+        "terrain_min_m": -2.13,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 132.4,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 408.0,
+        "centroid": [
+         2066,
+         6431
+        ],
+        "sea_cause_frac": 0.22,
+        "max_depth_m": 3.08,
+        "terrain_min_m": -0.63,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 766.2,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 244.0,
+        "centroid": [
+         1989,
+         6481
+        ],
+        "sea_cause_frac": 0.08,
+        "max_depth_m": 2.63,
+        "terrain_min_m": -0.18,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 672.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 144.0,
+        "centroid": [
+         10171,
+         3518
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.23,
+        "terrain_min_m": 3.75,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 6504.2,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 92.0,
+        "centroid": [
+         7668,
+         3584
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 1.47,
+        "terrain_min_m": 1.16,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 6134.9,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 84.0,
+        "centroid": [
+         6781,
+         4549
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.24,
+        "terrain_min_m": 2.04,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5263.6,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 84.0,
+        "centroid": [
+         8754,
+         1798
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 1.41,
+        "terrain_min_m": 1.92,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 7946.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 80.0,
+        "centroid": [
+         2896,
+         7179
+        ],
+        "sea_cause_frac": 0.4,
+        "max_depth_m": 0.78,
+        "terrain_min_m": 0.17,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 972.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 80.0,
+        "centroid": [
+         7117,
+         4226
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.16,
+        "terrain_min_m": 2.27,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5515.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 76.0,
+        "centroid": [
+         2541,
+         7463
+        ],
+        "sea_cause_frac": 0.11,
+        "max_depth_m": 0.56,
+        "terrain_min_m": 0.27,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 546.5,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 72.0,
+        "centroid": [
+         10533,
+         9548
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.51,
+        "terrain_min_m": 0.71,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 2199.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 72.0,
+        "centroid": [
+         5934,
+         5143
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.23,
+        "terrain_min_m": 1.8,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4415.8,
+        "dist_design_inland_m": 4.0
+       }
+      ]
+     },
+     "inland": {
+      "components": 0,
+      "area_m2": 0,
+      "sea_caused_area_m2": 0,
+      "in_corridors_m2": 0,
+      "top": []
+     }
+    },
+    "land_vertices_below_sea_level": {
+     "beach": 0,
+     "narva": 0,
+     "other": 0
+    }
+   },
+   "audit-polish-low": {
+    "terrain": "E:/DayZ-Baltic-Build/v30-polish/shore-polish/terrain_shore.npz",
+    "terrain_sha256": "88ed02684bef02a21a573460bcfc6993408fe5075bd3906efbdfa6b70ae4a5ef",
+    "sea_level_m": 0.54,
+    "sea_cut_m": 0.51,
+    "channels": "E:/DayZ-Baltic-Build/v30-polish/fit-polish",
+    "flooded_area_m2": 143044,
+    "holes_area_m2": 16704,
+    "zones": {
+     "border": {
+      "components": 17,
+      "area_m2": 50196,
+      "sea_caused_area_m2": 50096,
+      "in_corridors_m2": 0,
+      "top": [
+       {
+        "zone": "border",
+        "area_m2": 49844.0,
+        "centroid": [
+         5,
+         9790
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.61,
+        "terrain_min_m": -3.07,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 1060.7
+       },
+       {
+        "zone": "border",
+        "area_m2": 188.0,
+        "centroid": [
+         3927,
+         12260
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.65,
+        "terrain_min_m": -1.11,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 486.5
+       },
+       {
+        "zone": "border",
+        "area_m2": 28.0,
+        "centroid": [
+         4322,
+         12278
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.15,
+        "terrain_min_m": -0.61,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 102.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 20.0,
+        "centroid": [
+         12279,
+         10603
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.3,
+        "terrain_min_m": 1.12,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 3917.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 16.0,
+        "centroid": [
+         3454,
+         12276
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.35,
+        "terrain_min_m": 0.19,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 968.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 16.0,
+        "centroid": [
+         12279,
+         10176
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.2,
+        "terrain_min_m": 1.22,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 3886.6,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 16.0,
+        "centroid": [
+         12281,
+         6328
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.19,
+        "terrain_min_m": 1.04,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5347.7,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 12.0,
+        "centroid": [
+         3445,
+         12281
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.77,
+        "terrain_min_m": -0.23,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 978.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 12.0,
+        "centroid": [
+         11869,
+         3
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.3,
+        "terrain_min_m": 1.82,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 10419.4,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 8.0,
+        "centroid": [
+         3466,
+         12269
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.15,
+        "terrain_min_m": 0.39,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 958.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 8.0,
+        "centroid": [
+         12278,
+         8811
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.21,
+        "terrain_min_m": 3.99,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4081.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "border",
+        "area_m2": 8.0,
+        "centroid": [
+         12281,
+         5448
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.16,
+        "terrain_min_m": 1.24,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5955.0,
+        "dist_design_inland_m": 4.0
+       }
+      ]
+     },
+     "narva": {
+      "components": 89,
+      "area_m2": 15776,
+      "sea_caused_area_m2": 6012,
+      "in_corridors_m2": 0,
+      "top": [
+       {
+        "zone": "narva",
+        "area_m2": 3348.0,
+        "centroid": [
+         2345,
+         6867
+        ],
+        "sea_cause_frac": 0.17,
+        "max_depth_m": 3.88,
+        "terrain_min_m": -1.93,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 512.8,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 3320.0,
+        "centroid": [
+         2146,
+         7184
+        ],
+        "sea_cause_frac": 0.64,
+        "max_depth_m": 2.62,
+        "terrain_min_m": -1.87,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 111.9,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 3252.0,
+        "centroid": [
+         2450,
+         6911
+        ],
+        "sea_cause_frac": 0.41,
+        "max_depth_m": 5.23,
+        "terrain_min_m": -3.13,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 526.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 2600.0,
+        "centroid": [
+         2243,
+         7182
+        ],
+        "sea_cause_frac": 0.52,
+        "max_depth_m": 2.26,
+        "terrain_min_m": -0.89,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 260.8,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 1244.0,
+        "centroid": [
+         2404,
+         6810
+        ],
+        "sea_cause_frac": 0.2,
+        "max_depth_m": 3.29,
+        "terrain_min_m": -1.12,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 694.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 976.0,
+        "centroid": [
+         2416,
+         6710
+        ],
+        "sea_cause_frac": 0.27,
+        "max_depth_m": 3.49,
+        "terrain_min_m": -1.04,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 766.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 168.0,
+        "centroid": [
+         2369,
+         7015
+        ],
+        "sea_cause_frac": 0.62,
+        "max_depth_m": 2.14,
+        "terrain_min_m": -0.29,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 569.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 100.0,
+        "centroid": [
+         2185,
+         6633
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.76,
+        "terrain_min_m": 1.69,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 673.5,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 80.0,
+        "centroid": [
+         2374,
+         7027
+        ],
+        "sea_cause_frac": 0.2,
+        "max_depth_m": 1.71,
+        "terrain_min_m": 0.09,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 567.5,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 76.0,
+        "centroid": [
+         2105,
+         6649
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 1.47,
+        "terrain_min_m": 3.16,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 614.5,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 48.0,
+        "centroid": [
+         2566,
+         6493
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.72,
+        "terrain_min_m": 1.73,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 1050.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "narva",
+        "area_m2": 28.0,
+        "centroid": [
+         2289,
+         7042
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.2,
+        "terrain_min_m": 1.47,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 492.2,
+        "dist_design_inland_m": 4.0
+       }
+      ]
+     },
+     "delta": {
+      "components": 8,
+      "area_m2": 10060,
+      "sea_caused_area_m2": 10060,
+      "in_corridors_m2": 932,
+      "top": [
+       {
+        "zone": "delta",
+        "area_m2": 2616.0,
+        "centroid": [
+         8358,
+         10324
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 5.0,
+        "terrain_min_m": -4.46,
+        "in_corridors_m2": 932.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 2508.0,
+        "centroid": [
+         8533,
+         10152
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 77.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 2188.0,
+        "centroid": [
+         8589,
+         10135
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 128.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 1716.0,
+        "centroid": [
+         8546,
+         10268
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 103.6,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 592.0,
+        "centroid": [
+         8470,
+         10257
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 104.4,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 420.0,
+        "centroid": [
+         8493,
+         10027
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 3.09,
+        "terrain_min_m": -2.55,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 84.9,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 16.0,
+        "centroid": [
+         8664,
+         10248
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.85,
+        "terrain_min_m": -0.31,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 305.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "delta",
+        "area_m2": 4.0,
+        "centroid": [
+         8553,
+         10437
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 0.52,
+        "terrain_min_m": 0.02,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 229.2,
+        "dist_design_inland_m": 4.0
+       }
+      ]
+     },
+     "coast": {
+      "components": 524,
+      "area_m2": 37732,
+      "sea_caused_area_m2": 37720,
+      "in_corridors_m2": 0,
+      "top": [
+       {
+        "zone": "coast",
+        "area_m2": 840.0,
+        "centroid": [
+         1905,
+         10657
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.79,
+        "terrain_min_m": -1.25,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 524.8
+       },
+       {
+        "zone": "coast",
+        "area_m2": 752.0,
+        "centroid": [
+         6683,
+         10710
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.79,
+        "terrain_min_m": -1.25,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 565.7
+       },
+       {
+        "zone": "coast",
+        "area_m2": 660.0,
+        "centroid": [
+         3865,
+         12124
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.42,
+        "terrain_min_m": -0.88,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 559.0
+       },
+       {
+        "zone": "coast",
+        "area_m2": 580.0,
+        "centroid": [
+         8369,
+         10006
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.67,
+        "terrain_min_m": -1.13,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "coast",
+        "area_m2": 472.0,
+        "centroid": [
+         6084,
+         11505
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.19,
+        "terrain_min_m": -0.65,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 474.2
+       },
+       {
+        "zone": "coast",
+        "area_m2": 448.0,
+        "centroid": [
+         1299,
+         10724
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.79,
+        "terrain_min_m": -1.25,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 188.0
+       },
+       {
+        "zone": "coast",
+        "area_m2": 448.0,
+        "centroid": [
+         3899,
+         9266
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.24,
+        "terrain_min_m": -0.7,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 83.2
+       },
+       {
+        "zone": "coast",
+        "area_m2": 440.0,
+        "centroid": [
+         4194,
+         9274
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.48,
+        "terrain_min_m": -0.94,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 85.0
+       },
+       {
+        "zone": "coast",
+        "area_m2": 408.0,
+        "centroid": [
+         767,
+         11757
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.79,
+        "terrain_min_m": -1.25,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 1334.1
+       },
+       {
+        "zone": "coast",
+        "area_m2": 396.0,
+        "centroid": [
+         1359,
+         10453
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.07,
+        "terrain_min_m": -0.53,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 14.4
+       },
+       {
+        "zone": "coast",
+        "area_m2": 380.0,
+        "centroid": [
+         4517,
+         12111
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.17,
+        "terrain_min_m": -0.63,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 82.3
+       },
+       {
+        "zone": "coast",
+        "area_m2": 380.0,
+        "centroid": [
+         2968,
+         10687
+        ],
+        "sea_cause_frac": 1.0,
+        "max_depth_m": 1.17,
+        "terrain_min_m": -0.63,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 4.0,
+        "dist_design_inland_m": 1564.9
+       }
+      ]
+     },
+     "bank": {
+      "components": 3244,
+      "area_m2": 29280,
+      "sea_caused_area_m2": 770,
+      "in_corridors_m2": 0,
+      "top": [
+       {
+        "zone": "bank",
+        "area_m2": 2180.0,
+        "centroid": [
+         10548,
+         4282
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 2.02,
+        "terrain_min_m": 2.16,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5934.9,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 448.0,
+        "centroid": [
+         2063,
+         7332
+        ],
+        "sea_cause_frac": 0.86,
+        "max_depth_m": 2.88,
+        "terrain_min_m": -2.13,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 132.4,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 408.0,
+        "centroid": [
+         2066,
+         6431
+        ],
+        "sea_cause_frac": 0.22,
+        "max_depth_m": 3.08,
+        "terrain_min_m": -0.63,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 766.2,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 388.0,
+        "centroid": [
+         10532,
+         4195
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 2.51,
+        "terrain_min_m": 1.69,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 6013.8,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 244.0,
+        "centroid": [
+         1989,
+         6481
+        ],
+        "sea_cause_frac": 0.08,
+        "max_depth_m": 2.63,
+        "terrain_min_m": -0.18,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 672.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 144.0,
+        "centroid": [
+         10171,
+         3518
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.23,
+        "terrain_min_m": 3.75,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 6504.2,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 92.0,
+        "centroid": [
+         7668,
+         3584
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 1.47,
+        "terrain_min_m": 1.16,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 6134.9,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 84.0,
+        "centroid": [
+         6781,
+         4549
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.24,
+        "terrain_min_m": 2.04,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5263.6,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 84.0,
+        "centroid": [
+         8754,
+         1798
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 1.41,
+        "terrain_min_m": 1.92,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 7946.3,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 80.0,
+        "centroid": [
+         2896,
+         7179
+        ],
+        "sea_cause_frac": 0.4,
+        "max_depth_m": 0.78,
+        "terrain_min_m": 0.17,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 972.0,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 80.0,
+        "centroid": [
+         7117,
+         4226
+        ],
+        "sea_cause_frac": 0.0,
+        "max_depth_m": 0.16,
+        "terrain_min_m": 2.27,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 5515.1,
+        "dist_design_inland_m": 4.0
+       },
+       {
+        "zone": "bank",
+        "area_m2": 76.0,
+        "centroid": [
+         2541,
+         7463
+        ],
+        "sea_cause_frac": 0.11,
+        "max_depth_m": 0.56,
+        "terrain_min_m": 0.27,
+        "in_corridors_m2": 0.0,
+        "dist_design_sea_m": 546.5,
+        "dist_design_inland_m": 4.0
+       }
+      ]
+     },
+     "inland": {
+      "components": 0,
+      "area_m2": 0,
+      "sea_caused_area_m2": 0,
+      "in_corridors_m2": 0,
+      "top": []
+     }
+    },
+    "land_vertices_below_sea_level": {
+     "beach": 0,
+     "narva": 0,
+     "other": 0
+    }
+   }
+  }
+ },
+ "channel_joints_vs_chernarus": {
+  "groups": {
+   "vanilla_river": {
+    "pieces": 660,
+    "joints": 647,
+    "scale_p50": 1.0,
+    "along_m_p10_p50_p90": [
+     -0.125,
+     -0.044,
+     -0.008
+    ],
+    "across_m_p10_p50_p90": [
+     -4.052,
+     -0.118,
+     3.779
+    ],
+    "heading_deg_p50_p90": [
+     0.13,
+     0.593
+    ],
+    "level_m_abs_p50_p90": [
+     0.017,
+     0.09
+    ],
+    "overlap_m2_p50_p90_max": [
+     1.0,
+     2.786,
+     66.098
+    ],
+    "overlap_len_m_p50_p90_max": [
+     0.041,
+     0.114,
+     2.754
+    ],
+    "gap_m_p50_p90_max": [
+     0.0,
+     0.0,
+     0.667
+    ],
+    "covered_m2": 292831.97,
+    "multi_m2": 967.07,
+    "multi_share": 0.003302
+   },
+   "vanilla_stream": {
+    "pieces": 389,
+    "joints": 325,
+    "scale_p50": 1.0,
+    "along_m_p10_p50_p90": [
+     -0.142,
+     -0.044,
+     -0.006
+    ],
+    "across_m_p10_p50_p90": [
+     -3.818,
+     -0.408,
+     3.353
+    ],
+    "heading_deg_p50_p90": [
+     0.274,
+     1.947
+    ],
+    "level_m_abs_p50_p90": [
+     0.02,
+     0.151
+    ],
+    "overlap_m2_p50_p90_max": [
+     0.599,
+     1.556,
+     58.419
+    ],
+    "overlap_len_m_p50_p90_max": [
+     0.04,
+     0.105,
+     4.173
+    ],
+    "gap_m_p50_p90_max": [
+     0.0,
+     0.0,
+     1.612
+    ],
+    "covered_m2": 104349.046,
+    "multi_m2": 510.177,
+    "multi_share": 0.004889
+   },
+   "R1": {
+    "pieces": 8,
+    "joints": 0,
+    "scale_p50": 3.696,
+    "along_m_p10_p50_p90": null,
+    "across_m_p10_p50_p90": null,
+    "heading_deg_p50_p90": null,
+    "level_m_abs_p50_p90": null,
+    "overlap_m2_p50_p90_max": null,
+    "overlap_len_m_p50_p90_max": null,
+    "gap_m_p50_p90_max": null,
+    "covered_m2": 21094.721,
+    "multi_m2": 12244.901,
+    "multi_share": 0.580472
+   },
+   "R2": {
+    "pieces": 44,
+    "joints": 37,
+    "scale_p50": 1.475,
+    "along_m_p10_p50_p90": [
+     -1.923,
+     0.01,
+     1.284
+    ],
+    "across_m_p10_p50_p90": [
+     -1.28,
+     0.082,
+     1.142
+    ],
+    "heading_deg_p50_p90": [
+     8.844,
+     21.99
+    ],
+    "level_m_abs_p50_p90": [
+     0.037,
+     0.162
+    ],
+    "overlap_m2_p50_p90_max": [
+     11.708,
+     33.236,
+     141.308
+    ],
+    "overlap_len_m_p50_p90_max": [
+     0.535,
+     1.727,
+     7.74
+    ],
+    "gap_m_p50_p90_max": [
+     0.01,
+     1.284,
+     5.463
+    ],
+    "covered_m2": 8821.267,
+    "multi_m2": 6452.685,
+    "multi_share": 0.731492
+   },
+   "R3": {
+    "pieces": 47,
+    "joints": 45,
+    "scale_p50": 1.374,
+    "along_m_p10_p50_p90": [
+     -3.209,
+     0.086,
+     1.005
+    ],
+    "across_m_p10_p50_p90": [
+     -0.668,
+     -0.024,
+     0.658
+    ],
+    "heading_deg_p50_p90": [
+     11.381,
+     20.584
+    ],
+    "level_m_abs_p50_p90": [
+     0.041,
+     0.159
+    ],
+    "overlap_m2_p50_p90_max": [
+     8.558,
+     36.835,
+     179.154
+    ],
+    "overlap_len_m_p50_p90_max": [
+     0.438,
+     2.273,
+     8.705
+    ],
+    "gap_m_p50_p90_max": [
+     0.086,
+     1.005,
+     3.886
+    ],
+    "covered_m2": 7503.81,
+    "multi_m2": 5644.814,
+    "multi_share": 0.75226
+   }
+  },
+  "vanilla_views": [
+   {
+    "center": [
+     655.0,
+     2409.0
+    ],
+    "half_m": 150.0,
+    "pieces": 21,
+    "joints": 19,
+    "covered_m2": 4847.013,
+    "multi_m2": 23.404,
+    "multi_share": 0.004829
+   },
+   {
+    "center": [
+     1094.0,
+     5707.0
+    ],
+    "half_m": 150.0,
+    "pieces": 24,
+    "joints": 25,
+    "covered_m2": 7443.007,
+    "multi_m2": 18.75,
+    "multi_share": 0.002519
+   }
+  ],
+  "tool": "tools/water/compare_channel_joints_v30.py (GLM lane D; receiver fixes, heading compared exit-to-entry after the gpt-6-astra council lane found it)"
+ }
+}

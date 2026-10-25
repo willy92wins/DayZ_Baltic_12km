@@ -1,0 +1,37 @@
+{
+  "status": "FROZEN_BEFORE_RUNTIME",
+  "mission_sha256": "9b82d2c1e4c60cb4f185a68299919b2c40b60bf5eed5710fd3cc9f617d546c73",
+  "pbo_sha256": "d1008dd6c882193706f06c5e7b8495ee1a357f5819a8574118784f7e90f18577",
+  "populations": [
+    0,
+    25,
+    100,
+    0
+  ],
+  "warmup_seconds": 25,
+  "samples_per_phase": 60,
+  "interval_seconds": 1,
+  "active_fraction": 0.8,
+  "active_samples_required": 30,
+  "max_prey_drift_m": 2,
+  "parent_reference_sha256": "af15a9633122edee47be0fcd8bccbe8090796cbbd0fa8784092a907725cb58fb",
+  "parent_mission_sha256": "60e4716a94886e05ce5c8de58ebbae9d02101bf7ebe1afbfbff016bb29fc40bb",
+  "water_pbo_sha256": "f9a5cdf7461ff09e80a102641289513896011a78b090fdbbd1056f9b985898d3",
+  "navmesh_sha256": "e8348efc2f361d8aa82cbd69c4fc8ad72470a628abd2a10ca8411d7f40fc313c",
+  "sites": {
+    "points": 101,
+    "routes": 100,
+    "minimum_ground_m": 1.25,
+    "nav_radius_m": 2,
+    "maximum_height_error_m": 0.8
+  },
+  "changes": [
+    "Unique mission/log name and world binding.",
+    "Before population: separate 101-site / 100-path WALK check; no AI or measured phase changes."
+  ],
+  "limits": [
+    "Same fixed population, stimulus, warmup and criteria as original baseline.",
+    "Separate site query check occurs before all measured phases.",
+    "No CE, cities, player capacity or rendering FPS acceptance."
+  ]
+}

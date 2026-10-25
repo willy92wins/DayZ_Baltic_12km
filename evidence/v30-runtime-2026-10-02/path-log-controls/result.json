@@ -1,0 +1,60 @@
+{
+  "status": "PASS_OFFLINE_PARSER_CONTROLS",
+  "cases": [
+    {
+      "name": "native_original",
+      "expected": "PASS",
+      "actual": "PASS_NATIVE_V30_PATHS"
+    },
+    {
+      "name": "missing_end",
+      "expected": "REJECT",
+      "rejected": true,
+      "actual": "ValueError: Wrong world or incomplete consumer",
+      "sha256": "ec081a71e70d1db8d38aa64ebde100777f6af8585949609641b3daec199dfa79"
+    },
+    {
+      "name": "wrong_world",
+      "expected": "REJECT",
+      "rejected": true,
+      "actual": "ValueError: Wrong world or incomplete consumer",
+      "sha256": "fc522c8a8ea8569f3441f9229adfac91b25c9baebbd11bb00239aba7948bf4f7"
+    },
+    {
+      "name": "missing_case",
+      "expected": "REJECT",
+      "rejected": true,
+      "actual": "ValueError: Query coverage differs from frozen reference",
+      "sha256": "93f7e4f981bd3ab83ea205c42952bb8a251c700107ed41daea8a258a318334b6"
+    },
+    {
+      "name": "duplicate_query",
+      "expected": "REJECT",
+      "rejected": true,
+      "actual": "ValueError: Duplicate or malformed record",
+      "sha256": "a8090f95662a901bde9a9af6d04987905294eee012b43d3354513ebf17c8f026"
+    },
+    {
+      "name": "partial_endpoint",
+      "expected": "REJECT",
+      "rejected": true,
+      "actual": "FAIL_NATIVE_V30_PATHS",
+      "sha256": "97f3be324158027a668efab466da6c09c4d7ea203a43041e71ddfb1bd791bff7"
+    },
+    {
+      "name": "nonfinite_endpoint",
+      "expected": "REJECT",
+      "rejected": true,
+      "actual": "ValueError: Invalid vector",
+      "sha256": "2e574af01c4d13c2da3d5023fe9ba720039ccc7a4782675e7be9370eb00aa039"
+    },
+    {
+      "name": "negative_succeeds",
+      "expected": "REJECT",
+      "rejected": true,
+      "actual": "FAIL_NATIVE_V30_PATHS",
+      "sha256": "46de706d1741e05d02b1649210eabe592ba6fd77b85e30010f03d7e53a3223cb"
+    }
+  ],
+  "limits": "Mutated-log verifier controls, not additional engine runs."
+}

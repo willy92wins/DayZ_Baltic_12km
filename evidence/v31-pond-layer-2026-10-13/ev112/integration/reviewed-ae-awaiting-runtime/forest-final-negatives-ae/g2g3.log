@@ -1,0 +1,181 @@
+{
+ "windows": 20,
+ "judged_windows": 19,
+ "seconds": 3.6,
+ "G2": {
+  "failed_windows": 5,
+  "failed_share": 0.2632,
+  "livonia_loo_fail_share": 0.2031,
+  "rule_a": false,
+  "excess_beyond_livonia": [
+   {
+    "window": [
+     9500.0,
+     5500.0
+    ],
+    "metric": "density.riparian.reed",
+    "value": 0.6483,
+    "excess": 0.036,
+    "livonia_loo_max_excess": 0.035562
+   },
+   {
+    "window": [
+     9500.0,
+     6000.0
+    ],
+    "metric": "density.riparian.reed",
+    "value": 0.1768,
+    "excess": 0.0491,
+    "livonia_loo_max_excess": 0.035562
+   },
+   {
+    "window": [
+     9500.0,
+     6500.0
+    ],
+    "metric": "density.riparian.reed",
+    "value": 0.2986,
+    "excess": 0.0457,
+    "livonia_loo_max_excess": 0.035562
+   }
+  ],
+  "n_excess_beyond_livonia": 3,
+  "rule_b": true,
+  "rule_b_metrics_judged": 67,
+  "rule_b_confidence": 0.999254,
+  "rule_b_per_metric": {
+   "density.riparian.reed": {
+    "failed_windows": 4,
+    "windows_with_metric": 17,
+    "share": 0.2353,
+    "livonia_loo": [
+     2,
+     11
+    ],
+    "cp95_upper": 0.6905,
+    "ok": true
+   },
+   "share.riparian.reed": {
+    "failed_windows": 3,
+    "windows_with_metric": 17,
+    "share": 0.1765,
+    "livonia_loo": [
+     2,
+     11
+    ],
+    "cp95_upper": 0.6905,
+    "ok": true
+   },
+   "density.riparian.dead": {
+    "failed_windows": 1,
+    "windows_with_metric": 17,
+    "share": 0.0588,
+    "livonia_loo": [
+     2,
+     11
+    ],
+    "cp95_upper": 0.6905,
+    "ok": true
+   },
+   "nn.reed.p50": {
+    "failed_windows": 1,
+    "windows_with_metric": 4,
+    "share": 0.25,
+    "livonia_loo": [
+     2,
+     13
+    ],
+    "cp95_upper": 0.6223,
+    "ok": true
+   },
+   "density.riparian.trees": {
+    "failed_windows": 1,
+    "windows_with_metric": 17,
+    "share": 0.0588,
+    "livonia_loo": [
+     2,
+     11
+    ],
+    "cp95_upper": 0.6905,
+    "ok": true
+   }
+  },
+  "failed_by_metric": {
+   "density.riparian.reed": 4,
+   "share.riparian.reed": 3,
+   "density.riparian.dead": 1,
+   "nn.reed.p50": 1,
+   "density.riparian.trees": 1
+  },
+  "verdict": "FAIL"
+ },
+ "G3": {
+  "failed_windows": 1,
+  "failed_share": 0.0526,
+  "livonia_loo_fail_share": 0.1602,
+  "rule_a": true,
+  "excess_beyond_livonia": [
+   {
+    "window": [
+     9500.0,
+     6500.0
+    ],
+    "metric": "tex_edge.out_-10_0.trees_per_ha",
+    "value": 87.7514,
+    "excess": 0.0703,
+    "livonia_loo_max_excess": 0.063763
+   }
+  ],
+  "n_excess_beyond_livonia": 1,
+  "rule_b": false,
+  "rule_b_metrics_judged": 40,
+  "rule_b_confidence": 0.99875,
+  "rule_b_per_metric": {
+   "tex_edge.out_-10_0.trees_per_ha": {
+    "failed_windows": 1,
+    "windows_with_metric": 4,
+    "share": 0.25,
+    "livonia_loo": [
+     2,
+     256
+    ],
+    "cp95_upper": 0.0421,
+    "ok": false
+   }
+  },
+  "failed_by_metric": {
+   "tex_edge.out_-10_0.trees_per_ha": 1
+  },
+  "verdict": "FAIL"
+ },
+ "composition_diagnostic": {
+  "density.edge.trees": {
+   "windows": 4,
+   "failed": 0,
+   "failed_obs_over_livonia_at_mix": [],
+   "failed_on_texture_share": [],
+   "all_obs_over_livonia_at_mix_p50_p90_max": [
+    0.765,
+    0.835,
+    0.853
+   ]
+  },
+  "density.riparian.trees": {
+   "windows": 17,
+   "failed": 1,
+   "failed_obs_over_livonia_at_mix": [
+    0.441
+   ],
+   "failed_on_texture_share": [
+    0.5
+   ],
+   "all_obs_over_livonia_at_mix_p50_p90_max": [
+    0.559,
+    0.63,
+    0.674
+   ]
+  }
+ }
+}
+G2-map FAIL (5/19 windows fail, Livonia LOO share 0.2031; 3 excesses beyond Livonia's own)
+G3-map FAIL (1/19 windows fail, Livonia LOO share 0.1602; 1 excesses beyond Livonia's own)

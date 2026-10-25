@@ -1,0 +1,82 @@
+{
+  "status": "PASS_EV88Q_HELPER_FIXTURES",
+  "crossings": [
+    {
+      "edge_length_m": 6.0,
+      "direction": "lower_dry_height",
+      "t": 0.6666666666666666,
+      "height_m": 0.5,
+      "within_bounds": true
+    },
+    {
+      "edge_length_m": 6.0,
+      "direction": "raise_dry_height",
+      "t": 0.33333333333333337,
+      "height_m": 1.9999999999999996,
+      "within_bounds": true
+    },
+    {
+      "edge_length_m": 6.0,
+      "negative": "crossing shift 1.01m",
+      "rejected_by_upper": true
+    },
+    {
+      "edge_length_m": 6.0,
+      "negative": "crossing shift 1.01m opposite direction",
+      "rejected_by_lower": true
+    },
+    {
+      "edge_length_m": 8.485281374238571,
+      "direction": "lower_dry_height",
+      "t": 0.617851130197758,
+      "height_m": 0.6185128603389076,
+      "within_bounds": true
+    },
+    {
+      "edge_length_m": 8.485281374238571,
+      "direction": "raise_dry_height",
+      "t": 0.3821488698022421,
+      "height_m": 1.6167812573081508,
+      "within_bounds": true
+    },
+    {
+      "edge_length_m": 8.485281374238571,
+      "negative": "crossing shift 1.01m",
+      "rejected_by_upper": true
+    },
+    {
+      "edge_length_m": 8.485281374238571,
+      "negative": "crossing shift 1.01m opposite direction",
+      "rejected_by_lower": true
+    }
+  ],
+  "nearflat": {
+    "tau_m": 0.024040603637695314,
+    "new_cell_rejected": true,
+    "exact_threshold_is_nearflat": true,
+    "nextafter_above_is_not_nearflat": true,
+    "unchanged_existing_cell_allowed": true
+  },
+  "extrema": {
+    "two_to_two_pass": true,
+    "one_to_two_negative_rejected": true
+  },
+  "stencils": {
+    "coefficient_sums": {
+      "xx": 0.0,
+      "zz": 0.0,
+      "xz": 0.0
+    },
+    "affine_plane_zero_second_differences": true,
+    "frozen_set_contains_only_touching_stencils": true,
+    "stencils": 10
+  },
+  "acceptance_helpers": {
+    "collar_energy_nonincrease": true,
+    "collar_hinge_nonincrease": true,
+    "new_30deg_hinge_rejected": true,
+    "slope_cap_rejects": true,
+    "fixed_exact_identity_rejects_change": true,
+    "rowcol_prominence_increase_rejected": true
+  }
+}

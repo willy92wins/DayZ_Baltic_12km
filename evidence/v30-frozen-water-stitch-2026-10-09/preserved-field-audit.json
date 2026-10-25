@@ -1,0 +1,60 @@
+{
+  "status": "PASS_SOURCE_FIELD_ONLY",
+  "source_identities": {
+    "E:\\DayZ-Baltic-Build\\v30-global-water-risk-20261009\\measured-bank-bed-r2\\terrain.npz": "e7daa6c62cde457b666507ec7eae7e6d16015ad714028585fdb352ace678e52c",
+    "E:\\DayZ-Baltic-Build\\v30-curved-channel-pilot-20261008\\r3-transition-proposal\\terrain_flat.npz": "e0d35db0a7a26f9ec055d57f0c9573a1dd2c27911ec8b084274283f5884cffd1",
+    "E:\\DayZ-Baltic-Build\\v30-continuation-20261008\\junction-fix-r2\\water\\pieces.json": "77d030e28a414fa738aa57d452ff56d02c1599811caa9455d2fb23dae1900d62",
+    "E:\\DayZ-Baltic-Build\\v30-frozen-water-stitch-20261009\\preserved-field.npy": "7a5d0900533670a1e533965b36a6dcf28be2715f96f94ccbfbe6a846bdf98e37"
+  },
+  "gates": {
+    "topology": true,
+    "visible_delta": true,
+    "no_dry_face_flood": true,
+    "no_new_join": true,
+    "no_lost_contact": true
+  },
+  "topology": {
+    "before_significant": 830,
+    "after_significant": 830,
+    "failed_original": [],
+    "merged": {},
+    "new_significant": [],
+    "pass_gate": true
+  },
+  "contacts": [
+    {
+      "axis": 0,
+      "newly_joined": 0,
+      "lost_contacts": 0
+    },
+    {
+      "axis": 1,
+      "newly_joined": 0,
+      "lost_contacts": 0
+    }
+  ],
+  "controls": [
+    "unchanged_18m2",
+    "buried_2m_delta_not_visible",
+    "new_water_6.48m2_rejected",
+    "lost_quarter_4.5m2_rejected",
+    "zero_depth_excluded",
+    "opposite_corners_two_bodies",
+    "cut_channel_rejected",
+    "merged_bodies_rejected",
+    "wrong_water_source_rejected"
+  ],
+  "all_grid_cells": 4190209,
+  "changed_faces": 32548,
+  "gained_area_m2": 1653.6497096983112,
+  "lost_area_m2": 1674.1733049621503,
+  "dry_face_new_area_m2": 0.0,
+  "maximum_old_visible_delta_m": 0.29295820677385487,
+  "maximum_new_visible_delta_m": 0.26875000000000004,
+  "buried_corner_delta_m": 0.44999999999999996,
+  "limits": [
+    "Only source geometry; current 538 stitched LODs, ODOL halos and engine remain separate checks.",
+    "The unchanged terrain hash does not identify water eligibility. Frozen water source and manifest are separately pinned.",
+    "Area gain/loss includes mixed shore faces. All original significant components are checked, not a cell-graph approximation."
+  ]
+}

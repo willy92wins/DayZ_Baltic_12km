@@ -1,0 +1,44 @@
+{
+  "status": "PASS_FULL_NETWORK_POSITIVE_AND_NEGATIVES",
+  "negative_count": 7,
+  "positive_sha256": "2686c55b6ee3a74b2a78fcb7139a57be5602c73be0c1ad429994b57db075974a",
+  "asc_sha256": "ed6cdaa5a1b9100a6f74041e9338f1c21f100a6686f596c73f79f33c4b8662c6",
+  "consumer_sha256": "e134f4e10e9287f3e52f74b4223d1d8dc8f8c5bf0ff5cb556e3d6fb2b5a7b494",
+  "tests": [
+    {
+      "name": "untreated_parent",
+      "expected_gate": "routes",
+      "rejected": true
+    },
+    {
+      "name": "protected_water_vertex",
+      "expected_gate": "protected_exact",
+      "rejected": true
+    },
+    {
+      "name": "outside_declared_support",
+      "expected_gate": "declared_support_exact",
+      "rejected": true
+    },
+    {
+      "name": "intermediate_road_bump",
+      "expected_gate": "routes",
+      "rejected": true
+    },
+    {
+      "name": "excessive_grading",
+      "expected_gate": "delta_limit",
+      "rejected": true
+    },
+    {
+      "name": "excessive_composed_grading",
+      "expected_gate": "composed_delta_limit",
+      "rejected": true
+    },
+    {
+      "name": "unrelated_geographic_edit",
+      "expected_gate": "independent_geographic_support",
+      "rejected": true
+    }
+  ]
+}

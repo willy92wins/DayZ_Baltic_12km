@@ -1,0 +1,64 @@
+{
+  "verdict": "SOUND_FOR_ONE_OFFLINE_AUTHORING_CALL",
+  "scope": "Independent pre-authoring review only. No author invocation, solver, candidate write, build or engine execution.",
+  "artifact_sha256": {
+    "plan": "242010094113e888203ca9a995b050887ea7190da9bfe4a3bd2d82e3946f1a43",
+    "author_ev92.py": "818376c2fca9123473b862ece174f4277ffebf3568eb8875863e354e7e2fe4fd",
+    "prepared.json": "a2e9f18b1e77db5d3ce90cb4d928464c775167f2e1c0ff99c2776d1cca0e802d",
+    "test_author_ev92.py": "0d06d66cb659285e15d4f8f7a526426a693c071951a33a788cc26b3eb3c4d27d",
+    "author-fixtures.json": "ca1cd33ffbe1dbf5a6ed67be343b1655144012cc66b74cb053d4cbe1633a7f6b",
+    "alpha-interval.json": "4664c3e72785962e0929cc123e552995903b5de76431c615323f1a0d67562b08"
+  },
+  "pins": {
+    "expected_count": 118,
+    "checked_count": 118,
+    "missing_count": 0,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "manifest_canonical_sha256": "fe0b802dfe4329ee68d0b731c680ed2b244d98136067637ebaf64d233a985930",
+    "status": "ALL_MATCH"
+  },
+  "domain": {
+    "variables": 85,
+    "variables_unique": 85,
+    "guard_nodes": 43,
+    "guard_nodes_unique": 43,
+    "free_variables": 42,
+    "stencils_prepared": 350,
+    "stencils_consumer": 350,
+    "stencils_exact_match": true,
+    "witness_rows": 129,
+    "direction_changes": 42,
+    "direction_changes_outside_variables": 0,
+    "direction_changes_on_guard": 0
+  },
+  "one_cast_readonly_reconstruction": {
+    "alpha_from_prepared": 0.6769237551186755,
+    "changed_vertices": 42,
+    "changed_outside_mutable_domain": 0,
+    "changed_guard_vertices": 0,
+    "solver_bounds_pass": true,
+    "witness_violations": 0,
+    "metadata_identity_contract": "author copies baseline archive entries and replaces only heights",
+    "candidate_exists": false,
+    "authoring_receipt_exists": false,
+    "write_marker_exists": false
+  },
+  "fixtures": {
+    "pass": true,
+    "tests": 4,
+    "fixture_author_sha256": "818376c2fca9123473b862ece174f4277ffebf3568eb8875863e354e7e2fe4fd",
+    "matches_current_author": true
+  },
+  "findings": [],
+  "limits": [
+    "EV92 remains unmaterialized; the in-memory check is not the independent full consumer.",
+    "Midpoint alpha is one ULP from a direct-root computation; the approved plan explicitly selects the stable rational-moment formula and pins it in prepared.json.",
+    "Any full consumer FAIL/INCONCLUSIVE must reject the one candidate; no alternate alpha is covered by this review."
+  ],
+  "source_refs": {
+    "author_ev92.py": "lines 13-16 pins; 31-66 exact moments/scalar rule; 68-96 source/domain preparation; 98-120 write authorization, one cast, bounds/witness checks and output.",
+    "plan.md": "EV92 rule, materiality interval, one-candidate failure policy, unchanged full gates.",
+    "consumer": "review-independent/verify_ev88q.py stencil_records/stencil_energy; independently enumerated the same 350 rows."
+  }
+}

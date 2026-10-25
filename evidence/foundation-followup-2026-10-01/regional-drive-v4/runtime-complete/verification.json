@@ -1,0 +1,120 @@
+{
+  "status": "PASS_EMPTY_SEDAN_NARVA_GRADES_AND_BRIDGE",
+  "global_checks": {
+    "header": true,
+    "end": true,
+    "cases": true,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "name": "southern_corridor",
+      "reverse": false,
+      "status": "PASS",
+      "checks": {
+        "one_case": true,
+        "terminal": true,
+        "one_arrival": true,
+        "clock": true,
+        "continuous_motion": true,
+        "spawn": true,
+        "endpoint": true,
+        "inside_corridor": true,
+        "all_waypoints": true,
+        "body_healthy": true,
+        "engine_healthy": true,
+        "wheels_present": true,
+        "wheels_healthy": true,
+        "upright": true,
+        "ground": true,
+        "contact_surface": true,
+        "no_jump": true,
+        "callbacks": true,
+        "cruise": true,
+        "stopped": true,
+        "logged_route": true
+      },
+      "samples": 731,
+      "end": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "duration_s": 146.006,
+      "maximum_step_m": 1.8091898980514636,
+      "maximum_dt_s": 0.20300000000000296,
+      "maximum_corridor_m": 0.22405064228864788,
+      "endpoint_distance_m": 1.4476586185213427,
+      "maximum_contact_error_m": 0.003863032428479851,
+      "maximum_ground_error_m": 2.1055353089494133e-05,
+      "contact_count_min": 4,
+      "longest_no_contact_s": 0.0,
+      "cruise_duration_s": 113.40600000000049,
+      "stop_duration_s": 5.400000000000006,
+      "speed_m_s": {
+        "p50": 8.450019675602773,
+        "p95": 8.60533930827334,
+        "max": 9.025244734648917
+      },
+      "maximum_abs_vertical_speed_m_s": 0.411143,
+      "health_min": 1000.0
+    },
+    {
+      "case": 1,
+      "name": "southern_corridor",
+      "reverse": true,
+      "status": "PASS",
+      "checks": {
+        "one_case": true,
+        "terminal": true,
+        "one_arrival": true,
+        "clock": true,
+        "continuous_motion": true,
+        "spawn": true,
+        "endpoint": true,
+        "inside_corridor": true,
+        "all_waypoints": true,
+        "body_healthy": true,
+        "engine_healthy": true,
+        "wheels_present": true,
+        "wheels_healthy": true,
+        "upright": true,
+        "ground": true,
+        "contact_surface": true,
+        "no_jump": true,
+        "callbacks": true,
+        "cruise": true,
+        "stopped": true,
+        "logged_route": true
+      },
+      "samples": 851,
+      "end": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "duration_s": 170.06799999999998,
+      "maximum_step_m": 2.772643953966908,
+      "maximum_dt_s": 0.23299999999998988,
+      "maximum_corridor_m": 0.23197449437346082,
+      "endpoint_distance_m": 1.4906767464172381,
+      "maximum_contact_error_m": 0.004425633868496259,
+      "maximum_ground_error_m": 2.1190130494730397e-05,
+      "contact_count_min": 4,
+      "longest_no_contact_s": 0.0,
+      "cruise_duration_s": 115.46800000000044,
+      "stop_duration_s": 5.400000000000006,
+      "speed_m_s": {
+        "p50": 8.34590487013176,
+        "p95": 8.495879693611668,
+        "max": 8.529909116486998
+      },
+      "maximum_abs_vertical_speed_m_s": 0.356146,
+      "health_min": 1000.0
+    }
+  ],
+  "limits": [
+    "V3 terminal FAIL retained; two empty-sedan journeys only.",
+    "No map/probe-PBO edits or post-spawn pose/velocity forcing."
+  ],
+  "reference_sha256": "195cc19fe52ce7ae7c717ba51e874ab0baf08c2e44f3d90ffde5fcd63f6f7024",
+  "log_sha256": "d9cd5d0d52a3d9c4bb70d25804bda262de53bf8924a6545488f59be1575393a6"
+}

@@ -1,0 +1,131 @@
+{
+  "status": "NO_STABLE_RESIDUAL_SUPPRESSION_BINDING_NOT_ISOLATED",
+  "phases": [
+    "PHASE;0;21566;untouched",
+    "PHASE;1;196343;WetFloor;set_return=true",
+    "PHASE;2;283752;reset_default;requested",
+    "PHASE;3;499691;NormalPower;set_return=true",
+    "PHASE;4;569282;reset_default;requested"
+  ],
+  "settings_after": {
+    "viewDistance": 1600.0,
+    "preferredObjectViewDistance": 1600.0,
+    "sceneComplexity": 500000.0,
+    "terrainGrid": 12.5
+  },
+  "settings_identical": true,
+  "profile_byte_identical": false,
+  "profile_hash_after": "91bc0ad3f6ba9f66ca9fe0299f7bce518f4db6002ca209e52d9f36451a390737",
+  "map_hashes_after": {
+    "baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "narva_trial.pbo": "b69265c5feb99d1bda7a5c9f02282818d0ffe4cd26f89f3a095c128e62d374f3"
+  },
+  "pixel_series": {
+    "pond_group": {
+      "relative_box": [
+        0.31,
+        0.43,
+        0.79,
+        0.66
+      ],
+      "baseline_mean": 64.68517303466797,
+      "changed_mean": 65.70133209228516,
+      "restored_mean": 65.31298065185547,
+      "median_delta_baseline_changed": 3.0622551441192627,
+      "median_delta_baseline_restored": 2.9298691749572754,
+      "changed_lighter_than_all_original_restored_by5_share": 2.4730202996920138e-05,
+      "pixels": 525673
+    },
+    "calibrated_center": {
+      "relative_box": [
+        0.48,
+        0.48,
+        0.52,
+        0.52
+      ],
+      "baseline_mean": 63.10468673706055,
+      "changed_mean": 62.7555046081543,
+      "restored_mean": 63.880348205566406,
+      "median_delta_baseline_changed": 2.4004862308502197,
+      "median_delta_baseline_restored": 2.3017683029174805,
+      "changed_lighter_than_all_original_restored_by5_share": 0.0,
+      "pixels": 7540
+    },
+    "dry_control": {
+      "relative_box": [
+        0.12,
+        0.8,
+        0.27,
+        0.94
+      ],
+      "baseline_mean": 60.30369186401367,
+      "changed_mean": 60.13172912597656,
+      "restored_mean": 59.89439392089844,
+      "median_delta_baseline_changed": 7.026886940002441,
+      "median_delta_baseline_restored": 8.1500244140625,
+      "changed_lighter_than_all_original_restored_by5_share": 0.00011969597223053444,
+      "pixels": 100254
+    },
+    "large_pond_bank": {
+      "relative_box": [
+        0.55,
+        0.48,
+        0.65,
+        0.6
+      ],
+      "baseline_mean": 61.76141357421875,
+      "changed_mean": 63.64722442626953,
+      "restored_mean": 64.02655792236328,
+      "median_delta_baseline_changed": 4.355069637298584,
+      "median_delta_baseline_restored": 3.8275516033172607,
+      "changed_lighter_than_all_original_restored_by5_share": 5.26935169409657e-05,
+      "pixels": 56933
+    }
+  },
+  "run_id": "0913d0b1-d3fa-488d-b73f-6883758473b9",
+  "close": {
+    "run_id": "0913d0b1-d3fa-488d-b73f-6883758473b9",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 4.0314294999989215,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "client",
+        "termination_line": true,
+        "rpt_rotated": false
+      },
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "close_order": [
+      "client",
+      "server"
+    ],
+    "logout_wait_s": 2.2640853000048082,
+    "logout_players": [
+      {
+        "player": "Dev",
+        "logout_finished": true
+      }
+    ],
+    "lease_ttl_s": 119.60932129999856
+  },
+  "final_state": {
+    "owner": null,
+    "runs": [],
+    "occupied": false
+  },
+  "limits": [
+    "GetMaterial and indices are valid; SetParam true is not a readback or proof that this resource shades the observed pixels.",
+    "NormalPower control is not unambiguous amid sea foam. No whole-map exclusion of a pond-material contribution.",
+    "Six frames per A/B/A phase cover waves but are not phase synchronized.",
+    "No geometry, level or production material changed; no fix promoted."
+  ]
+}

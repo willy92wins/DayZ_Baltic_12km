@@ -1,0 +1,141 @@
+{
+  "status": "STATIC_SHORELINE_SAMPLING_ONLY",
+  "grid_step_m": 1.5,
+  "core": [
+    1500,
+    6200,
+    3500,
+    8200
+  ],
+  "native_sha256": [
+    "beba1691236f558e6900c99b26e5fb6cc8b248540840a843486d0605d2f6fd8d",
+    "7832f0a9d05cb472bc419bd6600b3034b07832b14e55e0a86fe1bf6d10c9d5dc"
+  ],
+  "results": [
+    {
+      "static_plane_m": 0.5,
+      "reference_water_samples": 412037,
+      "previously_below_plane": 267917,
+      "after_below_plane": 265283,
+      "lost_samples": 2634,
+      "approximate_lost_area_m2": 5926.5,
+      "deepest_loss_inside_reference_water_m": 5.579351816801399,
+      "lost_samples_more_than_12m_inside_water": 0,
+      "worst_locations": [
+        {
+          "x": 3222.75,
+          "north": 8008.25,
+          "inside_water_m": 5.579351816801399,
+          "terrain_before_m": 0.48083334043622167,
+          "terrain_after_m": 0.5045833401381985
+        },
+        {
+          "x": 3185.25,
+          "north": 8047.25,
+          "inside_water_m": 5.2312812853630275,
+          "terrain_before_m": 0.49583333854872763,
+          "terrain_after_m": 0.5170833406348903
+        },
+        {
+          "x": 3452.25,
+          "north": 8002.25,
+          "inside_water_m": 5.048735462671729,
+          "terrain_before_m": 0.44791665921609136,
+          "terrain_after_m": 0.5091666529576196
+        },
+        {
+          "x": 3222.75,
+          "north": 8006.75,
+          "inside_water_m": 4.952878285908841,
+          "terrain_before_m": 0.48583333566785014,
+          "terrain_after_m": 0.5095833353698269
+        },
+        {
+          "x": 3446.25,
+          "north": 7978.25,
+          "inside_water_m": 4.802531641955772,
+          "terrain_before_m": 0.419583321859443,
+          "terrain_after_m": 0.504166652758942
+        }
+      ]
+    },
+    {
+      "static_plane_m": 0.75,
+      "reference_water_samples": 412037,
+      "previously_below_plane": 269201,
+      "after_below_plane": 268623,
+      "lost_samples": 578,
+      "approximate_lost_area_m2": 1300.5,
+      "deepest_loss_inside_reference_water_m": 2.27747494352077,
+      "lost_samples_more_than_12m_inside_water": 0,
+      "worst_locations": [
+        {
+          "x": 2040.75,
+          "north": 7490.75,
+          "inside_water_m": 2.27747494352077,
+          "terrain_before_m": 0.12374999979509084,
+          "terrain_after_m": 0.7645833268761627
+        },
+        {
+          "x": 2039.25,
+          "north": 7490.75,
+          "inside_water_m": 1.9655247803312672,
+          "terrain_before_m": 0.11999999987890987,
+          "terrain_after_m": 0.7670833319425575
+        },
+        {
+          "x": 2001.75,
+          "north": 7466.75,
+          "inside_water_m": 1.8757479621608883,
+          "terrain_before_m": 0.22999999998139176,
+          "terrain_after_m": 0.7620833399706195
+        },
+        {
+          "x": 2055.75,
+          "north": 7502.75,
+          "inside_water_m": 1.8566881294544442,
+          "terrain_before_m": 0.11999999987890987,
+          "terrain_after_m": 0.783750005066438
+        },
+        {
+          "x": 2042.25,
+          "north": 7490.75,
+          "inside_water_m": 1.7033481227779628,
+          "terrain_before_m": 0.1312499996274528,
+          "terrain_after_m": 0.7845833227038376
+        }
+      ]
+    },
+    {
+      "static_plane_m": 1.0,
+      "reference_water_samples": 412037,
+      "previously_below_plane": 270397,
+      "after_below_plane": 270395,
+      "lost_samples": 2,
+      "approximate_lost_area_m2": 4.5,
+      "deepest_loss_inside_reference_water_m": 0.2465790693547373,
+      "lost_samples_more_than_12m_inside_water": 0,
+      "worst_locations": [
+        {
+          "x": 2423.25,
+          "north": 7060.25,
+          "inside_water_m": 0.2465790693547373,
+          "terrain_before_m": 0.9716666738191861,
+          "terrain_after_m": 1.021250012020245
+        },
+        {
+          "x": 2174.25,
+          "north": 7189.25,
+          "inside_water_m": 0.04794283709775607,
+          "terrain_before_m": 0.982083340485874,
+          "terrain_after_m": 1.0870833521087797
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "1.5 m point sampling of native triangular terrain against three static planes; approximate area, no exact polygons.",
+    "No claim of channel connectivity, in-game wetness, waves, swimming or elevated water validation.",
+    "Loss inside reference-water cells must be reviewed before regional rollout."
+  ]
+}

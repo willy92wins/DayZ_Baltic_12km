@@ -1,0 +1,19 @@
+# Defectos visuales del agua — 08-10-2026
+
+La preview plana pasa las pruebas de consulta de agua y la lancha local, pero Guillermo aporta dos capturas que la rechazan visualmente. No se acepta ni promueve. La cobertura en planta no acredita continuidad visual.
+
+1. Conservar las capturas de Guillermo y cámaras exactas del run 04edb81f-5fc1-41b5-a884-f2b240ae645a.
+2. Separar dos síntomas: reflejos temporales sobre tierra en R1_far; juntas de cuadrícula en R2a_oblique. Leer geometría visual y cotas compartidas. Contrastar consultas físicas donde brilla la tierra.
+3. Bisección del primer síntoma: un parche de configuración aislado que aleje el mar, con terreno, estanques, cámara y clima iguales. Solo diagnóstico; no sustituye la decisión de oleaje ±0,10 m ni se distribuye. Máximo dos controles de componentes, sin barrido de parámetros.
+4. Juntas: una corrección fundada en la diferencia 3D medida, y una comprobación/corrección posterior solo si aporta un discriminador nuevo. Preservar máscaras, niveles, corredores, carreteras y fondo ≥1 m. No reabrir el piloto agotado de curvas. Discriminador elegido tras medir saltos de hasta 0,15 m en R2: conectar solo el LOD visible de los planos generados, con una cota común por vértice entre los planos adyacentes. Roadway, memoria, propiedades pond y máscara permanecen exactos; compensar el centro de binarización al colocar cada objeto. Es una reparación local de los planos existentes, no otro intento del piloto de curvas. Verificar también si el motor acopla su lectura al LOD visual antes de extender el arreglo.
+5. Validar cobertura, límites de solape, alturas en motor y vistas cercanas/medias/lejanas en las escenas fallidas. Una consulta pond PASS no cierra un fallo visual. Repetir solo pruebas afectadas por el cambio.
+
+PASS: desaparecen ambos defectos en las escenas y ráfagas controladas, con invariantes conservados y paquete identificado. FAIL: cualquiera persiste. INCONCLUSO: texturas sin cargar, cámara no comparable o captura congelada. Un FAIL cambia el diagnóstico; no se etiqueta como aceptado por agotar este presupuesto.
+
+## Cambio de estrategia tras los dos controles
+
+Mar a −100 m: tres capturas R1 cargadas sin reflejos sobre tierra. Nivel normal y waveAmplitude=0 verificado en motor: el defecto persiste. No seguir variando parámetros de oleaje. Un control nuevo, de otra dimensión: anular los dos componentes de ruido de Subdivision (rougness=0), preservando el mar normal y el terreno fuente. Su finalidad es discriminar la geometría de relieve que añade el motor. El mecanismo de esta propiedad está descrito en la referencia de CfgWorlds de BI (documentación Arma, aplicación a DayZ pendiente del experimento), y los valores están presentes en P:/DZ/data/config.cpp:1688-1708. Presupuesto: un control de subdivisión; si no cambia la imagen, descartarlo y volver a la geometría/nivel efectivamente renderizados.
+
+Subdivision=0 también conserva el defecto. La instrumentación del cliente coincide con el servidor (mar 0,65–0,85 m; puntos secos); de cerca el mismo suelo no presenta lámina. Discriminador siguiente: precisión de profundidad de la cámara aérea. Una prueba A/B/A sobre la misma instancia y pose: near plane original → 1 m → original, 30 s por fase. Solo cámara scripted propiedad del bridge, mediante addon de diagnóstico aislado; sin tocar fuentes MCP ni usar Camera.GetCurrentCamera (native con antecedentes de fallo). Registrar near plane leído y las fases. El terreno y los parámetros de agua permanecen exactos.
+
+Las dos capturas posteriores de Guillermo amplían explícitamente la revisión visual al perfil completo del valle: giros del cauce, orillas e islotes, caras de talud y transiciones hacia la llanura. El piloto de juntas no pretende cerrar ese smoothing. Referencias: user-images/R1-annotated-water-and-shores.png y R3-valley-smoothing-request.png.

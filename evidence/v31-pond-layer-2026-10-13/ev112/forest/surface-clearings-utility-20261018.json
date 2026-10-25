@@ -1,0 +1,43 @@
+{
+  "status": "SURFACE_UTILITY_OFFLINE_VERIFIED; OT6 and EV112 remain open",
+  "scope": "grass repaint from hash-bound 1m clearing mask; preserves road/water precedence and pixels outside exact mask plus RGB 3px halo",
+  "sources": [
+    {
+      "path": "tools/terrain/build_surface_v30.py",
+      "before_sha256": "702b9915cfc83e1651b38ea6891496515003c3484dd33ed1bc2b00ebe1e81904",
+      "after_sha256": "12547a56758a3b9935ffe5aff7cc5569924b7742d35d27c7bb8c96290ff72e03",
+      "prototype_sha256": "cd2b6c113792553494dc619e0122c6dcd4a6fae8e275a7a339640e28f72e1e12",
+      "only_prototype_difference": "removed experimental absolute import path"
+    },
+    {
+      "path": "tools/terrain/patch_surface_v31.py",
+      "before_sha256": "1684eac5246675b0ddcf90f65140c4eb8b44fdd35cee16d7e76ad1e121b557de",
+      "after_sha256": "6cb0ae1830cf96b44cbe2d87418f97e740cdd4ef12b23ff320d7dcded0c0cf17",
+      "prototype_sha256": "38b66e35beb2b2f7b42f762953ca2ec2898f48de6717248aa9ab62453008cfdd",
+      "only_prototype_difference": "removed experimental absolute import path"
+    }
+  ],
+  "input_controls": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot6-20261018\\clearings-input-controls\\checks.json",
+  "input_controls_passed": 7,
+  "packed_validation": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot6-20261018\\surface-b51-v2-validation.json",
+  "pixel_comparison": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot6-20261018\\surface-b51-v2-pixels-final.json",
+  "pixel_summary": {
+    "outside_in_world": 0,
+    "outside_world": 1730,
+    "tiles": 774,
+    "layers": 1544,
+    "changed_outside_mask_slots": 0,
+    "changed_outside_mask_and_3px_blend_rgb": 0,
+    "mask_north6": 773,
+    "mask_east6": 706
+  },
+  "g8_negative_controls": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot6-20261018\\surface-b51-v2-negatives\\negatives.json",
+  "positive_G8": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot6-20261018\\map-b-seed51\\g8-painted-v2.json",
+  "limits": [
+    "The B51 forest is diagnostic and still fails G2; this is not forest acceptance.",
+    "Regenerate mask from final placed records and validate final packed surface again.",
+    "No engine deployment or visual acceptance."
+  ],
+  "production_input_controls": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-ot6-20261018\\clearings-production-controls\\checks.json",
+  "production_equivalent_to_tested_prototype": true
+}

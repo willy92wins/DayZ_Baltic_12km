@@ -1,0 +1,44 @@
+{
+  "status": "PASS_EV95_GLOBAL_CIVIL_SOURCE_PRESERVED",
+  "checks": {
+    "fixed_vertices_exact": true,
+    "road_sample_cells_exact": true,
+    "road_guard_cells_exact": true,
+    "bridge_cells_exact": true,
+    "readset_stable": true,
+    "one_ulp_edit_negative": true
+  },
+  "metrics": {
+    "fixed_vertices": {
+      "protected": 100215,
+      "changed": 0
+    },
+    "road_sample_cells": {
+      "protected": 41101,
+      "changed": 0
+    },
+    "road_guard_cells": {
+      "protected": 80672,
+      "changed": 0
+    },
+    "bridge_cells": {
+      "protected": 150,
+      "changed": 0
+    }
+  },
+  "source_pins_start": {
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-civil-ev95\\run-01\\civil-mask.npz": "46faaf22e2cfefc8137e2b555227a985cfe212265694f1bce106281937c9ffe3"
+  },
+  "source_pins_end": {
+    "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\real-sector-preflight\\ev94-rebase\\slope-bound\\composition-run-01\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\global-operator-prototype\\global-civil-ev95\\run-01\\civil-mask.npz": "46faaf22e2cfefc8137e2b555227a985cfe212265694f1bce106281937c9ffe3"
+  },
+  "consumer_sha256": "3794d25d3c09af99134b4ae140825bfdc733242ef6126bb27d43c314deaa6675",
+  "limits": [
+    "Proof of EV95 source heights over the conservative global civil mask.",
+    "Existing vehicle/bridge runtime tests remain historical; EV95 native readback is pending."
+  ]
+}

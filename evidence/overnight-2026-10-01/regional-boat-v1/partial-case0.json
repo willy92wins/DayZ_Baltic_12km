@@ -1,0 +1,97 @@
+{
+  "status": "FAIL_OR_INCOMPLETE",
+  "global_checks": {
+    "header": true,
+    "all_cases_complete": false,
+    "exact_cases": false,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "river": "Narva",
+      "reverse": false,
+      "status": "FAIL",
+      "checks": {
+        "one_start_and_finish": false,
+        "one_arrival": false,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": false,
+        "start_and_endpoint": false,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": null,
+      "samples": 688,
+      "max_dt_s": 0.5019999999999953,
+      "max_step_m": 0.6952697318307826,
+      "max_corridor_distance_m": 0.931132218590971,
+      "max_waypoint_distance_m": 35.235213243914394,
+      "end_distance_m": 35.236200540296544,
+      "max_ground_error_m": 0.0015494829279134592,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 43.001999999999995
+    },
+    {
+      "case": 1,
+      "status": "FAIL",
+      "reason": "missing motion samples",
+      "samples": 0
+    },
+    {
+      "case": 2,
+      "status": "FAIL",
+      "reason": "missing motion samples",
+      "samples": 0
+    },
+    {
+      "case": 3,
+      "status": "FAIL",
+      "reason": "missing motion samples",
+      "samples": 0
+    },
+    {
+      "case": 4,
+      "status": "FAIL",
+      "reason": "missing motion samples",
+      "samples": 0
+    },
+    {
+      "case": 5,
+      "status": "FAIL",
+      "reason": "missing motion samples",
+      "samples": 0
+    },
+    {
+      "case": 6,
+      "status": "FAIL",
+      "reason": "missing motion samples",
+      "samples": 0
+    },
+    {
+      "case": 7,
+      "status": "FAIL",
+      "reason": "missing motion samples",
+      "samples": 0
+    }
+  ],
+  "limits": [
+    "Empty boat only",
+    "Four selected sectors, not whole rivers",
+    "Fresh NM and V10 bridge acceptance are separate"
+  ],
+  "reference_sha256": "a2b77d0fbbd64b0abda36cb322beb51026bd8889ca47b15615c93015da3ce9d2",
+  "log_sha256": "57ff912fefad6586c09f7c42494a0bdb6649bb21e5c22275960b1038c97447d9",
+  "terrain_sha256": "335554a6ea06f8546eeac5444aec7597eaf45df18be0c69b0baab48a573947b2"
+}

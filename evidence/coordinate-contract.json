@@ -1,0 +1,53 @@
+{
+  "source_crs": "EPSG:3857",
+  "source_bounds": [
+    3048368.9585057087,
+    8002067.376183363,
+    3512400.587213772,
+    8466099.004891422
+  ],
+  "source_bbox_lonlat": [
+    27.383964270611855,
+    58.165039461816995,
+    31.552431314445137,
+    60.296725847771626
+  ],
+  "source_to_game_scale": 0.02648095353804162,
+  "game_crs_wkt": "LOCAL_CS[\"Baltic game engineering coordinates\",LOCAL_DATUM[\"Map frame\",0],UNIT[\"metre\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+  "tb_origin": [
+    200000.0,
+    0.0
+  ],
+  "game_size_m": 12288.0,
+  "grid_cells": [
+    2048,
+    2048
+  ],
+  "cell_size_m": 6.0,
+  "samples": "cell centres, row zero north",
+  "z_physical_factor": 0.051660202327529485,
+  "z_comparison_multiplier": 3.0,
+  "vertical_datum": "Copernicus DSM orthometric metres EGM2008; datum from product documentation, not inferred from horizontal CRS",
+  "projection_measurements": [
+    {
+      "latitude": 58.165039461816995,
+      "name": "south",
+      "game_m_per_real_m_east_west": 0.05008187436834107,
+      "compression": 19.96730379229064
+    },
+    {
+      "latitude": 59.24753984058884,
+      "name": "centre",
+      "game_m_per_real_m_east_west": 0.051660202327529485,
+      "compression": 19.357260617368983
+    },
+    {
+      "latitude": 60.296725847771626,
+      "name": "north",
+      "game_m_per_real_m_east_west": 0.0533068664480693,
+      "compression": 18.759309384170688
+    }
+  ],
+  "projection_note": "Exact approved Web Mercator silhouette retained by one scalar XY transform. Game axes are engineering metres. Compression in real ground metres varies with latitude; projected metres are not ground distances.",
+  "terrain_builder_sampling": "Observed locally with 128x128 at 6m: TB vertex X=xllcorner+col*cellsize; Y=yllcorner+nrows*cellsize-row*cellsize, offset (-3,+3)m from GIS centres. Four UI positives and negatives; six SHP anchors passed. Analytic sampling adapter passed actual TB export; NOT applied to production terrain. Evidence: evidence/tb-registration/."
+}

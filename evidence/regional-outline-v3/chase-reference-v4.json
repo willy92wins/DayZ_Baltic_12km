@@ -1,0 +1,49 @@
+{
+  "status": "FROZEN_BEFORE_RUNTIME",
+  "parent_sha256": "c6ae44928dc2ad0e53c12b6c22327efbc82ffefd1a6d6d5bf1ccbd60600b1589",
+  "mission_sha256": "ed12a90dd60bea81df85fe42531cb22bbf445fc438c414be59f04568720bc2c7",
+  "stages": [
+    {
+      "spawn_axis_m": -80,
+      "goal_axis_m": -55
+    },
+    {
+      "spawn_axis_m": -50,
+      "goal_axis_m": 60
+    },
+    {
+      "spawn_axis_m": 50,
+      "goal_axis_m": -60
+    }
+  ],
+  "stage_timeout_s": 90,
+  "sample_interval_s": 0.2,
+  "requirements": [
+    "New run only: local control and two summit traversals. No infected movement overrides.",
+    "Reach within4m3D of fixed goal;0.02m allowance only for position logging precision.",
+    "Physical contact -0.2/+0.5m; positive health; sample gaps<=1s; target drift<=2m; timeout90s.",
+    "Measured path length<=3 times initial straight distance; lateral deviation reported, no fictitious road.",
+    "Only valid native mind samples0..4 after1s; require at least one response1..4."
+  ],
+  "limits": [
+    "One infected and one client, one summit only.",
+    "Strength4 diagnostic stimulus does not prove normal vanilla perception.",
+    "No regional connectivity, water or player-capacity acceptance."
+  ],
+  "target_settlement_s": 20,
+  "center_xz": [
+    5184,
+    7644
+  ],
+  "axis_xz": [
+    1,
+    0
+  ],
+  "height_sha256": "3e2f6a9643ba4a8c58a86534c75de6033b7dbdf7a3de5d09a5ea46ff66680ac6",
+  "human_target_control": "Temporary zero movement-speed override on server and client. No infected movement overrides. Client releases at450s and mission finish.",
+  "contract": "open_ground_v4",
+  "goal_radius_m": 4,
+  "path_max_length_factor": 3,
+  "logged_position_tolerance_m": 0.02,
+  "stimulus_multiplier": 4
+}

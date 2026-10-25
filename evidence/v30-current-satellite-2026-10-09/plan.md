@@ -1,0 +1,9 @@
+# EV28 — superficie completa sobre terreno y agua actuales
+
+Alcance autorizado: completar toda la superficie y BALTIC-010. EV25 conserva exactamente los soportes de agua EV16, pero el satélite heredado es anterior a los ajustes del contorno. EV22/23 ya probaron que cls/level no reproduce el agua compilada. El generador admitirá explícitamente plane.npy con SHA256 obligatorio y validación previa al pool; el modo antiguo se conserva para reproducir construcciones históricas.
+
+Una regeneración de 1.024 satélites y máscaras sobre terreno EV25 fb36ec4c y campo físico d59dcdb9. Misma paleta y opciones existentes: depth-all, grava, shore-ring flowing, landcover smooth sigma1. No variar niveles, terreno, modelos, objetos, materiales, navegación ni ingeniería. La regla de proximidad de orilla fuera de las celdas de agua sigue siendo la existente; no se atribuye al generador la corrección del residual gráfico.
+
+Antes de empaquetar: identificar las fuentes anteriores por contenido; verificar las 1.024 salidas y 1.984 solapes; clasificar todo píxel con interpolación triangular independiente contra el campo físico; cero máscara terrestre bajo agua en fuente, cero mezcla terrestre compilada a 4m de la frontera. Inventariar toda mezcla DXT de borde. Comparar satélite fuente y decodificado, y conservar los cambios por tesela. Negativos: hash incorrecto, pareja de argumentos incompleta, matriz inválida, triángulos analíticos y un píxel interior alterado. La compresión puede introducir diferencias; no exigir identidad PNG/PAA.
+
+Empaquetado aislado sustituyendo únicamente texturas s_/m_ del PBO EV25; prueba de igualdad de todas las otras entradas y del PBO de agua. Vistas en motor de regiones de cambio y distancias sin cerrar BALTIC-016/019 por una captura cargada. No promoción TB ni navmesh antes de congelar geometría. Un fallo del consumidor se investiga por mecanismo, sin barrido de paletas.

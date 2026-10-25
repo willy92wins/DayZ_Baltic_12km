@@ -1,0 +1,102 @@
+--- before/SKILL.md
++++ C:\Users\guill\.codex\skills\dayz-terrain-workflow\SKILL.md
+@@ -1,6 +1,6 @@
+ ---
+ name: dayz-terrain-workflow
+-description: Importar, empaquetar y diagnosticar terrenos DayZ con Terrain Builder, Buldozer y NavMeshGenerator; usar para manchas negras, agua fuera de límites, WRP o errores de carga de navmesh. No sustituye el diseño geográfico ni demuestra rendimiento multijugador.
++description: Importar, empaquetar y diagnosticar terrenos DayZ con Terrain Builder, Buldozer y NavMeshGenerator; usar para manchas negras, agua fuera de límites, ríos navegables, carreteras lisas, objetos desplazados tras importar, WRP o errores de carga de navmesh. No sustituye el diseño geográfico ni demuestra rendimiento multijugador.
+ ---
+ 
+ # Terrenos DayZ: de la fuente al motor
+@@ -24,7 +24,8 @@
+   esperas; si no hay una API de liberación, no afirmes que el bloqueo desapareció.
+ - Navegación y arranque: lee [references/navmesh-bootstrap.md](references/navmesh-bootstrap.md).
+ - Coste de terreno y carga: lee [references/terrain-performance.md](references/terrain-performance.md).
+-- Relieve regional, reservas y persistencia de la importación: lee
++- Relieve regional, reservas, persistencia de la importación, puentes desplazados
++  tras Rebuild o diferencias mínimas de precisión en el WRP: lee
+   [references/regional-relief.md](references/regional-relief.md).
+ - Render o agua: aplica los discriminadores siguientes. Los resultados del caso
+   Baltic son evidencia local, no parámetros universales.
+--- before/regional-relief.md
++++ C:\Users\guill\.codex\skills\dayz-terrain-workflow\references\regional-relief.md
+@@ -33,6 +33,57 @@
+ Fuente: DayZ_Baltic_12km_dev, evidence/regional-outline-v3:
+ verification.json, native-export-first.json, native-export-rebuilt.json y
+ native-export-persisted.json. Día30-09-2026, Terrain Builder instalado localmente.
++
++## Objetos desplazados tras importar y reconstruir
++
++Compara también los objetos del WRP con la referencia anterior: empareja por
++ID y modelo, y separa rotación/escala, posición horizontal y cota vertical.
++Una altura de terreno correcta no acredita las poses ni el gálibo del puente.
++
++En Baltic V9, tras la secuencia de importación y Rebuild, los dos tramos
++exteriores del puente estaban 4.798312m y 0.434668m más bajos. Los IDs, modelos,
++rotaciones y posiciones horizontales seguían exactos. Las exportaciones
++acreditan el cambio; no aíslan qué operación ni qué mecanismo interno lo causó.
++
++La corrección de cotas absolutas en el editor eliminó esos desplazamientos
++métricos, pero dejó diferencias verticales de -5.96046e-8m y +7.15256e-7m;
++el tramo central quedó exacto. Verifica la matriz exportada con toda su
++precisión: la cifra redondeada de la UI no prueba igualdad binaria. Calcula
++la cota de cada modelo desde su referente verificado; el ajuste de estos
++tramos no es un offset general aplicable a otros puentes o al agua.
++
++## Diferencias mínimas: diagnóstico sin cambiar el veredicto
++
++Registra número, posiciones y magnitud de las diferencias, además de comparar
++cabecera, materiales y objetos por separado. El WRP V9 corregido tenía 22
++vértices distintos de los 4.194.304 previstos, todos en la última fila o
++columna, con error máximo 5.960464477539063e-8m. Cabecera y bloque de materiales
++eran exactos. Esa distribución permite distinguirlo del primer ensayo con
++1.672.627 alturas antiguas; la explicación por redondeo interno sigue siendo
++una **hipótesis**, no una causa aislada.
++
++El criterio vigente exigía igualdad exacta de alturas y puentes y siguió en
++**FAIL**. Conserva ese resultado. Una tolerancia nueva necesita justificación,
++alcance por campo y controles que rechacen desplazamientos materiales antes
++de ejecutarse; no sustituir la comparación por un epsilon global para obtener
++verde. Un WRP corregido por script sería un derivado, no prueba de exportación
++nativa ni de persistencia en el editor.
++
++Después de corregir, guardar, cerrar, reabrir y exportar a un nombre nuevo
++sigue siendo una comprobación independiente. Al registrar este caso, esa
++reapertura de V9 estaba pendiente: el WRP contenía tres puentes y ningún objeto
++de agua regional. No acredita integración del agua, navmesh nueva ni carga
++en juego. El PASS de reapertura del ensayo regional V3 anterior no se hereda.
++
++Evidencia local revalidada el 01-10-2026 en DayZ_Baltic_12km_dev:
++
++- `evidence/regional-foundation-v1/native-heights-v9-first-differences.json`
++  y `native-bridges-v9-first.json`: diferencias y FAIL conservados.
++- `evidence/regional-foundation-v1/handoff-2026-10-01/skill-update/source-check.json`:
++  nueva lectura completa de ambos WRP y del ASC, hashes y poses por ID.
++- `tools/navigation/verify_foundation_native.py:28–31`: criterio exacto vigente.
++  `tools/playtest/verify_texture_grid_change.py:17–65`: parser local hasta EOF;
++  su formato y dimensiones son específicos de este proyecto.
+ 
+ ## Precisión del grafo y coste de teselas
+ 
+--- before/handoff.md
++++ C:\Users\guill\ObsidianVault\AI\30_Sessions\2026-10-01-dayz-baltic-handoff-terreno-v9.md
+@@ -227,3 +227,19 @@
+ El handoff nuevo no figura entre esos fallos. No se corrigió deuda global fuera
+ de este encargo ni se declaró verde el gate del vault. No hubo nuevo ensayo
+ in-game, cambios de producto, modificación de verificadores ni commit.
++
++## Addendum: conocimiento incorporado a la skill — 01-10-2026
++
++A petición de Guillermo se amplió
++[dayz-terrain-workflow](C:/Users/guill/.codex/skills/dayz-terrain-workflow/SKILL.md)
++y su referencia de relieve regional con la comparación de puentes tras
++importación/Rebuild, el diagnóstico de diferencias numéricas mínimas y los
++límites de la validación nativa. Se conserva el FAIL y se etiqueta como hipótesis
++el mecanismo interno de redondeo. No hace falta una skill independiente para
++este mismo flujo de terreno.
++
++La fuente local es editable: la skill no figura entre los 70 artefactos del
++mapa de promoción comprobado. Los binarios se releyeron sin modificarlos;
++el mapa, los verificadores y las sesiones de DayZ permanecen fuera de este
++encargo. Recibo, hashes, copias previas y comprobaciones en
++[skill-update](P:/DayZ_Baltic_12km_dev/evidence/regional-foundation-v1/handoff-2026-10-01/skill-update/README.md).

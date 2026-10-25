@@ -1,0 +1,42 @@
+{
+  "status": "INCONCLUSIVE_OR_FAIL",
+  "checks": {
+    "header": true,
+    "engine_geometry": true,
+    "route_end_marker": true,
+    "increasing_time": true,
+    "continuous_samples": false,
+    "no_health_loss": true,
+    "inside_6m_route_corridor": true,
+    "engine_route_distance_agrees": true,
+    "first_last_route_points": true,
+    "both_sides_of_bridge": true,
+    "samples_under_central_span": true,
+    "powered_motion": true,
+    "input_callbacks_executed": true
+  },
+  "log_sha256": "e3cdc43ae469caef3ecccfecb81f16533a09d5087adaec4814d7b5a31c0ceb49",
+  "end_reason": "OUTWARD_ROUTE_REACHED_EMPTY_BOAT_ONLY",
+  "samples": 223,
+  "horizontal_net_m": 98.07954017021153,
+  "max_horizontal_step_m": 0.6741661516273513,
+  "max_distance_from_route_m": 1.4461787311110108,
+  "max_route_distance_readback_error_m": 0.006584998363555555,
+  "bridge_signed_position_min_max_m": [
+    -52.04904977266015,
+    44.163454556792225
+  ],
+  "max_along_bridge_offset_when_under_m": 2.1121099227472793,
+  "health_first_min_last": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "longest_powered_motion_streak": 197,
+  "limits": [
+    "Empty boat; no seated crew, return journey or medium vessel.",
+    "Native TB persistence and new navmesh remain pending.",
+    "Local 120m route only; not regional river navigation.",
+    "Steering sign/controller tested only by this bounded route."
+  ]
+}

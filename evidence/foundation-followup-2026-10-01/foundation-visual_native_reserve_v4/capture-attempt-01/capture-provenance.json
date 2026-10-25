@@ -1,0 +1,65 @@
+{
+  "status": "FAILED_CAPTURE_PROVENANCE",
+  "run_id": "f516cb16-c234-4757-8afe-6e52107c9349",
+  "reference_sha256": "071a140cd8768e4f1e0976c42e002a2e30ce17fec74ef2074d19097262e93dbd",
+  "identity_sha256": "fb529965843a5587ff77dba5b65a62bf14d9937d8246f967cc0b3acbc170ef06",
+  "images": [],
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 2,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Reserve aerial",
+        "samples": 55,
+        "avg64_median": 82.0513,
+        "avg64_range": [
+          60.0939,
+          96.6767
+        ],
+        "native_min64_min": 25.641,
+        "native_max64_max": 166.667,
+        "global10_median": null
+      },
+      {
+        "phase": 1,
+        "name": "Reserve player",
+        "samples": 55,
+        "avg64_median": 81.0127,
+        "avg64_range": [
+          27.2225,
+          226.148
+        ],
+        "native_min64_min": 20.0,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Frozen capture interval (-2 to +3s) omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "error": "(0, [])",
+  "logs_sha256": {
+    "camera.log": "45b8342433a71c4dd7453daa4206ec061d82d83bda9363b44919c9dafdec3906",
+    "client-metrics.log": "6d3362a6849eba1930739eb16fb9c8d0044f54e6f6a41fba1666a4d562948fe2"
+  },
+  "limit": "File/run/camera provenance only. Actual terrain, water and textures need independent pixel review."
+}

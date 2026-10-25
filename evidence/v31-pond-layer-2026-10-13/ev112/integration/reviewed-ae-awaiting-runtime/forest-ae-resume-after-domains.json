@@ -1,0 +1,70 @@
+{
+  "scope": "Finish AE diagnostics after the observed successful paired-domain control run.\n\nOriginal chain/import/regional failures stay immutable. This runner never changes\nsource, gates, bands, product files, reserved seeds, deployment or DayZ state.\n",
+  "runner_sha256": "6d9572e1311a0f6d4ae008458bffffd4794513c3b5ab5223b4747feb51056e7d",
+  "original_chain_failure_sha256": "35db88e9460a47d75f808e0542c297649f301a3b10e31cbc7b4f3a0f054ea8e1",
+  "original_import_resume_sha256": "88662b1ed0fc434a959c4aaee87bafb01af9233c2f8ecc998b5824a91988b885",
+  "original_pipeline_attempt2": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\pipeline-ae-package.attempt2-regional-failure.json",
+  "original_pipeline_attempt2_sha256": "42f0b3463ddaabdda7ea819a019cbc67221920ee533865cbeb3161716a2ba956",
+  "negative_execution_sha256": "745e8969fd951c7160e9d7ce87f79ae6d394710264f6ae5f1ca9abbd5e04b155",
+  "negative_domain_binding_sha256": "106e51c19158aae1d5acab472a75893385c90039d98c848aa3c36d13160f2eb9",
+  "frozen_manifest_sha256": "927d3799da4d834427c84db1447bd4595cf79b1f71dd2dfec70a3172606b9dfd",
+  "source_sha256": "0fef87eec16f4a609b33482ac438fc33f07e48c1db3d12810a3d0bd7501c658a",
+  "records_sha256": "2e86b4a79d243ec43f68ba70dd0492e88a434963814a4b1b47c8965823709b37",
+  "pbo_sha256": "bf2627eb7abe95652eb215b27694983252c11d019e147635795b8d4cf114246e",
+  "negative_row": {
+    "step": "negatives",
+    "rc": 0,
+    "cmd": [
+      "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+      "-I",
+      "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\run-final-forest-negatives-ae-domains.py"
+    ],
+    "execution_receipt": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-negative-domains-execution.json",
+    "domain_binding": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-negatives-ae\\domain-binding.json"
+  },
+  "release_acceptance": false,
+  "status": "MEASURED_AWAITING_VISUAL_INSPECTION_AND_FRESH_HOLDOUTS",
+  "steps": [
+    {
+      "step": "rim-counts",
+      "rc": 0,
+      "seconds": 12.613096714019775,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\audit-final-rim-counts.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-painted-rasters-ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\final-rim-counts-ae.json"
+      ],
+      "continuation": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-resume-after-domains.json"
+    },
+    {
+      "step": "renders",
+      "rc": 0,
+      "seconds": 14.077794551849365,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\render-final-forest-ae.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-painted-rasters-ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-final-renders-ae"
+      ],
+      "continuation": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-resume-after-domains.json"
+    },
+    {
+      "step": "fresh-diagnostics",
+      "rc": 0,
+      "seconds": 47.9843635559082,
+      "cmd": [
+        "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+        "-I",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\audit-forest-r2-diagnostics.py",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-map-51ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-painted-rasters-ae",
+        "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-r2-diagnostics-ae-painted"
+      ],
+      "continuation": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-resume-after-domains.json"
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+[
+ {
+  "design": {
+   "track": "shores",
+   "summary": "Diagnóstico: en EV109, la orilla de agua ancha (48,7 km de mar y 87,0 km de charca; quedan fuera los cauces de menos de 17 m) está escalonada con más de 0,25 m de amplitud en el 8 % de las ventanas de 60 m (unos 10,7 km). Si el umbral baja a 0,15 m, sube al 21,5 % (unos 28,9 km). La escalera se concentra en las orillas que corren hacia el NE, a contrapelo de la diagonal NO-SE: del 10 al 20 % de sus ventanas pasan de 0,25 m, frente a un 3 % en el cuadrante NO. Por causa, la más extendida son las orillas empinadas: el agua cambia de cota dentro de un solo triángulo (282 ventanas). La más dañina en proporción es el borde de la reserva de carretera: es la dilatación de 2 vértices de las 'bridge or ford reserves' (build_v30.py:9, :413), está congelado, baja por debajo del mar y fija la orilla de las calzadas sobre el agua, entre ellas las del islote. Propuesta: una pasada de rampa que suaviza la orilla con un spline (σ 12 m) y asigna a todos los vértices de los triángulos cortados D = s·distancia firmada. La pista se confirmó en una prueba sintética: con una rampa uniforme, la línea recta sale exacta (1e-12 m); con pendientes distintas a cada lado, falla hasta 2,8 m. En el prototipo con la variante B-strict (deja mover el borde de reserva que no es plataforma, pendiente de aprobación), la amplitud baja así: islote 0,068→0,032 m; calzadas S 0,10→0,04 m y E 0,088→0,042 m; r01 0,204→0,029 m; r11 0,211→0,090 m; r08 0,120→0,097 m. No hacen falta cambios de envolvente ni bordes expuestos nuevos; solo cambian unas pocas celdas de charca, y únicamente en r08 y r11. Con todo lo congelado fijo (variante A), las calzadas apenas mejoran: el borde de reserva es el límite.",
+   "diagnosis": [
+    "Método de medida (medido, scratchpad shorelib.py): nivel exacto de D = H - W sobre los triángulos nativos NO-SE. W es el campo visual F en las celdas de huella (orden de esquinas NO, NE, SO, SE: pond_footprint_v31.py:30-31 y :92) y el mar a 0,75 en el resto (tools/terrain/bridges_v31.py:46, 'SEA, SEA_BED = 0.75, 0.0'; descripción en :34). Resultado: 146.690 segmentos en 1.019 cadenas.",
+    "Agua ancha = a 24 m o menos de agua situada a 18 m o más de tierra; se excluyen los cauces de menos de 17 m de ancho (orilla opuesta a 17 m o menos con agua en medio). Longitud ancha: mar 48,68 km, charca 87,02 km. Estrecha excluida: 7,6 km, que corresponden a la pista de arroyos/kit (census2/summary.json).",
+    "Métricas, calibradas con formas sintéticas. (a) wiggle: residuo lateral frente a un ajuste local cuadrático Savitzky-Golay de 12 m. Valores: recta 0, círculo R20 0,013 m, escalera de 6 m p90 0,53 m, dientes de 0,5 m cada 6 m p90 0,26 m, dientes de 0,2 m p90 0,11 m. (b) zz12: giro cancelado en ±6 m con cuerdas de 3 m. Valores: escalera 87, curva lisa 0. (c) dientes de sierra del proyecto (tools/terrain/eval_shore_v30.py:52, :73, :80).",
+    "Distribución de wiggle p90 por ventana de 60 m (6.706 ventanas, paso 20 m): p50 0,06, p75 0,14, p90 0,23, p95 0,30, p99 0,46 m. Superan 0,25 m el 8,0 % (536 ventanas, unos 10,7 km); 0,15 m el 21,5 % (1.443, unos 28,9 km); 0,5 m el 0,7 % (48). Fuente: census2/summary.json.",
+    "Dirección, medido: superan 0,25 m el 10,2 / 19,9 / 14,1 % de las ventanas a 0-30 / 30-60 / 60-90 grados (orillas hacia el NE) y el 2,6 / 3,0 / 2,9 % a 90-180 grados (hacia el NO, a lo largo de la diagonal nativa). Es el mismo efecto de rejilla que en los arroyos de Chernarus.",
+    "Causas de las ventanas por encima de 0,25 m. Orilla empinada (el agua pasa de mojado a seco dentro de un solo triángulo, rango mediano de D ≥ 1 m): 282. Borde de reserva congelado: 124 de 303 (41 %, la peor proporción; p50 0,23 m). Plataforma: 51 de 179. Otras: 50. Narva: 29.",
+    "Causa raíz del borde de reserva (leído en código, sin ejecutar): la reserva son las estaciones de carretera a 10 m o menos del agua, rasterizadas y dilatadas 2 iteraciones (tools/terrain/build_v30.py:9, :242, :413). El tope de plataforma sigue plano, pero el borde de reserva sin plataforma baja bajo el agua: 1.208 vértices de reserva-only bajo 0,75 en el mapa y 1.031 en celdas cortadas por la orilla de agua ancha (resv_count.py). La orilla pasa por aristas congeladas-congeladas, así que la escalera de la máscara queda fijada. En el pase de pendientes del build la reserva no está fija (build_v30.py:480: 'fixed = water | platform | narva'); en los pasos posteriores sí (bury_edges_v31.py:26).",
+    "Islote (caja x 6650-7750, z 10050-10800), medido: 193 ventanas con wiggle p90 de p50 0,14, p90 0,25, máx. 0,41 m. Causas: 80 borde de reserva, 42 plataforma, 54 empinada, 17 otras. Su mejor ventana queda en el puesto 32 del mapa (rango de lista de trabajo 17, en (6803, 10468)). Guillermo vio zigzag con unos 0,15-0,25 m, así que el umbral de visibilidad está por debajo de 0,25 (inferido).",
+    "Prueba de la pista (hint-test.json, sintética, terreno con ruido). Con la rampa uniforme D = s·sd en todos los vértices de los triángulos cortados, la recta sale exacta a 0, 17, 37, 45, 63, 90 y 135 grados (desviación máxima de 1e-12 m o menos). Con pendientes desiguales (0,4 en tierra y 0,1 en agua), la desviación llega a 2,5-2,8 m en direcciones oblicuas y es 0 solo en las tres direcciones de arista de triángulo. Círculos R15/30/60: máximo 0,39/0,13/0,09 m, dentro de la cota de cuerda h²/8R. Una rampa uniforme vale; una asimétrica no.",
+    "Verificado: la huella recalculada con una copia de pond_footprint_v31.py (sha256 e15ec5c7… idéntico al del worktree) reproduce exactamente fp-ev109: mismas celdas y planos, 43 bordes expuestos como en el informe EV109.",
+    "Observación ajena a este trabajo: git status del worktree marca 'M tools/terrain/bridges_v31.py', y las líneas citadas de ese archivo se movieron durante la sesión (SEA pasó de :41 a :46). No escribí en el worktree, así que otra sesión lo está editando."
+   ],
+   "proposal_rules": [
+    "Alcance: solo orillas de agua ancha de la lista de trabajo (wiggle p90 > umbral). Por cuerpo, el mar a L = 0,75 o un único plano de charca. Se excluyen los cauces de menos de 17 m (W_NARROW) y las celdas con F ≠ plano (uniones de niveles).",
+    "Vértices protegidos, nunca cambian: reserve | platform | narva (en la variante B, solo platform | narva); kit y corte de puente dilatados 1 vértice; lagunas v31. Para el mar, además todo vértice de celda de envolvente (regla de dos colores). Para la charca, los vértices de celdas de otro nivel o con F ≠ plano. Los vértices más cerca de una orilla no tratada que de la diana tampoco se tocan.",
+    "Diana C: la orilla TRI exacta remuestreada a 1 m y suavizada con un spline de longitud de arco (β/α = σ^4, σ = 12 m, longitud de onda de corte de unos 75 m). Fijos: los puntos sobre aristas protegido-protegido y los 6 m extremos de cada tramo abierto (empalme con la orilla original). Tramos de menos de 24 m: nada.",
+    "Restricciones de lado sobre C: cada vértice protegido con |D| > 0,1 queda en su lado con margen de 0,5 m. En las charcas, los vértices de celdas fuera de la envolvente quedan secos, de modo que la envolvente nunca necesita crecer. Las violaciones desplazan C a lo largo de la normal con una campana gaussiana de σ 6 m, paso máximo de 1 m y total máximo de 4 m, en hasta 10 iteraciones. Lo no resuelto se informa.",
+    "Modo strict, necesario para la exactitud: los vecinos de triangulación libres de un vértice protegido (6 en la partición NO-SE) toman su lado. Así ningún triángulo cortado contiene un vértice fijo y la orilla resulta exacta. Contrapartida: la orilla se desplaza hacia fuera hasta un triángulo junto a lo congelado. Con todo lo congelado fijo (A), strict es inviable en las calzadas (91 restricciones sin resolver); úsese solo con B.",
+    "Rampa: los vértices libres a B0 = 9 m o menos de C (lo que cubre todo triángulo cortado, de diagonal 8,49 m) se resuelven por mínimos cuadrados con D = s·sd (peso 1) más una ecuación por arista de rejilla cortada (E-O, N-S, NO-SE): (1-t)·D_a + t·D_b = 0, con t = sd_a/(sd_a - sd_b) y peso 10. |D - s·sd| queda limitado a 0,8 m. El signo de D sigue al de sd.",
+    "Pendiente uniforme s: ajuste por mínimos cuadrados de D_viejo sobre sd en la banda, limitado a [0,05, 0,35]. En charcas, además s ≤ (L - 1,0)/(sd más profunda de un vértice mojado de triángulo cortado), para que el fondo quede a 1,0 m o más (BED_MIN de pond_footprint_v31.py:22 y :176). Valores ajustados en el prototipo: 0,14-0,25.",
+    "Mezcla de B0 a B1 = 15 m: interpolación smoothstep de la rampa al terreno viejo, con el signo forzado. Tierra ≥ min(s·sd, 0,30 m); agua ≤ -min(s·|sd|, 0,10 m); en charcas, fondo ≥ 1,0 m donde ya lo estaba y nunca por debajo del valor previo si este ya era menor.",
+    "Reglas de rechazo o salto propuestas para producción: en la variante A, saltar los tramos con más del 20 % de puntos fijos, porque en r01 la variante A empeora (dientes de sierra 9,2→13,9/km). No relajar reserva a menos de 60 m de un cruce 015 pendiente (#45 está a 107 m de r01). No tocar nada con pendiente nueva de más de 35 grados (umbral del proyecto max(35°, antes)). Ninguna bolsa de mar nueva.",
+    "Invariantes comprobadas por sitio con aserciones: 0 vértices de plataforma o Narva cambiados; 0 protegidos cambiados; 0 vértices de envolvente tocados desde el lado del mar; 0 celdas de huella con una esquina bajo 0,75; huella recalculada sin bordes expuestos nuevos, sin fondo bajo 1 m y con la misma cifra de campo > 0,35 (7)."
+   ],
+   "pipeline_placement": "Paso nuevo de la cadena EV108/EV109 de HANDOFF.md §'Reconstruir EV108 y EV109', después del paso 5 (EV109) y antes de volver a montar el agua. La pasada lee ev109/terrain-ev109.npz (después de bury), fp-ev109/footprint.npz (planos y F), ev109/envelope-br.npy y la lista de trabajo; escribe terrain-sr.npz y un informe. Después: bury_edges_v31.py terrain-sr.npz ev109/terrain-ev109.npz ev108-kit/cover-ev108.npy ev109/envelope-br.npy fp-ev109/footprint-report.json → copiar la última fpN a fp-ev110 → pond_author_v31 → pack_water_v30.ps1 → stage_pond_pilot_v31 --full → verify_pond_exact_v31 → stage_bridges_v31 con los mismos registros (records-ev108 + ev109/bridge-records) → compile → package. Si se quiere EV110R, regenerar también global_normal_map. Entradas que cambian: solo la cota del terreno en la banda de orilla. No cambian la envolvente, la cobertura, los registros de puentes y kit ni las piezas de mar (no hay). Las piezas de charca solo cambian en las teselas donde cambia la huella (prototipo: r08 +1/-6 celdas, r11 -5; mar e islote 0). Aviso: bury_edges trata la reserva como congelada (bury_edges_v31.py:26, :46). Si con la variante B un borde expuesto nuevo cae en un vértice de reserva-only, bury devolvería sus vecinos a la referencia. En el prototipo hay 0 bordes nuevos, así que bury no haría nada (inferido, no ejecutado). Las sondas de kit y puentes no se ven afectadas porque esos vértices están protegidos; aun así, conviene repetir las sondas de charca.",
+   "metrics_before_after": [
+    "Prueba de la pista (sintética, hint-test.json): recta con rampa uniforme, desviación de 1e-12 m o menos (7 ángulos, 224-444 puntos de orilla cada uno). Pendientes desiguales: hasta 2,8 m. Círculos R15/30/60: máximo 0,39/0,13/0,09 m.",
+    "Exactitud en el mapa (variante B-strict). Distancia de la orilla TRI nueva a la diana en celdas con las 4 esquinas en la rampa: islote n=2.232, p50 0,041, p99 0,30, máx. 0,76 m; r01 n=132, p50 0,048, p99 0,77 m; r08 n=90, p50 0,043, p99 1,11 m; r11 n=136, p50 0,044, p99 1,6 m. El residuo viene de la curvatura, de los topes de 0,8 m y de las restricciones de lado no resueltas.",
+    "Islote, caja de 1100 × 750 m con inset de 15 m, 3.851 m de orilla. Wiggle medio 0,068→0,064 m con A y →0,032 m con B-strict; wiggle p90 0,181→0,175 (A) y →0,073 (Bs); fracción por encima de 0,25 m 4,4 %→4,6 % (A) y →0,8 % (Bs); zz12 8,9→8,2 (A) y →3,9 (Bs). Cambiados 2.050 vértices (A) y 2.481 (Bs, 224 de ellos de reserva-only). ΔH máx. 1,98 m (A) y 2,13 m (Bs), p95 1,02/1,61 m.",
+    "Islote por subzonas, wiggle medio antes→Bs: calzada S (609 m) 0,100→0,040, fracción >0,25 de 7,9 %→1,4 %; calzada E (1.315 m) 0,088→0,042, de 4,4 %→0,8 %; cuerpo del islote (1.310 m) 0,068→0,030; costa continental 0,031→0,017. Con A: calzada S 0,100→0,092 y calzada E 0,088→0,087 (sin mejora real).",
+    "r01, mar con borde de reserva (rango 1 del censo, (10506, 9474)), 218 m. Bs: wiggle medio 0,204→0,029 m, p90 0,515→0,070 m, >0,25 del 29 %→0 %, zz12 39,5→2,5, dientes de sierra 9,2→0/km. A: 0,204→0,175 con dientes de sierra 9,2→13,9 (peor). Cambiados 167 vértices (Bs, 86 de reserva-only) o 103 (A); ΔH máx. 1,54 m (Bs) y 1,78 m (A).",
+    "r08, charca empinada a nivel 4,4 (rango 10), 198 m, igual en A y Bs porque no hay congelados. Wiggle medio 0,120→0,097, p90 0,294→0,261 (Bs); zz12 17,9→9,2; dientes de sierra 15,2→5,4/km. Cambiados 138 vértices; ΔH máx. 2,12 m (Bs) y 1,60 m (A). Restricciones de lado sin resolver: 12.",
+    "r11, charca con plataforma a nivel 2,775 (rango 9), 189 m. Wiggle medio 0,211→0,130 (A) y →0,090 (Bs); p90 0,494→0,318 (A) y →0,210 (Bs); >0,25 del 30,9 %→13,7 % (A) y →5,8 % (Bs); dientes de sierra 5,3→0/km (Bs). Cambiados 103 vértices (A) o 109 (Bs, 8 de reserva-only); ΔH máx. 1,52 m (A) y 2,28 m (Bs).",
+    "Vértices cambiados en total: 2.391 con A y 2.895 con Bs. Plataforma y Narva cambiados: 0 y 0 (aserción). Congelados cambiados con A: 0. Reserva-only cambiados con Bs: 318.",
+    "Cambio de máxima ΔH en todos los sitios: 2,28 m (Bs, r11). Pendiente máxima de los triángulos cambiados antes→después: islote 30,9→34,1/33,8 grados; resto ≤ 28,3. Triángulos nuevos de más de 35 grados: 0.",
+    "Agua y tierra (area-shift.json, muestreo de 0,5 m). Bs: islote 7.590 m² de agua pasan a tierra y 446 m² de tierra a agua (sobre 688.016 m² de agua en la caja); desplazamiento de la orilla p50 1,3, p95 4,4, máx. 5,3 m. r01: 520 m² a tierra. r08: 318 m² a tierra y 63 a agua. r11: 440 m² a tierra. A: islote 1.126/627 m², desplazamiento p50 0,22 y máx. 4,3 m.",
+    "Huella de charca recalculada, Bs frente a EV109 (fp-compare.json). Celdas de huella 380.275→380.265 (r08 +1/-6, r11 -5; islote y r01 0); visibles -11/+1. Bordes expuestos 43→43 (0 nuevos); fondo bajo 1 m 0→0; campo > 0,35: 7→7; contactos nuevos en divisorias iguales ([4, 8]). Celdas de huella con una esquina bajo 0,75: 0→0. Componentes mojados en la caja: sin cambio (islote 3→3, 0 diminutos). Con A el resultado es el mismo salvo -8/+1 celdas de huella."
+   ],
+   "worklist": [
+    "Lista completa en wf-shores/worklist.json y worklist.csv: 146 tramos con wiggle p90 > 0,25 m, unos 16,6 km (32 de mar y 114 de charca). Por causa: empinada 85 (9,2 km), borde de reserva 16 (3,3 km, necesitan la variante B), otras 27 (2,0 km), plataforma 8 (1,2 km; residuo esperado), Narva 10 (1,0 km; residuo esperado). Ninguno toca el kit ni los cortes de puente. Con umbral de 0,15 m, unos 28,9 km.",
+    "1. Mar, borde de reserva, (10556, 9659); caja x 10412-10675, z 9398-9941; unos 660 m; wiggle máx. 0,70 m. Incluye el prototipo r01 (10495, 9465).",
+    "2. Mar, borde de reserva, (10256, 9395); caja 10117-10435 / 9285-9471; 340 m; 0,63 m. A 144 m del cruce 015 #45 (navegable, pendiente): excluir la reserva cercana.",
+    "3. Mar, borde de reserva, (10046, 9211); caja 9940-10133 / 9102-9336; 300 m; 0,62 m.",
+    "4. Charca a 2,775, empinada/plataforma, (7373, 3325); caja 7228-7543 / 3177-3458; 400 m; 0,53 m. Prototipo r11.",
+    "5. Charca, borde de reserva, (7382, 3273); caja 7267-7532 / 3117-3404; 400 m; 0,48 m.",
+    "6. Mar, borde de reserva, (10681, 10126); caja 10602-10777 / 10008-10231; 280 m; 0,52 m.",
+    "7. Charca a 3,15, empinada, (10476, 4064); caja 10410-10541 / 3957-4175; 220 m; 0,58 m.",
+    "8. Mar, borde de reserva, (3558, 6571); caja 3505-3614 / 6461-6674; 200 m; 0,58 m.",
+    "9. Charca a 2,45, empinada, (1863, 6320); caja 1799-1928 / 6265-6379; 240 m; 0,46 m.",
+    "10. Charca a 3,15, borde de reserva, (9756, 2678); caja 9666-9849 / 2630-2724; 180 m; 0,50 m.",
+    "12/14. Mar, plataforma, (3518, 6870) y (3589, 6880): residuo esperado.",
+    "13/15. Mar y charca, Narva, (2414, 6963) y (2354, 6854): residuo esperado (Narva fija).",
+    "17. Islote: la calzada S en (6803, 10468), caja 6742-6861 / 10356-10577, rango 17 de la lista y 32 por ventana. Prototipo sobre la caja completa del islote: x 6650-7750, z 10050-10800 (calzada S de unos (6790, 10150) al islote; calzada E del islote a unos (7600, 10750)).",
+    "20. Charca a 4,4, empinada, (9377, 11567); caja 9323-9433 / 11504-11635. Prototipo r08."
+   ],
+   "files_written": [
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/shorelib.py (orilla TRI exacta, encadenado, métricas zz12, wiggle y dientes de sierra)",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/shore_ramp.py (la pasada; parámetros SIGMA, B0, B1, STRICT, RELAX_RESERVE)",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/census2.py + census2/summary.json, ranked.json, ranked.csv, stretches.json (censo del mapa)",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/worklist.py + worklist.json, worklist.csv, worklist-summary.json",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/proto2.py + p2-A/ y p2-Bs/ (terrain-proto.npz, changed.npy, metrics.json, targets.json)",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/renders-final/*-sheet.png (antes | A | B-strict, 0,25 m/px con rejilla de 6 m y diagonales; aros naranja = vértices cambiados, rojo = congelados, amarillo = diana): islet-S-causeway, islet-E-causeway, islet-junction, islet-tip, r01-sea-reserve, r08-pond-steep, r11-pond-platform",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/p2-B/renders/islet-zz-ab.png (vista general del islote a 1 m/px coloreada por zz12; versión B no estricta)",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/hint_test.py + hint-test.json",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/fpcompare.py + fp-compare.json; fp-ref/, fp-A/, fp-Bs/ (huella recalculada); pond_footprint_v31_copy.py (copia byte a byte, sha256 e15ec5c7…)",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-shores/area_disp.py + area-shift.json",
+    "Intermedios descartables en la misma carpeta: census/ (censo v1 con métrica de giro sobre 60 m, sustituido), proto/, proto-A/, proto-B/, p2-B/, p2-As/, look*.py, dbg*.py, patch*.py. Ocupa unos 738 MB, sobre todo .npz."
+   ],
+   "risks": [
+    "Sin la variante B, que necesita aprobación, las calzadas del islote y los tramos de borde de reserva (16 tramos, 3,3 km) no se arreglan. Con A, la calzada E queda en 0,088→0,087 m, y en r01 la variante A empeora (dientes de sierra 9,2→13,9/km). La regla de saltar tramos con más del 20 % de puntos fijos está propuesta, no probada.",
+    "La reserva señala reservas de puente o vado (build_v30.py:9). Relajarla cerca de cruces 015 pendientes podría estorbar decisiones futuras. r01 está a 107 m del cruce #45 y el tramo 2 de la lista a 144 m. Hace falta una exclusión por distancia y la lista de cruces pendientes.",
+    "El modo strict desplaza la orilla hacia fuera hasta un triángulo junto a lo fijo: calzadas aproximadamente 6 m más anchas por lado, 7.590 m² de agua a tierra en la caja del islote (1,1 %), desplazamiento máximo de 5-8 m. Puede leerse como «más tierra» en el juego.",
+    "Las charcas pierden celdas de huella (r08 -6/+1, r11 -5). Las piezas de esas teselas se reautorizan; las verificaciones exactas y del servidor deben repetirse. Pond_author, el empaquetado, verify_pond_exact y las sondas no se ejecutaron.",
+    "Quedan sin resolver restricciones de lado (r08 12; islote 94 con Bs). Ahí la diana no puede respetar los vértices fijos o la envolvente, y quedan escalones locales con residuo de hasta 1,1-1,6 m (p99 en r08 y r11).",
+    "En los extremos de caja aparecen quiebros de empalme (6 m fijos). En producción, la pasada debe tomar cadenas completas o cortar en puntos naturales.",
+    "Los cauces de menos de 17 m quedan excluidos por diseño. Si una orilla ancha se estrecha en una bocana, el tramo estrecho conserva la escalera y se resuelve en la pista de arroyos/kit.",
+    "El umbral de visibilidad no está calibrado. El islote, que Guillermo vio con zigzag, tiene wiggle p90 de 0,14-0,25 m: con 0,25 de umbral, la mayor parte del islote quedaría fuera de la lista.",
+    "El suavizado con σ 12 m redondea cabos y entrantes de menos de unos 40 m. Puede borrar detalles intencionados de la costa.",
+    "bury_edges trata la reserva como congelada (bury_edges_v31.py:26, :46). Un borde expuesto nuevo sobre un vértice de reserva-only relajado haría que bury deshiciera parte de la rampa. En el prototipo hubo 0 bordes nuevos.",
+    "Otra sesión está modificando tools/terrain/bridges_v31.py en el worktree (git status 'M'). Si cambia la reconstrucción de EV109, la entrada de esta pasada también cambia."
+   ],
+   "unverified": [
+    "Nada se ha visto en el juego ni en el cliente. No hay WRP compilado ni sonda de servidor de la orilla nueva.",
+    "Que el borde visible del mar en el motor coincida con el nivel 0,75 del terreno. Lo tomo de bridges_v31.py:34/:46; no lo he medido, y el oleaje y la marea pueden moverlo.",
+    "Que el render del terreno use exactamente la partición NO-SE de los TRI de mi modelo. Lo apoyo en streams/README (202/202 celdas de Chernarus) y en el enunciado; no lo medí en Baltic.",
+    "Que bury_edges_v31 no cambie nada sobre el terreno del prototipo. Lo infiero de los 0 bordes expuestos nuevos en la huella recalculada; bury no se ejecutó.",
+    "pond_author, pack_water, stage_pond_pilot, verify_pond_exact, stage_bridges, compile y package no se ejecutaron sobre el terreno del prototipo.",
+    "Que los vértices de reserva-only bajo el agua no soporten nada en el diseño de carreteras. Me baso en build_v30.py:8-9 (la calzada está en la plataforma) y en :480; no lo comprobé contra la geometría de la carretera ni contra objetos del WRP.",
+    "Que la métrica wiggle o zz12 se corresponda con lo que Guillermo percibe. Solo la calibré con formas sintéticas y con su comentario del islote.",
+    "Las uniones de varios niveles (F ≠ plano, 9.917 celdas) quedan protegidas y no se tratan."
+   ],
+   "open_questions_for_user": [
+    "¿Autorizas que la pasada mueva los vértices de reserva sin plataforma ni Narva (el borde de 2 vértices de las reservas de puente o vado) en las orillas de agua ancha, sin tocar nunca la plataforma? Sin eso no se arreglan las calzadas del islote ni unos 3,3 km de costa junto a carreteras. ¿Qué distancia de exclusión ponemos alrededor de los cruces 015 pendientes (#45 y los 16 en espera)? Propongo 60 m.",
+    "Modo exacto (strict, orilla recta, pero calzadas y orillas hasta unos 6 m más anchas hacia el agua) o no estricto (orilla en su sitio, con dientes residuales de 0,15-0,3 m junto a lo congelado). ¿Cuál prefieres?",
+    "¿Con qué umbral de visibilidad entra un tramo en la lista: wiggle p90 > 0,25 m (146 tramos, unos 16,6 km, la mayor parte del islote fuera) o > 0,15 m (unos 28,9 km, islote dentro)?",
+    "Tramos fijados por plataforma o Narva (unos 2,1 km): ¿aceptamos el residuo o se abre su revisión?",
+    "Escala de suavizado: ¿σ 12 m (conserva entrantes de unos 40 m o más) o 24 m (costa más tendida)? ¿Quieres verlo en el juego en el islote y en r01 antes de extenderlo al mapa?"
+   ]
+  },
+  "review": {
+   "track": "shores",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "El solver hace pasar la orilla por los cruces del objetivo y la evaluación acredita esa exactitud.",
+     "evidence": "SP/wf-shores/shore_ramp.py:327-359 aproxima los cruces mediante distancias firmadas, resuelve mínimos cuadrados con peso finito y después recorta la solución; :360-382 aplica otras correcciones. SP/wf-shores/proto2.py:123 limita la evaluación del error a celdas con sus cuatro vértices modificados, excluyendo transiciones junto a vértices fijos. Ejecuté GIS python.exe -I ./audit-extra.py:40-50 sobre B-strict y la huella recalculada, midiendo distancia geométrica a las polilíneas objetivo en todos los triángulos modificados: p99/máximo de 0,404/2,125 m en islet, 0,865/2,239 m en r01, 2,680/3,670 m en r08 y 1,670/1,734 m en r11. Además, audit.py reproduce en r08 un wiggle p90 final de 0,261 m, todavía superior al umbral propuesto de 0,25.",
+     "fix": "Retirar la garantía de exactitud del pase real. Evaluar todos los triángulos afectados y sus transiciones, con tolerancias explícitas sobre el resultado posterior a los recortes y a la regeneración del agua. Rechazar o dejar pendientes los tramos que incumplan."
+    },
+    {
+     "severity": "major",
+     "claim": "El pase aplica las exclusiones del 20 % de puntos fijos, los 60 m alrededor de cruces 015 pendientes y la prohibición de pendientes nuevas superiores a 35°.",
+     "evidence": "Lectura de SP/wf-shores/shore_ramp.py:42-60, :145-225 y :261-392: la protección incluye máscaras existentes, pero no carga cruces pendientes ni aplica un radio de 60 m; tampoco descarta por una fracción fija superior al 20 %. SP/wf-shores/proto2.py:132 calcula las pendientes nuevas, :149 las registra y :164 guarda el terreno sin exigir que sean cero. Medido con audit.py: los dos prototipos actuales tienen cero triángulos nuevos o agravados por encima de 35°; eso confirma estos resultados concretos, pero no convierte las reglas anunciadas en guardas ejecutables.",
+     "fix": "Incorporar las exclusiones antes del solver y hacer fallar la aceptación cuando se incumplan pendientes o restricciones. Conservar por tramo las razones de exclusión y las entradas congeladas del inventario 015."
+    },
+    {
+     "severity": "major",
+     "claim": "El contador de componentes acredita que no se crean bolsas de mar.",
+     "evidence": "SP/wf-shores/proto2.py:134-137 usa scipy.ndimage.label sobre vértices mojados con conectividad predeterminada de cuatro vecinos y solo devuelve cantidades. Ejecuté GIS python.exe -I ./final-check.py: la matriz de alturas relativas [[-1,1],[1,-1]] produce dos componentes en ese contador, aunque los vértices NW y SE están conectados por la diagonal nativa completamente sumergida. Además, conservar el número de componentes no demuestra conservar su identidad o conexión con el mar.",
+     "fix": "Comprobar conectividad conforme a los triángulos NW-SE y correspondencia espacial entre componentes anteriores y posteriores, incluyendo su conexión con el mar exterior. Añadir controles negativos de creación, separación y sustitución de bolsas."
+    },
+    {
+     "severity": "major",
+     "claim": "terrain-proto.npz sirve como terreno de continuación del flujo conservando las protecciones necesarias.",
+     "evidence": "SP/wf-shores/proto2.py:164 solo guarda heights, reserve, platform y narva. audit.py:64 comprobó que desaparecen 13 arrays del baseline, incluidos water, level, v31_kit, v31_bridge_cut y v31_lagoon. Ejecuté GIS python.exe -I ./final-check.py: cargar B-strict mediante shorelib.load y volver a construir protected_mask falla con KeyError('v31_kit'), exigido en shore_ramp.py:46. El enterrado ejecutado conserva esa salida incompleta, porque bury_edges_v31.py:24 y :50 propaga únicamente los arrays recibidos.",
+     "fix": "Generar el terreno derivado copiando todos los arrays originales y sustituyendo únicamente heights. Verificar identidad de las demás capas y que el resultado pueda alimentar el siguiente pase."
+    },
+    {
+     "severity": "minor",
+     "claim": "Las 1019 cadenas conservan la exactitud geométrica de los segmentos extraídos.",
+     "evidence": "SP/wf-shores/shorelib.py:93-109 une segmentos por clave de arista; :149-154 promedia sus extremos sin comprobar coincidencia. audit.py:29-38 confirmó residuos de los segmentos individuales de solo 2,45e-12 m, pero encontró seis pares de extremos compartiendo clave y separados más de 1 mm. audit-extra.py:21-24 localizó el mayor: (9859,4288; 228) frente a (9860,4934; 228), separados 1,0646 m, entre celdas de charca con campos distintos. Su promedio abandona las intersecciones originales.",
+     "fix": "Separar cadenas cuando los extremos geométricos o las superficies de agua no coincidan. No promediar discontinuidades; identificarlas explícitamente y recalcular las métricas afectadas."
+    },
+    {
+     "severity": "minor",
+     "claim": "Cambiar sigma de 12 a 24 mediante el argumento del prototipo cambia el suavizado.",
+     "evidence": "SP/wf-shores/proto2.py:16 modifica SR.SIGMA, pero shore_ramp.py:63 captura sigma=SIGMA al definir smooth_pinned y :171 lo llama sin argumento. Ejecuté audit-extra.py:25-29: cambiar SR.SIGMA de 12 a 24 produce diferencia exactamente cero; pasar sigma=24 explícitamente cambia el mismo objetivo hasta 1,9037 m. El argumento predeterminado sigue siendo 12.",
+     "fix": "Pasar SIGMA explícitamente o resolver su valor dentro de la función. Registrar el parámetro realmente usado y repetir cualquier comparación 12/24."
+    },
+    {
+     "severity": "minor",
+     "claim": "Los 146 tramos fusionados suman aproximadamente 16,6 km.",
+     "evidence": "SP/wf-shores/worklist.py:10 permite fusionar ventanas separadas 40 m, pero :23 calcula siempre 60 + 20*(n-1). audit.py:45-52 reprodujo 146 grupos y 16,56 km según esa fórmula; once grupos contienen saltos de 40 m. La suma de sus extensiones reales, último inicio menos primero más 60, es 16,80 km: faltan 240 m.",
+     "fix": "Calcular la extensión a partir de las posiciones de arco o de la unión explícita de intervalos. Distinguir longitud cubierta por ventanas, extensión de grupos y longitud finalmente intervenida."
+    }
+   ],
+   "confirmed_claims": [
+    "Trabajo de solo lectura sobre WT, BUILD y los archivos del autor; scripts y resultados escritos exclusivamente en SP/wf-shores-review. Intérprete utilizado: C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe con -I. Inicio registrado: 18:17:37; última comprobación: 18:23:30 del 15-10-2026.",
+    "Reejecutó census2 mediante rerun-census.py con salida local: su summary.json coincide íntegramente con el del autor. Reproduce 48,68 km de mar, 87,02 km de charca, 146690 segmentos, 1019 cadenas y 6706 ventanas.",
+    "Recalculados los percentiles de wiggle p90 por ventana: 0,058/0,135/0,225/0,299/0,46395 m. Superan 0,25: 536 ventanas, 7,9928 %; superan 0,15: 1443, 21,5180 %; superan 0,5: 48, 0,7158 %. Las cifras 10,72 y 28,86 km corresponden a número de ventanas por paso de 20 m.",
+    "Reproducidas las seis proporciones direccionales y las etiquetas de las 536 ventanas: 282 steep-bank, 124 reserve, 51 platform, 50 other y 29 Narva. La reproducción confirma la clasificación del algoritmo; no demuestra causalidad física.",
+    "La caja del islote reproduce 193 ventanas, 19 superiores a 0,25 m, y causas 80 reserve, 42 platform, 54 steep y 17 other. El umbral deja fuera la mayoría de las ventanas de la zona denunciada.",
+    "Los anclajes coinciden: build_v30.py:36, :242 y :326 selecciona estaciones a hasta 10 m del agua; :413 aplica dos iteraciones de dilatación; :480 fija water, platform y narva. bury_edges_v31.py:26 y :46 trata reserve como congelada. Medidos 1208 vértices reserve-only bajo 0,75 m.",
+    "Verificadas la fórmula triangular NW-SE y el orden NW, NE, SW, SE en shorelib.py:35-69, bridges_v31.py:64-68 y pond_footprint_v31.py:30-31, :92. BED_MIN=1,0 figura en pond_footprint_v31.py:22 y se comprueba en :176.",
+    "Comparado bridges_v31.py contra HEAD usando --git-dir y --work-tree explícitos: las modificaciones afectan al asiento y reporte de los extremos de puentes; mantienen SEA=0,75 y la fórmula triangular.",
+    "Medidos desde los NPZ: A modifica 2391 vértices y cero congelados; B-strict modifica 2895, incluidos 318 reserve-only, con cero platform, Narva o protegidos modificados en los sitios ensayados. Sus changed.npy coinciden con las diferencias reales. Máximo |dH| de B-strict: 2,280026 m. Cero triángulos nuevos o agravados por encima de 35° en ambos prototipos.",
+    "Recalculadas las métricas de los cuatro sitios de p2-A y p2-Bs. B-strict reproduce las mejoras anunciadas; A reproduce el empeoramiento de r01 a 13,88 dientes/km. Estas mediciones reutilizan las funciones métricas leídas del autor.",
+    "Ejecutó el bury_edges_v31.py real sobre B-strict con todas las salidas locales: cero cambios al terreno, 43 bordes expuestos y cero nuevos. La huella regenerada coincide exactamente con la del autor en env_plane, plane, field y visible: 380275 a 380265 celdas, una añadida y once retiradas; cero fondos sumergidos bajo 1 m, siete esquinas con desviación de campo superior a 0,35 m y cero celdas de charca con esquina bajo 0,75 m.",
+    "El SHA256 del constructor de huella actual y de la copia es e15ec5c75a662bb68bbf69c0eaf0094020bbf7d2c54d58b02aeee3d15c99faf0.",
+    "Integración independiente por polígonos de triángulos modificados: B-strict convierte aproximadamente 7597,14 m2 de agua en tierra y 444,03 m2 de tierra en agua en el islote, coherente con las estimaciones muestreadas del autor. Evidencia conservada en audit-results.json, audit-extra-results.json, final-check-results.json, census2/summary.json y bury-report.json (todo bajo SP/wf-shores-review/)."
+   ],
+   "not_checked": [
+    "Comportamiento en juego, altura efectiva y variación del mar, diagonal de render en Baltic, agua física, navegación, aspecto de las calzadas y rendimiento. No se utilizó DayZ MCP.",
+    "pond_author, pack_water, stage_pond_pilot, verify_pond_exact, stage_bridges, compilación y empaquetado del candidato.",
+    "Aplicación y aceptación de los 146 tramos completos; los NPZ p2 revisados contienen cuatro sitios. No queda demostrada la solución general de los 85 tramos etiquetados steep-bank.",
+    "Distancias reales de las futuras intervenciones a todos los cruces 015 pendientes, y continuidad o anchura útil de carreteras y canales tras una aplicación global.",
+    "Ausencia de nuevas bolsas de mar mediante conectividad triangular completa en los prototipos: se refutó el contador utilizado, pero no se sustituyó por un verificador global.",
+    "Reejecución de todas las calibraciones sintéticas, comparación completa sigma 12/24 corregida y recuento específico de los 1031 vértices reserve-only en celdas de orilla ancha.",
+    "Desplazamiento máximo global de orilla y conservación de todos los estrechamientos navegables. La integración de áreas realizada no prueba esas propiedades.",
+    "Aprobación de Guillermo para mover reserve-only, elegir modo estricto, umbral y sigma; permanecen decisiones abiertas.",
+    "Limitación del propio envío: por fallos de tamaño de comando en la herramienta Bash, Codex recibió un resumen condensado del diseño (cifras, citas path:line, reglas y riesgos principales), no el JSON completo; los detalles del diseño no incluidos en el resumen (por ejemplo la lista nominal completa de tramos 1-20 y las notas de renders) no fueron contrastados."
+   ]
+  }
+ },
+ {
+  "design": {
+   "track": "thin_streams",
+   "summary": "Diagnóstico: el zigzag de los arroyos finos de la capa v31 depende del rumbo, no del azar. He medido 2.745 segmentos de 30 m, que suman 82,5 km de tramos finos en EV109. Los que van hacia NE-SO, a 22,5° o más de cualquier arista del triángulo, oscilan con una mediana de 0,56–0,67. Los que siguen E-O, N-S o la diagonal NO-SE se quedan en 0,10–0,15 (Spearman 0,71). Así salen 23,4 km de orilla en escalera fina con hilos de agua de 1,2 a 1,8 m. El entorno del puente 015-8 tiene un zigzag moderado (0,16–0,19): dos saltos entre columnas de vértices y un ancho que va de 4,8 a 10,1 m.\n\nPropuesta (a): rehacer el trazado de cada cauce sobre la rejilla, con tramos rectos de al menos 12 m en las tres direcciones de arista y fondo y orillas a una altura constante respecto al agua (F − D y F + E). En los 3 prototipos, la oscilación de la orilla baja a ≤0,07, la variación del ancho (CV) a 0,02–0,18 y el agua en el eje llega al 100 %. No toca ningún vértice congelado ni deja bordes de pieza expuestos nuevos. Cuesta más desvío respecto al GIS (p90 +1–3 m, máximo 10,5–12 m), mucho movimiento de tierra (|dH| p90 1,8–2,6 m) y una escalera de 12 m con esquinas interiores en ángulo recto en los cauces que van al NE.\n\nRecomiendo (a). La opción (b) necesita el mismo trazado y el mismo perfil de terreno, porque la lámina plana del kit también la recorta el terreno. Además arrastra problemas medidos: el 83,7 % del eje con agua en EV108, juntas kit/charca en 55 de los 126 extremos y un modo que aún no existe. El kit se puede añadir después sobre esos mismos trazados. Esto contradice la elección de Guillermo, así que queda como pregunta abierta.",
+   "diagnosis": [
+    "MEDIDO, censo sobre EV109 (terrain-ev109.npz + fp-ev109). Defino «tramo fino» con la regla de kit_candidates_v31.py:53: vértice mojado de clase 5/6 sin ningún vértice mojado a más de 1,5 vértices de tierra seca en su ventana de 7×7. Salen 79 componentes y 16.590 vértices; 87 cauces cubren 11.745 de ellos (el 71 %; el resto son ramas cortas sin medir), con 82,47 km. Mojado = terreno por debajo del campo visual F de la celda (las mismas dos caras nativas por celda que pond_author_v31.py:3-6). Script: census.py.",
+    "MEDIDO, oscilación frente al rumbo, en 2.745 segmentos de 30 m. Cada uno se mide con transectos de ±14 m cada 1 m sobre los triángulos exactos. Agrupados por la distancia δ a la dirección de arista más cercana (0/90/135°): δ<7,5°: n=674, oscilación p50 0,11, RMS de la orilla 0,34 m, CV del ancho 0,11. δ 7,5–15°: 0,18 / 0,54 / 0,19. δ 15–22,5°: 0,21 / 0,64 / 0,21. δ 22,5–33,75°: 0,56 / 1,46 / 0,28. δ ≥33,75°: n=350, 0,67 / 1,31 / 0,24. Spearman de δ con la oscilación 0,71, con el RMS 0,57 y con el CV 0,32 (p<1e-60).",
+    "MEDIDO, por clase de rumbo: NO-SE (la diagonal nativa) oscilación 0,10 y CV del ancho 0,06; N-S 0,15 / 0,21; E-O 0,15 / 0,21; NE-SO 0,67 / 0,24. Figura: census\\census.png. El efecto se mantiene aunque se controle el ancho: con agua de 6 m o más, NE da 0,35 frente a 0,09 en las aristas; con menos de 4 m, 0,63 frente a 0,12.",
+    "MEDIDO: 777 segmentos (23,4 km) tienen oscilación ≥0,40; 618 de ellos van al NE (δ≥22,5°). Afecta a 63 de los 87 cauces. En planta (cand1.png, cand2.png) se ven como escaleras de un vértice de paso con hilos de agua de 1,2–1,8 m: anchura p10 1,17 m en r71. No son cadenas de hexágonos sueltos: el agua es un único componente conexo en las tres ventanas de prototipo.",
+    "MEDIDO en 015-8 (7117,6920): los cauces 39.0 (al norte, 262 m) y 44.0 (al sur, 296 m) dan una oscilación de 0,19 y 0,16, por debajo de la mediana de toda la red (0,22). Lo que Guillermo ve como «cauce zigzagueante» es: un salto de 90° entre columnas en (7120–7140, 6810–6830), el enlace diagonal desde el corte del puente en (7110–7135, 6870–6895), y un ancho que va de 4,8 a 10,1 m (CV 0,27). El tramo norte ya es recto en N-S.",
+    "MEDIDO, red entera: los extremos de 55 de los 126 cauces con zigzag tocan agua ancha (son uniones); ninguno toca el mar del motor (H<0,75 fuera de la envolvente, regla de bridges_v31.py:46 y :151). 11 cauces tienen reserva o plataforma a ≤6 m y 16 pasan a ≤50 m de un puente de la 015. Pendiente del agua: p50 0,9 m/km, p90 5,3 m/km (network.py).",
+    "MEDIDO, Chernarus, 1.682 piezas streambed (chern_turns.py, sobre los datos de vanilla-tricks): rumbos agrupados en 0° (245), 90° (498), 135° (496) y 180° (361), y solo 29 piezas entre 37,5° y 52,5°. Emparejando cada pieza con su vecina más cercana a <28 m: 330 parejas giran 40–50° y 306 giran 85–90°. INFERIDO: Chernarus también resuelve los cursos hacia el NE como escaleras N/E, con piezas curvas en los giros.",
+    "DEDUCIDO (geometría de triángulos planos, confirmado en los renders): una orilla en V nunca puede ser recta en dirección NE. Si se ponen los vértices por antidiagonales, los triángulos que contienen el quiebro de la V cortan la línea de agua paralela a la diagonal NO-SE. Las orillas rectas solo son posibles en las aristas E-O, N-S y NO-SE, y siempre que (H − F) sea constante a lo largo de las líneas de fondo y de orilla. Un D o un E variable dentro de un tramo tuerce la orilla por la cara diagonal (bank_j–path_i+1); por eso la v2, con un E distinto en cada tramo recto, abultaba las juntas (proto2\\ab.png).",
+    "VERIFICADO: ejecutado sobre las entradas de EV109 (terrain-ev109, cover-ev108, envelope-br), pond_footprint_v31.py reproduce fp-ev109\\footprint.npz exactamente: plane, env_plane, visible y field con diferencia máxima 0 (cmp_fp.py). terrain-br.npz y terrain-ev109.npz tienen alturas idénticas. Por eso las métricas de los prototipos usan la cadena real de huella y campo, no un modelo aparte.",
+    "MEDIDO (kit, estrategia (b), en EV108; HANDOFF.md:16 y streams/README.md:60-63): eje del kit con agua en 349 de 417 puntos de sonda (83,7 %), calado p50 0,08 m. El motor solo da agua del kit con ≥0,10 m bajo el suelo de la pieza. Ancho visible del kit-118: 3,2/5,8/7,9 m (p10/p50/p90, desviación típica 1,8); Chernarus 2,5/3,6/4,9 (1,02) (scratchpad\\outline\\kit-outline-stats.json). El modo que limitaría el cuerpo del kit al tramo no está implementado (HANDOFF.md:19, streams/README.md:84-85)."
+   ],
+   "proposal_rules": [
+    "Selección: tramos finos según kit_candidates_v31.py:53, excluyendo v31_kit (kit-118 y kit-7). Se procesan los cauces con algún segmento de 30 m con oscilación ≥0,40, por orden de metros en zigzag (census\\ranking.csv).",
+    "Curso de referencia: el camino geodésico más largo por los vértices mojados del cauce (vecindad de 8), suavizado con una gaussiana de σ=9 m y remuestreado cada 1 m. El nivel se toma de F en los vértices viejos, forzado a ser monótono aguas abajo.",
+    "Trazado: Dijkstra sobre estados (vértice, dirección, tramo recorrido) con las 6 direcciones nativas (E, O, N, S, NO, SE). Solo se puede girar 45° o 90° tras recorrer MIN_RUN=2 pasos en la misma dirección (12 m en ortogonal, 17 m en diagonal); los giros de 135° o 180° están prohibidos. Coste por paso = longitud × (1 + (d/4 m)² + 2·clip(H0 − nivel, 0, 5)), donde d es la distancia al curso; penalización T45=6 por giro de 45° y T90=18 por giro de 90°. Los extremos coinciden con los del camino viejo en el borde de la ventana. Los vértices congelados solo se admiten si ya están mojados (el canal del puente bajo el tablero) y nunca se modifican; los de v31_bridge_cut tampoco.",
+    "Perfil, con t = semiancho / separación: 6 m para E-O y N-S, 4,243 m para NO-SE. Fondo: H = max(1,0, F − D); orilla: H = F + E, constantes en todo el cauce. E = p25 de (H0 − F) de las orillas viejas, limitado a [0,45, 0,90] (0,45–0,90 en los prototipos); D = E·t/(1 − t). Anchos objetivo: 4,0 m en arroyos y 7,0 m en 015-8. Si t > 0,70, se añade una segunda línea de fondo a la izquierda del avance (015-8, diagonal: t=0,325).",
+    "Orilla = los 8 vecinos del fondo que no son fondo en tramos E-O y N-S; en tramos NO-SE, solo los 6 vecinos nativos. El anillo exterior (vecinos de fondo y orilla) solo se sube, hasta F + E. El cauce viejo (vértices mojados del mismo componente a más de 2 vértices del borde de la ventana) se rellena hasta F + E + 0,05, solo subiendo. Los vértices mojados de otra agua de la ventana no se tocan.",
+    "Chaflán en giros de 90°: si la esquina exterior o = v + d_entrada − d_salida cae en la diagonal nativa de v (±(1,1)), se pone H[o] = F + D + 2E. Así la línea de agua de la celda de esquina queda exactamente en fc + fr = t, un bisel recto a 45°. Las esquinas interiores siguen siendo un escalón en ángulo recto: con esta rejilla no se pueden biselar sin tocar el fondo.",
+    "Envolvente: a las celdas que tocan un vértice de fondo y no tenían plano se les asigna el plano de la celda de huella vieja más cercana del mismo cauce. Solo se añaden celdas, así que se cumple la aserción de pond_footprint_v31.py:148.",
+    "Tres pasadas: niveles tomados de la F vieja, luego de la F que calcula pond_footprint_v31.py sobre el terreno nuevo. En los 3 prototipos el nivel ya no cambia desde la segunda pasada (Δ=0).",
+    "Alternativa en estudio (no recomendada como valor por defecto): MIN_RUN=4 (tramos de 24 m, como la pieza larga del kit). Baja las esquinas en r71 de 9,6 a 4,7 por 100 m, pero sube el desvío respecto al GIS a p90 11,2 m y máx. 14,2 m (proto3_run4)."
+   ],
+   "pipeline_placement": "Una pasada nueva, tools/water/lattice_streams_v31.py (por escribir: hoy solo existe el prototipo, scratchpad\\wf-thin_streams\\reroute4.py). Va justo después de bridges_v31.py (paso 5 de «Reconstruir EV108 y EV109», HANDOFF.md:106-109) y antes de bury_edges_v31.py. Así los canales y sellos de los puentes ya existen cuando se ejecuta y se tratan como fijos.\n\nEntradas: terrain-br.npz (alturas idénticas a terrain-ev109.npz, medido), ev109/envelope-br.npy, fp-ev109/footprint.npz (de donde sale F), ev108-kit/cover-ev108.npy y la lista de cauces del censo.\n\nSalidas: terrain-ls.npz (alturas y una capa nueva v31_lattice_stream), envelope-ls.npy (envelope-br más las celdas nuevas bajo el fondo) e informe JSON. Dentro de la pasada se itera 3 veces con pond_footprint_v31.py para cerrar el ciclo terreno ↔ F.\n\nDespués, la cadena de siempre con la envolvente nueva: bury_edges_v31.py (referencia terrain-br, cover-ev108, envelope-ls) → la última fpN → pond_author_v31.py → pack_water_v30.ps1 → stage_pond_pilot_v31.py → verify_pond_exact_v31.py → stage_bridges_v31.py (registros sin cambios: records-ev108 + bridge-records) → compile → package. Al final, sonda de servidor con puntos nuevos a lo largo de los trazados.\n\nNo cambia la cobertura base, los registros de objetos, el kit ni los puentes. Si más adelante se elige (b), los mismos trazados y perfiles serían la entrada de streambed_kit_v31.py en lugar de su eje suavizado.",
+   "metrics_before_after": [
+    "Versión de referencia: proto4 (reroute4.py: E único por cauce en [0,45, 0,90], término de valle κ=2, MIN_RUN=2, chaflán). Antes = EV109; después = terreno y huella reales de pond_footprint_v31. Toda la medida es offline, sobre la geometría exacta de triángulos frente a F.",
+    "Global, 3 prototipos: 0 vértices congelados cambiados y 0 vértices de v31_bridge_cut cambiados (comprobado con aserción y en evaluate.py). Bordes de pieza expuestos (<0,05 m): 43 antes y 43 después, la misma lista (0 nuevos). Celdas de huella: 380.275 → 380.194. 0 vértices del trazado a ≤2 vértices del mar. 0 triángulos nuevos de más de 35°.",
+    "P1, 015-8 (ventana x 7064–7196, z 6700–7076; ancho objetivo 7 m). Esquinas de orilla por 100 m: 12,3 → 7,2 (216 → 89 tramos rectos). Parte de la orilla en rectas ≥6 m: 0,29 → 0,75. Ancho p10/p50/p90: 4,81/8,05/10,1 → 6,5/7,0/8,6 m; CV del ancho: 0,27 → 0,18 (402 estaciones antes; 303 después, sin contar las que están a <5 m de una esquina). Oscilación de la orilla: 0,20 → 0,07. Desvío respecto al GIS p50/p90/máx: 2,55/5,93/8,47 → 3,02/6,98/10,64 m. Agua en el eje: 94,6 % → 100 % (muestreo cada 0,5 m). Vértices del trazado mojados para el motor: 70/70. Movimiento de tierra: 191 vértices cambiados, |dH| p50 0,98 m y p90 1,81 m, máx. +2,78 m (relleno del cauce viejo, de 2,29 m de hondo) y −3,45 m, volumen neto −2.010 m³. Bajo el tablero, el agua sigue siendo el canal irregular del puente (10 vértices de fondo y 18 de orilla fijos).",
+    "P2, r71 hacia el NE (x 10850–11050, z 4770–4990; 4 m). Esquinas por 100 m: 23,7 → 9,6. Rectas ≥6 m: 0,10 → 0,92. Ancho p10/p50/p90: 1,17/1,8/2,8 → 3,7/4,1/4,1 m; CV 0,40 → 0,04 (261 estaciones antes; 106 después, fuera de los alrededores de las esquinas). Oscilación: 0,64 → 0,002. Estaciones sin agua: 5 % → 0 %. Desvío respecto al GIS: 2,38/3,51/7,74 → 2,96/6,21/10,53 m. Trazado: 22 giros de 90°. Agua para el motor: 60/60 vértices. Área de agua en la ventana: 460 → 1.289 m². Tierra: 180 vértices, |dH| p90 2,55 m, volumen neto −5.795 m³. Con E de hasta 2,0 (proto5): −1.747 m³, pero 0,9 m de calado y subidas de hasta 2,94 m.",
+    "P3, r92 mixto, a 26 m de la 015-25 (x 4925–5045, z 4420–4640; 4 m). Esquinas por 100 m: 21,3 → 6,6. Rectas ≥6 m: 0,22 → 0,87. Ancho: 1,6/3,4/5,9 → 3,9/3,9/4,1 m; CV 0,42 → 0,02 (258 / 141 estaciones). Oscilación: 0,37 → 0,004. Desvío respecto al GIS: 2,84/7,53/9,08 → 3,51/8,82/12,08 m. Agua en el eje: 64,7 % → 100 % (medido sobre el curso suavizado; el hilo viejo es conexo, pero con estrechamientos de ~1,2 m). Motor: 49/49. Tierra: 152 vértices, |dH| p90 2,01 m, volumen neto −3.170 m³. La charca E-O separada en (4870–4915, 4440) no se toca.",
+    "Variantes, mismos 3 sitios: v1 (E fijo 0,45, sin chaflán) da una orilla igual de recta (oscilación ≤0,06), pero con todas las esquinas en L. v2 (E distinto en cada tramo) abulta las juntas; descartada (proto2\\ab.png). MIN_RUN=4: menos esquinas, más desvío respecto al GIS (r71 p90 11,2 m).",
+    "Estrategia (b), cuantificada sin construirla. Desvío respecto al GIS, rectitud y uniformidad en las rectas: iguales que (a) si comparte trazado y perfil (INFERIDO: la lámina plana de 14×24 m de streambed_kit_v31.py:27 también la recorta el terreno). Continuidad del agua para el motor: 83,7 % del eje en la sonda de EV108, frente al 100 % offline de (a) (179/179 vértices del trazado), que aún no se ha sondeado en servidor. Ancho medido del kit en EV108 (sin rejilla): 5,8 m p50 con desviación típica 1,8, frente a 3,9–7,0 m y CV 0,02–0,18 de (a). Juntas: 55 de 126 extremos de cauce tocan agua ancha y 16 cauces están a ≤50 m de un puente; en (b) cada uno es una transición kit ↔ charca o sello, en (a) sigue siendo la misma capa."
+   ],
+   "worklist": [
+    "1. Cauce 100.0, centro (4807,2555): 10,2 km, 2.397 m en zigzag; peor tramo (5533,524), oscilación 0,79, rumbo 51°.",
+    "2. Cauce 71.0, (11257,5112): 1,78 km, 1.030 m en zigzag (58 %); peor (10950,4878), 0,82; prototipo P2.",
+    "3. Cauce 53.0, (5808,5958): 2,59 km, 1.026 m; peor (6451,6439), 0,77. La rama 53.1 (5700,5657) tiene el peor tramo de todo el mapa, (5633,5470), 0,85.",
+    "4. Cauce 87.0, (11469,4082): 1,81 km, 999 m; peor (11328,3744), 0,81.",
+    "5. Cauce 92.0, (5331,3834): 2,72 km, 988 m; peor (4961,4529), 0,80; a 26 m de la 015-25, con reserva a 0,6 m; prototipo P3.",
+    "6. Cauce 70.0, (3220,5462): 807 m; peor (3272,4778).",
+    "7. Cauce 37.0, (10237,6415): 3,09 km, 780 m; peor (10073,6911); a 28 m de la 015-16 y a 3,6 m de reserva.",
+    "8. Cauce 38.0, (11938,7246): 750 m; peor (11812,7300).",
+    "9. Cauce 35.0, (8332,7585): 723 m; peor (8181,7377); a 372 m de la 015-11.",
+    "10. Cauce 120.0, (2786,1644): 722 m. 11. Cauce 130.0, (1241,1079): 679 m (67 %). 12. Cauce 73.0, (8026,4974): 663 m, a 27 m de la 015-37. 13. Cauce 25.0, (11538,7957): 661 m, a 43 m de la 015-42. 14. Cauce 1.0, (7291,11838): 573 m. 15. Cauce 63.0, (11742,5979): 569 m. 16. Cauce 113.0, (3760,3474): 569 m. 17. Cauce 21.0, (9120,8227): 568 m, a 22 m de la 015-13, peor (9357,8409). 18. Cauce 62.0, (11126,5708): 563 m, a 41 m de la 015-40, peor (11020,5560).",
+    "Junto a puentes de la 015, con menos zigzag: cauce 43.0 (8347,6694), 243 m, en la 015-11; 66.0 (7416,5616), 152 m, en la 015-37; 57.0 (11191,6382), 149 m, en la 015-40; 23.0 (10085,8547), 61 m, en la 015-18; 34.0 (10359,7586), 58 m, en la 015-16; 29.0 (4914,8161), 31 m, en la 015-19.",
+    "015-8 (7117,6920), prototipo P1, recomendado por la petición de Guillermo aunque mida poco zigzag: cauce 44.0 al sur (7128,6778, oscilación 0,16, saltos en (7135,6820) y (7125,6890)) y cauce 39.0 al norte (7127,7053, 0,19).",
+    "Total de la pasada: 63 cauces, 23,4 km de segmentos con oscilación ≥0,40, dentro de una red fina de 82,5 km. Lista completa en census\\ranking.csv; segmentos en census\\census-segments.csv."
+   ],
+   "files_written": [
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\census.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\census\\census.json",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\census\\census-reaches.csv",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\census\\census-segments.csv",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\census\\ranking.csv",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\census\\census.png",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\reroute.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\reroute2.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\reroute3.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\reroute4.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\evaluate.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\outline.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\common.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\protos.json",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\proto4\\metrics.json",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\proto4\\reroute.json",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\proto4\\ab.png",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\proto4\\detail.png",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\proto4\\terrain-it2.npz",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\proto4\\envelope.npy",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\proto4\\fp-it2\\footprint.npz",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\detail_v1_v3.png",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\detail_run2_run4.png",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\zoom_0158.png",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\chern_turns.py",
+    "C:\\Users\\guill\\AppData\\Local\\Temp\\claude\\C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c\\cbd20ff7-7297-478d-817e-6ab70f5cd6cd\\scratchpad\\wf-thin_streams\\network.py",
+    "Variantes con su ab.png y metrics.json: proto1 (v1), proto2 (v2, descartada), proto3, proto3_run4 (MIN_RUN 4), proto5 (E hasta 2,0), todas bajo ...\\scratchpad\\wf-thin_streams\\"
+   ],
+   "risks": [
+    "Los cauces hacia el NE quedan como escaleras de 12 m con esquinas interiores en ángulo recto: el chaflán solo arregla las exteriores. Juzgado en planta puede parecer un canal artificial. Es el mismo límite de la rejilla que tiene el kit en Chernarus, que lo suaviza con piezas curvas y relieve 3D.",
+    "Mucho movimiento de tierra: |dH| p90 1,8–2,6 m, bajadas de hasta 3,5 m en las paredes de las V estrechas y rellenos de hasta 2,8 m en los cauces viejos hondos; volumen neto −2.000 a −5.800 m³ por ventana de 300–440 m. Las V estrechas se convierten en fondos de valle planos de ~12 m. Con E de hasta 2,0 baja el volumen (r71: −1.747 m³), pero el calado llega a 0,9 m y aparecen subidas de hasta 2,9 m que pueden leerse como diques (la queja de la 017).",
+    "Más desvío respecto al GIS: p90 +1–3 m y máximo de 10,5–12 m frente a 7,7–9,1 m ahora; con MIN_RUN=4, hasta 14 m.",
+    "El ancho cambia el carácter del cauce: en r71 el agua pasa de 1,8 a 4,1 m y su superficie se multiplica por 2,8. En 015-8 se fijó 7 m (el puente es de 8 m y el río tiene nombre: el producto pide 8–20 m para ríos con nombre); a 8 m, la diagonal necesita dos líneas de fondo.",
+    "Bajo los tableros de los puentes el canal irregular sigue igual, porque los vértices del corte del puente y los congelados no se tocan (en 015-8, 8 orillas fijas por debajo del nivel del agua). Las orillas pueden seguir quebradas justo a la sombra del tablero.",
+    "La aplicación a todo el mapa no está probada: uniones entre afluentes (55 de 126 extremos tocan agua ancha), ventanas que se solapan entre cauces, interacción con el suavizado de tierra seca de EV97 si se vuelve a ejecutar y el tamaño del PBO de agua.",
+    "Si D o E varían dentro de un tramo, las orillas vuelven a torcerse (lo demostró la v2). Cualquier ajuste local posterior, manual o automático, sobre fondo u orilla rompe la rectitud."
+   ],
+   "unverified": [
+    "El aspecto en el cliente: nada de esto se ha construido, empaquetado ni visto en el juego. Las métricas offline son necesarias pero no bastan.",
+    "El agua para el motor en servidor: el 100 % de vértices del trazado por debajo del plano de todas sus celdas de huella es un cálculo offline, no una sonda con BalticBridgeProbeV2.",
+    "La cadena entera tras la pasada: solo ejecuté pond_footprint_v31.py (reproduce fp-ev109 exactamente). No ejecuté bury_edges_v31, pond_author_v31, pack, stage, verify_pond_exact, compile ni package. Los 43 bordes expuestos sin novedad salen del informe de huella, no de bury_edges.",
+    "La estrategia (b) sobre la rejilla no está construida (es la pista kit_lattice). Sus cifras de continuidad y ancho son las medidas de EV108 con el eje suavizado, no en rejilla; que su rectitud iguale a la de (a) es una inferencia geométrica.",
+    "La lectura de Chernarus (306 parejas con giro de 85–90°) se hizo emparejando cada pieza con su vecina más cercana, sin reconstruir las cadenas. Que las piezas curvas sean las de los giros es una inferencia.",
+    "El censo cubre el 71 % de los vértices finos (los cauces). Las ramas de menos de 10 vértices y lo que quedó tras 12 cauces por componente no se midieron.",
+    "No comparé el GIS de rivers.shp con el agua original de cada arroyo: tomo rivers.shp (derived/tb/source/vectors) como el curso GIS, desplazado x+200000.",
+    "Las pendientes son ≤35° en los triángulos cambiados (máx. 32,9°). No ejecuté ningún guardián de pendiente como el de v_streams o el del kit."
+   ],
+   "open_questions_for_user": [
+    "Guillermo eligió volver a tender el kit streambed sobre la rejilla, la (b). La medida indica que (b) necesita el mismo trazado y el mismo perfil de terreno que (a), y que (a) sola ya deja las orillas rectas, el ancho uniforme y el agua continua sin juntas kit/charca. ¿Se acepta ver primero (a) en el juego en 015-8, r71 (10950,4878) y r92 (4985,4530), y decidir después si se pone el kit encima de esos trazados?",
+    "¿Qué ancho de agua quiere: 4 m en los arroyos (Chernarus da 3,6) y 7–8 m en el Oredezh de la 015-8, o conservar el ancho actual de cada cauce? En los hilos de 1,8 m como r71, 4 m es más del doble.",
+    "Hacia el NE solo caben escaleras. ¿Prefiere escalones de 12 m (desvío respecto al GIS p90 ~6 m) o de 24 m (menos esquinas, p90 ~11 m)?",
+    "¿Acepta allanar las V estrechas (bajadas de hasta 3,5 m en las orillas) o prefiere conservar las paredes altas con un cauce más hondo (E de hasta 2 m, calado ~0,9 m)?",
+    "Bajo los tableros de los puentes, el canal del corte se queda irregular porque los vértices congelados y los del corte no se tocan. ¿Lo dejamos así o se reabre la excepción del puente para enderezar ese canal?"
+   ]
+  },
+  "review": {
+   "track": "thin_streams",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "Los vértices mojados de otra agua de la ventana no se modifican.",
+     "evidence": "MEDIDO: geometry.json:39, contraejemplo con protect=True: orilla 9,60→10,90 m, agua eliminada. <SP>/wf-thin_streams/reroute2.py:42-63 ignora protect en fondo, orilla y chaflán.",
+     "fix": "Proteger otras aguas en todos los roles y en el trazado; rechazar conflictos y comprobar también los triángulos incidentes."
+    },
+    {
+     "severity": "major",
+     "claim": "El relleno del componente viejo permite procesar separadamente sus cauces sin destruir afluentes.",
+     "evidence": "MEDIDO: audit_followup.py:64-75, followup.json:351: en una unión en T, un afluente no seleccionado pasa de 10 a 2 vértices mojados, con relleno 9,60→10,95 m. <SP>/wf-thin_streams/reroute.py:49-54 selecciona el componente completo y :234-242 genera el fill; reroute2.py:68-71 lo eleva.",
+     "fix": "Delimitar el tramo sustituido, preservar ramas y uniones, resolver ventanas solapadas y verificar conectividad triangular antes/después."
+    },
+    {
+     "severity": "major",
+     "claim": "La opción (b) necesita el mismo perfil y puede añadirse después; la comparación presentada justifica recomendar (a) sobre la elección del usuario.",
+     "evidence": "INFERIDO geométricamente: tools/water/streambed_kit_v31.py:196 asigna Y≤W−0,25. Con E=0,45 y t=1/3, D=0,225 deja el terreno 0,025 m sobre Y. followup.json:334: conservando F, 219/287 estaciones de r92 quedarían sobre ese plano físico hipotético. El 83,7 % histórico en servidor (EV108, eje suavizado) y el 100 % offline de (a) son de sistemas distintos y no constituyen un A/B.",
+     "fix": "Validar asiento, plano físico y juntas específicos del kit; comparar ambas opciones en iguales sitios y sondas. Mantener (b) como elección vigente hasta decisión explícita de Guillermo."
+    },
+    {
+     "severity": "minor",
+     "claim": "El resumen extrapola al cauce completo la uniformidad medida excluyendo giros (CV 0,02–0,18, oscilación ≤0,07).",
+     "evidence": "MEDIDO con interpolación independiente, followup.json:241-320: r71 completo CV=0,686 / oscilación=0,463; excluyendo giros, 0,038 / 0,002 sobre 106/329 estaciones. r92 completo: 0,635 / 0,282. <SP>/wf-thin_streams/evaluate.py:123-131 excluye giros solo después. Los descartes son transectos truncados, no huecos de agua.",
+     "fix": "Separar rectas y giros; publicar cobertura y métricas completas con criterios comparables antes/después."
+    },
+    {
+     "severity": "minor",
+     "claim": "Las cifras de movimiento de tierra y el máximo de 32,9° cubren todos los cambios.",
+     "evidence": "MEDIDO: numbers.json:21 y followup.json:19-25: 557 vértices cambiados, 523 contabilizados dentro y 34 fuera de ventanas; hasta 2,578 m fuera y +527,84 m³ omitidos. Máximo real afectado = 33,367°; ninguna cara nueva >35°. <SP>/wf-thin_streams/evaluate.py:166-194 recorta la evaluación.",
+     "fix": "Evaluar el delta completo y todos sus triángulos incidentes; declarar el halo de edición. Volumen neto total corregido: −10.448,07 m³."
+    },
+    {
+     "severity": "minor",
+     "claim": "La fórmula del perfil mantiene el ancho objetivo cuando actúa el mínimo de fondo de 1 m.",
+     "evidence": "MEDIDO, contraejemplo paramétrico en geometry.json:51: F=1,95, E=0,90 y objetivo 7 m producen D=1,26, pero el fondo limitado deja 6,162 m de agua. <SP>/wf-thin_streams/reroute2.py:39-45 aplica el límite después de calcular D.",
+     "fix": "Exigir F−D≥1; recalcular parámetros compatibles con el ancho o rechazar el caso."
+    },
+    {
+     "severity": "minor",
+     "claim": "Todos los tramos rectos tienen al menos dos pasos (MIN_RUN=2).",
+     "evidence": "MEDIDO: numbers.json:101-161 registra tramos terminales de 6 m en los tres prototipos. <SP>/wf-thin_streams/reroute4.py:35-43 inicia run=MIN_RUN y acepta el destino sin comprobar la longitud final.",
+     "fix": "Aplicar el mínimo a los extremos o declarar y evaluar explícitamente esas excepciones de enlace."
+    },
+    {
+     "severity": "minor",
+     "claim": "El censo clasifica cada vértice contra su F visual exacta.",
+     "evidence": "MEDIDO: numbers.json:165-170: 26 falsos mojados respecto a las esquinas realmente incidentes; sobreestimación de F hasta 0,575 m. <SP>/wf-thin_streams/census.py:126 y common.py:25-30 propagan el máximo de todas las esquinas de cada celda a todos sus vértices.",
+     "fix": "Acumular cada esquina de field únicamente en su vértice correspondiente y repetir selección y métricas."
+    },
+    {
+     "severity": "minor",
+     "claim": "55 de 126 extremos son uniones reales que exigirían transición kit/charca.",
+     "evidence": "MEDIDO: census-audit.json:84-88 reproduce 55 candidatos por proximidad. <SP>/wf-thin_streams/network.py:26-29 busca cualquier agua ancha en 7×7 vértices, hasta 25,46 m; no verifica conexión.",
+     "fix": "Denominarlo proximidad hasta demostrar continuidad triangular y localizar las transiciones sobre el trazado final."
+    }
+   ],
+   "confirmed_claims": [
+    "MEDIDO: Python GIS con -I, run_source.py census: reproducción completa idéntica del algoritmo actual; 87 cauces, 2745 segmentos, 82468 m. Spearman oscilación=0,711353, RMS=0,574538 y CV=0,317698. census-audit.json:2-77: 777 segmentos/23351 m, 63 cauces y 618 segmentos NE.",
+    "MEDIDO: adversarial_geometry.py:21-47: rectas E/N/NO con F constante, ancho 4,000/4,000/4,002 m. Chaflán fc+fr=t: error <6e-17. Controles negativos modificando orilla o chaflán detectan desviaciones.",
+    "MEDIDO: run_source.py footprint y reroute reproducen exactamente los campos de EV109 y el terreno del prototipo. terrain-br=terrain-ev109; iteraciones 1→2 sin cambios de altura ni campo. numbers.json:2-20; followup.json:2-17.",
+    "MEDIDO globalmente: 0 alturas modificadas en reserve/platform/narva/v31_bridge_cut/v31_kit. Envolvente +1 celda, ninguna retirada ni nivel previo alterado; cover contenido. Huella 380275→380194. numbers.json:21-57.",
+    "MEDIDO: bordes recalculados desde arrays, 43→43 con idéntica lista. run_source.py bury ejecutó bury_edges_v31 sin cambiar alturas ni crear exposiciones. numbers.json:59-64; bury-report.json:3-12.",
+    "MEDIDO: mar H<0,75 fuera de envolvente: 657455 vértices antes/después, sin altas ni bajas; ninguna esquina de huella bajo 1 m. 1507 caras modificadas, ninguna nueva >35°. numbers.json:65-79.",
+    "MEDIDO offline cada 0,05 m: ejes completos mojados visual y físicamente, 8778/8778, 7080/7080 y 6108/6108; mínimos físicos 0,0369/0,3669/0,225 m. Los 179 vértices están bajo todos sus planos incidentes. numbers.json:84-162. No demuestra comportamiento del motor."
+   ],
+   "not_checked": [
+    "Cliente/servidor, apariencia, conducción, navegación y rendimiento; no se utilizó DayZ MCP.",
+    "Autoría, pack, stage, verify_pond_exact, compile y package posteriores; identidad de objetos y carreteras compiladas.",
+    "Pasada global de 63 cauces, solapamiento de ventanas y uniones reales; las invariantes positivas medidas corresponden a los tres prototipos.",
+    "Kit sobre rejilla construido, A/B equivalente, datos crudos del sondeo EV108, cadenas/giros de Chernarus y validación independiente del GIS.",
+    "Variantes proto1/2/3/3_run4/5 y el islote de la bahía norte.",
+    "Nota de transporte: <SP> en las rutas de evidencia es el directorio scratchpad de la sesión (C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad). Los ficheros de revisión (numbers.json, followup.json, geometry.json, census-audit.json, audit_followup.py, adversarial_geometry.py, run_source.py) los escribió Codex bajo <SP>/wf-thin_streams-review/ y no los he abierto yo. Los números de arriba son los que devolvió Codex, no reverificados por este agente reenviador."
+   ]
+  }
+ },
+ {
+  "design": {
+   "track": "kit_lattice",
+   "summary": "Funciona, de momento solo en offline. El prototipo v8 coloca kit-118 y kit-7 sobre la retícula de vértices: rectas solo N-S, E-O o NO-SE, centradas en una línea de vértices; giros de 45° con long_curve cuyo PI cae en el vértice de esquina, y escaleras NE-SO con pares slanted a escala 0,82. Las orillas se forman con una V lineal medida en el vértice, no con la cuerda: eje = Y-0,33 y anillo 1 (6 m en ejes, 4,24 m en la diagonal) = Y-0,33+0,322·q. Así la línea de agua solo cruza los triángulos del eje al anillo 1, que son planos a lo largo de la línea, y la orilla sale recta y de ancho constante. Con las mismas entradas que v7 (paso 1 de HANDOFF.md), el ancho visible p10/50/90 baja de 3,2/5,8/8,0 a 3,0/3,5/4,2 m (kit-118) y de 3,4/5,6/7,9 a 3,0/3,5/4,1 m (kit-7). La desviación típica baja de 1,8 a 0,67-0,87; el borde fuera de la banda de piedras, del 69-71 % al 11-14 %; Chernarus da 2,5/3,6/4,9, 1,02 y 17 %. El margen del motor (≥0,10 m bajo el suelo del kit) pasa del 35-38 % al 96-99 % de las muestras del eje. El terreno movido es parecido: 5,5 frente a 6,1 mil m³ en kit-118 y 30,4 frente a 32,7 mil m³ en kit-7, con algo más de desmonte; ningún triángulo supera 35° y no se toca ningún vértice congelado. Lo que queda por decidir es estético y solo se ve en el juego: las escaleras NE-SO (32 codos en kit-7) y los saltos de 6 m. La herramienta v8 son 12 cambios concretos sobre v7, listados regla a regla.",
+   "diagnosis": [
+    "Medido (método de kit_outline.py generalizado en measure_v8.py; con los registros de v7 reproduce las cifras del fichero de estadísticas con ±0,1 m): con v7 sobre EV109, kit-118 da 564 muestras, ancho 3,2/5,8/8,0 m, desviación 1,80 y borde fuera de banda 0,691. kit-7 da 3.411 muestras, 3,4/5,6/7,9 m, 1,71 y 0,708. El fichero kit-outline-stats.json daba 3,2/5,8/7,9 y 3,4/5,5/7,8; la diferencia es la cota de la recta corta, 0,174 medida frente a 0,17 en streambed_kit_v31.py:73.",
+    "Medido: v7 coloca cuerdas en cualquier rumbo, siguiendo un eje suavizado (streambed_kit_v31.py:186 y 200-224), y talla el terreno por distancia a la cuerda (271-287, 310-325). Los vértices caen a distancias arbitrarias del eje, así que la línea de agua cruza triángulos no planos a lo largo del cauce: salen los hexágonos y el ancho variable que vio Guillermo.",
+    "Medido (geometría de turn-pieces.json): el PI de long_curve_left está a 12,68 m del extremo de entrada y a 13,02 m del de salida; en long_curve_right, a 12,75 y 13,51 m. Si el PI se coloca en el vértice donde se cruzan las dos líneas de la retícula, ambos extremos de la curva quedan sobre líneas de vértices por construcción, con cualquier escala.",
+    "Comprobado con los desplazamientos medianos de Chernarus: el par slanted→slanted_inv tiene un desplazamiento de origen a origen de (-3,67; 3,69) m en la rejilla de 7,5 m, es decir, mitad de celda en los dos ejes. En nuestra rejilla de 6 m hace falta escala 3,0/3,69 = 0,81-0,82, así que la escala de 0,8 se confirma en geometría; en el juego no está comprobado.",
+    "Medido sobre el prototipo: en una recta sobre línea de vértices con el anillo 1 en Y+1,60 (ejes) o Y+1,04 (diagonal), el ancho visible es 3,49 m con p10-p90 de 3,43-3,57 en las rectas largas de kit-7. La diagonal NO-SE y los ejes dan el mismo ancho porque la V es lineal en distancia.",
+    "Medido: el margen del motor en v7 (suelo del kit menos terreno en el eje) es p50 0,07-0,09 m, con 35-38 % de las muestras ≥0,10 m. Es coherente con la sonda de EV108: 180 de 417 puntos con ≥0,10 m (streams/README.md:62-63).",
+    "Medido: con el prototipo v8, el margen ≥0,10 m baja de 0,10 en 2 % de las muestras de rectas, 3-4 % de las de curvas y 2 % de las de slanted. Se concentra en las curvas, porque el arco va hasta ~1,2 m por dentro del vértice de esquina, y en las slanted, porque su canal se desplaza 1 m dentro de la pieza. El mínimo es -0,07 m en (8219, 9205), en la curva final de kit-118, y 0,01 m en (9048, 11268)."
+   ],
+   "proposal_rules": [
+    "TRAZADO: Dijkstra sobre estados (vértice, rumbo, metros desde la última esquina, tipo de la última esquina), limitado a vértices a ≤12 m de la vaguada de v7 y que no estén congelados. Rumbos: N, S, E y O (paso 6 m) y NO, SE (paso 8,49 m); nunca NE ni SO. Coste por paso: L·(0,3 + (d/2,5)²), con d la distancia a la vaguada. Cada curva cuesta 10 y cada codo 14. Distancias mínimas entre esquinas: curva-curva 18 m, curva-codo 14 m, codo-codo 6 m, desde el inicio 10 m (curva) o 4 m (codo).",
+    "GIROS PERMITIDOS: 45° entre un rumbo de eje y la diagonal (N↔NO, O↔NO, S↔SE, E↔SE), resuelto con long_curve. 90° solo N↔E y S↔O, resuelto con un codo slanted. Cualquier otro giro está prohibido, igual que en Chernarus: elbow90 solo aparece en 0↔90 y 180↔270.",
+    "CURVA: el PI va en el vértice de esquina con escala 0,88 (rango 0,80-1,00, ajustada ±0,02 por iteración hasta que cada tramo se pueda rellenar). Su +Z es el rumbo aguas arriba en la entrada. Si el giro aguas arriba es +45° se usa long_curve_left; si es -45°, long_curve_right. La curva va plana a la media de Y en sus dos extremos. Matriz: columnas [X, Y, Z]·s con X = Y×Z y T = esquina - R·(PI_x, 0,21, PI_z).",
+    "CODO: slanted si el tramo es E-O y slanted_inv si es N-S, a escala 0,82, con el origen a media celda (3 m) de la esquina sobre la línea de su tramo y +Z aguas arriba del tramo. Si un peldaño de una celda está entre dos codos, comparte la pieza; se deduplica por posición de origen. Cada codo ocupa 6,65 m en cada tramo.",
+    "RECTAS: centradas en la línea de vértices. Mezcla larga/corta con escala uniforme por tramo de 0,90-1,06 y solape de 1,2-4,0 m (Chernarus: 1,45-3,1 m de extremo a extremo de placa), elegida minimizando ((s-1)/0,05)² + ((ov-2,5)/0,7)² + número de piezas. Unión directa sin rectas si el hueco va de -7,5 a 0,5 m. Inclinadas entre Y(extremo de aguas arriba) e Y(extremo de aguas abajo). El 25 % lleva la variante _2.",
+    "PERFIL: la regla de v7 (líneas 189-199) evaluada sobre la polilínea de la retícula. W se toma de la muestra más cercana de la vaguada, la tierra es la mediana a 5/7,5/10 m de la polilínea, Y = min(W-0,25, tierra-1,06) con media móvil de 20 m, monótona y ≥1,33.",
+    "ASIENTO (sustituye a las líneas 310-325 de v7): q = distancia del vértice a la polilínea de la retícula (no al arco ni a la cuerda); yq = Y en la proyección. Anillo 0 (q<0,01): yq-0,33. Anillo 1 (q≤6,01, que es la primera línea de vértices en ejes, a 6 m, y en diagonal, a 4,24 m): yq-0,33+0,322·q, que da 1,60 en ejes y 1,04 en diagonal. Estos valores se fijan exactamente, bajando o subiendo, porque la rectitud de la orilla depende de ello. Medio ancho resultante: 0,58/0,322 = 1,8 m.",
+    "EXTERIOR (6 < q ≤ 13 m): solo se sube, hasta yq+0,25+0,10 como mínimo, sin pasar del techo de asiento de v7 (líneas 72 y SEAT_OH). Así ningún trozo de la lámina de 14 m asoma fuera del anillo 1. Más allá de los extremos de la cadena: solo el eje y un remate hasta yq+0,5, como END_RISE de v7.",
+    "EXTREMOS: se quitan piezas mientras su tramo pase a ≤6 m de un vértice congelado o de agua visible de otro nivel, o a ≤6,51 m (RING1+0,5 en lugar de TRENCH+0,5 de v7:238) de un vértice de envolvente de otro nivel.",
+    "Sin cambios respecto a v7: charcas (288-301, ahora medidas contra la polilínea), relleno de hoyos y cauce viejo (353-359), guarda de pendientes de 35° (388-410), vértices congelados y protegidos intocables (assert de la línea 416).",
+    "Regla añadida pero no aplicada en el prototipo: eje del arco. Para las curvas y el canal de las slanted, aplicar la regla de eje de v7 (326-352) con AXIS_CLEAR = 0,10 sobre la línea central real de la pieza, bajando solo los vértices fuera del anillo 0. Así el 2-4 % de muestras de curva y slanted con margen <0,10 m llega al umbral del motor; ensancha la lámina ~0,3 m en el codo.",
+    "Opcional: variar el medio ancho (1,5-2,1 m) a lo largo del cauce con una longitud de onda de ≥50 m, para acercarse a la desviación de Chernarus (1,02 frente a 0,67-0,87). En una línea de vértices, una variación lineal entre vértices mantiene la orilla recta a tramos."
+   ],
+   "pipeline_placement": "Sustituye a tools/water/streambed_kit_v31.py en el paso 1 de «Reconstruir EV108 y EV109» de HANDOFF.md. Tiene las mismas 10 entradas y salidas (terreno, footprint, cover, envelope y sites como entrada; terrain-kit.npz, cover/envelope recortados, kit-records.json y kit-report.json como salida). Cambia: kit-records.json, que ahora trae matrices escaladas y nuevos tipos (long_curve_left/right, short_slanted/_inv); el terreno de las ventanas de kit-118 y kit-7 (147 y 860 vértices cambiados frente a 208 y 1.065 en v7); y la cover/envelope, que recorta las mismas 394 y 2.201 celdas. Lo que sigue no cambia de orden: bury_edges_v31 → pond_author → pack → stage_pond_pilot → verify_pond_exact → stage_bridges_v31 (con los registros nuevos) → paso 5, puentes EV109, sobre el terreno resultante. wrp0wzd.object_record (tools/terrain/wrp0wzd.py:54-55) escribe la matriz tal cual, así que la escala pasa al WRP. tools/water/probe_points_kit.py:14-26 asume solo rectas, matriz unitaria y ROAD de rectas: hay que generalizarlo antes de la sonda de servidor del paso 7.",
+   "metrics_before_after": [
+    "Ancho visible p10/50/90 (m), kit-118: v7 3,2/5,8/8,0 (564 muestras) → v8 3,03/3,50/4,22 (678 muestras). Chernarus (rectas): 2,5/3,6/4,9 (6.954 muestras, kit-outline-stats.json).",
+    "Ancho visible p10/50/90 (m), kit-7: v7 3,4/5,6/7,9 (3.411) → v8 3,03/3,50/4,05 (3.971).",
+    "Desviación típica del ancho: kit-118 1,80 → 0,67; kit-7 1,71 → 0,87; Chernarus 1,02.",
+    "Proporción del borde fuera de la banda de piedras: kit-118 0,691 → 0,137; kit-7 0,708 → 0,106; Chernarus 0,172.",
+    "Proporción del eje seco: 0,000 → 0,000 en los dos sitios (Chernarus 0,005).",
+    "Ancho por tipo en v8, kit-7, p10/50/90: rectas largas 3,43/3,50/3,57 (1.620); rectas cortas 3,38/3,49/3,53 (336); curvas 3,3/3,5/4,2 (1.235); slanted 2,95/3,05/7,6 (780). El p90 de las slanted es un artefacto del corte transversal en un codo, que recorre el otro tramo.",
+    "Margen del motor (suelo del kit menos terreno en el eje, proporción ≥0,10 m): kit-118 0,381 → 0,960; kit-7 0,353 → 0,988. p50 0,09/0,07 → 0,32/0,32 m; mínimo -0,20/-0,30 → -0,07/-0,06 m.",
+    "Terreno movido, kit-118: relleno 4.370 → 3.675 m³, desmonte 1.731 → 1.811 m³, 208 → 147 vértices, subida máxima 3,09 → 3,01 m, bajada máxima 2,16 → 2,50 m.",
+    "Terreno movido, kit-7: relleno 16.233 → 10.640 m³, desmonte 16.460 → 19.782 m³, 1.065 → 860 vértices, subida máxima 3,47 → 2,44 m, bajada máxima 4,32 → 4,46 m.",
+    "Pendientes en los triángulos cambiados, p50/p90/máx (°), kit-118: 4,8/20,7/34,4 → 12,9/17,9/28,6. kit-7: 7,1/23,4/34,6 → 17,8/18,4/31,7. Triángulos >35°: 0 → 0 (en kit-7 había 8 antes de v7, los mismos).",
+    "Desviación del curso: retícula→vaguada p50/p90/máx 1,72/4,07/6,21 m (kit-118) y 1,76/4,27/7,59 m (kit-7). Longitud: 290,5 → 298,4 m y 1.649,5 → 1.781,2 m (+8 % en kit-7 por las escaleras).",
+    "Contactos: 0 vértices congelados cambiados; congelados a ≤6 m o ≤12 m del agua: 0 y 0 en los dos sitios; el más cercano en kit-118 a 15,4 m (v7: 14,9 m). Celdas de charca quitadas: 394 y 2.201, igual que v7. Vértices de vaguada antigua rellenados: 9 en kit-118 y 112 en kit-7 (v7: 1 y 26). Piezas de extremo quitadas: 1 en kit-118 (lado de la carretera) y 0 en kit-7.",
+    "Piezas: kit-118 20 → 20 (5 curvas, 3 slanted, 12 rectas); kit-7 119 → 130 (26 curvas, 52 slanted, 52 rectas). Escalas: 0,82 en slanted, 0,88-0,98 en curvas, 0,94-1,05 en rectas."
+   ],
+   "worklist": [
+    "1. Vista de cámara de kit-118 (8258, 9050), donde Guillermo vio los hexágonos: N 8274,8958→9030; curva N>NO en (8274, 9030), diagonal hasta (8250, 9054), curva NO>N; N hasta (8250, 9072); curva N>NO; diagonal hasta (8226, 9096), curva NO>N; N hasta (8226, 9198), curva N>NO; final en (8220, 9204).",
+    "2. Salto de kit-118 junto a la carretera: codos N>E (8268, 8958) y E>N (8274, 8958), un desplazamiento de 6 m con 3 slanted. Hay que revisarlo en el juego o eliminarlo subiendo el coste del codo o eligiendo la columna x=8274 para el inicio.",
+    "3. Escalera NE-SO de kit-7, de (8844, 11334) a (9084, 11382): 12 codos E>N y N>E, peldaños de 6-30 m con contrahuellas de 6 m.",
+    "4. Escalera SO de kit-7, de (9132, 11274) a (8970, 11190): 18 codos S>O y O>S, con un tramo O de 78 m entre (9120, 11268) y (9042, 11268).",
+    "5. Codos de kit-7 en (8406, 11946)-(8394, 11934): 4 codos S>O y O>S en una rinconada estrecha.",
+    "6. Curvas de kit-7 en saltos cortos de 18-24 m (pares SE>S y S>SE) en (8388, 12054-12030), (8412, 11850-11802), (8580, 11658-11634), (8598, 11616-11598), (8664, 11532-11514) y (8772, 11406-11388). Visualmente son desplazamientos laterales; Chernarus usa curva más pliegue para lo mismo.",
+    "7. Recta NO-SE más larga de kit-7: de (8664, 11514) a (8772, 11406), 152 m; aquí el resultado es más limpio (vista 3 del render).",
+    "8. Puntos de margen del motor bajo en v8, para la regla de eje en el arco: (8219, 9205) -0,07 m, (8274, 9020) -0,04 m, (8251, 9054) 0,05 m y (9048, 11268) 0,01 m."
+   ],
+   "files_written": [
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/lattice_v8.py",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/measure_v8.py",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/render_v8.py",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/plan_overview.py",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/kit_geom.json",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/terrain-v8.npz",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/kit-records-v8.json",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/report-v8.json",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/measure.json",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/geometry-v8.json",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/cover-v8.npy",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/envelope-v8.npy",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/plan_spots.png",
+    "C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice/run3/overview.png"
+   ],
+   "risks": [
+    "La escalera NE-SO (32 codos en kit-7, con contrahuellas de 6 m) dibuja un agua en peldaños rectos. Es limpia, sin hexágonos, pero Guillermo puede seguir viéndola «falsa» o «poligonal». Alternativa: long_snake a 45° con pliegues, como hace Chernarus, pero rompe la regla de la retícula.",
+    "El anillo 1 se fija exactamente, también bajando, y eso abre una V de 12 m (ejes) o 8,5 m (diagonal) aunque las orillas sean más altas. En kit-7 hay 3.300 m³ más de desmonte que en v7 y la bajada máxima es de 4,46 m.",
+    "El trazado se aparta de la vaguada hasta 6,2 m (kit-118) y 7,6 m (kit-7), con p90 de 4,1-4,3 m. Se rellenan más vértices de vaguada antigua: 112 en kit-7 frente a 26.",
+    "La escala 0,82 de las slanted también reduce el lecho de piedras (±1,9 m) y la lámina (+0,16 m sobre el suelo). Chernarus nunca baja de 0,91 de p10 en slanted.",
+    "El 2-4 % de las muestras de curva y slanted tiene menos de 0,10 m de margen de motor sin la regla de eje en el arco.",
+    "El parámetro de ancho (HW 1,8 m) da 3,5 m de p50 y una desviación menor que la de Chernarus: puede verse demasiado regular.",
+    "tools/water/probe_points_kit.py y kit_outline.py solo conocen rectas y matrices unitarias; sin generalizarlos, la sonda de servidor fallaría en silencio o mediría mal."
+   ],
+   "unverified": [
+    "Ninguna medida en el juego: ni el aspecto de la lámina en codos, curvas a escala 0,88 y slanted a 0,82, ni las juntas de 45° y 90°. Sin sonda de servidor (no se usó DayZ MCP).",
+    "El agua del motor con piezas escaladas y con curvas o slanted (el margen ≥0,10 m es un umbral medido para rectas a escala 1). Que GetWaterDepth tome la superficie de calzada más alta entre piezas que se solapan es una inferencia.",
+    "El prototipo no ha pasado bury_edges_v31, pond_author, verify_pond_exact, el empaquetado ni la compilación. Tampoco el paso 5 (puentes EV109) sobre el terreno v8: el enlace kit-118/carretera es el cruce #6.",
+    "La convención del proxy de agua en las curvas, que turn-pieces.json marca como inferida.",
+    "Las piedras sueltas (regla de v7, líneas 362-373) no están colocadas en el prototipo.",
+    "Las métricas de Chernarus solo cubren rectas (kit-outline-stats.json): las curvas y slanted de Chernarus no se han medido con el método generalizado."
+   ],
+   "open_questions_for_user": [
+    "Tramos NE-SO: ¿escalera de codos slanted en la retícula (el prototipo actual, limpia pero escalonada) o long_snake a 45° con pliegues, que serpentea más natural pero el agua no queda sobre la retícula?",
+    "¿Aceptas que el primer anillo de la V se fije exactamente aunque haya que cortar la orilla, con más desmonte (+3.300 m³ en kit-7), o prefieres solo subir y aceptar algo de irregularidad donde la orilla es alta?",
+    "¿Ancho uniforme de 3,5 m o con variación lenta de 3,0 a 4,2 m a lo largo del cauce para que se parezca más a Chernarus?",
+    "¿Hacemos el pase completo (bury → agua → puentes → compilado) de un EV110 con kit-118 y kit-7 en retícula para verlo en el juego, después de añadir la regla de eje en el arco y generalizar probe_points_kit.py?"
+   ]
+  },
+  "review": {
+   "track": "kit_lattice",
+   "verdict": "unsound",
+   "defects": [
+    {
+     "severity": "major",
+     "claim": "[medido] La regla de unión directa admite huecos entre láminas. El resultado «eje seco = 0» omite esas juntas.",
+     "evidence": "scratchpad/wf-kit_lattice/lattice_v8.py:274 y :327 aceptan separaciones positivas hasta 0,5 m. Ejecuté gaps_and_v_rule.py con Python GIS -I: seis huecos interiores en kit-7, de 0,04870–0,33545 m. Ejemplo: piezas 5/6, estaciones 138,25→138,58, hueco de 0,33545 m alrededor de (8396,903;12021,097). measure_v8.py:83-94 excluye extremos del muestreo. Resultado: wf-kit_lattice-review/gaps-and-v-rule.json.",
+     "fix": "Rechazar juntas con separación positiva. Comprobar continuidad mediante la unión completa de las láminas sobre los triángulos nativos, incluyendo extremos, y ajustar las piezas hasta eliminar los cortes."
+    },
+    {
+     "severity": "major",
+     "claim": "[medido] El verificador sustituye los labios inclinados del agua por una superficie plana; las métricas publicadas no representan la geometría almacenada.",
+     "evidence": "scratchpad/wf-kit_lattice/measure_v8.py:45 y :64-68 fijan toda la lámina a una altura. Sin embargo, scratchpad/turn-pieces/turn-pieces.json:518-530 registra alturas del proxy largo entre -0,228 y 0,460 m, desplazadas +0,25 respecto al roadway; :4407-4418 confirma los labios de las curvas. Ejecuté exact_overlay.py y corrected_measure.py -I reconstruyendo esa geometría: kit-7 tiene siete cortes interiores de 0,15211–0,75802 m, suma 4,00386 m, y ocho componentes incluso dilatándolos 5 cm. Anchos p10/50/90 corregidos: kit-118 2,64/3,49/4,14 m, desviación 0,71; kit-7 2,95/3,47/4,05 m, desviación 0,90. Resultados: wf-kit_lattice-review/exact-overlay.json, corrected-measure.json y final-checks.json. Es una reconstrucción offline bajo la convención de proxy del diseño, no una observación del render.",
+     "fix": "Medir las caras del proxy con sus alturas y LOD reales. Recalcular v7, v8 y Chernarus con el mismo modelo corregido y añadir una comprobación de continuidad independiente de los percentiles."
+    },
+    {
+     "severity": "major",
+     "claim": "[medido/inferido] La corrección limitada a vértices exteriores al anillo 0 no puede garantizar el margen de 0,10 m. El máximo de superficies roadway tampoco demuestra presencia de agua del motor.",
+     "evidence": "corrected_measure.py -I encontró cinco muestras de kit-118 y siete de kit-7 con margen insuficiente exactamente sobre aristas del anillo 0. En (8274;8986,360586), margen 0,082442 m y peso baricéntrico exterior igual a cero: bajar otros vértices no cambia esa altura. El solver reutilizado selecciona vértices por peso en tools/water/streambed_kit_v31.py:333-348. El cálculo publicado toma np.nanmax de roadway en scratchpad/wf-kit_lattice/measure_v8.py:149-159; :70-81 aproxima las caras mediante proyección al eje. Frente a caras reconstruidas, el error máximo es 0,11714/0,09446 m. Márgenes geométricos corregidos >=0,10: 650/678 y 3928/3971; mínimos -0,06994/-0,06359 m. Resultado: wf-kit_lattice-review/corrected-measure.json.",
+     "fix": "Resolver también las juntas y las muestras sostenidas exclusivamente por el anillo 0, mediante colocación de piezas o una modificación explícita del asiento. Exigir cero muestras sin resolver y pendientes válidas después del ajuste. Validar posteriormente en servidor las piezas escaladas y la selección de agua en solapes."
+    },
+    {
+     "severity": "minor",
+     "claim": "[medido] Colocar el PI en un vértice no sitúa ambos extremos de estas curvas exactamente sobre la retícula.",
+     "evidence": "scratchpad/turn-pieces/turn-pieces.json:12915-12916 registra giros de +44,36 y -44,53 grados. lattice_v8.py:295-302 alinea una entrada y el PI sin corregir ese ángulo. corrected_measure.py -I midió desviaciones de los extremos de salida de 0,09832–0,14136 m. Resultado: wf-kit_lattice-review/corrected-measure.json.",
+     "fix": "Sustituir la afirmación exacta por una tolerancia medida y comprobar las juntas con la geometría real de ambos extremos."
+    },
+    {
+     "severity": "minor",
+     "claim": "[medido por lectura] El prototipo no sustituye directamente el comando del paso 1 manteniendo su interfaz.",
+     "evidence": "HANDOFF.md:93-95 pasa cinco entradas y cinco rutas de salida. scratchpad/wf-kit_lattice/lattice_v8.py:221-222 consume seis argumentos y trata el sexto como directorio; :492-499 escribe nombres terrain-v8.npz, cover-v8.npy, envelope-v8.npy, kit-records-v8.json y report-v8.json. El comando documentado no produciría las rutas esperadas por los pasos siguientes.",
+     "fix": "Conservar la interfaz de diez argumentos y sus rutas, o proporcionar un adaptador y actualizar explícitamente el comando de reconstrucción."
+    },
+    {
+     "severity": "minor",
+     "claim": "[medido] Los recuentos 394 y 2.201 corresponden a la envolvente, no también a la cobertura.",
+     "evidence": "corrected_measure.py -I comparó las entradas de HANDOFF.md con run3: cover elimina 144/761 celdas; envelope elimina 394/2.201. Los arrays resultantes sí coinciden exactamente con v7. lattice_v8.py:414-419 conserva el máximo de ambos recuentos en un único contador. Resultado: wf-kit_lattice-review/corrected-measure.json.",
+     "fix": "Separar los contadores de cover y envelope y corregir las cifras del diseño."
+    }
+   ],
+   "confirmed_claims": [
+    "[medido] Scripts, resultados y review-verdict.json están en C:/Users/guill/AppData/Local/Temp/claude/C--Users-guill-OneDrive-Documentos-DayZ-Projects-DayZ-Baltic-12km-dev--claude-worktrees-handoff-astra-map-review-6d301c/cbd20ff7-7297-478d-817e-6ab70f5cd6cd/scratchpad/wf-kit_lattice-review/. Todos los scripts se ejecutaron con C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe -I. Las referencias scratchpad/ remiten al directorio indicado en la petición.",
+    "[medido] Reejecutar measure_v8.py reproduce los anchos publicados: v7 3,2/5,8/8,0 y 3,4/5,6/7,9 m, desviaciones 1,80/1,71; v8 3,03/3,50/4,22 y 3,03/3,50/4,05 m, desviaciones 0,67/0,87. Márgenes >=0,10 del método original: 651/678 y 3925/3971. Esto confirma reproducibilidad del cálculo, sujeto a los defectos geométricos descritos. Evidencia: measure-rerun.json y audit-independent.json.",
+    "[medido] audit_independent.py recalculó 147/860 vértices cambiados y pendientes máximas 28,5713/31,6616 grados, con cero triángulos cambiados >35 grados. Relleno por suma nodal ×36: 3675,04/10640,39 m³; desmonte: 1810,81/19781,69 m³. Evidencia: audit-independent.json.",
+    "[medido] Cero vértices congelados modificados y cero vértices incidentes a la envolvente conservada modificados; máscaras idénticas. Cero triángulos cambiados incidentes a reserve o narva. Comprobado mediante audit_independent.py y final_checks.py.",
+    "[medido] final_checks.py intersectó las placas con 184/1029 celdas: ninguna pertenece a la envolvente restante. Sus vértices mínimos están a 1,27279/1,18216 m, por encima de 0,75 m; la interpolación lineal no introduce mar bajo esas placas. Tampoco aparecen nuevas celdas bajo 0,75 m en el terreno completo.",
+    "[medido] La V lineal produce 3,6 m de ancho en rectas N-S, E-O y NO-SE con perfil constante: 61 estaciones por dirección, error de semiancho <1,1e-13 m. El control con diagonal opuesta deja seco el punto medio: terreno 11,0371 frente a agua 10,25; la diagonal correcta da 9,67. Evidencia: gaps-and-v-rule.json. Esta prueba no cubre curvas ni juntas.",
+    "[medido] Ejecuté bury_edges_v31.py sobre v8: 43 bordes expuestos heredados, cero nuevos y cero alturas modificadas. pond_and_platform.py confirmó igualdad exacta con EV108 de env_plane, plane, field y visible. Los siete excesos de campo sobre 0,35 m y los 12 contactos en divisorias ya existen idénticos en EV108; no son regresiones del prototipo.",
+    "[medido por lectura] tools/terrain/wrp0wzd.py:54-55 serializa los 12 valores sin normalizar la matriz; tools/terrain/stage_bridges_v31.py:19-20 la entrega directamente. Esto respalda conservar la escala en la serialización, sin acreditar su comportamiento en motor."
+   ],
+   "not_checked": [
+    "No se llamó DayZ MCP ni se alteró la sesión del juego. Apariencia, agua del motor, escalas, proxies, navegación y rendimiento siguen sin validación en motor.",
+    "P:/ no está disponible en este proceso: Get-PSDrive mostró C, D y E y la lectura directa del P3D falló. La reconstrucción utiliza los vértices almacenados en kit_geom.json y turn-pieces.json. La convención de proxy sigue marcada como inferida en turn-pieces.json:16.",
+    "No se ejecutaron pond_author, compilación, empaquetado, verify_pond_exact ni la reconstrucción posterior de puentes EV109. Sí se ejecutó bury/footprint, que dejó v8 intacto.",
+    "No se acreditó toda la superficie de calzada/plataformas mediante estaciones o polígonos independientes. Aunque los vértices congelados permanecen intactos, cambian seis triángulos incidentes a platform cerca de (8262,8934); el vértice libre allí sube 1,23749 m. Evidencia: pond-and-platform.json. Esto no demuestra por sí solo que se haya movido la calzada.",
+    "No se recalcularon Chernarus con proxies inclinados y curvas/slanted, la variación opcional de ancho ni el terreno posterior a la corrección de eje propuesta. Las métricas del prototipo no validan esas variantes."
+   ]
+  }
+ }
+]

@@ -1,0 +1,516 @@
+{
+  "status": "PASS_VECTOR_EVALUATOR_FIXTURES",
+  "purpose": "implementation parity and performance only; no optimizer/candidate/physical acceptance",
+  "inputs": {
+    "frozen_author_sha256": "ed7b49f5df3111cb191a041bf53429f19b0839599cb3352810c280d510839d26",
+    "B_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "D4_sha256": "38250740c9fc4cfb22515e0dec488e1719b2ac481069b68dab4ac6e4d0cba587",
+    "diagnostic_sha256": "e3b6389586c88b7028f156bab7f8fc10b7f3503c91479aef3032672880b1861e"
+  },
+  "method": "local precomputed face->variable indices, vectorized float64 normals/cross/dot/atan2; order edges and base gaps precomputed; no 4M-height copy during evaluate(x)",
+  "fixture_vectors": "B zero, EV85 x0, EV85 diagnostic, 20 deterministic box-interior vectors per patch",
+  "patches": [
+    {
+      "patch": 0,
+      "focus_rc": [
+        1880,
+        191
+      ],
+      "case_count": 23,
+      "max_abs_error": {
+        "angles": 1.4210854715202004e-14,
+        "slopes": 7.105427357601002e-15,
+        "order_ineq": 0.0,
+        "order_eq": 0.0
+      },
+      "tolerance_deg_or_m": 1e-10,
+      "cases": [
+        {
+          "case": "B_zero",
+          "errors_max_abs": {
+            "angles": 3.552713678800501e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "x0",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "diagnostic",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_00",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_01",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_02",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_03",
+          "errors_max_abs": {
+            "angles": 1.0658141036401503e-14,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_04",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_05",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_06",
+          "errors_max_abs": {
+            "angles": 1.4210854715202004e-14,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_07",
+          "errors_max_abs": {
+            "angles": 3.552713678800501e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_08",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_09",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_10",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_11",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_12",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_13",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_14",
+          "errors_max_abs": {
+            "angles": 1.0658141036401503e-14,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_15",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_16",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_17",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_18",
+          "errors_max_abs": {
+            "angles": 1.0658141036401503e-14,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_19",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        }
+      ],
+      "precomputed": {
+        "faces": 89,
+        "dedup_hinges": 111,
+        "focus_hinges": 12,
+        "slope_faces": 66,
+        "order_edges": 114
+      }
+    },
+    {
+      "patch": 1,
+      "focus_rc": [
+        1785,
+        366
+      ],
+      "case_count": 23,
+      "max_abs_error": {
+        "angles": 1.0658141036401503e-14,
+        "slopes": 1.0658141036401503e-14,
+        "order_ineq": 0.0,
+        "order_eq": 0.0
+      },
+      "tolerance_deg_or_m": 1e-10,
+      "cases": [
+        {
+          "case": "B_zero",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "x0",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "diagnostic",
+          "errors_max_abs": {
+            "angles": 3.552713678800501e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_00",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 5.329070518200751e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_01",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_02",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_03",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_04",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_05",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_06",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_07",
+          "errors_max_abs": {
+            "angles": 1.0658141036401503e-14,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_08",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_09",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_10",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_11",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_12",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_13",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_14",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 1.0658141036401503e-14,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_15",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_16",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_17",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_18",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 7.105427357601002e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        },
+        {
+          "case": "interior_19",
+          "errors_max_abs": {
+            "angles": 7.105427357601002e-15,
+            "slopes": 3.552713678800501e-15,
+            "order_ineq": 0.0,
+            "order_eq": 0.0
+          }
+        }
+      ],
+      "precomputed": {
+        "faces": 84,
+        "dedup_hinges": 104,
+        "focus_hinges": 12,
+        "slope_faces": 62,
+        "order_edges": 106
+      }
+    }
+  ],
+  "benchmarks": [
+    {
+      "patch": 0,
+      "focus_rc": [
+        1880,
+        191
+      ],
+      "variables": 21,
+      "dedup_hinges": 111,
+      "focus_hinges": 12,
+      "slope_faces": 66,
+      "order_edges": 114,
+      "precompute_face_count": 89,
+      "calls": 100,
+      "elapsed_seconds": 0.02247300004819408,
+      "milliseconds_per_eval": 0.2247300004819408,
+      "full_4m_copy_per_eval": false
+    },
+    {
+      "patch": 1,
+      "focus_rc": [
+        1785,
+        366
+      ],
+      "variables": 18,
+      "dedup_hinges": 104,
+      "focus_hinges": 12,
+      "slope_faces": 62,
+      "order_edges": 106,
+      "precompute_face_count": 84,
+      "calls": 100,
+      "elapsed_seconds": 0.015102099976502359,
+      "milliseconds_per_eval": 0.1510209997650236,
+      "full_4m_copy_per_eval": false
+    }
+  ],
+  "limits": [
+    "Random interior fixtures are code parity checks, not feasible solutions or physics checks.",
+    "No global queue solve, p99/count recomputation, consumer, ODOL, or DayZ validation was performed."
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "status": "FAIL_OFFLINE_PILOT",
+  "checks": {
+    "format": true,
+    "finite": true,
+    "protected_exact": true,
+    "delta_limit": true,
+    "dry_floor": true,
+    "affected_triangles": false,
+    "routes": false
+  },
+  "changed_vertices": 407,
+  "max_delta_m": 1.3500003814697266,
+  "max_affected_triangle_degrees": 36.575294494628906,
+  "station_step_m": 0.37,
+  "lateral_step_m": 0.25,
+  "routes": [
+    {
+      "chain": 5,
+      "sections": 1734,
+      "cross_failures": 1,
+      "max_cross_m": 0.031311378680161095,
+      "grade_failures": 0,
+      "max_grade": 0.030739530716611327,
+      "chord_failures": 0,
+      "max_chord_m": 0.018651565643598822,
+      "new_or_worse_cross_outside_core": 0,
+      "examples": [
+        {
+          "station_m": 1114.553,
+          "xz": [
+            5631.126576392326,
+            10021.790524409209
+          ],
+          "cross_m": 0.031311378680161095,
+          "baseline_m": 0.11665175691882013
+        }
+      ],
+      "pass": false
+    },
+    {
+      "chain": 13,
+      "sections": 2703,
+      "cross_failures": 18,
+      "max_cross_m": 0.08332798087183946,
+      "grade_failures": 0,
+      "max_grade": 0.06132481614223696,
+      "chord_failures": 0,
+      "max_chord_m": 0.025123178527515222,
+      "new_or_worse_cross_outside_core": 0,
+      "examples": [
+        {
+          "station_m": 94.093,
+          "xz": [
+            7522.724876231555,
+            7707.549155395594
+          ],
+          "cross_m": 0.03936935786853546,
+          "baseline_m": 0.07824206904731668
+        },
+        {
+          "station_m": 185.483,
+          "xz": [
+            7434.940840346447,
+            7682.401994371733
+          ],
+          "cross_m": 0.08332798087183946,
+          "baseline_m": 0.0840951295509278
+        },
+        {
+          "station_m": 211.013,
+          "xz": [
+            7412.276706026239,
+            7670.862782491229
+          ],
+          "cross_m": 0.03778491022237773,
+          "baseline_m": 0.03188619943112414
+        },
+        {
+          "station_m": 241.353,
+          "xz": [
+            7387.710972173496,
+            7653.092683403801
+          ],
+          "cross_m": 0.042559060181396546,
+          "baseline_m": 0.16552723205743192
+        },
+        {
+          "station_m": 241.72299999999998,
+          "xz": [
+            7387.39440624585,
+            7652.9011474712615
+          ],
+          "cross_m": 0.038022277685698214,
+          "baseline_m": 0.1479414767053484
+        },
+        {
+          "station_m": 327.933,
+          "xz": [
+            7309.248432587289,
+            7616.6860735475275
+          ],
+          "cross_m": 0.039481244239194524,
+          "baseline_m": 0.11159684640758272
+        },
+        {
+          "station_m": 328.303,
+          "xz": [
+            7308.904810881664,
+            7616.548872514648
+          ],
+          "cross_m": 0.04445661442572657,
+          "baseline_m": 0.1253603076364591
+        },
+        {
+          "station_m": 411.183,
+          "xz": [
+            7234.55481275486,
+            7580.552119875119
+          ],
+          "cross_m": 0.030263554518977998,
+          "baseline_m": 0.022288774651503473
+        }
+      ],
+      "pass": false
+    },
+    {
+      "chain": 68,
+      "sections": 2702,
+      "cross_failures": 1,
+      "max_cross_m": 0.03431089880922045,
+      "grade_failures": 0,
+      "max_grade": 0.0600005177181744,
+      "chord_failures": 0,
+      "max_chord_m": 0.022915286845277993,
+      "new_or_worse_cross_outside_core": 0,
+      "examples": [
+        {
+          "station_m": 2894.2529999999997,
+          "xz": [
+            10064.152991915618,
+            2606.8601979690798
+          ],
+          "cross_m": 0.03431089880922045,
+          "baseline_m": 0.21422850413826033
+        }
+      ],
+      "pass": false
+    }
+  ],
+  "asc_sha256": "92061f0ffb8904e11ee344f34013ec37a9d88647a1eec678770bb3d3d89e44b8",
+  "limits": [
+    "Three selected corridors only, not whole road network or native import.",
+    "No new/worse width failures permitted on other eligible portions of those chains."
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "finite": true,
+    "structural_exact": true,
+    "corridors_exact": true,
+    "roads_pass": true,
+    "metadata_outside_local_exact": true,
+    "no_new_floor_exception": true,
+    "legacy_low_not_excavated": true,
+    "no_new_dry_flood": false,
+    "no_new_wet_exposure": false,
+    "slopes": true,
+    "R3_curvature": true,
+    "general_curvature": true,
+    "R1_shore_turns": false,
+    "R1_shore_distance": false,
+    "R2_shore_turns": true,
+    "R2_shore_distance": false,
+    "R3_shore_turns": false,
+    "R3_shore_distance": false
+  },
+  "curvature": {
+    "R3_valley": {
+      "before": 0.022390349713036835,
+      "after": 0.01827146281929913,
+      "reduction": 0.18395813136136374
+    },
+    "general_dry": {
+      "before": 0.014806586137007369,
+      "after": 0.013092426026237133,
+      "reduction": 0.11577011033528439
+    }
+  },
+  "outlines": {
+    "R1": {
+      "before": {
+        "lines": 2,
+        "length_m": 507.20703496792237,
+        "samples": 242,
+        "turn_p50": 3.9519107140018206,
+        "turn_p90": 23.039456892569877,
+        "turn_p95": 28.80583440728418,
+        "turn_over30_share": 0.045454545454545456
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 499.2684449589798,
+        "samples": 238,
+        "turn_p50": 5.190708064162012,
+        "turn_p90": 20.878433971893944,
+        "turn_p95": 28.710596467805924,
+        "turn_over30_share": 0.046218487394957986
+      },
+      "hausdorff_m": 4.876348339618279
+    },
+    "R2": {
+      "before": {
+        "lines": 2,
+        "length_m": 812.7945216624786,
+        "samples": 395,
+        "turn_p50": 5.490514208207124,
+        "turn_p90": 29.632085333337162,
+        "turn_p95": 53.53929375869794,
+        "turn_over30_share": 0.09873417721518987
+      },
+      "after": {
+        "lines": 2,
+        "length_m": 730.3195451264936,
+        "samples": 355,
+        "turn_p50": 3.6488774135172846,
+        "turn_p90": 22.92210560071246,
+        "turn_p95": 36.40173226194979,
+        "turn_over30_share": 0.07887323943661972
+      },
+      "hausdorff_m": 13.80919958798434
+    },
+    "R3": {
+      "before": {
+        "lines": 2,
+        "length_m": 867.1271619719322,
+        "samples": 422,
+        "turn_p50": 10.01427744024578,
+        "turn_p90": 37.68891934544408,
+        "turn_p95": 46.3190495417347,
+        "turn_over30_share": 0.1872037914691943
+      },
+      "after": {
+        "lines": 5,
+        "length_m": 785.343512526142,
+        "samples": 366,
+        "turn_p50": 13.443439238828343,
+        "turn_p90": 59.563290457876356,
+        "turn_p95": 115.51514405222505,
+        "turn_over30_share": 0.2650273224043716
+      },
+      "hausdorff_m": 6.145876571438561
+    }
+  },
+  "new_dry_flood": 22,
+  "new_wet_exposure": 2,
+  "bad_faces": 0,
+  "reclassified_vertices": 100,
+  "corridor_vertices": 22893,
+  "wet_area_before": 20699.694489780257,
+  "wet_area_after": 19800.573402404953,
+  "roads": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "terrain_sha256": "642983e0711bdabce7e8c233ac9a842648e7d415f19b9770e142df73bc26cc2e",
+  "limits": [
+    "Frozen physical pond planes; class-derived reconstruction is not the deployed water.",
+    "Native whole-domain audit corrects removed-cells clipping in the preliminary metric; no game acceptance."
+  ]
+}

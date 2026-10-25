@@ -1,0 +1,67 @@
+{
+  "time": "2026-09-29T18:32:33.761870+02:00",
+  "status": "PASS_SAMPLED_DRY_INTERIOR",
+  "supersedes_process_and_instrumentation_state": "checkpoint.json",
+  "before": {
+    "dry_interior_samples": 297,
+    "flooded": 44,
+    "not_above_sea_max": 108
+  },
+  "after": {
+    "dry_interior_samples": 297,
+    "flooded": 0,
+    "not_above_sea_max": 0
+  },
+  "runtime_verification": {
+    "status": "PASS_SAMPLED_DRY_INTERIOR",
+    "log_sha256": "189baf62cf06dea3655ac27e4ce557b974c1609fce0e51d2a79815382d54550d",
+    "samples": 441,
+    "sea_readings": {
+      "sea_min": 0.5,
+      "sea_max": 1.0,
+      "sea_now": 0.506368,
+      "wave_max": 0.25,
+      "wave_now": -0.243632
+    },
+    "native_source": "P:\\DayZ_Baltic_12km_dev\\tb\\narva_trial\\narva_tb_dryland_v1.asc",
+    "native_sha256": "7832f0a9d05cb472bc419bd6600b3034b07832b14e55e0a86fe1bf6d10c9d5dc",
+    "terrain_matches_saved_native_max_error_m": 0.00500003337860111,
+    "reference_dry_interior_samples": 297,
+    "runtime_wet_dry_interior_samples": 0,
+    "dry_interior_samples_at_or_below_sea_max": 0,
+    "flooded_dry_samples": [],
+    "limits": [
+      "441 points in Narva, no exhaustive regional traversal or water topology test.",
+      "Maximum is API-reported for this Buldozer session; player runtime/config must be checked separately.",
+      "Point queries prove positive depth over sampled dry land, not exact flooded polygon area."
+    ]
+  },
+  "visual": {
+    "position_engine": [
+      3222.75,
+      8008.25
+    ],
+    "file": "orilla-3223-8008.png",
+    "scope": "Single shoreline view. Water and land visible without previous black patches; no exhaustive channel connectivity verification."
+  },
+  "terrain_changed_this_trial": false,
+  "project_sha256_unchanged": "5f9390837b3a503977bf9a5f1a67f3a92ad9a066778207f5e1b7076ccec4feeb",
+  "cleanup": {
+    "Time": "2026-09-29T18:28:21.1741430+02:00",
+    "ParametersRestored": true,
+    "ObserverPboRemovedByHash": true,
+    "BuldozerExited": true,
+    "TerrainBuilderAlive": false
+  },
+  "navmesh": {
+    "native_UI_authorized_by_user": true,
+    "application_opened": true,
+    "generation_started": false,
+    "output_nm_created": false,
+    "blocker": "Managed launcher has no navmesh data-server option. Proposed extension requires scope approval."
+  },
+  "limits": [
+    "Not a playable release.",
+    "No player, swimming, vehicle, elevated-water, regional topology or 80-100 player validation."
+  ]
+}

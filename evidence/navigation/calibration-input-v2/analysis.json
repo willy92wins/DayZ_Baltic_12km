@@ -1,0 +1,209 @@
+{
+  "status": "PASS_CALIBRATION_MOVEMENT_ONLY",
+  "checks": {
+    "correct_header": true,
+    "complete": true,
+    "water_reference": true,
+    "strictly_increasing_time": true,
+    "no_damage": true,
+    "authority_and_no_proxy": true,
+    "input_callbacks_measured": true
+  },
+  "log_sha256": "9b29af8fcb8bb015b3d348f9579e14b72e6875ca320390e892446973e1c96a93",
+  "end_reason": "DISTANCE_SAFETY_STOP",
+  "samples": 116,
+  "distance_m": 89.27753580828791,
+  "health_first_min_last": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "powered_motion_samples": 85,
+  "longest_powered_motion_streak": 85,
+  "active_samples": 116,
+  "phases": [
+    {
+      "phase": 0,
+      "samples": 22,
+      "time_s": [
+        0.496,
+        10.996
+      ],
+      "net_horizontal_displacement_m": 0.10198039027220886,
+      "max_horizontal_speed_m_s": 0.0702093,
+      "rpm_min_median_max": [
+        0.0,
+        0.0,
+        700.0
+      ],
+      "clutch_values": [
+        -1832932600.0
+      ],
+      "gear_values": [
+        1.0
+      ],
+      "future_gear_values": [
+        1.0
+      ],
+      "neutral_values": [
+        1.0
+      ],
+      "prop_omega_min_max": [
+        0.0,
+        0.0
+      ],
+      "throttle_min_max": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "phase": 1,
+      "samples": 30,
+      "time_s": [
+        11.496,
+        25.996
+      ],
+      "net_horizontal_displacement_m": 10.502304509011344,
+      "max_horizontal_speed_m_s": 1.16305,
+      "rpm_min_median_max": [
+        765.692,
+        933.3045,
+        1099.54
+      ],
+      "clutch_values": [
+        -1832932600.0
+      ],
+      "gear_values": [
+        1.0,
+        2.0
+      ],
+      "future_gear_values": [
+        1.0,
+        2.0
+      ],
+      "neutral_values": [
+        1.0
+      ],
+      "prop_omega_min_max": [
+        0.0,
+        34.9014
+      ],
+      "throttle_min_max": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "phase": 2,
+      "samples": 29,
+      "time_s": [
+        26.496,
+        40.507
+      ],
+      "net_horizontal_displacement_m": 18.103579756499748,
+      "max_horizontal_speed_m_s": 1.34472,
+      "rpm_min_median_max": [
+        1106.72,
+        1174.55,
+        1200.95
+      ],
+      "clutch_values": [
+        -1832932600.0
+      ],
+      "gear_values": [
+        2.0
+      ],
+      "future_gear_values": [
+        2.0
+      ],
+      "neutral_values": [
+        1.0
+      ],
+      "prop_omega_min_max": [
+        35.1294,
+        38.1197
+      ],
+      "throttle_min_max": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "phase": 3,
+      "samples": 30,
+      "time_s": [
+        41.007,
+        55.507
+      ],
+      "net_horizontal_displacement_m": 46.27142638821573,
+      "max_horizontal_speed_m_s": 4.86437,
+      "rpm_min_median_max": [
+        1202.18,
+        2621.375,
+        3482.53
+      ],
+      "clutch_values": [
+        -1832932600.0
+      ],
+      "gear_values": [
+        2.0
+      ],
+      "future_gear_values": [
+        2.0
+      ],
+      "neutral_values": [
+        1.0
+      ],
+      "prop_omega_min_max": [
+        38.1588,
+        110.492
+      ],
+      "throttle_min_max": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "phase": 4,
+      "samples": 5,
+      "time_s": [
+        56.007,
+        58.007
+      ],
+      "net_horizontal_displacement_m": 10.631669671317276,
+      "max_horizontal_speed_m_s": 6.29422,
+      "rpm_min_median_max": [
+        3504.54,
+        3956.04,
+        4182.42
+      ],
+      "clutch_values": [
+        -1832932600.0
+      ],
+      "gear_values": [
+        2.0
+      ],
+      "future_gear_values": [
+        2.0
+      ],
+      "neutral_values": [
+        1.0
+      ],
+      "prop_omega_min_max": [
+        111.189,
+        132.683
+      ],
+      "throttle_min_max": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "clutch_readback": "UNUSABLE_UNVALIDATED_NATIVE_INT; do not infer actual clutch engagement",
+  "limits": [
+    "Sequential phases, not isolated causal A/B/A/B.",
+    "Empty boat in open sea, not river/bridge/crew validation.",
+    "Maximum displacement is sampled; safety stop can occur between rows."
+  ]
+}

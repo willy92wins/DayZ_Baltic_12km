@@ -1,0 +1,53 @@
+128/1024 tiles compiled and independently classified
+256/1024 tiles compiled and independently classified
+384/1024 tiles compiled and independently classified
+512/1024 tiles compiled and independently classified
+640/1024 tiles compiled and independently classified
+768/1024 tiles compiled and independently classified
+896/1024 tiles compiled and independently classified
+1024/1024 tiles compiled and independently classified
+{
+  "status": "PASS_COMPLETE_SURFACE_SOURCE_COMPILED",
+  "gates": {
+    "all_map_pixels": true,
+    "all_tiles": true,
+    "source_wet_gravel": true,
+    "compiled_interior_gravel": true,
+    "mask_alpha": true,
+    "palette": true,
+    "all_overlaps": true,
+    "negative_controls": true
+  },
+  "counts": {
+    "pixels": 150847524,
+    "wet_pixels": 35772020,
+    "source_wet_not_gravel": 0,
+    "compiled_interior_pixels": 34445727,
+    "compiled_interior_non_gravel": 0,
+    "compiled_wet_non_gravel": 4323,
+    "satellite_changed_pixels": 6125,
+    "mask_changed_pixels": 562,
+    "dry_mask_changed_pixels": 551,
+    "satellite_quantization_abs_sum": 310284759
+  },
+  "satellite_quantization_mean": 0.6856476676408689,
+  "satellite_quantization_max": 25,
+  "overlaps": 3968,
+  "bad_overlaps": [],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\candidate\\terrain.npz": "b54963eb3cf5429c6192fb6f1e8f6d10c9a3cc397fdbabdf5c2f89cbabcf8e36",
+    "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\ImageToPAA\\ImageToPAA.exe": "0b786037fc708931bcc85088ba69648bcf57463bcf3b1d3a21a35f29b9c2344a"
+  },
+  "controls": [
+    "independent_nonplanar_triangle_heights",
+    "nonplanar_wet_dry_classification",
+    "compiled_real_interior_pixel_mutations"
+  ],
+  "seconds": 270.26499999998487,
+  "limits": [
+    "Full nominal physical pixel classification; does not detect native ocean shader artifacts.",
+    "DXT border mixing inventoried, not zero at all water edges. Satellite compression error measured, not identical to PNG.",
+    "Same palette and design classes; near-water shore proximity outside finite cells retains legacy heuristic."
+  ]
+}

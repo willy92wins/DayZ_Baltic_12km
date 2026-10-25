@@ -1,0 +1,42 @@
+{
+  "status": "OFFLINE_PACKAGE_PASS",
+  "baseline_sha256": "751823ac65cd56c9093de9705ee30b08a448a69606690c1363ecf944a15ac838",
+  "compiled_pbo_sha256": "21a5cd3f7355b1360bf691130b73635bd70d70e0f3cddbc11e61c2295a65ef6a",
+  "pbo_sha256": "c43e68fd1db82ccd5bb8a91a9a8c5de0e7d5435edaa56e75b1d170efe7bfeb6d",
+  "wrp_sha256": "f846dc12405883959653d241e9dd81e88e3e052e5b0ded53fd71aef08b2eb975",
+  "source_wrp_sha256": "c2f83afb2c2d45f6debcec1b4ad21f2ce58aa9bc6d24cb4af0560a88eff651e2",
+  "objects": {
+    "objects": 17900,
+    "max_matrix_delta": 9.5367431640625e-07,
+    "pilot_exact": 35
+  },
+  "reader": {
+    "version": 32,
+    "stride": 64,
+    "model_count": 5271,
+    "table": [
+      16548915,
+      17694515
+    ],
+    "after": [
+      22,
+      16815905
+    ]
+  },
+  "negative_controls": {
+    "missing": true,
+    "extra": true,
+    "moved": true
+  },
+  "entries_unchanged": 6825,
+  "changed_entries": [
+    "baltic_trial.wrp",
+    "config.bin"
+  ],
+  "config_delta": "requiredAddons += Baltic_Stream_Pilot",
+  "forest": false,
+  "limits": [
+    "OPRW table locator is heuristic; heights require independent engine probes.",
+    "Technical probe without forest; not acceptance of final map, AI, water, collision or appearance."
+  ]
+}

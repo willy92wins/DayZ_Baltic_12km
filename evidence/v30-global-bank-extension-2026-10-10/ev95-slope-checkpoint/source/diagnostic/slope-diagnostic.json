@@ -1,0 +1,143 @@
+{
+  "schema": "ev94.single-slope-violation-diagnostic.v1",
+  "status": "ONE_FACE_LOCALIZED_SINGLE_NODE_REPAIR_FEASIBLE_BUT_OBJECTIVE_GATE_FAILS",
+  "scope": "Read-only diagnosis of full-run-02; no source, candidate, solver, or consumer evaluation rerun.",
+  "inputs": {
+    "consumer_report": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/real-sector-preflight/ev94-rebase/consumer/full-run-02.json",
+      "sha256": "259c87fa01894eb3db409f6087e7cd3b787918e1e08629b4e53ad0fdd2e24030"
+    },
+    "base_focal_npz": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/real-sector-preflight/focus-unit/author-run-01/candidate-terrain.npz",
+      "sha256": "30d0ed33e477846297a17e758e34a51490d54ee809e8b63ec9d69229170d15a1"
+    },
+    "candidate_local_npz": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/real-sector-preflight/ev94-rebase/solve-run-01/candidate-local.npz",
+      "sha256": "3360b1e8912671bffe1348c29cf1d2e9e65bc6a50984435fff8b917dc4b67cb0"
+    },
+    "prepared_npz": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/real-sector-preflight/ev94-rebase/preflight-run-05/prepared.npz",
+      "sha256": "2df4ad67280c656025843f6528147a68c03dfcf6ecdfbe9cce2ee4818e15a2eb"
+    },
+    "solver_state_npz": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/real-sector-preflight/ev94-rebase/solve-run-01/solver-state.npz",
+      "sha256": "0307b485a9fa5eb2bcfb349c56fd3c94a42b0d64e4f6136d2d901e59319eadeb"
+    },
+    "ev87_geometry_source": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-strict-bank-relief-20261010/review-independent/verify_ev87.py",
+      "sha256": "964206b98f4c30c04abcb070d0e05f08a6e41edb31a24400574de2ad208fee27",
+      "anchors": "triangle_normals:248-254; slopes:256-258"
+    },
+    "ev88_gate_source": {
+      "path": "E:/DayZ-Baltic-Build/v30-wide-bank-fairing-pilot-20261010/review-independent/verify_ev88q.py",
+      "sha256": "82a988790e6bdfc0289bcb7c32cb0afd1210e07b264d92731aba266bc5980f78",
+      "anchors": "local_sector_stats:193-216; slope bad rule is H > max(B, 35 deg) + 1e-4 deg"
+    },
+    "ev94_consumer_source": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/real-sector-preflight/ev94-rebase/consumer/verify_ev94_rebase.py",
+      "sha256": "95393c52a1e18e887a766023166dbfd86d2121b70e473912ddea32f6c2c9a760",
+      "anchors": "float64 geometry inputs and slope gate:282-303"
+    },
+    "objective_gate_source": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/real-sector-preflight/order-closure/verify_order_closure.py",
+      "sha256": "064f67ef4fcf2f33264853d4301f33e79246e2be3297d9f01b0a64bacf9e4e5e",
+      "anchors": "closure_cost_report:1159-1171; closed cost must stay within 1e-7*max(1,raw_cost) and below baseline cost"
+    },
+    "inventory_reason_source": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/global-operator-prototype/real-sector-preflight/inventory-run-02.json/inventory.json",
+      "sha256": "a1d656fff3b0bd7b2435893ff5e57a0ca92df2068f0db024291bc1409b8eb967",
+      "reason_bit_4": "engineering_halo"
+    },
+    "coordinate_sources": [
+      {
+        "path": "P:/DayZ_Baltic_12km_dev/tests/narva-playtest/world/config.cpp",
+        "sha256": "d6a423f6e43c4ca2d7805902420bedf9deb53551ec5b61da534f2b14d18ec509",
+        "anchor": "centerPosition at line 24 is [6144, 6144, 100]"
+      },
+      {
+        "path": "P:/DayZ_Baltic_12km_dev/evidence/playtest/evidence/wrp-reopened.json",
+        "sha256": "7c79de6ca5e5ee7f818b302e6873799f24cc02ab9fc79ca3a68e219a7ec3a069",
+        "anchors": "terrain_grid [2048,2048], terrain_spacing_m 6.0 at lines 10-14"
+      }
+    ]
+  },
+  "failure": {
+    "full_run_gate": "slope_hinge_global_nonregression",
+    "full_run_gate_counts": {"passed": 14, "total": 15},
+    "global_slope_violation_count": 1,
+    "new_hinges_over_30": 0,
+    "affected_sector_maxima_nonworse": true,
+    "face": {
+      "triangle": "EV87 triangle 0 (NW-NE-SE)",
+      "cell_rc": [899, 445],
+      "vertices_rc": [[899, 445], [899, 446], [900, 446]],
+      "xyz_m": [[2670, 7.2344970703125, 6894], [2676, 3.1139774322509766, 6894], [2676, 2.2569596767425537, 6888]],
+      "coordinate_convention": "X=6*column, Z=12288-6*row, Y=height; 2048-grid/6m WRP and row direction follows EV87 triangle normal z=-6 (CfgWorlds centerPosition is 6144,6144)."
+    },
+    "slope_deg": {
+      "baseline": 35.00000098391883,
+      "candidate": 35.04774429562605,
+      "gate_limit": 35.000100983918834,
+      "candidate_excess_over_limit": 0.047643311707216
+    },
+    "vertices": [
+      {
+        "rc": [899, 445],
+        "B_m": 7.2344970703125,
+        "H_m": 7.2344970703125,
+        "delta_m": 0.0,
+        "classification": "fixed; not a variable",
+        "fixed_reason": "engineering_halo (reason bit 4); exact water/civil/P9 masks false",
+        "bounds_valid": true
+      },
+      {
+        "rc": [899, 446],
+        "B_m": 3.1139774322509766,
+        "H_m": 3.1139774322509766,
+        "delta_m": 0.0,
+        "classification": "fixed; not a variable",
+        "fixed_reason": "engineering_halo (reason bit 4); exact water/civil/P9 masks false",
+        "bounds_valid": true
+      },
+      {
+        "rc": [900, 446],
+        "B_m": 2.2943551540374756,
+        "H_m": 2.2569596767425537,
+        "delta_m": -0.037395477294921875,
+        "classification": "mobile; eligible, not in fixed mask",
+        "bounds_m": [1.8000000715255737, 2.7943551540374756]
+      }
+    ],
+    "distance_from_face_vertices_to_nearest_mask_or_edge": {
+      "retained_windows_plus_halo2": {"nearest_rc": [965, 326], "distance_m": 816.4631038816144},
+      "water_block": {"nearest_rc": [906, 450], "distance_m": 43.26661530556787},
+      "civil_block": {"nearest_rc": [897, 445], "distance_m": 12.0},
+      "p9_block": {"nearest_rc": [815, 320], "distance_m": 911.9407875514726},
+      "nearest_preflight_256x256_window_edge": {"distance_m": 306},
+      "nearest_260x260_context_edge": {"distance_m": 318},
+      "nearest_global_2048_map_edge": {"distance_m": 2670}
+    },
+    "mechanism": "The two fixed upper vertices leave the southeast height as the only degree of freedom on this face. Lowering that one vertex by 3.74 cm increases the triangle's gradient magnitude; the baseline is already almost exactly 35 degrees. This is a local per-triangle regression, not a new >30-degree hinge, sector-maximum regression, or window/water/civil/P9 mask violation."
+  },
+  "in_memory_single_vertex_test_not_applied": {
+    "only_node_rc": [900, 446],
+    "required_float32_height_m": 2.2942752838134766,
+    "raise_from_candidate_m": 0.03731560707092285,
+    "difference_from_baseline_m": -0.00007987022399902344,
+    "slope_after_deg": 35.00010083225762,
+    "local_touched_triangle_violations_after": 0,
+    "bounds_pass": true,
+    "d8_edges_touching_node_pass": true,
+    "energy": {
+      "raw_cost": 667.0554852789421,
+      "candidate_closed_cost": 667.0554856756754,
+      "single_node_adjusted_cost": 667.0642320712899,
+      "candidate_delta_from_raw": 3.967332986576366e-7,
+      "allowed_delta": 0.00006670554852789421,
+      "adjusted_delta_from_raw": 0.008746792347778864,
+      "adjusted_exceeds_allowance_by_factor": 131.07,
+      "objective_gate_after_adjustment": false
+    },
+    "conclusion": "The float32 single-node raise is a feasible geometric repair under the exact bounds and D8 witnesses and clears all touched triangle slope violations in the local diagnostic tile. It violates the existing objective-closure allowance by about 131x, so it is not an acceptable post-solve repair. Preserve the failed candidate; a passing result under the current objective contract requires re-optimization with the slope restriction represented in the solve, rather than patching this output."
+  }
+}

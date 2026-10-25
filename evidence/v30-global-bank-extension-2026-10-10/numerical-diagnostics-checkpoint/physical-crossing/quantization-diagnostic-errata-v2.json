@@ -1,0 +1,36 @@
+{
+  "schema": "ev94.wet-bank-quantization-diagnostic-errata.v2",
+  "status": "PRIOR_NEIGHBORHOOD_INFEASIBILITY_CLAIM_INVALIDATED",
+  "preserved_prior_artifacts": {
+    "quantization_report": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/postsolve-consumer/quantization-diagnostic.json",
+      "sha256": "7D8723A913FD9EC1C8B6D293482D4FB1A6C51CFD73997D78776CD704B058EDA5"
+    },
+    "quantization_script": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/postsolve-consumer/diagnose_crossing_quantization.py",
+      "sha256": "14D1DFD8EA1434F009922F74EE511186C14DAB8967D04FCBD60B127FF50FC7A2"
+    },
+    "crossing_report": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/postsolve-consumer/crossing-infeasibility.json",
+      "sha256": "68D10C45994019A0B074E220970141DDD348FE82CC1EAEDD763D3B7647DA4219"
+    },
+    "crossing_script": {
+      "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/postsolve-consumer/analyze_crossing_infeasibility.py",
+      "sha256": "EEE99810A278D2E033F33914FA8EEB6AC81FC7C7FD588A91E1EA76F94C83E640"
+    }
+  },
+  "corrected_diagnostic": {
+    "path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/postsolve-consumer/crossing-geometry-fraction-v2.json",
+    "sha256": "A0331F83EC496D196BA2599EB96D2D0B1861793A871F60E424614326C372B5E8",
+    "source_path": "E:/DayZ-Baltic-Build/v30-global-bank-extension-20261010/G/wet-bank-pilot/postsolve-consumer/crossing-geometry-fraction-v2.py",
+    "source_sha256": "467556444E0B56D2A46F5263A6A15987F158E5F8BD1DF6B802895F0897FD822A"
+  },
+  "errata": [
+    "The former 0-of-3^13 result is not a proof of f32-neighborhood infeasibility. It tested every exact floating C_cross residual against >=0 even though the unchanged baseline B itself has 14 negative residuals, all between -8.89e-16 and 0. The direct P/F shoreline reconstruction finds zero B crossing failures.",
+    "The earlier row metadata mapping used crossing_rows_json[:C_cross_rows], but 32 sign_only summary records are not matrix rows. Correct mapping filters those summaries first: 560 records = 32 summaries + 528 CSR rows. CSR-derived 13-node support remains valid; row labels from the old positional map do not.",
+    "The exact stored C coefficients contain sub-ULP representational artifacts at baseline-pinned variables: for RC (857,1182), the stored single-variable interval has width +5.60981754089469e-17 m; for RC (857,1184), it has width -2.0002362498791288e-16 m. Independent exact-rational P/F/design crossing constraints give width 0 at B for both nodes. The second stored-C contradiction is not a physical crossing contradiction.",
+    "For the candidate, 20 C rows below -1e-12 map to direct geometric crossing drift on five native edges, each duplicated across P/F and two adjacent cells. The direct parameter excess is at most 1.8719795342516847e-7 of a 6 m edge (~1.12 micrometers); this is a real exact-geometry violation under the frozen no-slack rule, but no joint f32-neighborhood feasibility result is established.",
+    "The old 9-versus-13 comparison counts single-node one-ULP moves that fix at least one strictly negative C row versus the CSR support union. The nine includes a node that only affects two baseline-level ~1e-15 rows. Restricting to 20 material rows gives six individually helpful nodes over ten support nodes. Neither count proves or disproves a simultaneous correction."
+  ],
+  "scope": "Read-only diagnosis. No solver, terrain edits, tolerance changes, or exhaustive neighborhood enumeration were performed in this correction."
+}

@@ -1,0 +1,65 @@
+{
+ "terrain": "E:\\DayZ-Baltic-Build\\v30-bug-recheck-20261008\\wave-banks-r1\\terrain_wave_banks.npz",
+ "sea_cut": 0.51,
+ "removed_cells": 682,
+ "reach_vertices": 907,
+ "water_depth_fail_outside_reaches": 0,
+ "pieces_fail_outside_removed_cells": {
+  "water_corner": 0,
+  "land_corner": 0
+ },
+ "reach_vertices_under_pieces": 802,
+ "reach_wet_depth_below_piece_m_min": 0.05,
+ "reach_wet_shallower_than_0_02_under_piece": 0,
+ "reach_land_below_piece_surface": 0,
+ "reach_wet_without_piece": 1,
+ "retained_pond_junctions": [
+  {
+   "row": 867,
+   "col": 368,
+   "x": 2208,
+   "z": 7080,
+   "ground_m": 1.349000096321106,
+   "pond_level_m": 1.4500000000000002,
+   "models": [
+    {
+     "model": "baltic_water_v30\\pilot_00001.p3d",
+     "sha256": "30c6c67e6347bbdccd95b31b9bb4bf5f9d6644323a2c5211f47c22cb6fb899f9",
+     "level_m": 1.4500000000000002
+    },
+    {
+     "model": "baltic_water_v30\\pilot_00002.p3d",
+     "sha256": "3d41478319296383d735f77265dc7250f62b44dbee3d62b59e2879ce9e6e60f8",
+     "level_m": 1.4500000000000002
+    }
+   ]
+  }
+ ],
+ "reach_wet_without_water_surface": 0,
+ "missing_water_surface_points": [],
+ "actual_faces": {
+  "removed_centers_still_under_pond": 0,
+  "remaining_pond_centers": [],
+  "retained_faces": 138,
+  "manifest_matrices_match": true,
+  "coverage": {
+   "fully_wet_native_faces": 698,
+   "uncovered_faces": 0,
+   "uncovered_area_m2": 0.0,
+   "examples": []
+  },
+  "limits": [
+   "Projected roadway faces and fully wet native triangles in removed cells only.",
+   "Mixed shore faces still have vertex checks, not complete area/depth certification.",
+   "Source MLOD hashes are checked here; deployed ODOL parity needs a separate receipt."
+  ]
+ },
+ "reach_land_below_retained_pond": [],
+ "status": "PASS_SCOPED_CHANNEL_WATER_GEOMETRY",
+ "terrain_sha256": "b363b79dc8b4374a626644da78f110666139d382ee09a38dc7aade46b2e659dc",
+ "water_manifest_sha256": "a0120d7ede8e7d319b2f6680742cf64c909bacf72bbe38af4852b62184552829",
+ "limits": [
+  "Scoped vertices and fully wet faces; no global coverage, wave, visual or boat-motion acceptance.",
+  "reach_wet_without_piece is the historical vanilla-only count, not a hole count."
+ ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PREPARED_DIAGNOSTIC_ONLY",
+  "samples": 30,
+  "interval_ms": 2000,
+  "points": 8,
+  "source_init_sha256": "9a5ac56ceb0679cc4fbfeaab0b8684a322d1b29ce2b5e78c4019ca91d43e6c2c",
+  "files": {
+    "init.c": "81ad00a46f0dfa48e30233aadb8be7cb696b1fb48a38507e026d916a912220aa",
+    "points.csv": "65c49d72a65318cff270a65fc8cd28351c11b32f0894b18656ca8bd78fef0cd0",
+    "points.json": "8bb243af1a448038c929c859b114038f683fd5bee59baa60f73443d6ac30f064"
+  },
+  "criteria": "Keep raw strict FAIL. Check whether identical points cross depth zero over time while ground and pond/sea flags stay stable, and whether depth tracks with-fake surface. No gate change or repeated acceptance selection.",
+  "source_apis": "P:/scripts/3_game/global/game.c:1192-1202,1533-1534; existing mission supplies other signatures."
+}

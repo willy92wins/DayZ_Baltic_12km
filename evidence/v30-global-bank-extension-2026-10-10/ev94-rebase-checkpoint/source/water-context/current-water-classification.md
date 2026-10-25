@@ -1,0 +1,22 @@
+# P-unknown Narva/Luga: clasificación espacial actual
+
+**Dictamen acotado:** los 40 parches no caen en los bordes de las features actuales de agua ni bajo los nueve puentes examinados. Están dentro del polígono de diseño `water_v3` de sus cauces, con ≥12 m de margen a la frontera; la mayor parte de Luga y casi la mitad de Narva quedan ≥20 m dentro. La ausencia de caras P3D compiladas es coherente con la ruta de mar del constructor, pero esto no es una lectura local del agua en el motor.
+
+La intersección exacta de los parches `corridors.geojson ∩ celda 6 m` con `design/water_v3.geojson` da:
+
+| Feature | Celdas P-unknown | Área | Dentro de feature | Área a ≥12 m del borde | Área a ≥20 m |
+|---|---:|---:|---:|---:|---:|
+| Narva_23 | 11 | 238.745766 m² | 100% | 238.745766 m² | 114.366448 m² (47.9%) |
+| Luga_0 | 29 | 752.262187 m² | 100% | 752.262187 m² | 649.554361 m² (86.3%) |
+
+Esto los clasifica como interior respecto al polígono de agua actual, no como borde de esa feature. El polígono no es una línea central, así que no prueba distancia al talweg. Narva tiene `width_median_m=50.3` (min/max 49.6/52.9); Luga 42.9 (34.9/61.4). La selección y las 40 coordenadas RC, alturas/clases por esquina y bandas geométricas están en [current-water-polygon-context.json](current-water-polygon-context.json). Los parches exactos se reconstruyen desde las celdas de [unknown-p-audit.json](unknown-p-audit.json).
+
+La fuente de diseño es reproducible y actual: `water_v3.geojson` SHA `caa333e365c2a4511f839937a9d76a5aa157a0ef925d6ee4b5efcc4ebb38f8a9`; `v30-v11/09/build.json` y `/13/build.json` fijan ambos ese mismo hash como input. Las 40 esquinas actuales de EV94 tienen clase 1 (sea/ocean) o 3 (navigable): Narva 30/14; Luga 0/116. Son **conteos nodales**, no proporciones de área. Las alturas actuales EV94 por esquina abarcan −5.906507 a −2.870000 m; niveles de clase abarcan Narva 0.50–0.75 y Luga 0.50–0.509382 m, todos ≤0.80.
+
+La ruta de construcción explica por qué P puede ser NaN aquí sin que signifique “tierra seca”: `tools/terrain/build_v30_water.py:66,167–168` asigna clase 1/nivel 0.75 a la máscara oceánica; `:191–196` asigna clase 3/nivel de bandas a polígonos navegables. `tools/water/build_water_pieces_v30.py:1–7,32–47` especifica que mar/delta son agua del motor y que solo genera planos interiores para clases 2/3/5/6/7 con nivel `>0.80`; `tools/terrain/v30_common.py:88–104` produce NaN para las demás celdas. El snapshot nativo preexistente EV93 registra `SEA;0.65;0.85;0.75;0.1`; su misión emite esos valores mediante las APIs globales en `build-focal/missions/BalticEV94FocalBankV1.BalticTrial/init.c:80`. No hubo lectura nativa local nueva en estos cauces. El terreno está varios metros bajo esos niveles, lo que es compatible con sumersión si la superficie global de mar está presente, pero no demuestra cobertura de motor en XY.
+
+**Puentes:** las 11 celdas Narva no intersectan celdas proyectadas de los nueve objetos civiles; las 29 Luga también quedan fuera de sus AABB transformadas completas. El hueco conservador mínimo a esos AABB es 604.907 m en Narva y 1710.652 m en Luga. Fuente y limitaciones: [corridor-domain-context.json](corridor-domain-context.json), cuyo inventario usa los nueve objetos `bridge_metal_25.p3d` y vértices de todos los LOD con caras; el resultado es una exclusión geométrica estática, no un diagnóstico de supresión runtime.
+
+**Lectura correcta:** estas áreas son un tramo interior de cauce de diseño con P desconocido y sin caras de agua compiladas; no son 991 m² demostrados de hueco visual. La explicación más consistente con fuentes es el fallback previsto a mar del motor por nivel bajo. Sigue sin probarse el agua runtime en las coordenadas ni el calado real allí; no se rellenó P ni se cambió geometría.
+
+Repro: GIS Python `C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe` con [current_water_polygon_context.py](current_water_polygon_context.py). Script SHA `39cbdb48d87dc5a32bb5162ad6d1e929e8e851a7e81b9437b863a56af90d5d90`; JSON SHA `6ad4cddfce1a59ee38e00eee1e2ad56862575a23d8ffbdd4666b988b74e00729`. Inputs EV94 terreno SHA `30d0ed33e477846297a17e758e34a51490d54ee809e8b63ec9d69229170d15a1`; índice/censo de caras EV93 SHA `c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c`; agua PBO exacta SHA `3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14`. Estado: `COMPLETE_CONTEXT_ONLY`; el script está incluido en el readset y la corrida no observó cambios.

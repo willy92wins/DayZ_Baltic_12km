@@ -1,0 +1,63 @@
+{
+  "verdict": "SOUND-with-fixes",
+  "critical_major_open": 0,
+  "review_round": 1,
+  "maximum_rounds": 2,
+  "time_utc": "2026-10-19T18:33:07.364636+00:00",
+  "raw_review": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-build-ae-r1.json",
+  "raw_review_sha256": "8f59ecf872001ca4a4a41a58601bdc9bc88e26a87d9108e3f575abf63dd6b7a8",
+  "world_sha256": "bf2627eb7abe95652eb215b27694983252c11d019e147635795b8d4cf114246e",
+  "water_sha256": "97edcafe1fc86d9abb4c3aa591d5081a6dd940b87020069fd45c04f8d0deae43",
+  "source_commit": "845295f7b9b0a3ea225ba675755f34efa67a548b",
+  "committed_sources": {
+    "tools/terrain/patch_surface_v31.py": {
+      "working_sha256": "00bfecc6e077b0b20402a50a9641866430ebade80836493f4f25440e7c0decf9",
+      "git_blob_sha256": "00bfecc6e077b0b20402a50a9641866430ebade80836493f4f25440e7c0decf9",
+      "equal_after_CRLF_normalization": true
+    },
+    "tools/vegetation/forest_v31.py": {
+      "working_sha256": "0fef87eec16f4a609b33482ac438fc33f07e48c1db3d12810a3d0bd7501c658a",
+      "git_blob_sha256": "0fef87eec16f4a609b33482ac438fc33f07e48c1db3d12810a3d0bd7501c658a",
+      "equal_after_CRLF_normalization": true
+    },
+    "tools/vegetation/make_forest_clearings_v31.py": {
+      "working_sha256": "59c493791bac9542ccc43bf6c36a08da551e48d54216639ccc1c12d0c1a273d4",
+      "git_blob_sha256": "cfb58352770a208d3704563a5da6b4274c8ffb92e62092fc1d0ae8a5a4bf7471",
+      "equal_after_CRLF_normalization": true
+    },
+    "tools/vegetation/streambed_water_v31.py": {
+      "working_sha256": "ac083a2a15192fe72667eef7e14fe0b8f74cea43c061746579203b45d00e1f46",
+      "git_blob_sha256": "ac083a2a15192fe72667eef7e14fe0b8f74cea43c061746579203b45d00e1f46",
+      "equal_after_CRLF_normalization": true
+    }
+  },
+  "review_scope": "Independent Claude OT7 review of the actual deployed final build and complete post-S source delta. Read-only review; reviewer did not recalculate hashes or execute tests. Executor rechecked bindings and deployed hashes at closure.",
+  "minor_responses": {
+    "staging_and_include_provenance": "Current imported wrp0wzd and include.lst are copied and hashed in build-review-ae-provenance. wrp0wzd exactly matches frozen O/terrain. This is a post-build inventory, not a reconstructed build-time attestation; the historical limitation remains explicit.",
+    "promoted_sources_and_patch_hash": "Four production files committed in 845295f7b9b0a3ea225ba675755f34efa67a548b. Patch hash was already in mechanical conditions.promoted; it is now also explicit in this receipt and the dependency snapshot.",
+    "g8_wording": "PASS without per-window exemptions; original structural exclusions for Narva, kit hulls and bridge areas are retained and separately reported. The original mechanical receipt is preserved unchanged; this statement qualifies its abbreviated wording.",
+    "live_helpers": "Actual verify_roads_v30 and patch_surface/pbo_index import paths and bytes are copied and hashed. verify_roads matches prior HEAD after CRLF normalization; patch_surface exactly matches the frozen copy. No claim of contemporaneous import-time measurement."
+  },
+  "acceptance_limits": [
+    "Compiled object readback covers all objects. Compiled terrain heights were not decoded; server sampling is pending.",
+    "Global G2/G3 use fixed aggregate/per-metric rules; regional 5/19 failure remains FAIL and is a personal-view target.",
+    "G9 C compares 243157 objects20m inside region, all identical. Three diagnostic reed A rows remain FAIL, outside statistical A acceptance by the frozen consumer.",
+    "124 WRP translations outside [0,12288) are absent from distribution mutations. Main gates receive the full JSON but retain their spatial filters; no universal gate coverage or engine-boundary acceptance is inferred.",
+    "015-45 protected60m remains pending. OT4 .03m bound concerns the accepted central domain only; original outer metrics and superseded historical G7 failures remain visible.",
+    "Plan section5 was read by executor: known vanilla concrete-joint water cuts are nonblocking pending work, never a PASS. Actual G8 and all raw runtime failures must still be reported and investigated by cause.",
+    "Personal view and FPS remain pending. No runtime acceptance is granted by this review."
+  ],
+  "evidence": {
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-build-ae-r1.json": "8f59ecf872001ca4a4a41a58601bdc9bc88e26a87d9108e3f575abf63dd6b7a8",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-build-ae-r1-run.json": "13648600e7c09efc7fae22fc2666d1d35f0bb8b8d9c3fbc000efe50b5f4484e0",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-build-ae-r1-binding.json": "1da3081f4c1c718d7ff3db39118292f366d7830838e8207d95367b1de25f9029",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\review-build-ae-r1-prompt.md": "42e638a70e8ee3511feeeffb9b93ccae2e39b85aedb2a2981bb6eb13e5a293c0",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-review-closure-ae.json": "09f22c9901aa671081d0a05ecdaab8cf80b0a34c092e879875e82a93e81db502",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\build-review-ae-provenance\\provenance.json": "8e16e6c4b61086a540a9af444d7a08b14024234c1e77469ae8dda5be5daaccf0",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\forest-ae-control-domain-boundary.json": "c693dc59a85f2a62098d716da438abf75ec20347a7a572fedb63974410b1f9ef",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\runtime-preflight-ae.json": "65ee16ef19e590bba1f432b0e6eead67ee5410b5149d2faf6426263aaa017468"
+  },
+  "ready_for_server_probe": true,
+  "server_probe": "NOT_RUN",
+  "personal_view": "PREPARED_NOT_ACCEPTED"
+}

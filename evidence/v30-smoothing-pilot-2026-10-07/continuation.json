@@ -1,0 +1,66 @@
+{
+  "status": "PREVIEW_TESTED_IN_ENGINE; SHORE_AND_RENDER_ACCEPTANCE_PENDING",
+  "worktree": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290",
+  "base_commit": "4382029394f27f7e256fe410eee71285134b449b",
+  "code_sha256": {
+    "tools\\terrain\\smooth_dry_relief_v30.py": "7629fe17aae53a0b4768e7dc20aa9b64e02ae15e7148bb3385e1926ea6ccdb46",
+    "tools\\water\\smooth_water_outlines_v30.py": "eb537bc90f79da12bb87f5844af61d73bf50e3c27ef8544d1a4e00a81a689e9b",
+    "tests\\test_water_outline_limits.py": "1a87d459a00b4fb5c87ddb0efc9df51e65a51b2517b8a79c41251e5d80655e62",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\build_dry_preview.ps1": "18fbdeb8d1baf39ce0e993d5889831c24b19767cb9d6c7e1fc65ea71e0b604b5",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\check_dry.py": "e0e65c56ea254403b4a25b53332bfb13cb3b80c0f705fe0957406388e2c37ae4",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\check_luga.py": "76989bf4bb1bf87c237e02344d1f8e54c3860b133ebc8fca7a225d3d29db656b",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\check_outlines.py": "3781f8eeb305bba3f7abbe28db93d7f53f44ac19e5ac19713896c352252dc12b",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\figures.py": "7ff2db957e2a6affcf4cbba36e2cd80c26eb88687444e48a806b4a07ba526741",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\locate_luga_failures.py": "88d966c8e2466c19c5e0f5a8feb72f9f8be1a123aed649eec7e34fef2b2006d8",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\pilot_luga.py": "195d6722ddc7fefef5e0ae4fb9a1c2dcd4ae3b15a24e4c6e19a97d2225d1d313",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\compare_runtime.py": "fe8c9994ce85949588c4cce5f88a44ef76ab315fb8e2607a147e96817c3c990d",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\prepare_render_missions.py": "d8e521d0ec0474ec735248f79c8983b33ee0acbfc185c357ff1b3dfcc5c00865",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\render_figures.py": "b85ef3e3b0b734796e9d76e3dc087503f21da552b0989fa03e686937dba2ecfb"
+  },
+  "runtime_controls_available": true,
+  "owned_run": null,
+  "owned_lease": false,
+  "blocked_by_other_run": null,
+  "next_steps": [
+    "Review the engine and offline dry-relief comparisons; no global map acceptance yet.",
+    "Luga: inspect the two native-triangle regressions near X10267.750/Z3854.120 and X10320.139/Z3991.598 before another bounded mechanism; do not increase sigmas blindly.",
+    "BALTIC019: direct-spawn camera missions give usable textures. Controlled focus interval and complete near/mid/far acceptance still missing; record startup focus and keep actual viewport fixed.",
+    "Adapt the existing vanilla boat probe to V12 high and low navigable sections; no boat traversal has been executed here.",
+    "River ends, RIVER80, lakes269/170, Terrain Builder and regenerated navmesh remain open."
+  ],
+  "evidence_text_normalized_to_lf": [
+    "evidence\\v30-smoothing-pilot-2026-10-07\\continuation.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\spec.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\figures\\selection.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\deploy-receipt.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\dry-independent-18-corrected.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\dry-independent.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\general-gates-comparison.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\luga-independent.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\luga-new-missing.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\outline-independent-18-strict.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\packed-content-summary.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\reports\\pbo-diff-v12.json",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\build_dry_preview.ps1",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\check_dry.py",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\check_luga.py",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\check_outlines.py",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\figures.py",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\locate_luga_failures.py",
+    "evidence\\v30-smoothing-pilot-2026-10-07\\scripts\\pilot_luga.py"
+  ],
+  "offline_commit": "2a710188652751d51a4705ca96cca4d0c419e1e8",
+  "runtime_pass_scope": "two deployed height readbacks, two identical camera matrices, viewport1920x1080, fixed noon",
+  "runtime_cleanup": {
+    "owner": null,
+    "runs": [],
+    "box_occupied": false,
+    "pending_commands": 0
+  },
+  "runtime_runs": {
+    "v12_teleport": "f8d4e477-165d-4c38-b4cd-d64e13d0b11c",
+    "v12_direct_nav": "b63e7661-ecd1-42ed-a72f-b1ce05ec99ae",
+    "v12_dry_baseline": "b1da273f-3771-4be8-912d-a48c36e6258c",
+    "dry_preview": "5cb12f16-8adb-4f56-82ad-f27e436c7b90"
+  }
+}

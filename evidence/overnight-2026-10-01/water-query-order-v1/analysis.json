@@ -1,0 +1,181 @@
+{
+  "status": "COMPLETE_ORDER_DISCRIMINATOR",
+  "engine_sha256": "9ef60ac38a1f96a298117537c9ad6e4fa7056efd70de0e4f3f661f18acef09f0",
+  "sample_count_each_pass": 627,
+  "stages": {
+    "0": {
+      "samples": 627,
+      "counts": {
+        "raw1_level_mismatch": 544,
+        "raw2_level_mismatch": 544,
+        "raw1_to_raw3_changed": 555,
+        "raw1_to_raw2_changed": 0,
+        "wet_but_pond_false": 154,
+        "wet_pond_false_fresh_water_ext": 154,
+        "dry": 60,
+        "dry_with_fresh_water_type": 0,
+        "dry_with_pond": 0
+      },
+      "first_level_mismatches": [
+        [
+          0,
+          "raw1",
+          0.986771,
+          2.65
+        ],
+        [
+          0,
+          "raw2",
+          0.986771,
+          2.65
+        ],
+        [
+          500,
+          "raw1",
+          0.987761,
+          2.625
+        ],
+        [
+          500,
+          "raw2",
+          0.987761,
+          2.625
+        ]
+      ]
+    },
+    "1": {
+      "samples": 627,
+      "counts": {
+        "raw1_to_raw3_changed": 0,
+        "raw1_to_raw2_changed": 0,
+        "wet_but_pond_false": 154,
+        "wet_pond_false_fresh_water_ext": 154,
+        "dry": 60,
+        "dry_with_fresh_water_type": 0,
+        "dry_with_pond": 0
+      },
+      "first_level_mismatches": []
+    }
+  },
+  "under_bridge_examples": [
+    {
+      "0": [
+        "0",
+        "17611",
+        "<2401.592529, 2.375000, 6884.299316>",
+        "-1.98909",
+        "10.322",
+        "false",
+        "0.973467",
+        "0.973467",
+        "true",
+        "false",
+        "2.125",
+        "2.125",
+        "fresh_water_ext",
+        "2.125",
+        "4.03196",
+        "false"
+      ],
+      "1": [
+        "1",
+        "17611",
+        "<2401.592529, 2.375000, 6884.299316>",
+        "-1.98909",
+        "10.322",
+        "false",
+        "2.125",
+        "2.125",
+        "true",
+        "false",
+        "2.125",
+        "2.125",
+        "fresh_water_ext",
+        "2.125",
+        "4.03194",
+        "false"
+      ]
+    },
+    {
+      "0": [
+        "0",
+        "17612",
+        "<2402.330811, 2.375000, 6884.791504>",
+        "-2.19985",
+        "7.49488",
+        "false",
+        "0.97204",
+        "0.97204",
+        "true",
+        "false",
+        "2.125",
+        "2.125",
+        "fresh_water_ext",
+        "2.125",
+        "4.25205",
+        "false"
+      ],
+      "1": [
+        "1",
+        "17612",
+        "<2402.330811, 2.375000, 6884.791504>",
+        "-2.19985",
+        "7.49488",
+        "false",
+        "2.125",
+        "2.125",
+        "true",
+        "false",
+        "2.125",
+        "2.125",
+        "fresh_water_ext",
+        "2.125",
+        "4.25204",
+        "false"
+      ]
+    },
+    {
+      "0": [
+        "0",
+        "18341",
+        "<2413.668457, 2.325000, 6894.439941>",
+        "-2.70876",
+        "9",
+        "false",
+        "0.515324",
+        "0.515324",
+        "true",
+        "false",
+        "2.075",
+        "2.11001",
+        "fresh_water_ext",
+        "2.075",
+        "4.81877",
+        "false"
+      ],
+      "1": [
+        "1",
+        "18341",
+        "<2413.668457, 2.325000, 6894.439941>",
+        "-2.70876",
+        "9",
+        "false",
+        "2.075",
+        "2.075",
+        "true",
+        "false",
+        "2.075",
+        "2.11001",
+        "fresh_water_ext",
+        "2.075",
+        "4.81877",
+        "false"
+      ]
+    }
+  ],
+  "limits": [
+    "Diagnostic only; original V3 FAIL preserved.",
+    "Order dependency does not identify native cache implementation.",
+    "SurfaceIsPond is false under sampled bridge despite lower 3D freshwater and positive depth; boat physics still pending."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "status": "USER_DECISION_REQUIRED_NO_EXCEPTION_APPLIED",
+  "strict_server_verdict": "FAIL",
+  "points": [
+    {
+      "id": 2733,
+      "family_id": 30424,
+      "kind": "kit_axis",
+      "expected": "wet",
+      "minimum": -0.0331441,
+      "mean": 0.030209210666666667,
+      "maximum": 0.094633,
+      "positive_samples": 20,
+      "samples": 30,
+      "ground": 1.87,
+      "nofake_range": [
+        1.98,
+        1.98
+      ],
+      "wave_relation_max_error": 4.400000000057136e-06
+    },
+    {
+      "id": 3807,
+      "family_id": 66055,
+      "kind": "old_bed",
+      "expected": "dry",
+      "minimum": -0.10355,
+      "mean": -0.011813793000000001,
+      "maximum": 0.0749298,
+      "positive_samples": 15,
+      "samples": 30,
+      "ground": 1.71,
+      "nofake_range": [
+        1.65,
+        1.65
+      ],
+      "wave_relation_max_error": 5.0999999999107315e-06
+    },
+    {
+      "id": 3808,
+      "family_id": 66056,
+      "kind": "old_bed",
+      "expected": "dry",
+      "minimum": -0.129658,
+      "mean": -0.03234856133333333,
+      "maximum": 0.0610071,
+      "positive_samples": 11,
+      "samples": 30,
+      "ground": 1.46,
+      "nofake_range": [
+        1.4,
+        1.4
+      ],
+      "wave_relation_max_error": 4.500000000108584e-06
+    },
+    {
+      "id": 3836,
+      "family_id": 0,
+      "kind": "shore_wet",
+      "expected": "wet",
+      "minimum": -0.00720781,
+      "mean": 0.10945911833333333,
+      "maximum": 0.235781,
+      "positive_samples": 28,
+      "samples": 30,
+      "ground": 0.606127,
+      "nofake_range": [
+        0.650126,
+        0.849874
+      ],
+      "wave_relation_max_error": 1.0000000000287557e-06
+    }
+  ],
+  "proposed_scope": "Exactly these four probe coordinates, no other point or tolerance. Retain raw strict FAIL and min/max/intermittency. Concrete lips/joints remain the existing plan section5 pending issue. No terrain, gate, package or coordinate changes.",
+  "alternative": "Continue a physical terrain correction, rebuild and revalidate affected offline/runtime scope; no permission inferred to broaden topology/protected changes.",
+  "limits": "One minute and fixed weather; does not establish player wetness, all-weather behavior, visual or FPS acceptance."
+}

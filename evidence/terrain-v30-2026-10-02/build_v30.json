@@ -1,0 +1,331 @@
+{
+ "params": {
+  "dimple_min_m": 0.2,
+  "dimple_water_clear_m": 30.0,
+  "high_min": 0.3,
+  "valley_deg": {
+   "3": 14.0,
+   "5": 18.0,
+   "6": 22.0
+  },
+  "valley_reach_m": 150.0,
+  "valley_freeboard_m": 0.35,
+  "road_reserve_water_m": 10.0,
+  "road_alpha": 400000.0,
+  "road_grade_max": 0.058,
+  "road_curvature_max": 0.001,
+  "road_grade_per_radius": 0.002,
+  "road_grade_per_radius_tight": 0.0005,
+  "road_tight_radius_m": 16.0,
+  "road_turn_window_m": 6.0,
+  "road_couple_m": 25.0,
+  "road_couple_tol_m": 0.002,
+  "road_admm_iters": 3000,
+  "road_admm_eps": 2e-05,
+  "road_dense_m": 0.125,
+  "road_platform_m": 12.6,
+  "road_slope_deg": 30.0,
+  "road_reach_m": 70.0,
+  "depth_max": {
+   "1": 2.0,
+   "2": 2.0,
+   "3": 3.0,
+   "5": 1.2,
+   "6": 0.5,
+   "7": 1.2
+  },
+  "bank_radius_m": 8.5,
+  "delta_bed": -2.5,
+  "bed_edge_m": 0.15,
+  "bed_gain_per_m": 0.45,
+  "bank_margin_m": 0.35,
+  "dry_floor_m": 1.4,
+  "shore_slope": 0.12,
+  "shore_min_depth_m": 0.1,
+  "shore_max_depth_m": 1.2,
+  "shore_freeboard_m": 0.06,
+  "shore_reach_m": 12.0,
+  "beach_slope": 0.15,
+  "beach_freeboard_m": 0.1,
+  "beach_floor_m": 0.8,
+  "piece_depth_m": 0.05,
+  "piece_freeboard_m": 0.03,
+  "narva_radius_m": 480.0,
+  "narva_blend_m": 120.0,
+  "slope_cap_m": 2.88
+ },
+ "dimple_vertices": 60120,
+ "excess_filled_vertices": 7031,
+ "valley_lowered_vertices": 8775,
+ "road_coupled_pairs": 27672,
+ "road_shared_ends": 80,
+ "road_causeway_stations": 2071,
+ "road_polish_log": [
+  [
+   0,
+   54052,
+   3454,
+   0
+  ],
+  [
+   1,
+   57506,
+   637,
+   0
+  ],
+  [
+   2,
+   58143,
+   178,
+   489
+  ],
+  [
+   3,
+   57832,
+   148,
+   0
+  ],
+  [
+   4,
+   57980,
+   14,
+   0
+  ],
+  [
+   5,
+   57994,
+   3,
+   68
+  ],
+  [
+   6,
+   57929,
+   30,
+   0
+  ],
+  [
+   7,
+   57959,
+   5,
+   0
+  ],
+  [
+   8,
+   57964,
+   0,
+   47
+  ],
+  [
+   9,
+   57917,
+   32,
+   0
+  ],
+  [
+   10,
+   57949,
+   6,
+   0
+  ],
+  [
+   11,
+   57955,
+   1,
+   51
+  ],
+  [
+   12,
+   57905,
+   39,
+   0
+  ],
+  [
+   13,
+   57944,
+   7,
+   0
+  ],
+  [
+   14,
+   57951,
+   4,
+   7
+  ],
+  [
+   15,
+   57948,
+   7,
+   0
+  ],
+  [
+   16,
+   57955,
+   0,
+   0
+  ],
+  [
+   17,
+   57955,
+   144,
+   38
+  ],
+  [
+   18,
+   58061,
+   83,
+   0
+  ],
+  [
+   19,
+   58144,
+   16,
+   0
+  ],
+  [
+   20,
+   58160,
+   7,
+   129
+  ],
+  [
+   21,
+   58038,
+   143,
+   0
+  ],
+  [
+   22,
+   58181,
+   33,
+   0
+  ],
+  [
+   23,
+   58214,
+   16,
+   187
+  ],
+  [
+   24,
+   58043,
+   153,
+   0
+  ],
+  [
+   25,
+   58196,
+   29,
+   0
+  ],
+  [
+   26,
+   58225,
+   18,
+   159
+  ],
+  [
+   27,
+   58084,
+   114,
+   0
+  ],
+  [
+   28,
+   58198,
+   79,
+   0
+  ],
+  [
+   29,
+   58277,
+   27,
+   71
+  ]
+ ],
+ "road_admm_log": [
+  [
+   2925,
+   0.0036566800366117187,
+   30.072180257366917,
+   1475.0685134252014
+  ],
+  [
+   2950,
+   0.003650467911081294,
+   32.01022950762818,
+   1475.0685134252014
+  ],
+  [
+   2975,
+   0.003613871045493526,
+   34.315077882471414,
+   1475.0685134252014
+  ],
+  [
+   3000,
+   0.0035760807255748412,
+   34.4007465843583,
+   1475.0685134252014
+  ]
+ ],
+ "road_admm_iterations": 3000,
+ "road_violation_max": {
+  "grade_m": 0.00084,
+  "curvature_m": 0.005325,
+  "floor_m": 0.0005,
+  "coupling_m": 0.00017
+ },
+ "road_grade_limited_by_bends": 1285,
+ "road_profile_grade_max": 0.0586,
+ "road_coupling_mismatch_max_m": 0.0022,
+ "road_chains": 124,
+ "road_stations": 107206,
+ "road_platform_vertices": 65208,
+ "road_reserve_vertices": 5532,
+ "beach_vertices": 2685,
+ "bank_vertices": 2372,
+ "piece_consistency": {
+  "water_vertices": 378697,
+  "land_vertices": 91788
+ },
+ "slope_cap_iterations": [
+  19,
+  6
+ ],
+ "slope_cap_converged": true,
+ "road_repair": [
+  {
+   "round": 0,
+   "flagged_stations": 26,
+   "groups": 12,
+   "max_change_m": 0.087
+  },
+  {
+   "round": 1,
+   "flagged_stations": 7,
+   "groups": 3,
+   "max_change_m": 0.0322
+  },
+  {
+   "round": 2,
+   "flagged_stations": 3,
+   "groups": 2,
+   "max_change_m": 0.0315
+  },
+  {
+   "round": 3,
+   "flagged_stations": 5,
+   "groups": 2,
+   "max_change_m": 0.0246
+  }
+ ],
+ "slope_resettle_iterations": [
+  3,
+  3
+ ],
+ "height_range": [
+  -12.0,
+  123.12
+ ],
+ "asc_sha256": "362550d10a51b867c03ee9079c6340c69c117244fe025cbda343dfc7117a51d8"
+}

@@ -1,0 +1,11 @@
+# EV28 — superficie completa actualizada
+
+Preview @DayZ_Baltic_CurrentSurfaceV1. Las1024 teselas anteriores coincidian con v12. build_surface_v30.py admite ahora un campo de agua fisica verificado por SHA256, evitando reconstruir el agua congelada a partir de cls/level. No cambia paleta ni opciones aprobadas. Se regeneran satelite y mascara sobre terreno EV25 y plane.npy d59dcdb9.
+
+Consumidor independiente de triangulos nativos:150.847.524 pixeles,35.772.061 mojados, cero superficie terrestre bajo agua en la fuente. Las2048 texturas se compilan y decodifican;34.445.765 pixeles interiores de agua sin mezcla terrestre. Los4.323 pixeles mezclados por DXT junto a la frontera se inventarian. Los3968 solapes (1984 por familia) coinciden exactamente. Error RGB medio de compresion0,68565/255, maximo25/255; no se pretende identidad fuente/PAA.
+
+Cambian1.710.644 pixeles de satelite y212.250 de mascara, estos ultimos todos secos. Hay9 controles de entrada (incluye caso valido) y controles analiticos de triangulo y de corrupcion real de mascara. El paquete cambia754 satelites y712 mascaras; las5361 entradas restantes y todo el PBO de agua quedan exactos. WRP compilado cfcbbd0c, terreno fb36ec4c. No nuevo censo de alturas ni travesias: la identidad de sus archivos delimita el alcance reutilizable.
+
+Run b690cc87-1c6f-465f-adba-ee070db236f4: texturas cargadas en puente/R1, R3 cercano/medio y tesela27,21 (mayor cambio) cercana/elevada. Sin foco manual. R3 lejano limitado por bruma: INCONCLUSO para aceptar distancia; el cercano tiene cabeza del jugador en parte de la imagen. Una primera camera_set fue rechazada por mezclar modo free con matriz, corregida a matrix antes de la captura. Todas las capturas guardadas presentan3 frames distintos; no hay A/B de mejora estetica. No se da por reparado el residual016 ni el fallo intermitente019.
+
+Cliente/servidor cerrados orderly, lease liberado y banco vacio. Mundo b69265c5feb99d1bda7a5c9f02282818d0ffe4cd26f89f3a095c128e62d374f3, agua3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14. Los PNG/PAA completos siguen en E:/DayZ-Baltic-Build/v30-current-satellite-20261009/surface/layers y tienen hashes individuales en surface-verification.json. No promocion a TB/base1.0: forma restante, lagos, residual y pruebas finales siguen pendientes.

@@ -1,0 +1,394 @@
+{
+  "status": "PASS_STRICT_DRY_FLOOR_SOURCE",
+  "source_sha256": "682d5553480e779cda1874725dd6a8a5a3615c356b65c546c77342f251857244",
+  "candidate_sha256": "b54963eb3cf5429c6192fb6f1e8f6d10c9a3cc397fdbabdf5c2f89cbabcf8e36",
+  "gates": {
+    "finite": true,
+    "metadata_exact": true,
+    "fixed_exact": true,
+    "outside_exact": true,
+    "water_faces_exact": true,
+    "road_platform_exact": true,
+    "dry_floor": true,
+    "max_change": true,
+    "no_new_steep_faces": true,
+    "all_target_floor_1_8": true,
+    "no_lowering": true,
+    "cumulative_uplift_ev61": true,
+    "frozen_fields_exact": true,
+    "natural_bank_p99": true,
+    "natural_bank_over30": true,
+    "natural_interior_p99": true,
+    "natural_interior_over30": true,
+    "natural_dry_p99": true,
+    "natural_dry_over30": true,
+    "editable_energy_reduction": true,
+    "roads_pass": true
+  },
+  "counts": {
+    "bad_faces": 0,
+    "max_slope_excess_degrees": 0.0,
+    "changed_vertices": 5202,
+    "water_support_vertices": 1077957
+  },
+  "angles": {
+    "natural_bank": {
+      "before": {
+        "n": 1558906,
+        "mean_sq_degrees": 12.502164207104139,
+        "p99_degrees": 16.70260433770203,
+        "max_degrees": 57.98325760045909,
+        "above30": 1636
+      },
+      "after": {
+        "n": 1558906,
+        "mean_sq_degrees": 12.485034744090905,
+        "p99_degrees": 16.690004228196063,
+        "max_degrees": 57.98325760045909,
+        "above30": 1626
+      },
+      "reduction": 0.001370119823214333
+    },
+    "natural_interior": {
+      "before": {
+        "n": 7295342,
+        "mean_sq_degrees": 0.6181307016606773,
+        "p99_degrees": 3.392091904318393,
+        "max_degrees": 47.22823023572591,
+        "above30": 112
+      },
+      "after": {
+        "n": 7295342,
+        "mean_sq_degrees": 0.6181307016606773,
+        "p99_degrees": 3.392091904318393,
+        "max_degrees": 47.22823023572591,
+        "above30": 112
+      },
+      "reduction": 0.0
+    },
+    "natural_dry": {
+      "before": {
+        "n": 9159090,
+        "mean_sq_degrees": 2.64389041432133,
+        "p99_degrees": 6.680274812770026,
+        "max_degrees": 57.98325760045909,
+        "above30": 1762
+      },
+      "after": {
+        "n": 9159090,
+        "mean_sq_degrees": 2.6409749257009416,
+        "p99_degrees": 6.677485696124607,
+        "max_degrees": 57.98325760045909,
+        "above30": 1752
+      },
+      "reduction": 0.0011027267259625662
+    },
+    "editable_incident": {
+      "before": {
+        "n": 22689,
+        "mean_sq_degrees": 21.292438640784106,
+        "p99_degrees": 22.20895688665204,
+        "max_degrees": 58.81839302403263,
+        "above30": 89
+      },
+      "after": {
+        "n": 22689,
+        "mean_sq_degrees": 17.888846740663833,
+        "p99_degrees": 20.09560789569805,
+        "max_degrees": 53.76999083079316,
+        "above30": 50
+      },
+      "reduction": 0.1598497925738267
+    }
+  },
+  "sectors": 43,
+  "regressed_sectors": [
+    {
+      "row": 4,
+      "col": 24,
+      "edges": 5,
+      "before_sum_sq": 0.44146056139994605,
+      "after_sum_sq": 0.744720964846861,
+      "before_max": 0.5273107139278459,
+      "after_max": 0.6496274337084508
+    },
+    {
+      "row": 5,
+      "col": 16,
+      "edges": 294,
+      "before_sum_sq": 519.9136781955675,
+      "after_sum_sq": 534.0772516905795,
+      "before_max": 8.78627948254474,
+      "after_max": 8.786342410311988
+    },
+    {
+      "row": 6,
+      "col": 14,
+      "edges": 57,
+      "before_sum_sq": 207.5176095518048,
+      "after_sum_sq": 207.61019815180953,
+      "before_max": 6.151729040808025,
+      "after_max": 6.09777735050056
+    },
+    {
+      "row": 29,
+      "col": 28,
+      "edges": 243,
+      "before_sum_sq": 820.008401954188,
+      "after_sum_sq": 833.4947968633978,
+      "before_max": 10.063715586564497,
+      "after_max": 10.015039760174616
+    }
+  ],
+  "largest_improvements": [
+    {
+      "kind": "diagonal",
+      "x": 9495.0,
+      "z": 9453.0,
+      "before": 9.239739850407592,
+      "after": 1.5521801580665788,
+      "delta": 7.687559692341013
+    },
+    {
+      "kind": "diagonal",
+      "x": 2379.0,
+      "z": 8205.0,
+      "before": 13.381783305484115,
+      "after": 6.02418886893587,
+      "delta": 7.357594436548245
+    },
+    {
+      "kind": "diagonal",
+      "x": 2373.0,
+      "z": 8211.0,
+      "before": 11.782214569180598,
+      "after": 4.808130178985915,
+      "delta": 6.974084390194682
+    },
+    {
+      "kind": "diagonal",
+      "x": 10209.0,
+      "z": 11655.0,
+      "before": 10.373895106650028,
+      "after": 3.6925694112714575,
+      "delta": 6.681325695378571
+    },
+    {
+      "kind": "diagonal",
+      "x": 3519.0,
+      "z": 6915.0,
+      "before": 17.6507745712391,
+      "after": 11.248083656071087,
+      "delta": 6.402690915168014
+    },
+    {
+      "kind": "diagonal",
+      "x": 8943.0,
+      "z": 10275.0,
+      "before": 10.689684488975018,
+      "after": 4.466671875427021,
+      "delta": 6.223012613547997
+    },
+    {
+      "kind": "diagonal",
+      "x": 2349.0,
+      "z": 8235.0,
+      "before": 12.924583385942006,
+      "after": 6.888890027064446,
+      "delta": 6.03569335887756
+    },
+    {
+      "kind": "vertical",
+      "x": 1677.0,
+      "z": 6339.0,
+      "before": 9.569822998240504,
+      "after": 3.620022678068069,
+      "delta": 5.949800320172435
+    },
+    {
+      "kind": "diagonal",
+      "x": 2367.0,
+      "z": 8217.0,
+      "before": 6.55755004230944,
+      "after": 0.6252741211916272,
+      "delta": 5.932275921117813
+    },
+    {
+      "kind": "vertical",
+      "x": 10089.0,
+      "z": 11745.0,
+      "before": 7.179202055235716,
+      "after": 1.8041963783411565,
+      "delta": 5.375005676894559
+    },
+    {
+      "kind": "vertical",
+      "x": 10089.0,
+      "z": 11733.0,
+      "before": 5.753413225367637,
+      "after": 0.5203549887131196,
+      "delta": 5.233058236654517
+    },
+    {
+      "kind": "horizontal",
+      "x": 9927.0,
+      "z": 9129.0,
+      "before": 12.41411048782574,
+      "after": 7.348847991084208,
+      "delta": 5.065262496741532
+    },
+    {
+      "kind": "horizontal",
+      "x": 9195.0,
+      "z": 9657.0,
+      "before": 8.309849687017842,
+      "after": 3.3886239658665467,
+      "delta": 4.921225721151295
+    },
+    {
+      "kind": "horizontal",
+      "x": 10089.0,
+      "z": 11739.0,
+      "before": 25.55506479818669,
+      "after": 20.750377130575025,
+      "delta": 4.804687667611667
+    },
+    {
+      "kind": "vertical",
+      "x": 2085.0,
+      "z": 7551.0,
+      "before": 7.139386833308585,
+      "after": 2.351337377528701,
+      "delta": 4.788049455779884
+    },
+    {
+      "kind": "horizontal",
+      "x": 12183.0,
+      "z": 1581.0,
+      "before": 10.721272806761176,
+      "after": 6.046764641771306,
+      "delta": 4.67450816498987
+    },
+    {
+      "kind": "vertical",
+      "x": 9945.0,
+      "z": 9207.0,
+      "before": 6.540019929012355,
+      "after": 2.0787431037101816,
+      "delta": 4.461276825302173
+    },
+    {
+      "kind": "vertical",
+      "x": 2379.0,
+      "z": 8199.0,
+      "before": 8.84801507539221,
+      "after": 4.395263369620139,
+      "delta": 4.452751705772071
+    },
+    {
+      "kind": "horizontal",
+      "x": 3489.0,
+      "z": 6951.0,
+      "before": 9.431897083044737,
+      "after": 4.99388406568628,
+      "delta": 4.438013017358457
+    },
+    {
+      "kind": "horizontal",
+      "x": 2385.0,
+      "z": 8199.0,
+      "before": 16.56881075612127,
+      "after": 12.147687587393646,
+      "delta": 4.421123168727624
+    },
+    {
+      "kind": "horizontal",
+      "x": 9495.0,
+      "z": 9453.0,
+      "before": 17.44941031062391,
+      "after": 13.06795392297571,
+      "delta": 4.3814563876482016
+    },
+    {
+      "kind": "vertical",
+      "x": 9189.0,
+      "z": 9255.0,
+      "before": 4.439262724767117,
+      "after": 0.09025269254930406,
+      "delta": 4.349010032217813
+    },
+    {
+      "kind": "vertical",
+      "x": 9879.0,
+      "z": 9273.0,
+      "before": 6.3621344158323065,
+      "after": 2.0754559744671104,
+      "delta": 4.286678441365196
+    },
+    {
+      "kind": "horizontal",
+      "x": 12171.0,
+      "z": 1629.0,
+      "before": 4.8139859118690955,
+      "after": 0.5525226199392742,
+      "delta": 4.261463291929822
+    }
+  ],
+  "roads": {
+    "chains": 100,
+    "samples": 77387,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "negative": [
+    "inclined_plane_cross_product_zero",
+    "45_degree_fold_cross_product",
+    "water_faces_exact_mutant_rejected",
+    "road_platform_exact_mutant_rejected",
+    "outside_exact_mutant_rejected",
+    "no_new_steep_faces_mutant_rejected",
+    "low_target_mutant_rejected"
+  ],
+  "limits": [
+    "Source geometry verification; native package and loaded views still required.",
+    "All actually wet native triangles retain every support vertex exactly; entirely dry corners of finite P cells may rise. Existing river contour/end/residual graphic defects are not fixed by this dry-surface unit.",
+    "Per-sector increases retained even when whole-map gates pass; artistic acceptance is not inferred from energy."
+  ]
+}

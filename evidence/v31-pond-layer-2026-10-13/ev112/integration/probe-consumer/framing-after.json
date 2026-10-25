@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "positive_real_log": "PASS",
+  "tool_sha256": "d84bd3c53cd1a7b1eaea57766d24b681b7d3fa8eb50d0940f8b694d82d1d6d9c",
+  "baseline_sha256": "d30a72b10a2d79aabed450257aff9d687b20b4b786cbf8fad8b47f0c2dc96d3d",
+  "cases": {
+    "rows-before-begin": {
+      "rejected": true,
+      "reason": "probe row outside BEGIN/END"
+    },
+    "end-before-rows": {
+      "rejected": true,
+      "reason": "probe row outside BEGIN/END"
+    },
+    "row-after-end": {
+      "rejected": true,
+      "reason": "probe row outside BEGIN/END"
+    },
+    "duplicate-begin": {
+      "rejected": true,
+      "reason": "invalid BEGIN order or width"
+    },
+    "missing-end": {
+      "rejected": true,
+      "reason": "incomplete probe framing or ids"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "time": "2026-09-29T17:30:49.364843+02:00",
+  "status": "REOPEN_EXPORT_PASS_RUNTIME_AWAITING_MANUAL_CONNECT",
+  "native_wrp": "tb/narva_trial/baltic_water_reopened_v1.wrp",
+  "native_wrp_sha256": "17e750e61f081635813522808b4dfe019711f5dd4fb14b60d4830ae4fc5dc98c",
+  "reopened_in_terrain_builder": true,
+  "native_heights_and_object_records_unchanged": true,
+  "steam_error_observed": "Unable to locate a running instance of Steam",
+  "steam_registration_repair": "App-visible pid and ActiveUser synchronized from verified host values; consumer retry pending. Host and process unchanged.",
+  "registry_reference_sources": [
+    "P:/DayZ_MCP_dev/tools/dayz_mcp/steam_preflight.py:124-136",
+    "P:/DayZ_MCP_dev/tools/dayz_mcp/steam_preflight.py:167-186",
+    "P:/DayZ_MCP_dev/tools/dayz_mcp/steam_preflight.py:503-518",
+    "P:/DayZ_MCP_dev/tools/dayz_mcp/wmi_host.py:85-106"
+  ],
+  "preflight_helper": "Cannot execute: preflight.py:213 has an invalid Python string escape; direct inspection confirmed P:/, DZ, scripts, Mods junction and Tools/Diag files. Skill source unchanged.",
+  "temporary_observers_installed": true,
+  "new_water_log_present": false,
+  "evidence_files": [
+    {
+      "file": "native-wrp-reopened-v1.json",
+      "bytes": 1665,
+      "sha256": "8820e70d7e93dbdcc839e7525c9b9018e75c69e43a7321edb89e09144e68c03a"
+    },
+    {
+      "file": "reopened-binary-comparison.json",
+      "bytes": 3006,
+      "sha256": "206272a5ab70618a25a780256b0ab10589238a5ed03d9bc8f04534e5ff3235b4"
+    },
+    {
+      "file": "reopened-semantic-comparison.json",
+      "bytes": 1043,
+      "sha256": "797a3d1a240b7e0d45ba5f93c88b30803d3243c7ab45d3922e2dd59e02287b63"
+    },
+    {
+      "file": "repair-redacted.json",
+      "bytes": 467,
+      "sha256": "f403cdf77b6d5fcccb9042ee5193bf92db8f42713e20b503b87c6a1edf08d1cc"
+    },
+    {
+      "file": "DayZDiag_x64_2026-09-29_17-24-23.RPT",
+      "bytes": 486,
+      "sha256": "6bad94502c15907cb39f86550b3d531a038dfda5a4c0b697c50cf436e8b82385"
+    }
+  ],
+  "limits": [
+    "No after-correction water result yet.",
+    "Steam UI remains rejected by automatic approval even after explicit user authorization. Registry investigation and repair followed the user request separately.",
+    "Registry backup contains account identifiers and remains local in work/steam-registration; it is deliberately excluded from reports and packages."
+  ]
+}

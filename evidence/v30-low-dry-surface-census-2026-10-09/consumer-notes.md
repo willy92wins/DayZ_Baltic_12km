@@ -1,0 +1,3 @@
+Probe coordinates use a point inside the largest convex native fragment, because an area-weighted component centroid can lie in a hole containing a pond. The area, membership and thresholds are unchanged.
+
+The first independent point sampler received float32 heights, so its height-difference arithmetic rounded before interpolation. The source values are now promoted losslessly to float64 before calling the independent native sampler, as in the exact-area calculation. The original 1e-8 m numerical tolerance is unchanged; this is not a relaxed runtime tolerance. The actual game has a separate float32 precision contract.

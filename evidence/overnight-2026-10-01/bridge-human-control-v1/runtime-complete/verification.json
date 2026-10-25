@@ -1,0 +1,89 @@
+{
+  "status": "PASS_HUMAN_CONTROL_WITHOUT_INFECTED",
+  "global_checks": {
+    "server_header": true,
+    "client_header": true,
+    "server_end": true,
+    "client_end": true,
+    "exact_cases": true,
+    "no_parse_errors": true,
+    "no_actor_records": true
+  },
+  "errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "status": "PASS",
+      "checks": {
+        "anchor": true,
+        "settled": true,
+        "terminal": true,
+        "frozen_goal": true,
+        "continuous": true,
+        "health": true,
+        "contact": true,
+        "terrain": true,
+        "corridor": true,
+        "bounded_speed": true,
+        "arrived": true,
+        "complete_distance": true,
+        "bounded_time": true,
+        "bounded_path": true,
+        "native_input": true
+      },
+      "samples": 42,
+      "duration_s": 8.219500000000004,
+      "progress_m": 11.194824000000153,
+      "maximum_speed_mps": 1.600044820719283,
+      "maximum_lateral_m": 0.009766000000126951,
+      "strict_lane_4m": true,
+      "maximum_gap_s": 0.2009000000000043,
+      "floor_error_range_m": [
+        0.050002691894647455,
+        0.08421830177859135
+      ]
+    },
+    {
+      "case": 1,
+      "status": "PASS",
+      "checks": {
+        "anchor": true,
+        "settled": true,
+        "terminal": true,
+        "frozen_goal": true,
+        "continuous": true,
+        "health": true,
+        "contact": true,
+        "terrain": true,
+        "corridor": true,
+        "bounded_speed": true,
+        "arrived": true,
+        "complete_distance": true,
+        "bounded_time": true,
+        "bounded_path": true,
+        "native_input": true
+      },
+      "samples": 973,
+      "duration_s": 194.64499999999998,
+      "progress_m": 294.0816207234181,
+      "maximum_speed_mps": 2.4121468675778868,
+      "maximum_lateral_m": 0.35652851629033416,
+      "strict_lane_4m": true,
+      "maximum_gap_s": 0.21000000000000796,
+      "floor_error_range_m": [
+        -6.699999999959516e-05,
+        0.05000071669766726
+      ]
+    }
+  ],
+  "limits": [
+    "Human controller only; not AI or navmesh acceptance.",
+    "No randomization or causal isolation of native collision/control internals.",
+    "Original pursuit V1/V2 FAILs remain."
+  ],
+  "source_sha256": {
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\bridge-human-control-v1\\reference.json": "e985d83200b189ddd6c0da6c21e292b7e10acfd82126e1d41ac6a332c10a2f27",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\bridge-human-control-v1\\runtime-complete\\engine.log": "cc45407e110112b0fca80478b00001c5c3ae7ac737196a845d132e3331d7fe6e",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\bridge-human-control-v1\\runtime-complete\\client-input.log": "b2a3ef7a40f12b69b1e5dcf39413fd14e8abe278e2c4614633eae37745d94178"
+  }
+}

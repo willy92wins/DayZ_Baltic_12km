@@ -1,0 +1,68 @@
+{
+  "status": "PASS_EV87_PREFLIGHT",
+  "inputs": {
+    "B": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "EV79": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "P": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "F": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "EV79_CONSTRAINTS": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "PRIOR_CONSTRAINTS": "18a3639907a68a8ceda37fe2a402884c2c4bc111fe8c7775d0a7d07dac02d370",
+    "WRP": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6"
+  },
+  "input_paths": {
+    "B": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\candidate\\terrain.npz",
+    "EV79": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\terrain.npz",
+    "P": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\plane.npy",
+    "F": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\candidate\\visible-field.npy",
+    "EV79_CONSTRAINTS": "E:\\DayZ-Baltic-Build\\v30-narva-dry-bank-relief-20261010\\constraints.npz",
+    "PRIOR_CONSTRAINTS": "E:\\DayZ-Baltic-Build\\v30-remaining-exact-dry-support-20261009\\constraints.npz",
+    "WRP": "E:\\DayZ-Baltic-Build\\v30-mixed-bank-incremental-fixed-20261010\\package\\world\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp"
+  },
+  "selector": {
+    "eligible_vertices": 2988565,
+    "seed_count": 5450,
+    "selected_count": 955,
+    "excluded_count": 4495,
+    "affected_hinges": 93171,
+    "windows9_disjoint": true,
+    "affected_hinges_exactly_once": true
+  },
+  "p99_domains": {
+    "bank": {
+      "n": 1591990,
+      "threshold_q0": 4.982070186506184,
+      "threshold_q1": 4.982070188947164,
+      "fraction": 0.10999999986961484,
+      "p99": 4.982070186774692,
+      "count30_B": 1
+    },
+    "interior": {
+      "n": 7170630,
+      "threshold_q0": 3.66773390076148,
+      "threshold_q1": 3.667761662268656,
+      "fraction": 0.7099999999627471,
+      "p99": 3.667753611431574,
+      "count30_B": 112
+    }
+  },
+  "fixtures": {
+    "solver_wiring": {
+      "same_constraint_factory_as_patch_task": true,
+      "scipy_status": 0,
+      "finite_solution": true,
+      "tie_and_focus_pass": true
+    },
+    "p99_order_stats_positive_negative": true,
+    "F_while_P_nan": true,
+    "partial_F_reject": true,
+    "quick_completed_before_deadline": true,
+    "slow_killed_at_parent_dispatch_deadline": true,
+    "timed_out_patch_base_unchanged": true,
+    "replacement_processed_next_patch": true
+  },
+  "consumer_script_sha256": "8fe9c6d20e756a5ce5983c91b08ab3d786aad237e14d4230ef55edb72da5ca09",
+  "selector_digest": "6a130632fd8efe5bd765b77a862385902183bfb34ba3b859d4f3bf98d24b308f",
+  "walltime_deadline_s": 1800.0,
+  "per_patch_timeout_s": 5.0,
+  "maxiter": 150
+}

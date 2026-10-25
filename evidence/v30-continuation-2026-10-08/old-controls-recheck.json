@@ -1,0 +1,112 @@
+{
+  "shallow_gate": {
+    "status": "PASS_SHALLOW_DEPTH_BOTH_PHASES",
+    "phases": [
+      {
+        "name": "calm",
+        "weather_reached": true,
+        "wind_mps": {
+          "min": 0.1,
+          "max": 0.1
+        },
+        "overcast": {
+          "min": 0.1,
+          "max": 0.1
+        },
+        "shallow_points": 7,
+        "failing": [],
+        "min_shallow_depth_bed": 0.0639703
+      },
+      {
+        "name": "storm",
+        "weather_reached": true,
+        "wind_mps": {
+          "min": 20.0,
+          "max": 20.0
+        },
+        "overcast": {
+          "min": 1.0,
+          "max": 1.0
+        },
+        "shallow_points": 7,
+        "failing": [],
+        "min_shallow_depth_bed": 0.064074
+      }
+    ]
+  },
+  "control_gate": {
+    "status": "FAIL_REFERENCE_CONTROLS",
+    "checked": [
+      {
+        "id": 13,
+        "role": "dry_bank",
+        "samples": 302,
+        "failing_samples": 0
+      },
+      {
+        "id": 22,
+        "role": "deep_pond",
+        "samples": 302,
+        "failing_samples": 0
+      },
+      {
+        "id": 33,
+        "role": "sea",
+        "samples": 302,
+        "failing_samples": 0
+      },
+      {
+        "id": 548,
+        "role": "changed_outline_dry_control",
+        "samples": 302,
+        "failing_samples": 0
+      },
+      {
+        "id": 642,
+        "role": "changed_outline_dry_control",
+        "samples": 302,
+        "failing_samples": 0
+      },
+      {
+        "id": 693,
+        "role": "high_deep_pond",
+        "samples": 302,
+        "failing_samples": 302
+      },
+      {
+        "id": 882,
+        "role": "changed_outline_dry_control",
+        "samples": 302,
+        "failing_samples": 0
+      },
+      {
+        "id": 1185,
+        "role": "changed_outline_dry_control",
+        "samples": 302,
+        "failing_samples": 0
+      },
+      {
+        "id": 1224,
+        "role": "changed_outline_dry_control",
+        "samples": 302,
+        "failing_samples": 0
+      },
+      {
+        "id": 1312,
+        "role": "changed_outline_dry_control",
+        "samples": 302,
+        "failing_samples": 0
+      }
+    ],
+    "failures": [
+      {
+        "id": 693,
+        "role": "high_deep_pond",
+        "first_failed_sample": 0,
+        "failing_samples": 302
+      }
+    ],
+    "missing_roles": [],
+    "limit": "Role and presence/depth over the sampled window; not a maximum-wave envelope."
+  }
+}

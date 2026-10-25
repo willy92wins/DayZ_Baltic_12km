@@ -1,0 +1,235 @@
+{
+  "status": "FROZEN_PERCEPTION_DISCRIMINATOR_RUNTIME_PENDING",
+  "terrain": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_combined_v10\\baltic_regional_foundation_v10.asc",
+  "terrain_sha256": "8e25fab25e8f0909fdda302ed4ba3db4c43884c523920f5ef3424db90780eb8b",
+  "inputs": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\missions\\BalticFoundationConsumerV5.BalticTrial\\nav-points.csv": "4b64613f888b7b077235a3c09a57234a5d9bfcd5fb2bd8ce7f7152552d21148d",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\narva_bridge_v10\\reference.json": "3845bcf4b2aef06ad222105fdccebf07184e8f28b8183d8631f0284006a53a86",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tb\\regional_foundation_v10\\01_native_v10.wrp": "631736b53c0f2c0902e702431dc37d72ed51e62cdbba2dfc480bb08584ac912b",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tools\\navigation\\regional_chase_init.c": "a41941d2c6f01e6317c11bbe849ce16bfd5b3f65427b81ecf78bb18b86649cf1"
+  },
+  "mission": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\missions\\BalticRegionalChaseV2.BalticTrial\\cases.csv": "11f868ba98ef2011e82d44f437c20b8e01fdde9dfff6e98d324defe4386874f4",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\missions\\BalticRegionalChaseV2.BalticTrial\\init.c": "1add2a0c9c07a6b0da6b43a950d2793ac357a4dd55409444392c53c84ebd9347"
+  },
+  "cases": [
+    {
+      "case": 0,
+      "name": "local_control",
+      "reverse": false,
+      "kind": "ground",
+      "start": [
+        5104.0,
+        81.76558685302734,
+        7644.0
+      ],
+      "goal": [
+        5129.0,
+        93.76557159423828,
+        7644.0
+      ],
+      "source_case": 0
+    },
+    {
+      "case": 1,
+      "name": "reserve_1",
+      "reverse": true,
+      "kind": "ground",
+      "start": [
+        8472.0,
+        3.950000047683716,
+        6234.0
+      ],
+      "goal": [
+        8352.0,
+        4.830000400543213,
+        6234.0
+      ],
+      "source_case": 8
+    },
+    {
+      "case": 2,
+      "name": "spb_1",
+      "reverse": true,
+      "kind": "ground",
+      "start": [
+        8472.0,
+        3.759999990463257,
+        11418.0
+      ],
+      "goal": [
+        8352.0,
+        3.5399999618530273,
+        11418.0
+      ],
+      "source_case": 10
+    },
+    {
+      "case": 3,
+      "name": "regional_1",
+      "reverse": true,
+      "kind": "ground",
+      "start": [
+        6168.0,
+        13.303800582885742,
+        11994.0
+      ],
+      "goal": [
+        6048.0,
+        2.5139999389648438,
+        11994.0
+      ],
+      "source_case": 12
+    },
+    {
+      "case": 4,
+      "name": "bridge_west",
+      "reverse": false,
+      "kind": "bridge",
+      "start": [
+        2283.713623046875,
+        11.035113334655762,
+        6910.41943359375
+      ],
+      "goal": [
+        2367.724609375,
+        11.050000190734863,
+        6897.490234375
+      ],
+      "source_case": 13
+    },
+    {
+      "case": 5,
+      "name": "bridge_west",
+      "reverse": true,
+      "kind": "bridge",
+      "start": [
+        2367.724609375,
+        11.050000190734863,
+        6897.490234375
+      ],
+      "goal": [
+        2283.713623046875,
+        11.035113334655762,
+        6910.41943359375
+      ],
+      "source_case": 14
+    },
+    {
+      "case": 6,
+      "name": "bridge_middle",
+      "reverse": false,
+      "kind": "bridge",
+      "start": [
+        2362.78271484375,
+        11.050000190734863,
+        6898.2509765625
+      ],
+      "goal": [
+        2471.5029296875,
+        11.050000190734863,
+        6881.51953125
+      ],
+      "source_case": 15
+    },
+    {
+      "case": 7,
+      "name": "bridge_middle",
+      "reverse": true,
+      "kind": "bridge",
+      "start": [
+        2471.5029296875,
+        11.050000190734863,
+        6881.51953125
+      ],
+      "goal": [
+        2362.78271484375,
+        11.050000190734863,
+        6898.2509765625
+      ],
+      "source_case": 16
+    },
+    {
+      "case": 8,
+      "name": "bridge_east",
+      "reverse": false,
+      "kind": "bridge",
+      "start": [
+        2466.56103515625,
+        11.050000190734863,
+        6882.27978515625
+      ],
+      "goal": [
+        2550.572021484375,
+        11.030265808105469,
+        6869.35107421875
+      ],
+      "source_case": 17
+    },
+    {
+      "case": 9,
+      "name": "bridge_east",
+      "reverse": true,
+      "kind": "bridge",
+      "start": [
+        2550.572021484375,
+        11.030265808105469,
+        6869.35107421875
+      ],
+      "goal": [
+        2466.56103515625,
+        11.050000190734863,
+        6882.27978515625
+      ],
+      "source_case": 18
+    }
+  ],
+  "bridge": {
+    "center_xz": [
+      2417.1428225906,
+      6889.8850822322
+    ],
+    "axis_xz": [
+      0.98836436083,
+      -0.15210486594
+    ],
+    "half_length_m": 112.5,
+    "deck_y": 11.0,
+    "max_lateral_m": 4.0
+  },
+  "criteria": {
+    "target_settlement_s": 20,
+    "minimum_final_settle_samples": 20,
+    "maximum_prey_drift_m": 2,
+    "maximum_sample_gap_s": 1,
+    "stage_timeout_s": 90,
+    "goal_radius_m": 4.002,
+    "path_length_factor": 3,
+    "physical_y_min_m": -0.2,
+    "physical_y_max_m": 0.5,
+    "maximum_ground_error_m": 0.002,
+    "maximum_spawn_error_m": 0.02,
+    "minimum_active_samples": 3,
+    "stimulus_multiplier": 4
+  },
+  "limits": [
+    "Locomotion under persistent diagnostic noise; not ordinary perception range.",
+    "Original V1 failures remain failed.",
+    "One infected and one human; no capacity claim.",
+    "No world/NM/terrain/object change; final native world remains d1008dd6."
+  ],
+  "parent_reference_sha256": "cb0e1f82c517a7222c5b1db6734018a1645713d44464fba408fe04e1a70d247e",
+  "parent_result_sha256": "3fe5b9b912a48fc279bda7911f607f61fe6a1c5de1b17ca5628071851f474317",
+  "log_header": "BALTIC_REGIONAL_CHASE_V2",
+  "deployed_mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticRegionalChaseV2.BalticTrial",
+  "stimulus": {
+    "api": "AddNoiseTarget",
+    "lifetime_s": 5,
+    "multiplier": 4,
+    "interval_s": 3
+  },
+  "changes": [
+    "Same frozen points, movement/contact/arrival criteria and90s timeout.",
+    "Only sound target lifetime/binding differs; selected failing cases renumbered with source_case preserved."
+  ]
+}

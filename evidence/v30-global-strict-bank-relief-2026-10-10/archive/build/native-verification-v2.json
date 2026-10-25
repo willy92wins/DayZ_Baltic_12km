@@ -1,0 +1,52 @@
+{
+  "translated_water_probes": 1205,
+  "baseline_ev82_terrain_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+  "baseline_ev82_runtime_sha256": "c0effbbcf0200bd916a691e94d44546bc573dc30a7c275b8049a8ad64b2863a2",
+  "reference_sha256": "f748ec16547b8a54150e2414c004c63d0f65cb9852537db2b558300fa857ff19",
+  "preserved_v1_fail_sha256": "dd97462b7ea6d7792e47963f386d975fa1ac9f79749cedf3375c8b70b0693031",
+  "status": "PASS_COMPLETE_NATIVE_READBACK",
+  "errors": [],
+  "terrain_sha256": "8e239f8e2815b61a920421af1dfbb1b64f353ab4978d633eb39fe74f04946d1b",
+  "pbo": {
+    "narva_trial.pbo": "727fadeaf1a26fb4ae8362cc894e80e83194c64d5062ac7c2512b79879721420",
+    "baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"
+  },
+  "runtime_sha256": "f69470851e82ce01f144a5530f1e28edf6541a3ef82cdf270bb20778103281c8",
+  "vertices": 4194304,
+  "dry_vertices": 3195297,
+  "wet_vertices": 999007,
+  "max_ground_error_m": 1.52588e-05,
+  "physical_anomalies": 23,
+  "unflagged_positive_scalar_queries": 327,
+  "dry_anomalies": 0,
+  "nominal_water_on_dry": 0,
+  "dynamic_water_on_dry": 0,
+  "design_water_without_presence": 23,
+  "missing_by_class": {
+    "1": 5,
+    "3": 18
+  },
+  "dry_nominal_over_1_8": 0,
+  "dry_by_protection": {
+    "reserve": 0,
+    "platform": 0,
+    "beach": 0
+  },
+  "negatives": {
+    "wrong_translated_water_plane": true,
+    "missing_grid_row": true,
+    "missing_end": true,
+    "missing_calibrated_point": true,
+    "missing_scalar_diagnostic_end": true,
+    "duplicate_anomaly": true,
+    "height_mismatch": true,
+    "stale_calibrated_height_reference": true
+  },
+  "elapsed_mission_ms": 25871,
+  "limits": [
+    "Complete runtime water queries at every native vertex; subcell continuity and render LOD remain separate.",
+    "Anomalies are differences against source class, requiring classification of intentional coast/shore transitions.",
+    "Dynamic water is sampled at current wave phase, not every tide/wind envelope.",
+    "No visual defect is closed by this physical readback."
+  ]
+}

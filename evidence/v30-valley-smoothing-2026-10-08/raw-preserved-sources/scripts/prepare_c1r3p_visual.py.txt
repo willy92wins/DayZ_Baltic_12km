@@ -1,0 +1,39 @@
+from pathlib import Path
+import json,hashlib,shutil,sys
+import numpy as np
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+B=Path('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008')
+E=W/'evidence/v30-valley-smoothing-2026-10-08'
+E8=W/'evidence/v30-water-visual-fix-2026-10-08'
+sys.path.insert(0,str(W/'tools/terrain'))
+from v30_common import tri_sample
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+old=E8/'missions/BalticWaterVisualDiag.BalticTrial/init.c'
+ref=json.loads((E8/'stitch-probe-reference.json').read_text())
+terrain=B/'candidate-c1r3p/terrain_valley.npz'
+h=np.load(terrain)['heights']
+s=old.read_text()
+assert s.count('2244 0 7164')==1
+s=s.replace('2244 0 7164','7348 0 5780')
+s=s.replace('BalticWaterVisualDiagMission','BalticC1R3PVisualMission')
+s=s.replace('baltic_water_visual_diag.log','baltic_c1r3p_visual.log')
+anchor='        LogSurface("R2_water", 8272.520000, 9041.160000);'
+assert s.count(anchor)==1
+rows=[]
+for p in ref['points']:
+    p['source_ground_m']=p['expected_ground_m']
+    p['expected_ground_m']=float(tri_sample(h,p['x'],p['z']))
+    rows.append(f'        LogSurface("Q{p["id"]}", {p["x"]:.6f}, {p["z"]:.6f});')
+s=s.replace(anchor,anchor+'\n'+'\n'.join(rows))
+out=E/'missions/BalticC1R3PVisual.BalticTrial';out.mkdir(parents=True,exist_ok=False)
+(out/'init.c').write_text(s)
+dest=Path('C:/Program Files (x86)/Steam/steamapps/common/DayZServer/mpmissions')/out.name
+dest.mkdir(exist_ok=False);shutil.copyfile(out/'init.c',dest/'init.c')
+assert sha(out/'init.c')==sha(dest/'init.c')
+ref.update(terrain_sha256=sha(terrain),mission_sha256=sha(dest/'init.c'),mission=str(dest),
+    source_reference_sha256=sha(E8/'stitch-probe-reference.json'),
+    log='baltic_c1r3p_visual.log',
+    contract='28 frozen water control coordinates, candidate native ground; no recomputation of physical pond levels.')
+(E/'c1r3p-visual-reference.json').write_text(json.dumps(ref,indent=2)+'\n')
+print(json.dumps(dict(mission=str(dest),sha256=sha(dest/'init.c'),points=len(ref['points']))))
+

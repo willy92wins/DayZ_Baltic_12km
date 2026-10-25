@@ -1,0 +1,54 @@
+# Preserve byte hashes of sampled data and authentic exports; review via numeric validators.
+tests/vertex_sampling_probe/*.asc -text -diff
+tests/vertex_sampling_probe/*.prj -text
+tests/vertex_sampling_probe/*.cpg -text
+evidence/tb-registration/*.asc -text -diff
+
+# Preserve native Narva logs byte-for-byte; they are evidence, not source code.
+evidence/narva/evidence/*.RPT -text -diff
+evidence/narva/evidence/*.log -text -diff
+
+# Authentic build logs retain bytes and whitespace as evidence.
+evidence/playtest/evidence/*.log -text -diff
+
+# Native first-run evidence retains original bytes.
+evidence/runtime-first/**/*.RPT -text -diff
+evidence/runtime-first/**/*.log -text -diff
+
+# Evidence hashes refer to original bytes, including original line endings.
+evidence/** -text
+
+# Frozen player-view fixtures retain their recorded deployment hashes.
+missions/BalticV30VisualTourV1.BalticTrial/** -text
+missions/BalticV30VisualFollowupV1.BalticTrial/** -text
+missions/BalticV30ShoreCompareV1.BalticTrial/** -text
+missions/BalticV30DeltaV1.BalticTrial/** -text
+missions/BalticV30DeltaNavV1.BalticTrial/** -text
+missions/BalticV30DeltaBoatV1.BalticTrial/** -text
+
+# New frozen runtime fixtures: mission hashes must survive checkout unchanged.
+missions/BalticNative*/** -text
+missions/BalticNavSeam*/** -text
+missions/BalticTerrainPerf*/** -text
+missions/BalticAILoad*/** -text
+missions/BalticBoatCalibration*/** -text
+missions/BalticBoatInput*/** -text
+missions/BalticBoatRouteInput*/** -text
+missions/BalticOutline*/** -text
+missions/Baltic*Water*/** -text
+missions/BalticShapeBoat*/** -text
+missions/BalticStaticShape*/** -text
+missions/BalticFoundation*/** -text
+missions/BalticSlopeBoat*/** -text
+tests/outline-consumer-v2/** -text
+missions/BalticV30LugaBoatV1.BalticTrial/** -text
+missions/BalticV30LugaCase4V2.BalticTrial/** -text
+missions/BalticV30LugaCases45V2.BalticTrial/** -text
+missions/BalticV12NavigationV1.BalticTrial/** -text
+tools/terrain/limit_shore_faces_v30.py text eol=lf
+tools/terrain/bound_shore_margin_v30.py text eol=lf
+tools/terrain/repair_current_fairways_v30.py text eol=lf
+tools/terrain/repair_wave_banks_v30.py text eol=lf
+tools/terrain/verify_channel_reaches_v30.py text eol=lf
+tools/playtest/dark_tiles_v30.py text eol=lf
+missions/BalticBugRecheckDriveV1.BalticTrial/** -text

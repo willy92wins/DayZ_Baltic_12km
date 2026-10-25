@@ -1,0 +1,168 @@
+{
+  "status": "PASS_EMPTY_BOAT_SELECTED_REGIONAL_SECTORS_BOTH_DIRECTIONS",
+  "global_checks": {
+    "header": true,
+    "all_cases_complete": true,
+    "exact_cases": true,
+    "no_parse_errors": true
+  },
+  "parse_errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "river": "Little Neva",
+      "reverse": false,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 630,
+      "max_dt_s": 0.6230000000000011,
+      "max_step_m": 0.8101382541936045,
+      "max_corridor_distance_m": 3.126008941813705,
+      "max_waypoint_distance_m": 0.48848551246253047,
+      "end_distance_m": 3.126008941813705,
+      "max_ground_error_m": 4.066212871789432e-05,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 281.61
+    },
+    {
+      "case": 1,
+      "river": "Little Neva",
+      "reverse": true,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 649,
+      "max_dt_s": 0.5810000000000173,
+      "max_step_m": 0.7906090455879021,
+      "max_corridor_distance_m": 3.053190697629635,
+      "max_waypoint_distance_m": 0.6634878800634672,
+      "end_distance_m": 3.053190697629635,
+      "max_ground_error_m": 4.112060374517057e-05,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 290.522
+    },
+    {
+      "case": 2,
+      "river": "Great Neva",
+      "reverse": false,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 500,
+      "max_dt_s": 0.728999999999985,
+      "max_step_m": 0.9928285361199983,
+      "max_corridor_distance_m": 2.8830673307084513,
+      "max_waypoint_distance_m": 0.8535900383042792,
+      "end_distance_m": 2.8830673307084513,
+      "max_ground_error_m": 4.7683716086766026e-08,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 216.255
+    },
+    {
+      "case": 3,
+      "river": "Great Neva",
+      "reverse": true,
+      "status": "PASS",
+      "checks": {
+        "one_start_and_finish": true,
+        "one_arrival": true,
+        "monotone_continuous_clock": true,
+        "continuous_motion": true,
+        "no_health_loss": true,
+        "inside_corridor": true,
+        "all_intermediate_points_visited": true,
+        "start_and_endpoint": true,
+        "engine_ground_matches_source": true,
+        "input_callbacks": true,
+        "sustained_powered_motion": true,
+        "engine_route_distance_agrees": true,
+        "targets_in_order": true
+      },
+      "end_reason": [
+        "ARRIVED_AND_STOPPED"
+      ],
+      "samples": 490,
+      "max_dt_s": 0.5490000000000066,
+      "max_step_m": 0.722852292582446,
+      "max_corridor_distance_m": 2.8177377832811246,
+      "max_waypoint_distance_m": 0.8191570885698795,
+      "end_distance_m": 2.8177377832811246,
+      "max_ground_error_m": 4.7683716086766026e-08,
+      "health_first_min_last": [
+        600.0,
+        600.0,
+        600.0
+      ],
+      "longest_powered_motion_s": 210.85
+    }
+  ],
+  "limits": [
+    "Empty vanilla boat, independent forward/reverse spawns; no crew or complete turn acceptance.",
+    "Only two delta branches and their real OSM connectors; no other river or medium-vessel acceptance.",
+    "Controller and thresholds unchanged; bind exact corrected world PBO/NM in runtime receipt."
+  ],
+  "reference_sha256": "e8bce9f87ae59c145d9ee2d83994057f5497fc2fd6ebbc0aee452af7bb3d07cb",
+  "log_sha256": "cf8a59d3f58c23d6bb9de67de87cd2d63c850d18c3f777c79b7908146c71aaa9",
+  "terrain_sha256": "64d4f160b963c28b519a50c9c29564dbe9727facabf7b52d83970eef5b8e6eb4"
+}

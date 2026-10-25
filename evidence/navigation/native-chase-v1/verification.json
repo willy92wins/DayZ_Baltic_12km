@@ -1,0 +1,104 @@
+{
+  "status": "FAIL_CONSUMER_ACCEPTANCE",
+  "issues": [
+    "stage0:fixed_prey"
+  ],
+  "stages": [
+    {
+      "stage": 0,
+      "checks": {
+        "spawn_at_frozen_axis": true,
+        "reached_frozen_axis": true,
+        "positive_health": true,
+        "physical_surface": true,
+        "within_road_corridor": true,
+        "fixed_prey": false,
+        "continuous_samples": true,
+        "within_timeout": true,
+        "responded_to_stimulus": true
+      },
+      "duration_s": 8.595500000000001,
+      "actor_samples": 46,
+      "max_sample_gap_s": 0.3000000000000007,
+      "axis_range_m": [
+        -80.00329081224287,
+        -64.78696030914301
+      ],
+      "maximum_lateral_m": 1.8445400026232956,
+      "health_min": 100.0,
+      "roadway_vertical_difference_m": [
+        0.0015223311486263214,
+        0.0400924928030193
+      ],
+      "prey_max_drift_m": 5.246174534657816,
+      "settlement_drift_m": null
+    },
+    {
+      "stage": 1,
+      "checks": {
+        "spawn_at_frozen_axis": true,
+        "reached_frozen_axis": true,
+        "positive_health": true,
+        "physical_surface": true,
+        "within_road_corridor": true,
+        "fixed_prey": true,
+        "continuous_samples": true,
+        "within_timeout": true,
+        "responded_to_stimulus": true
+      },
+      "duration_s": 50.27139999999999,
+      "actor_samples": 269,
+      "max_sample_gap_s": 0.2009000000000043,
+      "axis_range_m": [
+        -50.00468931963316,
+        48.17480379407694
+      ],
+      "maximum_lateral_m": 3.04018136456709,
+      "health_min": 100.0,
+      "roadway_vertical_difference_m": [
+        0.001440000000000552,
+        0.03999999999999915
+      ],
+      "prey_max_drift_m": 0.0,
+      "settlement_drift_m": null
+    },
+    {
+      "stage": 2,
+      "checks": {
+        "spawn_at_frozen_axis": true,
+        "reached_frozen_axis": true,
+        "positive_health": true,
+        "physical_surface": true,
+        "within_road_corridor": true,
+        "fixed_prey": true,
+        "continuous_samples": true,
+        "within_timeout": true,
+        "responded_to_stimulus": true
+      },
+      "duration_s": 58.97219999999999,
+      "actor_samples": 315,
+      "max_sample_gap_s": 0.20100000000002183,
+      "axis_range_m": [
+        -48.3434861868632,
+        49.99875913346699
+      ],
+      "maximum_lateral_m": 3.989648676033433,
+      "health_min": 100.0,
+      "roadway_vertical_difference_m": [
+        0.001440000000000552,
+        0.03999999999999915
+      ],
+      "prey_max_drift_m": 0.0,
+      "settlement_drift_m": null
+    }
+  ],
+  "limits": [
+    "One infected at a time and one client; not player capacity.",
+    "Only the tested Narva corridor; no regional route acceptance.",
+    "Position records alone cannot establish movement authority; mission source has been inspected for overrides.",
+    "Graph sample-height mismatch remains a separate failed geometric gate."
+  ],
+  "log_sha256": "27653a978d98b7e34f8ac5d520bbf94fed92bd2d321dfb99d546aa6231fd20ea",
+  "reference_sha256": "677361d20444ca79d5a0d54e54246470efc7e62ae443a199d6a197c485a35805",
+  "height_sha256": "c1f23f24808cb6f1ff858f47a378f6bdf8211387f63c110a12ff72fd3bd82d3c"
+}

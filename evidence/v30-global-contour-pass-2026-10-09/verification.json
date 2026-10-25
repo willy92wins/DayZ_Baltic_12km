@@ -1,0 +1,153 @@
+{
+  "status": "FAIL_GLOBAL_SOURCE",
+  "gates": {
+    "finite": true,
+    "fixed_exact": true,
+    "outside_scope_exact": true,
+    "height_displacement": true,
+    "visible_signs_exact": true,
+    "bed_floor": true,
+    "no_wet_raise": true,
+    "dry_margin": true,
+    "slopes": true,
+    "metadata_exact": true,
+    "all_tiles_processed": true,
+    "no_author_errors": true,
+    "perimeters_exact": true,
+    "contour_correspondence": false,
+    "global_p90": true,
+    "global_over30": true,
+    "global_max": false,
+    "physical_topology": false,
+    "physical_contacts": true,
+    "physical_dry_flood": true,
+    "visible_topology": false,
+    "visible_contacts": true,
+    "visible_dry_flood": true,
+    "visible_offset": true
+  },
+  "physical": {
+    "changed_vertices": 54588,
+    "sign_changes": 0,
+    "floor_violations": 0,
+    "wet_raises": 0,
+    "dry_margin_violations": 0,
+    "max_slope_excess_deg": 2.4271919372154116e-06,
+    "bad_faces": []
+  },
+  "before": {
+    "chains": 1001,
+    "long_chains": 767,
+    "length_m": 426921.3279882411,
+    "samples": 207823,
+    "p90_degrees": 52.53184256275406,
+    "over30_share": 0.21724255736852996,
+    "max_degrees": 178.12057742771702
+  },
+  "after": {
+    "chains": 1001,
+    "long_chains": 767,
+    "length_m": 421679.6908003185,
+    "samples": 205224,
+    "p90_degrees": 38.53478932607148,
+    "over30_share": 0.14451038864850116,
+    "max_degrees": 178.86213896128257
+  },
+  "corresponding_contour_limit_m": 4.100000042213267,
+  "domains": {
+    "physical": {
+      "topology": {
+        "before_significant": 830,
+        "after_significant": 830,
+        "failed_original": [
+          {
+            "component": 82,
+            "area": 627.2219914416988,
+            "retained_area": 561.1412934457234,
+            "ratio": 0.8946454383015399,
+            "significant_descendants": [
+              82
+            ]
+          }
+        ],
+        "merged": {},
+        "new_significant": [],
+        "pass_gate": false
+      },
+      "contacts": [
+        {
+          "axis": 0,
+          "new": 0,
+          "lost": 0
+        },
+        {
+          "axis": 1,
+          "new": 0,
+          "lost": 0
+        }
+      ],
+      "dry_gain_m2": 0.0,
+      "gained_area_m2": 159407.33367076435,
+      "lost_area_m2": 32477.837363454313,
+      "max_visible_offset_m": null
+    },
+    "visible": {
+      "topology": {
+        "before_significant": 830,
+        "after_significant": 830,
+        "failed_original": [
+          {
+            "component": 82,
+            "area": 627.2219914416988,
+            "retained_area": 561.1412934457235,
+            "ratio": 0.8946454383015401,
+            "significant_descendants": [
+              82
+            ]
+          }
+        ],
+        "merged": {},
+        "new_significant": [],
+        "pass_gate": false
+      },
+      "contacts": [
+        {
+          "axis": 0,
+          "new": 0,
+          "lost": 0
+        },
+        {
+          "axis": 1,
+          "new": 0,
+          "lost": 0
+        }
+      ],
+      "dry_gain_m2": 0.0,
+      "gained_area_m2": 159388.60728117492,
+      "lost_area_m2": 32465.604948081032,
+      "max_visible_offset_m": 0.32643521465363595
+    }
+  },
+  "negative_controls": [
+    "whole_triangle_18m2",
+    "quarter_triangle_4.5m2",
+    "straight_and_right_angle",
+    "missing_body_rejected",
+    "area_loss_rejected",
+    "unchanged_physical_fixture_passes",
+    "bed_floor_mutant_rejected",
+    "wet_raise_mutant_rejected",
+    "visible_sign_mutant_rejected",
+    "steep_face_mutant_rejected",
+    "dry_margin_mutant_rejected",
+    "fixed_vertex_mutant_rejected"
+  ],
+  "source_sha256": "cff6d175da46a0080bd761c327babf9c0ef4c53434744ceec9241bc9cc28c82c",
+  "candidate_sha256": "83cdd5cdce9de947490e015ae89a81c15d90c246f3203296c168b85cbe5571ee",
+  "seconds": 28.203000000008615,
+  "limits": [
+    "All finite pond/river cells measured; ocean coast and terrain-only creases retain their separate scope.",
+    "All sectors reported; a global improvement does not claim every corner is solved.",
+    "Compiled coverage, native readback, navigation and visual acceptance remain separate."
+  ]
+}

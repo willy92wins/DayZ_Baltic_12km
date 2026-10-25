@@ -1,0 +1,33 @@
+{
+  "status": "PASS_EXACT_DEDUP_WORLD_CONTENT",
+  "checks": {
+    "headers_exact": true,
+    "heights_exact": true,
+    "materials_exact": true,
+    "terminator_exact": true,
+    "instance_count_exact": true,
+    "poses_ids_and_aliases_exact": true,
+    "bridges_exact": true,
+    "distinct_model_count": true,
+    "packed_entry_names_exact": true,
+    "only_compiled_wrp_changed": true
+  },
+  "renamed_instances": 4659,
+  "bad_object_records": [],
+  "changed_pbo_entries": [
+    "baltic_trial.wrp"
+  ],
+  "before_world_pbo_sha256": "572d4124c7343f7a39ebf84b81aae913636e942aa441bb5ba95e5e79d37c3b7c",
+  "after_world_pbo_sha256": "e556f5763c552a890975e57841edc88e1f76406a5840657232030eb16c97159a",
+  "files": {
+    "E:\\DayZ-Baltic-Build\\v30-continuity-package\\world\\stage\\BalticTrialWorld\\baltic_trial.wrp": "a464cd162ba5720b6d0a07c88ad5aab301c316c05c348a25b1c72df4e140e4bb",
+    "E:\\DayZ-Baltic-Build\\v30-continuity-dedup-package\\world\\stage\\BalticTrialWorld\\baltic_trial.wrp": "d82a70a1580a281567820df559a3d1a994efd8526957b19b56e68189dcd49714",
+    "E:\\DayZ-Baltic-Build\\v30-water-deduplicated\\deduplication.json": "f6abe924252733bcfe0b288c4a73fe736d03310a1968e079636105315fbab461",
+    "E:\\DayZ-Baltic-Build\\v30-continuity-package\\pbo-verification.json": "caafcd21e84056ebab79fe695ef2066b7142c99c051a662e2982e6dbce8ba566",
+    "E:\\DayZ-Baltic-Build\\v30-continuity-dedup-package\\pbo-verification.json": "3d0c91cb2b1c8ecbb815ccffc93948488ebfecdc0b0464389b2e2e1ac0eabec5"
+  },
+  "limits": [
+    "Source model and placement equivalence plus packed-entry parity; no FPS or runtime claim.",
+    "The compiled world must still load and be paired with its generated navmesh."
+  ]
+}

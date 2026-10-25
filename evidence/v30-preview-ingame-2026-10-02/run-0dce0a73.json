@@ -1,0 +1,37 @@
+{
+  "status": "PASS_FUNCTIONAL_NO_CAPTURES",
+  "run_id": "0dce0a73-e865-4cae-ad21-b4dd93ddace2",
+  "date_local": "2026-10-02T05:05/05:08",
+  "purpose": "V30 preview 2 in the engine: smooth shores, water pieces from the final water, surface V30 (1 m/px satellite and mask)",
+  "package": {
+    "mod": "P:\\Mods\\@DayZ_Baltic_V30",
+    "narva_trial_pbo_sha256": "e514f929c42de3c0f9ebfa8b00f8553e1b1d73492e65c852716930eafe3cd577",
+    "baltic_water_v30_pbo_sha256": "ede6bbcce1e987fc51f8e451e5d5bb365fb8ca010a31b3942e965eb66b6ff344",
+    "build": "E:\\DayZ-Baltic-Build\\v30-preview2 (tools/terrain/build_v30_package.ps1 -Layers E:\\DayZ-Baltic-Build\\surface-v30)",
+    "terrain_asc_sha256": "936fc77b13620cf732df61f9b41361814eaf7e1badd445f65805334c9f9cc179",
+    "water": "17,322 pieces",
+    "rollback": "preview 1 PBOs kept in E:\\DayZ-Baltic-Build\\v30-preview1\\out\\Addons"
+  },
+  "launch": {
+    "project": "DayZ_MCP",
+    "mode": "all",
+    "mission": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZServer\\mpmissions\\BalticFoundationSPBBasicV1.BalticTrial",
+    "extra_mods": ["P:\\Mods\\@DayZ_Baltic_V30"],
+    "no_base_mods": true,
+    "no_file_patching": true
+  },
+  "checks": [
+    {"what": "player connects", "result": "15 s after launch, bridge ready on both peers"},
+    {"what": "road station chain 74 (6682, 7097.1)", "result": "cp_gravel, y 23.51 (new mask: roads are gravel)"},
+    {"what": "St Petersburg built-up (8600, 9950)", "result": "cp_grass, y 1.65 (new mask: built-up is grass)"},
+    {"what": "forest bank (3744, 2202)", "result": "cp_conifer_common1, y 4.906; player_teleport landed at 4.906"},
+    {"what": "navigable (1062, 4812)", "result": "fresh_water_ext at 2.625"},
+    {"what": "five random stream groove vertices", "result": "all fresh_water_ext: 2.000 (design 1.949), 3.025 (3.034), 1.625 (1.629), 3.750 (3.761), 2.650 (2.640)"},
+    {"what": "RPT", "result": "no world, model or terrain errors; 4,539 'Unknown object class pond' on the client (known)"},
+    {"what": "close", "result": "dayz_test_close graceful (client then server), lease released"}
+  ],
+  "not_verified": [
+    "Nothing visual: capture_screenshot returned frame_client_all_black, the display was off (no user input since about 04:35; AC display timeout 5 min).",
+    "Swimming, boats, driving and AI on V30. The navmesh is V29's and stale for V30."
+  ]
+}

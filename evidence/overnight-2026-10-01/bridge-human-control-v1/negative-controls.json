@@ -1,0 +1,100 @@
+{
+  "status": "PASS_REAL_LOCAL_HUMAN_CONTROL_AND_15_NEGATIVES",
+  "full_run_status": "PASS_HUMAN_CONTROL_WITHOUT_INFECTED",
+  "scope": "Case0 only positive; not map or bridge acceptance",
+  "reference_sha256": "e985d83200b189ddd6c0da6c21e292b7e10acfd82126e1d41ac6a332c10a2f27",
+  "server_sha256": "cc45407e110112b0fca80478b00001c5c3ae7ac737196a845d132e3331d7fe6e",
+  "client_sha256": "b2a3ef7a40f12b69b1e5dcf39413fd14e8abe278e2c4614633eae37745d94178",
+  "controls": [
+    {
+      "name": "dead_human",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "5332c780ba3348b6768687b4ff6fe593740c3b06af982565474f4e923684a93e",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "unconscious",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "ce1633d7867e07fbef034b759343a286083e73b642871fd5e026f4b90da7d8a7",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "nonfinite",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "dea80361a05b05201dc70fc55a5e14af142fdef281720ba9ae25d2b96315b006",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "wrong_ground",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "ae602dd8c0a554eaa5594cbefff123bc851158e22278669f5be8f75615c454b1",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "floating",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "b2490dffae1c2bcb45e873b25681498ec662bfd4dc964930196fa21bfb05846d",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "teleport",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "08296c63f192b631e96599537cc47d832c3eecab7b3f7733d3542cf96d96f430",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "wrong_goal",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "d9a683899f04ea8c8dd14833fc16798917c4be34a6bd689d52fa7730f2528662",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "false_arrival",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "24e27a00e2a0162f9cf4b1670455feccb12f5da98cfe94feb0b7fcf01acd09ed",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "unknown_marker",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "6a566f6b21c66275fa816e7f7b6aef1be626e0e6d10b012bde35c49db1217d5a",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "backwards_clock",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "095e748f648f7d9c59a5dac6d7683a361d02a45d233611ead7291b8338a4b07c",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "unexpected_actor",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "eafe7133bf1715a83a74a177bdf87ead9b55e292412dee9b09c046a38cf78fd1",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "missing_movement",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "fb5f658c0c3255360520d46b7fd04467ce9231290aa3c49017d8b1aabc590f85",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "duplicate_movement",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "282c2164da1b90d9bdd5117ebc8415f8e9488743a55ad347ef2915a964ecd33c",
+      "client_sha256": "2debd853ee1431af189d86b42394873e634594956ee027c7c4b92e84611a3546"
+    },
+    {
+      "name": "missing_input",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "5804a43e404debc1acc1240c348c07d0db02fda4de9a54fba156634e227f14f9",
+      "client_sha256": "ffed178a7b47517c291c60a6d70f96742454f929b7a38db81dc3a6d7dc0c9373"
+    },
+    {
+      "name": "client_missing_end",
+      "status": "EXPECTED_REJECTION",
+      "source_sha256": "5804a43e404debc1acc1240c348c07d0db02fda4de9a54fba156634e227f14f9",
+      "client_sha256": "4e11f69a833570cef924666b9b3cb73696e9ce0bda435662123eecc15652b915"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+from pathlib import Path
+import json,sys,shutil,re
+import numpy as np
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+B=Path('E:/DayZ-Baltic-Build/v30-global-water-risk-20261009');E=W/'evidence/v30-global-water-risk-2026-10-09'
+sys.path.insert(0,str(W/'tools/terrain'))
+from v30_common import tri_sample
+src=Path('P:/DayZ_MCP_dev/_client/profiles/baltic_projection_probe.log')
+text=src.read_text(encoding='utf-8-sig');batches=[];active=None
+def vector(s):return np.array([float(v) for v in re.findall(r'-?\d+(?:\.\d+)?',s)])
+for line in text.splitlines():
+    f=line.split(';')
+    if f[0]=='CAM':
+        active=dict(time=int(f[1]),cam=vector(f[2]),points=[])
+        batches.append(active)
+    elif f[0]=='P' and active is not None:
+        active['points'].append((np.array([float(v) for v in f[2:5]]),vector(f[5])))
+batches=[b for b in batches if np.max(np.abs(b['cam']-[2185,280,7350]))<.001 and len(b['points'])==20]
+assert len(batches)>=2,'wait for two complete fixed-camera batches'
+b=batches[-1]
+m=np.array([-.9967640042304993,-3.725290298461914e-9,-.08038417994976044,.06680204719305038,.556220531463623,-.8283454775810242,.044711336493492126,-.8310347199440002,-.5544205904006958]).reshape(3,3)
+xyz=np.array([p[0] for p in b['points']]);screen=np.array([p[1] for p in b['points']])
+q=(xyz-b['cam'])@m.T
+use=(q[:,2]>1)&np.isfinite(screen).all(1)&(screen[:,:2]>.001).all(1)&(screen[:,:2]<.999).all(1)
+ax=np.c_[np.ones(use.sum()),q[use,0]/q[use,2]]
+ay=np.c_[np.ones(use.sum()),-q[use,1]/q[use,2]]
+cx,fx=np.linalg.lstsq(ax,screen[use,0],rcond=None)[0]
+cy,fy=np.linalg.lstsq(ay,screen[use,1],rcond=None)[0]
+error=max(np.max(np.abs(ax@[cx,fx]-screen[use,0])),np.max(np.abs(ay@[cy,fy]-screen[use,1])))
+assert error<2e-5 and fx>0 and fy>0,(error,cx,fx,cy,fy)
+t=dict(np.load('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008/candidate-c1r3p/terrain_valley.npz'))
+mask=np.load(B/'global-risk-masks.npz')
+points=[]
+for label,px,py in [('user_residual_center',324,116),('user_residual_east',347,117),('bridge_left_approach',505,157),('old_reflection_e',1016,407),('old_dark_w',748,608),('old_bright_w',350,300),('old_reflection_n',982,148)]:
+    direction=m[2]+m[0]*((px/1920-cx)/fx)+m[1]*((cy-py/1080)/fy)
+    # Scan front-to-back, then bisect first crossing (not assuming a monotonic whole ray).
+    ds=np.linspace(0,3000,3001);rays=b['cam']+ds[:,None]*direction
+    diff=rays[:,1]-tri_sample(t['heights'],rays[:,0],rays[:,2])
+    indices=np.where(diff<=0)[0];assert len(indices)
+    k=indices[0];lo=ds[max(0,k-1)];hi=ds[k]
+    for _ in range(40):
+        d=(lo+hi)/2;p=b['cam']+d*direction
+        if p[1]>float(tri_sample(t['heights'],p[0],p[2])):lo=d
+        else:hi=d
+    p=b['cam']+hi*direction;r,c=round((12282-p[2])/6),round(p[0]/6)
+    points.append(dict(name=label,pixel=[px,py],world=p.tolist(),cell=[r,c],
+        cls=int(t['cls'][r,c]),vertex_h=float(t['heights'][r,c]),
+        reserve=bool(t['reserve'][r,c]),platform=bool(t['platform'][r,c]),beach=bool(t['beach'][r,c]),
+        empirical_lowland=bool(mask['lowland'][r,c]),coarse_only=bool(mask['coarse_only'][r,c]),
+        component=int(mask['labels'][r,c])))
+out=dict(status='NATIVE_PROJECTION_CALIBRATED',points_used=int(use.sum()),batch_time=b['time'],
+    fit=dict(cx=float(cx),fx=float(fx),cy=float(cy),fy=float(fy),max_normalized_residual=float(error),vertical_fov_degrees=float(np.rad2deg(2*np.arctan(.5/fy)))),
+    points=points,limits=['Residual pixel center chosen from user crop registered on bridge, correlation .968; nearby samples bound selection uncertainty.','Height is the terrain intersection, not proof of the visual mechanism.'])
+shutil.copyfile(src,E/'projection-runtime.log')
+(E/'native-projection.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps(out,indent=2))

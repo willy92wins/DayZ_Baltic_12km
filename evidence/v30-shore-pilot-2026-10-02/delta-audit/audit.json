@@ -1,0 +1,82 @@
+{
+  "status": "FAIL",
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-fairway-candidate-bounded\\terrain_v30.npz": "1117b4b11b38e9369ea8ad7179cd3bbbde0517e19a714968357b25fc166b36e0",
+    "P:\\DayZ_Baltic_12km_dev\\tests\\water_v3\\water_v3.geojson": "5060aa79f0898074055a217857c76d3f9953252cd850d840c8a55c6796ce764a",
+    "P:\\DayZ_Baltic_12km_dev\\source\\vectors\\rivers.shp": "0c43c8cf1d4248f4f5a2e31e61f6a6569afd360f0ce0ae2a7537f05f3b317d5b",
+    "P:\\DayZ_Baltic_12km_dev\\source\\vectors\\rivers.dbf": "8c14d8d67a4a286ec84d489c35b0fa34e79dfe7e55464669287fe87e80ac43f9",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\v30-shore-pilot-2026-10-02\\audit_delta_axes.py": "da29e2591ca0ce61914774536d801dbeea3afe27f47ddbdaed68336678141c2e"
+  },
+  "scope": "Two navigable V3 delta branches; actual OSM centre lines merged by shared endpoints, 24 m useful width, min sea 0.5 m, depth 3 m with 1 cm tolerance.",
+  "exclusions": [
+    "24 m at branch endpoints; not mouth/confluence connectivity",
+    "Other delta branches intentionally not navigable in approved V3 design"
+  ],
+  "limitations": [
+    "Read-only diagnostic; does not invent a replacement route or alter geometry.",
+    "Axis corridor outside its approved polygon is separately reported, not clipped away.",
+    "No boat/collision/engine-wave acceptance."
+  ],
+  "branches": [
+    {
+      "branch": "Little Neva",
+      "part": 0,
+      "length_m": 326.1363430660132,
+      "osm_ids": [
+        "way/72322196",
+        "way/72322204",
+        "way/78518193",
+        "way/78518205",
+        "way/219158978",
+        "way/1227564346"
+      ],
+      "outside_branch_design_m2": 774.4514540907866,
+      "faces": 463,
+      "intersection_vertices": 2018,
+      "failing_faces": 345,
+      "min_depth_m": -1.7348580360413273,
+      "worst_xz": [
+        8370.0,
+        10326.0
+      ],
+      "worst_cell_rc": [
+        325,
+        1395
+      ],
+      "controls": {
+        "affine_max_error_m": 1.4210854715202004e-14,
+        "sampler_max_difference_m": 8.135714324453147e-13,
+        "shallow_obstacle_rejected": true
+      }
+    },
+    {
+      "branch": "Great Neva",
+      "part": 0,
+      "length_m": 247.08314502774576,
+      "osm_ids": [
+        "way/34348576",
+        "way/71959351",
+        "way/362796529",
+        "way/816346775"
+      ],
+      "outside_branch_design_m2": 152.03340682191754,
+      "faces": 369,
+      "intersection_vertices": 1623,
+      "failing_faces": 365,
+      "min_depth_m": -0.7564795943747973,
+      "worst_xz": [
+        8525.346390354525,
+        10104.0
+      ],
+      "worst_cell_rc": [
+        363,
+        1420
+      ],
+      "controls": {
+        "affine_max_error_m": 1.4210854715202004e-14,
+        "sampler_max_difference_m": 9.352518759442319e-13,
+        "shallow_obstacle_rejected": true
+      }
+    }
+  ]
+}

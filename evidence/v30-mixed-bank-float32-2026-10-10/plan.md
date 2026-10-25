@@ -1,0 +1,11 @@
+# EV81 — corrección acotada de cuantización de EV80
+
+Petición vigente: continuar el terreno y los taludes piramidales. EV80 ya tiene consumidor, paquete y lectura nativa completos. Su replay exacto identifica 1275 rechazos locales que pasan con un ULP hacia la altura anterior; no demuestra aceptación conjunta. EV80 permanece distribuido durante esta prueba.
+
+Único cambio de autoría: al fallar la comprobación float32 de una propuesta, evaluar como máximo uno y dos valores np.nextafter hacia la altura actual, con las mismas comprobaciones directas y tolerancias, conservando beneficio relativo >=1e-4. Si no pasan, rechazar. No modificar selector, objetivos, límites, orden ni máscaras. La fuente sigue siendo EV79 y el presupuesto total fuente±2m; no encadenar otros 2m sobre EV80. Registro por nodo de propuesta original, razón inicial, ULP seleccionado y resultados. Un recorrido, máximo180s de resolución; abortar sin candidato si se trunca. No invocar motor ni empaquetar desde la autoría.
+
+Consumidor independiente: ejecutar el consumidor EV80 contra la misma fuente EV79, con positivos/negativos; además comparar el resultado con el EV80 desplegado. Para promover exigir menos de3384 quiebros mixtos>30 y reducción>=5% de energía en bisagras incidentes a cambios respecto a EV80, cero nuevos>30 frente a EV80, p99 y conteos seco banco/interior no peores, ningún aumento de máximos por sector modificado respecto a EV80 (mismas tolerancias). P/F, soporte mojado, ingeniería y metadatos idénticos. Si falla, conservar informe y EV80 sin relajar puertas ni lanzar otra variante.
+
+Antes de ejecutar, revisar diff y fixtures numéricos: propuesta ya válida sin mover; valor un ULP fuera del límite vuelve dentro sin ampliar tolerancia; rechazo real sigue rechazado a2ULP; sin mejora no se acepta. Esto arregla una representación numérica, no cambia el diseño de protección.
+
+Solo si pasa el consumidor: exposición física/visible compilada, regeneración de superficie afectada con padding y comprobación de todos los solapes/mips, paquete aislado cotejado íntegro, lectura nativa completa y cierre orderly. No afirmar arreglado el render gris, agua sobre tierra o aspecto artístico sin evidencia correspondiente. Sin push, EV68 no promovido.

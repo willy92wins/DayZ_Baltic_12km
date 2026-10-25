@@ -1,0 +1,73 @@
+[
+  {
+    "start": "0x1400235b0",
+    "end": "0x1400235f3",
+    "instructions": [
+      "1400235b0: sub rsp, 0x48",
+      "1400235b4: mov r9, qword ptr [rip + 0x1101aa5] ; 0x141125060",
+      "1400235bb: lea rax, [rip + 0xde0826] ; 0x140e03de8 'normal,wire,wire only,overdraw,overdrawZ'",
+      "1400235c2: mov byte ptr [rsp + 0x30], 0",
+      "1400235c7: lea r8, [rip + 0xde084a] ; 0x140e03e18 'Render debug mode'",
+      "1400235ce: mov dword ptr [rsp + 0x28], 0xffffffff",
+      "1400235d6: lea rdx, [rip + 0xde0853] ; 0x140e03e30 'rctrl+ralt+w'",
+      "1400235dd: lea rcx, [rip + 0x12461f4] ; 0x1412697d8",
+      "1400235e4: mov qword ptr [rsp + 0x20], rax",
+      "1400235e9: call 0x14013d800",
+      "1400235ee: add rsp, 0x48",
+      "1400235f2: ret "
+    ]
+  },
+  {
+    "start": "0x140021f10",
+    "end": "0x140021f4e",
+    "instructions": [
+      "140021f10: sub rsp, 0x48",
+      "140021f14: mov r9, qword ptr [rip + 0x110315d] ; 0x141125078",
+      "140021f1b: lea rax, [rip + 0xddfcae] ; 0x140e01bd0 'true,false'",
+      "140021f22: mov byte ptr [rsp + 0x30], 0",
+      "140021f27: lea r8, [rip + 0xde2236] ; 0x140e04164 'Water'",
+      "140021f2e: mov dword ptr [rsp + 0x28], 0xffffffff",
+      "140021f36: lea rcx, [rip + 0x1247d23] ; 0x141269c60",
+      "140021f3d: xor edx, edx",
+      "140021f3f: mov qword ptr [rsp + 0x20], rax",
+      "140021f44: call 0x14013d800",
+      "140021f49: add rsp, 0x48",
+      "140021f4d: ret "
+    ]
+  },
+  {
+    "start": "0x14013d800",
+    "end": "0x14013d875",
+    "instructions": [
+      "14013d800: mov qword ptr [rsp + 8], rbx",
+      "14013d805: mov qword ptr [rsp + 0x10], rsi",
+      "14013d80a: mov qword ptr [rsp + 0x18], rdi",
+      "14013d80f: push r14",
+      "14013d811: sub rsp, 0x40",
+      "14013d815: mov rbx, r9",
+      "14013d818: mov dword ptr [rcx], 0",
+      "14013d81e: mov rdi, r8",
+      "14013d821: mov rsi, rdx",
+      "14013d824: mov r14, rcx",
+      "14013d827: call 0x14013e040",
+      "14013d82c: movzx eax, byte ptr [rsp + 0x80]",
+      "14013d834: mov r9, rbx",
+      "14013d837: mov ecx, dword ptr [r14 + 4]",
+      "14013d83b: mov r8, rdi",
+      "14013d83e: mov byte ptr [rsp + 0x30], al",
+      "14013d842: mov rdx, rsi",
+      "14013d845: mov eax, dword ptr [rsp + 0x78]",
+      "14013d849: mov dword ptr [rsp + 0x28], eax",
+      "14013d84d: mov rax, qword ptr [rsp + 0x70]",
+      "14013d852: mov qword ptr [rsp + 0x20], rax",
+      "14013d857: call 0x14013dcc0",
+      "14013d85c: mov rbx, qword ptr [rsp + 0x50]",
+      "14013d861: mov rax, r14",
+      "14013d864: mov rsi, qword ptr [rsp + 0x58]",
+      "14013d869: mov rdi, qword ptr [rsp + 0x60]",
+      "14013d86e: add rsp, 0x40",
+      "14013d872: pop r14",
+      "14013d874: ret "
+    ]
+  }
+]

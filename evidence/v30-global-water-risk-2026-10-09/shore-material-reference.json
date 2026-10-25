@@ -1,0 +1,27 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NOT_FOR_MAP_RELEASE",
+  "mods": [
+    {
+      "mod": "P:\\Mods\\@BalticShoreReadback",
+      "sha256": "148ab4e917d9e1117b9fafe5328b3fd48734bfb68ecf40525a046d96d20cf012"
+    },
+    {
+      "mod": "P:\\Mods\\@BalticShoreMarker",
+      "sha256": "8c453ffdcd63666061088b00f3e1b37541b2920154931264c6f30a2a224cbcae"
+    }
+  ],
+  "sources": [
+    "P:/bin/config.cpp:5198-5201",
+    "P:/bin/config.cpp:155-167",
+    "P:/scripts/3_game/global/game.c:448"
+  ],
+  "gate": [
+    "Same terrain, water models, camera, weather and loaded texture quality.",
+    "Baseline must visibly reproduce the residual. Marker must show on a real shoreline positive control before interpreting absent color.",
+    "Runtime config readback confirms selected material names, not the renderer consuming them."
+  ],
+  "limits": [
+    "Only the shore and wet-shore materials are relabelled. Ocean/pond geometry and sea physical heights remain exact.",
+    "No supported DayZ shore-darkening tuning is inferred from Arma documentation. Markers are diagnostic and must never enter a production map."
+  ]
+}

@@ -1,0 +1,21 @@
+--- E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/pond-edge/pe_common.py	2026-10-12 03:44:10.717996200 +0200
++++ E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder/pe_common.py	2026-10-13 14:12:43.982838000 +0200
+@@ -6,13 +6,13 @@
+ import numpy as np
+ from scipy.ndimage import maximum_filter1d
+ 
+-HERE = 'E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/pond-edge'
++HERE = 'E:/DayZ-Baltic-Build/v31-pond-layer-20261013/p1-builder'
+ V3_PATH = 'E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round3/harness/eval_shore_v3.py'
+ V3_SHA = 'a3ea2779ac4e175c3743cde23389e8914ac8610d260d3b3c2ff8971e37b26e3d'
+-BASE = 'E:/DayZ-Baltic-Build/v31-ev99-shore-lakes-20261012/terrain-ev99.npz'
+-BASE_SHA = '8e35c3ab3638ae423728f57d5968e6657efd7d52a4c1d22e980d71e14b4fc5a3'
+-COVER = 'E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/cover-level-ev98.npy'
+-COVER_SHA = '7421b17ce8c3ad711c7bf7fa4ee227d98503df4cdf3b63f35798586d22680ba3'
++BASE = 'E:/DayZ-Baltic-Build/v31-ev103-sills-cones-20261012/terrain-ev103.npz'
++BASE_SHA = 'a1f458efae757cecea3e39973b2c25be65f264f0fe6bb6e3827249fbb3c205cc'
++COVER = 'E:/DayZ-Baltic-Build/v31-pond-layer-20261013/envelope-ev103.npy'
++COVER_SHA = 'c03da36928e9da37bd9523c4696332b7106eb1e339640679b6fec654cbf46073'
+ 
+ 
+ def sha256(path):

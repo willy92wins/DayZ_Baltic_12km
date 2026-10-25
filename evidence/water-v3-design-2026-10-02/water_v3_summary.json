@@ -1,0 +1,129 @@
+{
+ "delta": {
+  "bodies": 13,
+  "area_km2": 0.0403,
+  "names": [
+   "Coal Harbour",
+   "Great Neva",
+   "Great Nevka",
+   "Gutuevsky basin",
+   "Little Neva",
+   "Little Nevka",
+   "Middle Nevka",
+   "Sea Canal",
+   "Vostochny Basin",
+   "Барочный бассейн",
+   "Большая Невка",
+   "Большая Турухтанная гавань"
+  ]
+ },
+ "rivers": {
+  "courses": 44,
+  "km": 49.46,
+  "area_km2": 0.3967,
+  "names": [
+   "Oredezh",
+   "Volkhov",
+   "Гриб",
+   "Ижора",
+   "Исток Волхова",
+   "Копка",
+   "Мертвица",
+   "Мста",
+   "Плюсса",
+   "Рог",
+   "Сиверсов канал",
+   "Чёрная",
+   "Шелонь"
+  ]
+ },
+ "stream_tiers": {
+  ">=4000m": {
+   "names": 10,
+   "km": 49.1
+  },
+  ">=2500m": {
+   "names": 25,
+   "km": 95.3
+  },
+  ">=1500m": {
+   "names": 52,
+   "km": 145.5
+  }
+ },
+ "ponds": {
+  "count": 387,
+  "area_km2": 0.2051,
+  "near_sea_level": 4
+ },
+ "road_crossings": {
+  "navigable": {
+   "main_roads": 828,
+   "secondary_tertiary": 1000
+  },
+  "rivers": {
+   "main_roads": 59,
+   "secondary_tertiary": 176
+  },
+  "streams_by_tier": {
+   ">=4000m": {
+    "main_roads": 54,
+    "secondary_tertiary": 150
+   },
+   ">=2500m": {
+    "main_roads": 101,
+    "secondary_tertiary": 246
+   },
+   ">=1500m": {
+    "main_roads": 196,
+    "secondary_tertiary": 390
+   }
+  },
+  "note": "segment intersections, not unique bridges; existing OSM bridges are not subtracted"
+ },
+ "params": {
+  "harbour_names": [
+   "Coal Harbour",
+   "Барочный бассейн",
+   "Vostochny Basin",
+   "Большая Турухтанная гавань",
+   "Gutuevsky basin"
+  ],
+  "delta_navigable_min_m": 30.0,
+  "delta_branch_w": [
+   12.0,
+   20.0
+  ],
+  "river_polygon_min_area_m2": 1500.0,
+  "river_line_min_m": 8000.0,
+  "river_w": [
+   8.0,
+   20.0
+  ],
+  "stream_tiers_m": [
+   4000.0,
+   2500.0,
+   1500.0
+  ],
+  "stream_w": [
+   3.0,
+   6.0
+  ],
+  "pond_min_m2": 300.0,
+  "pond_types": [
+   "",
+   "pond",
+   "lake",
+   "reservoir",
+   "oxbow",
+   "basin"
+  ],
+  "river_freeboard_m": 0.4,
+  "stream_freeboard_m": 0.25,
+  "river_depth_m": 1.2,
+  "stream_depth_m": 0.5,
+  "pond_freeboard_m": 0.3,
+  "sea_level_m": 0.75,
+  "step_m": 6.0
+ }
+}

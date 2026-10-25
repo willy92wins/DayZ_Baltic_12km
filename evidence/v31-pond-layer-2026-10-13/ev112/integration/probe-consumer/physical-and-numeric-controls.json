@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "Consumer controls on real historical EV110 data. No EV112 runtime is claimed.",
+  "baseline_self_comparison": "PASS",
+  "tool_sha256": "d84bd3c53cd1a7b1eaea57766d24b681b7d3fa8eb50d0940f8b694d82d1d6d9c",
+  "cases": {
+    "road-step": {
+      "detected": true,
+      "failed_sites": [
+        "015-8"
+      ]
+    },
+    "dry-under": {
+      "detected": true,
+      "failed_sites": [
+        "015-8"
+      ]
+    },
+    "new-sea": {
+      "detected": true,
+      "failed_sites": [
+        "015-8"
+      ]
+    },
+    "surface-error": {
+      "detected": true,
+      "failed_sites": [
+        "015-8"
+      ]
+    },
+    "missing-row": {
+      "detected": true,
+      "reason": "incomplete probe framing or ids"
+    },
+    "nonfinite-surface": {
+      "detected": true,
+      "reason": "non-finite or invalid row"
+    }
+  }
+}

@@ -1,0 +1,3558 @@
+{
+  "schema": "ev95.native-water-anomaly-classification.v1",
+  "status": "COMPLETE_OFFLINE_STATIC_CLASSIFICATION",
+  "producer_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\anomaly-classification\\classify_anomalies.py",
+  "producer_sha256": "1b884e358a3345134bc15d2eb3208575f4c37cec729aaca9ac4014b4f14f0e37",
+  "inputs_start": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\ev95-physical-anomalies.csv": "f8d8195166e8a1f81c045c14edeead726ba513cacd1ee7fa34e208b964574e41",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\native-snapshot.log": "f01f9076638d71ad4d8a51be2c5e898f31a3bd8e58ca5128b34f47b467bfb913",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\native-verification.json": "c6835dd6caf4c1f40240f0ce449600de09dba15aacb321ad368bb21b631704c4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\verify_native.py": "73e6a5323d970953598d805242d275f82559df3bf36f7d04bceef2f867edd3d2",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\stage.json": "b04b066d99f9c22a4fffd77c66762d3e9e744dfa2bbf20d8508f076845571dda",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\deploy.json": "f5a9c8185812e0b77a804ef9811e0405b5a7969f8ccfc19b85cc29d23cac03ca",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\anomaly-classification\\classify_anomalies.py": "1b884e358a3345134bc15d2eb3208575f4c37cec729aaca9ac4014b4f14f0e37"
+  },
+  "inputs_end": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\ev95-physical-anomalies.csv": "f8d8195166e8a1f81c045c14edeead726ba513cacd1ee7fa34e208b964574e41",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\native-snapshot.log": "f01f9076638d71ad4d8a51be2c5e898f31a3bd8e58ca5128b34f47b467bfb913",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\terrain.npz": "40c174e31c8a3bf44855dad72e53a7a5e0a26f41a1fbac0afc74a98d1513c58a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\plane.npy": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\candidate\\visible-field.npy": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\runs\\20261010T092417Z-63d4cec3\\manifest.json": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\ev93-face-index\\build_face_index.py": "d1d3d1106bfdff7fd63f201ae042fdbd181bce92a96dddf1afc3182f694d288e",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\native-verification.json": "c6835dd6caf4c1f40240f0ce449600de09dba15aacb321ad368bb21b631704c4",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\verify_native.py": "73e6a5323d970953598d805242d275f82559df3bf36f7d04bceef2f867edd3d2",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\stage.json": "b04b066d99f9c22a4fffd77c66762d3e9e744dfa2bbf20d8508f076845571dda",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\deploy.json": "f5a9c8185812e0b77a804ef9811e0405b5a7969f8ccfc19b85cc29d23cac03ca",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\build-wide-slope\\anomaly-classification\\classify_anomalies.py": "1b884e358a3345134bc15d2eb3208575f4c37cec729aaca9ac4014b4f14f0e37"
+  },
+  "index": {
+    "manifest_sha256": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c",
+    "status": "COMPLETE",
+    "objects": 18024,
+    "faces": 883308,
+    "physical_faces": 358577,
+    "visible_faces": 524731,
+    "source_wrp_sha256": "3071395e2d1830f1c5c28bd84346761b5c517710e9d5f1f4ac19cd3fc1eff1f6",
+    "water_pbo_sha256": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14"
+  },
+  "anomaly_count": 24,
+  "classification_counts": {
+    "field-unknown-and-no-static-face-at-sample": 6,
+    "compiled-field-and-static-face-present; runtime-presence-flags-false": 18
+  },
+  "rows": [
+    {
+      "row": 422,
+      "col": 1359,
+      "xz_m": [
+        8154.0,
+        9750.0
+      ],
+      "class": 1,
+      "ground_m": 0.8277777433395386,
+      "level_m": 0.75,
+      "water_mask": true,
+      "reserve": false,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "0.652273",
+        "depth": "-0.185504",
+        "sea_now": "0.652273",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            421,
+            1358
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            421,
+            1359
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            422,
+            1358
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            422,
+            1359
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 4,
+      "F_nan_adjacent_cell_count": 16,
+      "physical": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "visible": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "classification": "field-unknown-and-no-static-face-at-sample"
+    },
+    {
+      "row": 423,
+      "col": 1358,
+      "xz_m": [
+        8148.0,
+        9744.0
+      ],
+      "class": 1,
+      "ground_m": 0.8549717664718628,
+      "level_m": 0.75,
+      "water_mask": true,
+      "reserve": false,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "0.652273",
+        "depth": "-0.200837",
+        "sea_now": "0.652273",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            422,
+            1357
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            422,
+            1358
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            423,
+            1357
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            423,
+            1358
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 4,
+      "F_nan_adjacent_cell_count": 16,
+      "physical": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "visible": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "classification": "field-unknown-and-no-static-face-at-sample"
+    },
+    {
+      "row": 424,
+      "col": 1357,
+      "xz_m": [
+        8142.0,
+        9738.0
+      ],
+      "class": 1,
+      "ground_m": 0.8670138716697693,
+      "level_m": 0.75,
+      "water_mask": true,
+      "reserve": false,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "0.652273",
+        "depth": "-0.224093",
+        "sea_now": "0.652273",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            423,
+            1356
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            423,
+            1357
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            424,
+            1356
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            424,
+            1357
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 4,
+      "F_nan_adjacent_cell_count": 16,
+      "physical": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 2,
+        "nearest_candidate_face": {
+          "object_id": 16805958,
+          "model_id": 2855,
+          "face_id": 5,
+          "face_y_at_point_m": 1.3250000476837158,
+          "ground_minus_face_y_m": -0.45798617601394653,
+          "xz_distance_m": 8.485198429646106,
+          "model_basename": "edge_07492.p3d"
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 2,
+        "nearest_candidate_face": {
+          "object_id": 16805958,
+          "model_id": 2855,
+          "face_id": 5,
+          "face_y_at_point_m": 1.3250000476837158,
+          "ground_minus_face_y_m": -0.45798617601394653,
+          "xz_distance_m": 8.485198429646106,
+          "model_basename": "edge_07492.p3d"
+        }
+      },
+      "classification": "field-unknown-and-no-static-face-at-sample"
+    },
+    {
+      "row": 426,
+      "col": 1354,
+      "xz_m": [
+        8124.0,
+        9726.0
+      ],
+      "class": 1,
+      "ground_m": 0.762499988079071,
+      "level_m": 0.75,
+      "water_mask": true,
+      "reserve": false,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "0.652014",
+        "depth": "-0.109039",
+        "sea_now": "0.652014",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            425,
+            1353
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            425,
+            1354
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            426,
+            1353
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            426,
+            1354
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 4,
+      "F_nan_adjacent_cell_count": 16,
+      "physical": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "visible": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "classification": "field-unknown-and-no-static-face-at-sample"
+    },
+    {
+      "row": 427,
+      "col": 1352,
+      "xz_m": [
+        8112.0,
+        9720.0
+      ],
+      "class": 1,
+      "ground_m": 0.6579861044883728,
+      "level_m": 0.75,
+      "water_mask": true,
+      "reserve": false,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "0.652014",
+        "depth": "0.066211",
+        "sea_now": "0.652014",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            426,
+            1351
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            426,
+            1352
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            427,
+            1351
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            427,
+            1352
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 4,
+      "F_nan_adjacent_cell_count": 16,
+      "physical": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "visible": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "classification": "field-unknown-and-no-static-face-at-sample"
+    },
+    {
+      "row": 475,
+      "col": 778,
+      "xz_m": [
+        4668.0,
+        9432.0
+      ],
+      "class": 1,
+      "ground_m": 0.6499999761581421,
+      "level_m": 0.75,
+      "water_mask": true,
+      "reserve": false,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "0.65",
+        "depth": "-0.0244995",
+        "sea_now": "0.65",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            474,
+            777
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            474,
+            778
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            475,
+            777
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        },
+        {
+          "cell_rc": [
+            475,
+            778
+          ],
+          "P": NaN,
+          "F4": [
+            NaN,
+            NaN,
+            NaN,
+            NaN
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 4,
+      "F_nan_adjacent_cell_count": 16,
+      "physical": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "visible": {
+        "exactly_contains_sample_point": [],
+        "containment_count": 0,
+        "bbox_candidates_in_four_adjacent_cells": 0,
+        "nearest_candidate_face": null
+      },
+      "classification": "field-unknown-and-no-static-face-at-sample"
+    },
+    {
+      "row": 853,
+      "col": 471,
+      "xz_m": [
+        2826.0,
+        7164.0
+      ],
+      "class": 3,
+      "ground_m": 1.277496337890625,
+      "level_m": 0.925000011920929,
+      "water_mask": true,
+      "reserve": false,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "0.925",
+        "depth": "-0.344089",
+        "sea_now": "0.769968",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            852,
+            470
+          ],
+          "P": 0.925,
+          "F4": [
+            0.925,
+            0.925,
+            0.925,
+            0.925
+          ]
+        },
+        {
+          "cell_rc": [
+            852,
+            471
+          ],
+          "P": 0.925,
+          "F4": [
+            0.925,
+            0.925,
+            0.925,
+            0.925
+          ]
+        },
+        {
+          "cell_rc": [
+            853,
+            470
+          ],
+          "P": 0.925,
+          "F4": [
+            0.925,
+            0.925,
+            0.925,
+            0.925
+          ]
+        },
+        {
+          "cell_rc": [
+            853,
+            471
+          ],
+          "P": 0.925,
+          "F4": [
+            0.925,
+            0.925,
+            0.925,
+            0.925
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800564,
+            "model_id": 5281,
+            "face_id": 39,
+            "face_y_at_point_m": 0.9249999881776603,
+            "ground_minus_face_y_m": 0.35249634971296473,
+            "model_basename": "globalvis_16800564.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 13,
+        "nearest_candidate_face": {
+          "object_id": 16800564,
+          "model_id": 5281,
+          "face_id": 39,
+          "face_y_at_point_m": 0.9249999881776603,
+          "ground_minus_face_y_m": 0.35249634971296473,
+          "model_basename": "globalvis_16800564.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800564,
+            "model_id": 5281,
+            "face_id": 92,
+            "face_y_at_point_m": 0.9249999881776603,
+            "ground_minus_face_y_m": 0.35249634971296473,
+            "model_basename": "globalvis_16800564.p3d"
+          },
+          {
+            "object_id": 16800564,
+            "model_id": 5281,
+            "face_id": 93,
+            "face_y_at_point_m": 0.9249999881776603,
+            "ground_minus_face_y_m": 0.35249634971296473,
+            "model_basename": "globalvis_16800564.p3d"
+          },
+          {
+            "object_id": 16800564,
+            "model_id": 5281,
+            "face_id": 95,
+            "face_y_at_point_m": 0.9249999881776603,
+            "ground_minus_face_y_m": 0.35249634971296473,
+            "model_basename": "globalvis_16800564.p3d"
+          },
+          {
+            "object_id": 16800564,
+            "model_id": 5281,
+            "face_id": 115,
+            "face_y_at_point_m": 0.9249999881776602,
+            "ground_minus_face_y_m": 0.35249634971296484,
+            "model_basename": "globalvis_16800564.p3d"
+          },
+          {
+            "object_id": 16800564,
+            "model_id": 5281,
+            "face_id": 117,
+            "face_y_at_point_m": 0.9249999881776603,
+            "ground_minus_face_y_m": 0.35249634971296473,
+            "model_basename": "globalvis_16800564.p3d"
+          },
+          {
+            "object_id": 16800564,
+            "model_id": 5281,
+            "face_id": 118,
+            "face_y_at_point_m": 0.9249999881776603,
+            "ground_minus_face_y_m": 0.35249634971296473,
+            "model_basename": "globalvis_16800564.p3d"
+          }
+        ],
+        "containment_count": 6,
+        "bbox_candidates_in_four_adjacent_cells": 45,
+        "nearest_candidate_face": {
+          "object_id": 16800564,
+          "model_id": 5281,
+          "face_id": 92,
+          "face_y_at_point_m": 0.9249999881776603,
+          "ground_minus_face_y_m": 0.35249634971296473,
+          "model_basename": "globalvis_16800564.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 895,
+      "col": 395,
+      "xz_m": [
+        2370.0,
+        6912.0
+      ],
+      "class": 3,
+      "ground_m": 2.3657400608062744,
+      "level_m": 2.125,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.125",
+        "depth": "-0.302026",
+        "sea_now": "0.792575",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            894,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            894,
+            395
+          ],
+          "P": 2.1,
+          "F4": [
+            2.1,
+            2.1,
+            2.1166666666666667,
+            2.10625
+          ]
+        },
+        {
+          "cell_rc": [
+            895,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.1166666666666667,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            895,
+            395
+          ],
+          "P": 2.125,
+          "F4": [
+            2.1166666666666667,
+            2.10625,
+            2.125,
+            2.11875
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800155,
+            "model_id": 5068,
+            "face_id": 6,
+            "face_y_at_point_m": 2.099999983794987,
+            "ground_minus_face_y_m": 0.2657400770112872,
+            "model_basename": "globalvis_16800155.p3d"
+          },
+          {
+            "object_id": 16812787,
+            "model_id": 11032,
+            "face_id": 5,
+            "face_y_at_point_m": 2.124999954365194,
+            "ground_minus_face_y_m": 0.24074010644108057,
+            "model_basename": "globalvis_16812787.p3d"
+          },
+          {
+            "object_id": 16814909,
+            "model_id": 12678,
+            "face_id": 2,
+            "face_y_at_point_m": 2.1249999525025487,
+            "ground_minus_face_y_m": 0.24074010830372572,
+            "model_basename": "seamfix_0895_0395.p3d"
+          },
+          {
+            "object_id": 16814909,
+            "model_id": 12678,
+            "face_id": 5,
+            "face_y_at_point_m": 2.1249999525025487,
+            "ground_minus_face_y_m": 0.24074010830372572,
+            "model_basename": "seamfix_0895_0395.p3d"
+          }
+        ],
+        "containment_count": 4,
+        "bbox_candidates_in_four_adjacent_cells": 40,
+        "nearest_candidate_face": {
+          "object_id": 16800155,
+          "model_id": 5068,
+          "face_id": 6,
+          "face_y_at_point_m": 2.099999983794987,
+          "ground_minus_face_y_m": 0.2657400770112872,
+          "model_basename": "globalvis_16800155.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800155,
+            "model_id": 5068,
+            "face_id": 0,
+            "face_y_at_point_m": 2.1250000819563866,
+            "ground_minus_face_y_m": 0.24073997884988785,
+            "model_basename": "globalvis_16800155.p3d"
+          },
+          {
+            "object_id": 16800155,
+            "model_id": 5068,
+            "face_id": 5,
+            "face_y_at_point_m": 2.1166667809252715,
+            "ground_minus_face_y_m": 0.24907327988100292,
+            "model_basename": "globalvis_16800155.p3d"
+          },
+          {
+            "object_id": 16812787,
+            "model_id": 11032,
+            "face_id": 18,
+            "face_y_at_point_m": 2.1166666554468065,
+            "ground_minus_face_y_m": 0.24907340535946787,
+            "model_basename": "globalvis_16812787.p3d"
+          },
+          {
+            "object_id": 16812787,
+            "model_id": 11032,
+            "face_id": 23,
+            "face_y_at_point_m": 2.1166666554468048,
+            "ground_minus_face_y_m": 0.24907340535946965,
+            "model_basename": "globalvis_16812787.p3d"
+          },
+          {
+            "object_id": 16814909,
+            "model_id": 12678,
+            "face_id": 2,
+            "face_y_at_point_m": 2.116666652262211,
+            "ground_minus_face_y_m": 0.24907340854406357,
+            "model_basename": "seamfix_0895_0395.p3d"
+          },
+          {
+            "object_id": 16814909,
+            "model_id": 12678,
+            "face_id": 5,
+            "face_y_at_point_m": 2.116666652262211,
+            "ground_minus_face_y_m": 0.24907340854406357,
+            "model_basename": "seamfix_0895_0395.p3d"
+          }
+        ],
+        "containment_count": 6,
+        "bbox_candidates_in_four_adjacent_cells": 74,
+        "nearest_candidate_face": {
+          "object_id": 16800155,
+          "model_id": 5068,
+          "face_id": 0,
+          "face_y_at_point_m": 2.1250000819563866,
+          "ground_minus_face_y_m": 0.24073997884988785,
+          "model_basename": "globalvis_16800155.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 896,
+      "col": 394,
+      "xz_m": [
+        2364.0,
+        6906.0
+      ],
+      "class": 3,
+      "ground_m": 3.047661781311035,
+      "level_m": 2.125,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.125",
+        "depth": "-0.931968",
+        "sea_now": "0.792575",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            895,
+            393
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            895,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.1166666666666667,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            896,
+            393
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            896,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 7,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.9226617906242609,
+            "model_basename": "globalvis_16800156.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 25,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 7,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": 0.9226617906242609,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 13,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.9226617906242609,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 19,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.9226617906242609,
+            "model_basename": "globalvis_16800156.p3d"
+          }
+        ],
+        "containment_count": 2,
+        "bbox_candidates_in_four_adjacent_cells": 63,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 13,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": 0.9226617906242609,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 896,
+      "col": 412,
+      "xz_m": [
+        2472.0,
+        6906.0
+      ],
+      "class": 3,
+      "ground_m": 2.2756497859954834,
+      "level_m": 2.075000047683716,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.075",
+        "depth": "-0.217348",
+        "sea_now": "0.792575",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            895,
+            411
+          ],
+          "P": 2.0500000000000003,
+          "F4": [
+            2.0500000000000003,
+            2.0500000000000003,
+            2.0562500000000004,
+            2.066666666666667
+          ]
+        },
+        {
+          "cell_rc": [
+            895,
+            412
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            896,
+            411
+          ],
+          "P": 2.075,
+          "F4": [
+            2.0562500000000004,
+            2.066666666666667,
+            2.06875,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            896,
+            412
+          ],
+          "P": 2.075,
+          "F4": [
+            2.066666666666667,
+            2.075,
+            2.075,
+            2.075
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812831,
+            "model_id": 11074,
+            "face_id": 15,
+            "face_y_at_point_m": 2.0499999998137355,
+            "ground_minus_face_y_m": 0.2256497861817479,
+            "model_basename": "globalvis_16812831.p3d"
+          },
+          {
+            "object_id": 16812831,
+            "model_id": 11074,
+            "face_id": 17,
+            "face_y_at_point_m": 2.0499999998137355,
+            "ground_minus_face_y_m": 0.2256497861817479,
+            "model_basename": "globalvis_16812831.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 31,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.20064967684447765,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16814930,
+            "model_id": 12687,
+            "face_id": 1,
+            "face_y_at_point_m": 2.074999952688813,
+            "ground_minus_face_y_m": 0.2006498333066702,
+            "model_basename": "seamfix_0896_0411.p3d"
+          },
+          {
+            "object_id": 16814930,
+            "model_id": 12687,
+            "face_id": 2,
+            "face_y_at_point_m": 2.074999952688813,
+            "ground_minus_face_y_m": 0.2006498333066702,
+            "model_basename": "seamfix_0896_0411.p3d"
+          }
+        ],
+        "containment_count": 5,
+        "bbox_candidates_in_four_adjacent_cells": 25,
+        "nearest_candidate_face": {
+          "object_id": 16812831,
+          "model_id": 11074,
+          "face_id": 15,
+          "face_y_at_point_m": 2.0499999998137355,
+          "ground_minus_face_y_m": 0.2256497861817479,
+          "model_basename": "globalvis_16812831.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812831,
+            "model_id": 11074,
+            "face_id": 26,
+            "face_y_at_point_m": 2.066666696365516,
+            "ground_minus_face_y_m": 0.20898308962996737,
+            "model_basename": "globalvis_16812831.p3d"
+          },
+          {
+            "object_id": 16812831,
+            "model_id": 11074,
+            "face_id": 30,
+            "face_y_at_point_m": 2.0750000001862645,
+            "ground_minus_face_y_m": 0.20064978580921888,
+            "model_basename": "globalvis_16812831.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 6,
+            "face_y_at_point_m": 2.066666708845234,
+            "ground_minus_face_y_m": 0.20898307715024922,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 35,
+            "face_y_at_point_m": 2.0666667088452337,
+            "ground_minus_face_y_m": 0.20898307715024966,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16814930,
+            "model_id": 12687,
+            "face_id": 1,
+            "face_y_at_point_m": 2.0666666524484754,
+            "ground_minus_face_y_m": 0.20898313354700804,
+            "model_basename": "seamfix_0896_0411.p3d"
+          },
+          {
+            "object_id": 16814930,
+            "model_id": 12687,
+            "face_id": 2,
+            "face_y_at_point_m": 2.0666666524484754,
+            "ground_minus_face_y_m": 0.20898313354700804,
+            "model_basename": "seamfix_0896_0411.p3d"
+          }
+        ],
+        "containment_count": 6,
+        "bbox_candidates_in_four_adjacent_cells": 79,
+        "nearest_candidate_face": {
+          "object_id": 16812831,
+          "model_id": 11074,
+          "face_id": 26,
+          "face_y_at_point_m": 2.066666696365516,
+          "ground_minus_face_y_m": 0.20898308962996737,
+          "model_basename": "globalvis_16812831.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 897,
+      "col": 393,
+      "xz_m": [
+        2358.0,
+        6900.0
+      ],
+      "class": 3,
+      "ground_m": 3.8064773082733154,
+      "level_m": 2.125,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.125",
+        "depth": "-1.75765",
+        "sea_now": "0.793709",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            896,
+            392
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            896,
+            393
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            392
+          ],
+          "P": 2.15,
+          "F4": [
+            2.15,
+            2.15,
+            2.15,
+            2.15
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            393
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.1375,
+            2.1375
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 8,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 1.6814773175865412,
+            "model_basename": "globalvis_16800156.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 24,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 8,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": 1.6814773175865412,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 28,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 1.6814773175865412,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 29,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 1.6814773175865412,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 30,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 1.6814773175865412,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 33,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 1.6814773175865412,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 48,
+            "face_y_at_point_m": 2.1499999910593033,
+            "ground_minus_face_y_m": 1.6564773172140121,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 49,
+            "face_y_at_point_m": 2.1499999910593033,
+            "ground_minus_face_y_m": 1.6564773172140121,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 50,
+            "face_y_at_point_m": 2.1499999910593033,
+            "ground_minus_face_y_m": 1.6564773172140121,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 53,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 1.6814773175865412,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 54,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 1.6814773175865412,
+            "model_basename": "globalvis_16800156.p3d"
+          }
+        ],
+        "containment_count": 9,
+        "bbox_candidates_in_four_adjacent_cells": 59,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 28,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": 1.6814773175865412,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 897,
+      "col": 394,
+      "xz_m": [
+        2364.0,
+        6900.0
+      ],
+      "class": 3,
+      "ground_m": 2.432239055633545,
+      "level_m": 2.125,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.125",
+        "depth": "-0.351689",
+        "sea_now": "0.793709",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            896,
+            393
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            896,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            393
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.1375,
+            2.1375
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.1375,
+            2.1375
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 7,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.30723906494677067,
+            "model_basename": "globalvis_16800156.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 24,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 7,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": 0.30723906494677067,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 32,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.30723906494677067,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 33,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.30723906494677067,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 35,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.30723906494677067,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 53,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.30723906494677067,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 55,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.30723906494677067,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 56,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 0.30723906494677067,
+            "model_basename": "globalvis_16800156.p3d"
+          }
+        ],
+        "containment_count": 6,
+        "bbox_candidates_in_four_adjacent_cells": 50,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 32,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": 0.30723906494677067,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 897,
+      "col": 395,
+      "xz_m": [
+        2370.0,
+        6900.0
+      ],
+      "class": 3,
+      "ground_m": 1.1449624300003052,
+      "level_m": 2.125,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.125",
+        "depth": "0.979622",
+        "sea_now": "0.793709",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            896,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            896,
+            395
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.11875,
+            2.125,
+            2.125
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.1375,
+            2.1375
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            395
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.1375,
+            2.13125
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 20,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": -0.9800375606864691,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16814910,
+            "model_id": 12680,
+            "face_id": 2,
+            "face_y_at_point_m": 2.125000047730282,
+            "ground_minus_face_y_m": -0.9800376177299768,
+            "model_basename": "seamfix_0896_0395.p3d"
+          },
+          {
+            "object_id": 16814910,
+            "model_id": 12680,
+            "face_id": 3,
+            "face_y_at_point_m": 2.125000047730282,
+            "ground_minus_face_y_m": -0.9800376177299768,
+            "model_basename": "seamfix_0896_0395.p3d"
+          }
+        ],
+        "containment_count": 3,
+        "bbox_candidates_in_four_adjacent_cells": 39,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 20,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": -0.9800375606864691,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 39,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": -0.9800375606864691,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 57,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": -0.9800375606864691,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16814910,
+            "model_id": 12680,
+            "face_id": 2,
+            "face_y_at_point_m": 2.125000047730282,
+            "ground_minus_face_y_m": -0.9800376177299768,
+            "model_basename": "seamfix_0896_0395.p3d"
+          },
+          {
+            "object_id": 16814910,
+            "model_id": 12680,
+            "face_id": 3,
+            "face_y_at_point_m": 2.125000047730282,
+            "ground_minus_face_y_m": -0.9800376177299768,
+            "model_basename": "seamfix_0896_0395.p3d"
+          }
+        ],
+        "containment_count": 4,
+        "bbox_candidates_in_four_adjacent_cells": 64,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 39,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": -0.9800375606864691,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 897,
+      "col": 413,
+      "xz_m": [
+        2478.0,
+        6900.0
+      ],
+      "class": 3,
+      "ground_m": 2.3005597591400146,
+      "level_m": 2.075000047683716,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.075",
+        "depth": "-0.289172",
+        "sea_now": "0.793709",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            896,
+            412
+          ],
+          "P": 2.075,
+          "F4": [
+            2.066666666666667,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            896,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            412
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 30,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.2255596499890089,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 17,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 30,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": 0.2255596499890089,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 39,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.2255596499890089,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 40,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.2255596499890089,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 42,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.2255596499890089,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 72,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.2255596499890089,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 74,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.2255596499890089,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 75,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.2255596499890089,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 6,
+        "bbox_candidates_in_four_adjacent_cells": 53,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 39,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": 0.2255596499890089,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 898,
+      "col": 393,
+      "xz_m": [
+        2358.0,
+        6894.0
+      ],
+      "class": 3,
+      "ground_m": 3.1318020820617676,
+      "level_m": 2.1500000953674316,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.15",
+        "depth": "-1.04729",
+        "sea_now": "0.793709",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            897,
+            392
+          ],
+          "P": 2.15,
+          "F4": [
+            2.15,
+            2.15,
+            2.15,
+            2.15
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            393
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.1375,
+            2.1375
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            392
+          ],
+          "P": 2.15,
+          "F4": [
+            2.15,
+            2.15,
+            2.15,
+            2.15
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            393
+          ],
+          "P": 2.15,
+          "F4": [
+            2.1375,
+            2.1375,
+            2.15,
+            2.15
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 0,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": 1.0068020913749933,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 11,
+            "face_y_at_point_m": 2.1500000953674316,
+            "ground_minus_face_y_m": 0.9818019866943359,
+            "model_basename": "globalvis_16800157.p3d"
+          }
+        ],
+        "containment_count": 2,
+        "bbox_candidates_in_four_adjacent_cells": 24,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 0,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": 1.0068020913749933,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 49,
+            "face_y_at_point_m": 2.1499999910593033,
+            "ground_minus_face_y_m": 0.9818020910024643,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 54,
+            "face_y_at_point_m": 2.137499989879627,
+            "ground_minus_face_y_m": 0.9943020921821404,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 12,
+            "face_y_at_point_m": 2.1499999953674305,
+            "ground_minus_face_y_m": 0.9818020866943371,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 15,
+            "face_y_at_point_m": 2.1374999955296516,
+            "ground_minus_face_y_m": 0.9943020865321159,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 16,
+            "face_y_at_point_m": 2.1374999955296516,
+            "ground_minus_face_y_m": 0.9943020865321159,
+            "model_basename": "globalvis_16800157.p3d"
+          }
+        ],
+        "containment_count": 5,
+        "bbox_candidates_in_four_adjacent_cells": 70,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 49,
+          "face_y_at_point_m": 2.1499999910593033,
+          "ground_minus_face_y_m": 0.9818020910024643,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 898,
+      "col": 394,
+      "xz_m": [
+        2364.0,
+        6894.0
+      ],
+      "class": 3,
+      "ground_m": 1.7231526374816895,
+      "level_m": 2.125,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.15",
+        "depth": "0.355961",
+        "sea_now": "0.793709",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            897,
+            393
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.1375,
+            2.1375
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            394
+          ],
+          "P": 2.125,
+          "F4": [
+            2.125,
+            2.125,
+            2.1375,
+            2.1375
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            393
+          ],
+          "P": 2.15,
+          "F4": [
+            2.1375,
+            2.1375,
+            2.15,
+            2.15
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            394
+          ],
+          "P": 2.15,
+          "F4": [
+            2.1375,
+            2.1375,
+            2.15,
+            2.15
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 1,
+            "face_y_at_point_m": 2.1249999906867743,
+            "ground_minus_face_y_m": -0.4018473532050848,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 5,
+            "face_y_at_point_m": 2.1500000953674316,
+            "ground_minus_face_y_m": -0.4268474578857422,
+            "model_basename": "globalvis_16800157.p3d"
+          }
+        ],
+        "containment_count": 2,
+        "bbox_candidates_in_four_adjacent_cells": 23,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 1,
+          "face_y_at_point_m": 2.1249999906867743,
+          "ground_minus_face_y_m": -0.4018473532050848,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 53,
+            "face_y_at_point_m": 2.137499989879629,
+            "ground_minus_face_y_m": -0.4143473523979395,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800156,
+            "model_id": 5069,
+            "face_id": 56,
+            "face_y_at_point_m": 2.137499989879627,
+            "ground_minus_face_y_m": -0.41434735239793774,
+            "model_basename": "globalvis_16800156.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 14,
+            "face_y_at_point_m": 2.1374999955296516,
+            "ground_minus_face_y_m": -0.4143473580479622,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 18,
+            "face_y_at_point_m": 2.1374999955296516,
+            "ground_minus_face_y_m": -0.4143473580479622,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 20,
+            "face_y_at_point_m": 2.1374999955296516,
+            "ground_minus_face_y_m": -0.4143473580479622,
+            "model_basename": "globalvis_16800157.p3d"
+          }
+        ],
+        "containment_count": 5,
+        "bbox_candidates_in_four_adjacent_cells": 58,
+        "nearest_candidate_face": {
+          "object_id": 16800156,
+          "model_id": 5069,
+          "face_id": 53,
+          "face_y_at_point_m": 2.137499989879629,
+          "ground_minus_face_y_m": -0.4143473523979395,
+          "model_basename": "globalvis_16800156.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 898,
+      "col": 414,
+      "xz_m": [
+        2484.0,
+        6894.0
+      ],
+      "class": 3,
+      "ground_m": 2.725158214569092,
+      "level_m": 2.075000047683716,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.075",
+        "depth": "-0.625802",
+        "sea_now": "0.793709",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            897,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            897,
+            414
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            414
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 37,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.650158105418086,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 11,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 37,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": 0.650158105418086,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 95,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.650158105418086,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 98,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.650158105418086,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 2,
+        "bbox_candidates_in_four_adjacent_cells": 38,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 95,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": 0.650158105418086,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 899,
+      "col": 393,
+      "xz_m": [
+        2358.0,
+        6888.0
+      ],
+      "class": 3,
+      "ground_m": 2.409715414047241,
+      "level_m": 2.1500000953674316,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.15",
+        "depth": "-0.271561",
+        "sea_now": "0.794836",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            898,
+            392
+          ],
+          "P": 2.15,
+          "F4": [
+            2.15,
+            2.15,
+            2.15,
+            2.15
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            393
+          ],
+          "P": 2.15,
+          "F4": [
+            2.1375,
+            2.1375,
+            2.15,
+            2.15
+          ]
+        },
+        {
+          "cell_rc": [
+            899,
+            392
+          ],
+          "P": 2.15,
+          "F4": [
+            2.15,
+            2.15,
+            2.1625,
+            2.15625
+          ]
+        },
+        {
+          "cell_rc": [
+            899,
+            393
+          ],
+          "P": 2.15,
+          "F4": [
+            2.15,
+            2.15,
+            2.15625,
+            2.15
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 11,
+            "face_y_at_point_m": 2.1500000953674316,
+            "ground_minus_face_y_m": 0.25971531867980957,
+            "model_basename": "globalvis_16800157.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 21,
+        "nearest_candidate_face": {
+          "object_id": 16800157,
+          "model_id": 5070,
+          "face_id": 11,
+          "face_y_at_point_m": 2.1500000953674316,
+          "ground_minus_face_y_m": 0.25971531867980957,
+          "model_basename": "globalvis_16800157.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 11,
+            "face_y_at_point_m": 2.1499999953674305,
+            "ground_minus_face_y_m": 0.25971541867981074,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 12,
+            "face_y_at_point_m": 2.1499999953674305,
+            "ground_minus_face_y_m": 0.25971541867981074,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 13,
+            "face_y_at_point_m": 2.1499999953674305,
+            "ground_minus_face_y_m": 0.25971541867981074,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 16,
+            "face_y_at_point_m": 2.1499999953674305,
+            "ground_minus_face_y_m": 0.25971541867981074,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 27,
+            "face_y_at_point_m": 2.1499999953674296,
+            "ground_minus_face_y_m": 0.2597154186798116,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 30,
+            "face_y_at_point_m": 2.1499999953674305,
+            "ground_minus_face_y_m": 0.25971541867981074,
+            "model_basename": "globalvis_16800157.p3d"
+          },
+          {
+            "object_id": 16800157,
+            "model_id": 5070,
+            "face_id": 31,
+            "face_y_at_point_m": 2.1499999953674305,
+            "ground_minus_face_y_m": 0.25971541867981074,
+            "model_basename": "globalvis_16800157.p3d"
+          }
+        ],
+        "containment_count": 7,
+        "bbox_candidates_in_four_adjacent_cells": 74,
+        "nearest_candidate_face": {
+          "object_id": 16800157,
+          "model_id": 5070,
+          "face_id": 11,
+          "face_y_at_point_m": 2.1499999953674305,
+          "ground_minus_face_y_m": 0.25971541867981074,
+          "model_basename": "globalvis_16800157.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 899,
+      "col": 413,
+      "xz_m": [
+        2478.0,
+        6888.0
+      ],
+      "class": 3,
+      "ground_m": 1.341675043106079,
+      "level_m": 2.075000047683716,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.075",
+        "depth": "0.75061",
+        "sea_now": "0.794836",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            898,
+            412
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            899,
+            412
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            899,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 23,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.7333250660449266,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 4,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 23,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": -0.7333250660449266,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 113,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.7333250660449266,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 116,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.7333250660449266,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 2,
+        "bbox_candidates_in_four_adjacent_cells": 24,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 113,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": -0.7333250660449266,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 899,
+      "col": 414,
+      "xz_m": [
+        2484.0,
+        6888.0
+      ],
+      "class": 3,
+      "ground_m": 2.6027677059173584,
+      "level_m": 2.075000047683716,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.075",
+        "depth": "-0.497272",
+        "sea_now": "0.794836",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            898,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            898,
+            414
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            899,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            899,
+            414
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 36,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.5277675967663527,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 4,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 36,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": 0.5277675967663527,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 115,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.5277675967663527,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 118,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.5277675967663527,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 2,
+        "bbox_candidates_in_four_adjacent_cells": 27,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 115,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": 0.5277675967663527,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 900,
+      "col": 413,
+      "xz_m": [
+        2478.0,
+        6882.0
+      ],
+      "class": 3,
+      "ground_m": 0.9454275965690613,
+      "level_m": 2.075000047683716,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.075",
+        "depth": "1.1639",
+        "sea_now": "0.794836",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            899,
+            412
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            899,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            900,
+            412
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            900,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 23,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -1.1295725125819445,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 8,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 23,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": -1.1295725125819445,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 134,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -1.1295725125819445,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 137,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -1.1295725125819445,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 2,
+        "bbox_candidates_in_four_adjacent_cells": 24,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 134,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": -1.1295725125819445,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 900,
+      "col": 414,
+      "xz_m": [
+        2484.0,
+        6882.0
+      ],
+      "class": 3,
+      "ground_m": 2.3255326747894287,
+      "level_m": 2.075000047683716,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.075",
+        "depth": "-0.254558",
+        "sea_now": "0.794836",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            899,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            899,
+            414
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            900,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            900,
+            414
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 36,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.25053256563842297,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 8,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 36,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": 0.25053256563842297,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 136,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.25053256563842297,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 139,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": 0.25053256563842297,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 2,
+        "bbox_candidates_in_four_adjacent_cells": 27,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 136,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": 0.25053256563842297,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 901,
+      "col": 402,
+      "xz_m": [
+        2412.0,
+        6876.0
+      ],
+      "class": 3,
+      "ground_m": 2.574408531188965,
+      "level_m": 2.125,
+      "water_mask": true,
+      "reserve": true,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.15",
+        "depth": "-0.360661",
+        "sea_now": "0.795955",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            900,
+            401
+          ],
+          "P": 2.125,
+          "F4": [
+            2.11875,
+            2.1125,
+            2.1375,
+            2.13125
+          ]
+        },
+        {
+          "cell_rc": [
+            900,
+            402
+          ],
+          "P": 2.125,
+          "F4": [
+            2.1125,
+            2.10625,
+            2.13125,
+            2.11875
+          ]
+        },
+        {
+          "cell_rc": [
+            901,
+            401
+          ],
+          "P": 2.15,
+          "F4": [
+            2.1375,
+            2.13125,
+            2.1625,
+            2.1562500000000004
+          ]
+        },
+        {
+          "cell_rc": [
+            901,
+            402
+          ],
+          "P": 2.125,
+          "F4": [
+            2.13125,
+            2.11875,
+            2.1562500000000004,
+            2.1375
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812814,
+            "model_id": 11057,
+            "face_id": 6,
+            "face_y_at_point_m": 2.1500001051463187,
+            "ground_minus_face_y_m": 0.42440842604264617,
+            "model_basename": "globalvis_16812814.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 46,
+        "nearest_candidate_face": {
+          "object_id": 16812814,
+          "model_id": 11057,
+          "face_id": 6,
+          "face_y_at_point_m": 2.1500001051463187,
+          "ground_minus_face_y_m": 0.42440842604264617,
+          "model_basename": "globalvis_16812814.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812814,
+            "model_id": 11057,
+            "face_id": 15,
+            "face_y_at_point_m": 2.13125000521541,
+            "ground_minus_face_y_m": 0.4431585259735549,
+            "model_basename": "globalvis_16812814.p3d"
+          },
+          {
+            "object_id": 16812814,
+            "model_id": 11057,
+            "face_id": 17,
+            "face_y_at_point_m": 2.1312500052154064,
+            "ground_minus_face_y_m": 0.4431585259735584,
+            "model_basename": "globalvis_16812814.p3d"
+          },
+          {
+            "object_id": 16812814,
+            "model_id": 11057,
+            "face_id": 18,
+            "face_y_at_point_m": 2.1312500052154064,
+            "ground_minus_face_y_m": 0.4431585259735584,
+            "model_basename": "globalvis_16812814.p3d"
+          }
+        ],
+        "containment_count": 3,
+        "bbox_candidates_in_four_adjacent_cells": 66,
+        "nearest_candidate_face": {
+          "object_id": 16812814,
+          "model_id": 11057,
+          "face_id": 15,
+          "face_y_at_point_m": 2.13125000521541,
+          "ground_minus_face_y_m": 0.4431585259735549,
+          "model_basename": "globalvis_16812814.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    },
+    {
+      "row": 901,
+      "col": 414,
+      "xz_m": [
+        2484.0,
+        6876.0
+      ],
+      "class": 3,
+      "ground_m": 1.974000096321106,
+      "level_m": 2.075000047683716,
+      "water_mask": true,
+      "reserve": false,
+      "platform": false,
+      "beach": false,
+      "runtime": {
+        "sea": "False",
+        "pond": "False",
+        "plane": "2.075",
+        "depth": "0.109856",
+        "sea_now": "0.795955",
+        "nominal": "False",
+        "dynamic": "False",
+        "near_nominal": "False",
+        "near_dynamic": "False"
+      },
+      "adjacent_compiled_fields": [
+        {
+          "cell_rc": [
+            900,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            900,
+            414
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            901,
+            413
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        },
+        {
+          "cell_rc": [
+            901,
+            414
+          ],
+          "P": 2.075,
+          "F4": [
+            2.075,
+            2.075,
+            2.075,
+            2.075
+          ]
+        }
+      ],
+      "P_nan_adjacent_cell_count": 0,
+      "F_nan_adjacent_cell_count": 0,
+      "physical": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 35,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.10100001282989979,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 1,
+        "bbox_candidates_in_four_adjacent_cells": 8,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 35,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": -0.10100001282989979,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "visible": {
+        "exactly_contains_sample_point": [
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 136,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.10100001282989979,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 137,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.10100001282989979,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 139,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.10100001282989979,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 162,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.10100001282989979,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 164,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.10100001282989979,
+            "model_basename": "globalvis_16812832.p3d"
+          },
+          {
+            "object_id": 16812832,
+            "model_id": 11075,
+            "face_id": 165,
+            "face_y_at_point_m": 2.0750001091510057,
+            "ground_minus_face_y_m": -0.10100001282989979,
+            "model_basename": "globalvis_16812832.p3d"
+          }
+        ],
+        "containment_count": 6,
+        "bbox_candidates_in_four_adjacent_cells": 27,
+        "nearest_candidate_face": {
+          "object_id": 16812832,
+          "model_id": 11075,
+          "face_id": 136,
+          "face_y_at_point_m": 2.0750001091510057,
+          "ground_minus_face_y_m": -0.10100001282989979,
+          "model_basename": "globalvis_16812832.p3d",
+          "xz_distance_m": 0.0
+        }
+      },
+      "classification": "compiled-field-and-static-face-present; runtime-presence-flags-false"
+    }
+  ],
+  "limits": [
+    "Index queries return conservative cell-bbox candidates; only the point-in-triangle test establishes exact XZ containment.",
+    "A static ODOL face at a sample point does not prove runtime SurfaceIsSea/SurfaceIsPond behavior or visual rendering.",
+    "P/F values are reported per adjacent cell and face; no NaN is filled and no per-cell values are merged.",
+    "Class and water-mask labels describe terrain source fields, not proof of authoritative river geometry.",
+    "Runtime snapshot is a single sampled phase; current sea/tide and subcell behavior remain unverified here."
+  ]
+}

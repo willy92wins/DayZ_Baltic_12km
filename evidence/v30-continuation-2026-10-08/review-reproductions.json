@@ -1,0 +1,125 @@
+{
+  "status": "PASS_REVIEW_REPRODUCTIONS",
+  "checks": {
+    "nature_unchanged_in_both_candidates": true,
+    "invalid_fairway_rejected": true,
+    "removed_fairway_overlap_disproved": true,
+    "coverage_negative_controls": true
+  },
+  "fairway": {
+    "changed_vertices": 6305,
+    "road_reserve_vertices": 483,
+    "nature_reserve_vertices": 0,
+    "high_below1_before": 0,
+    "high_below1_after": 88,
+    "lowering_quantiles_m": [
+      0.00010102987289428711,
+      0.0009999573230743408,
+      0.0010000243782997131,
+      0.0014923155307769776,
+      0.07936882972717285
+    ],
+    "single_ulp_changes": 0,
+    "prior_candidate_verdict": "FAIL_PROTECTED_ROAD_RESERVE",
+    "protected_generator_result": {
+      "status": "INFEASIBLE",
+      "source_sha256": "a292b6c39ad5c4fa19936e5498dc0ddaa064ee6ce4ecdb3115a763a3f0bc57c1",
+      "corridor_sha256": "28866a8cf6ff57f2f825228046164ef939bc22bca9948eb96fe2463da46af343",
+      "constraints": 55047,
+      "variables": 6720,
+      "max_lowering_bound_m": 0.1,
+      "target_depth_m": 1.001,
+      "minimum_high_water_bed_m": 0.9,
+      "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    }
+  },
+  "removed_overlap": [
+    {
+      "river": "Narva_2",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_3",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_6",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_7",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_8",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_10",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_12",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_13",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_14",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_15",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_16",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_19",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_22",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_23",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_25",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_26",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Narva_27",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Luga_0",
+      "removed_cell_intersections": 0
+    },
+    {
+      "river": "Neva_0",
+      "removed_cell_intersections": 0
+    }
+  ],
+  "geometry_controls": {
+    "full_face_pass": true,
+    "subcell_hole_rejected": true,
+    "unsupported_orientation_rejected": true,
+    "real_junction_retained": true
+  },
+  "nature_reference_sha256": "10bd6d9c9b944e2964d72055301101a7014c5bb09ff3ddc298a15897bab5c915",
+  "limits": [
+    "Source face coverage is not a maximum-wave, collision or rendered-seam verdict.",
+    "88 new exceptions use the frozen vertex-level >=2 m definition; not cell-mean level."
+  ]
+}

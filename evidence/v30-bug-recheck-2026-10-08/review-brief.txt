@@ -1,0 +1,26 @@
+REVISIÓN PREPARADA; NO ENVIADA. Requiere consentimiento explícito para exportar estos archivos privados al proveedor, tras el bloqueo del auto-review. El permiso pendiente del brief anterior no incluye por sí mismo estos archivos.
+
+Revisión independiente, solo lectura, de la revisión de veinte fallos y reparación de dos orillas. Codex ejecuta e integra. No editar, delegar, ejecutar MCP, tocar DayZ ni leer rutas fuera de esta lista. Informe conciso: defectos reproducibles con path:line, consecuencia y corrección; separar hipótesis de mecanismos probados. No asumir que todos los bugs están cerrados.
+
+Lista de lectura propuesta, relativa al worktree:
+evidence/v30-bug-recheck-2026-10-08/README.md
+evidence/v30-bug-recheck-2026-10-08/plan.md
+tools/terrain/repair_current_fairways_v30.py
+tools/terrain/repair_wave_banks_v30.py
+tools/terrain/verify_channel_reaches_v30.py
+tools/playtest/dark_tiles_v30.py
+tools/playtest/read_water_temporal_v30.py
+evidence/v30-bug-recheck-2026-10-08/check_fairway_candidate.py
+evidence/v30-bug-recheck-2026-10-08/check_floor_feasibility.py
+evidence/v30-bug-recheck-2026-10-08/check_wave_banks.py
+evidence/v30-bug-recheck-2026-10-08/verify_wave_fix.py
+evidence/v30-bug-recheck-2026-10-08/prepare_wave_fixed.py
+evidence/v30-bug-recheck-2026-10-08/fairway-verification.json
+evidence/v30-bug-recheck-2026-10-08/floor-feasibility.json
+evidence/v30-bug-recheck-2026-10-08/wave-bank-verification.json
+evidence/v30-bug-recheck-2026-10-08/wave-fixed-verification.json
+evidence/v30-bug-recheck-2026-10-08/diagnostic-controls.json
+missions/BalticBugRecheckWaterV2.BalticTrial/init.c
+Por símbolos solamente: tools/terrain/v30_common.py (tri_sample, cell_planes, vertex_plane_bounds), tools/navigation/waterway_common.py (sample), tools/terrain/profile_inland_v30.py (líneas 306–320).
+
+Preguntas: ¿El comprobador acepta un hueco real o elimina cobertura? ¿La reparación local conserva suelo seco y márgenes fuera de los dos fallos? ¿El experimento prueba calma/tormenta y no confunde la nueva clasificación con un PASS borrando controles? ¿El conflicto del fondo se demuestra sin depender del margen adicional de 1 mm? ¿Se mezclan resultados históricos y actuales o queda algún falso cierre en la tabla? La propuesta de calado no está desplegada; no tratarla como fix aceptado.

@@ -1,0 +1,15 @@
+from pathlib import Path
+import json,hashlib,shutil,sys
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+E=W/'evidence/v30-water-visual-fix-2026-10-08'
+src=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008/client-probe/baltic_water_client_probe')
+p=Path('P:/Mods/@BalticWaterClientProbe/Addons/baltic_water_client_probe.pbo')
+sys.path.insert(0,str(W/'tools/playtest'))
+from attach_navmesh import read_pbo
+_,_,a=read_pbo(p)
+assert a['scripts/5_Mission/BalticWaterClientProbe.c']==(src/'scripts/5_Mission/BalticWaterClientProbe.c').read_bytes()
+assert a['config.bin']==(src/'config.bin').read_bytes()
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+shutil.copytree(src,E/'client-probe-source')
+(E/'client-probe-reference.json').write_text(json.dumps(dict(pbo=str(p),sha256=sha(p),source_sha256=sha(src/'scripts/5_Mission/BalticWaterClientProbe.c')),indent=2)+'\n')
+print(sha(p))

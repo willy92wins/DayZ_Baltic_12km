@@ -1,0 +1,24 @@
+{
+  "status": "REVIEWED_AND_SUPPLEMENT_EXECUTED",
+  "findings": [
+    {
+      "severity": "blocking_acceptance",
+      "source": "verify_focus_1981.py",
+      "sha256": "5dff923cca7d519ca728c64e821b43c05685f542e1279a85cbd5ccc659557c0a",
+      "finding": "Eight actually executed compiled-coverage gates were omitted from top-level aggregation. Preserved original source/report; independent supplement validates 36 gates, numeric coverage and 33 sources plus 8 models."
+    }
+  ],
+  "reviewed_by": [
+    "root",
+    "water_evidence_review"
+  ],
+  "evidence": {
+    "finalize_focal_report.py": "bb5cd1ddc65004654bfce64bda8c57afc4af6ac39e954db92c6c165caa6f73b1",
+    "verify_focus_1981_v2.py": "76b519f930b1f5dd9ea77d0b4f0745d9ee28580fdffd23bbc564264b58ab9620",
+    "consumer-run-01/review.json": "b9af8d77c2efe342b02012af160a1f8cae44d41d5581be21045da8539116de7e",
+    "consumer-run-01/acceptance-supplement.json": "fab5c76e2f1a7a5935cf70bfaa08dedd4500411e4c2ac11670dc7fccc4b89e7f"
+  },
+  "geometry_rerun": false,
+  "scope": "focal offline; composition/build/native/visual separate",
+  "created_utc": "2026-10-10T15:08:25.403802+00:00"
+}

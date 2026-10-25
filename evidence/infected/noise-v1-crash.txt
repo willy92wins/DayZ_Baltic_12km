@@ -1,0 +1,48 @@
+---------------------------------------------
+Log P:\DayZ_MCP_dev\_server\profiles\crash_2026-09-29_23-17-03.log started at 29.09. 23:18:44
+
+
+
+------------------------------------
+WILLY, 29.09 2026 23:18:44
+Unhandled exception
+
+Program: C:\Program Files (x86)\Steam\steamapps\common\DayZ\DayZDiag_x64.exe
+Reason: Access violation. Illegal read by 0x7ff792036e8d at 0xffffffffffffffff
+
+
+Class:      'Object'
+Entity id:0
+
+Function: 'ObjectGetType'
+Stack trace:
+scripts/3_Game/entities\object.c:476 Function GetType
+C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticInfected.BalticTrial\init.c:74 Function Record
+C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticInfected.BalticTrial\init.c:187 Function OnUpdate
+scripts/3_Game/dayzgame.c:2986 Function OnUpdate
+
+SymGetSymFromAddr:487, addr:0x7ff792036e8d
+SymGetSymFromAddr:487, addr:0x7ff7920174cf
+SymGetSymFromAddr:487, addr:0x7ff7922ce258
+SymGetSymFromAddr:487, addr:0x7ff792039857
+SymGetSymFromAddr:487, addr:0x7ff792018bb8
+SymGetSymFromAddr:487, addr:0x7ff79201621b
+SymGetSymFromAddr:487, addr:0x7ff7920163d7
+SymGetSymFromAddr:487, addr:0x7ff792016eef
+SymGetSymFromAddr:487, addr:0x7ff7922d259a
+SymGetSymFromAddr:487, addr:0x7ff7922b283e
+[CDPCreateServer]: ??? addr:0x7ff7927a19da
+[CDPCreateServer]: ??? addr:0x7ff79293989e
+[CDPCreateServer]: ??? addr:0x7ff79292fcd4
+SymGetSymFromAddr:487, addr:0x7ff792156477
+[CDPCreateServer]: ??? addr:0x7ff79293adc6
+SymGetSymFromAddr:487, addr:0x7ff7922a9b3e
+[CDPCreateServer]: ??? addr:0x7ff792a91b22
+[BaseThreadInitThunk]: ??? addr:0x7ffcb034259d
+[RtlUserThreadStart]: ??? addr:0x7ffcb19caf78
+[RtlUserThreadStart]: ??? addr:0x7ffcb19caf78
+
+
+
+Runtime mode
+CLI params: server  config P:\DayZ_MCP_dev\_server\serverDZ.cfg profiles P:\DayZ_MCP_dev\_server\profiles mission C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticInfected.BalticTrial mod P:\Mods\@DayZ_MCP;P:\Mods\@DayZ_Baltic_12km port 2302 

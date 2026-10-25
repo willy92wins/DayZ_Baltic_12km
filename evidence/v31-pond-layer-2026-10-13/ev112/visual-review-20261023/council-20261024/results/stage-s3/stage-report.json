@@ -1,0 +1,35 @@
+{
+  "status": "STAGED",
+  "forest": true,
+  "source_wrp_sha256": "c27c4e797521b4de9ec7d6a4d0acda47410e31571e28fb86990d900598d3e949",
+  "wrp_sha256": "f07926200627c24f26a8da4df54a03df03e5776f92e2821dd676bbb07dab3f77",
+  "pilot_pbo_sha256": "b2c1799d7edb7adf2deb55f3f3b76e0c0c82f608bcf1673f47074da93c6eeea1",
+  "terrain_sha256": "6a081028120778d3821574878d4b3845f419c411e661a97d1dc17f3440a4c8a1",
+  "removed_old_kit_records": 36,
+  "added_models": 35,
+  "remaining_objects": 2578787,
+  "forest_height_adjustments": 24,
+  "checks": {
+    "heights": true,
+    "objects": true,
+    "ids_unique": true,
+    "materials": true,
+    "header": true
+  },
+  "config_delta": "requiredAddons += Baltic_Stream_Pilot",
+  "pilot": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\visual-pilot-20261024-p",
+  "merged": "E:\\DayZ-Baltic-Build\\qc-council-20261024\\road-merged-s3",
+  "forest_reference": {
+    "path": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json",
+    "sha256": "813081fa1ef4a8f2f442ebe2811fb2f435bc38b56c9d693477b3b525bfece26c"
+  },
+  "limitations": [
+    "Source WRP parity only; binarized WRP readback and engine tests pending.",
+    "Navmesh unchanged; this is not AI navigation acceptance.",
+    "Vegetation reseating still requires forest consumer checks."
+  ],
+  "forest_excluded": 93,
+  "parent_visual_stage": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-visual-road-20261024-h",
+  "exclusion_reason": "same base_radius_plan * scale + 0.5 m clearance, against the complete saved pilot bed including caps",
+  "road_layer": "S3"
+}

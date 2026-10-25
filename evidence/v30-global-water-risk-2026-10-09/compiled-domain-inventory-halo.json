@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE_COMPILED_DOMAIN_INVENTORY_NOT_RENDER_ACCEPTANCE",
+  "instances": 16931,
+  "models": 9111,
+  "cell_intersections": 4,
+  "affected_objects": 1,
+  "total_mismatch_area_m2": 0.23718908729551913,
+  "maximum_cell_mismatch_area_m2": 0.05929756164550781,
+  "no_expected_pond_cells": 4,
+  "tiny_intersections": 61247,
+  "tiny_area_m2": 31.423975088822825,
+  "water_sha256": "b09b3a7f57c785155021a60f86d00fdcb2eb5a510bd45f6cead0895d1183d3f1",
+  "world_source_sha256": "eda1bafdfc358b6910a061856f3cca9a9c2ff065968300df781a2704ccfc8d6b",
+  "frozen_terrain_sha256": "e0d35db0a7a26f9ec055d57f0c9573a1dd2c27911ec8b084274283f5884cffd1",
+  "sea_cutoff_m": 0.51,
+  "elapsed_s": 7.041510581970215,
+  "limits": [
+    "Mismatch means compiled roadway outside a frozen level cell, not automatically a defect. Local deliberate junction/flat replacements must be classified.",
+    "Intersections <=0.005 m2 are inventoried separately as numerical/sliver cases, not accepted as correct.",
+    "Area is summed per object and cell; overlapping objects can count the same ground more than once."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "VISUAL_FAIL_PREVIEW_NOT_ACCEPTED",
+  "evidence": {
+    "land": "user-images/R1-land-reflections.png",
+    "joints": "user-images/R2-water-gaps.png"
+  },
+  "isolated": {
+    "sea_away": {
+      "readback_level": -100,
+      "loaded_R1_frames": [
+        4,
+        5,
+        6
+      ],
+      "land_reflections_seen": false,
+      "R2_joints_visible": true,
+      "R2_texture_loading_invalid_for_material_comparison": true
+    }
+  },
+  "facts": [
+    "The current horizontal pond representation has 0.15 m adjacent height steps in photographed R2 bounds.",
+    "Three R1 loaded control frames retain ponds but show no specular land patches.",
+    "Sea-away is diagnostic only; accepted sea parameters remain MaxTide=1.5 MaxWave=0.1."
+  ],
+  "hypotheses": [
+    "Sea rendering produces the R1 land artifact; the contributing wave/LOD component remains to isolate.",
+    "The R2 height steps cause visible holes; the stitched visible-surface pilot will discriminate."
+  ],
+  "next_control": "Historical experiment sequence completed; current state is ../v30-global-water-risk-2026-10-09/README.md. Wave amplitude, subdivision and near-plane controls did not remove the artifact.",
+  "current_status": "OPEN_VISUAL_RESIDUAL_C1R3P; global native and compiled detection completed; isolated halo correction under validation"
+}

@@ -1,0 +1,174 @@
+{
+  "verdict": "PASS",
+  "scope": "Six independent regional control geometries imported into and exported from Terrain Builder",
+  "tolerance_m": 0.0001,
+  "count": 6,
+  "max_error_m": 6.439950089294999e-06,
+  "checks": [
+    {
+      "name": "Lake Peipus",
+      "expected_xy": [
+        201373.80168356936,
+        755.6764341097132
+      ],
+      "exported_xy": [
+        201373.8016900093,
+        755.6764341094599
+      ],
+      "error_m": 6.439950089294999e-06,
+      "source_lonlat": [
+        27.85,
+        58.3
+      ],
+      "exported_lonlat_attributes": [
+        27,
+        58
+      ]
+    },
+    {
+      "name": "Lake Ladoga",
+      "expected_xy": [
+        211691.2636060823,
+        11121.156881815012
+      ],
+      "exported_xy": [
+        211691.2636114242,
+        11121.156881812021
+      ],
+      "error_m": 5.341892502037472e-06,
+      "source_lonlat": [
+        31.35,
+        60.1
+      ],
+      "exported_lonlat_attributes": [
+        31,
+        60
+      ]
+    },
+    {
+      "name": "Lake Ilmen",
+      "expected_xy": [
+        211986.04823243982,
+        195.47677778107754
+      ],
+      "exported_xy": [
+        211986.04823775304,
+        195.47677778102533
+      ],
+      "error_m": 5.313224392268287e-06,
+      "source_lonlat": [
+        31.45,
+        58.2
+      ],
+      "exported_lonlat_attributes": [
+        31,
+        58
+      ]
+    },
+    {
+      "name": "Gatchina",
+      "expected_xy": [
+        208103.5940910446,
+        8053.161594381517
+      ],
+      "exported_xy": [
+        208103.5940967492,
+        8053.161594379177
+      ],
+      "error_m": 5.704613183974579e-06,
+      "source_lonlat": [
+        30.1329523,
+        59.5770957
+      ],
+      "exported_lonlat_attributes": [
+        30,
+        59
+      ]
+    },
+    {
+      "name": "Luga",
+      "expected_xy": [
+        207268.49606997476,
+        3226.7434961052895
+      ],
+      "exported_xy": [
+        207268.49607576657,
+        3226.7434961043355
+      ],
+      "error_m": 5.791807858621415e-06,
+      "source_lonlat": [
+        29.8496614,
+        58.7377484
+      ],
+      "exported_lonlat_attributes": [
+        29,
+        58
+      ]
+    },
+    {
+      "name": "Narva",
+      "expected_xy": [
+        202343.86448753995,
+        6907.35221567226
+      ],
+      "exported_xy": [
+        202343.8644938692,
+        6907.352215669992
+      ],
+      "error_m": 6.329239519710645e-06,
+      "source_lonlat": [
+        28.1790751,
+        59.3796931
+      ],
+      "exported_lonlat_attributes": [
+        28,
+        59
+      ]
+    }
+  ],
+  "exported_dbf_fields": [
+    [
+      "__LAYER",
+      "C",
+      30,
+      0
+    ],
+    [
+      "__ID",
+      "N",
+      30,
+      0
+    ],
+    [
+      "label",
+      "C",
+      30,
+      0
+    ],
+    [
+      "lat",
+      "N",
+      30,
+      0
+    ],
+    [
+      "lon",
+      "N",
+      30,
+      0
+    ]
+  ],
+  "attribute_warning": "TB export changed floating-point lon/lat fields to integer numeric fields. Geometry passed; attribute roundtrip failed. Use immutable source for provenance.",
+  "not_proven": [
+    "Terrain vertex registration correction",
+    "Gameplay water",
+    "Road objects",
+    "Performance"
+  ],
+  "export_sha256": {
+    "anchors_tb_export.dbf": "b9ac3ec3e55d4d69f867205f2babe43d29f09c34759dbb687302c28b5fc03cbb",
+    "anchors_tb_export.prj": "20451220b3475131fbfd7cf3983f9fd1fd14bd87e33c6d8190a1cca9b0717808",
+    "anchors_tb_export.shp": "5e701e3d4a0f2353d96a3cf0d13d64d6bae632d248e65613b471a38c53692099",
+    "anchors_tb_export.shx": "b04dd8049871aea9013769b501c1c4e9b4af56d1e52dc74283ae5a27af6c1a0f"
+  }
+}

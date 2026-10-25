@@ -1,0 +1,126 @@
+{
+  "status": "CANDIDATE_AUTHORED_PENDING_INDEPENDENT_CONSUMER",
+  "source_sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+  "candidate_sha256": "0a18c5623885eed274cfe7d296e02aba290ed491b835d317213fc7876b2fc45b",
+  "constraints_sha256": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+  "plane_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+  "visible_field_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+  "p99_source_report_sha256": "ea613bbad671a630f8b3d008c85b4bf9c7b887e39cbb89e38b278e9e7ade0bca",
+  "p99_bank_source_ev79": 5.004892938026179,
+  "p99_interior_source_ev79": 3.667753611431574,
+  "selector": {
+    "classes": [
+      0
+    ],
+    "nearby_flow_classes": [
+      3,
+      5,
+      6
+    ],
+    "distance_m": 96.0,
+    "fixed_sha256": "cef61f28d414f63607a26b7292676843117763d9a0d7604510f5999de8ac62ff",
+    "domain_vertices": 581794,
+    "source_fold_vertex_mask": 42098,
+    "selector_vertices": 4329,
+    "source_fold_nodes": 4329
+  },
+  "counts": {
+    "changed_vertices": 2591,
+    "accepted_nodes": 2591,
+    "rejected_by_reason": {
+      "accepted": 2591,
+      "benefit_below_material_floor": 324,
+      "float32_bank_p99_rejected": 1275,
+      "float32_new_over30_rejected": 82,
+      "empty_hinge_component": 22,
+      "float32_sector_rejected": 34,
+      "float32_slope_rejected": 1
+    },
+    "wet_support_vertices": 1077957,
+    "fixed_vertices": 1271694
+  },
+  "delta": {
+    "min_m": -0.2193741798400879,
+    "max_m": 2.0,
+    "max_abs_m": 2.0,
+    "lowered": 92,
+    "raised": 2499
+  },
+  "method": {
+    "order": "native row then column",
+    "once_per_node": true,
+    "local_patch": "5x5",
+    "local_faces": 6,
+    "local_hinges": 12,
+    "objective": "sum of 12 hinge angles squared",
+    "max_seconds": 1200.0,
+    "elapsed_seconds": 86.516,
+    "neighbor_state": "current deterministic EV80 state",
+    "hard_thresholds_compared_to": "original EV79 source"
+  },
+  "fixtures": {
+    "status": "PASS",
+    "template_faces": 6,
+    "template_hinges": 12,
+    "random_patch": "25 heights; five deltas per face",
+    "direct_cross_product_checks": 66,
+    "vectorized_selector_matches_local_template": true,
+    "hinge_interval_fixture_bounds": [
+      -0.3639702342662022,
+      0.36397023426620234
+    ],
+    "slope_interval_fixture_bounds": [
+      -0.3639702342662023,
+      0.3639702342662024
+    ],
+    "bounded_node_fixture": {
+      "max_delta": 0.5,
+      "lower_delta": -0.2,
+      "intervals": 42,
+      "result_reason": "accepted",
+      "accepted": true
+    },
+    "sector_64_boundary_fixture": {
+      "vertical_vertex_col_65_maps_edge_col_64": true,
+      "horizontal_vertex_row_64_maps_edge_row_63": true,
+      "diagonal_63_63_stays_in_sector_0_0": true
+    },
+    "source_clamped_water_floor_fixture": "PASS",
+    "independent_formula": "normalized 3D cross products + atan2"
+  },
+  "terrain_delta_sha256": "3ff59ffe9e98ede143e6d6653eca49b38a88428e86aa70b7e995d2cdfc3f551e",
+  "execution": {
+    "selected_expected": 4329,
+    "selected_processed": 4329,
+    "selection_exhausted": true,
+    "timed_out": false,
+    "rejected_total": 1738,
+    "accepted_total": 2591,
+    "invalid_attempts": [
+      {
+        "file": "attempt-invalid-01.json",
+        "status": "INVALID_IMPLEMENTATION_ATTEMPT",
+        "reason": "review finding: solve_node loop index shadowed upper delta bound hi",
+        "candidate_written": false
+      },
+      {
+        "file": "attempt-invalid-02.json",
+        "status": "INVALID_IMPLEMENTATION_ATTEMPT",
+        "reason": "water-floor must be min(source,max incident P/F+0.0001); sector indices for vertical/horizontal hinges were off by one",
+        "candidate_written": false
+      }
+    ],
+    "exact_executed_script_sha256": "faa8b0bd6f0139650151d1e36f5f7521337360b5c1443b13acbc82465370d728",
+    "post_run_guard_script_sha256": "91defbb1d05af795c08159f94ca51c9fb898a01539dffe2c3a63f80c9ec89b35"
+  },
+  "provenance": {
+    "terrain_source_sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "fixed_constraints_sha256": "ad0cffd5f26fc942e17fc959236494287650b1528b728a15f4b1100da72f319c",
+    "p99_reference_sha256": "ea613bbad671a630f8b3d008c85b4bf9c7b887e39cbb89e38b278e9e7ade0bca",
+    "p99_reference_candidate_sha256": "dbc59ec542206984060e1d9f13112680694336b5a69bb4269cfe5136cfa0a22c",
+    "fixed_mask_sha256": "cef61f28d414f63607a26b7292676843117763d9a0d7604510f5999de8ac62ff",
+    "P_sha256": "768e8e58525887b9db15006ba5fc4a8bbf3cde3fca9c90facc25ebbe939551e0",
+    "F_sha256": "f446a2164648e481d1216864bc879c4f6ddaa245db54d689d9ad99a82d7f095c",
+    "exact_executed_script_sha256": "faa8b0bd6f0139650151d1e36f5f7521337360b5c1443b13acbc82465370d728"
+  }
+}

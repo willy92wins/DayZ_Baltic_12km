@@ -1,0 +1,31 @@
+{
+  "status": "PASS_NEGATIVE_CONTROLS",
+  "source_log": "P:\\DayZ_Baltic_12km_dev\\evidence\\navigation\\route-input-complete-v1\\boat-route-complete.log",
+  "cases": [
+    {
+      "case": "missing_end",
+      "rejected_by": "route_end_marker"
+    },
+    {
+      "case": "propeller_stopped",
+      "rejected_by": "powered_motion"
+    },
+    {
+      "case": "health_lost",
+      "rejected_by": "no_health_loss"
+    },
+    {
+      "case": "gap_during_motion",
+      "rejected_by": "continuous_samples"
+    },
+    {
+      "case": "teleport_during_motion",
+      "rejected_by": "continuous_samples"
+    },
+    {
+      "case": "runtime_distance_forged",
+      "rejected_by": "engine_route_distance_agrees"
+    }
+  ],
+  "limits": "Synthetic corruptions, not new engine observations."
+}

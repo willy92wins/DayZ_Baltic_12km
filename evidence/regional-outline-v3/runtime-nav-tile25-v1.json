@@ -1,0 +1,179 @@
+{
+  "status": "FAIL",
+  "gates": {
+    "heights": true,
+    "coverage": false,
+    "routes": false,
+    "negative_filter": true
+  },
+  "groups": {
+    "regional": {
+      "total": 231,
+      "height_pass": 231,
+      "nav_pass": 230
+    },
+    "spb": {
+      "total": 28,
+      "height_pass": 28,
+      "nav_pass": 28
+    },
+    "reserve": {
+      "total": 14,
+      "height_pass": 14,
+      "nav_pass": 14
+    },
+    "summit_0": {
+      "total": 2,
+      "height_pass": 2,
+      "nav_pass": 0
+    },
+    "summit_1": {
+      "total": 2,
+      "height_pass": 2,
+      "nav_pass": 2
+    },
+    "summit_2": {
+      "total": 2,
+      "height_pass": 2,
+      "nav_pass": 2
+    }
+  },
+  "sample_count": 279,
+  "max_height_error_m": 4.995117173223207e-07,
+  "sample_failures": [
+    {
+      "index": 65,
+      "group": "regional",
+      "requested": [
+        5472.0,
+        106.129501,
+        7386.0
+      ],
+      "expected_y": 106.12950134277344,
+      "height_error_m": 3.427734327487997e-07,
+      "found": true,
+      "sampled": [
+        5472.0,
+        103.652168,
+        7386.0
+      ],
+      "sample_distance_m": 2.4773330000000016
+    },
+    {
+      "index": 273,
+      "group": "summit_0",
+      "requested": [
+        5184.0,
+        109.568497,
+        7644.0
+      ],
+      "expected_y": 109.56849670410156,
+      "height_error_m": 2.9589843109079084e-07,
+      "found": true,
+      "sampled": [
+        5184.0,
+        106.481682,
+        7644.0
+      ],
+      "sample_distance_m": 3.086814999999987
+    },
+    {
+      "index": 274,
+      "group": "summit_0",
+      "requested": [
+        5460.0,
+        107.559799,
+        7392.0
+      ],
+      "expected_y": 107.55979919433594,
+      "height_error_m": 1.9433593934081728e-07,
+      "found": true,
+      "sampled": [
+        5460.0,
+        104.084175,
+        7392.0
+      ],
+      "sample_distance_m": 3.4756239999999963
+    }
+  ],
+  "routes": [
+    {
+      "name": "summit_0_0",
+      "passed": false,
+      "flags": [
+        true,
+        true,
+        true
+      ],
+      "count": 2,
+      "endpoints_ok": false,
+      "length_m": 61.979764156377655
+    },
+    {
+      "name": "summit_0_1",
+      "passed": false,
+      "flags": [
+        true,
+        true,
+        true
+      ],
+      "count": 2,
+      "endpoints_ok": false,
+      "length_m": 61.41051158896939
+    },
+    {
+      "name": "summit_1_0",
+      "passed": true,
+      "flags": [
+        true,
+        true,
+        true
+      ],
+      "count": 2,
+      "endpoints_ok": true,
+      "length_m": 61.7336173473222
+    },
+    {
+      "name": "summit_1_1",
+      "passed": true,
+      "flags": [
+        true,
+        true,
+        true
+      ],
+      "count": 2,
+      "endpoints_ok": true,
+      "length_m": 60.93623198723101
+    },
+    {
+      "name": "summit_2_0",
+      "passed": true,
+      "flags": [
+        true,
+        true,
+        true
+      ],
+      "count": 2,
+      "endpoints_ok": true,
+      "length_m": 61.97565827850806
+    },
+    {
+      "name": "summit_2_1",
+      "passed": true,
+      "flags": [
+        true,
+        true,
+        true
+      ],
+      "count": 2,
+      "endpoints_ok": true,
+      "length_m": 60.049470972907
+    }
+  ],
+  "limits": [
+    "Fixed samples and six short graph paths only; no actors, full-area connectivity or player-load proof."
+  ],
+  "log": "P:\\DayZ_Baltic_12km_dev\\evidence\\regional-outline-v3\\runtime-nav-tile25-v1.log",
+  "log_sha256": "24b1603444f352b7572d8858f6608169a2c9190452f042e89f0d82d773cdc71c",
+  "reference_sha256": "5314d14112f2bbbc70126fd1d34986b16a6b608d5376972bb3a609e3eaed0287"
+}

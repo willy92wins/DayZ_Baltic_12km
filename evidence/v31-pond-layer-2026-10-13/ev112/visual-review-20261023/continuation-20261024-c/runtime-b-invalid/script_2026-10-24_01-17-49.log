@@ -1,0 +1,35 @@
+---------------------------------------------
+Log P:\DayZ_MCP_dev\_server\profiles\script_2026-10-24_01-17-49.log started at 2026-10-24 01:17:55 (2026-10-23 23:17:55 UTC)
+
+01:17:55.017 SCRIPT       : Module: GameLib; loaded 13x files; 13x classes; used 8/2097 kB (0%) of static memory; defines: "DAYZ_1_30,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,ENABLE_LOGGING,ROBOCLIENT,INPUT_OVERRIDE,DayZ_MCP,sakhal,nasdara,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION"; CRC32: dd77776f
+01:17:55.085 SCRIPT       : Registered 324 temporary action enum(s), UAN==324
+01:17:56.147 SCRIPT    (W): @"scripts/3_Game/human.c,17": Missing script declaration for method 'HumanInputController.DisableCrouchCameraHorizontalRotation'
+01:17:56.147 SCRIPT    (W): @"scripts/3_Game/human.c,241": Method not linked 'HumanInputController.DisableCrouchCameratHorizontalRotation'
+01:17:56.147 SCRIPT    (W): @"scripts/3_Game/human.c,240": Method not linked 'HumanInputController.DisableErectCameratHorizontalRotation'
+01:17:56.147 SCRIPT    (W): @"scripts/3_Game/human.c,17": Missing script declaration for method 'HumanInputController.DisableErectHorizontalRotation'
+01:17:56.148 SCRIPT       : Module: Game; loaded 440x files; 1506x classes; used 5234/33554 kB (15%) of static memory; defines: "DAYZ_1_30,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,ENABLE_LOGGING,ROBOCLIENT,INPUT_OVERRIDE,DayZ_MCP,sakhal,nasdara,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION"; CRC32: 3e5003ae
+01:17:56.151 SCRIPT       : ... Backlit Effects Enabled
+01:17:58.962 SCRIPT    (W): @"scripts/4_World/entities/building/underground/entrance/land_underground_entrance.c,149": 'UpdatePathgraphDoorByAnimationSourceName' is obsolete: 1.30: Use UpdatePathgraphEntityState
+01:18:00.202 SCRIPT       : Module: World; loaded 2332x files; 6358x classes; used 12776/33554 kB (38%) of static memory; defines: "DAYZ_1_30,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,ENABLE_LOGGING,ROBOCLIENT,INPUT_OVERRIDE,DayZ_MCP,sakhal,nasdara,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION"; CRC32: c08a388f
+01:18:20.593  SCRIPT    (W): @"DayZ_MCP/scripts/5_Mission/mcpclientbridge.c,5612": 'IsVitalCarBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice
+01:18:20.593  SCRIPT    (W): @"DayZ_MCP/scripts/5_Mission/mcpclientbridge.c,5612": 'IsVitalTruckBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice
+01:18:21.135  SCRIPT    (W): @"DayZ_MCP/scripts/5_Mission/mcpbridge.c,2161": 'ForceUpdateLightsStart' is obsolete: 1.30: no replacement
+01:18:21.141  SCRIPT    (W): @"DayZ_MCP/scripts/5_Mission/mcpbridge.c,4376": 'IsVitalCarBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice
+01:18:21.141  SCRIPT    (W): @"DayZ_MCP/scripts/5_Mission/mcpbridge.c,4376": 'IsVitalTruckBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice
+01:18:21.145  SCRIPT       : Module: Mission; loaded 229x files; 603x classes; used 4736/33554 kB (14%) of static memory; defines: "DAYZ_1_30,SERVER_FOR_WINDOWS,SERVER,PLATFORM_WINDOWS,DIAG,DIAG_DEVELOPER,NO_GUI,NO_GUI_INGAME,ENABLE_LOGGING,ROBOCLIENT,INPUT_OVERRIDE,DayZ_MCP,sakhal,nasdara,DayZ,FEATURE_CURSOR,FEATURE_NETWORK_RECONCILIATION,FEATURE_NETWORK_RECONCILATION,ENABLE_CAROUSEL,BROADCAST_BUNKER_SP_VIS_ENABLED"; CRC32: 2a0869d5
+01:18:21.761  SCRIPT       : string s =    'Module PluginConfigDebugProfile is not Registred in PluginManager.c!'
+01:18:21.761  SCRIPT    (E):    -- Stack trace --
+01:18:21.761  SCRIPT    (E):    GetPlugin() scripts/4_World/plugins/pluginmanager.c : 341
+01:18:21.761  SCRIPT    (E):    OnInit() scripts/4_World/plugins/pluginbase/pluginitemdiagnostic.c : 94
+01:18:21.761  SCRIPT    (E):    PluginsInit() scripts/4_World/plugins/pluginmanager.c : 136
+01:18:21.761  SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+01:18:21.761  SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins/pluginmanager.c : 304
+01:18:21.761  SCRIPT    (E):    MissionBase() scripts/5_Mission/mission/missionbase.c : 21
+01:18:21.761  SCRIPT    (E):    CreateCustomMission() C:\Program Files (x86)\Steam\steamapps\common\DayZServer\mpmissions\BalticVisualProbeV1.BalticTrial\init.c : 145
+01:18:21.761  SCRIPT    (E):    -----------------
+01:18:21.761  SCRIPT       : [DayZ_MCP] diag PluginInventoryDebug registered=1
+01:18:21.787  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:139 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder
+01:18:21.787  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:139 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json
+01:18:21.918  SCRIPT    (W): scripts/5_Mission/mission/missionserver.c:104 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder
+01:18:21.918  SCRIPT    (W): scripts/5_Mission/mission/missionserver.c:104 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json
+01:18:21.918  SCRIPT       : [DayZ-MCP] config loaded path=$profile:dayz_mcp.json url=http://127.0.0.1:8765/ keylen=43 instlen=36 poll_hz=5

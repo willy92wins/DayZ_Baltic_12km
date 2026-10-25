@@ -1,0 +1,550 @@
+{
+  "schema": "ev94.coordinated-crossing-component.analysis.v1",
+  "status": "ANALYTIC_PINNING_CONFIRMED_NO_NEW_CANDIDATE",
+  "scope": "read-only analysis of one-ULP energy-only wet endpoint (858,1184); no solver, no altered grid, no new neighbor enumeration",
+  "analysis_source": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\diagnostic-polish-consumer-v1\\analysis-v2-recovery\\coordinated_crossing_component.py",
+    "sha256": "050e495c32957b769281b9ab716cf316a7c705f3b9069ec7ea9713e3a2366db6"
+  },
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\prepared-runs\\attempt-08\\prepared.npz": "52409a8d074d15ec068bddc6e9265bc3782e84e9d54582b8a6d7b0a6675a787f",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\solve-once\\solution.npz": "1b7a23ebb3c203427f1c77cb8de6becfca750746e47f5494bba6723b0610eab1",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\energy-neighbor-polish-v2-recovery\\run-01\\receipt.json": "b71fbdab6f545abbf75075c40a7e1623e95969b11295306ce101c6f62d487e34",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\energy-neighbor-polish-v2-recovery\\run-01\\neighbors.jsonl": "086eb6741aad7f33e3dfb72fdd4d62d26e94406cecd017a973dde592865ca94a",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\float32-component-conversion-v1\\robust-f32-design\\candidate-only-milp\\d8-sign-fix-v1\\energy-neighbor-polish-v2-recovery\\energy_neighbor_polish.py": "4f40c6c51aaa9db4edeaf7ee27a1a2230cd2cb8ee508cbfe3db7f6c3daf30ba2",
+    "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\G\\wet-bank-pilot\\postsolve-consumer\\diagnostic-polish-consumer-v1\\analysis-v2-recovery\\mechanism.json": "01610f50167b109ee43c65458cbe21c93efd23b8abda05ff2ac42b2aaa0c853b"
+  },
+  "variable_chain": {
+    "1": {
+      "global_rc": [
+        857,
+        1182
+      ],
+      "raw_height_m": 6.675186634063721,
+      "bounds_float32_inward_m": [
+        6.175186634063721,
+        7.175186634063721
+      ]
+    },
+    "2": {
+      "global_rc": [
+        857,
+        1183
+      ],
+      "raw_height_m": 4.7328338623046875,
+      "bounds_float32_inward_m": [
+        4.2328338623046875,
+        5.2328338623046875
+      ]
+    },
+    "13": {
+      "global_rc": [
+        858,
+        1183
+      ],
+      "raw_height_m": 6.231369972229004,
+      "bounds_float32_inward_m": [
+        5.731369972229004,
+        6.731369972229004
+      ]
+    },
+    "14": {
+      "global_rc": [
+        858,
+        1184
+      ],
+      "raw_height_m": 4.192239284515381,
+      "bounds_float32_inward_m": [
+        3.692239284515381,
+        4.692239284515381
+      ]
+    }
+  },
+  "active_crossing_rows": {
+    "10": {
+      "type": "cross_lower",
+      "surface": "P",
+      "cell_rc": [
+        856,
+        1181
+      ],
+      "edge_rc": [
+        [
+          856,
+          1182
+        ],
+        [
+          857,
+          1182
+        ]
+      ],
+      "t_base": 0.5519646266162874,
+      "t_bound": 0.5519646266162874,
+      "slack_at_raw_m": 0.0,
+      "coefficients": [
+        {
+          "variable_index": 1,
+          "global_rc": [
+            857,
+            1182
+          ],
+          "coefficient": 0.4480353733837126
+        }
+      ]
+    },
+    "19": {
+      "type": "cross_upper",
+      "surface": "P",
+      "cell_rc": [
+        856,
+        1182
+      ],
+      "edge_rc": [
+        [
+          856,
+          1182
+        ],
+        [
+          857,
+          1182
+        ]
+      ],
+      "t_base": 0.5677316814687302,
+      "t_bound": 0.5677316814687302,
+      "slack_at_raw_m": 0.0,
+      "coefficients": [
+        {
+          "variable_index": 1,
+          "global_rc": [
+            857,
+            1182
+          ],
+          "coefficient": -0.4322683185312698
+        }
+      ]
+    },
+    "26": {
+      "type": "cross_lower",
+      "surface": "P",
+      "cell_rc": [
+        856,
+        1182
+      ],
+      "edge_rc": [
+        [
+          857,
+          1182
+        ],
+        [
+          857,
+          1183
+        ]
+      ],
+      "t_base": 0.46345166910565555,
+      "t_bound": 0.46345166910565555,
+      "slack_at_raw_m": 0.0,
+      "coefficients": [
+        {
+          "variable_index": 1,
+          "global_rc": [
+            857,
+            1182
+          ],
+          "coefficient": 0.5365483308943444
+        },
+        {
+          "variable_index": 2,
+          "global_rc": [
+            857,
+            1183
+          ],
+          "coefficient": 0.46345166910565555
+        }
+      ]
+    },
+    "67": {
+      "type": "cross_upper",
+      "surface": "P",
+      "cell_rc": [
+        857,
+        1182
+      ],
+      "edge_rc": [
+        [
+          857,
+          1182
+        ],
+        [
+          857,
+          1183
+        ]
+      ],
+      "t_base": 0.5020646343148943,
+      "t_bound": 0.5020646343148943,
+      "slack_at_raw_m": 0.0,
+      "coefficients": [
+        {
+          "variable_index": 1,
+          "global_rc": [
+            857,
+            1182
+          ],
+          "coefficient": -0.49793536568510566
+        },
+        {
+          "variable_index": 2,
+          "global_rc": [
+            857,
+            1183
+          ],
+          "coefficient": -0.5020646343148943
+        }
+      ]
+    },
+    "74": {
+      "type": "cross_lower",
+      "surface": "P",
+      "cell_rc": [
+        857,
+        1182
+      ],
+      "edge_rc": [
+        [
+          857,
+          1183
+        ],
+        [
+          858,
+          1183
+        ]
+      ],
+      "t_base": 0.3545927046468307,
+      "t_bound": 0.3545927046468307,
+      "slack_at_raw_m": 0.0,
+      "coefficients": [
+        {
+          "variable_index": 2,
+          "global_rc": [
+            857,
+            1183
+          ],
+          "coefficient": 0.3545927046468307
+        },
+        {
+          "variable_index": 13,
+          "global_rc": [
+            858,
+            1183
+          ],
+          "coefficient": 0.6454072953531693
+        }
+      ]
+    },
+    "83": {
+      "type": "cross_upper",
+      "surface": "P",
+      "cell_rc": [
+        857,
+        1183
+      ],
+      "edge_rc": [
+        [
+          857,
+          1183
+        ],
+        [
+          858,
+          1183
+        ]
+      ],
+      "t_base": 0.40464154865085544,
+      "t_bound": 0.40464154865085544,
+      "slack_at_raw_m": 0.0,
+      "coefficients": [
+        {
+          "variable_index": 2,
+          "global_rc": [
+            857,
+            1183
+          ],
+          "coefficient": -0.40464154865085544
+        },
+        {
+          "variable_index": 13,
+          "global_rc": [
+            858,
+            1183
+          ],
+          "coefficient": -0.5953584513491446
+        }
+      ]
+    },
+    "115": {
+      "type": "cross_upper",
+      "surface": "P",
+      "cell_rc": [
+        858,
+        1183
+      ],
+      "edge_rc": [
+        [
+          858,
+          1183
+        ],
+        [
+          858,
+          1184
+        ]
+      ],
+      "t_base": 0.32188715327753664,
+      "t_bound": 0.32188715327753664,
+      "slack_at_raw_m": 0.0,
+      "coefficients": [
+        {
+          "variable_index": 13,
+          "global_rc": [
+            858,
+            1183
+          ],
+          "coefficient": -0.6781128467224633
+        },
+        {
+          "variable_index": 14,
+          "global_rc": [
+            858,
+            1184
+          ],
+          "coefficient": -0.32188715327753664
+        }
+      ]
+    }
+  },
+  "crossing_row_alignment": {
+    "metadata_rows": 560,
+    "affine_rows": 528,
+    "sign_only_metadata_rows": 32,
+    "first_sign_only_metadata_index": 122,
+    "selected_affine_prefix_rows_align": true
+  },
+  "pinning_chain": {
+    "step_1": {
+      "rows": [
+        10,
+        19
+      ],
+      "coordinate": [
+        857,
+        1182
+      ],
+      "implication": "row 10 gives +c*delta_1 >= 0; row 19 gives -c'*delta_1 >= 0; therefore delta_1=0"
+    },
+    "step_2": {
+      "rows": [
+        26,
+        67
+      ],
+      "coordinate": [
+        857,
+        1183
+      ],
+      "implication": "with delta_1=0, row 26 gives +c*delta_2 >= 0 and row 67 gives -c'*delta_2 >= 0; therefore delta_2=0"
+    },
+    "step_3": {
+      "rows": [
+        74,
+        83
+      ],
+      "coordinate": [
+        858,
+        1183
+      ],
+      "implication": "with delta_2=0, row 74 gives +c*delta_13 >= 0 and row 83 gives -c'*delta_13 >= 0; therefore delta_13=0"
+    },
+    "step_4": {
+      "rows": [
+        115
+      ],
+      "coordinate": [
+        858,
+        1184
+      ],
+      "implication": "with delta_13=0, active upper row 115 requires delta_14 <= 0; raising the wet endpoint is impossible under the frozen crossing intervals"
+    }
+  },
+  "connected_active_crossing_component": {
+    "active_interval_row_count": 38,
+    "node_count": 11,
+    "mutable_variable_count": 9,
+    "fixed_context_node_count": 2,
+    "bbox_rc_inclusive": [
+      856,
+      860,
+      1181,
+      1187
+    ],
+    "nodes": [
+      {
+        "global_rc": [
+          856,
+          1181
+        ],
+        "variable_index": null
+      },
+      {
+        "global_rc": [
+          856,
+          1182
+        ],
+        "variable_index": null
+      },
+      {
+        "global_rc": [
+          857,
+          1182
+        ],
+        "variable_index": 1
+      },
+      {
+        "global_rc": [
+          857,
+          1183
+        ],
+        "variable_index": 2
+      },
+      {
+        "global_rc": [
+          858,
+          1183
+        ],
+        "variable_index": 13
+      },
+      {
+        "global_rc": [
+          858,
+          1184
+        ],
+        "variable_index": 14
+      },
+      {
+        "global_rc": [
+          858,
+          1185
+        ],
+        "variable_index": 15
+      },
+      {
+        "global_rc": [
+          859,
+          1185
+        ],
+        "variable_index": 26
+      },
+      {
+        "global_rc": [
+          859,
+          1186
+        ],
+        "variable_index": 27
+      },
+      {
+        "global_rc": [
+          860,
+          1186
+        ],
+        "variable_index": 38
+      },
+      {
+        "global_rc": [
+          860,
+          1187
+        ],
+        "variable_index": 39
+      }
+    ],
+    "active_row_indices": [
+      3,
+      7,
+      10,
+      14,
+      19,
+      22,
+      26,
+      31,
+      67,
+      71,
+      74,
+      79,
+      83,
+      87,
+      91,
+      95,
+      106,
+      110,
+      115,
+      119,
+      128,
+      132,
+      142,
+      146,
+      156,
+      160,
+      164,
+      168,
+      186,
+      190,
+      194,
+      198,
+      202,
+      206,
+      210,
+      214,
+      250,
+      254
+    ]
+  },
+  "objective": {
+    "one_ulp_m": 4.76837158203125e-07,
+    "direction": {
+      "index_13": -4.76837158203125e-07,
+      "index_14": 4.76837158203125e-07
+    },
+    "gradient_A_objective_at_raw": {
+      "1": 10.308757901191711,
+      "2": -11.569435060024261,
+      "13": 8.220751404762268,
+      "14": -15.035201966762543
+    },
+    "quadratic_delta_exact_formula": "g^T d + 0.5 * ||A d||^2",
+    "objective_at_raw": 155.94405102975676,
+    "predicted_delta_objective": -1.1089298951105775e-05,
+    "predicted_objective_after_transfer": 155.9440399404578,
+    "energy_allowance_from_neighbor_ledger": 1.5594405102975674e-05,
+    "crossing_feasibility": "rejected by the exact active-row chain; this is objective-only, not a feasible correction"
+  },
+  "fixtures": {
+    "positive_synthetic_active_upper_tangent": {
+      "pass": true,
+      "C": [
+        -0.7,
+        -0.3
+      ],
+      "d": [
+        -0.3,
+        0.7
+      ],
+      "Cdotd": 1.3322676295501878e-17
+    },
+    "negative_real_active_pin_chain": {
+      "pass": true,
+      "expected": "delta_1=delta_2=delta_13=0, hence delta_14<=0",
+      "positive_wet_step_row115_Cdotd": -1.5348775543095429e-07
+    }
+  },
+  "interpretation": [
+    "The exact crossing constraints are affine halfspaces in absolute heights. At the raw state the selected rows have zero slack, so this is an exact feasible-set pin, not a first-order approximation.",
+    "The pinning uses the current 121-variable domain and its fixed collar. Moving the collar or changing the crossing intervals/design bounds would change the authorized problem; neither was tested or proposed as an accepted fix.",
+    "The separate energy-only neighbor at (863,1189) remains blocked by its active inward float32 lower bound, outside this crossing chain.",
+    "D8 was not needed to prove the obstruction; adding D8 constraints cannot make a crossing-infeasible displacement feasible. No statement is made about a redesigned interval set or a larger domain that changes fixed context."
+  ],
+  "readset_reverified": true
+}

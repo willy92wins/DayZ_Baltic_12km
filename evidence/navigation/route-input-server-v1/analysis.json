@@ -1,0 +1,42 @@
+{
+  "status": "PASS_EMPTY_BOAT_LOCAL_OUTWARD",
+  "checks": {
+    "header": true,
+    "engine_geometry": true,
+    "route_end_marker": true,
+    "increasing_time": true,
+    "continuous_samples": true,
+    "no_health_loss": true,
+    "inside_6m_route_corridor": true,
+    "engine_route_distance_agrees": true,
+    "first_last_route_points": true,
+    "both_sides_of_bridge": true,
+    "samples_under_central_span": true,
+    "powered_motion": true,
+    "input_callbacks_executed": true
+  },
+  "log_sha256": "8ad568ff819fd992d69b5c2d8d21df5fa8842a8a0e8c1edd8966c8bd09bc5ba3",
+  "end_reason": "OUTWARD_ROUTE_REACHED_EMPTY_BOAT_ONLY",
+  "samples": 226,
+  "horizontal_net_m": 97.82764026592962,
+  "max_horizontal_step_m": 0.6841052550592993,
+  "max_distance_from_route_m": 1.3438491750451815,
+  "max_route_distance_readback_error_m": 0.006620456622555199,
+  "bridge_signed_position_min_max_m": [
+    -51.80956392574948,
+    44.163454556792225
+  ],
+  "max_along_bridge_offset_when_under_m": 2.3204364808840507,
+  "health_first_min_last": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "longest_powered_motion_streak": 196,
+  "limits": [
+    "Empty boat; no seated crew, return journey or medium vessel.",
+    "Native TB persistence and new navmesh remain pending.",
+    "Local 120m route only; not regional river navigation.",
+    "Steering sign/controller tested only by this bounded route."
+  ]
+}

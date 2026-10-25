@@ -1,0 +1,73 @@
+{
+  "status": "REJECTED_SHAPE_REGRESSION_NOT_DEPLOYED",
+  "candidate_sha256": "805cebcc4b78f2b10566fec0c1602057b3a8d7fb0d8e84be444c4737cc21ad4f",
+  "failures": [
+    {
+      "features": [
+        "river_057:-1"
+      ],
+      "before": {
+        "lines": 1,
+        "length_m": 136.5813465968095,
+        "samples": 63,
+        "p90_degrees": 36.946200365295546,
+        "over30_share": 0.19047619047619047,
+        "max_degrees": 57.43015129264231
+      },
+      "after": {
+        "lines": 1,
+        "length_m": 134.32549207485977,
+        "samples": 62,
+        "p90_degrees": 40.02548002558143,
+        "over30_share": 0.16129032258064516,
+        "max_degrees": 67.1726584146764
+      },
+      "retained_area": 0.95935031508112
+    },
+    {
+      "features": [
+        "stream_0207:0"
+      ],
+      "before": {
+        "lines": 1,
+        "length_m": 126.62579095031126,
+        "samples": 58,
+        "p90_degrees": 29.32770622848296,
+        "over30_share": 0.10344827586206896,
+        "max_degrees": 110.335749656383
+      },
+      "after": {
+        "lines": 1,
+        "length_m": 125.47727578955976,
+        "samples": 57,
+        "p90_degrees": 35.4333592656435,
+        "over30_share": 0.14035087719298245,
+        "max_degrees": 137.7945518623094
+      },
+      "retained_area": 0.6890214395652686
+    },
+    {
+      "features": [
+        "Volkhov:polygon_east_cut"
+      ],
+      "before": {
+        "lines": 2,
+        "length_m": 311.1476938590056,
+        "samples": 144,
+        "p90_degrees": 66.68351590997062,
+        "over30_share": 0.3888888888888889,
+        "max_degrees": 98.42135499340115
+      },
+      "after": {
+        "lines": 1,
+        "length_m": 296.5425943800053,
+        "samples": 143,
+        "p90_degrees": 82.1629219292123,
+        "over30_share": 0.44755244755244755,
+        "max_degrees": 159.8961680739316
+      },
+      "retained_area": 0.8276543169490419
+    }
+  ],
+  "reason": "The native contour consumer rejects every target. No global acceptance or package attempted."
+}

@@ -1,0 +1,170 @@
+{
+  "status": "FAIL_OR_INCOMPLETE_CONTINUOUS_PURSUIT",
+  "global_checks": {
+    "server_header": true,
+    "server_end": false,
+    "client_header": true,
+    "client_end": true,
+    "exact_cases": false,
+    "no_parse_errors": true
+  },
+  "errors": [],
+  "cases": [
+    {
+      "case": 0,
+      "name": "moving_local_control",
+      "status": "PASS",
+      "checks": {
+        "one_spawn": true,
+        "one_move_begin": true,
+        "terminal": true,
+        "anchor": true,
+        "frozen_goal": true,
+        "settlement": true,
+        "spawn_xz": true,
+        "continuous": true,
+        "actor_health": true,
+        "prey_conscious_healthy": true,
+        "known_mind": true,
+        "acquired": true,
+        "within_timeout": true,
+        "actual_actor_goal": true,
+        "actual_prey_goal": true,
+        "actor_contact": true,
+        "prey_contact": true,
+        "actor_terrain": true,
+        "prey_terrain": true,
+        "actor_corridor": true,
+        "prey_corridor": true,
+        "actor_no_teleport": true,
+        "prey_no_teleport": true,
+        "actor_complete_distance": true,
+        "bounded_path": true,
+        "actual_client_input": true
+      },
+      "terminal": [
+        "REACHED"
+      ],
+      "actor": {
+        "contact": true,
+        "terrain": true,
+        "min_y": 0.0017005220087469297,
+        "max_y": 0.0401194026903795,
+        "maximum_ground_error_m": 0.00017593665801030056
+      },
+      "prey": {
+        "contact": true,
+        "terrain": true,
+        "min_y": 0.050002691894647455,
+        "max_y": 0.08421851953180237,
+        "maximum_ground_error_m": 0.0001963262748034822
+      },
+      "actor_trace": {
+        "bounded_speed": true,
+        "maximum_speed_mps": 7.778094651814221,
+        "corridor": true,
+        "maximum_lateral_m": 0.619141000000127,
+        "path_length_m": 24.2223443606069,
+        "progress_m": 21.50781300000017
+      },
+      "prey_trace": {
+        "bounded_speed": true,
+        "maximum_speed_mps": 3.8531838398421434,
+        "corridor": true,
+        "maximum_lateral_m": 0.14404300000023795,
+        "path_length_m": 12.998220935927822,
+        "progress_m": 23.688476999999693
+      },
+      "samples": 59,
+      "duration_s": 10.843999999999994,
+      "maximum_gap_s": 0.2009000000000043,
+      "client_input_samples": 35
+    },
+    {
+      "case": 1,
+      "name": "bridge_continuous_east",
+      "status": "FAIL",
+      "checks": {
+        "one_spawn": true,
+        "one_move_begin": true,
+        "terminal": false,
+        "anchor": true,
+        "frozen_goal": true,
+        "settlement": true,
+        "spawn_xz": true,
+        "continuous": true,
+        "actor_health": true,
+        "prey_conscious_healthy": true,
+        "known_mind": true,
+        "acquired": true,
+        "within_timeout": true,
+        "actual_actor_goal": false,
+        "actual_prey_goal": false,
+        "actor_contact": true,
+        "prey_contact": false,
+        "actor_terrain": true,
+        "prey_terrain": true,
+        "actor_corridor": true,
+        "prey_corridor": false,
+        "actor_no_teleport": true,
+        "prey_no_teleport": true,
+        "actor_complete_distance": false,
+        "bounded_path": true,
+        "actual_client_input": true
+      },
+      "terminal": [
+        "CORRIDOR"
+      ],
+      "actor": {
+        "contact": true,
+        "terrain": true,
+        "min_y": 0.0014381666509422075,
+        "max_y": 0.04000274950059435,
+        "maximum_ground_error_m": 5.064745577598728e-05
+      },
+      "prey": {
+        "contact": false,
+        "terrain": true,
+        "min_y": -5.9999999999504894e-05,
+        "max_y": 2.6202190108801986,
+        "maximum_ground_error_m": 5.1372869585009084e-05
+      },
+      "actor_trace": {
+        "bounded_speed": true,
+        "maximum_speed_mps": 9.432950553534349,
+        "corridor": true,
+        "maximum_lateral_m": 3.7467691148564106,
+        "path_length_m": 80.20041761764905,
+        "progress_m": 67.03124405886307
+      },
+      "prey_trace": {
+        "bounded_speed": true,
+        "maximum_speed_mps": 2.680227460194943,
+        "corridor": false,
+        "maximum_lateral_m": 4.00562613779552,
+        "path_length_m": 72.68923528616062,
+        "progress_m": 69.45181005941642
+      },
+      "samples": 278,
+      "duration_s": 51.7671,
+      "maximum_gap_s": 0.20189999999999486,
+      "client_input_samples": 232
+    },
+    {
+      "case": 2,
+      "status": "FAIL",
+      "reason": "Missing active sequence"
+    }
+  ],
+  "limits": [
+    "Separate moving-target consumer; old stationary/noise failures remain preserved.",
+    "New infected per direction, each starts on dry ground before bridge.",
+    "No native perception root-cause claim.",
+    "No multiplayer capacity or populated-map acceptance."
+  ],
+  "source_sha256": {
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\continuous-pursuit-v1\\reference-r4.json": "ca030aa5e164b01cf005bd8170ac5763657de5b31f8fdf05804eda7385f5603d",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\continuous-pursuit-v1\\runtime-complete\\engine.log": "9b2908bd777d761b32d0388d6a519c52f78ccb6a02d5892a3f0e213443f22084",
+    "P:\\DayZ_Baltic_12km_dev\\evidence\\overnight-2026-10-01\\continuous-pursuit-v1\\runtime-complete\\client-input.log": "de638e7450560f2de783e6536db316505a56b657d420253038235a63497a00d6"
+  }
+}

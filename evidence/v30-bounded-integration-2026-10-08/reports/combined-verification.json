@@ -1,0 +1,119 @@
+{
+  "status": "PASS_NO_REGRESSION",
+  "checks": {
+    "water_depth_same_as_v12": true,
+    "banks_same_as_v12": true,
+    "pieces_same_as_v12": true,
+    "bed_floor_same_as_v12": true,
+    "land_floor_same_as_v12": true,
+    "slopes_same_as_v12": true,
+    "narva_same_as_v12": true,
+    "status_same_as_v12": true,
+    "limits_same_as_v12": true,
+    "roads_pass": true,
+    "roads_identical_to_v12": true,
+    "no_steeper_land_faces": true,
+    "frozen_all_probe_corners_exact": true,
+    "interleaved_1m_all_probe_corners_exact": true
+  },
+  "general_status": "FAIL_INHERITED_IDENTICAL_TO_V12",
+  "roads": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "baseline_roads": {
+    "chains": 100,
+    "samples": 77381,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "shore_supports": {
+    "frozen": {
+      "stations": 13197,
+      "probes": 857805,
+      "changed_corner_samples": 0
+    },
+    "interleaved_1m": {
+      "stations": 13180,
+      "probes": 856700,
+      "changed_corner_samples": 0
+    }
+  },
+  "discarded_command": "roads-combined.json used historical v29 water, unlike frozen V12 road gate. Retained as diagnostic, not acceptance."
+}

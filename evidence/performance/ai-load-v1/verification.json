@@ -1,0 +1,241 @@
+{
+  "status": "PASS_BOUNDED_ACTIVE_AI_MEASUREMENT",
+  "issues": [],
+  "phases": [
+    {
+      "phase": 0,
+      "population": 0,
+      "samples": 60,
+      "measured_seconds": 60.0,
+      "tick_range": [
+        55.51,
+        115.51
+      ],
+      "awake_mean": 0.0,
+      "awake_min": 0.0,
+      "active_samples": 60,
+      "moving_mean": 0.0,
+      "health_min": 100.0,
+      "prey_drift_max_m": 0.0,
+      "max_simulation_timeslice_s": 0.011,
+      "timeslices_over_50ms": 0.0,
+      "max_sampling_window_s": 1.0,
+      "update_calls_per_second": 7025.066666666667
+    },
+    {
+      "phase": 1,
+      "population": 25,
+      "samples": 60,
+      "measured_seconds": 60.0,
+      "tick_range": [
+        140.527,
+        200.527
+      ],
+      "awake_mean": 25.0,
+      "awake_min": 25.0,
+      "active_samples": 60,
+      "moving_mean": 1.3,
+      "health_min": 100.0,
+      "prey_drift_max_m": 0.475478,
+      "max_simulation_timeslice_s": 0.009,
+      "timeslices_over_50ms": 0.0,
+      "max_sampling_window_s": 1.0,
+      "update_calls_per_second": 6935.083333333333
+    },
+    {
+      "phase": 2,
+      "population": 100,
+      "samples": 60,
+      "measured_seconds": 60.0,
+      "tick_range": [
+        225.566,
+        285.566
+      ],
+      "awake_mean": 100.0,
+      "awake_min": 100.0,
+      "active_samples": 60,
+      "moving_mean": 31.466666666666665,
+      "health_min": 88.0,
+      "prey_drift_max_m": 0.822314,
+      "max_simulation_timeslice_s": 0.012,
+      "timeslices_over_50ms": 0.0,
+      "max_sampling_window_s": 1.0,
+      "update_calls_per_second": 5713.433333333333
+    },
+    {
+      "phase": 3,
+      "population": 0,
+      "samples": 60,
+      "measured_seconds": 60.0,
+      "tick_range": [
+        310.567,
+        370.567
+      ],
+      "awake_mean": 0.0,
+      "awake_min": 0.0,
+      "active_samples": 60,
+      "moving_mean": 0.0,
+      "health_min": 100.0,
+      "prey_drift_max_m": 0.822314,
+      "max_simulation_timeslice_s": 0.017,
+      "timeslices_over_50ms": 0.0,
+      "max_sampling_window_s": 1.0,
+      "update_calls_per_second": 6202.416666666667
+    }
+  ],
+  "limits": [
+    "Single client, no CE, loot, persistence or city objects; not 100-player capacity.",
+    "OnUpdate rate and simulation timeslice are not render FPS or measured callback CPU cost.",
+    "All infected in one local cluster; population and collision stress together."
+  ],
+  "host": {
+    "server": {
+      "process_id": 256196,
+      "start_utc": "2026-09-30T10:44:22.5497856Z",
+      "phases": [
+        {
+          "phase": 0,
+          "intervals": 56,
+          "seconds": 57.6057979,
+          "cpu_percent_one_logical_core": 16.8168836352495,
+          "cpu_peak_interval_percent_one_core": 30.434273218355738,
+          "resident_mib_range": [
+            1629.453125,
+            1630.6640625
+          ],
+          "resident_mib_median": 1629.9140625,
+          "private_mib_range": [
+            1958.15625,
+            1961.33203125
+          ]
+        },
+        {
+          "phase": 1,
+          "intervals": 56,
+          "seconds": 57.542862400000004,
+          "cpu_percent_one_logical_core": 16.237895735961857,
+          "cpu_peak_interval_percent_one_core": 28.841114240928515,
+          "resident_mib_range": [
+            1637.3515625,
+            1637.93359375
+          ],
+          "resident_mib_median": 1637.89453125,
+          "private_mib_range": [
+            1963.04296875,
+            1963.69921875
+          ]
+        },
+        {
+          "phase": 2,
+          "intervals": 57,
+          "seconds": 58.605448800000005,
+          "cpu_percent_one_logical_core": 3.9992015213438648,
+          "cpu_peak_interval_percent_one_core": 21.18946363970338,
+          "resident_mib_range": [
+            1644.6953125,
+            1645.6328125
+          ],
+          "resident_mib_median": 1645.3125,
+          "private_mib_range": [
+            1973.26171875,
+            1974.1796875
+          ]
+        },
+        {
+          "phase": 3,
+          "intervals": 56,
+          "seconds": 57.58592700000003,
+          "cpu_percent_one_logical_core": 0.4341338466254088,
+          "cpu_peak_interval_percent_one_core": 4.573636573325219,
+          "resident_mib_range": [
+            1645.7890625,
+            1645.8515625
+          ],
+          "resident_mib_median": 1645.8203125,
+          "private_mib_range": [
+            1977.12109375,
+            1977.25390625
+          ]
+        }
+      ],
+      "alignment": "Both interval endpoints read an S marker for the same phase. Engine marker may lag up to the actual host polling interval; phase boundaries and warmup excluded."
+    },
+    "client": {
+      "process_id": 256032,
+      "start_utc": "2026-09-30T10:44:36.4045328Z",
+      "phases": [
+        {
+          "phase": 0,
+          "intervals": 57,
+          "seconds": 58.58999540000001,
+          "cpu_percent_one_logical_core": 1.4934290300353905,
+          "cpu_peak_interval_percent_one_core": 11.997898736006967,
+          "resident_mib_range": [
+            2229.28515625,
+            2242.54296875
+          ],
+          "resident_mib_median": 2236.23828125,
+          "private_mib_range": [
+            3311.87109375,
+            3326.0703125
+          ]
+        },
+        {
+          "phase": 1,
+          "intervals": 56,
+          "seconds": 57.5714608,
+          "cpu_percent_one_logical_core": 2.2254950320802007,
+          "cpu_peak_interval_percent_one_core": 6.084903189677062,
+          "resident_mib_range": [
+            2322.1328125,
+            2324.70703125
+          ],
+          "resident_mib_median": 2323.76171875,
+          "private_mib_range": [
+            3424.140625,
+            3426.81640625
+          ]
+        },
+        {
+          "phase": 2,
+          "intervals": 56,
+          "seconds": 57.652945200000005,
+          "cpu_percent_one_logical_core": 4.7428192792482005,
+          "cpu_peak_interval_percent_one_core": 10.617007577364358,
+          "resident_mib_range": [
+            2346.484375,
+            2373.25
+          ],
+          "resident_mib_median": 2366.177734375,
+          "private_mib_range": [
+            3448.109375,
+            3495.9140625
+          ]
+        },
+        {
+          "phase": 3,
+          "intervals": 57,
+          "seconds": 58.61398630000002,
+          "cpu_percent_one_logical_core": 4.185221232769147,
+          "cpu_peak_interval_percent_one_core": 13.71240047600649,
+          "resident_mib_range": [
+            2361.1796875,
+            2362.8671875
+          ],
+          "resident_mib_median": 2362.125,
+          "private_mib_range": [
+            3484.765625,
+            3486.50390625
+          ]
+        }
+      ],
+      "alignment": "Both interval endpoints read an S marker for the same phase. Engine marker may lag up to the actual host polling interval; phase boundaries and warmup excluded."
+    }
+  },
+  "sha256": {
+    "engine.log": "f2459094b5aa14af0ad9039954ffacbe2da184e595a0bf3411f5fdcd788f6def",
+    "ai-load-reference-v1.json": "af15a9633122edee47be0fcd8bccbe8090796cbbd0fa8784092a907725cb58fb",
+    "server-process.jsonl": "f88f105e6d738f1a549d0a336d6890727ade9cc38a2226d0923cdcc601a16624",
+    "client-process.jsonl": "98f22f081b90ce14ff67a76580f3d379284c7aaa17153fb256809740234220d2"
+  }
+}

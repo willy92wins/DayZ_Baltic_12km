@@ -1,0 +1,56 @@
+"""Read-only inventory of remaining flat pond instances against shared visual field."""
+from pathlib import Path
+import sys,json,hashlib
+from collections import Counter
+import numpy as np
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+B=Path('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008')
+E=W/'evidence/v30-valley-smoothing-2026-10-08'
+F=Path('E:/DayZ-Baltic-Build/v30-continuation-20261008/junction-fix-r2')
+B7=Path('E:/DayZ-Baltic-Build/v30-curved-channel-pilot-20261008')
+B8=Path('E:/DayZ-Baltic-Build/v30-water-visual-fix-20261008')
+sys.path[:0]=[str(W/'tools/navigation'),str(W/'tools/terrain'),str(W/'tools/water')]
+from water_mesh import py3d
+from v30_common import tri_sample
+from wrp0wzd import read
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+old=json.loads((F/'water/pieces.json').read_text())
+author=json.loads((W/'evidence/v30-curved-channel-pilot-2026-10-08/flat-water-authoring.json').read_text())
+poses=[p for p in old['poses'] if p not in author['removed_poses']]+author['new_poses']
+world=read(B/'world-c1r3p/root/dayz_baltic_12km_dev/tb/narva_trial/baltic_trial.wrp')
+objects=[o for o in world['objects'] if o['name'].startswith('baltic_water_v30')]
+assert [o['name'] for o in objects]==[p['model'] for p in poses]
+field=np.load(B8/'stitched-water/visual_vertex_levels.npy')
+already={p['model'] for p in author['new_poses']}
+cache={};rows=[]
+source=F/'water/source/baltic_water_v30'
+for i,(obj,p) in enumerate(zip(objects,poses)):
+    if p['model'] in already:continue
+    name=Path(p['model'].replace('\\','/')).name
+    if name not in cache:
+        raw=(source/name).read_bytes();assert raw[:4]==b'MLOD'
+        with (source/name).open('rb') as f:mdl=py3d.P3D(f)
+        lod=mdl.lods[0];v=np.array([q.coords for q in lod.points])
+        assert np.max(np.abs(v[:,1]),initial=0)<1e-7,name
+        # Sample every native-grid point in the footprint bounding box as a conservative predictor.
+        cache[name]=(v,hashlib.sha256(raw).hexdigest())
+    v,sourcehash=cache[name];ox,oy,oz=p['origin']
+    x=v[:,0]+ox;z=v[:,2]+oz
+    target=tri_sample(field,x,z)
+    delta=target-oy
+    rows.append(dict(id=obj['id'],model=name,origin=p['origin'],source_sha256=sourcehash,
+        visible_y_min=float(target.min()),visible_y_max=float(target.max()),
+        max_delta=float(np.max(np.abs(delta))),bounds=[float(x.min()),float(z.min()),float(x.max()),float(z.max())]))
+    if (i+1)%3000==0:print('inventoried',i+1,flush=True)
+out=dict(status='READ_ONLY_GLOBAL_VISUAL_INVENTORY',water_objects=len(objects),already_stitched=len(already),
+    remaining_instances=len(rows),remaining_models=len(cache),
+    change_over_1mm=sum(r['max_delta']>.001 for r in rows),
+    change_over_35cm=sum(r['max_delta']>.35 for r in rows),
+    max_delta=max(r['max_delta'] for r in rows),
+    limits=['Predictor at source vertices, not a coverage/physics/compiled proof.',
+    'The global averaged field can cross unrelated water bodies; do not apply blindly.'],
+    largest=sorted(rows,key=lambda r:r['max_delta'],reverse=True)[:20],
+    world_sha256=sha(B/'world-c1r3p/root/dayz_baltic_12km_dev/tb/narva_trial/baltic_trial.wrp'))
+(B/'global-stitch-inventory-rows.json').write_text(json.dumps(rows)+'\n')
+(E/'global-stitch-inventory.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps({k:v for k,v in out.items() if k!='largest'},indent=2))

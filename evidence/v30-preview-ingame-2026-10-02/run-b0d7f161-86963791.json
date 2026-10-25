@@ -1,0 +1,37 @@
+{
+  "status": "PASS_FUNCTIONAL_NO_CAPTURES",
+  "summary": "Run b0d7f161 (preview 5) found the road on the sea causeway west of St Petersburg sloping to 0.97 m. Fix: roads keep the ground V29 had dry, and whole carriageways stay land on causeways. Run 86963791 (preview 6) confirms a flat, dry causeway road.",
+  "runs": [
+    {
+      "run_id": "b0d7f161-e53b-4829-bebf-6e5c525d8874",
+      "package": {"narva_trial_pbo_sha256": "24d8835198e3175ae0391df34f8f6292568e0bbb71df864c2916a4e84d312261",
+                  "baltic_water_v30_pbo_sha256": "b6d7cb0eedf76b78d98c8ee1d1011df4115d1faea080c0428bac75db707c1a8e"},
+      "checks": [
+        "causeway station (7364.2, 10706.1): cp_gravel at y 0.968, normal x 0.21 (sloping). The vertex beside the road is sea, as in V29 (V29 itself samples 1.197 there).",
+        "causeway station (7249.2, 10684.5): cp_gravel at y 1.283",
+        "player_teleport onto the causeway landed at 0.968"
+      ],
+      "close": "graceful"
+    },
+    {
+      "run_id": "86963791-19fe-4ed5-9d5a-81d356004779",
+      "package": {"narva_trial_pbo_sha256": "93c505930de817abc00bf2b38bd7564c18602bf1175e2ae62f5a42fa0faa33c7",
+                  "baltic_water_v30_pbo_sha256": "e9b52b8c4fc07df8bc4854dcd9e144e16875af8006221f16efaa6ab95de56681",
+                  "derived_wrp_sha256": "de208a3c3323b12af76339171f8a19791bb6b76396bd82f13a8feb84b038e8eb",
+                  "water_objects": 17622,
+                  "build": "E:\\DayZ-Baltic-Build\\v30-preview6 with -Layers E:\\DayZ-Baltic-Build\\surface-v30e"},
+      "checks": [
+        "player connected 14 s after launch",
+        "causeway station (7364.2, 10706.1): cp_gravel at y 1.517, normal (0.0006, 0.9999998, 0.0001)",
+        "causeway station (7249.2, 10684.5): cp_gravel at y 1.506, flat",
+        "player_teleport onto the causeway landed at 1.517",
+        "stream groove (5028, 4842): fresh_water_ext at 2.00"
+      ],
+      "close": "graceful (client then server), lease released"
+    }
+  ],
+  "not_verified": [
+    "Nothing visual: the display stayed off.",
+    "Swimming, boats, driving and AI on V30. The navmesh is V29's and stale for V30."
+  ]
+}

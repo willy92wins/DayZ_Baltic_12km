@@ -1,0 +1,55 @@
+{
+ "inputs": {
+  "terrain": "E:\\DayZ-Baltic-Build\\v30-v3\\relevel-b\\terrain_relevel.npz",
+  "terrain_sha256": "fdfe2ff8b2c2b6b3e6978659faf1d52e59f4545a7d484290823acd247f0b7238",
+  "sd": "E:\\DayZ-Baltic-Build\\v30-v3\\polish\\sd_polish.npz",
+  "sd_sha256": "11564fdb5321d3dc3b4aef058fce6bfa4cf6a8ffa45db65f935ff1ffc1e0b04f"
+ },
+ "params": {
+  "sigma": 12.0,
+  "sigma_narva": 18.0,
+  "max_shift": 4.0,
+  "margin_depth": 0.6,
+  "margin_width": 12.0,
+  "bank_margin": 0.1,
+  "shelf_depth": 3.0
+ },
+ "narva_margin": {
+  "vertices_to_land": 327,
+  "raise_max_m": 0.695
+ },
+ "narva_shelf": {
+  "vertices_deepened": 185,
+  "deepen_max_m": 3.247,
+  "deepen_median_m": 0.344
+ },
+ "outline": {
+  "lines": 5539,
+  "shift_m_p50_p95_max": [
+   1.72,
+   4.0,
+   4.0
+  ],
+  "turn_deg_per_12m_before": {
+   "p50": 15.9,
+   "p95": 85.9
+  },
+  "turn_deg_per_12m_after": {
+   "p50": 8.8,
+   "p95": 68.1
+  }
+ },
+ "sd_kept_input_distance": 151436,
+ "sd": {
+  "support_vertices": 552509,
+  "sign_changed_vs_input": 11302,
+  "abs_change_m_p50_p95": [
+   0.94,
+   4.35
+  ]
+ },
+ "outputs": {
+  "terrain_sha256": "5f207001765ed2bc8b2c1dbe5cfe9a27e31dbb138d66db3dc191c19de4f19ec6",
+  "sd_sha256": "a234bd7e02a32857e6bee62b61e689012d0ff7f1d2f88e25d12fadda6695f0e1"
+ }
+}

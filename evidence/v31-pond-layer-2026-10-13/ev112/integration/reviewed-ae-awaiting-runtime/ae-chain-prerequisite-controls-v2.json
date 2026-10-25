@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "scope": "Exercise the actual chain receipt guard, including a poll that skips the exact first-stage count.",
+  "chain_sha256": "d87f7622a9551325dc9fc549547d5c6dfc1bc1dec16375e32c18adfc536bbed5",
+  "checker_sha256": "fe13513c8119269b46e7ce886f46dcfcbdfdfe9a3284005342aa6f0459b7a909",
+  "cases": [
+    {
+      "case": "absent_wait",
+      "expected_rejection": false,
+      "result": "PASS"
+    },
+    {
+      "case": "empty_wait",
+      "expected_rejection": false,
+      "result": "PASS"
+    },
+    {
+      "case": "exact_first_stage",
+      "expected_rejection": false,
+      "result": "PASS"
+    },
+    {
+      "case": "poll_skips_first_count",
+      "expected_rejection": false,
+      "result": "PASS"
+    },
+    {
+      "case": "missing_required",
+      "expected_rejection": true,
+      "result": "PASS"
+    },
+    {
+      "case": "incomplete_required",
+      "expected_rejection": true,
+      "result": "PASS"
+    },
+    {
+      "case": "actual_failure",
+      "expected_rejection": true,
+      "result": "PASS"
+    },
+    {
+      "case": "declared_unpainted_exception",
+      "expected_rejection": false,
+      "result": "PASS"
+    },
+    {
+      "case": "unrelated_failure_not_exempt",
+      "expected_rejection": true,
+      "result": "PASS"
+    }
+  ],
+  "permissive_mutant_rejected": true,
+  "production_outputs_changed": false
+}

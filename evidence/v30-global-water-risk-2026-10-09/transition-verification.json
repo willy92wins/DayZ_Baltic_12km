@@ -1,0 +1,77 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "finite": true,
+    "no_lowering": true,
+    "max_raise": true,
+    "water_faces_exact": true,
+    "structural_exact": true,
+    "no_remaining_free_lowland": false,
+    "no_unrequested_high_changes": true,
+    "r3_exact": true,
+    "historical_consumers_exact": true,
+    "confirmed_residual_at_target": false,
+    "no_steeper_faces": true
+  },
+  "metadata_exact": true,
+  "roads": {
+    "chains": 100,
+    "samples": 77387,
+    "cross_fail": 0,
+    "grade_fail": 0,
+    "chord_fail": 0,
+    "cross_max_m": 0.02575704333356299,
+    "grade_max": 0.062467542737979165,
+    "chord_max_m": 0.024596331934844784,
+    "worst": {
+      "cross": {
+        "chain": 43,
+        "station_m": 217.7457156342528,
+        "x": 7527.3,
+        "z": 9023.7,
+        "value": 0.0258
+      },
+      "grade": {
+        "chain": 102,
+        "station_m": 688.4718233811913,
+        "x": 6188.7,
+        "z": 7879.1,
+        "value": 0.0625
+      },
+      "chord": {
+        "chain": 102,
+        "station_m": 1000.2326490632402,
+        "x": 6153.8,
+        "z": 8181.2,
+        "value": 0.0246
+      }
+    },
+    "fail_list": [],
+    "status": "PASS",
+    "limits": {
+      "cross_m": 0.03,
+      "grade": 0.065,
+      "chord_m": 0.03,
+      "water_clear_m": 48.0,
+      "narva_clear_m": 470.0,
+      "end_margin_m": 18.0
+    }
+  },
+  "negative": {
+    "residual_restored": true,
+    "bed_moved": true,
+    "engineering_changed": true,
+    "nonfinite": true,
+    "unchanged_source_rejected": true
+  },
+  "terrain_sha256": "85e775dd1c2a1902336eec9b8b949228694edbb201aaf0f34d1414ba77b66fea",
+  "source_sha256": "9c3011b8af5279e807630d4e91512d2e95a434463d3523a5b4074e70bc7cc8f6",
+  "changed_vertices": 12012,
+  "remaining_protected_low_vertices": 17401,
+  "residual_before": 1.520456666024811,
+  "residual_after": 1.770679631099413,
+  "limits": [
+    "Protected lowland still open; empirical target does not prove the native shader envelope.",
+    "Water faces/physical controls are exact to the C1R3P package that passed 28x62 in engine."
+  ]
+}

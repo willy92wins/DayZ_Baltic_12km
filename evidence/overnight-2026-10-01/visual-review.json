@@ -1,0 +1,114 @@
+{
+  "status": "PARTIAL_VISUAL_ACCEPTANCE",
+  "review_sha256": "57400c320c8492083f2d6eb67d2879e00a211cac19a92587d4254f8da1302e45",
+  "world_pbo_sha256": "d1008dd6c882193706f06c5e7b8495ee1a357f5819a8574118784f7e90f18577",
+  "groups": [
+    {
+      "group": "spb",
+      "run_id": "1e6053c0-4cb9-4757-b36b-d092f91bfb42",
+      "telemetry_status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+      "verification_sha256": "9a912ba5359b495d111745537b4abe94d217dfa3029b2e48f509425d18757bdc",
+      "run_state": "EXITED_ORDERLY",
+      "accepted_images": [
+        {
+          "path": "foundation-visual_g_spb_v1\\phase2.jpg",
+          "sha256": "528d582b4f743034aaa8b166bdad3eb16f23c4225c822132c71a4452e7769079"
+        }
+      ],
+      "scope": "Only reviewed views; pose/timing limits in visual-review.md"
+    },
+    {
+      "group": "narva",
+      "run_id": "8da1b9ad-8c30-499b-9736-b10012f28b30",
+      "telemetry_status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+      "verification_sha256": "05feacb79460d4a86fc1f4bb1c7fdf6ef300b6ba08b8660c8b032c509568e090",
+      "run_state": "EXITED_ORDERLY",
+      "accepted_images": [
+        {
+          "path": "foundation-visual_g_narva_v1\\phase0.jpg",
+          "sha256": "acf811ac7ea6cec7d740b6e4b786a2adfb8f8ddbdf691f7f0e8d2c70a0d1b254"
+        },
+        {
+          "path": "foundation-visual_g_narva_v1\\phase1.jpg",
+          "sha256": "ca66791b953d98ac50c8324e231e7db9c5cbe6fbb3304b737517ede89854eaec"
+        },
+        {
+          "path": "foundation-visual_g_narva_v1\\phase2.jpg",
+          "sha256": "129ab7dc5495b243a3dab171bf383ebc2fab58b114d2fbc74587b502c04915b9"
+        }
+      ],
+      "scope": "Only reviewed views; pose/timing limits in visual-review.md"
+    },
+    {
+      "group": "neva",
+      "run_id": "4d8a77d6-50ad-450f-8b77-2b4520f4ff4f",
+      "telemetry_status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+      "verification_sha256": "6f7c3466eccfbeee1d8b3a0f3a7a80e77e0d93f909f90d7db97f5869c6369a25",
+      "run_state": "EXITED_ORDERLY",
+      "accepted_images": [],
+      "scope": "Only reviewed views; pose/timing limits in visual-review.md"
+    },
+    {
+      "group": "reserve",
+      "run_id": "45b5f42c-2007-498a-8314-5e7ace84f4cb",
+      "telemetry_status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+      "verification_sha256": "4767b13c856a71c2f1788c60df94cd73911f15adaa33d207e04a2108c03ba307",
+      "run_state": "EXITED_ORDERLY",
+      "accepted_images": [],
+      "scope": "Only reviewed views; pose/timing limits in visual-review.md"
+    },
+    {
+      "group": "north",
+      "run_id": "b908a2ae-cfc2-4bc4-9061-9c145103a76b",
+      "telemetry_status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+      "verification_sha256": "5023a6aa18fcca03b9c53989a553950c0866fa3b71fe91874f7cb6c5acf36e7a",
+      "run_state": "EXITED_ORDERLY",
+      "accepted_images": [
+        {
+          "path": "foundation-visual_g_north_v1\\frame-2026-10-01T09-57-20.023Z.jpg",
+          "sha256": "dd17a74ed2693f38f344256cc263a767807f1fd578c74553188fbbd93e2fb51b"
+        },
+        {
+          "path": "foundation-visual_g_north_v1\\frame-2026-10-01T09-57-29.223Z.jpg",
+          "sha256": "b24fac35093ccea697e7e5da780911ce92c00c37d8e3ee59a8f6940a0ae21778"
+        }
+      ],
+      "scope": "Only reviewed views; pose/timing limits in visual-review.md"
+    },
+    {
+      "group": "south",
+      "run_id": "607f1d95-fb97-48ff-96d7-617326f88442",
+      "telemetry_status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+      "verification_sha256": "4887465f01d2358e4c8c887edeb714825e692a3ad77dfdad70ef4977141ac5cf",
+      "run_state": "EXITED_ORDERLY",
+      "accepted_images": [],
+      "scope": "Only reviewed views; pose/timing limits in visual-review.md"
+    },
+    {
+      "group": "overview",
+      "run_id": "5d05214b-09a4-40a4-9c30-270da7cb96f1",
+      "telemetry_status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+      "verification_sha256": "4828fc2304885b595161483aef2d808e675c8d6260c6f8c657b7b832ce9a57f8",
+      "run_state": "EXITED_ORDERLY",
+      "accepted_images": [],
+      "scope": "Only reviewed views; pose/timing limits in visual-review.md"
+    }
+  ],
+  "excluded_other_window_images": [
+    "foundation-visual_g_north_v1/frame-2026-10-01T09-57-01.600Z.jpg",
+    "foundation-visual_g_north_v1/frame-2026-10-01T09-57-10.830Z.jpg"
+  ],
+  "limits": [
+    "Telemetry PASS does not prove pixels.",
+    "Narva ground telemetry copy was late; no exact timestamp from that copy.",
+    "Aerial diagnostic near plane10m differs from normal gameplay.",
+    "Focus/pause invalidates regional FPS comparisons.",
+    "Distant transition crash unresolved."
+  ],
+  "neva_repeat": {
+    "run_id": "a3477d19-7929-4851-9ff7-8b1ed1b3e7c0",
+    "status": "CAMERA_TELEMETRY_PASS_PIXELS_INCONCLUSIVE",
+    "state": "EXITED_ORDERLY",
+    "evidence": "foundation-visual_g_neva_v1/repeat-01/visual-observation.json"
+  }
+}

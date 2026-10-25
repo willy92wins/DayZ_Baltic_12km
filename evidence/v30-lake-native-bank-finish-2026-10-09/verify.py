@@ -1,0 +1,61 @@
+"""Consume saved terrain without the author's solver or constraint file."""
+from pathlib import Path
+import sys,json,hashlib
+import numpy as np
+from scipy.ndimage import distance_transform_edt
+B=Path(__file__).parent
+W=Path('C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+sys.path[:0]=[str(W/'tools/terrain'),'E:/DayZ-Baltic-Build/v30-surface-crease-audit-20261009']
+from relevel_bodies_v30 import label_bodies
+from audit_native_surface import hinges,incident_all,validate
+SOURCE=Path('E:/DayZ-Baltic-Build/v30-native-hinge-finish-20261009/candidate/terrain.npz')
+PLANE=Path('E:/DayZ-Baltic-Build/v30-global-water-risk-20261009/frozen-field-reference/plane.npy')
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+
+def curvature(a,mask):
+ xx=(a[1:-1,:-2]-2*a[1:-1,1:-1]+a[1:-1,2:])/36
+ zz=(a[:-2,1:-1]-2*a[1:-1,1:-1]+a[2:,1:-1])/36
+ xz=(a[2:,2:]-a[2:,:-2]-a[:-2,2:]+a[:-2,:-2])/144
+ return float(np.sqrt(np.mean((xx*xx+zz*zz+2*xz*xz)[mask[1:-1,1:-1]])))
+
+def slopes(a):
+ # Face edges in the two real orthogonal directions; diagonal is NW-SE.
+ nw,ne,sw,se=a[:-1,:-1],a[:-1,1:],a[1:,:-1],a[1:,1:]
+ return [np.degrees(np.arctan(np.hypot(ne-nw,se-ne)/6)),np.degrees(np.arctan(np.hypot(se-sw,sw-nw)/6))]
+
+def basic(h,v,allowed,fixed,support,floor):
+ changed=v!=h
+ return dict(finite=bool(np.isfinite(v).all()),outside_scope_exact=not bool(np.any(changed&~allowed)),fixed_exact=not bool(np.any(changed&fixed)),water_faces_exact=not bool(np.any(changed&support)),no_raises=bool(np.all(v<=h+1e-6)),lowering_at_most_1_5m=float((h-v).max())<=1.500001,floor=bool(np.all(v>=floor-1e-6)),slopes=all(np.all(b<=np.maximum(a,35)+1e-4) for a,b in zip(slopes(h),slopes(v))))
+
+def main():
+ t=dict(np.load(SOURCE));u=dict(np.load(B/'candidate/terrain.npz'));h=t['heights'].astype(float);v=u['heights'].astype(float);p=np.load(PLANE)
+ support=np.zeros(h.shape,bool)
+ for dr,dc in ((0,0),(0,1),(1,0),(1,1)):support[dr:dr+2047,dc:dc+2047]|=np.isfinite(p)
+ fixed=np.load('E:/DayZ-Baltic-Build/v30-native-terminal-finish-20261009/constraints.npz')['fixed']|support|t['water']|t['beach']|(t['cls']!=0)
+ fixed[:11]=True;fixed[-11:]=True;fixed[:,:11]=True;fixed[:,-11:]=True
+ labels=label_bodies(t['cls'],t['level']);allowed=np.zeros(h.shape,bool);floor=h.copy();banks={};reports=[]
+ for name,x,z in [('southwest',622.4,840.),('southeast',10436.5,308.2)]:
+  body=int(labels[round((12282-z)/6),round(x/6)]);dist=distance_transform_edt(labels!=body,sampling=6);dry=t['cls']==0
+  bank=(dist>0)&(dist<=36)&dry;ring=(dist>12)&(dist<=36)&dry;scope=(dist>0)&(dist<72)&dry&~fixed;allowed|=scope
+  target=max(1.8,float(np.median(t['level'][labels==body]))+.3,float(np.median(h[ring])))
+  floor[scope]=np.minimum(h[scope],target);banks[name]=bank
+  before=curvature(h,bank);after=curvature(v,bank)
+  reports.append(dict(name=name,curvature_before=before,curvature_after=after,curvature_reduction=1-after/before,bank_p90_before=float(np.percentile(h[bank],90)),bank_p90_after=float(np.percentile(v[bank],90)),changed_bank_vertices=int(np.sum(bank&(h!=v)))))
+ for report in reports:
+  values=[]
+  for terrain in (h,v):
+   parts=[a[incident_all(banks[report['name']],kind)] for kind,a in hinges(terrain)]
+   a=np.concatenate(parts);values.append(dict(edges=len(a),rms=float(np.sqrt(np.mean(a*a))),p99=float(np.percentile(a,99)),over30=int((a>30).sum())))
+  report['native_before'],report['native_after']=values
+  report['shape_gate']=report['curvature_reduction']>=.10 and report['bank_p90_after']<=report['bank_p90_before'] and values[1]['rms']<values[0]['rms']
+ gates=basic(h,v,allowed,fixed,support,floor);gates['metadata_exact']=set(t)==set(u) and all(np.array_equal(t[k],u[k],equal_nan=True) for k in t if k!='heights')
+ gates['both_lake_shapes']=all(r['shape_gate'] for r in reports)
+ # Execute independent invariants on a small valid fixture and corrupt it.
+ a=np.full((8,8),3.);sc=np.zeros_like(a,bool);sc[3:5,3:5]=True;fx=~sc;ws=np.zeros_like(sc);ws[1,1]=True;low=np.full_like(a,2.)
+ assert all(basic(a,a,sc,fx,ws,low).values())
+ tests=validate()+['unchanged_fixture_passes']
+ for label,rc,val,gate in [('outside',(1,2),2.8,'outside_scope_exact'),('protected',(1,2),2.8,'fixed_exact'),('water',(1,1),2.8,'water_faces_exact'),('raise',(3,3),3.2,'no_raises'),('deep',(3,3),1.4,'lowering_at_most_1_5m'),('floor',(3,3),1.9,'floor'),('steep',(3,3),15,'slopes')]:
+  b=a.copy();b[rc]=val;assert not basic(a,b,sc,fx,ws,low)[gate];tests.append(label+'_mutant_rejected')
+ result=dict(status='PASS_LAKE_NATIVE_BANK_SOURCE' if all(gates.values()) else 'REJECTED_LAKE_NATIVE_BANK_SOURCE',source_sha256=sha(SOURCE),candidate_sha256=sha(B/'candidate/terrain.npz'),gates=gates,lakes=reports,changed_vertices=int((h!=v).sum()),maximum_lowering_m=float((h-v).max()),controls=tests,limits=['Water levels, bed, outline and all native water support vertices exact.','Lake-level decision remains pending.','Source geometry only: native import and visual consumer not yet executed.'])
+ (B/'verification.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
+if __name__=='__main__':main()

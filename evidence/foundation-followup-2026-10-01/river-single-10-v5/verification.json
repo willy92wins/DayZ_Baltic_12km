@@ -1,0 +1,98 @@
+{
+  "status": "PASS_ONE_ISOLATED_RIVER_CASE",
+  "cases": [
+    {
+      "case": 10,
+      "status": "PASS",
+      "physical": {
+        "status": "PASS_EMPTY_BOAT_SELECTED_REGIONAL_SECTORS_BOTH_DIRECTIONS",
+        "global_checks": {
+          "header": true,
+          "all_cases_complete": true,
+          "exact_cases": true,
+          "no_parse_errors": true
+        },
+        "parse_errors": [],
+        "cases": [
+          {
+            "case": 10,
+            "river": "Delta occidental",
+            "reverse": false,
+            "status": "PASS",
+            "checks": {
+              "one_start_and_finish": true,
+              "one_arrival": true,
+              "monotone_continuous_clock": true,
+              "continuous_motion": true,
+              "no_health_loss": true,
+              "inside_corridor": true,
+              "all_intermediate_points_visited": true,
+              "start_and_endpoint": true,
+              "engine_ground_matches_source": true,
+              "input_callbacks": true,
+              "sustained_powered_motion": true,
+              "engine_route_distance_agrees": true,
+              "targets_in_order": true
+            },
+            "end_reason": [
+              "ARRIVED_AND_STOPPED"
+            ],
+            "samples": 982,
+            "max_dt_s": 0.5089999999999577,
+            "max_step_m": 0.7119166788356055,
+            "max_corridor_distance_m": 4.182686670338381,
+            "max_waypoint_distance_m": 1.0163851043878978,
+            "end_distance_m": 3.4448185378170733,
+            "max_ground_error_m": 0.00023500131135811841,
+            "health_first_min_last": [
+              600.0,
+              600.0,
+              600.0
+            ],
+            "longest_powered_motion_s": 373.53700000000003
+          }
+        ],
+        "limits": [
+          "One empty boat on unchanged V10; no fleet, crew or medium-vessel acceptance.",
+          "Earlier full and interrupted results remain preserved.",
+          "All geometry, control logic and V3 physical/event gates unchanged."
+        ]
+      },
+      "events": {
+        "status": "PASS",
+        "checks": {
+          "parse": true,
+          "complete_transition_sequence": true,
+          "transition_clock": true,
+          "transition_geometry": true,
+          "same_tick_physical_witness": true,
+          "physical_targets_match_events": true,
+          "arrival_distance_and_speed": true,
+          "engine_off_observation": true
+        },
+        "parse_errors": [],
+        "transitions": 129,
+        "engine_off_observed_s": 9.600000000000023,
+        "final_speed_mps": 0.212393,
+        "limit": "Engine off and endpoint retained; no stationary-moored claim."
+      },
+      "log_sha256": "3051473031e320ac02c29cd92b67783c69ce6ea5e2aadcf3e64486984676d22b"
+    }
+  ],
+  "limits": [
+    "One empty boat on unchanged V10; no fleet, crew or medium-vessel acceptance.",
+    "Earlier full and interrupted results remain preserved.",
+    "All geometry, control logic and V3 physical/event gates unchanged."
+  ],
+  "scope_case": 10,
+  "clock": {
+    "passed": true,
+    "clocks": {
+      "ABS_SPAWN_MS": 45969,
+      "ABS_END_MS": 481883
+    },
+    "elapsed_s": 435.914,
+    "errors": []
+  },
+  "reference_sha256": "bf6cabd243cae0478c975a75d9cfdd8cd95984cf5c995d77cb5a68cbb7807a77"
+}

@@ -1,0 +1,684 @@
+{
+ "schema": "shore-eval.v2",
+ "harness": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/round2/harness/eval_shore_v2.py",
+ "harness_sha256": "422bf8186e0d75f9b6c3aab241bd96eec26c20a501377d7542d10d108aa7b9b4",
+ "v1_sha256": "343f5716aeba0c8eb4e48497c71b8df07f32d058bacf53a65e6b46383f69922e",
+ "candidate": "round2/sea-fair/sf-recipe.npz",
+ "candidate_sha256": "510242cab738c24ee77f1d58d937d46a655bd05b88698247d2bf1e4e5352bb59",
+ "base": "E:/DayZ-Baltic-Build/v30-pond-sea-separation-20261011-b/terrain-ev98.npz",
+ "base_sha256": "483b6ec00ffcb25d7ed47665f9ea96f6268e9d9b59daa07c239292c50bb9cf05",
+ "cover": "E:/DayZ-Baltic-Build/v30-shore-sdf-20261011/cover-level-ev98.npy",
+ "cover_sha256": "7421b17ce8c3ad711c7bf7fa4ee227d98503df4cdf3b63f35798586d22680ba3",
+ "gates_violations": {
+  "frozen": 0,
+  "band": 0,
+  "pond_bed": 0,
+  "piece_edge": 0,
+  "new_sea": 0,
+  "slope": 0,
+  "area_large": 0,
+  "area_mid": 0,
+  "area_total": 0,
+  "topo_vtx_lost": 0,
+  "topo_vtx_split": 0,
+  "topo_vtx_merge": 0,
+  "topo_tri_lost": 0,
+  "topo_tri_split": 0,
+  "topo_tri_merge": 0,
+  "flood": 0,
+  "nav_shallow": 0,
+  "nav_channel_raised": 0
+ },
+ "gates_pass": true,
+ "gate_groups_pass": {
+  "v1": true,
+  "G_area": true,
+  "G_topo": true,
+  "G_flood": true,
+  "G_nav": true
+ },
+ "changed_vertices": 53976,
+ "max_abs_change_m": 1.5,
+ "details": {
+  "v1_sidecar": "round2/judge/sea-fair.v1.json",
+  "v1_gates_pass": true,
+  "candidate_heights_dtype": "float32",
+  "non_height_arrays_identical": {
+   "cls": true,
+   "level": true,
+   "platform": true,
+   "reserve": true,
+   "narva": true,
+   "water": true,
+   "beach": true,
+   "ev96_bed_raised": true,
+   "ev96_converted_to_sea": true,
+   "ev98_bed_raised": true
+  },
+  "topo_tri": {
+   "base_n": 2657,
+   "cand_n": 2643,
+   "lost": 26,
+   "lost_area_m2": 116.0,
+   "lost_ge_minpx": 0,
+   "lost_max_m2": 16.0,
+   "new": 4,
+   "new_area_m2": 16.0,
+   "new_ge_minpx": 0,
+   "new_max_m2": 4.0,
+   "split": 7,
+   "split_sig": 0,
+   "merged": 3,
+   "merged_sig": 0,
+   "lost_sig_x_z_m2": [],
+   "split_sig_x_z_m2": [],
+   "merge_sig_x_z_m2": []
+  },
+  "flood": {
+   "new_wet_m2": 60288.0,
+   "new_dry_m2": 51600.0,
+   "new_wet_gt4_m2": 16.0,
+   "new_wet_gt6_m2": 0.0,
+   "new_wet_gt8_m2": 0.0,
+   "new_wet_gt12_m2": 0.0,
+   "new_wet_gt24_m2": 0.0,
+   "new_wet_max_dist_m": 5.7,
+   "far_clusters_x_z_m2": []
+  },
+  "topo_vtx": {
+   "base_n": 858,
+   "cand_n": 868,
+   "lost": 0,
+   "lost_area_m2": 0.0,
+   "lost_ge_minpx": 0,
+   "lost_max_m2": 0.0,
+   "new": 0,
+   "new_area_m2": 0.0,
+   "new_ge_minpx": 0,
+   "new_max_m2": 0.0,
+   "split": 4,
+   "split_sig": 0,
+   "merged": 0,
+   "merged_sig": 0,
+   "lost_sig_x_z_m2": [],
+   "split_sig_x_z_m2": [],
+   "merge_sig_x_z_m2": []
+  },
+  "area": {
+   "base_total_m2": 35478158.8,
+   "cand_total_m2": 35483770.5,
+   "total_rel_pct": 0.0158,
+   "base_bodies": 858,
+   "classes": {
+    "36-200m2": {
+     "n": 73,
+     "over5": 0,
+     "over10": 0,
+     "p50_abs_pct": 0.0,
+     "worst": 0.0
+    },
+    "200-2000m2": {
+     "n": 455,
+     "over5": 0,
+     "over10": 0,
+     "p50_abs_pct": 0.0,
+     "worst": 0.0
+    },
+    "2000-10000m2": {
+     "n": 109,
+     "over5": 0,
+     "over10": 0,
+     "p50_abs_pct": 0.23,
+     "worst": -3.75
+    },
+    "ge10000m2": {
+     "n": 37,
+     "over5": 0,
+     "over10": 0,
+     "p50_abs_pct": 0.11,
+     "worst": 3.68
+    }
+   },
+   "large_n": 146,
+   "large_over5": 0,
+   "mid_n": 455,
+   "mid_over10": 0,
+   "mid_allowed": 9,
+   "large_offenders_x_z_basem2_relpct": [],
+   "mid_offenders_x_z_basem2_relpct": []
+  },
+  "nav": {
+   "navigable_vertices": 36596,
+   "navigable_wet_vertices": 36553,
+   "channel_vertices": 25706,
+   "new_shallow": 0,
+   "new_shallow_by_bank_dist_m": {
+    "le6": 0,
+    "6-12": 0,
+    "ge12": 0
+   },
+   "new_shallow_now_dry": 0,
+   "channel_raised": 0,
+   "channel_raised_gt_1cm": 0,
+   "channel_max_raise_m": 0.0,
+   "depth_lost_below_1p5": 1350
+  }
+ },
+ "metrics": {
+  "engine_tri": {
+   "model": "TRI K=3 cell-centred, primary",
+   "base": {
+    "map": {
+     "all": {
+      "length_km": 402.081,
+      "sawtooth": 5105,
+      "corners": 3293,
+      "sawtooth_per_km": 12.696,
+      "corners_per_km": 8.19,
+      "chords": 132196,
+      "grid_aligned_frac": 0.4169,
+      "short_lines": 1306,
+      "short_len_km": 25.196
+     },
+     "sea": {
+      "length_km": 92.126,
+      "sawtooth": 1400,
+      "corners": 528,
+      "sawtooth_per_km": 15.197,
+      "corners_per_km": 5.731,
+      "chords": 30609,
+      "grid_aligned_frac": 0.467
+     },
+     "pond": {
+      "length_km": 309.955,
+      "sawtooth": 3705,
+      "corners": 2765,
+      "sawtooth_per_km": 11.953,
+      "corners_per_km": 8.921,
+      "chords": 101587,
+      "grid_aligned_frac": 0.4017
+     }
+    },
+    "spb": {
+     "all": {
+      "length_km": 19.761,
+      "sawtooth": 253,
+      "corners": 165,
+      "sawtooth_per_km": 12.803,
+      "corners_per_km": 8.35,
+      "chords": 6519,
+      "grid_aligned_frac": 0.4738,
+      "short_lines": 25,
+      "short_len_km": 0.283
+     },
+     "sea": {
+      "length_km": 15.285,
+      "sawtooth": 173,
+      "corners": 104,
+      "sawtooth_per_km": 11.318,
+      "corners_per_km": 6.804,
+      "chords": 5070,
+      "grid_aligned_frac": 0.4941
+     },
+     "pond": {
+      "length_km": 4.476,
+      "sawtooth": 80,
+      "corners": 61,
+      "sawtooth_per_km": 17.872,
+      "corners_per_km": 13.628,
+      "chords": 1449,
+      "grid_aligned_frac": 0.403
+     }
+    }
+   },
+   "cand": {
+    "map": {
+     "all": {
+      "length_km": 391.023,
+      "sawtooth": 3871,
+      "corners": 2852,
+      "sawtooth_per_km": 9.9,
+      "corners_per_km": 7.294,
+      "chords": 128520,
+      "grid_aligned_frac": 0.3604,
+      "short_lines": 1307,
+      "short_len_km": 24.734
+     },
+     "sea": {
+      "length_km": 89.422,
+      "sawtooth": 929,
+      "corners": 425,
+      "sawtooth_per_km": 10.389,
+      "corners_per_km": 4.753,
+      "chords": 29688,
+      "grid_aligned_frac": 0.3733
+     },
+     "pond": {
+      "length_km": 301.601,
+      "sawtooth": 2942,
+      "corners": 2427,
+      "sawtooth_per_km": 9.755,
+      "corners_per_km": 8.047,
+      "chords": 98832,
+      "grid_aligned_frac": 0.3566
+     }
+    },
+    "spb": {
+     "all": {
+      "length_km": 19.453,
+      "sawtooth": 208,
+      "corners": 154,
+      "sawtooth_per_km": 10.693,
+      "corners_per_km": 7.917,
+      "chords": 6417,
+      "grid_aligned_frac": 0.43,
+      "short_lines": 27,
+      "short_len_km": 0.312
+     },
+     "sea": {
+      "length_km": 15.111,
+      "sawtooth": 135,
+      "corners": 97,
+      "sawtooth_per_km": 8.934,
+      "corners_per_km": 6.419,
+      "chords": 5012,
+      "grid_aligned_frac": 0.4471
+     },
+     "pond": {
+      "length_km": 4.342,
+      "sawtooth": 73,
+      "corners": 57,
+      "sawtooth_per_km": 16.813,
+      "corners_per_km": 13.128,
+      "chords": 1405,
+      "grid_aligned_frac": 0.3687
+     }
+    }
+   }
+  },
+  "quads": {
+   "model": "v1 vertex quads, secondary",
+   "base": {
+    "map": {
+     "all": {
+      "length_km": 432.454,
+      "sawtooth": 1742,
+      "corners": 2721,
+      "sawtooth_per_km": 4.028,
+      "corners_per_km": 6.292,
+      "chords": 143117,
+      "grid_aligned_frac": 0.4694,
+      "short_lines": 381,
+      "short_len_km": 5.62
+     },
+     "sea": {
+      "length_km": 88.311,
+      "sawtooth": 256,
+      "corners": 388,
+      "sawtooth_per_km": 2.899,
+      "corners_per_km": 4.394,
+      "chords": 29297,
+      "grid_aligned_frac": 0.5472
+     },
+     "pond": {
+      "length_km": 344.143,
+      "sawtooth": 1486,
+      "corners": 2333,
+      "sawtooth_per_km": 4.318,
+      "corners_per_km": 6.779,
+      "chords": 113820,
+      "grid_aligned_frac": 0.4493
+     }
+    },
+    "spb": {
+     "all": {
+      "length_km": 19.275,
+      "sawtooth": 117,
+      "corners": 139,
+      "sawtooth_per_km": 6.07,
+      "corners_per_km": 7.211,
+      "chords": 6363,
+      "grid_aligned_frac": 0.5348,
+      "short_lines": 32,
+      "short_len_km": 0.49
+     },
+     "sea": {
+      "length_km": 14.881,
+      "sawtooth": 61,
+      "corners": 84,
+      "sawtooth_per_km": 4.099,
+      "corners_per_km": 5.645,
+      "chords": 4937,
+      "grid_aligned_frac": 0.5597
+     },
+     "pond": {
+      "length_km": 4.395,
+      "sawtooth": 56,
+      "corners": 55,
+      "sawtooth_per_km": 12.743,
+      "corners_per_km": 12.515,
+      "chords": 1426,
+      "grid_aligned_frac": 0.4488
+     }
+    }
+   },
+   "cand": {
+    "map": {
+     "all": {
+      "length_km": 424.727,
+      "sawtooth": 1392,
+      "corners": 2365,
+      "sawtooth_per_km": 3.277,
+      "corners_per_km": 5.568,
+      "chords": 140544,
+      "grid_aligned_frac": 0.4059,
+      "short_lines": 377,
+      "short_len_km": 5.37
+     },
+     "sea": {
+      "length_km": 86.415,
+      "sawtooth": 204,
+      "corners": 322,
+      "sawtooth_per_km": 2.361,
+      "corners_per_km": 3.726,
+      "chords": 28668,
+      "grid_aligned_frac": 0.4215
+     },
+     "pond": {
+      "length_km": 338.312,
+      "sawtooth": 1188,
+      "corners": 2043,
+      "sawtooth_per_km": 3.512,
+      "corners_per_km": 6.039,
+      "chords": 111876,
+      "grid_aligned_frac": 0.4019
+     }
+    },
+    "spb": {
+     "all": {
+      "length_km": 19.088,
+      "sawtooth": 123,
+      "corners": 133,
+      "sawtooth_per_km": 6.444,
+      "corners_per_km": 6.968,
+      "chords": 6301,
+      "grid_aligned_frac": 0.481,
+      "short_lines": 31,
+      "short_len_km": 0.451
+     },
+     "sea": {
+      "length_km": 14.749,
+      "sawtooth": 65,
+      "corners": 81,
+      "sawtooth_per_km": 4.407,
+      "corners_per_km": 5.492,
+      "chords": 4892,
+      "grid_aligned_frac": 0.4998
+     },
+     "pond": {
+      "length_km": 4.339,
+      "sawtooth": 58,
+      "corners": 52,
+      "sawtooth_per_km": 13.367,
+      "corners_per_km": 11.984,
+      "chords": 1409,
+      "grid_aligned_frac": 0.4159
+     }
+    }
+   }
+  },
+  "quads_all_match_v1": true,
+  "v1": {
+   "base_map": {
+    "length_km": 432.454,
+    "sawtooth": 1742,
+    "corners": 2721,
+    "sawtooth_per_km": 4.028,
+    "corners_per_km": 6.292
+   },
+   "cand_map": {
+    "length_km": 424.727,
+    "sawtooth": 1392,
+    "corners": 2365,
+    "sawtooth_per_km": 3.277,
+    "corners_per_km": 5.568
+   },
+   "base_spb": {
+    "length_km": 19.275,
+    "sawtooth": 117,
+    "corners": 139,
+    "sawtooth_per_km": 6.07,
+    "corners_per_km": 7.211
+   },
+   "cand_spb": {
+    "length_km": 19.088,
+    "sawtooth": 123,
+    "corners": 133,
+    "sawtooth_per_km": 6.444,
+    "corners_per_km": 6.968
+   }
+  }
+ },
+ "summary_base_cand": {
+  "tri_map_all": {
+   "length_km": [
+    402.081,
+    391.023
+   ],
+   "sawtooth_per_km": [
+    12.696,
+    9.9
+   ],
+   "corners_per_km": [
+    8.19,
+    7.294
+   ],
+   "grid_aligned_frac": [
+    0.4169,
+    0.3604
+   ]
+  },
+  "tri_map_sea": {
+   "length_km": [
+    92.126,
+    89.422
+   ],
+   "sawtooth_per_km": [
+    15.197,
+    10.389
+   ],
+   "corners_per_km": [
+    5.731,
+    4.753
+   ],
+   "grid_aligned_frac": [
+    0.467,
+    0.3733
+   ]
+  },
+  "tri_map_pond": {
+   "length_km": [
+    309.955,
+    301.601
+   ],
+   "sawtooth_per_km": [
+    11.953,
+    9.755
+   ],
+   "corners_per_km": [
+    8.921,
+    8.047
+   ],
+   "grid_aligned_frac": [
+    0.4017,
+    0.3566
+   ]
+  },
+  "tri_spb_all": {
+   "length_km": [
+    19.761,
+    19.453
+   ],
+   "sawtooth_per_km": [
+    12.803,
+    10.693
+   ],
+   "corners_per_km": [
+    8.35,
+    7.917
+   ],
+   "grid_aligned_frac": [
+    0.4738,
+    0.43
+   ]
+  },
+  "tri_spb_sea": {
+   "length_km": [
+    15.285,
+    15.111
+   ],
+   "sawtooth_per_km": [
+    11.318,
+    8.934
+   ],
+   "corners_per_km": [
+    6.804,
+    6.419
+   ],
+   "grid_aligned_frac": [
+    0.4941,
+    0.4471
+   ]
+  },
+  "tri_spb_pond": {
+   "length_km": [
+    4.476,
+    4.342
+   ],
+   "sawtooth_per_km": [
+    17.872,
+    16.813
+   ],
+   "corners_per_km": [
+    13.628,
+    13.128
+   ],
+   "grid_aligned_frac": [
+    0.403,
+    0.3687
+   ]
+  },
+  "quads_map_all": {
+   "length_km": [
+    432.454,
+    424.727
+   ],
+   "sawtooth_per_km": [
+    4.028,
+    3.277
+   ],
+   "corners_per_km": [
+    6.292,
+    5.568
+   ],
+   "grid_aligned_frac": [
+    0.4694,
+    0.4059
+   ]
+  },
+  "quads_map_sea": {
+   "length_km": [
+    88.311,
+    86.415
+   ],
+   "sawtooth_per_km": [
+    2.899,
+    2.361
+   ],
+   "corners_per_km": [
+    4.394,
+    3.726
+   ],
+   "grid_aligned_frac": [
+    0.5472,
+    0.4215
+   ]
+  },
+  "quads_map_pond": {
+   "length_km": [
+    344.143,
+    338.312
+   ],
+   "sawtooth_per_km": [
+    4.318,
+    3.512
+   ],
+   "corners_per_km": [
+    6.779,
+    6.039
+   ],
+   "grid_aligned_frac": [
+    0.4493,
+    0.4019
+   ]
+  },
+  "quads_spb_all": {
+   "length_km": [
+    19.275,
+    19.088
+   ],
+   "sawtooth_per_km": [
+    6.07,
+    6.444
+   ],
+   "corners_per_km": [
+    7.211,
+    6.968
+   ],
+   "grid_aligned_frac": [
+    0.5348,
+    0.481
+   ]
+  },
+  "quads_spb_sea": {
+   "length_km": [
+    14.881,
+    14.749
+   ],
+   "sawtooth_per_km": [
+    4.099,
+    4.407
+   ],
+   "corners_per_km": [
+    5.645,
+    5.492
+   ],
+   "grid_aligned_frac": [
+    0.5597,
+    0.4998
+   ]
+  },
+  "quads_spb_pond": {
+   "length_km": [
+    4.395,
+    4.339
+   ],
+   "sawtooth_per_km": [
+    12.743,
+    13.367
+   ],
+   "corners_per_km": [
+    12.515,
+    11.984
+   ],
+   "grid_aligned_frac": [
+    0.4488,
+    0.4159
+   ]
+  }
+ },
+ "runtime_s": {
+  "base_context": 6.4,
+  "candidate": 5.5
+ }
+}

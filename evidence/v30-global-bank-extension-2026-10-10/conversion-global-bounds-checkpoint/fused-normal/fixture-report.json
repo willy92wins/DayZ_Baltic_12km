@@ -1,0 +1,160 @@
+{
+  "status": "PASS_FUSED_NORMAL_FIXTURES",
+  "operator_reference_sha256": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+  "cp_reference_sha256": "d743f5006e0aa6606024a3c3291a74cb52b78f76c1aa5c6dfd95cdd26cdc9d2a",
+  "ev88_reference_sha256": "5b4b8f08e5205e1f9cc90bcc8e82e61dade45bb82bd22da8ee69303aa4475cc4",
+  "cases": [
+    {
+      "case": "edge_1x7",
+      "shape": [
+        1,
+        7
+      ],
+      "variables": 5,
+      "A_rows": 10,
+      "C_rows": 6,
+      "G_rows": 0,
+      "checks": {
+        "fused_vs_csr": 8.881784197001252e-16,
+        "fused_vs_old_matrix_free": 8.881784197001252e-16,
+        "fused_A_vs_csr": 6.661338147750939e-16,
+        "diagonal_vs_csr": 0.0,
+        "normal_adjoint_abs_error": 8.881784197001252e-16,
+        "xx_anchor_mask_count": 5,
+        "xx_anchor_count": 5,
+        "zz_anchor_mask_count": 0,
+        "zz_anchor_count": 0,
+        "xz_anchor_mask_count": 0,
+        "xz_anchor_count": 0
+      }
+    },
+    {
+      "case": "edge_2x4",
+      "shape": [
+        2,
+        4
+      ],
+      "variables": 5,
+      "A_rows": 9,
+      "C_rows": 7,
+      "G_rows": 12,
+      "checks": {
+        "fused_vs_csr": 1.7763568394002505e-15,
+        "fused_vs_old_matrix_free": 8.881784197001252e-16,
+        "fused_A_vs_csr": 0.0,
+        "diagonal_vs_csr": 0.0,
+        "normal_adjoint_abs_error": 7.105427357601002e-15,
+        "xx_anchor_mask_count": 4,
+        "xx_anchor_count": 4,
+        "zz_anchor_mask_count": 0,
+        "zz_anchor_count": 0,
+        "xz_anchor_mask_count": 0,
+        "xz_anchor_count": 0
+      }
+    },
+    {
+      "case": "edge_4x2",
+      "shape": [
+        4,
+        2
+      ],
+      "variables": 5,
+      "A_rows": 9,
+      "C_rows": 7,
+      "G_rows": 12,
+      "checks": {
+        "fused_vs_csr": 5.551115123125783e-16,
+        "fused_vs_old_matrix_free": 0.0,
+        "fused_A_vs_csr": 0.0,
+        "diagonal_vs_csr": 0.0,
+        "normal_adjoint_abs_error": 8.881784197001252e-16,
+        "xx_anchor_mask_count": 0,
+        "xx_anchor_count": 0,
+        "zz_anchor_mask_count": 4,
+        "zz_anchor_count": 4,
+        "xz_anchor_mask_count": 0,
+        "xz_anchor_count": 0
+      }
+    },
+    {
+      "case": "mixed_tie_seam",
+      "shape": [
+        11,
+        132
+      ],
+      "variables": 1161,
+      "A_rows": 4949,
+      "C_rows": 1447,
+      "G_rows": 5240,
+      "checks": {
+        "fused_vs_csr": 2.1316282072803006e-14,
+        "fused_vs_old_matrix_free": 1.4210854715202004e-14,
+        "fused_A_vs_csr": 1.4210854715202004e-14,
+        "diagonal_vs_csr": 0.0,
+        "normal_adjoint_abs_error": 1.1368683772161603e-13,
+        "xx_anchor_mask_count": 1430,
+        "xx_anchor_count": 1430,
+        "zz_anchor_mask_count": 1188,
+        "zz_anchor_count": 1188,
+        "xz_anchor_mask_count": 1170,
+        "xz_anchor_count": 1170
+      }
+    },
+    {
+      "case": "fully_variable",
+      "shape": [
+        8,
+        9
+      ],
+      "variables": 72,
+      "A_rows": 224,
+      "C_rows": 70,
+      "G_rows": 224,
+      "checks": {
+        "fused_vs_csr": 1.4210854715202004e-14,
+        "fused_vs_old_matrix_free": 7.105427357601002e-15,
+        "fused_A_vs_csr": 3.552713678800501e-15,
+        "diagonal_vs_csr": 0.0,
+        "normal_adjoint_abs_error": 8.526512829121202e-14,
+        "xx_anchor_mask_count": 56,
+        "xx_anchor_count": 56,
+        "zz_anchor_mask_count": 54,
+        "zz_anchor_count": 54,
+        "xz_anchor_mask_count": 42,
+        "xz_anchor_count": 42
+      }
+    },
+    {
+      "case": "sparse_mask",
+      "shape": [
+        9,
+        10
+      ],
+      "variables": 54,
+      "A_rows": 240,
+      "C_rows": 87,
+      "G_rows": 288,
+      "checks": {
+        "fused_vs_csr": 1.4210854715202004e-14,
+        "fused_vs_old_matrix_free": 7.105427357601002e-15,
+        "fused_A_vs_csr": 3.552713678800501e-15,
+        "diagonal_vs_csr": 0.0,
+        "normal_adjoint_abs_error": 1.4210854715202004e-14,
+        "xx_anchor_mask_count": 66,
+        "xx_anchor_count": 66,
+        "zz_anchor_mask_count": 64,
+        "zz_anchor_count": 64,
+        "xz_anchor_mask_count": 56,
+        "xz_anchor_count": 56
+      }
+    }
+  ],
+  "negative_cases_rejected": [
+    "wrong_length",
+    "nonfinite_x",
+    "invalid_rho"
+  ],
+  "tolerance_abs_max": 1e-10,
+  "solver_called": false,
+  "global_benchmark_called": false
+}

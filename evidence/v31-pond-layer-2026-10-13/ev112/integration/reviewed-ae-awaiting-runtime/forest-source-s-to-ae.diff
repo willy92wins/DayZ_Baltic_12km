@@ -1,0 +1,469 @@
+--- reviewed-S/forest_v31.py
++++ validated-ae/forest_v31.py
+@@ -1,7 +1,7 @@
+ """EV112 forest placement across the Baltic map; approved sparse open bog design.
+ 
+ Writes stage_bridges_v31 records {model, matrix}: scaled model axes then position.
+-The validation candidate is S, 2026-10-19. Mechanical validation and
++The validation candidate is AE, 2026-10-19 (surface-aware bush redistribution). Mechanical validation and
+ final terrain integration are separate from the user's in-game visual acceptance.
+ 
+ Inputs: --terrain (native 6 m mesh), --footprint (pond plane and envelope),
+@@ -11,16 +11,25 @@
+ --seed and --out. --exclude adds polygons with a margin, for the final dam and
+ causeways. --region filters written sample points, not the surrounding computation.
+ 
+-Forest: world-anchored random fields and candidate points, calibrated globally
+-with a two-pass placement. Texture edges spill into neighbouring open land using
+-Livonia profiles; riparian and road margins use their corresponding measured
+-profiles. Reserve-core density factor is 1.345. A provisional canopy supplies
+-edge tree/bush floors and solitary-form mix. Mandatory object/native-cell gaps
+-enter the provisional canopy. Near these gaps a 60 m base transition, a 5 m
+-inward alignment of the original tree-floor bins, and a 5 m extension of the
+-bush-floor support are generator choices; reference bands remain unchanged.
+-The canopy-relative tree floor is not multiplied by the base gap weight. Model scales, tilts and palettes
+-come from the Livonia reference. Synthetic forest clearings are not added.
++Forest: world-anchored fields and candidates. The original Livonia profiles,
++palette, exclusions, target values and gate bands remain unchanged. Admission
++calibration separates the base and existing10-15/15-20/20-25m tree-floor strata
++inside each original texture class. Nonbush final records are generated first.
++Their accepted tree centres define a global5m canopy with20m disc,60trees/ha,
++components>=0.5ha and holes<100m2, matching the reference physical definition.
++Bush floors and dry normalisation use that accepted canopy. The full original
++exterior tree-floor bush companion is included in the target before normalising.
++Each actual canopy context(interior,edge,open) uses conservative target-mass
++redistribution: raw * G(target/G(raw)), with the same50m Gaussian/100m support.
++The symmetric zero-padded operator preserves each context integral before
++admission; two convolutions need200m support.450m raster padding covers that,
++the150m profile dependency,40m maximum halo,32m candidate block and5m phase.
++No arbitrary coefficient clamp or alternate target is introduced. Bog and
++riparian intensities retain their original rules. Physical/consumer gates,
++not conservation alone, establish acceptance.
++Bush admission is recalibrated against the same final tree centres that are
++written to the output. No local tree regeneration in bush-only passes.
++These are generator corrections; only fresh consumer gates establish acceptance.
+ 
+ Bog: every OSM wetland component uses sparse pine, regardless of old forest-floor
+ paint. Core target is 40 trees/ha [DESIGN], pine/birch 0.92/0.08, low scales from
+@@ -49,7 +58,7 @@
+ This repairs the generator; the original G2/G3/G7 acceptance bands are unchanged.
+ 
+ Tiles: default 500 m, 30 m halo and world-aligned raster padding. --calibration
+-reuses a prior report's global K only when its class schema matches exactly. Partition invariance must be checked against
++reuses a prior report's K and accepted-canopy dependencies only after schema, seed, source, inputs and guide hashes match. Partition invariance must be checked against
+ another tile size using the same seed, region and calibration. Worker count
+ must not change output records. Reports include tool/input hashes and counts.
+ 
+@@ -121,7 +130,7 @@
+ CANOPY_TREES = ([10.0, 15.0, 20.0], [99.3, 207.0, 300.1])   # v4c: Livonia trees/ha by canopy bin (lower bound, m),
+ # conifer + broadleaf of analysis.json edge_profile_canopy (bins 10-15, 15-20, 20-25 m inside the canopy mask)
+ PALETTE_CUT = (5.0, -30.0)                      # dt >= 5: interior palette; -30 <= dt < 5: edge; below: open
+-RASTER_PAD = 150                                # m of raster around a tile (>= halo + 100 m edge profile + margin)
++RASTER_PAD = 450                                # 200m redistribution +150m profile +40m halo +32m candidate block +5m phase <450m
+ FIELD_BLOCK, CAND_BLOCK, BLOCK_OFF = 64, 32, 1 << 20
+ STAND_SIGMA, STAND_SMOOTH = 0.231, 30.0
+ CORE_FACTOR = 1.345
+@@ -169,6 +178,7 @@
+ # field ids (world-anchored random streams)
+ F_STAND, F_BROADLEAF, F_BUSH, F_DEAD, F_REED, F_SPILL, F_MOSS, F_PINE = 2, 3, 4, 5, 6, 7, 8, 9
+ GROUPS = ["reed", "trees", "dead", "bush"]
++TREE_ADMISSION_STRATA = ["base", "canopy_10_15", "canopy_15_20", "canopy_20_25"]
+ NU = 10   # uniforms per candidate: pick, family, model, solitary, accept, scale, tilt, yaw, azimuth, priority
+ 
+ 
+@@ -958,6 +968,14 @@
+     ref = json.loads(Path(a.reference).read_text(encoding="utf-8"))
+     work = Path(a.out) / "work"
+     pal_names = sorted(ref["models"])
++    guide = cfg.get("accepted_canopy")
++    A["accepted_sd"] = np.load(guide["sd"]["path"], mmap_mode="r") if guide else None
++    A["accepted_trees"] = np.load(guide["points"]["path"], mmap_mode="r") if guide else None
++    A["accepted_tree_index"] = cKDTree(A["accepted_trees"]) if guide else None
++    planned = cfg.get("planned_clearings")
++    A["planned_clearings"] = np.load(planned["path"], mmap_mode="r", allow_pickle=False) if planned else None
++    if planned and (A["planned_clearings"].shape != (MAP, MAP) or A["planned_clearings"].dtype != bool):
++        raise ValueError("invalid planned clearing raster")
+     A.update({"a": a, "ref": ref, "H": t["heights"].astype(np.float64), "plane": fp["plane"], "env": fp["env_plane"],
+               "narva": t["narva"], "kit_cells": t["v31_kit"], "bridge_cells": t["v31_bridge_cut"] | t["v31_bridge_fill"],
+               "core": cv["osmres_relation_5351287"] | cv["osmres_relation_5351299"],
+@@ -974,8 +992,11 @@
+ 
+ 
+ def place_tile(job):
+-    """job = (tile index, core rows [ci0, ci1), cols [cj0, cj1), pass, K or None). Returns the core instances and,
+-    for pass 0, the expected and accepted counts per group and class."""
++    """job=(tile, core rows, core cols, pass, K). Pass0 calibrates nonbush;
++    pass2 places final nonbush; pass3 calibrates bushes against those final
++    tree centres; pass4 places final bushes. Sampling streams remain0/1.
++    Calibration passes return expected/accepted counts; placement returns
++    core instances. The bush guide is global, independent of tile size."""
+     ti, ci0, ci1, cj0, cj1, pas, K = job
+     a, ref, H, plane, env = A["a"], A["ref"], A["H"], A["plane"], A["env"]
+     seed, halo = a.seed, a.halo
+@@ -1129,13 +1150,43 @@
+     bl = np.maximum(bl, (1.0 - open_mix) * bl + open_mix * broadc)
+     near_c = (sd1 < CANOPY_SOL_SPAN) & ~rip
+     solt = np.where(near_c, np.where(rs, np.maximum(np.nan_to_num(solt, nan=0.0), solc), solc), solt)
++    # Bush contexts come from the final accepted trees when available. This
++    # raster is global to the run, independent of the placement tile size.
++    bush_sd = sd1
++    if A["accepted_sd"] is not None:
++        gr = np.floor((math.ceil(MAP / 5) * 5 - Z) / 5).astype(int)
++        gc = np.floor(X / 5).astype(int)
++        valid = (gr >= 0) & (gc >= 0) & (gr < A["accepted_sd"].shape[0]) & (gc < A["accepted_sd"].shape[1])
++        bush_sd = np.full(sd1.shape, -1000.0)
++        bush_sd[valid] = A["accepted_sd"][gr[valid], gc[valid]]
+     cb_lo, cb_v = np.array(CANOPY_BUSH[0]), np.array(CANOPY_BUSH[1])
+     # [DESIGN] Use the same one-cell support extension as the tree mantle
+     # near mandatory gaps; retain every measured bush-bin value and onset.
+     cb_span = CANOPY_SOL_SPAN + np.where(gap_distance < gap_span + CANOPY_SOL_SPAN, 5.0, 0.0)
+-    in_cb = (sd1 >= cb_lo[0]) & (sd1 < cb_span) & ~rip & ~bog
+-    cbv = cb_v[np.clip(np.searchsorted(cb_lo, np.floor(sd1 / 5.0) * 5.0, side="right") - 1, 0, len(cb_lo) - 1)]
+-    lam_b = np.where(in_cb, np.maximum(lam_b, cbv / 1e4 * bush_c * adm), lam_b)
++    in_cb = (bush_sd >= cb_lo[0]) & (bush_sd < cb_span) & ~rip & ~bog
++    cbv = cb_v[np.clip(np.searchsorted(cb_lo, np.floor(bush_sd / 5.0) * 5.0, side="right") - 1, 0, len(cb_lo) - 1)]
++    # [DESIGN] The texture profile governs the immediate painted boundary.
++    # Blend the extra canopy mantle continuously on both sides over20m, the
++    # consumer canopy disc radius. Y's25m overlap depleted the actual canopy
++    # edge mix. Keep all measured densities, 25m canopy support and normalisation.
++    bush_floor_distance = np.clip(np.abs(dt) / 20.0, 0.0, 1.0)
++    bush_floor_weight = bush_floor_distance * bush_floor_distance * (3.0 - 2.0 * bush_floor_distance)
++    # The downstream painter creates real texture boundaries around tree-free
++    # patches. The canopy extra must fade at those boundaries too. Preserve
++    # the complete original context target below; use this only to shape its
++    # conservative redistribution, never as a new density target or gate cap.
++    stale_floor = np.zeros_like(lam_b)
++    if pas in (3, 4):
++        if A["planned_clearings"] is None:
++            raise ValueError("bush pass requires planned clearing guide")
++        planned_forest = forest & ~read_global(A["planned_clearings"], wi0, wi1, wj0, wj1, False)
++        planned_dt = np.where(planned_forest, edt(planned_forest)-0.5, 0.5-edt(~planned_forest))
++        painted_u = np.clip(np.minimum(np.abs(dt), np.abs(planned_dt))/20.0, 0.0, 1.0)
++        painted_weight = painted_u*painted_u*(3.0-2.0*painted_u)
++        stale_floor = np.where(in_cb, np.maximum(cbv/1e4*adm-lam_b/np.maximum(bush_c, 1e-12), 0.0)*(bush_floor_weight-painted_weight), 0.0)
++    lam_b = np.where(in_cb, lam_b + np.maximum(cbv / 1e4 * bush_c * adm - lam_b, 0.0) * bush_floor_weight, lam_b)
++    bush_dry = ~bog & ~rip
++    bush_target = lam_b / np.maximum(bush_c, 1e-12)
+     # Canopy mantle: original Livonia bins at the adjusted provisional distance.
+     ct_lo, ct_v = np.array(CANOPY_TREES[0]), np.array(CANOPY_TREES[1])
+     # The traced actual canopy inner mantle is one 5m cell inward from the
+@@ -1144,7 +1195,45 @@
+     ct_sd = sd1 - np.where(gap_distance < gap_span + CANOPY_SOL_SPAN, 5.0, 0.0)
+     in_ct = (ct_sd >= ct_lo[0]) & (ct_sd < CANOPY_SOL_SPAN) & ~rip & ~bog & (moss_distance > BOG_MOSS_GAP_M + 0.75) & ~object_gap
+     ctv = ct_v[np.clip(np.searchsorted(ct_lo, np.floor(ct_sd / 5.0) * 5.0, side="right") - 1, 0, len(ct_lo) - 1)]
++    tree_before_canopy_floor = lam_t
+     lam_t = np.where(in_ct, np.maximum(lam_t, ctv / 1e4 * stand * coref * adm), lam_t)
++    # [DESIGN] The extra exterior tree mantle needs its reference bush
++    # companion. Use the bush/tree ratio from the same Livonia canopy bin,
++    # including the existing5m near-gap distance correction. This term
++    # accompanies the added tree intensity without changing that intensity.
++    companion_bush = cb_v[np.clip(np.searchsorted(cb_lo, np.floor(ct_sd / 5.0) * 5.0, side="right") - 1, 0, len(cb_lo) - 1)]
++    exterior_u = np.clip(-dt / 20.0, 0.0, 1.0)
++    exterior_weight = exterior_u * exterior_u * (3.0 - 2.0 * exterior_u)
++    extra_tree_intensity = np.maximum(lam_t - tree_before_canopy_floor, 0.0)
++    companion_intensity = extra_tree_intensity / np.maximum(stand * coref, 1e-12) * companion_bush / np.maximum(ctv, 1e-12)
++    # Include the complete companion target in the same normalisation.
++    bush_target = bush_target + np.where(bush_dry, companion_intensity * exterior_weight, 0.0)
++    shaped_target = bush_target-stale_floor
++    if (shaped_target < -1e-12).any():
++        raise ValueError("clearing redistribution removed base bush intensity")
++    raw_bush = np.maximum(shaped_target, 0.0) * bush_c
++    bush_context = np.where(bush_sd >= 25.0, 0, np.where(bush_sd >= -10.0, 1, 2))
++    bush_correction = np.ones_like(lam_b)
++    for context in (0, 1, 2):
++        mask = bush_dry & (bush_context == context)
++        target = bush_target * mask
++        raw = raw_bush * mask
++        # Conservative redistribution with the symmetric Gaussian operator G:
++        # lambda = raw * G(target / G(raw)). For a finite zero-padded window,
++        # sum(lambda) = sum(target), since G is its own transpose. The former
++        # raw * G(target)/G(raw) lost target mass on fragmented contexts.
++        denominator = ndimage.gaussian_filter(raw, 50.0, mode="constant", truncate=2.0)
++        if np.any((target > 0) & (denominator <= 0)):
++            raise ValueError("positive bush target has no redistribution support")
++        allocation = np.divide(target, denominator, out=np.zeros_like(target), where=denominator > 0)
++        factor = ndimage.gaussian_filter(allocation, 50.0, mode="constant", truncate=2.0)
++        balanced = raw * factor
++        target_mass = float(target.sum())
++        if not np.isfinite(balanced).all() or abs(float(balanced.sum())-target_mass) > max(1.0,target_mass)*1e-12:
++            raise ValueError("bush target mass was not conserved")
++        bush_correction = np.where(mask, factor, bush_correction)
++    lam_b = np.where(bush_dry, raw_bush * bush_correction, lam_b)
++    tree_admission = np.where(in_ct, 1 + np.clip(np.searchsorted(ct_lo, ct_sd, side="right") - 1, 0, 2), 0)
+     ref_models = ref["models"]
+     pal = dict(ref["palette"], bog=BOG_PALETTE)
+     lim, hulls = A["limits"], A["hulls"]
+@@ -1203,13 +1292,32 @@
+         return np.array([ref_models[nm]["scale_q"][-1] for nm in names])
+ 
+     trees, bushes, deads, reeds = Grid(3.0), Grid(3.0), Grid(3.0), Grid(3.0)
++    # Bush-only passes use the same globally accepted tree centres as the
++    # written forest. Include every possible transformed bush centre plus
++    # the 0.52m tree clearance; no new tree decisions are made here.
++    if pas in (3, 4):
++        if A["accepted_tree_index"] is None:
++            raise ValueError("bush pass requires accepted tree guide")
++        bc_max = max(np.linalg.norm(m["bc"]) * m["scale_q"][-1]
++                     for m in ref_models.values() if m["family"] == "bush")
++        centre = ((rj0+rj1)/2, MAP-(ri0+ri1)/2)
++        radius = math.hypot((rj1-rj0)/2, (ri1-ri0)/2) + bc_max + 0.52
++        ids = A["accepted_tree_index"].query_ball_point(centre, radius)
++        for tx, tz in A["accepted_trees"][ids]:
++            trees.add(tx, tz, 0)
+     out = {k: [] for k in ("x", "z", "names", "fam", "cls", "M", "T", "s", "dt", "bd", "pick")}
+     stats = {}
+     cls_f, wb_f, pctx_f, solt_f, bl_f, core_f = cls.ravel(), wb.ravel(), pctx.ravel(), solt.ravel(), bl.ravel(), corepx.ravel()
+     for gid, group in enumerate(GROUPS):
++        if (pas == 2 and group == "bush") or (pas in (3, 4) and group != "bush"):
++            continue
+         lam = {"trees": lam_t, "dead": lam_d, "bush": lam_b, "reed": lam_r}[group]
+-        lamK = lam * (np.asarray(K[group], float)[cls] if K is not None else 1.0)
+-        x, z, flat, U = sample_world(seed, gid, pas, lamK, wi0, wj0, ri0, ri1, rj0, rj1)
++        if group == "trees" and K is not None:
++            lamK = lam * np.asarray(K["tree_admission"], float)[cls, tree_admission]
++        else:
++            lamK = lam * (np.asarray(K[group], float)[cls] if K is not None and pas != 3 else 1.0)
++        sample_pass = 0 if pas in (0, 3) else 1
++        x, z, flat, U = sample_world(seed, gid, sample_pass, lamK, wi0, wj0, ri0, ri1, rj0, rj1)
+         pick = U[:, 0] < wb_f[flat]                                   # this instance follows the bog design
+         if group == "trees":
+             fam_idx = np.where(U[:, 1] < np.where(pick, BOG_BROADLEAF, bl_f[flat]), 1, 0)
+@@ -1247,14 +1355,19 @@
+         else:
+             keep = accept_simple(T[:, 0], T[:, 2], U[:, 4], reeds, REED_REED, trees, REED_TREE, REED_SOFT)
+         inc = keep & core_f[flat]
+-        if pas == 0:
++        if pas in (0, 3):
+             stats[group] = {"exp": np.bincount(cls_f[core_f], weights=lam.ravel()[core_f], minlength=len(CLASSES)).tolist(),
+                             "got": np.bincount(cls_f[flat[inc]], minlength=len(CLASSES)).tolist()}
++            if group == "trees":
++                detail = (cls * len(TREE_ADMISSION_STRATA) + tree_admission).ravel()
++                stats["tree_admission"] = {
++                    "exp": np.bincount(detail[core_f], weights=lam.ravel()[core_f], minlength=len(CLASSES)*4).tolist(),
++                    "got": np.bincount(detail[flat[inc]], minlength=len(CLASSES)*4).tolist()}
+             continue
+         for k_, v_ in (("x", x), ("z", z), ("names", names), ("fam", fam_idx), ("cls", cls_f[flat]), ("M", M), ("T", T), ("s", s),
+                        ("dt", dt.ravel()[flat]), ("bd", bd.ravel()[flat]), ("pick", pick)):
+             out[k_].append(v_[inc])
+-    if pas == 0:
++    if pas in (0, 3):
+         return ti, None, stats
+     o = {k: np.concatenate(v) for k, v in out.items()}
+     o["names_idx"] = np.array([A["pal_names"].index(nm) for nm in o["names"]], np.uint16)
+@@ -1274,6 +1387,121 @@
+             if ci0 < ci1 and cj0 < cj1:
+                 out.append((len(out), ci0, ci1, cj0, cj1))
+     return out
++
++
++def write_accepted_canopy(results, work):
++    """Same physical canopy definition as Livonia:5m,20m disc,60/ha,
++    components>=0.5ha, holes<100m2. Global north-up raster, x/z phase0.
++    Source centres are exactly the nonbush records later written to output.
++    """
++    points = np.concatenate([r[1]["T"][r[1]["fam"] <= 1][:, (0, 2)] for r in results])
++    n = math.ceil(MAP / 5)
++    # Lower-inclusive world cells first, then reverse to north-up.
++    # floor((north-z)/5) puts exact5m boundaries into the adjacent row.
++    row = n - 1 - np.floor(points[:, 1]/5).astype(int)
++    col = np.floor(points[:, 0]/5).astype(int)
++    ok = (row >= 0) & (col >= 0) & (row < n) & (col < n)
++    count = np.bincount(row[ok]*n+col[ok], minlength=n*n).reshape(n,n).astype(float)
++    yy, xx = np.mgrid[-4:5,-4:5]
++    disc = ((xx*5)**2+(yy*5)**2 <= 400).astype(float)
++    fm = ndimage.convolve(count, disc, mode="constant")/(disc.sum()*25/1e4) >= 60
++    lab, num = ndimage.label(fm)
++    sizes = np.bincount(lab.ravel())*25
++    keep = sizes >= 5000
++    keep[0] = False
++    fm = keep[lab]
++    holes = ndimage.binary_fill_holes(fm) & ~fm
++    lab, num = ndimage.label(holes)
++    sizes = np.bincount(lab.ravel())*25
++    small = sizes < 100
++    small[0] = False
++    fm |= small[lab]
++    sd = np.where(fm, ndimage.distance_transform_edt(fm), -ndimage.distance_transform_edt(~fm))*5 if fm.any() and not fm.all() else np.full(fm.shape,1000. if fm.all() else -1000.)
++    paths = {"points": work/"accepted-tree-centres.npy", "sd": work/"accepted-canopy-sd5m.npy"}
++    np.save(paths["points"], points)
++    np.save(paths["sd"], sd.astype(np.float32))
++    return {k:{"path":str(p),"sha256":sha(p)} for k,p in paths.items()}
++
++
++def write_planned_clearings(guide, work):
++    """Predict the unchanged independent painter400 from final accepted trees.
++    Native1m,10m tree distance,8-connected400m2 patches,3m blend and complete
++    10.75m moss fringe. Later acceptance compares this against the separate
++    exporter and actual final surface. A regional run predicts its own trees;
++    partition runs reuse the full-map guide through validated calibration.
++    """
++    points_path = Path(guide["points"]["path"])
++    if sha(points_path) != guide["points"]["sha256"]:
++        raise ValueError("changed tree guide for planned clearings")
++    points = np.load(points_path, allow_pickle=False)
++    if points.ndim != 2 or points.shape[1] != 2 or not len(points) or not np.isfinite(points).all():
++        raise ValueError("invalid tree guide for planned clearings")
++    paths = {name:work/name for name in ("slot1m.npy", "wsea1m.npy", "moss1m.npy")}
++    slot = np.load(paths["slot1m.npy"], mmap_mode="r", allow_pickle=False)
++    wet = np.load(paths["wsea1m.npy"], mmap_mode="r", allow_pickle=False)
++    moss = np.load(paths["moss1m.npy"], mmap_mode="r", allow_pickle=False)
++    if slot.shape != (MAP,MAP) or wet.shape != slot.shape or moss.shape != slot.shape or moss.dtype != bool:
++        raise ValueError("invalid rasters for planned clearings")
++    tree = cKDTree(points);raw = np.zeros(slot.shape,bool)
++    for i0 in range(0,MAP,128):
++        forest = (slot[i0:i0+128] == 1) & ((wet[i0:i0+128] & 1) == 0)
++        ii,jj = np.nonzero(forest)
++        q = np.c_[jj+0.5,MAP-i0-ii-0.5]
++        dist = tree.query(q,distance_upper_bound=10.0)[0]
++        raw[i0+ii,jj] = dist >= 10.0
++    labels,_ = ndimage.label(raw,structure=np.ones((3,3),bool))
++    sizes = np.bincount(labels.ravel());keep = sizes >= 400;keep[0] = False
++    mask = keep[labels];del labels,raw
++    mask = ndimage.binary_dilation(mask,iterations=3) & (slot == 1) & ((wet & 1) == 0)
++    gap = (ndimage.distance_transform_edt(~moss) <= 10.75) if moss.any() else np.zeros(mask.shape,bool)
++    mask |= gap & (slot == 1) & ((wet & 1) == 0)
++    output = work/"planned-clearings.npy"
++    if output.exists():
++        raise ValueError("planned clearing output already exists")
++    np.save(output,mask)
++    return dict(path=str(output),sha256=sha(output),points_sha256=guide["points"]["sha256"],
++                input_sha256={k:sha(p) for k,p in paths.items()},minimum_patch_m2=400,
++                tree_free_distance_m=10.0,blend_margin_m=3.0,moss_margin_m=10.75)
++
++
++def calibration_ratio(exp, got):
++    exp, got = np.asarray(exp,float), np.asarray(got,float)
++    ratio = np.divide(exp,got,out=np.ones_like(exp),where=got>=5)
++    return np.round(np.clip(ratio,1.,3.),4).tolist()
++
++
++def validate_calibration(report, a):
++    if report.get("classes") != CLASSES or report.get("tree_admission_strata") != TREE_ADMISSION_STRATA:
++        raise ValueError("calibration class/stratum schema mismatch")
++    if report.get("seed") != a.seed or report.get("tool_sha256") != sha(__file__):
++        raise ValueError("calibration seed/source mismatch")
++    for k,v in report["inputs"].items():
++        if sha(getattr(a,k.replace("-","_"))) != v["sha256"]:
++            raise ValueError("calibration input mismatch: "+k)
++    expected_exclude = report.get("exclude")
++    if bool(a.exclude) != bool(expected_exclude) or (a.exclude and sha(a.exclude) != expected_exclude["sha256"]):
++        raise ValueError("calibration exclusions mismatch")
++    if a.layer_dir != report["layer_dirs"]:
++        raise ValueError("calibration layer directories mismatch")
++    K = report["calibration_K"]
++    for group in GROUPS+["tree_admission"]:
++        values = np.asarray(K[group],float)
++        shape = (len(CLASSES),4) if group == "tree_admission" else (len(CLASSES),)
++        if values.shape != shape or not np.isfinite(values).all() or (values<1).any() or (values>3).any():
++            raise ValueError("invalid calibration coefficients: "+group)
++    guide = report["accepted_canopy"]
++    for k in ("points","sd"):
++        if sha(guide[k]["path"]) != guide[k]["sha256"]:
++            raise ValueError("changed accepted-canopy dependency: "+k)
++    planned = report["planned_clearings"]
++    if sha(planned["path"]) != planned["sha256"] or planned["points_sha256"] != guide["points"]["sha256"]:
++        raise ValueError("changed planned clearing dependency")
++    if (planned["minimum_patch_m2"],planned["tree_free_distance_m"],planned["blend_margin_m"],planned["moss_margin_m"]) != (400,10.0,3.0,10.75):
++        raise ValueError("planned clearing contract mismatch")
++    for name,digest in planned["input_sha256"].items():
++        if report["work_sha256"].get(name) != digest:
++            raise ValueError("planned clearing raster binding mismatch")
++    return K, guide
+ 
+ 
+ def main():
+@@ -1293,7 +1521,7 @@
+     if out.exists():
+         raise SystemExit(f"{out} exists")
+     region = [int(v) for v in a.region.split(",")]
+-    if a.tile % 5 or a.halo < 0 or a.halo > RASTER_PAD - 110 or not (0 <= region[0] < region[2] <= MAP and 0 <= region[1] < region[3] <= MAP):
++    if a.tile % 5 or a.halo < 0 or a.halo > 40 or not (0 <= region[0] < region[2] <= MAP and 0 <= region[1] < region[3] <= MAP):
+         raise SystemExit("tile must be a multiple of 5, halo in 0..40, region inside the map")
+     work = out / "work"
+     work.mkdir(parents=True)
+@@ -1316,28 +1544,45 @@
+             jobs.append((ti, ci0, ci1, cj0, cj1))
+     del land
+     cfgd = vars(a).copy()
+-    with ProcessPoolExecutor(a.workers, initializer=init_worker, initargs=(cfgd,)) as ex:
+-        if a.calibration:
+-            calibration_report = json.loads(Path(a.calibration).read_text(encoding="utf-8"))
+-            if calibration_report.get("classes") != CLASSES:
+-                raise ValueError("calibration classes do not match this generator")
+-            K = calibration_report["calibration_K"]
+-            if any(len(K[g]) != len(CLASSES) or not np.isfinite(K[g]).all() for g in GROUPS):
+-                raise ValueError("invalid calibration coefficients")
+-            calib = {"source": str(a.calibration), "sha256": sha(a.calibration)}
+-        else:
+-            agg = {g: {"exp": np.zeros(len(CLASSES)), "got": np.zeros(len(CLASSES))} for g in GROUPS}
+-            for _, _, st in ex.map(place_tile, [j + (0, None) for j in jobs], chunksize=1):
+-                for g in GROUPS:
+-                    agg[g]["exp"] += st[g]["exp"]
+-                    agg[g]["got"] += st[g]["got"]
+-            K = {g: [round(float(np.clip(agg[g]["exp"][c] / agg[g]["got"][c], 1.0, 3.0)), 4) if agg[g]["got"][c] >= 5 else 1.0
+-                     for c in range(len(CLASSES))] for g in GROUPS}
+-            calib = {"source": "pass 0 over every tile", "expected": {g: np.round(agg[g]["exp"], 3).tolist() for g in GROUPS},
+-                     "accepted": {g: agg[g]["got"].astype(int).tolist() for g in GROUPS}}
+-            log(f"pass 0 done in {time.time() - t0:.0f} s; K {json.dumps(K)}")
+-        res = list(ex.map(place_tile, [j + (1, K) for j in jobs], chunksize=1))
+-    log(f"pass 1 done in {time.time() - t0:.0f} s")
++    if a.calibration:
++        calibration_report = json.loads(Path(a.calibration).read_text(encoding="utf-8"))
++        K, guide = validate_calibration(calibration_report, a)
++        calib = {"source":str(a.calibration), "sha256":sha(a.calibration)}
++    else:
++        sizes = {g:len(CLASSES) for g in GROUPS}
++        sizes["tree_admission"] = len(CLASSES)*4
++        agg = {g:{"exp":np.zeros(n),"got":np.zeros(n)} for g,n in sizes.items()}
++        with ProcessPoolExecutor(a.workers,initializer=init_worker,initargs=(cfgd,)) as ex:
++            for _,_,st in ex.map(place_tile,[j+(0,None) for j in jobs],chunksize=1):
++                for g in agg:
++                    for key in ("exp","got"):agg[g][key] += st[g][key]
++        K = {g:calibration_ratio(v["exp"],v["got"]) for g,v in agg.items()}
++        K["tree_admission"] = np.asarray(K["tree_admission"]).reshape(len(CLASSES),4).tolist()
++        calib = {"source":"nonbush pass0 plus bush pass0 against accepted final trees",
++                 "expected":{g:v["exp"].round(3).tolist() for g,v in agg.items()},
++                 "accepted":{g:v["got"].astype(int).tolist() for g,v in agg.items()}}
++        log(f"nonbush calibration done in {time.time()-t0:.0f} s")
++    with ProcessPoolExecutor(a.workers,initializer=init_worker,initargs=(cfgd,)) as ex:
++        nonbush = list(ex.map(place_tile,[j+(2,K) for j in jobs],chunksize=1))
++    log(f"final nonbush placement done in {time.time()-t0:.0f} s")
++    if not a.calibration:
++        guide = write_accepted_canopy(nonbush, work)
++    cfgd["accepted_canopy"] = guide
++    planned = calibration_report["planned_clearings"] if a.calibration else write_planned_clearings(guide, work)
++    cfgd["planned_clearings"] = planned
++    log(f"planned clearing guide ready in {time.time()-t0:.0f} s")
++    with ProcessPoolExecutor(a.workers,initializer=init_worker,initargs=(cfgd,)) as ex:
++        if not a.calibration:
++            exp, got = np.zeros(len(CLASSES)), np.zeros(len(CLASSES))
++            for _,_,st in ex.map(place_tile,[j+(3,None) for j in jobs],chunksize=1):
++                exp += st["bush"]["exp"];got += st["bush"]["got"]
++            K["bush"] = calibration_ratio(exp,got)
++            calib["bush_final_tree_admission"] = {"expected":exp.round(3).tolist(),"accepted":got.astype(int).tolist()}
++            log(f"bush calibration done in {time.time()-t0:.0f} s")
++        bush = list(ex.map(place_tile,[j+(4,K) for j in jobs],chunksize=1))
++    by_tile = {r[0]:r[1] for r in bush}
++    res = [(ti,{k:np.concatenate([o[k],by_tile[ti][k]]) for k in o},None) for ti,o,_ in nonbush]
++    log(f"final bush placement done in {time.time()-t0:.0f} s")
+     res.sort(key=lambda r: r[0])
+     o = {k: np.concatenate([r[1][k] for r in res]) for k in res[0][1]}
+     tile_of = np.concatenate([np.full(len(r[1]["x"]), r[0], np.uint32) for r in res])
+@@ -1378,7 +1623,7 @@
+               "work_sha256": {p.name: sha(p) for p in sorted(work.glob("*.npy"))},
+               "exclusion_objects": {"bridge": sum(1 for x_ in hulls if x_["kind"] == "bridge"), "kit": sum(1 for x_ in hulls if x_["kind"] == "kit")},
+               "palette_models": pal_names, "classes": CLASSES, "counts": counts, "counts_by_class": by_cls,
+-              "calibration_K": K, "calibration": calib,
++              "calibration_K": K, "calibration": calib, "tree_admission_strata": TREE_ADMISSION_STRATA, "accepted_canopy": guide, "planned_clearings": planned,
+               "bog_components": comps,
+               "design": {"texture_classes": {c: dict(zip(("trees_ha", "bush_ha", "dead_ha", "reed_ha", "broadleaf_share", "solitary_target"),
+                                                          [None if isinstance(x_, float) and math.isnan(x_) else x_ for x_ in v])) for c, v in DESIGN.items()},
+@@ -1386,7 +1631,7 @@
+                          "edge_profile": {k: [round(float(x_), 4) for x_ in v] for k, v in ep.items()},
+                          "road_span_m": ROAD_SPAN, "spill_sigma": [list(SPILL_SIGMA[0]), list(SPILL_SIGMA[1])], "spill_smooth_m": SPILL_SMOOTH,
+                          "edge_span_m": [EDGE_IN_M, -EDGE_OUT_M], "palette_cut_m": list(PALETTE_CUT), "canopy_solitary_span_m": CANOPY_SOL_SPAN, "canopy_trees_floor": [list(CANOPY_TREES[0]), list(CANOPY_TREES[1])],
+-                         "mandatory_gap_transition": {"span_m": 60.0, "curve": "smoothstep", "canopy_tree_floor_weighted": False, "canopy_tree_distance_shift_m": 5.0, "canopy_bush_extra_support_m": 5.0, "extra_support_max_gap_distance_m": 85.0, "bog_and_riparian_weight": 1.0, "producer_vs_measurement_grid_phase_m": 0.0},
++                         "mandatory_gap_transition": {"span_m": 60.0, "curve": "smoothstep", "canopy_tree_floor_weighted": False, "canopy_tree_distance_shift_m": 5.0, "canopy_bush_extra_support_m": 5.0, "canopy_bush_floor_blend_m": 20.0, "canopy_bush_floor_weight": "smoothstep(abs(texture_distance)/20)", "dry_bush_cluster_local_sigma_m": 50.0, "dry_bush_cluster_local_support_m": 100.0, "dry_bush_cluster_local_bounds": None, "dry_bush_conservative_operator": "raw*G(target/G(raw)); constant-zero symmetric Gaussian", "dry_bush_combined_support_m": 200.0, "dry_bush_normalisation_profile_weighted": True, "dry_bush_stratum_shrinkage": None, "dry_bush_context": "accepted final trees: interior/edge/open", "planned_texture_floor": "same20m fade at painter400 boundary shapes raw intensity; original context target integral retained", "tree_admission": TREE_ADMISSION_STRATA, "exterior_tree_bush_companion": "same_corrected_canopy_bin_reference_ratio", "exterior_companion_blend_m": 20.0, "raster_pad_m": 450, "extra_support_max_gap_distance_m": 85.0, "bog_and_riparian_weight": 1.0, "producer_vs_measurement_grid_phase_m": 0.0},
+                          "road_geometry": {"band_m": [FOOT_BURIED, FOOT_H], "min_axis_distance_m": ROAD_HALF + SAFETY},
+                          "bog": {"transition_m": BOG_TRANS_M, "open_trees_ha": BOG_TREES, "wooded_trees_ha": WOODED_BOG_TREES,
+                                  "bush_ha": BOG_BUSH, "dead_ha": BOG_DEAD, "broadleaf_share": BOG_BROADLEAF, "moss_core_share": BOG_MOSS_CORE,

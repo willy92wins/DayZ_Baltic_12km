@@ -1,0 +1,11 @@
+# EV37 — continuidad de dos arroyos sobre la malla nativa
+
+EV36 recorre 101.602 muestras en77 perfiles construidos. Dos interrupciones sin reserva/plataforma en stream_0094 y stream_0264 tienen agua fisica ya definida, pero el terreno llega a superar la lamina. stream_0241 se mantiene aparte: esta junto al corte de una reserva y la diferencia supera2m. No modificar cruces protegidos.
+
+Alcance: reparar esos dos pasos dentro del poligono de arroyo mas la tolerancia de una celda6m, con caminos por aristas REALES de la malla NW-SE (no vecindad8 que permite la diagonal inexistente). Seleccionar apoyos mojados a ambos lados, minimizar excavacion y desvio del eje. Suelo>=1m, recorte/plataformas/reserva/Narva/playa/corredores exactos, ninguna otra masa; descenso<=1,5m, sin elevaciones ni cambios de nivel fisico/visible. Minimo0,15m por debajo de todas las laminas incidentes en el camino, dando margen al gate corriente0,10m de verify_terrain_v30.py34. Una propuesta determinista para ambas cajas, sin barrido.
+
+La peticion de corregir gaps exige permitir que la tierra del propio arroyo pase a ser agua en el enlace: cambia la vieja restriccion de signo fijo que impedía unirlo. Solo vertices del corredor de diseno, con recibo exacto. Cualquier cambio de clase se acompaña de nivel/flag coherentes; no regenerar P/F desde metadatos. El consumidor debe probar que todas las nuevas conexiones son internas al mismo arroyo autorizado, y que ninguna isla/cuerpo ajeno desaparece. No ocultar esos enlaces esperados como regresiones ni permitir conexiones fuera de las dos cajas.
+
+Verde antes de desplegar: trazado continuo con profundidad>=0,10 a muestreo0,25m y en todos los cruces de aristas; pendiente de toda cara tocada<=max(anterior,35grados); limites/protecciones exactos; contactos nuevos localizados y atribuidos; censo77perfiles sin nueva interrupcion. Cobertura de P3D compilados sobre las nuevas caras mojadas, cero hueco físico/visible; nuevas juntas solo si falta cobertura. Despues WRP/hash, alturas/agua nativas y consumidores afectados. No promocion automatica por exito del autor. Un FAIL conservaEV28.
+
+Esta unidad no resuelve los cruces de carretera/plataforma ni el residual grafico; el resto del objetivo sigue abierto.

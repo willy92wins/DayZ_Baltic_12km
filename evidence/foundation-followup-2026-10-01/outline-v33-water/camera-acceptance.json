@@ -1,0 +1,46 @@
+{
+  "camera": {
+    "status": "PASS_CAMERA_TELEMETRY_AND_RESTORE",
+    "issues": [],
+    "poses": 1,
+    "restoration": {
+      "position": true,
+      "orientation": true,
+      "nearplane": true,
+      "fov": true,
+      "active": true,
+      "frozen": true,
+      "view": true,
+      "time": true
+    },
+    "limit": "Actual images require separate visual review; the view distance getter is not exposed and requested value is not an observed effective range."
+  },
+  "metrics": {
+    "status": "COMPLETE_CLIENT_NATIVE_COUNTER_MEASUREMENT",
+    "phases": [
+      {
+        "phase": 0,
+        "name": "Frozen shoreline diagnostic",
+        "samples": 55,
+        "avg64_median": 71.5884,
+        "avg64_range": [
+          56.7879,
+          164.524
+        ],
+        "native_min64_min": 25.641,
+        "native_max64_max": 333.333,
+        "global10_median": null
+      }
+    ],
+    "limits": [
+      "Counters reported by the client APIs; not headless server throughput.",
+      "One client, empty terrain, local machine and diagnostic aerial views; not multiplayer capacity.",
+      "Frozen capture interval (-2 to +3s) omitted before summarizing. No performance threshold was predeclared."
+    ]
+  },
+  "sha256": {
+    "camera-reference.json": "df7709336563d9072d9cba8e791955f44155e67a79d56408e16eaae6d54854d3",
+    "camera.log": "a1a033e8e28697ffba73bc7ff5b743e4bfd70e9d3eac2eeabc852748778f6ff3",
+    "client-metrics.log": "052ef9d71f20ea93afbecefbc64aff3a48eaefeba4a19753ce02dda1c289504f"
+  }
+}

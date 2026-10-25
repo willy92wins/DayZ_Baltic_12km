@@ -1,0 +1,104 @@
+{
+  "status": "GLOBAL_RISK_INVENTORY_NOT_RENDER_CERTIFICATION",
+  "terrain_sha256": "9c3011b8af5279e807630d4e91512d2e95a434463d3523a5b4074e70bc7cc8f6",
+  "grid": {
+    "vertices": 4194304,
+    "native_faces": 8380418,
+    "cell_size_m": 6
+  },
+  "thresholds": {
+    "measured_sea_max_m": 0.85,
+    "empirical_screening_m": 1.8
+  },
+  "counts": {
+    "dry_vertices": 3195297,
+    "low_vertices": 30668,
+    "native_subsea_vertices": 360,
+    "low_reserve": 858,
+    "low_platform": 3290,
+    "low_beach": 3538,
+    "low_water_face_support": 12492,
+    "low_beyond_18m_water": 8256,
+    "coarse_only": 9038
+  },
+  "components": 3890,
+  "risk_tiles": 3104,
+  "coarse_models": [
+    {
+      "spacing_m": 12,
+      "native_dry_points_below_measured_sea": 51,
+      "maximum_drop_m": 5.361292600631714
+    },
+    {
+      "spacing_m": 24,
+      "native_dry_points_below_measured_sea": 434,
+      "maximum_drop_m": 7.6451873779296875
+    },
+    {
+      "spacing_m": 48,
+      "native_dry_points_below_measured_sea": 2467,
+      "maximum_drop_m": 13.066564559936523
+    },
+    {
+      "spacing_m": 96,
+      "native_dry_points_below_measured_sea": 8100,
+      "maximum_drop_m": 30.838968753814697
+    }
+  ],
+  "known_locations": [
+    {
+      "name": "land_reflection_e",
+      "x": 2179.5378579574535,
+      "z": 7086.08340795272,
+      "source_projection": "approximate FOV, not exact native registration",
+      "current_ground": 1.6054551112629838,
+      "lowland_risk_near_18m": true,
+      "coarse_risk_near_18m": true,
+      "nearest_water_m": 16.97056274847714
+    },
+    {
+      "name": "land_dark_w",
+      "x": 2281.83524086905,
+      "z": 7203.550967902245,
+      "source_projection": "approximate FOV, not exact native registration",
+      "current_ground": 1.7999999523162842,
+      "lowland_risk_near_18m": false,
+      "coarse_risk_near_18m": true,
+      "nearest_water_m": 48.0
+    },
+    {
+      "name": "land_bright_w",
+      "x": 2534.586799995839,
+      "z": 7037.539623450302,
+      "source_projection": "approximate FOV, not exact native registration",
+      "current_ground": 1.7999999523162842,
+      "lowland_risk_near_18m": false,
+      "coarse_risk_near_18m": false,
+      "nearest_water_m": 96.0
+    },
+    {
+      "name": "land_reflection_n",
+      "x": 2210.0612841806774,
+      "z": 6866.549706202653,
+      "source_projection": "approximate FOV, not exact native registration",
+      "current_ground": 1.987971777060775,
+      "lowland_risk_near_18m": true,
+      "coarse_risk_near_18m": false,
+      "nearest_water_m": 38.41874542459709
+    }
+  ],
+  "analytical_controls": {
+    "affine_planes_exact": true,
+    "high_dry_negative": true,
+    "low_dry_positive": true,
+    "physical_subsea_positive": true,
+    "intentional_water_excluded": true,
+    "coarse_depression_analytic": true
+  },
+  "limits": [
+    "Empirical threshold is a screening bound, not native visual sea height.",
+    "Coarse surfaces are hypotheses, not decoded renderer LODs.",
+    "Full native vertex coverage; subcell physical pond coverage and global shader behavior remain separate.",
+    "New user residual must be located and tested; do not close 016 from this inventory."
+  ]
+}

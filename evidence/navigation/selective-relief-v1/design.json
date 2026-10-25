@@ -1,0 +1,114 @@
+{
+  "status": "DESIGN_ONLY_SELECTIVE_Z_AUTHORIZED_NUMERIC_TARGETS_PROPOSED",
+  "date": "2026-09-30",
+  "user_decision": "podemos exagerar la altura de alguna zona en concreto olvidandonos de la escala en pos de jugabilidad",
+  "source_sha256": {
+    "relief3x": "ecb2bd99a1751362bfcab0c150f10d18649bf3a50b24ea49a3eb0ffdb48bdf1f",
+    "ocean": "df25b7ed05a32ab93256c08b620f598057d2fb3c73cd5d6ed6cb6a32298d9ba7",
+    "inland_water": "4271645c83df1b4c224ec6de1784b5b34de15dfd63da9a1381cc5f09e3d9f5d0",
+    "landcover": "2305690ebdfa08210a02d0ddbde282e92b7297e08ff18dd962c78e82b1b987b3",
+    "georef": "edc36a718abd1521f10331c2ecd7226a3ba5b96bab934ce34aed0c8327c5e407",
+    "approval": "86322c533923dae3a9d553715799c7aab20ab000a476cff4febb0932f90a22a0",
+    "coordinate_contract": "2cd33c54138c85a7bb49e40cc84f39d8b419b22cdf1d9d36b12b73d34e9b104a"
+  },
+  "source_paths": {
+    "relief3x": "source\\baltic_relief3x_2048_6m.asc",
+    "ocean": "derived\\gis\\ocean_mask_game.tif",
+    "inland_water": "derived\\gis\\inland_water_mask_game.tif",
+    "landcover": "derived\\gis\\worldcover_2021_3857.tif",
+    "georef": "evidence\\georef-v0.json",
+    "approval": "evidence\\aprobacion.json",
+    "coordinate_contract": "evidence\\coordinate-contract.json"
+  },
+  "zones": [
+    {
+      "id": "A",
+      "name": "Interior al oeste de Gatchina",
+      "centre_game_km": [
+        6.1,
+        7.85
+      ],
+      "ellipse_diameters_km": [
+        4.0,
+        3.0
+      ],
+      "selected_crest_target_m": [
+        80,
+        140
+      ],
+      "source3x_dry_cells": 258047,
+      "source3x_dry_height_p50_p90_p99_max_m": [
+        19.66349983215332,
+        23.694539642333982,
+        25.689523887634284,
+        29.454299926757812
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Sur, entre Peipus y Luga",
+      "centre_game_km": [
+        4.55,
+        1.75
+      ],
+      "ellipse_diameters_km": [
+        4.3,
+        2.9
+      ],
+      "selected_crest_target_m": [
+        100,
+        160
+      ],
+      "source3x_dry_cells": 262908,
+      "source3x_dry_height_p50_p90_p99_max_m": [
+        13.22029972076416,
+        21.095890235900885,
+        26.62165128707885,
+        32.58570098876953
+      ]
+    }
+  ],
+  "closeup_xywh_km": [
+    6.257677533039648,
+    7.659700440528634,
+    4.809642290748899,
+    3.827143612334802
+  ],
+  "nature_reserve_design": {
+    "name": "Mshinskoye — conservación y biomas",
+    "centre_game_km": [
+      8.2,
+      5.2
+    ],
+    "ellipse_diameters_km": [
+      2.5,
+      2.8
+    ],
+    "boundary_status": "CONSERVATIVE_DESIGN_ENVELOPE_NOT_VERIFIED_RESERVE_BOUNDARY",
+    "priority": "Water, wetlands and natural area override proposed uplifts",
+    "vegetation_intent": "Dense forest pockets, transitional woodland, clearings and wetlands",
+    "placement_stage": "After terrain and base navigation; P10/P13"
+  },
+  "proposal_acceptance": "User accepts zonal proposal as starting point and requires dense woodland pockets and multiple biomes; final heights remain engineering targets",
+  "regional_rolling_crest_targets_m": [
+    30,
+    70
+  ],
+  "optional_landmark_crest_targets_m": [
+    180,
+    200
+  ],
+  "road_grade_design_targets_percent": {
+    "primary": 6,
+    "secondary": 8
+  },
+  "terrain_modified": false,
+  "sources_unchanged": true,
+  "limits": [
+    "Areas are schematic study envelopes, not edit masks.",
+    "Source statistics exclude raster water/wetland but do not certify dry ground in engine.",
+    "Source3x is not the deployed native0.2 terrain.",
+    "Lake levels, river beds, final profiles and sight lines remain to be designed.",
+    "No runtime, navmesh or performance acceptance."
+  ]
+}

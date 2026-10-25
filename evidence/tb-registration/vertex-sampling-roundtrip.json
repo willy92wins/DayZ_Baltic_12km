@@ -1,0 +1,71 @@
+{
+  "verdict": "PASS",
+  "consumer": "Actual Terrain Builder import, Rebuild terrain, Save, Export terrain ASC",
+  "position_contract_source": "mesh-registration.json: four UI positives and four negatives in prior asymmetric fixture",
+  "not_measured": "No second UI XY measurement or in-game height measurement in this analytic fixture",
+  "header": {
+    "ncols": 128.0,
+    "nrows": 128.0,
+    "xllcorner": 200000.0,
+    "yllcorner": 0.0,
+    "cellsize": 6.0,
+    "nodata_value": -9999.0
+  },
+  "all_samples": 16384,
+  "interior_samples": 16129,
+  "interior_max_error_vs_analytic_m": 0.0,
+  "all_samples_max_error_vs_candidate_m": 0.0,
+  "negative_control_min_error_m": 0.25,
+  "negative_control_max_error_m": 0.25,
+  "tolerance_m": 0.0051,
+  "controls": [
+    {
+      "name": "NW",
+      "row": 8,
+      "col": 11,
+      "x": 200066,
+      "y": 720,
+      "z": 171.0,
+      "uncorrected_z": 171.25,
+      "tb_export_z": 171.0
+    },
+    {
+      "name": "NE",
+      "row": 17,
+      "col": 112,
+      "x": 200672,
+      "y": 666,
+      "z": 267.5,
+      "uncorrected_z": 267.75,
+      "tb_export_z": 267.5
+    },
+    {
+      "name": "SW",
+      "row": 110,
+      "col": 20,
+      "x": 200120,
+      "y": 108,
+      "z": 129.0,
+      "uncorrected_z": 129.25,
+      "tb_export_z": 129.0
+    },
+    {
+      "name": "SE",
+      "row": 101,
+      "col": 106,
+      "x": 200636,
+      "y": 162,
+      "z": 219.5,
+      "uncorrected_z": 219.75,
+      "tb_export_z": 219.5
+    }
+  ],
+  "edge_policy": "Top/left clamped in candidate; excluded from analytic PASS. No real-world boundary adequacy claim.",
+  "edge_max_error_vs_analytic_m": 0.5,
+  "production": "NOT_APPLIED; assess coastline, nodata and boundary effects before production use",
+  "sha256": {
+    "tb/vertex_sampling_probe/plane_tb_export.asc": "35a86a96dc9ae99675a20ee2f05b1eb35a725e0621c265b8716918521b648e35",
+    "tests/vertex_sampling_probe/plane_tb_vertices.asc": "d5a4137062f2e9b86c5e21889083cbe7ed2af0a1791f0abacc684064826a7721",
+    "tests/vertex_sampling_probe/plane_gis_centres.asc": "e2dbc43510cd4530d394f8813e59fbbfc81cf997d87909fad2290ec95b2402ac"
+  }
+}

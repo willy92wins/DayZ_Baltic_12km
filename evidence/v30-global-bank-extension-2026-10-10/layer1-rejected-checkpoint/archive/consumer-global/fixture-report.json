@@ -1,0 +1,137 @@
+{
+  "status": "FIXTURES_PASS",
+  "consumer_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\verify_layer.py",
+  "consumer_sha256": "33050881caaf5e75f288d4122222c15eb326bf146c28a4c723760564457b3dc2",
+  "command": "\"C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe\" \"E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\verify_layer.py\" --self-test",
+  "fixtures": {
+    "bbox_touch_zero_area": true,
+    "duplicate_ownership_detectable": true,
+    "exact_overlap_positive": true,
+    "indexed_unknown_faces": {
+      "physical_minus_1e-6_fails": true,
+      "physical_plus_1e-5_passes_sign_contract": true,
+      "tuple_key_summaries_json_serializable": true,
+      "visible_plus_1e-5_fails_2e-5_contract": true
+    },
+    "known_layer_sign_flip_negative": true,
+    "protected_node_negative": true,
+    "real_window_consumer": {
+      "L32_guard_uses_physical_not_solver_lower": true,
+      "changed_candidate_vertices": 42,
+      "consumer_domain_helper_cases": {
+        "high_field_exact_negative": true,
+        "high_field_exact_positive": true,
+        "p9_exact_negative": true,
+        "p9_exact_positive": true,
+        "unknown_face_burial_negative": true,
+        "unknown_face_burial_positive": true
+      },
+      "mutated_guard_negative": true,
+      "pilot_center_rc": [
+        840,
+        370
+      ],
+      "pilot_stencil_count": 350,
+      "pilot_variable_count": 85,
+      "real_ev92_window_positive": true
+    },
+    "unknown_face_burial_positive_negative": true,
+    "segmented_terminal_ledger": {
+      "two_segment_checkpoint_then_terminal_accepted": true,
+      "missing_terminal_result_rejected": true,
+      "ending_in_incomplete_rejected": true
+    },
+    "real_face_index_kind_api": {
+      "physical_name_returns_code_0": true,
+      "visible_name_returns_code_1": true,
+      "query_window_and_cell_agree": true,
+      "numeric_kind_rejected": true
+    }
+  },
+  "full_candidate_evaluation": "NOT_RUN",
+  "scope": "Local fixtures, actual EV93 FaceRangeIndex API and two-cell direct ODOL exposure equivalence; no full candidate evaluation.",
+  "source_snapshot_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\archive\\verify_layer-pre-unknown-contract-fixture-7b0b9a26.py",
+  "source_snapshot_sha256": "7B0B9A26526119D23ABC02C463EE24B20573ADF32E57032EC634160F1C8DBEBB",
+  "prior_pre_L32_snapshot_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\archive\\verify_layer-pre-L32-bounds-2fc48e7.py",
+  "prior_pre_L32_snapshot_sha256": "2FC48E7F118DBB2A547E175B8DC60588A461B8F3D20DC42DB3B41420823D4C5F",
+  "real_author_ledger_parser_smoke": {
+    "status": "PASS",
+    "ledger_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\fairing-layer1\\ledger.jsonl",
+    "ledger_sha256": "dc0a26cc38f55c1a8bb5709e36cfacd41859c3f901aabed15968a56c44832e85",
+    "prepared_sha256": "765c5a5a778132fce7f1c1d21a59c1220b62443b180238e13ee51a203b3483d4",
+    "events": 705,
+    "result_rows": 703,
+    "checkpoints": [
+      {
+        "status": "INCOMPLETE",
+        "classified_results": 490,
+        "unprocessed_count": 213
+      },
+      {
+        "status": "AUTHORED_PENDING_GLOBAL_CONSUMER",
+        "classified_results": null,
+        "unprocessed_count": 0
+      }
+    ],
+    "terminal_counts": {
+      "accepted": 340,
+      "rejected": 311,
+      "not_authored": 49,
+      "inconclusive": 3,
+      "timeout": 0,
+      "error": 0
+    }
+  },
+  "pre_parser_fix_source_path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\pre-terminal-parser-fix\\verify_layer.py",
+  "pre_parser_fix_source_sha256": "7B0B9A26526119D23ABC02C463EE24B20573ADF32E57032EC634160F1C8DBEBB",
+  "original_attempt_01_report_sha256": "78A8D9A5DFFB8760ABBC5DB5ECD36D4513559FA862FF2051469F94702FF3120E",
+  "previous_attempt_02_error": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\runs\\attempt-02\\ev93-review.json",
+    "sha256": "a82eae192eb947837a0ef3dbf0162b93d85317b07740ece1ac593dbefc4c98a3",
+    "error": "ValueError('unknown face kind: 0')",
+    "meaning": "Consumer API adapter bug; not a candidate gate result."
+  },
+  "real_index_vs_compiled_exposure_smoke": {
+    "status": "PASS",
+    "cells": [
+      {
+        "cell": [
+          832,
+          362
+        ],
+        "direct_objects": 9,
+        "identity_faces": {
+          "physical": 32,
+          "visible": 34
+        },
+        "exposure_symmetric_difference_m2": {
+          "physical": 0.0,
+          "visible": 0.0
+        }
+      },
+      {
+        "cell": [
+          128,
+          1918
+        ],
+        "direct_objects": 1,
+        "identity_faces": {
+          "physical": 8,
+          "visible": 8
+        },
+        "exposure_symmetric_difference_m2": {
+          "physical": 0.0,
+          "visible": 0.0
+        }
+      }
+    ],
+    "base_sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0",
+    "index_manifest_sha256": "c81bfeb9e271b35add6644ad0d66cad1093b8cf08b665d2253ba62fbfad7372c"
+  },
+  "previous_attempt_03_error": {
+    "path": "E:\\DayZ-Baltic-Build\\v30-global-bank-extension-20261010\\consumer-global\\runs\\attempt-03\\ev93-review.json",
+    "sha256": "d456bc8f9ffdfb599da9f1f8434bf2f5b1bca1e46c1f9f032c6f8d803884d774",
+    "error": "AttributeError: EV87 module has no B_WRP; consumer passed absent module attributes.",
+    "meaning": "Input-path/API adapter bug; not a candidate gate result."
+  }
+}

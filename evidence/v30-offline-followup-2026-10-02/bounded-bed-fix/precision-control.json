@@ -1,0 +1,10 @@
+{
+  "initial_result": "Candidate file generated, but final sampler comparison raised AssertionError; not accepted at that point.",
+  "experiment": "Identical float32 height values with float32 versus float64 intermediate subtraction in tri_sample, compared to barycentric float64 arithmetic on the Luga corridor.",
+  "float32_max_difference_m": 2.2075330607940202e-7,
+  "float64_max_difference_m": 1.3713474800169934e-12,
+  "comparison_tolerance_m": 1e-7,
+  "correction": "Cast the input heights to float64 for the comparison. No tolerance, height value, solver or calado criterion changed.",
+  "source_at_failed_run": "audit-run-v2.py",
+  "recovery": "finalize_candidate.py reads and verifies the existing candidate; no second solve or binary rewrite."
+}

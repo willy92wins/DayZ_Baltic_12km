@@ -1,0 +1,57 @@
+{
+  "run_id": "56c5303a-c4c5-47e4-8b0b-f449987f94da",
+  "close": {
+    "run_id": "56c5303a-c4c5-47e4-8b0b-f449987f94da",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 2.956060999989859,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "lease_ttl_s": 119.61057799999253
+  },
+  "release": {
+    "released": true,
+    "cleanup": {
+      "terminal_safe": true,
+      "runs_released": [],
+      "cancelled": 0,
+      "vehicle_release_enqueued": 0
+    },
+    "cleanup_degraded": [],
+    "ok": true,
+    "next_step": "session_acquire_wait"
+  },
+  "final_session_status": {
+    "owner": null,
+    "box_occupied": false,
+    "runs": [],
+    "foreign": [],
+    "pending_commands": 0
+  },
+  "other_mcp_status": {
+    "owner": null,
+    "box_occupied": false,
+    "runs": [],
+    "foreign": [],
+    "pending_commands": 0
+  },
+  "lease_note": "One lease expired during offline rendering analysis; the same own run was reacquired without a restart.",
+  "discarded_focus_run": {
+    "run_id": "2d9fcbc9-fea7-4710-bdba-71953073eedd",
+    "reason": "Initial observer tracked dedicated server. Closed orderly and repeated with corrected selector."
+  },
+  "completed_render_runs": [
+    "24eed80e-9172-4790-aaee-7b35881e1cea",
+    "13e8ac2f-21a1-4ba2-8c36-34cd60e26564"
+  ],
+  "render_closes": "Both orderly; client first, server second, retired; leases released."
+}

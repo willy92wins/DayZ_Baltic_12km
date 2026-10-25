@@ -1,0 +1,46 @@
+{
+  "status": "B_REPRODUCES_EFFECT_WITHOUT_PONDS_STRICT_WIND_MATCH_FAILED",
+  "joint": {
+    "A_B_overlap": 2866,
+    "B_Areturn_overlap": 3711,
+    "all_three_overlap": 2853,
+    "B_retains_effect": true
+  },
+  "identical_camera_matrices": true,
+  "logs": [
+    {
+      "phase": "B",
+      "samples": 536,
+      "sea_range": [
+        0.650062,
+        0.849939
+      ],
+      "wind_range": [
+        19.7329,
+        19.9896
+      ],
+      "strict_20ms_identity": false
+    },
+    {
+      "phase": "Areturn",
+      "samples": 567,
+      "sea_range": [
+        0.650031,
+        0.849969
+      ],
+      "wind_range": [
+        20.0,
+        20.0
+      ],
+      "strict_20ms_identity": true
+    }
+  ],
+  "source_A": "EV48 stable 6-frame reference; same package/camera/projection, weather command but not exact wind readback",
+  "limits": [
+    "Initial strict 20m/s readback assertion failed in B; retained as a failed comparison dimension.",
+    "The B counterexample shows the effect without the four instances. Counts do not establish an isolated effect-size comparison across A/B/A.",
+    "Not proof of the specific ocean shader mechanism.",
+    "The omitted designed ponds must be restored, never removed as a production fix.",
+    "Unchanged baseline dry mask, common control pixels and threshold are used; actual pond interiors excluded."
+  ]
+}

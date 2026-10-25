@@ -1,0 +1,85 @@
+{
+  "status": "READY_FOR_ONE_SOLVE",
+  "scope": "Independent static/pre-solve review only. No optimizer, solver, candidate or engine executed.",
+  "source_identity": {
+    "author_ev91.py": {
+      "sha256": "d17e358e9e9e92952e51e008148b534c2fde4a3ae7fe1e4197fdab4215adc9f1"
+    },
+    "plan.md": {
+      "sha256": "f06e72d568823c5475c301d9baed851619cf0e0b0b4ee5b42eeb0c7cd5ec953f"
+    },
+    "prepared.json": {
+      "sha256": "127b906c1d2a5d2aa09172ed47dac16cd489aae6a2955428a96166a325605877"
+    },
+    "collar-guard-preflight.json": {
+      "sha256": "1f1e68cf1b2358c2bb5d21d9268cfd2f030b46b6d7247227bc55be0efe2fc0df"
+    },
+    "EV90 physical preflight": {
+      "sha256": "8c8ec80cbb7029f510c832adf90a8871e385fbd8ec52ee5043d5ea24e1099d63"
+    },
+    "EV90 source author pinned by EV91": {
+      "sha256": "c8ee41f14c332bf9a5849ee7a6454e82043ccc5e06a866bd018df817f819ad7e"
+    },
+    "B terrain": {
+      "sha256": "f9fb23decc6dbcfa2837b5bedcb02aea3eec44d2bbdc7b4c07d5d3f5fee061f0"
+    },
+    "EV90 consumer latest observed status": "FAIL_EV90_OFFLINE_CONSUMER (attempt-02; full run completed; shape, collar energy and collar hinge gates failed; EV91 plan explicitly responds to these failures)"
+  },
+  "checks": {
+    "current_source_pins": {
+      "checked": 112,
+      "changed": 0,
+      "missing": 0
+    },
+    "domain": {
+      "variables": 85,
+      "total_stencils": 350,
+      "collar_stencils": 107,
+      "collar_hinges": {
+        "diag": 112,
+        "vertical": 108,
+        "horizontal": 108
+      }
+    },
+    "guard": {
+      "variables_pinned_to_B": 43,
+      "free_variables": 42,
+      "guard_matches_independent_preflight_exactly": true,
+      "all_measured_collar_hinge_supports_use_all_four_vertices": true,
+      "populations_reduced": false
+    },
+    "bounds": {
+      "EV90_original_float32_inward_bounds_match_exactly": true,
+      "EV91_solver_bounds_equal_original_except_guard_pinned_to_B": true,
+      "baseline_inside_solver_bounds": true,
+      "baseline_satisfies_all_90_descent_rows": true
+    },
+    "solver_API": {
+      "scipy": "1.18.1",
+      "method": "SLSQP",
+      "analytic_objective_jacobian": true,
+      "LinearConstraint_adapter_jacobian_exact": true,
+      "objective_jacobian_max_abs_central_difference_error": 1.5832194000253708e-08,
+      "linear_jacobian_max_abs_diff": 0.0,
+      "fixed_bounds_removed_for_finite_differences": false
+    },
+    "negative_controls": {
+      "missing_one_guard_member_changes_guard_set": true,
+      "one_float32_ulp_guard_mutation_fails_exact_postcast_pin": true
+    },
+    "candidate_artifacts_absent": true,
+    "D8_only_originals_preserved": true
+  },
+  "review_notes": [
+    "Author recomputes EV90 inputs and bounds, reconstructs the guard from all EV90 stencils and four-vertex hinge supports, then requires exact equality with the independent guard JSON before narrowing bounds.",
+    "SciPy source converts LinearConstraint to a callable Jacobian (GIS env scipy/optimize/_constraints.py:526-538). With callable objective and constraint Jacobians, scipy/optimize/_minimize.py:725-733 leaves fixed variables in place rather than removing them for finite differences. The supplied implementation therefore keeps the 85-variable layout with 43 equal bounds and 42 free variables.",
+    "The post-cast author checks exact guard identity and all witness inequalities before writing a candidate. Consumer gates remain pending; this verdict is not a candidate or product PASS.",
+    "The plan requires EV90 full completion, not EV90 PASS. Latest attempt-02 did complete with FAIL_EV90_OFFLINE_CONSUMER; that failed baseline is recorded, not hidden."
+  ],
+  "line_references": {
+    "author_ev91.py": "45-67 guard; 101-139 preparation and bounds; 70-98 SLSQP worker/timeout; 142-181 solve gate, quantization and output checks",
+    "verify_ev90.py": "685-693 collar mask and hinge measurement; 722-727 gates",
+    "scipy _constraints.py": "526-538 exact linear Jacobian adapter",
+    "scipy _minimize.py": "725-733 fixed-bound finite-difference removal condition"
+  }
+}

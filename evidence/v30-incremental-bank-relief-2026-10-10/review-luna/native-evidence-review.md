@@ -1,0 +1,26 @@
+# EV82-B — revisión de evidencia nativa
+
+**Veredicto:** no encontré una discrepancia concreta que impida aceptar la geometría B en los vértices de terreno muestreados por el motor. Esto no acepta el render del agua ni todos sus aspectos físicos.
+
+## Cadena y cobertura verificadas
+
+- `native-verification.json`: `PASS_COMPLETE_NATIVE_READBACK`, candidato `f9fb23de…e061f0`, 4.194.304 vértices consultados (3.195.297 secos, 999.007 mojados), error máximo de suelo `1,52588e-5 m`, cero anomalías en vértices secos, cero agua nominal/dinámica en secos y cero caras húmedas nuevas según el consumidor de geometría.
+- La referencia EV80 tiene identidad explícita (`0a18c562…fc45b`, snapshot `5e14a189…239c3`). Hay 1.212 puntos calibrados, 1.205 consultas de plano trasladado; los hashes del terreno, la referencia y el snapshot coinciden con los informes. Las 101 entradas `omitted_cells` están etiquetadas `sub3cm_sliver` en la lista de puntos de riesgo; no reducen la cobertura del barrido nativo completo de vértices.
+- El snapshot actual (`c0effbbc…2863a2`) tiene cabecera con el hash EV82-B y termina con cobertura completa: 2.048 filas `G`, `GRID_END` para 4.194.304, 1.212 `P`, 339 `Q` y 25 `A`. El verificador retiene controles negativos para discrepancia de altura, punto calibrado, fila y cierre faltantes, plano trasladado incorrecto y anomalía duplicada; los siete rechazan sus mutantes.
+- Anclaje del despliegue: `native-reference.json` fija el hash de `deploy.json`; sus dos PBO desplegados verifican contra el disco (`narva_trial.pbo` `b11c825b…b340c36c`, agua `3946db8b…f02ae14`). La auditoría independiente previa leyó el PBO real: 6.827 entradas, solo WRP + 91 PAA cambiados frente a EV80, PBO de agua idéntico. El WRP editable 0WZD cotejado con ambos NPZ conserva las alturas exactas y 18.033 registros de objeto idénticos. Los P/F de EV82-B y EV80 tienen hashes iguales.
+- `native-scripts-provenance.json` fija los hashes que aún tienen `prepare_probe.py`, `verify_native.py`, `compare_native_inventory.py` y `classify_native_differences.py`. Coinciden con los archivos actuales. El hash del snapshot coincide con `native-verification.json` y el hash del despliegue coincide con `native-reference.json`.
+- `lifecycle-close.json` registra cierre ordenado, corrida retirada, métricas de salida válidas, `release.ok=true`, sin owner y sin ocupación del banco. El campo `server_alive=true` del resumen de corrida es previo al bloque de cierre; no contradice los marcadores posteriores de cierre/liberación.
+
+## Diferencias que no bloquean geometría, pero no deben presentarse como causa o PASS visual
+
+El inventario A de anomalías físicas cambia de 28 a 25 (2 añadidas, 5 retiradas; 23 registros comunes cambian). El inventario Q de escalares positivos cambia de 317 a 339 (275 añadidos, 253 retirados; 56 comunes cambian). Recalculé sus coordenadas contra el diff EV80→B: ninguna fila añadida, retirada o modificada en A o Q cae en un vértice cuya altura cambió. Las 2 A nuevas están en `cls=1` y con altura intacta `0,65 m`. No hay anomalía seca; quedan 25 casos de clase positiva sin presencia de agua (`7 cls=1`, `18 cls=3`) inventariados por el verificador, y la fase de ola/escalares puede variar. Eso deja una cuestión de clasificación/agua, no contradice las alturas B. Los 339 Q tampoco son una medida de defecto visual.
+
+Hay una desactualización documental concreta, no una divergencia de ejecución: `native-reference.json.status` sigue en `PREPARED_NOT_RUN_SERVER_ONLY` y `native-scripts-provenance.json` conserva “not run”, aunque los artefactos posteriores `native-snapshot.log`, `native-verification.json`, `native-inventory-comparison.json` y `native-difference-classification.json` prueban la ejecución con hashes coherentes. Conviene leer esos dos campos como recibos de preparación congelados, no como estado actual. No invalida por sí solo el readback, pero debe evitarse al resumir el lifecycle.
+
+## Hipótesis visual para una investigación posterior
+
+EV76 no separó la ROI gris de su control ondulado por terreno o profundidad: los rayos calibrados alcanzan P, F y terreno en ambas regiones, ambas con el fondo bajo el mar. El análisis espacial independiente de EV73 encontró dos transiciones a menos de dos píxeles de aristas exteriores de instancias `globalvis_*`; los objetos cotejados comparten material CalmWater y flags de alpha/visibilidad, aunque difieren en geometría y radio. Por tanto, una hipótesis de trabajo es que el cambio visible depende de la cobertura/visibilidad en un borde de pieza o de su composición/oclusión, y no de una diferencia local de clase, material o altura. EV77 no la prueba: su carpeta preservada dice que no obtuvo una referencia normal válida ni ejecutó los estados wire; el LIVE-STATE posterior la marca inconclusa/auto-restaurada. Cualquier continuación tendría que capturar una referencia normal válida y comparar wireframe en la misma pose restaurando al final; la hipótesis no equivale a causa ni reparación.
+
+## Límites
+
+El readback es exhaustivo en vértices nativos y discreto en puntos de riesgo; no mide continuidad subcelda, otras fases de oleaje, LOD visual, oclusión, shader ni aceptación de pixels. La evidencia permite cerrar la fidelidad de alturas nativas de B y conservar objetos/agua/materiales como estaban; no cierra la base completa ni el problema de render.

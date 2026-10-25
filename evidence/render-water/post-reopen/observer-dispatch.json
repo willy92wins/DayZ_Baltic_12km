@@ -1,0 +1,39 @@
+{
+  "time": "2026-09-29T17:43:48.498822+02:00",
+  "status": "INCONCLUSIVE_F10_OBSERVER_NOT_LOADED",
+  "water_log_exists": false,
+  "user_reported_manual_F10": true,
+  "engine_hook_marker_seen": false,
+  "checks": {
+    "both_observer_files_exist_and_expected_hashes": true,
+    "buldozer_launch_name": "Buldozer",
+    "profile_directory": "P:/Buldozer",
+    "data_directory_UI": "P:/",
+    "user_settings_data_directory_UI": "P:/",
+    "input_UABuldRunScript": "kF10",
+    "probe_header": "static void BuldozerMain()",
+    "secondary_header": "static void guillMain()",
+    "native_preferences_modified": false
+  },
+  "discriminator": "Baseline script log includes Module: BuldozerModule after the successful historical F10. Current live snapshot does not. Failure is before an observed probe execution; cause not isolated.",
+  "next": "One physical F10 held one second after clicking Buldozer title, with no simultaneous assistant window changes; request pending. If no hook marker/file, stop key retries and investigate input/script dispatch independently.",
+  "snapshots": [
+    {
+      "file": "snapshot-script_2026-09-29_17-34-21.log",
+      "bytes": 2972,
+      "sha256": "69c2349c6af39b97bf7745252accba5f714ad03b5d04565c18374181f7fd8003",
+      "buldozer_module_marker_present": false
+    },
+    {
+      "file": "snapshot-DayZDiag_x64_2026-09-29_17-34-21.RPT",
+      "bytes": 2429,
+      "sha256": "5139f5cb215c6768cd5a49dfbb377b777dfdb16caefc1c66d25797af8643dc68",
+      "buldozer_module_marker_present": false
+    }
+  ],
+  "official_reference": "https://community.bistudio.com/wiki/DayZ:Buldozer_for_Terrain_Builder",
+  "limits": [
+    "No corrected-water runtime PASS.",
+    "Do not repeat source edits or raise shoreline further based on a missing observation log."
+  ]
+}

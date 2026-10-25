@@ -1,0 +1,33 @@
+"""Finish the existing 1.80 m objective outside frozen water/engineering faces."""
+from pathlib import Path
+import sys,json,hashlib
+import numpy as np
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290')
+B=Path('E:/DayZ-Baltic-Build/v30-global-water-risk-20261009');E=W/'evidence/v30-global-water-risk-2026-10-09'
+source=Path('E:/DayZ-Baltic-Build/v30-valley-smoothing-20261008/candidate-c1r3p/terrain_valley.npz')
+sys.path.insert(0,str(W/'tools/terrain'))
+from finish_shores_v30 import discard_steeper_land_faces
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert sha(source)=='9c3011b8af5279e807630d4e91512d2e95a434463d3523a5b4074e70bc7cc8f6'
+t=dict(np.load(source));h=t['heights'].astype(float);wet=t['cls']>0
+touch=wet[:-1,:-1]|wet[1:,:-1]|wet[:-1,1:]|wet[1:,1:]
+waterfaces=np.zeros_like(wet)
+for dr,dc in ((0,0),(0,1),(1,0),(1,1)):waterfaces[dr:dr+2047,dc:dc+2047]|=touch
+fixed=waterfaces|t['reserve']|t['platform']|t['beach']
+fixed[:2]=True;fixed[-2:]=True;fixed[:,:2]=True;fixed[:,-2:]=True
+eligible=~fixed&~wet&(h<1.8-1e-5)
+assert h[eligible].min()>=1.39999,float(h[eligible].min())
+candidate=h.copy();candidate[eligible]=1.8
+candidate,recovery=discard_steeper_land_faces(candidate,h,t['cls'])
+out=B/'candidate-d1';out.mkdir(exist_ok=False)
+np.savez_compressed(out/'terrain.npz',**dict(t,heights=candidate.astype(t['heights'].dtype)))
+np.savez_compressed(out/'scope.npz',fixed=fixed,waterfaces=waterfaces,eligible=eligible)
+report=dict(status='BUILT_PENDING_INDEPENDENT_GATES',source_sha256=sha(source),terrain_sha256=sha(out/'terrain.npz'),
+    eligible_vertices=int(eligible.sum()),min_eligible_before=float(h[eligible].min()),
+    max_raise=float((candidate-h).max()),recovery=recovery,
+    unchanged_water_faces=True,unchanged_engineering=True,
+    limits=['Protected water/shore/engineering lowland remains explicitly open.',
+    'The source lowland goal is unchanged at 1.80 m; this repairs the incomplete transition outside water faces.'])
+(E/'transition-authoring.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))
+

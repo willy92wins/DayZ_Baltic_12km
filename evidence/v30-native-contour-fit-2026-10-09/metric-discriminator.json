@@ -1,0 +1,84 @@
+{
+  "status": "METRIC_DIAGNOSTIC_NOT_CANDIDATE_ACCEPTANCE",
+  "controls": {
+    "square": {
+      "legacy": {
+        "lines": 1,
+        "length_m": 50.0,
+        "samples": 19,
+        "p90_degrees": 68.74795905833759,
+        "over30_share": 0.3157894736842105,
+        "max_degrees": 90.0
+      },
+      "actual": {
+        "corner_count": 2,
+        "corner_max_degrees": 90.0,
+        "corner_turn_square_sum": 4.934802200544679,
+        "corner_turn_square_per_m": 0.09869604401089357,
+        "one_metre_turn_square_mean": 3.514189586004753,
+        "one_metre_phases": [
+          4.934802200544679,
+          3.3272775216009975,
+          2.4674011002723395,
+          3.3272775216009975
+        ]
+      }
+    },
+    "round": {
+      "legacy": {
+        "lines": 1,
+        "length_m": 45.70789149425879,
+        "samples": 17,
+        "p90_degrees": 68.21572883609554,
+        "over30_share": 0.47058823529411764,
+        "max_degrees": 68.75584532529679
+      },
+      "actual": {
+        "corner_count": 301,
+        "corner_max_degrees": 0.6000000000079638,
+        "corner_turn_square_sum": 0.03284385020140296,
+        "corner_turn_square_per_m": 0.0007185597306655102,
+        "one_metre_turn_square_mean": 0.6096271384258383,
+        "one_metre_phases": [
+          0.6091543247116534,
+          0.6102323711665911,
+          0.610091870496389,
+          0.6090299873287196
+        ]
+      }
+    },
+    "legacy_accepts_round_cap": false
+  },
+  "native_candidate": {
+    "source": {
+      "corner_count": 42,
+      "corner_max_degrees": 49.34490374895613,
+      "corner_turn_square_sum": 4.0345944222529635,
+      "corner_turn_square_per_m": 0.03186234330284392,
+      "one_metre_turn_square_mean": 3.2823139214507577,
+      "one_metre_phases": [
+        3.3009142530200846,
+        3.5344563890357668,
+        3.099893798232878,
+        3.193991245514301
+      ]
+    },
+    "candidate": {
+      "corner_count": 38,
+      "corner_max_degrees": 92.96710646406682,
+      "corner_turn_square_sum": 6.599484532325073,
+      "corner_turn_square_per_m": 0.05504526208365794,
+      "one_metre_turn_square_mean": 4.357565183480721,
+      "one_metre_phases": [
+        4.298801022441355,
+        3.7004681835589968,
+        4.253547603428122,
+        5.17744392449441
+      ]
+    }
+  },
+  "limits": [
+    "Raw corners and one-metre samples are diagnostics, not retroactively substituted acceptance gates.",
+    "The inherited six-metre statistic measures curvature as well as angularity."
+  ]
+}

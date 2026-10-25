@@ -1,0 +1,107 @@
+{
+  "status": "PASS_A_ONLY_FIXTURES",
+  "global_arrays_loaded": false,
+  "full_operator_sha256": "d3017e58bbae3b71c891fab6892a5bf8d9386ae8a51a451a94c9b05769ac750a",
+  "fused_normal_sha256": "19a3e3a493f643702e66aaf265c705739535d386412f74659369d7746117ffaa",
+  "cases": [
+    {
+      "shape": [
+        1,
+        1
+      ],
+      "variables": 1,
+      "A_rows": 1,
+      "anchor_counts": {
+        "xx": 0,
+        "zz": 0,
+        "xz": 0
+      },
+      "rhs_exact": true,
+      "diag_exact": true,
+      "A_exact": true,
+      "AT_exact": true,
+      "adjoint_relative_error": 0.0,
+      "fused_normal_max_abs": 0.0
+    },
+    {
+      "shape": [
+        2,
+        3
+      ],
+      "variables": 2,
+      "A_rows": 4,
+      "anchor_counts": {
+        "xx": 2,
+        "zz": 0,
+        "xz": 0
+      },
+      "rhs_exact": true,
+      "diag_exact": true,
+      "A_exact": true,
+      "AT_exact": true,
+      "adjoint_relative_error": 0.0,
+      "fused_normal_max_abs": 0.0
+    },
+    {
+      "shape": [
+        3,
+        5
+      ],
+      "variables": 3,
+      "A_rows": 13,
+      "anchor_counts": {
+        "xx": 5,
+        "zz": 3,
+        "xz": 2
+      },
+      "rhs_exact": true,
+      "diag_exact": true,
+      "A_exact": true,
+      "AT_exact": true,
+      "adjoint_relative_error": 1.6798743127710764e-16,
+      "fused_normal_max_abs": 0.0
+    },
+    {
+      "shape": [
+        7,
+        6
+      ],
+      "variables": 6,
+      "A_rows": 39,
+      "anchor_counts": {
+        "xx": 11,
+        "zz": 11,
+        "xz": 11
+      },
+      "rhs_exact": true,
+      "diag_exact": true,
+      "A_exact": true,
+      "AT_exact": true,
+      "adjoint_relative_error": 2.255211998965437e-16,
+      "fused_normal_max_abs": 0.0
+    },
+    {
+      "shape": [
+        5,
+        8
+      ],
+      "variables": 40,
+      "A_rows": 112,
+      "anchor_counts": {
+        "xx": 30,
+        "zz": 24,
+        "xz": 18
+      },
+      "rhs_exact": true,
+      "diag_exact": true,
+      "A_exact": true,
+      "AT_exact": true,
+      "adjoint_relative_error": 3.350424270204011e-16,
+      "fused_normal_max_abs": 0.0
+    }
+  ],
+  "negative_controls": {
+    "unsorted_variables_rejected": true,
+    "nonfinite_base_rejected": true
+  }
+}

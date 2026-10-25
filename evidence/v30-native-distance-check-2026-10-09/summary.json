@@ -1,0 +1,178 @@
+{
+  "status": "DISTANCE_FOG_DISCRIMINATED_NOT_STREAMING_FIXED",
+  "run_id": "206c090d-bd6a-484e-86d9-22d3b57c7096",
+  "blocks": [
+    {
+      "block": 0,
+      "phase": 0,
+      "valid": false,
+      "reason": "pause menu observed; excluded",
+      "settled_samples": 93,
+      "settle_ms": 5000,
+      "last_fps_median": 250.0,
+      "avg64_fps_median": 225.352
+    },
+    {
+      "block": 1,
+      "phase": 1,
+      "valid": false,
+      "reason": "pause menu observed; excluded",
+      "settled_samples": 251,
+      "settle_ms": 5000,
+      "last_fps_median": 250.0,
+      "avg64_fps_median": 209.15
+    },
+    {
+      "block": 2,
+      "phase": 3,
+      "valid": true,
+      "reason": "corrected active scene",
+      "settled_samples": 26,
+      "settle_ms": 5000,
+      "last_fps_median": 19.4193,
+      "avg64_fps_median": 19.02495
+    },
+    {
+      "block": 3,
+      "phase": 1,
+      "valid": true,
+      "reason": "corrected active scene",
+      "settled_samples": 21,
+      "settle_ms": 5000,
+      "last_fps_median": 19.2308,
+      "avg64_fps_median": 19.1102
+    },
+    {
+      "block": 4,
+      "phase": 2,
+      "valid": true,
+      "reason": "corrected active scene",
+      "settled_samples": 34,
+      "settle_ms": 5000,
+      "last_fps_median": 19.6078,
+      "avg64_fps_median": 19.5838
+    },
+    {
+      "block": 5,
+      "phase": 3,
+      "valid": true,
+      "reason": "corrected active scene",
+      "settled_samples": 52,
+      "settle_ms": 5000,
+      "last_fps_median": 19.049349999999997,
+      "avg64_fps_median": 19.076
+    }
+  ],
+  "image_metrics": {
+    "base_vs_restored": {
+      "mean_abs_rgb": 0.01569206267595291,
+      "share_pixels_over10": 0.0
+    },
+    "base_vs_view": {
+      "mean_abs_rgb": 17.87236213684082,
+      "share_pixels_over10": 0.46818333333333334
+    },
+    "view_vs_objects": {
+      "mean_abs_rgb": 0.3146296441555023,
+      "share_pixels_over10": 0.001080952380952381
+    }
+  },
+  "settings_after": {
+    "viewDistance": 1600.0,
+    "preferredObjectViewDistance": 1600.0,
+    "sceneComplexity": 500000.0,
+    "terrainGrid": 12.5
+  },
+  "profile_hash_after": "33ccbabd7ab0f3fab014a169d0debf23abcee5d531ac9d537ce2da0a50874703",
+  "profile_byte_identical": true,
+  "map_files_after": {
+    "baltic_water_v30.pbo": "3946db8bf3a70ca6ae0253e15935fd6500c5fcdfc47551b3370238f39f02ae14",
+    "narva_trial.pbo": "b69265c5feb99d1bda7a5c9f02282818d0ffe4cd26f89f3a095c128e62d374f3"
+  },
+  "world_time": {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "hour": 12,
+    "minute": 0
+  },
+  "camera": {
+    "ok": 1,
+    "applied_mode": "get",
+    "pos": [
+      6640,
+      440,
+      6340
+    ],
+    "matrix": [
+      -0.6212761998176575,
+      1.4901161193847656e-08,
+      -0.7835916876792908,
+      0.3385733962059021,
+      0.9018358588218689,
+      -0.268440306186676,
+      0.7066709995269775,
+      -0.43207886815071106,
+      -0.5602891445159912,
+      6640,
+      440,
+      6340
+    ],
+    "dir": [
+      0.7066709995269775,
+      -0.43207886815071106,
+      -0.5602891445159912
+    ],
+    "fov": 0,
+    "interpolation_complete": 0,
+    "viewport_moved": 1,
+    "view": "scripted",
+    "error": ""
+  },
+  "close": {
+    "run_id": "206c090d-bd6a-484e-86d9-22d3b57c7096",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 5.007409899990307,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "client",
+        "termination_line": true,
+        "rpt_rotated": false
+      },
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "close_order": [
+      "client",
+      "server"
+    ],
+    "logout_wait_s": 2.2134383999800775,
+    "logout_players": [
+      {
+        "player": "Dev",
+        "logout_finished": true
+      }
+    ],
+    "lease_ttl_s": 119.60169209999731
+  },
+  "final_state": {
+    "owner": null,
+    "runs": [],
+    "occupied": false
+  },
+  "limitations": [
+    "Reference is explicitly restored1600, not untouched initial state.",
+    "No native view-distance getter; setter execution and reversible image change are evidence.",
+    "Native19FPS in test client is descriptive, not a production benchmark.",
+    "All captures have distinct frames but tiny adjacent deltas trigger render_frozen_signal.",
+    "Object-distance addition changes some distant water pixels; no all-map streaming or water-gap closure."
+  ]
+}

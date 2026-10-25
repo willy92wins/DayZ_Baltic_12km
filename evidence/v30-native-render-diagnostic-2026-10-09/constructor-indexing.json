@@ -1,0 +1,62 @@
+[
+  {
+    "start": "0x14013dff4",
+    "end": "0x14013e036",
+    "instructions": [
+      "14013dff4: movzx r8d, byte ptr [rsp + 0x90]",
+      "14013dffd: mov rdx, qword ptr [rsp + 0x80]",
+      "14013e005: mov rcx, qword ptr [r15 + rbp*8 + 0x11cd180]",
+      "14013e00d: mov dword ptr [r14 + r15 + 0x11d31b4], esi",
+      "14013e015: mov dword ptr [r14 + r15 + 0x11d31b8], edi",
+      "14013e01d: call 0x14013e120",
+      "14013e022: mov byte ptr [rip + 0xfe4f53], 1 ; 0x141122f7c",
+      "14013e029: add rsp, 0x28",
+      "14013e02d: pop r15",
+      "14013e02f: pop r14",
+      "14013e031: pop rdi",
+      "14013e032: pop rsi",
+      "14013e033: pop rbp",
+      "14013e034: pop rbx",
+      "14013e035: ret "
+    ]
+  },
+  {
+    "start": "0x14013dcc0",
+    "end": "0x14013dd61",
+    "instructions": [
+      "14013dcc0: push rbx",
+      "14013dcc2: push rbp",
+      "14013dcc3: push rsi",
+      "14013dcc4: push rdi",
+      "14013dcc5: push r14",
+      "14013dcc7: push r15",
+      "14013dcc9: sub rsp, 0x28",
+      "14013dccd: mov ebp, ecx",
+      "14013dccf: lea r15, [rip - 0x13dcd6] ; 0x140000000",
+      "14013dcd6: imul r14, rbp, 0x88",
+      "14013dcdd: mov rdi, r8",
+      "14013dce0: mov qword ptr [rsp + 0x70], rbp",
+      "14013dce5: mov rbx, rdx",
+      "14013dce8: mov qword ptr [rsp + 0x68], r14",
+      "14013dced: lea rcx, [r15 + 0x11d3198]",
+      "14013dcf4: xor edx, edx",
+      "14013dcf6: add rcx, r14",
+      "14013dcf9: mov r8d, 0x80",
+      "14013dcff: mov rsi, r9",
+      "14013dd02: call 0x140dc7c68",
+      "14013dd07: mov eax, dword ptr [rsp + 0x88]",
+      "14013dd0e: mov qword ptr [r14 + r15 + 0x11d3190], rdi",
+      "14013dd16: xor edi, edi",
+      "14013dd18: mov dword ptr [r14 + r15 + 0x11d31b0], eax",
+      "14013dd20: mov eax, dword ptr [rip + 0x108f44a] ; 0x1411cd170",
+      "14013dd26: mov qword ptr [r14 + r15 + 0x11d3198], rsi",
+      "14013dd2e: mov esi, edi",
+      "14013dd30: mov dword ptr [r14 + r15 + 0x11d31c4], eax",
+      "14013dd38: mov qword ptr [r14 + r15 + 0x11d31a8], rbx",
+      "14013dd40: mov dword ptr [r14 + r15 + 0x11d31bc], 0xffffffff",
+      "14013dd4c: mov dword ptr [r14 + r15 + 0x11d31d0], 0xffffffff",
+      "14013dd58: test rbx, rbx",
+      "14013dd5b: je 0x14013dff4"
+    ]
+  }
+]

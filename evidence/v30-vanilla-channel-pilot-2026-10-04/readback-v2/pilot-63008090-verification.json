@@ -1,0 +1,294 @@
+{
+ "status": "FAIL_OR_INCOMPLETE",
+ "version": 2,
+ "checks": {
+  "header": true,
+  "end": true,
+  "pieces": true,
+  "engine_rule_agreement": true,
+  "no_hull_holes": false
+ },
+ "pieces_found": 100,
+ "pieces_expected": 100,
+ "worst_pieces": [
+  {
+   "index": 91,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 0.0002532105322589015,
+   "direction_error_deg": 4.4338726831902825e-05,
+   "up_error_deg": 2.0614700166548044e-05,
+   "scale_error": 2.418261243031239e-06
+  },
+  {
+   "index": 80,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 0.0001573420080008967,
+   "direction_error_deg": 4.19393220783133e-05,
+   "up_error_deg": 2.4148365394514843e-05,
+   "scale_error": 2.072684152976123e-06
+  },
+  {
+   "index": 26,
+   "reach": "R2",
+   "found": true,
+   "position_error_m": 0.00012310818731313446,
+   "direction_error_deg": 4.034475724753357e-05,
+   "up_error_deg": 2.4979263396123047e-05,
+   "scale_error": 3.901024926644681e-06
+  },
+  {
+   "index": 64,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 8.901991024199962e-05,
+   "direction_error_deg": 1.1131846416284069e-05,
+   "up_error_deg": 3.922715954285103e-05,
+   "scale_error": 1.5263991588465586e-06
+  },
+  {
+   "index": 90,
+   "reach": "R3",
+   "found": true,
+   "position_error_m": 6.116313202488542e-05,
+   "direction_error_deg": 3.260029328259524e-05,
+   "up_error_deg": 3.8505096792433685e-05,
+   "scale_error": 1.3313296964856391e-06
+  }
+ ],
+ "max_errors": {
+  "position_error_m": 0.000651,
+  "direction_error_deg": 4.4e-05,
+  "up_error_deg": 3.9e-05,
+  "scale_error": 5e-06
+ },
+ "agreement": {
+  "PAD:body": {
+   "counts": {
+    "dry": 292,
+    "match": 312,
+    "pond": 36
+   },
+   "agreement": 1.0
+  },
+  "PAD:hull": {
+   "counts": {
+    "dry": 291,
+    "match": 315,
+    "pond": 34
+   },
+   "agreement": 1.0
+  },
+  "R1:body": {
+   "counts": {
+    "pond": 15,
+    "match": 278,
+    "dry": 6,
+    "miss_value": 1
+   },
+   "agreement": 0.9965
+  },
+  "R1:hull": {
+   "counts": {
+    "pond": 15,
+    "match": 278,
+    "dry": 6,
+    "miss_value": 1
+   },
+   "agreement": 0.9965
+  },
+  "R2:body": {
+   "counts": {
+    "match": 614
+   },
+   "agreement": 1.0
+  },
+  "R2:hull": {
+   "counts": {
+    "match": 614
+   },
+   "agreement": 1.0
+  },
+  "R3:body": {
+   "counts": {
+    "match": 387
+   },
+   "agreement": 1.0
+  },
+  "R3:hull": {
+   "counts": {
+    "match": 387
+   },
+   "agreement": 1.0
+  }
+ },
+ "holes": {
+  "PAD": [
+   {
+    "s": -18.0,
+    "offset": 0.0,
+    "surface": 3.1971
+   },
+   {
+    "s": -18.0,
+    "offset": 23.5,
+    "surface": 3.1971
+   },
+   {
+    "s": -18.0,
+    "offset": -23.5,
+    "surface": 3.1971
+   }
+  ]
+ },
+ "hole_counts": {
+  "PAD": 3
+ },
+ "visual_residual_by_zone": {
+  "PAD:flat": {
+   "n": 240,
+   "abs_p50_p90_max_m": [
+    0.0,
+    0.0001,
+    0.0001
+   ],
+   "share_le_1cm": 1.0,
+   "signed_p50_m": 0.0
+  },
+  "PAD:skirt+z": {
+   "n": 39,
+   "abs_p50_p90_max_m": [
+    0.0935,
+    0.1871,
+    0.2338
+   ],
+   "share_le_1cm": 0.154,
+   "signed_p50_m": 0.0935
+  },
+  "PAD:skirt-z": {
+   "n": 36,
+   "abs_p50_p90_max_m": [
+    0.0932,
+    0.1868,
+    0.2336
+   ],
+   "share_le_1cm": 0.083,
+   "signed_p50_m": -0.0932
+  },
+  "R1:flat": {
+   "n": 170,
+   "abs_p50_p90_max_m": [
+    0.0,
+    0.0,
+    0.0201
+   ],
+   "share_le_1cm": 0.965,
+   "signed_p50_m": 0.0
+  },
+  "R1:skirt+z": {
+   "n": 46,
+   "abs_p50_p90_max_m": [
+    0.2042,
+    0.4111,
+    0.5551
+   ],
+   "share_le_1cm": 0.022,
+   "signed_p50_m": 0.2042
+  },
+  "R1:skirt-z": {
+   "n": 63,
+   "abs_p50_p90_max_m": [
+    0.3107,
+    0.5147,
+    0.5585
+   ],
+   "share_le_1cm": 0.0,
+   "signed_p50_m": -0.2795
+  },
+  "R2:flat": {
+   "n": 557,
+   "abs_p50_p90_max_m": [
+    0.0,
+    0.0136,
+    0.0867
+   ],
+   "share_le_1cm": 0.878,
+   "signed_p50_m": 0.0
+  },
+  "R2:skirt+z": {
+   "n": 36,
+   "abs_p50_p90_max_m": [
+    0.0241,
+    0.0686,
+    0.129
+   ],
+   "share_le_1cm": 0.139,
+   "signed_p50_m": 0.0241
+  },
+  "R2:skirt-z": {
+   "n": 21,
+   "abs_p50_p90_max_m": [
+    0.0141,
+    0.0655,
+    0.0784
+   ],
+   "share_le_1cm": 0.381,
+   "signed_p50_m": -0.0091
+  },
+  "R3:flat": {
+   "n": 341,
+   "abs_p50_p90_max_m": [
+    0.0001,
+    0.024,
+    0.1343
+   ],
+   "share_le_1cm": 0.839,
+   "signed_p50_m": 0.0001
+  },
+  "R3:skirt+z": {
+   "n": 28,
+   "abs_p50_p90_max_m": [
+    0.0354,
+    0.0943,
+    0.1172
+   ],
+   "share_le_1cm": 0.25,
+   "signed_p50_m": 0.0354
+  },
+  "R3:skirt-z": {
+   "n": 18,
+   "abs_p50_p90_max_m": [
+    0.0186,
+    0.0698,
+    0.1194
+   ],
+   "share_le_1cm": 0.278,
+   "signed_p50_m": -0.0153
+  }
+ },
+ "misses": {
+  "R1:hull": [
+   {
+    "s": 228.02,
+    "offset": 30.5,
+    "engine": 0.582728,
+    "model": 1.0830500019016371
+   }
+  ],
+  "R1:body": [
+   {
+    "s": 228.02,
+    "offset": 30.5,
+    "engine": 0.58272,
+    "model": 1.0830413787553532
+   }
+  ]
+ },
+ "reference_sha256": "38773adc1a49bb21b76958ca08ffbfa6423a0c54cafdfe5bf818da03bb37339a",
+ "log_sha256": "6f41d7117d3bd8c09e8904635ebf40517754e550d005a6fdea49cabfd97fa680",
+ "limits": [
+  "Server readback of native APIs; no visual or boat result.",
+  "V2 prediction: engine rule of tools/water/engine_water_model.py, frozen in the reference before the run."
+ ]
+}
