@@ -1,0 +1,50 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "diagonal": {
+      "affected_edges": 1476,
+      "before_over20": 4,
+      "after_over20": 1,
+      "new_or_worsened_over20": 0,
+      "max_increase_deg": 7.185317426323407
+    },
+    "east": {
+      "affected_edges": 1504,
+      "before_over20": 5,
+      "after_over20": 6,
+      "new_or_worsened_over20": 2,
+      "max_increase_deg": 5.596297000722436
+    },
+    "south": {
+      "affected_edges": 1494,
+      "before_over20": 1,
+      "after_over20": 1,
+      "new_or_worsened_over20": 1,
+      "max_increase_deg": 10.748519963576186
+    }
+  },
+  "violations": [
+    {
+      "edge": "east",
+      "row": 1230,
+      "col": 1957,
+      "before": 19.641071052085486,
+      "after": 24.4855178160294
+    },
+    {
+      "edge": "east",
+      "row": 1232,
+      "col": 1959,
+      "before": 22.23451070882503,
+      "after": 22.36871271289662
+    },
+    {
+      "edge": "south",
+      "row": 1232,
+      "col": 1959,
+      "before": 39.30845781884832,
+      "after": 39.7749110617379
+    }
+  ],
+  "scope": "Independent native shared-edge census; preserve existing >20deg and do not introduce new >20deg folds. No visual acceptance."
+}

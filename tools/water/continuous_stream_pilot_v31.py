@@ -154,6 +154,9 @@ def strip_faces(n, m):
 
 
 def axis_for(site, vp, wet, lab):
+    if site.get('extend') or (site.get('mode','component')!='component' and
+                             site.get('ends')!={'up':'natural','dn':'natural'}):
+        raise ValueError(('independent replacement requires two natural ends',site['id']))
     if site.get('mode','component')=='component':
         body,_,P,s,W=kit.site_axis(site,vp,wet,lab)
         # Recover the exact unsampled source terminal from the same component.
@@ -191,14 +194,21 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('build');ap.add_argument('out')
     ap.add_argument('--sites',nargs='+',default=['kit-118','65.0-0'])
+    ap.add_argument('--candidate-base',type=Path,help='Explicit buried terrain/footprint/envelope directory; does not reset to the old pilot base')
+    ap.add_argument('--expected-terrain-sha256')
+    ap.add_argument('--expected-footprint-sha256')
     args=ap.parse_args();B=Path(args.build);out=Path(args.out)
     out.mkdir(parents=True,exist_ok=False);src=out/'source'/PREFIX;src.mkdir(parents=True)
     provenance=out/'provenance';provenance.mkdir()
     for source in (__file__,kit.__file__,py3d.__file__):
         path=Path(source);(provenance/path.name).write_bytes(path.read_bytes())
     tp=B/'water-fix-b/terrain.npz';fp=B/'water-fix-b/bury-work/fp0/footprint.npz'
-    assert sha(tp)=='07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62'
-    assert sha(fp)=='49ee2a69db85f047425f8e1d31a964f92771ceb19b203c42570b04c3c6207de5'
+    if args.candidate_base:
+        if not args.expected_terrain_sha256 or not args.expected_footprint_sha256:
+            raise ValueError('candidate base requires both frozen input hashes')
+        tp=args.candidate_base/'terrain-buried.npz';fp=args.candidate_base/'bury-work/fp0/footprint.npz'
+    assert sha(tp)==(args.expected_terrain_sha256 or '07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62')
+    assert sha(fp)==(args.expected_footprint_sha256 or '49ee2a69db85f047425f8e1d31a964f92771ceb19b203c42570b04c3c6207de5')
     for resource in (WATER_TEX,WATER_MAT,BED_TEX,BED_MAT,WATER_ROAD,BED_ROAD):
         assert (Path('P:/')/resource).is_file(), resource
     old=np.load(tp);arrays={k:old[k] for k in old.files};H0=arrays['heights'].astype(float);H=H0.copy()
@@ -208,8 +218,15 @@ def main():
     sites=json.loads((B.parent/'ev112-ot1-20261018/sites-d.json').read_text())
     oldrecords=json.loads((B/'water-fix-b/kit/kit-records.json').read_text())
     frozen=arrays['reserve']|arrays['platform']|arrays['narva']|arrays['v31_bridge_cut']|arrays['v31_bridge_fill']|arrays['v31_dam']|arrays['v31_causeway']|arrays['v31_shore_ramp']
+    sys.path.insert(0,str(HERE.parent/'terrain'))
+    from shape_repair_constraints_ev112 import s3_road_guard
+    road_guard,road_reference_hashes=s3_road_guard()
+    frozen|=road_guard
+    for key in ('v31_road_repair','v31_road_mesh_repair','v31_continuous_pilot'):
+        if key in arrays:frozen|=arrays[key]
     current_fp=np.load(fp);current_pond=np.isfinite(current_fp['plane'])
-    env=np.load(B/'dam/envelope-dam.npy').copy();cover=np.load(B/'dam/cover-dam.npy').copy()
+    env=np.load(args.candidate_base/'envelope.npy' if args.candidate_base else B/'dam/envelope-dam.npy').copy()
+    cover=np.load(args.candidate_base/'cover.npy' if args.candidate_base else B/'dam/cover-dam.npy').copy()
     env0=env.copy();cover0=cover.copy()
     # Entire current pond-cell planes stay exact, not just wet corners.
     protected=frozen|kit.c2v(current_pond)
@@ -257,6 +274,7 @@ def main():
         target=target+burrow*(np.minimum(target,support)-target)
         target=np.maximum(target,height_floor[sl])
         take=free&(blend>0)
+        assert not np.any(take&edited[sl]), ('replacement support overlap requires joint solve',name)
         initial=H0[sl].copy();initial[take]=target[take]
         ceiling=np.full_like(target,np.inf)
         wet_support=(dist<8)&(along>=4)
@@ -379,7 +397,9 @@ def main():
                             dry_bank_solver=bank_solver,
                             ends='natural; inherited from component or source reach',
                             geometry_status='CANDIDATE; independent verification and engine test pending'))
-    arrays['heights']=H.astype(np.float32);arrays['v31_continuous_pilot']=arrays['heights']!=arrays['heights'].dtype.type(H0)
+    arrays['heights']=H.astype(np.float32)
+    delta=arrays['heights']!=H0.astype(np.float32)
+    arrays['v31_continuous_pilot']=arrays.get('v31_continuous_pilot',np.zeros_like(delta))|delta
     assert np.array_equal(arrays['heights'][protected],H0.astype(np.float32)[protected])
     np.savez_compressed(out/'terrain.npz',**arrays)
     np.save(out/'envelope.npy',env);np.save(out/'cover.npy',cover)
@@ -388,7 +408,8 @@ def main():
     result=dict(schema='continuous-stream-pilot-v1',author_source_sha256=sha(__file__),terrain_input_sha256=sha(tp),footprint_sha256=sha(fp),
                 reference_terrain_sha256=sha(refpath),terrain_sha256=sha(out/'terrain.npz'),
                 sites=reports,instances=instances,removed_sites=args.sites,
-                changed_vertices=int(arrays['v31_continuous_pilot'].sum()),
+                changed_vertices=int(delta.sum()),road_reference_hashes=road_reference_hashes,
+                base_terrain_path=str(tp),base_footprint_path=str(fp),
                 retired_inactive_envelope_cells=int((np.isfinite(env0)&~np.isfinite(env)).sum()),
                 retired_inactive_cover_cells=int((np.isfinite(cover0)&~np.isfinite(cover)).sum()),
                 protected_vertices_unchanged=True,production_deployed=False,

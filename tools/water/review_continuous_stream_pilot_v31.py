@@ -4,7 +4,7 @@ This is an OFFLINE gate; motor water/collision and human visual acceptance remai
 separate. Has a deletion negative: removing the last water chunk must lose the
 frozen endpoint while leaving interior water present.
 """
-import argparse,json,sys
+import argparse,hashlib,json,sys
 from pathlib import Path
 import numpy as np
 from shapely.geometry import Polygon,Point
@@ -23,15 +23,39 @@ def vertices(lod,face,origin):
     return np.array([lod.points[v.point_index].coords for v in face.vertices])+origin
 
 
+def require_authored_support(authored,base,candidate):
+    if authored.shape!=base.shape or candidate.shape!=base.shape or not all(np.isfinite(h).all() for h in (authored,base,candidate)):
+        raise ValueError('invalid terrain shape or heights')
+    changed=authored!=base
+    if not changed.any() or not np.array_equal(candidate[changed],authored[changed]):
+        raise ValueError('review terrain does not retain the authored pilot support')
+
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('pilot');p.add_argument('build');p.add_argument('--terrain',type=Path);p.add_argument('--output',type=Path);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('pilot');p.add_argument('build');p.add_argument('--terrain',type=Path);p.add_argument('--output',type=Path)
+    p.add_argument('--base-terrain',type=Path);p.add_argument('--base-footprint',type=Path)
+    p.add_argument('--expected-base-sha256');p.add_argument('--expected-footprint-sha256');a=p.parse_args()
     out=Path(a.pilot);B=Path(a.build);rep=json.loads((out/'author-report.json').read_text())
     original=recover(B,[s['site'] for s in rep['sites']])
     dest=a.output or out
     if a.output:dest.mkdir(parents=True,exist_ok=False)
-    H=np.load(a.terrain or out/'terrain.npz')['heights'];base=np.load(B/'water-fix-b/terrain.npz')
+    bp=a.base_terrain or B/'water-fix-b/terrain.npz';fp_path=a.base_footprint or B/'water-fix-b/bury-work/fp0/footprint.npz'
+    if a.base_terrain or a.base_footprint:
+        if not (a.base_terrain and a.base_footprint and a.expected_base_sha256 and a.expected_footprint_sha256):
+            raise ValueError('explicit review base requires both paths and both pinned hashes')
+    base_hash=hashlib.sha256(bp.read_bytes()).hexdigest();fp_hash=hashlib.sha256(fp_path.read_bytes()).hexdigest()
+    assert base_hash==(a.expected_base_sha256 or '07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62')
+    assert fp_hash==(a.expected_footprint_sha256 or '49ee2a69db85f047425f8e1d31a964f92771ceb19b203c42570b04c3c6207de5')
+    assert rep['terrain_input_sha256']==base_hash and rep['footprint_sha256']==fp_hash
+    authored_path=out/'terrain.npz';terrain_path=a.terrain or authored_path
+    authored_hash=hashlib.sha256(authored_path.read_bytes()).hexdigest()
+    assert authored_hash==rep['terrain_sha256'], 'authored terrain changed'
+    terrain_hash=hashlib.sha256(terrain_path.read_bytes()).hexdigest()
+    H=np.load(terrain_path)['heights'];base=np.load(bp)
+    require_authored_support(np.load(authored_path)['heights'],base['heights'],H)
     changed=H!=base['heights'];reports=[];checks={}
-    fig,axes=plt.subplots(2,2,figsize=(12,10),constrained_layout=True)
+    assert rep['sites'] and len({s['site'] for s in rep['sites']})==len(rep['sites'])
+    fig,axes=plt.subplots(len(rep['sites']),2,figsize=(12,5*len(rep['sites'])),squeeze=False,constrained_layout=True)
     for si,site in enumerate(rep['sites']):
         name=site['site'];z=np.load(out/(name+'-surfaces.npz'))
         require_original_endpoints(site['original_raw_endpoints'],original[name])
@@ -95,17 +119,27 @@ def main():
         for j in range(0,bed.shape[1],2):ax.plot(s,bed[:,j,1],lw=.65,alpha=.65)
         ax.plot(s,z['level'],c='#1683ad',lw=2,label='Agua visual')
         ax.set_title(name+' · perfil del lecho y márgenes');ax.set_xlabel('Estación (m)');ax.set_ylabel('Altura (m)');ax.grid(alpha=.2)
-    fp=np.load(B/'water-fix-b/bury-work/fp0/footprint.npz');m=np.isfinite(fp['plane'])
+    fp=np.load(fp_path);m=np.isfinite(fp['plane'])
     pond=np.zeros_like(changed)
     for dr in (0,1):
         for dc in (0,1):pond[dr:dr+2047,dc:dc+2047]|=m
     checks['current_pond_corners_unchanged']=not bool((changed&pond).any())
     checks['frozen_unchanged']=not bool((changed&(base['reserve']|base['platform']|base['narva'])).any())
     checks['no_new_sea_vertices']=not bool(((base['heights']>=.75)&(H<.75)).any())
+    sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'terrain'))
+    from shape_repair_constraints_ev112 import s3_road_guard
+    road_guard,road_hashes=s3_road_guard()
+    checks['road_triangles_unchanged']=not bool((changed&road_guard).any())
+    for key in ('v31_bridge_cut','v31_bridge_fill','v31_dam','v31_causeway','v31_shore_ramp','v31_continuous_pilot','v31_road_repair','v31_road_mesh_repair'):
+        if key in base.files:checks[key+'_unchanged']=not bool((changed&base[key]).any())
+    rr,cc=np.mgrid[:2048,:2048]
+    checks['protected_01545_unchanged']=not bool((changed&(np.hypot(cc*6.-10397.4,12282.-rr*6.-9421.9)<=60)).any())
     fig.suptitle('EV112 · candidato geométrico, todavía sin aceptación en motor')
     fig.savefig(dest/'pilot-preview.png',dpi=160);plt.close(fig)
     result=dict(status='OFFLINE_PASS' if all(checks.values()) else 'FAIL',checks=checks,sites=reports,prekit_reference_sha256=PINS,
                 changed_vertices=int(changed.sum()),scope='Saved MLOD geometry only; no engine or visual claim.')
+    result.update(base_terrain_sha256=base_hash,base_footprint_sha256=fp_hash,road_reference_hashes=road_hashes,
+                  reviewed_terrain_path=str(terrain_path),reviewed_terrain_sha256=terrain_hash,authored_terrain_sha256=authored_hash)
     (dest/'review.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     print(json.dumps({k:v for k,v in result.items() if k!='sites'},indent=2))
     print(json.dumps([{k:v for k,v in r.items() if k!='models'} for r in reports],indent=2))

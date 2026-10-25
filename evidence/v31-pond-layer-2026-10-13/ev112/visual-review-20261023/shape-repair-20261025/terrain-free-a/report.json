@@ -1,0 +1,61 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "nonempty_correction": true,
+    "protected_exact": true,
+    "road_triangles_exact": true,
+    "pond_corners_exact": true,
+    "sea_classification_exact": true,
+    "no_new_peak_failures": true,
+    "no_new_pit_failures": true,
+    "existing_faults_not_worsened": false,
+    "slope_guard": false,
+    "targeted_vertices_clear": true
+  },
+  "input_sha256": "6a081028120778d3821574878d4b3845f419c411e661a97d1dc17f3440a4c8a1",
+  "footprint_sha256": "95f7a26304e88c726679ec69ef076bb149ec1f1f8bdf4a6cd1e83e40f3b6be83",
+  "output_sha256": "da1c442161d7e955b2f3d0bd96bfa63916206f8f58ac4f30dff8f33b9035e2b5",
+  "road_reference_hashes": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz": "94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\road-grade-chains-v6.json": "b31fb7d72398981ee98132ce59eab48c4aa404043718475fbb2725b13de1b824"
+  },
+  "source_sha256": "143a2503215db33a3f145d1bbddb6e7d5b46223109a384f5f614d8ed699d86f1",
+  "targeted_vertices": 3,
+  "changed_vertices": 82,
+  "max_delta_m": 0.75,
+  "before": {
+    "spike_vertices": 480,
+    "pit_vertices": 1732
+  },
+  "after": {
+    "spike_vertices": 479,
+    "pit_vertices": 1727
+  },
+  "solves": [
+    {
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 30,
+      "energy_before": 31.49196485256563,
+      "energy_after": 20.655376617930774,
+      "bounds_satisfied": true
+    },
+    {
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 26,
+      "energy_before": 173.31231770563025,
+      "energy_after": 150.09411679664717,
+      "bounds_satisfied": true
+    },
+    {
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 22,
+      "energy_before": 90.04776974861582,
+      "energy_after": 88.43193963020529,
+      "bounds_satisfied": true
+    }
+  ],
+  "scope": "Only free dry native spike/pit neighbourhoods; all other shape findings remain open. No compiled or visual acceptance."
+}

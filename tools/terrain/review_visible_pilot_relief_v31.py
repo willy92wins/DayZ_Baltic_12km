@@ -5,7 +5,7 @@ and overlaps/dihedrals of the full saved MLOD bed. Visibility uses samples on
 both sides of each native edge (0.10m inset, 0.5m spacing), not a claim of
 exhaustive occlusion. The independent native angle census includes all edges.
 """
-import argparse,csv,json,sys
+import argparse,csv,hashlib,json,sys
 from pathlib import Path
 import numpy as np
 import shapely
@@ -65,9 +65,15 @@ def mesh_edges(tris,H,water):
 
 
 def main():
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('pilot');ap.add_argument('build');a=ap.parse_args()
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('pilot');ap.add_argument('build')
+    ap.add_argument('--base-terrain',type=Path);ap.add_argument('--expected-base-sha256');a=ap.parse_args()
+    if bool(a.base_terrain)!=bool(a.expected_base_sha256):ap.error('base terrain and its frozen hash must be supplied together')
     P=Path(a.pilot);B=Path(a.build);rep=json.loads((P/'author-report.json').read_text())
-    H=np.load(P/'terrain.npz')['heights'].astype(float);H0=np.load(B/'water-fix-b/terrain.npz')['heights'].astype(float)
+    base=a.base_terrain or B/'water-fix-b/terrain.npz'
+    base_hash=hashlib.sha256(base.read_bytes()).hexdigest()
+    assert base_hash==(a.expected_base_sha256 or '07054c46ebf2861bc905fe2d68fb3b734d7b8e9ad1d538c73a7ee745edd56d62')
+    assert rep['terrain_input_sha256']==base_hash
+    H=np.load(P/'terrain.npz')['heights'].astype(float);H0=np.load(base)['heights'].astype(float)
     alltris=[];allwater=[];meshes=[]
     for site in rep['sites']:
         tris=[];water=[]
@@ -97,9 +103,10 @@ def main():
                              worsened=bool(angles[r,c]>A0[kind][r,c]+.01),both_sides_visible_samples=int((visible[0]&visible[1]).sum())))
     rows.sort(key=lambda r:(not r['exposed'],-r['after']))
     with open(P/'visible-native-creases.csv','w',newline='',encoding='utf-8') as f:
-        w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+        fields=['edge','row','col','x','z','before','after','exposed','worsened','both_sides_visible_samples']
+        w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
     exposed=[r for r in rows if r['exposed']]
-    result=dict(status='DIAGNOSTIC',meshes=meshes,native_over20=len(rows),exposed_over20=len(exposed),
+    result=dict(status='DIAGNOSTIC',base_terrain_sha256=base_hash,meshes=meshes,native_over20=len(rows),exposed_over20=len(exposed),
                 exposed_worsened=sum(r['worsened'] for r in exposed),worst_exposed=exposed[:15],
                 limitations=['Sampled visibility, not exhaustive occlusion.','20 degrees is diagnostic, not an aesthetic acceptance threshold.','Saved MLOD, not engine rendering.'])
     (P/'visible-relief-review.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
