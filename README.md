@@ -81,8 +81,12 @@ la huella del agua y las reservas de carretera. Compilación y sonda de
 revisión visual pendiente. [Comparación y controles](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/hybrid-relief-20261025/README.md).
 
 Piloto F: corregida una transición rectangular junto a Narva, con **165 tests**
-y controles de agua y carreteras superados. Conserva E y está en preparación
-para probarse en el motor. [Evidencia y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/rectangle-pilot-20261025/README.md).
+y controles de agua y carreteras superados. Conserva E y su paquete compilado está verificado; la sonda de4.749puntos
+está preparada para probarse en el motor. [Evidencia y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/rectangle-pilot-20261025/README.md).
+
+Comparación con Chernarus: instrumentación de servidor vacío preparada y revisada,
+con **184 tests**. Las seis pasadas aún no se han ejecutado.
+[Preparación y límites](evidence/performance/server-baseline-preparation-20261025/README.md).
 
 ## Desarrollo y documentación
 

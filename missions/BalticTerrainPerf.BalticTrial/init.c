@@ -22,7 +22,9 @@ class BalticTerrainPerfMission: MissionServer
     override void OnInit()
     {
         super.OnInit();
-        if (!GetGame().IsDedicatedServer() || GetGame().GetWorldName() != "BalticTrial")
+        string actualWorld = GetGame().GetWorldName();
+        actualWorld.ToLower();
+        if (!GetGame().IsDedicatedServer() || actualWorld != "baltictrial")
         {
             m_Finished = true;
             return;
@@ -34,7 +36,7 @@ class BalticTerrainPerfMission: MissionServer
             m_Finished = true;
             return;
         }
-        FPrintln(report, "BALTIC_TERRAIN_PERF_V1;BalticTrial;SERVER;NO_CE_NO_PLAYERS");
+        FPrintln(report, "BALTIC_TERRAIN_PERF_V1;" + GetGame().GetWorldName() + ";SERVER;NO_CE_NO_PLAYERS");
         FPrintln(report, "INIT;" + m_Start + ";" + GetGame().GetTime());
         FPrintln(report, "columns;sample;tick;mission_ms;window_s;updates;sum_timeslice;max_timeslice;over50ms;fps_min64;fps_max64;fps_avg64");
         CloseFile(report);

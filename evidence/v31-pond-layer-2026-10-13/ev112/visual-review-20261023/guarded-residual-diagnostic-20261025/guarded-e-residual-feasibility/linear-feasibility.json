@@ -1,0 +1,59 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NO_CANDIDATE",
+  "selected_clusters": [
+    15,
+    16,
+    28,
+    44
+  ],
+  "results": [
+    {
+      "cluster": 15,
+      "variables": 9,
+      "linear_rows": 11,
+      "linear_witness_feasible": true,
+      "lp_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "nonlinear_minimum": [
+        0.3966647356326512,
+        -0.05013681624930577
+      ]
+    },
+    {
+      "cluster": 16,
+      "variables": 23,
+      "linear_rows": 191,
+      "linear_witness_feasible": false,
+      "lp_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "cluster": 28,
+      "variables": 37,
+      "linear_rows": 278,
+      "linear_witness_feasible": false,
+      "lp_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "cluster": 44,
+      "variables": 16,
+      "linear_rows": 36,
+      "linear_witness_feasible": true,
+      "lp_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "nonlinear_minimum": [
+        0.40601845501954215,
+        -0.03403100615004906
+      ]
+    }
+  ],
+  "source_sha256": "f5bf8ac5f841072527f81e72f9ac640bb3757e34a602e31e9273956d6c35f5ba",
+  "solver_sha256": "5f575db39c594f231860528b69bc515e0ebc4c00ac9ab249fbe5b992c791aad0",
+  "instrumented_author_sha256": "c2e09f277adcaa79767ed28762781db6b51e44e4cb85e4c04cf33cdc77f11450",
+  "retained_terrain_sha256": "efbf0c18b1144ee401d983e4f64e2a35b489c69ae5f333524fdc66fbbf4714f9",
+  "limits": [
+    "LP infeasibility applies only to the selected sufficient witnesses, not to unrestricted min/max prominence.",
+    "No terrain, geometry, package or production source authored or changed."
+  ]
+}

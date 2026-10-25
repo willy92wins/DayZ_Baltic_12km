@@ -1,6 +1,6 @@
 # EV112 — transición rectangular de Narva, candidato F
 
-**Corrección offline verificada; compilación y motor pendientes.** El piloto
+**Corrección offline y paquete compilado verificados; motor pendiente.** El piloto
 X2916/Z6834 suaviza94 vértices libres dentro de24m, con delta máximo0,502m.
 Los máximos por eje bajan de0,363/0,435m a0,165/0,235m (EO/NS), bajo0,30m.
 El censo global pasa de5 a4 transiciones rectangulares; las otras cuatro son
@@ -22,7 +22,8 @@ esa diferencia, sin afirmar igualdad de máscaras.
 Fuente WRP:2578725 objetos,59 ajustes de altura de árboles; restantes2578666
 byte exactos. Error máximo de apoyo independiente4,64e-7m. El control completo de bosque mide2560872
 instancias sin fallos y conserva los mismos3727 discos de borde INCONCLUSOS.
-La compilación continúa. La navegación en cálculo pertenece a E;
+Compilación terminada y2578725 objetos/62poses contrastados en el paquete.
+Sonda de4749puntos preparada, sin ejecutar. La navegación en cálculo pertenece a E;
 no acredita este candidato F. Siguen pendientes vista, contacto cliente,
 otras transiciones, ríos restantes y benchmark frente a Chernarus.
 
