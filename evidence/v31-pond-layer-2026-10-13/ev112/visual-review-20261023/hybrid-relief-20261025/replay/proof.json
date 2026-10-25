@@ -1,0 +1,19 @@
+{
+  "status": "BYTE_EXACT_TERRAIN_AND_DOMAINS_REPLAY",
+  "original_report_sha256": "d25ed164363e3c121ee93cc9ebd031fa0efc4f754c37b30053047984822b9111",
+  "replay_report_sha256": "18a0bb1d4055e669ca74d490ee9cb19a254211c249691d305b7f99df6159b3d0",
+  "terrain_sha256": "efbf0c18b1144ee401d983e4f64e2a35b489c69ae5f333524fdc66fbbf4714f9",
+  "domains_sha256": "272a4138c18d0d7c55882bd67b4574250a783635b1a11f81778edbf4fa37242d",
+  "source_hashes": [
+    "f5bf8ac5f841072527f81e72f9ac640bb3757e34a602e31e9273956d6c35f5ba",
+    "821ed14a97ae2886db32c0d2cff646a0891aa10072bddda35aad5c9186741bef"
+  ],
+  "fixes": [
+    "Dirty-context guard includes accepted sibling clusters.",
+    "Source hashes captured at entry and rechecked at exit.",
+    "Retry mode and inherited error recorded separately."
+  ],
+  "limits": [
+    "Build consumers remain bound to original byte-identical E terrain; source snapshots preserve both runs."
+  ]
+}

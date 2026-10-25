@@ -38,7 +38,16 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('base',type=Path);ap.add_argument('discovery',type=Path);ap.add_argument('out',type=Path)
     ap.add_argument('--expected-terrain-sha256',required=True);ap.add_argument('--expected-domains-sha256',required=True)
+    ap.add_argument('--retain-candidate',type=Path);ap.add_argument('--expected-retained-sha256')
+    ap.add_argument('--expected-retained-domains-sha256');ap.add_argument('--hybrid-witnesses',action='store_true')
     a=ap.parse_args();tp=a.base/'terrain-buried.npz';fp=a.base/'bury-work/fp0/footprint.npz';dp=a.discovery/'domains.npz'
+    retention_args=(a.retain_candidate,a.expected_retained_sha256,a.expected_retained_domains_sha256)
+    if any(retention_args) and not all(retention_args):ap.error('Retained terrain and domains hashes must accompany the retained candidate')
+    if a.hybrid_witnesses and not a.retain_candidate:ap.error('Hybrid mode is restricted to failed clusters of a retained candidate')
+    solver_path=Path(__file__).with_name('repair_free_shapes_ev112.py').resolve()
+    if fair_native_patch.__module__!='repair_free_shapes_ev112' or Path(fair_native_patch.__code__.co_filename).resolve()!=solver_path:
+        raise ValueError('Solver substitution is not an authored candidate')
+    author_hash,solver_hash=sha(__file__),sha(solver_path)
     assert sha(tp)==a.expected_terrain_sha256 and sha(dp)==a.expected_domains_sha256
     discovery=json.loads((a.discovery/'report.json').read_text())
     assert discovery['terrain_sha256']==sha(tp) and discovery['footprint_sha256']==sha(fp)
@@ -56,13 +65,40 @@ def main():
     pk0,pt0,*_=P.prominence(h0)
     floor=np.minimum(h0,D.lower_floor(arrays,np.load(a.base/'envelope.npy')))
     prior=gaussian_filter(h0,2,mode='nearest')
-    reports=[];accepted=np.zeros_like(free)
+    reports=[];accepted=np.zeros_like(free);retained=None;previous_changed=np.zeros_like(free);previous_clusters={}
+    if a.retain_candidate:
+        oldtp=a.retain_candidate/'terrain.npz';oldmp=a.retain_candidate/'domains.npz';oldrp=a.retain_candidate/'report.json'
+        if sha(oldtp)!=a.expected_retained_sha256 or sha(oldmp)!=a.expected_retained_domains_sha256:raise ValueError('Retained candidate identity mismatch')
+        old_report=json.loads(oldrp.read_text());old_arrays=np.load(oldtp);old_masks=np.load(oldmp)
+        if old_report['status']!='PARTIAL_LOCAL_OFFLINE_PASS_PENDING_FULL_VALIDATION' or old_report['input_sha256']!=sha(tp) or old_report['domains_sha256']!=sha(dp) or old_report['output_sha256']!=sha(oldtp) or not old_report['checks'] or not all(old_report['checks'].values()):raise ValueError('Retained candidate provenance failed')
+        for key in arrays:
+            if key not in ('heights','v31_shape_repair') and not np.array_equal(arrays[key],old_arrays[key],equal_nan=True):raise ValueError('Retained metadata drift')
+        h=old_arrays['heights'].astype(float);previous_changed=h!=h0
+        if not np.array_equal(previous_changed,old_masks['changed']):raise ValueError('Retained change mask mismatch')
+        for key,value in (('free',free),('road',road),('shore',shore),('target',target)):
+            if not np.array_equal(old_masks[key],value):raise ValueError('Retained domain mismatch: '+key)
+        accepted=old_masks['accepted'].copy()
+        if (accepted&~target).any():raise ValueError('Retained acceptance outside target')
+        if not np.array_equal(old_arrays['v31_shape_repair'],arrays.get('v31_shape_repair',np.zeros_like(free))|previous_changed):raise ValueError('Retained layer union mismatch')
+        previous_clusters={item['cluster']:item for item in old_report['clusters']}
+        if set(previous_clusters)!=set(range(1,count+1)):raise ValueError('Retained cluster coverage mismatch')
+        pass_mask=np.isin(clusters,[i for i,x in previous_clusters.items() if x['status']=='LOCAL_CHECKS_PASS'])
+        if (previous_changed&~pass_mask).any() or not np.array_equal(accepted,target&pass_mask):raise ValueError('Retained cluster masks mismatch')
+        retained=dict(terrain_sha256=sha(oldtp),domains_sha256=sha(oldmp),report_sha256=sha(oldrp),groups_applied=old_report['groups_applied'],changed_vertices=int(previous_changed.sum()))
     for ident,sl0 in enumerate(find_objects(clusters),1):
         members=[g for g in groups if clusters[tuple(g['representative'])]==ident]
         assert all((clusters[tuple(np.array(g['target_vertices']).T)]==ident).all() for g in members)
         sl=tuple(slice(max(0,s.start-4),min(h0.shape[axis],s.stop+4)) for axis,s in enumerate(sl0))
+        if retained:
+            previous=previous_clusters[ident]
+            if previous['status']!='SOLVER_FAILED':
+                reports.append(dict(previous,inherited=True));continue
+            if (h[sl]!=h0[sl]).any():
+                skipped=dict(previous,status='NOT_RETRIED_CHANGED_CONTEXT',retried=False,reason='Previously accepted terrain intersects the padded solver slice')
+                if 'error' in skipped:skipped['previous_error']=skipped.pop('error')
+                reports.append(skipped);continue
         use=free[sl]&(clusters[sl]==ident)
-        item=dict(cluster=ident,groups=[dict(kind=g['kind'],representative=g['representative']) for g in members],free_vertices=int(use.sum()))
+        item=dict(cluster=ident,groups=[dict(kind=g['kind'],representative=g['representative']) for g in members],free_vertices=int(use.sum()),retried=bool(retained),witness_mode='hybrid' if a.hybrid_witnesses else 'bounds')
         if not use.any() or use.sum()>600:
             item['status']='NOT_SOLVED_DOMAIN_BUDGET';reports.append(item);continue
         base=h0[sl];lo=np.maximum(base-.75,floor[sl]);hi=base+.75
@@ -78,7 +114,7 @@ def main():
         ptarg=peak_target[sl]&(clusters[sl]==ident);ttarg=pit_target[sl]&(clusters[sl]==ident)
         pc[ptarg]=.2999;tc[ttarg]=.2999
         try:
-            patch,solve=fair_native_patch(base,prior[sl],use,lo,hi,pc,tc,bound_witnesses=True)
+            patch,solve=fair_native_patch(base,prior[sl],use,lo,hi,pc,tc,bound_witnesses=True,preserve_satisfied_witnesses=a.hybrid_witnesses)
         except ValueError as exc:
             item.update(status='SOLVER_FAILED',error=str(exc));reports.append(item);continue
         patch=patch.astype(np.float32).astype(float)
@@ -109,6 +145,7 @@ def main():
                 accepted_targets_clear=bool((pk[accepted&peak_target]<=.3).all() and (pt[accepted&pit_target]<=.3).all()),
                 slope_guard=not bool(((up>np.maximum(up0,35)+1e-5)|(low>np.maximum(lo0,35)+1e-5)).any()),
                 no_new_or_worse_sharp_edges=all((angles[k]<=np.maximum(angles0[k],20)+.01).all() for k in angles0))
+    if retained:checks['retained_changes_exact']=bool(np.array_equal(h[previous_changed],old_arrays['heights'][previous_changed]))
     footprint=np.load(fp);water=np.where(np.isfinite(footprint['plane'])[:,:,None],footprint['field'],.75)
     corners=lambda v:np.stack((v[:-1,:-1],v[:-1,1:],v[1:,:-1],v[1:,1:]),axis=-1)
     checks['visual_water_corner_classifications_exact']=bool(np.array_equal(corners(h)<water,corners(h0)<water))
@@ -116,13 +153,14 @@ def main():
     np.savez_compressed(a.out/'terrain.npz',**arrays)
     np.savez_compressed(a.out/'domains.npz',free=free,road=road,shore=shore,target=target,accepted=accepted,changed=changed)
     accepted_groups=[g for g in groups if accepted[tuple(g['representative'])]]
+    if sha(__file__)!=author_hash or sha(solver_path)!=solver_hash:raise ValueError('Author or solver source changed during execution')
     result=dict(status='PARTIAL_LOCAL_OFFLINE_PASS_PENDING_FULL_VALIDATION' if all(checks.values()) else 'FAIL',checks=checks,
                 groups_considered=len(groups),groups_applied=len(accepted_groups),peak_groups_applied=sum(g['kind']=='peak' for g in accepted_groups),
                 pit_groups_applied=sum(g['kind']=='pit' for g in accepted_groups),clusters=reports,
                 changed_vertices=int(changed.sum()),raised_vertices=int((h>h0).sum()),lowered_vertices=int((h<h0).sum()),
                 delta_min_m=float((h-h0).min()),delta_max_m=float((h-h0).max()),
-                input_sha256=sha(tp),output_sha256=sha(a.out/'terrain.npz'),domains_sha256=sha(dp),author_sha256=sha(__file__),
-                solver_sha256=sha(Path(__file__).with_name('repair_free_shapes_ev112.py')),
+                input_sha256=sha(tp),output_sha256=sha(a.out/'terrain.npz'),domains_sha256=sha(dp),author_sha256=author_hash,
+                solver_sha256=solver_hash,retained_candidate=retained,witness_mode='hybrid' if a.hybrid_witnesses else 'bounds',
                 scope='Only successfully verified clusters applied. Rejected clusters and all other findings stay open. No forest/binary/runtime/visual acceptance.')
     (a.out/'report.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k!='clusters'},indent=2))

@@ -1,0 +1,337 @@
+{
+  "status": "RESIDUALS_OPEN",
+  "counts": {
+    "native_spike": 268,
+    "native_pit": 1144,
+    "rectangular_terrain_transition": 5
+  },
+  "tag_combinations": {
+    "native_spike": {
+      "total": 268,
+      "exact_tag_combinations": {
+        "outside_listed_domains": 16,
+        "v31_kit": 32,
+        "pond_corners + v31_kit": 12,
+        "sea_bed": 1,
+        "pond_corners": 54,
+        "reserve + v31_shore_ramp": 34,
+        "sea_bed + v31_causeway + v31_shore_ramp": 1,
+        "v31_causeway": 14,
+        "pond_corners + v31_causeway": 3,
+        "platform + reserve": 11,
+        "v31_causeway + v31_shore_ramp": 2,
+        "platform": 16,
+        "platform + protected_01545_60m + reserve": 1,
+        "reserve + v31_causeway": 1,
+        "platform + pond_corners + reserve + v31_bridge_cut + v31_bridge_fill": 2,
+        "platform + v31_bridge_cut + v31_bridge_fill": 7,
+        "platform + pond_corners + v31_bridge_cut + v31_bridge_fill": 3,
+        "v31_shore_ramp": 3,
+        "platform + reserve + v31_bridge_cut + v31_bridge_fill": 2,
+        "narva": 14,
+        "narva + v31_dam": 1,
+        "narva + pond_corners + v31_dam": 1,
+        "narva + pond_corners": 14,
+        "pond_corners + v31_shore_ramp": 13,
+        "platform + pond_corners + reserve": 4,
+        "platform + pond_corners": 3,
+        "pond_corners + reserve + v31_shore_ramp": 2,
+        "pond_corners + v31_causeway + v31_shore_ramp": 1
+      }
+    },
+    "native_pit": {
+      "total": 1144,
+      "exact_tag_combinations": {
+        "sea_bed": 353,
+        "pond_corners": 626,
+        "platform": 1,
+        "sea_bed + v31_shore_ramp": 52,
+        "sea_bed + v31_causeway": 41,
+        "reserve + sea_bed + v31_causeway": 2,
+        "reserve + sea_bed + v31_shore_ramp": 4,
+        "outside_listed_domains": 11,
+        "reserve + sea_bed + v31_causeway + v31_shore_ramp": 1,
+        "sea_bed + v31_causeway + v31_shore_ramp": 4,
+        "v31_kit": 13,
+        "platform + protected_01545_60m + reserve": 1,
+        "platform + reserve": 2,
+        "reserve": 1,
+        "pond_corners + reserve": 8,
+        "narva + sea_bed": 11,
+        "narva": 1,
+        "narva + pond_corners": 8,
+        "pond_corners + v31_causeway": 3,
+        "pond_corners + reserve + v31_causeway": 1
+      }
+    },
+    "rectangular_terrain_transition": {
+      "total": 5,
+      "exact_tag_combinations": {
+        "outside_listed_domains": 1,
+        "pond_corners": 4
+      }
+    }
+  },
+  "rejected_target_clusters": [
+    {
+      "cluster": 15,
+      "groups": [
+        {
+          "kind": "peak",
+          "representative": [
+            507,
+            1669
+          ]
+        }
+      ],
+      "status": "SOLVER_FAILED",
+      "reason": null,
+      "error": "('constrained native fairing failed', 'Positive directional derivative for linesearch')",
+      "checks": null
+    },
+    {
+      "cluster": 16,
+      "groups": [
+        {
+          "kind": "peak",
+          "representative": [
+            522,
+            1668
+          ]
+        },
+        {
+          "kind": "pit",
+          "representative": [
+            522,
+            1670
+          ]
+        }
+      ],
+      "status": "SOLVER_FAILED",
+      "reason": null,
+      "error": "('constrained native fairing failed', 'Positive directional derivative for linesearch')",
+      "checks": null
+    },
+    {
+      "cluster": 28,
+      "groups": [
+        {
+          "kind": "pit",
+          "representative": [
+            929,
+            1310
+          ]
+        },
+        {
+          "kind": "pit",
+          "representative": [
+            931,
+            1306
+          ]
+        }
+      ],
+      "status": "SOLVER_FAILED",
+      "reason": null,
+      "error": "('constrained native fairing failed', 'Positive directional derivative for linesearch')",
+      "checks": null
+    },
+    {
+      "cluster": 35,
+      "groups": [
+        {
+          "kind": "peak",
+          "representative": [
+            1024,
+            254
+          ]
+        }
+      ],
+      "status": "LOCAL_CHECKS_FAIL",
+      "reason": null,
+      "error": null,
+      "checks": {
+        "fixed_exact": true,
+        "no_new_overshoot_exact": true,
+        "bounds_respected": true,
+        "target_clear": true,
+        "no_new_or_worse_faults": true,
+        "no_new_or_worse_sharp_edges": true,
+        "pure_energy_decreased": false
+      }
+    },
+    {
+      "cluster": 39,
+      "groups": [
+        {
+          "kind": "peak",
+          "representative": [
+            1171,
+            190
+          ]
+        }
+      ],
+      "status": "NOT_RETRIED_CHANGED_CONTEXT",
+      "reason": "Previously accepted terrain intersects the padded solver slice",
+      "error": null,
+      "checks": null
+    },
+    {
+      "cluster": 44,
+      "groups": [
+        {
+          "kind": "peak",
+          "representative": [
+            1371,
+            1754
+          ]
+        },
+        {
+          "kind": "peak",
+          "representative": [
+            1374,
+            1753
+          ]
+        },
+        {
+          "kind": "peak",
+          "representative": [
+            1377,
+            1752
+          ]
+        }
+      ],
+      "status": "SOLVER_FAILED",
+      "reason": null,
+      "error": "('constrained native fairing failed', 'Positive directional derivative for linesearch')",
+      "checks": null
+    }
+  ],
+  "rectangle_findings_unchanged": [
+    {
+      "kind": "rectangular_terrain_transition",
+      "row": 87.63157894736842,
+      "col": 126.52631578947368,
+      "bbox_rc": [
+        85,
+        124,
+        91,
+        131
+      ],
+      "hull_fill": 0.9285714285714286,
+      "perimeter_share": 0.9473684210526315,
+      "edge_vertices": 19,
+      "min_side_m": 25.45584412271571,
+      "max_side_m": 29.698484809834994,
+      "xy": [
+        762,
+        11754
+      ],
+      "domains": [
+        "outside_listed_domains"
+      ]
+    },
+    {
+      "kind": "rectangular_terrain_transition",
+      "row": 144.8181818181818,
+      "col": 1548.090909090909,
+      "bbox_rc": [
+        140,
+        1544,
+        150,
+        1553
+      ],
+      "hull_fill": 0.9,
+      "perimeter_share": 0.9090909090909091,
+      "edge_vertices": 33,
+      "min_side_m": 25.45584412271571,
+      "max_side_m": 63.63961030678928,
+      "xy": [
+        9288,
+        11412
+      ],
+      "domains": [
+        "pond_corners"
+      ]
+    },
+    {
+      "kind": "rectangular_terrain_transition",
+      "row": 907.9047619047619,
+      "col": 486.38095238095235,
+      "bbox_rc": [
+        906,
+        484,
+        911,
+        490
+      ],
+      "hull_fill": 0.925,
+      "perimeter_share": 1.0,
+      "edge_vertices": 21,
+      "min_side_m": 24.0,
+      "max_side_m": 30.0,
+      "xy": [
+        2916,
+        6834
+      ],
+      "domains": [
+        "pond_corners"
+      ]
+    },
+    {
+      "kind": "rectangular_terrain_transition",
+      "row": 1307.0256410256409,
+      "col": 815.076923076923,
+      "bbox_rc": [
+        1305,
+        810,
+        1310,
+        822
+      ],
+      "hull_fill": 0.9090909090909091,
+      "perimeter_share": 1.0,
+      "edge_vertices": 39,
+      "min_side_m": 24.0,
+      "max_side_m": 66.0,
+      "xy": [
+        4890,
+        4440
+      ],
+      "domains": [
+        "pond_corners"
+      ]
+    },
+    {
+      "kind": "rectangular_terrain_transition",
+      "row": 1709.0,
+      "col": 507.5,
+      "bbox_rc": [
+        1706,
+        504,
+        1713,
+        512
+      ],
+      "hull_fill": 0.9206349206349206,
+      "perimeter_share": 1.0,
+      "edge_vertices": 28,
+      "min_side_m": 29.698484809834994,
+      "max_side_m": 38.18376618407357,
+      "xy": [
+        3048,
+        2028
+      ],
+      "domains": [
+        "pond_corners"
+      ]
+    }
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\guarded-relief-batch-e\\shape-screen.json": "f49008682cb351d9eb57e1cf53ba8e8ad77db6153f90fd710aa8225e4ec9136b",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\guarded-relief-batch-d\\shape-screen.json": "07bea74cf8df670e4ba45524d1bc1a2764680272b8a0284e7571a8c82b103c81",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\guarded-relief-batch-e-replay\\report.json": "18a0bb1d4055e669ca74d490ee9cb19a254211c249691d305b7f99df6159b3d0"
+  },
+  "limits": [
+    "A screen finding is not a uniquely confirmed visual defect.",
+    "Domain tags are descriptive and do not authorize changing protected heights.",
+    "Failed SLSQP is not proof of geometric impossibility.",
+    "The 10 unapplied target groups are a subset of all remaining findings."
+  ]
+}

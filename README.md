@@ -62,9 +62,9 @@ orillas, relieve, colisiones y conexiones. Los controles de terreno de las
 carreteras pasan en el ámbito medido; las carreteras físicas, la conducción y
 la navegación completa siguen pendientes de validación en juego.
 
-Último avance: el candidato U2 supera **2.823 controles de servidor y 300
-rayos de repetición**, con los cinco fallos de contacto anteriores corregidos;
-**149 pruebas automatizadas** pasan. [Resultados, evidencia y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/runtime-rv-contact-20261025/README.md).
+La base de colisión U2 supera **2.823 controles de servidor y 300 rayos de
+repetición**, con los cinco fallos de contacto anteriores corregidos.
+[Resultados de colisión y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/runtime-rv-contact-20261025/README.md).
 
 El mapeado urbano, la economía de loot Este/Oeste y su progresión son parte de
 la visión pendiente de implementar. La comparación de rendimiento con Chernarus
@@ -75,9 +75,10 @@ acercamientos y el [mapa regional del recorte](docs/images/baltic-region.png)
 se han generado con datos de **© OpenStreetMap contributors** y **ESA WorldCover 2021**;
 [procedencia, créditos y reproducción de las imágenes](docs/images/README.md).
 
-Nuevo candidato de relieve: **58 picos y8 depresiones corregidos**, manteniendo
+Nuevo candidato de relieve E: **59 picos y 12 depresiones corregidos**, manteniendo
 la huella del agua y las reservas de carretera. Compilación y sonda de
-**4.292 puntos en servidor superadas**; revisión visual pendiente. [Comparación y controles](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/guarded-relief-20261025/README.md).
+**4.401 puntos en servidor superadas**, junto con **159 pruebas automatizadas**;
+revisión visual pendiente. [Comparación y controles](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/hybrid-relief-20261025/README.md).
 
 ## Desarrollo y documentación
 
