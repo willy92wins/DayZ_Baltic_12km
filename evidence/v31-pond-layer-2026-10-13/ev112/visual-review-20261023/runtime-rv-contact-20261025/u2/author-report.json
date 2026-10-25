@@ -1,0 +1,1593 @@
+{
+  "schema": "continuous-stream-pilot-v1",
+  "author_source_sha256": "8b340a2ab4e25d69ff9baf46f71c8f843c9da2c02137c32fa356a0bb9deb9169",
+  "terrain_input_sha256": "6a081028120778d3821574878d4b3845f419c411e661a97d1dc17f3440a4c8a1",
+  "footprint_sha256": "95f7a26304e88c726679ec69ef076bb149ec1f1f8bdf4a6cd1e83e40f3b6be83",
+  "reference_terrain_sha256": "b804f6ff16bce28ba47a5c9a01184c66212c93bcd20ed57509ac7ea4192f2e1c",
+  "terrain_sha256": "8433348b031af7dd73cd8ea7a0c61ef340e75aec51e574e2b5786dd9d5fd408d",
+  "sites": [
+    {
+      "site": "kit-118",
+      "length_m": 302.63228129618045,
+      "endpoints": [
+        [
+          8258.111947183976,
+          8929.430202925752
+        ],
+        [
+          8216.860199705827,
+          9215.11289097407
+        ]
+      ],
+      "original_raw_endpoints": [
+        [
+          8262.0,
+          8934.0
+        ],
+        [
+          8220.0,
+          9210.0
+        ]
+      ],
+      "water_levels": [
+        7.073529625137379,
+        2.1464531902626045
+      ],
+      "max_turn_per_m_deg": 3.9236595440169713,
+      "water_road_to_terrain_min_m": 0.5999999999999996,
+      "chunk_count": 26,
+      "support_solver": {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "iterations": 122,
+        "energy_before": 292.76028863110275,
+        "energy_after": 168.97385166553292,
+        "bounds_satisfied": true
+      },
+      "dry_bank_solver": {
+        "success": true,
+        "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "iterations": 437,
+        "energy_before": 108.67507633225203,
+        "energy_after": 102.88710023079706,
+        "bounds_satisfied": true
+      },
+      "ends": "natural; inherited from component or source reach",
+      "geometry_status": "CANDIDATE; independent verification and engine test pending"
+    },
+    {
+      "site": "65.0-0",
+      "length_m": 99.01161535470719,
+      "endpoints": [
+        [
+          5201.317402154343,
+          5894.779430576394
+        ],
+        [
+          5128.518881777926,
+          5832.185682429361
+        ]
+      ],
+      "original_raw_endpoints": [
+        [
+          5196.0,
+          5892.0
+        ],
+        [
+          5130.0,
+          5838.0
+        ]
+      ],
+      "water_levels": [
+        3.6579721152520586,
+        2.540479086554408
+      ],
+      "max_turn_per_m_deg": 3.931722986052584,
+      "water_road_to_terrain_min_m": 0.8721278000923627,
+      "chunk_count": 9,
+      "support_solver": {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "iterations": 120,
+        "energy_before": 649.6450572041919,
+        "energy_after": 471.51100409643266,
+        "bounds_satisfied": true
+      },
+      "dry_bank_solver": {
+        "success": false,
+        "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+        "iterations": 500,
+        "energy_before": 74.65618634083549,
+        "energy_after": 38.641048336309645,
+        "bounds_satisfied": true
+      },
+      "ends": "natural; inherited from component or source reach",
+      "geometry_status": "CANDIDATE; independent verification and engine test pending"
+    },
+    {
+      "site": "131.0-0",
+      "length_m": 314.49356904972643,
+      "endpoints": [
+        [
+          8347.761007958421,
+          481.7537138024581
+        ],
+        [
+          8542.595953019949,
+          717.8570994073807
+        ]
+      ],
+      "original_raw_endpoints": [
+        [
+          8352.0,
+          486.0
+        ],
+        [
+          8538.0,
+          714.0
+        ]
+      ],
+      "water_levels": [
+        2.314213261692926,
+        1.9801446445514874
+      ],
+      "max_turn_per_m_deg": 0.6454094432334552,
+      "water_road_to_terrain_min_m": 0.5997395970267121,
+      "chunk_count": 27,
+      "support_solver": {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "iterations": 133,
+        "energy_before": 284.45976142031594,
+        "energy_after": 42.11826320718149,
+        "bounds_satisfied": true
+      },
+      "dry_bank_solver": {
+        "success": true,
+        "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "iterations": 419,
+        "energy_before": 111.91162618181387,
+        "energy_after": 105.15584281524318,
+        "bounds_satisfied": true
+      },
+      "ends": "natural; inherited from component or source reach",
+      "geometry_status": "CANDIDATE; independent verification and engine test pending"
+    }
+  ],
+  "instances": [
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0000.p3d",
+      "origin": [
+        8262.0,
+        7.0,
+        8934.0
+      ],
+      "station": [
+        0.0,
+        11.992418171055267
+      ],
+      "sha256": "bbf4d5e40dfcb3bf5216981f10cbf21db681d403ea51c4e20676956289207c5a",
+      "visual_triangles": 1544,
+      "collision_components": 1520,
+      "signed_collision_volume": -175.1834587007761
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0012.p3d",
+      "origin": [
+        8267.0,
+        7.0,
+        8945.0
+      ],
+      "station": [
+        11.992418171055267,
+        23.977254513165803
+      ],
+      "sha256": "721f232700bf4f80d6ee269c8d92a8fbf14b0443e0eba73d55c536b10dbeb234",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -104.27910044789314
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0024.p3d",
+      "origin": [
+        8271.0,
+        7.0,
+        8956.0
+      ],
+      "station": [
+        23.977254513165803,
+        35.96209085527634
+      ],
+      "sha256": "0b486106e4c86dad9d98667f8af933fb935ca541681e33f4eb70bc8c777d372e",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -150.5959202349186
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0036.p3d",
+      "origin": [
+        8273.0,
+        6.0,
+        8968.0
+      ],
+      "station": [
+        35.96209085527634,
+        47.94692719738687
+      ],
+      "sha256": "ebe493e0ef5e49a0233019e8479a38618b55e4f666c4e077336e0fe87d53901f",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.69385969638824
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0048.p3d",
+      "origin": [
+        8274.0,
+        6.0,
+        8980.0
+      ],
+      "station": [
+        47.94692719738687,
+        59.9317635394974
+      ],
+      "sha256": "c8afe7b67a110dc2bfc8017081dcfc561b33ad8c2f000c8a85293e0072528344",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.68522834777832
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0060.p3d",
+      "origin": [
+        8274.0,
+        6.0,
+        8992.0
+      ],
+      "station": [
+        59.9317635394974,
+        71.91659988160794
+      ],
+      "sha256": "e90e2a8a1c6d35d9c33d1d607c289b2f8aa90f9a90eb195de1f5e8181ffddac2",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.6889525949955
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0072.p3d",
+      "origin": [
+        8273.0,
+        6.0,
+        9004.0
+      ],
+      "station": [
+        71.91659988160794,
+        83.90143622371848
+      ],
+      "sha256": "72dd11700951a94414b4d0b680f406cf3c4422287a510e0e2a7ac56573fa12b1",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.7293768748641
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0084.p3d",
+      "origin": [
+        8271.0,
+        5.0,
+        9016.0
+      ],
+      "station": [
+        83.90143622371848,
+        95.886272565829
+      ],
+      "sha256": "bee880634ae7bac25c7330aefc94d3080330bb3d97c235894005e055210d6a19",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.70261979103088
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0096.p3d",
+      "origin": [
+        8268.0,
+        5.0,
+        9027.0
+      ],
+      "station": [
+        95.886272565829,
+        107.87110890793954
+      ],
+      "sha256": "adecabe78a82b80c726a2f3931b63d2f72ac9b0ddc5bbddca16596cf12287c47",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.70724660158157
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0108.p3d",
+      "origin": [
+        8264.0,
+        5.0,
+        9038.0
+      ],
+      "station": [
+        107.87110890793954,
+        119.85594525005008
+      ],
+      "sha256": "5052359c594e8d0f87fdb6b201d8fbd7cc3a0cee5f23949e49f08d616844a425",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.70109160244465
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0120.p3d",
+      "origin": [
+        8259.0,
+        5.0,
+        9049.0
+      ],
+      "station": [
+        119.85594525005008,
+        131.84078159216062
+      ],
+      "sha256": "ba159714b472a1806868607fe0d01f62102eb0bd599aff56e5d81831e407afe6",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.68884731829166
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0132.p3d",
+      "origin": [
+        8252.0,
+        5.0,
+        9059.0
+      ],
+      "station": [
+        131.84078159216062,
+        143.82561793427115
+      ],
+      "sha256": "130775ad3871bf7207a3f407aacba4c9016725f4065754a2f25c125a547c8f03",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.68123051524162
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0144.p3d",
+      "origin": [
+        8246.0,
+        5.0,
+        9070.0
+      ],
+      "station": [
+        143.82561793427115,
+        155.81045427638168
+      ],
+      "sha256": "92d773f153552040cc6afb7ef1481dfe36affa3984ea2cff908c97c79aa026f0",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.68655671179295
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0156.p3d",
+      "origin": [
+        8240.0,
+        4.0,
+        9080.0
+      ],
+      "station": [
+        155.81045427638168,
+        167.79529061849223
+      ],
+      "sha256": "c2868e48317eefa977792e7dd0b6956630dd2970eeb2877710c3269c30127136",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.68835446238518
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0168.p3d",
+      "origin": [
+        8235.0,
+        4.0,
+        9091.0
+      ],
+      "station": [
+        167.79529061849223,
+        179.78012696060276
+      ],
+      "sha256": "8be73d8c84fc9855d09121906f42eb3131123a16fd2dbe69471a62a85acfcb61",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.69441424310207
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0180.p3d",
+      "origin": [
+        8230.0,
+        4.0,
+        9102.0
+      ],
+      "station": [
+        179.78012696060276,
+        191.76496330271328
+      ],
+      "sha256": "8a7a652cafba3faa8fced2ab3cbc3ae88808053f8b4fb1ef50d9c5b3cd5b14fb",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.69865682721138
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0192.p3d",
+      "origin": [
+        8226.0,
+        4.0,
+        9113.0
+      ],
+      "station": [
+        191.76496330271328,
+        203.7497996448238
+      ],
+      "sha256": "11e28f97fb9106cd91af5134bbd32e53d2098a9d97c343a6cf21c59d7a977b27",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.69058203697205
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0204.p3d",
+      "origin": [
+        8224.0,
+        3.0,
+        9125.0
+      ],
+      "station": [
+        203.7497996448238,
+        215.73463598693436
+      ],
+      "sha256": "9e325deb1ad639e8cade880b7dcd5b79168a5938a14ae628cdf7ada3eb5dd404",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.71257816255093
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0216.p3d",
+      "origin": [
+        8223.0,
+        3.0,
+        9137.0
+      ],
+      "station": [
+        215.73463598693436,
+        227.7194723290449
+      ],
+      "sha256": "281dc7bc53fcfe56153d3d74a53525600cda30cfb463929bd2c4cad80cb1022f",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.7030207812786
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0228.p3d",
+      "origin": [
+        8223.0,
+        3.0,
+        9149.0
+      ],
+      "station": [
+        227.7194723290449,
+        239.70430867115542
+      ],
+      "sha256": "dd23aae1f6b1fc3f187085fbd6e37edde0ccb2e31dccbc4852f8a7628a869077",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.6927345097065
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0240.p3d",
+      "origin": [
+        8225.0,
+        3.0,
+        9160.0
+      ],
+      "station": [
+        239.70430867115542,
+        251.68914501326597
+      ],
+      "sha256": "9aaf258e93e1263310fb93abe04c3fdb11b96c13505177431336b24b59bd8d38",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.68200232088566
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0252.p3d",
+      "origin": [
+        8227.0,
+        3.0,
+        9172.0
+      ],
+      "station": [
+        251.68914501326597,
+        263.6739813553765
+      ],
+      "sha256": "7ecca14846981db94d64e856c8b2b20247d1f05cb17d9ba2cabf237544a0d23b",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.69485814869404
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0264.p3d",
+      "origin": [
+        8227.0,
+        2.0,
+        9184.0
+      ],
+      "station": [
+        263.6739813553765,
+        275.65881769748705
+      ],
+      "sha256": "be7d8f8a632c8979a770795e46ec4fd9104832852b14984462351328bf99fa14",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -151.4615884423256
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0276.p3d",
+      "origin": [
+        8225.0,
+        2.0,
+        9196.0
+      ],
+      "station": [
+        275.65881769748705,
+        287.64365403959755
+      ],
+      "sha256": "f3b5efe73dd2c34d16276ac95e85cb5b2f620ee63818c56acf364f5675a78956",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -132.6953125745058
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0288.p3d",
+      "origin": [
+        8222.0,
+        2.0,
+        9207.0
+      ],
+      "station": [
+        287.64365403959755,
+        299.63228129618045
+      ],
+      "sha256": "0390a972fa7bdcf4137e58cb81ee314e3f8a970a9254b45fee746aa65f20ed72",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -124.76878537982702
+    },
+    {
+      "site": "kit-118",
+      "model": "baltic_stream_pilot\\cs_kit_118_0300.p3d",
+      "origin": [
+        8218.0,
+        2.0,
+        9213.0
+      ],
+      "station": [
+        299.63228129618045,
+        302.63228129618045
+      ],
+      "sha256": "44d89e50083c2cf010af2d696cf7da5c12c30fc2d5a9949fcd093f5d10ad7648",
+      "visual_triangles": 842,
+      "collision_components": 836,
+      "signed_collision_volume": -134.99075308442116
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0000.p3d",
+      "origin": [
+        5196.0,
+        4.0,
+        5892.0
+      ],
+      "station": [
+        0.0,
+        11.932610137820944
+      ],
+      "sha256": "1d5bb4c60cb2c87ee5d67daba075e86d12eebeb8dfac0d4de6c3ace6ea59e01b",
+      "visual_triangles": 1544,
+      "collision_components": 1520,
+      "signed_collision_volume": -252.27267175912857
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0012.p3d",
+      "origin": [
+        5186.0,
+        3.0,
+        5886.0
+      ],
+      "station": [
+        11.932610137820944,
+        23.797830413462833
+      ],
+      "sha256": "abfde2878b05e5aefdf482a88f13a73a97548103ab8f2203959ef5303eb76c6f",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -150.17397187650204
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0024.p3d",
+      "origin": [
+        5175.0,
+        3.0,
+        5880.0
+      ],
+      "station": [
+        23.797830413462833,
+        35.66305068910472
+      ],
+      "sha256": "924e546aa014a4a3f511bb7b3e3ff8367e71c35c29670d8bd3337ce54032d65a",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -150.16466729342937
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0036.p3d",
+      "origin": [
+        5165.0,
+        3.0,
+        5874.0
+      ],
+      "station": [
+        35.66305068910472,
+        47.52827096474661
+      ],
+      "sha256": "30f1226be5bcf3bbe4cf8c2c5e5c598dc093d0fe339672fb21f314ea0601a769",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -150.17275214195251
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0048.p3d",
+      "origin": [
+        5155.0,
+        3.0,
+        5867.0
+      ],
+      "station": [
+        47.52827096474661,
+        59.39349124038851
+      ],
+      "sha256": "fe566f9e618740919ee4876959857545f066ec34b4ac7962e31ec015e9ccfcf9",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -150.17994314432144
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0060.p3d",
+      "origin": [
+        5146.0,
+        3.0,
+        5860.0
+      ],
+      "station": [
+        59.39349124038851,
+        71.25871151603039
+      ],
+      "sha256": "9c20cafa06f8ba195913e09dc6478258ff3d5bb2ebf92f2fa36f305255b2a8fc",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -149.98492777347565
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0072.p3d",
+      "origin": [
+        5138.0,
+        3.0,
+        5851.0
+      ],
+      "station": [
+        71.25871151603039,
+        83.12393179167228
+      ],
+      "sha256": "068e768527e511b4facb67461676203612488c53d7d5db7776a422110154c0dd",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -114.28728796541691
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0084.p3d",
+      "origin": [
+        5131.0,
+        3.0,
+        5842.0
+      ],
+      "station": [
+        83.12393179167228,
+        95.01161535470719
+      ],
+      "sha256": "776245124c3a700f34c35633813d7da430e3446f65af80730a5de0f07d9e8a5f",
+      "visual_triangles": 936,
+      "collision_components": 912,
+      "signed_collision_volume": -82.28019140660763
+    },
+    {
+      "site": "65.0-0",
+      "model": "baltic_stream_pilot\\cs_65p0_0_0096.p3d",
+      "origin": [
+        5129.0,
+        3.0,
+        5834.0
+      ],
+      "station": [
+        95.01161535470719,
+        99.01161535470719
+      ],
+      "sha256": "cf8d748224954af2023aff2b52ea693bf395361f71a47ac22546b99efcd7c54d",
+      "visual_triangles": 920,
+      "collision_components": 912,
+      "signed_collision_volume": -124.64742690324783
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0000.p3d",
+      "origin": [
+        8352.0,
+        2.0,
+        486.0
+      ],
+      "station": [
+        0.0,
+        11.989971664351017
+      ],
+      "sha256": "1fbac9301116f014060cf7eb396a2dad4789b68ebfc1094eb9bb36091e9914e3",
+      "visual_triangles": 1544,
+      "collision_components": 182,
+      "signed_collision_volume": -378.24331502492197,
+      "source_collision_components": 1520
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0012.p3d",
+      "origin": [
+        8360.0,
+        2.0,
+        494.0
+      ],
+      "station": [
+        11.989971664351017,
+        23.969914993053056
+      ],
+      "sha256": "0ec6d2a42027e7b9ff2df86fbcdd29337d0f7c2f2e78fa91882e59ad8b60519a",
+      "visual_triangles": 936,
+      "collision_components": 56,
+      "signed_collision_volume": -277.20990910381073,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0024.p3d",
+      "origin": [
+        8369.0,
+        2.0,
+        503.0
+      ],
+      "station": [
+        23.969914993053056,
+        35.949858321755094
+      ],
+      "sha256": "07f08a57eb755dabd170d5cef1d2c873a668b88601bc5f53211e2497865ebe42",
+      "visual_triangles": 936,
+      "collision_components": 54,
+      "signed_collision_volume": -281.013579086711,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0036.p3d",
+      "origin": [
+        8378.0,
+        2.0,
+        511.0
+      ],
+      "station": [
+        35.949858321755094,
+        47.92980165045713
+      ],
+      "sha256": "9eab146eb161d5fca21ba045d96b2731fc87806b956ef0ca405ba4c4048fc4ab",
+      "visual_triangles": 936,
+      "collision_components": 57,
+      "signed_collision_volume": -281.40337067097425,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0048.p3d",
+      "origin": [
+        8387.0,
+        2.0,
+        519.0
+      ],
+      "station": [
+        47.92980165045713,
+        59.909744979159164
+      ],
+      "sha256": "7e3b3994d8be2ac0836cfacf406f00eb24a0c7422461ea2a35b970e1ce08c081",
+      "visual_triangles": 936,
+      "collision_components": 71,
+      "signed_collision_volume": -241.08492585892475,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0060.p3d",
+      "origin": [
+        8396.0,
+        2.0,
+        527.0
+      ],
+      "station": [
+        59.909744979159164,
+        71.8896883078612
+      ],
+      "sha256": "503f054c739731644fe30bb6113ad659e58a10e6eeac1e288a18e5d6928de7aa",
+      "visual_triangles": 936,
+      "collision_components": 72,
+      "signed_collision_volume": -240.84679027522606,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0072.p3d",
+      "origin": [
+        8405.0,
+        2.0,
+        534.0
+      ],
+      "station": [
+        71.8896883078612,
+        83.86963163656324
+      ],
+      "sha256": "4c7092ad2610276b30a8fe2590c4d9cf90be5e5cb71201d1b851917626c222e8",
+      "visual_triangles": 936,
+      "collision_components": 72,
+      "signed_collision_volume": -241.6067592302958,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0084.p3d",
+      "origin": [
+        8415.0,
+        2.0,
+        541.0
+      ],
+      "station": [
+        83.86963163656324,
+        95.84957496526528
+      ],
+      "sha256": "25a8a81906f0f088158c5334ed32cd0b52263851b74fa98b2ee3fcbb5bee72c4",
+      "visual_triangles": 936,
+      "collision_components": 64,
+      "signed_collision_volume": -261.145451657474,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0096.p3d",
+      "origin": [
+        8425.0,
+        2.0,
+        548.0
+      ],
+      "station": [
+        95.84957496526528,
+        107.82951829396731
+      ],
+      "sha256": "5191b06ef5cbe29fe4977bbe9e7358694ab3efb24db24cd262a177a639fcfaee",
+      "visual_triangles": 936,
+      "collision_components": 54,
+      "signed_collision_volume": -281.1880550558369,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0108.p3d",
+      "origin": [
+        8435.0,
+        2.0,
+        555.0
+      ],
+      "station": [
+        107.82951829396731,
+        119.80946162266935
+      ],
+      "sha256": "e89333ea2ad556b2dccc7a78e730f77c4adb309d603c9f00f851f6935ac5c2a1",
+      "visual_triangles": 936,
+      "collision_components": 72,
+      "signed_collision_volume": -238.8323012677332,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0120.p3d",
+      "origin": [
+        8444.0,
+        2.0,
+        562.0
+      ],
+      "station": [
+        119.80946162266935,
+        131.7894049513714
+      ],
+      "sha256": "f8f4a5664f2ab96f93783ea1342a436d8ea1ae93f00f7a74960243dc2049d7de",
+      "visual_triangles": 936,
+      "collision_components": 72,
+      "signed_collision_volume": -240.1374288412432,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0132.p3d",
+      "origin": [
+        8453.0,
+        2.0,
+        570.0
+      ],
+      "station": [
+        131.7894049513714,
+        143.76934828007342
+      ],
+      "sha256": "e2f820969f73df16049e94b33fdfed7674c2448d9c95e954eaf04414a0b09644",
+      "visual_triangles": 936,
+      "collision_components": 91,
+      "signed_collision_volume": -233.56825562318178,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0144.p3d",
+      "origin": [
+        8461.0,
+        2.0,
+        579.0
+      ],
+      "station": [
+        143.76934828007342,
+        155.74929160877545
+      ],
+      "sha256": "45621b9a17ba186ba398cb116bfdf8a2b77f7f107c5fed7eba33fdd8b25ac5e0",
+      "visual_triangles": 936,
+      "collision_components": 130,
+      "signed_collision_volume": -209.40402396768334,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0156.p3d",
+      "origin": [
+        8468.0,
+        2.0,
+        589.0
+      ],
+      "station": [
+        155.74929160877545,
+        167.72923493747751
+      ],
+      "sha256": "ab9f7c8e87d9bdee3d380f6911463284ed725d3c7b0ea7238a41cc698d619ee1",
+      "visual_triangles": 936,
+      "collision_components": 136,
+      "signed_collision_volume": -206.27714469656354,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0168.p3d",
+      "origin": [
+        8474.0,
+        2.0,
+        599.0
+      ],
+      "station": [
+        167.72923493747751,
+        179.70917826617955
+      ],
+      "sha256": "00ad104a69f86e66be8c4b657c681b22f703d9659e9805b08ec87f79e9af0405",
+      "visual_triangles": 936,
+      "collision_components": 113,
+      "signed_collision_volume": -221.29396664847928,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0180.p3d",
+      "origin": [
+        8478.0,
+        2.0,
+        610.0
+      ],
+      "station": [
+        179.70917826617955,
+        191.68912159488158
+      ],
+      "sha256": "9475af8201e8a61b1dedd3573f43316b5486f26827945724a182d5642a13d5ee",
+      "visual_triangles": 936,
+      "collision_components": 75,
+      "signed_collision_volume": -245.56083245699608,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0192.p3d",
+      "origin": [
+        8481.0,
+        2.0,
+        622.0
+      ],
+      "station": [
+        191.68912159488158,
+        203.66906492358362
+      ],
+      "sha256": "984da7949c0455e3393219173451d5e0bb8b6021a787fe5b18b1cc71f95daf23",
+      "visual_triangles": 936,
+      "collision_components": 64,
+      "signed_collision_volume": -273.79477042829,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0204.p3d",
+      "origin": [
+        8484.0,
+        2.0,
+        633.0
+      ],
+      "station": [
+        203.66906492358362,
+        215.64900825228565
+      ],
+      "sha256": "5e9f573edc8eea607c373304efe3987afa342cbebadec4c3a7f209309382d427",
+      "visual_triangles": 936,
+      "collision_components": 64,
+      "signed_collision_volume": -274.2985538877546,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0216.p3d",
+      "origin": [
+        8488.0,
+        2.0,
+        645.0
+      ],
+      "station": [
+        215.64900825228565,
+        227.6289515809877
+      ],
+      "sha256": "e44f22f176616fadc8fce494400968f490fe2ec97f653c828f039d79e89a9541",
+      "visual_triangles": 936,
+      "collision_components": 72,
+      "signed_collision_volume": -249.12744305034477,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0228.p3d",
+      "origin": [
+        8491.0,
+        2.0,
+        656.0
+      ],
+      "station": [
+        227.6289515809877,
+        239.60889490968972
+      ],
+      "sha256": "cdc1a308cc204866aedafa531a2e885c4394721a4836ab9da917b3f804d35d25",
+      "visual_triangles": 936,
+      "collision_components": 82,
+      "signed_collision_volume": -239.98547491555405,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0240.p3d",
+      "origin": [
+        8497.0,
+        2.0,
+        667.0
+      ],
+      "station": [
+        239.60889490968972,
+        251.58883823839176
+      ],
+      "sha256": "a6b33d3144a3f80a5c9d2dd3ae9f9894d09a516d1fae87f9c784b192f7975afc",
+      "visual_triangles": 936,
+      "collision_components": 111,
+      "signed_collision_volume": -219.0962289708356,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0252.p3d",
+      "origin": [
+        8503.0,
+        2.0,
+        677.0
+      ],
+      "station": [
+        251.58883823839176,
+        263.5687815670938
+      ],
+      "sha256": "ea6b5370979ff661b884cd932ac552ac788358a44d6c62fea68625601f9debe6",
+      "visual_triangles": 936,
+      "collision_components": 87,
+      "signed_collision_volume": -235.57035513843095,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0264.p3d",
+      "origin": [
+        8510.0,
+        2.0,
+        687.0
+      ],
+      "station": [
+        263.5687815670938,
+        275.54872489579583
+      ],
+      "sha256": "d97707f57ad658e64e9ccf9cef51e2365ba9fcfb1a0d2a631e744746f586e5e3",
+      "visual_triangles": 936,
+      "collision_components": 72,
+      "signed_collision_volume": -245.32070554420358,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0276.p3d",
+      "origin": [
+        8518.0,
+        2.0,
+        696.0
+      ],
+      "station": [
+        275.54872489579583,
+        287.5286682244979
+      ],
+      "sha256": "13942caa59150f93e797523222c025fb2554708f4f6fdafe8cb8fbdd91366147",
+      "visual_triangles": 936,
+      "collision_components": 64,
+      "signed_collision_volume": -266.90297481666005,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0288.p3d",
+      "origin": [
+        8527.0,
+        2.0,
+        704.0
+      ],
+      "station": [
+        287.5286682244979,
+        299.5086115531999
+      ],
+      "sha256": "032303d8aa6835be8719eee83526f61385547f36790d2443bf1a0828e1cb7b3b",
+      "visual_triangles": 936,
+      "collision_components": 72,
+      "signed_collision_volume": -246.28095931683973,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0300.p3d",
+      "origin": [
+        8536.0,
+        2.0,
+        712.0
+      ],
+      "station": [
+        299.5086115531999,
+        311.49356904972643
+      ],
+      "sha256": "637f07d5c3d6529836803cdec748db45fe1b86bf4fd9cb3c55be3764f01be586",
+      "visual_triangles": 936,
+      "collision_components": 85,
+      "signed_collision_volume": -252.88984288275236,
+      "source_collision_components": 912
+    },
+    {
+      "site": "131.0-0",
+      "model": "baltic_stream_pilot\\cs_131p0_0_0312.p3d",
+      "origin": [
+        8541.0,
+        2.0,
+        717.0
+      ],
+      "station": [
+        311.49356904972643,
+        314.49356904972643
+      ],
+      "sha256": "c7970c91594679bdce8f86abf923f07d247ccc224d6a03aad54a1217411975d4",
+      "visual_triangles": 842,
+      "collision_components": 101,
+      "signed_collision_volume": -191.64482121169573,
+      "source_collision_components": 836
+    }
+  ],
+  "removed_sites": [
+    "kit-118",
+    "65.0-0",
+    "131.0-0"
+  ],
+  "changed_vertices": 743,
+  "road_reference_hashes": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\tests\\regional_foundation_roads_v6\\reference.npz": "94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\road-grade-chains-v6.json": "b31fb7d72398981ee98132ce59eab48c4aa404043718475fbb2725b13de1b824"
+  },
+  "base_terrain_path": "E:\\DayZ-Baltic-Build\\qc-council-20261024\\road-merged-s3\\terrain-buried.npz",
+  "base_footprint_path": "E:\\DayZ-Baltic-Build\\qc-council-20261024\\road-merged-s3\\bury-work\\fp0\\footprint.npz",
+  "retired_inactive_envelope_cells": 0,
+  "retired_inactive_cover_cells": 0,
+  "protected_vertices_unchanged": true,
+  "production_deployed": false,
+  "limitations": [
+    "Mesh self-consistency is not engine water, walking collision or visual acceptance.",
+    "The material is vanilla; geometry and terrain support are new.",
+    "Forest support and full footprint regeneration required before integration."
+  ],
+  "collision_packing": {
+    "status": "CANDIDATE_GLOBAL_OVERLAY_PENDING",
+    "input_author_sha256": "3dbfcf567cbd549c20beda594eda3719b9d4944add2b244a9ffaf2f004317833",
+    "packing_source_sha256": "2864dbdf9d857eeabbf6b758d22388cc620162e9e5d3bc40e70a5920271d2f9c",
+    "author_source_sha256": "5508514399f53ec1e11991cc392eb7f0c8d46eb0fe6aa70eafbd27c0d1705bf6",
+    "raw_roof_budget_m": 0.03,
+    "horizontal_budget_m": 0.01,
+    "required_global_vertical_error_m": 0.02,
+    "before_components": 25156,
+    "after_components": 2245,
+    "models": [
+      {
+        "model": "cs_131p0_0_0000.p3d",
+        "before_components": 1520,
+        "after_components": 182,
+        "before_bytes": 34513265,
+        "after_bytes": 2141225,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.015625,
+        "local_roof_bound_m": 0.0292901279912037,
+        "seconds": 2.765999999945052
+      },
+      {
+        "model": "cs_131p0_0_0012.p3d",
+        "before_components": 912,
+        "after_components": 56,
+        "before_bytes": 12950097,
+        "after_bytes": 670713,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.0078125,
+        "local_roof_bound_m": 0.01518461790758352,
+        "seconds": 1.062000000034459
+      },
+      {
+        "model": "cs_131p0_0_0024.p3d",
+        "before_components": 912,
+        "after_components": 54,
+        "before_bytes": 12950097,
+        "after_bytes": 639837,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.009765625,
+        "local_roof_bound_m": 0.018257203881592354,
+        "seconds": 0.9690000000409782
+      },
+      {
+        "model": "cs_131p0_0_0036.p3d",
+        "before_components": 912,
+        "after_components": 57,
+        "before_bytes": 12950097,
+        "after_bytes": 679257,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.009765625,
+        "local_roof_bound_m": 0.01594670111803198,
+        "seconds": 1.7339999999385327
+      },
+      {
+        "model": "cs_131p0_0_0048.p3d",
+        "before_components": 912,
+        "after_components": 71,
+        "before_bytes": 12950097,
+        "after_bytes": 807384,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.005859375,
+        "local_roof_bound_m": 0.008507872523402571,
+        "seconds": 1.077999999979511
+      },
+      {
+        "model": "cs_131p0_0_0060.p3d",
+        "before_components": 912,
+        "after_components": 72,
+        "before_bytes": 12950097,
+        "after_bytes": 818241,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.00748390783911268,
+        "seconds": 1.047000000020489
+      },
+      {
+        "model": "cs_131p0_0_0072.p3d",
+        "before_components": 912,
+        "after_components": 72,
+        "before_bytes": 12950097,
+        "after_bytes": 819153,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.004695875691389906,
+        "seconds": 1.0
+      },
+      {
+        "model": "cs_131p0_0_0084.p3d",
+        "before_components": 912,
+        "after_components": 64,
+        "before_bytes": 12950097,
+        "after_bytes": 733921,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.007321004802976705,
+        "seconds": 1.0320000000065193
+      },
+      {
+        "model": "cs_131p0_0_0096.p3d",
+        "before_components": 912,
+        "after_components": 54,
+        "before_bytes": 12950097,
+        "after_bytes": 630189,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.005859375,
+        "local_roof_bound_m": 0.009570684011706077,
+        "seconds": 0.9529999999795109
+      },
+      {
+        "model": "cs_131p0_0_0108.p3d",
+        "before_components": 912,
+        "after_components": 72,
+        "before_bytes": 12950097,
+        "after_bytes": 830553,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.004522882074368573,
+        "seconds": 1.047000000020489
+      },
+      {
+        "model": "cs_131p0_0_0120.p3d",
+        "before_components": 912,
+        "after_components": 72,
+        "before_bytes": 12950097,
+        "after_bytes": 815961,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.005878578932965284,
+        "seconds": 0.984000000054948
+      },
+      {
+        "model": "cs_131p0_0_0132.p3d",
+        "before_components": 912,
+        "after_components": 91,
+        "before_bytes": 12950097,
+        "after_bytes": 965149,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.004666652694717832,
+        "seconds": 1.1089999999385327
+      },
+      {
+        "model": "cs_131p0_0_0144.p3d",
+        "before_components": 912,
+        "after_components": 130,
+        "before_bytes": 12950097,
+        "after_bytes": 1267693,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.0067827565907829235,
+        "seconds": 1.327999999979511
+      },
+      {
+        "model": "cs_131p0_0_0156.p3d",
+        "before_components": 912,
+        "after_components": 136,
+        "before_bytes": 12950097,
+        "after_bytes": 1318849,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.004288642940576709,
+        "seconds": 1.3290000000270084
+      },
+      {
+        "model": "cs_131p0_0_0168.p3d",
+        "before_components": 912,
+        "after_components": 113,
+        "before_bytes": 12950097,
+        "after_bytes": 1135782,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.001953125,
+        "local_roof_bound_m": 0.003559210455355899,
+        "seconds": 1.25
+      },
+      {
+        "model": "cs_131p0_0_0180.p3d",
+        "before_components": 912,
+        "after_components": 75,
+        "before_bytes": 12950097,
+        "after_bytes": 854703,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.003908844560482794,
+        "seconds": 1.0929999999934807
+      },
+      {
+        "model": "cs_131p0_0_0192.p3d",
+        "before_components": 912,
+        "after_components": 64,
+        "before_bytes": 12950097,
+        "after_bytes": 746881,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.001953125,
+        "local_roof_bound_m": 0.003533245492811088,
+        "seconds": 1.0160000000614673
+      },
+      {
+        "model": "cs_131p0_0_0204.p3d",
+        "before_components": 912,
+        "after_components": 64,
+        "before_bytes": 12950097,
+        "after_bytes": 739969,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.003969784277906507,
+        "seconds": 0.9839999999385327
+      },
+      {
+        "model": "cs_131p0_0_0216.p3d",
+        "before_components": 912,
+        "after_components": 72,
+        "before_bytes": 12950097,
+        "after_bytes": 825993,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.004075419768422045,
+        "seconds": 1.047000000020489
+      },
+      {
+        "model": "cs_131p0_0_0228.p3d",
+        "before_components": 912,
+        "after_components": 82,
+        "before_bytes": 12950097,
+        "after_bytes": 895705,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.006097062114686309,
+        "seconds": 0.9529999999795109
+      },
+      {
+        "model": "cs_131p0_0_0240.p3d",
+        "before_components": 912,
+        "after_components": 111,
+        "before_bytes": 12950097,
+        "after_bytes": 1119783,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.007219532896796471,
+        "seconds": 1.1099999999860302
+      },
+      {
+        "model": "cs_131p0_0_0252.p3d",
+        "before_components": 912,
+        "after_components": 87,
+        "before_bytes": 12950097,
+        "after_bytes": 918666,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.0058650449828459295,
+        "seconds": 0.984000000054948
+      },
+      {
+        "model": "cs_131p0_0_0264.p3d",
+        "before_components": 912,
+        "after_components": 72,
+        "before_bytes": 12950097,
+        "after_bytes": 833745,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.006150801018743379,
+        "seconds": 0.9379999999655411
+      },
+      {
+        "model": "cs_131p0_0_0276.p3d",
+        "before_components": 912,
+        "after_components": 64,
+        "before_bytes": 12950097,
+        "after_bytes": 735649,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.005859375,
+        "local_roof_bound_m": 0.008714748877532694,
+        "seconds": 0.9679999999934807
+      },
+      {
+        "model": "cs_131p0_0_0288.p3d",
+        "before_components": 912,
+        "after_components": 72,
+        "before_bytes": 12950097,
+        "after_bytes": 820521,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.00390625,
+        "local_roof_bound_m": 0.006304620859514665,
+        "seconds": 0.9690000000409782
+      },
+      {
+        "model": "cs_131p0_0_0300.p3d",
+        "before_components": 912,
+        "after_components": 85,
+        "before_bytes": 12950097,
+        "after_bytes": 904183,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.015625,
+        "local_roof_bound_m": 0.029824987232916794,
+        "seconds": 1.062999999965541
+      },
+      {
+        "model": "cs_131p0_0_0312.p3d",
+        "before_components": 836,
+        "after_components": 101,
+        "before_bytes": 10975259,
+        "after_bytes": 844118,
+        "non_geometry_lods_byte_exact": true,
+        "max_centering_shift_m": 0.015625,
+        "local_roof_bound_m": 0.029921141071873603,
+        "seconds": 0.8900000000139698
+      }
+    ],
+    "limitations": [
+      "Full-mesh overlay, closure, binary and engine checks required.",
+      "No map-wide performance acceptance."
+    ]
+  },
+  "composition": {
+    "parents": [
+      {
+        "path": "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\visual-pilot-20261024-p",
+        "author_sha256": "18f9a536221524ddd24fb0586762d6d62dd449b91c272ef580709803e0779672",
+        "pbo_sha256": "b2c1799d7edb7adf2deb55f3f3b76e0c0c82f608bcf1673f47074da93c6eeea1"
+      },
+      {
+        "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-131-compact-a",
+        "author_sha256": "5139587a85879cb30db476f1b21cc1d3c5adc917ab5f44a81657779cfd88b3c1",
+        "pbo_sha256": "b03dd92b0a1fc7845a06bca52c742dbb06ca00272fc86f2a9ff42e824599dc35"
+      }
+    ],
+    "free_terrain_sha256": "82e0f1ca5fb102ec4109adac8095819f9b060730e5750c9593eb6e1a86461761",
+    "free_vertices": 905,
+    "river_vertices": 743,
+    "overlap_vertices": 0
+  }
+}

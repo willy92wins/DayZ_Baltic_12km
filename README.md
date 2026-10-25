@@ -62,6 +62,10 @@ orillas, relieve, colisiones y conexiones. Los controles de terreno de las
 carreteras pasan en el ámbito medido; las carreteras físicas, la conducción y
 la navegación completa siguen pendientes de validación en juego.
 
+Último avance: el candidato U2 supera **2.823 controles de servidor y 300
+rayos de repetición**, con los cinco fallos de contacto anteriores corregidos;
+**132 pruebas automatizadas** pasan. [Resultados, evidencia y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/runtime-rv-contact-20261025/README.md).
+
 El mapeado urbano, la economía de loot Este/Oeste y su progresión son parte de
 la visión pendiente de implementar. La comparación de rendimiento con Chernarus
 sigue abierta. **Todavía no hay una versión jugable con aceptación global.**
