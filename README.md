@@ -5,16 +5,19 @@ Finlandia, San Petersburgo con Kotlin y el Neva, Narva y la frontera, el Luga,
 Peipus e Ilmen. Recorte aprobado por Guillermo el 29-09-2026. Se generó aquí
 desde fuentes públicas; no depende del heightmap no entregado de Exta.
 
-**Estado:** candidato de terreno V29 (`@DayZ_Baltic_RoadV29`) desplegado y probado
-en el motor. La base no está aceptada: la auditoría del 02-10 encontró agua que falta,
-un canal navegable uniforme, un satélite de maqueta desalineado y bordes rectos en el
-relieve, y se van a rehacer agua y suelo. No hay edificios, vegetación colocada ni
-carreteras físicas: el mapeado va después (P10).
+**Estado (25-10-2026):** EV112 en desarrollo, todavía sin aceptación global.
+Hay pilotos de cauce continuo, correcciones locales de relieve y bosque colocado.
+Los controles de terreno de las carreteras pasan en el ámbito medido; las
+carreteras físicas, navegación y conducción siguen pendientes. El candidato más
+reciente conserva los fallos y límites documentados para la revisión en juego.
+Código, pruebas y evidencia se publican con un historial saneado independiente;
+los datos y builds grandes se identifican por sus manifiestos. Ver
+[PUBLICATION.md](PUBLICATION.md).
 
 - Estado vivo y siguiente paso: [HANDOFF.md](HANDOFF.md). Historia: [HANDOFF-history.md](HANDOFF-history.md).
 - Producto y criterios: [product-spec.md](product-spec.md). Problemas: [bugs.md](bugs.md).
-- Plan vigente: [plans/water-ground-rebuild-v1.md](plans/water-ground-rebuild-v1.md)
-  (antecedente: [plans/v29-close-and-surface.md](plans/v29-close-and-surface.md)).
+- Plan vigente: [corrección de ríos y relieve](plans/ev112-shape-repair-20261025.md).
+  El estado concreto y las excepciones están en HANDOFF.md.
 - Auditoría de agua y suelo: [evidence/v29-water-color-audit-2026-10-02](evidence/v29-water-color-audit-2026-10-02/summary.json).
 - Desarrollo en `P:\DayZ_Baltic_12km_dev` (`subst` de `C:\Users\guill\OneDrive\Documentos\DayZ Projects`).
 - Fuentes y atribuciones: [licenses/sources.md](licenses/sources.md).
