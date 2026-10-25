@@ -1,6 +1,6 @@
 # EV112 — suavizado de vecinos de extremos protegidos
 
-**Candidato D validado offline; integración en motor y aceptación visual pendientes.**
+**Candidato D compilado y probado:4292 puntos de servidor PASS,0 fallos. Vista pendiente.**
 58 grupos de picos y8 depresiones corregidos sin mover sus ápices protegidos.
 1347 alturas cambiadas, delta máximo absoluto0,75m y alcance24m. El censo global
 pasa de327 a269 picos y de1156 a1148 depresiones. Los5 patrones rectangulares
@@ -58,7 +58,11 @@ El delta guardado permite reconstruir exactamente las alturas sobre la base
 fijada. Los grandes derivados se conservan fuera de Git, en
 `E:/DayZ-Baltic-Build/shape-repair-20261025`.
 
-Compilación D en curso al crear este checkpoint. Navegación U2 en generación
-separada: no acepta D. Permanecen la vista conjunta, contactos del cliente,
+Compilación D terminada:2578725objetos y62poses piloto contrastados, controles
+negativos ausente/extra/movido detectados. MundoD SHAe78190d9e32f55824cc703950235ac69d3173dd2a6e02a9a488918a8833ab2f4.
+Sonda ampliada4292puntos PASS: todas las1347 nuevas alturas y triángulos objetivo incluidos.
+149 tests PASS al cierre del build. Run7b9c50cf cerrado ordenadamente y lease liberado;
+cliente no lanzado. Vista personal preparada con el modD. Navegación U2 terminó TIMEOUT a3600s/74%,
+sinarchivo, tresPBO intactos; servidor cerrado y lease liberado. No acepta D. Permanecen la vista conjunta, contactos del cliente,
 otros ríos/relieves, bosque de borde, navegación y comparación con Chernarus.
 La comprobación U2 anterior de2823 controles y300 rayos no se atribuye a D.

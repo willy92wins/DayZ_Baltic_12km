@@ -15,7 +15,7 @@ generator=importlib.util.module_from_spec(spec);spec.loader.exec_module(generato
 
 
 class NavmeshGeneratorIdentity(unittest.TestCase):
-    def invoke(self,format_version=9,mutate_input=False,unknown_generator=False,wrong_pilot=False,returncode=0,payload='full',count=1,delete_input=False):
+    def invoke(self,format_version=9,mutate_input=False,unknown_generator=False,wrong_pilot=False,returncode=0,payload='full',count=1,delete_input=False,timeout_s=10):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder);exe=root/'generator.exe';exe.write_bytes(b'fixture-generator')
             files=[]
@@ -26,7 +26,7 @@ class NavmeshGeneratorIdentity(unittest.TestCase):
                   '--world-pbo',str(files[0][0]),'--world-sha256',files[0][1],
                   '--water-pbo',str(files[1][0]),'--water-sha256',files[1][1],
                   '--additional-pbo',str(files[2][0]),'0'*64 if wrong_pilot else files[2][1],
-                  '--out',str(out),'--timeout-s','10']
+                  '--out',str(out),'--timeout-s',str(timeout_s)]
             def child(argv,**kwargs):
                 self.assertNotIn('--kill',argv)
                 if payload=='full':Path(argv[-1]).write_bytes(struct.pack('<5I',0x4d534554,format_version,count,1,1)+bytes(28))
@@ -36,7 +36,7 @@ class NavmeshGeneratorIdentity(unittest.TestCase):
                 return type('Completed',(),{'returncode':returncode})()
             profiles={} if unknown_generator else {generator.sha(exe):9}
             with patch.object(generator,'GENERATOR',exe),patch.object(generator,'GENERATOR_FORMATS',profiles),patch.object(sys,'argv',args),patch.object(generator.subprocess,'run',side_effect=child) as run,contextlib.redirect_stdout(io.StringIO()):
-                if unknown_generator or wrong_pilot:
+                if unknown_generator or wrong_pilot or not 10<=timeout_s<=7200:
                     with self.assertRaises(ValueError):generator.main()
                     run.assert_not_called();return
                 code=generator.main();result=json.loads((out/'generation.json').read_text())
@@ -74,6 +74,11 @@ class NavmeshGeneratorIdentity(unittest.TestCase):
         code,result=self.invoke(count=2)
         self.assertEqual(code,1);self.assertFalse(result['header_ok'])
         self.assertEqual(result['status'],'GENERATED_FILE_HEADER_LAYOUT_UNVERIFIED')
+
+    def test_extended_generation_remains_bounded(self):
+        self.assertEqual(self.invoke(timeout_s=7200)[0],0)
+        self.invoke(timeout_s=7201)
+        self.invoke(timeout_s=9)
 
 
 if __name__=='__main__':unittest.main()
