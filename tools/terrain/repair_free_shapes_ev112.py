@@ -15,24 +15,31 @@ import census_creases_v31 as crease
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def fair_native_patch(base, prior, free, floor, ceiling, peak_cap, pit_cap):
+def fair_native_patch(base, prior, free, floor, ceiling, peak_cap, pit_cap, *, bound_witnesses=False):
     """Thin-plate solve with native slope and prominence constraints.
 
-    For each small native shape, retain a baseline witness pair for min/max.
+    For each small native shape, select a sufficient witness pair for min/max.
+    The default retains baseline extrema; bound_witnesses uses reachable bounds
+    while treating fixed coordinates as their exact baseline heights.
     Bounding that pair is sufficient to bound the shape's prominence, even
     if another vertex becomes its extremum. Final full-grid consumer checks
     still use the independent, unrestricted min/max implementation.
     """
     ids=np.full(base.shape,-1,int);ids[free]=np.arange(free.sum());n=int(free.sum())
     lo=floor[free];hi=ceiling[free];rows=[];upper=[]
+    witness_lo=np.where(free,floor,base) if bound_witnesses else base
+    witness_hi=np.where(free,ceiling,base) if bound_witnesses else base
     for points,ring in D.rings():
         for r in range(1,base.shape[0]-2):
             for c in range(1,base.shape[1]-2):
                 pp=[(r+dr,c+dc) for dr,dc in points];rr=[(r+dr,c+dc) for dr,dc in ring]
-                for a,b,cap in ((min(pp,key=lambda q:base[q]),max(rr,key=lambda q:base[q]),min(peak_cap[q] for q in pp)),
-                                (min(rr,key=lambda q:base[q]),max(pp,key=lambda q:base[q]),min(pit_cap[q] for q in pp))):
+                for a,b,cap in ((min(pp,key=lambda q:witness_lo[q]),max(rr,key=lambda q:witness_hi[q]),min(peak_cap[q] for q in pp)),
+                                (min(rr,key=lambda q:witness_lo[q]),max(pp,key=lambda q:witness_hi[q]),min(pit_cap[q] for q in pp))):
                     ia,ib=ids[a],ids[b]
-                    if ia<0 and ib<0:continue
+                    if ia<0 and ib<0:
+                        if bound_witnesses and base[a]-base[b]>cap+1e-9:
+                            raise ValueError('Fixed prominence witnesses cannot satisfy the requested cap')
+                        continue
                     row=np.zeros(n);constant=0.
                     for q,idx,sgn in ((a,ia,1),(b,ib,-1)):
                         if idx>=0:row[idx]+=sgn
@@ -68,7 +75,7 @@ def fair_native_patch(base, prior, free, floor, ceiling, peak_cap, pit_cap):
                     bounds=list(zip(lo,hi)),constraints=constraints,options={'maxiter':300,'ftol':1e-10})
     if not result.success:raise ValueError(('constrained native fairing failed',str(result.message)))
     h=base.copy();h[free]=result.x
-    return h,dict(success=True,iterations=int(result.nit),linear_prominence_constraints=len(rows),native_triangles=len(cap),energy=float(result.fun))
+    return h,dict(success=True,iterations=int(result.nit),linear_prominence_constraints=len(rows),native_triangles=len(cap),energy=float(result.fun),witnesses='bounds' if bound_witnesses else 'baseline')
 
 
 def main():

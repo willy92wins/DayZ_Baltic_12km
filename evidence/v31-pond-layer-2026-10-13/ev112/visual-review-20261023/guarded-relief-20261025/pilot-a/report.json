@@ -1,0 +1,51 @@
+{
+  "status": "LOCAL_OFFLINE_PASS_PENDING_FOOTPRINT_ROADS_REVIEW",
+  "checks": {
+    "nonempty_correction": true,
+    "protected_exact": true,
+    "outside_24m_exact": true,
+    "apex_exact": true,
+    "road_exact": true,
+    "shore_edge_vertices_exact": true,
+    "sea_classification_exact": true,
+    "no_new_peaks": true,
+    "no_new_pits": true,
+    "no_worsened_faults": true,
+    "target_clear": true,
+    "slope_guard": true,
+    "no_new_or_worse_sharp_edges": true,
+    "energy_decreased": true,
+    "visual_water_corner_classifications_exact": true
+  },
+  "target": [
+    181,
+    1316
+  ],
+  "old_peak_m": 0.3371713161468506,
+  "new_peak_m": 0.006591796875,
+  "changed_vertices": 16,
+  "max_delta_m": 0.5159833431243896,
+  "energy_before": 131.01407344784673,
+  "energy_after": 127.4713198797717,
+  "crease_violations": {
+    "diagonal": 0,
+    "east": 0,
+    "south": 0
+  },
+  "solve": {
+    "success": true,
+    "iterations": 24,
+    "linear_prominence_constraints": 269,
+    "native_triangles": 50,
+    "energy": 127.47132733245678,
+    "witnesses": "bounds"
+  },
+  "input_sha256": "ab96a8f6fb3da6ca02e566caa1cf5d61ad720d340ec611316c33bcbe2ce717ef",
+  "output_sha256": "8f57731d3553900a2b79e875bc50b240ce1dc3944c2af2968f89370633a0fb97",
+  "domains_sha256": "86df3764906c16dda62c06896668dd8aa8c051b5ece07e8e516f21c27e05b442",
+  "author_sha256": "1a266a5b1027e900449dd4841cf54b2ea6a1b378983e6551706c681b2680af16",
+  "solver_sha256": "4f618ea45acc70c8f4e6474a261efd8bb2f4359ece4b40065e5e6dc694a87494",
+  "limits": [
+    "Protected apex and shoreline/roads unchanged. No visual, forest, binary, runtime or global acceptance."
+  ]
+}

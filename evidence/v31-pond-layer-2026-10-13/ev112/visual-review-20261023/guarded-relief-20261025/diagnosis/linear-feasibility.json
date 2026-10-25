@@ -1,0 +1,77 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "selected_clusters": [
+    10,
+    11,
+    15,
+    16,
+    28,
+    38,
+    39,
+    44
+  ],
+  "results": [
+    {
+      "cluster": 10,
+      "linear_witness_feasible": false,
+      "lp_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "cluster": 11,
+      "linear_witness_feasible": false,
+      "lp_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "cluster": 15,
+      "linear_witness_feasible": true,
+      "lp_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "nonlinear_minimum": [
+        0.3966647356326512,
+        -0.004314124224891858
+      ]
+    },
+    {
+      "cluster": 16,
+      "linear_witness_feasible": false,
+      "lp_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "cluster": 28,
+      "linear_witness_feasible": true,
+      "lp_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "nonlinear_minimum": [
+        0.16876418019247208,
+        -0.07500137877361346
+      ]
+    },
+    {
+      "cluster": 38,
+      "linear_witness_feasible": false,
+      "lp_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "cluster": 39,
+      "linear_witness_feasible": false,
+      "lp_status": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "cluster": 44,
+      "linear_witness_feasible": true,
+      "lp_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "nonlinear_minimum": [
+        0.42694158293101364,
+        -0.0008202474561078699
+      ]
+    }
+  ],
+  "source_sha256": "cef5392c640a576fd130cffe6c4df67bab70d9ac2c46f6655b84d9259976617f",
+  "limits": "LP infeasibility applies only to the selected sufficient witnesses, not to the underlying unrestricted min/max prominence. No candidate authored."
+}

@@ -52,6 +52,45 @@ class ShapeRepairConstraints(unittest.TestCase):
         self.assertLess(corrected[6,6]-max(corrected[5,6],corrected[6,5],corrected[6,7],corrected[7,6]),.3)
         self.assertLess(float(np.max(np.abs(corrected-2))),.1)
 
+    def test_fixed_apex_is_faired_through_free_neighbours(self):
+        h=np.full((13,13),2.);h[6,6]=2.6
+        free=np.zeros(h.shape,bool);free[3:-3,3:-3]=True;free[6,6]=False;free[5,5]=False
+        corrected,receipt=fair_native_patch(h,np.full_like(h,2.),free,h-.75,h+.75,
+                                           np.full_like(h,.29999),np.full_like(h,.29999),bound_witnesses=True)
+        self.assertTrue(receipt['success'])
+        np.testing.assert_array_equal(corrected[~free],h[~free])
+        neighbours=[corrected[r,c] for r,c in [(5,5),(5,6),(6,5),(6,7),(7,6),(7,7)]]
+        self.assertLessEqual(corrected[6,6]-max(neighbours),.3)
+        before,after=census.angles(h),census.angles(corrected)
+        self.assertTrue(all((after[k]<=np.maximum(before[k],20)+1e-5).all() for k in before))
+        # The fixed apex can only be corrected here by changing its neighbours.
+        self.assertGreater(float(corrected[free].max()),2.3)
+
+    def test_fixed_prominence_cannot_be_reported_as_solved(self):
+        h=np.full((13,13),2.);h[6,6]=3.
+        free=np.zeros(h.shape,bool);free[3,3]=True
+        with self.assertRaisesRegex(ValueError,'Fixed prominence'):
+            fair_native_patch(h,np.full_like(h,2.),free,h-.1,h+.1,
+                              np.full_like(h,.29999),np.full_like(h,.29999),bound_witnesses=True)
+
+    def test_fixed_pit_is_faired_through_free_neighbours(self):
+        h=np.full((13,13),2.);h[6,6]=1.4
+        free=np.zeros(h.shape,bool);free[3:-3,3:-3]=True;free[6,6]=False;free[5,5]=False
+        lo=np.maximum(h-.75,np.minimum(h,h[6,6]))
+        corrected,receipt=fair_native_patch(h,np.full_like(h,2.),free,lo,h+.75,
+                                           np.full_like(h,.2999),np.full_like(h,.2999),bound_witnesses=True)
+        np.testing.assert_array_equal(corrected[~free],h[~free])
+        neighbours=[corrected[r,c] for r,c in [(5,5),(5,6),(6,5),(6,7),(7,6),(7,7)]]
+        self.assertLessEqual(min(neighbours)-corrected[6,6],.3)
+        self.assertGreaterEqual(float(corrected[free].min()),h[6,6]-1e-10)
+
+    def test_free_witness_with_insufficient_bounds_fails(self):
+        h=np.full((13,13),2.);h[6,6]=3.
+        free=np.zeros(h.shape,bool);free[6,7]=True
+        with self.assertRaisesRegex(ValueError,'constrained native fairing failed'):
+            fair_native_patch(h,np.full_like(h,2.),free,h-.1,h+.1,
+                              np.full_like(h,.2999),np.full_like(h,.2999),bound_witnesses=True)
+
     def test_crease_constraints_match_independent_native_edge_consumer(self):
         rng=np.random.default_rng(12);base=rng.normal(3,.3,(9,9));free=np.zeros(base.shape,bool);free[3:-3,3:-3]=True
         candidate=base.copy();candidate[free]+=rng.normal(0,.3,int(free.sum()))
