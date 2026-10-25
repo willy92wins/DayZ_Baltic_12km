@@ -8,10 +8,11 @@ las grandes urbes rusas; de sus islas y canales a **Narva**, donde un río separ
 dos mundos. Bosques, humedales, embalses y corredores fluviales dan forma a una
 región real condensada en unos **151 km² de superficie de juego**.
 
-![Área geográfica de inspiración de Baltic: golfo de Finlandia, San Petersburgo, Narva y lagos del recorte aprobado](docs/images/baltic-region.png)
+![Captura del área real: San Petersburgo, Narva, el golfo de Finlandia y los bosques y lagos de la región](docs/reference/zona-real.png)
 
-*Mapa del área real que inspira el proyecto, con el encuadre aprobado. Las
-distancias se condensan para DayZ; la imagen es cartografía de referencia.*
+*La zona que inspira Baltic. Captura de Google Maps aportada por Guillermo:
+San Petersburgo al noreste, Narva al oeste y, entre ambas, costa, ríos, bosques
+y humedales. Las distancias se condensan para DayZ.*
 
 ## Narva: la frontera que se convirtió en frente
 
@@ -65,9 +66,10 @@ El mapeado urbano, la economía de loot Este/Oeste y su progresión son parte de
 la visión pendiente de implementar. La comparación de rendimiento con Chernarus
 sigue abierta. **Todavía no hay una versión jugable con aceptación global.**
 
-Las ilustraciones muestran la base geográfica del proyecto. Se han generado
-con datos de **© OpenStreetMap contributors** y **ESA WorldCover 2021**;
-[créditos, fuentes y reproducción de las imágenes](docs/images/README.md).
+La imagen principal es la captura de referencia aportada por Guillermo. Los
+acercamientos y el [mapa regional del recorte](docs/images/baltic-region.png)
+se han generado con datos de **© OpenStreetMap contributors** y **ESA WorldCover 2021**;
+[procedencia, créditos y reproducción de las imágenes](docs/images/README.md).
 
 ## Desarrollo y documentación
 

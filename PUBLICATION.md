@@ -19,3 +19,8 @@ la distribución final del loot. El estado de aceptación sigue en HANDOFF.md.
 Las dos ilustraciones de `docs/images/` se generan desde el recorte aprobado y
 datos GIS existentes, con atribuciones y hashes. Son cartografía del área de
 inspiración; no capturas del juego ni evidencia de prestaciones implementadas.
+
+Guillermo aportó después la captura de la zona que quería en la presentación.
+Se publica íntegra en `docs/reference/zona-real.png` como imagen principal del
+README, con procedencia y hash. Las figuras generadas siguen disponibles como
+referencia complementaria. Esta captura no modifica el recorte aprobado.

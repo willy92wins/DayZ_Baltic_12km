@@ -1,5 +1,13 @@
 # Cartografía de presentación
 
+La imagen principal del README, [zona-real.png](../reference/zona-real.png), es
+la captura aportada por Guillermo para mostrar el área de inspiración. Se conserva
+íntegra, sin recortar ni modificar. Su procedencia y hash constan en
+[source.json](../reference/source.json). **Cartografía: Google Maps.** Su SHA-256
+coincide con `referencias/regional.png` en [la aprobación original](../../evidence/aprobacion.json),
+cuya procedencia figura en [las fuentes](../../licenses/sources.md). Las atribuciones
+OSM/ESA de esta página corresponden a las figuras generadas que se describen a continuación.
+
 `baltic-region.png` muestra el recorte geográfico aprobado. `narva-saint-petersburg.png`
 acerca dos de sus áreas: Narva/Ivangorod y San Petersburgo/Kotlin. Son ilustraciones
 cartográficas elaboradas desde los datos GIS del proyecto, con colores interpretativos.
@@ -27,7 +35,8 @@ Los rótulos de ciudades se anclan a sus nodos OSM, identificados en
 
 Los originales, fechas y licencias se describen en [las fuentes del proyecto](../../licenses/sources.md)
 y en [el manifiesto de adquisición](../../evidence/source-manifest.json).
-Los mapas no incorporan capturas de Google Maps ni recursos visuales del juego.
+Las dos figuras generadas no incorporan capturas de otros mapas ni recursos
+visuales del juego; la captura aportada se conserva como archivo independiente.
 
 ## Reproducción
 
