@@ -1,18 +1,79 @@
-# DayZ Baltic 12km — terreno y navegación
+# Baltic — DayZ al otro lado de la frontera
 
-Mapa DayZ de 12,288 × 12,288 km que condensa la región báltica: golfo de
-Finlandia, San Petersburgo con Kotlin y el Neva, Narva y la frontera, el Luga,
-Peipus e Ilmen. Recorte aprobado por Guillermo el 29-09-2026. Se generó aquí
-desde fuentes públicas; no depende del heightmap no entregado de Exta.
+**Dos orillas. Dos arsenales. Un territorio en disputa.**
 
-**Estado (25-10-2026):** EV112 en desarrollo, todavía sin aceptación global.
-Hay pilotos de cauce continuo, correcciones locales de relieve y bosque colocado.
-Los controles de terreno de las carreteras pasan en el ámbito medido; las
-carreteras físicas, navegación y conducción siguen pendientes. El candidato más
-reciente conserva los fallos y límites documentados para la revisión en juego.
-Código, pruebas y evidencia se publican con un historial saneado independiente;
-los datos y builds grandes se identifican por sus manifiestos. Ver
-[PUBLICATION.md](PUBLICATION.md).
+Un mapa de **12,288 × 12,288 km** para DayZ, inspirado en el noroeste de Rusia
+y la frontera con Estonia. Del golfo de Finlandia a **San Petersburgo**, una de
+las grandes urbes rusas; de sus islas y canales a **Narva**, donde un río separa
+dos mundos. Bosques, humedales, embalses y corredores fluviales dan forma a una
+región real condensada en unos **151 km² de superficie de juego**.
+
+![Área geográfica de inspiración de Baltic: golfo de Finlandia, San Petersburgo, Narva y lagos del recorte aprobado](docs/images/baltic-region.png)
+
+*Mapa del área real que inspira el proyecto, con el encuadre aprobado. Las
+distancias se condensan para DayZ; la imagen es cartografía de referencia.*
+
+## Narva: la frontera que se convirtió en frente
+
+En la **historia alternativa de Baltic**, la OTAN y parte del bloque del
+Pacto de Varsovia se disputan este rincón del Báltico. Narva concentra la
+tensión: sus cruces, el río y los accesos a ambas orillas convierten la ciudad
+fronteriza en un punto clave del conflicto.
+
+Cuando llega el colapso, quedan las huellas de esa guerra: posiciones
+abandonadas, rutas de abastecimiento interrumpidas y material de procedencias
+distintas. Para quien sobrevive, cruzar al otro lado significa buscar otro
+equipo, exponerse en un paso disputado o encontrar una ruta por el agua.
+
+La ambientación toma su identidad del territorio real. El conflicto pertenece
+al lore ficticio del mapa y no representa la situación histórica o política actual.
+
+![Acercamientos cartográficos a Narva e Ivangorod, y a San Petersburgo y Kotlin](docs/images/narva-saint-petersburg.png)
+
+*Narva está en Estonia; Ivangorod, en la orilla rusa. San Petersburgo y Kotlin
+aportan la referencia urbana y costera. Vías, agua y frontera proceden de datos
+geográficos; estos mapas no representan zonas de loot ya implementadas.*
+
+## La experiencia que estamos construyendo
+
+- **Cruzar de Este a Oeste tiene un propósito.** La visión del loot distingue
+  armamento y equipo de origen oriental y occidental, para que cambiar de zona
+  abra otras posibilidades de abastecimiento. La distribución y los tiers se
+  definirán durante el diseño de la economía.
+- **Los ríos forman parte del viaje.** Cauces navegables, embalses y conexiones
+  con la costa para desplazarse en embarcación, transportar equipo y elegir
+  accesos distintos a los de las carreteras. Profundidad, continuidad y paso
+  bajo puentes forman parte de los criterios de aceptación.
+- **Una gran urbe frente a una frontera tensa.** San Petersburgo aporta la
+  escala urbana, sus canales y el Neva; Narva concentra el cruce entre ambos
+  territorios y el peso del conflicto.
+- **Naturaleza con identidad báltica.** Bosque denso, claros, humedales y agua
+  abierta para alternar orientación, cobertura y exposición durante el recorrido.
+- **Geografía reconocible a escala DayZ.** Costa, localidades y conexiones
+  parten de fuentes reales. El terreno se adapta a la jugabilidad con una
+  transformación común del área, conservando sus referencias principales.
+
+## Estado del proyecto
+
+**En desarrollo · EV112 · actualizado el 25-10-2026.** Hay terreno generado,
+bosque colocado y pilotos de cauce continuo. Se están corrigiendo y verificando
+orillas, relieve, colisiones y conexiones. Los controles de terreno de las
+carreteras pasan en el ámbito medido; las carreteras físicas, la conducción y
+la navegación completa siguen pendientes de validación en juego.
+
+El mapeado urbano, la economía de loot Este/Oeste y su progresión son parte de
+la visión pendiente de implementar. La comparación de rendimiento con Chernarus
+sigue abierta. **Todavía no hay una versión jugable con aceptación global.**
+
+Las ilustraciones muestran la base geográfica del proyecto. Se han generado
+con datos de **© OpenStreetMap contributors** y **ESA WorldCover 2021**;
+[créditos, fuentes y reproducción de las imágenes](docs/images/README.md).
+
+## Desarrollo y documentación
+
+Este repositorio reúne código, herramientas de calidad y evidencia de desarrollo.
+El historial público es independiente del local; los datos y builds grandes se
+identifican mediante manifiestos. Ver [PUBLICATION.md](PUBLICATION.md).
 
 - Estado vivo y siguiente paso: [HANDOFF.md](HANDOFF.md). Historia: [HANDOFF-history.md](HANDOFF-history.md).
 - Producto y criterios: [product-spec.md](product-spec.md). Problemas: [bugs.md](bugs.md).
