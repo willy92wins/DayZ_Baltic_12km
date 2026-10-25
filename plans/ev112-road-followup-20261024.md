@@ -30,3 +30,20 @@ Bury vuelve a calcular la huella completa: ninguna exposición nueva, cero vért
 
 
 Cierre de esta continuación: R compilado y desplegado aislado. PBO234881855edd0529c4c899ed5e68c3517379588e857652132fbb6f3708a343c8; frente a Q solo cambia WRP,6.826 entradas exactas. Sonda1.037 puntos y consumidor transversal directo preparados y comprobados offline. MCP130 bloquea ejecución y navmesh; no prueba de conducción ni aceptación visual. Checkpoint continuation-20261024-d.
+
+25-10, continuación autónoma sobre F: las187 posiciones congeladas de las11
+secciones no están incluidas en la sonda4749. Se preparan como una sonda separada,
+con los mismos XZ y orden de muestras. La comparación previa detectó diferencias
+de altura R→F de hasta0,04091m por las capas posteriores; no se ejecutó con la
+suposición de igualdad. Se conserva R y se recalcula únicamente la expectativa Y
+sobre F fijado por SHA. Las11 secciones F pasan offline, máximo0,029499904m.
+Emisor físico existente y consumidor
+eval_visual_road_probe_ev112.py sin cambios; límite transversal0,03m. Un run
+servidor, sin cliente, máximo900s, bootstrap data-server como F4749 y la sonda
+forestal. Paquetes y misión ligados antes/después; cierre MCP propio. No modifica
+terreno ni coloca carreteras. PASS sólo prueba esas11 secciones medidas; conducción,
+emplazamiento visual, mapeado físico y navegación siguen fuera de este resultado.
+
+## Resultado de esta unidad — 25-10-2026
+
+F supera187puntos y las11secciones antes fallidas; máximo nativo0.02950m contra0,03m. Sonda cerrada, sin cliente. No equivale a conducción ni colocación de todas las carreteras. Evidencia: [quality-continuation](../evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/quality-continuation-20261025/README.md).

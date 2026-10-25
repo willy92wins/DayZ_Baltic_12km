@@ -1,0 +1,19 @@
+test_actual_native_true_false_are_read_without_coercion (test_forest_boundary_native_booleans.ForestNativeBooleans.test_actual_native_true_false_are_read_without_coercion) ... ERROR
+test_non_native_boolean_aliases_are_rejected (test_forest_boundary_native_booleans.ForestNativeBooleans.test_non_native_boolean_aliases_are_rejected) ... ok
+
+======================================================================
+ERROR: test_actual_native_true_false_are_read_without_coercion (test_forest_boundary_native_booleans.ForestNativeBooleans.test_actual_native_true_false_are_read_without_coercion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_forest_boundary_native_booleans.py", line 26, in test_actual_native_true_false_are_read_without_coercion
+    rows=parse(native_fields(),2,ID)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\vegetation\eval_forest_boundary_probe_v31.py", line 24, in parse
+    i, h, sea, pond, clock = int(fields[1]), float(fields[2]), fields[3], fields[4], int(fields[5])
+                                                                                     ^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '<0.000000, 0.000000, 0.000000>'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.004s
+
+FAILED (errors=1)

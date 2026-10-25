@@ -9,7 +9,7 @@ from eval_forest_boundary_probe_v31 import parse, judge
 class ForestBoundaryProbe(unittest.TestCase):
     def setUp(self):
         self.survey_id = '36be520c-80f4-4479-8a6e-242119f92cbf'
-        self.text = 'BALTIC_FOREST_BOUNDARY_V1;BalticTrial\nSURVEY;'+self.survey_id+'\nBEGIN;3\nP;0;2;0;0;10\nP;1;2;0;0;10\nP;2;2;0;0;11\nEND;3\n'
+        self.text = 'BALTIC_FOREST_BOUNDARY_V1;BalticTrial\nSURVEY;'+self.survey_id+'\nBEGIN;3\nP;0;2;false;false;10\nP;1;2;false;false;10\nP;2;2;false;false;11\nEND;3\n'
         self.doc = dict(objects=[dict(id=7, root_y=2, embed=.1, support_required=True)],
                         points=[dict(id=i, object_id=7, kind=k, x=100, z=12285) for i, k in enumerate(('root', 'support', 'margin'))])
 
@@ -17,11 +17,11 @@ class ForestBoundaryProbe(unittest.TestCase):
         self.assertEqual(judge(self.doc, parse(self.text, 3, self.survey_id))['status'], 'SAMPLED_BOUNDARY_CLEAR')
 
     def test_missing_duplicate_nan_bad_bool_or_backwards_clock(self):
-        for text in [self.text.replace('END;3', ''), self.text.replace('P;1;', 'P;0;'), self.text.replace('P;1;2;', 'P;1;nan;'), self.text.replace(';0;0;11', ';2;0;11'), self.text.replace(';0;0;11', ';0;0;9')]:
+        for text in [self.text.replace('END;3', ''), self.text.replace('P;1;', 'P;0;'), self.text.replace('P;1;2;', 'P;1;nan;'), self.text.replace(';false;false;11', ';2;false;11'), self.text.replace(';false;false;11', ';false;false;9')]:
             with self.subTest(text=text), self.assertRaises(ValueError): parse(text, 3, self.survey_id)
 
     def test_floatation_root_and_sea_fail_independently(self):
-        for before, after, kind in [('P;0;2;', 'P;0;1.98;', 'root'), ('P;1;2;', 'P;1;1.88;', 'support'), ('P;2;2;0;', 'P;2;2;1;', 'margin_water')]:
+        for before, after, kind in [('P;0;2;', 'P;0;1.98;', 'root'), ('P;1;2;', 'P;1;1.88;', 'support'), ('P;2;2;false;', 'P;2;2;true;', 'margin_water')]:
             result = judge(self.doc, parse(self.text.replace(before, after), 3, self.survey_id))
             self.assertEqual(result['status'], 'FAIL'); self.assertEqual(result['counts'][kind], 1)
 

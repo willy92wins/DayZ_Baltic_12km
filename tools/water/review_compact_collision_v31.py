@@ -25,6 +25,15 @@ def vertices(lod,faces):
     return np.array([[lod.points[v.point_index].coords for v in face.vertices] for face in faces])
 
 
+def require_eligible_packing(candidate):
+    # Legacy overlap candidates have no packing claim. If one is present,
+    # a cost-failed or incomplete author must not acquire a geometry PASS.
+    if 'collision_packing' in candidate:
+        packing=candidate['collision_packing']
+        if not isinstance(packing,dict) or packing.get('status')!='CANDIDATE_GLOBAL_OVERLAY_PENDING':
+            raise ValueError('candidate collision packing is not eligible for acceptance')
+
+
 def height(tri,xy):
     # Barycentric interpolation, independent of the author's plane equations.
     a=tri[:,0][:,[0,2]];b=tri[:,1][:,[0,2]]-a;c=tri[:,2][:,[0,2]]-a;q=xy-a
@@ -70,6 +79,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('original',type=Path);p.add_argument('candidate',type=Path);p.add_argument('report',type=Path);a=p.parse_args()
     if a.report.exists():raise FileExistsError(a.report)
     old=json.loads((a.original/'author-report.json').read_text());new=json.loads((a.candidate/'author-report.json').read_text())
+    require_eligible_packing(new)
     before={i['model']:i for i in old['instances']};after={i['model']:i for i in new['instances']};assert len(before)==len(old['instances']) and set(before)==set(after) and len(after)==len(new['instances'])
     all_source=[];all_roof=[];source_labels=[];roof_labels=[];checks={};models=[]
     for name in before:

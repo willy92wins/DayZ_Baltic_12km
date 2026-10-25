@@ -62,9 +62,11 @@ orillas, relieve, colisiones y conexiones. Los controles de terreno de las
 carreteras pasan en el ámbito medido; las carreteras físicas, la conducción y
 la navegación completa siguen pendientes de validación en juego.
 
-La base de colisión U2 supera **2.823 controles de servidor y 300 rayos de
-repetición**, con los cinco fallos de contacto anteriores corregidos.
-[Resultados de colisión y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/runtime-rv-contact-20261025/README.md).
+La colisión C del río 131 supera **4.749 controles de servidor y 300 rayos
+adicionales**, con **1.449 componentes frente a 2.245** de la base U2. También
+pasan **269.968 consultas sobre 3.727 árboles** y **11 secciones de carretera**
+antes fallidas. Son resultados de servidor en el ámbito muestreado; la vista
+y la conducción siguen pendientes. [Pruebas, rechazos y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/quality-continuation-20261025/README.md).
 
 El mapeado urbano, la economía de loot Este/Oeste y su progresión son parte de
 la visión pendiente de implementar. La comparación de rendimiento con Chernarus
@@ -84,13 +86,14 @@ Piloto F: corregida una transición rectangular junto a Narva, con **165 tests**
 y controles de agua y carreteras superados. Conserva E y supera **4.749 controles
 de servidor, sin fallos**; quedan cuatro transiciones por resolver. [Evidencia y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/rectangle-pilot-20261025/README.md).
 
-Navegación de E compatible con DayZ 1.30: **37 rutas locales y 108 puntos
-verificados**. La navegación global y la locomoción siguen pendientes.
-[Evidencia de navegación](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/navmesh-e-runtime-20261025/README.md).
+Navegación de E compatible con DayZ 1.30: las **37 rutas anteriores y ocho
+rutas locales nuevas superan la sonda**. La generación de navegación F terminó
+sin una malla válida; sigue pendiente, junto con la locomoción y la cobertura global.
+[Evidencia de navegación](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/quality-continuation-20261025/README.md).
 
 Comparación de servidor vacío con Chernarus: **16,8 % menos RAM residente y
 15,6 % menos memoria privada**, con tres pasadas por mapa y poca dispersión.
-**188 tests** y revisión independiente del lector. La CPU varió mucho; estos
+Revisión independiente del lector; la suite actual alcanza **225 tests**. La CPU varió mucho; estos
 resultados todavía no acreditan FPS ni capacidad multijugador.
 [Mediciones y límites](evidence/performance/server-baseline-ab-20261025/README.md).
 

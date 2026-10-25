@@ -55,6 +55,7 @@ def fit_grid(grid,vertical_budget=.015,horizontal_budget=.002):
             normal=np.cross(t[:,1]-t[:,0],t[:,2]-t[:,0])
             return t[:,0,1]-(normal[:,0]*(xy[:,0]-t[:,0,0])+normal[:,2]*(xy[:,1]-t[:,0,2]))/normal[:,1]
         exact=height(roof_tri[ib[which]],xy)-height(source[ia[which]],xy)
+        if not np.isfinite(exact).all():raise ValueError('nonfinite exact roof refinement')
         bound=float(exact.max())
         if bound>vertical_budget+1e-9:return None
     return dict(points=points,faces=faces,volume=float(volume),roof_upper_error_bound_m=max(0.,bound),source_triangles=len(tri))

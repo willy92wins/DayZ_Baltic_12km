@@ -1,0 +1,12 @@
+Revisión independiente de código y evidencia ya cerrada; sólo lectura, Fable5.1 nativo, herramientas Read/Glob/Grep. No escribir, ejecutar comandos, usar MCP, iniciar procesos, publicar ni crear subagentes. Una lane de revisión acotada; Codex integrará. Devuelve SOUND / SOUND-with-fixes / NEEDS-WORK con hallazgos concretos path:línea y fix mínimo.
+
+W=C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c
+R=E:/DayZ-Baltic-Build/shape-repair-20261025
+
+Revisa W/tools/water/midpoint_stream_collision_v31.py (nuevo); cambio de una línea finita en compact_stream_collision_v31.py; W/tests/test_midpoint_stream_collision_v31.py; R/author_midpoint_collision.py. Plan W/plans/ev112-river131-collision-midpoints-20261025.md ya incorporó los siete ajustes de tu revisión anterior, que puedes leer en R/collision-midpoint-plan-review/review-response.json.
+
+Evidencia cerrada: R/river-131-midpoint-a/packing-report.json (27modelos,2245→1398componentes;53228→44764caras;31104→25178vértices;máximos72/140sin aumento). Costes medidos desde P3D releídos; cada modelo sin aumento, hashes y origen fijos, LOD noGeometry bytes exactos. Fuente baseline guardada por SHA, no recomputada. R/collision-midpoint-execution/tests.json y tests.stderr.log:224PASS, incluye plano/caps, valle, rechazo NaN del refinamiento exacto, límites, determinismo en dos procesos independientes.
+
+El consumidor geométrico independiente W/tools/water/review_compact_collision_v31.py está ejecutándose sobre toda la unión; su resultado no es requisito para terminar esta revisión de código. No presumir PASS por la autoría ni esperar a ese proceso. El prototipo NO está compilado ni desplegado. F sigue generando navegación con la colisión anterior y no se toca. No FPS/AI/caminado aceptados. El plan exige471? Lee la cifra exacta del plan:4749controles F con cobertura de2823originales más300rayos y juntas, y tres contactos originales sípertenecen al río131. No reutilizar índices U2.
+
+Busca errores reales de partición/cobertura/caps/NaN/cache/timeout, mutaciones de arrays compartidos, autoría/hash/falso PASS y tests insuficientes. El corte sólo explora ambos puntos medios de bloques rechazados; no busca optimalidad general. El cap20000 es defensivo para un máximo teórico2925estados en21×39; timeout60s comprueba antes/después y la autoría tiene1800s externo. No introducir criterios nuevos de motor sin fuente.

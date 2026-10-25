@@ -1,0 +1,18 @@
+test_actual_native_true_false_are_read_without_coercion (test_forest_boundary_native_booleans.ForestNativeBooleans.test_actual_native_true_false_are_read_without_coercion) ... ERROR
+test_non_native_boolean_aliases_are_rejected (test_forest_boundary_native_booleans.ForestNativeBooleans.test_non_native_boolean_aliases_are_rejected) ... ok
+
+======================================================================
+ERROR: test_actual_native_true_false_are_read_without_coercion (test_forest_boundary_native_booleans.ForestNativeBooleans.test_actual_native_true_false_are_read_without_coercion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_forest_boundary_native_booleans.py", line 26, in test_actual_native_true_false_are_read_without_coercion
+    rows=parse(native_fields(),2,ID)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\vegetation\eval_forest_boundary_probe_v31.py", line 26, in parse
+    raise ValueError('invalid identity, height, boolean or clock')
+ValueError: invalid identity, height, boolean or clock
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (errors=1)

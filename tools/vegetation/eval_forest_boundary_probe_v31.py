@@ -22,9 +22,11 @@ def parse(text, count, survey_id):
         if len(fields) != 6 or fields[0] != 'P':
             raise ValueError('invalid row schema')
         i, h, sea, pond, clock = int(fields[1]), float(fields[2]), fields[3], fields[4], int(fields[5])
-        if i != len(rows) or i in rows or not math.isfinite(h) or sea not in ('0', '1') or pond not in ('0', '1') or clock < 0 or clock < previous:
+        # DayZ bool-to-string concatenation emits these exact spellings.
+        # Captured 1.30 boundary diagnostic and native navigation logs agree.
+        if i != len(rows) or i in rows or not math.isfinite(h) or sea not in ('false', 'true') or pond not in ('false', 'true') or clock < 0 or clock < previous:
             raise ValueError('invalid identity, height, boolean or clock')
-        rows[i] = dict(ground=h, sea=sea == '1', pond=pond == '1', clock=clock)
+        rows[i] = dict(ground=h, sea=sea == 'true', pond=pond == 'true', clock=clock)
         previous = clock
     return rows
 
