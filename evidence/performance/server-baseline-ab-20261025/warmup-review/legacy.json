@@ -1,0 +1,22 @@
+{
+  "returncode": 0,
+  "controls": {
+    "status": "PASS_EVIDENCE_REJECTION_CONTROLS",
+    "controls": {
+      "missing_end": "REJECTED",
+      "wrong_world": "REJECTED",
+      "missing_sample": "REJECTED",
+      "duplicate_sample": "REJECTED",
+      "wrong_columns": "REJECTED",
+      "nonfinite_clock": "REJECTED",
+      "clock_backwards": "REJECTED",
+      "zero_updates": "REJECTED",
+      "invalid_fps": "REJECTED",
+      "fractional_over50": "REJECTED"
+    }
+  },
+  "original_artifact_present": false,
+  "original_artifact_unchanged": null,
+  "validator_sha256": "f526c071958260cca6fa0132de5b0e6604f098d5f6d8d66e44fca540cb66c163",
+  "note": "Executed actual legacy regression script with isolated Python and explicit module path; no engine capture changed. This sparse worktree had no negative-controls.json; the script creates its current result."
+}

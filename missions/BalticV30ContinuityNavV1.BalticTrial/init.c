@@ -46,9 +46,18 @@ class BalticV30ContinuityNavMission: MissionServer
             for (int i=0;i<path.Count();i++)
             {
                 vector p=path[i];
-                vector groundSample=Vector(p[0],GetGame().SurfaceY(p[0],p[2]),p[2]);
-                vector roadSample=Vector(p[0],GetGame().SurfaceRoadY(p[0],p[2]),p[2]);
-                FPrintln(output,"P;"+fields[0]+";"+i+";"+p.ToString()+";"+groundSample.ToString()+";"+roadSample.ToString());
+                // Nested SurfaceRoadY in Vector lost X in13/108 DayZ1.30 samples.
+                // Capture scalar results before constructing or serializing vectors.
+                float pointX=p[0];
+                float pointZ=p[2];
+                float groundY=GetGame().SurfaceY(pointX,pointZ);
+                float roadY=GetGame().SurfaceRoadY(pointX,pointZ);
+                vector groundSample=Vector(pointX,groundY,pointZ);
+                vector roadSample=Vector(pointX,roadY,pointZ);
+                string pointText=p.ToString();
+                string groundText=groundSample.ToString();
+                string roadText=roadSample.ToString();
+                FPrintln(output,"P;"+fields[0]+";"+i+";"+pointText+";"+groundText+";"+roadText);
             }
             count++;
         }

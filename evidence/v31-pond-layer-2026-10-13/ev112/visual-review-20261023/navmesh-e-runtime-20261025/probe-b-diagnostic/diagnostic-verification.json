@@ -1,0 +1,102 @@
+{
+  "status": "REPRODUCED_NESTED_VECTOR_COORDINATE_FAILURE",
+  "waypoints": 108,
+  "legacy_direct_coordinate_failures": 13,
+  "scalar_temporaries_coordinate_failures": 0,
+  "legacy_direct_x_zero": 13,
+  "max_scalar_vs_vector_text_delta_m": 0.00442399999974441,
+  "navigation_and_native_ground_samples_identical": true,
+  "native_road_y_identical": true,
+  "legacy_failures": [
+    [
+      "stream",
+      0,
+      0.0,
+      2184.0
+    ],
+    [
+      "stream",
+      1,
+      0.0,
+      2232.0
+    ],
+    [
+      "changed_bank_01",
+      0,
+      0.0,
+      9270.0
+    ],
+    [
+      "changed_bank_02",
+      0,
+      0.0,
+      4194.0
+    ],
+    [
+      "changed_bank_04",
+      0,
+      0.0,
+      5814.0
+    ],
+    [
+      "changed_bank_04",
+      1,
+      0.0,
+      5838.0
+    ],
+    [
+      "changed_bank_06",
+      0,
+      0.0,
+      1752.0
+    ],
+    [
+      "changed_bank_09",
+      0,
+      0.0,
+      1620.0
+    ],
+    [
+      "changed_bank_11",
+      0,
+      0.0,
+      2130.0
+    ],
+    [
+      "changed_bank_12",
+      0,
+      0.0,
+      4614.0
+    ],
+    [
+      "changed_bank_13",
+      0,
+      0.0,
+      12060.0
+    ],
+    [
+      "changed_bank_17",
+      0,
+      0.0,
+      2166.0
+    ],
+    [
+      "changed_bank_18",
+      0,
+      0.0,
+      4842.0
+    ]
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\navmesh-guarded-e-v9-probe\\runtime.log": "397cf6588feb2d545ab31292770d76dde10953485a6278809f5021818f8282ad",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\navmesh-guarded-e-v9-probe-b\\runtime.log": "6b24e58b432d2dc1d9f70ff724965f59e22db4f26e94a1f92bea0644e480be18",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\navmesh-guarded-e-v9-probe-b\\diagnostic.log": "c4e98bb59b030bd3d6d0b88298b64a7abcceb0698949247f6f4e2e62358557a3",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\validate_nav_coordinate_diagnostic.py": "518f5aefdabb018665f2d3807a27fcdfe7c2847ed07d9d92f96669b0d765128d"
+  },
+  "limits": [
+    "Direct legacy vector components are already wrong before ToString. This isolates the nested construction form as failing in this probe.",
+    "The internal engine/compiler mechanism is not established. No navigation, terrain or consumer thresholds changed.",
+    "Direct float concatenation has coarser textual precision than Vector.ToString; geometric comparisons use the full vector rows. Initial diagnostic validator rejected that representation difference and was corrected without relaxing consumer tolerances.",
+    "Final clean canonical-source probe C still required before source closure."
+  ]
+}

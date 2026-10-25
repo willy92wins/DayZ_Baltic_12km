@@ -1,0 +1,23 @@
+from pathlib import Path
+import hashlib,json,shutil
+R=Path(__file__).parent;W=Path('C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c')
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+C=R/'navmesh-guarded-e-v9-probe-c';source=W/'missions/BalticV30ContinuityNavV1.BalticTrial/init.c'
+mission=Path('C:/temp/DayZ_MCP_130_dev/mpmissions/BalticGuardedENavV9C.BalticTrial')
+assert not (C/'runtime.log').exists()
+shutil.copyfile(C/'deployment.json',C/'deployment-before-review.json')
+shutil.copyfile(C/'reference.json',C/'reference-inherited-before-review.json')
+s=source.read_text(encoding='utf-8').replace('baltic_v30_continuity_nav_v1.log','baltic_ev112_nav_v9_c.log').replace('BALTIC_V30_CONTINUITY_NAV_V1','BALTIC_EV112_NAV_V9')
+(mission/'init.c').write_bytes(s.encode('utf-8'))
+ref=json.loads((C/'reference.json').read_text());old=dict(ref)
+ref.update(mission=str(mission),code_sha256=sha(mission/'init.c'),source_mission_sha256=sha(source),queries_sha256=sha(mission/'queries.csv'))
+assert all(ref[k]==v for k,v in old.items() if k not in ('mission','code_sha256','source_mission_sha256','queries_sha256'))
+(C/'reference.json').write_text(json.dumps(ref,indent=2)+'\n',encoding='utf-8')
+dep=json.loads((C/'deployment.json').read_text())
+for p in (source,mission/'init.c',mission/'queries.csv',C/'reference.json'):dep['inputs'][str(p)]=sha(p)
+dep['inputs'][str(Path(__file__))]=sha(Path(__file__))
+(C/'deployment.json').write_text(json.dumps(dep,indent=2)+'\n',encoding='utf-8')
+B=R/'navmesh-guarded-e-v9-probe-b';m=Path('C:/temp/DayZ_MCP_130_dev/mpmissions/BalticGuardedENavV9B.BalticTrial')
+r=json.loads((B/'reference.json').read_text());r.update(mission=str(m),code_sha256=sha(m/'init.c'),queries_sha256=sha(m/'queries.csv'),execution_reference_note='B execution binding; original prepared reference is retained unchanged.',prepared_reference_sha256=sha(B/'reference.json'))
+(B/'execution-reference.json').write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8')
+print(json.dumps(dict(final_c_mission_sha256=sha(mission/'init.c'),c_reference_sha256=sha(C/'reference.json'),canonical_source_sha256=sha(source)),indent=2))

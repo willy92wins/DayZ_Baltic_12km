@@ -1,0 +1,103 @@
+{
+  "status": "PASS_EMPTY_SERVER_RAM_BUDGET",
+  "order": [
+    "BalticTrial",
+    "ChernarusPlus",
+    "ChernarusPlus",
+    "BalticTrial",
+    "BalticTrial",
+    "ChernarusPlus"
+  ],
+  "metrics": {
+    "working_set_mib": {
+      "baltic": [
+        2785.140625,
+        2787.38671875,
+        2786.9765625
+      ],
+      "chernarus": [
+        3348.015625,
+        3349.3515625,
+        3352.34765625
+      ],
+      "baltic_median": 2786.9765625,
+      "chernarus_median": 3349.3515625,
+      "ratio": 0.832094365280593,
+      "paired_ratios": [
+        0.8318780247628026,
+        0.8322168236855548,
+        0.8313506975638574
+      ],
+      "baltic_dispersion": 0.0008059248793915898,
+      "chernarus_dispersion": 0.0012933940105010998,
+      "status": "PASS_LOCAL_RAM_BUDGET"
+    },
+    "private_mib": {
+      "baltic": [
+        3148.78125,
+        3151.24609375,
+        3150.33203125
+      ],
+      "chernarus": [
+        3732.6171875,
+        3733.38671875,
+        3736.08984375
+      ],
+      "baltic_median": 3150.33203125,
+      "chernarus_median": 3733.38671875,
+      "ratio": 0.8438268705002474,
+      "paired_ratios": [
+        0.8435853696823818,
+        0.8440717051688366,
+        0.843216347304951
+      ],
+      "baltic_dispersion": 0.0007824076083250153,
+      "chernarus_dispersion": 0.0009301624802379709,
+      "status": "PASS_LOCAL_RAM_BUDGET"
+    },
+    "cpu_percent_one_logical_core": {
+      "baltic": [
+        6.535209274437907,
+        4.2599031735427815,
+        6.27207789226063
+      ],
+      "chernarus": [
+        4.733018273513087,
+        4.227097481171076,
+        14.327888003281222
+      ],
+      "baltic_median": 6.27207789226063,
+      "chernarus_median": 4.733018273513087,
+      "ratio": 1.3251750848629567,
+      "paired_ratios": [
+        1.3807699224425647,
+        1.0077608081000813,
+        0.43775313506249247
+      ],
+      "baltic_dispersion": 0.36276751341094116,
+      "chernarus_dispersion": 2.1341118792285636,
+      "status": "DESCRIPTIVE_ONLY"
+    }
+  },
+  "limits": [
+    "Only empty dedicated-server process RAM and CPU; no CE/AI/players/client.",
+    "No client FPS, VRAM or production-capacity verdict.",
+    "Configuration and file identities cannot prove the absence of unrelated host load."
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\server-baseline-ab-v2\\pass-01\\reference.json": "1e9dbb8d17d6450384cd7e7a2953006a05e2db2a26749859b37eaf6cc2447275",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\server-baseline-ab-v2\\pass-02\\reference.json": "c4fa7f85ef147ea9c8bb6dc708fc911de83bade452946f749c15a3659e03e5ef",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\server-baseline-ab-v2\\pass-03\\reference.json": "31143a5adabef288fb5ea46782386e2a1a58623917349dabc8a8314ff0034ace",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\server-baseline-ab-v2\\pass-04\\reference.json": "726ef8b18226d6338b5497c82d5518d72165599c6412632f6be8f0ba249f5574",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\server-baseline-ab-v2\\pass-05\\reference.json": "78356b2fd0b8a92e25d459ff524159c43a3983f100a855d86b981d4ef03a9959",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\server-baseline-ab-v2\\pass-06\\reference.json": "965271391995126eed9fd8d490051c109190a9ae963b54c914972ea07411bb4b"
+  },
+  "validation_sources": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\verify_terrain_perf.py": "f526c071958260cca6fa0132de5b0e6604f098d5f6d8d66e44fca540cb66c163",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\read_server_baseline_ev112.py": "e215b4101351197e97b4db87acaa8862c08c80fbbfdf762764a14f415a34c0ce",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\compare_server_baseline_ev112.py": "59966adffb6355aed0c7cff90c9edb5ac5841e5b2006d73e4c5ec43d68021d70"
+  },
+  "completed_utc": "2026-10-25T20:40:03.330428+00:00",
+  "retained_original_validation_failure": "pass-05/result.json: original float subtraction falsely rejected exact textual warmup; fixed reader revalidates same raw capture, no measurement repeated or discarded.",
+  "measurement_repeats": 0
+}

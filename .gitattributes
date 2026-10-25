@@ -18,6 +18,9 @@ evidence/runtime-first/**/*.log -text -diff
 # Evidence hashes refer to original bytes, including original line endings.
 evidence/** -text
 
+# Exact captured decimal-clock regression, including native line endings.
+tests/fixtures/server-baseline-roundoff.log -text
+
 # Frozen player-view fixtures retain their recorded deployment hashes.
 missions/BalticV30VisualTourV1.BalticTrial/** -text
 missions/BalticV30VisualFollowupV1.BalticTrial/** -text

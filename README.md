@@ -81,12 +81,18 @@ la huella del agua y las reservas de carretera. Compilación y sonda de
 revisión visual pendiente. [Comparación y controles](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/hybrid-relief-20261025/README.md).
 
 Piloto F: corregida una transición rectangular junto a Narva, con **165 tests**
-y controles de agua y carreteras superados. Conserva E y su paquete compilado está verificado; la sonda de4.749puntos
-está preparada para probarse en el motor. [Evidencia y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/rectangle-pilot-20261025/README.md).
+y controles de agua y carreteras superados. Conserva E y supera **4.749 controles
+de servidor, sin fallos**; quedan cuatro transiciones por resolver. [Evidencia y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/rectangle-pilot-20261025/README.md).
 
-Comparación con Chernarus: instrumentación de servidor vacío preparada y revisada,
-con **184 tests**. Las seis pasadas aún no se han ejecutado.
-[Preparación y límites](evidence/performance/server-baseline-preparation-20261025/README.md).
+Navegación de E compatible con DayZ 1.30: **37 rutas locales y 108 puntos
+verificados**. La navegación global y la locomoción siguen pendientes.
+[Evidencia de navegación](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/navmesh-e-runtime-20261025/README.md).
+
+Comparación de servidor vacío con Chernarus: **16,8 % menos RAM residente y
+15,6 % menos memoria privada**, con tres pasadas por mapa y poca dispersión.
+**188 tests** y revisión independiente del lector. La CPU varió mucho; estos
+resultados todavía no acreditan FPS ni capacidad multijugador.
+[Mediciones y límites](evidence/performance/server-baseline-ab-20261025/README.md).
 
 ## Desarrollo y documentación
 

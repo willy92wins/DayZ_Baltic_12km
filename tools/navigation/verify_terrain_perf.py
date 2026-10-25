@@ -1,5 +1,6 @@
 """Validate completeness of a measured server baseline, not player capacity."""
 import argparse
+from decimal import Decimal
 import hashlib
 import json
 import math
@@ -30,8 +31,12 @@ def verify(text):
             raise ValueError('Nonfinite measurement')
         if tick <= previous_time or ms <= previous_ms or not 0.999 <= duration <= 3:
             raise ValueError('Discontinuous clock or excessive sample gap')
-        if expected == 1 and tick-start < 31:
-            raise ValueError('Warmup missing')
+        if expected == 1:
+            # Judge the recorded decimal interval, subtracting the actual first
+            # window. Binary subtraction can turn exactly31s into30.9999999999.
+            warmup = Decimal(parts[2])-Decimal(parts[4])-Decimal(initial[1])
+            if warmup < 30:
+                raise ValueError('Warmup missing')
         if expected > 1 and abs(tick-previous_time-duration) > .002:
             raise ValueError('Sample interval mismatch')
         if updates < 1 or updates != int(updates) or over50 != int(over50) or not 0 <= over50 <= updates:
@@ -44,7 +49,7 @@ def verify(text):
         raise ValueError('Incomplete final interval')
     elapsed = sum(r[2] for r in rows)
     return {'status': 'PASS_COMPLETE_SERVER_BASELINE_MEASUREMENT', 'samples': len(rows),
-            'measurement_seconds': elapsed, 'warmup_seconds': rows[0][0]-rows[0][2]-start,
+            'measurement_seconds': elapsed, 'warmup_seconds': float(warmup),
             'mean_update_rate_hz': sum(r[3] for r in rows)/elapsed,
             'native_fps_avg64_median': statistics.median(r[9] for r in rows),
             'native_fps_min64_minimum': min(r[7] for r in rows),

@@ -1,0 +1,288 @@
+{
+  "status": "READ_ONLY_F_PATCH_DRY_CORRIDOR_SCREEN",
+  "changed_vertices": 94,
+  "changed_vertex_bounds_xz": [
+    2892.0,
+    6804.0,
+    2958.0,
+    6870.0
+  ],
+  "policy": {
+    "centers_x": [
+      2892,
+      2898,
+      2904,
+      2910,
+      2916,
+      2922,
+      2928,
+      2934,
+      2940,
+      2946
+    ],
+    "centers_z": [
+      6804,
+      6810,
+      6816,
+      6822,
+      6828,
+      6834,
+      6840,
+      6846,
+      6852,
+      6858,
+      6864
+    ],
+    "half_extents_m": [
+      12,
+      18,
+      24,
+      30
+    ],
+    "min_corner_clearance_m": 0.05,
+    "min_strong_cells": 2,
+    "strong_delta_m": 0.1,
+    "sample_spacing_max_m": 1.0,
+    "ranking": "Maximize distinct crossed cells containing >=0.1m E/F change; then minimize midpoint distance to(2916,6834), then prefer longer segment. No native result used."
+  },
+  "routes": [
+    {
+      "direction": "ew",
+      "valid_geometric_candidates": 354,
+      "selected": {
+        "name": "f_patch_ew",
+        "start_xz": [
+          2886,
+          6828
+        ],
+        "end_xz": [
+          2946,
+          6828
+        ],
+        "length_m": 60.0,
+        "min_conservative_corner_dry_clearance_m": 0.07022726535797119,
+        "strong_changed_cells": [
+          [
+            909,
+            482
+          ],
+          [
+            909,
+            483
+          ],
+          [
+            909,
+            484
+          ],
+          [
+            909,
+            485
+          ],
+          [
+            909,
+            486
+          ],
+          [
+            909,
+            487
+          ],
+          [
+            909,
+            488
+          ],
+          [
+            909,
+            489
+          ],
+          [
+            909,
+            490
+          ],
+          [
+            909,
+            491
+          ]
+        ]
+      }
+    },
+    {
+      "direction": "ns",
+      "valid_geometric_candidates": 165,
+      "selected": {
+        "name": "f_patch_ns",
+        "start_xz": [
+          2934,
+          6804
+        ],
+        "end_xz": [
+          2934,
+          6864
+        ],
+        "length_m": 60.0,
+        "min_conservative_corner_dry_clearance_m": 1.1725298166275024,
+        "strong_changed_cells": [
+          [
+            903,
+            489
+          ],
+          [
+            904,
+            489
+          ],
+          [
+            905,
+            489
+          ],
+          [
+            906,
+            489
+          ],
+          [
+            907,
+            489
+          ],
+          [
+            908,
+            489
+          ],
+          [
+            909,
+            489
+          ],
+          [
+            910,
+            489
+          ],
+          [
+            912,
+            489
+          ],
+          [
+            913,
+            489
+          ]
+        ]
+      }
+    },
+    {
+      "direction": "ne_sw",
+      "valid_geometric_candidates": 110,
+      "selected": {
+        "name": "f_patch_ne_sw",
+        "start_xz": [
+          2910,
+          6804
+        ],
+        "end_xz": [
+          2958,
+          6852
+        ],
+        "length_m": 67.88225099390856,
+        "min_conservative_corner_dry_clearance_m": 0.08896899223327637,
+        "strong_changed_cells": [
+          [
+            906,
+            491
+          ],
+          [
+            907,
+            490
+          ],
+          [
+            907,
+            491
+          ],
+          [
+            908,
+            489
+          ],
+          [
+            909,
+            488
+          ],
+          [
+            909,
+            489
+          ],
+          [
+            910,
+            487
+          ],
+          [
+            911,
+            486
+          ],
+          [
+            911,
+            487
+          ],
+          [
+            912,
+            485
+          ],
+          [
+            913,
+            485
+          ]
+        ]
+      }
+    },
+    {
+      "direction": "nw_se",
+      "valid_geometric_candidates": 144,
+      "selected": {
+        "name": "f_patch_nw_se",
+        "start_xz": [
+          2898,
+          6876
+        ],
+        "end_xz": [
+          2958,
+          6816
+        ],
+        "length_m": 84.8528137423857,
+        "min_conservative_corner_dry_clearance_m": 0.15274405479431152,
+        "strong_changed_cells": [
+          [
+            903,
+            485
+          ],
+          [
+            904,
+            486
+          ],
+          [
+            905,
+            487
+          ],
+          [
+            906,
+            488
+          ],
+          [
+            907,
+            489
+          ],
+          [
+            908,
+            490
+          ],
+          [
+            909,
+            491
+          ]
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Conservative dry cells do not prove absence of 3D object obstructions.",
+    "Coordinates screened before any new E/F native queries; no query result selected or discarded."
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\guarded-relief-batch-e-merged\\terrain-buried.npz": "705196d69646f2528aa5796d26e90bab36aebd07a5a0ddb861b31b7160f4a33e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\rectangle-pilot-f-merged\\terrain-buried.npz": "caa5398021399b6e435faf407005f053d58758091371b5b8fbd2e60e53f69cfc",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\rectangle-pilot-f-merged\\bury-work\\fp0\\footprint.npz": "95f7a26304e88c726679ec69ef076bb149ec1f1f8bdf4a6cd1e83e40f3b6be83",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\screen_f_nav_dry_corridors.py": "568160542b506d5971e3205121bcb1168fdeabca527fb40429442099c54c57c4"
+  }
+}

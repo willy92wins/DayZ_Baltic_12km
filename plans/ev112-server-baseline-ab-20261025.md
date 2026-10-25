@@ -52,3 +52,14 @@ Compara las medianas de las tres pasadas por mundo. RAM >1,10 requiere además
 dos excesos en los pares A1/B2, A4/B3, A5/B6 para FAIL; discrepancia o dispersión
 alta queda INCONCLUSO. Cada resultado se vuelve a derivar de sus capturas y hashes.
 CPU solo descriptiva. Una preparación sin seis pasadas nunca obtiene PASS.
+
+## Resultado y corrección del consumidor, 25-10
+Seis capturas completas, sin repetir ni descartar mediciones. El lector anterior
+rechazó por redondeo binario el calentamiento exacto de la captura5 y podía aceptar
+menos de30s si la primera ventana duraba más de1s. La corrección calcula sobre
+texto decimal tick inicial de muestra menos su duración menos INIT, exige>=30
+sin epsilon, y conserva todos los logs/resultados originales. Cuatro regresiones:
+188tests PASS y diez controles negativos legacy aparte. Fable5.1: SOUND.
+Todas las capturas se revalidaron con el mismo código y hashes reales.
+PASS solo del presupuesto RAM de E; CPU descriptiva y variable. Tabla, límites,
+versiones de resultados y artefactos en evidence/performance/server-baseline-ab-20261025.
