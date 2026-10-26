@@ -1,0 +1,29 @@
+{
+  "status": "CONTROL_FLOW_PASS",
+  "coordinator_sha256": "23cd56314a539521a52976fcc6c1ff1b45b5cfdd6b4c8a2e00704ca1c1f4f51f",
+  "harness_sha256": "9dd95f0ca1b9478219586ff52bb6cfe36e9725e71e4bede9c737fa0cbfa93329",
+  "scope": "Mocked tools test JS ownership and cleanup; inline PowerShell is not covered here; not native DayZ or MCP acceptance",
+  "cases": [
+    {
+      "name": "lease_recovery",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 2,
+      "closed": true,
+      "released": true,
+      "cancelled": false,
+      "error": null
+    },
+    {
+      "name": "lease_denied",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 2,
+      "closed": false,
+      "released": false,
+      "cancelled": true,
+      "error": "Own run not adopted DayZ cleanup: Own run not adopted"
+    }
+  ],
+  "negative_mutations": []
+}

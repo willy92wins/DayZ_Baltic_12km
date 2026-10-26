@@ -1,0 +1,20 @@
+{
+  "status": "ADAPTED_REVIEW_FIXES_PENDING_NATIVE_GATE",
+  "parent": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\nav-kit7-preparation-20261026\\adaptation.json",
+  "parent_sha256": "0f49e3c4cdabf53464f6b8c48a2e0fd8d96fdbf1dbec244668016bcaba909a3f",
+  "coordinator": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\orchestrate_nav_kit7_v2.js",
+  "coordinator_sha256": "23cd56314a539521a52976fcc6c1ff1b45b5cfdd6b4c8a2e00704ca1c1f4f51f",
+  "physical_result": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-overlap-native-20261026\\full\\result.json",
+  "mod": "@DayZ_Baltic_EV112_Kit7Overlap",
+  "pilot_sha256": "3d9550bfb3f27e3916b14579990c240c4aaf4d779e628658ec572cb2c806a2b6",
+  "fixes": [
+    "Normalize mixed Windows paths and reject duplicate aliases.",
+    "Hard bind expected world, water, pilot, bridge and engine in prelaunch gate.",
+    "Retain completed generator-wrapper result instead of polling dead session.",
+    "Only record CLOSED after own official retired close."
+  ],
+  "limits": [
+    "No native generation has started.",
+    "Transient heartbeat while own lease remains active still aborts conservatively; optional retry not added."
+  ]
+}

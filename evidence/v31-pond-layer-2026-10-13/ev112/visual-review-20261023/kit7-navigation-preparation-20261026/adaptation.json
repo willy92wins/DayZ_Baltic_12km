@@ -1,0 +1,26 @@
+{
+  "status": "DRAFT_PENDING_PHYSICS_AND_REVIEW",
+  "source": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\orchestrate_nav_c_retry_v3.js",
+  "source_sha256": "f19b600cbfe7d300a951067b8d0cb47ecd24ffb03f0c4348ee3574ab405b9336",
+  "adapted": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\orchestrate_nav_kit7.js",
+  "adapted_sha256": "06689d1ac0a94590f4429726f7b24148ef605f9cd42f850f58df950ed3c732a0",
+  "inverse_substitutions_exact": true,
+  "replacements": {
+    "retryCNavigationAfterHumanClose": "generateKit7Navigation",
+    "nav-c-retry-human-close-20261026": "nav-kit7-preparation-20261026",
+    "navmesh-c-retry-v9-20261026": "navmesh-kit7-v9-20261026",
+    "BalticCNavData": "BalticKit7NavData",
+    "parseMcpSafe": "parseKit7Mcp",
+    "@DayZ_Baltic_EV112_MidpointC": "@DayZ_Baltic_EV112_Kit7Native",
+    "4e5f909d2a27e9322299d751d2d54d67f5cc06700499d0498e533b5e1674ef38": "10e09e3fbec79e786db65e5e9f5bd9e4f5ed7d7efc8121cbbab87c4bf266f9bc",
+    "c7dc430d809bcec2f29ff1fe86f266f0f9680b8ad676a8722b0b45d4494de02f": "46244e7f2abc6bd2d07be828097325ec9bba9c672b48bfcef177895b87380b2d",
+    "navRetry": "navKit7",
+    "Recuperar solo nuestra generación C": "Recuperar solo nuestra generación kit7",
+    "EV112 C: nuevo intento tras cierre humano confirmado, máximo7200s, sin cliente": "EV112 kit7: navegación propia tras gate físico, máximo7200s, sin cliente",
+    "C_NAV_": "KIT7_NAV_"
+  },
+  "additional_physics_gate": "const physical=await read(r+'/kit7-water-native-20261026/full/result.json');if(physical.status!=='SERVER_PROBE_PASS'||physical.points!==6801||!physical.identity_bound||!physical.inputs_unchanged)throw Error('Kit7 physical gate missing');\n",
+  "mission": "C:\\temp\\DayZ_MCP_130_dev\\mpmissions\\BalticKit7NavData.BalticTrial",
+  "mission_sha256": "60f8c3a1218a5cf8ab43d15fc4ec2162e3dba669d4d5440d4017e8782d954c2a",
+  "generator_not_started": true
+}

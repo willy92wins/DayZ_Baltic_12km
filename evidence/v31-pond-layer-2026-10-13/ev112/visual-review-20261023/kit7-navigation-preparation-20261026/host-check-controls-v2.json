@@ -1,0 +1,51 @@
+{
+  "status": "REAL_POWERSHELL_HOST_BINDING_CONTROLS_PASS",
+  "coordinator_sha256": "23cd56314a539521a52976fcc6c1ff1b45b5cfdd6b4c8a2e00704ca1c1f4f51f",
+  "command_expression_sha256": "f1fb2729fc170c8f52a835197ed562633a42fcd562fb985d4d36caaf2e2fe24d",
+  "host_source_sha256": "b332946deb9bf24038525c3da414b25ca4ee9f368b7364288bd82e29c4470281",
+  "cases": [
+    {
+      "name": "mixed_paths",
+      "expected_pass": true,
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "wrong_hash",
+      "expected_pass": false,
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "name": "missing_package",
+      "expected_pass": false,
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "name": "extra_package",
+      "expected_pass": false,
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "name": "duplicate_alias",
+      "expected_pass": false,
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "name": "wrong_engine",
+      "expected_pass": false,
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "name": "wrong_mode",
+      "expected_pass": false,
+      "exit_code": 1,
+      "passed": true
+    }
+  ],
+  "scope": "Actual inline PowerShell executed against retained real host identity and altered fixtures; no processes launched or stopped."
+}

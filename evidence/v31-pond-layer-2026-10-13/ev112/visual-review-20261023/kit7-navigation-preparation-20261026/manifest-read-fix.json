@@ -1,0 +1,13 @@
+{
+  "status": "PRELAUNCH_OUTPUT_TRUNCATION_NO_RUN",
+  "failed_coordinator_sha256": "23cd56314a539521a52976fcc6c1ff1b45b5cfdd6b4c8a2e00704ca1c1f4f51f",
+  "replacement_sha256": "fa4097e1577364cd4417b9544b27f6ef103bbb1c8f6aac3640fa953715e0b737",
+  "mechanism": "Full256inputmanifest exceeded9000token command-output budget. JSON parser rejected truncation warning before lifecycle call. Project only three consumed fields for JS; full on-disk manifest remains verified by PowerShell pre/post loops.",
+  "new_launch": false,
+  "generator_started": false,
+  "attempt_consumed": false,
+  "source_delta": [
+    "const prepared=await read(d+'/launch-inputs.json');",
+    "const prepared=JSON.parse((await cmd(\"Get-Content -LiteralPath '\"+d+\"/launch-inputs.json' -Raw | ConvertFrom-Json | Select-Object status,observer_sha256,packages | ConvertTo-Json -Depth 6\",10000,3000)).output);"
+  ]
+}
