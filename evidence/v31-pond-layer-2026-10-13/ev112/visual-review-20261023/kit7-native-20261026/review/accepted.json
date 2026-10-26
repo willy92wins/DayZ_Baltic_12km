@@ -1,0 +1,77 @@
+{
+  "status": "REVIEW_ACCEPTED_PREPARE_ONLY",
+  "review_verdict": "SOUND-with-fixes",
+  "reviewer": "claude-fable-5-1",
+  "receiver": "Codex",
+  "fixes": [
+    {
+      "id": 1,
+      "fix": "Reject optimized interpreter before reading gate; real -O negative returns nonzero."
+    },
+    {
+      "id": 2,
+      "fix": "Bind both interpolation and native parser plus WRP reader before use."
+    },
+    {
+      "id": 3,
+      "fix": "Correct native SurfaceY tolerance citation to line88."
+    },
+    {
+      "id": 4,
+      "fix": "NaN field preserves six columns and reaches numeric validation."
+    },
+    {
+      "id": 5,
+      "fix": "Plan preserves partial outputs and forbids blind rerun."
+    },
+    {
+      "id": 6,
+      "fix": "Consumer requires deployed init hash to equal bound producer; updated-hash mutant rejected."
+    }
+  ],
+  "tests": [
+    {
+      "pattern": "test_native_height_probe_ev112.py",
+      "exit_code": 0
+    },
+    {
+      "pattern": "test_forest_boundary_probe.py",
+      "exit_code": 0
+    },
+    {
+      "pattern": "test_forest_boundary_native_booleans.py",
+      "exit_code": 0
+    }
+  ],
+  "optimized_python_rejected": true,
+  "mode_adjustment": "DataServer true, matching F boundary host receipt; no navigation acceptance",
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\prepare_kit7_native_data.py": "326518712fbb42bfe14ee260ef94fec6a16acfc5fa868d831609e6f17d8e2a99",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\native_height_probe_ev112.py": "90cb7f1aedd693291b31beb7b83633c2dfbfa34730a8c6656979f2581600d75d",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\water\\streambed_kit_v31.py": "61c4e393d0803741da48fd417d5509bc76ab7252ed3684fb5108d3b4976cb3f9",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\vegetation\\eval_forest_boundary_probe_v31.py": "62a26ec95ecb6576d3f6382ce7de4b54a920e69ad715511ffc321bcfdc2340f0",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\vegetation\\prepare_forest_boundary_probe_v31.py": "bb3f7cf285c8c20be7cb30b5ad8f04a379353faca6e18fac1699eb24b005b368",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\vegetation\\review_visual_forest_support_v31.py": "5120616cb2c3f2ed9223030ecd1d926befd90b8359e1e1def24adec689f865aa",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\missions\\BalticForestBoundaryV1.BalticTrial\\init.c": "69fd65fcaa0e2395f16121025a56828609d8094a5ee0297570564bb6607cbd6c",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-byteexact-20261026\\terrain-buried.npz": "815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-byteexact-20261026\\bury-work\\fp0\\footprint.npz": "084171b0e29df5c220f9d5aab42a3dc683a2f70a07579f08cd930dfd109e716b",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\rectangle-pilot-f-merged\\terrain-buried.npz": "caa5398021399b6e435faf407005f053d58758091371b5b8fbd2e60e53f69cfc",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\stage-report.json": "7b6cccb44e97b5cbce1d39a40eb89f331fb254991f15ce3a5e3c3a9e0bc8a67c",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\forest-support-review-full.json": "fe04757c184fc09d2cde78e8d73fd4b58089759d8b0d8a1a18572d99f632fa15",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev112-build-20261018\\stage-nonforest-c\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp": "394ef458f3ecc0690dbc8176e5baf18c1ada47e3c1f0f65e8d1ee1cbb632dccb",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\forest-boundary-full-f\\points.json": "d3c1b266ca20f8b12192037960c005a7c9d75092e352192b6b92fcd97ad2f356",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\package-kit7-fc-world-20261026\\verification.json": "330263494331bd8cd51bca781a9d174524a76e232813bae48a061c891c85089a",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\package-kit7-fc-pilot-v2-20261026\\verification.json": "e93d2e5b9443f3d5102dda5a15852a9295085f3e6f44f13ee4ba5041ed2d7c16",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\ev111-wip\\forest\\ref-v2\\livonia-reference-v31.json": "813081fa1ef4a8f2f442ebe2811fb2f435bc38b56c9d693477b3b525bfece26c",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\wrp0wzd.py": "8b85cec46ba72851a4ec829c5b0adcc88727ee852c3f699ab7a15e31b50fee2a",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\ev112-kit7-native-data-unit-20261026.md": "2988d3f38f577c3d23ddc370d4ff7d85c9172aa74598a38353f92ef74ec4e359",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tests\\test_native_height_probe_ev112.py": "6c3a731f2dc2267b65390cd1f33d6f262b31caf5c3c763ce7ddaae4f253c70e6",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\accept_kit7_native_preparation.py": "f66e9db6ce1d9f2c19b910dfab95dba21d4025294240e87a44da0fbaff72afc7",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\forest-boundary-full-f\\host-identity.json": "9f1fd061a6057081e95c2897b7f66fdbc4b36a7be1f7a8d54ed7599240ec1abc",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-native-data-review-20261026\\review-response.json": "2dffda3aa696e8e26c127aed76d55437340cec8fa4fe1be6ed7cf0dcd913e073",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-native-data-review-20261026\\source-hashes.json": "350ed60588afd677cde96a0f39819e97d64f401500967d88048fd5542cc7192e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-native-data-review-20261026\\completion.json": "9ca08df038a91dbb839d4af5a1aabc7dd24854ccba8d1340e9a162acfd074e42"
+  },
+  "scope": "Preparation and consumer tests only; runtime identity must be checked independently at launch."
+}

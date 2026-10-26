@@ -72,7 +72,9 @@ El candidato **kit-7: 1,66 km de cauce continuo** pasa coste y contacto completo
 en fuente y PBO: **127.528 → 8.623 componentes**, con la geometría de charcas
 anterior intacta. Ya está integrado en el WRP fuente y el bosque: **292 conflictos
 retirados y 1.623 apoyos ajustados**, con carreteras y contexto forestal comprobados.
-El paquete combinado declara sus **201 piezas**; faltan las pruebas propias en el motor.
+El paquete combinado declara sus **201 piezas** y ya pasa **11.052 mediciones de altura**
+y **269.968 muestras de apoyo en la frontera** en el motor. Agua/colisión propia y navegación
+siguen pendientes. [Pruebas nativas y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/kit7-native-20261026/README.md).
 [Integración técnica y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/kit7-integration-20261026/README.md). **C/F ya pasa 45 consultas de navegación en servidor**,
 incluidas 8 rutas sobre el terreno corregido; movimiento real de IA pendiente.
 [Prueba de navegación y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/c-navigation-20261026/README.md).
