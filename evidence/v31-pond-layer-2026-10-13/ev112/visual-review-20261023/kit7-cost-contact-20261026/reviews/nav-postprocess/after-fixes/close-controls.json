@@ -1,0 +1,129 @@
+{
+  "status": "PASS_ORDERLY_CLOSE_CONTROLS",
+  "helper_sha256": "137c06f7701c0a74b425090e9e9304a1e7f719d13cc131c76d6a4cd9f6d4262e",
+  "test_sha256": "0608436d85bcb21545c9b5cf4d9f51d90e3929e1dee31d440e34679b25e7845c",
+  "cases": [
+    {
+      "case": "complete_official_close",
+      "rejected": false,
+      "passed": true
+    },
+    {
+      "case": "reject_graceful",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "reject_exit_metrics_valid",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "reject_stop_method",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "reject_stop_required",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "reject_reason",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "reject_roles",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "exit_0",
+      "rejected": false,
+      "passed": true
+    },
+    {
+      "case": "exit_-1",
+      "rejected": false,
+      "passed": true
+    },
+    {
+      "case": "exit_True",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "exit_1",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "exit_23",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "exit_-1073741819",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "exit_4294967295",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "before_intent",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "after_deadline",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "wrong_run",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "duplicate_intent",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "premature_exit",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "actual_prior_rpt_termination_bound",
+      "rejected": false,
+      "passed": true
+    },
+    {
+      "case": "wrong_rpt_hash",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "wrong_rpt_mission",
+      "rejected": true,
+      "passed": true
+    },
+    {
+      "case": "actual_prior_early_human_close_still_rejected",
+      "rejected": true,
+      "passed": true
+    }
+  ],
+  "measured_prior": {
+    "observer_sha256": "d49e18390329e57f34e79c39c23deace872b5163a53ecafe4e59e3269aa59a79",
+    "rpt_sha256": "8d2bc48a97122c5097deba70f9f592cd60bfd946e30395c46ee596cf917c50f5",
+    "exit_code": -1,
+    "conclusion": "Native orderly termination can return -1; this previous run remains rejected due to early exit. Not an initiator trace."
+  },
+  "limits": "Synthetic positive close records and mutations plus actual prior early-exit negative; current C generation must supply its own complete native receipts."
+}

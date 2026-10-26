@@ -1,0 +1,30 @@
+{
+  "status": "POND_GEOMETRY_EXACT_KIT7_PENDING_INTEGRATION",
+  "checks": {
+    "plane": true,
+    "field": true,
+    "visible": true,
+    "envelope_matches_reviewed_candidate": true,
+    "no_bury_changes": true,
+    "no_new_exposed": true,
+    "terrain_byte_exact": true,
+    "footprint_bound_to_exact_terrain": true
+  },
+  "last_footprint": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-byteexact-20261026\\bury-work\\fp0\\footprint.npz",
+  "footprint_sha256": "084171b0e29df5c220f9d5aab42a3dc683a2f70a07579f08cd930dfd109e716b",
+  "terrain_sha256": "815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40",
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\preserve_kit7_merge_bytes.py": "2fbe00c4a8b3991a5aad2f0064d9f30aa73907aff6a35dcc95df43eee3c5fe4e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-20261026\\container-diagnostic.json": "d1c08cbced496000e3522ac8f8ed8a2b270e526cde83b6e0730dbd079d3524df",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-20261026\\merge-verification.json": "aac73927f01ab74018b9c1edd43eee7b79eec49a11d23fcb29d12ef08d330801",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-20261026\\inputs.json": "3a3a1c2714626ba39796f9ac6dd25652f1cf3e340cdcc095c4acb1dc728925f6",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-midpoint-a-20261026\\terrain.npz": "815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-byteexact-20261026\\cover.npy": "dec97c8c06b8ee1728458e216b413ed129800ff659e7dbdca457f10b7210bedf",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-byteexact-20261026\\envelope.npy": "c6fbaf78c5d549ab3a2aacf711852e34a5d99b4c637150d1a04044e7e5d54e66",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-byteexact-20261026\\bury-work\\fp0\\footprint-report.json": "62b28b3d741ffaaa6faaa0dc7cd67410ea7bdf19ad9d2396b1aa86bdea8f4471"
+  },
+  "correction": "bury used np.savez (ZIP_STORED) while candidate used compressed NPZ. Every NPY payload was byteexact. Preserve original compressed bytes after proving no actual terrain mutation; original failed output/report retained.",
+  "limits": [
+    "Pond geometry fields exact toF; no new terrain edits. Kit7WRP,forest,native/navigation/visual acceptance remain separate."
+  ]
+}

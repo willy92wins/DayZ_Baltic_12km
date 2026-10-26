@@ -68,11 +68,11 @@ pasan **269.968 consultas sobre 3.727 árboles** y **11 secciones de carretera**
 antes fallidas. Son resultados de servidor en el ámbito muestreado; la vista
 y la conducción siguen pendientes. [Pruebas, rechazos y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/quality-continuation-20261025/README.md).
 
-Nuevo candidato **kit-7: 1,66 km de cauce continuo**, con extremos, agua y colisión
-verificados en los modelos guardados, sin nuevos picos ni pliegues expuestos en
-las muestras. Su coste aún necesita reducirse; no está desplegado. La generación
-de navegación C terminó sin una malla válida.
-[Avance del 26-10, pruebas y pendientes](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/restart-continuation-20261026/README.md).
+El candidato **kit-7: 1,66 km de cauce continuo** pasa coste y contacto completo
+en fuente y PBO: **127.528 → 8.623 componentes**, con la geometría de charcas
+anterior intacta. Sigue aislado; faltan integración de bosque/WRP y pruebas
+propias en el motor. La nueva generación de navegación C/F está en curso.
+[Pruebas, costes y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/kit7-cost-contact-20261026/README.md).
 
 El mapeado urbano, la economía de loot Este/Oeste y su progresión son parte de
 la visión pendiente de implementar. La comparación de rendimiento con Chernarus
