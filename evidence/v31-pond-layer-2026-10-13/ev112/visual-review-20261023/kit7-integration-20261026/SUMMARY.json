@@ -1,0 +1,208 @@
+{
+  "status": "TECHNICAL_INTEGRATION_NATIVE_PENDING",
+  "source": {
+    "status": "PASS_INDEPENDENT_SOURCE_COMPOSITION",
+    "source_wrp_sha256": "6e649b72bf4ec6789a83050f21b7e5597de417e14f251f854728eb20d8b84bd8",
+    "wrp_sha256": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+    "source_objects": 2578725,
+    "objects": 2578398,
+    "removed_old_kit": 174,
+    "removed_forest": 292,
+    "retained_byte_exact": 2576636,
+    "existing_pilot_poses_exact": 62,
+    "new_pilot_poses": 139,
+    "calculated_height_deltas": 1623,
+    "effective_float32_height_changes": 1623,
+    "outside_roots_unchanged": 2918,
+    "world_side_files_byte_exact": 8873,
+    "inputs_unchanged": true,
+    "limits": [
+      "Source bytes/heights only. Full forest, compiled WRP, package, native/nav/client acceptance pending."
+    ]
+  },
+  "forest": {
+    "instances": 2560580,
+    "counts": {
+      "origin": 0,
+      "trunk_support": 0,
+      "tilt": 0,
+      "native_water": 0,
+      "sea_band": 0,
+      "pilot_water": 0,
+      "pilot_bed_margin": 0,
+      "orthonormal_scale": 0,
+      "determinant": 0,
+      "scale_range": 0,
+      "nonfinite_interior_support": 0
+    },
+    "boundary_pending": 3727,
+    "status": "INCONCLUSIVE_BOUNDARY_SUPPORT"
+  },
+  "road": {
+    "status": "OFFLINE_MESH_PASS",
+    "coverage_sha256": "405173842d6066934ded15607e67676ef5c74f6f7725bcd3d1d7e248966c7fb2",
+    "cross_sections": 77559,
+    "grade_intervals": 130534,
+    "cross_max_m": 0.02950129995690176,
+    "grade_max": 0.06455185306269254,
+    "failures": [],
+    "failure_count": 0,
+    "inputs": {
+      "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-byteexact-20261026\\terrain-buried.npz": "815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40",
+      "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\rectangle-pilot-f-roads\\water-vertices.npz": "cad34a5da8a454c6ee5cdfa54ab6d3538fa396e428494774b29ecf6a4870df97",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\audit_road_mesh_edges_ev112.py": "775525c4443c8a7a518c8d55d8c9b9225dd6b14e4bd44a9610b4a2597855ced8",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\verify_roads_v30.py": "20d9e296451653ee712b8835c4698dc54081a29e63bef5a227ab5e8b5c858625"
+    },
+    "limits": [
+      "Exact transverse extrema only at frozen P11 stations; not every longitudinal cross-section.",
+      "Exact native slopes on eligible centreline; P11 chord remains measured by the legacy judge.",
+      "Wet/Narva/end exclusions remain pending; no physical roads, driving or visual verdict."
+    ]
+  },
+  "pilot": {
+    "status": "PASS_201_MODELS_BYTE_EXACT_CONFIG_EXTENDED",
+    "pbo_sha256": "46244e7f2abc6bd2d07be828097325ec9bba9c672b48bfcef177895b87380b2d",
+    "preserved_C_models": 62,
+    "added_kit7_models": 139,
+    "total_models": 201,
+    "old_classes_exact": 27,
+    "repaired_missing_legacy_classes": 35,
+    "brand_new_classes": 139,
+    "added_house_classes": 174,
+    "other_config_semantics_exact": true,
+    "pbo_properties_exact": true,
+    "inputs_unchanged": true,
+    "limits": [
+      "Isolated pilot PBO only. Compiled world placement, native water/collision/navigation and client remain pending."
+    ]
+  },
+  "world": {
+    "status": "OBJECTS_AND_PAYLOAD_VERIFIED_BOUNDARY_PENDING",
+    "forest_status": "INCONCLUSIVE_BOUNDARY_SUPPORT",
+    "boundary_discs_pending": 3727,
+    "objects": {
+      "objects": 2578398,
+      "pilot_exact": 201,
+      "max_matrix_delta": 1.52587890625e-05,
+      "forest_y_rounding": [
+        {
+          "id": 17329757,
+          "model": "dz\\plants_bliss\\tree\\d_piceaabies_fallend.p3d",
+          "source": [
+            0.6598502397537231,
+            0.0,
+            0.23388263583183289,
+            0.0,
+            0.7000738382339478,
+            0.0,
+            -0.23388263583183289,
+            0.0,
+            0.6598502397537231,
+            7068.9189453125,
+            64.44026184082031,
+            8332.8642578125
+          ],
+          "compiled": [
+            0.6598502397537231,
+            0.0,
+            0.23388263583183289,
+            0.0,
+            0.7000738382339478,
+            0.0,
+            -0.23388263583183289,
+            0.0,
+            0.6598502397537231,
+            7068.9189453125,
+            64.44024658203125,
+            8332.8642578125
+          ],
+          "delta_y": 1.52587890625e-05,
+          "two_ulp": 1.52587890625e-05,
+          "compiled_root_error_m": -1.1794657254426966e-05
+        }
+      ]
+    },
+    "reader": {
+      "version": 32,
+      "stride": 64,
+      "table": [
+        16829521,
+        181846993
+      ],
+      "after": [
+        0,
+        19327115
+      ],
+      "model_count": 5509
+    },
+    "negative_controls": {
+      "missing": true,
+      "extra": true,
+      "moved": true
+    },
+    "source_wrp_sha256": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+    "compiled_pbo_sha256": "26e1f6bc0333e029bc47a9b68b6844c55be2651e0e285e693405472b66598009",
+    "pbo_sha256": "10e09e3fbec79e786db65e5e9f5bd9e4f5ed7d7efc8121cbbab87c4bf266f9bc",
+    "wrp_sha256": "0da63d3f258923e784a62bcb59bb1d7f2ab99866816f530bfe73cd4211b23254",
+    "entries_unchanged": 6826,
+    "changed_entries": [
+      "baltic_trial.wrp"
+    ],
+    "old_navmesh_preserved_but_not_accepted": true,
+    "sources": {
+      "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\package_kit7_fc_world_quiet.py": "3fda9324a8d2e52b3df727a404dc4684ffaebe252ef4dda39aa855889c4cf2a3",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\package_visual_forest_ev112.py": "1b0b46b7124a382d343b9f227053f9ceb5ba46477e178c4f1f9bcb5f781a90cf",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\playtest\\attach_navmesh.py": "717b81469e0a799690d1586cd7a4492f079c3b2db626eec7e2815cd15896e062",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\waterway_common.py": "52db0150c8f9949855aeee477d4abeccbc8d53f6cc050c8ab3f35fafcce01719"
+    },
+    "limits": [
+      "Technical candidate only. Boundary forest status remains INCONCLUSIVE, not PASS.",
+      "OPRW table discovery is heuristic, heights not decoded; motor evidence required.",
+      "Native collision/water/forest, visual, regenerated navigation and performance acceptance remain pending."
+    ]
+  },
+  "first_compile": {
+    "returncode": 1,
+    "timeout": true,
+    "seconds": 929.0424280166626,
+    "inputs_unchanged": true,
+    "args": [
+      "powershell",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\compile_visual_pilot_ev112.ps1",
+      "-Stage",
+      "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026",
+      "-Pilot",
+      "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\pilot-kit7-fc-20261026"
+    ]
+  },
+  "retry_compile": {
+    "returncode": 0,
+    "timeout": false,
+    "seconds": 584.6105923652649,
+    "inputs_unchanged": true,
+    "args": [
+      "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\AddonBuilder.exe",
+      "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\root\\dayz_baltic_12km_dev\\tb\\narva_trial",
+      "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\out-quiet",
+      "-prefix=dayz_baltic_12km_dev\\tb\\narva_trial",
+      "-project=E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\root",
+      "-temp=E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\temp-quiet",
+      "-binarizeNoLogs",
+      "-include=C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/codex-handoff-review-74f290/packages/baltic-road-v29/tools/include.lst"
+    ],
+    "compiled_pbo_sha256": "26e1f6bc0333e029bc47a9b68b6844c55be2651e0e285e693405472b66598009"
+  },
+  "native_probe_status": "PREPARED_NOT_RUNTIME_READY",
+  "native_probe_points": 2050,
+  "client_started": false,
+  "limits": [
+    "No fresh kit7 native, navigation, client or performance acceptance.",
+    "3727 boundary supports remain unknown.",
+    "OPRW reader checks object tables, not compiled heights.",
+    "Prepared probe still needs binding to combined package and full regression coverage."
+  ]
+}

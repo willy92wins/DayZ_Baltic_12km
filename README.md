@@ -70,8 +70,10 @@ y la conducción siguen pendientes. [Pruebas, rechazos y límites](evidence/v31-
 
 El candidato **kit-7: 1,66 km de cauce continuo** pasa coste y contacto completo
 en fuente y PBO: **127.528 → 8.623 componentes**, con la geometría de charcas
-anterior intacta. Sigue aislado; faltan integración de bosque/WRP y pruebas
-propias en el motor. **C/F ya pasa 45 consultas de navegación en servidor**,
+anterior intacta. Ya está integrado en el WRP fuente y el bosque: **292 conflictos
+retirados y 1.623 apoyos ajustados**, con carreteras y contexto forestal comprobados.
+El paquete combinado declara sus **201 piezas**; faltan las pruebas propias en el motor.
+[Integración técnica y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/kit7-integration-20261026/README.md). **C/F ya pasa 45 consultas de navegación en servidor**,
 incluidas 8 rutas sobre el terreno corregido; movimiento real de IA pendiente.
 [Prueba de navegación y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/c-navigation-20261026/README.md).
 [Pruebas, costes y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/kit7-cost-contact-20261026/README.md).
@@ -95,8 +97,9 @@ y controles de agua y carreteras superados. Conserva E y supera **4.749 controle
 de servidor, sin fallos**; quedan cuatro transiciones por resolver. [Evidencia y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/rectangle-pilot-20261025/README.md).
 
 Navegación de E compatible con DayZ 1.30: las **37 rutas anteriores y ocho
-rutas locales nuevas superan la sonda**. La generación de navegación F terminó
-sin una malla válida; sigue pendiente, junto con la locomoción y la cobertura global.
+rutas locales nuevas superan la sonda**. El primer intento de navegación F terminó
+sin una malla válida; C/F ya dispone de la malla y las 45 consultas indicadas arriba.
+Siguen pendientes la locomoción y la cobertura global.
 [Evidencia de navegación](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/quality-continuation-20261025/README.md).
 
 Comparación de servidor vacío con Chernarus: **16,8 % menos RAM residente y

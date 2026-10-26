@@ -1,0 +1,9 @@
+# EV112 — corrección del presupuesto de compilación
+
+El límite de 900 s se fijó sin consultar los tiempos de compilación de los mundos comparables. La inspección posterior de los logs originales muestra 15 min 40 s para `stage-combined` y 18 min 30 s para `stage-rectangle-f`, ambos con Build Successful y PBO posteriormente verificado. Por tanto, superar 15 minutos no distingue un compilador atascado de una ejecución normal en esta máquina. Esto corrige un error de presupuesto del orquestador, no un defecto demostrado del terreno.
+
+El reintento con `-binarizeNoLogs` conserva su límite ya iniciado y su recibo real. Si también agota 900 s, una única ejecución adicional tendrá 1.800 s, antes de iniciarla, con idénticas fuentes, dependencias y verificación. Directorios nuevos `out-sized`/`temp-sized`, proceso y fuentes ligados por hash, sin cambios globales ni despliegue. Readback y empaquetado mantienen su presupuesto de 900 s. No habrá repetición automática tras otro timeout; quedará documentado para diagnosticar con evidencia nueva.
+
+La ayuda local confirma el modo de logging. El hecho de que `-noLogs` evite el tráfico de registro se observa en el comando del hijo y en la ausencia de nuevas líneas por objeto; no prueba que el logging explique toda la duración. Se conservan los dos intentos anteriores. No se ampliará ninguna tolerancia geométrica ni se aceptará un PBO sin readback completo, configuración y payload exactos. El paquete técnico sigue sin aceptar alturas compiladas, frontera, física, navegación ni vista del candidato.
+
+Resultado de la unidad: el reintento con logging reducido terminó en 584,61 s, con inputs intactos; readback/empaquetado posterior 68,88 s. **No se ejecutó el intento adicional de 1.800 s.** Sus scripts quedan como preparación condicional histórica; no deben lanzarse sobre esta unidad ya resuelta.

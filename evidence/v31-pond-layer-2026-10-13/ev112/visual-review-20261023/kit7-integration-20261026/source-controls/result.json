@@ -1,0 +1,32 @@
+{
+  "status": "PASS_REAL_WRP_MUTANT_CONTROLS",
+  "positive_review": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\independent-source-review.json",
+  "source_sha256": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+  "mutants": {
+    "changed_height": {
+      "rejected": true,
+      "reader_line": 54,
+      "assertion": "assert ya==np.ascontiguousarray(H0[::-1],dtype='<f4').tobytes() and yb==np.ascontiguousarray(H[::-1],dtype='<f4').tobytes()",
+      "message": ""
+    },
+    "moved_object": {
+      "rejected": true,
+      "reader_line": 73,
+      "assertion": "assert actual==expect,('unexpected object bytes',ident,name)",
+      "message": "('unexpected object bytes', 16787372, 'dz\\\\structures\\\\roads\\\\bridges\\\\bridge_metal_25.p3d')"
+    },
+    "missing_object": {
+      "rejected": true,
+      "reader_line": 63,
+      "assertion": "oi,actual,on,om=row(b); assert oi==ident and on==name and oi not in outids; outids.add(oi); dstn+=1",
+      "message": ""
+    },
+    "extra_object": {
+      "rejected": true,
+      "reader_line": 63,
+      "assertion": "oi,actual,on,om=row(b); assert oi==ident and on==name and oi not in outids; outids.add(oi); dstn+=1",
+      "message": ""
+    }
+  },
+  "original_unchanged": true
+}

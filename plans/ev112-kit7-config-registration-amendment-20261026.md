@@ -1,0 +1,7 @@
+# EV112 — completar el registro real de clases del piloto
+
+En la ejecución del plan de composición kit7, el guard de configuración rechazó el paquete antes de FileBank. El `config.bin` del PBO C `c7dc430d809bcec2f29ff1fe86f266f0f9680b8ad676a8722b0b45d4494de02f`, decodificado por CfgConvert, contiene **27 clases**, aunque el PBO contiene **62 modelos**. Las 27 son las piezas131; faltan las35 de kit118/65. El residuo de configuración coincide con el candidato y ninguna clase antigua cambia. Evidencia: `package-kit7-fc-pilot-20261026/config-failure-diagnosis.json` y los dos decodificados. El fallo inicial se conserva y no produjo PBO nuevo.
+
+Se corrige la premisa del plan anterior: registrar139piezas nuevas también exige completar35registros ausentes. La unidad debe conservar las27clases existentes, las62entradasODOL C exactas, añadir139ODOL exactos y producir201clases únicas. Son174clases añadidas:35de reparación y139nuevas. Todas con el patrón existente `Land_<stem>: HouseNoDestruct`, scope1 y ruta exacta; dependencias, prefijo y resto de configuración permanecen iguales. No se recompilan modelos.
+
+Esto demuestra un hueco del registro de clases, no una regresión física medida. Los resultados nativos anteriores conservan su alcance y su paquete. La nueva composición requiere revisión del cambio de contador, CfgConvert y readback íntegro antes de compilar el mundo. Los outputs fallidos y sus recibos no se sobrescriben; v2 usa una carpeta nueva. Se mantienen los límites de900s, hashes completos y no despliegue automático por un PASS offline.
