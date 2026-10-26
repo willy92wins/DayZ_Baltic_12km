@@ -21,8 +21,9 @@ assert counts['candidate']=={'native_spike':267,'native_pit':1144,'rectangular_t
 assert report['changed_vertices']==14 and all(report['checks'].values())
 E.mkdir(parents=True,exist_ok=False)
 def save(p,name):
-    raw=p.read_bytes();target=E/(name+'.gz' if len(raw)>250000 else name);target.parent.mkdir(parents=True,exist_ok=True)
-    target.write_bytes(gzip.compress(raw,mtime=0) if len(raw)>250000 else raw)
+    raw=p.read_bytes();compress=len(raw)>250000 and p.suffix.lower() not in ('.png','.jpg','.npz')
+    target=E/(name+'.gz' if compress else name);target.parent.mkdir(parents=True,exist_ok=True)
+    target.write_bytes(gzip.compress(raw,mtime=0) if compress else raw)
 for name in ['inputs.json','receipt.json','validation.json','baseline-shape-screen.json','candidate-shape-screen.json','terrain-comparison.png']:
     save(O/name,name)
 for name in ['report.json','all-protected-audit.json']:save(O/'candidate'/name,'candidate/'+name)
