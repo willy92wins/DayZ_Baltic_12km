@@ -1,0 +1,129 @@
+{
+  "status": "SYNTHETIC_CONSUMER_CONTROLS_PASS",
+  "controls": [
+    {
+      "name": "positive",
+      "status": "PASS_KIT7_NATIVE_GRAPH",
+      "expected": "PASS",
+      "ok": true
+    },
+    {
+      "name": "missing_piece",
+      "status": "REJECTED_EVIDENCE: Query coverage differs from frozen reference",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "missing_seam",
+      "status": "REJECTED_EVIDENCE: Query coverage differs from frozen reference",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "missing_end",
+      "status": "REJECTED_EVIDENCE: Query coverage differs from frozen reference",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "missing_cap",
+      "status": "REJECTED_EVIDENCE: Query coverage differs from frozen reference",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "truncated",
+      "status": "REJECTED_EVIDENCE: Wrong world or incomplete consumer",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "duplicate",
+      "status": "REJECTED_EVIDENCE: Duplicate or malformed record",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "regression_xz_mutated",
+      "status": "FAIL_KIT7_NATIVE_GRAPH",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "wrong_f_set",
+      "status": "REJECTED_EVIDENCE: F local identity mismatch",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "no_f_delta",
+      "status": "INCONCLUSIVE_F_PATCH_NOT_SAMPLED",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "nonfinite_sample",
+      "status": "REJECTED_EVIDENCE: Invalid vector",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "below_roadway",
+      "status": "FAIL_KIT7_NATIVE_GRAPH",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "partial_path",
+      "status": "FAIL_KIT7_NATIVE_GRAPH",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "relaxed_tolerance",
+      "status": "REJECTED_EVIDENCE: Original surface tolerance required",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "changed_centerline",
+      "status": "REJECTED_EVIDENCE: Corridor/exterior differs from fixed centre line",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "fake_exterior",
+      "status": "REJECTED_EVIDENCE: Corridor/exterior differs from fixed centre line",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "fake_corridor",
+      "status": "REJECTED_EVIDENCE: Corridor/exterior differs from fixed centre line",
+      "expected": "REJECT",
+      "ok": true
+    },
+    {
+      "name": "wrong_reference_sha",
+      "status": "FAIL_KIT7_PROBE_EVIDENCE",
+      "reason": "Frozen reference identity mismatch",
+      "ok": true
+    },
+    {
+      "name": "wrong_terrain_sha",
+      "status": "FAIL_KIT7_PROBE_EVIDENCE",
+      "reason": "E terrain identity mismatch",
+      "ok": true
+    }
+  ],
+  "native_acceptance": false,
+  "limits": [
+    "Synthetic positive retargets old C45 heights and adds ideal geometric polylines; never consume as runtime evidence."
+  ],
+  "sources": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\test_kit7_nav_consumer_v2.py": "134a0d83eedd55198744096083afac0138c3dd1b7d18b0540090dc4ec035a364",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\verify_kit7_nav_ev112.py": "671437a81a17964825ea17016292932d6d0a10489d6b9961eafa8e92faf84cad",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav-consumer-20261026\\reference.json": "8f813aedae719af71f2d1a9d2cfd6344d6e69bb67e2c82a36326398083782505",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\patch-nav-c45\\runtime.log": "b5c69d20be27ba9f9cd024d6b8fe05d7ba227e410a18dbb6bd137c1874c20b8f"
+  }
+}

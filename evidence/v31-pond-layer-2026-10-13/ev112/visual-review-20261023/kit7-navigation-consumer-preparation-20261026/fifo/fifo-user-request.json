@@ -1,0 +1,12 @@
+{
+  "status": "FIFO_ADAPTATION_NOT_LAUNCHED",
+  "user_request": "No periodic checks; join MCP lease queue and execute when prior task finishes.",
+  "source": "orchestrate_nav_kit7_fifo_v4.js",
+  "source_sha256": "fbc6b1de8649faae52271d4f142c5c34f38252a7b92095d6bcebf2453e15972a",
+  "changes": [
+    "Remove occupancy polling before launch",
+    "Delegate queue and lease acquisition to dayz_test_run on_busy=queue, wait_for_box_s=600, takeover=false"
+  ],
+  "automation": "baltic-navegaci-n-cuando-quede-libre-el-banco PAUSED",
+  "generation_budget_unchanged": true
+}

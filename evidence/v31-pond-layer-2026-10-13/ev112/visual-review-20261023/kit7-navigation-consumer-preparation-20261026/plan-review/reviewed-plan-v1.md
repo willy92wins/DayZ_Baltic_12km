@@ -1,0 +1,35 @@
+# Kit7: consumidor del grafo sobre las piezas compiladas
+
+Continuación del punto 4 de `ev112-kit7-native-verification-20261026.md` y de la generación propia aprobada. La petición viva autoriza corregir, comprobar y publicar unidades funcionales. Esta unidad no cambia terreno, modelos, geometría, agua ni tolerancias anteriores. No acepta locomoción, barcos, vista, FPS ni EV112 global.
+
+## Descubrimiento verificado
+
+- Mundo `10e09e3f`, piloto `3d9550bf`, agua `97edcafe`; física propia 6801/6801 y alturas 11052/11052. La nueva NM todavía se está generando; ningún resultado de C se hereda como navegación del kit7.
+- `R/kit7-nav-route-discovery-20261026/proposals.json`: 278 recorridos de pieza, 276 de junta y cuatro de extremo natural. Dos lados, 139 piezas y 138 juntas. Perfil geométrico de cribado a 0,5 m; no equivale a una prueba continua.
+- `R/kit7-packed-nav-discovery-20261026/geometry.json` y `roadway.npz`: lectura estricta de los 139 ODOL dentro del PBO desplegado, clasificación de todas las caras Roadway por etiqueta gravel_small_ext/water_ext y poses leídas del WRP compilado, iguales a las 139 previstas. Hay cuatro transiciones adicionales desde terreno exterior hasta el interior de los extremos; cribado de 25 cm, pendiente máxima 11,47 grados. El lector OPRW conserva su limitación heurística y exige tabla única, ID único y matriz exacta.
+- 45 regresiones F conservan XZ, nombre, expectativa y tolerancias. Solo cambian las dos Y de `changed_bank_13`: el terreno nuevo difiere en esos puntos. Inicio (8394,12060): terreno 5,242240906, Roadway seco 5,897387054; petición a superficie mayor +0,1. Final (8418,12060): terreno 8,993166924, sin Roadway; petición terreno +0,1. Todas las demás peticiones se conservan completas, incluidos puentes.
+
+`R` es `E:/DayZ-Baltic-Build/shape-repair-20261025`. Las propuestas quedan fijadas antes de consultar FindPath; no seleccionar solo las que pasen.
+
+## Implementación propuesta [DESIGN]
+
+1. Preparar 607 consultas: las 45 anteriores y las 562 locales. CSV y referencia con nombres únicos, cobertura exhaustiva de los conjuntos esperados, UUID de esta sonda, hashes de entradas y límites. Guardar la comparación de las 45 regresiones. Las cuatro transiciones se incluyen aunque fallen.
+2. Productor dedicado sin cliente, estado solo servidor, sin RPC ni persistencia de juego. Reutilizar los filtros y formato Q/P del productor nativo anterior. Una consulta por tick de 0,1 s; colecciones en miembros reutilizados. Calentar objetos con GetObjectsAtPosition antes de SurfaceRoadY en cada waypoint. Capturar escalares antes de Vector. Final END exacto; esquema incorrecto termina FAIL. No cambiar mundo ni invocar lifecycle desde la misión.
+3. Consumidor conserva `verify_continuity_nav_v30` y sus puertas: cabecera/mundo, cobertura exacta, índices, campos finitos, posiciones solicitadas, expectativas positivas/negativas/desconectadas, extremos a 2,1 m, error terreno 0,011 m y superficie 0,801 m. Además comprobar todos los vectores sampleados y posiciones de los nuevos extremos, sin reducir las regresiones.
+4. Cobertura local independiente mediante las caras Roadway del PBO y matrices del WRP: construir la polilínea XZ completa devuelta por FindPath. Exigir que permanezca en el corredor fijado de su orilla (línea de cribado, radio 2,1 m por el muestreo de 2 m del motor más redondeo), que no cruce la proyección de agua del kit7 y que esté cubierta por la unión seca de las piezas requeridas. Tolerancia geométrica horizontal 0,01 m, la ya usada en el contacto de geometría; registrar cualquier hueco, sin ocultarlo en un agregado. Exigir al menos 0,5 m de intersección de línea con cada pieza requerida; para juntas, ambas piezas. Para transiciones permitir únicamente la parte de ese corredor fuera de la proyección completa de los modelos y exigir al menos 0,5 m de recorrido exterior. El resto de casos no permite salida al terreno para esquivar la pieza. El corredor impide cambiar de orilla o regresar rodeando el río. Alturas de waypoints se comprueban nativamente; esta unidad no certifica la altura del segmento completo ni el paso de un actor.
+5. Conservar las ocho comprobaciones locales F del consumidor anterior contra E, además de las 45 regresiones. Si el paquete nuevo altera esos recorridos, dejar el fallo explícito.
+
+## Fuentes y verificación de API [EXACT]
+
+- `P:/scripts/3_game/AI/aiworld.c:65`, PGFilter.SetFlags(int,int,int); `:98`, FindPath(vector,vector,PGFilter,out TVectorArray); `:122`, SampleNavmeshPosition(vector,float,PGFilter,out vector). Definiciones leídas fuera de guardas. Las tres están ejecutadas en las 45 consultas históricas.
+- `P:/scripts/3_game/global/game.c:923`, GetObjectsAtPosition(vector,float,out array<Object>,out array<CargoBase>); `:1177`, SurfaceRoadY(float,float,RoadSurfaceDetection=LEGACY). Ya usadas en las sondas físicas. No inferir linkage solo por declaración.
+- Productor previo `missions/BalticV30ContinuityNavV1.BalticTrial/init.c`; consumidor `tools/navigation/verify_continuity_nav_v30.py`, sobre `tools/terrain/verify_v30_acceptance.py`.
+- Lector de poses `tools/terrain/package_visual_forest_ev112.py:29`; lector ODOL estricto `C:/temp/moto_lanes/review_g3/tools/odol_reader.py`, SHA fa0d74b6. Etiquetas por section.get_face_indices ya verificadas con el comparador de LOD de esta unidad.
+
+## Puertas y presupuesto antes de ronda 1
+
+Revisión de plan y después código por Fable 5.1, vía CLI nativo, solo lectura. Código/entradas congelados en cada revisión. Controles del consumidor: positivo que atraviesa caras secas; negativos por quitar pieza/junta/extremo, desviar al terreno, cruzar agua, cambiar pose, ruta parcial, NaN, duplicado, truncamiento y contrato de regresión alterado. Los controles no sustituyen el motor.
+
+Solo tras generación/estructura/identidad/cierre aceptados: empaquetar NM en una copia aislada y probar igualdad de todas las demás entradas y PBO; arrancar servidor normal por FIFO nativo del MCP, sin preadquirir lease y sin takeover. Coordinador de lease y observador de proceso propios. Una ejecución inicial, arranque 300 s, sonda 900 s; presupuesto cubre 607 consultas en aproximadamente un minuto más carga. Si falla, preservar evidencia y diagnosticar antes de otra ejecución; un fallo de ruta no autoriza relajar controles ni quitar casos. La sonda no acepta el conjunto si no pasan todas las rutas y todos los controles. Cierre oficial del run propio y comprobación terminal antes del handoff.
+
+Resultados: PASS solo del grafo local si evidencia completa y todas las puertas verdaderas; FAIL si evidencia completa contradice un criterio; INCONCLUSO si falta identidad, termina incompleto o no se pudo ejecutar. Fallos y límites se publican con el checkpoint. La generación activa mantiene su propio coordinador, sin interferencias de esta preparación.
