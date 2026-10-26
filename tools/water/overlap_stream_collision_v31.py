@@ -40,15 +40,29 @@ def expanded_component(points, half_side=1 / 512):
     return dict(points=cloud[used], faces=inverse[hull.simplices], volume=float(hull.volume))
 
 
-def selected_components(lod, targets, origin):
+def selected_components(lod, targets, origin, *, minimal_bbox_anchors=False, contact_only=False):
     """Contact footprints plus four bbox extrema keep the existing WRP centre."""
     xyz = np.array([p.coords for p in lod.points])
     lo, hi = xyz[:, [0, 2]].min(0), xyz[:, [0, 2]].max(0)
     chosen = {}
+    anchors = {}
+    if minimal_bbox_anchors and contact_only:
+        raise ValueError('Contact-only selection cannot request bbox anchors')
+    if minimal_bbox_anchors:
+        for axis in range(2):
+            for side, extreme in (('min', lo[axis]), ('max', hi[axis])):
+                eligible = []
+                for label, selection in lod.selections.items():
+                    values = np.array([v.coords for v in selection.points])[:, [0, 2]][:, axis]
+                    if np.any(values == extreme):
+                        eligible.append((len(selection.points), label))
+                assert eligible, 'Missing bounding-box anchor'
+                anchors[min(eligible)[1]] = True
     for label, selection in lod.selections.items():
         p = np.array([v.coords for v in selection.points])[:, [0, 2]]
         reasons = []
-        if np.any(p.min(0) == lo) or np.any(p.max(0) == hi):
+        if not contact_only and (label in anchors if minimal_bbox_anchors else
+                np.any(p.min(0) == lo) or np.any(p.max(0) == hi)):
             reasons.append('bbox_extremum')
         footprint = MultiPoint(p + np.array(origin)[[0, 2]]).convex_hull
         if any(footprint.distance(Point(t['x'], t['z'])) <= 1 / 512 for t in targets):
@@ -67,6 +81,10 @@ def main():
     parser.add_argument('--expected-author-sha256', required=True)
     parser.add_argument('--contact-targets', type=Path,
                         help='Optional model-keyed world XZ targets; expand local components and bbox anchors only')
+    parser.add_argument('--minimal-bbox-anchors', action='store_true',
+                        help='Use the smallest component at each bbox extremum instead of the whole perimeter')
+    parser.add_argument('--contact-only', action='store_true',
+                        help='Expand contact components only; reject any change to existing geometry bounds')
     args = parser.parse_args()
     original, output = args.original, args.output
     assert sha(original / 'author-report.json') == args.expected_author_sha256
@@ -81,6 +99,8 @@ def main():
                for name in requested)
     assert requested <= {i['model'].split('\\')[-1] for i in author['instances']}
     targets = json.loads(args.contact_targets.read_text()) if args.contact_targets else None
+    if args.contact_only and (targets is None or args.minimal_bbox_anchors):
+        parser.error('--contact-only requires targets and excludes --minimal-bbox-anchors')
     if targets is not None:
         assert set(targets) == requested
         assert all(v and all(np.isfinite([t['x'], t['z']]).all() for t in v) for v in targets.values())
@@ -100,7 +120,10 @@ def main():
             continue
         header, lods, blobs = load(source)
         old = lods[1]
-        chosen = (selected_components(old, targets[name], inst['origin']) if targets is not None
+        assert py3d.classify_lod_resolution(old.resolution) == 'geometry'
+        chosen = (selected_components(old, targets[name], inst['origin'],
+                                      minimal_bbox_anchors=args.minimal_bbox_anchors,
+                                      contact_only=args.contact_only) if targets is not None
                   else {label: ['whole_model'] for label in old.selections})
         geo = py3d.LOD()
         geo.resolution = old.resolution
@@ -139,8 +162,8 @@ def main():
         new_xyz = np.array([p.coords for p in saved[1].points])
         delta_min = new_xyz.min(0) - old_xyz.min(0)
         delta_max = new_xyz.max(0) - old_xyz.max(0)
-        assert np.array_equal(delta_min, [-1/512, 0, -1/512])
-        assert np.array_equal(delta_max, [1/512, 0, 1/512])
+        assert np.array_equal(delta_min, [0, 0, 0] if args.contact_only else [-1/512, 0, -1/512])
+        assert np.array_equal(delta_max, [0, 0, 0] if args.contact_only else [1/512, 0, 1/512])
         assert len(saved[1].selections) == inst['collision_components']
         assert abs(mass_before - mass_after) < 1e-6
         for label, original_selection in old.selections.items():
@@ -162,6 +185,8 @@ def main():
     (output / 'author-report.json').write_text(json.dumps(author, indent=2) + '\n')
     report = dict(status='CANDIDATE_REQUIRES_INDEPENDENT_OVERLAY_BINARY_AND_ENGINE',
                   half_side_m=1/512, maximum_horizontal_displacement_m=2**.5/512,
+                  minimal_bbox_anchors=args.minimal_bbox_anchors,
+                  contact_only=args.contact_only,
                   models=reports, unchanged_models=len(author['instances'])-len(reports),
                   original_author_sha256=args.expected_author_sha256,
                   contact_targets_sha256=sha(args.contact_targets) if args.contact_targets else None,

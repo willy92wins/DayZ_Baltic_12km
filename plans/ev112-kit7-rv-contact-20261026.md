@@ -36,3 +36,39 @@ review600s con una ronda de correcciones concretas; calibración180s y sonda1200
 startup300s cada una. Sin reintentos ciegos. Timeout/error = INCONCLUSO; FAIL
 de calidad queda abierto. Cliente,navmesh,FPS y aceptación visual separados.
 Solo tras física PASS se retoma la generación de navmesh del kit7.
+
+## Corrección de coste tras medir el primer candidato
+
+El solape local con anclas mínimas mantiene8623componentes, sube263552→269210
+caras y149022→151851vértices. Nueve componentes de seis modelos exceden72/140
+(máximo81/158). La unidad se detuvo antes de compilar o desplegar.
+
+[DESIGN] Segundo candidato, conservando el primero: dividir solo esos nueve
+componentes por grupos de triángulos de su techo. Cada grupo forma una envolvente
+convexa con la misma base plana; todas sus esquinas deben pertenecer al sólido
+original. Cada triángulo de techo original se conserva dentro de un grupo,
+por lo que la unión cubre la envolvente original. Exigir además overlay
+independiente de los techos antes/después a1e-7m y cobertura completa.
+Masa total de cada componente original constante, distribuida por volumen.
+El número de componentes puede aumentar únicamente por estas nueve divisiones;
+no se eleva72/140. Registrar coste final, sin convertirlo en promesa de FPS.
+
+Presupuesto adicional único: partición120s, revisión600s, y las puertas binarias
+y nativas aún no utilizadas de esta unidad. Fallo de equivalencia o coste
+impide desplegar. Todo lo externo a Geometry de los19modelos permanece exacto.
+
+## Variante final tras aislar el exceso lateral
+
+La variante partida conserva alturas,masa,caps y cierre, pero falla extensión
+horizontal por0,019326562m² acumulados fuera de1cm. Los12componentes causantes
+son anclas de bbox. Descubrimiento medido en kit7-contact-only-discovery.json:
+los componentes de contacto por sí solos preservan exactamente las seis cotas
+del bbox de los19modelos; no sobrepasan72/140 ni la extensión1cm. Por tanto las
+anclas eran innecesarias aquí. Retirarlas permite conservar8623componentes,
+sin utilizar la partición experimental ni modificar tolerancias.
+
+Último candidato acotado: --contact-only, con rechazo obligatorio si cambia
+cualquier cota del bbox. Original y dos candidatos previos conservados.
+Autor120s, overlay900s y las puertas binarias/nativas no utilizadas. Nueva
+revisión600s del cambio de selección. La siguiente ejecución de motor conserva
+los6801puntos. Ningún despliegue si falla una puerta; volver al diagnóstico.

@@ -1,0 +1,42 @@
+{
+  "status": "NON_GEOMETRY_COMPARATOR_CONTROLS_PASS",
+  "actual_reordered_binary_pair": true,
+  "negative_cases": [
+    {
+      "name": "reverse_winding",
+      "rejected": true
+    },
+    {
+      "name": "surface_label_swap",
+      "rejected": true
+    },
+    {
+      "name": "vertex_1cm",
+      "rejected": true
+    },
+    {
+      "name": "remove_face",
+      "rejected": true
+    },
+    {
+      "name": "section_coverage_gap",
+      "rejected": true
+    },
+    {
+      "name": "opaque_stream_change",
+      "rejected": true
+    }
+  ],
+  "model_negative_cases": [
+    {
+      "name": "missing_lod",
+      "rejected": true
+    },
+    {
+      "name": "changed_lod_resolution",
+      "rejected": true
+    }
+  ],
+  "nan_payload_bits_preserved": true,
+  "source_sha256": "14e600c9f21d05a186b96c13f219d5ef799056ac96f7153b74b05fd61969274c"
+}

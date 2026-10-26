@@ -60,6 +60,28 @@ class OverlapCollisionTests(unittest.TestCase):
         self.assertEqual(set(selected_components(lod,[dict(x=0,z=0)],[0,0,0])),
                          {'left','right','front','back','contact'})
 
+    def test_minimal_anchors_choose_smallest_at_each_extremum(self):
+        selections = {}
+        for name,x,z,extra in [('left_small',-10,0,0),('left_large',-10,5,4),
+                               ('right',10,0,0),('front',0,-10,0),
+                               ('back',0,10,0),('contact',0,0,0)]:
+            points = [SimpleNamespace(coords=(x+dx,y,z+dz))
+                      for dx,y,dz in itertools.product((-1.,1.),repeat=3)]
+            points += [SimpleNamespace(coords=(x,0,z)) for _ in range(extra)]
+            selections[name] = SimpleNamespace(points=points)
+        lod = SimpleNamespace(points=[p for s in selections.values() for p in s.points],selections=selections)
+        targets = [dict(x=8192,z=9000)]
+        origin = [8192,0,9000]
+        legacy = selected_components(lod,targets,origin)
+        minimal = selected_components(lod,targets,origin,minimal_bbox_anchors=True)
+        self.assertIn('left_large',legacy)
+        self.assertNotIn('left_large',minimal)
+        self.assertEqual(set(minimal),{'left_small','right','front','back','contact'})
+        only_contact = selected_components(lod,targets,origin,contact_only=True)
+        self.assertEqual(set(only_contact),{'contact'})
+        with self.assertRaises(ValueError):
+            selected_components(lod,targets,origin,contact_only=True,minimal_bbox_anchors=True)
+
 
 if __name__ == '__main__':
     unittest.main()
