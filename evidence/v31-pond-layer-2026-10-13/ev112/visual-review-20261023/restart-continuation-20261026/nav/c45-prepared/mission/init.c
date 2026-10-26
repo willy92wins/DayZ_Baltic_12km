@@ -1,0 +1,68 @@
+void main() { GetGame().GetWorld().SetDate(2026, 10, 2, 12, 0); }
+class BalticV30ContinuityNavMission: MissionServer
+{
+    override PlayerBase CreateCharacter(PlayerIdentity identity, vector pos, ParamsReadContext ctx, string characterName)
+    {
+        pos = "8778 0 10122";
+        pos[1] = GetGame().SurfaceRoadY(pos[0], pos[2]) + 0.2;
+        return super.CreateCharacter(identity, pos, ctx, characterName);
+    }
+    protected float m_Elapsed;
+    protected bool m_Done;
+    override void OnUpdate(float timeslice)
+    {
+        super.OnUpdate(timeslice);
+        if (m_Done || !GetGame().IsDedicatedServer()) return;
+        m_Elapsed = m_Elapsed + timeslice;
+        if (m_Elapsed < 5) return;
+        m_Done = true;
+        FileHandle input=OpenFile("$mission:queries.csv",FileMode.READ);
+        FileHandle output=OpenFile("$profile:baltic_patch_nav_c45.log",FileMode.WRITE);
+        if (!input || !output) return;
+        FPrintln(output,"BALTIC_PATCH_NAV_C45;"+GetGame().GetWorldName());
+        AIWorld ai=GetGame().GetWorld().GetAIWorld();
+        PGFilter walk=new PGFilter;
+        walk.SetFlags(PGPolyFlags.WALK,PGPolyFlags.SWIM | PGPolyFlags.SWIM_SEA | PGPolyFlags.DISABLED,PGPolyFlags.NONE);
+        PGFilter none=new PGFilter;
+        none.SetFlags(PGPolyFlags.NONE,PGPolyFlags.ALL,PGPolyFlags.NONE);
+        array<string> fields=new array<string>;
+        array<vector> path=new array<vector>;
+        string row;
+        int count=0;
+        while (FGets(input,row)>=0)
+        {
+            if (row=="") continue;
+            fields.Clear();row.Split(";",fields);
+            if (fields.Count()!=3) { FPrintln(output,"FAIL;SCHEMA"); break; }
+            vector start=fields[1].ToVector();vector goal=fields[2].ToVector();
+            PGFilter filter=walk;
+            if (fields[0]=="negative") filter=none;
+            vector a,b;
+            bool sa=ai.SampleNavmeshPosition(start,2,filter,a);
+            bool sb=ai.SampleNavmeshPosition(goal,2,filter,b);
+            path.Clear();bool found=false;
+            if (sa && sb) found=ai.FindPath(a,b,filter,path);
+            FPrintln(output,"Q;"+fields[0]+";"+sa+";"+sb+";"+found+";"+path.Count()+";"+start.ToString()+";"+goal.ToString()+";"+a.ToString()+";"+b.ToString());
+            for (int i=0;i<path.Count();i++)
+            {
+                vector p=path[i];
+                // Nested SurfaceRoadY in Vector lost X in13/108 DayZ1.30 samples.
+                // Capture scalar results before constructing or serializing vectors.
+                float pointX=p[0];
+                float pointZ=p[2];
+                float groundY=GetGame().SurfaceY(pointX,pointZ);
+                float roadY=GetGame().SurfaceRoadY(pointX,pointZ);
+                vector groundSample=Vector(pointX,groundY,pointZ);
+                vector roadSample=Vector(pointX,roadY,pointZ);
+                string pointText=p.ToString();
+                string groundText=groundSample.ToString();
+                string roadText=roadSample.ToString();
+                FPrintln(output,"P;"+fields[0]+";"+i+";"+pointText+";"+groundText+";"+roadText);
+            }
+            count++;
+        }
+        FPrintln(output,"END;"+count);
+        CloseFile(input);CloseFile(output);
+    }
+}
+Mission CreateCustomMission(string path) { return new BalticV30ContinuityNavMission(); }

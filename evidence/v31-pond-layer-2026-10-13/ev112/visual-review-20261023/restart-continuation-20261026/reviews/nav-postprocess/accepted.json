@@ -1,0 +1,38 @@
+{
+  "status": "ACCEPTED_AFTER_REVIEW",
+  "review_model": "claude-fable-5-1",
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\prepare_c45_exact_queries.py": "18b8f3fda97bfc037283c846196457250b3f6318582eaafa901054c98657246a",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\package_and_deploy_c_nav9.py": "d2a2da35246c583db460e551bef87d0a0f50c8a87b46e26d3ab5b70813f607b8",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\finish_c45_probe.py": "efb9650e3cd5ea82732492f887444c6d519d0b4015404c796bfc9db77f5dd62e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\orchestrate_c45_probe.js": "a05a2c8a5fde8f266e252223a8afa5d6c5467e1ed3f9b9076b3e56960aeb3559",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\test_c45_command_completion.cjs": "d7b490e3695e363a72b55ff472c6e9b172502d070864ad50e7a0c87d54a75529",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\nav-c-postprocess-review\\review-response.json": "4b63347e4c860a6c942068220e9f1c3e4894f457f6ad8ddfb8fe5abbb6602d02",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\nav-c-postprocess-review\\command-flow-controls.json": "82d10c7bdb9e971c7c1dbae655a94853cbc3b8acc79270c0f43afaf5ae5e5dca",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\nav-c-postprocess-review\\delayed-command-control.json": "3b92af859a74e38392e3c66638439cedc6c52f25573e6fa0f1045106327ea062",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\nav-c-postprocess-review\\tested-command-function.js": "7f0a5c2b2961457e757cee486c2560d7f1b56731fae7d6d018b4b1d1822348cc",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\capture_patch_nav_log.ps1": "5df357e455b54f1f49b99c81ef3921276b9115564e710ab2183658b9febbf9a9",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\capture_owned_server_identity.ps1": "700a2d6a3c9f8b17eb7d7d99d2700d135386e6693cf65277c467e90b30213ee9",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\copy_owned_server_rpt.ps1": "87816bb466336c042f10f2c8af6bcd70e67e505773d9cc4cfa409aacf79298db",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\record_nav_c_event.ps1": "4178ce97bbf01330cdf36b2d6a6bf4310257483200c88b93abacc52d4e71b6fd",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\verify_continuity_nav_v30.py": "f8248eaaa799e585424796a76f55b383362b63a036dedc54287d53a57d960f56",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\verify_patch_nav_coverage_ev112.py": "1ac20b4df437138f0285ab86f733172d06c99f49e5aeb3f84f82e866d90d54ac",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\prepare_patch_nav_probe_ev112.py": "2a9c3161adb5970aabc4844e3b9849b33d7711041bd5b1261b90a9d5ac4d822c",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\prepare_current_nav_probe_ev112.py": "2b6d1d37dbd8e7be2dc7765d2239da37f5d85030baf098083cd29cfbc522f9cc",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\verify_v30_acceptance.py": "f679ccfcdbafd30896a4ca8c2d3173e4aec054db40b217ef995b9597310bd991",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\terrain\\v30_common.py": "6485307be67bde8ce3f2b37f597a3a1502fbf2ce19e9313b0d071a42468eb53f",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\playtest\\attach_navmesh.py": "717b81469e0a799690d1586cd7a4492f079c3b2db626eec7e2815cd15896e062",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\inspect_navmesh_v9_ev112.py": "d6b82d9ae7f38da105fca068e8242a9273173c6a52d9eaf975fe95f2b8f71576"
+  },
+  "fixes": {
+    "F1": "Foreground commands await final exit, keep lease alive while pending, and reject delayed nonzero/null completion. Only readonly capture explicitly opts into background, then polled. Native12s delayed failure rejected plus5 control cases."
+  },
+  "backlog": [
+    "Initial own lease acquisition is logged as HEARTBEAT_ERROR then LEASE_RECOVERED; known timeline naming, not server failure.",
+    "Probe consumer requires retired run and clean terminal state; does not additionally require graceful flag. Generation packager does."
+  ],
+  "review_note": "Consumer already requires mcp.server_binding BOUND; imported local verifier dependencies now frozen. Prior F results are bound by the consumer independent of launch timing; do not infer a past skip as a measured fact.",
+  "limits": [
+    "Acceptance of postprocess code only. Generation/package/runtime/coverage remain pending."
+  ]
+}

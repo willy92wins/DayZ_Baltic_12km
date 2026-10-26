@@ -56,7 +56,7 @@ geográficos; estos mapas no representan zonas de loot ya implementadas.*
 
 ## Estado del proyecto
 
-**En desarrollo · EV112 · actualizado el 25-10-2026.** Hay terreno generado,
+**En desarrollo · EV112 · actualizado el 26-10-2026.** Hay terreno generado,
 bosque colocado y pilotos de cauce continuo. Se están corrigiendo y verificando
 orillas, relieve, colisiones y conexiones. Los controles de terreno de las
 carreteras pasan en el ámbito medido; las carreteras físicas, la conducción y
@@ -67,6 +67,12 @@ adicionales**, con **1.449 componentes frente a 2.245** de la base U2. También
 pasan **269.968 consultas sobre 3.727 árboles** y **11 secciones de carretera**
 antes fallidas. Son resultados de servidor en el ámbito muestreado; la vista
 y la conducción siguen pendientes. [Pruebas, rechazos y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/quality-continuation-20261025/README.md).
+
+Nuevo candidato **kit-7: 1,66 km de cauce continuo**, con extremos, agua y colisión
+verificados en los modelos guardados, sin nuevos picos ni pliegues expuestos en
+las muestras. Su coste aún necesita reducirse; no está desplegado. La generación
+de navegación C terminó sin una malla válida.
+[Avance del 26-10, pruebas y pendientes](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/restart-continuation-20261026/README.md).
 
 El mapeado urbano, la economía de loot Este/Oeste y su progresión son parte de
 la visión pendiente de implementar. La comparación de rendimiento con Chernarus
@@ -93,7 +99,7 @@ sin una malla válida; sigue pendiente, junto con la locomoción y la cobertura 
 
 Comparación de servidor vacío con Chernarus: **16,8 % menos RAM residente y
 15,6 % menos memoria privada**, con tres pasadas por mapa y poca dispersión.
-Revisión independiente del lector; la suite actual alcanza **225 tests**. La CPU varió mucho; estos
+Revisión independiente del lector; la suite actual alcanza **230 tests**. La CPU varió mucho; estos
 resultados todavía no acreditan FPS ni capacidad multijugador.
 [Mediciones y límites](evidence/performance/server-baseline-ab-20261025/README.md).
 

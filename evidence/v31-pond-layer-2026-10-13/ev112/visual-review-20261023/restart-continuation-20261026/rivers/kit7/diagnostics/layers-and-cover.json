@@ -1,0 +1,48 @@
+{
+  "status": "READ_ONLY_SCOPE_DISCRIMINATOR",
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-a-on-f-20261026\\terrain.npz": "815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-a-on-f-20261026\\kit-7-surfaces.npz": "9d8caf0fb75d2bd34f71b877ecd3f71079898fbc01c28e67ddab0bf8dca50063",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-a-on-f-20261026\\envelope.npy": "c6fbaf78c5d549ab3a2aacf711852e34a5d99b4c637150d1a04044e7e5d54e66",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-a-on-f-20261026\\cover.npy": "dec97c8c06b8ee1728458e216b413ed129800ff659e7dbdca457f10b7210bedf",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\rectangle-pilot-f-merged\\envelope.npy": "f5c1090e2a9762fcddc13f299277d1ecff491107179486338b9540b519d0fc3d",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\rectangle-pilot-f-merged\\cover.npy": "dec97c8c06b8ee1728458e216b413ed129800ff659e7dbdca457f10b7210bedf",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\rectangle-pilot-f-merged\\bury-work\\fp0\\footprint.npz": "95f7a26304e88c726679ec69ef076bb149ec1f1f8bdf4a6cd1e83e40f3b6be83",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\combined-merged\\terrain-buried.npz": "ab96a8f6fb3da6ca02e566caa1cf5d61ad720d340ec611316c33bcbe2ce717ef",
+    "E:\\DayZ-Baltic-Build\\v31-pond-layer-20261013\\bridges\\terrain-ev107.npz": "b804f6ff16bce28ba47a5c9a01184c66212c93bcd20ed57509ac7ea4192f2e1c",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-bounds-next-20261026\\kit-7\\bounds.npz": "612f019cae9702a727582fb7ab29768719078512a16997b6b7aa808115d55c60"
+  },
+  "checks": {
+    "envelope.npy_only_authorized_inactive_retirement": true,
+    "envelope.npy_all_current_pond_cells_exact": true,
+    "cover.npy_only_authorized_inactive_retirement": true,
+    "cover.npy_all_current_pond_cells_exact": true
+  },
+  "layers": {
+    "envelope.npy": {
+      "changed_cells": 36,
+      "changed_active_pond_cells": 0
+    },
+    "cover.npy": {
+      "changed_cells": 0,
+      "changed_active_pond_cells": 0
+    }
+  },
+  "retired_eligible_cells": 4026,
+  "over_T_075_vertices": 2164,
+  "over_T_075_inside_saved_bed": 1349,
+  "over_T_075_below_saved_bed": 1337,
+  "over_T_075_outside_saved_bed": 815,
+  "over_T_075_inside_but_above_saved_bed": 12,
+  "envelope_conflicts": 475,
+  "ceiling_driven_conflicts": 475,
+  "floor_driven_conflicts": 0,
+  "reference_ev107_free_delta_T_max_m": 4.460665702819824,
+  "reference_ev107_free_outside_T_075": 502,
+  "limits": [
+    "Saved surface projection and barycentric heights at native vertices only; not continuous occlusion or compiled visibility.",
+    "The T +/-0.75 test is conditional relief-envelope comparison, not original river author acceptance.",
+    "Layer comparison validates only authorized retirement of inactive cells. New water footprint, coverage and topology still need regeneration.",
+    "No geometry, terrain, envelope, cover or deployed file modified."
+  ]
+}

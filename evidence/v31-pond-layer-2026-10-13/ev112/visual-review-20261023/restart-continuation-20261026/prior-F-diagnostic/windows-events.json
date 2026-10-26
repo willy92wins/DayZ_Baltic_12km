@@ -1,0 +1,47 @@
+{
+    "from_utc":  "2026-10-25T22:13:00.0000000Z",
+    "until_utc":  "2026-10-25T22:15:30.0000000Z",
+    "channels":  [
+                     {
+                         "channel":  "Application",
+                         "enabled":  true,
+                         "events":  [
+
+                                    ],
+                         "error_id":  "NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand"
+                     },
+                     {
+                         "channel":  "System",
+                         "enabled":  true,
+                         "events":  [
+
+                                    ],
+                         "error_id":  "NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand"
+                     },
+                     {
+                         "channel":  "Microsoft-Windows-TaskScheduler/Operational",
+                         "enabled":  false,
+                         "events":  [
+
+                                    ],
+                         "error_id":  "NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand"
+                     },
+                     {
+                         "channel":  "Microsoft-Windows-Sysmon/Operational",
+                         "enabled":  null,
+                         "events":  [
+
+                                    ],
+                         "error_id":  "NoMatchingLogsFound,Microsoft.PowerShell.Commands.GetWinEventCommand"
+                     },
+                     {
+                         "channel":  "Security",
+                         "enabled":  null,
+                         "events":  [
+
+                                    ],
+                         "error_id":  "LogInfoUnavailable,Microsoft.PowerShell.Commands.GetWinEventCommand"
+                     }
+                 ],
+    "limits":  "Read-only metadata; absent events or disabled/unavailable channels do not establish the shutdown cause."
+}

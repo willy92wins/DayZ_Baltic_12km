@@ -1,0 +1,41 @@
+{
+  "status": "PASS_RETAINED_HANDLE_SMOKE",
+  "script_sha256": "f881f29b6fb19aa06f3e1adf097ce9c52ce4f7a041c46910f0160c27efd99ef6",
+  "cases": [
+    {
+      "case": "exit23",
+      "observer_exit": 0,
+      "child_alive_after_observer": false,
+      "output": {
+        "process_id": 215604,
+        "start_utc": "2026-10-25T23:07:27.9923874Z",
+        "exited": true,
+        "exit_code": 23,
+        "handle_retained": true,
+        "mutation_attempted": false
+      }
+    },
+    {
+      "case": "wrong_creation",
+      "observer_exit": 1,
+      "child_alive_after_observer": true,
+      "output": null
+    },
+    {
+      "case": "timeout",
+      "observer_exit": 0,
+      "child_alive_after_observer": true,
+      "output": {
+        "process_id": 69092,
+        "start_utc": "2026-10-25T23:07:36.2190512Z",
+        "exited": false,
+        "exit_code": null,
+        "handle_retained": true,
+        "mutation_attempted": false
+      }
+    }
+  ],
+  "limits": [
+    "Own synthetic processes only; no DayZ exit code has been captured yet."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "F1_F2_F3_RESOLVED_CONTROL_FLOW_TESTED",
+  "review_sha256": "3ac765502d1bb7dd0471c65e5a9a6d1fb8036d6600e61b32bf7fe51ed954aa1c",
+  "coordinator_sha256": "e22c61b0cdb74fbb63d9b64ba42013b9de1166de04b5003015ef42b868118e55",
+  "control_flow_sha256": "9ea912b667bb7da40e3f87c763bc914023f486e330d54da4d45335d681e2d38a",
+  "fixes": {
+    "F1": "Retry capture while wrapper is alive; no null parent command line dereference",
+    "F2": "Only successful wrapper plus generated receipt counts done; otherwise cancel exact owned generator. Unconfirmed cancellation retains own run/lease for live recovery.",
+    "F3": "Catch final status and RPT-copy errors; observer check still runs. Durable final completion includes accumulated errors."
+  },
+  "scope": "Mocked coordinator flow plus 4 real observer-process controls; native DayZ acceptance pending"
+}
