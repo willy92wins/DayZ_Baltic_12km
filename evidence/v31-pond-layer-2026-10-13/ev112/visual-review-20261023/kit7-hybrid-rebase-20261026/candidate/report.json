@@ -1,0 +1,73 @@
+{
+  "status": "PARTIAL_LOCAL_OFFLINE_PASS_PENDING_FULL_VALIDATION",
+  "checks": {
+    "nonempty": true,
+    "protected_exact": true,
+    "target_heights_exact": true,
+    "outside_domain_exact": true,
+    "roads_exact": true,
+    "shore_edge_vertices_exact": true,
+    "sea_classification_exact": true,
+    "no_new_peak_failures": true,
+    "no_new_pit_failures": true,
+    "no_worsened_faults": true,
+    "accepted_targets_clear": true,
+    "slope_guard": true,
+    "no_new_or_worse_sharp_edges": true,
+    "visual_water_corner_classifications_exact": true
+  },
+  "groups_considered": 1,
+  "groups_applied": 1,
+  "peak_groups_applied": 1,
+  "pit_groups_applied": 0,
+  "clusters": [
+    {
+      "cluster": 1,
+      "groups": [
+        {
+          "kind": "peak",
+          "representative": [
+            1171,
+            190
+          ]
+        }
+      ],
+      "free_vertices": 14,
+      "retried": false,
+      "witness_mode": "hybrid",
+      "status": "LOCAL_CHECKS_PASS",
+      "checks": {
+        "fixed_exact": true,
+        "no_new_overshoot_exact": true,
+        "bounds_respected": true,
+        "target_clear": true,
+        "no_new_or_worse_faults": true,
+        "no_new_or_worse_sharp_edges": true,
+        "pure_energy_decreased": true
+      },
+      "solve": {
+        "success": true,
+        "iterations": 20,
+        "linear_prominence_constraints": 60,
+        "native_triangles": 49,
+        "energy": 161.9878194413373,
+        "witnesses": "hybrid"
+      },
+      "pure_energy_before": 164.12960644691617,
+      "pure_energy_after": 161.89718826912684
+    }
+  ],
+  "changed_vertices": 14,
+  "raised_vertices": 14,
+  "lowered_vertices": 0,
+  "delta_min_m": 0.0,
+  "delta_max_m": 0.5942428112030029,
+  "input_sha256": "815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40",
+  "output_sha256": "4aceee7c42fd2022331d7293271e099b3d966fbc8f7c3551b31b1e9f2324376a",
+  "domains_sha256": "5af81412b35dd1023a6f60833b39d2745d3f309637f92cbe402d65581ce7db59",
+  "author_sha256": "98311d57dced8fb8b50f0afc258271aec2b801fb9f26af4ca2568e1069fe4d7e",
+  "solver_sha256": "5f575db39c594f231860528b69bc515e0ebc4c00ac9ab249fbe5b992c791aad0",
+  "retained_candidate": null,
+  "witness_mode": "hybrid",
+  "scope": "Only successfully verified clusters applied. Rejected clusters and all other findings stay open. No forest/binary/runtime/visual acceptance."
+}

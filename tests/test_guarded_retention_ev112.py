@@ -41,13 +41,15 @@ class GuardedRetention(unittest.TestCase):
             terrain_sha256=sha(self.base / 'terrain-buried.npz'), footprint_sha256=sha(footprint),
             groups=[dict(independently_feasible=True, kind='peak', representative=[6, 6], target_vertices=[[6, 6]])])))
 
-    def run_author(self, output, retained=None):
+    def run_author(self, output, retained=None, fresh_hybrid=False):
         args = ['repair_guarded_shapes_ev112.py', str(self.base), str(self.discovery), str(output),
                 '--expected-terrain-sha256', sha(self.base / 'terrain-buried.npz'),
                 '--expected-domains-sha256', sha(self.discovery / 'domains.npz')]
         if retained:
             args += ['--retain-candidate', str(retained), '--expected-retained-sha256', sha(retained / 'terrain.npz'),
                      '--expected-retained-domains-sha256', sha(retained / 'domains.npz'), '--hybrid-witnesses']
+        if fresh_hybrid:
+            args += ['--hybrid-witnesses']
         # Only the native-grid dimension is scaled for this integration fixture;
         # production author, solver, serializers and independent consumers run.
         with patch.object(sys, 'argv', args), patch.object(author.D, 'N', 13), contextlib.redirect_stdout(io.StringIO()):
@@ -56,6 +58,14 @@ class GuardedRetention(unittest.TestCase):
             except SystemExit as result:
                 self.assertEqual(result.code, 0)
         return json.loads((output / 'report.json').read_text())
+
+    def test_fresh_hybrid_candidate_uses_all_existing_guards(self):
+        result=self.run_author(self.root/'fresh-hybrid',fresh_hybrid=True)
+        self.assertEqual(result['witness_mode'],'hybrid')
+        self.assertEqual(result['clusters'][0]['solve']['witnesses'],'hybrid')
+        self.assertIsNone(result['retained_candidate'])
+        self.assertEqual(result['groups_applied'],1)
+        self.assertTrue(all(result['checks'].values()))
 
     def test_retains_previous_actual_solution_exactly(self):
         first, second = self.root / 'first', self.root / 'second'

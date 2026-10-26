@@ -118,3 +118,12 @@ Python GIS con `-I`; salidas en `E:/DayZ-Baltic-Build/v31-pond-layer-20261013/`;
    `ev109r_config.py`, `compile_world_ev109r.ps1`, `package_ev109r.py`.
 7. Sondas: puntos con `tools/water/probe_points_kit.py` y `tools/terrain/probe_points_bridges.py`, misiÃ³n
    `BalticBridgeProbeV2.BalticTrial` (solo servidor), y comparar con `bridges/ev109/probe-ev109-summary.json`.
+
+## Candidato aislado: rebase híbrido1171,190 (26-10-2026)
+
+Ver plans/ev112-rebased-hybrid-relief-20261026.md y evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/kit7-hybrid-rebase-20261026/README.md.
+14vecinos corregidos;29tests,coronas,agua,carreteras y censo offlinePASS. Candidato
+267picos/1144pozos/4rectángulos, sin aceptación global. NO desplegado ni integrado:
+kit7 nativo sigue268picos y su generación/607 no se heredan. Candidato preparado
+en E:/DayZ-Baltic-Build/shape-repair-20261025/kit7-hybrid-pilot-merged-20261026.
+Faltan bosque,stage,binario y sonda propias antes de integrar esta modificación.

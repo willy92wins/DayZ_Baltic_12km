@@ -43,7 +43,8 @@ def main():
     a=ap.parse_args();tp=a.base/'terrain-buried.npz';fp=a.base/'bury-work/fp0/footprint.npz';dp=a.discovery/'domains.npz'
     retention_args=(a.retain_candidate,a.expected_retained_sha256,a.expected_retained_domains_sha256)
     if any(retention_args) and not all(retention_args):ap.error('Retained terrain and domains hashes must accompany the retained candidate')
-    if a.hybrid_witnesses and not a.retain_candidate:ap.error('Hybrid mode is restricted to failed clusters of a retained candidate')
+    # Hybrid witnesses are also valid on a fresh baseline. Retained mode alone
+    # restricts retries to failed clusters and guards overlapping old changes.
     solver_path=Path(__file__).with_name('repair_free_shapes_ev112.py').resolve()
     if fair_native_patch.__module__!='repair_free_shapes_ev112' or Path(fair_native_patch.__code__.co_filename).resolve()!=solver_path:
         raise ValueError('Solver substitution is not an authored candidate')
