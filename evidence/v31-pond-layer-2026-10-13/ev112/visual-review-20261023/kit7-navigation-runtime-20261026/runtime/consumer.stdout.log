@@ -1,0 +1,64 @@
+{
+  "status": "FAIL_KIT7_NATIVE_GRAPH",
+  "limits": [
+    "Native graph only; no locomotion, boats, visual, FPS or global acceptance.",
+    "Continuous XZ coverage, but waypoint-only native heights.",
+    "Existing terrain/surface/endpoint tolerances retained."
+  ],
+  "height_issues": [
+    "kit7_piece_124_right/1: nav waypoint too far from physical surface",
+    "kit7_piece_133_right/1: nav waypoint too far from physical surface",
+    "kit7_seam_124_right/0: nav waypoint too far from physical surface",
+    "kit7_seam_133_right/0: nav waypoint too far from physical surface"
+  ],
+  "upstream_status": "FAIL_LOCAL_CONTINUITY_NAV_PATHS",
+  "f_patch_coverage": {
+    "f_patch_ew_1": {
+      "waypoints": 2,
+      "max_delta_m": 0.5016803741455078,
+      "covered": true
+    },
+    "f_patch_ew_2": {
+      "waypoints": 2,
+      "max_delta_m": 0.5016803741455078,
+      "covered": true
+    },
+    "f_patch_ne_sw_1": {
+      "waypoints": 2,
+      "max_delta_m": 0.29489779472351074,
+      "covered": true
+    },
+    "f_patch_ne_sw_2": {
+      "waypoints": 2,
+      "max_delta_m": 0.26709651947021484,
+      "covered": true
+    },
+    "f_patch_ns_1": {
+      "waypoints": 2,
+      "max_delta_m": 0.31990551948547363,
+      "covered": true
+    },
+    "f_patch_ns_2": {
+      "waypoints": 2,
+      "max_delta_m": 0.31990551948547363,
+      "covered": true
+    },
+    "f_patch_nw_se_1": {
+      "waypoints": 2,
+      "max_delta_m": 0.38542842864990234,
+      "covered": true
+    },
+    "f_patch_nw_se_2": {
+      "waypoints": 2,
+      "max_delta_m": 0.38542842864990234,
+      "covered": true
+    }
+  },
+  "local_failures": [],
+  "minimum_f_delta_m": 0.05,
+  "log_sha256": "5421b53fccbc30aed2b848258ca78e2eb7a56cb5f1029132e76fab441b67f229",
+  "reference_sha256": "8f813aedae719af71f2d1a9d2cfd6344d6e69bb67e2c82a36326398083782505",
+  "terrain_e_sha256": "705196d69646f2528aa5796d26e90bab36aebd07a5a0ddb861b31b7160f4a33e",
+  "terrain_sha256": "815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40",
+  "geometry_sha256": "e3c902fd1561804b3b02b68ada18e64c26c3d697f79c9fce8bb0ad62e66d3c5e"
+}

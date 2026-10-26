@@ -1,0 +1,1 @@
+El primer diagnóstico falló al tratar un LOD vacío como una matriz de caras. No produjo veredicto. La revisión v2 omite LOD sin caras y conserva los restantes; fuente original archivada. Sus warnings de proyección de caras verticales no se usan como alturas. No hubo cambio en modelos ni consumidor nativo.
