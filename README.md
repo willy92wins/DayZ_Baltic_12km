@@ -71,7 +71,9 @@ y la conducción siguen pendientes. [Pruebas, rechazos y límites](evidence/v31-
 El candidato **kit-7: 1,66 km de cauce continuo** pasa coste y contacto completo
 en fuente y PBO: **127.528 → 8.623 componentes**, con la geometría de charcas
 anterior intacta. Sigue aislado; faltan integración de bosque/WRP y pruebas
-propias en el motor. La nueva generación de navegación C/F está en curso.
+propias en el motor. **C/F ya pasa 45 consultas de navegación en servidor**,
+incluidas 8 rutas sobre el terreno corregido; movimiento real de IA pendiente.
+[Prueba de navegación y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/c-navigation-20261026/README.md).
 [Pruebas, costes y límites](evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/kit7-cost-contact-20261026/README.md).
 
 El mapeado urbano, la economía de loot Este/Oeste y su progresión son parte de
