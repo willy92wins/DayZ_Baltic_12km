@@ -1,0 +1,19 @@
+{
+  "status": "REJECTED_OFFLINE_CONFIRMED",
+  "additional_failure": "CAP_NOT_PRESERVED",
+  "source_sha256": "9d8caf0fb75d2bd34f71b877ecd3f71079898fbc01c28e67ddab0bf8dca50063",
+  "candidate_sha256": "6c3f6dce63c2951f55abb258a1418e3155b9e3a59f73b01b64ba419b44eb20f2",
+  "cap_changed_points": 201,
+  "cap_delta_range_m": [
+    -0.025390625,
+    0.0
+  ],
+  "definition": "rows with min(station,station[-1]-station)<6, independent of author free mask",
+  "original_gate_scope": "fixed_exact only checked ~free, not the promised complete CAP region",
+  "adjudication": [
+    "Keep original pilot result unchanged and rejected; no rerun or weight sweep.",
+    "Next consumer must derive CAP/wet/borders from original arrays, and reject explicit mutations.",
+    "The rejection is not a defect of the historical author: the new pilot promised a larger fixed domain than it implemented.",
+    "No build or native/RAM trial for this rejected candidate."
+  ]
+}

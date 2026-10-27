@@ -1,0 +1,55 @@
+{
+  "status": "REJECTED_OFFLINE",
+  "gates": {
+    "finite": true,
+    "fixed_exact": true,
+    "bounds": true,
+    "curvature_nonincreasing": false,
+    "slope_nonincreasing": true,
+    "improved": false
+  },
+  "solver": {
+    "success": true,
+    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "iterations": 345,
+    "energy_before": 567.6109630260468,
+    "energy_after": 567.3903119471813,
+    "bounds_satisfied": true
+  },
+  "inputs_unchanged": true,
+  "source_grid_shape": [
+    1663,
+    39
+  ],
+  "changed_points": 38329,
+  "infeasible_fixed": 0,
+  "no_quantized_value_fixed": 0,
+  "free_points": 43186,
+  "delta_range_m": [
+    -0.078125,
+    0.0
+  ],
+  "curvature_energy": [
+    561.7330589294434,
+    562.1204872131348
+  ],
+  "slopes": {
+    "baseline": {
+      "longitudinal_max": 0.24420910601166515,
+      "transverse_max": 0.48817384319310814,
+      "face_max": 0.5237935517144957
+    },
+    "candidate": {
+      "longitudinal_max": 0.24420910601166515,
+      "transverse_max": 0.48817384319310814,
+      "face_max": 0.5105282009967941
+    }
+  },
+  "candidate_sha256": "6c3f6dce63c2951f55abb258a1418e3155b9e3a59f73b01b64ba419b44eb20f2",
+  "limits": [
+    "One fixed .002 prior weight, one solver capped500; no parameter sweep.",
+    "Discrete grid energy is not physical curvature or visual acceptance.",
+    "OLD nav Y comparisons are descriptive only: regenerated topology/height not predicted.",
+    "No native graph/RAM/actor/visual PASS, asset package or deployment."
+  ]
+}
