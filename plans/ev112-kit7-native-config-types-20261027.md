@@ -1,7 +1,8 @@
 # Kit7: comprobar la lectura nativa de la configuración de navegación
 
-Estado: PLAN_REVISADO_SOUND_WITH_FIXES; ajustes conciliados por Codex tras
-revisión independiente Fable5.1. Implementación y prueba nativa pendientes.
+Estado: EJECUTADO_DIAGNOSTICO_VALIDO. Implementación revisada Fable5.1 y
+prueba nativa completa; ambos flags Baltic dan int/float0, controlesPASS.
+Ver evidence/navigation/kit7-native-config-types-20261027. No cierre de RAM.
 Codex ejecutor/integrador por la
 petición autónoma vigente. Experimento diagnóstico previo a otra generación;
 no es el council ampliado ni modifica el mapa o sus criterios.

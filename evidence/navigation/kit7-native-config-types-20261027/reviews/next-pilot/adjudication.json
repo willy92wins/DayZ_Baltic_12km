@@ -1,0 +1,18 @@
+{
+  "status": "ACCEPTED_AFTER_REVIEW",
+  "verdict": "SOUND-with-fixes",
+  "model": "claude-fable-5-1",
+  "plan_sha256": "2986b7849ca1030ac39052219f514ceedd3a235b2af5fc1ac83363da7c6883b9",
+  "implementation_reviewed": false,
+  "accepted": [
+    "Independent token delta, class scope and duplicate GenParams negative",
+    "No-op roundtrip control, actual PBO reread from deployment, compiled prefix and changed bytes",
+    "Native type/text/numeric expectations and missing test positives",
+    "Explicit INCONCLUSIVE rejection without repeat; frozen RAM consumer; references corrected"
+  ],
+  "rejected_or_corrected": [
+    "Review claim that Baltic mod also loads in Chernarus passes is contradicted by prepare_nav8_ram_pass.py: extras4forBaltic/1bridgeforChernarus. Preserve original comparison contract.",
+    "RAM FAIL cannot be called no effect from historical comparison; simply reject candidate without causal claim."
+  ],
+  "strict_addition": "No-op roundtrip binary mismatch stops/replans; do not attribute candidate behavior to single flag if compiler confound not isolated."
+}

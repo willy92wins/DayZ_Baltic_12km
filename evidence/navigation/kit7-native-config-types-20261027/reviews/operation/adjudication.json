@@ -1,0 +1,41 @@
+{
+  "status": "ACCEPTED_AFTER_REVIEW",
+  "review_model": "claude-fable-5-1",
+  "verdict": "SOUND-with-fixes",
+  "items": [
+    {
+      "id": 1,
+      "resolution": "Producer seal_kit7_config_types_probe.py prepared while review ran; inspected by integrator. Freezes mission/probe/coordinator/reader/capture/helpers/118 stock hashes/4 packages/engine before queue."
+    },
+    {
+      "id": 2,
+      "resolution": "Moved RPT extraction before consumer; script extraction also precedes consumer. Invalid wire capture retains both diagnostic channels."
+    },
+    {
+      "id": 3,
+      "resolution": "Copy script log only when fresh creation and unique UUID BEGIN bind it. Exact file hash, marker line numbers and excerpts; absent channel explicitly UNAVAILABLE. No warning-free claim."
+    }
+  ],
+  "corrections_to_review": [
+    "Prelaunch validates stock content hashes through deployment.inputs, not only inventory names.",
+    "Sentinel -1 not interpreted as native enum for existing field; no assumption CT_* excludes -1."
+  ],
+  "inputs": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\ev112-kit7-native-config-types-20261027.md": "c5fc9f1e69676e50d2639527207bb7e07b46ce2b1d1092b953795564e84a34f9",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\missions\\BalticNavConfigTypes.BalticTrial\\init.c": "49e89c33ceb0ccc9230b2da871589fe7b18c1309f2420df4d36b64e7c5671178",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\verify_nav_config_types_ev112.py": "a15fd21440e9e678bb4cf7300c003ea44b625b90a9aa71a8d5eba4cfb38630ae",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\test_nav_config_types_ev112.py": "66ca139b1ac9873fc3e12f29bf005150760c886259d31e9d9c951297efb857b0",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\prepare_kit7_config_types_runtime.py": "3ace2903f444c1b2119d1cff7d2adaa68d1c9b21d986089572c6b083fce68419",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\orchestrate_kit7_config_types_probe.js": "7c054f5249992378d8270c941fbe719b91e226b7a92545fc9d5959f7f33351b6",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\capture_kit7_config_types_log.ps1": "a16d3fb1261367d616594403211e2103cad49a8b2b97f60bc83d41fd7afb7741",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\finish_kit7_config_types_probe.py": "da9aa098a01c61339cf720ac8357340198bf5ad340d6ba813639d87d33bf62e0",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\verify_c_orderly_close.py": "137c06f7701c0a74b425090e9e9304a1e7f719d13cc131c76d6a4cd9f6d4262e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\capture_owned_server_identity.ps1": "700a2d6a3c9f8b17eb7d7d99d2700d135386e6693cf65277c467e90b30213ee9",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\copy_owned_server_rpt.ps1": "87816bb466336c042f10f2c8af6bcd70e67e505773d9cc4cfa409aacf79298db",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-native-config-types-20261027\\script-validator.json": "b0ce6d2e72b54be4fbb9a6b1a5d715a1024165d9347c62b470cf3e86c7c844d6",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-native-config-types-20261027\\coordinator-controls.json": "ae2859d5c6bb9291f5e8ac8fb0feb7850fcfece81ec583142ce35761f6514e83",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-native-config-types-20261027\\command-flow-controls.json": "33c0ca5d198120364ed4c5c6221c2fcfdc848f8d1be02adb564f70e3cb243ee8",
+    "P:\\scripts\\3_game\\global\\game.c": "81adad304e1462b7d027a5feaf69ad0255c5b618ae357a596d8aef525493af98",
+    "E:/DayZ-Baltic-Build/shape-repair-20261025/seal_kit7_config_types_probe.py": "9d3bd80249283d69539ed865671ebf9255ccaadc05cf307c1ebc00f547767629"
+  }
+}
