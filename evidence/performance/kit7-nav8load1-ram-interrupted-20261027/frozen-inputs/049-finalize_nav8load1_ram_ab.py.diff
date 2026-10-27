@@ -1,0 +1,18 @@
+--- reviewed/finalize_nav8load1_ram_ab.py
++++ final/finalize_nav8load1_ram_ab.py
+@@ -17,8 +17,14 @@
+ assert adjudication['status']=='ACCEPTED_AFTER_REVIEW' and reviewed
+ required=adjudication['inputs']
+ assert set(reviewed)<=set(required)<=set(gate['inputs'])
++changed={str(R/n) for n in ('prepare_nav8load1_ram_pass.py','finalize_nav8load1_ram_ab.py','test_nav8load1_joint_gate.py')}|{str(D/'joint-gate-controls.json')}
++assert set(adjudication['post_review_changes'])==changed
++assert all(required[p]==h for p,h in reviewed.items() if p not in changed)
++followup=R/'kit7-nav8load1-recovery-review-20261027'
++final_review=load(followup/'adjudication.json');assert final_review['status']=='ACCEPTED_AFTER_REVIEW'
++assert all(required[p]==final_review['inputs'][p] for p in changed)
+ assert all(gate['inputs'][p]==h for p,h in required.items())
+-for proof in (review/'source-hashes.json',review/'adjudication.json'):
++for proof in (review/'source-hashes.json',review/'adjudication.json',followup/'source-hashes.json',followup/'adjudication.json'):
+  assert gate['inputs'].get(str(proof))==sha(proof)
+ assert all(sha(p)==h for p,h in gate['inputs'].items())
+ native=R/'kit7-nav8load1-consumer-20261027'

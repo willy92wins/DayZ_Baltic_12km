@@ -1,0 +1,26 @@
+--- reviewed/recover_kit7_nav8load1_config_consumer.py
++++ final/recover_kit7_nav8load1_config_consumer.py
+@@ -11,8 +11,11 @@
+ assert __debug__
+ review=read(V/'response.json');assert not review['is_error'] and not review.get('permission_denials') and 'claude-fable-5-1' in review['modelUsage']
+ assert read(V/'completion.json')['returncode']==0 and read(V/'adjudication.json')['status']=='ACCEPTED_AFTER_REVIEW'
+-for p,h in read(V/'source-hashes.json').items():assert sha(p)==h,p
+-assert not (D/'config-result.json').exists() and not (D/'joint-result.json').exists()
++adjudication=read(V/'adjudication.json');reviewed=read(V/'source-hashes.json')
++assert set(reviewed)<=set(adjudication['inputs'])
++assert all(adjudication['inputs'][p]==h for p,h in reviewed.items() if p not in adjudication['post_review_changes'])
++for p,h in adjudication['inputs'].items():assert sha(p)==h,p
++assert not any((D/n).exists() for n in ['config-result.json','joint-result.json','config-recovery.json','config-consumer-recovery.stdout.log','config-consumer-recovery.stderr.log'])
+ assert 'ModuleNotFoundError' in (D/'config-consumer.stderr.log').read_text() and 'verify_nav_config_types_ev112' in (D/'config-consumer.stderr.log').read_text()
+ # Reuse the exact frozen admission and lifecycle checks, stopping before any write.
+ original=(R/'finish_kit7_nav8load1_probe.py').read_text()
+@@ -32,7 +35,8 @@
+ bootstrap='import sys,runpy;sys.path.insert(0,sys.argv[1]);script=sys.argv.pop(1)+"/verify_nav8_load1_config_ev112.py";sys.argv[0]=script;runpy.run_path(script,run_name="__main__")'
+ args=[sys.executable,'-I','-c',bootstrap,str(W/'tools/navigation'),'--probe-id',frozen['probe_id'],'--log',str(D/'config-runtime.log'),'--out',str(D/'config-result.json')]
+ p=subprocess.run(args,capture_output=True)
+-(D/'config-consumer-recovery.stdout.log').write_bytes(p.stdout);(D/'config-consumer-recovery.stderr.log').write_bytes(p.stderr)
++with (D/'config-consumer-recovery.stdout.log').open('xb') as f:f.write(p.stdout)
++with (D/'config-consumer-recovery.stderr.log').open('xb') as f:f.write(p.stderr)
+ config=read(D/'config-result.json')
+ joint=dict(status='PASS_LOAD1_CONFIG_AND_NATIVE607' if p.returncode==0 and config['status']=='PASS_NATIVE_LOAD1_CONFIG' else 'FAIL_LOAD1_CONFIG_OR_NATIVE607',config_status=config['status'],native_status=nav['status'],run_id=host['run_id'],packages=dep['packages'],ram_measured=False,global_acceptance=False,recovery='Same original logs; explicit isolated Python import path; original failure preserved')
+ write(D/'joint-result.json',joint)

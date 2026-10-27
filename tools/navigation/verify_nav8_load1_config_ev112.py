@@ -2,6 +2,10 @@
 import argparse
 import json
 from pathlib import Path
+import sys
+
+# Keep the CLI usable with Python -I, which excludes the script directory.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from verify_nav_config_types_ev112 import evaluate, require
 
 

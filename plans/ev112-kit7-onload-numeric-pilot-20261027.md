@@ -1,6 +1,6 @@
 # Kit7: piloto aislado del flag numérico al cargar navegación
 
-Estado: PLAN_REVISADO_SOUND_WITH_FIXES. Fable5.1 revisó el plan; Codex integra
+Estado: SONDA_PASS_RAM_INCONCLUSO. La ejecución de esta variante terminó: config+607 PASS; dos medidas RAM válidas y tercera admisión rechazada por puerto ajeno, sin run. Bloque incompleto conservado, no aceptación RAM ni repetición automática. Continuación: plans/ev112-kit7-post-load1-diagnostic-20261027.md. Estado previo del plan: PLAN_REVISADO_SOUND_WITH_FIXES. Fable5.1 revisó el plan; Codex integra
 los ajustes verificados. Empaquetador revisado y paquete offlinePASS; despliegue y código de sonda/RAM
 aún pendientes. Evidencia evidence/navigation/kit7-nav8-onload-package-20261027. Codex ejecutor/integrador por el encargo
 autónomo vigente. Esta fase continúa el pendiente de RAM; no es el council
