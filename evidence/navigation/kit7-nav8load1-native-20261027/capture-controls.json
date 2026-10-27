@@ -1,0 +1,50 @@
+{
+    "status":  "PASS_REAL_POWERSHELL_CAPTURE_CONTROLS",
+    "capture_sha256":  "b46e093d3f9d08f2421ed5423e975ba9bc123d438c7a92b683f7f85d1cb79647",
+    "rejected_parser_errors":  14,
+    "cases":  [
+                  {
+                      "name":  "success",
+                      "passed":  true,
+                      "exit_code":  0,
+                      "capture_only":  true
+                  },
+                  {
+                      "name":  "abort_end_zero",
+                      "passed":  true,
+                      "exit_code":  0,
+                      "capture_only":  true
+                  },
+                  {
+                      "name":  "stale_config",
+                      "passed":  true,
+                      "exit_code":  1,
+                      "capture_only":  true
+                  },
+                  {
+                      "name":  "stale_engine",
+                      "passed":  true,
+                      "exit_code":  1,
+                      "capture_only":  true
+                  },
+                  {
+                      "name":  "wrong_creation",
+                      "passed":  true,
+                      "exit_code":  1,
+                      "capture_only":  true
+                  },
+                  {
+                      "name":  "partial_config",
+                      "passed":  true,
+                      "exit_code":  1,
+                      "capture_only":  true
+                  },
+                  {
+                      "name":  "existing_output",
+                      "passed":  true,
+                      "exit_code":  1,
+                      "capture_only":  true
+                  }
+              ],
+    "limits":  "Synthetic logs on current owned PowerShell process; no DayZ acceptance."
+}

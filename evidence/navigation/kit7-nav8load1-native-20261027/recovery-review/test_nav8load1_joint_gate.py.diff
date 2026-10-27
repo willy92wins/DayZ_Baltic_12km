@@ -1,0 +1,39 @@
+--- reviewed/test_nav8load1_joint_gate.py
++++ final/test_nav8load1_joint_gate.py
+@@ -30,20 +30,28 @@
+   changed=copy.deepcopy(fixtures);changed[key][field]['P:/test/1.pbo']='wrong'
+   reject(lambda:run(changed),name+'_'+key+'_packages')
+  admission=source[source.index('gate='):source.index("native=R/'kit7-nav8load1-consumer-20261027'")]
+- reviewed={'orchestrate.js':'a','finish.py':'b','finalize.py':'c','sampler.ps1':'d','consumer.py':'e'}
+- review=R/'kit7-nav8load1-ram-review-20261027'
+- inputs={**reviewed,str(review/'source-hashes.json'):'review-sha',str(review/'adjudication.json'):'adjudication-sha'}
+- values={'source-hashes.json':reviewed,'adjudication.json':dict(status='ACCEPTED_AFTER_REVIEW',inputs=reviewed),'accepted.json':dict(status='ACCEPTED_AFTER_REVIEW',inputs=inputs)}
++ changed_paths={str(R/n) for n in ('prepare_nav8load1_ram_pass.py','finalize_nav8load1_ram_ab.py','test_nav8load1_joint_gate.py')}|{str(D/'joint-gate-controls.json')}
++ reviewed={**{str(R/n):n for n in ('orchestrate.js','finish.py','sampler.ps1','consumer.py')},**{p:'old-'+p for p in changed_paths}}
++ required={**reviewed,**{p:'new-'+p for p in changed_paths}}
++ review=R/'kit7-nav8load1-ram-review-20261027';followup=R/'kit7-nav8load1-recovery-review-20261027'
++ inputs={**required,**{str(folder/n):str(folder/n)+'-digest' for folder in (review,followup) for n in ('source-hashes.json','adjudication.json')}}
++ values={str(review/'source-hashes.json'):reviewed,str(review/'adjudication.json'):dict(status='ACCEPTED_AFTER_REVIEW',inputs=required,post_review_changes=sorted(changed_paths)),str(followup/'adjudication.json'):dict(status='ACCEPTED_AFTER_REVIEW',inputs=required),str(D/'accepted.json'):dict(status='ACCEPTED_AFTER_REVIEW',inputs=inputs)}
+  def admit(v):
+-  read=lambda p:v[p.name]
++  read=lambda p:v[str(p)]
+   sha=lambda p:inputs.get(str(p),'unknown')
+   exec(compile(admission,name,'exec'),dict(R=R,D=D,read=read,load=read,sha=sha))
+  admit(values);checks.append(dict(case=name+'_complete_review_coverage',passed=True))
+- for key in [None,*reviewed,str(review/'adjudication.json'),str(review/'source-hashes.json')]:
++ for key in [None,*reviewed,str(review/'adjudication.json'),str(review/'source-hashes.json'),str(followup/'source-hashes.json'),str(followup/'adjudication.json')]:
+   changed=copy.deepcopy(values)
+-  if key is None:changed['accepted.json']['inputs']={}
+-  else:del changed['accepted.json']['inputs'][key]
++  if key is None:changed[str(D/'accepted.json')]['inputs']={}
++  else:del changed[str(D/'accepted.json')]['inputs'][key]
+   reject(lambda:admit(changed),name+'_missing_review_coverage_'+str(key))
++ changed=copy.deepcopy(values);changed[str(review/'source-hashes.json')][str(R/'consumer.py')]='wrong-original-review-hash'
++ reject(lambda:admit(changed),name+'_changed_unapproved_review_value')
++ changed=copy.deepcopy(values);changed[str(followup/'adjudication.json')]['inputs'][next(iter(changed_paths))]='wrong-followup-value'
++ reject(lambda:admit(changed),name+'_changed_followup_review_value')
++ changed=copy.deepcopy(values);changed[str(review/'adjudication.json')]['post_review_changes'].append(str(R/'consumer.py'))
++ reject(lambda:admit(changed),name+'_expanded_change_allowlist')
+ source=(R/'prepare_nav8load1_ram_pass.py').read_text();section=source[source.index("attempts=D/'attempt-reservations'"):source.index('out.mkdir();')]
+ with tempfile.TemporaryDirectory() as folder:
+  scope=dict(D=Path(folder),n=1,row={'mission':'fresh'},sha=lambda p:'sealed',json=json)
