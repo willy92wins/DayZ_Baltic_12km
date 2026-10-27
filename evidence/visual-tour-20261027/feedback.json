@@ -1,0 +1,60 @@
+{
+  "status": "VISUAL_REJECTED_BY_USER",
+  "date": "2026-10-27",
+  "run_id": "65991f66-398a-4149-be99-f91298b30817",
+  "mod": "@DayZ_Baltic_EV112_Kit7Nav8Load1",
+  "world_sha256": "f0e0e6b99da08b48f62ee47fa72b8905a5c9843bee4a30cefa18f517ddb1f603",
+  "pilot_sha256": "3d9550bfb3f27e3916b14579990c240c4aaf4d779e628658ec572cb2c806a2b6",
+  "water_sha256": "97edcafe1fc86d9abb4c3aa591d5081a6dd940b87020069fd45c04f8d0deae43",
+  "dry_bank_candidate_in_game": false,
+  "player_position_before_free_camera": [
+    2390.6826171875,
+    5.084774971008301,
+    6941.03759765625
+  ],
+  "exact_defect_world_coordinates": "NOT_MEASURED; player position is not the defect position",
+  "screens": [
+    {
+      "file": "narva-l-shape.png",
+      "sha256": "a7664055a499a0a5674faa01faebd6a714a706ff4b8a0d2d1690dbc46b81946a",
+      "kept_local": true
+    },
+    {
+      "file": "narva-bridge-banks.png",
+      "sha256": "69473e2cd6e306d43fd0fefb7c56ed9bebc4e7f6a9e8d9a5fd99fdcb3e5b6248",
+      "kept_local": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "NARVA-VIS-01",
+      "bug": "007",
+      "observed": "Raised angular L-shaped ground in front of the dam",
+      "status": "OPEN"
+    },
+    {
+      "id": "NARVA-VIS-02",
+      "bug": "015",
+      "observed": "Bridge reported misaligned by user; intended road axis and both approaches must be checked in world coordinates",
+      "status": "OPEN"
+    },
+    {
+      "id": "NARVA-VIS-03",
+      "bug": "007",
+      "observed": "Banks alternate straight edges, polygonal corners and overly regular circular arcs, including red-marked edges around dam and bridge",
+      "status": "OPEN"
+    }
+  ],
+  "instruction": "Systemic procedural detection and repair across the map; do not scope to a local Narva patch.",
+  "annotated_image": "Red-marked third image present in conversation; no local path supplied. Do not claim it is archived.",
+  "code_findings": [
+    "rectangle_components detects closed rectangular components, not general open L/U shapes.",
+    "terrain_screen tags protected domains without suppressing findings; protection exclusion is not established as cause.",
+    "route_screen targets route lines and does not certify every visible shoreline silhouette or circular arc."
+  ],
+  "limits": [
+    "No global visual PASS was issued; current scope failure still requires correction.",
+    "Exact source layer of L, matching terrain report row and bridge identity remain to be isolated.",
+    "No repair, new validator, build or runtime acceptance was performed during this review."
+  ]
+}

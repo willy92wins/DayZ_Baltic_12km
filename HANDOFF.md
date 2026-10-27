@@ -1,6 +1,7 @@
 # DayZ Baltic 12km â€” handoff
 
 <!-- LIVE-STATE:START -->
+visual_review_current: Visita humana27-10: ocho observaciones rechazadas, incluyendo carretera partida por río en4789.515/5516.522; carretera49 bien localmente con pavimentado y conducción pendientes. Evidencia en evidence/visual-tour-20261027. Run anterior cbcf20d3 cerrado oficialmente. Bosque8500/3500 preparado, arranque en cola FIFO (seguir ACTIVE-WORK.md, no duplicar). Requisito: detección y reparación PROCEDIMENTAL global de cruces, lechos y orillas de río/mar. Revaluar plan MLOD después de la visita; no lanzar experimentos paralelos.
 project: DayZ_Baltic_12km
 updated: 2026-10-27 (orilla seca completa y referencia real del agua: OFFLINE_CANDIDATE_ONLY)
 owner: Codex, ejecutor e integrador por petición viva de Guillermo: continuar OT1 y EV112 hasta completar las pruebas autorizadas. Plan aprobado plans/ev112-plan-astra.md; decisiones del picker incorporadas en la sesión canónica.

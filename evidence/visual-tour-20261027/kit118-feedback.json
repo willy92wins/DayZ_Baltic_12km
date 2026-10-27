@@ -1,0 +1,33 @@
+{
+  "status": "VISUAL_REJECTED_BY_USER",
+  "date": "2026-10-27",
+  "run_id": "216a08f4-9e0c-4c03-9245-d22f9aea1d33",
+  "site": "kit-118",
+  "reference_position_xz": [8253, 9038],
+  "position_scope": "Tour stop, not exact defect coordinates. Affected endpoint still to identify.",
+  "build_identity_reference": "feedback.json",
+  "dry_bank_candidate_in_game": false,
+  "evidence_type": "User observation in game; no kit118 screenshot or measurement supplied yet",
+  "duplicate_user_reply_deduplicated": true,
+  "findings": [
+    {
+      "id": "KIT118-VIS-01",
+      "bug": "007",
+      "observed": "Los lechos del río sobresalen mucho",
+      "status": "OPEN",
+      "required_coverage": "Procedural validation of the whole visible riverbed envelope relative to independent surrounding terrain and actual water level, including transitions and silhouette; agreement between authored visual and collision surfaces alone is insufficient."
+    },
+    {
+      "id": "KIT118-VIS-02",
+      "bug": "020",
+      "observed": "En el extremo solapa con la carretera",
+      "status": "OPEN",
+      "required_coverage": "Procedural validation of both complete endpoints of every river against the actual road corridor and approaches in the compiled world. Classify intentional crossings and validate their support, clearance and connectivity instead of excluding them."
+    }
+  ],
+  "user_classification": "Error de revisión",
+  "scope": "Systemic detection and procedural repair of all equivalent cases, not a kit118-only patch",
+  "root_cause": "NOT_ISOLATED; source layer, exact footprint and relation to previous checker findings remain to be verified",
+  "repair_status": "NOT_IMPLEMENTED",
+  "existing_tolerances_and_protections": "UNCHANGED"
+}
