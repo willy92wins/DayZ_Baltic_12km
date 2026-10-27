@@ -1,6 +1,6 @@
 # Kit7: diagnóstico antes de otro candidato de navegación
 
-Estado: PLAN_REVISADO_SOUND_WITH_FIXES. Fable5.1 revisó; Codex integra las correcciones contrastadas. Codex ejecutor/integrador por el encargo vigente.
+Estado: EJECUTADO_DIAGNOSTICO_LOCAL_INCONCLUSO. Evidencia: evidence/navigation/kit7-post-load1-diagnostic-20261027. Se ampliaron52XY; los tres errores Nav12 se descomponen numéricamente dentro de sus polígonos. Mecanismo del generador/control corrector no verificados. Estado del plan aprobado: PLAN_REVISADO_SOUND_WITH_FIXES. Fable5.1 revisó; Codex integra las correcciones contrastadas. Codex ejecutor/integrador por el encargo vigente.
 Continúa P7 y el pendiente de RAM. No inicia el council ampliado ni autoriza
 otro valor de tileWidth, otra generación, edición del NM o cambio de tolerancias.
 
