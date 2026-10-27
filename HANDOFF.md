@@ -2,10 +2,10 @@
 
 <!-- LIVE-STATE:START -->
 project: DayZ_Baltic_12km
-updated: 2026-10-27 (Nav8 funcional/RAM abierto; conversión nativa de flags observada; siguiente piloto revisado)
+updated: 2026-10-27 (Nav8 funcional/RAM abierto; sonda flags completa; Nav8Load1 empaquetado offline y sin desplegar)
 owner: Codex, ejecutor e integrador por petición viva de Guillermo: continuar OT1 y EV112 hasta completar las pruebas autorizadas. Plan aprobado plans/ev112-plan-astra.md; decisiones del picker incorporadas en la sesión canónica.
 status: EV112 abierto. F conserva 59 picos/12 depresiones corregidos y corrige una transición rectangular. Quedan268picos,1144depresiones,4transiciones. Colisión C, bosque muestreado y 11 secciones de carretera pasan motor; vista/cliente/global pendientes.
-plan: plans/ev112-kit7-onload-numeric-pilot-20261027.md. Cambio experimental únicamente OnLoad texto true -> número1, mismo NM. Plan revisado; implementación y nueva aceptación pendientes.
+plan: plans/ev112-kit7-onload-numeric-pilot-20261027.md. Solo OnLoad literal1, mismo NM; revisión de plan y empaquetador integradas. Paquete f0e0e6b9… offlinePASS. Sonda/RAM pendientes.
 candidate_f: F mundo4e5f909d2a27e9322299d751d2d54d67f5cc06700499d0498e533b5e1674ef38; terreno33d6f2713800bd07f3e20ca80870423a8a41c16b7408492d6f705f3fbffe9049; mergedcaa5398021399b6e435faf407005f053d58758091371b5b8fbd2e60e53f69cfc. E exacto+94vértices,59árbolesY. 4749controles físicos PASS; F original NM6 conservado, CNav9 validada aparte. Bosque3727/269968 SAMPLED_BOUNDARY_CLEAR; no disco continuo.
 candidate: E:/DayZ-Baltic-Build/shape-repair-20261025/guarded-relief-batch-e: terreno efbf0c18b1144ee401d983e4f64e2a35b489c69ae5f333524fdc66fbbf4714f9; merged705196d69646f2528aa5796d26e90bab36aebd07a5a0ddb861b31b7160f4a33e. StageE WRPfuente85b2d03dded38382d9deaa01cfc1a36b996087ce2d7e8cadeb8f07c135894887. PackageE verifica2578725objetos/62poses; mundo3a285df12e565373d678997aedb9b51f65f11cdbb0f24939da3b8ce77712231a. BaseT y candidatoD preservados.
 pilots: EV111 V2 @DayZ_Baltic_EV111_ForestPilotV2 (mundo ee4bd96eâ€¦, E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev111/r2/BUILD-EV111-r2.md); EV111 V1; EV110 @DayZ_Baltic_EV110_LatticeShoresV1 mundo 226932e3â€¦, agua 46e63c70â€¦ (terreno ev110/terrain-ev110.npz d25e9428â€¦, cadena evidence/â€¦/ev110/BUILD-EV110.md); EV109 7ad4d6cfâ€¦; EV108 V7 389e27a6â€¦. Build E:/DayZ-Baltic-Build/v31-pond-layer-20261013; trabajo de EV112 en ev112-wip/; relevo en handoff-20261018/ (MANIFEST.json).
@@ -18,9 +18,9 @@ validation: Kit7 fuente2578398objetos y201modelos; G2/G3/G7/G8 y carreteras offl
 cleanup: Run2e1e9c77-222e-438c-955e-55b2f0ec0371 cerrado oficialmente, observador y lease liberado, selfnone,0pending. No relanzar sonda config consumida.
 performance: Control kit7original de 12,5 DIAGNOSTIC_ONLY: PASS_EMPTY_SERVER_RAM_BUDGET, seis ABBAAB nuevas,sin repeticiones. Residente 2787.18/3348.65MiB ratio0.832329; privada 3151.58/3731.24MiB ratio0.844646. Conserva4FAILaltura. Nav8funcional conservaFAILRAM1.265913/1.241333. SinFPS/capacidad.
 bugs: bugs.md una fila por ID: 007 (orillas en escalera; kit EV108), 015 (puentes; EV109), 017, 018, 019, 020. Historia en bugs-history-hasta-2026-10-10.md.
-next: Implementar y revisar piloto Nav8Load1; preservar bytes NM/WRP/auxiliares. Confirmar flag en motor y607; solo entonces bloque RAM nuevo contra Chernarus. Sin causalidad ni aceptación global anticipada.
+next: Preparar despliegue aislado @DayZ_Baltic_EV112_Kit7Nav8Load1 y revisión de sonda config+607. Releer PBO destino; no lanzar hasta sellar. Si607PASS, RAMABBAAB nuevo contraChernarus.
 git: GitHub público https://github.com/willy92wins/DayZ_Baltic_12km. Historial público saneado independiente en E:/DayZ-Baltic-Build/shape-repair-20261025/public-repo; historial local completo conservado. No publicar ramas locales ni usar --all/--mirror; ver PUBLICATION.md.
-handoff: evidence/navigation/kit7-native-config-types-20261027/README.md; Nav8/Nav12/original12,5 y diagnóstico Chernarus preservados.
+handoff: evidence/navigation/kit7-nav8-onload-package-20261027/README.md; diagnóstico de getters y estados Nav8/Nav12/original12,5 preservados.
 deployed: Nav8 funcional conservado; Nav12 af12bfe3ed48c6d436ed2f22bf8057d28a8e96d2de402ef3c36ae09862bfc87d rechazado; NavV9 original a2919a80ae6da6fc90e75b0ac55d1e9dd4ba4a39f6700b9fec237c7e7683b16c restaurado por hash solo para diagnóstico.
 visual_probe: C conserva4749+300físicaPASS; NMpropia CNav9 y45consultas/8rutasF PASS en servidor normal. Ninguna cobertura de actor ni tránsito por25modelosC. Sincliente/vista/CCT/FPS/capacidad. E+Nav9 anterior conservado.
 council: Fable5.1, Grok4.7, Gemini4ArgonHigh, Muse Wonder1.0 CLI nativo, GLM5.3FlashEXL3 y Qwen3.8. Siete informes de seis familias; Glimmer suplementario. Opus sustituido por Fable por el usuario. Adjudicación y recibos en checkpoint actual.

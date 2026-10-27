@@ -21,6 +21,9 @@ evidence/** -text
 # Exact captured decimal-clock regression, including native line endings.
 tests/fixtures/server-baseline-roundoff.log -text
 
+# Literal compiler export is bound by SHA256 in the OnLoad isolation controls.
+tests/fixtures/nav8-onload/original.cpp -text
+
 # Frozen player-view fixtures retain their recorded deployment hashes.
 missions/BalticV30VisualTourV1.BalticTrial/** -text
 missions/BalticV30VisualFollowupV1.BalticTrial/** -text

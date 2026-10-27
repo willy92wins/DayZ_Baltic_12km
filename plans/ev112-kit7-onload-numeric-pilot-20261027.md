@@ -1,7 +1,8 @@
 # Kit7: piloto aislado del flag numérico al cargar navegación
 
 Estado: PLAN_REVISADO_SOUND_WITH_FIXES. Fable5.1 revisó el plan; Codex integra
-los ajustes verificados. Código nuevo aún pendiente de revisión. Codex ejecutor/integrador por el encargo
+los ajustes verificados. Empaquetador revisado y paquete offlinePASS; despliegue y código de sonda/RAM
+aún pendientes. Evidencia evidence/navigation/kit7-nav8-onload-package-20261027. Codex ejecutor/integrador por el encargo
 autónomo vigente. Esta fase continúa el pendiente de RAM; no es el council
 ampliado y no cambia decisiones de producto ni tolerancias.
 
