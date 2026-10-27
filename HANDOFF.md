@@ -24,6 +24,7 @@ handoff: evidence/navigation/chernarus-height-reference-20261027/README.md; Nav8
 deployed: Nav8 funcional conservado; Nav12 af12bfe3ed48c6d436ed2f22bf8057d28a8e96d2de402ef3c36ae09862bfc87d rechazado; NavV9 original a2919a80ae6da6fc90e75b0ac55d1e9dd4ba4a39f6700b9fec237c7e7683b16c restaurado por hash solo para diagnóstico.
 visual_probe: C conserva4749+300físicaPASS; NMpropia CNav9 y45consultas/8rutasF PASS en servidor normal. Ninguna cobertura de actor ni tránsito por25modelosC. Sincliente/vista/CCT/FPS/capacidad. E+Nav9 anterior conservado.
 council: Fable5.1, Grok4.7, Gemini4ArgonHigh, Muse Wonder1.0 CLI nativo, GLM5.3FlashEXL3 y Qwen3.8. Siete informes de seis familias; Glimmer suplementario. Opus sustituido por Fable por el usuario. Adjudicación y recibos en checkpoint actual.
+council_next: plans/quality-council-expanded-after-ev112-20261027.md. Encargo27-10: terminar el trabajo vigente; council ampliado de validadores, mapa y herramientas; consolidar todas las mejoras aprobadas en el plan y ejecutarlas. Núcleo Claude/Fable, ChatGPT, Grok, Muse Wonder CLI y Gemini/Argon; otras familias según sondeo vivo. Estado EN_COLA, no ejecutado.
 <!-- LIVE-STATE:END -->
 
 ## Leer primero
