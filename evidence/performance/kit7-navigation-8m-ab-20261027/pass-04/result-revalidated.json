@@ -1,0 +1,65 @@
+{
+  "status": "PASS_COMPLETE_EMPTY_SERVER_MEASUREMENT",
+  "world": "BalticTrial",
+  "engine_world": "BalticTrial",
+  "process_id": 64608,
+  "start_utc": "2026-10-27T06:12:05.859767Z",
+  "host_samples": 270,
+  "measurement_samples": 217,
+  "host_measurement_seconds": 119.7061344,
+  "engine_measurement_seconds": 120.00001,
+  "cpu_seconds": 45.3125,
+  "cpu_percent_one_logical_core": 37.85311440146212,
+  "start_boundary_uncertainty_s": 0.5403301999999996,
+  "end_boundary_uncertainty_s": 0.5629369000000111,
+  "engine": {
+    "status": "PASS_COMPLETE_SERVER_BASELINE_MEASUREMENT",
+    "samples": 120,
+    "measurement_seconds": 120.00001,
+    "warmup_seconds": 30.0,
+    "mean_update_rate_hz": 7614.907698757692,
+    "native_fps_avg64_median": 14.2857,
+    "native_fps_min64_minimum": 14.2857,
+    "native_fps_avg64_range": [
+      14.2857,
+      14.2857
+    ],
+    "max_update_timeslice_ms": 4.0,
+    "updates_over_50ms": 0,
+    "limits": [
+      "Isolated server, no CE/AI/players. Not 80-100-player capacity.",
+      "Native FPS are rolling 64-frame samples, not a frame-time percentile.",
+      "Headless native FPS may be stale or use another clock: do not equate this API value with OnUpdate rate or player performance.",
+      "OnUpdate timeslice is simulation delta, not CPU execution duration."
+    ]
+  },
+  "limits": [
+    "Empty dedicated server, no CE/AI/players/client. No player-capacity or client-FPS verdict.",
+    "CPU is cumulative process CPU per monotonic wall time relative to one logical core.",
+    "Host capture targets 0.5-second cadence; measured boundary uncertainty reported, not exact synchronization.",
+    "Working set and private bytes have different meanings; neither is VRAM."
+  ],
+  "working_set_mib": {
+    "median": 4243.30078125,
+    "minimum": 4243.265625,
+    "maximum": 4243.48046875
+  },
+  "private_mib": {
+    "median": 4638.4140625,
+    "minimum": 4636.3984375,
+    "maximum": 4641.74609375
+  },
+  "engine_read_unavailable_samples": 0,
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-04\\reference.json": "dd359fdc73e5ca323a2e9831dbb99d8d95e7ab9172d7899cbf1f3bb3f22ba9d7",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-04\\host.jsonl": "3ed5cee331c4a8d13b4b4fe73b01e9787cd5427999a5f362d42f03fa87cfcf45",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-04\\baltic_ab_04_8d386a461dc5.log": "b9a22f6678a4f7ecc579babc44e87decc9960ecb464505a655220b5a558497ba"
+  },
+  "validation_sources": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\verify_terrain_perf.py": "f526c071958260cca6fa0132de5b0e6604f098d5f6d8d66e44fca540cb66c163",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\read_server_baseline_ev112.py": "e215b4101351197e97b4db87acaa8862c08c80fbbfdf762764a14f415a34c0ce",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\compare_server_baseline_ev112.py": "59966adffb6355aed0c7cff90c9edb5ac5841e5b2006d73e4c5ec43d68021d70"
+  },
+  "revalidated_utc": "2026-10-27T06:31:51.711036+00:00",
+  "all_bound_files_rehashed": true
+}

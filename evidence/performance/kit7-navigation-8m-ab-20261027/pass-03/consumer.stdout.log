@@ -1,0 +1,58 @@
+{
+  "status": "PASS_COMPLETE_EMPTY_SERVER_MEASUREMENT",
+  "world": "ChernarusPlus",
+  "engine_world": "ChernarusPlus",
+  "process_id": 47604,
+  "start_utc": "2026-10-27T06:05:31.972134Z",
+  "host_samples": 262,
+  "measurement_samples": 216,
+  "host_measurement_seconds": 119.4994685,
+  "engine_measurement_seconds": 120.0,
+  "cpu_seconds": 45.171875,
+  "cpu_percent_one_logical_core": 37.80090034459023,
+  "start_boundary_uncertainty_s": 0.5598247000000001,
+  "end_boundary_uncertainty_s": 0.5309454000000073,
+  "engine": {
+    "status": "PASS_COMPLETE_SERVER_BASELINE_MEASUREMENT",
+    "samples": 120,
+    "measurement_seconds": 120.0,
+    "warmup_seconds": 30.0,
+    "mean_update_rate_hz": 6829.433333333333,
+    "native_fps_avg64_median": 14.2857,
+    "native_fps_min64_minimum": 14.2857,
+    "native_fps_avg64_range": [
+      14.2857,
+      14.2857
+    ],
+    "max_update_timeslice_ms": 4.0,
+    "updates_over_50ms": 0,
+    "limits": [
+      "Isolated server, no CE/AI/players. Not 80-100-player capacity.",
+      "Native FPS are rolling 64-frame samples, not a frame-time percentile.",
+      "Headless native FPS may be stale or use another clock: do not equate this API value with OnUpdate rate or player performance.",
+      "OnUpdate timeslice is simulation delta, not CPU execution duration."
+    ]
+  },
+  "limits": [
+    "Empty dedicated server, no CE/AI/players/client. No player-capacity or client-FPS verdict.",
+    "CPU is cumulative process CPU per monotonic wall time relative to one logical core.",
+    "Host capture targets 0.5-second cadence; measured boundary uncertainty reported, not exact synchronization.",
+    "Working set and private bytes have different meanings; neither is VRAM."
+  ],
+  "working_set_mib": {
+    "median": 3353.546875,
+    "minimum": 3353.51171875,
+    "maximum": 3353.67578125
+  },
+  "private_mib": {
+    "median": 3737.86328125,
+    "minimum": 3735.84765625,
+    "maximum": 3738.12109375
+  },
+  "engine_read_unavailable_samples": 0,
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-03\\reference.json": "a63020db97ed02778e8b9aca7d3a76888890596164a8b0191e9244f9fcf5e282",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-03\\baltic_ab_03_45ee1f68e39e.log": "d9f25f4a3a3a373624301cfef55d53d54b05adfefe355bbd8b95e801d0bf655e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-03\\host.jsonl": "e87b4f392797811b195b895325525e49843cb367cb537b9d890add5fa7fa2b10"
+  }
+}

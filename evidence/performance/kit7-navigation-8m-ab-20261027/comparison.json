@@ -1,0 +1,102 @@
+{
+  "status": "FAIL_EMPTY_SERVER_RAM_BUDGET",
+  "order": [
+    "BalticTrial",
+    "ChernarusPlus",
+    "ChernarusPlus",
+    "BalticTrial",
+    "BalticTrial",
+    "ChernarusPlus"
+  ],
+  "metrics": {
+    "working_set_mib": {
+      "baltic": [
+        4242.12109375,
+        4243.30078125,
+        4242.40625
+      ],
+      "chernarus": [
+        3347.140625,
+        3353.546875,
+        3351.26171875
+      ],
+      "baltic_median": 4242.40625,
+      "chernarus_median": 3351.26171875,
+      "ratio": 1.2659131413891456,
+      "paired_ratios": [
+        1.2673865752951445,
+        1.2653172713591487,
+        1.2659131413891456
+      ],
+      "baltic_dispersion": 0.0002780703757448971,
+      "chernarus_dispersion": 0.0019115934646815624,
+      "status": "FAIL_LOCAL_RAM_BUDGET"
+    },
+    "private_mib": {
+      "baltic": [
+        4635.1015625,
+        4638.4140625,
+        4637.6015625
+      ],
+      "chernarus": [
+        3730.23046875,
+        3737.86328125,
+        3735.984375
+      ],
+      "baltic_median": 4637.6015625,
+      "chernarus_median": 3735.984375,
+      "ratio": 1.2413332329581812,
+      "paired_ratios": [
+        1.242577798163024,
+        1.2409266239799017,
+        1.2413332329581812
+      ],
+      "baltic_dispersion": 0.0007142700715786211,
+      "chernarus_dispersion": 0.0020430525756682267,
+      "status": "FAIL_LOCAL_RAM_BUDGET"
+    },
+    "cpu_percent_one_logical_core": {
+      "baltic": [
+        2.8304489357613063,
+        37.85311440146212,
+        5.247630763753806
+      ],
+      "chernarus": [
+        2.6069558496035095,
+        37.80090034459023,
+        4.746170863607771
+      ],
+      "baltic_median": 5.247630763753806,
+      "chernarus_median": 4.746170863607771,
+      "ratio": 1.1056556779257738,
+      "paired_ratios": [
+        1.085729524798737,
+        1.0013812913553886,
+        1.1056556779257738
+      ],
+      "baltic_dispersion": 6.6739957596879265,
+      "chernarus_dispersion": 7.415229140788723,
+      "status": "DESCRIPTIVE_ONLY"
+    }
+  },
+  "limits": [
+    "Only empty dedicated-server process RAM and CPU; no CE/AI/players/client.",
+    "No client FPS, VRAM or production-capacity verdict.",
+    "Configuration and file identities cannot prove the absence of unrelated host load."
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-01\\reference.json": "8783608e62060642429ca3447daa96964e2840711938a9069c0e525aaa544a5e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-02\\reference.json": "0f49c120ac7acd9107918e366dff1561c33358ef8893c1f66470f663533a0227",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-03\\reference.json": "a63020db97ed02778e8b9aca7d3a76888890596164a8b0191e9244f9fcf5e282",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-04\\reference.json": "dd359fdc73e5ca323a2e9831dbb99d8d95e7ab9172d7899cbf1f3bb3f22ba9d7",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-05\\reference.json": "b1d76a7c5bf32fdb76b8d8be511ecbf13918742c6b9998c609f7040cf474a938",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav8-ram-ab-20261027\\pass-06\\reference.json": "4826755753547696b3acb7a501d4be6a8b033dbc1be54ec09ef30e078584bac2"
+  },
+  "validation_sources": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\verify_terrain_perf.py": "f526c071958260cca6fa0132de5b0e6604f098d5f6d8d66e44fca540cb66c163",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\read_server_baseline_ev112.py": "e215b4101351197e97b4db87acaa8862c08c80fbbfdf762764a14f415a34c0ce",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\compare_server_baseline_ev112.py": "59966adffb6355aed0c7cff90c9edb5ac5841e5b2006d73e4c5ec43d68021d70"
+  },
+  "completed_utc": "2026-10-27T06:33:56.790092+00:00",
+  "measurement_repeats": 0
+}
