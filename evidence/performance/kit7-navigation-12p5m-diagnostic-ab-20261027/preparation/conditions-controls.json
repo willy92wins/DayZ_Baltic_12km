@@ -1,0 +1,63 @@
+{
+  "status": "PASS_RAM_CONSUMER_CONTRACT_CONTROLS",
+  "checks": [
+    {
+      "name": "actual_mission_1",
+      "status": "PASS_CONSUMER_COMPATIBLE"
+    },
+    {
+      "name": "actual_mission_2",
+      "status": "PASS_CONSUMER_COMPATIBLE"
+    },
+    {
+      "name": "actual_mission_3",
+      "status": "PASS_CONSUMER_COMPATIBLE"
+    },
+    {
+      "name": "actual_mission_4",
+      "status": "PASS_CONSUMER_COMPATIBLE"
+    },
+    {
+      "name": "actual_mission_5",
+      "status": "PASS_CONSUMER_COMPATIBLE"
+    },
+    {
+      "name": "actual_mission_6",
+      "status": "PASS_CONSUMER_COMPATIBLE"
+    },
+    {
+      "name": "six_actual_missions_equivalent",
+      "status": "PASS"
+    },
+    {
+      "name": "old_wrong_prefix",
+      "status": "PASS_REJECTED",
+      "reason": "Mission and engine log identity differ"
+    },
+    {
+      "name": "identical_temporary_copy_preserves_equivalence",
+      "status": "PASS"
+    },
+    {
+      "name": "mismatched_engine_log",
+      "status": "PASS_REJECTED",
+      "reason": "Mission and engine log identity differ"
+    },
+    {
+      "name": "wrong_world_guard",
+      "status": "PASS_REJECTED",
+      "reason": "Mission world guard missing or repeated"
+    },
+    {
+      "name": "mission_drift_breaks_equivalence",
+      "status": "PASS_REJECTED",
+      "reason": "Common conditions changed"
+    }
+  ],
+  "count": 12,
+  "native_measurement": false,
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-navv9diag-ram-ab-20261027\\missions.json": "4fc182ab2e95ad8576b16d8616bc324740fff59eab820b8c90561254bd13b18d",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\compare_server_baseline_ev112.py": "59966adffb6355aed0c7cff90c9edb5ac5841e5b2006d73e4c5ec43d68021d70"
+  }
+}

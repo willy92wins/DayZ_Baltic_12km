@@ -1,0 +1,105 @@
+{
+  "status": "PASS_EMPTY_SERVER_RAM_BUDGET",
+  "order": [
+    "BalticTrial",
+    "ChernarusPlus",
+    "ChernarusPlus",
+    "BalticTrial",
+    "BalticTrial",
+    "ChernarusPlus"
+  ],
+  "metrics": {
+    "working_set_mib": {
+      "baltic": [
+        2786.98046875,
+        2787.17578125,
+        2789.25390625
+      ],
+      "chernarus": [
+        3348.6484375,
+        3350.2734375,
+        3347.1328125
+      ],
+      "baltic_median": 2787.17578125,
+      "chernarus_median": 3348.6484375,
+      "ratio": 0.8323285747281436,
+      "paired_ratios": [
+        0.8322702489577185,
+        0.8319248662072826,
+        0.8333263310716028
+      ],
+      "baltic_dispersion": 0.0008156778324833185,
+      "chernarus_dispersion": 0.0009378783884356329,
+      "status": "PASS_LOCAL_RAM_BUDGET"
+    },
+    "private_mib": {
+      "baltic": [
+        3151.578125,
+        3149.796875,
+        3155.1640625
+      ],
+      "chernarus": [
+        3731.2421875,
+        3733.01171875,
+        3730.87109375
+      ],
+      "baltic_median": 3151.578125,
+      "chernarus_median": 3731.2421875,
+      "ratio": 0.8446458221227431,
+      "paired_ratios": [
+        0.8446458221227431,
+        0.8437682794241831,
+        0.8456909883017852
+      ],
+      "baltic_dispersion": 0.0017030158501940991,
+      "chernarus_dispersion": 0.0005737030437668421,
+      "status": "PASS_LOCAL_RAM_BUDGET"
+    },
+    "cpu_percent_one_logical_core": {
+      "baltic": [
+        4.547995833506938,
+        5.065338035532237,
+        4.207920274580682
+      ],
+      "chernarus": [
+        4.29714617441342,
+        5.421145870371576,
+        4.698383540366937
+      ],
+      "baltic_median": 4.547995833506938,
+      "chernarus_median": 4.698383540366937,
+      "ratio": 0.9679916069925076,
+      "paired_ratios": [
+        1.058375872942642,
+        0.9343666738827393,
+        0.895610211134881
+      ],
+      "baltic_dispersion": 0.18852650537509488,
+      "chernarus_dispersion": 0.23923114967118517,
+      "status": "DESCRIPTIVE_ONLY"
+    }
+  },
+  "limits": [
+    "Only empty dedicated-server process RAM and CPU; no CE/AI/players/client.",
+    "No client FPS, VRAM or production-capacity verdict.",
+    "Configuration and file identities cannot prove the absence of unrelated host load."
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-navv9diag-ram-ab-20261027\\pass-01\\reference.json": "0931f407f99715ecd87b12887cea4ea9a65a3c9580cba713162bb78af257c969",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-navv9diag-ram-ab-20261027\\pass-02\\reference.json": "fddf026bc5efc27edd0d480f14a489de1f2b11b062df82e27e8453ea29ebff88",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-navv9diag-ram-ab-20261027\\pass-03\\reference.json": "b49fa102dad84f827894c7d201a1919f15400f49a760ff2713b32c50e2e03779",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-navv9diag-ram-ab-20261027\\pass-04\\reference.json": "282fe8243fd5921aff9d736b2f0ceb712759a9ac63a92784de57f07b507aecef",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-navv9diag-ram-ab-20261027\\pass-05\\reference.json": "878db4aad8c0ba842886d8b438632b7a1491047c4ca95367ab416880f0d503a3",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-navv9diag-ram-ab-20261027\\pass-06\\reference.json": "6bc6e416b83d4723ced4fc0410c58a2fda1f4886236d319d7bf16ca80be10bd7"
+  },
+  "validation_sources": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\verify_terrain_perf.py": "f526c071958260cca6fa0132de5b0e6604f098d5f6d8d66e44fca540cb66c163",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\read_server_baseline_ev112.py": "e215b4101351197e97b4db87acaa8862c08c80fbbfdf762764a14f415a34c0ce",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\performance\\compare_server_baseline_ev112.py": "59966adffb6355aed0c7cff90c9edb5ac5841e5b2006d73e4c5ec43d68021d70"
+  },
+  "completed_utc": "2026-10-27T10:17:47.422507+00:00",
+  "measurement_repeats": 0,
+  "acceptance_eligible": false,
+  "scope": "DIAGNOSTIC_ONLY_ORIGINAL_FOUR_HEIGHT_FAILURES_PRESERVED",
+  "height_result_sha256": "e086af218bc393476256cbfc17a540964d2daf53735dd9587585ae15eb9f7041"
+}

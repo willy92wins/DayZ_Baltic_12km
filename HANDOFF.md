@@ -2,7 +2,7 @@
 
 <!-- LIVE-STATE:START -->
 project: DayZ_Baltic_12km
-updated: 2026-10-27 (Nav8 funcional publicado; Nav12 rechazado por tres alturas nuevas)
+updated: 2026-10-27 (Nav8 funcional publicado; Nav12 rechazado; control RAM12,5 completado)
 owner: Codex, ejecutor e integrador por petición viva de Guillermo: continuar OT1 y EV112 hasta completar las pruebas autorizadas. Plan aprobado plans/ev112-plan-astra.md; decisiones del picker incorporadas en la sesión canónica.
 status: EV112 abierto. F conserva 59 picos/12 depresiones corregidos y corrige una transición rectangular. Quedan268picos,1144depresiones,4transiciones. Colisión C, bosque muestreado y 11 secciones de carretera pasan motor; vista/cliente/global pendientes.
 plan: plans/ev112-kit7-navv9-ram-diagnostic-20261027.md. Medir el control original12,5 antes de otra generación; diagnóstico separado, cuatro FAIL preservados. Sin rebajar tolerancias.
@@ -15,12 +15,12 @@ relief: EV97: suavizado Ïƒ 12 m solo de tierra seca; reserva, plataformas y Na
 focus: el cliente sin foco al cargar abre el menÃº de pausa (cielo morado, terreno sin texturas) hasta que Guillermo hace clic en la ventana y pulsa Â«ContinuarÂ».
 blocker: Nav8 cierra los cuatro fallos y pasa607, pero falla RAM1.26591/1.24133. Nav12 introduce tres alturas nuevas0.856856/0.923148/0.818588 contra0.801 y queda rechazado. No se ejecutó RAM12. Visual,actores y global siguen pendientes.
 validation: Kit7 fuente2578398objetos y201modelos; G2/G3/G7/G8 y carreteras offlinePASS. Motor propio11052alturas/0fallos (3430vértices+7622centroides, máximo0.0001861622m); frontera3727/269968 SAMPLED_BOUNDARY_CLEAR,3categorías0.19tests; Fable5.1 revisado y corregido. No aceptación visual/global.
-cleanup: Generación y sonda607 Nav12 cerradas oficialmente; leases liberados, sin procesos propios pendientes al cierre. Nav8 cerrado. Automatización anterior PAUSED; próximo control diagnóstico por FIFO.
-performance: FAIL_EMPTY_SERVER_RAM_BUDGET sobre kit7 Nav8: 6 pasadas nuevas ABBAAB, 3 por mapa, 0 repeticiones. Residente 4242.41/3351.26 MiB (ratio 1.26591); privada 4637.60/3735.98 MiB (ratio 1.24133). Presupuesto 1.10 y dispersión 5% intactos. CPU descriptiva; no FPS/VRAM/capacidad. Evidencia evidence/performance/kit7-navigation-8m-ab-20261027.
+cleanup: Los seis runs propios del control RAM12,5 cerrados oficialmente y leases liberados. Generación/sonda Nav12 y Nav8 también cerrados. Automatización anterior PAUSED; siguientes lanzamientos por FIFO.
+performance: Control kit7original de 12,5 DIAGNOSTIC_ONLY: PASS_EMPTY_SERVER_RAM_BUDGET, seis ABBAAB nuevas,sin repeticiones. Residente 2787.18/3348.65MiB ratio0.832329; privada 3151.58/3731.24MiB ratio0.844646. Conserva4FAILaltura. Nav8funcional conservaFAILRAM1.265913/1.241333. SinFPS/capacidad.
 bugs: bugs.md una fila por ID: 007 (orillas en escalera; kit EV108), 015 (puentes; EV109), 017, 018, 019, 020. Historia en bugs-history-hasta-2026-10-10.md.
-next: Completar revisión del corredor navv9diag y seis pasadas RAM nuevas ABBAAB del paquete original12,5. DIAGNOSTIC_ONLY, nunca aceptación funcional. Una pasada inválida detiene el bloque; sin repetición favorable.
+next: Replantear una única variante funcional motivada con el control RAM12,5 ya medido; no generar otro ancho por el estimador de dos diagonales. Mantener607consultas y tolerancias0.801/0.011/2.1; nuevo paquete necesitará su propio RAMABBAAB. No aceptación global.
 git: GitHub público https://github.com/willy92wins/DayZ_Baltic_12km. Historial público saneado independiente en E:/DayZ-Baltic-Build/shape-repair-20261025/public-repo; historial local completo conservado. No publicar ramas locales ni usar --all/--mirror; ver PUBLICATION.md.
-handoff: evidence/navigation/kit7-nav12-rejected-20261027/README.md; Nav8funcional y RAMFAIL conservados en sus checkpoints anteriores. Evidencia privada completa en E:/DayZ-Baltic-Build/shape-repair-20261025.
+handoff: evidence/performance/kit7-navigation-12p5m-diagnostic-ab-20261027/README.md; Nav12FAIL en evidence/navigation/kit7-nav12-rejected-20261027; Nav8funcional y RAMFAIL intactos.
 deployed: Nav8 funcional conservado; Nav12 af12bfe3ed48c6d436ed2f22bf8057d28a8e96d2de402ef3c36ae09862bfc87d rechazado; NavV9 original a2919a80ae6da6fc90e75b0ac55d1e9dd4ba4a39f6700b9fec237c7e7683b16c restaurado por hash solo para diagnóstico.
 visual_probe: C conserva4749+300físicaPASS; NMpropia CNav9 y45consultas/8rutasF PASS en servidor normal. Ninguna cobertura de actor ni tránsito por25modelosC. Sincliente/vista/CCT/FPS/capacidad. E+Nav9 anterior conservado.
 council: Fable5.1, Grok4.7, Gemini4ArgonHigh, Muse Wonder1.0 CLI nativo, GLM5.3FlashEXL3 y Qwen3.8. Siete informes de seis familias; Glimmer suplementario. Opus sustituido por Fable por el usuario. Adjudicación y recibos en checkpoint actual.
