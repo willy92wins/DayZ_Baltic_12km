@@ -98,6 +98,28 @@ class NavmeshV9Prefixes(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'bounds disagree'):
             inspect(data, (2, 1), 8.)
 
+    def test_twelve_metre_grid_bounds_and_wrong_dimension_rejection(self):
+        for width in (12., 8., 12.5):
+            data = synthetic_prefix_fixture()
+            struct.pack_into('<2f', data, 32, width, width)
+            for start, x in ((56, 0), (176, 1)):
+                struct.pack_into('<f', data, start + 88, x * width)
+                struct.pack_into('<f', data, start + 100, (x + 1) * width)
+                struct.pack_into('<f', data, start + 108, width)
+            if width != 12.:
+                with self.subTest(width=width), self.assertRaisesRegex(ValueError, 'tile dimensions'):
+                    inspect(data, (2, 1), 12.)
+                continue
+            result = inspect(data, (2, 1), 12.)
+            self.assertEqual(result['tiles'], 2)
+            self.assertEqual(result['grid'], [2, 1])
+            self.assertEqual(result['tile_width'], 12.)
+            with self.assertRaisesRegex(ValueError, 'grid coverage'):
+                inspect(data, (1024, 1024), 12.)
+            struct.pack_into('<f', data, 176 + 100, 24.1)
+            with self.assertRaisesRegex(ValueError, 'bounds disagree'):
+                inspect(data, (2, 1), 12.)
+
 
 if __name__ == '__main__':
     unittest.main()

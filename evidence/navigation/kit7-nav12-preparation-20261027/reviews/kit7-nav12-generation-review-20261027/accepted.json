@@ -1,0 +1,43 @@
+{
+  "status": "ACCEPTED_GENERATION_CODE",
+  "verdict": "SOUND",
+  "model": "claude-fable-5-1",
+  "scope": "Only input package, strict inspector and generation coordinator; no native12/607/RAM acceptance",
+  "review_sha256": "b99ce291090a2f9d1f9c5ca0c22e5821ec0922ce936e5469ef17f65e98325e17",
+  "reviewed_source_hashes": {
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\ev112-kit7-nav12-cost-20261027.md": "f3abf393215da53dc741d973a6b93b873cd1c5c270ed0c581bf9fda3f50fe77d",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-nav12-plan-review-20261027\\accepted.json": "9ef8f96b71d5669940bbd783432a4e6e1ac7ee7784a48ffcaa5510b950f11ded",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\package_nav12_config_ev112.py": "b9e81014a307c80d34cf993036dfbd50d477086c92d60110f8a7037eb33dc424",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tests\\test_nav12_config_ev112.py": "8cba89c0f6ffb2d6deb56883dc18317a875de79a27fa665834946072bde4d935",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\navigation\\inspect_navmesh_v9_ev112.py": "621932ab42fcbe8733ccbd26a6844db9bab4cddb4d5efc280d27d5deaa7e7742",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tests\\test_navmesh_v9_prefixes_ev112.py": "ce8af9a1e639aa903ff1d30c06f81959cd2948f2e8bd08e6f646c40bcb0cbd06",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\orchestrate_kit7_nav12_generation.js": "d1f5bdc0647c3b3b690c823b9896437382d28226781e27fb595637ced63a6241",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\test_kit7_nav12_generation.cjs": "929f53ec6380c3e6a25b12121ee0ae110c6ea0aec3cc8d8ccf22b78fb0db54f8",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\nav-kit7-12m-preparation-20261027\\generation-controls.json": "72da4eb67c543f40a5306b0578ebcaef6d6593954994957f269b631b6aa5b79e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\nav-kit7-12m-preparation-20261027\\launch-inputs.json": "ddcce5db6cea7e5db9e0ab7758fc0b77dce5f3fa29d0eeaf9d3303fbdc72c932",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\package-kit7-nav12-input-20261027\\verification.json": "1be01a914459b7aedd2a79fe871abb6864db1e413bdf343e2b5b3abf5aa7aec0",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\prepare_kit7_nav12_generation.py": "b6c28a85955ec9d3e5516956eb2e9b86f4714be2135643f3b7af7e33ec2817a5",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\fix_nav12_generation_lifecycle.py": "b322584dd4bb3b961b70367bcc0027cbd1fc0395db22aac51221e1dfd5493480"
+  },
+  "reviewed_launch_inputs_sha256": "ddcce5db6cea7e5db9e0ab7758fc0b77dce5f3fa29d0eeaf9d3303fbdc72c932",
+  "coordinator_unchanged": "d1f5bdc0647c3b3b690c823b9896437382d28226781e27fb595637ced63a6241",
+  "reconciliation": [
+    {
+      "finding": "Clock-origin test weakness",
+      "resolution": "Added 30 second fixture delay and rejected clock_from_now mutant. 26 cases and 9 mutants pass; coordinator unchanged."
+    },
+    {
+      "finding": "Python microsecond timestamp",
+      "resolution": "Positive V8 parse assertion matches truncated millisecond representation."
+    },
+    {
+      "finding": "Launch state seal",
+      "resolution": "Preserve reviewed manifest; refresh only strengthened harness hash, add its result and this receipt; record status-only flip separately."
+    },
+    {
+      "finding": "Observer timeout naming / PID reuse / deadline mutation coverage",
+      "resolution": "Optional observations retained. Current code remains fail closed; no product gate weakened."
+    }
+  ],
+  "controls_sha256": "fe78f7abdb942df8f7ebc824616559207e90f80025bc1de3452c580dd5e2f6a3"
+}

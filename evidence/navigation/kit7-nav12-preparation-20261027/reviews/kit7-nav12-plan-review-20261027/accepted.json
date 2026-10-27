@@ -1,0 +1,50 @@
+{
+  "status": "ACCEPTED_AFTER_REVIEW",
+  "scope": "Plan only; implementation and native Nav12 results are not yet validated",
+  "review_verdict": "SOUND-with-fixes",
+  "model": "claude-fable-5-1",
+  "response_sha256": "42dd25f4d2dbd42816f26b37b700afeb1c002254aedfad44fb0358c40e3b9f5d",
+  "reviewed_plan_sha256": "f1446ae0c5d8e960dad594edd5b283337d6dfd045459b2c6488c5f48dc47a51a",
+  "final_plan_sha256": "f3abf393215da53dc741d973a6b93b873cd1c5c270ed0c581bf9fda3f50fe77d",
+  "other_reviewed_inputs_unchanged": true,
+  "adjudication": [
+    {
+      "finding": 1,
+      "status": "PARTIAL",
+      "resolution": "Historical E RAM PASS and 12.5m dimensions verified. Added as motivation only; rejected causal attribution or linear RAM scaling across different packages."
+    },
+    {
+      "finding": 2,
+      "status": "ACCEPTED",
+      "resolution": "If Nav12 fails RAM, first measure exact kit7 NavV9 as diagnostic control; preserve its four height failures."
+    },
+    {
+      "finding": 3,
+      "status": "PARTIAL",
+      "resolution": "Added broad maxima and functional uncertainty. Did not infer two native failures from two calibration observations."
+    },
+    {
+      "finding": 4,
+      "status": "ACCEPTED",
+      "resolution": "Persist budget from existing generation.json.started_utc, bind run and fixed 18000s deadline, reject reset/mismatch. Native subprocess timeout retained."
+    },
+    {
+      "finding": 5,
+      "status": "ACCEPTED",
+      "resolution": "Explicit strict inspector CLI --grid 1024 1024 --tile-width 12 and negative 8/12.5m mismatch tests."
+    }
+  ],
+  "worker_boundary": {
+    "allowed_tools": [
+      "Read",
+      "Glob",
+      "Grep"
+    ],
+    "write_capability": false,
+    "pinned_source_hashes_unchanged_at_review_completion": true
+  },
+  "plan_before_budget_clarification_sha256": "c23df74a3e3d54aeefb9e63392383a32b8ffb9819ac574c0379ebb48d5dd6864",
+  "budget_clarification": "Keep native generation 18000s and existing coordinator 18300s, both anchored to generation.json.started_utc. The 300s allowance is for wrapper hashing/cleanup, not extension of generation.",
+  "plan_before_storage_note_sha256": "cd175ccd63569b8d7e7e5f54589db30d2de28426e08cfd8d905fafd1bfe4ee4e",
+  "storage_note": "Input Nav12 was built before archival. ENOSPC at deployment; archived Nav8Input/NavV9 byteexact with manifest, retained functional Nav8 installed. No geometry or validation change."
+}
