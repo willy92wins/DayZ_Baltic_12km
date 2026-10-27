@@ -1,0 +1,184 @@
+{
+  "status": "CONTROL_FLOW_PASS",
+  "coordinator_sha256": "d31f7b6f74b56633c31fcd0aa9bfbbdef1b34f5abd8f26b75c40ff97ff46d4ad",
+  "harness_sha256": "94cdbbbad87f4ef3590876080e60c366057b2bff07336f654f81bb3284b84249",
+  "scope": "Mocked tools test JS ownership and cleanup; inline PowerShell is not covered here; not native DayZ or MCP acceptance",
+  "cases": [
+    {
+      "name": "physics_fail",
+      "passed": true,
+      "launches": 0,
+      "error": "Kit7 physical gate missing"
+    },
+    {
+      "name": "physics_missing",
+      "passed": true,
+      "launches": 0,
+      "error": "Kit7 physical package binding missing"
+    },
+    {
+      "name": "physics_mismatch",
+      "passed": true,
+      "launches": 0,
+      "error": "Kit7 physical package binding missing"
+    },
+    {
+      "name": "physics_engine",
+      "passed": true,
+      "launches": 0,
+      "error": "Kit7 physical package binding missing"
+    },
+    {
+      "name": "physics_count",
+      "passed": true,
+      "launches": 0,
+      "error": "Kit7 physical gate missing"
+    },
+    {
+      "name": "physics_unbound",
+      "passed": true,
+      "launches": 0,
+      "error": "Kit7 physical gate missing"
+    },
+    {
+      "name": "physics_drift",
+      "passed": true,
+      "launches": 0,
+      "error": "Kit7 physical gate missing"
+    },
+    {
+      "name": "physics_old_coherent",
+      "passed": true,
+      "launches": 0,
+      "error": "Kit7 physical package binding missing"
+    },
+    {
+      "name": "physics_duplicate",
+      "passed": true,
+      "launches": 0,
+      "error": "Invalid or duplicate package path"
+    },
+    {
+      "name": "physics_mixed_paths",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 1,
+      "closed": true,
+      "released": true,
+      "cancelled": false,
+      "error": null
+    },
+    {
+      "name": "success",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 1,
+      "closed": true,
+      "released": true,
+      "cancelled": false,
+      "error": null
+    },
+    {
+      "name": "rapid_progress",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 1901,
+      "closed": true,
+      "released": true,
+      "cancelled": false,
+      "error": null
+    },
+    {
+      "name": "elapsed_deadline",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 2,
+      "closed": true,
+      "released": true,
+      "cancelled": true,
+      "error": "Coordinator duration bound "
+    },
+    {
+      "name": "delayed_capture",
+      "passed": true,
+      "captureCount": 4,
+      "pollCount": 4,
+      "closed": true,
+      "released": true,
+      "cancelled": false,
+      "error": null
+    },
+    {
+      "name": "wrapper_failure",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 1,
+      "closed": true,
+      "released": true,
+      "cancelled": true,
+      "error": "Generator failed: wrapper failed "
+    },
+    {
+      "name": "cancel_failure",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 1,
+      "closed": false,
+      "released": false,
+      "cancelled": false,
+      "error": "Generator failed: wrapper failed Generator cancellation: Generator identity could not be confirmed; DayZ cleanup: Unconfirmed generator cancellation; keep the own server/lease for live recovery"
+    },
+    {
+      "name": "final_status_failure",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 1,
+      "closed": true,
+      "released": true,
+      "cancelled": false,
+      "error": " Final status/receipt: Final status fixture failure"
+    },
+    {
+      "name": "rpt_failure",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 1,
+      "closed": true,
+      "released": true,
+      "cancelled": false,
+      "error": "  RPT copy: RPT fixture read error"
+    },
+    {
+      "name": "foreign_owner",
+      "passed": true,
+      "captureCount": 1,
+      "pollCount": 2,
+      "closed": false,
+      "released": false,
+      "cancelled": true,
+      "error": "Coordination lost; no forced adoption DayZ cleanup: Coordination lost; no forced adoption"
+    }
+  ],
+  "negative_mutations": [
+    {
+      "name": "iteration_counter",
+      "rejected": true
+    },
+    {
+      "name": "deadline_removed",
+      "rejected": true
+    },
+    {
+      "name": "single_capture",
+      "rejected": true
+    },
+    {
+      "name": "skip_cancel_after_wrapper_error",
+      "rejected": true
+    },
+    {
+      "name": "close_with_unconfirmed_cancel",
+      "rejected": true
+    }
+  ]
+}

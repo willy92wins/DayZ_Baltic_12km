@@ -1,0 +1,139 @@
+{
+  "status": "PASS_KIT7_PROBE_CONTROL_FLOW",
+  "coordinator_sha256": "9b30545bbcba24d83e560e6101022edabac6398399411f5d5fa981811057c0b8",
+  "cases": [
+    {
+      "mode": "success",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 1,
+      "closed": 1,
+      "released": 1,
+      "consumed": true,
+      "polls": 2,
+      "error": null
+    },
+    {
+      "mode": "slow_readiness",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 1,
+      "closed": 1,
+      "released": 1,
+      "consumed": true,
+      "polls": 2,
+      "error": null
+    },
+    {
+      "mode": "readiness_timeout",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 1,
+      "closed": 1,
+      "released": 1,
+      "consumed": false,
+      "polls": 0,
+      "error": "Bridge readiness deadline "
+    },
+    {
+      "mode": "queue_timeout",
+      "passed": true,
+      "attempted": true,
+      "started": false,
+      "acquired": 0,
+      "closed": 0,
+      "released": 0,
+      "consumed": false,
+      "polls": 0,
+      "error": "Launch refused"
+    },
+    {
+      "mode": "delayed_precheck_failure",
+      "passed": true,
+      "attempted": false,
+      "started": false,
+      "acquired": 0,
+      "closed": 0,
+      "released": 0,
+      "consumed": false,
+      "polls": 1,
+      "error": "precheck failure"
+    },
+    {
+      "mode": "capture_failure",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 1,
+      "closed": 1,
+      "released": 1,
+      "consumed": false,
+      "polls": 2,
+      "error": "capture "
+    },
+    {
+      "mode": "wrong_server_identity",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 1,
+      "closed": 0,
+      "released": 1,
+      "consumed": false,
+      "polls": 0,
+      "error": "Own server/client identity mismatch Own server/client identity mismatch Incomplete terminal state"
+    },
+    {
+      "mode": "observer_failure",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 1,
+      "closed": 1,
+      "released": 1,
+      "consumed": false,
+      "polls": 0,
+      "error": "observer failed "
+    },
+    {
+      "mode": "consumer_failure",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 1,
+      "closed": 1,
+      "released": 1,
+      "consumed": true,
+      "polls": 2,
+      "error": "native FAIL"
+    },
+    {
+      "mode": "lease_recovery",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 2,
+      "closed": 1,
+      "released": 1,
+      "consumed": true,
+      "polls": 2,
+      "error": null
+    },
+    {
+      "mode": "foreign_takeover",
+      "passed": true,
+      "attempted": true,
+      "started": true,
+      "acquired": 1,
+      "closed": 0,
+      "released": 0,
+      "consumed": false,
+      "polls": 1,
+      "error": "Coordination lost; no forced adoption Coordination lost; no forced adoption Incomplete terminal state Observer: Observer incomplete"
+    }
+  ],
+  "limits": "Mock control flow only; native607 remains separate."
+}
