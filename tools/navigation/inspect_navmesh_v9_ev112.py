@@ -13,7 +13,7 @@ import struct
 
 
 def inspect(data, expected_grid, tile_width=50.):
-    if tile_width not in (12.5, 25., 50.):
+    if tile_width not in (8., 12.5, 25., 50.):
         raise ValueError('Unsupported explicit tile dimension')
     if len(data) < 48:
         raise ValueError('Truncated TESM header')
@@ -85,7 +85,7 @@ def main():
     parser.add_argument('output', type=Path)
     parser.add_argument('--expected-sha256', required=True)
     parser.add_argument('--grid', type=int, nargs=2, required=True)
-    parser.add_argument('--tile-width', type=float, choices=(12.5, 25., 50.), required=True)
+    parser.add_argument('--tile-width', type=float, choices=(8., 12.5, 25., 50.), required=True)
     args = parser.parse_args()
     data = args.navmesh.read_bytes()
     if hashlib.sha256(data).hexdigest() != args.expected_sha256:

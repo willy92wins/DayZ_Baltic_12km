@@ -3,7 +3,7 @@ param(
     [Parameter(Mandatory=$true)][string]$ExpectedStartUtc,
     [Parameter(Mandatory=$true)][string]$ExpectedExecutable,
     [Parameter(Mandatory=$true)][string]$OutputDirectory,
-    [ValidateRange(1,7500)][int]$MaxSeconds=7500,
+    [ValidateRange(1,18300)][int]$MaxSeconds=7500,
     [ValidateRange(100,5000)][int]$IntervalMilliseconds=5000
 )
 # Read-only observer. The caller proves MCP ownership; this script never manages it.

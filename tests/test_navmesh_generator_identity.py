@@ -36,7 +36,7 @@ class NavmeshGeneratorIdentity(unittest.TestCase):
                 return type('Completed',(),{'returncode':returncode})()
             profiles={} if unknown_generator else {generator.sha(exe):9}
             with patch.object(generator,'GENERATOR',exe),patch.object(generator,'GENERATOR_FORMATS',profiles),patch.object(sys,'argv',args),patch.object(generator.subprocess,'run',side_effect=child) as run,contextlib.redirect_stdout(io.StringIO()):
-                if unknown_generator or wrong_pilot or not 10<=timeout_s<=7200:
+                if unknown_generator or wrong_pilot or not 10<=timeout_s<=18000:
                     with self.assertRaises(ValueError):generator.main()
                     run.assert_not_called();return
                 code=generator.main();result=json.loads((out/'generation.json').read_text())
@@ -77,7 +77,8 @@ class NavmeshGeneratorIdentity(unittest.TestCase):
 
     def test_extended_generation_remains_bounded(self):
         self.assertEqual(self.invoke(timeout_s=7200)[0],0)
-        self.invoke(timeout_s=7201)
+        self.assertEqual(self.invoke(timeout_s=18000)[0],0)
+        self.invoke(timeout_s=18001)
         self.invoke(timeout_s=9)
 
 

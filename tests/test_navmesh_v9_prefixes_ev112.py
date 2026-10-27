@@ -84,6 +84,20 @@ class NavmeshV9Prefixes(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unsupported explicit'):
             inspect(data, (2, 1), 0.)
 
+    def test_eight_metre_bounds_and_dimension_remain_strict(self):
+        data = synthetic_prefix_fixture()
+        struct.pack_into('<2f', data, 32, 8., 8.)
+        for start, x in ((56, 0), (176, 1)):
+            struct.pack_into('<f', data, start + 88, x * 8.)
+            struct.pack_into('<f', data, start + 100, (x + 1) * 8.)
+            struct.pack_into('<f', data, start + 108, 8.)
+        self.assertEqual(inspect(data, (2, 1), 8.)['tile_width'], 8.)
+        with self.assertRaisesRegex(ValueError, 'tile dimensions'):
+            inspect(data, (2, 1), 12.5)
+        struct.pack_into('<f', data, 176 + 100, 16.1)
+        with self.assertRaisesRegex(ValueError, 'bounds disagree'):
+            inspect(data, (2, 1), 8.)
+
 
 if __name__ == '__main__':
     unittest.main()

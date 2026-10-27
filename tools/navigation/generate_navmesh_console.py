@@ -45,7 +45,7 @@ def main():
     ap.add_argument('--out', required=True, type=Path)
     ap.add_argument('--timeout-s', type=int, default=1800)
     a = ap.parse_args()
-    if a.out.exists() or not 10 <= a.timeout_s <= 7200:
+    if a.out.exists() or not 10 <= a.timeout_s <= 18000:
         raise ValueError('Fresh output directory and bounded timeout required')
     generator_sha = sha(GENERATOR)
     if generator_sha not in GENERATOR_FORMATS:
