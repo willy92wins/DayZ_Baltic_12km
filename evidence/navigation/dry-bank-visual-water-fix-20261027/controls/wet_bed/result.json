@@ -1,0 +1,183 @@
+{
+  "status": "REJECTED_OFFLINE",
+  "gates": {
+    "preservation": false,
+    "quantization": true,
+    "bounds": true,
+    "changed": true,
+    "energy_strictly_lower": true,
+    "slopes_nonincreasing": true
+  },
+  "preservation": {
+    "water_exact": true,
+    "axis_exact": true,
+    "station_exact": true,
+    "level_exact": true,
+    "raw_exact": true,
+    "bed_xz_exact": true,
+    "cap_exact": true,
+    "wet_exact": false,
+    "border_exact": true,
+    "protected_exact": true,
+    "infeasible_exact": true,
+    "excluded_exact": false
+  },
+  "baseline_sha256": "9d8caf0fb75d2bd34f71b877ecd3f71079898fbc01c28e67ddab0bf8dca50063",
+  "candidate_sha256": "14fa4d1c6243a76a045e727c6aa3c41f6bc1b3cf37492f551564839dc6fc44c7",
+  "baseline": {
+    "discrete_energy": 561.7330589294434,
+    "slopes": {
+      "longitudinal_max": 0.24420910601166515,
+      "transverse_max": 0.48817384319310814,
+      "face_max": 0.5237935517144957
+    }
+  },
+  "candidate": {
+    "discrete_energy": 561.7307243347168,
+    "slopes": {
+      "longitudinal_max": 0.24420910601166515,
+      "transverse_max": 0.48817384319310814,
+      "face_max": 0.5237935517144957
+    }
+  },
+  "changed_points": 1,
+  "counts": {
+    "cap": 546,
+    "wet": 11641,
+    "border": 3326,
+    "protected": 0,
+    "infeasible": 3385,
+    "eligible": 49470
+  },
+  "delta_range_m": [
+    -0.001953125,
+    0.0
+  ],
+  "freeboard_q3_q4": {
+    "-4.0": {
+      "baseline": {
+        "count": 1663,
+        "minimum": -0.490234375,
+        "maximum": 0.400390625,
+        "quantiles": {
+          "p01": 0.3984375,
+          "p05": 0.3984375,
+          "p25": 0.400390625,
+          "p50": 0.400390625,
+          "p75": 0.400390625,
+          "p95": 0.400390625,
+          "p99": 0.400390625
+        }
+      },
+      "candidate": {
+        "count": 1663,
+        "minimum": -0.490234375,
+        "maximum": 0.400390625,
+        "quantiles": {
+          "p01": 0.3984375,
+          "p05": 0.3984375,
+          "p25": 0.400390625,
+          "p50": 0.400390625,
+          "p75": 0.400390625,
+          "p95": 0.400390625,
+          "p99": 0.400390625
+        }
+      }
+    },
+    "-3.0": {
+      "baseline": {
+        "count": 1663,
+        "minimum": -0.50390625,
+        "maximum": 0.171875,
+        "quantiles": {
+          "p01": 0.169921875,
+          "p05": 0.169921875,
+          "p25": 0.171875,
+          "p50": 0.171875,
+          "p75": 0.171875,
+          "p95": 0.171875,
+          "p99": 0.171875
+        }
+      },
+      "candidate": {
+        "count": 1663,
+        "minimum": -0.50390625,
+        "maximum": 0.171875,
+        "quantiles": {
+          "p01": 0.169921875,
+          "p05": 0.169921875,
+          "p25": 0.171875,
+          "p50": 0.171875,
+          "p75": 0.171875,
+          "p95": 0.171875,
+          "p99": 0.171875
+        }
+      }
+    },
+    "3.0": {
+      "baseline": {
+        "count": 1663,
+        "minimum": -0.525390625,
+        "maximum": 0.171875,
+        "quantiles": {
+          "p01": 0.169921875,
+          "p05": 0.169921875,
+          "p25": 0.171875,
+          "p50": 0.171875,
+          "p75": 0.171875,
+          "p95": 0.171875,
+          "p99": 0.171875
+        }
+      },
+      "candidate": {
+        "count": 1663,
+        "minimum": -0.525390625,
+        "maximum": 0.171875,
+        "quantiles": {
+          "p01": 0.169921875,
+          "p05": 0.169921875,
+          "p25": 0.171875,
+          "p50": 0.171875,
+          "p75": 0.171875,
+          "p95": 0.171875,
+          "p99": 0.171875
+        }
+      }
+    },
+    "4.0": {
+      "baseline": {
+        "count": 1663,
+        "minimum": -0.5078125,
+        "maximum": 0.400390625,
+        "quantiles": {
+          "p01": 0.3984375,
+          "p05": 0.3984375,
+          "p25": 0.400390625,
+          "p50": 0.400390625,
+          "p75": 0.400390625,
+          "p95": 0.400390625,
+          "p99": 0.400390625
+        }
+      },
+      "candidate": {
+        "count": 1663,
+        "minimum": -0.5078125,
+        "maximum": 0.400390625,
+        "quantiles": {
+          "p01": 0.3984375,
+          "p05": 0.3984375,
+          "p25": 0.400390625,
+          "p50": 0.400390625,
+          "p75": 0.400390625,
+          "p95": 0.400390625,
+          "p99": 0.400390625
+        }
+      }
+    }
+  },
+  "sources_unchanged": true,
+  "limits": [
+    "Saved-array offline result; no native, visual, P14, navigation or RAM acceptance.",
+    "The 0.025 m dry floor is experimental, not a wave or native-water guarantee."
+  ]
+}

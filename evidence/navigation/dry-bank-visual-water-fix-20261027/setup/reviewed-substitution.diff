@@ -1,0 +1,57 @@
+--- pilot_dry_bank_domain.py
++++ pilot_dry_bank_visual_floor.py
+@@ -48,7 +48,9 @@
+     cap=np.minimum(arrays['station'],arrays['station'][-1]-arrays['station'])<=6
+     free=np.broadcast_to((abs(qs)>2.25)&(abs(qs)<18),original.shape).copy()
+     free[cap,:]=False;free&=~touch
+-    floor=ground+.02;water=np.broadcast_to(arrays['level'][:,None],original.shape)
++    floor=ground+.02
++    assert np.array_equal(arrays['water'][:,0,1],arrays['water'][:,1,1])
++    water=np.broadcast_to(arrays['water'][:,0,1,None],original.shape)
+     floor=np.where(original>=water+.025,np.maximum(floor,water+.025),floor)
+     infeasible=free&(floor>original);free&=~infeasible
+     quant_bad=free&(np.ceil(floor*512)>np.floor(original*512));free&=~quant_bad
+--- verify_dry_bank_domain.py
++++ verify_dry_bank_visual_floor.py
+@@ -67,7 +67,9 @@
+     border = np.broadcast_to((abs(qs) == 18)[None,:], bed.shape[:2])
+     floor = terrain+.02
+     original = bed[:,:,1]
+-    water = np.broadcast_to(arrays['level'][:,None], original.shape)
++    if not np.array_equal(arrays['water'][:,0,1], arrays['water'][:,1,1]):
++        raise ValueError('water bank Y mismatch')
++    water = np.broadcast_to(arrays['water'][:,0,1,None], original.shape)
+     floor = np.where(original >= water+.025, np.maximum(floor, water+.025), floor)
+     # Fixed infeasible points are part of the contract, including new q3/q4.
+     infeasible = (floor > original) | (np.ceil(floor*512) > np.floor(original*512))
+@@ -131,8 +133,8 @@
+     freeboard = {}
+     for q in (-4.,-3.,3.,4.):
+         col = int(np.flatnonzero(masks['qs']==q)[0])
+-        freeboard[str(q)] = dict(baseline=distribution(ay[:,col]-a['level']),
+-                                 candidate=distribution(by[:,col]-a['level']))
++        freeboard[str(q)] = dict(baseline=distribution(ay[:,col]-a['water'][:,0,1]),
++                                 candidate=distribution(by[:,col]-a['water'][:,0,1]))
+     check_sources(context)
+     return dict(status='OFFLINE_CANDIDATE_ONLY' if all(gates.values()) else 'REJECTED_OFFLINE',
+                 gates=gates, preservation=preservation, baseline_sha256=sha(baseline),
+--- run_dry_bank_domain.py
++++ run_dry_bank_visual_floor.py
+@@ -24,7 +24,7 @@
+     args=p.parse_args();args.output.mkdir(exist_ok=False)
+     ctx=json.loads(args.context.read_text(encoding='utf-8-sig'))
+     root=Path(__file__).parent
+-    rc=bounded([sys.executable,'-I',str(root/'pilot_dry_bank_domain.py'),'--context',str(args.context),
++    rc=bounded([sys.executable,'-I',str(root/'pilot_dry_bank_visual_floor.py'),'--context',str(args.context),
+                 '--output',str(args.candidate_output)],ctx['worktree'],args.output,900)
+     if rc:return rc
+     report=args.candidate_output/'author-report.json';candidate=args.candidate_output/'candidate-surfaces.npz'
+@@ -33,7 +33,7 @@
+     if payload['status']!='AUTHORED_PENDING_INDEPENDENT_CHECK':return 3
+     if hashlib.sha256(candidate.read_bytes()).hexdigest()!=payload['candidate_sha256']:return 3
+     # CLI consumer has no access to author's free mask or PASS booleans.
+-    command=[sys.executable,'-I',str(root/'verify_dry_bank_domain.py'),'--baseline',ctx['paths']['source'],
++    command=[sys.executable,'-I',str(root/'verify_dry_bank_visual_floor.py'),'--baseline',ctx['paths']['source'],
+              '--candidate',str(candidate),'--context',str(args.context),'--output',str(args.output/'result.json')]
+     validation=args.output/'validation';validation.mkdir()
+     return bounded(command,ctx['worktree'],validation,300)

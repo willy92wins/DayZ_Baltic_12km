@@ -1,0 +1,12 @@
+{
+  "status": "ONE_CONCRETE_TEST_FIX",
+  "failed_execution": "PTY13749 exit1; before any CLI mutant or candidate",
+  "repro": "test_dry_bank_domain.py:23 IndexError indexing argwhere(protected)[0]; frozen kit has zero protected vertices.",
+  "correction": "Conditional protected mutant; zero coverage explicitly NOT_APPLICABLE. Mandatory mutations unaffected.",
+  "original_test_sha256": "a6d77ecddf934f03b34e9a8d7094024d8151e551584c15274876db5e7c485d91",
+  "fixed_test_sha256": "97c30e2518c32cb4ac044da791d220ae682d56e2def86c5f3168569723338d83",
+  "review": "Fable SOUND by reading, but did not execute. Runtime counterexample supersedes expected 11 PASS.",
+  "mutation_count_before": 0,
+  "candidate_count_before": 0,
+  "remaining_code_correction_budget": 0
+}

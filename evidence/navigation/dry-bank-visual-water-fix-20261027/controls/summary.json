@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "case": "protected_mutant",
+      "result": "NOT_APPLICABLE",
+      "reason": "Zero frozen baseline vertices in protected terrain."
+    },
+    {
+      "case": "identity",
+      "result": "PASS",
+      "expected_failed_gate": null,
+      "exitcode": 2
+    },
+    {
+      "case": "cap_interior",
+      "result": "PASS",
+      "expected_failed_gate": "cap_exact",
+      "exitcode": 2
+    },
+    {
+      "case": "wet_bed",
+      "result": "PASS",
+      "expected_failed_gate": "wet_exact",
+      "exitcode": 2
+    },
+    {
+      "case": "water_y",
+      "result": "PASS",
+      "expected_failed_gate": "water_exact",
+      "exitcode": 2
+    },
+    {
+      "case": "bed_xz",
+      "result": "PASS",
+      "expected_failed_gate": "bed_xz_exact",
+      "exitcode": 2
+    },
+    {
+      "case": "outer_border",
+      "result": "PASS",
+      "expected_failed_gate": "border_exact",
+      "exitcode": 2
+    },
+    {
+      "case": "ceiling",
+      "result": "PASS",
+      "expected_failed_gate": "bounds",
+      "exitcode": 2
+    },
+    {
+      "case": "nonfinite",
+      "result": "PASS",
+      "expected_failed_gate": "invalid",
+      "exitcode": 2
+    },
+    {
+      "case": "actual_dry_floor",
+      "result": "PASS",
+      "expected_failed_gate": "bounds",
+      "exitcode": 2
+    },
+    {
+      "case": "retired_candidate",
+      "result": "PASS",
+      "expected_failed_gate": "bounds",
+      "exitcode": 2
+    },
+    {
+      "case": "timeout_propagation",
+      "result": "PASS",
+      "exitcode": 124
+    },
+    {
+      "case": "bitwise_signed_zero",
+      "result": "PASS"
+    }
+  ]
+}

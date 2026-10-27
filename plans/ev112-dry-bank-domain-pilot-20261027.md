@@ -1,6 +1,6 @@
 # Piloto de dominio seco completo, tras rechazo del delantal
 
-Estado: REVISADO_SOUND_WITH_FIXES_PENDIENTE_IMPLEMENTACION. Codex ejecutor/integrador; revisión Fable.
+Estado: EJECUTADO_REJECTED_OFFLINE. Codex ejecutor/integrador; revisión Fable.
 Encargo vigente de corregir ríos y relieve; P7/P9/P10/P14. No abre council.
 
 ## Cambio de hipótesis y por qué
@@ -86,3 +86,7 @@ ladera seca se aplican las cotas propuestas y se fijan los puntos infactibles,
 sin atribuir un desajuste a identidad de fuente. Energía discreta por índice y
 pendiente física se mantienen separadas. Este plan NO se ha implementado ni
 ejecutado todavía; sus salidas deben ser nuevas y no reusar el piloto rechazado.
+
+## Resultado ejecutado
+
+REJECTED_OFFLINE; evidencia evidence/navigation/dry-bank-domain-pilot-20261027. Un candidato consumido; no relanzar. Diez controles PASS y uno NOT_APPLICABLE (cero puntos protegidos). Primera ejecución del test falló por ese supuesto, única corrección conservada. Agua/extremos y demás puertas constan por separado. Energía561.733058929→534.285533905. Ningún build ni prueba nativa.

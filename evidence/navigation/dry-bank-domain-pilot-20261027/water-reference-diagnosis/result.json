@@ -1,0 +1,98 @@
+{
+  "status": "REJECTED_OFFLINE_ACTUAL_WATER_FLOOR",
+  "source_sha256": "9d8caf0fb75d2bd34f71b877ecd3f71079898fbc01c28e67ddab0bf8dca50063",
+  "candidate_sha256": "df0c5994964e159431a618022a6dceae22a12964c1157ac0b54b3dc51a9bdeb8",
+  "violations": 4,
+  "all_violations_misclassified_by_unrounded_level": true,
+  "minimum_visual_margin_after": 0.001953125,
+  "rows": [
+    {
+      "row": 539,
+      "column": 2,
+      "station": 538.9333742388205,
+      "q": -16.0,
+      "xyz_before": [
+        8527.283203125,
+        4.6640625,
+        11677.796875
+      ],
+      "xyz_after": [
+        8527.283203125,
+        4.64453125,
+        11677.796875
+      ],
+      "visual_water_y": 4.638671875,
+      "unrounded_level": 4.639122082779171,
+      "before_visual_margin": 0.025390625,
+      "after_visual_margin": 0.005859375,
+      "original_classified_dry_by_level": false
+    },
+    {
+      "row": 645,
+      "column": 1,
+      "station": 644.9201240874414,
+      "q": -17.0,
+      "xyz_before": [
+        8575.619140625,
+        3.73046875,
+        11605.564453125
+      ],
+      "xyz_after": [
+        8575.619140625,
+        3.71484375,
+        11605.564453125
+      ],
+      "visual_water_y": 3.705078125,
+      "unrounded_level": 3.705976664479714,
+      "before_visual_margin": 0.025390625,
+      "after_visual_margin": 0.009765625,
+      "original_classified_dry_by_level": false
+    },
+    {
+      "row": 738,
+      "column": 36,
+      "station": 737.9084989546278,
+      "q": 16.0,
+      "xyz_before": [
+        8664.3125,
+        3.0,
+        11552.138671875
+      ],
+      "xyz_after": [
+        8664.3125,
+        2.98046875,
+        11552.138671875
+      ],
+      "visual_water_y": 2.974609375,
+      "unrounded_level": 2.9754886559513705,
+      "before_visual_margin": 0.025390625,
+      "after_visual_margin": 0.005859375,
+      "original_classified_dry_by_level": false
+    },
+    {
+      "row": 1630,
+      "column": 3,
+      "station": 1629.796997680759,
+      "q": -15.0,
+      "xyz_before": [
+        8957.330078125,
+        2.06640625,
+        11160.421875
+      ],
+      "xyz_after": [
+        8957.330078125,
+        2.04296875,
+        11160.421875
+      ],
+      "visual_water_y": 2.041015625,
+      "unrounded_level": 2.0418703323453236,
+      "before_visual_margin": 0.025390625,
+      "after_visual_margin": 0.001953125,
+      "original_classified_dry_by_level": false
+    }
+  ],
+  "mechanism": "Author and checker use level before rounding for was_dry. Saved visual water is independently rounded to1/512. Points at exactly13ticks above visual water can fall below level+.025, disable the dry floor, then be lowered.",
+  "exact_reference": "continuous_stream_pilot_v31.py rounds water before saving it; level stores W unchanged. Fix uses saved water Y for both classification and lower bound, with no tolerance change.",
+  "old_candidate_retired": true,
+  "old_script_rerun_authorized": false
+}
