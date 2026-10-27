@@ -1,0 +1,26 @@
+from pathlib import Path
+import hashlib,json,subprocess,time
+R=Path(__file__).parent
+W=Path('C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c')
+O=R/'kit7-joint-height-ram-next-review-20261027';O.mkdir(exist_ok=False)
+paths=[R/'census_kit7_nav_payload_cost.py',R/'kit7-nav-payload-cost-20261027-v2/result.json',R/'kit7-navv9diag-ram-ab-20261027/comparison.json',R/'kit7-nav8-ram-ab-20261027/comparison.json',R/'kit7-ram-cross-block-conditions-20261027.json',R/'kit7-nav-fine-width-diagnostic-20261027/result.json',R/'chernarus-nav-height-reference-20261027/result.json',R/'kit7-nav12-height-reconstruction-20261027/result.json',R/'kit7-after-nav12-review-20261027/response.json',W/'plans/ev112-kit7-nav12-cost-20261027.md',W/'plans/ev112-kit7-chernarus-height-reference-20261027.md',W/'tools/navigation/inspect_navmesh_v9_ev112.py',W/'tools/navigation/generate_navmesh_console.py']
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+before={str(p):sha(p) for p in paths};(O/'source-hashes.json').write_text(json.dumps(before,indent=2)+'\n')
+brief='''Una lane Fable5.1 READ ONLY de investigación y revisión del siguiente experimento. NO es el council ampliado: el usuario ordenó ese council después de terminar pendientes. Codex ejecuta e integra. SOLO Read/Glob/Grep; no procesos, Git, escrituras, MCP, subagentes, ni mensajes. Máximo1200 palabras y cierre FIN_REVISION.
+Fuentes exactas: E:/DayZ-Baltic-Build/shape-repair-20261025/kit7-joint-height-ram-next-review-20261027/source-hashes.json. R=su raíz shape-repair; W se deduce de rutas. Lecturas acotadas, no enormes históricos ni arrays runtime completos; usa campos resumen y muestras.
+Hechos: usuario exige mismos607 checks y .801/.011/2.1, cuatrooriginales cerrados enNav8 max.711963; RAM FAIL1.265913/1.241333. Nav12:3fallos nuevos116 .856856/.923148/.818588; noRAM. Original12.5 YA PASÓ6ABBAAB actuales RAM .832329/.844646, conserva4heightFAIL. Mismosexe/config/misiónnormalizada/no-base/paquetesauxiliares entrebloques. NoheredarPASS. NMpolysreproducenYfallidas, LODscoinciden;0detalleempírico en TODOS8/12/Chernarusactual. Esquinanativa(9132,11280) gravaRoadway1.91014/Geometry1.90834,agua2.15067; máximoaguaNOesdefectograva. Tu revisión anterior pedíaRAM12.5antesdeotroancho:yahechoPASS. Tu condición RoadY-GroundY>.801 necesaria fue refutada; no repetirla.
+Nuevo contrasteChernarus actual:24long_straight elegidosindependientes,49Q/48comparables/NONEPASS,17puntosconabsNavY-RoadY>.801,max5.595824;0raisedpoints. DiferenciafuenteYextremosdeclarada; NOactorproof,NOexenciónBaltic. Todosrunscerrados/identidad/hashrevalidados.
+Nuevocensoreadonly:4NM reales porhash,0tilesconpolygons0 enTODOS. Nav8:2,359,296tiles,3,916,960polys,1,996,338tilescon1poly(84.62%),897,066,212bytesenellos; total1,338,007,300bytes.12.5:966,289tiles,2,446,651polys,709,675onepoly;704,535,052bytes.12m1,048,576tiles/741,138,936bytes;Chernarus94,249tiles/640,312,416bytes. CensoNOfueheapprofiling ni prediceRAM. Primeraejecuciónrechazóasumirordenlinealdetiles; v2usaunicidad+cobertura ycoincidetotalesconinspectores. Revisacódigo si vesfalsascifras.
+Interpetaciones a cuestionar: reducircomplejidadpoligonal sin reducirelgridsiguepagando muchostilesonepoly; nohaytilesvacíos quepodamospodar. NOpropongoeditarNMbinario,geometríatrampa,moverconsultas,nirebajarumbrales. El estimador2diagonales refutado:12predice0conocidos/falla3;8predice10amplios/pasa0. Finescreen9.5-10.5conocidos14:10mmax.86758,10.5max1.10925; no sonoráculos.
+Encargo: verificahechos/censo, y propone UN siguiente experimento que pueda conducir a mismo paquete alturaPASS/RAMPASS sinserieciega. Considera si el RAM12.5PASS permite un candidato10m motivado porcoste+alineación, o si faltaun discriminadorgeométrico/contrato verificado. No inventes APIs/semánticacellSize. Si eligescandidato, explica porqué10frenteaotros, datoindependienteparaelección, riesgo, quéno garantiza, criterios/parada ypresupuesto previo; si nohayvía honesta, dilo ypropónuna únicamediciónque cambieesa decisión. No aconsejarrepetirRAM12.5/Chernarusniotra auditoríaequivalente. No atribuircausalidad a correlaciónbytesRAM. No exigirnotificaralusuario simplemente porqueestásincompleto. Cita path:line paraAPI, patrón ohechoque cambielaacción; LO_NO_VERIFICADO explícito. Laspropuestas sevalidarán porCodexantesdelplan. MantenerNav8funcionalyfallosregistrados.
+'''
+(O/'brief.md').write_text(brief,encoding='utf-8')
+args=['C:/Users/guill/.local/bin/claude.exe','--print','--safe-mode','--model','claude-fable-5-1','--effort','medium','--tools','Read,Glob,Grep','--allowedTools','Read,Glob,Grep','--output-format','json','--no-session-persistence']
+start=time.monotonic()
+with (O/'response.json').open('wb') as out,(O/'stderr.log').open('wb') as err:
+ p=subprocess.Popen(args,cwd=W,stdin=subprocess.PIPE,stdout=out,stderr=err,creationflags=0x08000000)
+ try:p.communicate(brief.encode(),timeout=300)
+ except subprocess.TimeoutExpired:p.terminate();p.wait(timeout=30);raise
+assert all(sha(Path(k))==v for k,v in before.items())
+(O/'completion.json').write_text(json.dumps(dict(returncode=p.returncode,seconds=time.monotonic()-start,inputs_unchanged=True),indent=2)+'\n')
+print('FABLE_EXIT',p.returncode);raise SystemExit(p.returncode)
