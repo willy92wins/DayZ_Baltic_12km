@@ -1,0 +1,1 @@
+SOUND-with-fixes. Adoptados ambos ajustes menores propuestos: preservar causa del abort en resultado y normalizar expectedShape. Se añade control negativo; misión de runtime actualizada antes del sellado y revalidada. No cambia selección, 49 consultas, tolerancias, lifecycle ni elegibilidad.
