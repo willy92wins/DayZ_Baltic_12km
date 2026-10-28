@@ -1,6 +1,6 @@
 # Carreteras B0 — consumidor, pivotes y huella completa antes del piloto
 
-Estado: BORRADOR_PENDIENTE_DE_REVISION. Preparación offline, sin colocación,
+Estado: REVISADO_PARA_IMPLEMENTAR. Preparación offline, sin colocación,
 compilación, despliegue o DayZ. Continúa A; no repite catálogo501/265.
 
 P5/P6/P9/P10/P11: reservar vías lisas y pasos navegables ahora, respetando P10
@@ -60,3 +60,45 @@ mantener cross0.03m/grade0.065/chord0.03m existentes. Las exclusiones antiguas
 48m agua/470m Narva/18m extremos quedan NO EVALUADAS y necesitan puertas propias.
 C: prueba de tablero/apoyos/accesos/agua y tránsito real en plan nativo separado,
 después de hipótesis y revisión. Ni puente por cercanía ni pavimentado global.
+
+## Adjudicación de Fable5.1 — 77.828s
+
+SOUND-with-fixes, entradas intactas, en evidence/road-b0-plan-review-20261028.
+Codex verifica y adjudica antes de implementación:
+
+- Se conserva UNA extracción120s/2GiB; no se acepta multiplicar presupuestos
+  por WRP/ODOL/corredores. La primera extracción se acota a asf1_25, asf2_25
+  y una curva identificada en el catálogo A, configuración instalada y metadatos
+  disponibles. No decodificar un WRP entero como efecto lateral. Si no cabe o
+  falta referente, guardar alcance parcial y campos UNKNOWN. Las ampliaciones
+  requieren hipótesis y plan propios; no reiniciar el catálogo A.
+- Fuente de piezas: PBO instalado structures_roads.pbo34c1cabe y sus entradas
+  fijadas por A. P:/DZ/structures/roads/config.cpp es sólo fuente nominal;
+  FTT TXT y verify_ftt_pilot.py NO prueban consumidor del motor. Config binaria
+  instalada exige lectura/decodificación con identidad trazada antes de afirmar
+  sus clases. Vanilla worlds_chernarusplus.pbo instalado existe; su identidad y
+  entradas deben descubrirse antes de usarlo, sin asumir equivalencia con P:.
+- consumer_observed = WRP_OBJECT / WRP_ROADNET / AMBOS / UNKNOWN. Debe citar
+  path:offset o path:line, hash y alcance de observación. Clases en config
+  solamente no prueban instancia WRP ni consumidor efectivo del mapa.
+- Registrar bounding_center, centro de cada LOD, offset realmente aplicado por
+  lector/consumidor, resolución Roadway, selecciones, caras y materiales.
+  No inventar offset si el lector sólo expone vértices. pivot_convention UNKNOWN
+  hasta referente independiente; tres instancias coherentes, propuestas por el
+  revisor, tampoco demostrarían por sí solas convención o altura del motor.
+- Fuente vial candidata: tests/regional_foundation_roads_v6/reference.npz en
+  checkout principal, ligada por ROAD_SHA de pilot_visible_exposure_ev112.py.
+  Fuente de superficies candidatas: surface-prototypes.npz/instances.npz y
+  manifiesto de evidence/deployed-surface-prototypes-20261028; es inventario
+  geométrico, NO referente independiente de intención/clases/anchuras de agua.
+  No derivar cruces del listado de puentes. Intersección debe ser línea contra
+  superficie/área completa, conservar contactos puntuales y casos marginales.
+  Se rechaza prescribir segmento-segmento/tolerancia0 sin definir representación;
+  el método y error numérico se fijan contra fuentes antes de implementar cruces.
+- Campos obligatorios: consumer_observed, pivot_convention, usable_width,
+  shoulder_material, roadway_present, crossings_exact, sources, coverage,
+  elapsed_s y peak_bytes. Desconocido explícito; Roadway ausente=false y ancho
+  UNKNOWN, nunca0. Cualquier UNKNOWN necesario impide DISCOVERY_COMPLETE.
+  Las alternativas de anchura futuras mostrarán huellas/conflictos medidos.
+- cross0.03/grade0.065/chord0.03 son restricciones preservadas para piloto B,
+  no prueban B0. RAM, nueve regresiones y C1 SIN REVISAR siguen abiertos.

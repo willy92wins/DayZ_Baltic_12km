@@ -1,0 +1,12 @@
+{
+  "status": "INCONCLUSIVE_DISCOVERY",
+  "error": "ValueError:prefix",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\road_consumer_discovery_ev112.py\", line 93, in main\n    try:r=run(a.output);dump(a.output/'report.json',r);return 0 if r['status']=='DISCOVERY_COMPLETE_NOT_PLACEMENT' else 2\n          ^^^^^^^^^^^^^\n  File \"C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\road_consumer_discovery_ev112.py\", line 67, in run\n    require(props.get('prefix')=='dz\\\\structures\\\\roads' or props.get('prefix')=='dz/structures/roads','prefix')\n  File \"C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\road_asset_catalog_ev112.py\", line 25, in require\n    if not condition:raise ValueError(reason)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: prefix\n",
+  "measurement": {
+    "pid": 76104,
+    "parent_pid": 76136,
+    "seconds": 1.7340000000040163,
+    "peak_resident_bytes": 716783616,
+    "peak_commit_bytes": 698941440
+  }
+}

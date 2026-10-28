@@ -1,0 +1,22 @@
+from pathlib import Path
+import hashlib,json,subprocess,time
+W=Path(r'C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c');R=Path(r'E:/DayZ-Baltic-Build/shape-repair-20261025');O=R/'road-b0-code-review-20261028';O.mkdir(exist_ok=False)
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+files=[W/'tools/quality/road_consumer_discovery_ev112.py',W/'tools/quality/test_road_consumer_discovery_ev112.py',W/'plans/ev112-road-consumer-discovery-b0-20261028.md',R/'run_road_b0_execution_20261028.py']
+pins={str(p):sha(p) for p in files};(O/'inputs.json').write_text(json.dumps(pins,indent=2),encoding='utf-8')
+brief='''Delegar JUICIO codigo RoadB0, una lane Fable5.1 CLI nativo medido hoy2.1.310, reviews con modelUsage confirmado. Codex executor/integrator adjudica. Read-only sin tools/hijos/escrituras/git. <=180s700palabras, SOUND/SOUND-with-fixes/NEEDS-WORK, lineas/fix/casos falsosPASS. FIN_REVISION. Plan revisado77.828s adjunto y adjudicacion acota una extraccion120s2GiB, 3piezas asf1_25/asf2_25/asf1_10 100 instaladas del catalogoA; sin leerWRP ni colocar.14tests inicialesPASS1.093s. Primitivas reales: cat.read_pbo Path devuelve raw,props,entries dict; cat.model_metadata exige strict todosLOD/rawvertices exactos yfaceindices, roles por resolucion ymeta materias/centros; cat.sections exige particion total sin duplicados, indices validados; cat.loaded_reader_binding verifica5modulosdelectorpath. odol_reader.py488 lee bounding_center,662 b_center,717-720 verticesrawfloat32 sin desplazamiento. Nuevooffset0 describe sololector, pivotUNKNOWN. No alteranhelperssellados. CfgConvert -txt -dst dest original es firma verificada en build_outside_material_variant.py:49, hash instalado4c4f fijado; solo decodificacion nueva en salida local, nunca build/mod. run_process selladoB3E2 observaPIDbirthimagen, RSSpropio+descendientes, presupuestos yretorno0, cierra soloidentidadespropias enagotamiento; base.run_tree permite recibo rc2 ypadrelointerpreta como descubrimiento incompleto si3modelos ynoerror, noPASSmapa. CLI meter.bounded youter120s2GiB totalincluyelectura/decoder, decodermax60sconrestante. PBO501entradas/265modelos yselectedhashes leidoscatalogoA, no repetirCLIcatalogo. Camposconsumer/pivot/width/shoulder/crossingsUNKNOWN deliberados, no consumer demostrado porclasesconfig. LocalcaraspoligonosWKT soloRprivado, publicararesumen/recibos sinvanillageometria. Configclasesobservaciones no acepta runtime. Fixture curvaenLareas32bbox80demuestraunionnoancho; RoadwayausenteUNKNOWN. Cruces marginales/nodos faltanporquenoseimplementancruces; respetaralcance. Buscar fallosconcretos representacion/indices/normalizacion/materiales/proyecciones/consumidor/sello; no exigirPASScompleto. ReceptorindependienteCodex verificaadjudica; B3F yahecho peronoobjetoactual.'''
+capsule=brief+'\n\n'+'\n\n'.join('FILE '+str(p)+'\n'+'\n'.join(f'{i+1}: {s}' for i,s in enumerate(p.read_text(encoding='utf-8').splitlines())) for p in files);(O/'capsule.md').write_text(capsule,encoding='utf-8')
+for p in files:(O/p.name).write_bytes(p.read_bytes())
+t=time.monotonic();timeout=False
+with (O/'events.jsonl').open('wb') as out,(O/'stderr.log').open('wb') as err:
+ p=subprocess.Popen(['C:/Users/guill/.local/bin/claude.exe','--print','--safe-mode','--model','claude-fable-5-1','--effort','medium','--output-format','stream-json','--verbose','--include-partial-messages','--no-session-persistence','--tools',''],cwd=W,stdin=subprocess.PIPE,stdout=out,stderr=err,creationflags=0x08000000)
+ (O/'running.json').write_text(json.dumps(dict(pid=p.pid,max_seconds=180)),encoding='utf-8')
+ try:p.communicate(capsule.encode(),timeout=180)
+ except subprocess.TimeoutExpired:timeout=True;p.terminate();p.wait(timeout=20)
+events=[]
+for line in (O/'events.jsonl').read_text(encoding='utf-8-sig').splitlines():
+ try:events.append(json.loads(line))
+ except json.JSONDecodeError:pass
+result=next((e for e in reversed(events) if e.get('type')=='result'),{});elapsed=time.monotonic()-t
+c=dict(returncode=p.returncode,timeout=timeout,seconds=elapsed,within_budget=elapsed<=180,models=list(result.get('modelUsage',{})),complete='FIN_REVISION' in result.get('result',''),inputs_unchanged=all(sha(Path(p))==h for p,h in pins.items()),denials=result.get('permission_denials',[]))
+(O/'review.md').write_text(result.get('result',''),encoding='utf-8');(O/'completion.json').write_text(json.dumps(c,indent=2),encoding='utf-8');print(json.dumps(c))
