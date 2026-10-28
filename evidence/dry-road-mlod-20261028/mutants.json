@@ -1,0 +1,169 @@
+{
+  "status": "SIX_REAL_MLOD_MUTANTS_REJECTED",
+  "positive_original": {
+    "status": "SAVED_MLOD_SEMANTICS_VERIFIED",
+    "source_sha256": "bbf4d5e40dfcb3bf5216981f10cbf21db681d403ea51c4e20676956289207c5a",
+    "candidate_sha256": "bbf4d5e40dfcb3bf5216981f10cbf21db681d403ea51c4e20676956289207c5a",
+    "components": 1520,
+    "points": 9120,
+    "faces": 12160,
+    "mass": 9120.0,
+    "contact": {
+      "checks": {
+        "nonempty_overlay": true,
+        "full_source_covered": true,
+        "no_excessive_horizontal_extension": true,
+        "vertical_contact_error": true
+      },
+      "source_triangles": 1520,
+      "roof_triangles": 1520,
+      "overlay_pairs": 18842,
+      "refinement_vertices": 27846,
+      "minimum_pair_height_error_m": 0.0,
+      "maximum_height_error_m": 0.0,
+      "lower_contact_coverage": {
+        "covered": true,
+        "uncovered_area_m2": 0.0,
+        "uncovered_triangles": [],
+        "uncovered_triangle_count": 0
+      },
+      "extrema": {
+        "minimum_pair": {
+          "source_triangle": 1,
+          "roof_triangle": 0,
+          "xz": [
+            2.236328125,
+            -18.970703125
+          ],
+          "source_y": 1.52734375,
+          "roof_y": 1.52734375,
+          "error_m": 0.0
+        },
+        "maximum": {
+          "source_triangle": 1,
+          "roof_triangle": 0,
+          "xz": [
+            2.236328125,
+            -18.970703125
+          ],
+          "source_y": 1.52734375,
+          "roof_y": 1.52734375,
+          "error_m": 0.0
+        }
+      },
+      "missing_area_m2": 0.0,
+      "excessive_horizontal_area_m2": 0.0,
+      "vertical_limit_m": 0.02,
+      "horizontal_limit_m": 0.01
+    },
+    "self_contact": {
+      "checks": {
+        "nonempty_overlay": true,
+        "full_source_covered": true,
+        "no_excessive_horizontal_extension": true,
+        "vertical_contact_error": true
+      },
+      "source_triangles": 1520,
+      "roof_triangles": 1520,
+      "overlay_pairs": 18842,
+      "refinement_vertices": 27846,
+      "minimum_pair_height_error_m": 0.0,
+      "maximum_height_error_m": 0.0,
+      "lower_contact_coverage": {
+        "covered": true,
+        "uncovered_area_m2": 0.0,
+        "uncovered_triangles": [],
+        "uncovered_triangle_count": 0
+      },
+      "extrema": {
+        "minimum_pair": {
+          "source_triangle": 1,
+          "roof_triangle": 0,
+          "xz": [
+            2.236328125,
+            -18.970703125
+          ],
+          "source_y": 1.52734375,
+          "roof_y": 1.52734375,
+          "error_m": 0.0
+        },
+        "maximum": {
+          "source_triangle": 1,
+          "roof_triangle": 0,
+          "xz": [
+            2.236328125,
+            -18.970703125
+          ],
+          "source_y": 1.52734375,
+          "roof_y": 1.52734375,
+          "error_m": 0.0
+        }
+      },
+      "missing_area_m2": 0.0,
+      "excessive_horizontal_area_m2": 0.0,
+      "vertical_limit_m": 1e-06,
+      "horizontal_limit_m": 0.0
+    },
+    "non_authorized_bytes_exact": true,
+    "bounds_exact": true
+  },
+  "positive_candidate_receipt_sha256": "b71fd86932cc382c525fdb290b8e2b2daf0bd9055776f3d0adb8959145aa7e18",
+  "mutants": [
+    {
+      "case": "water_y",
+      "status": "REJECTED_BY_SEMANTIC_CONSUMER",
+      "reason": "unauthorized_bytes_lod_0",
+      "seconds": 3.2810000000172295,
+      "sha256": "1b589b08117e42c1e7b6842942c635720b1ec79cf8ae5cf94a786a361f943a54"
+    },
+    {
+      "case": "bed_x",
+      "status": "REJECTED_BY_SEMANTIC_CONSUMER",
+      "reason": "unauthorized_bytes_lod_0",
+      "seconds": 3.125,
+      "sha256": "1a86ed706d5b23bc66ac8ed5c11d47af6fe91c5bb6394e579880fdea9c831755"
+    },
+    {
+      "case": "uv",
+      "status": "REJECTED_BY_SEMANTIC_CONSUMER",
+      "reason": "unauthorized_bytes_lod_0",
+      "seconds": 3.202999999979511,
+      "sha256": "bf3dba864785d4f4cdb82e813a7ca55e9fb06c06b7b0150be2fba84d0659d9ed"
+    },
+    {
+      "case": "turned_normal",
+      "status": "REJECTED_BY_SEMANTIC_CONSUMER",
+      "reason": "wrong_bed_normal",
+      "seconds": 3.2179999999934807,
+      "sha256": "cd22648a4eb0cdc08988f7a39bdb01275770222454b8177e201cbe339b44199f"
+    },
+    {
+      "case": "roof_plus_5cm",
+      "status": "REJECTED_BY_SEMANTIC_CONSUMER",
+      "reason": "prism_volume_changed",
+      "seconds": 3.3439999999827705,
+      "sha256": "ef77c5570f1cae08532d0c68265c214a046ec3e8a81cea562a5891ee8f7a8caa"
+    },
+    {
+      "case": "half_roofs_collapsed",
+      "status": "REJECTED_BY_SEMANTIC_CONSUMER",
+      "reason": "open_or_wrong_winding_component",
+      "seconds": 3.4210000000020955,
+      "sha256": "bd29dba226b4813196b206afe65ddf5a40d8afe3d5716ce6c688194ace995257"
+    }
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\pilot-kit7-fc-20261026\\source\\baltic_stream_pilot\\cs_kit_118_0000.p3d": "bbf4d5e40dfcb3bf5216981f10cbf21db681d403ea51c4e20676956289207c5a",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\dry-road-mlod-candidate-r2-20261028\\source\\baltic_stream_pilot\\cs_kit_118_0000.p3d": "d13069d5ec2816cdacc90891a83e5f92f517c4c33703380d534d3f7538baddef",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\verify_dry_road_mlod_ev112.py": "ec49c25e37eae745e3808e7c15e161def51f30bfbe0744b484dad163c604d713",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\test_dry_road_mlod_mutants_20261028.py": "d59ff22cfdd85cb56e4a01c17ec5156bdb9bad505c69fb5ae0aa08baa46ac9fd"
+  },
+  "measurement": {
+    "pid": 138748,
+    "parent_pid": 139616,
+    "seconds": 30.76500000001397,
+    "peak_resident_bytes": 642342912,
+    "peak_commit_bytes": 627736576
+  },
+  "limits": "Offline saved MLOD; no engine or visual acceptance."
+}
