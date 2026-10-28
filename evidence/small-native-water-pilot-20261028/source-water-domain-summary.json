@@ -1,0 +1,34 @@
+{
+  "status": "INCONCLUSIVE_DOMAIN",
+  "counts": {
+    "vanilla_stream_water": 6352,
+    "pilot_water": 201,
+    "nonwater_stones": 971,
+    "pond_bound_by_footprint": 10264
+  },
+  "water_geometry_overlaps": [],
+  "unknown_models": [],
+  "minimum_bound_distance_m": {
+    "vanilla_stream_water": 1026.0682657407351,
+    "pilot_water": 3599.6199590757656
+  },
+  "active_pond_cells_near_target_collar": 5,
+  "potential_pond_envelope_cells_near_target_collar": 33,
+  "bounds": [
+    11749.158011110367,
+    2353.535525118656,
+    11847.832347381218,
+    2426.1698181029756
+  ],
+  "seconds": 7.1710000000020955,
+  "requirements": [
+    "Freeze every vertex of a potential pond envelope cell, not just current visible footprint.",
+    "Prove all model/pond corner protections unchanged on final float32 candidate."
+  ],
+  "limits": [
+    "Source stream geometry; native vanilla binary identity not refreshed. No in-game acceptance.",
+    "Water pond source binding relies on the existing exact footprint/world proof; no regeneration here.",
+    "Stone misc is not water. Object grounding and forest replay remain integration requirements."
+  ],
+  "interpretation": "Conservative bounding-box pond overlap refined by exact-pond-domain.json; model bounds had no overlap."
+}

@@ -1,0 +1,79 @@
+{
+  "status": "REJECTED_OFFLINE",
+  "checks": {
+    "delta": {
+      "status": "PASS",
+      "result": {
+        "changed": 108,
+        "maximum_height_delta_m": 2.4557435512542725
+      }
+    },
+    "pond_corners": {
+      "status": "PASS",
+      "result": null
+    },
+    "topology": {
+      "status": "PASS",
+      "result": {
+        "wet": {
+          "before": 81,
+          "after": 81,
+          "overlap_pairs": 81
+        },
+        "dry": {
+          "before": 28,
+          "after": 28,
+          "overlap_pairs": 28
+        }
+      }
+    },
+    "slope": {
+      "status": "PASS",
+      "result": {
+        "regressions": 0
+      }
+    },
+    "prominence": {
+      "status": "FAIL",
+      "reason": "prominence_regression_peak_pit_[3, 6]"
+    },
+    "native_segments": {
+      "status": "PASS",
+      "result": {
+        "segments": 107611,
+        "mixed_faces": 107611,
+        "maximum_edge_error_m": 2.033691978340166e-12,
+        "maximum_water_height_residual_m": 1.92120798436779e-12,
+        "exact_water_vertex_faces": 4,
+        "zero_length_segments": 2
+      }
+    },
+    "native_chains": {
+      "status": "PASS",
+      "result": {
+        "chains": 1030,
+        "assigned_exactly_once": 107611
+      }
+    },
+    "other_shores": {
+      "status": "PASS",
+      "result": {
+        "unchanged_other_segments": 107547
+      }
+    },
+    "closed_contour": {
+      "status": "FAIL",
+      "reason": "abrupt_turns_10"
+    }
+  },
+  "failures": [
+    "prominence",
+    "closed_contour"
+  ],
+  "seconds": 20.937999999994645,
+  "candidate_sha256": "73b8fa8abeef6b213e3811c282787f9499554bc5be1aef29cfb4b79080a41101",
+  "context_sha256": "c8fa65a56d80dd738e1eeb9bb7fe69847edd9be421d6f6ac7b196e76360f74ab",
+  "limitations": [
+    "No compiled world, object grounding, game, navigation, RAM or human visual acceptance."
+  ]
+}
