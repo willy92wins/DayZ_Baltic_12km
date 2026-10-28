@@ -1,0 +1,28 @@
+{
+  "status": "LOCAL_SUPPORT_DISCRIMINATOR",
+  "checks": {
+    "candidate_change_within_own_normal_or_incident_triangle": true,
+    "Y_only_changes_within_incident_triangles": true,
+    "N_only_changes_within_own_normals": true,
+    "normal_only_outside_Y_ring_exact": true,
+    "Y_only_outside_normal_change_exact": true,
+    "unaffected_slots_exact": true
+  },
+  "vertices": 845,
+  "changedY": 82,
+  "changedN": 125,
+  "Y_incident_ring": 128,
+  "changedST": 124,
+  "reviewer_false_fail_indices": [
+    90,
+    163,
+    197,
+    234,
+    238,
+    239,
+    468
+  ],
+  "all_seven_incident_to_changed_Y": true,
+  "inputs": "Four existing compiled builds; no source or tolerance changes.",
+  "limits": "Local-support evidence for this compiled mesh; ST semantic layout remains a hypothesis."
+}
