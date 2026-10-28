@@ -170,3 +170,50 @@ C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev.
 La etapaA produce prototipos con identidades de cara, semántica y matrices;
 la etapaB los consume tras verificar. No ejecutar B sin cobertura de A y sus
 estados inconclusos. Ninguna etapa declara reparación aceptada del mapa.
+
+## Etapa A: revisión de código y puerta de ejecución
+
+Fable5.1,186,859s, SOUND-with-fixes; fuentes congeladas durante revisión.
+Se han incorporado en una única corrección conjunta:
+- Manifiesto con barras Windows/POSIX y detección de alias duplicados.
+- JSON/NPZ leídos una vez y ligados a su hash; recomprobación de manifiesto,
+  entradas, mundo, paquetes y lector al finalizar el cálculo.
+- Ruta completa de proxies por modelo y ranura, conservando ramas repetidas y
+  jerarquías; el índice se publica con proxy-paths.json. No sólo última ranura.
+- Pruebas de caras múltiples y degeneradas retenidas, Roadway hijo excluido del
+  agua proxy, nietos y centros no nulos, manifiesto real y mutación de instancias.
+- Residuo de coplanaridad guardado por cara. No se cambia1e-9 ni se transforma
+  AMBIGUOUS en PASS. Las afirmaciones de residuo inevitable del revisor son
+  hipótesis de riesgo, no mediciones; se registrará la distribución real.
+
+23 pruebas fuente pasan. Producción A autorizada por este plan revisado:
+una ejecución de deployed_surface_inventory_ev112.py,120s/2GiB, salida nueva
+E:/DayZ-Baltic-Build/shape-repair-20261025/deployed-surface-prototypes-20261028.
+No ejecutar B todavía: requiere revisar la precisión adicional siguiente.
+
+## Precisión propia pendiente de revisión para B
+
+Intersección XZ con una lámina no significa agua expuesta. Las placas pueden
+prolongarse bajo una orilla seca. Antes de clasificar el eje como mojado,
+particionar también por caras nativas y resolver Wmodelo(t)-Hnativo(t).
+Separar BURIED_MODEL_WATER, EXPOSED_MODEL_WATER y contacto/equivalencia, con
+sus intervalos y ambigüedades. No sumar bbox ni contar una placa enterrada como
+carretera inundada. Probar placa ancha bajo orillas secas, W elevado sobre la
+misma huella, cruce H-W dentro de una cara y placa estrecha entre muestras.
+Esta ampliación no cambia A ni autoriza aún implementación/ejecución de B.
+
+## Resultado de A — EJECUTADA_Y_VERIFICADA
+
+Una extracción39,343s,539009caras/17818instancias.23tests fuente PASS.
+Consumidor independiente44,031s: cobertura por cara/modelo y matrices exactas;
+201pilotos contrastados contra MLOD fuente actual, máximo error de vértice0m.
+Los primeros consumidores rechazaron por procedencia antes de geometría:
+145hashes antiguos y19copias temporales distintas. Resolución verificada:
+base201paquete46244e7f más19reemplazos Geometry-only conservando otras superficies
+para obtener3d9550bf. La comparación final usa esa cadena y fuentes actuales,
+no los PASS históricos rechazados. No ejecutar otra vez A ni sus consumidores.
+
+43caras siguen AMBIGUOUS (maderas, tramos curvos/inclinados y piedra curva),
+residuo máximo0,354368843m. No es prueba de defecto del mapa: falta resolver
+triangulación del motor o calcular límites conservadores para ambos casos.
+B permanece pendiente de revisión de agua enterrada y tratamiento de estas caras.
