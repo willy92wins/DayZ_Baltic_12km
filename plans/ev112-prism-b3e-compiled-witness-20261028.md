@@ -1,5 +1,13 @@
 # B3E — comprobar el testigo numérico en el ODOL guardado
 
+Estado vigente: CONSUMIDO_INCONCLUSIVE_PREFLIGHT. El intento agotó 60.047 s
+antes de sellar el entorno y sin compilar control ni candidato. Código y 41
+tests validados; no ODOL nuevo. Plan y aprobación tal como se ejecutaron en
+evidence/prism-b3e-preflight-20261028/plan-executed.md y approval.json.
+No relanzar el preparador. Siguiente unidad sólo lectura:
+plans/ev112-b3e-preflight-timeout-discovery-20261028.md, revisada para implementar.
+Los estados que siguen describen las puertas históricas antes de ese intento.
+
 Estado: REVISADO_PARA_IMPLEMENTAR. Fable5.1 nativo105.985s, SOUND-with-fixes,
 adjudicado; todavía no hay código B3E ni autorización técnica para compilar.
 Codex ejecutor/integrador por petición viva.
@@ -176,3 +184,15 @@ ni builds ejecutados. Los siguientes detalles se incorporan antes de implementar
 La cápsula no contenía contrato b445, lector ni reparación local de preflight:
 se incluirán esas anclas verificadas en la code review. Los módulos antiguos ya
 leídos no se mutan. Ningún cambio de tolerancia, etiqueta, geometría o producto.
+
+## Puerta de ejecución — 28-10-2026
+
+REVISADO_PARA_EJECUTAR. Fable 5.1 nativo entregó SOUND-with-fixes en 271.875 s;
+adjudicación en R/prism-b3e-code-review-20261028/adjudication.md. Corrección
+agrupada: errores internos inconclusos, telemetría exe opcional manteniendo
+memoria fail-closed, nacimiento de descendientes, reproducción de métrica MLOD
+antes de exigir el margen ODOL y mismo dominio de 12 contactos. Censo y overlay
+siguen completos. No se mutaron helpers sellados ni tolerancias. Suite final
+privada 41 PASS en 31.872 s (proceso 44.484 s), postimágenes intactas.
+La aprobación mecánica fija código, plan, revisión y recibo de tests antes de
+preflight fresco y la única pareja compilada. Ningún paquete 201 ni motor.

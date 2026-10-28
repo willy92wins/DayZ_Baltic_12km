@@ -1,0 +1,36 @@
+**Veredicto: SOUND-with-fixes.** No encuentro falso PASS verificable. Encuentro una vía verificable de falso REJECTED_BINARY por clasificación de errores internos y dos robustecimientos del árbol owned. Nada reabre producto, tolerancias ni geometría.
+
+**Hallazgos bloqueantes para la corrección agrupada**
+
+1. **Clasificación por `type(e) is ValueError` confunde error interno con rechazo geométrico.** `prism_b3e_compiled_ev112.py:198` sólo distingue por tipo exacto. Varios caminos tras el censo lanzan `ValueError` plano no procedente de `need`:
+   - `prism_b3_binary_ev112.py:143` (`np.frombuffer` sobre `normal_raw` con longitud no múltiplo de 4). Repro: en `CandidateGate.setUp` añadir `self.candidate.lods[1].normal_raw=bytes(13)`; `run_gate()` lanza `ValueError("buffer size must be a multiple of element size")` sin atributo `details`; a través del CLI se escribe `status=REJECTED_BINARY`, exit 1.
+   - `prism_b3e_compiled_ev112.py:196`: el `dump` del informe de éxito está dentro del `try`. `meter.dump` usa `allow_nan=False`. El resultado de `verify_pair` incluye `geometry_diagnostics.face_area` y el fixture heredado fija `face_area=nan` (`test_prism_b3_binary_ev112.py:168`), lo que sugiere que el control real lo tiene. Repro: `g.meter.dump(Path(td)/'r.json', self.run_gate())` en `test_full_candidate_gate_positive`. Si `normalized` conserva el NaN, un candidato íntegramente certificado se publica como `REJECTED_BINARY` con traza de serialización.
+   Consecuencia: el plan (línea 116) exige INCONCLUSIVE para error interno y prohíbe reconstruir tras rechazo geométrico; un falso REJECTED cierra la vía del candidato. Fix: `need` ya asigna `.details`; clasificar `isinstance(e,ValueError) and hasattr(e,'details')`; serializar el informe en un bloque separado que, si falla, escriba INCONCLUSIVE con tipo y traza, nunca REJECTED. Añadir ambos negativos a la suite.
+
+2. **`run_tree` mata su propio árbol ante `psutil.AccessDenied`.** `build_prism_b3e_ev112.py:39-48` captura sólo `NoSuchProcess`/`FileNotFoundError`; `p.exe()`, `memory_info()` y `sha(exe)` pueden lanzar `AccessDenied`/`PermissionError` con procesos en salida o conhost. La excepción sale del `while`, entra en `except BaseException` (línea 54), ejecuta `stop_owned()` y aborta AddonBuilder a mitad de Binarize. Repro: `mock.patch.object(psutil.Process,'exe',side_effect=psutil.AccessDenied(1))` alrededor de `run_tree([sys.executable,'-c','import time;time.sleep(1)'],...)`: el hijo muere y se lanza aunque nada haya fallado. Consecuencia: INCONCLUSIVE_EXECUTION espurio consumiendo la única compilación de control o candidato del presupuesto. Fix: capturar `psutil.Error` y `OSError` en el muestreo, registrando `executable=None, sha256=None, reason=...` en `observed` sin abortar; el límite de identidad de hijos no observados ya está declarado en la línea 57.
+
+**Hallazgos no bloqueantes (registrar o corregir si caben en la misma pasada)**
+
+3. **Hijo gate no hereda el binding de psutil.** `build_prism_b3e_ev112.py:128` lanza el CLI con `-I` y sin la ruta `dry-road-build-dependencies-20261028`; la gate (`prism_b3e_compiled_ev112.py:11`) sólo añade quality/water/playtest. Si `meter.memory()` importa psutil, en el hijo resolverá el de site-packages, no el 7.2.2 verificado en la línea 91 del padre. No es falso PASS; registrar en el informe del hijo `psutil.__version__`/`__file__` o pasar la ruta explícita. Cobertura limitada: cuerpo de `meter` no incluido.
+
+4. **Reuso de PID dentro del árbol owned.** `build_prism_b3e_ev112.py:40` usa `setdefault`; si un hijo legítimo nuevo reutiliza el PID de un descendiente ya muerto, `live_owned()` lo descarta por `create_time` y queda sin muestrear ni acotar. Fail-open sólo sobre el límite de memoria, probabilidad baja, no sobre el resultado geométrico. Fix trivial: `if pid not in borns or borns[pid]!=d.create_time(): borns[pid]=...`.
+
+5. **Igualdad exacta de margen depende de la versión de shapely/GEOS.** `prism_b3e_compiled_ev112.py:117` exige `margin==proof` en float64 calculado por `boundary.distance`. Con caras bit-idénticas (censo) la entrada es igual, pero GEOS no está sellado en el contrato (sí psutil). Un cambio de versión produciría `contact_proof_changed` REJECTED sin cambio geométrico. Registrar `shapely.__version__`, `shapely.geos_version` y `numpy.__version__` en el informe y, si difieren del B3D, tratar como INCONCLUSIVE. No pido tolerancia.
+
+6. **Desempate de testigo con caras solapadas.** `prism_b3e_compiled_ev112.py:115` `max(hits)` desempata margen igual por nombre y luego índice. Si el proof B3D eligió otra regla con dos caras de techo conteniendo el punto, se rechaza por `contact_proof_changed`. Sólo relevante con solape de techo entre componentes; registrar como límite.
+
+7. **Pins transitivos del contrato previo.** `build_prism_b3e_ev112.py:101` parte de `d['pins']` del B3D. `context()` (`prism_b3e_compiled_ev112.py:139,147`) exige que `baseline_odol`, `baseline_pbo` y `poses` del contrato R1 estén en esos pins. Si el B3D no los heredó, la ejecución para en la línea 114 antes de cualquier build (fail-closed, correcto), pero conviene comprobarlo en seco antes de consumir presupuesto. Cobertura limitada: pins B3D omitidos en la cápsula.
+
+8. **Identidad de puntos por `id()`.** `prism_b3e_compiled_ev112.py:47,55` asume que `selection.points/faces` son los mismos objetos que `mlod.points/faces`. Si el loader real crea copias, todos los componentes caen en `component_members` → INCONCLUSIVE_CENSUS. Fail-closed, pero bloquearía producción; verificar en el control real. Cuerpo del loader no incluido.
+
+**Verificado como correcto**
+
+- Censo visita la unión completa, conserva todas las filas y residuos, separa estructural (INCONCLUSIVE) de geométrico (REJECTED) y exige cobertura 1520/1520 por los cuatro índices (`:82-85`). Claves cíclicas sobre uint32 con signed zero (`:27-34`).
+- Control autónomo con su propio centro, recibo sellado, `candidate_started_before_control` (`:175`) y relectura de snapshots antes/después (`:169,188`) incluyendo recibo y censo del control (`:179-181`).
+- `verify_pair` intacto y sólo tras el censo; protecciones de LOD/campos None/model_info conservadas; nuevo binding no usa `verify_saved` ni `bind_context`.
+- Preparador no recorre árboles con junctions; config idéntica comprobada en ambos lados y en el hijo; preflight sólo por copia local verificada por diff literal (`build:67`); `native_environment_certified=False`.
+- `check_pins` tras lectura y antes de publicar; `mkdir(exist_ok=False)` en todas las salidas.
+
+**Límites de esta revisión.** Sin ejecutar nada. No vistos: `water_constraint_diagnostic_ev112` (`sha/dump/bounded/memory/normalized`), `review_compact_collision_v31.load`, `odol_reader` completo, `contract-r1.json`, pins B3D, `original_controls`, `canonical_lod`. Los fixtures no prueban parsing real del ODOL; la primera lectura estricta real ocurrirá en el control. Tras aplicar las correcciones 1 y 2 y sus negativos, la suite completa debe ejecutarse y el archivo de aprobación debe regenerarse con los nuevos hashes, porque `build:95-97` liga ambos scripts y el test.
+
+FIN_REVISION
