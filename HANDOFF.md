@@ -3,10 +3,10 @@
 <!-- LIVE-STATE:START -->
 visual_review_current: Visita finalizada; C1 SIN REVISAR. Nueve regresiones abiertas. Censo Visual201 verificado:24m² de lecho sobre H en corredor de carretera de kit118; no reparación física.
 project: DayZ_Baltic_12km
-updated: 2026-10-28 (lecturas y catálogo vial completos; B3E2 revisado)
+updated: 2026-10-28 (B3E2 compilado condicional; B3F revisado; carreteras B0 preparadas)
 owner: Codex, ejecutor e integrador por petición viva de Guillermo: continuar OT1 y EV112 hasta completar las pruebas autorizadas. Plan aprobado plans/ev112-plan-astra.md; decisiones del picker incorporadas en la sesión canónica.
 status: EV112 abierto. F conserva 59 picos/12 depresiones corregidos y corrige una transición rectangular. Quedan268picos,1144depresiones,4transiciones. Colisión C, bosque muestreado y 11 secciones de carretera pasan motor; vista/cliente/global pendientes.
-plan: B3E2 REVISADO_PARA_IMPLEMENTAR en plans/ev112-b3e-build-continuation-20261028.md. Catálogo vial A completo; B/C requieren plan específico de corredores.
+plan: B3F REVISADO_PARA_IMPLEMENTAR en plans/ev112-b3f-package-composition-20261028.md; RoadB0 borrador para consumidor/pivote/huella, no colocación.
 candidate_f: F mundo4e5f909d2a27e9322299d751d2d54d67f5cc06700499d0498e533b5e1674ef38; terreno33d6f2713800bd07f3e20ca80870423a8a41c16b7408492d6f705f3fbffe9049; mergedcaa5398021399b6e435faf407005f053d58758091371b5b8fbd2e60e53f69cfc. E exacto+94vértices,59árbolesY. 4749controles físicos PASS; F original NM6 conservado, CNav9 validada aparte. Bosque3727/269968 SAMPLED_BOUNDARY_CLEAR; no disco continuo.
 candidate: E:/DayZ-Baltic-Build/shape-repair-20261025/guarded-relief-batch-e: terreno efbf0c18b1144ee401d983e4f64e2a35b489c69ae5f333524fdc66fbbf4714f9; merged705196d69646f2528aa5796d26e90bab36aebd07a5a0ddb861b31b7160f4a33e. StageE WRPfuente85b2d03dded38382d9deaa01cfc1a36b996087ce2d7e8cadeb8f07c135894887. PackageE verifica2578725objetos/62poses; mundo3a285df12e565373d678997aedb9b51f65f11cdbb0f24939da3b8ce77712231a. BaseT y candidatoD preservados.
 pilots: EV111 V2 @DayZ_Baltic_EV111_ForestPilotV2 (mundo ee4bd96eâ€¦, E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev111/r2/BUILD-EV111-r2.md); EV111 V1; EV110 @DayZ_Baltic_EV110_LatticeShoresV1 mundo 226932e3â€¦, agua 46e63c70â€¦ (terreno ev110/terrain-ev110.npz d25e9428â€¦, cadena evidence/â€¦/ev110/BUILD-EV110.md); EV109 7ad4d6cfâ€¦; EV108 V7 389e27a6â€¦. Build E:/DayZ-Baltic-Build/v31-pond-layer-20261013; trabajo de EV112 en ev112-wip/; relevo en handoff-20261018/ (MANIFEST.json).
@@ -16,17 +16,30 @@ relief: EV97: suavizado Ïƒ 12 m solo de tierra seca; reserva, plataformas y Na
 focus: el cliente sin foco al cargar abre el menÃº de pausa (cielo morado, terreno sin texturas) hasta que Guillermo hace clic en la ventana y pulsa Â«ContinuarÂ».
 blocker: RAM sigue abierta. Nav8Load1 conserva607PASS; bloque RAM incompleto por rechazo port_in_use_foreign en tercera admisión sin run. Dos medidas válidas no bastan para agregar ni aceptar. Nav8 anterior mantiene FAILRAM; Nav12 mantiene tresFAILaltura.
 validation: Kit7 fuente2578398objetos y201modelos; G2/G3/G7/G8 y carreteras offlinePASS. Motor propio11052alturas/0fallos (3430vértices+7622centroides, máximo0.0001861622m); frontera3727/269968 SAMPLED_BOUNDARY_CLEAR,3categorías0.19tests; Fable5.1 revisado y corregido. No aceptación visual/global.
-cleanup: Sin operación propia activa, run ni lease. Diagnóstico de lectura, catálogo vial, suites y revisiones CONSUMIDOS. No relanzar.
+cleanup: Sin operación propia activa, run ni lease. B3E2 pareja/revisiones/suites/preparadores/congelación CONSUMIDOS. B3F sólo plan revisado, no código/paquete todavía.
 performance: Nav8Load1: INCONCLUSIVE_INTERRUPTED_RAM_BLOCK,2/6medidas; Baltic4254.57/4649.21MiB,Chernarus3349.37/3733.76MiB descriptivos. Sincomparaciónagregada. Original12.5 PASSRAMdiagnóstico pero4FAILaltura; Nav8anterior FAILRAM1.265913/1.241333. SinFPS/capacidad.
 bugs: bugs.md una fila por ID: 007 (orillas en escalera; kit EV108), 015 (puentes; EV109), 017, 018, 019, 020. Historia en bugs-history-hasta-2026-10-10.md.
-next: Implementar/revisar/probar preparador B3E2 antes de una pareja aislada. Carreteras: fijar consumidor nativo y footprint completo para pilotos49/49-301/71/76; no colocar globalmente.
+next: Implementar/revisar/probar B3F composición201 sin DayZ; revisión de RoadB0 antes de extracción consumidor/pivotes/materiales/huella completa. No repetir B3E2.
 git: GitHub público https://github.com/willy92wins/DayZ_Baltic_12km. Historial público saneado independiente en E:/DayZ-Baltic-Build/shape-repair-20261025/public-repo; historial local completo conservado. No publicar ramas locales ni usar --all/--mirror; ver PUBLICATION.md.
-handoff: Lecturas9/7 HASHES_MATCH0.641s y16testsR2PASS2.734s. Catálogo501entradas/265modelosstrict,154piezasRoadway,6puentesnominales;20testsPASS0.531s,4.25s/675405824B. Sin build/DayZ. B3D sólo MLOD offline.
+handoff: B3E2 COMPILED_B3E_CONDITIONAL, control3514/candidato2581,1520/1520 exactos. Preflight0.375s/builds8.453/4.609s;24testsPASS6.156s. Original47FAIL21inciertos. P9 decisiond510 recuperado y23.9566664m² anclados al corredor8m.
 deployed: Nav8 funcional conservado; Nav12 af12bfe3ed48c6d436ed2f22bf8057d28a8e96d2de402ef3c36ae09862bfc87d rechazado; NavV9 original a2919a80ae6da6fc90e75b0ac55d1e9dd4ba4a39f6700b9fec237c7e7683b16c restaurado por hash solo para diagnóstico.
 visual_probe: C conserva4749+300físicaPASS; NMpropia CNav9 y45consultas/8rutasF PASS en servidor normal. Ninguna cobertura de actor ni tránsito por25modelosC. Sincliente/vista/CCT/FPS/capacidad. E+Nav9 anterior conservado.
 council: Fable5.1, Grok4.7, Gemini4ArgonHigh, Muse Wonder1.0 CLI nativo, GLM5.3FlashEXL3 y Qwen3.8. Siete informes de seis familias; Glimmer suplementario. Opus sustituido por Fable por el usuario. Adjudicación y recibos en checkpoint actual.
 council_next: plans/quality-council-expanded-after-ev112-20261027.md. Encargo27-10: terminar el trabajo vigente; council ampliado de validadores, mapa y herramientas; consolidar todas las mejoras aprobadas en el plan y ejecutarlas. Núcleo Claude/Fable, ChatGPT, Grok, Muse Wonder CLI y Gemini/Argon; otras familias según sondeo vivo. Estado EN_COLA, no ejecutado.
 <!-- LIVE-STATE:END -->
+
+## B3E2 compilado y carreteras — 28-10-2026
+
+[Evidencia](evidence/prism-b3e2-compiled-20261028/README.md): pareja compilada,
+1520componentes bitexactos;700dry/723wet en interior con0.641/0.523mm de margen.
+Control3514, candidato2581; overlay y LODprotegidos conservados. No prueba nativa,
+201 ni despliegue.18identidades observadas retiradas, sin run/lease.
+Plan B3F revisado por Fable62.812s para composición201 futura, no código aún.
+[Carreteras](evidence/road-preparation-receipts-20261028/README.md): P9 original
+recuperado de Gitpúblico; falsa ausencia en main corregida.23.9566664m² pertenecen
+a corredor8m histórico, no a toda huella12/9m. RoadB0 prepara consumidor/pivotes,
+materiales/anchura y cuatro pilotos; sigue borrador pendiente revisión.
+
 
 ## Lecturas y preparación vial — 28-10-2026
 

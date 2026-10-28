@@ -1,0 +1,98 @@
+{
+  "status": "COMPILED_B3E_CONDITIONAL",
+  "contract_sha256": "c3709a1929214e1372fb2026b8d84c8ae83466aa83e033da968fa196a598f8e4",
+  "proof_sha256": "9a541c82274a9cad75c337d734db2d3ab62120a5e8694c3502fc09f9dd841884",
+  "candidate_odol_sha256": "2581a99ff60f5a6242af55483cce6dd1aa3556cbc36e8a2f1c1488fa08c93545",
+  "control_odol_sha256": "351424ab535a3e3eb40fc460a22360ab442776446055b116e10c0ba6134579f5",
+  "census": {
+    "status": "EXACT_CENSUS",
+    "expected_components": 1520,
+    "observed_components": 1520,
+    "visited_components": 1520,
+    "compared_components": 1520,
+    "global_errors": [],
+    "structural_failures": 0,
+    "geometric_failures": []
+  },
+  "contacts": [
+    {
+      "id": 700,
+      "strict_interior": true,
+      "margin_m": 0.0006409918344828816,
+      "world_ulp_m": 0.0009765625,
+      "margin_ulps": 0.6563756385104708
+    },
+    {
+      "id": 723,
+      "strict_interior": true,
+      "margin_m": 0.0005226926610255875,
+      "world_ulp_m": 0.0009765625,
+      "margin_ulps": 0.5352372848902016
+    }
+  ],
+  "overlay": {
+    "checks": {
+      "nonempty_overlay": true,
+      "full_source_covered": true,
+      "no_excessive_horizontal_extension": true,
+      "vertical_contact_error": true
+    },
+    "source_triangles": 1520,
+    "roof_triangles": 1520,
+    "overlay_pairs": 18842,
+    "refinement_vertices": 28277,
+    "minimum_pair_height_error_m": -0.0007552973696061116,
+    "maximum_height_error_m": 0.00017500188924568505,
+    "lower_contact_coverage": {
+      "covered": true,
+      "uncovered_area_m2": 0.0,
+      "uncovered_triangles": [],
+      "uncovered_triangle_count": 0
+    },
+    "extrema": {
+      "minimum_pair": {
+        "source_triangle": 1330,
+        "roof_triangle": 1409,
+        "xz": [
+          8263.6044921875,
+          8937.6953125
+        ],
+        "source_y": 6.437414156622536,
+        "roof_y": 6.43665885925293,
+        "error_m": -0.0007552973696061116
+      },
+      "maximum": {
+        "source_triangle": 1488,
+        "roof_triangle": 1410,
+        "xz": [
+          8262.96875,
+          8939.0869140625
+        ],
+        "source_y": 7.027431485384924,
+        "roof_y": 7.02760648727417,
+        "error_m": 0.00017500188924568505
+      }
+    },
+    "missing_area_m2": 0.0,
+    "excessive_horizontal_area_m2": 0.0,
+    "vertical_limit_m": 0.02,
+    "horizontal_limit_m": 0.01
+  },
+  "measurement": {
+    "pid": 27748,
+    "parent_pid": 71280,
+    "seconds": 7.0,
+    "peak_resident_bytes": 286658560,
+    "peak_commit_bytes": 269930496
+  },
+  "preflight_seconds": 0.375,
+  "build_seconds": [
+    8.453000000001339,
+    4.609000000000378
+  ],
+  "no_package201_or_dayz": true,
+  "original_failures_unchanged": {
+    "fail": 47,
+    "uncertain": 21
+  }
+}

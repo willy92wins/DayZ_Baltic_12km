@@ -150,12 +150,13 @@ sobre formulaciones amplias anteriores; B/C siguen sin autoría autorizada.
   de vértices decodificados. FTT es histórico/P:, sólo comparación si hash igual;
   no exigir igualdad instalada por nombres ni rechazar una versión legítima.
 - Puentes no hallados en este PBO: informar ausencia acotada, no inventario global.
-  P9 exige agua mínima para calado y máxima para gálibo. El decision.json citado
-  por product-spec no está en este checkout ni en main: conservar pendiente la
-  recuperación del recibo antes del plan nativo; P9 y README del contrato sí leídos.
+  P9 exige agua mínima para calado y máxima para gálibo. Recibo recuperado del
+  Git público f9700cc, SHA d510af67: fondo1m/calado0.95m/corredor24m. La afirmación
+  anterior de ausencia en main era errónea; ver road-preparation-receipts-20261028.
 - Las11secciones: evidence/v31-pond-layer-2026-10-13/ev112/visual-review-20261023/
   quality-continuation-20261025/README.md. La cifra24m² de la tabla es contexto del
-  handoff, no guarda de este catálogo; requiere su recibo exacto en la fase B.
+  handoff, no guarda de este catálogo; recibo recuperado:23.95666642052773m²
+  sobre el corredor histórico8m, sin extrapolar a la huella de piezas12/9m.
 
 Presupuestos sin cambio: code review180s, suite120s, un censo120s/2GiB.
 Un método de parseo incompatible se conserva como inconcluso; no barrer lectores.
@@ -164,3 +165,6 @@ Resultado A:501entradas/265modelosstrict,154piezasRoadway,6puentesnominales.
 4.25s/675405824bytes,20testsPASS. evidence/road-catalog-installed-20261028.
 No repetir catálogo. asf1_25=12m y asf2_25=9m superan banda8m del gate previo;
 B debe comprobar footprint completo sin tratarlo como anchoútil ni aprobarlo ahora.
+
+Siguiente B0: plans/ev112-road-consumer-discovery-b0-20261028.md (borrador),
+consumidor/pivotes/materiales/huella completa antes de proponer poses o ancho.
