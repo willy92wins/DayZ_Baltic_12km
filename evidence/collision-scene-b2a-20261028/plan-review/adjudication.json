@@ -1,0 +1,53 @@
+{
+  "verdict": "SOUND_WITH_FIXES_ADJUDICATED",
+  "review_sha256": "56ed78467f6051036d6cf834755aad7b74d2dc29ed2ed704923cd4973b8eaefc",
+  "plan_sha256": "32a1100bb0576aa2dc155decce7c139d1d33044a73a21b7ebd283dc8d5743b4e",
+  "items": [
+    {
+      "id": 1,
+      "decision": "ACCEPT_WITH_CONDITIONAL_CLAIM",
+      "reason": "Geometry tree raw Ymin=-13.41708469 matches lod.b_min, not assumed zero. Compare raw and raw+bounding_center; header plausibility is not engine-frame proof. Output conditional, no native clearance approval."
+    },
+    {
+      "id": 2,
+      "decision": "ACCEPT_WITH_CORRECTION",
+      "reason": "Bind original2658 and diagnosis. H/B from original expected for all10, match A. Tree delta is relative to max(H,B), not always B."
+    },
+    {
+      "id": 3,
+      "decision": "REJECT_COUNTEREXAMPLE",
+      "reason": "observations.json is selected_examples. Full B1/result.json details contains all10 IDs in all3rounds with54-71objects each. Use full pinned result."
+    },
+    {
+      "id": 4,
+      "decision": "REJECT_EMPIRICAL_CLEARANCE_ACCEPT_COVERAGE",
+      "reason": "5443 includes6proxychildren:72missingWRPmodels, not66. Unknown unbounded model/proxy makes all origins coverage unknown; empirical max radius cannot prove absence."
+    },
+    {
+      "id": 5,
+      "decision": "ACCEPT",
+      "reason": "Explicit two proxy conventions; nonempty unresolved proxy stays UNKNOWN."
+    },
+    {
+      "id": 6,
+      "decision": "ACCEPT",
+      "reason": "Exact float32 Geometry resolution, <=1 LOD, explicit empty and complete component face coverage."
+    },
+    {
+      "id": 7,
+      "decision": "ACCEPT",
+      "reason": "Degenerate hull uses AABB exclusion only, otherwise inconclusive. Effective float32 offsets saved."
+    },
+    {
+      "id": 8,
+      "decision": "ACCEPT",
+      "reason": "External reader fixed by3 hashes, Python GIS -I, paths explicit."
+    },
+    {
+      "id": "integrator-terrain",
+      "decision": "ADD_INDEPENDENT_CHECK",
+      "reason": "Fixed lowY must also exceed interpolated terrain at each effective XZ offset."
+    }
+  ],
+  "scope": "Offline only; no map PASS, no native run, original47FAIL21uncertain retained"
+}

@@ -1,0 +1,55 @@
+{
+  "verdict": "SOUND_WITH_FIXES_ADJUDICATED",
+  "publication_allowed": true,
+  "native_launch_allowed": false,
+  "review_sha256": "b446ba6af845608ce8e3c461442d08369a196911239a754a4e216a22d415673b",
+  "final_code_sha256": "394a99d2e8cbc51ce3ad33bf66e43836ded2a4538e96c12e5cd361da66eeab88",
+  "final_tests_sha256": "148cb31ca784bb301b317774cd16d0f788aa3618250fb74641ab5f72d2a54789",
+  "correction_budget_used": 1,
+  "items": [
+    {
+      "id": 1,
+      "decision": "ACCEPT_FIXED",
+      "proof": "central-comparison.json retains all contacts and both native channels for10centrals; no closest-to-expected selection."
+    },
+    {
+      "id": 2,
+      "decision": "ACCEPT_FIXED",
+      "proof": "report contacts/proofs by frame; plus_bounding_center has0contacts and360AABBexclusions."
+    },
+    {
+      "id": 3,
+      "decision": "ACCEPT_FIXED",
+      "proof": "Snapshot search uses full scene by model;1791occurrences,1665float32matches,126notbitidentical with residual per coordinate<=0.0000005001m. No geometric tolerance changed."
+    },
+    {
+      "id": 4,
+      "decision": "ACCEPT_LIMIT",
+      "proof": "Terrain clearance explicitly relative to pinnedNPZ; tri_h shared with original expected ground; no compiledWRPheight proof."
+    },
+    {
+      "id": 5,
+      "decision": "ACCEPT_FIXED",
+      "proof": "Six new fixtures cover nonempty proxy, frame union and full comparison outputs;37testsPASS."
+    },
+    {
+      "id": "review-coordinate-range",
+      "decision": "CORRECT_REVIEW_TEXT",
+      "proof": "Ten IDs span X8246.21875..8262.7578125 and Z8938..8942.09375; not a2m radius. Bounds scan is complete regardless of review estimate."
+    },
+    {
+      "id": "review-causality",
+      "decision": "KEEP_HYPOTHESIS",
+      "proof": "Tree contact correspondence is descriptive, not proof of historical vanilla identity, certified engine frame or root cause."
+    }
+  ],
+  "unchanged_artifacts": {
+    "points.json": "466592da3018dd4b4323ca0bab4f9900253421a2ba23c3d5ed4a5c7311ca5510",
+    "hits.json": "3a375ddd92cb08126b120455f2c9fdaae05c154f5817240973c5018f33e67146",
+    "poses.json": "5fd99e738cb9316199fbb864df42342acf5d7c4c0b041e7202b03c99f09c6460",
+    "models.json": "e31abb351c6696cd720635a58f265c31f15b7e75a0ced9cd01ad4d9aa26a5349",
+    "proxy-evidence.json": "f9d67a0dbd7e7cc7b59acf2971107c5bc9a9935b14f0f7528f2aef69c000deb2",
+    "native-central.json": "4af5e1b7da99146d9fa2f9f6c381bcd4438f91d393cf48065879499ee4e989fb"
+  },
+  "remaining": "Original47FAIL21uncertain; independent water reference, nativeB2, RAM, nine visual regressions and global acceptance open."
+}
