@@ -1,0 +1,29 @@
+**Veredicto: SOUND-with-fixes.** El discriminador exacto es correcto en lo esencial, el plan coincide con la evidencia en R, y el consumidor ya no puede otorgar membresía de agua por contacto de área cero. Hay una brecha concreta en el camino de retorno exacto→float del consumidor y dos fixtures ausentes que cubren justo el mecanismo real de la regresión.
+
+**Lo que verifiqué como correcto**
+
+- **SAT entero estricto** (`tools/quality/pilot_exact_incidence_ev112.py:28-39`). Multiplicar por 512 en float64 es exacto, `int()` de un float entero es exacto, y los enteros Python no desbordan. Para dos triángulos, los 6 ejes normales de arista bastan: interiores disjuntos ⟺ algún eje con solape ≤ 0. La condición `min(max)<=max(min)` rechaza contacto en arista y en punto sin tolerancia. Degeneración se detecta con producto cruzado entero y lanza error, no devuelve falso silencioso.
+- **No fuerza el grid.** Si alguna coordenada no es múltiplo de 1/512, pasa a racionales con el valor binario exacto recibido. Correcto según el plan.
+- **`rational_polygon`** es Sutherland–Hodgman con Fraction sobre el primer triángulo como semilla. Los casos v=0 se conservan, las intersecciones se insertan sólo con cambio estricto de signo, y la dedup es por igualdad exacta. Al ser el resultado convexo, el abanico desde p[0] sólo da 0 si es colineal. Devuelve lista vacía sólo sin área positiva matemática.
+- **Despacho** (`guarded_intersection`, línea 40-45). El umbral selecciona backend y nunca descarta: área 0 o área ≤ cota van a exacto, y la única forma de descartar es que el polígono racional sea vacío. El resultado espurio del clipping float es un sliver de ancho ~pocos ulp×|coord| por largo ≤ extensión, es decir ~1e-11 m² a 5-6 km; la cota 64·eps·|coord|·extensión es ~1e-9 m², margen ~100×. No es una prueba formal, pero es coherente y no homologa tolerancia con producto.
+- **Tres triángulos originales.** El consumidor pasa bed original, `native_triangle` (esquinas de celda, sin recortar) y agua original (`pilot_visible_exposure_ev112.py:99`). Coincide con el plan.
+- **Evidencia.** `pilot-exposure-contact-discriminator-20261028.json` muestra dos ejes separadores con solape entero 0 y GEOS LineString/área 0 para el par bed 196 / agua 635; las coordenadas de ese par son las del fixture `test_real_regression_shared_edge`, y son múltiplos exactos de 1/512, así que ejercitan el camino entero y además el racional. El pareado reporta 0 caras agua en ambos, residual de área 7.62e-14 y altura 0. El plan reproduce esos números sin inflar su alcance.
+- Pins: `inputs.json` del productor incluye `incidence_sha256`. 7 fixtures exactas y 15 de integración existen en los archivos de test.
+
+**Bugs concretos / fixes mínimos**
+
+1. **Membresía decidida sobre el polígono exacto ya redondeado a float** — `tools/quality/pilot_visible_exposure_ev112.py:99-100`. `guarded_intersection` devuelve los vértices racionales convertidos a float y el consumidor decide `if g.area(cut)==0: continue`. Un sliver verdadero más fino que un ulp a 5-10 km (~1e-12 m) puede colapsar a vértices colineales en float y quedar descartado, contradiciendo "una intersección diminuta positiva sigue presente" y omitiendo `layer_refs` y los deltas de ese par. Es exactamente el tipo de discordancia NaN/finito que terminó la ronda anterior. Fix mínimo: cuando `used` es True, decidir por `len(cut)>=3` del resultado exacto (o devolver desde `guarded_intersection` un booleano `exact_positive = bool(exact)`), y mantener `g.area(cut)==0` sólo para el camino aproximado. El área métrica puede seguir siendo float; lo que debe ser exacto es la membresía.
+
+2. **Falta el fixture del mecanismo real en el corte triple** — `tools/quality/test_pilot_exact_incidence_ev112.py`. `test_tiny_positive_sliver_not_discarded` llama a `guarded_intersection` con `area=0`; `test_native_part_contact_only` sólo llama a `rational_polygon` y en coordenadas pequeñas. No hay ningún test donde el aproximado traiga un sliver espurio positivo (por ejemplo `area=1e-12` y un polígono de 3 vértices casi colineales) y se exija `used=True` y resultado vacío. Añadir ese fixture y una variante trasladada a 10000 m del contacto nativo sólo en punto a través de `guarded_intersection`. Es la prueba que distingue "despacha a exacto" de "descarta por pequeño".
+
+3. **Semilla sin comprobar degeneración** — `pilot_exact_incidence_ev112.py:7`. `rational_polygon` sólo verifica orientación de `ts[1:]`; un primer triángulo colineal devuelve `[]` en silencio, mientras el camino entero de `positive_pair` lanza `exact_degenerate_triangle`. Inalcanzable hoy porque `refine` rechaza bed casi degenerado antes, pero la asimetría entre backends es gratuita de cerrar: una línea comprobando `cross` de `ts[0]` y lanzando el mismo error.
+
+**Observaciones sin fix obligatorio**
+
+- El corte `ce` de línea 107 (parte expuesta ∩ agua) sigue en float sin guardia. Sólo afecta áreas, no membresía, y el espurio posible (~1e-11 m²) queda muy por debajo del control 1e-7 m². No ampliar.
+- **Presupuesto.** Cada par (parte nativa, agua candidata) cuyo corte float sea vacío va a Fraction sobre 3 triángulos. Es el principal coste nuevo y el estimador del preflight es estratificado, no peor caso, como ya declara el código. Si el preflight r2 excede 600 s, la respuesta correcta es cerrar la ronda con ese dato, no acortar la cota.
+- No hay test de `nonfinite_incidence` ni de `positive_pair` con un triángulo en grid y otro fuera; opcionales.
+
+**Lo que no debe cambiar**: umbrales 1e-7 m²/1e-9 m, la cota de despacho como selector y no como filtro, la ausencia de epsilon en alturas, y la regla de que el consumidor float64 nuevo no importe SAT ni clipping del productor. Censo previo sigue consumido y no publicable; candidato seco y reparación física siguen después.
+
+FIN_REVISION

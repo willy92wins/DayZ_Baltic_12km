@@ -140,8 +140,15 @@ evidence/pilot-visible-surface-20261028. Extracción80.703s y consumidor45.719s.
 Primer consumidor detenido por ruta relativa, conservado y corregido con
 contexto W explícito en un script nuevo. No se repitió extracción ni preflight.
 
-Estado del plan: PARCIAL. A extracción/procedencia/CAP verificada; exposición
-contra H/W/corredor/candidato todavía NO ejecutada. La categoría geométrica de
-CAP no demuestra que esté expuesto ni que pueda moverse sin afectar extremos.
-Núcleo de subdivisión nuevo en desarrollo con12fixtures iniciales, sin producción
-ni publicación; falta revisión y completar consumidores antes de ejecutar.
+Estado del plan: PARCIAL. Extracción/procedencia/CAP y exposición continua
+contra H/W/corredor verificadas. Censo R2:201modelos/185744caras/299567partes;
+consumidor GEOS independiente verifica18métricas en todas las caras.37fixtures
+fuente/exportación. Evidencia evidence/pilot-visible-exposure-20261028.
+Se corrigieron falsos contactos de área0 y una resta float32 en el consumidor;
+fallos y experimentos pareados conservados. No se relajaron tolerancias.
+Kit118:13.478894m² BODY y10.477772m² CAPsobre H dentro del corredor rectangular
+de carretera±4m; no bajo agua Visual. El corredor no certifica el pavimento.
+La superficie sobre H incluye orillas diseñadas y lecho sumergido; no toda es
+defectuosa. Siguiente: extensión lateral y altura respecto al agua de sección,
+viabilidad frente a restricciones y candidato previo sólo en139kit7. Los62
+restantes siguen SIN_CANDIDATO. Sin reparación física ni aceptación visual.

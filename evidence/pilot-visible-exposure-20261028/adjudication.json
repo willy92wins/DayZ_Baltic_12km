@@ -1,0 +1,33 @@
+{
+  "status": "DIAGNOSTIC_VALIDATED_NOT_MAP_REPAIR",
+  "reviews": [
+    {
+      "family": "Claude",
+      "model": "Fable5.1",
+      "seconds": 252.766,
+      "verdict": "SOUND-with-fixes"
+    },
+    {
+      "family": "Claude",
+      "model": "Fable5.1",
+      "seconds": 167.016,
+      "verdict": "SOUND-with-fixes"
+    }
+  ],
+  "fixes": [
+    "Road graph/zero length guards; categories explicit; stratified cost check.",
+    "Promote consumer heights before subtraction; paired mechanism isolated.",
+    "Exact integer SAT plus rational common-footprint fallback: no epsilon to discard small areas.",
+    "Preserve exact positive membership even if float vertices collapse; degenerate seed check.",
+    "Independent consumer uses original GEOS triangle footprint before rounded subparts. No producer SAT/clip import."
+  ],
+  "tests_source": 37,
+  "consumer_faces": 185744,
+  "area_numeric_bound_m2": 1e-07,
+  "height_numeric_bound_m": 1e-09,
+  "actual_max_area_residual_m2": 3.2109870318208777e-12,
+  "actual_max_height_residual_m": 9.976464099281657e-13,
+  "product_tolerances_changed": false,
+  "water_modified": false,
+  "geometry_modified": false
+}

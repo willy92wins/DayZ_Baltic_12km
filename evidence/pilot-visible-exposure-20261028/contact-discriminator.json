@@ -1,0 +1,66 @@
+{
+  "status": "EXACT_ZERO_AREA_CONTACT_MISCLASSIFIED_BY_FLOAT_PARTITION",
+  "model": "baltic_stream_pilot/cs_65p0_0_0012.p3d",
+  "bed_face": 196,
+  "producer_water_faces": 1.0,
+  "producer_water_nominal_delta": [
+    2.793673249633428,
+    2.7962359591013843
+  ],
+  "candidates": [
+    {
+      "water_global_index": 635,
+      "water_model": "baltic_stream_pilot/cs_65p0_0_0012.p3d",
+      "water_face": 5,
+      "exact_integer_positive_area_overlap": false,
+      "separating_axes": [
+        {
+          "axis": [
+            -248,
+            434
+          ],
+          "overlap_scaled_integer": 0
+        },
+        {
+          "axis": [
+            248,
+            -434
+          ],
+          "overlap_scaled_integer": 0
+        }
+      ],
+      "geos_type": "LineString",
+      "geos_area": 0.0,
+      "bed_xz": [
+        [
+          5189.29296875,
+          5885.814453125
+        ],
+        [
+          5190.140625,
+          5886.298828125
+        ],
+        [
+          5189.666015625,
+          5885.1640625
+        ]
+      ],
+      "water_xz": [
+        [
+          5189.29296875,
+          5885.814453125
+        ],
+        [
+          5187.923828125,
+          5890.21484375
+        ],
+        [
+          5190.140625,
+          5886.298828125
+        ]
+      ]
+    }
+  ],
+  "mechanism": "Global projected triangles only touch an exact common boundary. Floating native-part clipping reported positive area and water membership. Integer separating-axis oracle certifies no positive-area overlap.",
+  "limits": "One reproduced regression; no broad claim that all remaining incidence disagreements have this cause."
+}
