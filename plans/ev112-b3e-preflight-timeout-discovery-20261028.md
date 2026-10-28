@@ -1,3 +1,7 @@
+Estado vigente: CONSUMIDO_HASHES_MATCH. Nuevelecturas/sietearchivos,0.641s;
+16testsR2PASS2.734s. Evidencia evidence/preflight-read-discovery-20261028.
+No causa histórica ni preflight completo; nueva pareja necesita plan separado.
+
 # B3E: localizar el agotamiento de preflight
 
 Estado: REVISADO_PARA_IMPLEMENTAR. Fable 5.1 nativo 66.25 s, SOUND-with-fixes
@@ -82,3 +86,24 @@ completa, identidad claude-fable-5-1, fuentes intactas. Código aún no implemen
 
 Se mantiene la revisión de código antes de una única ejecución diagnóstica.
 No amplía los 60 s ni autoriza compilación. B3E sigue inconcluso y consumido.
+
+## Ejecución asignada — petición viva posterior
+
+Guillermo pide continuar pruebas y preparar carreteras. Codex implementa esta
+unidad separable mientras descubre el siguiente trabajo vial. Code review
+independiente de hasta180s antes de producción; una corrección agrupada, suite30s,
+una lectura real60s. No autoriza relanzar B3E. El padre usa el handle propio de
+Popen y GetProcessTimes para PID/nacimiento; kill se dirige al handle, no busca
+procesos por nombre. Firma verificada en documentación Microsoft de GetProcessTimes.
+La medición registra también la relectura de integridad de ambos recibos;
+no se suma esa relectura como lectura de herramientas ni se oculta su coste.
+
+Descubrimiento del ejecutor: sys.executable de GIS es un launcher Windows y su
+imagen real es el CPython empaquetado de Codex detrás de ese entorno. Para el
+hijo stdlib se resuelve GetModuleFileNameW(NULL) del proceso GIS vivo y se usa
+esa MISMA imagen con -I -S, sin paquetes ni Python global resuelto por PATH.
+Así el handle de Popen corresponde al intérprete que lee y se puede terminar
+sin dejar al hijo del launcher. Se exige igualdad de PID reportado y handle,
+y el negativo de timeout comprueba el PID escrito por el hijo antes de pararlo.
+Firma GetModuleFileNameW verificada en documentación Microsoft. No es evidencia
+retroactiva de causalidad del preflight anterior ni un cambio de runtime GIS.

@@ -1,0 +1,26 @@
+**Dictamen: SOUND-with-fixes.** El plan B3E2 es coherente con el contrato, los presupuestos y las prohibiciones. Los fallos están en que el código de referencia contradice en cinco puntos lo que el propio plan exige, y el plan debe fijar esos puntos como requisitos verificables para la unidad nueva. Ninguno obliga a reabrir el consumidor ni sus 41 fixtures.
+
+Problemas concretos y fix:
+
+1. **Recibos leídos antes de verificar su hash.** `build_prism_b3e_ev112.py:71` consume campos de `report.json` del preflight histórico y usa `old['original_sha256']` como pin. Ese pin vive dentro del mismo archivo no verificado. En `build_prism_b3e_ev112.py:84` se lee `contract-r1.json` dentro del preflight, pero su hash sólo se comprueba en la línea 106, después de que preflight ya devolvió. Esto contradice la línea 29 del plan. Fix: la unidad nueva verifica `ancestry_hash` y el hash del recibo de preflight histórico contra pins literales de la aprobación nueva antes de parsear ningún campo. Los sha 9f8786a5 y 5fb69872 van como literales en la aprobación, no derivados del recibo.
+
+2. **Comprobaciones oficiales ejecutadas en proceso.** La línea 76 hace `exec_module` sobre la copia reparada y llama `pf.main()` en el proceso del orquestador. Un watchdog en hilo no puede interrumpir limpiamente esa llamada, y si el timeout histórico ocurrió ahí, el `finally` no garantiza recibo. Es la razón más probable de que no quedara fase registrada. Fix: ejecutar las comprobaciones oficiales como hijo bajo el mismo bucle acotado de 60s y 2 GiB, con marcador de fase flush+fsync antes de cada llamada. Así un segundo agotamiento aísla al menos la fase, que es lo único que el plan puede prometer. No es diagnóstico de la causa histórica, y el plan ya lo dice bien.
+
+3. **Pinning transitivo incompleto.** La línea 41 del plan exige pinning transitivo, pero la lista de la línea 113 del código no incluye `pack_continuous_stream_pilot_v31.ps1`, ni los scripts que ese ps1 invoque, ni el módulo `continuous_stream_pilot_v31` del que se importa `model_config`, ni las herramientas del lector en la ruta temporal hardcodeada de la línea 121. Una ruta bajo `C:/temp` no es fuente sellada. Fix: la aprobación nueva pina el ps1, sus dependencias, el módulo de config y el lector. El orquestador los verifica en `stable()` antes de cada fase, no sólo al inicio.
+
+4. **Reutilización posible de la aprobación vieja.** El código acepta cualquier aprobación con estado `REVIEW_ADJUDICATED_TESTS_PASS` en una ruta fija. El plan pide aprobación nueva con carpeta exclusiva, pero no dice cómo se rechaza la antigua. Fix: la aprobación nueva lleva un campo de esquema distinto, pina el plan B3E2 y la postimagen del preparador nuevo, y el orquestador rechaza si la aprobación pina el plan B3E anterior o el CLI consumido. Fallo de pin con nombre de ruta en el mensaje, no el genérico `approval_inherited_mismatch` de la línea 115.
+
+5. **Clasificación de rechazos del gate.** Cuando el consumidor rechaza geometría devuelve código distinto de cero y `run_tree` lanza antes de que el orquestador lea el informe. El recibo de ejecución sólo dice "ver informes hijos". No es falso PASS, pero el recibo final no enlaza el estado real. Fix: antes de lanzar, si existe `report.json` del gate, copiar su campo de estado y su hash en `execution-failure.json` sin reinterpretarlo. Fixture obligatorio: rechazo del gate de control produce fallo con ese enlace y no se crea carpeta de candidato.
+
+Observaciones menores que el plan debe recoger:
+
+- **Huérfanos y timeout.** Si el proceso padre termina y queda un descendiente vivo, el bucle sigue hasta el límite y clasifica como timeout. Es fail-closed y aceptable, pero el plan debe decirlo, y el fixture de "retorno 0 tardío" debe cubrir también este caso.
+- **Muestreo de procesos.** El muestreo cada 0.1s y la suma de RSS del árbol ya quedan limitados en `observation_limit`. El plan no promete más que eso. Correcto. No añadir afirmaciones de árbol completo.
+- **Falta un fixture positivo del orquestador.** La línea 52 del plan lo pide para el consumidor. Hace falta también uno para el orquestador nuevo con un hijo trivial que escriba un PBO sintético aceptado por el lector, para probar la secuencia completa sin Binarize. El mock no puede sustituir la prueba real del consumidor, como ya dice el plan.
+- **Presupuesto total.** La suma de fases es 720s de pared más revisiones. Es coherente y no se relaja. Si preflight agota de nuevo, parar, tal como fija la línea 57.
+
+Lo que está bien y no necesita cambio: orden control antes de candidato con fallo bloqueante, comparación de `config.bin` entre ambos lados, ejecución del gate con `-I`, separación entre hashes instalados y procesos observados, prohibición de reintentos internos, y exclusión explícita de nativo, paquete 201, DayZ y lease. Las carreteras quedan fuera de esta unidad, como pide el usuario.
+
+Para Codex: adjudicar los puntos 1 a 5 contra las fuentes selladas, incorporarlos como requisitos del plan, y sólo entonces escribir la unidad nueva y su suite dentro de los 180s de código y 120s de suite.
+
+FIN_REVISION
