@@ -1,0 +1,25 @@
+**Veredicto: SOUND-with-fixes** (máximo alcanzable OFFLINE_CANDIDATE_ONLY; sin cambio de producto ni de tolerancias).
+
+**Cadena de identidad.** Correcta y cerrada: pins → sha de cada ruta antes y después (`verify_…:132,140`, `prism_…:71,77`), hash fijo del contrato previo y del testigo (`verify_…:24-25`), binding transitivo c769/d130/recibo/original vía pins del previo (`:26-28`), marco fijo centro/traslación (`:29`), sha del candidato y del contrato recomprobados tras la lectura (`:137-138`). TOCTOU residual sólo entre `sha` y `read_bytes` de cada fichero, cubierto por la recomprobación posterior. Las rutas de pins son relativas al CWD: la identidad depende de ejecutar desde el directorio canónico (límite, no fallo).
+
+**Bytes y dominio.** Máscara construida desde índices/caras leídos del candidato, no del autor (`verify_…:81-88`); todo fuera de 17×4 bytes Y + 50×12 bytes normales debe ser idéntico. LODs 0/2/3 idénticos entre fuente, candidato y d130 (`:66`). XZ (`:89`), caja de ambos marcos (`:100,113`), 4560 pares exactos por `Fraction` (`:49-58,98`), plano/base ≤1e-6 contra d130 (`:102-107`), dos marcos mundiales bit-idénticos (`:111-112`), recibo 700/723 campo a campo (`:114-116`). `shared_normal`/`external_normal` son redundantes con `unique_assignment` del helper (`verify_prism_contact_b3:67-69`), lo que es defensa en profundidad, no error.
+
+**Hallazgos (orden de prioridad).**
+
+1. **Clasificación de excepciones: falso REJECTED por bug interno** — `verify_prism_b3_numeric_ev112.py:142`. Cualquier excepción que no sea `Inconclusive/OSError/KeyError/JSONDecodeError` se etiqueta `REJECTED_MLOD`. `IndexError`, `TypeError`, `AttributeError`, `struct.error`, `MemoryError` procedentes de py3d/`components` o de un testigo con tipos raros se reportarían como rechazo geométrico. Repro: testigo con `before` = dict → `np.asarray(...,float)` lanza `TypeError` → `failure.json.status=='REJECTED_MLOD'`. Fix: sólo `ValueError` puro (no `Inconclusive`) → REJECTED; todo lo demás → INCONCLUSIVE.
+
+2. **Artefacto huérfano del autor** — `prism_b3_numeric_author_ev112.py:74-77`. `candidate.p3d` se escribe antes de la recomprobación de pins; si falla, el fichero persiste junto a `failure.json` sin `report.json`. No es falso PASS (el consumidor hashea y verifica por su cuenta), pero sí riesgo operativo de "una sola autoría". Fix: escribir a `candidate.p3d.tmp` y renombrar sólo tras `:77`, o borrarlo en `except`.
+
+3. **Test frágil** — `test_prism_b3_numeric_ev112.py:100`. Sumar 1e-7 a `facenormals[20][0]` no cambia bits si ese componente es ±1.0 (ulp 1.19e-7); el test pasaría a un `OFFLINE_CANDIDATE_ONLY` y fallaría el `assertRaisesRegex`. Pasó en la suite guardada, luego el valor actual no es ±1; dependencia tácita del fixture. Fix: usar `np.nextafter` sobre el float32 o afirmar previamente que los bytes cambiaron.
+
+4. **Conteo incidente no exigido** — `verify_…:79,121`. El contrato fija 17 cambios y conteos, pero 50 caras/50 normales sólo se reportan. No produce falso PASS (la máscara ya limita bytes), pero el contrato debería pinear `expected_incident_faces=50` para que un testigo aceptable con dominio incidente distinto no pase silenciosamente. Añadir `need(len(incident)==50)` es cambio de contrato, no de tolerancia; lo señalo como opcional.
+
+5. **Cobertura negativa pendiente** (sin repro propio, listado): no hay test para `incident_domain`, `external_normal`, `xz_changed`, `baseline_outside_domain` (d130≠c769 fuera de los 12 componentes), `component_members`, `reference_plane` (Y dentro de 2^-25 del testigo pero fuera del plano >1e-6), `predicted_bbox_changed`, `strict_contact`, `geometry_length`, ni negativos CLI (pin alterado, `contract_changed_during_read`, `candidate_changed_during_read`, directorio de salida existente). Los dos últimos requieren mutar durante la ejecución; basta con un pin con hash incorrecto y comprobar `INCONCLUSIVE`.
+
+**Verificaciones sin hallazgo.** `type(i) is int` excluye `bool`. `-0.0` vs `0.0` cuenta como cambio en ambos lados (coherente, `author:42` / `verify:78`). `Fraction(180,512)` es exacto en binario. `exact_pairs` y `components` comparten la agrupación por tupla XZ float64, consistente. Comparación `matrix[:9]` y `origin+centre` tolera ints JSON. El orden `components`(68) antes de máscara(88) hace que `normal_error` se alcance en `test_normal_inverted` sólo si el round-trip py3d es byte-idéntico fuera del cambio; la suite guardada lo confirma empíricamente.
+
+**Límites.** No está en cápsula: `overlay` (tolerancias ±.02/.01 y qué `checks` emite), `closed_component`, `require` (asumo `ValueError`), `meter.bounded/dump/memory` (comportamiento del watchdog si expira durante `write_bytes` o concurrencia con el `dump` del `except`), serialización py3d. Sobre ellos no afirmo nada. No se ha ejecutado nada; Codex adjudica los repros.
+
+**Identidad del dictamen.** Revisión Fable 5.1 sobre los tres SHA256 declarados (0aae1b…, 558a6c…, 870f7f…) más fragmentos de helpers; sin herramientas, sin informes previos.
+
+FIN_REVISION

@@ -1,0 +1,88 @@
+{
+  "status": "OFFLINE_CANDIDATE_ONLY",
+  "changed_y": 17,
+  "incident_faces": 50,
+  "incident_normals": 50,
+  "exact_mlod_pairs": 4560,
+  "geometry_counts": [
+    9120,
+    12160,
+    1520
+  ],
+  "maximum_plane_error_m": 2.7824641812834727e-08,
+  "world_frames_bit_exact": true,
+  "source_and_predicted_bbox_exact": true,
+  "protected_bytes_exact": true,
+  "contacts": [
+    {
+      "id": 700,
+      "local_margin_m": 0.0008792183454447269,
+      "world_float32_margin_m": 0.0006409918344828816,
+      "witness_component": "Component1368"
+    },
+    {
+      "id": 723,
+      "local_margin_m": 0.0007551557787030588,
+      "world_float32_margin_m": 0.0005226926610255875,
+      "witness_component": "Component1410"
+    }
+  ],
+  "overlay": {
+    "checks": {
+      "nonempty_overlay": true,
+      "full_source_covered": true,
+      "no_excessive_horizontal_extension": true,
+      "vertical_contact_error": true
+    },
+    "source_triangles": 1520,
+    "roof_triangles": 1520,
+    "overlay_pairs": 18842,
+    "refinement_vertices": 28277,
+    "minimum_pair_height_error_m": -0.0007552973696061116,
+    "maximum_height_error_m": 0.00017500188924568505,
+    "lower_contact_coverage": {
+      "covered": true,
+      "uncovered_area_m2": 0.0,
+      "uncovered_triangles": [],
+      "uncovered_triangle_count": 0
+    },
+    "extrema": {
+      "minimum_pair": {
+        "source_triangle": 1330,
+        "roof_triangle": 1409,
+        "xz": [
+          8263.6044921875,
+          8937.6953125
+        ],
+        "source_y": 6.437414156622536,
+        "roof_y": 6.43665885925293,
+        "error_m": -0.0007552973696061116
+      },
+      "maximum": {
+        "source_triangle": 1488,
+        "roof_triangle": 1410,
+        "xz": [
+          8262.96875,
+          8939.0869140625
+        ],
+        "source_y": 7.027431485384924,
+        "roof_y": 7.02760648727417,
+        "error_m": 0.00017500188924568505
+      }
+    },
+    "missing_area_m2": 0.0,
+    "excessive_horizontal_area_m2": 0.0,
+    "vertical_limit_m": 0.02,
+    "horizontal_limit_m": 0.01
+  },
+  "limits": "Fixed-frame MLOD calculation only; no new ODOL, compiler centre, package or native certification.",
+  "candidate_sha256": "f2b7018bea6a692ef5964bae4894172e0a73eeabe8be55ea68244a774cb7e634",
+  "contract_sha256": "b44553ee67478e597511e6a075452b07858d6f2457f9a035c3f1101d4bdbf31a",
+  "measurement": {
+    "pid": 61616,
+    "parent_pid": 40948,
+    "seconds": 9.78099999999904,
+    "peak_resident_bytes": 438718464,
+    "peak_commit_bytes": 423186432
+  }
+}
