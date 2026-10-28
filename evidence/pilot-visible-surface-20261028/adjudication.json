@@ -1,0 +1,29 @@
+{
+  "review": "SOUND-with-fixes",
+  "decisions": [
+    {
+      "id": 1,
+      "status": "EXPLICIT_GUARD_ADDED",
+      "reason": "Reader was already pinned transitively by A source_pins. Now discovery.reader is checked explicitly too; no prior unpinned extraction claim."
+    },
+    {
+      "id": 2,
+      "status": "FIXED_TESTED",
+      "reason": "Roadway water and unknown sections retained separately; unknown fixture."
+    },
+    {
+      "id": 3,
+      "status": "FIXED_TESTED",
+      "reason": "npz_start/cap_before/cap_after stored explicitly, 25 fixtures PASS."
+    },
+    {
+      "id": 4,
+      "status": "FIXED",
+      "reason": "Source row mapping errors now carry model name."
+    }
+  ],
+  "preflight": "Single consumed preflight6.969s, metadata/201/190504 unchanged by fixes; not rerun.",
+  "consumer": "Original stopped before model comparison on relative path; separate consumer resolved known W base and verified201 in45.719s.",
+  "unknown_visual": 0,
+  "unknown_roadway": 0
+}
