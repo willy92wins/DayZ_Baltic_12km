@@ -1,0 +1,143 @@
+{
+  "status": "DIAGNOSTIC_COMPLETE_NOT_MAP_ACCEPTANCE",
+  "chains": 1030,
+  "classification_counts": {
+    "FROZEN_SCREEN_CONFLICT": 33,
+    "NOT_EVALUATED_OPEN": 37,
+    "OUT_OF_SCOPE_POND": 887,
+    "PARTIAL_CONSTRAINTS_INCONCLUSIVE": 73
+  },
+  "pilot_fixed_mask_exact": true,
+  "verified_prominence_supports": 9,
+  "screen_budget": {
+    "pairs_left": 1992828
+  },
+  "cases": {
+    "292": {
+      "chain": 292,
+      "segments": 18,
+      "closed": true,
+      "fixed_edge_fraction": 1.0,
+      "fully_fixed_faces": 18,
+      "base_fixed_faces": 18,
+      "raw_fixed_turns": [
+        {
+          "index": 0,
+          "xz": [
+            2442.0,
+            6973.237623764932
+          ],
+          "degrees": 75.69344439011418
+        },
+        {
+          "index": 1,
+          "xz": [
+            2441.1514431367164,
+            6972.848556863284
+          ],
+          "degrees": 50.75478058394937
+        },
+        {
+          "index": 3,
+          "xz": [
+            2440.930196104171,
+            6967.069803895829
+          ],
+          "degrees": 90.0
+        },
+        {
+          "index": 4,
+          "xz": [
+            2436.0,
+            6967.069803895829
+          ],
+          "degrees": 51.03650996101021
+        },
+        {
+          "index": 5,
+          "xz": [
+            2435.5216631504245,
+            6966.4783368495755
+          ],
+          "degrees": 51.03650996101021
+        },
+        {
+          "index": 7,
+          "xz": [
+            2429.589041106628,
+            6966.410958893372
+          ],
+          "degrees": 76.94231581720754
+        },
+        {
+          "index": 9,
+          "xz": [
+            2430.0,
+            6965.0
+          ],
+          "degrees": 66.3527909673002
+        },
+        {
+          "index": 14,
+          "xz": [
+            2443.0,
+            6965.0
+          ],
+          "degrees": 90.0
+        }
+      ],
+      "classification": {
+        "status": "FROZEN_SCREEN_CONFLICT",
+        "metrics": {
+          "rotations": 18,
+          "maximum_turn_deg": 105.5881498757248,
+          "longest_straight_m": 13.0,
+          "maximum_abrupt_turns": 8,
+          "maximum_long_straights": 0
+        },
+        "conditions": "Current fixed_C, all three vertices of every face, fixed water/grid; no permission to edit."
+      }
+    },
+    "769": {
+      "chain": 769,
+      "segments": 94,
+      "closed": true,
+      "fixed_edge_fraction": 0.13829787234042554,
+      "fully_fixed_faces": 11,
+      "base_fixed_faces": 0,
+      "raw_fixed_turns": [
+        {
+          "index": 15,
+          "xz": [
+            11780.870155802808,
+            2409.129844197192
+          ],
+          "degrees": 88.53540231153697
+        },
+        {
+          "index": 17,
+          "xz": [
+            11780.103309141454,
+            2403.896690858546
+          ],
+          "degrees": 69.01515038525417
+        }
+      ],
+      "classification": {
+        "status": "PARTIAL_CONSTRAINTS_INCONCLUSIVE"
+      }
+    }
+  },
+  "limitations": [
+    "Certificates conditional on current pilot constraints; no global impossibility.",
+    "Open, partial, pond and cost-excluded contours are not accepted.",
+    "No terrain generation, no MLOD, no build, no DayZ or new performance comparison."
+  ],
+  "resources": {
+    "pid": 121212,
+    "parent_pid": 124000,
+    "seconds": 7.562999999994645,
+    "peak_resident_bytes": 402149376,
+    "peak_commit_bytes": 381460480
+  }
+}
