@@ -1,0 +1,1 @@
+R0 stopped before APIs/points because it bound the pre-replay B2 consumer. Published B2 replay accepted4255 binds current2f5d; historicalf0b1 preserved. All actual engine/world/packages matched. Continue only remaining API and point reads; no old producer/consumer executed.

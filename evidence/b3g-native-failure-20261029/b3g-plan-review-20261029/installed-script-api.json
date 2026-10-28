@@ -1,0 +1,62 @@
+{
+  "package_sha256": "ff0ad7ee5297c75da74364569a830bc0223315c0131579a0c11a7875d64cb2e2",
+  "prefix": {
+    "product": "dayz",
+    "prefix": "scripts",
+    "version": "127662"
+  },
+  "apis": [
+    {
+      "entry": "3_Game/Global/DayZPhysics.c",
+      "sha256": "279ce05c528e467cbf7de820954ee0ce98355d47f8efdd04eca4c5de50d86b07",
+      "p_drive_path": "P:\\scripts\\3_Game\\Global\\DayZPhysics.c",
+      "p_drive_sha256": "279ce05c528e467cbf7de820954ee0ce98355d47f8efdd04eca4c5de50d86b07",
+      "definitions": [
+        {
+          "line": 1,
+          "text": "enum PhxInteractionLayers"
+        },
+        {
+          "line": 6,
+          "text": "\tBUILDING,"
+        },
+        {
+          "line": 199,
+          "text": "\tproto static bool\tRaycastRV(vector begPos, vector endPos, out vector contactPos, out vector contactDir, out int contactComponent, /*out*/ set<Object> results = NULL, Object with = NULL, Object ignore = NULL,  bool sorted = false,  bool ground_only = false,  int iType = ObjIntersectView, float radius = 0.0, CollisionFlags flags = CollisionFlags.NEARESTCONTACT);"
+        },
+        {
+          "line": 211,
+          "text": "\tproto static bool\tRayCastBullet(vector begPos, vector endPos, PhxInteractionLayers layerMask, Object ignoreObj, out Object hitObject, out vector hitPosition, out vector hitNormal, out float hitFraction);"
+        }
+      ]
+    },
+    {
+      "entry": "3_Game/Global/Game.c",
+      "sha256": "81adad304e1462b7d027a5feaf69ad0255c5b618ae357a596d8aef525493af98",
+      "p_drive_path": "P:\\scripts\\3_Game\\Global\\Game.c",
+      "p_drive_sha256": "81adad304e1462b7d027a5feaf69ad0255c5b618ae357a596d8aef525493af98",
+      "definitions": [
+        {
+          "line": 1178,
+          "text": "\tproto native float\t\tSurfaceRoadY3D(float x, float y, float z, RoadSurfaceDetection rsd);"
+        },
+        {
+          "line": 1196,
+          "text": "\tproto native bool\t\tSurfaceIsSea(float x, float z);"
+        },
+        {
+          "line": 1197,
+          "text": "\tproto native bool\t\tSurfaceIsPond(float x, float z);"
+        },
+        {
+          "line": 1198,
+          "text": "\tproto native float      GetWaterDepth(vector posWS);"
+        },
+        {
+          "line": 1200,
+          "text": "\tproto native float\t\tGetWaterSurfaceHeightNoFakeWave(vector posWS);"
+        }
+      ]
+    }
+  ]
+}

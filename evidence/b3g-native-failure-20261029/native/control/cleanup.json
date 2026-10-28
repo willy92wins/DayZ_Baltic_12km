@@ -1,0 +1,52 @@
+{
+  "close": {
+    "run_id": "d4b28db9-f080-4a1c-85b4-c73faaee2e8e",
+    "graceful": true,
+    "stop_method": "orderly_close",
+    "graceful_wait_s": 2.801085300001432,
+    "exit_metrics_valid": true,
+    "run_retired": true,
+    "stop_required": false,
+    "reason": null,
+    "roles": [
+      {
+        "role": "server",
+        "termination_line": true,
+        "rpt_rotated": false
+      }
+    ],
+    "lease_ttl_s": 119.70216910000454
+  },
+  "release": {
+    "released": true,
+    "cleanup": {
+      "terminal_safe": true,
+      "runs_released": [],
+      "cancelled": 0,
+      "vehicle_release_enqueued": 0
+    },
+    "cleanup_degraded": [],
+    "ok": true,
+    "next_step": "session_acquire_wait"
+  },
+  "self": {
+    "state": "none",
+    "position": null
+  },
+  "pending_commands": 0,
+  "cleanup_degraded": [],
+  "own_run_retired": true,
+  "own_retired_status": [
+    {
+      "run_id": "d4b28db9-f080-4a1c-85b4-c73faaee2e8e",
+      "daemon_generation_at_launch": "2b5f960b9256490793319b0857c9f1b8",
+      "daemon_generation_current": "2b5f960b9256490793319b0857c9f1b8",
+      "generation_changed": false,
+      "event": "run_reaped",
+      "reason": "all_processes_gone_or_foreign",
+      "decision": "reaped",
+      "state": "EXITED",
+      "client_death_diagnosis": null
+    }
+  ]
+}
