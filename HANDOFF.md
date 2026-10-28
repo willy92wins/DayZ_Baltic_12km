@@ -3,10 +3,10 @@
 <!-- LIVE-STATE:START -->
 visual_review_current: Visita finalizada; C1 SIN REVISAR. Nueve regresiones abiertas. Censo Visual201 verificado:24m² de lecho sobre H en corredor de carretera de kit118; no reparación física.
 project: DayZ_Baltic_12km
-updated: 2026-10-28 (B3D MLOD validado offline; 35 tests, publicación en preparación)
+updated: 2026-10-28 (B3D publicado148da18d; B3E plan revisado para implementar)
 owner: Codex, ejecutor e integrador por petición viva de Guillermo: continuar OT1 y EV112 hasta completar las pruebas autorizadas. Plan aprobado plans/ev112-plan-astra.md; decisiones del picker incorporadas en la sesión canónica.
 status: EV112 abierto. F conserva 59 picos/12 depresiones corregidos y corrige una transición rectangular. Quedan268picos,1144depresiones,4transiciones. Colisión C, bosque muestreado y 11 secciones de carretera pasan motor; vista/cliente/global pendientes.
-plan: B3D ejecutado una vez tras revisión; evidence/prism-b3d-numeric-20261028. Siguiente plan binario separado, todavía no autorizado ni ejecutado.
+plan: B3D consumido/publicado. B3E plans/ev112-prism-b3e-compiled-witness-20261028.md REVISADO_PARA_IMPLEMENTAR; código/verificador/pareja aún no existen.
 candidate_f: F mundo4e5f909d2a27e9322299d751d2d54d67f5cc06700499d0498e533b5e1674ef38; terreno33d6f2713800bd07f3e20ca80870423a8a41c16b7408492d6f705f3fbffe9049; mergedcaa5398021399b6e435faf407005f053d58758091371b5b8fbd2e60e53f69cfc. E exacto+94vértices,59árbolesY. 4749controles físicos PASS; F original NM6 conservado, CNav9 validada aparte. Bosque3727/269968 SAMPLED_BOUNDARY_CLEAR; no disco continuo.
 candidate: E:/DayZ-Baltic-Build/shape-repair-20261025/guarded-relief-batch-e: terreno efbf0c18b1144ee401d983e4f64e2a35b489c69ae5f333524fdc66fbbf4714f9; merged705196d69646f2528aa5796d26e90bab36aebd07a5a0ddb861b31b7160f4a33e. StageE WRPfuente85b2d03dded38382d9deaa01cfc1a36b996087ce2d7e8cadeb8f07c135894887. PackageE verifica2578725objetos/62poses; mundo3a285df12e565373d678997aedb9b51f65f11cdbb0f24939da3b8ce77712231a. BaseT y candidatoD preservados.
 pilots: EV111 V2 @DayZ_Baltic_EV111_ForestPilotV2 (mundo ee4bd96eâ€¦, E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev111/r2/BUILD-EV111-r2.md); EV111 V1; EV110 @DayZ_Baltic_EV110_LatticeShoresV1 mundo 226932e3â€¦, agua 46e63c70â€¦ (terreno ev110/terrain-ev110.npz d25e9428â€¦, cadena evidence/â€¦/ev110/BUILD-EV110.md); EV109 7ad4d6cfâ€¦; EV108 V7 389e27a6â€¦. Build E:/DayZ-Baltic-Build/v31-pond-layer-20261013; trabajo de EV112 en ev112-wip/; relevo en handoff-20261018/ (MANIFEST.json).
@@ -16,10 +16,10 @@ relief: EV97: suavizado Ïƒ 12 m solo de tierra seca; reserva, plataformas y Na
 focus: el cliente sin foco al cargar abre el menÃº de pausa (cielo morado, terreno sin texturas) hasta que Guillermo hace clic en la ventana y pulsa Â«ContinuarÂ».
 blocker: RAM sigue abierta. Nav8Load1 conserva607PASS; bloque RAM incompleto por rechazo port_in_use_foreign en tercera admisión sin run. Dos medidas válidas no bastan para agregar ni aceptar. Nav8 anterior mantiene FAILRAM; Nav12 mantiene tresFAILaltura.
 validation: Kit7 fuente2578398objetos y201modelos; G2/G3/G7/G8 y carreteras offlinePASS. Motor propio11052alturas/0fallos (3430vértices+7622centroides, máximo0.0001861622m); frontera3727/269968 SAMPLED_BOUNDARY_CLEAR,3categorías0.19tests; Fable5.1 revisado y corregido. No aceptación visual/global.
-cleanup: B3D autor/consumidor concluidos; sin run ni lease DayZ. No repetir revisiones, autores, consumidores o congelación consumidos.
+cleanup: Sin operación propia activa, run ni lease. B3D revisiones/autor/consumidor/tests/congelación/publicadores y revisión de planB3E CONSUMIDOS; no relanzar.
 performance: Nav8Load1: INCONCLUSIVE_INTERRUPTED_RAM_BLOCK,2/6medidas; Baltic4254.57/4649.21MiB,Chernarus3349.37/3733.76MiB descriptivos. Sincomparaciónagregada. Original12.5 PASSRAMdiagnóstico pero4FAILaltura; Nav8anterior FAILRAM1.265913/1.241333. SinFPS/capacidad.
 bugs: bugs.md una fila por ID: 007 (orillas en escalera; kit EV108), 015 (puentes; EV109), 017, 018, 019, 020. Historia en bugs-history-hasta-2026-10-10.md.
-next: Publicar B3D validado desde public-repo y preparar/revisar plan separado de binarización; conservar B3B rechazado y todas las etiquetas originales.
+next: Implementar B3E según plan adjudicado: censo binario completo1520, gatecontrol separado, bindingB3D y bits de caras. Code review y tests antes de una pareja nueva; preflight fresco. No paquete201/DayZ en B3E.
 git: GitHub público https://github.com/willy92wins/DayZ_Baltic_12km. Historial público saneado independiente en E:/DayZ-Baltic-Build/shape-repair-20261025/public-repo; historial local completo conservado. No publicar ramas locales ni usar --all/--mirror; ver PUBLICATION.md.
 handoff: B3D f2b7018b: 17Y/50caras-normales, 4560pares exactos, marcos mundiales calculados bit-idénticos, bbox/otrosLOD/overlay/contactos conservados. OFFLINE_CANDIDATE_ONLY; no ODOL ni motor.
 deployed: Nav8 funcional conservado; Nav12 af12bfe3ed48c6d436ed2f22bf8057d28a8e96d2de402ef3c36ae09862bfc87d rechazado; NavV9 original a2919a80ae6da6fc90e75b0ac55d1e9dd4ba4a39f6700b9fec237c7e7683b16c restaurado por hash solo para diagnóstico.
@@ -27,6 +27,14 @@ visual_probe: C conserva4749+300físicaPASS; NMpropia CNav9 y45consultas/8rutasF
 council: Fable5.1, Grok4.7, Gemini4ArgonHigh, Muse Wonder1.0 CLI nativo, GLM5.3FlashEXL3 y Qwen3.8. Siete informes de seis familias; Glimmer suplementario. Opus sustituido por Fable por el usuario. Adjudicación y recibos en checkpoint actual.
 council_next: plans/quality-council-expanded-after-ev112-20261027.md. Encargo27-10: terminar el trabajo vigente; council ampliado de validadores, mapa y herramientas; consolidar todas las mejoras aprobadas en el plan y ejecutarlas. Núcleo Claude/Fable, ChatGPT, Grok, Muse Wonder CLI y Gemini/Argon; otras familias según sondeo vivo. Estado EN_COLA, no ejecutado.
 <!-- LIVE-STATE:END -->
+
+## Plan B3E revisado — 28-10-2026
+
+Fable5.1 nativo105.985s, SOUND-with-fixes adjudicado.
+[evidencia de revisión](evidence/prism-b3e-plan-review-20261028/adjudication.md).
+No código B3E, compilación ni paquete nuevos. Siguiente implementar/revisar/probar
+el consumidor y preparador; censo completo antes de rechazo, control antes de
+candidato, binding B3D y comparación de bits. No rebajar tolerancias.
 
 ## Checkpoint B3D — 28-10-2026
 
