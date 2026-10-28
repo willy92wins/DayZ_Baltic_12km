@@ -60,3 +60,19 @@ Guillermo se desplaza y señala un posible puente ausente. Confirma que su perso
 Regresión requerida: inventariar intersecciones carretera/agua de forma independiente de los puentes generados, contrastar TODAS con el WRP compilado y continuidad real del paso, clasificar cruces intencionados/noresueltos y mantener excepciones explícitas. No convertir «todos los puentes de la lista pasan» en «todos los cruces están resueltos». Sin reparación durante la visita. [Ubicación y límites](additional-crossing-feedback.json).
 
 Aclaración posterior de Guillermo: **la carretera está partida por el río**, no es sólo una sospecha abstracta de puente ausente. CROSSING-VIS-01 pasa a RECHAZO VISUAL DE CONTINUIDAD confirmado por el usuario. Falta identificar el mecanismo y medir el cruce; la ausencia de puente sigue siendo una hipótesis técnica, no el estado del defecto. Exige revisión geométrica de todos los demás cruces y de las orillas tanto de ríos como del mar. La carretera49 bien localmente no exime este otro tramo roto.
+
+## Bosque denso: visto bueno visual local
+
+Parada5, X8500/Z3500: Guillermo responde «Se ve bien; pasar al siguiente punto». Estado LOCAL_VISUAL_OK sólo para la zona vista. No certifica todo el bosque ni rendimiento, población de árboles o relieve global. [Reporte](forest-feedback.json). Siguiente parada autorizada: candidato de relieve oriental X11790/Z2400, señalado por el censo como native_spike; la marca numérica aún requiere interpretación visual.
+
+Parada6, **RELIEF-EAST-VIS-01 / 011**: Guillermo señala que «el lado izquierdo necesita smoothing». Rechazo visual de esa zona del relieve, cerca de la parada11790/2400. Posición del personaje y cámara player archivadas, pero no delimitan el área exacta ni certifican la vista libre. Había un candidato native_spike previo en la parada; aún no se ha asociado al lado señalado, por lo que no se afirma falso negativo. Incorporar al corpus real y al control/reparación procedimental global del relieve, sin rebajar tolerancias o protecciones. [Reporte](relief-east-feedback.json). No reparación durante la visita.
+
+Captura de **RELIEF-EAST-VIS-01** recibida: concreta la falta de suavizado en el contorno de una masa de agua, con entrantes/lenguas estrechas y codos a la izquierda, más rectas largas visibles. Guardada localmente con SHA-256 8ca9a311335134f7ac6dc1b40047493f45aac7c0d16642d62b2dc086ab76e792; metadatos en [relief-east-feedback.json](relief-east-feedback.json). Misma observación, no duplicarla. Regresión geométrica de contornos completos de charcas/lagunas, ríos y costas, con transiciones recta-curva y escalas; un detector de picos puntuales no cubre esa intención. Localización exacta/correspondencia con censo y causa aún pendientes. No variar agua, protecciones ni tolerancias por esta imagen; no se publica la captura ni se repara durante la visita.
+
+## Terraplén c0: visto bueno visual local
+
+Parada7, X7286/Z10693: Guillermo responde «Se ve bien; pasar al siguiente punto». LOCAL_VISUAL_OK sólo para la zona revisada; no prueba conducción, toda la longitud del terraplén ni aceptación de otras orillas. [Reporte](causeway-c0-feedback.json). Parada siguiente: c1 en6789/10357, según inventario aprobado.
+
+## Fin de visita y continuación autónoma
+
+El28-10 Guillermo indica que no puede seguir mirando y pide continuar el mapa. C1 queda SIN REVISAR. Los nueve reportes conservan su estado; bosque/c0 tienen visto bueno local. [Cierre documental](tour-ended-20261028.json). No se emitió cierre contra otro run: el de la visita ya no figura activo. Reevaluación del plan MLOD antes de continuar, mediante el plan geométrico del28-10.

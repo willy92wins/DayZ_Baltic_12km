@@ -1,0 +1,114 @@
+{
+  "status": "CENSO_DIAGNOSTICO_COMPLETO",
+  "map_acceptance": false,
+  "cells": 4190209,
+  "faces": 8380418,
+  "segment_validation": {
+    "segments": 107641,
+    "mixed_faces": 107641,
+    "maximum_edge_error_m": 2.033691978340166e-12,
+    "maximum_water_height_residual_m": 1.92120798436779e-12,
+    "exact_water_vertex_faces": 4,
+    "zero_length_segments": 2
+  },
+  "chain_validation": {
+    "chains": 1030,
+    "assigned_exactly_once": 107641
+  },
+  "discontinuities": {
+    "shared_key_gaps": 5,
+    "maximum_gap_m": 1.0645994177993998
+  },
+  "coincident_open_ends_different_keys": 0,
+  "screen_status_counts": {
+    "DEGENERATE": 1,
+    "DIAGNOSTIC_FINDINGS": 790,
+    "NOT_EVALUATED_COST": 3,
+    "NO_SCREEN_FINDING_NOT_ACCEPTANCE": 236
+  },
+  "policy": {
+    "version": "ev112-shapes-3",
+    "simplification_m": 0.25,
+    "long_straight_m": 60.0,
+    "abrupt_turn_deg": 45.0,
+    "stair_turn_deg": 60.0,
+    "stair_turns": 3,
+    "stair_axis_tolerance_deg": 5.0,
+    "stair_axis_share": 0.9,
+    "join_turn_deg": 30.0,
+    "join_gap_m": 0.5,
+    "pyramid_rms_ratio": 0.025,
+    "pyramid_relief_m": 0.3,
+    "rectangle_hull_fill": 0.9,
+    "rectangle_perimeter_share": 0.85,
+    "rectangle_min_side_m": 24.0,
+    "rectangle_step_m": 0.3,
+    "rectangle_stencil_span_cells": 2.0,
+    "stair_axis_balance": 0.1,
+    "chain_bridge_max_m": 0.5,
+    "pose_tolerance_m": 0.001,
+    "rounded_stair_run_min_m": 20.0,
+    "rounded_stair_axis_share": 0.65,
+    "source_geometry_tolerance_m": 0.001,
+    "native_prominence_m": 0.3,
+    "rectangle_min_vertices": 16,
+    "rectangle_min_side_support": 3,
+    "pyramid_aspect_min": 0.25,
+    "pyramid_angle_step_deg": 3.0,
+    "pyramid_radius_cells": [
+      2,
+      4,
+      8
+    ],
+    "pyramid_apex_offsets_cells": [
+      0.0,
+      -0.5,
+      0.5
+    ],
+    "pyramid_phase_search_max_rms": 0.15,
+    "pyramid_background_mode": "fit_plane_without_slope_cap",
+    "slanted_axis_flat_tolerance_m": 0.001,
+    "slanted_axis_linear_tolerance_m": 0.01
+  },
+  "dry_bed_effect": {
+    "unchanged": {
+      "water": true,
+      "axis": true,
+      "station": true,
+      "level": true,
+      "raw": true,
+      "bed_xz": true
+    },
+    "scope": "All saved bed vertices including caps. Height difference is not rendered exposure.",
+    "original": {
+      "vertices": 64857,
+      "above_native_vertices": 61506,
+      "delta_quantiles_m": [
+        -0.031139354221445537,
+        1.0530304115576374,
+        1.5276931101456286,
+        1.6369905818998853,
+        1.8110326326374613
+      ]
+    },
+    "candidate": {
+      "vertices": 64857,
+      "above_native_vertices": 61506,
+      "delta_quantiles_m": [
+        -0.031139354221445537,
+        0.8614505805695805,
+        1.1129458675626869,
+        1.2784485193683344,
+        1.4223607576374613
+      ]
+    },
+    "changed_y": 48982
+  },
+  "seconds": 5.921999999991385,
+  "limits": [
+    "Nominal native terrain/pond/sea only; no model occlusion.",
+    "Screens do not grant naturalness or visual PASS; closed turns not evaluated.",
+    "No bridge, road-water, collision, navigation or RAM acceptance.",
+    "Review positions only; screenshot-to-feature association unconfirmed."
+  ]
+}

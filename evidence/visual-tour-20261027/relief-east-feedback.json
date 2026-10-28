@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-27",
+  "run_id": "f37e2198-95f8-47b8-a303-28dc248f2f1d",
+  "site": "relief-east",
+  "id": "RELIEF-EAST-VIS-01",
+  "bug": "011",
+  "reference_position_xz": [
+    11790,
+    2400
+  ],
+  "build_identity_reference": "feedback.json",
+  "user_report": "el lado izuqiqerdo necesita smoothing",
+  "observed": "La captura concreta el lado izquierdo como una orilla con entrantes estrechos, lenguas de tierra y codos marcados; también muestra tramos largos casi rectos.",
+  "status": "VISUAL_REJECTED_BY_USER",
+  "scope": "La zona izquierda señalada por el usuario; no implica rechazo de todo el relieve visible.",
+  "localization": {
+    "player": {
+      "name": "Dev",
+      "pos": [
+        11790.9140625,
+        1.465181589126587,
+        2400.356201171875
+      ],
+      "godmode": 1
+    },
+    "camera": {
+      "ok": 1,
+      "applied_mode": "get",
+      "pos": [
+        11791.19140625,
+        3.896193742752075,
+        2401.621337890625
+      ],
+      "matrix": [],
+      "dir": [
+        -0.3810363709926605,
+        -0.47988268733024597,
+        -0.7902682423591614
+      ],
+      "fov": 0,
+      "interpolation_complete": 0,
+      "viewport_moved": 0,
+      "view": "player",
+      "error": ""
+    },
+    "exact_defect_coordinates": null,
+    "limitation": "La cámara consultada informa view=player; no prueba que coincida con una cámara libre usada por el usuario. Izquierda es relativa a su vista, no una dirección cardinal ni las coordenadas del personaje."
+  },
+  "existing_screening_candidate": {
+    "xy": [
+      11790,
+      2400
+    ],
+    "kind": "native_spike",
+    "prominence_m": 2.3962854146957397,
+    "matched_to_user_feature": false
+  },
+  "required_action": "Añadir esta observación al corpus de regresiones de relieve y a la detección/reparación procedimental global. Delimitar el área observada y contrastarla con el censo antes de evaluar cobertura o corregir; mantener agua, extremos, topología, apoyos, protecciones y tolerancias. La regresión debe cubrir el contorno completo visible de masas de agua, incluidas charcas/lagunas, no sólo alturas puntuales: entrantes, lenguas estrechas, variación de curvatura y transiciones entre rectas y curvas a varias escalas. Confirmar geometría del mundo y separar formas naturales o diseñadas de artefactos. La captura no prescribe un radio, umbral ni reclasificación de agua.",
+  "review_gap": "Había un candidato numérico previo en esta parada, pero aún no se ha asociado a la zona izquierda señalada. No afirmar falso negativo ni reparación validada. Esta captura prueba que revisar sólo la prominencia de un vértice no responde al contorno señalado. Sigue pendiente asociar el contorno observado al censo y aislar generación, geometría y representación.",
+  "repair_status": "NOT_IMPLEMENTED_DURING_TOUR",
+  "dry_bank_candidate_in_game": false,
+  "tolerances": "UNCHANGED",
+  "lifecycle": {
+    "release": {
+      "released": true,
+      "cleanup": {
+        "terminal_safe": true,
+        "runs_released": [
+          "f37e2198-95f8-47b8-a303-28dc248f2f1d"
+        ],
+        "cancelled": 0,
+        "vehicle_release_enqueued": 0
+      },
+      "cleanup_degraded": [],
+      "ok": true,
+      "next_step": "session_acquire_wait"
+    },
+    "final_session": {
+      "self": {
+        "state": "none",
+        "position": null
+      },
+      "pending_commands": 0
+    }
+  },
+  "related_bug_ids": [
+    "007"
+  ],
+  "user_screenshot": {
+    "local_archive": "visual-tour-20261027/relief-east-shore-user.png",
+    "sha256": "8ca9a311335134f7ac6dc1b40047493f45aac7c0d16642d62b2dc086ab76e792",
+    "bytes": 3868647,
+    "image_size_px": [
+      1885,
+      1072
+    ],
+    "source": "User attachment following the report about smoothing the left side",
+    "published": false
+  },
+  "image_observations": [
+    "The image shows the outline of a pond or water body viewed from above.",
+    "The left and upper-left bank has narrow inlets, narrow protruding tongues and abrupt turns.",
+    "The upper-right and lower shoreline include long nearly straight stretches.",
+    "These are visible contour observations, not measurements of curvature, slope or world dimensions."
+  ],
+  "screenshot_scope": "Amplía y precisa el mismo RELIEF-EAST-VIS-01; no contar un segundo reporte. No atribuir objetos pequeños del agua ni causas a partir de esta captura."
+}

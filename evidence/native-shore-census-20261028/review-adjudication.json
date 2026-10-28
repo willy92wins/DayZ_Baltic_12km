@@ -1,0 +1,27 @@
+{
+  "plan": {
+    "model": [
+      "claude-fable-5-1"
+    ],
+    "inputs_unchanged": true,
+    "verdict": "SOUND-with-fixes"
+  },
+  "code": {
+    "model": [
+      "claude-fable-5-1"
+    ],
+    "inputs_unchanged": true,
+    "verdict": "SOUND"
+  },
+  "post_review_correction": {
+    "reason": "Two corruption repros passed the old consumer: repeated edge and wholly zero edge replacing a straddling edge.",
+    "change": "Require distinct endpoint edges and dry/wet separation on each.",
+    "repro_tests": [
+      "test_same_edge_twice_rejected",
+      "test_all_zero_edge_cannot_replace_crossing_edge"
+    ],
+    "tests_total": 20,
+    "final_tests": "PASS",
+    "second_fable_review": false
+  }
+}
