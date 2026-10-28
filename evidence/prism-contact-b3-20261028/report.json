@@ -1,0 +1,57 @@
+{
+  "status": "OFFLINE_CANDIDATE_ONLY",
+  "candidate_sha256": "c769dd9a0631156075ec61586dc8f5a1471964899e21bdf34e8d13adad8233ad",
+  "contract_sha256": "447d4a767183bdf95064387a7e0ef45d14a5e040aba6941c5584428e0829ff48",
+  "geometry_counts": [
+    9120,
+    12160,
+    1520
+  ],
+  "selected_components": 12,
+  "contacts": [
+    {
+      "id": 700,
+      "local_margin_m": 0.0008792183454447269,
+      "world_float32_margin_m": 0.0006409918344828816,
+      "world_ulp_m": 0.0009765625,
+      "margin_ulps": 0.6563756385104708,
+      "witness_component": "Component1368",
+      "frame": "MLOD_PLUS_ORIGIN_FLOAT32_NOT_ENGINE_CERTIFIED"
+    },
+    {
+      "id": 723,
+      "local_margin_m": 0.0007551557787030588,
+      "world_float32_margin_m": 0.0005226926610255875,
+      "world_ulp_m": 0.0009765625,
+      "margin_ulps": 0.5352372848902016,
+      "witness_component": "Component1410",
+      "frame": "MLOD_PLUS_ORIGIN_FLOAT32_NOT_ENGINE_CERTIFIED"
+    }
+  ],
+  "maximum_plane_error_m": 2.7824641812834727e-08,
+  "overlay_checks": {
+    "nonempty_overlay": true,
+    "full_source_covered": true,
+    "no_excessive_horizontal_extension": true,
+    "vertical_contact_error": true
+  },
+  "tests": {
+    "private": 17,
+    "public": 17
+  },
+  "reviews": {
+    "plan_seconds": 183.437,
+    "code_seconds": 276.907,
+    "water_seconds": 209.938
+  },
+  "protections": [
+    "Other LODs, faces, indices, masses and nonselected bytes exact. Same bounding box and Geometry counts.",
+    "700 dry and723 wet retain original coordinates and labels. Water failure remains open."
+  ],
+  "limitations": [
+    "MLOD only, no compilation, deployment or native run. World float32 frame is not engine-certified.",
+    "Original2658 still47FAIL21uncertain. B2 unchanged. RAM,C1,nine visual regressions and global acceptance open.",
+    "No generalization to all map contacts before native controls. Expanded council queued after prior work."
+  ],
+  "next": "Prepare and review a separate binary/native B3 plan; preserve central controls, all source LODs, models and world poses. Do not repeat consumed B3 offline author/consumer."
+}
