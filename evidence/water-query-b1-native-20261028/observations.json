@@ -1,0 +1,4436 @@
+{
+  "status": "B1_OBSERVATIONS_NO_PRODUCT_ACCEPTANCE",
+  "run_id": "7de477e9-56cc-4b9c-ae6e-aa9d19db457b",
+  "native_verdict": "INCONCLUSIVE_DIAGNOSTIC",
+  "rows": 345,
+  "points": 115,
+  "reference_mismatches": [],
+  "confounders": {
+    "original_roadway_inconclusive": 60,
+    "query_clock_or_global_wave_changed": 109
+  },
+  "groups": {
+    "all": {
+      "rows": 345,
+      "points": 115,
+      "residuals": {
+        "nf_high": {
+          "count": 1035,
+          "min": -0.16059600000000085,
+          "median": 0.041547999999999696,
+          "max": 0.1469809999999998,
+          "max_abs": 0.16059600000000085,
+          "within_original_water_005": 534
+        },
+        "fake_high": {
+          "count": 1035,
+          "min": -9.000000000147779e-06,
+          "median": -8.881784197001252e-16,
+          "max": 5.1999999996846236e-06,
+          "max_abs": 9.000000000147779e-06,
+          "within_original_water_005": 1035
+        },
+        "nf_low": {
+          "count": 1035,
+          "min": -0.16059600000000085,
+          "median": 0.041547999999999696,
+          "max": 0.1469809999999998,
+          "max_abs": 0.16059600000000085,
+          "within_original_water_005": 534
+        },
+        "fake_low": {
+          "count": 1035,
+          "min": -9.000000000147779e-06,
+          "median": -8.881784197001252e-16,
+          "max": 5.1999999996846236e-06,
+          "max_abs": 9.000000000147779e-06,
+          "within_original_water_005": 1035
+        }
+      },
+      "depth_origin_01": {
+        "count": 345,
+        "min": -8.000000000230045e-06,
+        "median": 0.0,
+        "max": 9.000000000369823e-06,
+        "max_abs": 9.000000000369823e-06,
+        "within_original_water_005": 345
+      },
+      "depth_origin_12": {
+        "count": 345,
+        "min": -1.000000000139778e-05,
+        "median": 0.0,
+        "max": 1.19999999995124e-06,
+        "max_abs": 1.000000000139778e-05,
+        "within_original_water_005": 345
+      },
+      "surface_high_minus_low": {
+        "count": 345,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 0.0,
+        "max_abs": 0.0,
+        "within_original_water_005": 345
+      },
+      "sea_fake_residue": {
+        "count": 1035,
+        "min": -1.000000000139778e-06,
+        "median": 0.0,
+        "max": 1.000000000139778e-06,
+        "max_abs": 1.000000000139778e-06,
+        "within_original_water_005": 1035
+      },
+      "surface_classes": {
+        "nf_high": {
+          "OTHER": 147,
+          "WATER_REF": 186,
+          "AMBIGUOUS": 12
+        },
+        "fake_high": {
+          "OTHER": 245,
+          "WATER_REF": 93,
+          "BED_REF": 7
+        },
+        "nf_low": {
+          "OTHER": 147,
+          "WATER_REF": 186,
+          "AMBIGUOUS": 12
+        },
+        "fake_low": {
+          "OTHER": 245,
+          "WATER_REF": 93,
+          "BED_REF": 7
+        }
+      }
+    },
+    "original_water_fail": {
+      "rows": 129,
+      "points": 43,
+      "residuals": {
+        "nf_high": {
+          "count": 387,
+          "min": -0.03580400000000003,
+          "median": 0.04665500000000056,
+          "max": 0.1464159599999998,
+          "max_abs": 0.1464159599999998,
+          "within_original_water_005": 198
+        },
+        "fake_high": {
+          "count": 387,
+          "min": -5.000000000365823e-06,
+          "median": -1.0000000000148779e-06,
+          "max": 5.1999999996846236e-06,
+          "max_abs": 5.1999999996846236e-06,
+          "within_original_water_005": 387
+        },
+        "nf_low": {
+          "count": 387,
+          "min": -0.03580400000000003,
+          "median": 0.04665500000000056,
+          "max": 0.1464159599999998,
+          "max_abs": 0.1464159599999998,
+          "within_original_water_005": 198
+        },
+        "fake_low": {
+          "count": 387,
+          "min": -5.000000000365823e-06,
+          "median": -1.0000000000148779e-06,
+          "max": 5.1999999996846236e-06,
+          "max_abs": 5.1999999996846236e-06,
+          "within_original_water_005": 387
+        }
+      },
+      "depth_origin_01": {
+        "count": 129,
+        "min": -1.0000000003618226e-06,
+        "median": 0.0,
+        "max": 1.0000000004728449e-06,
+        "max_abs": 1.0000000004728449e-06,
+        "within_original_water_005": 129
+      },
+      "depth_origin_12": {
+        "count": 129,
+        "min": -1.0000000002508003e-06,
+        "median": -1.942890293094024e-16,
+        "max": 1.19999999995124e-06,
+        "max_abs": 1.19999999995124e-06,
+        "within_original_water_005": 129
+      },
+      "surface_high_minus_low": {
+        "count": 129,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 0.0,
+        "max_abs": 0.0,
+        "within_original_water_005": 129
+      },
+      "sea_fake_residue": {
+        "count": 387,
+        "min": -1.000000000139778e-06,
+        "median": 0.0,
+        "max": 1.000000000139778e-06,
+        "max_abs": 1.000000000139778e-06,
+        "within_original_water_005": 387
+      },
+      "surface_classes": {
+        "nf_high": {
+          "WATER_REF": 129
+        },
+        "fake_high": {
+          "WATER_REF": 68,
+          "OTHER": 54,
+          "BED_REF": 7
+        },
+        "nf_low": {
+          "WATER_REF": 129
+        },
+        "fake_low": {
+          "WATER_REF": 68,
+          "OTHER": 54,
+          "BED_REF": 7
+        }
+      }
+    },
+    "original_water_pass": {
+      "rows": 168,
+      "points": 56,
+      "residuals": {
+        "nf_high": {
+          "count": 504,
+          "min": -0.16059600000000085,
+          "median": 0.029064499999999965,
+          "max": 0.13912300000000055,
+          "max_abs": 0.16059600000000085,
+          "within_original_water_005": 285
+        },
+        "fake_high": {
+          "count": 504,
+          "min": -5.000000001587068e-06,
+          "median": -7.494005416219807e-16,
+          "max": 5.000000001587068e-06,
+          "max_abs": 5.000000001587068e-06,
+          "within_original_water_005": 504
+        },
+        "nf_low": {
+          "count": 504,
+          "min": -0.16059600000000085,
+          "median": 0.029064499999999965,
+          "max": 0.13912300000000055,
+          "max_abs": 0.16059600000000085,
+          "within_original_water_005": 285
+        },
+        "fake_low": {
+          "count": 504,
+          "min": -5.000000001587068e-06,
+          "median": -7.494005416219807e-16,
+          "max": 5.000000001587068e-06,
+          "max_abs": 5.000000001587068e-06,
+          "within_original_water_005": 504
+        }
+      },
+      "depth_origin_01": {
+        "count": 168,
+        "min": -8.000000000230045e-06,
+        "median": 0.0,
+        "max": 9.000000000369823e-06,
+        "max_abs": 9.000000000369823e-06,
+        "within_original_water_005": 168
+      },
+      "depth_origin_12": {
+        "count": 168,
+        "min": -1.000000000139778e-05,
+        "median": 0.0,
+        "max": 1.0000000010279564e-06,
+        "max_abs": 1.000000000139778e-05,
+        "within_original_water_005": 168
+      },
+      "surface_high_minus_low": {
+        "count": 168,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 0.0,
+        "max_abs": 0.0,
+        "within_original_water_005": 168
+      },
+      "sea_fake_residue": {
+        "count": 504,
+        "min": -1.0000000000842668e-06,
+        "median": 0.0,
+        "max": 1.000000000139778e-06,
+        "max_abs": 1.000000000139778e-06,
+        "within_original_water_005": 504
+      },
+      "surface_classes": {
+        "nf_high": {
+          "OTHER": 147,
+          "WATER_REF": 12,
+          "AMBIGUOUS": 9
+        },
+        "fake_high": {
+          "OTHER": 160,
+          "WATER_REF": 8
+        },
+        "nf_low": {
+          "OTHER": 147,
+          "WATER_REF": 12,
+          "AMBIGUOUS": 9
+        },
+        "fake_low": {
+          "OTHER": 160,
+          "WATER_REF": 8
+        }
+      }
+    },
+    "original_water_inconclusive": {
+      "rows": 48,
+      "points": 16,
+      "residuals": {
+        "nf_high": {
+          "count": 144,
+          "min": -0.019267000000000034,
+          "median": 0.07037050000000014,
+          "max": 0.1469809999999998,
+          "max_abs": 0.1469809999999998,
+          "within_original_water_005": 51
+        },
+        "fake_high": {
+          "count": 144,
+          "min": -9.000000000147779e-06,
+          "median": 2.0816681711721685e-16,
+          "max": 5.00000000069889e-06,
+          "max_abs": 9.000000000147779e-06,
+          "within_original_water_005": 144
+        },
+        "nf_low": {
+          "count": 144,
+          "min": -0.019267000000000034,
+          "median": 0.07037050000000014,
+          "max": 0.1469809999999998,
+          "max_abs": 0.1469809999999998,
+          "within_original_water_005": 51
+        },
+        "fake_low": {
+          "count": 144,
+          "min": -9.000000000147779e-06,
+          "median": 2.0816681711721685e-16,
+          "max": 5.00000000069889e-06,
+          "max_abs": 9.000000000147779e-06,
+          "within_original_water_005": 144
+        }
+      },
+      "depth_origin_01": {
+        "count": 48,
+        "min": -1.0000000003618226e-06,
+        "median": 0.0,
+        "max": 1.0000000005838672e-06,
+        "max_abs": 1.0000000005838672e-06,
+        "within_original_water_005": 48
+      },
+      "depth_origin_12": {
+        "count": 48,
+        "min": -1.0000000000065512e-05,
+        "median": -2.220446049250313e-16,
+        "max": 9.99999999945489e-07,
+        "max_abs": 1.0000000000065512e-05,
+        "within_original_water_005": 48
+      },
+      "surface_high_minus_low": {
+        "count": 48,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 0.0,
+        "max_abs": 0.0,
+        "within_original_water_005": 48
+      },
+      "sea_fake_residue": {
+        "count": 144,
+        "min": -1.000000000139778e-06,
+        "median": 0.0,
+        "max": 1.000000000139778e-06,
+        "max_abs": 1.000000000139778e-06,
+        "within_original_water_005": 144
+      },
+      "surface_classes": {
+        "nf_high": {
+          "WATER_REF": 45,
+          "AMBIGUOUS": 3
+        },
+        "fake_high": {
+          "OTHER": 31,
+          "WATER_REF": 17
+        },
+        "nf_low": {
+          "WATER_REF": 45,
+          "AMBIGUOUS": 3
+        },
+        "fake_low": {
+          "OTHER": 31,
+          "WATER_REF": 17
+        }
+      }
+    },
+    "without_recorded_confounders": {
+      "rows": 192,
+      "points": 95,
+      "residuals": {
+        "nf_high": {
+          "count": 576,
+          "min": -0.15380799999999972,
+          "median": 0.036716699999999505,
+          "max": 0.14108099999999987,
+          "max_abs": 0.15380799999999972,
+          "within_original_water_005": 327
+        },
+        "fake_high": {
+          "count": 576,
+          "min": -5.00000000069889e-06,
+          "median": -9.999999992515995e-07,
+          "max": 5.1999999996846236e-06,
+          "max_abs": 5.1999999996846236e-06,
+          "within_original_water_005": 576
+        },
+        "nf_low": {
+          "count": 576,
+          "min": -0.15380799999999972,
+          "median": 0.036716699999999505,
+          "max": 0.14108099999999987,
+          "max_abs": 0.15380799999999972,
+          "within_original_water_005": 327
+        },
+        "fake_low": {
+          "count": 576,
+          "min": -5.00000000069889e-06,
+          "median": -9.999999992515995e-07,
+          "max": 5.1999999996846236e-06,
+          "max_abs": 5.1999999996846236e-06,
+          "within_original_water_005": 576
+        }
+      },
+      "depth_origin_01": {
+        "count": 192,
+        "min": -8.000000000230045e-06,
+        "median": 0.0,
+        "max": 9.000000000369823e-06,
+        "max_abs": 9.000000000369823e-06,
+        "within_original_water_005": 192
+      },
+      "depth_origin_12": {
+        "count": 192,
+        "min": -1.0000000000509601e-05,
+        "median": 0.0,
+        "max": 1.19999999995124e-06,
+        "max_abs": 1.0000000000509601e-05,
+        "within_original_water_005": 192
+      },
+      "surface_high_minus_low": {
+        "count": 192,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 0.0,
+        "max_abs": 0.0,
+        "within_original_water_005": 192
+      },
+      "sea_fake_residue": {
+        "count": 576,
+        "min": -1.000000000139778e-06,
+        "median": 0.0,
+        "max": 1.000000000139778e-06,
+        "max_abs": 1.000000000139778e-06,
+        "within_original_water_005": 576
+      },
+      "surface_classes": {
+        "nf_high": {
+          "OTHER": 94,
+          "WATER_REF": 90,
+          "AMBIGUOUS": 8
+        },
+        "fake_high": {
+          "OTHER": 134,
+          "WATER_REF": 53,
+          "BED_REF": 5
+        },
+        "nf_low": {
+          "OTHER": 94,
+          "WATER_REF": 90,
+          "AMBIGUOUS": 8
+        },
+        "fake_low": {
+          "OTHER": 134,
+          "WATER_REF": 53,
+          "BED_REF": 5
+        }
+      }
+    }
+  },
+  "selected_examples": [
+    {
+      "id": 292,
+      "round": 0,
+      "original_states": {
+        "ground": "PASS",
+        "roadway": "PASS",
+        "water": "PASS",
+        "rv": "PASS",
+        "bullet": "PASS"
+      },
+      "original_expect": "dry",
+      "measured": {
+        "id": 292,
+        "round": 0,
+        "start_ms": 24130,
+        "end_ms": 24130,
+        "wave_before": -0.0857531,
+        "wave_after": -0.0857531,
+        "pos": [
+          8257.462891,
+          8.106481,
+          8928.667969
+        ],
+        "ground": 8.10648,
+        "road": 8.10648,
+        "sea": false,
+        "pond": false,
+        "object_count": 73,
+        "depth_origins": [
+          [
+            8257.462891,
+            8.116481,
+            8928.667969
+          ],
+          [
+            8257.462891,
+            8.116481,
+            8928.667969
+          ],
+          [
+            8257.462891,
+            8.356481,
+            8928.667969
+          ]
+        ],
+        "high": [
+          8257.462891,
+          108.106483,
+          8928.667969
+        ],
+        "low": [
+          8257.462891,
+          10.106481,
+          8928.667969
+        ],
+        "nf_high": 0.664247,
+        "fake_high": 0.783316,
+        "nf_low": 0.664247,
+        "fake_low": 0.783316,
+        "depths": [
+          -7.33317,
+          -7.33317,
+          -7.57316
+        ],
+        "low_below_ref": false,
+        "objects": [
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8241.829102,
+              21.923559,
+              8913.080078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3fb_summer.p3d",
+            "pos": [
+              8236.453125,
+              20.315207,
+              8899.68457
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_salixalba_2sb_summer.p3d",
+            "pos": [
+              8228.52832,
+              14.704125,
+              8910.34668
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2s_summer.p3d",
+            "pos": [
+              8233.929688,
+              14.522231,
+              8898.787109
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_c7956dc3cabce015.p3d",
+            "pos": [
+              8244.0,
+              8.082292,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_56171670657e40f6.p3d",
+            "pos": [
+              8241.0,
+              8.266666,
+              8895.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_b91268d089a114ea.p3d",
+            "pos": [
+              8244.0,
+              8.24375,
+              8898.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_7e3a63f9f5acf6ae.p3d",
+            "pos": [
+              8244.0,
+              7.984375,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8240.022461,
+              18.403065,
+              8916.174805
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_1c847c0fa8de3889.p3d",
+            "pos": [
+              8244.0,
+              8.126041,
+              8901.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_220a2bbf0014a9b4.p3d",
+            "pos": [
+              8241.0,
+              8.278125,
+              8898.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8242.339844,
+              11.498623,
+              8927.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8241.837891,
+              11.193654,
+              8909.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2s_summer.p3d",
+            "pos": [
+              8232.448242,
+              13.324865,
+              8916.212891
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_b3b5396572c70aed.p3d",
+            "pos": [
+              8241.0,
+              8.190625,
+              8901.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8249.783203,
+              10.605916,
+              8893.728516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.535156,
+              9.986133,
+              8899.728516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.941406,
+              10.05334,
+              8901.969727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8243.588867,
+              10.270346,
+              8906.09668
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8244.152344,
+              9.886337,
+              8902.482422
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8227.116211,
+              11.49343,
+              8906.862305
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8249.05957,
+              14.394576,
+              8944.823242
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8237.407227,
+              21.656681,
+              8933.97168
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8246.214844,
+              18.88937,
+              8940.923828
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_2fb_summer.p3d",
+            "pos": [
+              8230.254883,
+              17.244736,
+              8941.15625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8244.548828,
+              16.988077,
+              8961.973633
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8247.237305,
+              10.246265,
+              8943.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8245.694336,
+              10.642464,
+              8941.830078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8244.761719,
+              12.386652,
+              8953.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8242.242188,
+              9.743874,
+              8948.709961
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8230.897461,
+              9.430171,
+              8945.720703
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1sb_summer.p3d",
+            "pos": [
+              8220.859375,
+              9.653426,
+              8942.814453
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8244.248047,
+              8.473017,
+              8939.40332
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8227.111328,
+              9.949553,
+              8932.371094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvaticae_3f_summer.p3d",
+            "pos": [
+              8267.943359,
+              18.896545,
+              8892.276367
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8287.448242,
+              18.196756,
+              8926.071289
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8275.004883,
+              18.397915,
+              8907.018555
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8256.792969,
+              23.50461,
+              8893.40625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3fb_summer.p3d",
+            "pos": [
+              8291.966797,
+              18.959072,
+              8908.516602
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8272.873047,
+              19.791519,
+              8910.09375
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3f_summer.p3d",
+            "pos": [
+              8295.610352,
+              14.955275,
+              8926.588867
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.041992,
+              15.892538,
+              8926.199219
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants\\tree\\t_fagussylvatica_3d.p3d",
+            "pos": [
+              8265.827148,
+              19.339863,
+              8891.418945
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_209f5d5a34df2850.p3d",
+            "pos": [
+              8268.0,
+              8.004167,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8263.290039,
+              14.127021,
+              8911.648438
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2s_summer.p3d",
+            "pos": [
+              8274.603516,
+              11.362609,
+              8912.750977
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8273.135742,
+              13.685596,
+              8894.563477
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8273.244141,
+              10.891186,
+              8896.668945
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2f_summer.p3d",
+            "pos": [
+              8281.387695,
+              12.454349,
+              8900.37207
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8260.423828,
+              10.087042,
+              8908.958008
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8271.682617,
+              11.254883,
+              8894.230469
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8256.466797,
+              9.800218,
+              8906.995117
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8271.457031,
+              10.125879,
+              8913.033203
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8262.466797,
+              12.755079,
+              8902.351563
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8283.222656,
+              10.324943,
+              8911.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1s_summer.p3d",
+            "pos": [
+              8268.698242,
+              10.409861,
+              8898.291992
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8276.019531,
+              9.033872,
+              8925.03125
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0000.p3d",
+            "pos": [
+              8257.989258,
+              7.396484,
+              8928.40625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0024.p3d",
+            "pos": [
+              8271.245117,
+              6.582031,
+              8954.890625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8293.106445,
+              14.228451,
+              8942.806641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0012.p3d",
+            "pos": [
+              8269.384766,
+              6.804688,
+              8945.089844
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8288.546875,
+              17.995703,
+              8931.767578
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.141602,
+              17.816109,
+              8930.175781
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants\\tree\\t_piceaabies_3d.p3d",
+            "pos": [
+              8292.512695,
+              17.088291,
+              8933.416992
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.245117,
+              15.431816,
+              8928.748047
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2sb_summer.p3d",
+            "pos": [
+              8280.728516,
+              14.789851,
+              8928.791016
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.396484,
+              13.665301,
+              8946.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8288.490234,
+              9.52813,
+              8940.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2s_summer.p3d",
+            "pos": [
+              8296.234375,
+              10.84382,
+              8930.681641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8293.803711,
+              10.127778,
+              8934.671875
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8290.933594,
+              7.5927,
+              8947.490234
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_1s_summer.p3d",
+            "pos": [
+              8286.430664,
+              8.645783,
+              8929.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\b_piceaabies_1f_summer.p3d",
+            "pos": [
+              8290.991211,
+              7.533192,
+              8949.9375
+            ]
+          }
+        ],
+        "sea_refs": [
+          {
+            "pos": [
+              2400.0,
+              100.0,
+              7000.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.664247,
+            "fake": 0.644058,
+            "depth_origin": [
+              2400.0,
+              0.914247,
+              7000.0
+            ],
+            "depth": -0.270189
+          },
+          {
+            "pos": [
+              2430.0,
+              100.0,
+              7020.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.664247,
+            "fake": 0.621972,
+            "depth_origin": [
+              2430.0,
+              0.914247,
+              7020.0
+            ],
+            "depth": -0.292275
+          },
+          {
+            "pos": [
+              2410.0,
+              100.0,
+              7040.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.664247,
+            "fake": 0.723329,
+            "depth_origin": [
+              2410.0,
+              0.914247,
+              7040.0
+            ],
+            "depth": -0.190918
+          }
+        ]
+      },
+      "surface_classes": {
+        "nf_high": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_high": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        },
+        "nf_low": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_low": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        }
+      },
+      "fake_minus_nofake": {
+        "high": 0.11906899999999998,
+        "low": 0.11906899999999998
+      },
+      "depth_surface_residuals": {
+        "nf_high": [
+          0.11906400000000072,
+          0.11906400000000072,
+          0.11907400000000123
+        ],
+        "fake_high": [
+          -4.999999999810711e-06,
+          -4.999999999810711e-06,
+          5.00000000069889e-06
+        ],
+        "nf_low": [
+          0.11906400000000072,
+          0.11906400000000072,
+          0.11907400000000123
+        ],
+        "fake_low": [
+          -4.999999999810711e-06,
+          -4.999999999810711e-06,
+          5.00000000069889e-06
+        ]
+      },
+      "confounders": []
+    },
+    {
+      "id": 524,
+      "round": 0,
+      "original_states": {
+        "ground": "PASS",
+        "roadway": "PASS",
+        "water": "FAIL",
+        "rv": "PASS",
+        "bullet": "PASS"
+      },
+      "original_expect": "dry",
+      "measured": {
+        "id": 524,
+        "round": 0,
+        "start_ms": 24876,
+        "end_ms": 24876,
+        "wave_before": -0.0607941,
+        "wave_after": -0.0607941,
+        "pos": [
+          8262.875,
+          6.835291,
+          8931.941406
+        ],
+        "ground": 6.83529,
+        "road": 6.95117,
+        "sea": false,
+        "pond": false,
+        "object_count": 72,
+        "depth_origins": [
+          [
+            8262.875,
+            6.845292,
+            8931.941406
+          ],
+          [
+            8262.875,
+            6.961172,
+            8931.941406
+          ],
+          [
+            8262.875,
+            7.201172,
+            8931.941406
+          ]
+        ],
+        "high": [
+          8262.875,
+          106.835289,
+          8931.941406
+        ],
+        "low": [
+          8262.875,
+          8.951172,
+          8931.941406
+        ],
+        "nf_high": 6.82422,
+        "fake_high": 6.78842,
+        "nf_low": 6.82422,
+        "fake_low": 6.78842,
+        "depths": [
+          -0.0568752,
+          -0.172756,
+          -0.412755
+        ],
+        "low_below_ref": false,
+        "objects": [
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8241.829102,
+              21.923559,
+              8913.080078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_c7956dc3cabce015.p3d",
+            "pos": [
+              8244.0,
+              8.082292,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_b91268d089a114ea.p3d",
+            "pos": [
+              8244.0,
+              8.24375,
+              8898.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_7e3a63f9f5acf6ae.p3d",
+            "pos": [
+              8244.0,
+              7.984375,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8240.022461,
+              18.403065,
+              8916.174805
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_1c847c0fa8de3889.p3d",
+            "pos": [
+              8244.0,
+              8.126041,
+              8901.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8242.339844,
+              11.498623,
+              8927.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8241.837891,
+              11.193654,
+              8909.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2s_summer.p3d",
+            "pos": [
+              8232.448242,
+              13.324865,
+              8916.212891
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_b3b5396572c70aed.p3d",
+            "pos": [
+              8241.0,
+              8.190625,
+              8901.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.535156,
+              9.986133,
+              8899.728516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.941406,
+              10.05334,
+              8901.969727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8243.588867,
+              10.270346,
+              8906.09668
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8244.152344,
+              9.886337,
+              8902.482422
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8249.05957,
+              14.394576,
+              8944.823242
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8237.407227,
+              21.656681,
+              8933.97168
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8246.214844,
+              18.88937,
+              8940.923828
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_2fb_summer.p3d",
+            "pos": [
+              8230.254883,
+              17.244736,
+              8941.15625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8244.548828,
+              16.988077,
+              8961.973633
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8247.237305,
+              10.246265,
+              8943.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8245.694336,
+              10.642464,
+              8941.830078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8244.761719,
+              12.386652,
+              8953.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8242.242188,
+              9.743874,
+              8948.709961
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8230.897461,
+              9.430171,
+              8945.720703
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8244.248047,
+              8.473017,
+              8939.40332
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8227.111328,
+              9.949553,
+              8932.371094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvaticae_3f_summer.p3d",
+            "pos": [
+              8267.943359,
+              18.896545,
+              8892.276367
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8287.448242,
+              18.196756,
+              8926.071289
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8275.004883,
+              18.397915,
+              8907.018555
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8256.792969,
+              23.50461,
+              8893.40625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3fb_summer.p3d",
+            "pos": [
+              8291.966797,
+              18.959072,
+              8908.516602
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8272.873047,
+              19.791519,
+              8910.09375
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3f_summer.p3d",
+            "pos": [
+              8295.610352,
+              14.955275,
+              8926.588867
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8301.198242,
+              20.060549,
+              8926.853516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.041992,
+              15.892538,
+              8926.199219
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_209f5d5a34df2850.p3d",
+            "pos": [
+              8268.0,
+              8.004167,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8263.290039,
+              14.127021,
+              8911.648438
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2s_summer.p3d",
+            "pos": [
+              8274.603516,
+              11.362609,
+              8912.750977
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8273.135742,
+              13.685596,
+              8894.563477
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8273.244141,
+              10.891186,
+              8896.668945
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2f_summer.p3d",
+            "pos": [
+              8281.387695,
+              12.454349,
+              8900.37207
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8260.423828,
+              10.087042,
+              8908.958008
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8271.682617,
+              11.254883,
+              8894.230469
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8256.466797,
+              9.800218,
+              8906.995117
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8271.457031,
+              10.125879,
+              8913.033203
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8262.466797,
+              12.755079,
+              8902.351563
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8283.222656,
+              10.324943,
+              8911.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1s_summer.p3d",
+            "pos": [
+              8268.698242,
+              10.409861,
+              8898.291992
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8276.019531,
+              9.033872,
+              8925.03125
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0000.p3d",
+            "pos": [
+              8257.989258,
+              7.396484,
+              8928.40625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0024.p3d",
+            "pos": [
+              8271.245117,
+              6.582031,
+              8954.890625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8293.106445,
+              14.228451,
+              8942.806641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0036.p3d",
+            "pos": [
+              8272.636719,
+              6.326172,
+              8967.102539
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0012.p3d",
+            "pos": [
+              8269.384766,
+              6.804688,
+              8945.089844
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8288.546875,
+              17.995703,
+              8931.767578
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.141602,
+              17.816109,
+              8930.175781
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8290.401367,
+              18.938606,
+              8954.516602
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8296.113281,
+              16.956499,
+              8949.480469
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8299.8125,
+              17.554239,
+              8930.616211
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants\\tree\\t_piceaabies_3d.p3d",
+            "pos": [
+              8292.512695,
+              17.088291,
+              8933.416992
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.245117,
+              15.431816,
+              8928.748047
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2sb_summer.p3d",
+            "pos": [
+              8280.728516,
+              14.789851,
+              8928.791016
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.396484,
+              13.665301,
+              8946.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8288.490234,
+              9.52813,
+              8940.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2s_summer.p3d",
+            "pos": [
+              8296.234375,
+              10.84382,
+              8930.681641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8293.803711,
+              10.127778,
+              8934.671875
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_1s_summer.p3d",
+            "pos": [
+              8291.655273,
+              7.872565,
+              8959.454102
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8293.554688,
+              7.339614,
+              8955.521484
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8290.933594,
+              7.5927,
+              8947.490234
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8298.28125,
+              9.211975,
+              8944.603516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_1s_summer.p3d",
+            "pos": [
+              8286.430664,
+              8.645783,
+              8929.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\b_piceaabies_1f_summer.p3d",
+            "pos": [
+              8290.991211,
+              7.533192,
+              8949.9375
+            ]
+          }
+        ],
+        "sea_refs": [
+          {
+            "pos": [
+              2400.0,
+              100.0,
+              7000.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.689206,
+            "fake": 0.668758,
+            "depth_origin": [
+              2400.0,
+              0.939206,
+              7000.0
+            ],
+            "depth": -0.270448
+          },
+          {
+            "pos": [
+              2430.0,
+              100.0,
+              7020.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.689206,
+            "fake": 0.599246,
+            "depth_origin": [
+              2430.0,
+              0.939206,
+              7020.0
+            ],
+            "depth": -0.33996
+          },
+          {
+            "pos": [
+              2410.0,
+              100.0,
+              7040.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.689206,
+            "fake": 0.700603,
+            "depth_origin": [
+              2410.0,
+              0.939206,
+              7040.0
+            ],
+            "depth": -0.238603
+          }
+        ]
+      },
+      "surface_classes": {
+        "nf_high": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_high": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        },
+        "nf_low": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_low": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        }
+      },
+      "fake_minus_nofake": {
+        "high": -0.035800000000000054,
+        "low": -0.035800000000000054
+      },
+      "depth_surface_residuals": {
+        "nf_high": [
+          -0.03580320000000069,
+          -0.03580400000000003,
+          -0.035803000000000695
+        ],
+        "fake_high": [
+          -3.200000000633252e-06,
+          -3.999999999976245e-06,
+          -3.0000000006413785e-06
+        ],
+        "nf_low": [
+          -0.03580320000000069,
+          -0.03580400000000003,
+          -0.035803000000000695
+        ],
+        "fake_low": [
+          -3.200000000633252e-06,
+          -3.999999999976245e-06,
+          -3.0000000006413785e-06
+        ]
+      },
+      "confounders": []
+    },
+    {
+      "id": 528,
+      "round": 0,
+      "original_states": {
+        "ground": "PASS",
+        "roadway": "PASS",
+        "water": "FAIL",
+        "rv": "PASS",
+        "bullet": "PASS"
+      },
+      "original_expect": "dry",
+      "measured": {
+        "id": 528,
+        "round": 0,
+        "start_ms": 25086,
+        "end_ms": 25086,
+        "wave_before": -0.0525188,
+        "wave_after": -0.0525188,
+        "pos": [
+          8259.828125,
+          6.841328,
+          8934.535156
+        ],
+        "ground": 6.84133,
+        "road": 6.95117,
+        "sea": false,
+        "pond": false,
+        "object_count": 67,
+        "depth_origins": [
+          [
+            8259.828125,
+            6.851328,
+            8934.535156
+          ],
+          [
+            8259.828125,
+            6.961172,
+            8934.535156
+          ],
+          [
+            8259.828125,
+            7.201172,
+            8934.535156
+          ]
+        ],
+        "high": [
+          8259.828125,
+          106.841324,
+          8934.535156
+        ],
+        "low": [
+          8259.828125,
+          8.951172,
+          8934.535156
+        ],
+        "nf_high": 6.82422,
+        "fake_high": 6.80929,
+        "nf_low": 6.82422,
+        "fake_low": 6.80929,
+        "depths": [
+          -0.0420332,
+          -0.151877,
+          -0.391877
+        ],
+        "low_below_ref": false,
+        "objects": [
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8241.829102,
+              21.923559,
+              8913.080078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_salixalba_2sb_summer.p3d",
+            "pos": [
+              8228.52832,
+              14.704125,
+              8910.34668
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_c7956dc3cabce015.p3d",
+            "pos": [
+              8244.0,
+              8.082292,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_b91268d089a114ea.p3d",
+            "pos": [
+              8244.0,
+              8.24375,
+              8898.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_7e3a63f9f5acf6ae.p3d",
+            "pos": [
+              8244.0,
+              7.984375,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8240.022461,
+              18.403065,
+              8916.174805
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_1c847c0fa8de3889.p3d",
+            "pos": [
+              8244.0,
+              8.126041,
+              8901.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8242.339844,
+              11.498623,
+              8927.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8241.837891,
+              11.193654,
+              8909.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2s_summer.p3d",
+            "pos": [
+              8232.448242,
+              13.324865,
+              8916.212891
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_b3b5396572c70aed.p3d",
+            "pos": [
+              8241.0,
+              8.190625,
+              8901.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.535156,
+              9.986133,
+              8899.728516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.941406,
+              10.05334,
+              8901.969727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8243.588867,
+              10.270346,
+              8906.09668
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8244.152344,
+              9.886337,
+              8902.482422
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8249.05957,
+              14.394576,
+              8944.823242
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8237.407227,
+              21.656681,
+              8933.97168
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8235.551758,
+              16.693789,
+              8964.662109
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8246.214844,
+              18.88937,
+              8940.923828
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_2fb_summer.p3d",
+            "pos": [
+              8230.254883,
+              17.244736,
+              8941.15625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8244.548828,
+              16.988077,
+              8961.973633
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8247.237305,
+              10.246265,
+              8943.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2s_summer.p3d",
+            "pos": [
+              8238.311523,
+              13.224031,
+              8967.286133
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8245.694336,
+              10.642464,
+              8941.830078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8244.761719,
+              12.386652,
+              8953.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8238.31543,
+              10.924992,
+              8963.919922
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8242.242188,
+              9.743874,
+              8948.709961
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8230.897461,
+              9.430171,
+              8945.720703
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1sb_summer.p3d",
+            "pos": [
+              8220.859375,
+              9.653426,
+              8942.814453
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8244.248047,
+              8.473017,
+              8939.40332
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8227.111328,
+              9.949553,
+              8932.371094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8287.448242,
+              18.196756,
+              8926.071289
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8275.004883,
+              18.397915,
+              8907.018555
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8272.873047,
+              19.791519,
+              8910.09375
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3f_summer.p3d",
+            "pos": [
+              8295.610352,
+              14.955275,
+              8926.588867
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.041992,
+              15.892538,
+              8926.199219
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_209f5d5a34df2850.p3d",
+            "pos": [
+              8268.0,
+              8.004167,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8263.290039,
+              14.127021,
+              8911.648438
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2s_summer.p3d",
+            "pos": [
+              8274.603516,
+              11.362609,
+              8912.750977
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8260.423828,
+              10.087042,
+              8908.958008
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8256.466797,
+              9.800218,
+              8906.995117
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8271.457031,
+              10.125879,
+              8913.033203
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8262.466797,
+              12.755079,
+              8902.351563
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8283.222656,
+              10.324943,
+              8911.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1s_summer.p3d",
+            "pos": [
+              8268.698242,
+              10.409861,
+              8898.291992
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8276.019531,
+              9.033872,
+              8925.03125
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0000.p3d",
+            "pos": [
+              8257.989258,
+              7.396484,
+              8928.40625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0024.p3d",
+            "pos": [
+              8271.245117,
+              6.582031,
+              8954.890625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8293.106445,
+              14.228451,
+              8942.806641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0036.p3d",
+            "pos": [
+              8272.636719,
+              6.326172,
+              8967.102539
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0012.p3d",
+            "pos": [
+              8269.384766,
+              6.804688,
+              8945.089844
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8288.546875,
+              17.995703,
+              8931.767578
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.141602,
+              17.816109,
+              8930.175781
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8290.401367,
+              18.938606,
+              8954.516602
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8296.113281,
+              16.956499,
+              8949.480469
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants\\tree\\t_piceaabies_3d.p3d",
+            "pos": [
+              8292.512695,
+              17.088291,
+              8933.416992
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.245117,
+              15.431816,
+              8928.748047
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2sb_summer.p3d",
+            "pos": [
+              8280.728516,
+              14.789851,
+              8928.791016
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.396484,
+              13.665301,
+              8946.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8288.490234,
+              9.52813,
+              8940.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2s_summer.p3d",
+            "pos": [
+              8296.234375,
+              10.84382,
+              8930.681641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8293.803711,
+              10.127778,
+              8934.671875
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8293.554688,
+              7.339614,
+              8955.521484
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8290.933594,
+              7.5927,
+              8947.490234
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8298.28125,
+              9.211975,
+              8944.603516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_1s_summer.p3d",
+            "pos": [
+              8286.430664,
+              8.645783,
+              8929.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\b_piceaabies_1f_summer.p3d",
+            "pos": [
+              8290.991211,
+              7.533192,
+              8949.9375
+            ]
+          }
+        ],
+        "sea_refs": [
+          {
+            "pos": [
+              2400.0,
+              100.0,
+              7000.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.697481,
+            "fake": 0.683873,
+            "depth_origin": [
+              2400.0,
+              0.947481,
+              7000.0
+            ],
+            "depth": -0.263608
+          },
+          {
+            "pos": [
+              2430.0,
+              100.0,
+              7020.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.697481,
+            "fake": 0.6077,
+            "depth_origin": [
+              2430.0,
+              0.947481,
+              7020.0
+            ],
+            "depth": -0.339781
+          },
+          {
+            "pos": [
+              2410.0,
+              100.0,
+              7040.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.697481,
+            "fake": 0.709036,
+            "depth_origin": [
+              2410.0,
+              0.947481,
+              7040.0
+            ],
+            "depth": -0.238445
+          }
+        ]
+      },
+      "surface_classes": {
+        "nf_high": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_high": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        },
+        "nf_low": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_low": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        }
+      },
+      "fake_minus_nofake": {
+        "high": -0.014930000000000554,
+        "low": -0.014930000000000554
+      },
+      "depth_surface_residuals": {
+        "nf_high": [
+          -0.014925200000000756,
+          -0.01492500000000005,
+          -0.014925000000000688
+        ],
+        "fake_high": [
+          4.799999999798021e-06,
+          5.000000000504601e-06,
+          4.9999999998662226e-06
+        ],
+        "nf_low": [
+          -0.014925200000000756,
+          -0.01492500000000005,
+          -0.014925000000000688
+        ],
+        "fake_low": [
+          4.799999999798021e-06,
+          5.000000000504601e-06,
+          4.9999999998662226e-06
+        ]
+      },
+      "confounders": []
+    },
+    {
+      "id": 700,
+      "round": 0,
+      "original_states": {
+        "ground": "PASS",
+        "roadway": "PASS",
+        "water": "PASS",
+        "rv": "FAIL",
+        "bullet": "PASS"
+      },
+      "original_expect": "dry",
+      "measured": {
+        "id": 700,
+        "round": 0,
+        "start_ms": 28062,
+        "end_ms": 28062,
+        "wave_before": 0.0808995,
+        "wave_after": 0.0808995,
+        "pos": [
+          8256.275391,
+          7.098794,
+          8941.851563
+        ],
+        "ground": 7.09879,
+        "road": 7.22461,
+        "sea": false,
+        "pond": false,
+        "object_count": 63,
+        "depth_origins": [
+          [
+            8256.275391,
+            7.108794,
+            8941.851563
+          ],
+          [
+            8256.275391,
+            7.23461,
+            8941.851563
+          ],
+          [
+            8256.275391,
+            7.474609,
+            8941.851563
+          ]
+        ],
+        "high": [
+          8256.275391,
+          107.098793,
+          8941.851563
+        ],
+        "low": [
+          8256.275391,
+          9.224609,
+          8941.851563
+        ],
+        "nf_high": 0.830899,
+        "fake_high": 0.694377,
+        "nf_low": 0.830899,
+        "fake_low": 0.694377,
+        "depths": [
+          -6.41442,
+          -6.54023,
+          -6.78023
+        ],
+        "low_below_ref": false,
+        "objects": [
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8241.829102,
+              21.923559,
+              8913.080078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_c7956dc3cabce015.p3d",
+            "pos": [
+              8244.0,
+              8.082292,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_7e3a63f9f5acf6ae.p3d",
+            "pos": [
+              8244.0,
+              7.984375,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8240.022461,
+              18.403065,
+              8916.174805
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8242.339844,
+              11.498623,
+              8927.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8241.837891,
+              11.193654,
+              8909.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2s_summer.p3d",
+            "pos": [
+              8232.448242,
+              13.324865,
+              8916.212891
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.941406,
+              10.05334,
+              8901.969727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8243.588867,
+              10.270346,
+              8906.09668
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3s_summer.p3d",
+            "pos": [
+              8248.424805,
+              17.150208,
+              8975.989258
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8249.05957,
+              14.394576,
+              8944.823242
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8237.407227,
+              21.656681,
+              8933.97168
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8235.551758,
+              16.693789,
+              8964.662109
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3fb_summer.p3d",
+            "pos": [
+              8219.069336,
+              19.236902,
+              8944.297852
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8246.214844,
+              18.88937,
+              8940.923828
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_2fb_summer.p3d",
+            "pos": [
+              8230.254883,
+              17.244736,
+              8941.15625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8217.426758,
+              17.480783,
+              8941.742188
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8244.548828,
+              16.988077,
+              8961.973633
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8247.237305,
+              10.246265,
+              8943.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2s_summer.p3d",
+            "pos": [
+              8238.311523,
+              13.224031,
+              8967.286133
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8245.694336,
+              10.642464,
+              8941.830078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8244.761719,
+              12.386652,
+              8953.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8238.31543,
+              10.924992,
+              8963.919922
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1s_summer.p3d",
+            "pos": [
+              8238.197266,
+              9.072495,
+              8970.71582
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8242.242188,
+              9.743874,
+              8948.709961
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1sb_summer.p3d",
+            "pos": [
+              8230.55957,
+              9.121619,
+              8962.931641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8230.897461,
+              9.430171,
+              8945.720703
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1sb_summer.p3d",
+            "pos": [
+              8220.859375,
+              9.653426,
+              8942.814453
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\b_piceaabies_1f_summer.p3d",
+            "pos": [
+              8220.944336,
+              8.523549,
+              8955.832031
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8244.248047,
+              8.473017,
+              8939.40332
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1sb_summer.p3d",
+            "pos": [
+              8222.557617,
+              8.762476,
+              8961.619141
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8227.111328,
+              9.949553,
+              8932.371094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8287.448242,
+              18.196756,
+              8926.071289
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8275.004883,
+              18.397915,
+              8907.018555
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8272.873047,
+              19.791519,
+              8910.09375
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.041992,
+              15.892538,
+              8926.199219
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_209f5d5a34df2850.p3d",
+            "pos": [
+              8268.0,
+              8.004167,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8263.290039,
+              14.127021,
+              8911.648438
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2s_summer.p3d",
+            "pos": [
+              8274.603516,
+              11.362609,
+              8912.750977
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8260.423828,
+              10.087042,
+              8908.958008
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8256.466797,
+              9.800218,
+              8906.995117
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8271.457031,
+              10.125879,
+              8913.033203
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8262.466797,
+              12.755079,
+              8902.351563
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8276.019531,
+              9.033872,
+              8925.03125
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0000.p3d",
+            "pos": [
+              8257.989258,
+              7.396484,
+              8928.40625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0024.p3d",
+            "pos": [
+              8271.245117,
+              6.582031,
+              8954.890625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8293.106445,
+              14.228451,
+              8942.806641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0036.p3d",
+            "pos": [
+              8272.636719,
+              6.326172,
+              8967.102539
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0012.p3d",
+            "pos": [
+              8269.384766,
+              6.804688,
+              8945.089844
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8288.546875,
+              17.995703,
+              8931.767578
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.141602,
+              17.816109,
+              8930.175781
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8290.401367,
+              18.938606,
+              8954.516602
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants\\tree\\t_piceaabies_3d.p3d",
+            "pos": [
+              8292.512695,
+              17.088291,
+              8933.416992
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.245117,
+              15.431816,
+              8928.748047
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2sb_summer.p3d",
+            "pos": [
+              8280.728516,
+              14.789851,
+              8928.791016
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.396484,
+              13.665301,
+              8946.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8288.490234,
+              9.52813,
+              8940.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8293.803711,
+              10.127778,
+              8934.671875
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_1s_summer.p3d",
+            "pos": [
+              8291.655273,
+              7.872565,
+              8959.454102
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8293.554688,
+              7.339614,
+              8955.521484
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8290.933594,
+              7.5927,
+              8947.490234
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_1s_summer.p3d",
+            "pos": [
+              8286.430664,
+              8.645783,
+              8929.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\b_piceaabies_1f_summer.p3d",
+            "pos": [
+              8290.991211,
+              7.533192,
+              8949.9375
+            ]
+          }
+        ],
+        "sea_refs": [
+          {
+            "pos": [
+              2400.0,
+              100.0,
+              7000.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.830899,
+            "fake": 0.811442,
+            "depth_origin": [
+              2400.0,
+              1.080899,
+              7000.0
+            ],
+            "depth": -0.269458
+          },
+          {
+            "pos": [
+              2430.0,
+              100.0,
+              7020.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.830899,
+            "fake": 0.7405,
+            "depth_origin": [
+              2430.0,
+              1.080899,
+              7020.0
+            ],
+            "depth": -0.3404
+          },
+          {
+            "pos": [
+              2410.0,
+              100.0,
+              7040.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.830899,
+            "fake": 0.841848,
+            "depth_origin": [
+              2410.0,
+              1.080899,
+              7040.0
+            ],
+            "depth": -0.239051
+          }
+        ]
+      },
+      "surface_classes": {
+        "nf_high": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_high": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        },
+        "nf_low": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_low": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        }
+      },
+      "fake_minus_nofake": {
+        "high": -0.13652200000000003,
+        "low": -0.13652200000000003
+      },
+      "depth_surface_residuals": {
+        "nf_high": [
+          -0.13652500000000067,
+          -0.13651900000000072,
+          -0.13651999999999997
+        ],
+        "fake_high": [
+          -3.000000000419334e-06,
+          2.9999999995311555e-06,
+          1.9999999993913775e-06
+        ],
+        "nf_low": [
+          -0.13652500000000067,
+          -0.13651900000000072,
+          -0.13651999999999997
+        ],
+        "fake_low": [
+          -3.000000000419334e-06,
+          2.9999999995311555e-06,
+          1.9999999993913775e-06
+        ]
+      },
+      "confounders": []
+    },
+    {
+      "id": 723,
+      "round": 0,
+      "original_states": {
+        "ground": "PASS",
+        "roadway": "PASS",
+        "water": "FAIL",
+        "rv": "FAIL",
+        "bullet": "PASS"
+      },
+      "original_expect": "wet",
+      "measured": {
+        "id": 723,
+        "round": 0,
+        "start_ms": 28602,
+        "end_ms": 28602,
+        "wave_before": 0.0938719,
+        "wave_after": 0.0938719,
+        "pos": [
+          8262.757813,
+          6.082312,
+          8938.232422
+        ],
+        "ground": 6.08231,
+        "road": 6.91797,
+        "sea": false,
+        "pond": false,
+        "object_count": 68,
+        "depth_origins": [
+          [
+            8262.757813,
+            6.092312,
+            8938.232422
+          ],
+          [
+            8262.757813,
+            6.927969,
+            8938.232422
+          ],
+          [
+            8262.757813,
+            7.167969,
+            8938.232422
+          ]
+        ],
+        "high": [
+          8262.757813,
+          106.082314,
+          8938.232422
+        ],
+        "low": [
+          8262.757813,
+          8.917969,
+          8938.232422
+        ],
+        "nf_high": 6.78711,
+        "fake_high": 6.84195,
+        "nf_low": 6.78711,
+        "fake_low": 6.84195,
+        "depths": [
+          0.749641,
+          -0.0860157,
+          -0.326015
+        ],
+        "low_below_ref": false,
+        "objects": [
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8241.829102,
+              21.923559,
+              8913.080078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_c7956dc3cabce015.p3d",
+            "pos": [
+              8244.0,
+              8.082292,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_7e3a63f9f5acf6ae.p3d",
+            "pos": [
+              8244.0,
+              7.984375,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8240.022461,
+              18.403065,
+              8916.174805
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8242.339844,
+              11.498623,
+              8927.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8241.837891,
+              11.193654,
+              8909.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2s_summer.p3d",
+            "pos": [
+              8232.448242,
+              13.324865,
+              8916.212891
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.535156,
+              9.986133,
+              8899.728516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8254.941406,
+              10.05334,
+              8901.969727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8243.588867,
+              10.270346,
+              8906.09668
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8249.05957,
+              14.394576,
+              8944.823242
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3f_summer.p3d",
+            "pos": [
+              8237.407227,
+              21.656681,
+              8933.97168
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8235.551758,
+              16.693789,
+              8964.662109
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8246.214844,
+              18.88937,
+              8940.923828
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_2fb_summer.p3d",
+            "pos": [
+              8230.254883,
+              17.244736,
+              8941.15625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8244.548828,
+              16.988077,
+              8961.973633
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8247.237305,
+              10.246265,
+              8943.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2s_summer.p3d",
+            "pos": [
+              8238.311523,
+              13.224031,
+              8967.286133
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8245.694336,
+              10.642464,
+              8941.830078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8244.761719,
+              12.386652,
+              8953.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8238.31543,
+              10.924992,
+              8963.919922
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8242.242188,
+              9.743874,
+              8948.709961
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8230.897461,
+              9.430171,
+              8945.720703
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8244.248047,
+              8.473017,
+              8939.40332
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8227.111328,
+              9.949553,
+              8932.371094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8287.448242,
+              18.196756,
+              8926.071289
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8275.004883,
+              18.397915,
+              8907.018555
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8272.873047,
+              19.791519,
+              8910.09375
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3f_summer.p3d",
+            "pos": [
+              8295.610352,
+              14.955275,
+              8926.588867
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.041992,
+              15.892538,
+              8926.199219
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_water_v30\\p31_209f5d5a34df2850.p3d",
+            "pos": [
+              8268.0,
+              8.004167,
+              8910.0
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_2sb_summer.p3d",
+            "pos": [
+              8263.290039,
+              14.127021,
+              8911.648438
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2s_summer.p3d",
+            "pos": [
+              8274.603516,
+              11.362609,
+              8912.750977
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_2w_summer.p3d",
+            "pos": [
+              8260.423828,
+              10.087042,
+              8908.958008
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_phragmitesaustralis_summer.p3d",
+            "pos": [
+              8256.466797,
+              9.800218,
+              8906.995117
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8271.457031,
+              10.125879,
+              8913.033203
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1f_summer.p3d",
+            "pos": [
+              8262.466797,
+              12.755079,
+              8902.351563
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_1fb_summer.p3d",
+            "pos": [
+              8283.222656,
+              10.324943,
+              8911.192383
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8276.019531,
+              9.033872,
+              8925.03125
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0000.p3d",
+            "pos": [
+              8257.989258,
+              7.396484,
+              8928.40625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0024.p3d",
+            "pos": [
+              8271.245117,
+              6.582031,
+              8954.890625
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_3s_summer.p3d",
+            "pos": [
+              8293.106445,
+              14.228451,
+              8942.806641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0036.p3d",
+            "pos": [
+              8272.636719,
+              6.326172,
+              8967.102539
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "baltic_stream_pilot\\cs_kit_118_0012.p3d",
+            "pos": [
+              8269.384766,
+              6.804688,
+              8945.089844
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8288.546875,
+              17.995703,
+              8931.767578
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3f_summer.p3d",
+            "pos": [
+              8290.141602,
+              17.816109,
+              8930.175781
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_3fb_summer.p3d",
+            "pos": [
+              8295.083984,
+              18.163412,
+              8956.931641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_3f_summer.p3d",
+            "pos": [
+              8290.401367,
+              18.938606,
+              8954.516602
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_larixdecidua_2f_summer.p3d",
+            "pos": [
+              8301.501953,
+              16.780611,
+              8944.260742
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8296.113281,
+              16.956499,
+              8949.480469
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2f_summer.p3d",
+            "pos": [
+              8299.8125,
+              17.554239,
+              8930.616211
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants\\tree\\t_piceaabies_3d.p3d",
+            "pos": [
+              8292.512695,
+              17.088291,
+              8933.416992
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.245117,
+              15.431816,
+              8928.748047
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2s_summer.p3d",
+            "pos": [
+              8293.526367,
+              13.265056,
+              8960.455078
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2sb_summer.p3d",
+            "pos": [
+              8280.728516,
+              14.789851,
+              8928.791016
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_2s_summer.p3d",
+            "pos": [
+              8295.067383,
+              9.498101,
+              8956.044922
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_fagussylvatica_3fb_summer.p3d",
+            "pos": [
+              8292.396484,
+              13.665301,
+              8946.594727
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_betulapendulae_1s_summer.p3d",
+            "pos": [
+              8288.490234,
+              9.52813,
+              8940.850586
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_2s_summer.p3d",
+            "pos": [
+              8296.234375,
+              10.84382,
+              8930.681641
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8293.803711,
+              10.127778,
+              8934.671875
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_1s_summer.p3d",
+            "pos": [
+              8291.655273,
+              7.872565,
+              8959.454102
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8293.554688,
+              7.339614,
+              8955.521484
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8290.933594,
+              7.5927,
+              8947.490234
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8294.856445,
+              7.179184,
+              8956.240234
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_betulanana_1s_summer.p3d",
+            "pos": [
+              8294.626953,
+              7.22108,
+              8960.882813
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\t_piceaabies_1f_summer.p3d",
+            "pos": [
+              8298.28125,
+              9.211975,
+              8944.603516
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\bush\\b_corylusheterophylla_1s_summer.p3d",
+            "pos": [
+              8286.430664,
+              8.645783,
+              8929.871094
+            ]
+          },
+          {
+            "valid": true,
+            "shape": "dz\\plants_bliss\\tree\\b_piceaabies_1f_summer.p3d",
+            "pos": [
+              8290.991211,
+              7.533192,
+              8949.9375
+            ]
+          }
+        ],
+        "sea_refs": [
+          {
+            "pos": [
+              2400.0,
+              100.0,
+              7000.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.843872,
+            "fake": 0.846135,
+            "depth_origin": [
+              2400.0,
+              1.093872,
+              7000.0
+            ],
+            "depth": -0.247737
+          },
+          {
+            "pos": [
+              2430.0,
+              100.0,
+              7020.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.843872,
+            "fake": 0.77219,
+            "depth_origin": [
+              2430.0,
+              1.093872,
+              7020.0
+            ],
+            "depth": -0.321682
+          },
+          {
+            "pos": [
+              2410.0,
+              100.0,
+              7040.0
+            ],
+            "sea": true,
+            "pond": false,
+            "nofake": 0.843872,
+            "fake": 0.873519,
+            "depth_origin": [
+              2410.0,
+              1.093872,
+              7040.0
+            ],
+            "depth": -0.220353
+          }
+        ]
+      },
+      "surface_classes": {
+        "nf_high": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_high": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        },
+        "nf_low": {
+          "matches": [
+            "WATER_REF"
+          ],
+          "label": "WATER_REF",
+          "identity": "NOT_DETERMINED"
+        },
+        "fake_low": {
+          "matches": [],
+          "label": "OTHER",
+          "identity": "NOT_DETERMINED"
+        }
+      },
+      "fake_minus_nofake": {
+        "high": 0.054839999999999556,
+        "low": 0.054839999999999556
+      },
+      "depth_surface_residuals": {
+        "nf_high": [
+          0.05484299999999953,
+          0.054843299999999845,
+          0.05484400000000006
+        ],
+        "fake_high": [
+          2.9999999999752447e-06,
+          3.3000000002891827e-06,
+          4.000000000503601e-06
+        ],
+        "nf_low": [
+          0.05484299999999953,
+          0.054843299999999845,
+          0.05484400000000006
+        ],
+        "fake_low": [
+          2.9999999999752447e-06,
+          3.3000000002891827e-06,
+          4.000000000503601e-06
+        ]
+      },
+      "confounders": []
+    }
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\water-query-b1-native-20261028\\result.json": "d3781bae041179307164a0acf1c38360604b865d61c56b181b0181a5e0762edb",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\observe_water_query_b1_native_20261028.py": "68be8eabb93ea70887b867293b3f810441a0565caf8b6f4f395c022a8613b144"
+  },
+  "limits": [
+    "All observations retained. Subgroup without recorded confounders does not prove absent confounding.",
+    "Numeric agreement supports a hypothesis; does not identify surface/object or repair the original FAIL."
+  ]
+}
