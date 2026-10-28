@@ -1,0 +1,18 @@
+**Veredicto: SOUND** (con dos notas operativas, no bloqueantes).
+
+**Fix exacto.** La firma real es `read_pbo(path)` con `path.read_bytes()` en `tools/playtest/attach_navmesh.py:20-21`. El consumidor congelado en R/prism-b3-binary-replay-20261028/failed-prism_b3_binary_ev112.py:175 pasa `c['baseline_pbo']` (str del JSON). El actual `tools/quality/prism_b3_binary_ev112.py:175` pasa `Path(c['baseline_pbo'])`. Comparé ambos archivos línea a línea: son idénticos salvo esa llamada. Los otros dos usos (`:178`, `pair/side/...`) ya reciben Path. La traza congelada en R/prism-b3-binary-pair-20261028/consumer.stderr.log:5-11 confirma que el AttributeError ocurre exactamente ahí, 0.69s, antes de abrir ningún PBO ni ODOL, por lo que ninguna puerta geométrica de `verify_pair` se evaluó. failure.json y failure-before.json son byte-idénticos.
+
+**Test cubre el error.** El test congelado (failed-test_...) sólo tiene `BinaryGate` y `PairGate` (33 tests, validation/report.json:3). El actual añade `SavedEntryPoint` en `tools/quality/test_prism_b3_binary_ev112.py:217-237` (34 tests, coincide con el plan). Recorre el `verify_saved` real desde JSON hasta `read_pbo`, mockeando sólo `meter.sha`, `bind_context`, `original_controls`, `np.load` y `read_pbo`. El mock del lector exige `isinstance(path,Path)` y `path==root/'baseline_pbo'`; con el código viejo recibiría str, el `assertIsInstance` lanza AssertionError dentro del `assertRaises(ReachedReader)` y el test falla. Repro mental: revertir `:175` a `read_pbo(c['baseline_pbo'])` → ese test falla; con el fix pasa. Los mocks no tocan el camino `:160-175` que se quiere cubrir (wrong_candidate, unpinned_core, pins, pose binding) y los datos sintéticos satisfacen cada `bind`.
+
+**Contrato R1 no invalida fuentes.** contract.json y contract-before.json son idénticos en pins (:86-107 verificado; plan dice congelado). Los pins :89-90 fijan consumidor/test a c0984c…/c04a8e…, por eso el consumidor actual fallaría con `input_changed` (`:163`) contra el contrato original: cambiar sólo esos dos hashes es necesario y suficiente. Todo lo demás permanece: candidato c769… (hardcode `:160` y pin `:80`), contrato offline 447d… (`:56,:166` y pin `:81`), source control d130…, baseline ODOL 351424…, PBO histórico ef229f…, poses, original_result. Añadir pines de los cuatro binarios (0fccf…/b2c8…/cf2f7a…/b8cfdd…, coinciden con pair/report.json:16-17,32-33) hace que el bucle `:163/:191` certifique que la pareja no fue recompilada ni alterada. Pinear contract-before.json y el 45d6bd… del pair/report.json:37 ata el R1 a la compilación original.
+
+**Presupuesto.** `MAX_SECONDS=180` en `:196` coincide con el plan; `meter.bounded` vigila memoria; tests tardaron 0.64s. Sin compilación, DayZ ni paquete.
+
+**Notas operativas (incorporar al ejecutar, no cambian el veredicto):**
+
+1. Escribir el contrato R1 en un directorio nuevo (no sobrescribir R/prism-b3-binary-pair-20261028/contract.json) y calcular sus pins de consumidor/test *después* de la última edición de ambos archivos; si el consumidor se vuelve a tocar, el pin queda obsoleto y `:163` dará `input_changed` antes de geometría.
+2. El empaquetado posterior en R/build_prism_b3_pair_20261028.py:104 asegura `proof['contract_sha256']==sha(contract)`; cuando se componga el paquete deberá recibir el contrato R1, no el original. El plan ya lo difiere a operación separada; dejarlo anotado.
+
+Estado del plan: ejecutable tal como está escrito. INCONCLUSIVE/REJECTED/PASS condicional se preservan en `:199-201`; una excepción de instrumento sigue cayendo en failure.json, no en PASS.
+
+FIN_REVISION — Claude Fable 5.1 (claude-fable-5-1), revisor independiente, sólo lectura.

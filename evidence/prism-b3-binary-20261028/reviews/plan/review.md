@@ -1,0 +1,42 @@
+**Veredicto: SOUND-with-fixes.** Fase PLAN (los tres ficheros de código aún no existen en W ni en R; lo comprobé con Glob). El plan es coherente con las fuentes citadas y con la puerta previa, pero tiene cuatro puntos que, tal como están escritos, pueden producir un REJECTED o un INCONCLUSIVE por motivos ajenos a la geometría de B3, y uno de recursos. Ninguno exige relajar criterios; exigen pre-registrarlos con precisión.
+
+## Verificado contra fuentes (sin hallazgo)
+
+- **Cadena de hashes y roles** coinciden: d130 es el candidato de la pareja histórica y 3514 su ODOL (`compile_dry_road_pair_20261028.py:30-31`, `compiled_dry_road_gate_ev112.py:17,23,26`). El PBO ef229 se compuso con esos mismos bytes (`package_dry_road_compiled_ev112.py:20-21`), así que "control nuevo == 3514 == entrada PBO" es una comprobación bien definida.
+- **Driver de compilación**: el flujo de `pack_continuous_stream_pilot_v31.ps1` con `model_config` de un solo modelo y `read_pbo` ya existe y es reproducible (`compile_dry_road_pair_20261028.py:39-63`). Tiempos históricos 7.5s y 4.75s; 150s/2GiB sobran. Consumidor previo 7.4s; 180s sobra. Presupuesto correcto.
+- **Lector**: `from_file(path, strict=True)` existe y strict aborta en tabla, fin de LOD y errores (`odol_reader.py:954,1178,1197,1211`). `size_of_rest_data` y la sonda instrumentada están en `compiled_dry_road_gate_ev112.py:45-46,145`. Los componentes Geometry son `NamedSelection` con `selected_faces`/`selected_vertices` (`odol_reader.py:246-261`), así que "nombre, 6/8, asignación única" es comprobable en ODOL.
+- **Winding**: la inversión ODOL ya se aplica con `key(t[::-1])` a todos los LOD (`compiled_dry_road_gate_ev112.py:106`).
+- **Overlay ±.02/.01** son los defaults de `overlay()` (`review_compact_collision_v31.py:45,70-72`); el gate Y añadía cero exacto en `compiled_dry_road_gate_ev112.py:131`, que el plan correctamente no reutiliza.
+- **canonical_lod** sólo canoniza Roadway y rechaza selecciones/proxies allí (`compare_non_geometry_lods_v31.py:16-20`); no afecta a Geometry. Correcto.
+- **Cambios observados en la pareja histórica** (`evidence/dry-road-compiled-20261028/compiled-gate.json:203-229`): LOD1 sólo cambió `size_of_rest_data/vertex_raw/vertices`; model_info sólo `center_of_mass/inv_inertia`. El conjunto permitido del plan para Geometry (añade normal_raw/normals) es un superconjunto razonable.
+
+## Hallazgos (fixes al plan)
+
+**F1 — Identidad fuente==binario "exacta" asume recentrado exacto (riesgo de REJECTED espurio).** La comprobación previa exige igualdad float64 exacta entre `MLOD+origen` y `ODOL_local+pose` (`compiled_dry_road_gate_ev112.py:105-106,121`). Eso equivale a que el compilador calcule `mlod − bounding_center` sin redondeo float32. Funcionó con las coordenadas históricas, pero los 72 valores nuevos de B3 salen de una resolución de planos (márgenes 0.00088/0.00076 m, `evidence/prism-contact-b3-20261028/report.json:15,24`), y para coordenadas locales de magnitud pequeña la resta con el centro (−4.0107421875, −0.396484375, −5.59375) puede perder bits. Un fallo por 1 ULP local se etiquetaría REJECTED_BINARY sin que haya pérdida de cara. Fix: definir el criterio como predicción determinista: `float32(mlod − bounding_center_f32)` debe coincidir byte a byte con `vertex_raw` del componente; y, por separado, el multiconjunto de caras orientadas en float32 mundial con el error bidireccional <.001 m vigente (`verify_compiled_stream_pilot_v31.py:60`). Si la predicción falla, registrar el error por esquina en ULP antes de adjudicar. Sin tolerancias nuevas, sólo predicción explícita.
+
+**F2 — "Interior estricto" no está definido y el margen offline no se transfiere al marco ODOL.** B3 midió el margen en `MLOD+origen` float32 (0.64 y 0.53 ULP, `report.json:17,26`). El marco binario es `(local+pose).astype(float32)` (`diagnose_compiled_contact_v31.py:63`); con centro distinto, el redondeo float32 cambia y un margen de 0.53 ULP puede caer a frontera. Además `classify()` usa `covers`, que incluye frontera (`diagnose_compiled_contact_v31.py:21`): no es un predicado estricto. Fix: pre-registrar (a) la fórmula exacta del marco, (b) predicado estricto `contains` o distancia a la frontera >0 calculada en float64 sobre los float32 mundiales, (c) que una frontera exacta es REJECTED_BINARY con el motivo "sub-ULP en marco ODOL" y no se reinterpreta a posteriori, y (d) que el reporte incluya distancia/ULP de ambos marcos. Así el resultado rojo, si ocurre, es una falsación legítima de la hipótesis y no una ambigüedad.
+
+**F3 — Campos derivados de Geometry no listados: `b_radius`, `b_center`, `face_area` de LOD1.** El plan exige "otros campos exactos" en Geometry. `b_min/b_max/b_center/b_radius` y `face_area` se leen por LOD (`odol_reader.py:654-663`). La bbox exacta de B3 offline cubre b_min/b_max/b_center, pero b_radius depende del vértice más lejano al centro y face_area de las áreas de cara; en la pareja histórica no cambiaron en LOD1 (`compiled-gate.json:219-223`) con movimientos sólo verticales de vértices no extremos, lo que no prueba nada para prismas. Fix: añadirlos a la lista de "campos a reportar con valor control/candidato" y pre-declarar que su cambio es INCONCLUSIVE_BINARY (como ya dice el plan) y no ampliar el conjunto permitido. Es sólo hacer explícito el riesgo para que el INCONCLUSIVE no parezca sorpresa.
+
+**F4 — Preflight: dos copias "con literal corregido" distintas; el plan no fija cuál.** Existen `R/run_preflight_with_literal_fix.py` (exec in-process, crea `preflight-literal-fix` con `exist_ok=False`, fallará si ya existe, línea 17) y `R/dry-road-build-preflight-20261028/preflight_syntax_repaired.py`, que es la que vincula el driver histórico vía `local_sha256`, `check_p_drive`, `validate_p_mods`, `find_dayz_tools` y `tools_sha256` (`compile_dry_road_pair_20261028.py:19-25`). Fix: nombrar ruta y SHA de la copia a usar (recomiendo la segunda, porque sus hashes de herramientas entran en `inputs.json`), ejecutar fresco en directorio nuevo y comprobar `installed_source_unchanged`.
+
+**F5 — Recursos/seguridad del árbol de build: junctions a P:\ quedan dentro de `source/`.** El script crea `source/DZ`, `source/bin`, `source/core` como junctions a `P:\` (`pack_continuous_stream_pilot_v31.ps1:16-20`) y no las elimina. El plan pide "vincular hashes de todos los archivos leídos": cualquier `rglob` sobre el árbol de compilación descenderá por P:\DZ (gigante) y reventará los 180s/2GiB del consumidor o el checkpoint posterior. Fix: el driver debe hashear sólo rutas explícitas (log, PBO, ODOL extraído, config), eliminar las tres junctions con `rmdir` no recursivo tras la build (nunca borrado recursivo), y el consumidor debe rechazar la presencia de junctions en el árbol.
+
+## Observaciones menores
+
+- **Mutantes**: añadir "control recompilado ≠ 3514" (camino INCONCLUSIVE), "matriz WRP con rotación" (la puerta previa exige identidad, `compiled_dry_road_gate_ev112.py:135`), y "orden de entradas PBO alterado" reutilizando `package_identity` (`compiled_dry_road_gate_ev112.py:164-170`). Los demás de la lista son adecuados.
+- **Vinculación del contrato B3**: el plan cita el candidato c769 pero no el `contract_sha256` 447d4a… ni los targets 700/723 por hash; incluirlos en los pines para que "candidato no ligado a su proof" sea comprobable.
+- **Origen del ODOL**: fijar que se consume la entrada extraída del PBO (como `compile_dry_road_pair_20261028.py:62`) y se cruza con `temp/` sólo como diagnóstico, para que la comparación con PBOef229 sea de bytes.
+- **Alcance**: correcto que no toque `compiled_dry_road_gate_ev112.py` ni relance B3 offline/B2; reutilizar sólo `read_backend`, `known_fields`, `normalized/canonical_lod`, `sections/transform`, `overlay`, `read_pbo`, `package_identity`.
+
+## Presupuesto y coste
+
+Build 2×150s, consumidor 180s, FileBank 120s, tests 120s: holgados frente a 7.5s/4.75s/7.4s/1.5s históricos. "Una corrección por repro, sin segunda pareja" es coherente. Sin DayZ, sin lease: correcto.
+
+## Cambios derivados
+
+Ninguno en herramientas existentes. Nuevos: `tools/quality/prism_b3_binary_ev112.py`, su test, y `R/build_prism_b3_pair_20261028.py`. El resultado máximo alcanzable sigue siendo COMPILED_B3_CONDITIONAL con center_of_mass/inv_inertia NO_CERTIFICADOS; no motor PASS; 700/723 originales intactos; 47FAIL/21 inciertos sin cambio.
+
+Identidad del revisor: claude-fable-5-1 (Fable 5.1), sólo Read/Glob/Grep, sin escrituras ni ejecución.
+
+FIN_REVISION

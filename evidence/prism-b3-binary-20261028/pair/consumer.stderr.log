@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\prism_b3_binary_ev112.py", line 198, in <module>
+    r=verify_saved(a.root,a.contract,a.pair,a.reader);meter.dump(a.output/'report.json',r);print(json.dumps({k:r[k] for k in ('status','contacts','geometry_changed_fields','model_info_changed_fields','measurement')}))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\prism_b3_binary_ev112.py", line 175, in verify_saved
+    _,before_props,expected=read_pbo(c['baseline_pbo']);bind(expected[NAME]==baseline_path.read_bytes(),'historical_package_payload')
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\playtest\attach_navmesh.py", line 21, in read_pbo
+    data = path.read_bytes()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'read_bytes'
