@@ -1,0 +1,29 @@
+Fuentes leídas; redacto el veredicto.
+
+**Veredicto: SOUND-with-fixes.** El plan conserva centrales, offsets, tolerancias y estados originales; los objetivos son observables en lo que promete (diferencia RH/RL y BH/BL por estímulo, matrices nativas vs candidatos WRP) y no sobrepasa lo autorizado. Hay cuatro fallos materiales de diseño con fix mínimo y tres precisiones no bloqueantes.
+
+## Hallazgos materiales
+
+**H1. Captura de resultados RV al reusar contenedores** (plan:68-70 "Arrays reutilizados" + "Capturar resultados nativos antes de construir texto"). Las dos reglas son incompatibles con un solo `set<Object>` como en `BalticVisualProbeV1/init.c:120-129`: tras `m_Hits.Clear()` para RL se pierde la lista de RH salvo que se serialice entre rayos (viola la segunda regla) o se copie. Contraejemplo: RH devuelve {haya}, RL devuelve {}; con un set reusado y texto diferido, el log muestra RH sin objetos y el consumidor etiqueta "terreno" un contacto de árbol. Consecuencia: la tabla alto/bajo, que es el producto del plan, queda falsa sin que ningún fixture lo detecte. Fix mínimo: dos `set<Object>` (RH, RL) y dos `Object` (BH, BL) distintos, limpiados antes de su llamada; además reiniciar contact/normal/component=-1/fraction/hitObject=null antes de cada uno de los cuatro rayos, porque en miss las salidas pueden quedar sin tocar (patrón VisualProbe:121-134). Serializar sólo después de BL.
+
+**H2. Identidad de los 5 PBO vanilla no se vincula al censo B2A** (plan:99-103). El plan pide hashes pre/post bajo Addons del ejecutable real y "declarar ambas listas", pero no exige igualdad con los hashes ya fijados en `evidence/collision-scene-b2a-20261028/report.json:45-66` (plants, plants_bliss, structures_industrial, structures_roads, water). Contraejemplo: actualización de DayZ Exp entre el censo y la corrida; las poses y contactos de B2A se compararían con geometría distinta y el consumidor lo atribuiría a marco/animación. Fix mínimo: el binder requiere host.vanilla_hashes == report.json hashes para los 5, pre y post, y los 3 propios == deployment inputs; desigualdad => PACKAGE_DRIFT, no diagnóstico. Lo de 4 paquetes en -mod es coherente con `water_query_native_b1_ev112.py:32` (cardinalidad 4), y 9 identidades únicas cuadra.
+
+**H3. Confusor de tiempo intra-grupo mal escalado** (plan:85-86). En B1 `start_ms != end_ms` era raro (`water_query_diag_b1_ev112.py:193`); en B2 cada grupo hace 4 rayos más N objetos × GetTransform (bosque: cientos), así que casi todo grupo cruzará un milisegundo y el confusor se vuelve universal y enmascara deriva real. Consecuencia: no invalida nada (estado ya INCONCLUSIVE_DIAGNOSTIC, plan:91) pero destruye la utilidad del confusor y de "tiempos por grupo". Fix mínimo: tres sellos t0 (antes de RH), t1 (tras BL), t2 (tras bucle O); confusor de tiempo sólo si t1 != t0; t2 sólo informativo. Deriva de matriz entre rondas se compara por (id,slot,oi) como `round_state_drift`.
+
+**H4. "Terreno" no es observable en RV; el plan lo trata como etiqueta** (plan:11, 79-81). `RaycastRV` (dayzphysics.c:199) no devuelve indicador de terreno; sólo hay contacto, normal, componente y set vacío. Contraejemplo: un contacto sobre la cara del lecho a 1 mm del terreno con set vacío por cualquier razón quedaría etiquetado "terreno", justo el caso 700/723 que se quiere discriminar. Fix mínimo: el consumidor registra `rv_objects_empty` y `contact_minus_surfacey` por separado y usa etiquetas NO_OBJECT_NEAR_SURFACE / NO_OBJECT_OFF_SURFACE / OBJECT_HIT con sólo error de formato (seis decimales, scalar_error:111-113); nunca "terrain". Nótese además que contactXZ puede diferir del XZ nominal (README B2A:30-31), por lo que la comparación debe ser con SurfaceY del punto emitido, no del contacto.
+
+## Verificaciones que sostienen el plan
+
+- **Centrales y bajo fijo**: `points.json` muestra low_y constante por grupo (10.044921875 en los 9 slots de 349) y XZ exactos float32; "Bajo = B2A.low_y fijo, mismo final" es correcto. high_y/end_y de B2A usan H central del NPZ; el plan usa SurfaceY medido por slot y lo valida sólo con error de formato (plan:77-78). Coherente; la diferencia NPZ vs SurfaceY se informa, no se tolera.
+- **GetTransform**: `enentity.c:288` declara `proto external void GetTransform(out vector mat[])` y Object.c:1395/1405/1447 ya la invoca con `vector[4]` en script vanilla, así que el enlace está ejercitado por código enviado. Precisión: un fallo de compilación no produce marcador ni cabecera (OnInit no corre); el binder debe tratar log ausente/vacío como fallo de infraestructura, no como resultado. El lint de 1 misión con 0 errores lo cubre antes del FIFO.
+- **Orden/esquema**: Q con cuenta de objetos, 4 R con etiqueta fija, N filas O y cierre END;270 replican el parser B1 (`parse`:138-162) con 90×3; EOF, duplicados, extra y reloj invertido ya están en fixtures.
+- **Lifecycle**: adaptación de `identity`:59-96 (run/PID/creación ≤1 ms, cliente not_started, file_patching false, server_mods [], log bajo profiles propio, count 345→270, cierre/release) es directa.
+- **Streaming**: precarga 10 s + 100 ms y re-snapshot por punto es el patrón B1/VisualProbe:102-116; 40 m sólo como snapshot, no universo. Correcto.
+
+## Precisiones no bloqueantes
+
+- **Máscara Bullet**: BUILDING igual al productor original mantiene comparabilidad, pero si la vegetación no está en esa capa, BH≠RH es artefacto de máscara, no de geometría. Registrar el valor entero de la máscara en Q y que el consumidor etiquete la diferencia RV/Bullet como "capa distinta", sin rayos adicionales.
+- **O rows**: construir la cadena por objeto dentro del bucle (patrón B1:165-179) es aceptable; la regla "antes de texto" aplica a los cuatro rayos.
+- **low_y double**: valores como 10.05859375 son float32 exactos; el consumidor debe comparar con `f32(low_y)` como ya hace `csv_for`, sin margen físico.
+
+FIN_REVISION

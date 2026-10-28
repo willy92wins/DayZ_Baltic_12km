@@ -1,0 +1,192 @@
+{
+  "status": "INCONCLUSIVE_DIAGNOSTIC",
+  "contract_complete": true,
+  "identity_bound": true,
+  "rows": 270,
+  "rays": 1080,
+  "original_native_verdict": "FAIL",
+  "original_fail_points": 47,
+  "original_uncertain_points": 21,
+  "run_id": "05130b56-a47b-45d6-bcea-af3a385f0660",
+  "original_rejection": "bullet_layer_changed",
+  "original_accepted_sha256": "16afbdb6865149f2c51352043882f447f73ac20737aa6ec6520bcec6785ec432",
+  "replay_accepted_sha256": "4255d6c155fc319d2a5d10e3c02d2c298cdf1a4dd4d2c451ed922c4bf683e48b",
+  "native_log_sha256": "8e14bf362bdc7ab65a115f5834b3aae2c1b40ad63fa67be49e8950b76550464d",
+  "layer_observation": {
+    "script_representation": 8,
+    "symbol": "PhxInteractionLayers.BUILDING",
+    "previous_ordinal_hypothesis": 2,
+    "mapping_status": "UNVERIFIED_FOR_ANY_VALUE"
+  },
+  "limits": [
+    "Positive stable layer representation is an instrument restriction, not certification of engine layer semantics.",
+    "The former ordinal2 hypothesis was rejected by native data; no integer, including2, certifies the mapping.",
+    "RV versus Bullet uses different consumers/layers; disagreement alone is not a geometric cause.",
+    "Empty returned objects do not identify terrain; SurfaceY comparison uses nominal emitted XZ.",
+    "Geometry contacts are conditional frame hypotheses at nominal XZ, not native surface identity.",
+    "On-disk static census does not certify animation, dynamic objects or occupied volume.",
+    "WRP matrix layout versus native aside/up/dir/position remains a hypothesis; residuals alone do not prove motion.",
+    "No original state, tolerance or product expectation is changed."
+  ],
+  "limits_binding": [
+    "Original identity rechecked with only two explicitly archived source supersessions.",
+    "No additional native run. No scripts.pbo historical identity assertion.",
+    "The script representation does not certify the engine integer or layer semantics."
+  ],
+  "resources": {
+    "pid": 49192,
+    "parent_pid": 50164,
+    "seconds": 4.75,
+    "peak_resident_bytes": 455630848,
+    "peak_commit_bytes": 456826880
+  },
+  "tests": 28,
+  "review_receipts": [
+    {
+      "folder": "collision-native-b2-plan-review-20261028",
+      "model": "claude-fable-5-1",
+      "seconds": 188.82800000000043,
+      "verdict": "SOUND-with-fixes"
+    },
+    {
+      "folder": "collision-native-b2-code-review-20261028",
+      "model": "claude-fable-5-1",
+      "seconds": 407.4529999999995,
+      "verdict": "SOUND-with-fixes"
+    },
+    {
+      "folder": "collision-b2-enum-replay-review-20261028",
+      "model": "claude-fable-5-1",
+      "seconds": 120.28099999999904,
+      "verdict": "SOUND-with-fixes"
+    },
+    {
+      "folder": "collision-b2-replay-code-review-20261028",
+      "model": "claude-fable-5-1",
+      "seconds": 162.88999999999942,
+      "verdict": "SOUND-with-fixes"
+    },
+    {
+      "folder": "collision-b2-geometry-record-review-20261028",
+      "model": "claude-fable-5-1",
+      "seconds": 80.5619999999999,
+      "verdict": "SOUND-with-fixes"
+    }
+  ],
+  "rounds": 3,
+  "central_ids": [
+    349,
+    348,
+    350,
+    311,
+    700,
+    701,
+    723,
+    725,
+    1425,
+    1426
+  ],
+  "unique_origins": 90,
+  "offset_origins": 80,
+  "ground_reference_mismatches": 0,
+  "ground_minus_npz_m": {
+    "min": -0.0001239625102620323,
+    "max": 3.221493559912858e-06,
+    "count": 270
+  },
+  "confounders": {
+    "native_bullet_layer_ordinal_unverified": 270,
+    "offline_geometry_ambiguous_or_degenerate": 270,
+    "ray_interval_clock_changed_not_motion_proof": 84
+  },
+  "pose_observations": 16116,
+  "pose_states": {
+    "MATCHED": 16116
+  },
+  "matrix_format_matches": {
+    "True": 16116
+  },
+  "rows_missing_candidates": 0,
+  "ray_descriptives": {
+    "RH": {
+      "labels": {
+        "OBJECT_HIT": 183,
+        "NO_OBJECT_OFF_SURFACE": 76,
+        "NO_OBJECT_NEAR_SURFACE": 11
+      },
+      "offset_minus_central_m": {
+        "min": -0.10339300000000051,
+        "max": 0.8434600000000003,
+        "count": 240
+      }
+    },
+    "RL": {
+      "labels": {
+        "OBJECT_HIT": 129,
+        "NO_OBJECT_OFF_SURFACE": 126,
+        "NO_OBJECT_NEAR_SURFACE": 15
+      },
+      "offset_minus_central_m": {
+        "min": -0.004000999999999699,
+        "max": 0.8434699999999999,
+        "count": 240
+      }
+    },
+    "BH": {
+      "labels": {
+        "OBJECT_HIT": 270
+      },
+      "offset_minus_central_m": {
+        "min": -0.07919300000000007,
+        "max": 0.04881299999999911,
+        "count": 240
+      }
+    },
+    "BL": {
+      "labels": {
+        "OBJECT_HIT": 270
+      },
+      "offset_minus_central_m": {
+        "min": -0.008130000000000415,
+        "max": 0.007806999999999675,
+        "count": 240
+      }
+    }
+  },
+  "geometry_records": {
+    "total": 1106,
+    "FACE_INTERIOR_with_height": 194,
+    "AMBIGUOUS_EDGE_OR_FACE_with_height": 78,
+    "INCONCLUSIVE_VERTICAL_OR_DEGENERATE_without_height": 834,
+    "source_sha256": "3a375ddd92cb08126b120455f2c9fdaae05c154f5817240973c5018f33e67146"
+  },
+  "result_uncompressed_sha256": "1a70150556aa13bf4902cb000a0f54c7314ed8bf6c7d21a7bb94b01c15bcfb7f",
+  "result_uncompressed_bytes": 32239753,
+  "result_compressed_bytes": 3220430,
+  "cleanup": {
+    "close": {
+      "run_id": "05130b56-a47b-45d6-bcea-af3a385f0660",
+      "run_retired": true,
+      "stop_required": false
+    },
+    "stop": null,
+    "self": {
+      "state": "none"
+    },
+    "own_run_present": false,
+    "pending_commands": 0,
+    "cleanup_degraded": [],
+    "error": null,
+    "cleanup_error": null,
+    "preclose_identity_error": null
+  },
+  "adjudication": [
+    "Native plan: separate all four result containers; bind eight static PBOs; timestamp ray and pose intervals; never infer terrain from empty objects.",
+    "Native code: NO_OBJECT_FOR_LINK_MARKER label corrected; 40m census covers current four candidates only; WRP/native matrix convention remains conditional.",
+    "Enum plan: ordinal confounder applies to every positive stable value, including2; captured8 is not engine layer certification.",
+    "Replay code: external receipt, helper and every new source must appear in accepted.inputs; corruption fixtures reject missing pins.",
+    "Geometry records: retain all1106 records, with null numeric residual for834 inconclusive records; finite heights required for the other272.",
+    "Geometry review F1 rejected: hits.json is tracked in public712ad0af and SHA verified; private-worktree index is not publication authority.",
+    "Geometry review F2 accepted: exact per-row ambiguity confounder coverage added to the real frozen-data fixture."
+  ]
+}

@@ -1,0 +1,40 @@
+**Veredicto: SOUND-with-fixes.** La misión, el consumidor, el binder y los helpers implementan el plan adjudicado sin falsos completos; H1–H4 y las tres precisiones están resueltos en código. Hay un fix mínimo (etiqueta de fallo mal atribuida en la misión) y dos precisiones no bloqueantes. Nada autoriza lanzar B2: sólo preparar tras adjudicación explícita.
+
+## H1–H4 del plan: estado en código
+
+- **H1 resuelto.** Dos `set<Object>` propios (`init.c:25-26`), salidas RH/RL/BH/BL como locales reinicializadas en cada `OnUpdate` (`init.c:93-110`), cuatro llamadas en líneas individuales (`init.c:150-153`), serialización sólo tras BL y t1 (`init.c:184-195`). Un miss conserva `"0 0 0"`, `-1` y `0` crudos; el parser los retiene y nunca los convierte en contacto (`collision_native_b2_ev112.py:128-130`, test `test_miss_keeps_raw_but_never_height`).
+- **H2 resuelto.** `static_binding` exige 8 paquetes del censo B2A = `deployment.static_packages` (`collision_native_b2_binding_ev112.py:15-18`), 5 vanilla bajo `Addons` del ejecutable real con hash igual al censo (`:21-25`), 3 propios iguales al mod (`:26-28`), unión de 9 (`:29`); `identity` lo repite pre y post con `PACKAGE_DRIFT:vanilla` (`:72-79`). Fixtures de falta/extra/cambio pre y post (`test_collision_native_b2_binding_ev112.py:56-67`). Rutas coherentes: censo y ejecutable ambos bajo `E:\SteamLibrary\...\DayZ Exp` (report.json:45-65, prelaunch.json:2).
+- **H3 resuelto por identidad.** t0/t1/t2 en `init.c:149/154/182`; confusor sólo si `t1 != t0` (`collision_native_b2_ev112.py:159`); deriva entre rondas por tupla ordenada (valid, shape, pos, matriz), no por índice O (`:169-171`).
+- **H4 resuelto.** Etiquetas `MISS / OBJECT_HIT / NO_OBJECT_NEAR_SURFACE / NO_OBJECT_OFF_SURFACE` con sólo error de formato, comparadas con el SurfaceY del XZ emitido, `contact_xz_delta` conservado (`:128-136, :185-187`); "terrain" ausente y testado (`test_collision_native_b2_ev112.py:106-109`).
+- **Precisiones.** Máscara registrada en Q y exigida `== 2` (`init.c:185`, consumidor `:78`); `PhxInteractionLayers` es enum secuencial NOCOLLISION,DEFAULT,BUILDING → 2 (`dayzphysics.c:1-6`), así que el entero emitido es correcto. O se forma tras los rayos. Bajo float32 fijo exigido en `:36` y `:156-157`.
+
+## Compilación/serialización Enforce
+
+- `GetTransform(matrix)` con `vector matrix[4]` es la misma forma de llamada que `Object.c:1395/1405/1447` contra `enentity.c:288`; asignar `"0 0 0"` a un elemento de array estático tiene precedente vanilla (`enmath3d.c:258-260`). Sin prueba de ejecución aún; el marcador `LINK` se mantiene y el parser lo exige en las líneas 3-4 (`:57-58`).
+- `string + bool` produce `true/false` y vectores `<x, y, z>` con 6 decimales: comprobado en el log B1 real (`evidence/water-query-b1-native-20261028/native.log:3-5`), mismo motor y mismos patrones.
+- Esquemas cruzados: Q=15, R=11, H=9, O=12 campos coinciden entre `init.c:184-195` y `parse` (`:70,81,90,97`). Las filas `LINK` salen antes de la primera Q porque las O se almacenan en `m_ObjectRows` (`init.c:173-180` vs `:186`).
+- Índices/rondas: `m_Index` 0..89, `m_Round` 0..2, `END;270` (`init.c:197-203`) = `range(3)` del parser. Clave `rnd;id;slot` tomada de los campos del CSV, no del índice.
+- Presupuesto temporal: ≥2 frames+100 ms por punto, ~40 s más E/S por fila; B1 ya cerró 345 puntos con ~75 objetos/punto en el mismo patrón, dentro de los 180 s.
+
+## Hallazgo con fix mínimo
+
+**F1. `FAIL;NO_TRANSFORM_LINK` no puede detectar un fallo de enlace y sí etiqueta mal otro caso** (`init.c:183`). Un fallo de compilación no produce log (OnInit no corre); un fallo en tiempo de ejecución deja el log terminado en `LINK;GetTransform;BEGIN`. La única forma de llegar a `:183` con `m_Linked == false` es que el primer punto (0;349;0) no devuelva ningún objeto válido en 40 m. Contraejemplo: servidor sin jugadores descarta objetos entre frames (comentario del propio VisualProbe `init.c:102-103`); snapshot vacío en el primer punto → log `FAIL;NO_TRANSFORM_LINK` → `capture_collision_b2_native_20261028.ps1:31` lanza `Producer: FAIL;NO_TRANSFORM_LINK`. Consecuencia: se atribuiría a enlace nativo lo que es un snapshot vacío, contra la regla aceptada del plan (`:43-44`) de no atribuir errores de enlace al mapa ni viceversa. Probabilidad baja (B1 obtuvo 73 objetos en el primer punto de la misma zona), pero el texto es falso por construcción. Fix mínimo: renombrar a `FAIL;NO_OBJECT_FOR_LINK_MARKER` en `init.c:183`; parser y tests no cambian (la cabecera ya exige el marcador). Tras el cambio hay que re-lintar y regenerar el informe offline, porque el hash de `init.c` está pinned en `collision-b2-offline-20261028/report.json:167` y `prepare` lo verifica (`collision_b2_native_20261028.py:17`).
+
+## Precisiones no bloqueantes
+
+**P1. `candidate_ids` es global, no por punto** (`collision_native_b2_binding_ev112.py:132`, consumidor `:167-168`). Los 4 candidatos de `poses.json` se exigen en el snapshot de cada uno de los 270 grupos. Verificado que es correcto para este universo: los 90 puntos ocupan x 8246–8263 / z 8938–8942 y los candidatos están en (8246.2, 8940.9), (8245.7, 8941.8), (8258.0, 8928.4) y (8269.4, 8945.1); distancia 3D máxima desde `Vector(x,0,z)` ≈ 31 m < 40 m. El fixture (`test_...:132`) no detectaría un universo disperso. No requiere cambio ahora; si se reutiliza el consumidor, derivar el conjunto esperado de `hits[key].instance`.
+
+**P2. Equivalencia de layout WRP (12 floats) con aside/up/dir/pos de `GetTransform` sigue siendo hipótesis.** `pose_checks` del informe offline sólo compara `poses.json` con el WRP, no con el motor. Si el orden o la escala difieren, los 270 grupos recibirán `matrix_differs_from_WRP` como confusor (`:166`), nunca PASS ni FAIL físico, y el emparejamiento por `GetPosition` (`:117-119`) sigue siendo independiente. Aceptable como diagnóstico; conviene leerlo así en el informe, no como deriva real.
+
+## Verificado sin hallazgo
+
+- CSV regenerado byte a byte desde `points.json` + original 2658 con `.9g` (round-trip float32) (`:44-46`, binder `:48`); central/offset, estados originales, `low_y == f32(max(H,B)+2)` y estado offline conservados (`:25-40`); `47/21` originales intactos y exigidos (`:23-24`).
+- Alto/final validados sólo con error de formato y ulp float32 (`:151-155`), mismo criterio que B1 nativo exitoso.
+- Snapshot 40 m sólo precarga/snapshot; `ray_candidate_not_in_native_snapshot` y `object_unmatched` son confusores, no ausencias declaradas (`:165-168`).
+- Resultado siempre `INCONCLUSIVE_DIAGNOSTIC` con `identity_bound` falso en el consumidor puro y verdadero sólo tras `identity` (`:205`, binder `:133`); mocks no cuentan como motor (`test_bound_consumer_mock_is_not_engine`).
+- Identidad/cierre: `identity` replica B1:59-96 con 270 filas y nombre de log propio; añade `client_diagnostics` no vacío, consistente con la evidencia B1 (`mcp-identity.json:19-22`). `finish_collision_b2_native_20261028.js`: lease, adopción exacta del run, heartbeats ≤20 s en cada comando, readiness ≤300 s, deadline 180 s, identidad y congelación pre/post, `mcp-identity.json`, `close` oficial, stop sólo si `stop_required`, release y `session_status` terminal, sin credenciales en disco. `gate` rechaza unidades ya consumidas; `consume_bound` rechaza `result.json` existente.
+- `prepare` exige adjudicación `REVIEWED_B2_PREPARATION_READY`, informe offline 18 tests/1 lint, pins verificados de ejecutable, bridge y 8 PBO, destinos frescos, copia por hash de los 3 propios al mod B2, sin copiar vanilla, ≤120 s. No lanza nada.
+
+**Recap:** código B2 nativo SOUND-with-fixes. Un fix mínimo de una línea en `missions/BalticCollisionB2.BalticTrial/init.c:183` (etiqueta `NO_TRANSFORM_LINK` → `NO_OBJECT_FOR_LINK_MARKER`), seguido de re-lint y regeneración del informe offline por el pin de hash. H1–H4 y las precisiones del plan quedan resueltos. Siguiente paso tras el fix: adjudicación explícita y `prepare`; el lanzamiento sigue sin autorizar por esta revisión.
+
+FIN_REVISION
