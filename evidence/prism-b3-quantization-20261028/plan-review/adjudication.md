@@ -1,0 +1,2 @@
+# Adjudicación B3C plan
+Fable5.1,181.25s,identidad/pines intactos,SOUND-with-fixes. Se aceptan1–4 y6–7 con límites detallados en plan. Punto5: guardia presupuestaria aceptada; cálculo4–5 valores rechazado porque confunde Ymundial con Ylocal del dominio. Registrar tamaños medidos. Bounding center futuro sigue hipótesis: mantener bbox no demuestra algoritmo interno. No se ha implementado ni ejecutado censo al adjudicar.
