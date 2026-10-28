@@ -1,0 +1,27 @@
+{
+  "status": "CHANNEL_TESTS_AND_REFINEMENT_PASS",
+  "tests": [
+    {
+      "script": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\test_dry_road_native_consumer_ev112.py",
+      "sha256": "24c8e6ccd6d23bdb464c5a904cf6d6bef6019aeba4c558bdf1e9d10abc848f70",
+      "returncode": 0,
+      "seconds": 0.15600000001722947,
+      "stdout": "",
+      "stderr": "......................\n----------------------------------------------------------------------\nRan 22 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "script": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\test_dry_road_channels_native_fixture_r2_20261028.py",
+      "sha256": "2cbca45ef59bacf48c06b85c860c5b6193a7a25832bd52ce6f77ef078493f28b",
+      "returncode": 0,
+      "seconds": 0.10999999998603016,
+      "stdout": "{\"status\": \"CONSUMER_REAL_FIXTURE_REGRESSION_PASS\", \"positive_samples\": 16, \"negatives\": [{\"kind\": \"ground\", \"rejected\": true}, {\"kind\": \"roadway\", \"rejected\": true}, {\"kind\": \"water\", \"rejected\": true}, {\"kind\": \"rv\", \"rejected\": true}, {\"kind\": \"bullet\", \"rejected\": true}, {\"kind\": \"missing_id\", \"rejected\": true}, {\"kind\": \"boundary_does_not_mask_failure\", \"rejected\": true}], \"calibration_source\": \"Historical2026-10-26; NOT a fresh runtime calibration\", \"new_native_run\": false, \"limits\": [\"Regression of code on recorded native measurements only.\", \"Full2658 probe and fresh calibration remain unexecuted.\"]}\n",
+      "stderr": ""
+    }
+  ],
+  "water_depth_numeric_ids": [
+    1769
+  ],
+  "all_uncertain_point_count": 21,
+  "known_original_uncertain_count": 20,
+  "scope": "Offline consumers and predeclared uncertainty, no runtime acceptance"
+}

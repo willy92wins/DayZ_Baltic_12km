@@ -1,0 +1,47 @@
+{
+  "status": "CONSUMER_REAL_FIXTURE_REGRESSION_PASS",
+  "positive_samples": 16,
+  "negatives": [
+    {
+      "kind": "ground",
+      "rejected": true
+    },
+    {
+      "kind": "roadway",
+      "rejected": true
+    },
+    {
+      "kind": "water",
+      "rejected": true
+    },
+    {
+      "kind": "rv",
+      "rejected": true
+    },
+    {
+      "kind": "bullet",
+      "rejected": true
+    },
+    {
+      "kind": "missing_id",
+      "rejected": true
+    },
+    {
+      "kind": "boundary_does_not_mask_failure",
+      "rejected": true
+    }
+  ],
+  "calibration_source": "Historical2026-10-26; NOT a fresh runtime calibration",
+  "new_native_run": false,
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\buried-roadway-semantics-20261028\\run\\result.json": "b4f9df7e271455448955cb9621efad72b891c83ee3845853db134440a65a1a38",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\kit7-overlap-native-20261026\\calibration\\native.log": "401ac2eced73707f47af1ff3eff151295aecbe2dd7c32ff9e505b61abef7224c",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\buried-roadway-semantics-20261028\\points.json": "78f02fe5ae887f62bf5d7c076831064eaee93a0ddc40e4cd34967e9cd86a5125",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\dry_road_native_consumer_ev112.py": "9613ed035eaa64cc58dfaf2e7a9baaa441c30e90f225b91567507b62660ff0b4",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\test_dry_road_channels_native_fixture_r2_20261028.py": "2cbca45ef59bacf48c06b85c860c5b6193a7a25832bd52ce6f77ef078493f28b"
+  },
+  "limits": [
+    "Regression of code on recorded native measurements only.",
+    "Full2658 probe and fresh calibration remain unexecuted."
+  ]
+}

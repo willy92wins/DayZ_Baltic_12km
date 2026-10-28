@@ -1,0 +1,57 @@
+{
+  "status": "EIGHT_PRE_FIFO_GATE_CONTROLS_PASS",
+  "script_sha256": "12be27e43a0f6fd6561b66cd0fdd260199a4408a112cfd4aad5dbcf5b8464692",
+  "cases": [
+    {
+      "case": "calibration_ok",
+      "expected_pass": true,
+      "returncode": 0,
+      "verified": true
+    },
+    {
+      "case": "probe_ok",
+      "expected_pass": true,
+      "returncode": 0,
+      "verified": true
+    },
+    {
+      "case": "missing_calibration_hash",
+      "expected_pass": false,
+      "returncode": 1,
+      "verified": true
+    },
+    {
+      "case": "wrong_calibration_hash",
+      "expected_pass": false,
+      "returncode": 1,
+      "verified": true
+    },
+    {
+      "case": "engine_drift",
+      "expected_pass": false,
+      "returncode": 1,
+      "verified": true
+    },
+    {
+      "case": "log_drift",
+      "expected_pass": false,
+      "returncode": 1,
+      "verified": true
+    },
+    {
+      "case": "deployment_drift",
+      "expected_pass": false,
+      "returncode": 1,
+      "verified": true
+    },
+    {
+      "case": "already_launched",
+      "expected_pass": false,
+      "returncode": 1,
+      "verified": true
+    }
+  ],
+  "limits": [
+    "Synthetic filesystem binding controls only; no MCP request or DayZ run."
+  ]
+}
