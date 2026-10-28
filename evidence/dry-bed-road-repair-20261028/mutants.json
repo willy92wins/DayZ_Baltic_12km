@@ -1,0 +1,48 @@
+{
+  "status": "ALL_SIX_MUTANTS_REJECTED",
+  "cases": [
+    {
+      "case": "omit_seed",
+      "rejected": true,
+      "reason": "selection_mismatch",
+      "seconds": 0.48399999999674037
+    },
+    {
+      "case": "move_XZ",
+      "rejected": true,
+      "reason": "XZ_or_raised",
+      "seconds": 1.0940000000118744
+    },
+    {
+      "case": "move_fixed_water_support",
+      "rejected": true,
+      "reason": "fixed_point_changed",
+      "seconds": 15.827999999979511
+    },
+    {
+      "case": "forge_free_mask",
+      "rejected": true,
+      "reason": "free_or_wet_mismatch",
+      "seconds": 12.5
+    },
+    {
+      "case": "omit_water_layer",
+      "rejected": true,
+      "reason": "water_inventory_omitted",
+      "seconds": 12.25
+    },
+    {
+      "case": "restore_road_obstacle",
+      "rejected": true,
+      "reason": "corridor_still_exposed",
+      "seconds": 15.01600000000326
+    }
+  ],
+  "measurement": {
+    "pid": 134216,
+    "parent_pid": 140572,
+    "seconds": 57.65600000001723,
+    "peak_resident_bytes": 367878144,
+    "peak_commit_bytes": 894124032
+  }
+}
