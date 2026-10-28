@@ -1,0 +1,154 @@
+{
+  "status": "FIVE_ANALYTIC_CONTROLS_AND_FOUR_LINEAGE_MUTANTS_PASS",
+  "consumer_sha256": "5b43bac4e84e79256407e0b974b3c7c49b2ef71271965b15788c41d1d2a34506",
+  "checks": [
+    {
+      "name": "flat_exposed",
+      "expected": [
+        1,
+        1,
+        1,
+        5,
+        5,
+        5,
+        5,
+        3,
+        3
+      ],
+      "actual": [
+        1.0,
+        1.0,
+        1.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        3.0,
+        3.0
+      ],
+      "max_residual": 0.0
+    },
+    {
+      "name": "flat_hidden",
+      "expected": [
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actual": [
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_residual": 0.0
+    },
+    {
+      "name": "above_ground_below_section_water",
+      "expected": [
+        0.01,
+        0.01,
+        -0.01,
+        5,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actual": [
+        0.01,
+        0.01,
+        -0.01,
+        5.0,
+        5.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_residual": 0.0
+    },
+    {
+      "name": "native_valley_between_stored_vertices",
+      "expected": [
+        -1,
+        1,
+        1,
+        0,
+        6,
+        0,
+        6,
+        0,
+        5
+      ],
+      "actual": [
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        6.0,
+        0.0,
+        6.0,
+        0.0,
+        5.0
+      ],
+      "max_residual": 0.0
+    },
+    {
+      "name": "offset_actual_water_edges",
+      "expected": [
+        1,
+        1,
+        1,
+        5,
+        5,
+        5,
+        5,
+        3.5,
+        2.5
+      ],
+      "actual": [
+        1.0,
+        1.0,
+        1.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        3.5,
+        2.5
+      ],
+      "max_residual": 0.0
+    }
+  ],
+  "lineage_mutants": [
+    {
+      "field": "grid",
+      "rejected": "baseline_body_not_source"
+    },
+    {
+      "field": "water",
+      "rejected": "body_water_changed"
+    },
+    {
+      "field": "candidate_grid",
+      "rejected": "candidate_body_not_input"
+    },
+    {
+      "field": "extra_cap",
+      "rejected": "cap_labels_changed"
+    }
+  ]
+}
