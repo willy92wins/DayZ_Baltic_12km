@@ -1,0 +1,30 @@
+from pathlib import Path
+from datetime import datetime
+import hashlib,json,sys
+R=Path(__file__).parent;O=R/'buried-roadway-semantics-20261028';D=O/'run';W=Path('C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c');sys.path.insert(0,str(W/'tools/quality'))
+from buried_roadway_semantics_ev112 import observe,parse,require,verify_frozen,verify_package_set
+read=lambda p:json.loads(p.read_text(encoding='utf-8-sig'))
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+require(not (D/'result.json').exists(),'fresh_result_required')
+dep=read(O/'deployment.json');pre=read(O/'prelaunch.json');accept=read(O/'accepted.json')
+require(accept['status']=='REVIEWED_DIAGNOSTIC_READY','not_accepted')
+for mapping in (dep['inputs'],accept['inputs']):
+    verify_frozen(mapping)
+host=read(D/'host-identity.json');m=read(D/'mcp-identity.json');capture=read(D/'log-capture.json');cleanup=read(D/'cleanup.json');launch=read(D/'launch.json')
+require(host['run_id']==m['run_id']==m['server_run_id']==launch['run_id']==cleanup['close']['run_id'],'run_binding')
+require(m['server_binding']=='BOUND' and m['version_state']=='ok' and m['poll_age_s']<10,'bridge_binding')
+require(len(m['processes'])==1 and m['processes'][0]['role']=='server' and m['processes'][0]['pid']==host['pid']==capture['pid'],'process_binding')
+require(datetime.fromisoformat(m['processes'][0]['creation_time_utc'])==datetime.fromisoformat(capture['created_utc']),'capture_creation_binding')
+require(abs((datetime.fromisoformat(host['created_utc'])-datetime.fromisoformat(capture['created_utc'])).total_seconds())<=.000001,'host_creation_binding')
+require(datetime.fromisoformat(capture['last_write_utc'])>=datetime.fromisoformat(host['created_utc']),'stale_log')
+require(host['navmesh_data_server'] and all(x['state']=='not_started' for x in m['client_diagnostics']),'wrong_runtime_mode')
+require(Path(host['mission_path'])==Path(dep['mission']) and host['mission_sha256']==dep['producer_sha256'],'mission_binding')
+require(host['executable_file_sha256']==pre['executable_sha256'] and sha(host['executable'])==pre['executable_sha256'],'engine_binding')
+expected={**dep['deployed'],pre['bridge_pbo']:pre['bridge_sha256']};verify_package_set(expected,host['package_hashes'])
+require(capture['sha256']==sha(D/'native.log') and capture['count']==16,'log_binding')
+require(cleanup['close']['run_retired'] and cleanup['self']['state']=='none' and not cleanup['cleanup_degraded'] and cleanup['pending_commands']==0 and not cleanup['error'] and not cleanup['cleanup_error'],'lifecycle_not_closed')
+points=read(O/'points.json')['points'];csv=''.join(f"{p['id']};{p['x']:.6f} 0 {p['z']:.6f}\n" for p in points)
+require((Path(dep['mission'])/'points.csv').read_text(encoding='ascii')==csv,'point_csv_binding')
+result=observe(points,parse((D/'native.log').read_text(encoding='utf-8-sig'),16));result.update(run_id=host['run_id'],log_sha256=sha(D/'native.log'),packages=expected,engine_sha256=pre['executable_sha256'],identity_bound=True)
+(D/'result.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8');print(json.dumps({k:v for k,v in result.items() if k not in ('rows','packages')},indent=2))
+raise SystemExit(0 if result['status']=='SEMANTICS_OBSERVED_AT_SAMPLES' else 1)
