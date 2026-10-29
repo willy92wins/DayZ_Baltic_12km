@@ -1,0 +1,21 @@
+{
+  "files": [
+    {
+      "path": "tools/quality/verify_certified_shore_kernel_ev112.py",
+      "before": "2d41e87a72167be5dadb3494079038f64f4d4d6fe1f63df96f9acb8dc8c714a4",
+      "after": "aa55beb7dd020e563009f9a13e603181deb31b8b0191aa62ebca91418cddd478"
+    },
+    {
+      "path": "tests/test_certified_shore_kernel_ev112.py",
+      "before": "bc57056d6c8c3d729d562d085ee2be23ca0cfeb385e96a54141f05666ab62142",
+      "after": "fb40fb40359e1553d9b059fcd79d292b755f1fa1c6fef0c64360f9e0f23ba0e7"
+    },
+    {
+      "path": "tools/quality/certified_shore_kernel_ev112.py",
+      "before": "c5809050a9263b07d74bdd4a25fd749acc36b70ccb5ec0bbdd45ce9333cedd95",
+      "after": "ca0e6db9815add0206f72acd00e5160719fe684801b91f564fad0f1a05599f5e"
+    }
+  ],
+  "edits": 52,
+  "notes": "Bounded patches only; no fixtures regenerated. Producer divide now appends, witnesses checked, h0/duplicate/center and bounded I/O handled. Consumer uses one per-query cap for transcript plus semantic reconstruction, collects exact unique proof certificates (division suppresses mul, station path_total precedes walk, collection off during proof validation), bounded root/sign/term arithmetic, robust contract/oracle schema, RESOURCE_INCONCLUSIVE on cap overflow, and added proof/cap/duplicate/h0/wrong-expected/threshold tests."
+}

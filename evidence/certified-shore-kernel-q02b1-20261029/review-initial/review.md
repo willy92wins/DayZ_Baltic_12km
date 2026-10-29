@@ -1,0 +1,38 @@
+**Veredicto: NEEDS-WORK.** El núcleo intervalar es correcto en su aritmética y el consumidor recomputa todo de forma independiente, pero hay un fallo de ejecución en un caso del propio contrato, una fuga en la verificación de expectativas de ventana y una expectativa de test desactualizada. Ninguno es defecto de exactitud; dos son de completitud/robustez.
+
+## Bloqueantes
+
+**1. Crash del productor en `near_zero_positive` (`certified_shore_kernel_ev112.py:64-65`).** `idiv` llama `imul(b,x,rec)` sin pasar `log`, así que no se añade ninguna entrada, y después ejecuta `log[-1]={...}` para "reemplazar" una entrada que no existe. En `interval_extras`, `main` crea `log=[]` fresco (línea 317) y `eval_interval_op` → `qfield` → `idiv` sobre lista vacía lanza `IndexError`, que no está en el `except (Bad,OSError,ValueError)` de la línea 326. Resultado: traceback, sin informe, `setUpClass` del suite falla. Contraejemplo: el propio caso `near_zero_positive` del ContractR1 (los dos casos `division_*` no llegan porque `qfield` retorna antes).
+Efecto secundario en ventanas: cuando el log sí tiene entradas, la línea 65 **sobrescribe la última entrada legítima** (p. ej. el `sub` de `Q-S` en la línea 188, o el `sub` de `2h-|CA|` en 217), de modo que el transcript pierde pasos. No compromete al consumidor (recomputa), pero el transcript deja de ser un registro fiel.
+Fix: en la línea 64-65 sustituir por `o=imul(b,x,rec); logop(log,'divide',[enci(x),enci(y)],enci(o)); return o`.
+
+**2. El consumidor no exige el literal `expected` de `window_extras` (`verify_certified_shore_kernel_ev112.py:320-322`).** La condición anidada sólo rechaza si `rec.state != exp.state`, que ya se comprobó en la línea 319. Un contrato cuya expectativa literal sea errónea produce `VERIFIED_NUMERIC_KERNEL_ONLY` igualmente. Las ramas `station` (347) e `interval` (360) sí exigen `rec.state == obj.expected`; la rama ventana es la única que no. Contraejemplo real: el prefijo de tests entrega `threshold_equal` con `expected:"DEFINED"` y el consumidor lo aceptaría. Fix: reemplazar 320-322 por `if kind=='window' and rec['state']!=obj['expected']: raise Bad('windowexpected')`.
+
+**3. Expectativa de test desactualizada.** `WINDOW[5]` (`threshold_equal`) y `test_window_states_threshold_and_resource` afirman `DEFINED`; el ContractR1 corregido y el código producen `SUPPORT_UNCERTAIN`. Verificación: `T=n/2^78` con `n` impar, por lo que `sqrt(T²)` en p=48 no es exacta (`j²·2^156 ≠ n²·2^96`), la distancia a cada extremo es `[j,j+1]/2^48` que contiene `T` sin ser puntual, y las líneas 237-239 dan `SUPPORT_UNCERTAIN`. El código es el correcto; la cola de tests que se está recuperando debe alinear el literal. La comprobación de degeneración sí es correcta: `q == T²` no es `<`, luego no `DEGENERATE` (línea 170).
+
+## Hallazgos no bloqueantes (con fix)
+
+**4. `IndexError` latente con ruta de un solo vértice** (`kernel:182,186,195` y `verify:124,129,139`). Centro en extremo abierto (`center_index=0`) con `h=0`: la ruta hacia atrás es `[pts[0]]`, el soporte pasa (`0>=0`) y `locate` accede a `path[1]`. Falla cerrado (traceback, no aceptación), pero es un crash por entrada válida. Fix: si `len(path)<2`, devolver la estación con `to=path[0]` y `segment=None`, en ambos ficheros.
+
+**5. `center_index` sin rango en oráculos** (`kernel:153`, y en el consumidor `validate_contract:93-98` no valida nada de ventanas salvo puntos). Un índice negativo usa indexación negativa de Python en `path_indices`/`walk_indices`; productor y consumidor coinciden, así que se verificaría geometría sin sentido. El pin SHA mitiga, pero el consumidor es el ancla de confianza y debe revalidar: rango de `center_index`, forma de `h`, claves de extras, `scope`, `c1`, `human_cases`.
+
+**6. Transcript opcional de facto** (`verify:192-212`). Un informe con `transcript:[]` pasa `verify_transcript`; la aceptación descansa sólo en la recomputación del consumidor. Eso es sólido (no hay forma de co-mutar geometría falsa: estaciones, soporte, campos y anchuras se comparan por igualdad exacta contra `expected_window`), pero el plan dice "verifica identidades enteras de TODAS las raíces reportadas". El mutador `dropwit` sí se rechaza por `keys()`; borrar la entrada entera no. Fix: exigir que el multiconjunto de entradas `sqrt_interval` del transcript contenga una entrada por cada raíz que el consumidor calcula (puede recolectarlas en `root_interval`).
+
+**7. Cap después de la operación en el consumidor** (`verify:51`). `ce()` calcula `j*j*den` sin la guarda `2*bl(j)+bl(den)>MAXBITS` que sí tiene `verify_witness:187`. Producto de hasta ~8192 bits antes de comprobar. Añadir la misma guarda. El productor sí comprueba antes (`kernel:70`).
+
+**8. `root_interval` del consumidor confía en `isqrt` sin la identidad entera.** `fl()` devuelve `isqrt(...)` sin comprobar `j²d<=N<(j+1)²d`. CPython garantiza exactitud, pero el plan pide la prueba entera; cuesta dos multiplicaciones ya acotadas por el fix 7.
+
+**9. Etiqueta de déficit con `h=0`.** `twoh=(0,0)` da `UNDEFINED_ZERO_CHORD` para el déficit (línea 217), que no es un chord. Cosmético; sugerir `UNDEFINED_ZERO_WINDOW` o documentarlo.
+
+## Lo que está correcto (verificado sobre el código)
+
+- **Raíz con dos testigos** (`kernel:67-76`, `verify:45-52,182-191`): `j=isqrt(floor(N/d))` es `floor(sqrt(N/d))`; `whi=j+1` salvo igualdad exacta; el consumidor verifica `w²d<=N<(w+1)²d` y `(w-1)²d<N<=w²d` con guardas de bits antes de los productos. Cuadrados perfectos racionales no enteros (9/4) dan encierro válido aunque holgado.
+- **Caps antes de asignar**: `fadd/fmul/fcmp` comprueban suma de bits de los factores antes de multiplicar (`kernel:24-25,29,35`); `sqrt_witnesses` comprueba antes del shift (68). `wide_mixed_input` cae en `fadd` de `dx²+dz²` (2048+2149 bits) → `RESOURCE_INCONCLUSIVE`, coincidente en ambos lados.
+- **Dominio de consulta** (`kernel:179-198`): `h<0`, `h=0` ancla, prefijo exacto == Q puntual → vértice canónico, segmento inequívoco sólo con `Q_lo>S_hi` y `Q_hi<N_lo`, final abierto exacto `t=1`, cerrada exacta → vértice 0, `Q_lo>total_hi` → `OUT_OF_RANGE`, resto `BOUNDARY_UNCERTAIN`. Comprobé `irrational_boundary_lo/hi`, `interval_boundary`, `open_final_inexact_hi`, `closed_exact_end`: todos coinciden con el contrato.
+- **Soporte cerrado**: `diamond_support_uncertain` tiene `2h == per_lo` exactamente (`4j/2^48`), y la línea 232 exige `<` estricto → `SUPPORT_UNCERTAIN`, correcto porque el perímetro real es mayor. `square_equal_half`: `2h==4` exacto → `INSUFFICIENT_SUPPORT`.
+- **Unidades y fórmulas**: cross/dot en m², cuerdas en m, déficit adimensional, desviación `cross(C-A,B-A)/|CA|`, curvatura `2·cross(B-A,C-B)/(|BA||CB||CA|)`; `isquare` da mínimo 0 si contiene 0; `qfield` distingue `[0,0]` de "contiene 0".
+- **Binding**: pin SHA del contrato y oráculos, `source` comparado con `strict_eq`, conteo de registros, orden, metadatos, umbral, `human_cases`, `producer_status`, salida con `open(...,'x')`.
+
+## Resumen para el integrador
+
+Aplicar los fixes 1 y 2 (dos líneas cada uno) y corregir el literal `threshold_equal` en la cola del suite; después reejecutar productor y consumidor. Los puntos 4-8 son endurecimiento y pueden ir en la misma entrega sin cambiar resultados numéricos. No concedo aprobación de ejecución final; con 1-3 resueltos y suite verde, el núcleo quedaría en SOUND-with-fixes respecto a la afirmación permitida `VERIFIED_NUMERIC_KERNEL_ONLY`, `calibration_ready=false`, ángulos `PENDING_CERTIFIED_ANGLE`.

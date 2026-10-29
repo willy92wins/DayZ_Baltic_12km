@@ -1,0 +1,31 @@
+E
+======================================================================
+ERROR: setUpClass (__main__.KernelTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_certified_shore_kernel_ev112.py", line 27, in setUpClass
+    if cls.prod_run.returncode!=0: raise AssertionError(cls.prod_run.stderr)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\certified_shore_kernel_ev112.py", line 328, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\certified_shore_kernel_ev112.py", line 319, in main
+    x=interval_pair(b,e['x']); y=interval_pair(b,e['y']) if e.get('y') is not None else None; st,res=eval_interval_op(b,log,e['op'],x,y); base['state']=st; base['result_interval']=enci(res) if res is not None else None
+                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\certified_shore_kernel_ev112.py", line 272, in eval_interval_op
+    f=qfield(b,x,y,'1',log); return f['state'],f['interval']
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\certified_shore_kernel_ev112.py", line 206, in qfield
+    return field(b,idiv(b,num,den,log),unit)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\certified_shore_kernel_ev112.py", line 65, in idiv
+    if log is not None: log[-1]={'op':'divide','input':[enci(x),enci(y)],'output':enci(o)}
+                        ~~~^^^^
+IndexError: list assignment index out of range
+
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.127s
+
+FAILED (errors=1)

@@ -1,0 +1,29 @@
+E
+======================================================================
+ERROR: setUpClass (__main__.KernelTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_certified_shore_kernel_ev112.py", line 30, in setUpClass
+    if cls.cons_run.returncode!=0: raise AssertionError(cls.cons_run.stderr+cls.ver_path.read_text())
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {
+  "schema": "q02b1-verification.v1",
+  "status": "REJECTED",
+  "errors": [
+    "controls"
+  ],
+  "calibration_ready": false,
+  "natural_positive_count": 0,
+  "human_cases_state": "GEOMETRY_UNBOUND",
+  "angle_state": "PENDING_CERTIFIED_ANGLE",
+  "c1": "NOT_REVIEWED",
+  "controls": 4,
+  "human_cases_resolved": 0,
+  "scope": "NUMERIC_KERNEL_ONLY"
+}
+
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.272s
+
+FAILED (errors=1)

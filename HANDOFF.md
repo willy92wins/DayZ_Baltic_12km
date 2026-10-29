@@ -1,3 +1,12 @@
+# Q02B1 completo en oráculos — 29-10
+
+VERIFIED_NUMERIC_KERNEL_ONLY,53consultas,21tests privados8.218s PASS. Productor0.250s/18.57MB,consumidor0.360s/41.64MB. Report16502f8c481a04653854eef2d331318d8b3b1fb8c9bdc4f7dd277af75e732750,contratoR1 4162c53e. Certificados racionales p48 y caps4096bits/100000ops; un control deliberado de recursos identificado, no todo numéricamente definido. Nueve humanos0resueltos,C1NOT_REVIEWED,ángulos/naturalidad/censo real pendientes. Evidence/certified-shore-kernel-q02b1-20261029. Autor parcial240s y cola47.891s; Fable164.781s NEEDS-WORK corregido Muse149.766s+integrador, delta82.890s adjudicada. R0/R1fallidos preservados, sin relajar umbral ni tolerancias. No mapa/build/DayZ/run/lease.
+
+Todas las autorías,revisiones,correcciones,suites,captura y consumidor Q02B1 CONSUMIDOS. No repetir. Siguiente plans/quality-council-q02b2-shared-prefix-design-20261029.md BORRADOR_PENDIENTE_DE_REVISION: cerrar algoritmo de prefijos/cache/consulta intervalar y presupuesto antes de usar contornos reales; no extrapolar coste de fixtures ni ampliar caps. Paralelo vial: B4A3 subconjunto12recursos de3modelos completo; RoadB4B requiere plan propio de precedencia/escena/pivotes/huellas/accesos/oclusores. No copiar12recursos como cierre5509modelos. Q03/Q05 y referente agua/natural pendientes; Nav8607históricos,original47FAIL21inciertos,RH/agua723/RAM/global abiertos. Mar al pie de Narva ya autorizado.
+
+Publicación sólo public-repo; recibo publish-q02b1-20261029/result.json cuando exista. No operación propia activa tras publicación. Preservar.gitattributes ajena y mantener automatización.
+
+---
 # B4A3 dependencias comprobadas; siguiente núcleo numérico Q02B1 — 29-10
 
 SAVED_PILOT_DEPENDENCIES_RESOLVED_ONLY. Dos textos, ocho recursos guardados y cuatro hojas nuevas; contrato178c6d86, reporte privado d5ce5307f926ead5a6f599da96b336c5b76451372e8ebf3f742a06cc5ce930a5. Captura1.547s/51.83MB, consumidor0.188s sin reabrir PBO,21tests privados1.641s PASS. PBO34c1 estable, tabla501 y hashes de hojas previos coinciden. evidence/road-b4a3-material-dependencies-20261029 contiene resumen y procedencia, no materiales completos. No build/DayZ/mapa modificado ni carretera terminada. Autor118.453s/corrección147.641s Muse; reviewFable116.485s, fixes adjudicados. Se corrigieron fixtures y esquema real LISTA del catálogo, sin cambiar entradas/contrato. Todo B4A3 autorías/reviews/suites/captura/consumidor/freeze CONSUMIDO, no repetir.

@@ -1,3 +1,5 @@
+Estado actual29-10: COMPLETADO_KERNEL_ORACULOS_ONLY, evidence/certified-shore-kernel-q02b1-20261029. 53consultas/21tests; no mapa/censo/naturalidad. Plan aprobado original preservado allí porhash. Operaciones consumidas.
+
 # Q02B1 — contrato numérico verificable antes del censo multiescala
 
 Estado: REVISADO_PARA_IMPLEMENTAR_NUCLEO_NUMERICO. Fable5.1 nativo77.093s SOUND-with-fixes, adjudicado al final. La petición Q02B/P14 continúa: medir formas reales, sin aceptar naturalidad por conteos o tolerancias ajustadas. Esta unidad propone cerrar la aritmética de estaciones/cuerdas/rasgos algebraicos con intervalos racionales. No ejecuta todavía las 538390 ventanas del mapa, no modifica geometría y no sustituye el referente natural pendiente.

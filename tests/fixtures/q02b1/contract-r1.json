@@ -1,0 +1,679 @@
+{
+  "schema": "q02b1-contract.v1",
+  "scope": "NUMERIC_KERNEL_ONLY",
+  "p": 48,
+  "max_bits": 4096,
+  "max_operations": 100000,
+  "old_oracles": {
+    "path": "tests/fixtures/q02b0/oracles.json",
+    "sha256": "083334300732b33b994dd6d97d063a19db08dd58e64a92cffea806848c4bde1b"
+  },
+  "plan_sha256": "fb3cc28e5d1d7625b195ff18490f02332de3645811a6e988b68f6730375cda8b",
+  "threshold_binary_ratio": [
+    3022314549036573,
+    302231454903657293676544
+  ],
+  "human_cases": {
+    "count": 9,
+    "state": "GEOMETRY_UNBOUND",
+    "resolved": 0
+  },
+  "controls": 4,
+  "c1": "NOT_REVIEWED",
+  "calibration_ready": false,
+  "natural_positive_count": 0,
+  "angle_state": "PENDING_CERTIFIED_ANGLE",
+  "window_extras": [
+    {
+      "id": "sqrt2_diamond",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "closed": true,
+      "center_index": 0,
+      "h": [
+        1,
+        1
+      ],
+      "expected": "DEFINED"
+    },
+    {
+      "id": "diamond_insufficient",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "closed": true,
+      "center_index": 0,
+      "h": [
+        3,
+        1
+      ],
+      "expected": "INSUFFICIENT_SUPPORT"
+    },
+    {
+      "id": "diamond_support_uncertain",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "closed": true,
+      "center_index": 0,
+      "h": [
+        796131459065720,
+        281474976710656
+      ],
+      "expected": "SUPPORT_UNCERTAIN"
+    },
+    {
+      "id": "square_equal_half",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "closed": true,
+      "center_index": 0,
+      "h": [
+        2,
+        1
+      ],
+      "expected": "INSUFFICIENT_SUPPORT"
+    },
+    {
+      "id": "tiny_positive",
+      "points": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1E-10,
+          0
+        ]
+      ],
+      "closed": false,
+      "center_index": 1,
+      "h": [
+        1,
+        1
+      ],
+      "expected": "DEGENERATE"
+    },
+    {
+      "id": "threshold_equal",
+      "points": [
+        [
+          -1E-08,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1E-08,
+          0
+        ]
+      ],
+      "closed": false,
+      "center_index": 1,
+      "h": [
+        3022314549036573,
+        302231454903657293676544
+      ],
+      "expected": "SUPPORT_UNCERTAIN"
+    },
+    {
+      "id": "zero_segment",
+      "points": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "closed": false,
+      "center_index": 1,
+      "h": [
+        1,
+        1
+      ],
+      "expected": "DEGENERATE"
+    },
+    {
+      "id": "wide_mixed_input",
+      "points": [
+        [
+          -1E+308,
+          5E-324
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1E+308,
+          0
+        ]
+      ],
+      "closed": false,
+      "center_index": 1,
+      "h": [
+        1,
+        1
+      ],
+      "expected": "RESOURCE_INCONCLUSIVE"
+    }
+  ],
+  "station_extras": [
+    {
+      "id": "zero",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "expected": "DEFINED"
+    },
+    {
+      "id": "negative",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "expected": "INVALID_QUERY"
+    },
+    {
+      "id": "irrational_boundary_lo",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          398065729532860,
+          281474976710656
+        ],
+        [
+          398065729532860,
+          281474976710656
+        ]
+      ],
+      "expected": "BOUNDARY_UNCERTAIN"
+    },
+    {
+      "id": "irrational_boundary_hi",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          398065729532861,
+          281474976710656
+        ],
+        [
+          398065729532861,
+          281474976710656
+        ]
+      ],
+      "expected": "BOUNDARY_UNCERTAIN"
+    },
+    {
+      "id": "interval_boundary",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          398065729532860,
+          281474976710656
+        ],
+        [
+          398065729532861,
+          281474976710656
+        ]
+      ],
+      "expected": "BOUNDARY_UNCERTAIN"
+    },
+    {
+      "id": "interval_interior",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "expected": "DEFINED"
+    },
+    {
+      "id": "open_final_exact",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "expected": "DEFINED"
+    },
+    {
+      "id": "open_final_inexact_hi",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          398065729532861,
+          281474976710656
+        ],
+        [
+          398065729532861,
+          281474976710656
+        ]
+      ],
+      "expected": "BOUNDARY_UNCERTAIN"
+    },
+    {
+      "id": "out_of_range",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "closed": false,
+      "query": [
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "expected": "OUT_OF_RANGE"
+    },
+    {
+      "id": "closed_exact_end",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "closed": true,
+      "query": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "expected": "DEFINED"
+    }
+  ],
+  "interval_extras": [
+    {
+      "id": "sqrt_interval",
+      "op": "sqrt",
+      "x": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "expected": "DEFINED"
+    },
+    {
+      "id": "square_spanning_zero",
+      "op": "square",
+      "x": [
+        [
+          -2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "exact": [
+        [
+          0,
+          1
+        ],
+        [
+          9,
+          1
+        ]
+      ],
+      "expected": "DEFINED"
+    },
+    {
+      "id": "division_zero",
+      "op": "divide",
+      "x": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "y": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "expected": "UNDEFINED_ZERO_CHORD"
+    },
+    {
+      "id": "division_conditioning",
+      "op": "divide",
+      "x": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "y": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "expected": "UNDEFINED_CONDITIONING"
+    },
+    {
+      "id": "near_zero_positive",
+      "op": "divide",
+      "x": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "y": [
+        [
+          1,
+          1099511627776
+        ],
+        [
+          1,
+          549755813888
+        ]
+      ],
+      "exact": [
+        [
+          549755813888,
+          1
+        ],
+        [
+          1099511627776,
+          1
+        ]
+      ],
+      "expected": "DEFINED"
+    }
+  ],
+  "invariants": {
+    "old_query_count": 30,
+    "old_states": {
+      "DEFINED": "DEFINED",
+      "COINCIDENT_SUPPORT": "UNDEFINED_ZERO_CHORD",
+      "INSUFFICIENT_SUPPORT": "INSUFFICIENT_SUPPORT"
+    },
+    "units": {
+      "cross": "m^2",
+      "dot": "m^2",
+      "chord": "m",
+      "deficit": "1",
+      "deviation": "m",
+      "curvature": "1/m"
+    }
+  },
+  "budgets": {
+    "author_s": 240,
+    "code_review_s": 180,
+    "suite_s": 120,
+    "capture_s": 30,
+    "consumer_s": 30,
+    "capture_bytes": 268435456
+  },
+  "non_authorizations": [
+    "map census",
+    "geometry modification",
+    "native acceptance",
+    "classification thresholds",
+    "build",
+    "DayZ"
+  ]
+}
