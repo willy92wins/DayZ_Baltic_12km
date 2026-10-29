@@ -1,3 +1,23 @@
+# Q03B4 plan revisado; publicación documental pendiente
+
+Muse97.875s SOUND-with-fixes/CONVERGE, cinco puntos adjudicados en evidence/q03b4-semantic-plan-review-20261029. Plan quality-council-q03b4-semantic-scene-index-20261029.md revisado para contrato y autoría con gates. No contrato Q03B4/código/captura histórica todavía. Siguiente congelar oráculos/contrato concretos y ejecutar autor local900s; code review240/suite180 antes de120s productor+120s consumidor/512MiB. Una Session acumulada, predicados separados, runs(model,source_model,lod,kind,proxy). Lectores79ef/0514 sellados. Revisión y preparador consumidos; seguir publicador nuevo sin duplicar. Sin run/lease/mapa;2identidades propias retiradas.
+
+# Q03B4 plan de índice en revisión — 29 de octubre
+
+Única operación propia q03b4-semantic-plan-review-20261029/muse180s. Seguir completion sin duplicar. Plan nuevo de productor/consumidor y adaptador mínimo de schemas variables sobre lectores sellados; no código ni contrato Q03B4 ni NPZ histórico autorizado. Codex planner/integrator, executor local propuesto después de gates. No run/lease/mapa. Q03B3 consumido y publicado fba8a8f3.
+
+# Q03B3 publicado — 29 de octubre
+
+fba8a8f3a280d32a38431a418043b35a6663be0a,40archivos,10tests privados1.157s/públicos0.422s PASS sin skips; remoto main verificado limpio. Recibo publish-q03b3-20261029/result.json.11identidades observadas propias retiradas. Sin operación propia/run/lease. Autor/review/corrección/repros/suites/freeze/stage/publicador/add/commit/push CONSUMIDOS.
+
+FIXTURE_FACE_ROUTE_IDENTITY_ONLY:4modelos/3rutas/5caras, hijo literal y ordinal/continuidad/ciclos/LOD/section por índice/multiconjunto completo verificados. Código fda1a85f24e35e4f1efde7d68e75468cda8454e9bb1ac3bd601a2ec76c65fe51; tests49e8bc9f; contratoR18173cc1e/oráculo17667706/extensión9802d6d7. Evidencia evidence/proxy-identity-q03b3-20261029. Una muestraJSON guardada root587->5509 confirmó sufijos; no204NPZ abiertos.
+
+Muse150.296s SOUND estático sobreR0; integradorCodex halló después cargador que aceptaba SHA de prefijo7B tras crecer archivo14B. Repro0.015s y corrección21.230s: EOF y tamaño final anteshash/parse. Núcleo rutas sin cambio; postimagen final sin otra revisión externa. Contextoautor/integrador compartido, no consenso. ContratoR0 schemaID sobrescrito por preparador fue corregido ANTES de código, conservando deadline/oráculos; recibos intactos.
+
+Siguiente acción autónoma: cerrar/revisar plan de productor semántico e índice utilizable por Q03C/Q05, sobre contratoescenae967 y anclas ya existentes. No plan ejecutable Q03B4 ni código nuevo todavía. Reutilizar lectores sellados Q03B1L/Q03B2 y conocimiento de identidadQ03B3; no rehacerlos, no otra reescritura de cuatroarchivos. El expected de Q03B3 es literal de fixtures: NO generar expected desde candidato real para fingir independencia. Productor y consumidor con recorrido propio necesitan sus gates antes de captura real; ni contratoe967 ni fixtureverde la autorizan por sí solos.
+
+face_section_membershipNOT_SAVED, kind_semanticsNOT_EVALUATED; matrices/época/motor/grafo global no certificados. Mapaintacto,nueve humanos0resueltos,C1NOT_REVIEWED. Q03C/Q05/referentes/ángulos y carreteras siguen pendientes; concentrar siguientes entregas en un índice que desbloquee medidas reales, no acumular pruebas genéricas. Última conversación sobrecouncil no cambió el plan ni pidió pausa. .gitattributes ajena preservada.
+
 # Q03B3 código sintético completo; publicación en curso
 
 FIXTURE_FACE_ROUTE_IDENTITY_ONLY.4modelos/3rutas/5caras,10tests privados PASS1.157s sin skips. Código fda1a85f/tests49e8bc9f, contratoR18173cc1e/oráculo17667706. Muse150.296s SOUND R0, integración detectó falsoPASS del cargador prefijo7/14bytes y corrigió21.230s con extensión9802d6d7; núcleoproxy sin cambios. Postimagen final no releída externamente. ContratoR0 corregido sóloschemaID antes de código y sin resetdeadline.

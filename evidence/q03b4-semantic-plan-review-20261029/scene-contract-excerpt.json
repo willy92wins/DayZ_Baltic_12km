@@ -1,0 +1,294 @@
+{
+  "schema": "q03b-saved-scene-binding-r1",
+  "epoch": {
+    "wrp_compiled": "0da63d3f258923e784a62bcb59bb1d7f2ab99866816f530bfe73cd4211b23254",
+    "wrp_editable": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+    "pilot_pbo": "3d9550bfb3f27e3916b14579990c240c4aaf4d779e628658ec572cb2c806a2b6",
+    "kind": "HISTORICAL_PIN_CHAIN_NOT_CURRENT_FILES"
+  },
+  "expected": {
+    "source_models": 5509,
+    "vegetation_models_not_saved": 72,
+    "prototype_models": 5443,
+    "proxy_only_models": 6,
+    "instances": 17818,
+    "prototype_faces": 539009,
+    "roadway": 362554,
+    "water_visual": 176390,
+    "conditional_proxy": 65,
+    "ambiguous": 43,
+    "degenerate": 0,
+    "proxy_paths": 7,
+    "pilot_models": 201,
+    "human_resolved": 0,
+    "C1": "NOT_REVIEWED"
+  },
+  "limits": {
+    "json_bytes": 16777216,
+    "json_total_bytes": 33554432,
+    "npz_stored_bytes": 16777216,
+    "archive_expanded_bytes": 134217728,
+    "total_expanded_bytes": 262434599,
+    "npy_header_bytes": 16384,
+    "zip_members": 35,
+    "output_bytes": 33554432,
+    "max_dimension": 2000000,
+    "max_dimensions": 3,
+    "read_chunk_bytes": 1048576
+  },
+  "npz_schemas": {
+    "prototypes": {
+      "members": [
+        "vertices",
+        "meta"
+      ],
+      "vertices": {
+        "shape": [
+          539009,
+          4,
+          3
+        ],
+        "dtype": "<f8"
+      },
+      "meta": {
+        "shape": [
+          539009
+        ],
+        "descr": [
+          [
+            "model",
+            "<i4"
+          ],
+          [
+            "source_model",
+            "<i4"
+          ],
+          [
+            "face",
+            "<i4"
+          ],
+          [
+            "section",
+            "<i4"
+          ],
+          [
+            "lod",
+            "<i4"
+          ],
+          [
+            "kind",
+            "|u1"
+          ],
+          [
+            "vertices",
+            "|u1"
+          ],
+          [
+            "flags",
+            "|u1"
+          ],
+          [
+            "proxy",
+            "<i4"
+          ],
+          [
+            "planarity_m",
+            "<f8"
+          ]
+        ],
+        "itemsize": 35
+      }
+    },
+    "instances": {
+      "members": [
+        "ids",
+        "model_index",
+        "matrix",
+        "norm",
+        "determinant",
+        "nonorthogonality"
+      ],
+      "shapes": {
+        "ids": [
+          17818
+        ],
+        "model_index": [
+          17818
+        ],
+        "matrix": [
+          17818,
+          12
+        ],
+        "norm": [
+          17818,
+          3
+        ],
+        "determinant": [
+          17818
+        ],
+        "nonorthogonality": [
+          17818
+        ]
+      },
+      "ids_and_index": "signed or unsigned little-endian integer of4or8bytes; observation preserved, no dtype cast",
+      "matrix": "little-endian f4 or f8; observation preserved; source comparison exact dtype/shape/bytes",
+      "metrics": "f8 finite"
+    },
+    "selected": {
+      "members": [
+        "ids",
+        "model_index",
+        "matrix"
+      ],
+      "same_columns_as": "instances; compare dtype,shape,C-order data bytes, not compressed container"
+    },
+    "pilot": {
+      "groups": [
+        "bed",
+        "water",
+        "unknown",
+        "road_bed",
+        "road_water",
+        "road_unknown"
+      ],
+      "group_members": [
+        "",
+        "_n",
+        "_flags",
+        "_source_ids"
+      ],
+      "extra_members": [
+        "source_grid",
+        "source_triangles",
+        "body_row_min",
+        "body_row_max",
+        "body_col_min",
+        "body_col_max",
+        "source_category",
+        "bed_source_face",
+        "npz_start",
+        "cap_before",
+        "cap_after"
+      ],
+      "group_schema": "xyz f8[F,4,3]; n/flags u1[F]; source_ids i4[F,2]",
+      "extra_schema": "source_grid f8[n,m,3] n,m>=2,n*m<=3B; source_triangles signedi4/i8[B,3]; four row/col extrema signedi4/i8[B]; source_category U9[B]; bed_source_face i4[B]; npz_start/cap_before/cap_after i4 scalar",
+      "grid_bound_proof": "source_faces enumerates points referenced by B triangles, hence <=3B unique vertices; source strip has complete grid topology",
+      "scalar_caps": "npz_start>=0; cap_before/after each0or8, classify counts from source_regions; never transform coords"
+    }
+  },
+  "reader_policy": {
+    "zip": "STORED or DEFLATED only, no encryption/duplicates/paths/external members, exact names; NPY1.0/2.0 C-order; preflight all ZipInfo/header sizes before np.load; expected bytes=header+shape product*itemsize, no trailing data; no object or pickle; pre-read6byteMAGIC+2version+u2(v1)/u4(v2) header length and reject>16384 BEFORE header allocation. Pass max_header_size=16384 explicitly to both header reader and np.load. NPY3 rejected. Directory entries prohibited.",
+    "snapshot": "pin exact bytes from stable path/handle within cap before parsing, bytes retained per archive; before/after identity and same-handle SHA. File reparse rejected; authorized source root exact; no fallback paths; I/O unavailable ->INCONCLUSIVE_SOURCE_IO with actual exception type; no attribution to cloud/sync. Only current archive plus shared compact data retained; release per-pilot before next.",
+    "consumer": "new independent semantic walker; may share bounded I/O primitives only, not producer check functions nor expected output builder; reads pinned sources itself. Compare all terminal coverage and per-array byte digest, not producer self-SHA; cannot import producer semantic functions or META/instance_guard/coverage_guard. Independently declare semantics; may share I/O and digest utility only. No shared output constructor.",
+    "format": "reports include all5509 catalog rows incl NOT_SAVED plus6proxy-only rows; prototype references to array rows/runs without geometry replication; one pilot binding row per201; retain multiplicity and all layer distinctions. Metadata report no geometry values."
+  },
+  "identities": {
+    "source_universe": "5509 =5437 nonvegetation+72 vegetation; indices retained from catalog, not packed",
+    "prototype_universe": "5443=5437 nonvegetation catalog indices +6 proxy-only indices; 5515 report rows total",
+    "meta_model": "exact set of nonvegetation catalog indices, NOT range(5443)",
+    "meta_source_model": "exact model-sections index set: nonvegetation + proxy-only; may exceed5508",
+    "proxy": "-1 for kinds0/1, integer0..6 for kind2; route root_model==meta.model and source_model==meta.source_model; traverse slots against saved model-sections proxies by literal slot; cycles/unknowns rejected",
+    "face_and_section": "source_model LOD row, face>=0 and <lod.faces, section exact stored index in that lod; kind0 is Roadway, kind1 root Visual water, kind2 conditional proxy; retain multiplicity",
+    "normalization": "ASCII only, no control/NUL/drive/.. traversal or empty internal components; replace backslash with slash, lower, strip outer slash; raw preserved. Match canonical catalog name. Never basename fallback."
+  },
+  "epoch_binding": {
+    "surface_inputs": "source_pins exact named WRP compiled/editable and pilot PBO declarations match epoch, no reopening binaries",
+    "pilot_inputs": "pins[surface inputs path] equals its contract SHA and pins[instances path] equals instances archive SHA; original surface artifact manifest SHA preserved. Verify all specified links, not substring matches",
+    "selected": "surface inputs source_pins[selected path] and discovery_artifacts selected entries match contract SHA/bytes; instances columns and selected columns dtype,shape,data bytes exact",
+    "test_mutation": "epoch_wrong_pbo changes pinned input JSON declaration in fixture and repins only fixture; no external PBO opened"
+  },
+  "pilot_constraints": {
+    "counts": "201 rows/model indices/instanceIDs/names unique; site counts139/26/9/27 from metadata; one instance per selected model; all catalog rows retained",
+    "source_grid": "n,m>=2; n*m<=3B; body_rows=n-cap_before-cap_after>=2. npz_start is GLOBAL station-array offset>=0, NEVER require npz_start+body_rows<=n(local grid). Global station-end not checked without source arrays; recorded as NOT_EVALUATED. source_triangles indices0<=idx<n*m; extrema row/col must match each triangle independently; category count/alphabet from source_regions; map permutation range0..B-1, no missing/duplicate mapping since historicalunmapped0",
+    "category": "dtype<U9 exactly; valuesBODY/CAP_START/CAP_END only; compare count per source_regions, no new geometry thresholds",
+    "face_n": "3or4 and unused padded rows exactlypositivezero bytes; legit zero vertex included whenindex<n",
+    "orientation": "source payload bytes/order preserved; no new oriented equality between MLOD and compiled; historical checks copied as evidence only; not mistaken for current verification"
+  },
+  "output_schema": {
+    "report_keys": [
+      "schema",
+      "contract_sha256",
+      "status",
+      "claims",
+      "coverage",
+      "sources",
+      "models",
+      "pilots",
+      "proxy_routes",
+      "limitations"
+    ],
+    "status": "VERIFIED_SAVED_SCENE_BINDING_ONLY on all checks; rejected/inconclusive failure record separate with explicit reason",
+    "coverage": "exact counts source_models/prototype_models/proxy_only_models/instances/prototype_faces andkindcounts,ambiguities,pilots,membercount; integers(notbool)",
+    "sources": "one record per JSON and NPZ; path/sha256/bytes, for NPZ eachmember dtype.descr/shape/order,data_sha256 andheader length. All204archives read, no selfdeclared pin only.",
+    "models": "5515 terminal rows; index/name/group/instance_count/layers/frame/prototype_ranges list of [start,end) in savedprototypes; refs preserve allfaceidentities/multiplicity via ranges+originalarrayhash, no faces serialized. Vegetation NOT_SAVED; nonpilot Visualbed NOT_SAVED, notABSENT; rootlocalRAW_UNCERTIFIED vs proxyexpandedCONDITIONAL. Proxyonlyrows notWRPinstances.",
+    "pilots": "201 records model/model_index/instance_id/site/archive/pose_row/world_frameALREADY_WORLD_UNCERTIFIED/arraydigestmap/categories/historical_checks. No transforming coordinates.",
+    "proxy_routes": "exact seven raw metadata routes retained with missing enginebinding fields explicitlyUNKNOWN",
+    "limitations": "explicit no native/currentprecedence/exposure/globallycompletefaces/geometry repair; ninehumans0resolved,C1NOT_REVIEWED. Consumer compares entire semantic report recursively with strict type and unknownkeys refusal, excludes no silentfields."
+  },
+  "pilot_literal_example": {
+    "model": "baltic_stream_pilot/cs_kit_118_0000.p3d",
+    "model_index": 3579,
+    "instance_id": 19394363,
+    "site": "kit-118",
+    "station": [
+      0.0,
+      11.992418171055267
+    ],
+    "file": "models/cs_kit_118_0000.npz",
+    "faces": {
+      "bed": 1520,
+      "water": 24,
+      "unknown": 0,
+      "road_bed": 1520,
+      "road_water": 24,
+      "road_unknown": 0
+    },
+    "ambiguous_faces": {
+      "bed": 0,
+      "water": 0,
+      "unknown": 0,
+      "road_bed": 0,
+      "road_water": 0,
+      "road_unknown": 0
+    },
+    "unmapped_bed_faces": 0,
+    "source_regions": {
+      "CAP_START": 608,
+      "BODY": 912
+    },
+    "checks": {
+      "bed": {
+        "exact_faces": true,
+        "exact_oriented_faces": false,
+        "left_only_faces": 0,
+        "right_only_faces": 0,
+        "left_duplicate_faces": 0,
+        "right_duplicate_faces": 0
+      },
+      "water": {
+        "exact_faces": true,
+        "exact_oriented_faces": false,
+        "left_only_faces": 0,
+        "right_only_faces": 0,
+        "left_duplicate_faces": 0,
+        "right_duplicate_faces": 0
+      },
+      "unknown": {
+        "exact_faces": true,
+        "exact_oriented_faces": true,
+        "left_only_faces": 0,
+        "right_only_faces": 0,
+        "left_duplicate_faces": 0,
+        "right_duplicate_faces": 0
+      },
+      "visual_vs_roadway": {
+        "exact_faces": true,
+        "exact_oriented_faces": true,
+        "left_only_faces": 0,
+        "right_only_faces": 0,
+        "left_duplicate_faces": 0,
+        "right_duplicate_faces": 0
+      }
+    }
+  }
+}

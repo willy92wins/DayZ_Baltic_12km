@@ -1,0 +1,579 @@
+
+tools/quality/saved_scene_archive_q03b2.py:44-84
+44: def _identity(s):
+45:     return s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns
+46: 
+47: 
+48: def _check_path(path):
+49:     for entry in [path, *path.parents]:
+50:         s = os.lstat(entry)
+51:         if stat.S_ISLNK(s.st_mode) or getattr(s, "st_file_attributes", 0) & 0x400:
+52:             fail("REPARSE")
+53:     return os.lstat(path)
+54: 
+55: 
+56: def _snapshot(path, session):
+57:     if not isinstance(path, (str, Path)):
+58:         fail("MEMBER_SCHEMA", "path type")
+59:     path = Path(path)
+60:     if not path.is_absolute() or ".." in path.parts:
+61:         fail("MEMBER_SCHEMA", "absolute non-traversing path required")
+62:     try:
+63:         before = _check_path(path)
+64:         if not stat.S_ISREG(before.st_mode):
+65:             fail("MEMBER_SCHEMA", "regular file required")
+66:         fd = os.open(path, os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0))
+67:         with os.fdopen(fd, "rb") as f:
+68:             first = os.fstat(f.fileno())
+69:             if _identity(first) != _identity(before):
+70:                 fail("INCONCLUSIVE_SOURCE_CHANGED")
+71:             n = first.st_size
+72:             if not 0 < n <= session.limits["stored"]:
+73:                 fail("STORED_CAP")
+74:             session.live_stored = n  # Logical reservation precedes snapshot read.
+75:             data = f.read(n)
+76:             session.cumulative_stored_actual_bytes_read += len(data)
+77:             after = os.fstat(f.fileno())
+78:             final = _check_path(path)
+79:             if len(data) != n or not (_identity(first) == _identity(after) == _identity(final)):
+80:                 fail("INCONCLUSIVE_SOURCE_CHANGED")
+81:         return data, hashlib.sha256(data).hexdigest()
+82:     except OSError as exc:
+83:         raise ArchiveError("INCONCLUSIVE_SOURCE_IO") from exc
+84: 
+
+tools/quality/saved_scene_archive_q03b2.py:108-199
+108: def _central(data, schemas, limits):
+109:     """Bounded raw-directory preguard. No ZipFile/ZipInfo created here."""
+110:     if type(schemas) is not dict or not 1 <= len(schemas) <= limits["members"]:
+111:         fail("MEMBER_SCHEMA")
+112:     for key in schemas:
+113:         if type(key) is not str or not key.isascii():
+114:             fail("MEMBER_SCHEMA")
+115:         try:
+116:             _name(key.encode("ascii"))
+117:         except ArchiveError as exc:
+118:             raise ArchiveError("MEMBER_SCHEMA", "schema name") from exc
+119:     end = None
+120:     for pos in range(len(data) - 22, max(-1, len(data) - 65558), -1):
+121:         if data[pos:pos + 4] != b"PK\x05\x06":
+122:             continue
+123:         e = struct.unpack_from("<4s4H2IH", data, pos)
+124:         if pos + 22 + e[7] == len(data):
+125:             end = pos
+126:             break
+127:     if end is None:
+128:         fail("ZIP_TRUNCATED", "EOCD")
+129:     if e[1] or e[2] or e[3] == 0xffff or e[4] == 0xffff or e[5] == 0xffffffff or e[6] == 0xffffffff:
+130:         fail("ZIP_LAYOUT_UNSUPPORTED", "disk/ZIP64 EOCD")
+131:     if end >= 20 and data[end - 20:end - 16] == b"PK\x06\x07":
+132:         fail("ZIP_LAYOUT_UNSUPPORTED", "ZIP64 locator")
+133:     if e[3] != e[4] or e[6] + e[5] != end:
+134:         fail("ZIP_TRUNCATED", "central bounds/counts")
+135:     if not 1 <= e[4] <= limits["members"]:
+136:         fail("MEMBER_SCHEMA", "member count")
+137:     cursor = e[6]
+138:     rows, names, expanded = [], set(), 0
+139:     while cursor < end:
+140:         if len(rows) >= limits["members"]:
+141:             fail("MEMBER_SCHEMA", "actual member count")
+142:         if end - cursor < 46:
+143:             fail("ZIP_TRUNCATED", "central header")
+144:         c = struct.unpack_from("<4s6H3I5H2I", data, cursor)
+145:         if c[0] != b"PK\x01\x02":
+146:             fail("ZIP_TRUNCATED", "central signature")
+147:         stop = cursor + 46 + c[10] + c[11] + c[12]
+148:         if stop > end:
+149:             fail("ZIP_TRUNCATED", "central extent")
+150:         if c[8] == 0xffffffff or c[9] == 0xffffffff or c[16] == 0xffffffff or c[13]:
+151:             fail("ZIP_LAYOUT_UNSUPPORTED", "central ZIP64/disk")
+152:         if c[11]:
+153:             fail("ZIP_LAYOUT_UNSUPPORTED", "central extra outside tested subset")
+154:         raw_name = data[cursor + 46:cursor + 46 + c[10]]
+155:         name = _name(raw_name)
+156:         if name in names:
+157:             fail("ZIP_DUPLICATE")
+158:         names.add(name)
+159:         if name not in schemas:
+160:             fail("MEMBER_SCHEMA", "unexpected member")
+161:         _flags(c[3], c[4])
+162:         if c[9] <= 0 or c[9] > limits["archive"] - expanded:
+163:             fail("ARCHIVE_CAP")
+164:         expanded += c[9]
+165:         rows.append({"name": name, "raw": raw_name, "flags": c[3], "method": c[4],
+166:                      "crc": c[7], "compressed": c[8], "expanded": c[9], "offset": c[16]})
+167:         cursor = stop
+168:     if len(rows) != e[4] or names != set(schemas):
+169:         fail("ZIP_TRUNCATED" if len(rows) != e[4] else "MEMBER_SCHEMA")
+170:     cursor = 0
+171:     for row in sorted(rows, key=lambda r: r["offset"]):
+172:         off = row["offset"]
+173:         if off != cursor:
+174:             fail("ZIP_LAYOUT_UNSUPPORTED", "local gap/overlap/concat")
+175:         if off + 30 > e[6]:
+176:             fail("ZIP_TRUNCATED")
+177:         h = struct.unpack_from("<4s5H3I2H", data, off)
+178:         start = off + 30 + h[9] + h[10]
+179:         stop = start + row["compressed"]
+180:         if h[0] != b"PK\x03\x04" or stop > e[6]:
+181:             fail("ZIP_TRUNCATED", "local range")
+182:         if data[off + 30:off + 30 + h[9]] != row["raw"] or h[2] != row["flags"] or h[3] != row["method"] or h[6] != row["crc"]:
+183:             fail("ZIP_TRUNCATED", "local/central mismatch")
+184:         extra = data[off + 30 + h[9]:start]
+185:         if h[7] == 0xffffffff or h[8] == 0xffffffff:
+186:             if h[7] != 0xffffffff or h[8] != 0xffffffff or len(extra) != 20 or extra[:4] != b"\x01\x00\x10\x00":
+187:                 fail("ZIP_LAYOUT_UNSUPPORTED", "local ZIP64 layout")
+188:             usize, csize = struct.unpack_from("<QQ", extra, 4)
+189:             if (usize, csize) != (row["expanded"], row["compressed"]):
+190:                 fail("ZIP_TRUNCATED", "local ZIP64 values")
+191:         elif extra:
+192:             fail("ZIP_LAYOUT_UNSUPPORTED", "local extra")
+193:         elif (h[8], h[7]) != (row["expanded"], row["compressed"]):
+194:             fail("ZIP_TRUNCATED", "local sizes")
+195:         row["data_start"], row["data_stop"] = start, stop
+196:         cursor = stop
+197:     if cursor != e[6]:
+198:         fail("ZIP_LAYOUT_UNSUPPORTED", "data/central gap")
+199:     return rows, expanded
+
+tools/quality/saved_scene_archive_q03b2.py:260-340
+260: class Session:
+261:     def __init__(self, **limits):
+262:         if set(limits) - set(CAPS):
+263:             fail("MEMBER_SCHEMA", "limit keys")
+264:         self.limits = dict(CAPS, **limits)
+265:         if any(type(v) is not int or not 0 < v <= CAPS[k] for k, v in self.limits.items()):
+266:             fail("MEMBER_SCHEMA", "limit values")
+267:         self.active = False
+268:         self.live_stored = self.live_expanded = 0
+269:         self.cumulative_stored_actual_bytes_read = 0
+270:         self.cumulative_expanded_reserved = 0
+271: 
+272:     def _prepare(self, path, schemas):
+273:         try:
+274:             data, digest = _snapshot(path, self)
+275:             rows, expanded = _central(data, schemas, self.limits)
+276:             if expanded > self.limits["total"] - self.cumulative_expanded_reserved:
+277:                 fail("TOTAL_CAP")
+278:             self.live_expanded = expanded
+279:             self.cumulative_expanded_reserved += expanded
+280:             for row in rows:
+281:                 row["decoded_sha256"] = _decoded_extent(data, row)
+282:             with zipfile.ZipFile(io.BytesIO(data), "r") as archive:
+283:                 infos = archive.infolist()
+284:                 if len(infos) != len(rows):
+285:                     fail("ZIP_TRUNCATED")
+286:                 for info, row in zip(infos, rows, strict=True):
+287:                     if (info.filename, info.flag_bits, info.compress_type, info.CRC, info.compress_size, info.file_size, info.header_offset) != (row["name"], row["flags"], row["method"], row["crc"], row["compressed"], row["expanded"], row["offset"]):
+288:                         fail("ZIP_TRUNCATED", "standard metadata mismatch")
+289:                 heads = {}
+290:                 for row in rows:
+291:                     with archive.open(row["name"], "r") as member:
+292:                         heads[row["name"]] = header.inspect_header(member, row["expanded"], schemas[row["name"]])
+293:                 arrays, payloads = {}, {}
+294:                 for row in rows:
+295:                     name = row["name"]
+296:                     with archive.open(name, "r") as member:
+297:                         reader = _PayloadReader(member, heads[name]["payload_offset"])
+298:                         try:
+299:                             array = np.lib.format.read_array(reader, allow_pickle=False, max_header_size=16384)
+300:                         except ValueError as exc:
+301:                             raise ArchiveError("NPY_TRAILING", "array read") from exc
+302:                         if reader.read(1) != b"" or reader.position != row["expanded"]:
+303:                             fail("NPY_TRAILING", "decoded extent")
+304:                     expected = heads[name]["payload_bytes"]
+305:                     if reader.full_digest.hexdigest() != row["decoded_sha256"]:
+306:                         fail("ZIP_TRUNCATED", "decoded/header-reader mismatch")
+307:                     array_hash = hashlib.sha256(memoryview(array).cast("B") if array.nbytes else b"").hexdigest()
+308:                     if reader.length != expected or array.nbytes != expected or array_hash != reader.digest.hexdigest():
+309:                         fail("NPY_TRAILING", "payload/array byte mismatch")
+310:                     array.flags.writeable = False
+311:                     arrays[name] = array
+312:                     payloads[name] = {"sha256": array_hash, "bytes": expected}
+313:             return {"arrays": arrays, "payloads": payloads, "source_sha256": digest,
+314:                     "status": "ARCHIVE_SESSION_FIXTURE_VERIFIED_ONLY", "closed": False}
+315:         except ArchiveError:
+316:             raise
+317:         except header.HeaderError as exc:
+318:             if exc.code == "INTERNAL_ERROR" and isinstance(exc.__cause__, (zipfile.BadZipFile, EOFError, zlib.error)):
+319:                 raise ArchiveError("ZIP_TRUNCATED", "header ZIP cause") from exc
+320:             raise
+321:         except (zipfile.BadZipFile, EOFError, zlib.error) as exc:
+322:             raise ArchiveError("ZIP_TRUNCATED") from exc
+323:         except Exception as exc:
+324:             raise ArchiveError("INTERNAL_ERROR", type(exc).__name__) from exc
+325: 
+326:     @contextmanager
+327:     def open(self, path, schemas):
+328:         if self.active:
+329:             fail("MEMBER_SCHEMA", "session already active")
+330:         self.active = True
+331:         result = None
+332:         try:
+333:             result = self._prepare(path, schemas)
+334:             yield result
+335:         finally:
+336:             if result is not None:
+337:                 result["arrays"].clear()
+338:                 result["closed"] = True
+339:             self.live_stored = self.live_expanded = 0
+340:             self.active = False
+
+tools/quality/saved_scene_npy_header_q03b1l.py:97-185
+97: def descriptor_json(dtype):
+98:     """Full JSON-compatible dtype description (field formats remain strings)."""
+99:     if dtype.fields is None:
+100:         return dtype.str
+101:     return [list(field) for field in dtype.descr]
+102: 
+103: 
+104: def _inspect(stream, member_bytes, schema):
+105:     if (type(member_bytes) is not int or not 0 <= member_bytes <= MEMBER_CAP
+106:             or type(schema) is not dict or set(schema) != {"dtype", "shape"}):
+107:         _fail("MEMBER_SCHEMA")
+108:     expected_shape = _shape(schema["shape"], list, "MEMBER_SCHEMA")
+109:     if type(schema["dtype"]) not in (str, list):
+110:         _fail("MEMBER_SCHEMA")
+111:     try:
+112:         expected_descr, expected_dtype = _dtype(schema["dtype"])
+113:     except HeaderError as exc:
+114:         if exc.code != "NPY_DTYPE":
+115:             raise
+116:         raise HeaderError("MEMBER_SCHEMA", "invalid expected dtype") from exc
+117: 
+118:     magic = _read_exact(stream, 6)
+119:     if magic != b"\x93NUMPY":
+120:         _fail("NPY_MAGIC")
+121:     version = _read_exact(stream, 2)
+122:     if version not in (b"\x01\x00", b"\x02\x00"):
+123:         _fail("NPY_VERSION")
+124:     width = 2 if version[0] == 1 else 4
+125:     length_bytes = _read_exact(stream, width)
+126:     length = struct.unpack("<H" if width == 2 else "<I", length_bytes)[0]
+127:     if length > HEADER_CAP:
+128:         _fail("HEADER_LIMIT")
+129:     header = _read_exact(stream, length)
+130:     try:
+131:         dictionary = ast.literal_eval(header.decode("latin1"))
+132:     except (SyntaxError, ValueError, TypeError, RecursionError) as exc:
+133:         raise HeaderError("MEMBER_SCHEMA", "header dictionary") from exc
+134:     if type(dictionary) is not dict or set(dictionary) != {"descr", "shape", "fortran_order"}:
+135:         _fail("MEMBER_SCHEMA")
+136:     if dictionary["fortran_order"] is not False:
+137:         _fail("NPY_ORDER")
+138:     shape = _shape(dictionary["shape"], tuple, "NPY_SHAPE")
+139:     if shape != expected_shape:
+140:         _fail("NPY_SHAPE", "schema mismatch")
+141:     actual_descr, dt = _dtype(dictionary["descr"])
+142:     if actual_descr != expected_descr or dt != expected_dtype:
+143:         _fail("NPY_DTYPE", "schema mismatch")
+144: 
+145:     count = 0 if 0 in shape else 1
+146:     if count:
+147:         for n in shape:
+148:             if count > MEMBER_CAP // n:
+149:                 _fail("NPY_SHAPE", "element count")
+150:             count *= n
+151:     if count > MEMBER_CAP // dt.itemsize:
+152:         _fail("NPY_SHAPE", "payload bytes")
+153:     payload_bytes = count * dt.itemsize
+154:     offset = 8 + width + length
+155:     if offset + payload_bytes != member_bytes:
+156:         _fail("NPY_TRAILING", "attested member length mismatch")
+157: 
+158:     # Public NumPy header reader. This bounded copy contains NO payload.
+159:     bounded = io.BytesIO(magic + version + length_bytes + header)
+160:     bounded.seek(8)
+161:     parser = (np.lib.format.read_array_header_1_0 if width == 2
+162:               else np.lib.format.read_array_header_2_0)
+163:     try:
+164:         parsed_shape, fortran, parsed_dtype = parser(bounded, max_header_size=HEADER_CAP)
+165:     except (ValueError, TypeError, OverflowError) as exc:
+166:         raise HeaderError("NPY_DTYPE", "standard header parser") from exc
+167:     if (parsed_shape != shape or fortran is not False or parsed_dtype != dt
+168:             or descriptor_json(parsed_dtype) != descriptor_json(dt)):
+169:         _fail("NPY_DTYPE", "standard parser mismatch")
+170:     return {"dtype": parsed_dtype, "descriptor": descriptor_json(parsed_dtype),
+171:             "shape": shape, "payload_offset": offset, "payload_bytes": payload_bytes}
+172: 
+173: 
+174: def inspect_header(stream, member_bytes, schema):
+175:     """Consume only prefix/header, leave stream at payload, return metadata.
+176: 
+177:     member_bytes is an attestation from the caller, not measured by this function.
+178:     Physical payload truncation and byte identity require a later caller gate.
+179:     """
+180:     try:
+181:         return _inspect(stream, member_bytes, schema)
+182:     except HeaderError:
+183:         raise
+184:     except Exception as exc:
+185:         raise HeaderError("INTERNAL_ERROR", type(exc).__name__) from exc
+
+tools/quality/deployed_surface_inventory_ev112.py:15-22
+15: ROADWAY = 3000000028082176.0
+16: TOL = 1e-9
+17: WATER_MATERIALS = frozenset(('dz/water/streams/data/water_streambed.rvmat',
+18:                             'dz/water/ponds/data/pond_moss_1.rvmat'))
+19: PROXY_CONDITIONAL, AMBIGUOUS_FACE, DEGENERATE_FACE = 1, 2, 4
+20: META = np.dtype([('model', '<i4'), ('source_model', '<i4'), ('face', '<i4'),
+21:                  ('section', '<i4'), ('lod', '<i4'), ('kind', 'u1'),
+22:                  ('vertices', 'u1'), ('flags', 'u1'), ('proxy', '<i4'), ('planarity_m', '<f8')])
+
+tools/quality/deployed_surface_inventory_ev112.py:115-198
+115: def sections(lod):
+116:     """Partition every face, including unknown/empty materials and textures."""
+117:     assignments = np.full(len(lod.faces), -1, np.int32); rows = []
+118:     for si, s in enumerate(lod.sections):
+119:         require(-1 <= s.texture_index < len(lod.textures) and
+120:                 -1 <= s.material_index < len(lod.materials), 'section_index')
+121:         material = lod.materials[s.material_index].material_name if s.material_index >= 0 else s.mat_name
+122:         texture = lod.textures[s.texture_index] if s.texture_index >= 0 else ''
+123:         ids = np.asarray(s.get_face_indices(lod.faces), np.int64)
+124:         require(((ids >= 0) & (ids < len(assignments))).all() and len(np.unique(ids)) == len(ids), 'section_faces')
+125:         require((assignments[ids] == -1).all(), 'overlapping_sections'); assignments[ids] = si
+126:         rows.append(dict(index=si, material_raw=material, material=norm(material),
+127:                          texture_raw=texture, texture=norm(texture), faces=len(ids)))
+128:     require((assignments >= 0).all(), 'unassigned_face'); return assignments, rows
+129: 
+130: 
+131: def select_lods(resolutions):
+132:     r = np.asarray(resolutions, float); require(np.isfinite(r).all(), 'lod_resolution')
+133:     visual = np.flatnonzero((r >= 0) & (r < 1000))
+134:     require(len(visual) > 0, 'missing_visual_lod')
+135:     vi = np.flatnonzero(r == r[visual].min()); require(len(vi) == 1, 'duplicate_visual_lod')
+136:     road = np.flatnonzero(r == ROADWAY); require(len(road) <= 1, 'duplicate_roadway_lod')
+137:     return int(vi[0]), int(road[0]) if len(road) else None
+138: 
+139: 
+140: def extract(odol, model_index):
+141:     require(not odol.lod_errors and len(odol.lods) == len(odol.resolutions), 'incomplete_odol')
+142:     visual, road = select_lods([l.resolution for l in odol.lods])
+143:     vertices, records, evidence = [], [], []
+144:     for li, lod in enumerate(odol.lods):
+145:         require(lod.lod_end_ok, 'lod_cursor')
+146:         assignment, ss = sections(lod)
+147:         evidence.append(dict(index=li, resolution=lod.resolution, faces=len(lod.faces), sections=ss))
+148:         points = np.asarray([[p.x, p.y, p.z] for p in lod.vertices], float).reshape(-1, 3)
+149:         require(np.isfinite(points).all(), 'nonfinite_model_vertex')
+150:         for fi, f in enumerate(lod.faces):
+151:             ids = np.asarray(f.vertex_indices, np.int64)
+152:             require(len(ids) in (3, 4) and ((ids >= 0) & (ids < len(points))).all(), 'face_vertex_indices')
+153:             si = int(assignment[fi]); kinds = []
+154:             if li == road: kinds.append(0)
+155:             if li == visual and ss[si]['material'] in WATER_MATERIALS: kinds.append(1)
+156:             if not kinds: continue
+157:             v = points[ids]; flag, residual = face_diagnostics(v)
+158:             padded = np.zeros((4, 3), float); padded[:len(v)] = v
+159:             for kind in kinds:
+160:                 vertices.append(padded)
+161:                 records.append((model_index, model_index, fi, si, li, kind, len(v), flag, -1, residual))
+162:     proxies = []
+163:     for p in odol.lods[visual].proxies:
+164:         t = p.transformation
+165:         matrix = [z for v in (t.orientation.aside, t.orientation.up, t.orientation.dir, t.position) for z in (v.x, v.y, v.z)]
+166:         name = norm(p.model); name += '' if name.endswith('.p3d') else '.p3d'
+167:         proxies.append(dict(model=name, matrix=matrix))
+168:     c = odol.model_info.bounding_center
+169:     return (np.asarray(vertices, float).reshape(-1, 4, 3), np.asarray(records, META),
+170:             dict(lods=evidence, proxies=proxies, center=[c.x, c.y, c.z]))
+171: 
+172: 
+173: def expand_proxies(model, prototypes, models, stack=(), path=(), paths=None):
+174:     """Return descendant water only. Never turn child Roadway into bridge support."""
+175:     require(model not in stack, 'proxy_cycle'); require(len(stack) < 16, 'proxy_depth')
+176:     if paths is None: paths = []
+177:     parts, records = [], []
+178:     for slot, p in enumerate(prototypes[model][2]['proxies']):
+179:         child = p['model']; require(child in prototypes, 'missing_proxy')
+180:         vertices, meta, info = prototypes[child]
+181:         water = meta['kind'] == 1
+182:         chain = path+((models[model],slot),)
+183:         direct_meta = meta[water].copy()
+184:         if len(direct_meta):
+185:             direct_meta['proxy'] = len(paths)
+186:             paths.append(dict(root_model=chain[0][0],slots=[list(x) for x in chain],source_model=models[child]))
+187:         sub, sm = expand_proxies(child, prototypes, models, stack+(model,), chain, paths)
+188:         if len(sub):
+189:             vertices = np.concatenate((vertices[water], sub)); meta = np.concatenate((direct_meta, sm))
+190:         else: vertices, meta = vertices[water].copy(), direct_meta
+191:         for i, count in enumerate(meta['vertices']):
+192:             vertices[i, :count] = proxy_transform(vertices[i, :count], info['center'], p['matrix'])
+193:             flag, residual = face_diagnostics(vertices[i, :count])
+194:             meta['flags'][i] |= PROXY_CONDITIONAL | flag
+195:             meta['planarity_m'][i] = residual
+196:         meta['model'] = models[model]; meta['kind'] = 2
+197:         parts.append(vertices); records.append(meta)
+198:     return (np.concatenate(parts), np.concatenate(records)) if parts else (np.empty((0,4,3)), np.empty(0,META))
+
+tools/quality/deployed_surface_inventory_ev112.py:222-227
+222: def instance_guard(ids, mi, matrix, catalog):
+223:     require(ids.ndim == mi.ndim == 1 and matrix.shape == (len(ids),12), 'instance_shape')
+224:     require(len(ids) == len(np.unique(ids)) == len(mi), 'instance_identity')
+225:     counts = dict(zip(*np.unique(mi, return_counts=True)))
+226:     require(counts == {x['index']:x['instances'] for x in catalog if x['group'] != 'vegetation_not_inspected'}, 'instance_coverage')
+227:     return matrix_inventory(matrix)
+
+tools/quality/deployed_surface_inventory_ev112.py:273-309
+273:         vertices, meta, summary = extract(od, models[b['name']]); prototypes[b['name']] = (vertices, meta, summary)
+274:         summaries.append(dict(name=b['name'], index=models[b['name']], **summary))
+275:     selected_names = {x['name'] for x in catalog if x['group'] != 'vegetation_not_inspected'}
+276:     require(selected_names <= prototypes.keys(), 'missing_model_binding')
+277:     # Keep prototypes compact. Parent proxy vertices are emitted once per model.
+278:     arrays, metadata, proxy_paths = [], [], []
+279:     for name, (vertices, meta, info) in prototypes.items():
+280:         if name not in original_models: continue
+281:         arrays.append(vertices); metadata.append(meta)
+282:         p, pm = expand_proxies(name, prototypes, models, paths=proxy_paths)
+283:         if len(p): arrays.append(p); metadata.append(pm)
+284:     faces, ids = np.concatenate(arrays), np.concatenate(metadata)
+285:     require(len(faces) == len(ids), 'face_count')
+286:     with np.load(io.BytesIO(sealed['selected-instances.npz'])) as f:
+287:         instance_ids, mi, matrix = f['ids'], f['model_index'], f['matrix']
+288:     metrics = instance_guard(instance_ids,mi,matrix,catalog)
+289:     for p,digest in pins.items(): require(meter.sha(p) == digest, 'input_changed_after_hash:'+str(p))
+290:     np.savez_compressed(output/'surface-prototypes.npz',vertices=faces,meta=ids)
+291:     np.savez_compressed(output/'instances.npz',ids=instance_ids,model_index=mi,matrix=matrix,**metrics)
+292:     meter.dump(output/'model-sections.json',summaries); meter.dump(output/'model-catalog.json',catalog)
+293:     meter.dump(output/'proxy-paths.json',proxy_paths)
+294:     result = dict(status='PROTOTYPES_ONLY_NOT_WORLD_OVERLAY',models=len(prototypes),instances=len(instance_ids),
+295:                   prototype_faces=len(ids),roadway_faces=int((ids['kind']==0).sum()),water_faces=int((ids['kind']==1).sum()),
+296:                   conditional_proxy_faces=int((ids['kind']==2).sum()),ambiguous_faces=int(((ids['flags']&AMBIGUOUS_FACE)!=0).sum()),
+297:                   degenerate_faces=int(((ids['flags']&DEGENERATE_FACE)!=0).sum()),
+298:                   max_finite_planarity_residual_m=float(np.max(ids['planarity_m'][np.isfinite(ids['planarity_m'])],initial=0)),
+299:                   limits=['Proxy frame conditional; no engine claim.', 'Preserved faces are not accepted bridge support.',
+300:                           'No world-space intersection, road width, driving or map acceptance.', 'Vegetation meshes not evaluated.'])
+301:     meter.dump(output/'inputs.json',dict(discovery_artifacts=artifacts,source_pins={str(k):v for k,v in pins.items()},
+302:                                         artifact_manifest_sha256=pins[artifact_path],
+303:                                         script_sha256=meter.sha(Path(__file__)),reader=inputs['reader']))
+304:     return result
+305: 
+306: 
+307: if __name__ == '__main__':
+308:     ap=argparse.ArgumentParser();ap.add_argument('root',type=Path);ap.add_argument('worktree',type=Path);ap.add_argument('output',type=Path)
+309:     a=ap.parse_args();a.output.mkdir(parents=True,exist_ok=False)
+
+tools/quality/pilot_visible_surface_ev112.py:44-122
+44: def coverage_guard(author,catalog,ids,mi):
+45:     names=[norm(x['model']) for x in author]
+46:     require(len(names)==len(set(names))==201,'author_coverage')
+47:     selected=[x for x in catalog if x['group']=='custom_pilot']
+48:     require(len(selected)==201 and set(names)=={x['name'] for x in selected},'pilot_model_coverage')
+49:     require(collections.Counter(x['site'] for x in author)==SITES,'site_coverage')
+50:     require(len(ids)==len(set(map(int,ids))),'duplicate_instance_id')
+51:     counts=collections.Counter(map(int,mi))
+52:     require(all(counts[x['index']]==1 for x in selected),'pilot_instance_coverage')
+53:     return {x['name']:x for x in selected}
+54: 
+55: def visual_role(material,texture):
+56:     if norm(material)==BED_MAT and norm(texture)==BED_TEX: return 'bed'
+57:     if norm(material)==WATER_MAT and norm(texture)==WATER_TEX: return 'water'
+58:     return 'unknown'  # Including empty or partial matches; never silently excluded.
+59: 
+60: def strip_mapping(points,triangles,station,array_bed,array_water,source_water,span):
+61:     """Prove complete source strip and NPZ body. CAP heights are actual MLOD rows."""
+62:     points,triangles=np.asarray(points,float),np.asarray(triangles,int)
+63:     require(points.ndim==2 and points.shape[1]==3 and np.isfinite(points).all(),'source_points')
+64:     require(triangles.ndim==2 and triangles.shape[1]==3,'nontriangle_source')
+65:     require(np.isfinite(station).all() and (np.diff(station)>0).all(),'station_order')
+66:     endpoints=[np.flatnonzero(station==s) for s in span]
+67:     require(all(len(x)==1 for x in endpoints),'station_anchor')
+68:     start,stop=(int(x[0]) for x in endpoints); require(start<stop,'station_span')
+69:     m=array_bed.shape[1]; before=8 if start==0 else 0; after=8 if stop==len(station)-1 else 0
+70:     n=stop-start+1+before+after
+71:     require(points.shape==(n*m,3),'source_strip_size')
+72:     require(triangles.min()>=0 and triangles.max()<len(points),'source_strip_indices')
+73:     expected=collections.Counter()
+74:     for r in range(n-1):
+75:         for c in range(m-1):
+76:             a=r*m+c; b=a+m; d=b+1; e=a+1
+77:             expected.update((tuple(sorted((a,b,d))),tuple(sorted((a,d,e)))))
+78:     require(collections.Counter(tuple(sorted(t)) for t in triangles)==expected,'source_strip_topology')
+79:     grid=points.reshape(n,m,3); body=grid[before:n-after if after else n]
+80:     require(np.array_equal(body,array_bed[start:stop+1]),'npz_body_not_source')
+81:     require(np.array_equal(source_water,array_water[start:stop+1]),'npz_water_not_source')
+82:     row=triangles//m; col=triangles%m
+83:     category=np.where(row.max(axis=1)<=before,'CAP_START',
+84:              np.where(row.min(axis=1)>=n-after-1,'CAP_END','BODY'))
+85:     if not before: category[category=='CAP_START']='BODY'
+86:     if not after: category[category=='CAP_END']='BODY'
+87:     cap_info=[]
+88:     for side,count,boundary,direction in (('start',before,before,-1),('end',after,n-after-1,1)):
+89:         if not count: continue
+90:         rows=np.arange(boundary+direction,boundary+direction*(count+1),direction)
+91:         shifts=grid[rows][:,:,(0,2)]-grid[boundary][:,(0,2)]
+92:         mean=shifts.mean(axis=1); cross=grid[boundary,-1,(0,2)]-grid[boundary,0,(0,2)]
+93:         tangent=np.array([cross[1],-cross[0]])/np.linalg.norm(cross)
+94:         along=mean@(direction*tangent)
+95:         cap_info.append(dict(side=side,rows=rows.tolist(),boundary_row=boundary,along_m=along.tolist(),
+96:           retrograde=bool(np.any(np.diff(np.r_[0,along])<=0)),
+97:           max_cross_row_shift_residual_m=float(np.max(abs(shifts-mean[:,None])))))
+98:     return grid,row.min(axis=1),row.max(axis=1),col.min(axis=1),col.max(axis=1),category,cap_info,start,before,after
+99: 
+100: def odol_faces(od,helper,matrix):
+101:     require(not od.lod_errors and len(od.lods)==len(od.resolutions),'incomplete_odol')
+102:     vi,ri=helper.select_lods([l.resolution for l in od.lods]); require(ri is not None,'missing_pilot_roadway')
+103:     groups={'bed':[],'water':[],'unknown':[],'road_bed':[],'road_water':[],'road_unknown':[]}
+104:     sections=[]; source_ids=collections.defaultdict(list)
+105:     for li in (vi,ri):
+106:         lod=od.lods[li]; require(lod.lod_end_ok,'lod_cursor')
+107:         require(not lod.proxies,'pilot_proxy_requires_explicit_expansion')
+108:         assignment,ss=helper.sections(lod)
+109:         p=np.array([[v.x,v.y,v.z] for v in lod.vertices],float)
+110:         sections.append(dict(lod=li,resolution=lod.resolution,sections=ss))
+111:         for fi,f in enumerate(lod.faces):
+112:             ind=np.asarray(f.vertex_indices,int)
+113:             require(len(ind) in (3,4) and (ind>=0).all() and (ind<len(p)).all(),'face_index')
+114:             s=ss[int(assignment[fi])]
+115:             if li==vi: role=visual_role(s['material'],s['texture'])
+116:             elif s['texture']==BED_ROAD: role='road_bed'
+117:             elif s['texture']==WATER_ROAD: role='road_water'
+118:             else: role='road_unknown'
+119:             groups[role].append(helper.transform(p[ind],matrix))
+120:             source_ids[role].append((fi,int(assignment[fi])))
+121:     require(groups['bed'] and groups['water'] and groups['road_bed'],'empty_pilot_surface')
+122:     return groups,source_ids,sections
+
+tools/quality/pilot_visible_surface_ev112.py:215-235
+215:             if len(match)==1: mapped[i]=match[0]
+216:         payload={}; ambiguity={}
+217:         for kind in groups:
+218:             faces=groups[kind]; v=np.zeros((len(faces),4,3)); count=np.array([len(f) for f in faces],np.uint8)
+219:             flags=np.empty(len(faces),np.uint8)
+220:             for i,face in enumerate(faces): v[i,:len(face)]=face; flags[i]=helper.face_flag(face)
+221:             payload[kind]=v; payload[kind+'_n']=count; payload[kind+'_flags']=flags
+222:             payload[kind+'_source_ids']=np.asarray(face_ids[kind],np.int32).reshape(-1,2)
+223:             ambiguity[kind]=int((flags!=0).sum())
+224:         payload.update(source_grid=grid,source_triangles=tris,body_row_min=rmin,body_row_max=rmax,
+225:                        body_col_min=cmin,body_col_max=cmax,source_category=category,bed_source_face=mapped,
+226:                        npz_start=np.int32(start),cap_before=np.int32(before),cap_after=np.int32(after))
+227:         basename=Path(name).stem+'.npz'; np.savez_compressed(output/'models'/basename,**payload)
+228:         reports.append(dict(model=name,model_index=mi,instance_id=int(poses['ids'][pos]),site=inst['site'],
+229:           station=inst['station'],file='models/'+basename,sha256=meter.sha(output/'models'/basename),
+230:           checks=checks,sections=sections,faces={k:len(v) for k,v in groups.items()},ambiguous_faces=ambiguity,
+231:           unmapped_bed_faces=int((mapped<0).sum()),cap_rows=caps,source_regions=dict(collections.Counter(category.tolist()))))
+232:     for p,digest in pins.items(): require(meter.sha(p)==digest,'input_changed_during_extraction:'+p)
+233:     require(len(reports)==201,'incomplete_production'); meter.dump(output/'models.json',reports)
+234:     return dict(status='EXTRACTED_DIAGNOSTIC_ONLY',models=len(reports),sites=SITES,
+235:       exact_geometry_models=sum(all(c['exact_faces'] for c in row['checks'].values()) for row in reports),
+
+tools/quality/saved_scene_proxy_identity_q03b3.py:175-193
+175:             "routes": route_rows, "faces": deepcopy(face_records), "limitations": dict(LIMITATIONS)}
+176: 
+177: 
+178: def validate_face_routes(sections, routes, face_records, expected):
+179:     try:
+180:         return _validate(sections, routes, face_records, expected)
+181:     except IdentityError:
+182:         raise
+183:     except Exception as exc:
+184:         raise IdentityError("INTERNAL_ERROR", type(exc).__name__) from exc
+185: 
+186: 
+187: def _pairs(pairs):
+188:     result = {}
+189:     for key, value in pairs:
+190:         require(key not in result, "SCHEMA", "duplicate JSON key")
+191:         result[key] = value
+192:     return result
+193: 
