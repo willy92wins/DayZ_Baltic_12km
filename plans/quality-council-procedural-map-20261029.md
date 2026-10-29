@@ -112,3 +112,5 @@ Q03B1/Q03B1A: dos noentregas dentro120s,0archivos completos/0suite/0capturas; ru
 Q03B1L cabecera NPY funcional validada con7métodos/26negativos+2schema; ejecución local asignada y revisión Fable completa con corrección reproducida. NPY_HEADER_FIXTURE_VERIFIED_ONLY; snapshot/ZIP/globalbudget/proxy y escena pendientes. Evidence/npy-header-q03b1l-20261029. Oráculos/contratos históricos intactos,0mapa/0humanos resueltos.
 
 Q03B2: snapshot/ZIP/budget sólofixtures completo;9PASS1SKIP y2checks64KiB. CRC y terminación físicaDEFLATE corregidos, caps yheader intactos. No204NPZ reales/índice/semánticaproxy ni exposición/reparación. Evidence/archive-session-q03b2-20261029. Siguiente corte semántico propio antes de Q03C/Q05, sin repetir council ni censos.
+
+Q03B3 plan proxy/faceidentities revisadoMuse48.985s para anclas/oráculoantesdecódigo. Secciones guardadas sólocuentas: pertenenciacaraNOT_SAVED, semánticakindNOT_EVALUATED. Ruta debe seguir hijo literal y todosordinales, expectedmulticonjunto completo. Sin código ni datos reales. Q03B2 ya publicado d7d4731e; no repetir sus operaciones.

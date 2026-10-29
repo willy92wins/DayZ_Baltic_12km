@@ -1,3 +1,19 @@
+# Checkpoint Q03B2 publicado; Q03B3 listo para anclas/oráculo
+
+d7d4731e32073479329530cf04f1d05353821802 publicado:55archivos,10métodos privados1.531s/públicos2.422s,9PASS1SKIPprivilegio symlink en cada suite; reparse simulado ejecutado. Dos checks de salida64KiB privados0.547s/públicos2.031s.29identidades delcheckpoint retiradas. Recibo publish-q03b2-20261029/result.json. Publicador original paró antesdecommit por espacio auténtico del stderrR0; continuación conservóbytes y55blobs, sin repetiradd/suites. Código79ef0195/tests b2c8c649/contrato72d3011b/extensión848c4442.
+
+Todo Q03B2 CONSUMIDO. ARCHIVE_SESSION_FIXTURE_VERIFIED_ONLY: snapshot/ZIP/budget sintético, CRC y EOF físico corregidos; helper051436d9 intacto. Revisor Fable180.063s sin dictamen, recuperaciónMuse105.953s; postimagen final adjudicada/verificada por integrador mismo contexto, no nueva revisiónexterna. No NPZhistórico/mapa/run/lease.
+
+Siguiente: plans/quality-council-q03b3-proxy-identity-slice-20261029.md REVISADO_PARA_PREPARAR_ORACULO_Y_ANCLAS, Muse48.985s. Evidencia evidence/q03b3-proxy-plan-review-20261029. Sin contrato/códigoQ03B3. Anclar una muestra guardada por estructura/sufijo y fijar oráculo pequeño antes de autor local600s/review180s/suite120s. Identidad por p['model'] y ordinal real, expected multiconjunto completo; secciones sólocuentas, face_section_membershipNOT_SAVED; kind_semanticsNOT_EVALUATED. No inventar rangos ni leer204NPZ por este plan. Dos identidades reviewer retiradas, ninguna operación propia activa.
+
+Q03C/Q05/ángulos/referentes/carreteras siguen abiertos; nueve humanos0resueltos,C1NOT_REVIEWED. No repetir council/censos ni permisos deproducto. Preservar .gitattributes ajena.
+
+# Checkpoint confirmado Q03B2; plan Q03B3 en revisión
+
+d7d4731e32073479329530cf04f1d05353821802 publicado,55archivos,mainremotoverificado limpio.10métodos privados1.531s/públicos2.422s:9PASS1SKIPprivilegio symlink; reparse simulado ejecutado.2checks64KiB privados0.547s/públicos2.031s.29identidades observadas retiradas delcheckpoint; receipt publish-q03b2-20261029/result.json. Publicador paró antesdecommit por espacioliteral de stderrR0; continuación preservóbytes, verificó55blobs y resto whitespace, sin readd ni tests repetidos.
+
+Q03B2 todoCONSUMIDO. Operaciónpropia actual única: q03b3-plan-review-20261029/muse90s, plan nuevo quality-council-q03b3-proxy-identity-slice-20261029.md. Seguir completion; sin código/contratoQ03B3 ni NPZhistórico autorizado. Definiciónsections:115-129 sólo guarda índice/material/texture/cuenta, no lista de caras porsección; debe quedar explícito NOT_SAVED y nunca inventar intervalos. Sin run/lease/DayZ.
+
 # Q03B2 completo sólofixtures; pendiente publicación
 
 ARCHIVE_SESSION_FIXTURE_VERIFIED_ONLY. Código79ef0195/tests b2c8c649, contrato72d3011b/extensión848c4442.10métodos privados9PASS1SKIPsymlinkreal, reparse simulado sí; dos checks adicionales64KiB. CRC y EOF físico corregidos sin modificar helper051436d9 ni caps. Fable180.063s noentrega; recuperaciónMuse105.953s SOUND-with-fixes, postimagen final comprobada por integrador con contexto compartido. SourceR0 preservada. No NPZhistórico/run/lease/mapa; todas las operaciones de autoría/review/corrección/suite privadas consumidas.
