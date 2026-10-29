@@ -1,6 +1,6 @@
 # Ejecución del council ampliado: validación y colocación procedimental
 
-CheckpointQ03C2A29-10: vistaheights nueva verificada desde815ef8, sin ampliar cap ni repetir rechazo original.13tests privados/públicos; no geometría/mapa. Q03C2R1 revisadoMuse37.922s: siguiente contrato+autoría debe medir nueve áreas conjuntas terreno/agua porcara. Q03C1 medición previa intacta; Q05 huellas/accesos, referentes/ángulos/carreteras y nueve rechazos abiertos. Council ya ejecutado.
+CheckpointQ03C2R129-10:1520caras/nueveáreas verificadas terreno fuente/agua,16tests privados/públicos.202.86435m² porcara encima de terreno fuente y sin huella seleccionada no prueban exposición visible. Original815ef8 no reabierto, vista <f4 finita y caps intactos. Q05A revisadaMuse36.407s para investigar bindings de huellas/accesos viales guardados, sinarrays/censo/colocación; investigación aún pendiente. Referentes/ángulos/carreteras/nueve humanos0resueltos continúan abiertos. Council ya ejecutado.
 
 Petición humana vigente del29-10: adelantar council, proponer mejoras y aplicar
 las justificadas a herramientas y mapa. Este plan reemplaza el orden temporal

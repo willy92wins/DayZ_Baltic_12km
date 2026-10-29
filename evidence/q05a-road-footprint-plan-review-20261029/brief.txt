@@ -1,0 +1,428 @@
+Asiento REVIEWER externo independiente para un plan Q05A de investigación guardada de carreteras. No ejecutar investigación, código, extractores ni pruebas. Sólo revisar este plan y anclas incluidas: alcance, hechos, circularidad, IDs, muestras, presupuestos y criterios. No pedir permisos de producto ya dados. No repetir council ni censos. Entrega español <=850palabras: SOUND/SOUND-with-fixes/NEEDS-WORK, hallazgos concretos con ancla y modificación mínima, premisas no comprobables y CONVERGE si procede. Diferencia hechos leídos de hipótesis. Contexto: Q03C2R1 ya medido, NO reparación ni exposición; queremos siguiente hito de huellas/accesos sin inventar pivote ni ancho y sin otra infraestructura genérica. Reviewer dispone sólo cápsula, no herramientas de shell/escritura/web.
+
+SOURCE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\plans\quality-council-q05a-road-footprint-bindings-20261029.md
+# Q05A — fuentes y selectores para huellas viales y ambos accesos
+
+Estado: BORRADOR_PENDIENTE_DE_REVISION. Investigación concreta sobre evidencia
+guardada; sin nuevo censo, NPZ, extracción vanilla, colocación, build o DayZ.
+
+## Propósito y criterio de producto
+
+[EXACT] product-spec.md:11-17, P5/P6/P9/P10/P11: conexiones y piezas humanas,
+pasos terrestres y navegables, reserva de terreno ahora y mapeado físico después,
+rasante y empalmes suaves. La decisión P9 conserva 1m/.95m/24m y excepciones;
+24m es corredor navegable, NO ancho vial. No nueva decisión de producto aquí.
+Q05/Q06/Q07 del council exigen huella completa, ambos accesos y alineación;
+ninguna caja local ni eje nominal basta como ancho útil o conducción.
+
+[EXACT] Q03C2R1 acaba de medir 1520 caras kit118 contra terreno fuente/agua
+seleccionada, nueve áreas por cara verificadas. Hay 202.8643504880163m² por cara
+con multiplicidad por encima del terreno fuente y sin huella seleccionada de
+agua; NO son superficie visible, unión mundial ni conflicto vial acreditado.
+Fuente NW-SE asumida, oclusores/agua nativa/marco compilado pendientes. No
+confundir esa cifra con el antiguo conflicto23.9566664m² del corredor8m.
+
+## Anclas verificadas y hechos guardados
+
+[EXACT] tools/quality/pilot_visible_exposure_ev112.py:24 fija ROAD_SHA94ecbca6;
+:50-57 road_guard exige xy(36428,2), edges(36467,3), longitudes positivas;
+:140-144 lee reference.npz/xy/edges. Su rect(...width=4) en:30-35 y discos de
+radio4 son la antigua banda8m, NO la huella de piezas de12/9m. No ejecutar CLI.
+
+[EXACT] evidence/road-water-census-20261028/README.md:3-8 conserva770aristas
+de contacto en29cadenas sobre124/36467, no770puentes. Su dominio nativo omite
+agua3D. evidence/road-surface-overlay-20261028/README.md:3-24 añade capas3D y
+Roadway:2413contactos, kit118 intercepta6aristas de carretera76. Conserva
+desalineación diagnóstica Narva y contacto49/301; no aceptación por proximidad.
+El código tools/quality/road_surface_overlay_ev112.py:204-240 fija fuentes y
+transformaciones históricas; :294-359 produce contactos/contextos. No relanzarlo.
+
+[EXACT] RoadB0R1 guarda tres local-faces-*.json privados en
+E:/DayZ-Baltic-Build/shape-repair-20261025/road-b0-discovery-r1-20261028,
+ligados por report.json. Contienen caras completas Visual/Roadway locales;
+bounding_center NO es pivote certificado. RoadB2 tiene cuatro hipótesis de
+origen/centro y fila/columna; RoadB3 sólo tres objetos elevados de ensayo.
+No escoger una hipótesis por conveniencia ni aplicar dos veces una transformación.
+
+[EXACT] Q03B6 indexa capas seleccionadas históricas3d955:201pilotos ya mundiales,
+539009caras y17818poses. No es toda la escena Visual ni la época B2Aef229.
+RoadB4B1 sólo equivalencia de contenido guardado, método no ligado/precedencia
+actual no probada. Doce recursos B4A3 no cierran5509modelos.
+
+## Unidad de investigación [DESIGN]
+
+Una entrega de investigación read-only120s, máximo16MiB por archivo/64MiB total,
+1200palabras más tabla. Fuentes: JSON/Markdown/código guardados; no abrir NPZ,
+PBO/P3D/WRP, terreno815ef8 o vistaheights; tampoco config/recursos instalados.
+Antes de leer comprobar longitud; si excede presupuesto registrar LOCATED_NOT_OPENED.
+No regenerar ni volver a recorrer censos anteriores. No modificar P: ni archivos
+sellados; no ejecutar los antiguos preparadores, CLI, autores o consumidores.
+
+1. Recuperar los pins y esquemas GUARDADOS del grafo vial, cadenas, contactos
+   nominales y overlay, incluidos nombres reales de campos y su significado.
+   Identificar los seis edge IDs de kit118/cadena76 y el enlace exacto49/301,
+   Narva71 y tramo49 seco. Coordenadas humanas sólo contexto; si la fuente no
+   permite un join literal, UNKNOWN, nunca nearest como vínculo certificado.
+2. Por esos contextos, distinguir centro de eje/reserva, superficie construida
+   seleccionada, plantilla vial local y eventual acceso. Señalar si existe un
+   selector de extremos/tangentes y su dominio de estaciones; NO fijar una
+   longitud de acceso sin criterio leído. Ambos lados deben permanecer en
+   cobertura incluso si el contacto está en un nodo compartido o extremo.
+3. Enlazar hashes/épocas de caras B0, hipótesis B2, poses B3 y superficies Q03B6,
+   conservando model_index, instance_id, source_ids y ordinal en columnas
+   distintas. No construir una huella mundial mezclando épocas/hipótesis.
+   Marcar provider/pivot/frame/usable_width y oclusión como UNKNOWN donde falte.
+4. Proponer el próximo contrato de medición con dos dominios separados:
+   A) contactos/solapes de superficies históricas ya mundiales contra reserva
+   vial fuente; B) cuatro predicciones de plantilla local, sin colocación y sin
+   certificar pivote. Para cada dominio listar datos que faltan antes de cargar
+   arrays y las medidas que realmente puede probar. Una falta de pivote bloquea
+   aceptación mundial, no el análisis local ya autorizado.
+
+Entregable: tabla por fuente/selector con path, SHA, época, campo/pointer o
+línea, leído/no abierto, verified/assumed/unknown y dependencia siguiente.
+Estados OBSERVED_SAVED, LOCATED_NOT_OPENED, UNKNOWN, CONTRADICTED.
+measurement_ready=false y placement_ready=false SIEMPRE en esta investigación.
+No publicar caras/recursos vanilla completos. Un informe previo no se vuelve
+a llamar fuente física actual; la tabla de puentes no define el universo vial.
+
+## Cierre y validación propuesta
+
+Una revisión externa del plan120s antes de investigación; no código, extractor
+o nuevo lector en esta unidad. Codex integrador adjudica con anclas. La entrega
+puede concluir INCONCLUSIVE_SOURCE_BINDINGS; no inventar campos ni completar
+joins por semejanza. Investigación consumida una vez, sin retries internos.
+Contrato/extractor posterior tendrá oráculos y presupuesto propios antes de
+arrays. Diseñar (sin afirmar ejecución) mutantes de puente omitido/girado/corto,
+arcén fuera8m, acceso ausente, cambio de época, eje o material, aguaRoadway falsa,
+nodo compartido y cadena recortada. Preservar controles naturales/diseñados y
+los nueve casos Q01; ningún sintético los resuelve por sí mismo.
+
+Q03C2R1 y censos previos quedan consumidos. Q02B ángulos/referentes Q08/Q17 y
+reparaciones siguen pendientes; no otro council. Nueve humanos0resueltos,
+C1NOT_REVIEWED; Nav8 histórico607PASS no es validación de carreteras nuevas.
+
+SOURCE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\product-spec.md
+# Producto y aceptación
+
+Fuente de autoridad: peticiones de Guillermo en esta conversación, límites v0 aprobados el 29-09-2026. El handoff heredado se usa como orientación, no como prueba de herramientas o datos.
+
+| ID | Requisito | Criterio de aceptación |
+|---|---|---|
+| P1 | Región condensada, propuesta 12,288 × 12,288 km | 2048² celdas de 6 m; encuadre aprobado completo y orientación norte, confirmado también por Terrain Builder. |
+| P2 | Conservar agua, costa, islas, ríos y zona natural | Geometrías de referencia trazables; posteriormente costas recorribles y agua funcional; no sustituir todos los lagos por mar. |
+| P3 | Conservar íntegro el acercamiento de San Petersburgo | Misma transformación global, sin escalado local. Huella aproximada 4,81 × 3,83 km. Verificar canales y cruces a escala de juego. |
+| P4 | Narva, frontera y territorio occidental | Localidad y ambas riberas presentes; cruce jugable diseñado y probado; futura base/búnker occidental pendiente de ubicación. |
+| P5 | Conexiones principales | Referencia topológica coherente y una selección jugable medida; las vías se construyen con piezas y anchuras humanas. |
+| P6 | Assets vanilla primero | Inventario y medidas reales antes de colocar edificios/puentes; futuros assets distintivos se priorizan después. |
+| P7 | Objetivo 80–100 jugadores, experiencia tipo Chernarus; optimización comparada con Chernarus (petición24-10) | A/B con la misma versión, hardware, ajustes y escenas equivalentes; frame times/tirones, RAM/VRAM y carga de servidor por separado. Ensayo de jugadores, IA, loot y persistencia aparte. Plan `plans/ev112-performance-chernarus-20261024.md`; inventario estático disponible, rendimiento todavía INCONCLUSO. |
+| P8 | Fuentes y generación reproducibles | Originales identificados por hash/fecha/licencia; transformaciones, excepciones, deltas y resultados registrados. |
+| P9 | Ríos navegables y puentes elevados | Petición30-09: lancha vanilla y margen para barcos medianos. Continuidad de agua, anchura útil, profundidad con agua mínima y gálibo con agua máxima; paso real de embarcación por cauce y puente, además de cruce terrestre. Decisión08-10: conservar el fondo de 1 m y aceptar 0,95 m de calado geométrico mínimo en los corredores actuales de 24 m; conservar las excepciones previas de bajos/Narva y comprobar la lancha. No equivale a envolvente máxima de oleaje ni prueba de barcos medianos. Contrato trazado en evidence/v30-navigation-contract-2026-10-08/decision.json. El antiguo ensayo de Narva a tablero2m no satisface este requisito; el candidato posterior debe acreditarlo con su geometria y consumidores identificados en el HANDOFF. |
+| P10 | Terreno y navegación antes del mapeado | Petición30-09: terminar primero relieve, hidrografía, cauces, orillas y navegación base. Posponer población, edificios, vegetación colocada, carreteras físicas y decoración. Los objetos de ensayo solo reservan gálibos y cruces; después del mapeado habrá que regenerar y validar de nuevo la navmesh. |
+| P11 | Carreteras lisas para conducción DayZ | Petición30-09: perfiles longitudinales progresivos, superficie sin baches ni escalones, y empalmes suaves entre terreno, piezas y puentes. Medir cambios de pendiente y caída transversal, además de pendiente máxima; validar después con vehículos vanilla a distintas velocidades, sin saltos, golpes ni encallamientos atribuibles a la vía. Preparar la reserva del terreno ahora; mapeado físico después según P10. |
+| P12 | Relieve selectivo por jugabilidad | Aprobación30-09: exagerar alturas de zonas concretas por encima de ×3 si conviene, sin fidelidad obligatoria a la escala vertical. Conservar XY, agua/islas/closeup, conexiones y P9/P11; medir perfiles, accesos, cobertura y líneas de visión. Cotas y máscaras de diseño en plans/selective-relief.md; aceptación posterior de terreno y navmesh regenerada. |
+| P13 | Reserva natural y variedad de biomas | Petición30-09: conservar la reserva como punto clave, con alta densidad de árboles en ciertos sectores. Reservar ahora terreno, humedales y mosaico de bosque denso/claros; contrastar el perímetro antes de editar Z. Colocar vegetación después según P10, comprobar contraste entre biomas desde jugador, accesos, colisiones/navmesh y rendimiento del sector más denso. No equiparar cobertura WorldCover con densidad de instancias. |
+| P14 | Contorno suave y bajos sin agua indeseada | Petición01-10: suavizar el outline general y corregir el agua que asoma intermitentemente en zonas bajas. Separar forma del terreno, textura y agua dinámica; comprobar margen y transiciones en las orillas, sin sacrificar canales navegables, islas, humedales ni la reserva. Validación visual con cámaras comparables y muestreo entre vértices, además de alturas nativas. |
+| P15 | Red ferroviaria de circunvalación, radiales y estación de San Petersburgo | Petición03-10: diseñar una red principal que dé la vuelta al mapa, con algunas radiales y bifurcaciones adicionales. Al menos el tramo de San Petersburgo debe seguir su posición y recorrido reales, con la misma transformación XY aprobada, para colocar su estación emblemática en el emplazamiento correspondiente. En la fase de diseño se concretarán estación, corredores y cruces, conservando cauces navegables, gálibos y reserva. **Alcance futuro: no ejecutar ahora**; diseño y colocación física pendientes, respetando P10. |
+
+El criterio de relieve selectivo está aprobado; las cotas del candidato regional ya estan implementadas y medidas, con aceptacion final segun HANDOFF. No confundir ese candidato con una decision de cerrar todos los niveles de agua. No están decididos densidad urbana, número de puentes jugables, economía militar ni ubicación/diseño del búnker. No se cambian silenciosamente para adaptar los datos al motor.
+
+SOURCE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\evidence\source-terrain-water-q03c2r1-20261029\README.md
+# Q03C2R1 — partición de lecho, terreno fuente y agua seleccionada
+
+MEASURED_SOURCE_TERRAIN_SELECTED_WATER_ONLY. Las 1520 caras de kit118_0000 se midieron con 4760 caras de agua seleccionada y la vista heights <f4 2048x2048. Los nueve valores racionales por cara fueron verificados mediante otro recorrido geométrico y cada marginal coincide exactamente con Q03C1. Productor 15.844s/117932032B, consumidor 31.328s/106930176B.
+
+Áreas proyectadas XZ sumadas por cara CON multiplicidad, no unión mundial. Filas: lecho encima/contacto/debajo del terreno fuente. Columnas: agua seleccionada igual o más alta, huella sólo inferior, sin huella seleccionada.
+
+| Relación con terreno fuente | Agua igual/superior | Agua sólo inferior | Sin huella seleccionada |
+|---|---:|---:|---:|
+| Encima | 30.2813550943 | 0 | 202.864350488 |
+| Contacto | 0 | 0 | 0 |
+| Debajo | 7.17606441589 | 3.03657424897 | 254.941271613 |
+
+Son medidas bajo la convención fuente NW-SE, no terreno WRP decodificado ni exposición visible. Faltan oclusores, agua nativa, marcos del motor y cobertura mundial. No vinculan una foto por proximidad. No se abrió de nuevo el original815ef8; cada proceso leyó su propia vista/pilotos y comprobó finitud. I/O/NumPy/zlib/Budget compartidos; sustracción frente a arreglo de rectas separados. Inventario antes/después idéntico no implica vigilancia continua.
+
+16 tests finales privados PASS sin skips, 17 oráculos geométricos literales previos y extensión escalar externa. Muse180.094s no entregó dictamen; Fable recuperación113.594s SOUND-with-fixes. Única corrección limita comparaciones racionales antes del producto; su test sugerido contenía un orden falso, adjudicado con repro. Postimagen integrada por Codex con contexto compartido, sin otra revisión externa. R0 e históricos conservados. Caps y tolerancias intactos; snapshots source consumidos, no permiso para repetir captura.
+
+report.json y measurements.json contienen áreas, IDs, celdas/testigos y hashes; no coordenadas vanilla completas ni cuadrícula. Terreno original y vista quedan privados. Mapa intacto, nueve casos humanos abiertos, C1 NOT_REVIEWED. Q05 huella completa/ambos accesos y las decisiones de reparación siguen pendientes.
+
+SOURCE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\evidence\road-water-census-20261028\README.md
+# Contactos geométricos de carretera con agua
+
+Censo independiente del inventario de puentes: recorre las124cadenas y36467
+aristas de la referencia de carreteras,107.181km, por74357particiones de caras
+nativas. No excluye agua, Narva ni extremos. Descubre770aristas con contacto en
+29cadenas y1929.125m de eje nominal mojado. No significa770cruces ni770puentes
+ausentes: falta contrastar cada contacto con los puentes reales y las capas3D.
+
+92raíces coinciden con el censo nativo independiente, residuo máximo2.57244e-12m.
+1313partes mojadas no tienen raíz interior (no desaparecen por ese motivo).
+65saltos de agua entre celdas dentro de aristas;0en nodos;0ambigüedades de agua
+o numéricas en este conjunto. Todas esas clases tienen fixtures, incluidos
+saltos justo en nodos, tangencias, agua menor de1cm entre muestras, carretera
+entera sumergida, islas, inversión, división de tramos y borde de mapa.
+
+El caso de posible puente ausente tiene un contacto próximo en cadena49,
+arista301, a11.601m del personaje4789.51465/5516.52197. Es contexto sin asociación
+exacta de cámara. El extremo de kit118 sigue NO EVALUADO: su agua3D no pertenece
+a este dominio y el contacto nativo más cercano a la parada está a1086.304m.
+
+Fable5.1 revisó plan y código;20pruebas pasan con consumidor de polígonos
+recortados independiente del recorrido de caras. Se corrigió un hueco propio:
+un salto deW situado justo en un nodo se perdía al dividir la carretera. Ahora
+se comparan todas las observaciones por nodo, incluso entre cadenas distintas.
+Slivers numéricos se conservan y etiquetan inciertos, no se borran ni se declaran
+saltos confirmados. No se rebajó ninguna tolerancia.
+
+Única ejecución4.594s, intérprete125272/launcher116600, pico306495488Bresidente
+y801845248Bcommit;120s/2GiB cumplidos. Hashes iniciales/finales exactos, exit0.
+Los GeoJSON usan XZ local en metros, NO longitud/latitud WGS84. contacts.json
+retiene las caras y ambos lados cuando corresponde. partitions.npz externo
+está identificado por hash y cubre también las partes secas.
+
+Siguiente: vincular al mundo visitado la geometría real de Roadway de todos los
+puentes y las láminas3D, revisar plan y cruzarla con este censo, sin tomar
+crossings-ev106 como universo esperado. Así se podrá distinguir omisión,
+desalineación, ancho insuficiente o tramo ya resuelto. Ningún mapa reparado,
+puente aceptado, conducción ni rendimiento se desprende de este diagnóstico.
+Nav8 histórico607PASS; RAM/global y c1 SIN REVISAR permanecen abiertos.
+
+SOURCE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\evidence\road-surface-overlay-20261028\README.md
+# Cruces de carretera contra superficies desplegadas
+
+Censo de las124cadenas y36467aristas de referencia, sin excluir agua, Narva
+ni extremos y sin usar la lista del generador para descubrir cruces. Usa las
+caras y poses reales selladas de la unidad A.32fixtures y consumidor independiente
+Shapely verifican2413contactos; residuo máximo1.69914e-12m.
+
+El diagnóstico identifica715.422m de eje bajo agua de modelo sin Roadway de
+puente, en7cadenas. Coinciden casi exactamente con la capa nominal de charcas:
+no sumar ambos. Otros1024.828m corresponden al mar nominal en14cadenas. Estas
+son longitudes sobre ejes; NO son cantidades de puentes ni aceptación visual.
+
+La posición reportada4789.51465/5516.52197 queda a11.601m del contacto
+cadena49/arista301: mar nominal y ninguna cara de puente observada. En Narva
+sí hay tablero sobre agua; eso no acepta su alineación. En la arista más
+próxima medida, eje y PCA del tablero difieren6.666grados con separación
+lateral2.228m; diagnóstico de ejes, no umbral nuevo. Kit118 tiene una pieza de
+lecho/Roadway que intercepta6aristas de la carretera76. Esto localiza el solape;
+la exposición del Visual completo y su reparación todavía están pendientes.
+
+Se separan agua enterrada/expuesta respecto al terreno fuente, mar/charca
+nominal y agua de modelo, tablero sobre/sumergido/ausente y geometría incierta.
+Ninguna Roadway water_ext se acepta como puente. Proxy enterrado conserva
+INCONCLUSIVE_WATER; caras ambiguas conservan ambos fans y rango de alturas.
+Los nodos incluyen todas las cadenas incidentes sin duplicar observaciones.
+Microhuecos no se sueldan; se guarda procedencia y ULP, e incertidumbre dentro
+de una misma instancia. No se modifica ninguna tolerancia ni geometría.
+
+Fable5.1 revisó plan y código. Se corrigieron el conteo de candidatos por
+mutación de defaultdict, el filtrado de proxy enterrado, procedencia de huecos,
+capas nominales, diferencias de agua, duplicación de nodos y cierre de recursos.
+El preflight histórico conservado tenía candidate_edges incorrecto; el censo
+verificado da994aristas candidatas/1399pares/129191caras.32tests incluyen
+orquestación con carreteras secas, nodos compartidos y falsa Roadway de puente.
+
+Censo4.437s,453042176B de commit; consumidor2.969s. Presupuesto120s/2GiB cumplido
+en PID real. H coincide byteexact con el WRP editable vinculado al mundo de
+la visita. No se ha decodificado la totalidad del terreno compilado: exposición
+relativa al terreno de autoría, no prueba de motor. Ningún run DayZ utilizado.
+
+Reportes resumidos y tramos están aquí; contacts.json/nodes.json completos y
+NPZ de cobertura permanecen externos por tamaño, ligados en artifact-hashes.
+Los intervalos de categorías pueden solaparse; no sumar ni contar como cruces.
+25de28piezas de puente intersectan algún eje: lasotras3no se borran ni se
+consideran defectuosas por este dato. Persisten RAM, contornos, relieve, lechos,
+aceptación visual/global y c1 SIN REVISAR; council ampliado sigue pendiente.
+
+SOURCE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\plans\ev112-road-b2-object-pilot-20261029.md
+# Carreteras B2 — ensayo aislado del consumidor de objetos WRP
+
+Estado: REVISADO_PARA_IMPLEMENTAR_UNIDAD1_OFFLINE. Fable5.1 nativo71s adjudicado.
+No autoriza autoría WRP, build ni motor.
+Petición viva: preparar carreteras mientras continúan pruebas de orillas.
+P5/P6/P9/P10/P11: pavimento y accesos completos, navegación conservada; no
+introduce puentes por proximidad ni modifica la intención de agua del producto.
+
+## Hipótesis y fuentes
+
+[EXACT] B0/B1 conservan caras Visual/Roadway instaladas de asf1_25, asf2_25 y
+asf1_10 100, centro local distinto en la curva. Reutilizar archivos por sus hashes
+de evidence/road-b1-source-discovery-20261029; no repetir catálogo/extracción.
+La tabla compilada actual no contiene esas piezas. Shapes roads.tv4s existe;
+su esquema ALB1 y RoadNetwork siguen sin decodificar ni descartar.
+
+[EXACT] tools/terrain/wrp0wzd.py:58 escribe fuente 0WZD;
+tools/terrain/package_visual_pilot_ev112.py:22 lee tabla OPRW heurística con
+ancla y comprobaciones. No ejecutar sus CLI históricos ni suponer sus límites
+de cantidad compatibles con 2.578.398 objetos; revisar lector antes de reutilizar.
+tools/terrain/package_visual_forest_ev112.py:117 aplica una hipótesis de centro
+al bosque; NO certifica el pivote de una carretera.
+
+[EXACT] P:/scripts/3_Game/entities/object.c:873 declara ModelToWorld(vector);
+P:/scripts/3_Game/global/game.c:930 declara GetObjectsAtPosition3D y :718
+ObjectModelToWorld. Son anclas de fuente desempaquetada, NO identidad instalada.
+Antes de implementar sonda, verificar las mismas firmas en scripts.pbo fijado
+del motor real. GetModelName usa GetType y configuración; su utilidad para un
+objeto vial estático aún no está demostrada. No inventar una clase de carretera.
+
+## Unidad propuesta [DESIGN]
+
+1. UNIDAD1: fijar referencia original/compilada, herramientas, tres modelos instalados y
+   tablas B0. Escribir receta independiente con tres instancias: recta identidad,
+   recta girada 90 grados y curva. Explicitar las dos hipótesis de centro frente
+   a origen y publicar predicciones distintas, sin seleccionar la que mejor ajuste.
+2. FUTURO, requiere plan propio: ensayo en mundo/carpeta nuevos, elevado sobre el suelo en un banco aislado:
+   sólo tres objetos añadidos; terreno, agua, reservas, objetos previos y P10
+   exactos. No pavimentado de producción. Resolver IDs y nombre de modelo por
+   censo completo del origen, sin colisión; conservar cada cara y material.
+3. FUTURO: leer fuente y binario guardados. Probar conteos, poses y huellas mundiales
+   completas Visual/Roadway, incluidos arcenes y extremos. Las dos hipótesis
+   deben seguir siendo distinguibles tras serialización. Si no, no lanzar.
+4. Sonda nativa separada, plan y presupuesto propios antes de admisión: identificar
+   cada instancia inequívocamente en el vecindario y registrar origen y bases
+   transformadas mediante el consumidor del motor, además de impactos sobre
+   caras interiores y fuera de la huella. No elegir objeto por el personaje ni
+   por el más cercano. Si el motor no expone identidad suficiente, INCONCLUSIVE.
+   La lectura del WRP y su transformación en Python no constituyen ese oráculo.
+5. Sólo después de certificar consumidor/pivote, preparar huella y accesos en
+   tramo49 (5296,6000), cruce49/301, Narva71 y extremo kit118/cadena76.
+   Censo carretera-agua independiente de lista de puentes. No colocar esas
+   carreteras dentro de este ensayo. El ancho útil y conducción siguen abiertos.
+
+## Gates y presupuesto propuestos
+
+Revisión180s antes de implementar. Unidad offline inicial120s/2GiB para receta,
+predicciones y fixtures; no build ni DayZ en esa primera unidad. Antes del build
+se debe cerrar un plan específico con presupuesto y preflight actuales.
+Conservar cross0.03m/grade0.065/chord0.03m y P9 1m/.95m/24m; no derivar ancho útil
+de bbox ni usar la antigua banda8m como cobertura de piezas12/9m.
+
+Positivos y negativos: identidad/rotación conocida, centro desplazado, curva con
+bbox mayor que huella, inversión de matriz, eje intercambiado, esquina/arcén
+fuera del antiguo buffer, accesos completos y candidato sin Roadway. No declarar
+convención certificada con fixtures. Sin pruebas de conducción/FPS/RAM todavía.
+
+Salida inicial permitida: RECIPE_HYPOTHESES_READY o INCONCLUSIVE_DISCOVERY;
+salida nativa futura por instancia, con campos verificados/asumidos/no observados.
+El ensayo WRP_OBJECT no afirma implementar ni validar RoadNetwork/ALB1.
+
+## Adjudicación RoadB2 — 71s
+
+Revisión guardada en road-b2-plan-review-20261029; entradas intactas. Se aceptan
+fixtures literales independientes, cuatro hipótesis (origen/centro por matriz
+fila/columna), campos verificado/asumido/no observado y RESOURCE_FAIL/READER_INCOMPATIBLE.
+El centro usado es bounding_center del ODOL expuesto por catálogoA y fijado en
+los JSON B0; NO centroide Visual ni centro de configuración. No recalcularlo.
+La lectura OPRW en UNIDAD1 es sólo revisión de código, sin recenso ni escritura.
+IDs de instancias quedan propuestos, no asignados hasta censo autorizado: futuro
+máximo existente+1, prueba de unicidad y desbordamiento uint32; no asumir huecos.
+
+La separación mínima propuesta debe superar0.03m y10ULP del float32 en las
+coordenadas propias de esta receta. Se rechaza reutilizar el ULP observado en
+otro modelo B3C: depende de magnitud/marco. La cuantización local y mundial se
+calculan aquí; no prueba compilación ni contacto. Identidad puede hacer coincidir
+fila/columna: exigir que el conjunto de tres poses las discrimine, no que cada
+instancia distinga todas. Si no, INCONCLUSIVE sin elegir por mejor ajuste.
+Apoyo Roadway-terreno, empalme con calzada real y conducción: NO OBSERVADOS.
+Ningún test puede probar por sí solo independencia intelectual; se archivará
+derivación separada de fixtures y se comprobará que el consumidor no llama al
+generador para producir su esperado. Una fixture autogenerada debe rechazarse
+por procedencia, además de negativos geométricos.
+
+SOURCE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\evidence\road-b4b1-saved-content-20261029\README.md
+# RoadB4B1: equivalencia de contenido guardado
+
+VERIFIED_SAVED_CONTENT_DIAGNOSTIC / INCONCLUSIVE_METHOD_BINDING. Dos derivaciones desde metadatos fijados verifican 5512 referencias: 5508 de procedencia única y cuatro grupos SAME_PINNED_CONTENT sobre 28 instancias históricas de puentes. Los SHA de paquete/modelo y rutas virtuales normalizadas coinciden; los locators crudos se conservan. El B4B0 histórico sigue VERIFIED_MISMATCH_DIAGNOSTIC y sus cuatro provider=null no se reescriben.
+
+Productor único 1.078 s/117.27 MB; consumidor guardado 1.000 s/140.38 MB, ambos rc2 esperado/reason null. Reporte privado d0848b551a031e4913f53963f50184ee373073ba66b65ccca6f9f40b19d19276, 10701747 bytes. No WRP/PBO/P3D/material leído: únicamente bundle JSON/JSONL y dos fuentes de código como bytes. Ninguna modificación de geometría/vanilla/P:/mapa, build, DayZ, run o lease.
+
+R1 no podía implementarse porque cuatro proveedores eran null; R2 corrige esa premisa antes de autoría y reconstruye candidatos contra las fuentes pinadas. Fable delta de contrato69.625 s, código153.500 s NEEDS-WORK, delta124.422 s SOUND-with-fixes adjudicados. Muse autor148.813 s/corrección130.515 s; integración Codex con contexto compartido, sin lane ciega. Consumidor separado con reconstrucción similar al productor, no diversidad conceptual demostrada. Suite final24 PASS,1.922 s, sin skips; intentos previos preservados.
+
+La ligadura del método histórico B2A permanece METHOD_UNVERIFIED y la del catálogo METHOD_DECLARED. No hay prueba de identidad física actual, precedencia nativa, build_ready, pivote, huella vial, accesos o conducción. Los cuatro conflictos de nombres quedan explicados en esta derivación; no son cuatro puentes reparados. Nueve rechazos humanos siguen abiertos.
+
+Operaciones CONSUMIDAS: autorías, correcciones, reviews, suites, productor, consumidor y congelación. No relanzar. Siguiente vial necesita contrato de precedencia actual/recursos completos de escena y piloto de pose/huella; no copiar doce recursos como cierre de5509modelos.
+
+ANCHOR C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\pilot_visible_exposure_ev112.py
+20:        'min_B_H','max_B_H','min_B_nominal_W','max_B_nominal_W','intersecting_visual_water_faces',
+21:        'nominal_visual_water_min_delta','nominal_visual_water_max_delta')
+22: H_SHA='815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40'
+23: FP_SHA='084171b0e29df5c220f9d5aab42a3dc683a2f70a07579f08cd930dfd109e716b'
+24: ROAD_SHA='94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2'
+25: 
+26: def polygon(p):
+27:     return Polygon(p) if len(p)>=3 and g.area(p)>0 else Polygon()
+28: 
+29: def rect(a,b,width=4.):
+30:     a,b=np.asarray(a,float),np.asarray(b,float)
+31:     require(a.shape==b.shape==(2,) and np.isfinite([a,b]).all(),'road_point')
+32:     d=b-a;require(np.linalg.norm(d)>0,'zero_length_road_edge')
+33:     normal=np.array([-d[1],d[0]])*width/np.linalg.norm(d)
+34:     return Polygon([a+normal,b+normal,b-normal,a-normal])
+35: 
+36: def disc_bounds(point,radius=4.,sides=64):
+37:     """Inner/outer bounds, never pretend polygon is exact circular corridor."""
+38:     theta=np.arange(sides)*2*np.pi/sides
+39:     unit=np.c_[np.cos(theta),np.sin(theta)]
+40:     return Polygon(point+radius*unit),Polygon(point+(radius/np.cos(np.pi/sides))*unit)
+41: 
+42: def corridor(xy,edges):
+43:     rectangles=[rect(xy[int(a)],xy[int(b)]) for a,b,_ in edges]
+44:     degree=np.zeros(len(xy),int)
+45:     for a,b,_ in edges:degree[int(a)]+=1;degree[int(b)]+=1
+46:     # Discs around ALL vertices include joints and endpoints. Bounds stay separate.
+47:     disc=[disc_bounds(p) for p in xy]
+48:     return rectangles,[v[0] for v in disc],[v[1] for v in disc],degree
+49: 
+50: def road_guard(xy,edges):
+51:     require(xy.shape==(36428,2) and edges.shape==(36467,3) and
+52:             np.isfinite(xy).all() and np.isfinite(edges).all() and
+53:             (edges[:,:2]>=0).all() and (edges[:,:2]<len(xy)).all() and
+54:             np.array_equal(edges[:,:2],edges[:,:2].astype(np.int64)),'road_universe')
+55:     lengths=np.linalg.norm(xy[edges[:,1].astype(int)]-xy[edges[:,0].astype(int)],axis=1)
+56:     require((lengths>0).all() and np.max(abs(lengths-edges[:,2]))<=1e-9,'road_lengths')
+57: 
+58: def summarize_regions(metrics,categories):
+ANCHOR C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_surface_overlay_ev112.py
+200: def sealed(path,expected,pins):
+201:     raw=path.read_bytes();require(hashlib.sha256(raw).hexdigest()==expected,'input_hash:'+str(path));pins[path]=expected;return raw
+202: 
+203: 
+204: def prepare(root,worktree,road_root):
+205:     pins={};manifest_path=worktree/'evidence/deployed-surface-prototypes-20261028/artifact-hashes.json'
+206:     raw=manifest_path.read_bytes();pins[manifest_path]=hashlib.sha256(raw).hexdigest();manifest=surface.manifest_keys(json.loads(raw))
+207:     base=root/'deployed-surface-prototypes-20261028'
+208:     def artifact(name):
+209:         p=base/name;key=surface.norm(p.relative_to(root).as_posix());require(key in manifest,'missing_artifact');return sealed(p,manifest[key]['sha256'],pins)
+210:     with np.load(io.BytesIO(artifact('surface-prototypes.npz'))) as z:v,m=z['vertices'],z['meta']
+211:     with np.load(io.BytesIO(artifact('instances.npz'))) as z:ids,mi,poses=z['ids'],z['model_index'],z['matrix']
+212:     catalog=json.loads(artifact('model-catalog.json'));sections=json.loads(artifact('model-sections.json'));proxy_paths=json.loads(artifact('proxy-paths.json'))
+213:     source_inputs=json.loads(artifact('inputs.json'))
+214:     require(hashlib.sha256(Path(surface.__file__).read_bytes()).hexdigest()==source_inputs['script_sha256'],'surface_transform_source_changed')
+215:     require(hashlib.sha256(Path(native.__file__).read_bytes()).hexdigest()=='6853a78f11a065949f0e4ea522fb03c29c7b0e20a576ac9cfc2221e80c69bf74','native_source_changed')
+216:     surface.instance_guard(ids,mi,poses,catalog)
+217:     require(len(v)==len(m)==539009 and len(ids)==17818,'surface_coverage')
+218:     expected={root/'river-kit7-merged-byteexact-20261026/terrain-buried.npz':'815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40',
+219:       road_root/'tests/regional_foundation_roads_v6/reference.npz':'94ecbca61bd5ba9ba61f89b765b043676a4a65703729a0b69009ae233984a1c2',
+220:       road_root/'evidence/regional-foundation-v1/road-grade-chains-v6.json':'b31fb7d72398981ee98132ce59eab48c4aa404043718475fbb2725b13de1b824',
+221:       worktree/'evidence/road-water-census-20261028/contacts.json':'3827291ed36e15a4320f18fd2d921badaacf6d575a8f1954e319d7fcc6b09c3d',
+222:       worktree/'evidence/road-water-census-20261028/chain-coverage.json':'e53011aae3277eb2ad0c9dbd60cf2ec6829198f0cc09d638d7ff4ccdbe8dffa8',
+223:       root/'river-kit7-merged-byteexact-20261026/bury-work/fp0/footprint.npz':'084171b0e29df5c220f9d5aab42a3dc683a2f70a07579f08cd930dfd109e716b'}
+224:     raw={p.name:sealed(p,d,pins) for p,d in expected.items()}
+225:     with np.load(io.BytesIO(raw['terrain-buried.npz'])) as z:h=z['heights']
+226:     with np.load(io.BytesIO(raw['footprint.npz'])) as z:plane=z['plane']
+227:     with np.load(io.BytesIO(raw['reference.npz'])) as z:xy,edges=z['xy'],z['edges']
+228:     chains=json.loads(raw['road-grade-chains-v6.json'])['chains'];coverage=native.graph_guard(xy,edges,chains)
+229:     require((coverage['chains'],coverage['nodes'],coverage['edges'])==(124,36428,36467),'road_universe')
+230:     contacts={(x['chain'],x['edge']):x for x in json.loads(raw['contacts.json'])}
+231:     require(len(contacts)==770,'native_contacts')
+232:     road_rows=[]
+233:     for ci,chain in enumerate(chains):
+234:         station=0.
+235:         for ei,(a,b) in enumerate(zip(chain,chain[1:])):
+236:             length=float(np.linalg.norm(xy[b]-xy[a]));road_rows.append((ci,ei,a,b,station,length));station+=length
+237:     source_wrp=root/'stage-kit7-fc-20261026/root/dayz_baltic_12km_dev/tb/narva_trial/baltic_trial.wrp'
+238:     require(str(source_wrp) in source_inputs['source_pins'],'source_wrp_pin')
+239:     pins[source_wrp]=source_inputs['source_pins'][str(source_wrp)]
+240:     with source_wrp.open('rb') as f:
+241:         magic,tx,tz,nx,nz,cell=struct.unpack('<4s4If',f.read(24));require(magic==b'0WZD' and (nz,nx)==h.shape,'source_wrp_header')

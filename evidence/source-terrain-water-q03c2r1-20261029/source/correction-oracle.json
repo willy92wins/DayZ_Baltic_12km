@@ -1,0 +1,20 @@
+{
+  "schema": "q03c2r1.closed-comparison-repro.v1",
+  "a": [
+    1099511627775,
+    1099511627777
+  ],
+  "b": [
+    1099511627773,
+    1099511627779
+  ],
+  "raw_a_gt_b": true,
+  "bits": 64,
+  "expected": "RESOURCE_INCONCLUSIVE",
+  "function_arguments": [
+    "0",
+    "b",
+    "a"
+  ],
+  "reason": "Cross products exceed cap before comparison; exact raw order is true."
+}

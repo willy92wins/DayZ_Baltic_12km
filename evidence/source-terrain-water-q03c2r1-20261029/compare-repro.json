@@ -1,0 +1,20 @@
+{
+  "scope": "closed scalar comparison repro only, no historical source",
+  "operands": [
+    [
+      1099511627775,
+      1099511627777
+    ],
+    [
+      1099511627773,
+      1099511627779
+    ]
+  ],
+  "input_bits_max": 41,
+  "configured_bits": 64,
+  "unchecked_python_comparison_returned": false,
+  "checked_budget_comparison": "RESOURCE_INCONCLUSIVE",
+  "new_producer_anchor": "water remainders uses uncounted chained Fraction comparisons",
+  "expected": "RESOURCE_INCONCLUSIVE before cross-product beyond bit cap",
+  "proposed_delta": "Use q.cmp in the remainder invariant and add exact negative."
+}
