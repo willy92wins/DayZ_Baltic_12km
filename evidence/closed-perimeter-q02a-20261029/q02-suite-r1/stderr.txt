@@ -1,0 +1,26 @@
+error: input SHA-256 mismatch
+error: output already exists; refusing to overwrite
+.error: input SHA-256 mismatch
+...error: duplicate JSON key rejected: status
+error: duplicate JSON key rejected: chain_count
+.Ferror: summary output already exists; refusing to overwrite
+error: output and summary-output must be distinct
+error: summary output already exists; refusing to overwrite
+.................................${USER_PROFILE}\Documents\Codex\2026-09-29\vamos\work\gis-env\Lib\site-packages\numpy\lib\_function_base_impl.py:1540: RuntimeWarning: overflow encountered in subtract
+  a = op(a[slice1], a[slice2])
+.........
+======================================================================
+FAIL: test_37_summary_output_roundtrip_and_mutants (__main__.TestCli.test_37_summary_output_roundtrip_and_mutants)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "${WORKTREE}\tests\test_closed_perimeter_ev112.py", line 563, in test_37_summary_output_roundtrip_and_mutants
+    self.assertEqual(sobj['full_report_sha256'], hashlib.sha256(report_raw).hexdigest())
+AssertionError: 'fc01e101c0bb66473066db153d89854bd18b1279bb5cfa8e5f69044bfe76a8b8' != '4295fe8ad18a600feadcba2e88e4ba78b79668b640d67ac64827592028dbaaeb'
+- fc01e101c0bb66473066db153d89854bd18b1279bb5cfa8e5f69044bfe76a8b8
++ 4295fe8ad18a600feadcba2e88e4ba78b79668b640d67ac64827592028dbaaeb
+
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.095s
+
+FAILED (failures=1)

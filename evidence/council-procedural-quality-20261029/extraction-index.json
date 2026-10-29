@@ -1,0 +1,69 @@
+[
+  {
+    "lane": "fable",
+    "identity": [
+      "claude-fable-5-1"
+    ],
+    "terminal": {
+      "type": "success",
+      "is_error": false
+    },
+    "end_marker": true,
+    "words": 2210,
+    "report_sha": "4be749c2570c3ee9ac01e38ec360cfb81399a15378355f55369e17f4c46231bf"
+  },
+  {
+    "lane": "muse",
+    "identity": [
+      [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 48402,
+          "cached_tokens": 0,
+          "output_tokens": 7743,
+          "reasoning_tokens": 1579,
+          "calls": 1
+        }
+      ]
+    ],
+    "terminal": {
+      "reason": null,
+      "type": "run.terminal.completed"
+    },
+    "end_marker": true,
+    "words": 2381,
+    "report_sha": "d72fefde1a52119f0c7b67f459fe5fdc381026b94fcf7b27b0fd0264b939b84c"
+  },
+  {
+    "lane": "grok",
+    "identity": {
+      "grok-4.7-build": {
+        "inputTokens": 53949,
+        "outputTokens": 18548,
+        "cacheReadInputTokens": 1664,
+        "cacheCreationInputTokens": 0,
+        "modelCalls": 1,
+        "costUSD": 0.220018
+      }
+    },
+    "terminal": {
+      "stopReason": "end_turn"
+    },
+    "end_marker": true,
+    "words": 2431,
+    "report_sha": "0fe3f33de523932c6c982362d4357cd678a32bf58a740721722df063d2716f67"
+  },
+  {
+    "lane": "argon",
+    "identity": [
+      "Requested gemini-4-argon-high; actual model not exposed by final envelope"
+    ],
+    "terminal": {
+      "status": "SUCCESS",
+      "denied_actions": null
+    },
+    "end_marker": false,
+    "words": 2057,
+    "report_sha": "53d1ea9e2e5e02fdc5bd11d8942ef21d0ae19fa9f95f75e5c39b4ade895af62e"
+  }
+]

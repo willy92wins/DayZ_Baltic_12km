@@ -1,0 +1,717 @@
+{
+  "schema": 1,
+  "base_commit": "f6ffe3d137f8b682c5d9edc8afa9aa670b826259",
+  "proposals": [
+    {
+      "id": "FABLE-01",
+      "unit": "Q03",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "Consumir capas 3D y materiales: altura máxima sola pierde puentes, oclusiones y agua inferior. Depende de Q04 para poses no certificadas. No raster6m como aceptación de detalle.",
+      "original": "**C01 Silueta compuesta terreno+modelos** · dominio: cobertura/contornos · problema: los lechos, terraplenes y puentes ocultan o crean siluetas que el censo nativo no ve · evidencia: native-shore README:27-28; tour README:21 · cambio: validador que rasteriza la altura visible máxima por celda y subcelda uniendo terreno y LOD visual de todos los modelos del WRP, reutilizando el lector de vértices ODOL que ya existe en road-b2 (evidence/road-b2-recipe-20261029/README.md:7) y el stream 0WZD de screen_shapes_ev112.py:42-67 · consumidor independiente: extracción de contornos H_visible=W sobre esa superficie, comparada cadena a cadena con el censo nativo · positivo: zona Narva 292 debe reaparecer con la misma L · mutante: hundir 0,5 m un lecho piloto y comprobar que su silueta desaparece del censo compuesto y que el contorno nativo reaparece · dependencias: ninguna · riesgo: coste de rasterizar millones de caras; usar celdas de 6 m con submuestreo · coste: alto · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-02",
+      "unit": "Q02B",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C02 Detector de forma por curvatura, multiescala y rotación-invariante** · dominio: contornos · problema: POLICY sólo ve escaleras y rectas · evidencia: shape_patterns_ev112.py:11-26, :63-70 · cambio: calcular curvatura firmada por longitud de arco a varias escalas de suavizado, y señalar: varianza de curvatura casi nula en tramos largos con curvatura no nula (arco de radio constante), dos rectas unidas por giro cercano a 90° con ambos lados largos (L abierta), tres rectas (U), y transiciones recta-arco con salto de curvatura · consumidor: segundo cálculo con otra parametrización (ángulo de tangente acumulado) sobre las mismas cadenas · positivo: contornos 292 y 769 citados en native-shore README:33-44 · mutante: contorno sintético de rugosidad natural con un arco de 40 m de radio constante insertado; sólo el insertado debe disparar · negativo real: contornos de charcas de la reserva ya aceptadas y, si se obtiene lectura, costa vanilla de Chernarus [HIPOTESIS: no he visto lector de terreno Chernarus] · dependencias: C01 para aplicarlo a siluetas compuestas · riesgo: falsos positivos en costas de acantilado realmente rectas; por eso los hallazgos siguen siendo adjudicables, no sentencias · coste: medio · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-03",
+      "unit": "Q01",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C03 Tabla de adjudicación obligatoria defecto↔capa↔censo** · dominio: proceso/validación · problema: no se distingue ausencia de detección de hallazgo no resuelto · evidencia: tour README:17, :52; reassessment:66-70 · cambio: registro por observación con capa, cadena o modelo, estado del screen y casilla de las tres descritas arriba; ninguna reparación se autoriza sin casilla · consumidor: revisión de un segundo agente que recalcula la casilla desde los GeoJSON sin leer la tabla · positivo: NARVA-VIS-03 queda en \"detectado sin resolver\" vía 292 · mutante: observación ficticia en una zona NO_SCREEN_FINDING debe quedar \"no correlacionada\" y no \"resuelta\" · dependencias: C01 · riesgo: bajo · coste: bajo · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-04",
+      "unit": "Q08",
+      "status": "INVESTIGACION_APROBADA",
+      "reason": "No redefinir protecciones por votación ni repetir permiso genérico. Primero recuperar contratos y medir delta concreto; decisión humana sólo ante incompatibilidad nueva. La autorización seca previa sigue exacta.",
+      "original": "**C04 Definición operativa del invariante de agua** · dominio: hidrografía/contrato · problema: sin definición, P14 y el zigzag de road49 son irreparables o inseguros · evidencia: product-spec P9 :15, P14 :20; road49 README:50 · cambio: proponer al usuario que \"agua/topología\" signifique niveles W, número y conectividad de cuerpos, corredores de 24 m, receptores y extremos, con margen lateral acotado por clase, y que el conjunto exacto de celdas mojadas no sea invariante · consumidor: diff topológico por cuerpo (componentes, área, conexiones, corredor P9 intacto) antes/después · positivo: suavizar 769 sin crear ni fundir cuerpos · mutante: una edición que una dos charcas debe fallar por conectividad, no por celdas · dependencias: ninguna · riesgo: es cambio de protección; por eso es decisión · coste: nulo técnico · DECISION_USUARIO.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-05",
+      "unit": "Q10",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C05 Retrazado de cauces por spline de curvatura limitada derivada de la referencia** · dominio: generación de ríos · problema: zigzags en escalera · evidencia: road49 README:50; shape_patterns:65 · cambio: ajustar el eje con una curva de curvatura continua (C2) cuya forma se toma de la referencia original muestreada, no de ruido; conservar nodos de receptor, cruces y anchuras; el desplazamiento lateral se limita al margen que fije C04 · consumidor: C02 sobre el nuevo eje y sobre ambas orillas resultantes, más join_screen existente en shape_patterns:75-91 para empalmes · positivo: el río de road49 una vez identificado · mutante: la misma escalera con codos redondeados individualmente debe seguir disparando rounded_orthogonal_staircase (:70) · dependencias: C04, C03 · riesgo: tocar P9 si el corredor se estrecha; medir anchura útil tras retrazar · coste: medio · TECNICA, condicionada a C04.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-06",
+      "unit": "Q11",
+      "status": "INVESTIGACION_APROBADA",
+      "reason": "No elegir aún elevar terreno frente a abatir faldón: ambos pueden ocultar o crear defectos. Medir superficie expuesta/capas y preservar agua/soportes antes de autoría.",
+      "original": "**C06 Banda de integración lateral del lecho** · dominio: lecho/orilla/modelos · problema: lecho que sobresale respecto al terreno y al agua · evidencia: tour README:33, :40-42; native-shore README:55-62 \"falta medir la transición lateral\" · cambio: generador que adapta el terreno seco en una banda alrededor de cada lecho hacia la cota del modelo con pendiente continua, y validador de perfiles transversales cada pocos metros midiendo altura del modelo sobre terreno circundante, pendiente de transición y silueta a altura de ojos · consumidor: C01 sobre la banda · positivo: cauce continuo65 y kit118 · mutante: subir 0,3 m un lecho y comprobar que el perfil dispara; bajarlo bajo el agua y comprobar que P9 dispara por profundidad · dependencias: C01, C03 · riesgo: sólo terreno seco, permitido por contrato; no toca agua · coste: medio · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-07",
+      "unit": "Q09",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C07 Perfil de ribera por clase hidrológica** · dominio: orillas/relieve · problema: entrantes y lenguas estrechas, codos y rectas en charcas · evidencia: tour README:70; native-shore README:40-44 · cambio: generador de taludes continuos cuya rugosidad se hereda del relieve local medido a escala de 24 a 96 m, con perfiles distintos para mar, río navegable, arroyo y charca; no un único suavizador global · consumidor: C02 por clase, y estadístico de anchura mínima de entrantes · positivo: contorno 769 · negativo: humedales de la reserva, donde los entrantes son intención P13 · mutante: aplicar el talud a una isla y comprobar que no desaparece · dependencias: C04 · riesgo: homogeneizar paisaje; por eso la rugosidad es heredada, no fija · coste: medio · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-08",
+      "unit": "Q05",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C08 Censo de paso construido en cruces** · dominio: carreteras/puentes · problema: 770 contactos nominales sin saber si hay puente, vado o corte · evidencia: road-water README:6-7, :34-37; tour README:58-62 · cambio: validador que, por contacto, busca superficie Roadway compilada que cubra el corredor, mide continuidad de altura y pendiente entre ambos accesos, y clasifica en puente, vado intencionado, corte, desalineación o ancho insuficiente · consumidor: perfil longitudinal a lo largo del eje muestreado en la geometría compilada, independiente de la lista EV110 · positivo: CROSSING-VIS-01 debe salir \"corte\" · mutante: desplazar un puente 3 m y borrar otro; ambos deben caer en clases distintas · dependencias: lector ODOL de road-b2 · riesgo: bajo · coste: medio · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-09",
+      "unit": "Q06",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C09 Generador de puentes por eje y tangentes** · dominio: puentes · problema: puente desalineado · evidencia: tour README:6, :23; road-b2 README:18 \"no colocar por personaje\" · cambio: la pose se deriva de la tangente del eje de carretera en ambos accesos y de la normal del cauce, con la huella Roadway medida, no del centro de pieza · consumidor: C08 · positivo: NARVA-VIS-02 · mutante: rotar 4° la pose y comprobar fallo por tangente en join_screen · dependencias: C08 · riesgo: soporte y gálibo P9 · coste: medio · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-10",
+      "unit": "Q07",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C10 Perfil de conducción incluyendo empalmes terreno-pieza** · dominio: carreteras · problema: aceptación local de road49 sin pavimento ni conducción · evidencia: product-spec P11 :17; tour README:48 · cambio: ampliar el perfil actual a toda la red con segunda derivada de rasante, caída transversal y escalón en el borde de cada pieza contra terreno · consumidor: ensayo nativo con vehículo vanilla a velocidades distintas usando el lector nativo de b3g2 · positivo: tramo road49 · mutante: elevar una pieza 5 cm · dependencias: C08 · riesgo: ninguno sobre contrato · coste: medio · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-11",
+      "unit": "Q12",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C11 Relieve multiescala con referencia espectral** · dominio: relieve · problema: crestas emergentes en L, picos, falta de suavizado · evidencia: tour README:5, :68; shape_patterns:15-26 sólo pirámides · cambio: residuo por banda a escalas 6/24/96/384 m, detección de terrazas por cuantización de alturas, y crestas rectas por alineación de gradiente; referencia: el DEM original transformado, comparando forma relativa y no amplitud, porque P12 exagera la vertical · consumidor: segundo cálculo en el dominio de pendientes · positivo: NARVA-VIS-01 y RELIEF-EAST · negativo: colinas de la reserva · mutante: terraza sintética de 0,3 m · dependencias: ninguna · riesgo: bajo · coste: medio · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-12",
+      "unit": "Q13",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C12 Gate de vegetación y props contra infraestructura** · dominio: árboles/rocas/props · problema: el gate actual es sólo soporte y agua · evidencia: review_visual_forest_support_v31.py:4; pilot_bed_margin limitado a pilotos :108-129 · cambio: extender a Roadway de toda la red, puentes, lechos, accesos y márgenes de gálibo; añadir densidad por bioma medida contra P13 y separación mínima entre troncos · consumidor: navmesh regenerada y conteo por sector · positivo: bosque de la parada 5 debe seguir pasando · mutante: árbol en Roadway y árbol en gálibo de puente · dependencias: C08 · riesgo: ninguno · coste: bajo · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-13",
+      "unit": "Q17",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C13 Banco común de controles y mutantes** · dominio: validación · problema: cada detector se prueba contra sus propios negativos, no contra naturalidad · evidencia: tour README:15 · cambio: corpus versionado con contornos y relieve reales aceptados, mutantes sintéticos por clase y las nueve observaciones; todo detector publica tasa sobre ese banco en cada run · consumidor: integrador que rechaza un detector sin tasa · riesgo: bajo · coste: bajo · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-14",
+      "unit": "Q19",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "Atlas comparables sí; camera_set sigue vetado. Investigar sólo rutas permitidas; falta API no autoriza inventarla.",
+      "original": "**C14 Capturas comparables desde el runtime** · dominio: composición visual · problema: la aceptación depende de la presencia del usuario · evidencia: product-spec P14 :20; b3g2 README:3-7 · cambio: investigar si el MCP nativo puede fijar cámara y capturar en los puntos del censo con igual hora y distancia [HIPOTESIS: no he leído esa API] · consumidor: el propio usuario sobre un lote reducido · riesgo: no sustituye aceptación humana · coste: bajo · INVESTIGAR.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-15",
+      "unit": "Q16",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "RAM nuevo bloque íntegro; no depende de calibrar Bullet para tiempos/RAM del servidor. No mezclar bloques históricos.",
+      "original": "**C15 Bloque RAM nuevo y proxy estático** · dominio: rendimiento · problema: inconcluso y bloque no rellenable · evidencia: perf README:3-4, :15-16 · cambio: plan revisado con bloque íntegro, más proxy offline de instancias y caras por sector comparado con Chernarus · consumidor: Bullet calibrado antes de usar sus tiempos · riesgo: no fijar umbrales nuevos · coste: medio · TECNICA.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "FABLE-16",
+      "unit": "Q14",
+      "status": "INVESTIGACION_DIFERIDA",
+      "reason": "Estudiar referentes sin importar assets ni código y sin anticipar P10; baja prioridad frente a geometría existente.",
+      "original": "**C16 Investigar soluciones de mods hermanos para orillas y lechos** · dominio: lecho/orilla · evidencia: ninguna en cápsula · cambio: estudio explícito de cómo resuelven integración de cauces, sin importar código · riesgo: licencia · coste: bajo · INVESTIGAR.",
+      "source": "lanes\\fable\\response.md",
+      "source_sha": "c472d8038557a987e50ac140ae90cf02b36f87f0df2741f53a047186231b71d7"
+    },
+    {
+      "id": "MUSE-01",
+      "unit": "Q01",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-01 — Registro discriminador de rechazos humanos.** Dominio: validación transversal. Problema observable: nueve rechazos abiertos conviven con PASS parciales sin saber si falló detección, reparación, materialización o revisión. Evidencia: “Falta asociar cada defecto a sus coordenadas y capa… distinguir ausencia de detección de hallazgo no resuelto” [evidence/visual-tour-20261027/README.md:17](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:17). Cambio: registro que vincule observación, cadena/contacto/modelo, estado del detector, delta de generación, build consumido y re-revisión. Consumidor independiente: auditor que rederive estado desde artefactos, no desde el registro. Positivo: un rechazo real queda trazado hasta su capa. Mutante/negativo: marcar “resuelto” sin cambiar el artefacto o sin nuevo censo debe seguir rechazado. Dependencias: censos existentes. Riesgo: burocracia si se convierte en fin. Coste: bajo. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-02",
+      "unit": "Q03",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-02 — Censo de siluetas finales con modelos, no sólo orilla nativa.** Dominio: contornos ríos/mar/charcas. Problema: el censo nativo ya existe, pero no equivale a silueta final con todos los modelos; lechos, presas, puentes y props pueden crear u ocultar aristas. Evidencia: el plan separa terreno de “ocultación por todos los modelos 3D” [plans/ev112-visual-geometry-reassessment-20261028.md:16](${BUILD_ROOT}\\council-expanded-20261029\\plans\\ev112-visual-geometry-reassessment-20261028.md:16). Cambio: consumidor del mundo compilado que extraiga contorno visible agua/terreno/modelo por capas y lo confronte con el censo nativo. Consumidor independiente: segundo recorrido sobre WRP/modelos desplegados. Positivo: L de Narva y lenguas orientales aparecen con capa responsable. Mutante: insertar una pieza recta que oculta orilla natural debe crear hallazgo de silueta final aunque el terreno no cambie. Dependencias: inventario de modelos colocados. Riesgo: coste de unión geométrica. Coste: medio-alto. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-03",
+      "unit": "Q02B",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-03 — Contornos cerrados, giro de cierre y patrones L/U multiescala.** Dominio: costas/lagunas. Problema: el screen actual no evalúa el giro que cierra una cadena y depende de simplificación y estaciones. Evidencia: `closure_turn_evaluated=False` en el censo [tools/quality/native_shore_census_ev112.py:78](${BUILD_ROOT}\\council-expanded-20261029\\tools\\quality\\native_shore_census_ev112.py:78); se exige cobertura “L/U, aristas abiertas/conectadas, rectas largas y combinaciones recta-arco” a varias escalas [evidence/visual-tour-20261027/README.md:21](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:21). Cambio: análisis de cadena cerrada completa, curvatura acumulada, rectas largas y arcos de radio casi constante, invariante a rotación y densidad de vértices. Consumidor: reimplementación por muestreo de longitud de arco. Positivo: charca oriental con entrantes y rectas queda señalada. Negativo: presa, canal o terraplén diseñado con recta justificada no se condena por forma sola; exige adjudicación. Dependencias: COB-02. Riesgo: falsos positivos en obra civil. Coste: medio. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-04",
+      "unit": "Q11",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-04 — Integración volumétrica lecho-orilla-agua-terreno.** Dominio: cauces. Problema: KIT118-VIS-01 y CONT65-VIS-01 repiten “el lecho sobresale”, pero Visual=Geometry no prueba integración. Evidencia: “comprobar… el volumen visible completo del lecho frente al terreno circundante y al agua real, con perfiles, pendientes de transición y silueta” [evidence/visual-tour-20261027/README.md:33](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:33); el piloto seco reconoce que altura enterrada “no equivale a exposición visible” [evidence/native-shore-census-20261028/README.md:60](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\native-shore-census-20261028\\README.md:60). Cambio: perfiles transversales y longitudinales lecho/agua/banca/terreno, exposición sobre agua y sobre terreno lateral, continuidad de taludes. Consumidor: perfiles desde malla compilada, no NPZ de autor. Positivo: ambos casos reales deben rechazar antes de reparar. Mutante: bajar el lecho pero dejar escalón lateral debe seguir fallando. Dependencias: COB-02. Riesgo: tocar XZ/agua si se repara mal; mantener invariantes. Coste: medio. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-05",
+      "unit": "Q10",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-05 — Naturalización fluvial por régimen de curva, no por redondeo local.** Dominio: ríos/arroyos. Problema: ROAD49-RIVER-VIS-01 rechaza zigzags; redondear cada codo crea arcos uniformes igualmente artificiales. Evidencia: “No basta con redondear cada codo de una escalera ni sustituirla por arcos uniformes” [evidence/visual-tour-20261027/README.md:50](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:50); `route_screen` ya detecta escaleras ortogonales y giros abruptos [tools/quality/shape_patterns_ev112.py:38](${BUILD_ROOT}\\council-expanded-20261029\\tools\\quality\\shape_patterns_ev112.py:38). Cambio: regenerar eje por tramos con variación continua de curvatura y anchura, conservando extremos, receptores, topología, cruces y protecciones. Consumidor: screen de eje más contornos finales de COB-02 y perfiles COB-04. Positivo: escalera real desaparece sin crear rosario de arcos iguales. Negativo: tramo recto fluvial plausible o canal diseñado no se fuerza a serpentear. Dependencias: adjudicación de tramos diseñados. Riesgo: alterar anchura útil P9. Coste: alto. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-06",
+      "unit": "Q09",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "La promesa mejora sin mover agua exige definir la capa; sólo diseño bajo invariantes vigentes, no garantiza contorno distinto con máscara húmeda exacta.",
+      "original": "**COB-06 — Relieve multiescala acoplado a contorno de agua.** Dominio: relieve/costas. Problema: RELIEF-EAST-VIS-01 pide smoothing a la izquierda; la captura concreta entrantes, lenguas estrechas, codos y rectas en una masa de agua. Evidencia: [evidence/visual-tour-20261027/README.md:68](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:68) y correlato 769 con “19 giros de al menos 45°” [evidence/native-shore-census-20261028/README.md:40](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\native-shore-census-20261028\\README.md:40). Cambio: suavizado selectivo por bandas de distancia a agua y escala, midiendo pendiente, curvatura y desplazamiento del contorno resultante; no suavizar sólo picos puntuales. Consumidor: comparación antes/después de contorno, perfiles y accesos. Positivo: la zona oriental mejora sin mover agua. Mutante: suavizar alturas dejando igual la silueta debe no contar como reparación. Dependencias: COB-03. Riesgo: invadir protecciones o crear agua intermitente P14. Coste: medio. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-07",
+      "unit": "Q05",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-07 — Universo carretera-agua contra paso construido real.** Dominio: carreteras/puentes. Problema: hay censo nominal independiente, pero no prueba paso; CROSSING-VIS-01 confirma “la carretera está partida por el río”. Evidencia: [evidence/visual-tour-20261027/README.md:62](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:62); el siguiente paso exige vincular “la geometría real de Roadway de todos los puentes y las láminas 3D” [evidence/road-water-census-20261028/README.md:34](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\road-water-census-20261028\\README.md:34). Cambio: por cada contacto, clasificar vado, puente, alcantarilla, contacto tangencial, extremo o no resuelto; verificar superficie continua, apoyos, accesos y gálibo en compilado. Consumidor: recorrido geométrico independiente desde Roadway y agua 3D. Positivo: cadena 49/arista 301 queda clasificada con evidencia. Negativo: “todos los puentes de la lista pasan” no puede cerrar un contacto sin puente. Dependencias: RoadB2 y censo de contactos. Riesgo: confundir contacto con cruce exigible. Coste: alto. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-08",
+      "unit": "Q06",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-08 — Puentes como sistema eje-accesos-soporte-gálibo-conducción.** Dominio: puentes. Problema: NARVA-VIS-02 es puente desalineado; medir sólo pose de pieza no prueba empalmes. Evidencia: validar “trazado de carretera, tangentes y continuidad de ambos accesos, posición y orientación en el WRP desplegado, soporte, gálibo, navegación y conducción” [evidence/visual-tour-20261027/README.md:23](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:23); RoadB2 advierte “no accesos/apoyo/conducción observados” [evidence/road-b2-recipe-20261029/README.md:13](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\road-b2-recipe-20261029\\README.md:13). Cambio: validador por puente completo y generador que ajuste accesos antes que la pieza central. Consumidor: perfil longitudinal/transversal y paso de vehículo/barco cuando aplique. Positivo: desalineación real rechaza por tangente o escalón. Mutante: puente centrado pero con acceso quebrado debe fallar. Dependencias: COB-07. Riesgo: mover apoyos protegidos; requiere excepción si ocurre. Coste: medio-alto. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-09",
+      "unit": "Q15",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-09 — Consumidores jugables finales: barco, vehículo y peatón.** Dominio: navegación/conducción/navmesh. Problema: P9 exige “paso real de embarcación por cauce y puente” y P11 validar con vehículos vanilla a distintas velocidades [product-spec.md:15](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:15). B3G2 mantiene RH y agua fallando y “Bullet sigue sin calibración” [evidence/b3g2-native-pair-20261029/README.md:5](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\b3g2-native-pair-20261029\\README.md:5). Cambio: batería pequeña de recorridos reales en corredores representativos y en todos los cruces navegables/conducibles reparados. Consumidor: motor, separado del generador geométrico. Positivo: geometría PASS pero barco encallado no cierra. Negativo: no fijar oleaje ni anchuras nuevas sin decisión; P9 no autoriza máximo de oleaje [product-spec.md:15](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:15). Dependencias: COB-04, COB-07, COB-08. Riesgo: coste de sesiones nativas. Coste: alto. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-10",
+      "unit": "Q15",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-10 — Colisión y navmesh como delta obligatorio tras cada reparación.** Dominio: colisión/navegación IA. Problema: reparar terreno o colocar modelos sin regenerar navegación deja mundo visualmente distinto del caminable. Evidencia: P10 ordena posponer población y advierte que “después del mapeado habrá que regenerar y validar de nuevo la navmesh” [product-spec.md:16](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:16). Cambio: cada delta de relieve/agua/carretera/puente/vegetación arrastra lista de consumidores afectados y su estado. Consumidor: muestreo de conectividad peatonal y vehicular entre riberas, accesos y claros. Positivo: puente visual con navmesh rota se detecta. Mutante: cambiar sólo textura no debe exigir falsa regeneración si el delta lo prueba. Dependencias: COB-01. Riesgo: coste de regeneración global; acotar por sectores con bordes auditados. Coste: medio. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-11",
+      "unit": "Q13",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-11 — Vegetación por bioma integrado, no sólo soporte y distancia al agua.** Dominio: bosque/rocas/vegetación. Problema: el gate actual es “support/water-clearance… not the complete forest or aesthetic gate” [tools/vegetation/review_visual_forest_support_v31.py:1](${BUILD_ROOT}\\council-expanded-20261029\\tools\\vegetation\\review_visual_forest_support_v31.py:1); el bosque tiene sólo LOCAL_VISUAL_OK [evidence/visual-tour-20261027/README.md:66](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:66). P13 pide mosaico denso/claros y contraste desde jugador, accesos, colisiones/navmesh y rendimiento [product-spec.md:19](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:19). Cambio: colocación por pendiente, humedad, distancia a orilla/carretera, claros de acceso y agrupación por especies; prohibido podar para obtener PASS. Consumidor: densidad efectiva por sector, oclusión de caminos y paso peatonal. Positivo: reserva densa sin árboles en cauce ni muralla uniforme. Negativo: retirar árboles conflictivos sin registrar causa debe invalidar la comparación. Dependencias: COB-02, COB-10, COB-14. Riesgo: rendimiento del sector denso. Coste: medio-alto. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-12",
+      "unit": "Q14",
+      "status": "INVESTIGACION_DIFERIDA",
+      "reason": "Auditar objetos existentes permitido; población nueva y colocación quedan tras P10.",
+      "original": "**COB-12 — Rocas, edificios y props con huella, acceso y contexto.** Dominio: población/props. Problema: colocar por punto válido puede romper orillas, accesos, vistas o jugabilidad aunque la instancia sea legal. Evidencia: P6 exige inventario y medidas reales antes de colocar [product-spec.md:12](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:12); P10 pospone población tras terreno/navegación [product-spec.md:16](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:16). Cambio: [DESIGN] colocación por huella completa, pendiente bajo huella, puerta/acceso, distancia a Roadway/agua, no invasión de gálibos y lectura visual desde rutas. Consumidor: colisión, navmesh y silueta final. Positivo: edificio no bloquea acceso a puente. Mutante: origen en seco pero huella sobre agua o carretera debe fallar. Dependencias: inventario vanilla medido. Riesgo: anticipar fase prohibida por P10 si se ejecuta antes de cerrar base. Coste: medio. Tipo: INVESTIGAR.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-13",
+      "unit": "Q20",
+      "status": "DIFERIDA_PRODUCTO",
+      "reason": "P15 explícitamente futuro. No reservar corredor inventado ni congelar terreno por esta propuesta.",
+      "original": "**COB-13 — Ferrocarril: reservar corredor y cruces, no construir todavía.** Dominio: ferrocarril. Problema: P15 pide red futura y tramo de San Petersburgo real, pero declara “Alcance futuro: no ejecutar ahora” [product-spec.md:21](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:21). Cambio: [DESIGN] sólo reserva analítica de corredor, cruces con agua/carretera y gálibos, para que carreteras y relieve no lo bloqueen. Consumidor: intersecciones con censos COB-07 y contornos COB-02. Positivo: un puente carretero nuevo no invade el futuro paso ferroviario crítico. Negativo: ninguna vía física ni estación se coloca en esta fase. Dependencias: decisión de corredores cuando toque. Riesgo: congelar en exceso territorio jugable. Coste: bajo-medio. Tipo: DECISION_USUARIO.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-14",
+      "unit": "Q16",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-14 — Rendimiento comparado por sectores y presupuestos de instancias.** Dominio: rendimiento servidor/cliente. Problema: P7 exige A/B contra Chernarus con misma versión/hardware/escenas [product-spec.md:13](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:13); RAM está “INCONCLUSIVE_INTERRUPTED” con dos de seis mediciones [evidence/performance/kit7-nav8load1-ram-interrupted-20261027/README.md:3](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\performance\\kit7-nav8load1-ram-interrupted-20261027\\README.md:3). Cambio: mapa de coste por sector —instancias, triángulos, materiales, agua, densidad forestal— y bloque A/B nuevo completo en escenas equivalentes: bosque denso, San Petersburgo, costa, interior vacío. Consumidor: frame times, RAM/VRAM y carga servidor por separado. Positivo: una mejora visual que dispara el sector denso se localiza. Negativo: mediana con una muestra por mundo no puede dar PASS. Dependencias: COB-11. Riesgo: comparar escenas no equivalentes. Coste: alto. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-15",
+      "unit": "Q18",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-15 — Reparación por clases con delta y recenso total del universo.** Dominio: generación/reproducibilidad. Problema: arreglos locales repetidos no prueban ausencia de equivalentes. Evidencia: el encargo es “detectar y reparar procedimentalmente TODOS los casos equivalentes” [evidence/visual-tour-20261027/README.md:9](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:9) y tras corregir “regenerar y censar TODO el universo aplicable” [evidence/visual-tour-20261027/README.md:25](${BUILD_ROOT}\\council-expanded-20261029\\evidence\\visual-tour-20261027\\README.md:25). Cambio: cada clase —L de orilla, lecho expuesto, zigzag, cruce roto, relieve áspero— genera delta identificado, lista de afectados y recenso completo antes/después. Consumidor: comparación de censos y regresiones reales. Positivo: reparar Narva no puede degradar otra costa sin aparecer. Mutante: cambiar etiquetas o controles sin delta geométrico no altera el estado. Dependencias: COB-01 a COB-08. Riesgo: regeneraciones caras. Coste: medio. Tipo: TECNICA.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-16",
+      "unit": "Q20",
+      "status": "DIFERIDA_PRODUCTO",
+      "reason": "Auditoría visual de recorridos permitida en Q19; densidad urbana/búnker/economía y nuevos criterios de jugabilidad requieren alternativas concretas posteriores.",
+      "original": "**COB-16 — Composición Este/Oeste, hitos y líneas de visión jugables.** Dominio: visual/jugabilidad/lore. Problema: un mapa técnicamente continuo puede quedar homogéneo o ilegible: Narva/frontera, reserva, San Petersburgo y occidente necesitan roles espaciales sin inventar densidad urbana ni búnker, no decididos [product-spec.md:23](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:23). P12 permite relieve selectivo midiendo “accesos, cobertura y líneas de visión” [product-spec.md:18](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:18). Cambio: [DESIGN] auditoría de recorridos Este-Oeste y norte-sur: hitos visibles, cuellos, refugios, exposición en cruces, contraste de biomas y tiempos a pie/vehículo/barco. Consumidor: rutas jugables y capturas comparables a escala de jugador. Positivo: un cruce válido pero suicida o invisible se marca como problema de diseño, no de geometría. Negativo: no convertir preferencia estética en umbral numérico aprobado sin decisión. Dependencias: base P10 cerrada por sectores. Riesgo: subjetividad; separar hecho observado de recomendación. Coste: medio. Tipo: DECISION_USUARIO.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "MUSE-17",
+      "unit": "Q14",
+      "status": "INVESTIGACION_DIFERIDA",
+      "reason": "P6 vanilla primero y procedencia/licencia; no incorporar mods por parecido.",
+      "original": "**COB-17 — Investigación explícita de mods hermanos antes de reinventar.** Dominio: reutilización. Problema: la cápsula no incorpora código hermano; no debe darse por ausente ni inventarse una solución externa. Evidencia: restricción de la petición actual; sin fuente primaria leída adicional, queda como [HIPOTESIS] de reutilización. Cambio: inventario investigado de técnicas o assets compatibles en licencia, escala, colisión y rendimiento, con prototipo comparado contra vanilla. Consumidor: misma batería Baltic, no capturas del mod origen. Positivo: una pieza o patrón hermano sólo entra si supera Roadway, agua y rendimiento locales. Negativo: parecido visual sin colisión/medidas no cuenta. Dependencias: licencias y procedencia P8 [product-spec.md:14](${BUILD_ROOT}\\council-expanded-20261029\\product-spec.md:14). Riesgo: dependencia y identidad visual ajena. Coste: medio. Tipo: INVESTIGAR.",
+      "source": "lanes\\muse\\response.md",
+      "source_sha": "628cc3905dd1f91188d9e1ef9fd82e1206ae0a36ad09b6041f5c29f23b4d6a18"
+    },
+    {
+      "id": "GROK-01",
+      "unit": "Q01",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C01.** Dominio: adjudicación. Problema: no se distingue ausencia de detección, hallazgo sin reparar, contexto sin foto y estructura diseñada. Evidencia: `visual-tour/README.md:16-17, 50-52`; `native-shore/README.md:22-23, 32-37`. Cambio: validador sobre artefactos ya guardados; el generador no se toca. Consumidor: relee geometría y emite `UNDETECTED`, `DETECTED_UNREPAIRED`, `UNCONFIRMED_CONTEXT`, `DESIGNED_EXCEPTION` o `DEGENERATE`. Positivo: una recta o escalera que `route_screen` ya puede marcar y que sigue en el mundo queda `DETECTED_UNREPAIRED`. Mutante: borrar la etiqueta del informe y conservar la geometría sigue en rechazo. Dependencias: censos publicados, sin relanzarlos. Riesgo: asociar la foto a la cadena vecina. Coste: bajo. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-02",
+      "unit": "Q03",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C02.** Dominio: lecho, orilla y máscara. Problema: Visual coincidente con Geometry no integra el lecho; KIT118-VIS-01 y CONT65-VIS-01 siguen abiertos y el contorno nativo los deja sin evaluar. Evidencia: `visual-tour/README.md:33-44`; `plans/ev112-visual-geometry-reassessment-20261028.md:16-19, 68-69`; `native_shore_census_ev112.py:110`. Cambio: validador de la envolvente compilada, perfiles laterales y silueta a varias alturas; sin materializar MLOD. Consumidor: distinto del ensamblador de cadenas nativas. Positivo: anillo visual por encima del terreno circundante, con la lámina por debajo, falla. Mutante: bajar solo el eje, o solo la colisión, sigue en fallo. Dependencias: C01 y el diferido del plan (`plan:7-13`). Riesgo: mover XZ o agua para esconder el borde. Coste: alto. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-03",
+      "unit": "Q02B",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C03.** Dominio: contornos de río, mar y charca. Problema: faltan L/U abiertas, recta larga troceada y radio constante; el cierre de cadena no se evalúa. Evidencia: `shape_patterns_ev112.py:11-19, 38-72`; `native_shore_census_ev112.py:78-90`; `visual-tour/README.md:13-16, 21-24, 68-70`; correlatos 292 y 769 en `native-shore/README.md:32-44`. Cambio: [DESIGN] detector multiescala e invariante a la teselación, con registro de obra diseñada; umbral nuevo solo tras calibrarlo con el corpus real, nunca como número ya aprobado. Consumidor: independiente de Douglas-Peucker. Positivo: lengua estrecha y rectas del tipo 769 producen hallazgo. Mutante: subdividir una recta bajo 60 m, o sustituir la escalera por arcos iguales, sigue en hallazgo; un círculo etiquetado como obra no falla solo por ser círculo. Dependencias: C01 y C09. Riesgo: marcar canales reales de San Petersburgo. Coste: alto. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-04",
+      "unit": "Q05",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "Censo de contactos no cuenta puentes; vado intencional necesita referente de producto, no etiqueta oportunista para aprobar.",
+      "original": "**C04.** Dominio: carretera, puente y acceso. Problema: CROSSING-VIS-01 es continuidad rota confirmada; la ausencia de puente es hipótesis. 770 contactos no son 770 puentes. Evidencia: `visual-tour/README.md:54-62`; `road-water/README.md:3-8, 16-19, 34-38`; `product-spec.md:11, 17`; `evidence/road-b2-recipe-20261029/README.md:13-18`. Cambio: clasificar cada contacto del censo ya hecho contra Roadway y extremos compilados: vado registrado, paso continuo, desalineación, ancho no medido u omisión. Sin colocar piezas. Consumidor: independiente de la lista de puentes y del eje. Positivo: eje que muere en el agua sin superficie continua falla aunque exista un puente en una lista. Mutante: un puente cuyo identificador pasa y otro contacto sigue abierto mantiene el fallo global. Dependencias: C01; B3 de receta sigue sin autoría aislada. Riesgo: inventar el número de puentes, que no está decidido (`product-spec.md:23`). Coste: alto. Tipo: TECNICA, y DECISION_USUARIO para vados intencionados.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-05",
+      "unit": "Q06",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "No trasplantar join30deg/0.5m a accesos vehiculares: son umbrales del screen de ejes. P11 exige consumidor propio sin relajar límites de rasante existentes.",
+      "original": "**C05.** Dominio: puentes ya colocados. Problema: NARVA-VIS-02 pide eje, empalmes y accesos antes de girar o desplazar. `join_screen` es eje local y no infiere agua ni receptor. Evidencia: `visual-tour/README.md:6, 23`; `shape_patterns_ev112.py:75-91`; `tools/quality/screen_shapes_ev112.py:104-110`; `product-spec.md:15, 17`. Cambio: validador de pose WRP, tangente de ambos accesos, soporte y gálibo con las tolerancias ya escritas (`join_turn_deg` 30, `join_gap_m` 0,50, `pose_tolerance_m` 0,001). Consumidor: distinto de la presencia del objeto. Positivo: un acceso quiebra la tangente y falla. Mutante: corregir un acceso y romper el otro, o invadir el corredor navegable de 24 m ya decidido, falla. Dependencias: C04. Riesgo: mover apoyos. Coste: medio. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-06",
+      "unit": "Q03",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C06.** Dominio: extremo de lecho contra carretera. Problema: KIT118-VIS-02 exige los dos extremos completos, no el centro; su agua 3D no está en el dominio nativo y el contacto nativo próximo a la parada está a 1.086 m. Evidencia: `visual-tour/README.md:34-36`; `road-water/README.md:19`; `screen_shapes_ev112.py:104-109`. Cambio: validador de volumen de ambos extremos contra el corredor Roadway. Consumidor: independiente del censo H−W. Positivo: tapa que solapa calzada falla. Mutante: acortar el eje muestreado y dejar la tapa fuera de la muestra sigue en fallo. Dependencias: C02 y C04. Riesgo: borrar un empalme legítimo. Coste: medio. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-07",
+      "unit": "Q11",
+      "status": "INVESTIGACION_APROBADA",
+      "reason": "Dos síntomas no demuestran causa común. Comparar ambos sitios y capas antes de algoritmo compartido.",
+      "original": "**C07.** Dominio: generación del lecho. Problema: el mismo síntoma en dos cauces no prueba una causa común. El NPZ cambia 48.982 alturas y aun así 61.506 vértices quedan sobre el terreno nativo. Evidencia: `visual-tour/README.md:40-44`; `native-shore/README.md:57-62`; `plan:87-89`. Cambio: [HIPOTESIS] diff por sitio y por LOD antes de un generador compartido. Consumidor: falla si solo un sitio mejora. Positivo: ambos lechos salientes fallan. Mutante: reparar KIT118 y dejar el cauce 65, o mejorar una energía de ajuste con la silueta igual, no es aceptación. Dependencias: C02. Riesgo: tomar el piloto offline por el mundo visitado. Coste: medio. Tipo: INVESTIGAR.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-08",
+      "unit": "Q12",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C08.** Dominio: relieve multiescala. Problema: RELIEF-EAST-VIS-01 es un contorno sin suavizar, no un pico; el `native_spike` de la parada no está ligado al lado señalado. NARVA-VIS-01 es la L delante de la presa. Evidencia: `product-spec.md:18, 20`; `visual-tour/README.md:66-70`; `native-shore/README.md:37-44, 83-85`; `shape_patterns_ev112.py:15, 23`. Cambio: banda de margen de agua a varias longitudes de onda, fuera de la plantilla local de pirámide. El generador de la charca oriental espera guards de agua, topología y vecindad. Consumidor: independiente del censo de prominencia. Positivo: el contorno 769 sigue en hallazgo aunque el pico local desaparezca. Mutante: suavizar solo la celda del pico, o entrar en la máscara de Narva, falla el guard. Dependencias: C03 y C09. Riesgo: agua indeseada en bajos si se toca la lámina. Coste: alto. Tipo: TECNICA; DECISION_USUARIO si la L no se separa de los apoyos de la presa.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-09",
+      "unit": "Q08",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "Clasificar discontinuidades sin soldar ni imponer salto cero; campos de agua pueden tener semántica distinta.",
+      "original": "**C09.** Dominio: lámina y máscara. Problema: cinco discontinuidades hasta 1,0646 m, caras H==W, dos segmentos nulos, una cadena degenerada y 65 saltos de agua entre celdas siguen sin adjudicación. Evidencia: `native-shore/README.md:16-20`; `road-water/README.md:14`; `road_water_contacts_ev112.py:54-56, 100-107`; `product-spec.md:15, 20`. Cambio: clasificar cada caso como límite de máscara, sliver incierto o rotura de lámina, sin soldar y sin tolerancia nueva. Consumidor: el residuo baricéntrico ya exigido, más el corredor navegable distinto del arroyo. Positivo: un desdoble que cruza un corredor P9 queda bloqueado como no adjudicado. Mutante: soldar y borrar la fila del informe sigue visible para el consumidor de las dos posiciones. Dependencias: ninguna edición. Riesgo: cambiar topología de agua. Coste: medio. Tipo: TECNICA; DECISION_USUARIO solo si la rotura es real.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-10",
+      "unit": "Q13",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C10.** Dominio: árboles. Problema: el visto bueno de X8500/Z3500 es local. El gate de soporte no es estética, copa, navmesh ni rendimiento, y la franja 12282–12288 queda desconocida. Evidencia: `tools/vegetation/review_visual_forest_support_v31.py:1-5, 51, 99-102, 134`; `product-spec.md:19`; `visual-tour/README.md:64-66`. Cambio: consumidores separados de contraste entre biomas, colisión de tronco y densidad del sector más denso. Sin podar ni reetiquetar. Consumidor: el radio de prueba es el `base_radius_plan` del modelo. Positivo: tronco sobre agua sigue en fallo. Mutante: subir el origen para cumplir 0,005 m, o encoger el radio solo en el test, falla. Dependencias: P10 aplaza replantar. Riesgo: podar para acercar la RAM a Chernarus. Coste: medio. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-11",
+      "unit": "Q14",
+      "status": "INVESTIGACION_DIFERIDA",
+      "reason": "Auditar existentes; no escalar San Petersburgo ni poblar antes de P10.",
+      "original": "**C11.** Dominio: rocas, edificios, props y canales de San Petersburgo. Problema: P3 pide canales y cruces a escala de juego en la huella de 4,81 × 3,83 km, sin escala local; P6 pide inventario medido antes de colocar. El lector de agua solo ata matrices de lecho. Evidencia: `product-spec.md:9, 12, 23`; `native-shore/README.md:29`; `screen_shapes_ev112.py:42-67`. Cambio: inventario de lo ya colocado contra gálibo navegable; props nuevos después de medir vanilla. Cualquier patrón de otro mod es investigación explícita, ni incorporación ni ausencia supuesta. Consumidor: un PASS de nombres de agua no cubre un edificio dentro del corredor. Positivo: prop que invade el gálibo P9 falla. Mutante: filtrar el objeto fuera de los prefijos de agua y declarar cobertura falla. Dependencias: P6 y P10. Riesgo: escalar San Petersburgo. Coste: medio. Tipo: INVESTIGAR.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-12",
+      "unit": "Q20",
+      "status": "DIFERIDA_PRODUCTO",
+      "reason": "No inferir geometría ferroviaria no decidida. P15 permanece futuro.",
+      "original": "**C12.** Dominio: ferrocarril. Problema: P15 es circunvalación, radiales y estación real de San Petersburgo, y el texto ordena no ejecutarlo. El censo de carreteras no reserva ese corredor. Evidencia: `product-spec.md:21`. Cambio: guarda de no-ejecución para que una reparación de carretera o relieve no ocupe el tramo real ya transformado; el resto del anillo sigue sin geometría decidida. Consumidor: cero objetos ferroviarios en el WRP no es PASS. Positivo: una edición que ciega el cruce ferroviario de un cauce navegable queda bloqueada. Mutante: marcar «sin ferrocarril» como requisito cumplido falla. Dependencias: decisión de corredores todavía abierta. Riesgo: diseñar de hecho la red. Coste: bajo. Tipo: DECISION_USUARIO.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-13",
+      "unit": "Q15",
+      "status": "INVESTIGACION_APROBADA",
+      "reason": "P9 sí menciona margen para barcos medianos, pero no acredita una prueba ni máximo de oleaje. Mantener contrato vigente y verificar APIs antes de telemetría.",
+      "original": "**C13.** Dominio: colisión, navmesh, vehículos y barcos. Problema: P9 exige paso de lancha por cauce y puente, más cruce terrestre; no es oleaje ni barco mediano. P11 exige vehículos a distintas velocidades. Bullet sigue sin capa calibrada y la causa de los contactos restantes es UNPROVEN. Evidencia: `product-spec.md:15-17`; `b3g2/README.md:3-8, 23-24`; `road-b2/README.md:15`; `visual-tour/README.md:48`. Cambio: no reabrir la pareja consumida ni mover tolerancias. Tras C04–C06, protocolo de telemetría de vehículo y lancha, y navmesh regenerada cuando toque P10. Consumidor: distinto del DumpStack golden y de los 607 controles. Positivo: RH349/350/1425 y agua723 siguen abiertos. Mutante: quitar ese contacto del conjunto, o pasar la lancha solo por el eje, no cierra P9. Dependencias: geometría del paso. Riesgo: tolerancia nueva. Coste: alto. Tipo: INVESTIGAR.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-14",
+      "unit": "Q16",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C14.** Dominio: rendimiento frente a Chernarus. Problema: hay dos muestras cerradas y la tercera no arrancó. Báltico 4254,57 / 4649,21 MiB frente a 3349,37 / 3733,76 MiB no autoriza un PASS. El bloque no se rellena. Evidencia: `product-spec.md:13`; `evidence/performance/kit7-nav8load1-ram-interrupted-20261027/README.md:3-20`. Cambio: bloque nuevo íntegro, con frame time, VRAM y carga de servidor por separado, e incluyendo el sector forestal más denso. Consumidor: una pasada ausente es INCONCLUSO. Mutante: promediar las muestras viejas con las nuevas, o podar árboles para bajar RAM, no es la misma escena. Dependencias: plan revisado y lease libre. Riesgo: publicar paridad con dos medianas. Coste: alto. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-15",
+      "unit": "Q18",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C15.** Dominio: generación y deltas. Problema: el encargo es corregir la clase entera, no el punto fotografiado. P8 exige transformación, excepción, delta y resultado. Evidencia: `visual-tour/README.md:9, 17, 25`; `product-spec.md:14`; `plan:72-81, 89`. Cambio: cada reparación futura registra clase, invariantes y universo re-censado. Consumidor: el mundo actual debe fallar por el motivo adjudicado en C01. Mutante: arreglar solo el entorno de la foto y dejar otra escalera inyectada falla. Dependencias: C01, C02, C03 y C04. Riesgo: cambiar de paso recorte, orientación, escala, reservas, extremos, receptores, agua o apoyos. Coste: alto al ejecutar; bajo al especificar. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-16",
+      "unit": "Q08",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C16.** Dominio: Este, Oeste y lore. Problema: Narva necesita ambas riberas y un cruce jugable; la reserva es punto clave; búnker, densidad urbana y economía militar no están decididos. La protección de Narva impide aplicar el suavizador existente a la L. Evidencia: `product-spec.md:10, 19, 23`; `native-shore/README.md:37-39`. Cambio: ledger espacial que todo generador declara al cruzar presa, reserva, acercamiento de San Petersburgo, islas y corredor oeste. Consumidor: menos escaleras dentro de la máscara no es PASS. Mutante: suavizado global de Narva falla aunque mejore el screen. Dependencias: C08. Riesgo: borrar identidad al naturalizar la presa. Coste: bajo. Tipo: TECNICA, con DECISION_USUARIO si hace falta una excepción local de apoyos.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "GROK-17",
+      "unit": "Q01",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**C17.** Dominio: cobertura de la revisión humana. Problema: continuar el mapa no revisa C1 (6789/10357). Ochenta de 108 objetos a 55 m no son inventario, y el rayo dio en el personaje. Evidencia: `visual-tour/README.md:58, 74-78`; `road-water/README.md:39`. Cambio: mapa de estados visitado, local, rechazado y sin revisar, obligatorio en cualquier informe posterior. Consumidor: un documento de aceptación sin C1 en `SIN_REVISAR` se rechaza. Mutante: copiar el `LOCAL_VISUAL_OK` del bosque a C1 falla. Dependencias: ninguna. Riesgo: bajo. Coste: bajo. Tipo: TECNICA.",
+      "source": "lanes\\grok\\response.md",
+      "source_sha": "3cba5ff8c22f646fae602c2552a8fa0eb36e2876417aaf382ff8cf3a672c656c"
+    },
+    {
+      "id": "ARGON-01",
+      "unit": "Q01",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "La cámara libre puede carecer de pose registrada. Frustum sólo cuando se acredite correspondencia; no convierte correlatos292/769 en localización exacta.",
+      "original": "**COB-01** | **Dominio:** Generación, deltas y atribución visual | **Tipo:** `TECNICA` | **Coste relativo:** Bajo | **Riesgo:** Bajo\n- **Problema observable:** Las observaciones humanas quedan como `UNCONFIRMED_CONTEXT_ONLY` porque la posición del personaje no localiza el defecto (`ROAD49-RIVER-VIS-01`, `RELIEF-EAST-VIS-01`, `CROSSING-VIS-01`) y no separa «no detectado» de «detectado sin reparar» o «bloqueado por máscara».\n- **Evidencia:** `evidence/visual-tour-20261027/README.md:17,52,56-58,68-70`; `tools/quality/native_shore_census_ev112.py:134-151`.\n- **Cambio (generador/validador/colocación):** Sustituir la búsqueda radial en `contexts` por un validador de frustum desde pose/orientación archivadas de cámara (excluyendo el volumen del avatar) contra terreno, agua nativa y todos los modelos `0WZD`, cruzando impactos con censos y máscaras para etiquetar `NO_DETECTADO`, `HALLAZGO_SIN_REPARAR` o `BLOQUEADO_MASCARA`.\n- **Consumidor independiente:** Proyector de siluetas en plano de imagen contrastado contra las capturas/metadatos locales de visita sin reutilizar `contexts`.\n- **Positivo y mutante/negativo:** *Positivo:* cámara en Narva y parada oriental recupera contornos 292 y 769 con su estado exacto de máscara. *Mutante/negativo:* colisionador del avatar delante de cámara o río fuera del cono visual es descartado.\n- **Dependencias:** Metadatos de `evidence/visual-tour-20261027` y WRP `Kit7Nav8Load1`.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-02",
+      "unit": "Q03",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-02** | **Dominio:** Lecho/orilla/agua y contornos compuestos 3D | **Tipo:** `TECNICA` | **Coste relativo:** Medio | **Riesgo:** Medio\n- **Problema observable:** Los lechos 3D sobresalen respecto al terreno y al agua (`KIT118-VIS-01`, `CONT65-VIS-01`), mientras `bed_effect` mide diferencia vertical incluso bajo terreno enterrado y el censo nativo ignora ocultación por modelos y crestas someras.\n- **Evidencia:** `evidence/visual-tour-20261027/README.md:21,33,42`; `evidence/native-shore-census-20261028/README.md:27,57-62`; `tools/quality/native_shore_census_ev112.py:98-118`.\n- **Cambio (generador/validador/colocación):** Evaluar la envolvente visible compuesta (máximo de terreno y modelos sólidos frente a agua nativa y láminas 3D) para extraer siluetas reales de ambas orillas, crestas someras en cortes de nivel cercanos al agua y prominencia/pendiente lateral donde el lecho emerge. En generación de lechos, abatir faldones secos exteriores por debajo del terreno circundante con transición tangente sin tocar la lámina húmeda.\n- **Consumidor independiente:** Muestreador de secciones transversales ortogonales sobre WRP + mallas MLOD/ODOL compiladas, independiente del optimizador NPZ.\n- **Positivo y mutante/negativo:** *Positivo:* cauce con bordes exteriores enterrados suavemente bajo terreno seco pasa. *Mutante/negativo:* `KIT118-VIS-01`, `CONT65-VIS-01` y un mutante con Visual=Geometry idénticos pero hombro saliente sobre terreno/agua fallan por exposición lateral.\n- **Dependencias:** Lectura completa de objetos `0WZD` y COB-06.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-03",
+      "unit": "Q02B",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-03** | **Dominio:** Contornos completos ríos/mar/charcas | **Tipo:** `TECNICA` | **Coste relativo:** Medio | **Riesgo:** Medio\n- **Problema observable:** `route_screen` simplifica polilíneas y solo detecta rectas largas, quiebros discretos, escaleras ortogonales y rectángulos cerrados; omite L/U abiertas (`NARVA-VIS-01`), empalmes recta-arco de radio constante (`NARVA-VIS-03`), zigzags oblicuos (`ROAD49-RIVER-VIS-01`), lenguas estrechas (`RELIEF-EAST-VIS-01`) y el giro de cierre (`closure_turn_evaluated=False`).\n- **Evidencia:** `evidence/visual-tour-20261027/README.md:5,7,13-15,22,50,70`; `tools/quality/shape_patterns_ev112.py:38-72`; `tools/quality/native_shore_census_ev112.py:78-80`.\n- **Cambio (generador/validador/colocación):** Incorporar un validador invariante a teselación parametrizado por longitud de arco (con índice modular en lazos cerrados) que mida espectro multiescala de curvatura firmada, mesetas de curvatura constante (círculos/arcos artificiales y saltos recta-arco), alternancia periódica de signo (zigzags no ortogonales), esquinas abiertas L/U y estrangulamientos por eje medial, separando estructuras antrópicas catalogadas (`DESIGNED_STRUCTURE` en canales P3 o presas) de riberas naturales.\n- **Consumidor independiente:** Ajustador de primitivas recta/arco/clotoide por longitud mínima de descripción sobre contornos compuestos COB-02.\n- **Positivo y mutante/negativo:** *Positivo:* meandro de curvatura continuamente variable y canal histórico catalogado en San Petersburgo se discriminan sin falso rechazo. *Mutante/negativo:* escalera con codos redondeados mediante arcos uniformes o ruido sub-celda falla por periodicidad macroaxial y mesetas de curvatura.\n- **Dependencias:** Censo nativo existente y COB-02.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-04",
+      "unit": "Q08",
+      "status": "INVESTIGACION_APROBADA",
+      "reason": "El usuario ya eligió mar hasta pie de presa con tierra sólo en apoyos laterales. No repetir alternativa estética; demostrar soporte separado antes de proponer delta protegido.",
+      "original": "**COB-04** | **Dominio:** Lecho/orilla/agua y máscaras | **Tipo:** `DECISION_USUARIO` | **Coste relativo:** Bajo | **Riesgo:** Medio\n- **Problema observable:** `shore_ramp_v31.base_protection` protege en bloque toda la máscara Narva, impidiendo corregir la L emergente delante de la presa (`NARVA-VIS-01`, contorno 292) y bordes regulares adyacentes (`NARVA-VIS-03`).\n- **Evidencia:** `evidence/native-shore-census-20261028/README.md:33-38,83-84`; `evidence/visual-tour-20261027/README.md:5,7`.\n- **Cambio (generador/validador/colocación):** Solicitar decisión acotada para escindir la máscara Narva en: (a) submáscara estructural estricta de cimientos/estribos de presa y puentes derivada de su huella 3D real (inmutable), y (b) subzona húmeda/somera residual editable bajo invariantes hidráulicos. *Alternativas concretas:* (1) sumergir el espolón residual en L bajo la lámina local conservando el pie de presa; (2) reperfilarlo como barra/orilla irregular emergente.\n- **Consumidor independiente:** Verificador de empotramiento 3D de todas las piezas de la presa (cero pérdida de soporte) + re-evaluación COB-03.\n- **Positivo y mutante/negativo:** *Positivo:* desaparecen los giros de 90°–105,59° del contorno 292 manteniendo intacto el contacto presa-terreno. *Mutante/negativo:* cualquier rebaje que alcance un triángulo portante de la presa es rechazado.\n- **Dependencias:** Huellas 3D de Narva en WRP y COB-06.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-05",
+      "unit": "Q09",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "Conservar correspondencia espacial de cuerpos/conexiones además del número; no editar XZ protegido ni 769 sólo por carecer de tres máscaras.",
+      "original": "**COB-05** | **Dominio:** Generación de contornos y deltas hidrográficos | **Tipo:** `TECNICA` | **Coste relativo:** Alto | **Riesgo:** Medio-Alto\n- **Problema observable:** Modificar solo Y de un kit MLOD no puede corregir siluetas angulosas en charcas/costas (`RELIEF-EAST-VIS-01`, contorno 769) ni trazados en zigzag (`ROAD49-RIVER-VIS-01`).\n- **Evidencia:** `plans/ev112-visual-geometry-reassessment-20261028.md:8-13,87-92`; `evidence/native-shore-census-20261028/README.md:40-44`.\n- **Cambio (generador/validador/colocación):** Reemplazar el suavizado local por optimización variacional de flujo de variación de curvatura sobre el campo `H-W` en dominios libres de máscara (contorno 769), sujeto a barreras duras de topología (sin fusionar el islote 772), extremos, receptores y gálibo P9 (24 m / fondo 1 m / calado 0,95 m). Si eliminar zigzags en ríos modulares (`ROAD49-RIVER-VIS-01`) exige reajustar XZ de piezas intermedias, emitir propuesta `DECISION_USUARIO` con delta aislado manteniendo fijos extremos, receptores y cruces.\n- **Consumidor independiente:** Verificador de invariantes topológicos (componentes secas/mojadas), conservación de receptores/extremos y sección navegable P9.\n- **Positivo y mutante/negativo:** *Positivo:* contorno 769 elimina codos agudos preservando separado el islote 772. *Mutante/negativo:* deformación que cierre el canal del islote, mueva un extremo o reduzca el corredor navegable bajo 24 m es rechazada.\n- **Dependencias:** COB-03 y, para tramos modulares XZ, autorización expresa.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-06",
+      "unit": "Q04",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "No una llamada física sobre receta offline: preparar/revisar WRP aislado, binarizar y vincular instancias antes de sonda. B3G2 no certifica por sí mismo pivotes de carreteras.",
+      "original": "**COB-06** | **Dominio:** Generación, WRP y colocación de modelos | **Tipo:** `TECNICA` | **Coste relativo:** Bajo | **Riesgo:** Bajo\n- **Problema observable:** En `RoadB2` permanecen sin adjudicar en motor las alternativas `RAW` frente a `ORIGIN` (`bounding_center` antes de rotar) y orden fila/columna, bloqueando validación exacta de puentes (`NARVA-VIS-02`) y huellas 3D.\n- **Evidencia:** `evidence/road-b2-recipe-20261029/README.md:3-8,17-18`; `evidence/b3g2-native-pair-20261029/README.md:9-15`.\n- **Cambio (generador/validador/colocación):** Adjudicar en una sola corrida nativa sobre las 3 instancias oblicuas cuya separación offline alcanza `10,77 m`, contrastando consultas físicas del arnés `B3G2` contra las 4 predicciones pre-registradas y congelando la transformación ganadora para todos los colocadores/validadores WRP.\n- **Consumidor independiente:** Lector nativo `B3G2` por `FileID` NTFS comparando impactos observados frente a las 24 huellas congeladas por hash.\n- **Positivo y mutante/negativo:** *Positivo:* una única hipótesis reproduce las superficies dentro de tolerancia de cuantización float32. *Mutante/negativo:* trasposición fila/columna u omisión de `bounding_center` diverge por metros y queda bloqueada en código.\n- **Dependencias:** Receta `RoadB2` y lector `B3G2` aprobados.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-07",
+      "unit": "Q05",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "La doble rodada no cubre toda huella ni accesos. No reutilizar chord0.03 como umbral universal de escalón; verificar su intención y consumidor P11.",
+      "original": "**COB-07** | **Dominio:** Carreteras/puentes/accesos | **Tipo:** `TECNICA` | **Coste relativo:** Medio | **Riesgo:** Medio\n- **Problema observable:** Existen carreteras partidas por ríos (`CROSSING-VIS-01` cerca de cadena 49 arista 301), puentes desalineados (`NARVA-VIS-02`), extremos de río solapando carretera (`KIT118-VIS-02`, fuera del censo de agua nativa) y el terraplén `c1` sin revisar.\n- **Evidencia:** `evidence/road-water-census-20261028/README.md:6-7,16-19,34-37`; `evidence/visual-tour-20261027/README.md:6,34,58-62,74`.\n- **Cambio (generador/validador/colocación):** Reconciliar el polígono 2D completo del corredor viario (ancho humano P5 + taludes, sin exclusiones de `verify_roads_v30.py`) contra agua nativa, láminas/lechos 3D y mallas `Roadway` de puentes/terraplenes (`c0`, `c1`). Clasificar cada contacto en paso continuo, puente desalineado (eje, tangente o rasante), cruce partido o intrusión lateral de cauce. En colocación, ajustar pose/accesos de puentes a la tangente de ambos estribos y retranquear caps secos fuera del corredor; si falta un puente nuevo no decidido (`product-spec.md:23`), elevar opciones de puente vanilla o desvío.\n- **Consumidor independiente:** Trazador de doble rodada paralela sobre las 124 cadenas exigiendo soporte seco o `Roadway` continuo sin escalones superiores a `chord 0.03`.\n- **Positivo y mutante/negativo:** *Positivo:* puente centrado con empalmes continuos en ambas riberas pasa. *Mutante/negativo:* `CROSSING-VIS-01`, `NARVA-VIS-02` y un cap de `kit118` que invade el carril sin tocar el eje central fallan con diagnóstico diferenciado.\n- **Dependencias:** COB-02, COB-06 y censo `road-water-census-20261028`.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-08",
+      "unit": "Q08",
+      "status": "INVESTIGACION_APROBADA",
+      "reason": "Rechazada imposición automática de salto cero y máximo de agua dinámica no aprobado. Clasificar cinco discontinuidades y65saltos con referente independiente primero.",
+      "original": "**COB-08** | **Dominio:** Lecho/orilla/agua y bajos P14 | **Tipo:** `TECNICA` | **Coste relativo:** Bajo | **Riesgo:** Medio\n- **Problema observable:** El censo descubrió 5 discontinuidades bajo la misma clave de arista (hasta `1,0646 m`), 65 saltos `WATER_STEP_AT_CELL_CUT`, 4 caras `H==W` y riesgo de agua intermitente en bajos (P14).\n- **Evidencia:** `evidence/native-shore-census-20261028/README.md:16-20`; `evidence/road-water-census-20261028/README.md:11`; `product-spec.md:20`.\n- **Cambio (generador/validador/colocación):** Imponer en generación de `footprint.npz` continuidad de cota de agua en toda arista interior compartida por caras mojadas o separación mediante cresta seca explícita entre láminas de distinto nivel, auditando además submuestreo interior a triángulos frente a envolvente dinámica de agua para eliminar rezumes no intencionados en depresiones secas sin drenar humedales P13.\n- **Consumidor independiente:** Verificador sobre los 8.380.418 triángulos que exige salto nulo de agua en aristas mojadas conectadas y francobordo positivo fuera de máscaras hídricas.\n- **Positivo y mutante/negativo:** *Positivo:* salto hidráulico de presa separado por dique seco cerrado y llanura baja seca entre vértices pasan. *Mutante/negativo:* arista mojada con salto de `1,06 m` o triángulo seco cuyo interior cae bajo agua dinámica es rechazado.\n- **Dependencias:** `footprint.npz` y perímetro de humedales/reserva P13.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-09",
+      "unit": "Q12",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-09** | **Dominio:** Relieve multiescala | **Tipo:** `TECNICA` | **Coste relativo:** Medio | **Riesgo:** Bajo\n- **Problema observable:** El detector piramidal (`pyramid_radius_cells=[2,4,8]` sin tope de pendiente base) solo detecta picos locales; omite facetas y transiciones ásperas de ladera a meso-escala como la zona oriental (`RELIEF-EAST-VIS-01`) o encuentros con relieve exagerado P12.\n- **Evidencia:** `evidence/visual-tour-20261027/README.md:66-70`; `tools/quality/shape_patterns_ev112.py:21-25`; `product-spec.md:18`.\n- **Cambio (generador/validador/colocación):** Añadir evaluación multiescala de curvatura media/gaussiana en múltiplos crecientes de la celda de 6 m más allá de 8 celdas, combinada con difusión anisótropa en tierra seca que suavice quiebros de pie de ladera y aristas facetadas preservando líneas de cresta y cotas de `plans/selective-relief.md`, corredores P11 y orillas.\n- **Consumidor independiente:** Analizador espectral de gradientes de terreno, pendientes de acceso peatonal y conservación de cuencas visuales desde cotas P12.\n- **Positivo y mutante/negativo:** *Positivo:* colina P12 con falda cóncava progresiva mantiene cota máxima y líneas de visión sin facetas. *Mutante/negativo:* cambio brusco de plano de ladera a escala media o suavizado isótropo que hunde la cima diseñada es rechazado.\n- **Dependencias:** Máscaras de `plans/selective-relief.md` y agua congelada.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-10",
+      "unit": "Q15",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "**COB-10** | **Dominio:** Colisión/navmesh/física nativa | **Tipo:** `INVESTIGAR` | **Coste relativo:** Medio | **Riesgo:** Medio\n- **Problema observable:** En `B3G2`, pese a corregirse `RV 700/723`, persisten fallos horizontales `RH349/350/1425` y `agua723`, Bullet sigue sin capa calibrada y la causalidad permanece `UNPROVEN`.\n- **Evidencia:** `evidence/b3g2-native-pair-20261029/README.md:4-7,35-36`.\n- **Cambio (generador/validador/colocación):** Investigar y calibrar las máscaras de colisión Bullet en un banco mínimo de piezas vanilla conocidas (terreno, agua, Geometry, Roadway) para aislar si `RH349/350/1425` y `agua723` provienen de filtro de capa, caras laterales ausentes/invertidas en LOD físico o huecos en costuras modelo-terreno; integrar después un gate de paridad Visual–Colisión–Navmesh tras cada regeneración P10.\n- **Consumidor independiente:** Trazador offline sobre LODs de colisión del PBO compilado confrontado contra logs nativos `B3G2`.\n- **Positivo y mutante/negativo:** *Positivo:* fixture vanilla reproduce exactamente impactos verticales y horizontales en motor y offline. *Mutante/negativo:* malla con LOD visual cerrado pero hueco lateral en colisión (`RV` pass, `RH` fail) o isla desconectada de navmesh bloquea aceptación.\n- **Dependencias:** Lector `B3G2` y COB-06.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "ARGON-11",
+      "unit": "Q20",
+      "status": "NO_EJECUTABLE_ENTREGA_TRUNCADA",
+      "reason": "Fragmento sin propuesta completa ni cierre. Además agua máxima de oleaje/barco mediano no está certificada; no derivar requisitos nuevos. No cuenta como voto.",
+      "original": "**COB-11** | **Dominio:** Vehículos/barcos/ferrocarril (P9, P11, P15) | **Tipo:** `TECNICA` | **Coste relativo:** Medio | **Riesgo:** Bajo\n- **Problema observable:** P9 carece de prueba de paso 3D bajo puentes con agua máxima y margen parametrizable de oleaje/barcos medianos; carreteras y terraplenes (`c0`, `c1`, carretera49) no tienen validación dinámica de conducción P11; y la futura red ferroviaria/estación de San Petersburgo (P15) necesita reserva geométrica previa sin infringir P10.\n- **Evidencia:** `product-spec.md:15-17,21`; `evidence/road-b2-recipe-20261029/README.",
+      "source": "lanes\\argon\\response.md",
+      "source_sha": "4d1db4f6508e7e1a948e97a7a5fdb287eed83ff51351020436875ada29fafe3a"
+    },
+    {
+      "id": "CHATGPT-01",
+      "unit": "Q01",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "1. CG01 / cobertura: matriz por región y fenómeno con universo independiente, medido/no evaluado/rechazado/aceptado y motivo. Evidencia screen_shapes:shape_axis_world declara proxy, native_shore:OBSERVATIONS contiene dominios no evaluados. Cambio: consumidor que cruza censos y regresiones humanas, sin convertir proximidad en asociación. Positivo cobertura completa; mutante elimina isla/modelo/cruce y debe bloquear. Técnica; coste medio; dependencia identidad de datos.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-02",
+      "unit": "Q02A",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "2. CG02 / costa: pantalla periódica de contornos cerrados, invariante a punto inicial, sentido y subdivisión. El plan geométrico §2a documenta cierre excluido. Control independiente segmentos/cadenas y curva analítica; mutante sitúa codo en la costura. Técnica; coste bajo; detección primero, sin tocar POLICY histórica.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-03",
+      "unit": "Q02B",
+      "status": "INVESTIGACION_APROBADA",
+      "reason": "Calibrar métricas multiescala con casos naturales/diseñados antes de umbrales; no prohibir círculos.",
+      "original": "3. CG03 / naturalidad: arcos uniformes, lenguas/entrantes y cambios de curvatura a varias escalas, evaluados con contexto. shape_patterns:route_screen cubre rectas/escaleras, no demuestra naturalidad. No prohibir toda curva regular. Calibrar positivos naturales y estructuras diseñadas frente a rechazos reales; mutantes círculos parciales/codos redondeados/zigzag no ortogonal. Investigar; coste medio; umbrales nuevos requieren evidencia previa.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-04",
+      "unit": "Q03",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "4. CG04 / silueta final: unir contorno nativo con superficies visibles de modelos, sin confundir terreno con render. Dos regresiones de lecho saliente. Censo independiente de caras/materiales/poses y secciones; controles charca oculta por modelo y costa visible sin modelo. Técnica; coste alto; frame ODOL/WRP verificado antes.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-05",
+      "unit": "Q11",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "5. CG05 / lechos: medir área, altura y continuidad de toda exposición y transición, no sólo centros o igualdad entre LOD. Mutante cambia vértice intermedio/extremo manteniendo centros. Consumo geométrico frente a terreno y agua; vista fija posterior. Técnica; coste medio; referente de agua independiente pendiente.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-06",
+      "unit": "Q05",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "6. CG06 / cruces: mantener descubrimiento desde intersecciones carretera-agua, luego cotejar TODOS los pasos construidos, no sólo puentes generados. road_water_contacts ya existe, extender ancho/huella real y accesos. Negativos puente omitido, giro, apoyo corto, dos pasos cercanos. Técnica; coste medio; no inventar centro por personaje.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-07",
+      "unit": "Q04",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "7. CG07 / vías: verificar transformaciones con identidad/90/grado-curva y controles asimétricos independientes antes de masificar; luego barrer toda huella. RoadB2 todavía cuatro hipótesis. Consumidor compilado más sonda mundo; mutante fila/columna u offset de centro. Técnica; coste medio; no nuevo permiso de producto.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-08",
+      "unit": "Q06",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "8. CG08 / accesos: continuidad de calzada, pendientes, peraltes, gaps, bordes y gálibo de ambas aproximaciones. Un puente alineado en el centro puede seguir incomunicado. Casos positivos en curvas/peraltes, negativo extremo flotante. Mecánica offline seguida vehículo real. Técnica; coste medio/alto; umbrales según actor y producto, no bbox como ancho útil.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-09",
+      "unit": "Q09",
+      "status": "INVESTIGACION_APROBADA",
+      "reason": "Preparar optimizador acotado, pero primero referente independiente y conjunto factible. Devuelve inviabilidad, nunca relaja protecciones.",
+      "original": "9. CG09 / reparación: optimizador conjunto restringido por máscaras/protecciones, agua, receptores, anchura/clase y continuidad de derivadas; no añadir ruido aleatorio ni círculos uniformes. Mantener objetivo de desplazamiento mínimo y devolver inviabilidad con restricciones activas. Positivo solución conocida; negativo restricciones incompatibles. Diseño/investigar; coste alto; no autoriza cambiar XZ protegido.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-10",
+      "unit": "Q12",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "10. CG10 / relieve: curvatura/normal multiescala y triangulación nativa, distinguiendo picos, crestas, pozos y rectángulos. Probar relieve diseñado, colina suave y arista triangulada rotada. Consume altura compilada además de NPZ; reparación localizada con frontera suave. Técnica dentro de protecciones; coste medio.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-11",
+      "unit": "Q08",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "11. CG11 / topología: preservar correspondencia espacial de componentes, extremos y conexiones; el mero recuento permite una desaparición y una creación compensatorias. Mutante rompe una conexión y crea otra conservando conteos. Consumidor separado y IDs geométricos. Técnica; coste medio.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-12",
+      "unit": "Q13",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "12. CG12 / colocación: interacciones de árboles/rocas/props/edificios contra agua, vías, apoyos, accesos y entre sí, con clases y reglas explícitas. No usar sólo centroides ni colisión AABB como aceptación final. Positivo copa sobre carretera sin tronco invasor, negativo tronco invadiendo. Técnica; coste alto; preservar reserva y variación de biomas.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-13",
+      "unit": "Q13",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "13. CG13 / soporte vegetal: dominio continuo del apoyo y pendiente alrededor de tronco, no sólo una muestra puntual; vegetación inclinada/diseñada diferenciada. SAMPLED_BOUNDARY_CLEAR no acredita disco completo. Negativo pequeño pozo entre muestras. Técnica; coste medio; sin poda para ocultar defecto.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-14",
+      "unit": "Q18",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "14. CG14 / estabilidad: regeneración determinista e incremental con semillas por identidad estable y máscaras de cambio; comparar TODO complemento protegido. Mutante ordena input o añade objeto distante y no debe mover región ajena. Técnica; coste medio; no nueva capa abstracta si ya hay herramientas que lo hacen.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-15",
+      "unit": "Q17",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "15. CG15 / adversarial: positivos y mutantes no triviales generados en corrida; rotaciones/reflejos/reparametrización/resampling equivalentes, negativos NaN, vacío, omisiones, duplicados, signos y origen. Pruebas del consumidor contra referente analítico/real. Técnica; coste bajo; no declarar poder por número de tests.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-16",
+      "unit": "Q01",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "16. CG16 / evidencias: diferenciar aprobación del artefacto, criterio físico, cobertura espacial y aceptación visual. Cada defecto debe enlazar fuente→candidato→compilado→desplegado→observación, y estado no observado bloquea aceptación de esa dimensión. Técnica; coste bajo; evita reabrir recibos históricos o promocionar síntesis como reparación.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-17",
+      "unit": "Q16",
+      "status": "APROBADA_TECNICA",
+      "reason": "Fundamento confirmado en las fuentes fijadas de la cápsula; pasa al plan con descubrimiento, pruebas independientes y puertas antes de modificar mapa. No es aceptación del resultado.",
+      "original": "17. CG17 / rendimiento: terminar A/B RAM bloqueado con escenas/carga/versión equivalentes; medir picos/colas/percentiles y estado inicial. Después sectorización/LOD/visibilidad/densidad y comparación de apariencia. No promediar dos medidas incompletas ni inferir 100 jugadores. Técnica; coste alto; benchmark separado de aceptación geométrica.",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    },
+    {
+      "id": "CHATGPT-18",
+      "unit": "Q19",
+      "status": "APROBADA_CON_CORRECCION",
+      "reason": "Atlas offline y cámaras sólo por rutas autorizadas; camera_set continúa vetado.",
+      "original": "18. CG18 / revisión visual: atlas por tiles más vistas a suelo/media/alta altura, cámaras repetibles cuando estén permitidas, prioridad por severidad y cambios; incluir muestras aleatorias fuera de hotspots. Medidas perceptuales no deben aceptar por sí solas. Técnica/investigar; coste medio; camera_set vetado y usuario no disponible ahora.\n\nTres acciones: cerrar costura de contornos y conservar naturaleza diagnóstica; unir hallazgos y cobertura para que ningún omitido desaparezca; resolver el pivote vial aislado y comprobar accesos antes de colocación global. No ejecutar suavizado masivo ni repoblar ni desplegar un mapa nuevo por la votación del council.\n\nLO_NO_VERIFICADO: APIs nuevas, identidad del modelo exacto de esta sesión (asiento ChatGPT nativo confirmado por runtime), causalidad física global, contornos del render con ola, ancho funcional por clase, geometría real de todos los apoyos y rendimiento con actores. Todas las propuestas son diseño hasta adjudicación y tests; citas por símbolo remiten a los extractos comunes, no a código nuevo ejecutable.\nEND_COUNCIL",
+      "source": "chatgpt-independent.md",
+      "source_sha": "783ee6419c488b6e17377b58175d088c28cd04bc7f0597204232f0e8e4ca2b26"
+    }
+  ]
+}
