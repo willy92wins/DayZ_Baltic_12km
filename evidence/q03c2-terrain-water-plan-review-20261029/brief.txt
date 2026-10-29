@@ -1,0 +1,240 @@
+REVIEWER externo único Muse Wonder1.0 CLI nativo. Plan nuevo Q03C2, no repetir council/reviews anteriores. Read-only sin herramientas/NPZ/PBO/WRP/web/escritura. Presupuesto120s, <=1100palabras. Una recuperación120s sólo por noentrega, no nuevas opiniones de dictamen entregado. SOUND/SOUND-with-fixes/NEEDS-WORK y CONVERGE/LOOP, hallazgos concretos con anclas, consecuencia y mínimo cambio. Codex planner/autor/integrador mismo contexto; tu revisión es estática de cápsula. Valora partición conjunta9slots, enumeración terreno/bordes/igualdad, independencia de recorridos, caps porcara (no porcelda), factibilidad bajo presupuesto y contrato de carga. No pedir ampliar caps/tolerancias ni otra infraestructura genérica. Header discovery sólo para fijar esquemas antes de código; no arrays reales aún. Pruebas históricas consumidas no se relanzan. Diferencia fuenteNW-SE de alturas compiladas y exposición real. Revisa el ejemplo H=W=x/6: ABOVE+agua inferior54; BELOW+agua superior18. Hay19 oráculos Q03C1, no20. No prometer FULL ni localizar fotos por proximidad. Devuelve modelo si accesible; identidad servida se registra desde run.usage.
+
+PLAN
+# Q03C2 — partición conjunta del lecho frente a terreno fuente y agua seleccionada
+
+Estado: BORRADOR_PENDIENTE_DE_REVISION. Codex planner/integrator y executor local
+explícito para este corte una vez revisado; una lane externa Muse CLI nativo.
+No nuevo council. No cambia producto, geometría, terreno, colocaciones ni P:.
+
+## Resultado que desbloquea [DESIGN]
+
+Medir, para las1520 caras completas de kit118_0000 ID19394363/model3579/pose13844,
+qué parte está por encima, en contacto o debajo del TERRENO FUENTE, cruzada con
+las tres clases de agua seleccionada Q03C1. Entregar nueve áreas racionales por
+cara y testigos de altura/celda, para elegir después una reparación fundada.
+No sumar restas independientes de áreas: el solape conjunto exige una partición
+geométrica. No llamar visible a lo que puede ocultar otro modelo, vegetación o
+agua nativa. No acotar al corredor histórico8m ni afirmar pavimento12/9m medido.
+Q03/Q11 y P9/P10/P11 son la intención; Q05 añadirá huella vial y ambos accesos.
+
+## Anclas comprobadas [EXACT]
+
+Q03C1 consumido:201pilotos/4760water,1520triples verificados por sustracción frente
+a arreglo de rectas. Sumatorio CON multiplicidad37.45741951018598m² cubiertos,
+3.0365742489692926m² con agua sólo inferior y457.8056221008301m² sin huella
+seleccionada. No equivale a exposición; nueve rechazos humanos siguen abiertos.
+Contrato43c95b5d, consumidor y métricas se fijarán completos en contratoQ03C2.
+Los helpers/source snapshots Q03C1/Q03B6/header/archive quedan sellados.
+
+tools/quality/pilot_visible_exposure_ev112.py:24-26 fija SHA del terreno815ef8b7
+y agua nominal084171b0. Líneas137-146 leen heights y exigen2048x2048; esta nueva
+unidad sólo añade TERRENO, no agua nominal ni sus planos. El NPZ fuente exacto
+E:/DayZ-Baltic-Build/shape-repair-20261025/river-kit7-merged-byteexact-20261026/terrain-buried.npz
+tiene12875883bytes observados por stat; SHA histórico completo:
+815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40.
+merge-verification.json de esa carpeta conserva terrain_byte_exact y el pin.
+No demuestra alturas del WRP decodificadas ni identidad actual del motor.
+
+tools/quality/pilot_surface_refinement_ev112.py:7-8 define OFF=(00,01,10,11)
+y TRI=(0,1,3)/(0,2,3). Líneas64-80 usan grid6, top=(n-1)*6,
+XZ=(6*c,top-6*r), diagonal NW-SE. Líneas91-99 distinguen B-H positivo,
+negativo y contacto planar idéntico. Su aritmética float y tolerancias NO se
+importan; sólo anclan convención histórica fuente, no prueba de triangulación
+compilada. La medición propuesta se etiqueta SOURCE_GRID_NW_SE_ASSUMPTION.
+source_grid del NPZ piloto es la malla del lecho; NO es el campo de alturas.
+
+evidence/pilot-visible-exposure-20261028 conserva23.9566664m² relativos a un
+corredor±4m. Sus CLIs/censos201modelos están consumidos; no se ejecutan ni se
+reclasifican. Esta nueva dimensión conjunta exacta se limita a un lecho completo.
+
+## Contrato y carga acotados [DESIGN]
+
+Antes de autoría geométrica: pins Q03C1 contrato/consumer/manifest/métricas y
+recibos, Q03B6/e967 y todos sus helpers, terreno/merge-verification y anclas.
+Reutilizar el enlace histórico3d955 y pilotos YA MUNDIALES, sin transformar.
+No PBO/P3D/WRP nuevo ni censo global. Aceptación del terreno fuente sólo porSHA.
+
+Dentro de la preparación del contrato se autoriza una inspección de cabeceras
+ZIP/NPY del único NPZ terreno pinado, sin cargar arrays ni medir geometría:
+snapshot/identidad/hash, máximo16MiB almacenado,35miembros,16384B porheader,
+128MiB expandido porarchivo,262434599B total de sesión. Cerrar TODOS los esquemas
+observados y su cota antes de código; heights debe ser finito f4/f8 y2048x2048.
+No asumir otros nombres/descriptores ni mmap. Si el archivo no cabe, rechazo y
+plan propio, no ampliación. Inspección60s/256MiB única, recibo/hash previos; no
+otra fase genérica de lectores. Arrays sólo tras revisión de código y suite.
+
+Una sesión acumulada por caminante para201pilotos y terreno, límites originales.
+Retener heights como array y reservar sus bytes reales antes de asignar; no
+convertir toda la cuadrícula a Fraction ni crear8millones de caras. Generar sólo
+celdas que intersecten la proyección de cada bed por índices enteros acotados.
+Retención lógica de arrays64MiB como presupuesto NUEVO explícito de esta unidad
+(incluye heights f8=32MiB y copias bed/water<=16MiB); RSS512MiB separado.
+No cambia cap de archivo/sesión ni el presupuesto racional por cara.
+
+## Algoritmos y significado [DESIGN]
+
+EjeXZ y alturaY. Cadafloat fuente se convierte exactamente a racional binario.
+Por cara: intersectar con triángulos fuente de celdas cerradas. Cara fuera de
+[0,12282]^2 rechazada, nunca clamp de geometría. Fronteras de celdas compartidas
+tienen área0; rango de celdas conservador incluye borde final sin indexar2048.
+Suma de partes terreno debe ser EXACTAMENTE el área bed; no tolerancia.
+
+Productor: sustracción/intersección convexa propia. En cada parte terreno cortar
+por B-H; si plano diferencia idénticamente0 toda el área es CONTACT, si no la
+recta de igualdad tiene área0 y separa ABOVE/BELOW. En cada región cruzar unión
+de footprintwater y unión(W>=B) por sustracción comoQ03C1, con reservas globales
+por cara de todas listas vivas. No sumar pares superpuestos como unión.
+
+Consumidor: recorrido propio de índices/celdas fuente desde sus lecturas; para
+cada intersección construir arreglo de rectas de lados, B-H y W-B, clasificar
+puntos interiores racionales. No importa geometría del productor ni usa sus
+celdas/pares para reducir el denominador. I/O, NumPy/zlib y Budget compartidos
+declarados; sustracción vs arreglo siguen independientes. Reusar primitivas
+selladas está permitido; no modificar ni relanzar CLIs Q03C1.
+
+Nueve slots=(ABOVE_SOURCE,CONTACT_SOURCE,BELOW_SOURCE) x
+(SELECTED_WATER_AT_OR_ABOVE,SELECTED_WATER_ONLY_BELOW,NO_SELECTED_FOOTPRINT).
+Igualdad W==B sigue cubierta; igualdad B==H ocupa CONTACT sólo en región planar.
+Por cara sum(nueve)=áreaXZ y cada suma marginal de agua debe igualar EXACTAMENTE
+el tripleQ03C1 pinado. No tomar esas igualdades como sustituto del consumidor.
+También mínimo/máximo B-H en vértices de la partición fuente y IDs de celda/cara.
+Los resultados NO prueban falta de agua mundial, visibilidad/render, volumen de
+relleno, navegabilidad, exposición de una fotografía ni aceptación del mapa.
+
+## Oráculos externos y negativos [DESIGN]
+
+Congelar geometrías/resultados literales antes de código, no esperados del
+productor. BasebedXZ(0,0),(12,0),(0,12),B=1,área72. H=0/1/2 coloca72 en
+ABOVE/CONTACT/BELOW; combinar con watercompleta superior/inferior/ausente.
+Plano H=x/6: ABOVE54/CONTACT0/BELOW18. Con W=x/6, ABOVE con agua sólo inferior54
+y BELOW con agua a igual/mayor altura18; los otros siete slots0. No producto de
+marginales. Derivar a mano cada fixture exacto antes de congelar.
+Pico sólo interior a una celda (vérticesbed no detectan), cambio de diagonal,
+costura exacta, esquina/borde final delgrid, varias celdas, agua deotro modelo,
+duplicidad deagua, winding/permutación/subdivisión y signedzero.
+Mutantes: Y/Z intercambiados, fila invertida, diagonalcontraria, una celdaomitida,
+doblecelda, terreno pinadocambiado, fuente_grid confundido, epsiloncerca de0,
+contacto clasificadoabove, watermarginalalterado, IDs/cifrasbool, descriptor,
+presupuesto antes deoperar, parcialpromovidoFULL y co-mutación informe/recibo.
+
+## Presupuestos, puertas y salida [DESIGN]
+
+Preparacióncabeceras60s/256MiB única; Codexexecutor local900s contrato/oráculos+
+código (máximo adaptador + productor + consumidor + test). Reviewexterna180s
+incluye contrato; suite120s/256MiB. Una corrección180 por repro cerrado y una
+recuperación180 por dictamen ausente, no bucle infinito. Sin aprobación ficticia.
+Una producción120s y consumidor120s/512MiB,32MiB salida, sin reintentos internos.
+Mantener4096bits/100000operaciones/1024fragmentos/8192vértices porcara y caminante;
+contabilizar todas partes acumuladas porcara, no reset porcelda. Si no cabe:
+RESOURCE_INCONCLUSIVE/parcial, no subida ni descarte de área paraPASS.
+
+Payload y receiptSHA/longitud/secuencia fsync, prefijo sin huecos comoQ03C1.
+FULL sólo1520caras con nueve áreas verificadas/marginales/IDs/alturas; cualquier
+degenerado/estado de recursos/cola sinterminal impideFULL. Estado final
+MEASURED_SOURCE_TERRAIN_SELECTED_WATER_ONLY o VERIFIED_PARTIAL_SOURCE_PARTITION.
+terrain_source_evaluated=true sólo tras medición; compiled_terrain_evaluated,
+exposure_evaluated,native_acceptance,map_repaired=false. Humanresolved0,C1NOT_REVIEWED.
+
+Después: testigos para decisión técnica de transiciónlecho/terreno conservando
+protecciones; Q05 huella vial real y ambosaccesos pendiente de poses/pivote.
+Q08/Q17 referentes independientes, Q02Bángulos y carreteras siguen abiertos.
+
+RESULTADO Q03C1
+{
+  "status": "MEASURED_SELECTED_WATER_OVERLAY_ONLY",
+  "contract_sha256": "43c95b5df45fcc68089e2b8ce8a24083719bf6fdc22eb59f1ef0db744012f0cb",
+  "consumer_sha256": "c12503d3509ba8fa80a5adf4fc16fa8302a143d6b71a90b3a6ca38b9f8b70fb2",
+  "metrics_sha256": "3dea334a9d78cebb4180e3947110fa7ec7bb9b715e3760f7dffdef5d58246a7a",
+  "bed_count": 1520,
+  "water_count": 4760,
+  "saved_pilots": 201,
+  "epoch": "historical 3d955",
+  "model_index": 3579,
+  "instance_id": 19394363,
+  "pose_row": 13844,
+  "source_ids": "opaque tuple separate from member ordinal",
+  "sum_kind": "FACE_AREA_SUM_WITH_MULTIPLICITY",
+  "area_slots": [
+    "covered_at_or_above_selected_water",
+    "selected_water_footprint_only_below",
+    "no_selected_water_footprint"
+  ],
+  "area_sums_rational": [
+    [
+      9009670105246332454710090122849,
+      240530987533625705223891189760
+    ],
+    [
+      182597550705940432131937280769,
+      60132746883406426305972797440
+    ],
+    [
+      120010997,
+      262144
+    ]
+  ],
+  "area_sums_approx_m2": [
+    37.45741951018598,
+    3.0365742489692926,
+    457.8056221008301
+  ],
+  "total_approx_m2": 498.29961585998535,
+  "positive_face_counts": [
+    102,
+    23,
+    1429
+  ],
+  "positive_intersection_pairs": 328,
+  "boundary_contact_pairs": 172,
+  "producer_max_ops": 4515,
+  "producer_max_live_pieces": 17,
+  "producer_max_live_vertices": 66,
+  "captured_files": 3042,
+  "captured_bytes": 1536916,
+  "producer": {
+    "id": "q03c1-real-producer",
+    "rc": 0,
+    "reason": null,
+    "seconds": 9.843000000008033,
+    "peak_rss": 81813504,
+    "started": 1793298664.1560342,
+    "finished": 1793298674.0001547,
+    "identities": {
+      "128876": 1793298664.1578555,
+      "131048": 1793298664.1657178,
+      "20388": 1793298664.1795423
+    },
+    "stdout_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "consumer": {
+    "id": "q03c1-real-consumer",
+    "rc": 0,
+    "reason": null,
+    "seconds": 7.421999999991385,
+    "peak_rss": 81956864,
+    "started": 1793298686.9894083,
+    "finished": 1793298694.4212878,
+    "identities": {
+      "131260": 1793298686.9905436,
+      "132884": 1793298686.998062,
+      "129100": 1793298687.0113397
+    },
+    "stdout_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "claims": {
+    "C1": "NOT_REVIEWED",
+    "exposure_evaluated": false,
+    "human_resolved": 0,
+    "map_repaired": false,
+    "native_acceptance": false,
+    "terrain_evaluated": false
+  },
+  "geometry_not_published": true,
+  "current_engine_identity": false
+}
+
+ANCLAS
+{"tools/quality/pilot_surface_refinement_ev112.py": {"sha256": "e6d22031fd3e2fcd8a545a0e0856fd3d3815758b04fbd556edb6bee379b1805f", "lines": "1: \"\"\"Convex common refinement against native NW-SE terrain and nominal water.\n2: Numerical uncertainty is explicit; positive/negative heights are never rounded.\n3: This module does not itself accept a map, render, or repaired surface.\n4: \"\"\"\n5: import math\n6: import numpy as np\n7: OFF=((0,0),(0,1),(1,0),(1,1))\n8: TRI=((0,1,3),(0,2,3))\n9: \n10: def require(ok,reason):\n11:     if not bool(ok):raise ValueError(reason)\n12: \n13: def cross(a,b):return float(a[0]*b[1]-a[1]*b[0])\n14: \n15: def area(p):\n16:     p=np.asarray(p,float)\n17:     if len(p)<3:return 0.\n18:     q=p-p[0]\n19:     return abs(math.fsum(cross(q[i],q[i+1]) for i in range(1,len(p)-1)))*.5\n20: \n21: def clip(p,values,positive=True):\n22:     \"\"\"Half-plane clipping with exact linear edge interpolation; no height epsilon.\"\"\"\n23:     p=np.asarray(p,float);values=np.asarray(values,float)\n24:     require(values.shape==(len(p),) and np.isfinite(p).all() and np.isfinite(values).all(),'clip_input')\n25:     if not positive:values=-values\n26:     result=[]\n27:     for i in range(len(p)):\n28:         j=(i+1)%len(p);a,b=values[i],values[j]\n29:         if a>=0:result.append(p[i])\n30:         if (a<0<b) or (b<0<a):\n31:             result.append(p[i]+(p[j]-p[i])*(a/(a-b)))\n32:     # Remove only exact repeated neighbours; never weld close coordinates.\n33:     out=[]\n34:     for point in result:\n35:         if not out or not np.array_equal(point,out[-1]):out.append(point)\n36:     if len(out)>1 and np.array_equal(out[0],out[-1]):out.pop()\n37:     return np.asarray(out,float).reshape(-1,2)\n38: \n39: def triangle_intersection(p,t):\n40:     t=np.asarray(t,float)\n41:     direction=cross(t[1]-t[0],t[2]-t[0])\n42:     require(direction!=0,'degenerate_clipping_triangle')\n43:     for a,b in zip(t,np.roll(t,-1,axis=0)):\n44:         if not len(p):break\n45:         values=np.array([cross(b-a,z-a) for z in p])*np.sign(direction)\n46:         p=clip(p,values)\n47:     return p\n48: \n49: def plane(t,y):\n50:     t,y=np.asarray(t,float),np.asarray(y,float)\n51:     require(t.shape==(3,2) and y.shape==(3,) and np.isfinite(t).all() and np.isfinite(y).all(),'plane_input')\n52:     edges=t[1:]-t[0];det=cross(edges[0],edges[1])\n53:     condition=abs(det)/max(float(np.sum(edges*edges,axis=1).max()),np.finfo(float).tiny)\n54:     require(condition>1e-12,'INCONCLUSIVE_NEAR_DEGENERATE_PROJECTION')\n55:     slope=np.linalg.solve(edges,y[1:]-y[0])\n56:     return t[0],float(y[0]),slope\n57: \n58: def evaluate(coeff,p):\n59:     origin,y,slope=coeff\n60:     return y+(np.asarray(p)-origin)@slope\n61: \n62: def refine(triangle,h,water_plane,water_field,grid=6.):\n63:     \"\"\"Return every positive-area triangle/native-face intersection with B/H/W.\"\"\"\n64:     tri=np.asarray(triangle,float);n=len(h);top=(n-1)*grid\n65:     require(tri.shape==(3,3) and np.isfinite(tri).all(),'bed_triangle')\n66:     xz=tri[:,(0,2)]\n67:     require((xz>=0).all() and (xz<=top).all(),'outside_native_domain')\n68:     bc=plane(xz,tri[:,1])\n69:     lo=xz.min(axis=0);hi=xz.max(axis=0)\n70:     r0=max(0,math.floor((top-hi[1])/grid));r1=min(n-2,math.floor((top-lo[1])/grid))\n71:     c0=max(0,math.floor(lo[0]/grid));c1=min(n-2,math.floor(hi[0]/grid))\n72:     parts=[]\n73:     for r in range(r0,r1+1):\n74:         for c in range(c0,c1+1):\n75:             corners=np.array([[grid*(c+dc),top-grid*(r+dr)] for dr,dc in OFF])\n76:             hv=np.array([h[r+dr,c+dc] for dr,dc in OFF],float)\n77:             has_pond=bool(np.isfinite(water_plane[r,c]))\n78:             wv=water_field[r,c] if has_pond else np.full(4,.75)\n79:             for ti,indices in enumerate(TRI):\n80:                 q=corners[list(indices)];p=triangle_intersection(xz.copy(),q);a=area(p)\n81:                 if a==0:continue\n82:                 hc=plane(q,hv[list(indices)]);wc=plane(q,wv[list(indices)])\n83:                 b=evaluate(bc,p);terrain=evaluate(hc,p);water=evaluate(wc,p)\n84:                 require(np.isfinite([b,terrain,water]).all(),'nonfinite_surface')\n85:                 parts.append(dict(polygon=p,area=a,cell=(r,c,ti),native_triangle=q,bed=b,terrain=terrain,water=water,\n86:                                   bed_plane=bc,terrain_plane=hc,water_coeff=wc,water_kind='POND' if has_pond else 'SEA'))\n87:     expected=area(xz);actual=math.fsum(p['area'] for p in parts)\n88:     require(abs(expected-actual)<=max(1e-9,expected*1e-10),'INCONCLUSIVE_REFINEMENT_AREA_GAP')\n89:     return parts\n90: \n91: def sign_regions(part,field):\n92:     \"\"\"Area on either side of B-H or B-W; extrema include all cut vertices.\"\"\"\n93:     p=part['polygon'];other=part['terrain_plane'] if field=='terrain' else part['water_coeff']\n94:     diff=part['bed']-part[field]\n95:     positive=clip(p,diff);negative=clip(p,diff,False)\n96:     zero=bool(np.all(diff==0))\n97:     return dict(above_area=0. if zero else area(positive),below_area=0. if zero else area(negative),\n98:                 contact_area=part['area'] if zero else 0.,minimum=float(diff.min()),maximum=float(diff.max()),\n99:                 above_polygon=positive,below_polygon=negative)"}, "tools/quality/pilot_visible_exposure_ev112.py": {"sha256": "c5d6ba151b9794173e18f6e0df976770550dfab066d1f458e4e9238ee088343c", "lines": "126:     manifest=json.loads(evidence.read_bytes());pins={str(evidence):meter.sha(evidence)}\n127:     def pin(p,digest):\n128:         require(meter.sha(p)==digest,'input_changed:'+str(p));pins[str(p)]=digest\n129:     for name in ('models.json','report.json','inputs.json'):\n130:         p=raw/name;pin(p,manifest[p.relative_to(root).as_posix()]['sha256'])\n131:     models=json.loads((raw/'models.json').read_bytes())\n132:     require(len(models)==201 and len({x['model'] for x in models})==201,'model_coverage')\n133:     for m in models:pin(raw/m['file'],m['sha256'])\n134:     previous=json.loads((raw/'inputs.json').read_bytes())['pins']\n135:     for name,digest in previous.items():\n136:         p=Path(name);pin(p if p.is_absolute() else worktree/p,digest)\n137:     hp=root/'river-kit7-merged-byteexact-20261026/terrain-buried.npz'\n138:     fp=root/'river-kit7-merged-byteexact-20261026/bury-work/fp0/footprint.npz'\n139:     # The explicit primary checkout is the independent road reference used by B.\n140:     rp=Path('C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/tests/regional_foundation_roads_v6/reference.npz')\n141:     for p,d in ((hp,H_SHA),(fp,FP_SHA),(rp,ROAD_SHA)):pin(p,d)\n142:     with np.load(hp) as f:h=f['heights']\n143:     with np.load(fp) as f:wp=f['plane'];wf=f['field']\n144:     with np.load(rp) as f:xy=f['xy'];edges=f['edges']\n145:     road_guard(xy,edges)\n146:     require(h.shape==(2048,2048) and wp.shape==(2047,2047) and wf.shape==(2047,2047,4),'grid_shape')\n147:     water=[];water_ref=[]\n148:     for m in models:\n149:         with np.load(raw/m['file']) as f:\n150:             require(np.all(f['bed_n']==3) and np.all(f['water_n']==3),'nontriangle_requires_new_partition')\n151:             require(not np.any(f['bed_flags']) and not np.any(f['water_flags']),'ambiguous_pilot_faces')\n152:             for i,tri in enumerate(f['water'][:,:3]):water.append(tri);water_ref.append([m['model_index'],i])\n153:     return raw,models,pins,h,wp,wf,xy,edges,np.asarray(water),water_ref"}, "tools/quality/saved_scene_archive_q03b2.py": {"sha256": "79ef0195ce28648a4c32a0c36cd82d381cc366e06277fac8e0468e7d42a2c369", "lines": "260: class Session:\n261:     def __init__(self, **limits):\n262:         if set(limits) - set(CAPS):\n263:             fail(\"MEMBER_SCHEMA\", \"limit keys\")\n264:         self.limits = dict(CAPS, **limits)\n265:         if any(type(v) is not int or not 0 < v <= CAPS[k] for k, v in self.limits.items()):\n266:             fail(\"MEMBER_SCHEMA\", \"limit values\")\n267:         self.active = False\n268:         self.live_stored = self.live_expanded = 0\n269:         self.cumulative_stored_actual_bytes_read = 0\n270:         self.cumulative_expanded_reserved = 0\n271: \n272:     def _prepare(self, path, schemas):\n273:         try:\n274:             data, digest = _snapshot(path, self)\n275:             rows, expanded = _central(data, schemas, self.limits)\n276:             if expanded > self.limits[\"total\"] - self.cumulative_expanded_reserved:\n277:                 fail(\"TOTAL_CAP\")\n278:             self.live_expanded = expanded\n279:             self.cumulative_expanded_reserved += expanded\n280:             for row in rows:\n281:                 row[\"decoded_sha256\"] = _decoded_extent(data, row)\n282:             with zipfile.ZipFile(io.BytesIO(data), \"r\") as archive:\n283:                 infos = archive.infolist()\n284:                 if len(infos) != len(rows):\n285:                     fail(\"ZIP_TRUNCATED\")\n286:                 for info, row in zip(infos, rows, strict=True):\n287:                     if (info.filename, info.flag_bits, info.compress_type, info.CRC, info.compress_size, info.file_size, info.header_offset) != (row[\"name\"], row[\"flags\"], row[\"method\"], row[\"crc\"], row[\"compressed\"], row[\"expanded\"], row[\"offset\"]):\n288:                         fail(\"ZIP_TRUNCATED\", \"standard metadata mismatch\")\n289:                 heads = {}\n290:                 for row in rows:\n291:                     with archive.open(row[\"name\"], \"r\") as member:\n292:                         heads[row[\"name\"]] = header.inspect_header(member, row[\"expanded\"], schemas[row[\"name\"]])\n293:                 arrays, payloads = {}, {}\n294:                 for row in rows:\n295:                     name = row[\"name\"]\n296:                     with archive.open(name, \"r\") as member:\n297:                         reader = _PayloadReader(member, heads[name][\"payload_offset\"])\n298:                         try:\n299:                             array = np.lib.format.read_array(reader, allow_pickle=False, max_header_size=16384)\n300:                         except ValueError as exc:\n301:                             raise ArchiveError(\"NPY_TRAILING\", \"array read\") from exc\n302:                         if reader.read(1) != b\"\" or reader.position != row[\"expanded\"]:\n303:                             fail(\"NPY_TRAILING\", \"decoded extent\")\n304:                     expected = heads[name][\"payload_bytes\"]\n305:                     if reader.full_digest.hexdigest() != row[\"decoded_sha256\"]:\n306:                         fail(\"ZIP_TRUNCATED\", \"decoded/header-reader mismatch\")\n307:                     array_hash = hashlib.sha256(memoryview(array).cast(\"B\") if array.nbytes else b\"\").hexdigest()\n308:                     if reader.length != expected or array.nbytes != expected or array_hash != reader.digest.hexdigest():\n309:                         fail(\"NPY_TRAILING\", \"payload/array byte mismatch\")\n310:                     array.flags.writeable = False\n311:                     arrays[name] = array\n312:                     payloads[name] = {\"sha256\": array_hash, \"bytes\": expected}\n313:             return {\"arrays\": arrays, \"payloads\": payloads, \"source_sha256\": digest,\n314:                     \"status\": \"ARCHIVE_SESSION_FIXTURE_VERIFIED_ONLY\", \"closed\": False}\n315:         except ArchiveError:\n316:             raise\n317:         except header.HeaderError as exc:\n318:             if exc.code == \"INTERNAL_ERROR\" and isinstance(exc.__cause__, (zipfile.BadZipFile, EOFError, zlib.error)):\n319:                 raise ArchiveError(\"ZIP_TRUNCATED\", \"header ZIP cause\") from exc\n320:             raise\n321:         except (zipfile.BadZipFile, EOFError, zlib.error) as exc:\n322:             raise ArchiveError(\"ZIP_TRUNCATED\") from exc\n323:         except Exception as exc:\n324:             raise ArchiveError(\"INTERNAL_ERROR\", type(exc).__name__) from exc\n325: \n326:     @contextmanager\n327:     def open(self, path, schemas):\n328:         if self.active:\n329:             fail(\"MEMBER_SCHEMA\", \"session already active\")\n330:         self.active = True\n331:         result = None\n332:         try:\n333:             result = self._prepare(path, schemas)\n334:             yield result\n335:         finally:\n336:             if result is not None:\n337:                 result[\"arrays\"].clear()\n338:                 result[\"closed\"] = True\n339:             self.live_stored = self.live_expanded = 0\n340:             self.active = False"}}

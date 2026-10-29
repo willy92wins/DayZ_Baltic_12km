@@ -1,0 +1,56 @@
+{
+  "status": "APPROVED_FOR_SINGLE_CAPTURE",
+  "time": 1793298648.0980144,
+  "contract_sha256": "43c95b5df45fcc68089e2b8ce8a24083719bf6fdc22eb59f1ef0db744012f0cb",
+  "code_pins": {
+    "selected_water_io_q03c1.py": "5f2655572c2f49a3c33d2d43ea8ac4b296d48625cfbcc03967a541ba0ccf0a26",
+    "selected_water_producer_q03c1.py": "139691de5c462a195b65cd0b689d8883334ff97053adef334dfe942e15b7b94f",
+    "selected_water_consumer_q03c1.py": "912f4f7b86b2e097c6da13d9cf8105a2746e8f1b07a4f8b6f1e69b09c582f301",
+    "test_selected_water_q03c1.py": "805a0ed9ccab95d74bf63d46bf42aef31c7b5ea1cff9dfa5887861a3bfb46c44"
+  },
+  "suite": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c1-private-suite-r1-20261029",
+  "methods": 17,
+  "review": "SOUND-with-fixes / CONVERGE; Fable native 152.375s recovery after Muse180.172s no delivery",
+  "applied": [
+    "Explicit f8 and integer-ID type guards",
+    "Missing scene archive is IDENTITY",
+    "Correct remainder inequalities 0<=nofoot<=uncovered<=total",
+    "Contract32MiB payload read cap",
+    "Producer reservations include outer live polygon lists"
+  ],
+  "counterclaims": [
+    {
+      "claim": "20 oracle cases",
+      "disposition": "REFUTED: 19 literal cases; counts do not certify geometry"
+    },
+    {
+      "claim": "cover remainder area must not exceed foot remainder area",
+      "disposition": "REFUTED: uncovered remainder >= no-footprint remainder; accepted first proposed inequality"
+    },
+    {
+      "claim": "reserve called immediately before every append",
+      "disposition": "QUALIFIED: conservative preallocation bounds cover loops; integrator additionally charges outer live lists"
+    }
+  ],
+  "arithmetic_scope": "Checked Budget arithmetic/comparisons count scalar rational operations. Sign and negation of checked rationals do not create numerator products. No bit/op tolerance changed.",
+  "correction": {
+    "started": 1793298426.6052296,
+    "finished": 1793298457.4733438,
+    "seconds": 30.868114233016968,
+    "within_budget": true,
+    "pins": {
+      "selected_water_io_q03c1.py": "5f2655572c2f49a3c33d2d43ea8ac4b296d48625cfbcc03967a541ba0ccf0a26",
+      "selected_water_producer_q03c1.py": "139691de5c462a195b65cd0b689d8883334ff97053adef334dfe942e15b7b94f",
+      "selected_water_consumer_q03c1.py": "912f4f7b86b2e097c6da13d9cf8105a2746e8f1b07a4f8b6f1e69b09c582f301",
+      "test_selected_water_q03c1.py": "805a0ed9ccab95d74bf63d46bf42aef31c7b5ea1cff9dfa5887861a3bfb46c44"
+    }
+  },
+  "postimage_review": "Codex integrator checked bounded R1 delta and final suite in shared author context. External reviewer saw R0 only; no invented re-review or consensus.",
+  "scope": "One historical selected-water overlay producer120s512MiB plus saved-prefix consumer120s512MiB. 32MiB output; no retry or cap expansion.",
+  "limitations": [
+    "No terrain/ordinary Visual/vegetation occlusion",
+    "No current engine or water semantics",
+    "No map modification",
+    "Nine human rejections unresolved; C1 NOT_REVIEWED"
+  ]
+}

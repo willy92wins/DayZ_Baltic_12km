@@ -1,0 +1,99 @@
+{
+  "schema": "q03c1-selected-water-overlay-v1",
+  "plan": {
+    "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\quality-council-q03c1-selected-water-overlay-20261029.md",
+    "sha256": "2ee0929e4764c3f5d5119d2ef3262cf4d28a0e9f62b0babf36632acd5398973b",
+    "bytes": 13939
+  },
+  "scene": {
+    "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b-contract-inputs-20261029\\contract-r1.json",
+    "sha256": "e9672092ce285f5e59802bc3f4faa2341d67a11965551702e7adabcf3173ee65",
+    "bytes": 435849
+  },
+  "index_contract": {
+    "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-local-author-20261029\\contract.json",
+    "sha256": "f8f8f6dcd1e3e74029875e5f40e7a2bb6dbfdaab84e892bd5c7457487ad87c9b",
+    "bytes": 5873
+  },
+  "index": {
+    "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-saved-selected-index-20261029\\report.json",
+    "sha256": "aa8d3ace483967ac5dec430f6a0e6e99cc7fed27196b16ac480040433454b060",
+    "bytes": 4511781
+  },
+  "index_consumer": {
+    "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-saved-selected-consumer-20261029\\consumer.json",
+    "sha256": "4a7ac141d410e42ebaef6ae5b4359035205426096b5f8b0361e63dcdab97e2f6",
+    "bytes": 238
+  },
+  "receipts": [
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-real-producer-20261029\\completion.json",
+      "sha256": "ddd0c8547cce0ac077c5d516fa633552e9e53c35ac5b23dc47177aaef6555312",
+      "bytes": 458
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-real-consumer-20261029\\completion.json",
+      "sha256": "edd4967095d79cf0391c3cbb3073430bfd29f86441b6598e92508f26c1be222a",
+      "bytes": 460
+    }
+  ],
+  "io": {
+    "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-local-author-20261029\\saved_scene_io_q03b6.py",
+    "sha256": "d0734c068d59c87a9d35e31e431a0eb864d4e5ce22d29b2ab9c597c62bd15a44",
+    "bytes": 6577
+  },
+  "oracle": {
+    "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c1-local-author-20261029\\oracle.json",
+    "sha256": "cd4efa1f94adad7e5ec5365d1711f60b47dabb5eee0012fae3b5932894d23ac2",
+    "bytes": 21834
+  },
+  "epoch": {
+    "wrp_compiled": "0da63d3f258923e784a62bcb59bb1d7f2ab99866816f530bfe73cd4211b23254",
+    "wrp_editable": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+    "pilot_pbo": "3d9550bfb3f27e3916b14579990c240c4aaf4d779e628658ec572cb2c806a2b6",
+    "kind": "HISTORICAL_PIN_CHAIN_NOT_CURRENT_FILES"
+  },
+  "target": {
+    "model": "baltic_stream_pilot/cs_kit_118_0000.p3d",
+    "model_index": 3579,
+    "instance_id": 19394363,
+    "pose_row": 13844,
+    "bed_count": 1520
+  },
+  "water_count": 4760,
+  "pilot_count": 201,
+  "limits": {
+    "bits": 4096,
+    "ops": 100000,
+    "pieces": 1024,
+    "vertices": 8192,
+    "output": 33554432,
+    "retained_arrays": 16777216
+  },
+  "archive_limits": {
+    "stored": 16777216,
+    "archive": 134217728,
+    "total": 262434599,
+    "members": 35
+  },
+  "budgets": {
+    "author_s": 900,
+    "review_s": 180,
+    "suite_s": 120,
+    "producer_s": 120,
+    "consumer_s": 120,
+    "rss": 536870912
+  },
+  "output": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c1-water-overlay-capture-20261029",
+  "consumer_output": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c1-water-overlay-consumer-20261029",
+  "claims": {
+    "terrain_evaluated": false,
+    "exposure_evaluated": false,
+    "native_acceptance": false,
+    "map_repaired": false,
+    "human_resolved": 0,
+    "C1": "NOT_REVIEWED"
+  },
+  "arithmetic": "Before add/sub reserve max(bits(an)+bits(bd),bits(bn)+bits(ad))+1 and bits(ad)+bits(bd); mul/div reserve both cross products; cmp reserves cross products. All operands/results/intermediates <=4096bits before Python Fraction operation, one operation token before each call. fromfloat exact as_integer_ratio inputs <=1075bits. Integer line normalization reserves numerator*LCM before constructing; counters independent.",
+  "terminal": "payload canonical JSON then exclusive atomic receipt {seq,bytes,sha256}; fsync payload before receipt. Strict contiguous prefix. Hash-bound header links external contract and source inventory. Final manifest iff all bed terminals written, FULL iff all numerically DEFINED. No coverage promotion from self-declared counters."
+}

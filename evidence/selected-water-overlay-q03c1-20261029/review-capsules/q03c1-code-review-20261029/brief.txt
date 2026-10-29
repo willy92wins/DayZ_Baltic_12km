@@ -1,0 +1,2304 @@
+REVIEWER externo único Muse Wonder1.0 CLI nativo. No council. Codex executor local e integrador con contexto compartido. Read-only, sin herramientas/shell/web/escritura, no NPZ/PBO/WRP/P3D.180s, <=1300palabras, SOUND/SOUND-with-fixes/NEEDS-WORK y CONVERGE/LOOP. Revisa contrato/oráculos congelados antes del código y tresmódulos más test completos. Se pide bugs concretos con ancla, impacto y fix mínimo, no otra fase genérica. Verifica exactitud unión/sustracción vs arreglo independiente, campos reales, identidad/caps antes operaciones y asignaciones, oráculos independientes, falsoFULL, parciales/recibos, bits/cero/contactos. No inventes campo report_sha256 en consumerQ03B6: ese recibo sólo liga contrato; hash de report está fijado externamente en contratoQ03C1. No NPZhistóricos abiertos aún. Reviewnoejecución. Suite corre por separado. Una corrección180 por repro cerrado y una recuperación180 si falta dictamen; no bucle. Algoritmos I/O NumPy/zlib compartidos, geometría propia en cada caminante. No reparar mapa, nocertificar mundo nativo ni visibilidad. Disponibilidad nativa medida29oct con entregas Muse104.031/142.844s; identidadservicio de esta revisión se registra al retorno.
+
+
+FILE contract.json SHA 43c95b5df45fcc68089e2b8ce8a24083719bf6fdc22eb59f1ef0db744012f0cb
+1: {
+2:   "schema": "q03c1-selected-water-overlay-v1",
+3:   "plan": {
+4:     "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\quality-council-q03c1-selected-water-overlay-20261029.md",
+5:     "sha256": "2ee0929e4764c3f5d5119d2ef3262cf4d28a0e9f62b0babf36632acd5398973b",
+6:     "bytes": 13939
+7:   },
+8:   "scene": {
+9:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b-contract-inputs-20261029\\contract-r1.json",
+10:     "sha256": "e9672092ce285f5e59802bc3f4faa2341d67a11965551702e7adabcf3173ee65",
+11:     "bytes": 435849
+12:   },
+13:   "index_contract": {
+14:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-local-author-20261029\\contract.json",
+15:     "sha256": "f8f8f6dcd1e3e74029875e5f40e7a2bb6dbfdaab84e892bd5c7457487ad87c9b",
+16:     "bytes": 5873
+17:   },
+18:   "index": {
+19:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-saved-selected-index-20261029\\report.json",
+20:     "sha256": "aa8d3ace483967ac5dec430f6a0e6e99cc7fed27196b16ac480040433454b060",
+21:     "bytes": 4511781
+22:   },
+23:   "index_consumer": {
+24:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-saved-selected-consumer-20261029\\consumer.json",
+25:     "sha256": "4a7ac141d410e42ebaef6ae5b4359035205426096b5f8b0361e63dcdab97e2f6",
+26:     "bytes": 238
+27:   },
+28:   "receipts": [
+29:     {
+30:       "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-real-producer-20261029\\completion.json",
+31:       "sha256": "ddd0c8547cce0ac077c5d516fa633552e9e53c35ac5b23dc47177aaef6555312",
+32:       "bytes": 458
+33:     },
+34:     {
+35:       "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-real-consumer-20261029\\completion.json",
+36:       "sha256": "edd4967095d79cf0391c3cbb3073430bfd29f86441b6598e92508f26c1be222a",
+37:       "bytes": 460
+38:     }
+39:   ],
+40:   "io": {
+41:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-local-author-20261029\\saved_scene_io_q03b6.py",
+42:     "sha256": "d0734c068d59c87a9d35e31e431a0eb864d4e5ce22d29b2ab9c597c62bd15a44",
+43:     "bytes": 6577
+44:   },
+45:   "oracle": {
+46:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c1-local-author-20261029\\oracle.json",
+47:     "sha256": "cd4efa1f94adad7e5ec5365d1711f60b47dabb5eee0012fae3b5932894d23ac2",
+48:     "bytes": 21834
+49:   },
+50:   "epoch": {
+51:     "wrp_compiled": "0da63d3f258923e784a62bcb59bb1d7f2ab99866816f530bfe73cd4211b23254",
+52:     "wrp_editable": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+53:     "pilot_pbo": "3d9550bfb3f27e3916b14579990c240c4aaf4d779e628658ec572cb2c806a2b6",
+54:     "kind": "HISTORICAL_PIN_CHAIN_NOT_CURRENT_FILES"
+55:   },
+56:   "target": {
+57:     "model": "baltic_stream_pilot/cs_kit_118_0000.p3d",
+58:     "model_index": 3579,
+59:     "instance_id": 19394363,
+60:     "pose_row": 13844,
+61:     "bed_count": 1520
+62:   },
+63:   "water_count": 4760,
+64:   "pilot_count": 201,
+65:   "limits": {
+66:     "bits": 4096,
+67:     "ops": 100000,
+68:     "pieces": 1024,
+69:     "vertices": 8192,
+70:     "output": 33554432,
+71:     "retained_arrays": 16777216
+72:   },
+73:   "archive_limits": {
+74:     "stored": 16777216,
+75:     "archive": 134217728,
+76:     "total": 262434599,
+77:     "members": 35
+78:   },
+79:   "budgets": {
+80:     "author_s": 900,
+81:     "review_s": 180,
+82:     "suite_s": 120,
+83:     "producer_s": 120,
+84:     "consumer_s": 120,
+85:     "rss": 536870912
+86:   },
+87:   "output": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c1-water-overlay-capture-20261029",
+88:   "consumer_output": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c1-water-overlay-consumer-20261029",
+89:   "claims": {
+90:     "terrain_evaluated": false,
+91:     "exposure_evaluated": false,
+92:     "native_acceptance": false,
+93:     "map_repaired": false,
+94:     "human_resolved": 0,
+95:     "C1": "NOT_REVIEWED"
+96:   },
+97:   "arithmetic": "Before add/sub reserve max(bits(an)+bits(bd),bits(bn)+bits(ad))+1 and bits(ad)+bits(bd); mul/div reserve both cross products; cmp reserves cross products. All operands/results/intermediates <=4096bits before Python Fraction operation, one operation token before each call. fromfloat exact as_integer_ratio inputs <=1075bits. Integer line normalization reserves numerator*LCM before constructing; counters independent.",
+98:   "terminal": "payload canonical JSON then exclusive atomic receipt {seq,bytes,sha256}; fsync payload before receipt. Strict contiguous prefix. Hash-bound header links external contract and source inventory. Final manifest iff all bed terminals written, FULL iff all numerically DEFINED. No coverage promotion from self-declared counters."
+99: }
+
+FILE oracle.json SHA cd4efa1f94adad7e5ec5365d1711f60b47dabb5eee0012fae3b5932894d23ac2
+1: {
+2:   "schema": "q03c1-literal-oracle-v1",
+3:   "area_order": [
+4:     "covered_at_or_above",
+5:     "footprint_only_below",
+6:     "no_selected_water_footprint"
+7:   ],
+8:   "cases": [
+9:     {
+10:       "id": "none",
+11:       "bed": [
+12:         [
+13:           0,
+14:           1,
+15:           0
+16:         ],
+17:         [
+18:           12,
+19:           1,
+20:           0
+21:         ],
+22:         [
+23:           0,
+24:           1,
+25:           12
+26:         ]
+27:       ],
+28:       "water": [],
+29:       "expected": {
+30:         "status": "DEFINED",
+31:         "areas": [
+32:           [
+33:             0,
+34:             1
+35:           ],
+36:           [
+37:             0,
+38:             1
+39:           ],
+40:           [
+41:             72,
+42:             1
+43:           ]
+44:         ],
+45:         "contact_pairs": 0
+46:       }
+47:     },
+48:     {
+49:       "id": "upper",
+50:       "bed": [
+51:         [
+52:           0,
+53:           1,
+54:           0
+55:         ],
+56:         [
+57:           12,
+58:           1,
+59:           0
+60:         ],
+61:         [
+62:           0,
+63:           1,
+64:           12
+65:         ]
+66:       ],
+67:       "water": [
+68:         {
+69:           "key": [
+70:             20,
+71:             0,
+72:             [
+73:               0,
+74:               5
+75:             ]
+76:           ],
+77:           "triangle": [
+78:             [
+79:               0,
+80:               2,
+81:               0
+82:             ],
+83:             [
+84:               12,
+85:               2,
+86:               0
+87:             ],
+88:             [
+89:               0,
+90:               2,
+91:               12
+92:             ]
+93:           ]
+94:         }
+95:       ],
+96:       "expected": {
+97:         "status": "DEFINED",
+98:         "areas": [
+99:           [
+100:             72,
+101:             1
+102:           ],
+103:           [
+104:             0,
+105:             1
+106:           ],
+107:           [
+108:             0,
+109:             1
+110:           ]
+111:         ],
+112:         "contact_pairs": 0
+113:       }
+114:     },
+115:     {
+116:       "id": "below",
+117:       "bed": [
+118:         [
+119:           0,
+120:           1,
+121:           0
+122:         ],
+123:         [
+124:           12,
+125:           1,
+126:           0
+127:         ],
+128:         [
+129:           0,
+130:           1,
+131:           12
+132:         ]
+133:       ],
+134:       "water": [
+135:         {
+136:           "key": [
+137:             20,
+138:             0,
+139:             [
+140:               0,
+141:               5
+142:             ]
+143:           ],
+144:           "triangle": [
+145:             [
+146:               0,
+147:               0,
+148:               0
+149:             ],
+150:             [
+151:               12,
+152:               0,
+153:               0
+154:             ],
+155:             [
+156:               0,
+157:               0,
+158:               12
+159:             ]
+160:           ]
+161:         }
+162:       ],
+163:       "expected": {
+164:         "status": "DEFINED",
+165:         "areas": [
+166:           [
+167:             0,
+168:             1
+169:           ],
+170:           [
+171:             72,
+172:             1
+173:           ],
+174:           [
+175:             0,
+176:             1
+177:           ]
+178:         ],
+179:         "contact_pairs": 0
+180:       }
+181:     },
+182:     {
+183:       "id": "contact",
+184:       "bed": [
+185:         [
+186:           0,
+187:           1,
+188:           0
+189:         ],
+190:         [
+191:           12,
+192:           1,
+193:           0
+194:         ],
+195:         [
+196:           0,
+197:           1,
+198:           12
+199:         ]
+200:       ],
+201:       "water": [
+202:         {
+203:           "key": [
+204:             20,
+205:             0,
+206:             [
+207:               0,
+208:               5
+209:             ]
+210:           ],
+211:           "triangle": [
+212:             [
+213:               0,
+214:               1,
+215:               0
+216:             ],
+217:             [
+218:               12,
+219:               1,
+220:               0
+221:             ],
+222:             [
+223:               0,
+224:               1,
+225:               12
+226:             ]
+227:           ]
+228:         }
+229:       ],
+230:       "expected": {
+231:         "status": "DEFINED",
+232:         "areas": [
+233:           [
+234:             72,
+235:             1
+236:           ],
+237:           [
+238:             0,
+239:             1
+240:           ],
+241:           [
+242:             0,
+243:             1
+244:           ]
+245:         ],
+246:         "contact_pairs": 0
+247:       }
+248:     },
+249:     {
+250:       "id": "half",
+251:       "bed": [
+252:         [
+253:           0,
+254:           1,
+255:           0
+256:         ],
+257:         [
+258:           12,
+259:           1,
+260:           0
+261:         ],
+262:         [
+263:           0,
+264:           1,
+265:           12
+266:         ]
+267:       ],
+268:       "water": [
+269:         {
+270:           "key": [
+271:             20,
+272:             0,
+273:             [
+274:               0,
+275:               5
+276:             ]
+277:           ],
+278:           "triangle": [
+279:             [
+280:               0,
+281:               2,
+282:               0
+283:             ],
+284:             [
+285:               12,
+286:               2,
+287:               0
+288:             ],
+289:             [
+290:               0,
+291:               2,
+292:               6
+293:             ]
+294:           ]
+295:         }
+296:       ],
+297:       "expected": {
+298:         "status": "DEFINED",
+299:         "areas": [
+300:           [
+301:             36,
+302:             1
+303:           ],
+304:           [
+305:             0,
+306:             1
+307:           ],
+308:           [
+309:             36,
+310:             1
+311:           ]
+312:         ],
+313:         "contact_pairs": 0
+314:       }
+315:     },
+316:     {
+317:       "id": "duplicate",
+318:       "bed": [
+319:         [
+320:           0,
+321:           1,
+322:           0
+323:         ],
+324:         [
+325:           12,
+326:           1,
+327:           0
+328:         ],
+329:         [
+330:           0,
+331:           1,
+332:           12
+333:         ]
+334:       ],
+335:       "water": [
+336:         {
+337:           "key": [
+338:             20,
+339:             0,
+340:             [
+341:               0,
+342:               5
+343:             ]
+344:           ],
+345:           "triangle": [
+346:             [
+347:               0,
+348:               2,
+349:               0
+350:             ],
+351:             [
+352:               12,
+353:               2,
+354:               0
+355:             ],
+356:             [
+357:               0,
+358:               2,
+359:               12
+360:             ]
+361:           ]
+362:         },
+363:         {
+364:           "key": [
+365:             21,
+366:             0,
+367:             [
+368:               0,
+369:               6
+370:             ]
+371:           ],
+372:           "triangle": [
+373:             [
+374:               0,
+375:               2,
+376:               0
+377:             ],
+378:             [
+379:               12,
+380:               2,
+381:               0
+382:             ],
+383:             [
+384:               0,
+385:               2,
+386:               12
+387:             ]
+388:           ]
+389:         }
+390:       ],
+391:       "expected": {
+392:         "status": "DEFINED",
+393:         "areas": [
+394:           [
+395:             72,
+396:             1
+397:           ],
+398:           [
+399:             0,
+400:             1
+401:           ],
+402:           [
+403:             0,
+404:             1
+405:           ]
+406:         ],
+407:         "contact_pairs": 0
+408:       }
+409:     },
+410:     {
+411:       "id": "two_layers",
+412:       "bed": [
+413:         [
+414:           0,
+415:           1,
+416:           0
+417:         ],
+418:         [
+419:           12,
+420:           1,
+421:           0
+422:         ],
+423:         [
+424:           0,
+425:           1,
+426:           12
+427:         ]
+428:       ],
+429:       "water": [
+430:         {
+431:           "key": [
+432:             20,
+433:             0,
+434:             [
+435:               0,
+436:               5
+437:             ]
+438:           ],
+439:           "triangle": [
+440:             [
+441:               0,
+442:               0,
+443:               0
+444:             ],
+445:             [
+446:               12,
+447:               0,
+448:               0
+449:             ],
+450:             [
+451:               0,
+452:               0,
+453:               12
+454:             ]
+455:           ]
+456:         },
+457:         {
+458:           "key": [
+459:             21,
+460:             0,
+461:             [
+462:               0,
+463:               6
+464:             ]
+465:           ],
+466:           "triangle": [
+467:             [
+468:               0,
+469:               2,
+470:               0
+471:             ],
+472:             [
+473:               12,
+474:               2,
+475:               0
+476:             ],
+477:             [
+478:               0,
+479:               2,
+480:               12
+481:             ]
+482:           ]
+483:         }
+484:       ],
+485:       "expected": {
+486:         "status": "DEFINED",
+487:         "areas": [
+488:           [
+489:             72,
+490:             1
+491:           ],
+492:           [
+493:             0,
+494:             1
+495:           ],
+496:           [
+497:             0,
+498:             1
+499:           ]
+500:         ],
+501:         "contact_pairs": 0
+502:       }
+503:     },
+504:     {
+505:       "id": "cross",
+506:       "bed": [
+507:         [
+508:           0,
+509:           1,
+510:           0
+511:         ],
+512:         [
+513:           12,
+514:           1,
+515:           0
+516:         ],
+517:         [
+518:           0,
+519:           1,
+520:           12
+521:         ]
+522:       ],
+523:       "water": [
+524:         {
+525:           "key": [
+526:             20,
+527:             0,
+528:             [
+529:               0,
+530:               5
+531:             ]
+532:           ],
+533:           "triangle": [
+534:             [
+535:               0,
+536:               0,
+537:               0
+538:             ],
+539:             [
+540:               12,
+541:               2,
+542:               0
+543:             ],
+544:             [
+545:               0,
+546:               0,
+547:               12
+548:             ]
+549:           ]
+550:         }
+551:       ],
+552:       "expected": {
+553:         "status": "DEFINED",
+554:         "areas": [
+555:           [
+556:             18,
+557:             1
+558:           ],
+559:           [
+560:             54,
+561:             1
+562:           ],
+563:           [
+564:             0,
+565:             1
+566:           ]
+567:         ],
+568:         "contact_pairs": 0
+569:       }
+570:     },
+571:     {
+572:       "id": "interior_hole",
+573:       "bed": [
+574:         [
+575:           0,
+576:           1,
+577:           0
+578:         ],
+579:         [
+580:           12,
+581:           1,
+582:           0
+583:         ],
+584:         [
+585:           0,
+586:           1,
+587:           12
+588:         ]
+589:       ],
+590:       "water": [
+591:         {
+592:           "key": [
+593:             20,
+594:             0,
+595:             [
+596:               0,
+597:               5
+598:             ]
+599:           ],
+600:           "triangle": [
+601:             [
+602:               1,
+603:               2,
+604:               1
+605:             ],
+606:             [
+607:               3,
+608:               2,
+609:               1
+610:             ],
+611:             [
+612:               1,
+613:               2,
+614:               3
+615:             ]
+616:           ]
+617:         }
+618:       ],
+619:       "expected": {
+620:         "status": "DEFINED",
+621:         "areas": [
+622:           [
+623:             2,
+624:             1
+625:           ],
+626:           [
+627:             0,
+628:             1
+629:           ],
+630:           [
+631:             70,
+632:             1
+633:           ]
+634:         ],
+635:         "contact_pairs": 0
+636:       }
+637:     },
+638:     {
+639:       "id": "nonconvex_remainder",
+640:       "bed": [
+641:         [
+642:           0,
+643:           1,
+644:           0
+645:         ],
+646:         [
+647:           12,
+648:           1,
+649:           0
+650:         ],
+651:         [
+652:           0,
+653:           1,
+654:           12
+655:         ]
+656:       ],
+657:       "water": [
+658:         {
+659:           "key": [
+660:             20,
+661:             0,
+662:             [
+663:               0,
+664:               5
+665:             ]
+666:           ],
+667:           "triangle": [
+668:             [
+669:               1,
+670:               2,
+671:               1
+672:             ],
+673:             [
+674:               3,
+675:               2,
+676:               1
+677:             ],
+678:             [
+679:               1,
+680:               2,
+681:               3
+682:             ]
+683:           ]
+684:         },
+685:         {
+686:           "key": [
+687:             21,
+688:             0,
+689:             [
+690:               0,
+691:               6
+692:             ]
+693:           ],
+694:           "triangle": [
+695:             [
+696:               7,
+697:               2,
+698:               1
+699:             ],
+700:             [
+701:               9,
+702:               2,
+703:               1
+704:             ],
+705:             [
+706:               7,
+707:               2,
+708:               3
+709:             ]
+710:           ]
+711:         }
+712:       ],
+713:       "expected": {
+714:         "status": "DEFINED",
+715:         "areas": [
+716:           [
+717:             4,
+718:             1
+719:           ],
+720:           [
+721:             0,
+722:             1
+723:           ],
+724:           [
+725:             68,
+726:             1
+727:           ]
+728:         ],
+729:         "contact_pairs": 0
+730:       }
+731:     },
+732:     {
+733:       "id": "seam",
+734:       "bed": [
+735:         [
+736:           0,
+737:           1,
+738:           0
+739:         ],
+740:         [
+741:           12,
+742:           1,
+743:           0
+744:         ],
+745:         [
+746:           0,
+747:           1,
+748:           12
+749:         ]
+750:       ],
+751:       "water": [
+752:         {
+753:           "key": [
+754:             20,
+755:             0,
+756:             [
+757:               0,
+758:               5
+759:             ]
+760:           ],
+761:           "triangle": [
+762:             [
+763:               0,
+764:               2,
+765:               0
+766:             ],
+767:             [
+768:               12,
+769:               2,
+770:               0
+771:             ],
+772:             [
+773:               0,
+774:               2,
+775:               6
+776:             ]
+777:           ]
+778:         },
+779:         {
+780:           "key": [
+781:             21,
+782:             0,
+783:             [
+784:               0,
+785:               6
+786:             ]
+787:           ],
+788:           "triangle": [
+789:             [
+790:               12,
+791:               2,
+792:               0
+793:             ],
+794:             [
+795:               0,
+796:               2,
+797:               12
+798:             ],
+799:             [
+800:               0,
+801:               2,
+802:               6
+803:             ]
+804:           ]
+805:         }
+806:       ],
+807:       "expected": {
+808:         "status": "DEFINED",
+809:         "areas": [
+810:           [
+811:             72,
+812:             1
+813:           ],
+814:           [
+815:             0,
+816:             1
+817:           ],
+818:           [
+819:             0,
+820:             1
+821:           ]
+822:         ],
+823:         "contact_pairs": 0
+824:       }
+825:     },
+826:     {
+827:       "id": "touch_point",
+828:       "bed": [
+829:         [
+830:           0,
+831:           1,
+832:           0
+833:         ],
+834:         [
+835:           12,
+836:           1,
+837:           0
+838:         ],
+839:         [
+840:           0,
+841:           1,
+842:           12
+843:         ]
+844:       ],
+845:       "water": [
+846:         {
+847:           "key": [
+848:             20,
+849:             0,
+850:             [
+851:               0,
+852:               5
+853:             ]
+854:           ],
+855:           "triangle": [
+856:             [
+857:               12,
+858:               2,
+859:               0
+860:             ],
+861:             [
+862:               14,
+863:               2,
+864:               0
+865:             ],
+866:             [
+867:               12,
+868:               2,
+869:               2
+870:             ]
+871:           ]
+872:         }
+873:       ],
+874:       "expected": {
+875:         "status": "DEFINED",
+876:         "areas": [
+877:           [
+878:             0,
+879:             1
+880:           ],
+881:           [
+882:             0,
+883:             1
+884:           ],
+885:           [
+886:             72,
+887:             1
+888:           ]
+889:         ],
+890:         "contact_pairs": 1
+891:       }
+892:     },
+893:     {
+894:       "id": "touch_edge",
+895:       "bed": [
+896:         [
+897:           0,
+898:           1,
+899:           0
+900:         ],
+901:         [
+902:           12,
+903:           1,
+904:           0
+905:         ],
+906:         [
+907:           0,
+908:           1,
+909:           12
+910:         ]
+911:       ],
+912:       "water": [
+913:         {
+914:           "key": [
+915:             20,
+916:             0,
+917:             [
+918:               0,
+919:               5
+920:             ]
+921:           ],
+922:           "triangle": [
+923:             [
+924:               0,
+925:               2,
+926:               0
+927:             ],
+928:             [
+929:               12,
+930:               2,
+931:               0
+932:             ],
+933:             [
+934:               0,
+935:               2,
+936:               -12
+937:             ]
+938:           ]
+939:         }
+940:       ],
+941:       "expected": {
+942:         "status": "DEFINED",
+943:         "areas": [
+944:           [
+945:             0,
+946:             1
+947:           ],
+948:           [
+949:             0,
+950:             1
+951:           ],
+952:           [
+953:             72,
+954:             1
+955:           ]
+956:         ],
+957:         "contact_pairs": 1
+958:       }
+959:     },
+960:     {
+961:       "id": "height_zero_on_edge",
+962:       "bed": [
+963:         [
+964:           0,
+965:           1,
+966:           0
+967:         ],
+968:         [
+969:           12,
+970:           1,
+971:           0
+972:         ],
+973:         [
+974:           0,
+975:           1,
+976:           12
+977:         ]
+978:       ],
+979:       "water": [
+980:         {
+981:           "key": [
+982:             20,
+983:             0,
+984:             [
+985:               0,
+986:               5
+987:             ]
+988:           ],
+989:           "triangle": [
+990:             [
+991:               0,
+992:               1,
+993:               0
+994:             ],
+995:             [
+996:               12,
+997:               1,
+998:               0
+999:             ],
+1000:             [
+1001:               0,
+1002:               0,
+1003:               12
+1004:             ]
+1005:           ]
+1006:         }
+1007:       ],
+1008:       "expected": {
+1009:         "status": "DEFINED",
+1010:         "areas": [
+1011:           [
+1012:             0,
+1013:             1
+1014:           ],
+1015:           [
+1016:             72,
+1017:             1
+1018:           ],
+1019:           [
+1020:             0,
+1021:             1
+1022:           ]
+1023:         ],
+1024:         "contact_pairs": 0
+1025:       }
+1026:     },
+1027:     {
+1028:       "id": "multilayer",
+1029:       "bed": [
+1030:         [
+1031:           0,
+1032:           1,
+1033:           0
+1034:         ],
+1035:         [
+1036:           12,
+1037:           1,
+1038:           0
+1039:         ],
+1040:         [
+1041:           0,
+1042:           1,
+1043:           12
+1044:         ]
+1045:       ],
+1046:       "water": [
+1047:         {
+1048:           "key": [
+1049:             20,
+1050:             0,
+1051:             [
+1052:               0,
+1053:               5
+1054:             ]
+1055:           ],
+1056:           "triangle": [
+1057:             [
+1058:               0,
+1059:               0,
+1060:               0
+1061:             ],
+1062:             [
+1063:               12,
+1064:               0,
+1065:               0
+1066:             ],
+1067:             [
+1068:               0,
+1069:               0,
+1070:               12
+1071:             ]
+1072:           ]
+1073:         },
+1074:         {
+1075:           "key": [
+1076:             21,
+1077:             0,
+1078:             [
+1079:               0,
+1080:               6
+1081:             ]
+1082:           ],
+1083:           "triangle": [
+1084:             [
+1085:               0,
+1086:               2,
+1087:               0
+1088:             ],
+1089:             [
+1090:               12,
+1091:               2,
+1092:               0
+1093:             ],
+1094:             [
+1095:               0,
+1096:               2,
+1097:               12
+1098:             ]
+1099:           ]
+1100:         },
+1101:         {
+1102:           "key": [
+1103:             22,
+1104:             0,
+1105:             [
+1106:               0,
+1107:               7
+1108:             ]
+1109:           ],
+1110:           "triangle": [
+1111:             [
+1112:               0,
+1113:               1,
+1114:               0
+1115:             ],
+1116:             [
+1117:               12,
+1118:               1,
+1119:               0
+1120:             ],
+1121:             [
+1122:               0,
+1123:               1,
+1124:               12
+1125:             ]
+1126:           ]
+1127:         },
+1128:         {
+1129:           "key": [
+1130:             23,
+1131:             0,
+1132:             [
+1133:               0,
+1134:               8
+1135:             ]
+1136:           ],
+1137:           "triangle": [
+1138:             [
+1139:               0,
+1140:               2,
+1141:               0
+1142:             ],
+1143:             [
+1144:               12,
+1145:               2,
+1146:               0
+1147:             ],
+1148:             [
+1149:               0,
+1150:               2,
+1151:               12
+1152:             ]
+1153:           ]
+1154:         },
+1155:         {
+1156:           "key": [
+1157:             24,
+1158:             0,
+1159:             [
+1160:               0,
+1161:               9
+1162:             ]
+1163:           ],
+1164:           "triangle": [
+1165:             [
+1166:               0,
+1167:               0,
+1168:               0
+1169:             ],
+1170:             [
+1171:               12,
+1172:               0,
+1173:               0
+1174:             ],
+1175:             [
+1176:               0,
+1177:               0,
+1178:               12
+1179:             ]
+1180:           ]
+1181:         },
+1182:         {
+1183:           "key": [
+1184:             25,
+1185:             0,
+1186:             [
+1187:               0,
+1188:               10
+1189:             ]
+1190:           ],
+1191:           "triangle": [
+1192:             [
+1193:               0,
+1194:               2,
+1195:               0
+1196:             ],
+1197:             [
+1198:               12,
+1199:               2,
+1200:               0
+1201:             ],
+1202:             [
+1203:               0,
+1204:               2,
+1205:               12
+1206:             ]
+1207:           ]
+1208:         }
+1209:       ],
+1210:       "expected": {
+1211:         "status": "DEFINED",
+1212:         "areas": [
+1213:           [
+1214:             72,
+1215:             1
+1216:           ],
+1217:           [
+1218:             0,
+1219:             1
+1220:           ],
+1221:           [
+1222:             0,
+1223:             1
+1224:           ]
+1225:         ],
+1226:         "contact_pairs": 0
+1227:       }
+1228:     },
+1229:     {
+1230:       "id": "water_point",
+1231:       "bed": [
+1232:         [
+1233:           0,
+1234:           1,
+1235:           0
+1236:         ],
+1237:         [
+1238:           12,
+1239:           1,
+1240:           0
+1241:         ],
+1242:         [
+1243:           0,
+1244:           1,
+1245:           12
+1246:         ]
+1247:       ],
+1248:       "water": [
+1249:         {
+1250:           "key": [
+1251:             20,
+1252:             0,
+1253:             [
+1254:               0,
+1255:               5
+1256:             ]
+1257:           ],
+1258:           "triangle": [
+1259:             [
+1260:               1,
+1261:               2,
+1262:               1
+1263:             ],
+1264:             [
+1265:               1,
+1266:               2,
+1267:               1
+1268:             ],
+1269:             [
+1270:               1,
+1271:               2,
+1272:               1
+1273:             ]
+1274:           ]
+1275:         }
+1276:       ],
+1277:       "expected": {
+1278:         "status": "INCONCLUSIVE_GEOMETRY",
+1279:         "areas": null,
+1280:         "contact_pairs": 0
+1281:       }
+1282:     },
+1283:     {
+1284:       "id": "water_segment",
+1285:       "bed": [
+1286:         [
+1287:           0,
+1288:           1,
+1289:           0
+1290:         ],
+1291:         [
+1292:           12,
+1293:           1,
+1294:           0
+1295:         ],
+1296:         [
+1297:           0,
+1298:           1,
+1299:           12
+1300:         ]
+1301:       ],
+1302:       "water": [
+1303:         {
+1304:           "key": [
+1305:             20,
+1306:             0,
+1307:             [
+1308:               0,
+1309:               5
+1310:             ]
+1311:           ],
+1312:           "triangle": [
+1313:             [
+1314:               0,
+1315:               2,
+1316:               0
+1317:             ],
+1318:             [
+1319:               6,
+1320:               2,
+1321:               0
+1322:             ],
+1323:             [
+1324:               12,
+1325:               2,
+1326:               0
+1327:             ]
+1328:           ]
+1329:         }
+1330:       ],
+1331:       "expected": {
+1332:         "status": "INCONCLUSIVE_GEOMETRY",
+1333:         "areas": null,
+1334:         "contact_pairs": 0
+1335:       }
+1336:     },
+1337:     {
+1338:       "id": "remote_point",
+1339:       "bed": [
+1340:         [
+1341:           0,
+1342:           1,
+1343:           0
+1344:         ],
+1345:         [
+1346:           12,
+1347:           1,
+1348:           0
+1349:         ],
+1350:         [
+1351:           0,
+1352:           1,
+1353:           12
+1354:         ]
+1355:       ],
+1356:       "water": [
+1357:         {
+1358:           "key": [
+1359:             20,
+1360:             0,
+1361:             [
+1362:               0,
+1363:               5
+1364:             ]
+1365:           ],
+1366:           "triangle": [
+1367:             [
+1368:               100,
+1369:               2,
+1370:               100
+1371:             ],
+1372:             [
+1373:               100,
+1374:               2,
+1375:               100
+1376:             ],
+1377:             [
+1378:               100,
+1379:               2,
+1380:               100
+1381:             ]
+1382:           ]
+1383:         }
+1384:       ],
+1385:       "expected": {
+1386:         "status": "DEFINED",
+1387:         "areas": [
+1388:           [
+1389:             0,
+1390:             1
+1391:           ],
+1392:           [
+1393:             0,
+1394:             1
+1395:           ],
+1396:           [
+1397:             72,
+1398:             1
+1399:           ]
+1400:         ],
+1401:         "contact_pairs": 0
+1402:       }
+1403:     },
+1404:     {
+1405:       "id": "bed_vertical",
+1406:       "bed": [
+1407:         [
+1408:           0,
+1409:           0,
+1410:           0
+1411:         ],
+1412:         [
+1413:           0,
+1414:           1,
+1415:           0
+1416:         ],
+1417:         [
+1418:           0,
+1419:           1,
+1420:           12
+1421:         ]
+1422:       ],
+1423:       "water": [],
+1424:       "expected": {
+1425:         "status": "DEGENERATE_PROJECTION",
+1426:         "areas": null,
+1427:         "contact_pairs": 0
+1428:       }
+1429:     }
+1430:   ],
+1431:   "derivation": "Base area12*12/2=72; half36; interior2; two disjoint interior4; cross x>=6 has legs6 and area18. Expected numbers literal and fixed before implementation. Degenerate/AABB rules from reviewed plan.",
+1432:   "metamorphics": [
+1433:     "water_permutation",
+1434:     "winding_reversal",
+1435:     "exact_translation",
+1436:     "water_subdivision",
+1437:     "bed_duplicate_with_distinct_keys"
+1438:   ],
+1439:   "negative_codes": {
+1440:     "nonfinite": "GEOMETRY",
+1441:     "quad": "GEOMETRY",
+1442:     "flag": "GEOMETRY",
+1443:     "padding": "GEOMETRY",
+1444:     "identity": "IDENTITY",
+1445:     "schema": "SCHEMA",
+1446:     "report": "REPORT",
+1447:     "ops": "RESOURCE_INCONCLUSIVE",
+1448:     "bits": "RESOURCE_INCONCLUSIVE",
+1449:     "pieces": "RESOURCE_INCONCLUSIVE",
+1450:     "truncated": "TERMINAL",
+1451:     "changed": "SOURCE_CHANGED"
+1452:   },
+1453:   "claims": {
+1454:     "terrain_evaluated": false,
+1455:     "exposure_evaluated": false,
+1456:     "native_acceptance": false,
+1457:     "map_repaired": false,
+1458:     "human_resolved": 0,
+1459:     "C1": "NOT_REVIEWED"
+1460:   }
+1461: }
+
+FILE quality-council-q03c1-selected-water-overlay-20261029.md SHA 2ee0929e4764c3f5d5119d2ef3262cf4d28a0e9f62b0babf36632acd5398973b
+1: # Q03C1 — medir cobertura vertical de agua guardada sobre un lecho completo
+2: 
+3: Estado: REVISADO_PARA_CONTRATO_Y_MEDICION_GEOMETRICA_ACOTADA. Unidad geométrica concreta después del
+4: índice Q03B6; no nueva infraestructura genérica. Planner/integrator Codex,
+5: executor local Codex explícito para contrato/oráculos/código una vez revisado.
+6: Una lane externa Muse Wonder1.0 CLI nativo; no nuevo council.
+7: 
+8: Revisión Muse104.031s SOUND-with-fixes/CONVERGE, siete precisiones adjudicadas
+9: al final. Todavía no contrato, código ni medición Q03C1. La futura revisión de
+10: código180s incluye el contrato externo; no segunda revisión de este mismo plan.
+11: 
+12: ## Intención y evidencia [EXACT]
+13: 
+14: Q03/Q11 del plan quality-council-procedural-map-20261029 exigen distinguir lecho,
+15: agua y oclusión antes de cambiar modelos/terreno. Q05 añadirá toda huella vial y
+16: ambos accesos; el corredor histórico8m no sustituye piezas12/9m ni ancho útil.
+17: Trazabilidad de producto: product-spec.md:15-17, P9 agua/calado/gálibo,
+18: P10 terreno/navegación antes de mapeado y P11 conducción. Este diagnóstico
+19: conserva sus criterios y no autoriza colocar pavimento ni aceptar navegación.
+20: Este corte entrega áreas y testigos geométricos de DOS capas históricas. No
+21: denomina «visible» a un lecho que podría estar oculto por terreno u otro modelo.
+22: 
+23: Q03B6 report aa8d3ace483967ac5dec430f6a0e6e99cc7fed27196b16ac480040433454b060
+24: y consumer verificado ligan los204NPZ/7046miembros. El JSON guardado contiene:
+25: 201 pilotos,4760 caras water en total; el modelo exacto
+26: `baltic_stream_pilot/cs_kit_118_0000.p3d`, index3579, instance19394363,
+27: pose_row13844, tiene1520 bed y24 water. Archivo relativo
+28: `pilot-visible-surface-extraction-20261028/models/cs_kit_118_0000.npz`.
+29: Todos los pilotos ya están en ALREADY_WORLD_UNCERTIFIED; no transformar de nuevo.
+30: Época3d955, no instalado actual/candidatoB3/sonda nativa. El vínculo es por ID,
+31: nombre e índice; no se vincula una fotografía a esta pieza por cercanía. Cont65
+32: permanece sin geometría humana enlazada. Nueve rechazos abiertos, C1NOT_REVIEWED.
+33: 
+34: Anclas leídas: pilot_visible_surface_ev112.py:172-234 guarda grupos mundiales,
+35: counts/flags/IDs y source_category; pilot_visible_exposure_ev112.py:68-121
+36: separa footprint de agua y relación vertical, y usa unión para no duplicar
+37: áreas; su corredor:28-47 es8m. pilot_surface_refinement_ev112.py:71-97 compara
+38: contra terreno/agua nominal pero no certifica oclusores completos. Sus CLIs
+39: consumidos NO se relanzan y sus tolerancias float no se trasladan a este corte.
+40: 
+41: Lectura aprobada disponible: saved_scene_archive_q03b2.py:260-352,
+42: Session(**limits).open(path,schemas); source Q03B6 saved_scene_io_q03b6.py:74-110,
+43: Reader.open(spec,names,predicate), sobre snapshot/hash y esquemas estrictos.
+44: Estos helpers sellados se usan como primitivas pinadas, sin modificar ni
+45: invocar CLIs anteriores. I/O/NumPy/zlib compartidos declarados.
+46: 
+47: ## Alcance, contrato previo y lectura [DESIGN]
+48: 
+49: Congelar contrato/oráculos literales ANTES de código; revisión de código incluye
+50: contrato. No otra investigación de contenedores ni lectura libre de204NPZ.
+51: Pins externos: e967 escena, f8f8f6dc Q03B6, report+consumer+receipts; 201 specs
+52: piloto exactas del contrato original, manifest/inputs/catalog rows necesarios,
+53: Reader/Session/header y fuentes de las anclas. No derivar expectativa del
+54: informe que producirá esta unidad ni cambiar pins para PASS.
+55: 
+56: Una Session acumulativa por caminante,201NPZ piloto, no prototipos/instancias
+57: releídos innecesariamente. Verificar todos sus descriptores/digests contra el
+58: índice verificado y SHA físico original; máximo16MiB stored porarchivo,
+59: 128MiB expandido porarchivo/262434599 acumulado/35miembros. No mmap/pickle.
+60: Retener sólo copias de water/IDs de201pilotos y bed/IDs/category del seleccionado;
+61: reservar copias antes de asignar y contabilizar memoria retenida. Memoria del
+62: helper y de la escena no se confunde con reservas lógicas.
+63: 
+64: Gate de geometría: finite, n==3 y flags==0 para caras utilizadas; cuarto slot
+65: de padding intacto y observado, no nueva triangulación de quads. Si se refuta
+66: triangularidad o aparecen flags, REJECTED_GEOMETRY y no se triangula por cuenta
+67: propia. Comprobar IDs fuente y cardinalidades1520/4760 mediante índices exactos,
+68: no nombres parciales. Categorías sólo como anotación histórica; no semántica
+69: render. AABB para descartar pares imposibles, nunca como huella ni ancho útil.
+70: 
+71: ## Medición exacta [DESIGN]
+72: 
+73: Objetivo por cada cara bed: área proyectadaXZ total, cubierta por al menos una
+74: cara water seleccionada con altura W>=B en el mismoXZ, y su complemento. También
+75: área con footprint de agua sin condición de altura y área de footprint con agua
+76: estrictamente inferior aB en TODOS los water que la cubren. De aquí:
+77: total = covered_at_or_above + footprint_only_below + no_water_footprint.
+78: No suma de áreas por pareja, ni suma por caras bed llamada unión mundial: bed
+79: pueden superponerse. Informe conserva resultados porcara y, si suma, la etiqueta
+80: FACE_AREA_SUM_WITH_MULTIPLICITY. Contacto W==B cuenta cubierto en esta medición,
+81: sin certificar agua física, render, profundidad navegable ni oleaje.
+82: 
+83: Convertir cadafloat binario finito a racional exacto, sin redondear/soldar ni
+84: epsilon. Determinantes XZ, planos afines, intersecciones y áreas racionales.
+85: Proyección con área0: DEGENERATE_PROJECTION porcara, sin dividir ni aceptar área
+86: visible0. Triángulo water degenerado que podría cruzar elbed deja estado
+87: INCONCLUSIVE_GEOMETRY, no se omite como transparente. No atan2 ni raíces.
+88: 
+89: Productor: lista de pares candidata por bounding boxes exactas (sweep/buckets
+90: puede ordenar, no alterar extremos). Para cada bed, intersectar cada triángulo
+91: water y recortar por semiplano W-B>=0. Estos recortes convexos se unen mediante
+92: sustracción incremental de polígonos convexos: partir cada resto por los lados
+93: del recorte, emitir las piezas exteriores disjuntas y continuar con interior.
+94: Repetir aparte sin condición de altura para footprint. Áreas racionales y
+95: extremos W-B porpareja de intersección; testigos IDs/modelo/cara/XYZ condicional
+96: en evidencia privada. Orden determinista por (model_index,face_index).
+97: 
+98: Consumidor propio: recarga fuentes y recorre cada bed contra TODOS los4760 water
+99: con AABB independiente; enumera las líneas de las caras candidatas y W-B=0,
+100: subdivide elbed en celdas convexas. Clasifica punto interior racional de cada
+101: celda contra el conjunto de water; calcula por separado las tres áreas. Las
+102: fronteras tienen área0; una región W-B idénticamente0 se clasifica contacto.
+103: Compara valores/estados/pares/IDs y cobertura completos. No importa funciones
+104: geométricas del productor ni acepta su lista de candidatos como denominador.
+105: I/O compartido sí; sustracción frente a arreglo de líneas son recorridos distintos.
+106: 
+107: No certificar exposición final: terreno/agua nativa/modelosVisual ordinarios/
+108: vegetación/oclusores NO evaluados. Water de otros modelos fuera201pilotos tampoco.
+109: La ausencia aquí se llama NO_SELECTED_WATER_FOOTPRINT, nunca «sin agua mundial».
+110: Esto localiza una relación geométrica reproducible para Q03C2, no decide reparación.
+111: 
+112: ## Oráculos y rechazos [DESIGN]
+113: 
+114: Congelar arrays y resultados racionales calculables a mano antes de código:
+115: triánguloXZ(0,0),(12,0),(0,12) área72; water completo superior=72/0/0,
+116: inferior=0/72/0, contacto=72/0/0, media cobertura=36/0/36; dos capas duplicadas
+117: superiores conservan72; capa inferior y superior concurrentes no duplican.
+118: Plano cruzado W-B corta triángulo en proporción literal derivada en contrato.
+119: Agua sólo de OTRO piloto debe cubrir; dos mitades con costura exacta suman72;
+120: cara repetida bed aparece dos veces con IDs distintos, nunca unión mundial.
+121: Invariantes tras permutación de water, inversión winding, traslación exacta y
+122: subdivisión de water sin mover superficie, firmados con resultados independientes.
+123: 
+124: Negativos: NaN/infinito, n4, flag no0, ID omitido/duplicado, digest/epoch distinto,
+125: dobletransformación, candidato AABB omitido, water debajo contado como superior,
+126: unión duplicada, igualdad clasificada debajo, racional malformado/bool comoint,
+127: denominador0, bitcap/opcap/piececap, salida parcial marcada completa, fuente o
+128: informe co-mutados. CLI productor→JSON→consumidor con positivos y negativos reales.
+129: Helpers antiguos/suites viejas no se repiten.
+130: 
+131: ## Presupuestos y terminales [DESIGN]
+132: 
+133: Codexexecutor local900s contrato/oráculos+delta geométrico acotado,3módulos como
+134: máximo más test; code review externa180s, suite120s/256MiB; una corrección180s
+135: por repro cerrado y una recuperación180s de dictamen ausente. No bucle interno.
+136: Una producción120s/512MiB y un consumidor120s/512MiB. Salida32MiB; evidencia
+137: geométrica completa privada, público sólo métricas/IDs/digests/resumen.
+138: 
+139: Caps porcara100000 operaciones racionales/4096bits poroperando,1024fragmentos
+140: vivos/8192vértices vivos; reservar antes de operar o materializar. El contador
+141: de AABB independiente cubre exactamente1520*4760=7235200pares como máximo por
+142: caminante; no es presupuesto racional compartido. No subir caps si no termina.
+143: Estos son límites de recursos del corte, no tolerancias geométricas. Contrato
+144: debe fijar cota conservadora de resultados/intermedios ANTES de cada operación.
+145: 
+146: Cada cara emite terminal íntegro fsync con estado y tiempos. FULL sólo si1520
+147: terminales definidos y comprobados por consumidor; si una cara agota recursos,
+148: RESOURCE_INCONCLUSIVE y no aceptar esa cara. Timeout conserva sólo terminales
+149: ya íntegros, sin prometer resumen final. Consumidor puede verificar prefijo
+150: guardado completo sin promoverlo a FULL. SOURCE_CHANGED/I/O/BUG diferenciados.
+151: Estados finales MEASURED_SELECTED_WATER_OVERLAY_ONLY o VERIFIED_PARTIAL_OVERLAY,
+152: siempre terrain_evaluated=false, exposure_evaluated=false, native_acceptance=false,
+153: map_repaired=false, human_resolved=0, C1NOT_REVIEWED.
+154: 
+155: Después: usar testigos para plan Q03C2 terreno/oclusores y Q05 huellas completas,
+156: sin repetir este corte ni buscar permisos de producto ya dados. Carreteras,
+157: ángulos certificados/Q08/Q17 siguen en backlog activo; nada de P:/build/DayZ.
+158: 
+159: ## Precisiones adjudicadas de revisión, obligatorias al contrato [DESIGN]
+160: 
+161: 1. Miembros geométricos canónicos `bed.npy` y `water.npy`, sus `_n`, `_flags`,
+162:    `_source_ids`; `road_*` se verifica por digest como los demás miembros, pero
+163:    NO se añade a la medición. Clave de cara: (model_index,ordinal_en_miembro,
+164:    source_ids_completo), dos columnas preservadas como tuple opaca. El ordinal
+165:    no se confunde con source_face ni con cara física del motor.
+166: 2. XZ=(coordenadas0,2), altura=1, área absoluta. Winding interno CCW por
+167:    determinante racional, sin modificar los arrays originales. Para n3, padding
+168:    slot3=(+0.0,+0.0,+0.0) bitexacto, coherente con zeros del writer218-221.
+169:    Signedzero de los tres vértices utilizados se conserva en sus digests;
+170:    como racional -0 y+0 tienen el mismo valor geométrico.
+171: 3. BedXZ degenerado da DEGENERATE_PROJECTION. WaterXZ degenerado puede ser punto
+172:    o segmento: si su AABB cerrada solapa AABBbed cerrada, incluso sólo frontera,
+173:    emitir INCONCLUSIVE_GEOMETRY/DEGENERATE_WATER_AABB_CANDIDATE. Es conservador:
+174:    no afirma cruce efectivo; ambos caminantes aplican ese mismo criterio exacto.
+175:    Si AABB son disjuntas queda descartado con razón. FULL requiere1520 triples
+176:    racionales medidos y verificados; cualquier terminal sin triple conserva
+177:    resultado global parcial. Error de fuente/esquema sigue REJECTED.
+178: 4. En productor, fragmentos convexos simples, interiores disjuntos y unión
+179:    exacta igual al resto pendiente después de cada resta; orientación del
+180:    recorte normalizada, limpieza sólo de duplicados exactos/área0. Oráculos
+181:    adicionales literales: water estrictamente interior (resto con hueco formado
+182:    por piezas), resto no convexo, vértice en arista, toque puntual/segmento y
+183:    línea W-B=0 coincidente con borde. Son ejemplos geométricos, no naturales.
+184: 5. Par reportado sólo si intersecciónXZ tiene área positiva. Contactos puntuales
+185:    o lineales se cuentan aparte, sin extremos de área ni aporte numérico. Para
+186:    cada celda del consumidor, punto interior=media racional de vértices de
+187:    polígono convexo con área positiva. Rectas se normalizan con coeficientes
+188:    enteros primitivos y signo canónico; duplicadas/coincidentes una sola vez.
+189:    Función W-B constante0 no añade recta y sí contacto; constante no0 se clasifica
+190:    por signo. Metamórficos permutación/subdivisión comparan áreas/estados, no la
+191:    identidad de pares, que cambia legítimamente con nuevos ordinales.
+192: 6. Cada terminal: payload JSON canónico más recibo de seq/bytes/SHA256, ambos
+193:    creados en destinos exclusivos. Publicar recibo sólo tras fsync del payload;
+194:    temporales se renombran atómicamente dentro del mismo directorio. Consumidor
+195:    sólo acepta secuencia0..k sin huecos con recibos íntegros y hashes correctos;
+196:    un payload huérfano no cuenta. Manifest final sólo si1520, no por timeout.
+197:    Cap32MiB incluye temporales, payloads y recibos. Racionales JSON como [n,d]
+198:    de enteros estrictos no bool, gcd1,d>0 y cero=[0,1]; sin floats/NaN/defaults.
+199: 7. Caps de fragmentos/celdas y vértices por caminante separados, cada uno con
+200:    su propio contador; no sumar presupuestos ni afirmar igualdad de operaciones.
+201:    Deduplicación de rectas previa al arreglo. Cotas conservadoras de bits antes
+202:    de cada operación (incluidos intermediarios antes de reducción) y reservas
+203:    antes de construir listas. Oráculo multicapa ejercita crecimiento y rechazo
+204:    previo. No se demuestra que todos los1520 terminen dentro de los caps; el
+205:    presupuesto es techo, no promesa de FULL. No ampliar tras observar datos.
+206: 
+207: Estos puntos son ajustes cerrados de especificación; el reviewer no releyó
+208: esta postimagen editorial. Codex verificó el delta con contexto compartido.
+209: No se ha abierto ningún NPZ adicional para este plan.
+
+FILE selected_water_io_q03c1.py SHA 79c180f1f703852657f366becfcea97c2a4dddeb7c1920095b42a8d90b70dc68
+1: """Shared pinned I/O and checked rational scalars; no polygon geometry."""
+2: from pathlib import Path
+3: from fractions import Fraction as F
+4: import json,hashlib,math,os,types,argparse,sys
+5: import numpy as np
+6: IO_SHA='d0734c068d59c87a9d35e31e431a0eb864d4e5ce22d29b2ab9c597c62bd15a44'
+7: CAPS={'bits':4096,'ops':100000,'pieces':1024,'vertices':8192,'output':33554432,'retained_arrays':16777216}
+8: CLAIMS={'terrain_evaluated':False,'exposure_evaluated':False,'native_acceptance':False,'map_repaired':False,'human_resolved':0,'C1':'NOT_REVIEWED'}
+9: class Rejected(Exception):
+10:  def __init__(self,code,detail=''):self.code=code;super().__init__(code+(':'+detail if detail else ''))
+11: def need(x,code,detail=''):
+12:  if not x:raise Rejected(code,detail)
+13: def digest(b):return hashlib.sha256(b).hexdigest()
+14: def canonical(v):return (json.dumps(v,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False)+'\n').encode()
+15: def exact(a,b):return type(a)==type(b) and (a.keys()==b.keys() and all(exact(a[k],b[k]) for k in a) if type(a) is dict else len(a)==len(b) and all(exact(x,y) for x,y in zip(a,b)) if type(a) is list else a==b)
+16: def pairs(rows):
+17:  d={}
+18:  for k,v in rows:need(k not in d,'SCHEMA');d[k]=v
+19:  return d
+20: def parse(b):
+21:  def bad(x):raise Rejected('SCHEMA','nonfinite')
+22:  try:return json.loads(b,object_pairs_hook=pairs,parse_constant=bad)
+23:  except (ValueError,UnicodeError,RecursionError) as e:raise Rejected('SCHEMA','JSON') from e
+24: def read(path,pin=None,cap=16777216):
+25:  p=Path(path);need(p.is_absolute() and '..' not in p.parts,'SCHEMA')
+26:  for q in (p,*p.parents):
+27:   s=os.lstat(q);need(not q.is_symlink() and not getattr(s,'st_file_attributes',0)&0x400,'REPARSE')
+28:  identity=lambda s:(s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns)
+29:  before=p.stat();need(0<before.st_size<=cap,'SCHEMA','size')
+30:  with p.open('rb') as f:
+31:   first=os.fstat(f.fileno());b=f.read(before.st_size);tail=f.read(1);last=os.fstat(f.fileno())
+32:  need(identity(before)==identity(first)==identity(last)==identity(p.stat()) and len(b)==before.st_size and not tail,'SOURCE_CHANGED')
+33:  if pin:need(digest(b)==pin['sha256'] and ('bytes' not in pin or len(b)==pin['bytes']),'IDENTITY')
+34:  return b
+35: def config(path,sha):
+36:  c=parse(read(path,{'sha256':sha}));need(c['schema']=='q03c1-selected-water-overlay-v1','SCHEMA')
+37:  need(exact(c['claims'],CLAIMS) and exact(c['limits'],CAPS),'SCHEMA','limits/claims')
+38:  need(c['io']['sha256']==IO_SHA,'IDENTITY','sealed IO');b=read(c['io']['path'],c['io'],65536)
+39:  m=types.ModuleType('_q03c1_saved_io');m.__file__=c['io']['path'];exec(compile(b,m.__file__,'exec'),m.__dict__)
+40:  return c,m
+41: class Budget:
+42:  def __init__(self,limits=None):
+43:   self.limits=dict(CAPS)
+44:   if limits:
+45:    need(all(k in CAPS and type(v) is int and 0<v<=CAPS[k] for k,v in limits.items()),'SCHEMA');self.limits.update(limits)
+46:   self.ops=0;self.peak_pieces=0;self.peak_vertices=0
+47:  def tick(self):
+48:   need(self.ops<self.limits['ops'],'RESOURCE_INCONCLUSIVE','ops');self.ops+=1
+49:  def bound(self,*bits):need(max(bits,default=0)<=self.limits['bits'],'RESOURCE_INCONCLUSIVE','bits')
+50:  def check(self,q):self.bound(abs(q.numerator).bit_length(),q.denominator.bit_length());return q
+51:  def val(self,v):
+52:   self.tick();need(type(v) in (int,float) and (type(v) is int or math.isfinite(v)),'GEOMETRY')
+53:   n,d=v.as_integer_ratio() if type(v) is float else (v,1);self.bound(abs(n).bit_length(),d.bit_length());return F(n,d)
+54:  def op(self,a,b,kind):
+55:   self.tick();self.check(a);self.check(b);an,ad,bn,bd=abs(a.numerator).bit_length(),a.denominator.bit_length(),abs(b.numerator).bit_length(),b.denominator.bit_length()
+56:   if kind in ('add','sub'):self.bound(max(an+bd,bn+ad)+1,ad+bd);v=a+b if kind=='add' else a-b
+57:   elif kind=='mul':self.bound(an+bn,ad+bd);v=a*b
+58:   elif kind=='div':need(b.numerator!=0,'INTERNAL_ERROR','zero denominator');self.bound(an+bd,ad+bn);v=a/b
+59:   else:raise Rejected('INTERNAL_ERROR','operation')
+60:   return self.check(v)
+61:  def add(self,a,b):return self.op(a,b,'add')
+62:  def sub(self,a,b):return self.op(a,b,'sub')
+63:  def mul(self,a,b):return self.op(a,b,'mul')
+64:  def div(self,a,b):return self.op(a,b,'div')
+65:  def cmp(self,a,b):
+66:   self.tick();self.check(a);self.check(b);self.bound(abs(a.numerator).bit_length()+b.denominator.bit_length(),abs(b.numerator).bit_length()+a.denominator.bit_length());return (a>b)-(a<b)
+67:  def reserve(self,pieces,vertices):
+68:   need(pieces<=self.limits['pieces'] and vertices<=self.limits['vertices'],'RESOURCE_INCONCLUSIVE','pieces/vertices');self.peak_pieces=max(self.peak_pieces,pieces);self.peak_vertices=max(self.peak_vertices,vertices)
+69:  def sum(self,values):
+70:   r=F(0)
+71:   for v in values:r=self.add(r,v)
+72:   return r
+73:  def stats(self):return {'ops':self.ops,'peak_pieces':self.peak_pieces,'peak_vertices':self.peak_vertices}
+74: def pack(q):return [q.numerator,q.denominator]
+75: def unpack(q):
+76:  need(type(q) is list and len(q)==2 and all(type(x) is int for x in q),'REPORT','rational type');n,d=q
+77:  need(d>0 and max(abs(n).bit_length(),d.bit_length())<=4096 and math.gcd(n,d)==1 and (n!=0 or d==1),'REPORT','rational canonical');return F(n,d)
+78: def validate_face(a,n=3,flag=0,padding=None):
+79:  need(type(n) is int and n==3 and type(flag) is int and flag==0,'GEOMETRY')
+80:  need(type(a) is list and len(a)==3 and all(type(p) is list and len(p)==3 for p in a),'GEOMETRY')
+81:  need(all(type(v) in (int,float) and (type(v) is int or math.isfinite(v)) for p in a for v in p),'GEOMETRY')
+82:  if padding is not None:need(np.array_equal(np.asarray(padding,dtype='<f8').view('<u8'),np.zeros(3,'<u8')),'GEOMETRY','padding')
+83: def key_ok(k):need(type(k) is list and len(k)==3 and type(k[0]) is int and type(k[1]) is int and k[0]>=0 and k[1]>=0 and type(k[2]) is list and len(k[2])==2 and all(type(v) is int and v>=0 for v in k[2]),'SCHEMA','face key')
+84: def fixture_data(path,sha):
+85:  b=read(path,{'sha256':sha},1048576);x=parse(b);need(type(x) is dict and set(x)=={'bed','water'},'SCHEMA')
+86:  for group in ('bed','water'):
+87:   need(type(x[group]) is list and len(x[group])<=128,'SCHEMA');seen=set()
+88:   for row in x[group]:
+89:    need(type(row) is dict and set(row)=={'key','triangle'},'SCHEMA');key_ok(row['key']);validate_face(row['triangle']);k=canonical(row['key']);need(k not in seen,'IDENTITY','duplicate key');seen.add(k)
+90:  need(len(x['bed'])>0,'SCHEMA');return x['bed'],x['water'],{'mode':'FIXTURE','sha256':digest(b)}
+91: def historical(c,I):
+92:  s=I.parse(I.read_small(c['scene']['path'],c['scene']));cc=I.parse(I.read_small(c['index_contract']['path'],c['index_contract']));idx=I.parse(I.read_small(c['index']['path'],c['index']));proof=I.parse(I.read_small(c['index_consumer']['path'],c['index_consumer']))
+93:  # Saved consumer binds its contract; exact report bytes are independently pinned
+94:  # in this external contract. Do not invent a report_sha256 field in that receipt.
+95:  need(proof['status']=='VERIFIED_SAVED_SELECTED_SURFACE_INDEX_ONLY' and proof['files_read']==204 and proof['contract_sha256']==c['index_contract']['sha256'] and idx['status']==proof['status'],'IDENTITY','proof')
+96:  need(idx['contract_sha256']==c['index_contract']['sha256'] and exact(s['epoch'],c['epoch']) and cc['scene']['sha256']==c['scene']['sha256'],'IDENTITY','epoch')
+97:  for p in c['receipts']:
+98:   v=I.parse(I.read_small(p['path'],p));need(v['rc']==0 and v['reason'] is None,'IDENTITY','completion')
+99:  for p in s['pins'].values():I.read_small(p['path'],p)
+100:  need(all(cc['limits'][k]==v for k,v in c['archive_limits'].items()),'IDENTITY')
+101:  rd=I.Reader(cc);pilots={p['model_index']:p for p in idx['pilots']};need(len(pilots)==len(idx['pilots'])==c['pilot_count'],'IDENTITY')
+102:  specs={p['relative']:p for p in s['arrays'] if p['kind']=='pilot'};need(len(specs)==c['pilot_count'],'IDENTITY','specs')
+103:  waters=[];beds=[];retained=0;inventory=[]
+104:  for mi,p in sorted(pilots.items()):
+105:   spec=specs[p['archive']];desc=p['arraydigestmap'];names=[n[:-4] for n in desc]
+106:   def pred(heads):need(exact(heads,{n:{'dtype':d['descriptor'],'shape':d['shape']} for n,d in desc.items()}),'IDENTITY','descriptors')
+107:   with rd.open(spec,names,pred) as (arrays,actual):
+108:    need(exact(desc,actual),'IDENTITY','array digests')
+109:    groups=['water']+(['bed'] if mi==c['target']['model_index'] else [])
+110:    for group in groups:
+111:     v=arrays[group];counts=arrays[group+'_n'];flags=arrays[group+'_flags'];ids=arrays[group+'_source_ids'];n=len(v)
+112:     need(v.shape==(n,4,3) and ids.shape==(n,2) and counts.shape==flags.shape==(n,) and np.isfinite(v).all() and np.all(counts==3) and not np.any(flags),'GEOMETRY')
+113:     need(not np.any(v[:,3,:].view('<u8')),'GEOMETRY','padding')
+114:     # Conservative retained Python list budget: 1024 bytes per triangle including keys.
+115:     need(retained+n*1024<=c['limits']['retained_arrays'],'RESOURCE_INCONCLUSIVE','retained');retained+=n*1024
+116:     target=waters if group=='water' else beds
+117:     for j in range(n):
+118:      row={'key':[mi,j,[int(z) for z in ids[j]]],'triangle':v[j,:3].tolist()};key_ok(row['key']);target.append(row)
+119:    inventory.append({'archive':p['archive'],'sha256':spec['sha256'],'members':actual})
+120:  need(len(waters)==c['water_count'] and len(beds)==c['target']['bed_count'],'IDENTITY','count')
+121:  p=pilots[c['target']['model_index']]
+122:  need(all(p[k]==c['target'][k] for k in ('model_index','model','instance_id','pose_row')),'IDENTITY','target')
+123:  return beds,waters,{'mode':'HISTORICAL','epoch':s['epoch'],'index_sha256':c['index']['sha256'],'archives':inventory,'retained_charge':retained}
+124: def result(key,b,status,areas=None,pair_rows=None,contacts=None,detail=None):
+125:  return {'key':key,'status':status,'areas':areas,'pairs':pair_rows or [],'contacts':contacts or [],'detail':detail,'stats':b.stats()}
+126: def semantic(r):
+127:  need(type(r) is dict and set(r)=={'key','status','areas','pairs','contacts','detail','stats'},'REPORT');key_ok(r['key'])
+128:  need(r['status'] in ('DEFINED','DEGENERATE_PROJECTION','INCONCLUSIVE_GEOMETRY','RESOURCE_INCONCLUSIVE'),'REPORT')
+129:  need((r['status']=='DEFINED')==(r['areas'] is not None),'REPORT')
+130:  st=r['stats'];need(type(st) is dict and set(st)=={'ops','peak_pieces','peak_vertices'} and all(type(v) is int and v>=0 for v in st.values()),'REPORT')
+131:  need(st['ops']<=CAPS['ops'] and st['peak_pieces']<=CAPS['pieces'] and st['peak_vertices']<=CAPS['vertices'],'REPORT')
+132:  if r['areas'] is not None:
+133:   need(type(r['areas']) is list and len(r['areas'])==3,'REPORT');need(all(unpack(q)>=0 for q in r['areas']),'REPORT')
+134:  need(type(r['pairs']) is list and type(r['contacts']) is list,'REPORT')
+135:  for p in r['pairs']:
+136:   need(type(p) is dict and set(p)=={'water','area','min_W_B','max_W_B'},'REPORT');key_ok(p['water']);need(unpack(p['area'])>0 and unpack(p['min_W_B'])<=unpack(p['max_W_B']),'REPORT')
+137:  for k in r['contacts']:key_ok(k)
+138:  return {k:v for k,v in r.items() if k!='stats'}
+139: class Output:
+140:  def __init__(self,path,cap):self.path=Path(path);self.path.mkdir(exist_ok=False);self.cap=cap;self.used=0
+141:  def write(self,name,value):
+142:   data=canonical(value);need(self.used+len(data)<=self.cap,'OUTPUT_CAP');p=self.path/name;temp=self.path/(name+'.tmp');need(not p.exists() and not temp.exists(),'TERMINAL')
+143:   with temp.open('xb') as f:f.write(data);f.flush();os.fsync(f.fileno())
+144:   os.replace(temp,p);self.used+=len(data);return {'bytes':len(data),'sha256':digest(data)}
+145:  def terminal(self,i,row):
+146:   n=f'{i:04d}.json';encoded=canonical(row);receipt={'seq':i,'bytes':len(encoded),'sha256':digest(encoded)}
+147:   need(self.used+len(encoded)+len(canonical(receipt))<=self.cap,'OUTPUT_CAP')
+148:   self.write(n,row);self.write(f'{i:04d}.receipt.json',receipt)
+149: def prefix(path,cap):
+150:  path=Path(path);entries=list(path.iterdir());need(all(p.is_file() and not p.is_symlink() for p in entries),'TERMINAL');names={p.name for p in entries};size=sum(p.stat().st_size for p in entries);need(size<=cap,'OUTPUT_CAP')
+151:  receipts=sorted(n for n in names if n.endswith('.receipt.json'));rows=[]
+152:  for i,n in enumerate(receipts):
+153:   need(n==f'{i:04d}.receipt.json','TERMINAL','gap');r=parse(read(path/n));need(type(r) is dict and set(r)=={'seq','bytes','sha256'} and type(r['seq']) is int and r['seq']==i and type(r['bytes']) is int,'TERMINAL')
+154:   b=read(path/f'{i:04d}.json',r);rows.append(parse(b))
+155:  allowed={'header.json','manifest.json'}|{f'{i:04d}{suffix}' for i in range(len(rows)) for suffix in ('.json','.receipt.json')}
+156:  if 'manifest.json' not in names:allowed|={f'{len(rows):04d}{suffix}' for suffix in ('.json','.json.tmp','.receipt.json.tmp')}
+157:  need(names<=allowed,'TERMINAL','unexpected/orphan files')
+158:  return rows
+159: def arguments(consumer=False):
+160:  p=argparse.ArgumentParser();p.add_argument('--contract',required=True);p.add_argument('--sha',required=True);p.add_argument('--out',required=True);p.add_argument('--fixture');p.add_argument('--fixture-sha')
+161:  if consumer:p.add_argument('--capture',required=True)
+162:  return p.parse_args()
+163: def data(c,I,a):return fixture_data(a.fixture,a.fixture_sha) if a.fixture else historical(c,I)
+164: def main_guard(fn):
+165:  try:fn()
+166:  except Exception as e:
+167:   code=getattr(e,'code',None) or ('IO_ERROR' if isinstance(e,OSError) else 'INTERNAL_ERROR');print(json.dumps({'status':'REJECTED','code':code,'detail':str(e)}),file=sys.stderr);sys.exit(1)
+
+FILE selected_water_producer_q03c1.py SHA 09bfc42488186f22bdbc2ff226ba6ee9a3fe1bf589ec8880ec29f66fdba12af1
+1: """Exact selected-water union by convex subtraction. No consumer geometry."""
+2: import sys
+3: from pathlib import Path
+4: sys.path.insert(0,str(Path(__file__).parent))
+5: import selected_water_io_q03c1 as I
+6: from fractions import Fraction as F
+7: def cross(a,b,q):return q.sub(q.mul(a[0],b[1]),q.mul(a[1],b[0]))
+8: def vector(a,b,q):return (q.sub(a[0],b[0]),q.sub(a[1],b[1]))
+9: def area(p,q):
+10:  if len(p)<3:return F(0)
+11:  total=q.sum(cross(vector(p[i],p[0],q),vector(p[i+1],p[0],q),q) for i in range(1,len(p)-1))
+12:  return q.div(abs(total),F(2))
+13: def projection(tri,q):
+14:  p=[(q.val(v[0]),q.val(v[2])) for v in tri];y=[q.val(v[1]) for v in tri]
+15:  d=cross(vector(p[1],p[0],q),vector(p[2],p[0],q),q)
+16:  if d<0:p.reverse();y.reverse()
+17:  return p,y,d
+18: def affine(p,y,q):
+19:  a=vector(p[1],p[0],q);b=vector(p[2],p[0],q);d=cross(a,b,q);u=q.sub(y[1],y[0]);v=q.sub(y[2],y[0])
+20:  sx=q.div(q.sub(q.mul(u,b[1]),q.mul(v,a[1])),d);sz=q.div(q.sub(q.mul(a[0],v),q.mul(b[0],u)),d)
+21:  return sx,sz,q.sub(q.sub(y[0],q.mul(sx,p[0][0])),q.mul(sz,p[0][1]))
+22: def value(line,p,q):return q.add(q.add(q.mul(line[0],p[0]),q.mul(line[1],p[1])),line[2])
+23: def edge(a,b,q):
+24:  dx=q.sub(b[0],a[0]);dz=q.sub(b[1],a[1]);return -dz,dx,q.sub(q.mul(dz,a[0]),q.mul(dx,a[1]))
+25: def clean(p):
+26:  out=[]
+27:  for v in p:
+28:   if not out or v!=out[-1]:out.append(v)
+29:  if len(out)>1 and out[0]==out[-1]:out.pop()
+30:  return out
+31: def clip(p,line,q,positive=True,held=(0,0)):
+32:  q.reserve(held[0]+2,held[1]+3*len(p)+2);out=[]
+33:  if not p:return out
+34:  vals=[value(line,v,q) for v in p]
+35:  if not positive:vals=[-v for v in vals]
+36:  for i,a in enumerate(p):
+37:   j=(i+1)%len(p);va,vb=vals[i],vals[j]
+38:   if va>=0:out.append(a)
+39:   if (va<0<vb) or (vb<0<va):
+40:    t=q.div(va,q.sub(va,vb));out.append(tuple(q.add(a[k],q.mul(q.sub(p[j][k],a[k]),t)) for k in (0,1)))
+41:  return clean(out)
+42: def intersection(p,t,q):
+43:  out=p
+44:  for i in range(3):out=clip(out,edge(t[i],t[(i+1)%3],q),q)
+45:  return out
+46: def subtract(rest,cut,q):
+47:  if not cut or area(cut,q)==0:return rest
+48:  output=[];total_vertices=sum(map(len,rest));remaining=len(rest)
+49:  for part in rest:
+50:   remaining-=1;total_vertices-=len(part);inside=part
+51:   for i,a in enumerate(cut):
+52:    if not inside:break
+53:    held=(remaining+len(output)+2,total_vertices+sum(map(len,output))+len(cut)+len(part))
+54:    l=edge(a,cut[(i+1)%len(cut)],q);out=clip(inside,l,q,False,held)
+55:    # When a line coincides with the whole polygon, only the inside continues.
+56:    if out and area(out,q)>0:
+57:     q.reserve(held[0]+2,held[1]+len(out)+len(inside));output.append(out)
+58:    inside=clip(inside,l,q,True,(held[0]+1,held[1]+len(out)))
+59:   q.reserve(len(output)+remaining+2,sum(map(len,output))+total_vertices+len(cut)+len(part))
+60:  return output
+61: def bbox(t):return (min(v[0] for v in t),min(v[2] for v in t),max(v[0] for v in t),max(v[2] for v in t))
+62: class Prepared:
+63:  def __init__(self,waters):
+64:   I.need(len(waters)<=4760,'GEOMETRY');self.rows=[]
+65:   for w in sorted(waters,key=lambda w:(w['key'][0],w['key'][1])):
+66:    I.key_ok(w['key']);I.validate_face(w['triangle']);self.rows.append((w,bbox(w['triangle'])))
+67: def candidates(tri,waters):
+68:  b=bbox(tri);out=[]
+69:  prepared=waters if isinstance(waters,Prepared) else Prepared(waters)
+70:  for w,a in prepared.rows:
+71:   if a[0]<=b[2] and b[0]<=a[2] and a[1]<=b[3] and b[1]<=a[3]:out.append(w)
+72:  return sorted(out,key=lambda w:(w['key'][0],w['key'][1]))
+73: def measure(row,waters,limits=None):
+74:  q=I.Budget(limits);key=row['key'];I.key_ok(key);I.validate_face(row['triangle'])
+75:  try:
+76:   p,y,d=projection(row['triangle'],q)
+77:   if d==0:return I.result(key,q,'DEGENERATE_PROJECTION')
+78:   plane=affine(p,y,q);foot=[p];cover=[p];total=area(p,q);pair_rows=[];contacts=[]
+79:   for w in candidates(row['triangle'],waters):
+80:    I.key_ok(w['key']);I.validate_face(w['triangle']);t,wy,det=projection(w['triangle'],q)
+81:    if det==0:return I.result(key,q,'INCONCLUSIVE_GEOMETRY',detail='DEGENERATE_WATER_AABB_CANDIDATE')
+82:    part=intersection(p,t,q);ar=area(part,q)
+83:    if not ar:
+84:     if part:contacts.append(w['key'])
+85:     continue
+86:    wp=affine(t,wy,q);delta=tuple(q.sub(a,b) for a,b in zip(wp,plane));vals=[value(delta,z,q) for z in part]
+87:    lo=hi=vals[0]
+88:    for v in vals[1:]:
+89:     if q.cmp(v,lo)<0:lo=v
+90:     if q.cmp(v,hi)>0:hi=v
+91:    pair_rows.append({'water':w['key'],'area':I.pack(ar),'min_W_B':I.pack(lo),'max_W_B':I.pack(hi)})
+92:    q.reserve(len(foot)+len(cover)+4,sum(map(len,foot))+sum(map(len,cover))+len(part)+12)
+93:    foot=subtract(foot,part,q);above=clip(part,delta,q)
+94:    cover=subtract(cover,above,q)
+95:   uncovered=q.sum(area(v,q) for v in cover);nofoot=q.sum(area(v,q) for v in foot)
+96:   covered=q.sub(total,uncovered);below=q.sub(uncovered,nofoot)
+97:   I.need(covered>=0 and below>=0 and nofoot>=0 and q.add(q.add(covered,below),nofoot)==total,'INTERNAL_ERROR','partition')
+98:   return I.result(key,q,'DEFINED',[I.pack(x) for x in (covered,below,nofoot)],pair_rows,contacts)
+99:  except I.Rejected as e:
+100:   if e.code=='RESOURCE_INCONCLUSIVE':return I.result(key,q,'RESOURCE_INCONCLUSIVE',detail=str(e))
+101:   raise
+102: def main():
+103:  a=I.arguments();c,sealed=I.config(a.contract,a.sha);bed,water,inventory=I.data(c,sealed,a);prepared=Prepared(water)
+104:  out=I.Output(a.out,c['limits']['output']);out.write('header.json',{'schema':'q03c1-capture-v1','contract_sha256':a.sha,'inventory':inventory,'bed_count':len(bed),'water_count':len(water),'claims':I.CLAIMS})
+105:  states={}
+106:  for i,row in enumerate(bed):
+107:   r=measure(row,prepared);out.terminal(i,r);states[r['status']]=states.get(r['status'],0)+1
+108:  full=states.get('DEFINED',0)==len(bed)
+109:  out.write('manifest.json',{'status':'MEASURED_SELECTED_WATER_OVERLAY_ONLY' if full else 'VERIFIED_PARTIAL_OVERLAY','terminals':len(bed),'states':states,'contract_sha256':a.sha,'claims':I.CLAIMS})
+110: if __name__=='__main__':I.main_guard(main)
+
+FILE selected_water_consumer_q03c1.py SHA 912f4f7b86b2e097c6da13d9cf8105a2746e8f1b07a4f8b6f1e69b09c582f301
+1: """Independent source walker: planar line arrangement and cell classification."""
+2: import sys,math
+3: from pathlib import Path
+4: sys.path.insert(0,str(Path(__file__).parent))
+5: import selected_water_io_q03c1 as I
+6: from fractions import Fraction as F
+7: def determinant(a,b,c,d,q):return q.sub(q.mul(a,d),q.mul(b,c))
+8: def polygon_area(v,q):
+9:  if len(v)<3:return F(0)
+10:  terms=[];origin=v[0]
+11:  for i in range(len(v)):
+12:   a=v[i];b=v[(i+1)%len(v)];terms.append(determinant(q.sub(a[0],origin[0]),q.sub(a[1],origin[1]),q.sub(b[0],origin[0]),q.sub(b[1],origin[1]),q))
+13:  return q.div(abs(q.sum(terms)),F(2))
+14: def projected(tri,q):
+15:  xs=[q.val(p[0]) for p in tri];zs=[q.val(p[2]) for p in tri];ys=[q.val(p[1]) for p in tri]
+16:  det=determinant(q.sub(xs[1],xs[0]),q.sub(zs[1],zs[0]),q.sub(xs[2],xs[0]),q.sub(zs[2],zs[0]),q)
+17:  if det==0:return list(zip(xs,zs)),None,[]
+18:  dy1=q.sub(ys[1],ys[0]);dy2=q.sub(ys[2],ys[0]);dx1=q.sub(xs[1],xs[0]);dx2=q.sub(xs[2],xs[0]);dz1=q.sub(zs[1],zs[0]);dz2=q.sub(zs[2],zs[0])
+19:  x=q.div(determinant(dy1,dz1,dy2,dz2,q),det);z=q.div(determinant(dx1,dy1,dx2,dy2,q),det);const=q.sub(ys[0],q.add(q.mul(x,xs[0]),q.mul(z,zs[0])))
+20:  points=list(zip(xs,zs));lines=[]
+21:  for i in range(3):
+22:   j=(i+1)%3;ax=q.sub(zs[i],zs[j]);az=q.sub(xs[j],xs[i]);ac=q.sub(q.mul(xs[i],zs[j]),q.mul(xs[j],zs[i]))
+23:   lines.append((ax,az,ac) if det>0 else (-ax,-az,-ac))
+24:  return points,(x,z,const),lines
+25: def evaluate(l,v,q):return q.add(q.add(q.mul(l[0],v[0]),q.mul(l[1],v[1])),l[2])
+26: def half(v,l,q,sign=1,held=(0,0)):
+27:  q.reserve(held[0]+2,held[1]+3*len(v)+2)
+28:  if not v:return []
+29:  out=[];last=v[-1];a=evaluate(l,last,q);a=a if sign>0 else -a
+30:  for point in v:
+31:   b=evaluate(l,point,q);b=b if sign>0 else -b
+32:   if (a<0<b) or (b<0<a):
+33:    ratio=q.div(a,q.sub(a,b));hit=tuple(q.add(last[k],q.mul(ratio,q.sub(point[k],last[k]))) for k in range(2));out.append(hit)
+34:   if b>=0:out.append(point)
+35:   last=point;a=b
+36:  result=[]
+37:  for p in out:
+38:   if not result or result[-1]!=p:result.append(p)
+39:  if len(result)>1 and result[0]==result[-1]:result.pop()
+40:  return result
+41: def normalized(l,q):
+42:  if l[0]==0 and l[1]==0:return None
+43:  multiple=1
+44:  for a in l:
+45:   d=a.denominator;g=math.gcd(multiple,d);v=multiple//g;q.tick();q.bound(v.bit_length()+d.bit_length());multiple=v*d
+46:  ns=[]
+47:  for a in l:
+48:   scale=multiple//a.denominator;q.tick();q.bound(abs(a.numerator).bit_length()+scale.bit_length());ns.append(a.numerator*scale)
+49:  g=math.gcd(*ns);ns=[n//g for n in ns]
+50:  if next(n for n in ns if n)!=abs(next(n for n in ns if n)):ns=[-n for n in ns]
+51:  return tuple(ns)
+52: class Prepared:
+53:  def __init__(self,waters):
+54:   I.need(len(waters)<=4760,'GEOMETRY');self.rows=[]
+55:   for w in sorted(waters,key=lambda w:(w['key'][0],w['key'][1])):
+56:    I.key_ok(w['key']);I.validate_face(w['triangle']);xs=[p[0] for p in w['triangle']];zs=[p[2] for p in w['triangle']]
+57:    self.rows.append((w,min(xs),max(xs),min(zs),max(zs)))
+58: def measure(row,waters,limits=None):
+59:  q=I.Budget(limits);key=row['key'];I.key_ok(key);I.validate_face(row['triangle'])
+60:  try:
+61:   bed,bplane,blines=projected(row['triangle'],q)
+62:   if bplane is None:return I.result(key,q,'DEGENERATE_PROJECTION')
+63:   x=[p[0] for p in row['triangle']];z=[p[2] for p in row['triangle']];x0,x1,z0,z1=min(x),max(x),min(z),max(z)
+64:   active=[];all_lines=set();pairs=[];contacts=[]
+65:   prepared=waters if isinstance(waters,Prepared) else Prepared(waters)
+66:   for w,wx0,wx1,wz0,wz1 in prepared.rows:
+67:    if wx1<x0 or wx0>x1 or wz1<z0 or wz0>z1:continue
+68:    p,wp,lines=projected(w['triangle'],q)
+69:    if wp is None:return I.result(key,q,'INCONCLUSIVE_GEOMETRY',detail='DEGENERATE_WATER_AABB_CANDIDATE')
+70:    common=bed
+71:    for line in lines:common=half(common,line,q)
+72:    ar=polygon_area(common,q)
+73:    if ar==0:
+74:     if common:contacts.append(w['key'])
+75:     continue
+76:    delta=tuple(q.sub(a,b) for a,b in zip(wp,bplane));values=[evaluate(delta,p,q) for p in common];low=high=values[0]
+77:    for v in values[1:]:
+78:     if q.cmp(v,low)<0:low=v
+79:     if q.cmp(v,high)>0:high=v
+80:    pairs.append({'water':w['key'],'area':I.pack(ar),'min_W_B':I.pack(low),'max_W_B':I.pack(high)})
+81:    active.append((lines,delta))
+82:    for line in (*lines,delta):
+83:     line=normalized(line,q)
+84:     if line is not None:all_lines.add(line)
+85:   cells=[bed]
+86:   for raw in sorted(all_lines):
+87:    line=tuple(F(n) for n in raw);next_cells=[];held_vertices=sum(map(len,cells))
+88:    for cell in cells:
+89:     vals=[evaluate(line,v,q) for v in cell]
+90:     if not (any(v>0 for v in vals) and any(v<0 for v in vals)):
+91:      q.reserve(len(cells)+len(next_cells)+1,held_vertices+sum(map(len,next_cells))+len(cell));next_cells.append(cell);continue
+92:     for sign in (1,-1):
+93:      part=half(cell,line,q,sign,(len(cells)+len(next_cells),held_vertices+sum(map(len,next_cells))))
+94:      if part and polygon_area(part,q)>0:
+95:       q.reserve(len(cells)+len(next_cells)+1,held_vertices+sum(map(len,next_cells))+len(part));next_cells.append(part)
+96:    cells=next_cells
+97:   areas=[F(0),F(0),F(0)]
+98:   for cell in cells:
+99:    center=tuple(q.div(q.sum(v[k] for v in cell),F(len(cell))) for k in (0,1));has_foot=has_cover=False
+100:    for lines,delta in active:
+101:     if all(evaluate(l,center,q)>=0 for l in lines):
+102:      has_foot=True
+103:      if evaluate(delta,center,q)>=0:has_cover=True
+104:    slot=0 if has_cover else 1 if has_foot else 2;areas[slot]=q.add(areas[slot],polygon_area(cell,q))
+105:   I.need(q.sum(areas)==polygon_area(bed,q),'INTERNAL_ERROR','cell partition')
+106:   return I.result(key,q,'DEFINED',[I.pack(a) for a in areas],pairs,contacts)
+107:  except I.Rejected as e:
+108:   if e.code=='RESOURCE_INCONCLUSIVE':return I.result(key,q,'RESOURCE_INCONCLUSIVE',detail=str(e))
+109:   raise
+110: def verify_rows(rows,bed,water):
+111:  I.need(len(rows)<=len(bed),'REPORT');verified=0;unverified=0;states={};prepared=Prepared(water)
+112:  for i,record in enumerate(rows):
+113:   claimed=I.semantic(record);I.need(I.exact(record['key'],bed[i]['key']),'REPORT','key')
+114:   actual=measure(bed[i],prepared)
+115:   if actual['status']=='RESOURCE_INCONCLUSIVE' or record['status']=='RESOURCE_INCONCLUSIVE':
+116:    I.need(record['status'] in ('DEFINED','RESOURCE_INCONCLUSIVE'),'REPORT');unverified+=1
+117:   else:I.need(I.exact(claimed,I.semantic(actual)),'REPORT','geometric mismatch');verified+=int(actual['status']=='DEFINED')
+118:   states[record['status']]=states.get(record['status'],0)+1
+119:  return verified,unverified,states
+120: def main():
+121:  a=I.arguments(True);c,sealed=I.config(a.contract,a.sha);bed,water,inventory=I.data(c,sealed,a)
+122:  header=I.parse(I.read(Path(a.capture)/'header.json',cap=c['limits']['output']))
+123:  expected={'schema':'q03c1-capture-v1','contract_sha256':a.sha,'inventory':inventory,'bed_count':len(bed),'water_count':len(water),'claims':I.CLAIMS}
+124:  I.need(I.exact(header,expected),'REPORT','header')
+125:  rows=I.prefix(a.capture,c['limits']['output']);verified,unverified,states=verify_rows(rows,bed,water)
+126:  manifest=Path(a.capture)/'manifest.json'
+127:  if manifest.exists():
+128:   m=I.parse(I.read(manifest));want={'status':'MEASURED_SELECTED_WATER_OVERLAY_ONLY' if states.get('DEFINED',0)==len(bed) else 'VERIFIED_PARTIAL_OVERLAY','terminals':len(bed),'states':states,'contract_sha256':a.sha,'claims':I.CLAIMS}
+129:   I.need(len(rows)==len(bed) and I.exact(m,want),'REPORT','manifest')
+130:  full=verified==len(bed) and unverified==0 and manifest.exists()
+131:  out=I.Output(a.out,c['limits']['output']);out.write('consumer.json',{'status':'MEASURED_SELECTED_WATER_OVERLAY_ONLY' if full else 'VERIFIED_PARTIAL_OVERLAY','contract_sha256':a.sha,'terminals':len(rows),'verified_numeric':verified,'unverified_numeric':unverified,'expected_faces':len(bed),'claims':I.CLAIMS})
+132: if __name__=='__main__':I.main_guard(main)
+
+FILE test_selected_water_q03c1.py SHA 68fd2f3b89fa52033926b4eb15f1ed63500a8e3624b3aaeef1edacdff9d827c9
+1: """Frozen literal geometry; independent expectations, CLI and co-mutant negatives."""
+2: from pathlib import Path
+3: import sys,json,hashlib,unittest,tempfile,os,copy,subprocess
+4: sys.path.insert(0,str(Path(__file__).parent))
+5: import selected_water_io_q03c1 as I
+6: import selected_water_producer_q03c1 as P
+7: import selected_water_consumer_q03c1 as C
+8: from fractions import Fraction as F
+9: D=Path(__file__).parent;ORACLE=I.parse((D/'oracle.json').read_bytes());CONTRACT=I.parse((D/'contract.json').read_bytes());SHA=I.digest((D/'contract.json').read_bytes())
+10: assert I.digest((D/'oracle.json').read_bytes())==CONTRACT['oracle']['sha256']
+11: def bed(case):return {'key':[10,0,[0,7]],'triangle':copy.deepcopy(case['bed'])}
+12: def target(name):return next(copy.deepcopy(c) for c in ORACLE['cases'] if c['id']==name)
+13: def projection(r):return {'status':r['status'],'areas':r['areas'],'contact_pairs':len(r['contacts'])}
+14: class Tests(unittest.TestCase):
+15:  def setUp(self):self.temp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C1_TEST_ROOT'));self.root=Path(self.temp.name)
+16:  def tearDown(self):self.temp.cleanup()
+17:  def checkreject(self,fn,code):
+18:   with self.assertRaises(I.Rejected) as e:fn()
+19:   self.assertEqual(e.exception.code,code)
+20:  def fixture(self,name='upper'):
+21:   c=target(name);x={'bed':[bed(c)],'water':c['water']};p=self.root/'fixture.json';p.write_bytes(I.canonical(x));return p,I.digest(p.read_bytes()),x
+22:  def command(self,script,out,fixture,sha,capture=None):
+23:   args=[sys.executable,'-I','-X','utf8',str(D/script),'--contract',str(D/'contract.json'),'--sha',SHA,'--out',str(out),'--fixture',str(fixture),'--fixture-sha',sha]
+24:   if capture:args+=['--capture',str(capture)]
+25:   return subprocess.run(args,capture_output=True,timeout=20)
+26:  def test_all_literals(self):
+27:   for c in ORACLE['cases']:
+28:    for fn in (P.measure,C.measure):
+29:     with self.subTest(case=c['id'],walker=fn.__module__):self.assertEqual(projection(fn(bed(c),c['water'])),c['expected'])
+30:  def test_areas_states_metamorphic(self):
+31:   for name in ('interior_hole','cross','nonconvex_remainder','multilayer','seam'):
+32:    c=target(name)
+33:    for version in range(3):
+34:     x=copy.deepcopy(c)
+35:     if version==0:x['water'].reverse()
+36:     if version==1:
+37:      x['bed'].reverse()
+38:      for w in x['water']:w['triangle'].reverse()
+39:     if version==2:
+40:      for tri in [x['bed']]+[w['triangle'] for w in x['water']]:
+41:       for p in tri:p[0]+=64;p[1]-=8;p[2]-=32
+42:     for fn in (P.measure,C.measure):self.assertEqual(projection(fn(bed(x),x['water'])),c['expected'])
+43:  def test_subdivision_different_pairs_same_areas(self):
+44:   whole=target('upper');split=target('seam')
+45:   for fn in (P.measure,C.measure):
+46:    a=fn(bed(whole),whole['water']);b=fn(bed(split),split['water']);self.assertEqual(a['areas'],b['areas']);self.assertNotEqual(a['pairs'],b['pairs'])
+47:  def test_no_aabb_or_false_height_acceptance(self):
+48:   case=target('cross');rows=[P.measure(bed(case),case['water'])]
+49:   for variant in ('area','omit','below','duplicate','contact','key'):
+50:    r=copy.deepcopy(rows)
+51:    if variant=='area':r[0]['areas']=[[72,1],[0,1],[0,1]]
+52:    if variant=='omit':r[0]['pairs']=[]
+53:    if variant=='below':r[0]['pairs'][0]['min_W_B']=[0,1]
+54:    if variant=='duplicate':r[0]['pairs']*=2
+55:    if variant=='contact':r[0]['contacts']=[[55,0,[1,1]]]
+56:    if variant=='key':r[0]['key'][1]=1
+57:    self.checkreject(lambda:C.verify_rows(r,[bed(case)],case['water']),'REPORT')
+58:  def test_duplicate_bed_preserves_multiplicity(self):
+59:   c=target('upper');a=bed(c);b=bed(c);b['key'][1]=1
+60:   rows=[P.measure(v,c['water']) for v in [a,b]];self.assertEqual(C.verify_rows(rows,[a,b],c['water'])[0],2)
+61:   self.assertEqual(sum(I.unpack(v['areas'][0]) for v in rows),F(144))
+62:  def test_resource_guards_before_operations(self):
+63:   q=I.Budget({'ops':1});q.add(F(1),F(1));self.checkreject(lambda:q.mul(F(1),F(1)),'RESOURCE_INCONCLUSIVE');self.assertEqual(q.ops,1)
+64:   q=I.Budget({'bits':8});self.checkreject(lambda:q.mul(F(255),F(255)),'RESOURCE_INCONCLUSIVE')
+65:   q=I.Budget({'pieces':1});self.checkreject(lambda:q.reserve(2,6),'RESOURCE_INCONCLUSIVE');self.assertEqual(q.peak_pieces,0)
+66:   q=I.Budget({'vertices':5});self.checkreject(lambda:q.reserve(1,6),'RESOURCE_INCONCLUSIVE')
+67:   c=target('multilayer')
+68:   for fn in (P.measure,C.measure):
+69:    for limits in ({'ops':4},{'pieces':1},{'bits':3}):self.assertEqual(fn(bed(c),c['water'],limits)['status'],'RESOURCE_INCONCLUSIVE')
+70:  def test_geometry_and_identity_guards(self):
+71:   c=target('upper')
+72:   for value in (float('nan'),float('inf'),True):
+73:    a=copy.deepcopy(c['bed']);a[0][0]=value;self.checkreject(lambda:I.validate_face(a),'GEOMETRY')
+74:   for opts in ({'n':4},{'flag':1},{'padding':[-0.,0.,0.]},{'padding':[1.,0.,0.]}):self.checkreject(lambda:I.validate_face(c['bed'],**opts),'GEOMETRY')
+75:   I.validate_face(c['bed'],padding=[0.,0.,0.])
+76:   p,sha,x=self.fixture();x['water']*=2;p.write_bytes(I.canonical(x));self.checkreject(lambda:I.fixture_data(p,I.digest(p.read_bytes())),'IDENTITY')
+77:   self.checkreject(lambda:I.fixture_data(p,sha),'IDENTITY')
+78:  def test_rational_schema(self):
+79:   for r in ([True,1],[1,False],[1,0],[2,2],[0,2],[1.,1],[1,-1],[1,1,1]):self.checkreject(lambda:I.unpack(r),'REPORT')
+80:   self.assertEqual(I.unpack([0,1]),0);self.assertEqual(I.unpack([-1,2]),F(-1,2))
+81:  def test_prefix_truncation_gap_and_orphan(self):
+82:   o=I.Output(self.root/'capture',33554432);o.write('header.json',{});c=target('upper');r=P.measure(bed(c),c['water']);o.terminal(0,r)
+83:   self.assertEqual(len(I.prefix(o.path,33554432)),1)
+84:   (o.path/'0001.json').write_bytes(b'partial');self.assertEqual(len(I.prefix(o.path,33554432)),1)
+85:   (o.path/'0001.json').unlink();(o.path/'0002.receipt.json').write_bytes(I.canonical({'seq':2,'bytes':1,'sha256':'a'*64}));self.checkreject(lambda:I.prefix(o.path,33554432),'TERMINAL');(o.path/'0002.receipt.json').unlink()
+86:   (o.path/'0000.json').write_bytes(b'{}');self.checkreject(lambda:I.prefix(o.path,33554432),'IDENTITY')
+87:  def test_output_budget_and_co_mutant(self):
+88:   o=I.Output(self.root/'cap',32);self.checkreject(lambda:o.write('x.json',{'a':'z'*100}),'OUTPUT_CAP');self.assertEqual(list(o.path.iterdir()),[])
+89:   c=target('upper');r=P.measure(bed(c),c['water']);r['areas']=[[0,1],[0,1],[72,1]];out=I.Output(self.root/'mutated',33554432);out.write('header.json',{});out.terminal(0,r)
+90:   rows=I.prefix(out.path,33554432);self.checkreject(lambda:C.verify_rows(rows,[bed(c)],c['water']),'REPORT')
+91:  def test_cli_full_and_co_mutated_claim(self):
+92:   p,sha,x=self.fixture('cross');capture=self.root/'production';out=self.root/'consumer'
+93:   run=self.command('selected_water_producer_q03c1.py',capture,p,sha);self.assertEqual(run.returncode,0,run.stderr)
+94:   run=self.command('selected_water_consumer_q03c1.py',out,p,sha,capture);self.assertEqual(run.returncode,0,run.stderr)
+95:   report=I.parse((out/'consumer.json').read_bytes());self.assertEqual(report['status'],'MEASURED_SELECTED_WATER_OVERLAY_ONLY');self.assertEqual(report['verified_numeric'],1)
+96:   h=I.parse((capture/'header.json').read_bytes());h['claims']['exposure_evaluated']=True;(capture/'header.json').write_bytes(I.canonical(h))
+97:   run=self.command('selected_water_consumer_q03c1.py',self.root/'bad',p,sha,capture);self.assertNotEqual(run.returncode,0);self.assertIn(b'REPORT',run.stderr)
+98:  def test_cli_partial_not_full(self):
+99:   p,sha,x=self.fixture('water_point');capture=self.root/'production'
+100:   run=self.command('selected_water_producer_q03c1.py',capture,p,sha);self.assertEqual(run.returncode,0,run.stderr)
+101:   run=self.command('selected_water_consumer_q03c1.py',self.root/'consumer',p,sha,capture);self.assertEqual(run.returncode,0,run.stderr)
+102:   report=I.parse((self.root/'consumer/consumer.json').read_bytes());self.assertEqual(report['status'],'VERIFIED_PARTIAL_OVERLAY');self.assertEqual(report['verified_numeric'],0)
+103:   m=I.parse((capture/'manifest.json').read_bytes());m['status']='MEASURED_SELECTED_WATER_OVERLAY_ONLY';(capture/'manifest.json').write_bytes(I.canonical(m))
+104:   run=self.command('selected_water_consumer_q03c1.py',self.root/'bad',p,sha,capture);self.assertNotEqual(run.returncode,0)
+105:  def test_cli_source_double_transform_and_changed_epoch(self):
+106:   p,sha,x=self.fixture();capture=self.root/'production';run=self.command('selected_water_producer_q03c1.py',capture,p,sha);self.assertEqual(run.returncode,0,run.stderr)
+107:   x['bed'][0]['triangle'][0][1]+=1;p.write_bytes(I.canonical(x));run=self.command('selected_water_consumer_q03c1.py',self.root/'bad',p,sha,capture);self.assertNotEqual(run.returncode,0);self.assertIn(b'IDENTITY',run.stderr)
+108:  def test_resource_record_never_accepts_full(self):
+109:   c=target('upper');r=P.measure(bed(c),c['water'],{'ops':1});v,u,_=C.verify_rows([r],[bed(c)],c['water']);self.assertEqual((v,u),(0,1))
+110: if __name__=='__main__':unittest.main(verbosity=2)

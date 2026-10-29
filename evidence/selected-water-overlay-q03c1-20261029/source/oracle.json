@@ -1,0 +1,1461 @@
+{
+  "schema": "q03c1-literal-oracle-v1",
+  "area_order": [
+    "covered_at_or_above",
+    "footprint_only_below",
+    "no_selected_water_footprint"
+  ],
+  "cases": [
+    {
+      "id": "none",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            72,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "upper",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            72,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "below",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            0,
+            1
+          ],
+          [
+            72,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "contact",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              12,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            72,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "half",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              6
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            36,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            36,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "duplicate",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              12
+            ]
+          ]
+        },
+        {
+          "key": [
+            21,
+            0,
+            [
+              0,
+              6
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            72,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "two_layers",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12
+            ]
+          ]
+        },
+        {
+          "key": [
+            21,
+            0,
+            [
+              0,
+              6
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            72,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "cross",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            18,
+            1
+          ],
+          [
+            54,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "interior_hole",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            70,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "nonconvex_remainder",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "key": [
+            21,
+            0,
+            [
+              0,
+              6
+            ]
+          ],
+          "triangle": [
+            [
+              7,
+              2,
+              1
+            ],
+            [
+              9,
+              2,
+              1
+            ],
+            [
+              7,
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            68,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "seam",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              6
+            ]
+          ]
+        },
+        {
+          "key": [
+            21,
+            0,
+            [
+              0,
+              6
+            ]
+          ],
+          "triangle": [
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              12
+            ],
+            [
+              0,
+              2,
+              6
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            72,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "touch_point",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              14,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              2
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            72,
+            1
+          ]
+        ],
+        "contact_pairs": 1
+      }
+    },
+    {
+      "id": "touch_edge",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              -12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            72,
+            1
+          ]
+        ],
+        "contact_pairs": 1
+      }
+    },
+    {
+      "id": "height_zero_on_edge",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              12,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            0,
+            1
+          ],
+          [
+            72,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "multilayer",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12
+            ]
+          ]
+        },
+        {
+          "key": [
+            21,
+            0,
+            [
+              0,
+              6
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              12
+            ]
+          ]
+        },
+        {
+          "key": [
+            22,
+            0,
+            [
+              0,
+              7
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              12,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              12
+            ]
+          ]
+        },
+        {
+          "key": [
+            23,
+            0,
+            [
+              0,
+              8
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              12
+            ]
+          ]
+        },
+        {
+          "key": [
+            24,
+            0,
+            [
+              0,
+              9
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12
+            ]
+          ]
+        },
+        {
+          "key": [
+            25,
+            0,
+            [
+              0,
+              10
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              12
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            72,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "water_point",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "INCONCLUSIVE_GEOMETRY",
+        "areas": null,
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "water_segment",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              12,
+              2,
+              0
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "INCONCLUSIVE_GEOMETRY",
+        "areas": null,
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "remote_point",
+      "bed": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [
+        {
+          "key": [
+            20,
+            0,
+            [
+              0,
+              5
+            ]
+          ],
+          "triangle": [
+            [
+              100,
+              2,
+              100
+            ],
+            [
+              100,
+              2,
+              100
+            ],
+            [
+              100,
+              2,
+              100
+            ]
+          ]
+        }
+      ],
+      "expected": {
+        "status": "DEFINED",
+        "areas": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            72,
+            1
+          ]
+        ],
+        "contact_pairs": 0
+      }
+    },
+    {
+      "id": "bed_vertical",
+      "bed": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          12
+        ]
+      ],
+      "water": [],
+      "expected": {
+        "status": "DEGENERATE_PROJECTION",
+        "areas": null,
+        "contact_pairs": 0
+      }
+    }
+  ],
+  "derivation": "Base area12*12/2=72; half36; interior2; two disjoint interior4; cross x>=6 has legs6 and area18. Expected numbers literal and fixed before implementation. Degenerate/AABB rules from reviewed plan.",
+  "metamorphics": [
+    "water_permutation",
+    "winding_reversal",
+    "exact_translation",
+    "water_subdivision",
+    "bed_duplicate_with_distinct_keys"
+  ],
+  "negative_codes": {
+    "nonfinite": "GEOMETRY",
+    "quad": "GEOMETRY",
+    "flag": "GEOMETRY",
+    "padding": "GEOMETRY",
+    "identity": "IDENTITY",
+    "schema": "SCHEMA",
+    "report": "REPORT",
+    "ops": "RESOURCE_INCONCLUSIVE",
+    "bits": "RESOURCE_INCONCLUSIVE",
+    "pieces": "RESOURCE_INCONCLUSIVE",
+    "truncated": "TERMINAL",
+    "changed": "SOURCE_CHANGED"
+  },
+  "claims": {
+    "terrain_evaluated": false,
+    "exposure_evaluated": false,
+    "native_acceptance": false,
+    "map_repaired": false,
+    "human_resolved": 0,
+    "C1": "NOT_REVIEWED"
+  }
+}

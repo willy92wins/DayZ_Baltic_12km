@@ -1,0 +1,9 @@
+# Q03C1 — revisión y resultado adjudicados
+
+Fable5.1 CLI nativo entregó SOUND-with-fixes/CONVERGE en152.375s, única recuperación después de Muse180.172s sin dictamen. La revisión estática cubrió R0 y contrato/oráculos, no los NPZ históricos. Hay19 casos literales, no20 como dijo el revisor. El límite de signos libres se refiere sólo a signo/negación de un racional ya comprobado; los productos/comparaciones racionales pasan por Budget. No cambia caps ni tolerancias.
+
+Se aplicaron dtype f8/IDs enteros, rechazo IDENTITY por spec ausente y las desigualdades correctas 0<=nofoot<=uncovered<=total. La alternativa del revisor que invertía el orden de los restos cover/foot se refutó. Integración añadió cap32MiB al lector de payload y reservas del productor para listas vivas externas, con repros cerrados y oráculo de corrección previo. Corrección única30.868s;17tests privadosR1 PASS2.844s. R0queda preservado. R1 fue integrado por Codex con contexto de autor, no releído por otra familia; no consenso externo de postimagen.
+
+La ejecución única leyó201pilotos históricos; productor9.843s/81813504B y consumidor7.422s/81956864B, ambos rc0/reasonnull. Las1520 caras tienen triple racional DEFINED y comprobado; sin caras numéricamente pendientes. Consumidor recargó fuentes y construyó arreglo de rectas/clasificación de celdas, frente a sustracción convexa incremental del productor. I/O/NumPy/zlib/Budget compartidos, geometría separada. Inventario antes/después idéntico no es vigilancia continua.
+
+Los valores son sumas de áreas por cara CON multiplicidad, no unión mundial. La zona sin huella seleccionada no demuestra falta de agua mundial ni lecho visible: faltan terreno, agua nativa, modelos fuera del subconjunto y oclusores Visual ordinarios/vegetación. Tampoco demuestra navegabilidad ni explica una fotografía por cercanía. Q03C2/Q05 deben añadir esas dimensiones. Nueve humanos0resueltos, C1NOT_REVIEWED; mapa intacto.

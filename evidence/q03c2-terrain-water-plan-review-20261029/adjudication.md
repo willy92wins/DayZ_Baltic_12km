@@ -1,0 +1,9 @@
+# Q03C2 — plan adjudicado
+
+Muse Wonder1.0 nativo62.265s, run.usage confirma modelo. SOUND-with-fixes/CONVERGE. Se incorporan siete precisiones a la postimagen, sin otra revisión externa inventada. Codex planner/integrator mismo contexto.
+
+F1 aceptado: positivos literales asimétricos para inversión de filas y celda no coplanar para diagonal; H=x/6 sólo comprueba otro eje. F2 premisa de compartir arrays no establecida: el plan ya exigía sesión/lecturas propias por caminante; se explicita proceso y decodificación independientes, biblioteca común declarada. F3 unión ya era requisito, se fija F/G y literal de aguas opuestas con solape parcial. F4 marginales ya por cara; fijado ahora SHA exacto measurements.json3dea334a y sus1520triples, no el agregado. F5 caps también para rectas/celdas/vértices/listas vivas del consumidor;4515ops observadas de Q03C1 no son cota ni predicción garantizada. F6 testigos/extremos sólo de área positiva, contactos aparte, degenerados sin falsoFULL. F7 finitud se difiere a carga real; cabeceras sólo esquema/orden/cotas/pins.
+
+El revisor enlazó anclas bajo su workspace council-expanded; no son las rutas reales. Las fuentes comprobadas y pinadas en inputs.json están bajo tools/quality del worktree handoff-astra-map-review-6d301c. Ningún NPZterreno se abrió en esta revisión. La preparación de contrato autoriza una inspección de cabeceras60s256MiB antes de código, no arrays ni medición. Aún sin contrato/oráculos/código Q03C2. No otra fase genérica de lectores, ni nuevo council.
+
+REVISADO_PARA_CONTRATO_Y_PARTICION_FUENTE. Nueve áreas conjuntas porcara, terreno815ef8 y triangulación fuenteNW-SE asumida, no WRPdecodificado ni exposición real. Presupuestos porcara/captura fijos, sin promesaFULL. Q03C2 no autoriza reparación, pavimento, P: ni DayZ. Q05 requiere huella completa/accesos y poses verificadas; nueve casos humanos permanecen abiertos.
