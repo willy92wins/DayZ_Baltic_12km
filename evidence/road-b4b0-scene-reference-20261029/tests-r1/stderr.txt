@@ -1,0 +1,44 @@
+test_consumer_detects_independent_source_change (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_detects_independent_source_change) ... ok
+test_consumer_rejects_bool_equal_one_mutation (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_rejects_bool_equal_one_mutation) ... ok
+test_consumer_rejects_mutated_report (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_rejects_mutated_report) ... ok
+test_consumer_rejects_substituted_producer_path (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_rejects_substituted_producer_path) ... ok
+test_consumer_verified_mismatch_diagnostic (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_verified_mismatch_diagnostic) ... ok
+test_negative_variants_producer_precise (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_negative_variants_producer_precise) ... 
+  test_negative_variants_producer_precise (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_negative_variants_producer_precise) (variant='truncated_header') ... FAIL
+  test_negative_variants_producer_precise (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_negative_variants_producer_precise) (variant='truncated_material') ... FAIL
+  test_negative_variants_producer_precise (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_negative_variants_producer_precise) (variant='truncated_name') ... FAIL
+test_positive_exterior_slash_alias (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_positive_exterior_slash_alias) ... ok
+test_positive_producer_then_consumer (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_positive_producer_then_consumer) ... ok
+test_stat_identity_units (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_stat_identity_units) ... ok
+
+======================================================================
+FAIL: test_negative_variants_producer_precise (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_negative_variants_producer_precise) (variant='truncated_header')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_scene_reference_index_ev112.py", line 105, in test_negative_variants_producer_precise
+    if detail is not None: self.assertIn(detail,self._details(data))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'truncated WRP header' not found in 'prefix beyond EOF'
+
+======================================================================
+FAIL: test_negative_variants_producer_precise (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_negative_variants_producer_precise) (variant='truncated_material')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_scene_reference_index_ev112.py", line 105, in test_negative_variants_producer_precise
+    if detail is not None: self.assertIn(detail,self._details(data))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'truncated material string bytes' not found in 'prefix beyond EOF'
+
+======================================================================
+FAIL: test_negative_variants_producer_precise (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_negative_variants_producer_precise) (variant='truncated_name')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_scene_reference_index_ev112.py", line 105, in test_negative_variants_producer_precise
+    if detail is not None: self.assertIn(detail,self._details(data))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'truncated object name bytes' not found in 'prefix beyond EOF'
+
+----------------------------------------------------------------------
+Ran 9 tests in 3.679s
+
+FAILED (failures=3)

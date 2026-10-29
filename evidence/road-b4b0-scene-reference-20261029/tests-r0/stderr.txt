@@ -1,0 +1,40 @@
+test_consumer_rejects_mutated_report (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_rejects_mutated_report) ... FAIL
+test_consumer_verified_mismatch_diagnostic (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_verified_mismatch_diagnostic) ... FAIL
+test_negative_variants_producer (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_negative_variants_producer) ... ok
+test_positive_producer_then_consumer (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_positive_producer_then_consumer) ... FAIL
+test_stat_identity_units (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_stat_identity_units) ... ok
+
+======================================================================
+FAIL: test_consumer_rejects_mutated_report (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_rejects_mutated_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_scene_reference_index_ev112.py", line 74, in test_consumer_rejects_mutated_report
+    d,c=self._fixture(); out=d/'report.json'; r,data=self._run(PROD,c,out); self.assertEqual(r.returncode,0)
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0
+
+======================================================================
+FAIL: test_consumer_verified_mismatch_diagnostic (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_consumer_verified_mismatch_diagnostic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_scene_reference_index_ev112.py", line 79, in test_consumer_verified_mismatch_diagnostic
+    cout=d/'consumer.json'; r2,cdata=self._run(CONS,c,cout,report=out); self.assertEqual(r2.returncode,2); self.assertEqual(cdata['status'],'VERIFIED_MISMATCH_DIAGNOSTIC')
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'INCONCLUSIVE_REFERENCE_MISMATCH' != 'VERIFIED_MISMATCH_DIAGNOSTIC'
+- INCONCLUSIVE_REFERENCE_MISMATCH
++ VERIFIED_MISMATCH_DIAGNOSTIC
+
+
+======================================================================
+FAIL: test_positive_producer_then_consumer (test_road_scene_reference_index_ev112.RoadB4B0Tests.test_positive_producer_then_consumer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_scene_reference_index_ev112.py", line 67, in test_positive_producer_then_consumer
+    d,c=self._fixture(); out=d/'report.json'; r,data=self._run(PROD,c,out); self.assertEqual(r.returncode,0,r.stderr); self.assertEqual(data['status'],'SAVED_SCENE_REFERENCE_INDEX_ONLY'); rows={x['name']:x for x in data['table']}; self.assertEqual(rows['dz/a.p3d']['candidate_instances'],3); self.assertEqual(rows['dz/c.p3d']['state'],'NEW_REFERENCE_WITH_B4A3_PIN'); self.assertEqual(rows['dz/b.p3d']['source_instances'],1)
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : 
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.583s
+
+FAILED (failures=3)

@@ -1,0 +1,44 @@
+{
+  "schema": "road-b4b0-literal.v1",
+  "header_hex": "30575a44010000000100000002000000020000000000c04000000000000000000000000000000000000000000000",
+  "matrix_hex": "0000803f0000000000000000000000000000803f0000000000000000000000000000803f000000000000000000000000",
+  "source_records": [
+    {
+      "id_hex": "01000000",
+      "size_hex": "08000000",
+      "name_hex": "647a2f612e703364"
+    },
+    {
+      "id_hex": "02000000",
+      "size_hex": "08000000",
+      "name_hex": "445a5c412e703364"
+    },
+    {
+      "id_hex": "03000000",
+      "size_hex": "08000000",
+      "name_hex": "647a2f622e703364"
+    }
+  ],
+  "terminator_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e703000000000000",
+  "counts": {
+    "dz/a.p3d": 2,
+    "dz/b.p3d": 1
+  },
+  "source_count": 3,
+  "source_bytes": 294,
+  "added_names": [
+    "dz/a.p3d",
+    "dz/c.p3d",
+    "dz/d.p3d"
+  ],
+  "expected_added_count": 3,
+  "expected_candidate_counts": {
+    "dz/a.p3d": 3,
+    "dz/b.p3d": 1,
+    "dz/c.p3d": 1,
+    "dz/d.p3d": 1
+  },
+  "expected_candidate_count": 6,
+  "expected_candidate_bytes": 486,
+  "note": "Hex literal independiente del productor. Header24+alturas16+material2+count4=46; tres registros64; terminador56. Derivación escrita antes del código."
+}

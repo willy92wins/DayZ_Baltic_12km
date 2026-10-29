@@ -1,0 +1,95 @@
+{
+  "status": "VERIFIED_MISMATCH_DIAGNOSTIC",
+  "scope": "SAVED_SCENE_REFERENCE_INDEX_ONLY",
+  "counts": {
+    "candidate_total": 2578401,
+    "distinct_references": 5512,
+    "source_total": 2578398
+  },
+  "states": {
+    "PROVIDER_RESOLVED": 5505,
+    "UNRESOLVED": 4,
+    "NEW_REFERENCE_WITH_B4A3_PIN": 3
+  },
+  "issues": [
+    {
+      "code": "PROVIDER_CONFLICT",
+      "detail": "multiple distinct providers for dz/structures/roads/bridges/bridge_metal_25.p3d"
+    },
+    {
+      "code": "PROVIDER_CONFLICT",
+      "detail": "multiple distinct providers for dz/structures/roads/bridges/bridge_wood_25.p3d"
+    },
+    {
+      "code": "PROVIDER_CONFLICT",
+      "detail": "multiple distinct providers for dz/structures/roads/bridges/bridge_wood_50.p3d"
+    },
+    {
+      "code": "PROVIDER_CONFLICT",
+      "detail": "multiple distinct providers for dz/structures/roads/bridges/bridge_wood_50_1.p3d"
+    }
+  ],
+  "source_sha256": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+  "candidate_sha256": "46063f3773aa3df74be04351f244550e105e2e2d887b8251413b0dff6fd8d7c5",
+  "contract_sha256": "b14834c369c937482327ed76c35aafaa4829d15cfdedfa5200d189833d55821e",
+  "private_report_sha256": "8858988232968b869973f0c270469d3c8ef3d637c107a5f5bd0369074a00d66f",
+  "private_report_bytes": 3558090,
+  "private_consumer_sha256": "53bd9540272fe0660c43e3fa250489fb3c9e04973f85c4c27f09e99934fc5614",
+  "producer": {
+    "rc": 2,
+    "reason": null,
+    "seconds": 14.078000000008615,
+    "peak_rss": 281935872,
+    "started": 1793265273.4294686,
+    "finished": 1793265287.5130854,
+    "identities": {
+      "105844": 1793265273.430744,
+      "21844": 1793265273.4367273,
+      "101908": 1793265273.4497209
+    },
+    "stdout_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "consumer": {
+    "rc": 2,
+    "reason": null,
+    "seconds": 22.14100000000326,
+    "peak_rss": 75657216,
+    "started": 1793265738.2086587,
+    "finished": 1793265760.3515234,
+    "identities": {
+      "97420": 1793265738.2104847,
+      "69908": 1793265738.216287,
+      "89928": 1793265738.2288847
+    },
+    "stdout_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "private_tests": 21,
+  "claims": {
+    "build_ready": false,
+    "consumer_id_uniqueness": "INHERITED_SEALED_B3_PRODUCER_RECHECKED",
+    "map_repaired": false,
+    "material_texture_closure": "NOT_EVALUATED",
+    "pivots_width_accesses": "NOT_EVALUATED",
+    "provider_precedence_current": "NOT_EVALUATED"
+  },
+  "process_binding": {
+    "pid": 89928,
+    "birth": 1793265738.2288847,
+    "launcher_pid": 97420,
+    "launcher_birth": 1793265738.2104847,
+    "binding": "OBSERVED_OWNED_DESCENDANT_AND_SCRIPT_PIN",
+    "child_executable_independently_recorded": false
+  },
+  "native_runtime_tested": false,
+  "source_original_instances": 2578398,
+  "candidate_delta_instances": 3,
+  "human_cases": {
+    "count": 9,
+    "resolved": 0,
+    "state": "GEOMETRY_UNBOUND"
+  },
+  "c1": "NOT_REVIEWED",
+  "provider_comparison_sha256": "3de3bd4bc082761181c8172b01cb322f8798e56a04f66e3c1ed903dab55fea0f"
+}
