@@ -1,0 +1,63 @@
+{
+  "sys_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+  "prefix": "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env",
+  "base_prefix": "C:\\Users\\guill\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python",
+  "zlib_origin": "built-in",
+  "zlib_has_file": false,
+  "zlib_compile": "1.3.2",
+  "zlib_runtime": "1.3.2",
+  "apis": {
+    "compressobj": {
+      "signature": "(level=-1, method=8, wbits=15, memLevel=8, strategy=0, zdict=None)",
+      "doc": "Return a compressor object.\n\n  level\n    The compression level (an integer in the range 0-9 or -1; default is\n    currently equivalent to 6).  Higher compression levels are slower,\n    but produce smaller results.\n  method\n    The compression algorithm.  If given, this must be DEFLATED.\n  wbits\n    +9 to +15: The base-two logarithm of the window size.  Include a zlib\n        container.\n    -9 to -15: Generate a raw stream.\n    +25 to +31: Include a gzip container.\n  memLevel\n    Controls the amount of memory used for internal compression state.\n    Valid values range from 1 to 9.  Higher values result in higher memory\n    usage, faster compression, and smaller output.\n  strategy\n    Used to tune the compression algorithm.  Possible values are\n    Z_DEFAULT_STRATEGY, Z_FILTERED, and Z_HUFFMAN_ONLY.\n  zdict\n    The predefined compression dictionary - a sequence of bytes\n    containing subsequences that are likely to occur in the input data."
+    },
+    "compress": {
+      "signature": "(data, /)",
+      "doc": null
+    },
+    "flush_compress": {
+      "signature": "(mode=4, /)",
+      "doc": null
+    },
+    "decompressobj": {
+      "signature": "(wbits=15, zdict=b'')",
+      "doc": "Return a decompressor object.\n\n  wbits\n    The window buffer size and container format.\n  zdict\n    The predefined compression dictionary.  This must be the same\n    dictionary as used by the compressor that produced the input data."
+    },
+    "decompress": {
+      "signature": "(data, /, max_length=0)",
+      "doc": null
+    },
+    "flush_decompress": {
+      "signature": "(length=16384, /)",
+      "doc": null
+    },
+    "addaudithook": {
+      "signature": "(hook)",
+      "doc": "Adds a new audit hook callback."
+    }
+  },
+  "pins": {
+    "executable": {
+      "path": "C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe",
+      "sha256": "9f91cee2e1b13d9779ab252507aeee120c379e2543ffe85f63cad129b58ba230",
+      "bytes": 277808
+    },
+    "_base_executable": {
+      "path": "C:\\Users\\guill\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e",
+      "bytes": 107312
+    }
+  },
+  "core_dll_candidates": [
+    "C:\\Users\\guill\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python3.dll",
+    "C:\\Users\\guill\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python312.dll"
+  ],
+  "codec_data_calls": 0,
+  "capture_opened": false,
+  "decompress_state": {
+    "eof": false,
+    "unused_data": "b''",
+    "unconsumed_tail": "b''"
+  }
+}

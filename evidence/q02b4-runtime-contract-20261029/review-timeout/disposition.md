@@ -1,0 +1,1 @@
+TIMEOUT120.078s sin texto ni dictamen. No aprobación. Una recuperación de entrega ausente120s con cápsula compacta, mismo borrador. No medición ni código. Si tampoco entrega, retirar ruta y dejar contrato pendiente.

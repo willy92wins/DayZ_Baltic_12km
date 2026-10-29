@@ -1,0 +1,29 @@
+unittest.case.FunctionTestCase (call)
+test_cli_producer_consumer_and_negatives ... FAIL
+unittest.case.FunctionTestCase (call)
+test_grouping_oracles ... ok
+unittest.case.FunctionTestCase (call)
+test_jsonl_physical ... ok
+unittest.case.FunctionTestCase (call)
+test_normalization_oracles ... ok
+unittest.case.FunctionTestCase (call)
+test_sha_and_strict_json ... ok
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (call)
+test_cli_producer_consumer_and_negatives
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\run_roadb4b1_tests_20261029.py", line 13, in call
+    with tempfile.TemporaryDirectory(prefix='b4b1-fixture-') as td: return fn(Path(td))
+                                                                           ^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_content_identity_ev112.py", line 129, in test_cli_producer_consumer_and_negatives
+    assert r2.returncode == 2, r2.stderr
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: invalid: table reconstruction mismatch
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.296s
+
+FAILED (failures=1)

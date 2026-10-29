@@ -1,0 +1,316 @@
+{
+  "schema": "road-b4b1-oracles.v2",
+  "normalization": [
+    {
+      "raw": "/DZ\\Structures\\Roads/",
+      "expected": "dz/structures/roads"
+    },
+    {
+      "raw": "Parts/Asf1_25.P3D",
+      "expected": "parts/asf1_25.p3d"
+    },
+    {
+      "raw": "part.p3d ",
+      "expected": "part.p3d "
+    }
+  ],
+  "rejected": [
+    "a//b",
+    "a/../b",
+    "C:/a",
+    "a/./b",
+    "a\u0000b",
+    "á/b",
+    "",
+    "..",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  ],
+  "grouping": [
+    {
+      "id": "same_content_different_locator_case",
+      "input": [
+        {
+          "package": "E:/A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "DZ/X",
+          "entry": "A.P3D",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "package": "E:\\A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "virtual": "dz/x/a.p3d",
+      "groups": 1,
+      "state": "SAME_PINNED_CONTENT"
+    },
+    {
+      "id": "distinct_packages_equal_model",
+      "input": [
+        {
+          "package": "A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "package": "B.pbo",
+          "package_sha": "3333333333333333333333333333333333333333333333333333333333333333",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "virtual": "dz/x/a.p3d",
+      "groups": 2,
+      "state": "DISTINCT_CONTENT"
+    },
+    {
+      "id": "conflicting_model_same_virtual",
+      "input": [
+        {
+          "package": "A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "package": "A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "4444444444444444444444444444444444444444444444444444444444444444"
+        }
+      ],
+      "virtual": "dz/x/a.p3d",
+      "groups": 0,
+      "state": "BLOCKED_SHA_CONFLICT",
+      "observed_keys": 2
+    },
+    {
+      "id": "single",
+      "input": [
+        {
+          "package": "A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "virtual": "dz/x/a.p3d",
+      "groups": 1,
+      "state": "SINGLE_PINNED_CONTENT"
+    },
+    {
+      "id": "missing_package_lookup",
+      "input": [],
+      "virtual": "dz/x/a.p3d",
+      "groups": 0,
+      "state": "UNRESOLVED"
+    },
+    {
+      "id": "invalid_virtual",
+      "input": [
+        {
+          "package": "A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz",
+          "entry": "../a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "virtual": "dz/a.p3d",
+      "groups": 0,
+      "state": "MALFORMED"
+    }
+  ],
+  "required_negatives": [
+    "omit_provenance",
+    "forged_pointer",
+    "duplicate_reference",
+    "changed_instance_count",
+    "receipt_pin_mismatch",
+    "producer_report_comutation",
+    "sha64_invalid",
+    "no_wrp_pbo_open",
+    "missing_method_binding",
+    "forged_bound_from_final_code",
+    "consumer_json_described_as_executable",
+    "forged_contract_binding",
+    "blocked_groups_counted",
+    "opening_excluded_input",
+    "silent_locator_normalization",
+    "remove_reconstructed_candidate_while_history_stays_null",
+    "extra_raw_provider_to_nonnull_history",
+    "alter_history_provider",
+    "missing_or_wrong_conflict_issue_pointer",
+    "mime_nonzero_rejected_provider",
+    "model_entry_sha_mismatch",
+    "road_not_READ_STRICT",
+    "previous_asset_sha_mismatch",
+    "jsonl_blank_index_shift"
+  ],
+  "sha64_invalid": [
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+  ],
+  "joins": [
+    {
+      "prefix": "DZ/X/",
+      "entry": "/A.P3D",
+      "expected": "dz/x/a.p3d"
+    },
+    {
+      "prefix": "dz",
+      "entry": "x//a.p3d",
+      "state": "MALFORMED"
+    },
+    {
+      "prefix": "",
+      "entry": "a.p3d",
+      "state": "MALFORMED"
+    }
+  ],
+  "method_cases": [
+    {
+      "states": [
+        "METHOD_UNVERIFIED",
+        "METHOD_DECLARED"
+      ],
+      "rows": [
+        "SAME_PINNED_CONTENT"
+      ],
+      "global": "INCONCLUSIVE_METHOD_BINDING",
+      "method_binding_global": "METHOD_UNVERIFIED"
+    },
+    {
+      "states": [
+        "METHOD_DECLARED"
+      ],
+      "rows": [
+        "SINGLE_PINNED_CONTENT"
+      ],
+      "global": "SAVED_CONTENT_IDENTITY_VERIFIED_ONLY",
+      "method_binding_global": "METHOD_DECLARED"
+    },
+    {
+      "states": [
+        "METHOD_BOUND"
+      ],
+      "rows": [
+        "DISTINCT_CONTENT"
+      ],
+      "global": "INCONCLUSIVE_SAVED_CONTENT_IDENTITY",
+      "method_binding_global": "METHOD_BOUND"
+    }
+  ],
+  "historical_rows": [
+    {
+      "id": "null_conflict_reconstructed",
+      "name": "dz/x/a.p3d",
+      "historical_provider": null,
+      "historical_state": "UNRESOLVED",
+      "issues": [
+        {
+          "code": "PROVIDER_CONFLICT",
+          "detail": "multiple distinct providers for dz/x/a.p3d"
+        }
+      ],
+      "candidates": [
+        {
+          "package": "E:/roads.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "DZ/X",
+          "entry": "A.P3D",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "package": "E:\\roads.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "expected_state": "SAME_PINNED_CONTENT",
+      "expected_groups": 1,
+      "historical_issue_pointer": "/issues/0"
+    },
+    {
+      "id": "null_missing_provider",
+      "name": "dz/x/a.p3d",
+      "historical_provider": null,
+      "historical_state": "UNRESOLVED",
+      "issues": [
+        {
+          "code": "PROVIDER_CONFLICT",
+          "detail": "multiple distinct providers for dz/x/a.p3d"
+        }
+      ],
+      "candidates": [
+        {
+          "package": "E:/roads.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "DZ/X",
+          "entry": "A.P3D",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "expected_state": "MALFORMED",
+      "issue": "HISTORY_PROVIDER_MISMATCH"
+    },
+    {
+      "id": "nonnull_extra_raw",
+      "name": "dz/x/a.p3d",
+      "historical_provider": {
+        "package": "E:/roads.pbo",
+        "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+        "prefix": "DZ/X",
+        "entry": "A.P3D",
+        "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+      },
+      "historical_state": "PROVIDER_RESOLVED",
+      "issues": [],
+      "candidates": [
+        {
+          "package": "E:/roads.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "DZ/X",
+          "entry": "A.P3D",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "package": "E:\\roads.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "expected_state": "MALFORMED",
+      "issue": "HISTORY_PROVIDER_MISMATCH"
+    }
+  ],
+  "jsonl": [
+    {
+      "bytes_utf8": "{\"name\":\"a\"}\n{\"name\":\"b\"}\n",
+      "pointers": [
+        "/0",
+        "/1"
+      ],
+      "accepted": true
+    },
+    {
+      "bytes_utf8": "{\"name\":\"a\"}\n\n{\"name\":\"b\"}\n",
+      "accepted": false
+    }
+  ]
+}

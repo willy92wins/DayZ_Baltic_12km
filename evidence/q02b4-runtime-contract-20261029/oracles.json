@@ -1,0 +1,67 @@
+{
+  "schema": "q02b4-oracles.v1",
+  "literal_cases": [
+    {
+      "id": "empty",
+      "hex": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "EXACT_BYTE_ROUNDTRIP"
+    },
+    {
+      "id": "binary",
+      "hex": "00fffe7f80",
+      "bytes": 5,
+      "sha256": "abcc6bb095efd05b8dba2411719022a332058f6f2a08cfb9951c7d584062b45b",
+      "expected": "EXACT_BYTE_ROUNDTRIP"
+    },
+    {
+      "id": "lf",
+      "hex": "610a620a",
+      "bytes": 4,
+      "sha256": "911169ddaaf146aff539f58c26c489af3b892dff0fe283c1c264c65ae5aa59a2",
+      "expected": "EXACT_BYTE_ROUNDTRIP"
+    },
+    {
+      "id": "crlf",
+      "hex": "610d0a620d0a",
+      "bytes": 6,
+      "sha256": "58055bdcc73787eb88c78d36f0b4939e9c5dc1c3ad17e25cc85a6833cf1a0cab",
+      "expected": "EXACT_BYTE_ROUNDTRIP"
+    }
+  ],
+  "generated_literal_rule": {
+    "high_ratio": "exactly 65537 ASCII A bytes",
+    "block_boundary": "bytes(range(256)) repeated 257 times; deterministic, not asserted incompressible"
+  },
+  "required_negatives": [
+    "changed_source_hash",
+    "changed_source_bytes",
+    "extra_source_file",
+    "removed_source_file",
+    "reparse_file",
+    "symlink_ancestor",
+    "inventory_traversal",
+    "inventory_duplicate",
+    "bad_classification",
+    "forged_completion_stream_sha",
+    "decoder_truncated",
+    "decoder_corrupt",
+    "decoder_concatenated",
+    "decoder_output_overrun",
+    "encoding_cap_exceeded",
+    "file_cap_before_read",
+    "total_cap_before_read",
+    "report_cap_before_write",
+    "unknown_import",
+    "forbidden_open",
+    "audit_hook_not_installed",
+    "bool_as_int",
+    "unknown_json_key",
+    "noncontiguous_partial_receipts",
+    "no_full_on_partial",
+    "fixed_codec_level",
+    "no_numeric_imports",
+    "no_NPZ_WRP_PBO_open"
+  ]
+}

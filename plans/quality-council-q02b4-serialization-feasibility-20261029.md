@@ -1,6 +1,8 @@
 # Q02B4 — coste de serialización guardada, sin repetir el censo
 
-Estado: REVISADO_PARA_DESCUBRIMIENTO_DE_FIRMAS_Y_CONTRATO. Fable98.484s SOUND-with-fixes adjudicado; aún no código ni medición. Unidad de descubrimiento posterior a Q02B3. Trazabilidad Q02/P11: hacer viable la cobertura de todos los contornos sin cambiar geometría, clasificación ni precisión. No constituye reparación ni aceptación visual.
+Estado: REVISADO_PARA_AUTORIA_DE_MEDICION_GUARDADA. Contrato final en tests/fixtures/q02b4/contract.json; revisión recuperada66.985s adjudicada, primer intento120.078s sin entrega. Todavía sin código ni medición. Estado histórico de descubrimiento sigue documentado abajo.
+
+ Fable98.484s SOUND-with-fixes adjudicado; aún no código ni medición. Unidad de descubrimiento posterior a Q02B3. Trazabilidad Q02/P11: hacer viable la cobertura de todos los contornos sin cambiar geometría, clasificación ni precisión. No constituye reparación ni aceptación visual.
 
 ## Hecho y límite de causalidad
 
@@ -41,3 +43,7 @@ La independencia se limita a flujo decodificador separado de la misma biblioteca
 Descubrimiento de firmas/retornos y versión es la próxima acción, sin correr el codec sobre captura. Contrato externo/oráculos y su revisión propios antes de autoría. Ninguna medición Q02B4 todavía; productor/consumidor Q02B3 consumidos al terminar y no se repiten.
 
 Resultado recibido sin repetir consumidor:549.657s/156037120RSS,rc2/reasonnull. SHA de consumer.json 90323e42630a3c1a14f8ae69f9180087068cbe7712a547d9e3713bbce6b99a74. El nuevo contrato deberá pinar ese archivo y completion, inventario y archivo por archivo; fuenteactual no se modifica. Presupuestos y alcance del plan no cambian.
+
+## Contrato final29-10 tras descubrimiento
+
+Runtime3.12.14/zlib1.3.2 builtin observado; probe audit propio0.203s y tres rechazos previstos, sin codec ni corpus. CotaB(cap16777216)=16782349, distinta deB(maxobservado16777106)=16782237.128MiB reserva derivada condicional, no garantía deRSS ni procedencia upstream. Progreso decoder incluye input consumido/salida producida/transiciónEOF; encodedSHA concatenación ordenada. Hash original y encoder reciben el mismo chunk una sola vez. No fullread a memoria. CapturaE:; ninguna causaOneDrive. Todos2618fsync dentro del techo120s, no tiempo garantizado. Clasificación externa2612prefix/5tail/1header y evidencia previa pinados. Siguiente autor180/review120/suite90; no duplicar sondeos ni Q02B3.

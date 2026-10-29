@@ -1,6 +1,6 @@
 # RoadB4B1 — equivalencia de contenido guardado, sin identidad física inventada
 
-Estado: REVISADO_PARA_IMPLEMENTAR_CONTRATO_R1. Fable 5.1 nativo68.328s SOUND-with-fixes adjudicado. Contrato externo R1 y oráculos sellados tras revisión105.078s; código aún ausente. Trazabilidad Q04/P10/P11. Unidad distinta de B4B0 consumido; no modificarlo ni repetir su censo. Objetivo: evitar que aliases de escritura generen conflictos de contenido ficticios, conservando la incertidumbre de precedencia física/nativa.
+Estado: CONSUMIDO_INCONCLUSIVE_METHOD_BINDING. Fable 5.1 nativo68.328s SOUND-with-fixes adjudicado. R1 refutado por provider=null en cuatro filas; delta R2 revisado69.625s y adjudicado, contrato/oráculos nuevos antes de autoría. Código y consumo guardado completados; consultar el checkpoint final. Trazabilidad Q04/P10/P11. Unidad distinta de B4B0 consumido; no modificarlo ni repetir su censo. Objetivo: evitar que aliases de escritura generen conflictos de contenido ficticios, conservando la incertidumbre de precedencia física/nativa.
 
 ## Mecanismo leído y alcance
 
@@ -12,7 +12,7 @@ Entradas externas nuevas por hash/bytes antes de código: contrato B4B0, su repo
 
 ## Contrato de contenido [DESIGN]
 
-Para cada uno de los5512nombres virtuales del reporte, conservar conteos, aliases, estado y proveedor original, y derivar grupos de contenido de las filas provider del reporte B4B0 y contrastar sus pins contra los índices guardados. El nuevo resultado nunca sustituye el reporte antiguo. Key=(package_sha256, normalized_prefix, normalized_entry, model_sha256). Normalización virtual ASCII exacta de slash/case/strip exterior ya autorizada; rechazar traversal, drive, controles, componentes interiores vacíos y colisión de contenidos bajo la misma key virtual. No basename fallback. El join prefix+entry debe dar exactamente el nombre esperado.
+Para cada uno de los5512nombres virtuales del reporte, conservar conteos, aliases, estado y proveedor original, y derivar grupos desde todos los candidatos reconstruidos en índices guardados y contrastar campos históricos B4B0, que conserva provider=null en cuatro conflictos. El nuevo resultado nunca sustituye el reporte antiguo. Key=(package_sha256, normalized_prefix, normalized_entry, model_sha256). Normalización virtual ASCII exacta de slash/case/strip exterior ya autorizada; rechazar traversal, drive, controles, componentes interiores vacíos y colisión de contenidos bajo la misma key virtual. No basename fallback. El join prefix+entry debe dar exactamente el nombre esperado.
 
 Cada grupo conserva todas las procedencias crudas: source_file_sha, JSON pointer/line, package_locator, prefix_raw y entry_raw. Package locator NO entra en igualdad de contenido; sí se conserva como observación. No resolverlo, ni usar normpath/realpath para afirmar identidad física. Dos paquetes con SHA distinto permanecen distintos aunque el modelo coincida. Dos entradas normalizadas iguales con SHA modelo distinto bloquean. Clave igual con locators distintos significa SAME_PINNED_CONTENT, no SAME_PHYSICAL_PROVIDER. Claims provider_precedence_current,physical_file_identity,build_ready y native_resolution permanecen NOT_EVALUATED/false.
 
@@ -39,3 +39,11 @@ Estados porfila: SAME_PINNED_CONTENT, DISTINCT_CONTENT, BLOCKED_SHA_CONFLICT, UN
 ## Contrato R1 adjudicado antes de autoría
 
 Fable nativo105.078s CONTRATO_REQUIERE_FIXES; once puntos adjudicados. Contract.json y oracles-r1.json bajo tests/fixtures/road_b4b1 fijan fuentes, esquema completo, normalización, join exacto de locator, estados de método separados y oráculos de estados ausentes. Los borradores se conservan. Consumer.json es resultado JSON; reporte y resultado declaran b14834 del contrato B4B0, verificado directamente. No falta ese binding. No se buscará ni inventará identidad cargada retrospectiva. Cuatro conflictos originales no se reclasifican. Siguiente autor240s/review180s/suite120s, luego única derivación30s y consumo30s/256MiB conforme al contrato; todavía sin código ni ejecución.
+
+## Delta R2 por dato ausente, 29-10
+
+R1 49d217 no se implementa: fuente:358 y cuatro filas guardadas prueban provider=null; el punto4 de Fable105.078s y su adjudicación estaban equivocados. Se conserva ese histórico. Nueva revisión69.625s acepta reconstrucción desde fuentes pinadas sin reabrir WRP/PBO. Contract-r2.json y oracles-r2.json fijan prefix de report, SHA confirmado config str/dict, puertas viales mime/READ_STRICT/unicidad/SHA/assets, igualdad no-null exacta y null con dos tuplas crudas distintas+pointer issue. JSONL conserva índices físicos; último LF vacío se ignora, líneas vacías interiores rechazan. No datos/tolerancias/métodos mejorados artificialmente. Autor240/review180/suite120; resultados siguen sólo metadatos guardados y método incierto.
+
+## Resultado consumido29-10
+
+5512referencias verificadas desde metadatos:5508single y4SAME_PINNED_CONTENT sobre28instancias, sin huecos/conflictos de contenido. METHOD_UNVERIFIED impide promoción. Productor1.078s yconsumidor1.000s;24tests privadosPASS1.922s. R2contrato263a2bfc y reporte d0848b55. Evidence/road-b4b1-saved-content-20261029. No identidad actual/precedencia/pivote/huella/build/mapa reparado. Todo consumido; apartados anteriores conservan historia, no son instrucciones de relanzamiento.
