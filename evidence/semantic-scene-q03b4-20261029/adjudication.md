@@ -1,0 +1,6 @@
+# Revisión adjudicada antes de corrección
+Fable5.1 nativo169.656s NEEDS-WORK. Muse240.141s sin dictamen; recuperación única entregada, no dos revisiones completas.
+H1 aceptado: sombra cat produce AttributeError reproducido. No llamarlo crash del proceso/motor.
+H2 parcialmente aceptado: N11 SCHEMA corresponde a descriptor; miembro extra llega a MEMBER_SCHEMA de helper sellado. Conservar oráculo/contrato históricos, añadir test META y subcaso extra explícito; no repinar para PASS.
+H3 aceptado: oráculo cap10x2 y negativo de permutación congelados antes de corrección (extension eb7f6d62). H4 aceptado negativo dtype mixto; la combinación completa tipos no era requisito, cada alternativa sí. H5 aceptado reemplazo de bytes real. H6 aceptado complementar section existente en otroLOD y manifiesto incompleto; mantener negativos R0 como casos propios, no renombrarlos como más fuertes.
+Integrador añade comparación de informe entero con fixture/expectativas externas; sus digests provienen de arrays fixture y JSON origen, nunca salida productor. Sin consenso ni revisión externa de futura postimagen. Una corrección240s sólo conjunto cerrado, suite180/256MiB; cualquier falla restante bloquea captura.

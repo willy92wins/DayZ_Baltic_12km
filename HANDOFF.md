@@ -1,3 +1,37 @@
+# Q03B4 cerrado con rechazo real; Q03B5 revisado
+
+Q03B4 REJECTED:COVERAGE tras productor real4.907s/153653248B. Falló la conjunción model_set==nonveg y source_set==set(models); no se guardaron diferencias, no atribuir cuál mitad ni causa. Consumer real no lanzado.13tests privados5.453s/públicos6.250s PASS sin skips; snapshots R0/R1 inertes en evidence/semantic-scene-q03b4-20261029, nada promovido a tools/tests. Autor853.932s, corrección116.832s; Muse240.141s sin dictamen y recuperación Fable169.656s NEEDS-WORK adjudicada. Postimagen final revisada sólo por integrador con contexto compartido. Contrato9deba0d9/oráculo5afd45bd/e967 intactos. 30identidades propias observadas retiradas; sin operación/run/lease/mapa.
+
+Siguiente: plans/quality-council-q03b5-meta-coverage-witness-20261029.md REVISADO_PARA_CONTRATO_Y_AUTORIA_DIAGNOSTICA, Muse30.703s. Congelar contrato/oráculos literales por(ID,rol) y dos universos antes de executor local300s; code review120/suite60; una corrección120 y una recuperación120. Una producción60s/256MiB y consumidor60s/256MiB sólo tras gates. Sólo NPZ prototipos/catálogo/secciones fijados, igualdad intacta, salida4MiB completa. No repetir Q03B4/captura/publicación/reviews/suites ni bajar igualdad a subconjunto. Q03C/Q05/referentes/ángulos/carreteras y nueve rechazos siguen abiertos.
+
+Publicación q03b4-q03b5 en preparación; seguir recibo, no duplicar. .gitattributes ajena preservada.
+
+# Q03B4 captura consumida REJECTED:COVERAGE; Q03B5 plan en revisión
+
+Productor real4.907s en igualdad de conjuntos META; sin testigos guardados de cuál mitad falla. No repetir captura ni tocar e967. Consumer no lanzado.13tests privados verdes después de corrección116.832s; snapshots inertes. Seguir q03b4-public-suite-20261029 y q03b5-plan-review-20261029 sin duplicar. No run/lease/mapa.
+
+# Q03B4 recuperación de dictamen activa
+
+Muse agotó240.141s sin dictamen; no aprobación. Fable recuperación única240s sobre mismas postimágenes R0, recibos q03b4-code-review-recovery-20261029; seguir sin duplicar. SuiteR0 once métodos8PASS2FAIL1ERROR por cat sombreado en consumidor; corregir sólo dentro de reserva240s tras dictamen. No NPZ histórico/run/lease/mapa. Autor local entregó853.932s<900s, contrato9deba0d9/oráculo5afd45bd. SnapshotR0 inerte.
+
+# Q03B4 código entregado; revisión y suite R0
+
+Código local entregado dentro900s en q03b4-local-author-20261029/delivery.json, snapshotR0 inerte. Seguir q03b4-code-review-20261029 y q03b4-private-suite-r0-20261029 sin duplicar. Contrato9deba0d9/oráculo5afd45bd congelados antes código. Ningún NPZ histórico abierto; captura bloqueada hasta adjudicación y suite. No run/lease/mapa.
+
+# Q03B4 autoría local activa
+
+Contrato/oráculos externos congelados antes de código en q03b4-local-author-20261029. Codex EXECUTOR900s desde start.json, revisar deadline antes de entregar. No captura histórica autorizada aún; seguir esta operación sin duplicar. Code review240s y suite180s después. No run/lease/mapa.
+
+# Q03B4 plan publicado — 29 de octubre
+
+0ea820ecdafb250e7b192dd35837edad4346d926,18archivos documentales; main remoto verificado limpio. Recibo publish-q03b4-plan-20261029/result.json. Muse Wonder1.0 nativo97.875s SOUND-with-fixes/CONVERGE,5puntos adjudicados,2identidades observadas retiradas. No operación propia/run/lease, código nuevo, tests ni NPZhistórico. Mapa intacto. Preparador/review/freeze/publicador/continuación/add/commit/push CONSUMIDOS, no repetir. Publicación inicial paró antes de commit por saltos Markdown del dictamen y líneas vacías numeradas de anclas; continuación preservó18blobs y verificó resto whitespace, sin readd/tests.
+
+Plan vigente quality-council-q03b4-semantic-scene-index-20261029.md REVISADO_PARA_CONTRATO_Y_AUTORIA_CON_GATES; evidencia q03b4-semantic-plan-review-20261029. Siguiente acción: congelar contrato Q03B4 y oráculos externos concretos ANTES de código, usando e967 intacto. Codex EXECUTOR local explícitamente asignado900s para contrato/oráculos y código acotado. Productor/consumidor con recorridos propios y adaptador mínimo; revisión de código240s incluye contrato; suite180s256MiB. Una corrección240 por repro cerrado y una recuperación de dictamen ausente240; no otra revisión del mismo plan. Una producción120s/512MiB y consumidor120s/512MiB sólo después de gates, no ahora.
+
+Diferencia de interfaz verificada: Session requiere schemas exactos; e967 permite dtype/grid variables. Adaptador inspecciona header acotado sobre snapshot pinado; cada caminante aplica sus predicados de clase, luego Session recarga y exige mismo SHA antes del consumo semántico. Lista completa2/6/3/35miembros con.npy. Una Session acumulada por corrida; inspección usa reserva temporal sin escribir acumulador, conserva comprobación de remanente. Runs(model,source_model,lod,kind,proxy) máximos/disjuntos/exhaustivos; consumidor lee fuentes por sí mismo y toma hashcontrato externo, no report. Oráculos deben cubrir variantes i/u4/8,f4/8,grid2x5 y gruposFdistintos/vacíos; N01-N18 en plan. No expected construido del propio productorQ03B3. Helper79ef/header0514 intactos. No modificar lectores ni rehacer cuatro archivos rechazados.
+
+No contratoQ03B4/código/captura todavía. Estado previsto INDEX_ONLY, nunca reparación. face_section_membershipNOT_SAVED; clasificador histórico no semántica de render; epoch3d955 no instaladoactual. Q03C/Q05 deben usar índice para medidas reales de exposición/huellas. Q02Bángulos/Q08/Q17/carreteras siguen abiertos. Nueve humanos0resueltos,C1NOT_REVIEWED. Council ya ejecutado, no repetir. .gitattributes ajena preservada.
+
 # Q03B4 plan revisado; publicación documental pendiente
 
 Muse97.875s SOUND-with-fixes/CONVERGE, cinco puntos adjudicados en evidence/q03b4-semantic-plan-review-20261029. Plan quality-council-q03b4-semantic-scene-index-20261029.md revisado para contrato y autoría con gates. No contrato Q03B4/código/captura histórica todavía. Siguiente congelar oráculos/contrato concretos y ejecutar autor local900s; code review240/suite180 antes de120s productor+120s consumidor/512MiB. Una Session acumulada, predicados separados, runs(model,source_model,lod,kind,proxy). Lectores79ef/0514 sellados. Revisión y preparador consumidos; seguir publicador nuevo sin duplicar. Sin run/lease/mapa;2identidades propias retiradas.

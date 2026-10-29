@@ -1,0 +1,782 @@
+{
+  "schema": "q03b4-literal-oracles-v1",
+  "meta_descr": [
+    [
+      "model",
+      "<i4"
+    ],
+    [
+      "source_model",
+      "<i4"
+    ],
+    [
+      "face",
+      "<i4"
+    ],
+    [
+      "section",
+      "<i4"
+    ],
+    [
+      "lod",
+      "<i4"
+    ],
+    [
+      "kind",
+      "|u1"
+    ],
+    [
+      "vertices",
+      "|u1"
+    ],
+    [
+      "flags",
+      "|u1"
+    ],
+    [
+      "proxy",
+      "<i4"
+    ],
+    [
+      "planarity_m",
+      "<f8"
+    ]
+  ],
+  "meta": [
+    [
+      10,
+      10,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      0
+    ],
+    [
+      10,
+      20,
+      0,
+      0,
+      0,
+      2,
+      3,
+      1,
+      0,
+      0
+    ],
+    [
+      11,
+      11,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      0
+    ],
+    [
+      11,
+      11,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      0
+    ]
+  ],
+  "runs": [
+    {
+      "key": [
+        10,
+        10,
+        3,
+        0,
+        -1
+      ],
+      "start": 0,
+      "end": 1
+    },
+    {
+      "key": [
+        10,
+        20,
+        0,
+        2,
+        0
+      ],
+      "start": 1,
+      "end": 2
+    },
+    {
+      "key": [
+        11,
+        11,
+        3,
+        0,
+        -1
+      ],
+      "start": 2,
+      "end": 4
+    }
+  ],
+  "ids": [
+    100,
+    101
+  ],
+  "model_index": [
+    10,
+    11
+  ],
+  "matrices": [
+    [
+      1,
+      -0.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      10,
+      20,
+      30
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      40,
+      50,
+      60
+    ]
+  ],
+  "grid_2x2": [
+    [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ]
+    ]
+  ],
+  "triangles_2x2": [
+    [
+      0,
+      2,
+      3
+    ],
+    [
+      0,
+      3,
+      1
+    ]
+  ],
+  "extrema_2x2": {
+    "body_row_min": [
+      0,
+      0
+    ],
+    "body_row_max": [
+      1,
+      1
+    ],
+    "body_col_min": [
+      0,
+      0
+    ],
+    "body_col_max": [
+      1,
+      1
+    ]
+  },
+  "categories_2x2": [
+    "BODY",
+    "BODY"
+  ],
+  "grid_2x5": [
+    [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        3,
+        0,
+        1
+      ],
+      [
+        4,
+        0,
+        1
+      ]
+    ]
+  ],
+  "triangles_2x5": [
+    [
+      0,
+      5,
+      6
+    ],
+    [
+      0,
+      6,
+      1
+    ],
+    [
+      1,
+      6,
+      7
+    ],
+    [
+      1,
+      7,
+      2
+    ],
+    [
+      2,
+      7,
+      8
+    ],
+    [
+      2,
+      8,
+      3
+    ],
+    [
+      3,
+      8,
+      9
+    ],
+    [
+      3,
+      9,
+      4
+    ]
+  ],
+  "extrema_2x5": {
+    "body_row_min": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "body_row_max": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "body_col_min": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+    ],
+    "body_col_max": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4
+    ]
+  },
+  "positive_types": {
+    "integer": [
+      "<i4",
+      "<i8",
+      "<u4",
+      "<u8"
+    ],
+    "matrix": [
+      "<f4",
+      "<f8"
+    ],
+    "triangle_extrema": [
+      "<i4",
+      "<i8"
+    ]
+  },
+  "negative_codes": {
+    "N01": "SOURCE_CHANGED",
+    "N02": "GRID",
+    "N03": "PADDING",
+    "N04": "PROXY",
+    "N05": "FACE",
+    "N06": "POSE",
+    "N07": "EPOCH",
+    "N08": "REPORT",
+    "N09": "CATEGORY",
+    "N10": "FACE",
+    "N11": "SCHEMA",
+    "N12": "REPORT",
+    "N13": "SCHEMA",
+    "N14": "TOTAL_CAP",
+    "N15": "COVERAGE",
+    "N16": "SCHEMA",
+    "N17": "SCHEMA",
+    "N18": "POSITIVE_VARIANTS"
+  },
+  "catalog": [
+    {
+      "index": 10,
+      "name": "a/root.p3d",
+      "instances": 1,
+      "group": "custom_pilot"
+    },
+    {
+      "index": 11,
+      "name": "a/other.p3d",
+      "instances": 1,
+      "group": "vanilla"
+    }
+  ],
+  "sections": [
+    {
+      "index": 10,
+      "name": "a/root.p3d",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "proxies": [
+        {
+          "model": "a/child.p3d",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "lods": [
+        {
+          "index": 3,
+          "resolution": 3000000028082176.0,
+          "faces": 3,
+          "sections": [
+            {
+              "index": 0,
+              "faces": 2,
+              "material": "",
+              "material_raw": "",
+              "texture": "",
+              "texture_raw": ""
+            },
+            {
+              "index": 1,
+              "faces": 1,
+              "material": "",
+              "material_raw": "",
+              "texture": "",
+              "texture_raw": ""
+            }
+          ]
+        },
+        {
+          "index": 0,
+          "resolution": 0.0,
+          "faces": 3,
+          "sections": [
+            {
+              "index": 0,
+              "faces": 2,
+              "material": "",
+              "material_raw": "",
+              "texture": "",
+              "texture_raw": ""
+            },
+            {
+              "index": 1,
+              "faces": 1,
+              "material": "dz/water/streams/data/water_streambed.rvmat",
+              "material_raw": "dz/water/streams/data/water_streambed.rvmat",
+              "texture": "",
+              "texture_raw": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "name": "a/other.p3d",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "proxies": [],
+      "lods": [
+        {
+          "index": 3,
+          "resolution": 3000000028082176.0,
+          "faces": 1,
+          "sections": [
+            {
+              "index": 0,
+              "faces": 1,
+              "material": "",
+              "material_raw": "",
+              "texture": "",
+              "texture_raw": ""
+            }
+          ]
+        },
+        {
+          "index": 0,
+          "resolution": 0.0,
+          "faces": 1,
+          "sections": [
+            {
+              "index": 0,
+              "faces": 1,
+              "material": "",
+              "material_raw": "",
+              "texture": "",
+              "texture_raw": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "name": "a/child.p3d",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "proxies": [],
+      "lods": [
+        {
+          "index": 0,
+          "resolution": 0.0,
+          "faces": 1,
+          "sections": [
+            {
+              "index": 0,
+              "faces": 1,
+              "material": "dz/water/streams/data/water_streambed.rvmat",
+              "material_raw": "dz/water/streams/data/water_streambed.rvmat",
+              "texture": "",
+              "texture_raw": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "root_model": 10,
+      "slots": [
+        [
+          10,
+          0
+        ]
+      ],
+      "source_model": 20
+    }
+  ],
+  "prototype_vertices": [
+    [
+      [
+        -0.0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  ],
+  "expected_models": [
+    {
+      "index": 10,
+      "name": "a/root.p3d",
+      "group": "custom_pilot",
+      "catalog_instance_count": 1,
+      "pose_rows": [
+        0
+      ],
+      "runs": [
+        {
+          "key": [
+            10,
+            10,
+            3,
+            0,
+            -1
+          ],
+          "start": 0,
+          "end": 1
+        },
+        {
+          "key": [
+            10,
+            20,
+            0,
+            2,
+            0
+          ],
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "layers": {
+        "roadway": "RAW_UNCERTIFIED",
+        "water_visual": "NOT_SAVED",
+        "conditional_proxy": "CONDITIONAL",
+        "visual_bed": "ALREADY_WORLD_UNCERTIFIED"
+      }
+    },
+    {
+      "index": 11,
+      "name": "a/other.p3d",
+      "group": "vanilla",
+      "catalog_instance_count": 1,
+      "pose_rows": [
+        1
+      ],
+      "runs": [
+        {
+          "key": [
+            11,
+            11,
+            3,
+            0,
+            -1
+          ],
+          "start": 2,
+          "end": 4
+        }
+      ],
+      "layers": {
+        "roadway": "RAW_UNCERTIFIED",
+        "water_visual": "NOT_SAVED",
+        "conditional_proxy": "NOT_SAVED",
+        "visual_bed": "NOT_SAVED"
+      }
+    },
+    {
+      "index": 20,
+      "name": "a/child.p3d",
+      "group": "proxy_only",
+      "catalog_instance_count": 0,
+      "pose_rows": [],
+      "runs": [],
+      "layers": {
+        "roadway": "NOT_SAVED",
+        "water_visual": "NOT_SAVED",
+        "conditional_proxy": "NOT_SAVED",
+        "visual_bed": "NOT_SAVED"
+      }
+    }
+  ],
+  "expected_coverage": {
+    "source_models": 2,
+    "vegetation_models_not_saved": 0,
+    "prototype_models": 3,
+    "proxy_only_models": 1,
+    "instances": 2,
+    "prototype_faces": 4,
+    "roadway": 3,
+    "water_visual": 0,
+    "conditional_proxy": 1,
+    "ambiguous": 0,
+    "degenerate": 0,
+    "proxy_paths": 1,
+    "pilot_models": 1,
+    "human_resolved": 0,
+    "C1": "NOT_REVIEWED",
+    "npz_files": 4,
+    "npz_members": 46
+  },
+  "expected_pilot_static": {
+    "model": "a/root.p3d",
+    "model_index": 10,
+    "instance_id": 100,
+    "site": "literal",
+    "archive": "pilot.npz",
+    "pose_row": 0,
+    "world_frame": "ALREADY_WORLD_UNCERTIFIED",
+    "categories": {
+      "BODY": 2
+    },
+    "historical_checks": {}
+  }
+}

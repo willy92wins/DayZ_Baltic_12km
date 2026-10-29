@@ -1,5 +1,7 @@
 # Q03B4 — índice de escena guardada para medir exposición y huellas
 
+Ejecución consumida: REJECTED:COVERAGE en datos reales, sin consumidor real.13tests sintéticos privados/públicos PASS. Contrato/evidencia intactos; no reutilizar como autorización de otra captura. Siguiente Q03B5 revisado busca testigos de conjuntos, no relaja esta guarda.
+
 Estado: REVISADO_PARA_CONTRATO_Y_AUTORIA_CON_GATES. Muse Wonder1.0 nativo97.875s SOUND-with-fixes/CONVERGE, cinco puntos adjudicados al final. Consumidores posteriores: Q03C (exposición de lechos y caps) y Q05 (contactos carretera/agua, huella y ambos accesos). Este corte entrega un índice que permite seleccionar las caras y poses guardadas sin volver a extraer modelos. No mide todavía exposición ni modifica el mapa.
 
 ## 1. Alcance y fuente única

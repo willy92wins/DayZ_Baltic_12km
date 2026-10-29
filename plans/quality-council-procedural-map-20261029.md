@@ -1,6 +1,6 @@
 # Ejecución del council ampliado: validación y colocación procedimental
 
-CheckpointQ03B4 29-10: plan de índice semántico revisado Muse97.875s; ver `quality-council-q03b4-semantic-scene-index-20261029.md` y `evidence/q03b4-semantic-plan-review-20261029`. Header/archive/proxy sintéticos previos están cerrados; no repetir sus suites. Sigue contrato/oráculos nuevos y productor/consumidor con recorridos propios, antes de captura histórica204NPZ. Aún no códigoQ03B4, índice real ni mapa reparado. Q03C/Q05 consumirán sus referencias de caras/poses/pilotos para exposición y huellas completas. Q02Bángulos/Q08/Q17, pavimentado/conducción y nueve rechazos siguen abiertos; council ya ejecutado, no repetir.
+CheckpointQ03B4 29-10:13tests privados/públicos verdes, pero productor real REJECTED:COVERAGE en igualdad de conjuntos META frente a inventarios; consumidor no lanzado, mapa intacto. Evidencia semantic-scene-q03b4-20261029 y snapshots inertes. No repetir captura ni rebajar e967. Siguiente Q03B5 diagnóstico de testigos revisado Muse30.703s: roles/universos separados, original intacto; contrato/oráculos antes de código300s y gates. Q03C/Q05 aún necesitan índice válido; ángulos/referentes/carreteras/nueve rechazos siguen abiertos. Council ya ejecutado.
 
 Petición humana vigente del29-10: adelantar council, proponer mejoras y aplicar
 las justificadas a herramientas y mapa. Este plan reemplaza el orden temporal
