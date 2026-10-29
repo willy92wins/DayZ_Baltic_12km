@@ -1,0 +1,61 @@
+{
+  "status": "INCONCLUSIVE_PROBE_DIAGNOSTIC",
+  "arms": {
+    "control": {
+      "status": "NOT_LAUNCHED"
+    },
+    "candidate": {
+      "status": "NOT_LAUNCHED"
+    }
+  },
+  "inputs": [
+    {
+      "kind": "SEALED_SOURCE",
+      "arm": "control",
+      "files": 6893,
+      "state": "MATCH"
+    },
+    {
+      "kind": "SEALED_SOURCE",
+      "arm": "candidate",
+      "files": 6893,
+      "state": "MATCH"
+    },
+    {
+      "kind": "WORK",
+      "arm": "control",
+      "files": 6893,
+      "state": "MATCH"
+    },
+    {
+      "kind": "WORK",
+      "arm": "candidate",
+      "files": 6893,
+      "state": "MATCH"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "INSTALLED_OR_FIXED_INPUT",
+      "path": "C:\\Users\\guill\\.agents\\skills\\dayz-preflight\\preflight.py",
+      "error": "REPARSE"
+    },
+    {
+      "kind": "LAUNCH_PREREQUISITES",
+      "error": "LOGGER_DELTA"
+    }
+  ],
+  "producer_status": "PROBE_STOPPED",
+  "producer_reason": "REPARSE",
+  "claims": {
+    "build_ready": false,
+    "decoder_verified": false,
+    "map_changed": false,
+    "native_acceptance": false
+  },
+  "decoder": "NOT_IMPLEMENTED",
+  "continuous_identity": false,
+  "report_sha256": "d82bb05f49b6839b68d23ee6fdb8603fb64f37151a98b12fddef90dad7cfab5b",
+  "contract_sha256": "e88e345a2e88a6c47b05091a40c1bdfbaab34353ad000f7b7b80d52b6104f1b6",
+  "seconds": 53.26600000000326
+}

@@ -1,0 +1,15 @@
+from pathlib import Path
+import hashlib,json,sys
+R=Path('E:/DayZ-Baltic-Build/shape-repair-20261025');D=R/'road-c1c-local-author-20261029';W=Path('C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c');O=R/'road-c1c-code-review-20261029';O.mkdir(exist_ok=False)
+def dump(p,x):p.write_text(json.dumps(x,indent=2),encoding='utf-8')
+files=[W/'plans/ev112-road-c1c-compile-probe-20261029.md',*[D/n for n in ['contract.json','oracle.json','probe_road_compile_c1c.py','observe_road_compile_c1c.py','test_probe_road_compile_c1c.py','logger-fixture.xml','author-completion.json']]]
+pins={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in files};dump(O/'pins.json',pins)
+brief='''Revisión independiente acotada de código RoadC1C. NO ejecutar shell, herramientas, builds ni modificar archivos. Sólo esta cápsula. Devuelve dictamen SOUND / SOUND-with-fixes / NEEDS-WORK con bugs concretos y fixes mínimos, máximo 1400 palabras. Tiempo180s. Codex executor local asignado escribió wrapper y observador; no es revisión de plan otra vez. Examina identidad/ownership/candidato bloqueado, presupuestos, logs, ruta privada/logger, preflight, observador independiente y negativos. COMPILE_PROBE_ONLY no decodifica terreno ni permite motor. Contrato y oráculo previos intactos. Los binarios no se entregan; anclas CLI son literales observados e invocación histórica, runtime sigue abierto. No inventes validación de binpath ni causa por control vacío. No hay captura real aún. Señala tests tautológicos si no prueban el gate.''' 
+for p in files:brief+='\n\n### '+str(p)+'\n'+p.read_text(encoding='utf-8')
+(O/'brief.md').write_text(brief,encoding='utf-8')
+muse='C:/Users/guill/AppData/Local/Programs/muse/muse-bin-1.4.14-R7309.1.exe';assert hashlib.sha256(Path(muse).read_bytes()).hexdigest()=='20d18c426cc26e9e4b3cc07008ec07ec97e12e466a2be8cd2797b2e0e2018382'
+cmd=[muse,'exec','--json','--model','muse-wonder-1.0','--contributor-mode','off','--reasoning-effort','high','--workspace',str(R/'council-expanded-20261029'),'--disable-write','--disable-shell','--disable-web-tools','--disable-reminders','--disable-request-user-input','--no-foreign-personal-context','--no-session-log','--max-model-steps','4','--prompt-file',str(O/'brief.md')]
+cfg={'parallel':2,'jobs':[{'id':'review','command':cmd,'cwd':str(R),'out':str(O/'native'),'seconds':180,'input_file':str(O/'brief.md')},{'id':'tests-R0','command':[sys.executable,'-I','-X','utf8',str(D/'test_probe_road_compile_c1c.py')], 'cwd':str(D),'out':str(D/'tests-R0'),'seconds':120,'max_bytes':268435456,'input_file':str(D/'test_probe_road_compile_c1c.py')}]};dump(O/'jobs.json',cfg)
+text='# RoadC1C revisión de código activa\n\nAutor local455.781s<600; contrato e88e345a/oráculo0a809df8 previos. Seguir road-c1c-code-review-20261029/native (180s) y tests-R0 (120s), no duplicar. Todavía ningún preflight operativo, ayudaCLI, build, run ni lease.\n\n'
+for p in [W/'HANDOFF.md',R/'ACTIVE-WORK.md']:p.write_bytes(text.encode()+p.read_bytes())
+print(json.dumps({'brief_bytes':len(brief.encode()),'jobs':str(O/'jobs.json')}))

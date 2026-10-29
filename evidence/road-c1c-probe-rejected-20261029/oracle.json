@@ -1,0 +1,25 @@
+{
+  "schema": "road-c1c-oracle.v1",
+  "valid_header_hex": "4f5052572000000001020304",
+  "source_header_hex": "30575a442000000001020304",
+  "positive_log": "Build Successful\n",
+  "negative_logs": [
+    "Build failed\n",
+    "Build Successful\nERROR: missing texture\n",
+    "Build Successful\nFATAL: test\n"
+  ],
+  "expected_positive": "ARTIFACT_OBSERVED_ONLY",
+  "expected_source_header": "WRP_MAGIC",
+  "expected_no_child": "PROBE_INCONCLUSIVE_NOT_OBSERVED",
+  "expected_bad_image": "UNEXPECTED_CHILD",
+  "expected_nonzero": "PROCESS_REJECTED",
+  "expected_timeout": "TIMEOUT",
+  "expected_missing_marker": "NO_MARKER",
+  "expected_old_log": "LOG_WINDOW",
+  "expected_multiple": "WRP_COUNT",
+  "expected_changed_source": "SOURCE_CHANGED",
+  "expected_changed_work": "WORK_INPUT_MUTATED",
+  "expected_co_mutant": "ARTIFACT_PIN",
+  "expected_extra_logger_change": "LOGGER_DELTA",
+  "candidate_requires": "control.status == ARTIFACT_OBSERVED_ONLY"
+}
