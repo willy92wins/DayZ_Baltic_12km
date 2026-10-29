@@ -1,3 +1,15 @@
+# Estado vivo — Q03B1L cabecera NPY validada,29-10
+
+NPY_HEADER_FIXTURE_VERIFIED_ONLY. Codex executor local187.177s; corrección puntual31.480s por hallazgo Fable reproducido. Módulo051436d9/tests c9077266 promovidos,7métodos privados PASS0.469s/50.92MB;26negativos originales+2schema. Oráculo79b946/contratode2afee0 intactos, extensión177d117f. Muse revisión código90.110s sin dictamen, recuperación Fable74.938s SOUND-with-fixes adjudicada; no postimagen externa adicional, integrador verificó delta propuesto. Evidence/npy-header-q03b1l-20261029.
+
+No run/lease/operación propia. Autores, reviews, corrección, suites y repro consumidos. No repetirlos. Siguiente: preparar unidad de snapshot/ZIP y presupuesto de sesión que use cabecera aprobada, sólo sintética hasta revisión y validación completas. Antes de diseñar, reanclar APIs/metadata; no asumir memoria acotada sólo por abrir ZipFile ni mmapNPZ. No datos históricos aún, proxy/semántica/consumidor pendientes. Q03C/Q05 medirán exposición y huella después. Council yaejecutado; reparación/geometría global/carreteras aún abiertas,0humanos resueltos,C1NOT_REVIEWED.
+
+## Checkpoint público confirmado — 29-10
+
+e495740090375a47751945b5a15b22f98ed5fba9 publicado:19archivos,main remoto verificado limpio. Receipt publish-q03b1-delivery-20261029/result.json. Dos noentregas acotadas,0archivosimplementación completos/0suite/0capturas. Ocho lecturas de oráculos estándar0.844s no son implementación.17identidades observadas propias retiradas; ninguna operación/run/lease. Automatización actualizada ACTIVE, conserva objetivos completos.
+
+No repetir autores/review/fixtures/freeze/publicador/stage/add/commit/push ni continuar streams. Publicación inicial paró por CRLF antes de commit; continuación verificó blobs sin readd ni nuevas pruebas, cr-at-eol reconoció CRLF sin modificar evidencia. Próximo trabajo: reevaluar asignación/mecanismo antes de autoría compacta con presupuesto propio; no código aprobado ni autorización de NPZ real. Plan Q03B1A y oráculos externos guardados. Respeto a .gitattributes ajena confirmado.
+
 # Estado vivo — Q03B1 y Q03B1A sin entrega completa,29-10
 
 No operación propia/run/lease. Muse120.063s dejó7958caracteres parciales, ningún archivo completo; Fable120.204s en el corte de cabecera tampoco entregó texto/resultado. Ambas rutas de esos intentos retiradas, no relanzar autores ni continuar streams. Plan Q03B1A revisado Muse52.578s y oráculo79b946/contrato de2afee0 congelados. Sólo ocho lecturas de oráculos NumPy estándar verificadas0.844s; suite de implementación0, código promovido0, NPZhistóricos0, mapa intacto. evidence/q03b1-delivery-budget-20261029.
