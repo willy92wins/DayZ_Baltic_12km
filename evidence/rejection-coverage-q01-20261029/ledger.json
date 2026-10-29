@@ -1,0 +1,1298 @@
+{
+  "schema": "rejection-coverage-ledger.v1",
+  "status": "OPEN_HUMAN_REJECTIONS",
+  "case_count": 9,
+  "resolved_count": 0,
+  "c1_verdict": "NOT_REVIEWED",
+  "visual_acceptance": "NOT_GRANTED",
+  "observed_build": {
+    "mod": "@DayZ_Baltic_EV112_Kit7Nav8Load1",
+    "world_sha256": "f0e0e6b99da08b48f62ee47fa72b8905a5c9843bee4a30cefa18f517ddb1f603",
+    "pilot_sha256": "3d9550bfb3f27e3916b14579990c240c4aaf4d779e628658ec572cb2c806a2b6",
+    "water_sha256": "97edcafe1fc86d9abb4c3aa591d5081a6dd940b87020069fd45c04f8d0deae43"
+  },
+  "build_bindings": [
+    {
+      "path": "evidence/visual-tour-20261027/feedback.json",
+      "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+      "pointer": "/mod",
+      "expected_literal": "@DayZ_Baltic_EV112_Kit7Nav8Load1"
+    },
+    {
+      "path": "evidence/visual-tour-20261027/feedback.json",
+      "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+      "pointer": "/world_sha256",
+      "expected_literal": "f0e0e6b99da08b48f62ee47fa72b8905a5c9843bee4a30cefa18f517ddb1f603"
+    },
+    {
+      "path": "evidence/visual-tour-20261027/feedback.json",
+      "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+      "pointer": "/pilot_sha256",
+      "expected_literal": "3d9550bfb3f27e3916b14579990c240c4aaf4d779e628658ec572cb2c806a2b6"
+    },
+    {
+      "path": "evidence/visual-tour-20261027/feedback.json",
+      "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+      "pointer": "/water_sha256",
+      "expected_literal": "97edcafe1fc86d9abb4c3aa591d5081a6dd940b87020069fd45c04f8d0deae43"
+    }
+  ],
+  "cases": [
+    {
+      "id": "NARVA-VIS-01",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/0/id",
+          "expected_literal": "NARVA-VIS-01"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/0/status",
+          "expected_literal": "OPEN"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/status",
+          "expected_literal": "VISUAL_REJECTED_BY_USER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/0/observed",
+          "expected_literal": "Raised angular L-shaped ground in front of the dam"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/exact_defect_world_coordinates",
+          "expected_literal": "NOT_MEASURED; player position is not the defect position"
+        }
+      ],
+      "scope": "Raised angular L-shaped ground in front of the dam",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "terrain",
+        "visual_models",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/0/observation",
+              "expected_literal": "NARVA-VIS-01"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/0/domain",
+              "expected_literal": "native_candidate"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/0/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/0/approximate_review_position",
+              "expected_literal": [
+                2391,
+                6941
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/narva/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/narva/point",
+              "expected_literal": [
+                2391.0,
+                6941.0
+              ]
+            }
+          ],
+          "limitation": "Cercanía a contactos carretera-agua; no identidad del cruce, puente ni defecto."
+        },
+        {
+          "state": "MATERIALIZATION_DIFFERENT",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/feedback.json",
+              "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+              "pointer": "/dry_bank_candidate_in_game",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "El piloto seco offline no estuvo materializado en esta visita; no transfiere aceptación al observado."
+        }
+      ]
+    },
+    {
+      "id": "NARVA-VIS-02",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/1/id",
+          "expected_literal": "NARVA-VIS-02"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/1/status",
+          "expected_literal": "OPEN"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/status",
+          "expected_literal": "VISUAL_REJECTED_BY_USER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/1/observed",
+          "expected_literal": "Bridge reported misaligned by user; intended road axis and both approaches must be checked in world coordinates"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/exact_defect_world_coordinates",
+          "expected_literal": "NOT_MEASURED; player position is not the defect position"
+        }
+      ],
+      "scope": "Bridge reported misaligned by user; intended road axis and both approaches must be checked in world coordinates",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "road_models",
+        "road_corridor",
+        "approaches",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "NOT_EVALUATED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/1/observation",
+              "expected_literal": "NARVA-VIS-02"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/1/domain",
+              "expected_literal": "road_model_not_evaluated"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/1/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/1/approximate_review_position",
+              "expected_literal": [
+                2391,
+                6941
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/narva/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/narva/point",
+              "expected_literal": [
+                2391.0,
+                6941.0
+              ]
+            }
+          ],
+          "limitation": "Cercanía a contactos carretera-agua; no identidad del cruce, puente ni defecto."
+        },
+        {
+          "state": "MATERIALIZATION_DIFFERENT",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/feedback.json",
+              "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+              "pointer": "/dry_bank_candidate_in_game",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "El piloto seco offline no estuvo materializado en esta visita; no transfiere aceptación al observado."
+        }
+      ]
+    },
+    {
+      "id": "NARVA-VIS-03",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/2/id",
+          "expected_literal": "NARVA-VIS-03"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/2/status",
+          "expected_literal": "OPEN"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/status",
+          "expected_literal": "VISUAL_REJECTED_BY_USER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/findings/2/observed",
+          "expected_literal": "Banks alternate straight edges, polygonal corners and overly regular circular arcs, including red-marked edges around dam and bridge"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/exact_defect_world_coordinates",
+          "expected_literal": "NOT_MEASURED; player position is not the defect position"
+        }
+      ],
+      "scope": "Banks alternate straight edges, polygonal corners and overly regular circular arcs, including red-marked edges around dam and bridge",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "terrain",
+        "visual_models",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/2/observation",
+              "expected_literal": "NARVA-VIS-03"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/2/domain",
+              "expected_literal": "native_or_model_unresolved"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/2/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/2/approximate_review_position",
+              "expected_literal": [
+                2391,
+                6941
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/narva/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/narva/point",
+              "expected_literal": [
+                2391.0,
+                6941.0
+              ]
+            }
+          ],
+          "limitation": "Cercanía a contactos carretera-agua; no identidad del cruce, puente ni defecto."
+        },
+        {
+          "state": "MATERIALIZATION_DIFFERENT",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/feedback.json",
+              "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+              "pointer": "/dry_bank_candidate_in_game",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "El piloto seco offline no estuvo materializado en esta visita; no transfiere aceptación al observado."
+        }
+      ]
+    },
+    {
+      "id": "KIT118-VIS-01",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/findings/0/id",
+          "expected_literal": "KIT118-VIS-01"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/findings/0/status",
+          "expected_literal": "OPEN"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/status",
+          "expected_literal": "VISUAL_REJECTED_BY_USER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/build_identity_reference",
+          "expected_literal": "feedback.json"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/findings/0/observed",
+          "expected_literal": "Los lechos del río sobresalen mucho"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/position_scope",
+          "expected_literal": "Tour stop, not exact defect coordinates. Affected endpoint still to identify."
+        }
+      ],
+      "scope": "Los lechos del río sobresalen mucho",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "riverbed_models",
+        "terrain",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "NOT_EVALUATED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/3/observation",
+              "expected_literal": "KIT118-VIS-01"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/3/domain",
+              "expected_literal": "model_not_evaluated"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/3/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/3/approximate_review_position",
+              "expected_literal": [
+                8253,
+                9038
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/kit118/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/kit118/point",
+              "expected_literal": [
+                8253.0,
+                9038.0
+              ]
+            }
+          ],
+          "limitation": "Cercanía a contactos carretera-agua; no identidad del cruce, puente ni defecto."
+        },
+        {
+          "state": "MATERIALIZATION_DIFFERENT",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+              "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+              "pointer": "/dry_bank_candidate_in_game",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "El piloto seco offline no estuvo materializado en esta visita; no transfiere aceptación al observado."
+        }
+      ]
+    },
+    {
+      "id": "KIT118-VIS-02",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/findings/1/id",
+          "expected_literal": "KIT118-VIS-02"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/findings/1/status",
+          "expected_literal": "OPEN"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/status",
+          "expected_literal": "VISUAL_REJECTED_BY_USER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/build_identity_reference",
+          "expected_literal": "feedback.json"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/findings/1/observed",
+          "expected_literal": "En el extremo solapa con la carretera"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+          "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+          "pointer": "/position_scope",
+          "expected_literal": "Tour stop, not exact defect coordinates. Affected endpoint still to identify."
+        }
+      ],
+      "scope": "En el extremo solapa con la carretera",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "riverbed_models",
+        "road_corridor",
+        "approaches",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "NOT_EVALUATED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/4/observation",
+              "expected_literal": "KIT118-VIS-02"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/4/domain",
+              "expected_literal": "model_road_not_evaluated"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/4/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/4/approximate_review_position",
+              "expected_literal": [
+                8253,
+                9038
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/kit118/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/kit118/point",
+              "expected_literal": [
+                8253.0,
+                9038.0
+              ]
+            }
+          ],
+          "limitation": "Cercanía a contactos carretera-agua; no identidad del cruce, puente ni defecto."
+        },
+        {
+          "state": "MATERIALIZATION_DIFFERENT",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/kit118-feedback.json",
+              "sha256": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+              "pointer": "/dry_bank_candidate_in_game",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "El piloto seco offline no estuvo materializado en esta visita; no transfiere aceptación al observado."
+        }
+      ]
+    },
+    {
+      "id": "CONT65-VIS-01",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/continuous65-feedback.json",
+          "sha256": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+          "pointer": "/findings/0/id",
+          "expected_literal": "CONT65-VIS-01"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/continuous65-feedback.json",
+          "sha256": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+          "pointer": "/findings/0/status",
+          "expected_literal": "OPEN"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/continuous65-feedback.json",
+          "sha256": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+          "pointer": "/status",
+          "expected_literal": "VISUAL_REJECTED_BY_USER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/continuous65-feedback.json",
+          "sha256": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+          "pointer": "/build_identity_reference",
+          "expected_literal": "feedback.json"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/continuous65-feedback.json",
+          "sha256": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+          "pointer": "/findings/0/observed",
+          "expected_literal": "esto esta como antes, el lecho sobresale demasiado y queda raro"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/continuous65-feedback.json",
+          "sha256": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+          "pointer": "/position_scope",
+          "expected_literal": "Tour stop, not the measured outline of the defect"
+        }
+      ],
+      "scope": "esto esta como antes, el lecho sobresale demasiado y queda raro",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "riverbed_models",
+        "terrain",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "NOT_EVALUATED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/5/observation",
+              "expected_literal": "CONT65-VIS-01"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/5/domain",
+              "expected_literal": "model_not_evaluated"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/5/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/5/approximate_review_position",
+              "expected_literal": [
+                5162,
+                5865
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "MATERIALIZATION_DIFFERENT",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/continuous65-feedback.json",
+              "sha256": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+              "pointer": "/dry_bank_candidate_in_game",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "El piloto seco offline no estuvo materializado en esta visita; no transfiere aceptación al observado."
+        }
+      ]
+    },
+    {
+      "id": "ROAD49-RIVER-VIS-01",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/river_findings/0/id",
+          "expected_literal": "ROAD49-RIVER-VIS-01"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/river_findings/0/status",
+          "expected_literal": "VISUAL_REJECTED_BY_USER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/build_identity_reference",
+          "expected_literal": "feedback.json"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/river_findings/0/observed",
+          "expected_literal": "River to the right of the user's view has pervasive zigzags"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/river_findings/0/exact_defect_coordinates",
+          "expected_literal": "NOT_MEASURED; tour-stop coordinates do not identify the river geometry"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/river_findings/0/river_source_id",
+          "expected_literal": null
+        }
+      ],
+      "scope": "River to the right of the user's view has pervasive zigzags",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "terrain",
+        "visual_models",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "NOT_EVALUATED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/6/observation",
+              "expected_literal": "ROAD49-RIVER-VIS-01"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/6/domain",
+              "expected_literal": "unknown"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/6/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/6/approximate_review_position",
+              "expected_literal": [
+                5295.7,
+                5999.9
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "MATERIALIZATION_DIFFERENT",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/road49-feedback.json",
+              "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+              "pointer": "/dry_bank_candidate_in_game",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "El piloto seco offline no estuvo materializado en esta visita; no transfiere aceptación al observado."
+        }
+      ]
+    },
+    {
+      "id": "CROSSING-VIS-01",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+          "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+          "pointer": "/id",
+          "expected_literal": "CROSSING-VIS-01"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+          "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+          "pointer": "/status",
+          "expected_literal": "USER_REJECTED_ROAD_INTERRUPTED_BY_RIVER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+          "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+          "pointer": "/build_identity_reference",
+          "expected_literal": "feedback.json"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+          "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+          "pointer": "/user_follow_up",
+          "expected_literal": "Es una carretera partida a la mitad por un río; error de revisión geométrica. Revisar también otros cruces y los bordes de ríos y mares."
+        },
+        {
+          "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+          "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+          "pointer": "/coordinates_scope",
+          "expected_literal": "Measured player and camera, confirmed by user to be at the crossing; exact road/water intersection polygon still to derive"
+        }
+      ],
+      "scope": "Es una carretera partida a la mitad por un río; error de revisión geométrica. Revisar también otros cruces y los bordes de ríos y mares.",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "road_corridor",
+        "road_models",
+        "approaches",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "NOT_EVALUATED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/7/observation",
+              "expected_literal": "CROSSING-VIS-01"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/7/domain",
+              "expected_literal": "road_model_not_evaluated"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/7/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/7/approximate_review_position",
+              "expected_literal": [
+                4789.51465,
+                5516.52197
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/reported_player/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/road-water-census-20261028/contexts.json",
+              "sha256": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+              "pointer": "/reported_player/point",
+              "expected_literal": [
+                4789.51465,
+                5516.52197
+              ]
+            }
+          ],
+          "limitation": "Cercanía a contactos carretera-agua; no identidad del cruce, puente ni defecto."
+        },
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+              "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+              "pointer": "/native_evidence/count_total",
+              "expected_literal": 108
+            },
+            {
+              "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+              "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+              "pointer": "/native_evidence/returned_entities",
+              "expected_literal": 80
+            },
+            {
+              "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+              "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+              "pointer": "/native_evidence/bridge_detected_in_returned_subset",
+              "expected_literal": false
+            },
+            {
+              "path": "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+              "sha256": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+              "pointer": "/native_evidence/absence_proven",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "Sólo80de108entidades; false en subconjunto no demuestra puente ausente. Rayo al superviviente excluido."
+        }
+      ]
+    },
+    {
+      "id": "RELIEF-EAST-VIS-01",
+      "human_verdict": "OPEN_REJECTED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+          "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+          "pointer": "/id",
+          "expected_literal": "RELIEF-EAST-VIS-01"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+          "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+          "pointer": "/status",
+          "expected_literal": "VISUAL_REJECTED_BY_USER"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+          "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+          "pointer": "/build_identity_reference",
+          "expected_literal": "feedback.json"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+          "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+          "pointer": "/observed",
+          "expected_literal": "La captura concreta el lado izquierdo como una orilla con entrantes estrechos, lenguas de tierra y codos marcados; también muestra tramos largos casi rectos."
+        },
+        {
+          "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+          "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+          "pointer": "/localization/limitation",
+          "expected_literal": "La cámara consultada informa view=player; no prueba que coincida con una cámara libre usada por el usuario. Izquierda es relativa a su vista, no una dirección cardinal ni las coordenadas del personaje."
+        }
+      ],
+      "scope": "La captura concreta el lado izquierdo como una orilla con entrantes estrechos, lenguas de tierra y codos marcados; también muestra tramos largos casi rectos.",
+      "location_status": "UNCONFIRMED_CONTEXT_ONLY",
+      "required_layers": [
+        "terrain",
+        "visual_models",
+        "water"
+      ],
+      "automatic_evidence": [
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/8/observation",
+              "expected_literal": "RELIEF-EAST-VIS-01"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/8/domain",
+              "expected_literal": "native_candidate"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/8/association",
+              "expected_literal": "UNCONFIRMED_CONTEXT_ONLY"
+            },
+            {
+              "path": "evidence/native-shore-census-20261028/observations.json",
+              "sha256": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+              "pointer": "/8/approximate_review_position",
+              "expected_literal": [
+                11790,
+                2400
+              ]
+            }
+          ],
+          "limitation": "Censo nativo: dominio declarado; vecinos sólo contextuales. No localiza el defecto ni acredita cobertura de modelos o reparación."
+        },
+        {
+          "state": "CONTEXT_ONLY_UNCONFIRMED",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+              "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+              "pointer": "/existing_screening_candidate/matched_to_user_feature",
+              "expected_literal": false
+            },
+            {
+              "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+              "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+              "pointer": "/localization/exact_defect_coordinates",
+              "expected_literal": null
+            }
+          ],
+          "limitation": "native_spike no vinculado al contorno señalado; coordenadas exactas sin medir."
+        },
+        {
+          "state": "MATERIALIZATION_DIFFERENT",
+          "bindings": [
+            {
+              "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+              "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+              "pointer": "/dry_bank_candidate_in_game",
+              "expected_literal": false
+            }
+          ],
+          "limitation": "El piloto seco offline no estuvo materializado en esta visita; no transfiere aceptación al observado."
+        }
+      ]
+    }
+  ],
+  "scope_controls": [
+    {
+      "id": "forest-dense",
+      "status": "LOCAL_VISUAL_OK",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/forest-feedback.json",
+          "sha256": "01369ecef0b76cbdd3cd760d4d654f8c193fbf62d164cac9d5a2c75fdcb2c4f0",
+          "pointer": "/status",
+          "expected_literal": "LOCAL_VISUAL_OK"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/forest-feedback.json",
+          "sha256": "01369ecef0b76cbdd3cd760d4d654f8c193fbf62d164cac9d5a2c75fdcb2c4f0",
+          "pointer": "/global_forest_acceptance",
+          "expected_literal": false
+        },
+        {
+          "path": "evidence/visual-tour-20261027/forest-feedback.json",
+          "sha256": "01369ecef0b76cbdd3cd760d4d654f8c193fbf62d164cac9d5a2c75fdcb2c4f0",
+          "pointer": "/performance",
+          "expected_literal": "NOT_MEASURED"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/tour-ended-20261028.json",
+          "sha256": "be33a1cb4c22115fb89af764bccd8bee7da28c598f241b7a6776e42368e5c374",
+          "pointer": "/local_visual_ok",
+          "expected_literal": [
+            "forest-dense",
+            "causeway-c0"
+          ]
+        }
+      ],
+      "limitation": "Visto bueno sólo de zona observada; no todo bosque ni rendimiento."
+    },
+    {
+      "id": "causeway-c0",
+      "status": "LOCAL_VISUAL_OK",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/causeway-c0-feedback.json",
+          "sha256": "40d52e3aee406e0afe66ea6ce48d252e5ea9d0eff583fb631527d09c741cade3",
+          "pointer": "/status",
+          "expected_literal": "LOCAL_VISUAL_OK"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/causeway-c0-feedback.json",
+          "sha256": "40d52e3aee406e0afe66ea6ce48d252e5ea9d0eff583fb631527d09c741cade3",
+          "pointer": "/driving",
+          "expected_literal": "NOT_TESTED"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/causeway-c0-feedback.json",
+          "sha256": "40d52e3aee406e0afe66ea6ce48d252e5ea9d0eff583fb631527d09c741cade3",
+          "pointer": "/global_causeway_acceptance",
+          "expected_literal": false
+        },
+        {
+          "path": "evidence/visual-tour-20261027/causeway-c0-feedback.json",
+          "sha256": "40d52e3aee406e0afe66ea6ce48d252e5ea9d0eff583fb631527d09c741cade3",
+          "pointer": "/global_shore_acceptance",
+          "expected_literal": false
+        },
+        {
+          "path": "evidence/visual-tour-20261027/tour-ended-20261028.json",
+          "sha256": "be33a1cb4c22115fb89af764bccd8bee7da28c598f241b7a6776e42368e5c374",
+          "pointer": "/local_visual_ok",
+          "expected_literal": [
+            "forest-dense",
+            "causeway-c0"
+          ]
+        }
+      ],
+      "limitation": "Sólo la zona vista; no longitud completa, conducción ni todas las orillas."
+    },
+    {
+      "id": "road-49",
+      "status": "LOCAL_VISUAL_OK_WITH_PAVING_PENDING_NO_DRIVING_TEST",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/road/status",
+          "expected_literal": "LOCAL_VISUAL_OK_WITH_PAVING_PENDING"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/road/paving",
+          "expected_literal": "PENDING"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/road/driving",
+          "expected_literal": "NOT_TESTED"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/road/global_road_acceptance",
+          "expected_literal": false
+        },
+        {
+          "path": "evidence/visual-tour-20261027/road49-feedback.json",
+          "sha256": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+          "pointer": "/road/bug_005_closed",
+          "expected_literal": false
+        },
+        {
+          "path": "evidence/visual-tour-20261027/tour-ended-20261028.json",
+          "sha256": "be33a1cb4c22115fb89af764bccd8bee7da28c598f241b7a6776e42368e5c374",
+          "pointer": "/road49",
+          "expected_literal": "LOCAL_VISUAL_OK_WITH_PAVING_PENDING_NO_DRIVING_TEST"
+        }
+      ],
+      "limitation": "Calzada vista localmente, pavimentado pendiente y conducción sin probar; no acepta río49."
+    },
+    {
+      "id": "causeway-c1",
+      "status": "NOT_REVIEWED",
+      "source_bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/tour-ended-20261028.json",
+          "sha256": "be33a1cb4c22115fb89af764bccd8bee7da28c598f241b7a6776e42368e5c374",
+          "pointer": "/c1_verdict",
+          "expected_literal": "NOT_REVIEWED"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/tour-ended-20261028.json",
+          "sha256": "be33a1cb4c22115fb89af764bccd8bee7da28c598f241b7a6776e42368e5c374",
+          "pointer": "/visual_acceptance",
+          "expected_literal": "NOT_GRANTED"
+        },
+        {
+          "path": "evidence/visual-tour-20261027/tour-ended-20261028.json",
+          "sha256": "be33a1cb4c22115fb89af764bccd8bee7da28c598f241b7a6776e42368e5c374",
+          "pointer": "/defect_observations",
+          "expected_literal": 9
+        }
+      ],
+      "limitation": "Visita terminó antes de veredicto; no hereda aceptación de c0."
+    }
+  ],
+  "references": [
+    {
+      "kind": "REFERENCE_ONLY",
+      "bindings": [
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/screens",
+          "expected_literal": [
+            {
+              "file": "narva-l-shape.png",
+              "sha256": "a7664055a499a0a5674faa01faebd6a714a706ff4b8a0d2d1690dbc46b81946a",
+              "kept_local": true
+            },
+            {
+              "file": "narva-bridge-banks.png",
+              "sha256": "69473e2cd6e306d43fd0fefb7c56ed9bebc4e7f6a9e8d9a5fd99fdcb3e5b6248",
+              "kept_local": true
+            }
+          ]
+        },
+        {
+          "path": "evidence/visual-tour-20261027/feedback.json",
+          "sha256": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+          "pointer": "/annotated_image",
+          "expected_literal": "Red-marked third image present in conversation; no local path supplied. Do not claim it is archived."
+        },
+        {
+          "path": "evidence/visual-tour-20261027/relief-east-feedback.json",
+          "sha256": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+          "pointer": "/user_screenshot",
+          "expected_literal": {
+            "local_archive": "visual-tour-20261027/relief-east-shore-user.png",
+            "sha256": "8ca9a311335134f7ac6dc1b40047493f45aac7c0d16642d62b2dc086ab76e792",
+            "bytes": 3868647,
+            "image_size_px": [
+              1885,
+              1072
+            ],
+            "source": "User attachment following the report about smoothing the left side",
+            "published": false
+          }
+        }
+      ],
+      "limitation": "Sólo referencias documentales y hashes declarados; no se abren imágenes ni se afirma lectura o archivo de imagen anotada sin ruta."
+    },
+    {
+      "kind": "DIAGNOSTIC_ONLY",
+      "bindings": [
+        {
+          "path": "evidence/closed-perimeter-q02a-20261029/summary.json",
+          "sha256": "d1f48ba4c2128e09d2c4381ab62cc5f18dc08aa0c6103691b6a686718b0aeef5",
+          "pointer": "/status",
+          "expected_literal": "DIAGNOSTIC_ONLY"
+        },
+        {
+          "path": "evidence/closed-perimeter-q02a-20261029/summary.json",
+          "sha256": "d1f48ba4c2128e09d2c4381ab62cc5f18dc08aa0c6103691b6a686718b0aeef5",
+          "pointer": "/input_sha256",
+          "expected_literal": "b6612009ff531ef2f3932240ea52cf0660bce97f7904b7d667f962ce0fd95847"
+        },
+        {
+          "path": "evidence/closed-perimeter-q02a-20261029/summary.json",
+          "sha256": "d1f48ba4c2128e09d2c4381ab62cc5f18dc08aa0c6103691b6a686718b0aeef5",
+          "pointer": "/full_report_sha256",
+          "expected_literal": "3fc0b5079ed4bd5f475263ba223bd3139bcc7e159fe9adb37736e5c3fb8465d7"
+        },
+        {
+          "path": "evidence/closed-perimeter-q02a-20261029/summary.json",
+          "sha256": "d1f48ba4c2128e09d2c4381ab62cc5f18dc08aa0c6103691b6a686718b0aeef5",
+          "pointer": "/summary",
+          "expected_literal": {
+            "chain_count": 1030,
+            "closed_chain_count": 993,
+            "open_chain_count": 37,
+            "degenerate_chain_count": 1,
+            "finding_chain_count": 876,
+            "no_finding_chain_count": 141,
+            "no_evaluable_chain_count": 12,
+            "evaluated_vertices": 102320,
+            "evaluated_edges": 107641,
+            "total_witness_count": 11921,
+            "closed_chains_with_closure_witness": 287,
+            "closed_chains_where_closure_is_only_witness": 1
+          }
+        }
+      ],
+      "limitation": "Agregado Q02A no asociado a9casos; no cambia su veredicto. Cadena278 no localizada como defecto humano."
+    }
+  ],
+  "domain_states": {
+    "native_candidate": "CONTEXT_ONLY_UNCONFIRMED",
+    "road_model_not_evaluated": "NOT_EVALUATED",
+    "native_or_model_unresolved": "CONTEXT_ONLY_UNCONFIRMED",
+    "model_not_evaluated": "NOT_EVALUATED",
+    "model_road_not_evaluated": "NOT_EVALUATED",
+    "unknown": "NOT_EVALUATED"
+  },
+  "source_pins": {
+    "evidence/closed-perimeter-q02a-20261029/summary.json": "d1f48ba4c2128e09d2c4381ab62cc5f18dc08aa0c6103691b6a686718b0aeef5",
+    "evidence/native-shore-census-20261028/observations.json": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+    "evidence/road-water-census-20261028/contexts.json": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+    "evidence/visual-tour-20261027/additional-crossing-feedback.json": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+    "evidence/visual-tour-20261027/causeway-c0-feedback.json": "40d52e3aee406e0afe66ea6ce48d252e5ea9d0eff583fb631527d09c741cade3",
+    "evidence/visual-tour-20261027/continuous65-feedback.json": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+    "evidence/visual-tour-20261027/feedback.json": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+    "evidence/visual-tour-20261027/forest-feedback.json": "01369ecef0b76cbdd3cd760d4d654f8c193fbf62d164cac9d5a2c75fdcb2c4f0",
+    "evidence/visual-tour-20261027/kit118-feedback.json": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+    "evidence/visual-tour-20261027/relief-east-feedback.json": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+    "evidence/visual-tour-20261027/road49-feedback.json": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+    "evidence/visual-tour-20261027/tour-ended-20261028.json": "be33a1cb4c22115fb89af764bccd8bee7da28c598f241b7a6776e42368e5c374"
+  },
+  "contract_sha256": "26e07a2e86af330bd4591622d937ef527895b73dcb61f6fcca584a5d84a0e9ce"
+}

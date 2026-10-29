@@ -74,4 +74,4 @@ activa hasta terminar; silencio sólo ante estado sin avance/acción posible.
 
 ## Checkpoint de implementacion29-10
 
-Q02A completo como diagnostico aditivo validado:48tests; evidence/closed-perimeter-q02a-20261029. Q04 completa solo su unidad RoadB3 fuenteaislada:53tests; evidence/road-b3-source-pilot-20261029. Q04global sigue pendiente compiled/native/pivote/accesos. Q01plan revisado: quality-council-q01-rejection-coverage-20261029.md; aun sincodigo. El resto continua pendiente conforme dependencias; ninguna reparacion visual global cerrada.
+Q02A completo como diagnostico aditivo validado:48tests; evidence/closed-perimeter-q02a-20261029. Q04 completa solo su unidad RoadB3 fuenteaislada:53tests; evidence/road-b3-source-pilot-20261029. Q04global sigue pendiente compiled/native/pivote/accesos. Q01 completado como registro abierto con9casos/0resueltos,25testsPASS y1skip; evidence/rejection-coverage-q01-20261029. RoadB4A tiene plan revisado de descubrimiento de entradas, todavía sin extractor ni build: ev112-road-b4-build-discovery-20261029.md. El resto continua pendiente conforme dependencias; ninguna reparacion visual global cerrada.

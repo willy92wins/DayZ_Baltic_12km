@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-27",
+  "run_id": "cbcf20d3-72bb-4e4a-8508-207f1e022b63",
+  "id": "CROSSING-VIS-01",
+  "bug": "015",
+  "status": "USER_REJECTED_ROAD_INTERRUPTED_BY_RIVER",
+  "user_report": "Estoy en otro punto donde parece faltar puente; mi personaje está ahí mirando al cruce",
+  "player_position": [
+    4789.5146484375,
+    2.950077533721924,
+    5516.52197265625
+  ],
+  "camera_position": [
+    4789.416015625,
+    4.581865310668945,
+    5516.46044921875
+  ],
+  "camera_direction": [
+    -0.7461845874786377,
+    -0.26791080832481384,
+    -0.6094526052474976
+  ],
+  "coordinates_scope": "Measured player and camera, confirmed by user to be at the crossing; exact road/water intersection polygon still to derive",
+  "build_identity_reference": "feedback.json",
+  "native_evidence": {
+    "query_radius_m": 55,
+    "query_limit": 80,
+    "count_total": 108,
+    "returned_entities": 80,
+    "bridge_detected_in_returned_subset": false,
+    "absence_proven": false,
+    "raycast": "SELF_HIT_ON_SURVIVOR; excluded as evidence of the crossing position or bridge absence",
+    "raw_receipt": "Local build: visual-tour-20261027/missing-bridge-located.json"
+  },
+  "historical_inventory_comparison": {
+    "nearest_ev110_bridge": {
+      "id": "015-25",
+      "distance_m": 809.6
+    },
+    "nearest_ev106_crossing": {
+      "n": 36,
+      "id": "stream_0241",
+      "distance_m": 606.1,
+      "plan": "skip (mixed)"
+    },
+    "scope": "Historical lists only. Neither proves completeness or the absence of a bridge in the currently compiled world."
+  },
+  "required_follow_up": "Derive the local crossing from actual roads and water, inspect compiled WRP bridge objects and consumer connectivity, and classify missing/unloaded/misplaced/no-crossing. Extend the independent whole-map road-water crossing census rather than validating only the list of generated bridges.",
+  "root_cause": "NOT_ISOLATED",
+  "repair_status": "NOT_IMPLEMENTED",
+  "user_follow_up": "Es una carretera partida a la mitad por un río; error de revisión geométrica. Revisar también otros cruces y los bordes de ríos y mares.",
+  "coverage_requirement": "Independent geometric census of road-water intersections and road continuity over the entire map, plus geometric review of river and sea shores. Missing bridge remains one mechanism to confirm, not a reason to defer the user-confirmed road-discontinuity defect."
+}

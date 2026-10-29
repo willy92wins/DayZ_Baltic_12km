@@ -1,0 +1,173 @@
+{
+  "status": "VERIFIED_OPEN_HUMAN_REJECTIONS",
+  "contract_sha256": "26e07a2e86af330bd4591622d937ef527895b73dcb61f6fcca584a5d84a0e9ce",
+  "ledger_sha256": "1a728ab84413db97e082e827de042e96d7716a97eb2500dd7465a715967f3921",
+  "case_count": 9,
+  "resolved_count": 0,
+  "c1_verdict": "NOT_REVIEWED",
+  "source_count": 12,
+  "rows": [
+    {
+      "id": "NARVA-VIS-01",
+      "primary_status_literals": [
+        [
+          "/findings/0/status",
+          "OPEN"
+        ],
+        [
+          "/status",
+          "VISUAL_REJECTED_BY_USER"
+        ]
+      ],
+      "automatic_states": [
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "MATERIALIZATION_DIFFERENT"
+      ]
+    },
+    {
+      "id": "NARVA-VIS-02",
+      "primary_status_literals": [
+        [
+          "/findings/1/status",
+          "OPEN"
+        ],
+        [
+          "/status",
+          "VISUAL_REJECTED_BY_USER"
+        ]
+      ],
+      "automatic_states": [
+        "NOT_EVALUATED",
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "MATERIALIZATION_DIFFERENT"
+      ]
+    },
+    {
+      "id": "NARVA-VIS-03",
+      "primary_status_literals": [
+        [
+          "/findings/2/status",
+          "OPEN"
+        ],
+        [
+          "/status",
+          "VISUAL_REJECTED_BY_USER"
+        ]
+      ],
+      "automatic_states": [
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "MATERIALIZATION_DIFFERENT"
+      ]
+    },
+    {
+      "id": "KIT118-VIS-01",
+      "primary_status_literals": [
+        [
+          "/findings/0/status",
+          "OPEN"
+        ],
+        [
+          "/status",
+          "VISUAL_REJECTED_BY_USER"
+        ]
+      ],
+      "automatic_states": [
+        "NOT_EVALUATED",
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "MATERIALIZATION_DIFFERENT"
+      ]
+    },
+    {
+      "id": "KIT118-VIS-02",
+      "primary_status_literals": [
+        [
+          "/findings/1/status",
+          "OPEN"
+        ],
+        [
+          "/status",
+          "VISUAL_REJECTED_BY_USER"
+        ]
+      ],
+      "automatic_states": [
+        "NOT_EVALUATED",
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "MATERIALIZATION_DIFFERENT"
+      ]
+    },
+    {
+      "id": "CONT65-VIS-01",
+      "primary_status_literals": [
+        [
+          "/findings/0/status",
+          "OPEN"
+        ],
+        [
+          "/status",
+          "VISUAL_REJECTED_BY_USER"
+        ]
+      ],
+      "automatic_states": [
+        "NOT_EVALUATED",
+        "MATERIALIZATION_DIFFERENT"
+      ]
+    },
+    {
+      "id": "ROAD49-RIVER-VIS-01",
+      "primary_status_literals": [
+        [
+          "/river_findings/0/status",
+          "VISUAL_REJECTED_BY_USER"
+        ]
+      ],
+      "automatic_states": [
+        "NOT_EVALUATED",
+        "MATERIALIZATION_DIFFERENT"
+      ]
+    },
+    {
+      "id": "CROSSING-VIS-01",
+      "primary_status_literals": [
+        [
+          "/status",
+          "USER_REJECTED_ROAD_INTERRUPTED_BY_RIVER"
+        ]
+      ],
+      "automatic_states": [
+        "NOT_EVALUATED",
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "CONTEXT_ONLY_UNCONFIRMED"
+      ]
+    },
+    {
+      "id": "RELIEF-EAST-VIS-01",
+      "primary_status_literals": [
+        [
+          "/status",
+          "VISUAL_REJECTED_BY_USER"
+        ]
+      ],
+      "automatic_states": [
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "CONTEXT_ONLY_UNCONFIRMED",
+        "MATERIALIZATION_DIFFERENT"
+      ]
+    }
+  ],
+  "public_source_hash_mismatches": [
+    "evidence/native-shore-census-20261028/observations.json",
+    "evidence/road-water-census-20261028/contexts.json",
+    "evidence/visual-tour-20261027/additional-crossing-feedback.json",
+    "evidence/visual-tour-20261027/causeway-c0-feedback.json",
+    "evidence/visual-tour-20261027/feedback.json",
+    "evidence/visual-tour-20261027/forest-feedback.json",
+    "evidence/visual-tour-20261027/relief-east-feedback.json"
+  ],
+  "limits": [
+    "Ledger proof only; no geometric repair or global acceptance",
+    "Consumer separate declarative implementation, source-reading proof not detector coverage",
+    "Windows symlink test skipped, no native symlink coverage claimed"
+  ]
+}

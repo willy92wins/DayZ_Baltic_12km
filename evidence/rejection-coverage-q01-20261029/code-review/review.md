@@ -1,0 +1,25 @@
+**Verdict: SOUND-with-fixes.** No false-PASS or closure path found; the real contract conforms to the code's schema by static inspection. Fixes below are coverage gaps, not acceptance bugs.
+
+**Static check of the real contract against `validate_fixed`:** all 13 top-level keys, 9 IDs in order, every primary id/status pointer, 4 build bindings on feedback.json, domainâ†’state pairs for all 9 census rows, 4 scope controls with the 12 scope-primary pointers, reference kinds/order, and the 12 source pins equal to the union of binding paths and to every binding sha256. All `global*`, `absence_proven`, `bridge_detected_in_returned_subset`, `matched_to_user_feature`, `dry_bank_candidate_in_game`, `bug_005_closed` literals are `false`; `river_source_id` is `null`; all associations are `UNCONFIRMED_CONTEXT_ONLY`. Schema mismatch: none. Not verifiable here: that source bytes hash to the pins and that literal types match (`deep_equal` is type-strict, so `[2391, 6941]` in observations.json must be ints and `[2391.0, 6941.0]` in contexts.json must be floats; `/summary` must have exactly the 12 listed keys).
+
+**Bugs / gaps**
+
+1. **Census row not tied to the case** â€” `tools/quality/verify_rejection_coverage_ev112.py:182-191` (same in producer). The domainâ†’state table is checked, but nothing requires the `/{i}/observation` binding to equal `c["id"]`, nor that each case carries a native-census entry, nor that observations.json's 9 IDs equal the universe. Counterexample: in case `NARVA-VIS-01` replace the four `/0/*` bindings with `/3/observation="KIT118-VIS-01"`, `/3/domain="model_not_evaluated"`, state `NOT_EVALUATED`; source literals match, table matches, consumer prints VERIFIED. Fix: require `_has(ev.bindings, OBS, f"/{idx}/observation", c["id"])` whenever any binding path is the census file, and pin the census ID list.
+
+2. **Adjudication 2 not enforced** â€” `verify_rejection_coverage_ev112.py:195-200`. `scope_primary["road-49"]` lacks `(TOUR, "/road49", "LOCAL_VISUAL_OK_WITH_PAVING_PENDING_NO_DRIVING_TEST")`, and forest/c0 lack `(TOUR, "/local_visual_ok", [...])`. Counterexample: delete the tour-ended binding from the road-49 control in contract and ledger; passes. The control status literal is then asserted only by `FIXED_SCOPES`, not by the source.
+
+3. **Negative tests mostly prove ledgerâ‰ contract, not the invariants** â€” `tests/test_rejection_coverage_ev112.py:218-254`. Every `mutate_ledger` case fails at `deep_equal(ledger, expected)` (consumer line 276) before any fixed rule runs. Invariants never exercised with contract+ledger+source co-mutated: `absence_proven:true` (plan item 3 explicitly demands this mutant), filled `river_source_id`, C1 promotion, other observed build, ID swap, `NOT_DETECTED`/`PASS` state, `resolved_count:1`. Only `FIXED` status, global flag, and association have real invariant tests (lines 279-305).
+
+4. **Pointer tests never reach `resolve_pointer`** â€” `tests:306-318`. `/findings/01/id` and `/findings/0/id~2` are rejected earlier because the primary binding `/findings/0/id` disappears (consumer line 177-179). Leading-zero index and `~2` escape rules at consumer lines 75-84 are untested. Add the bad pointer as an extra binding instead of replacing the primary.
+
+5. **Nested bridge-ID test is vacuous** â€” `tests:272-278`. The fixture has no `bridge` object, so rejection comes from "pointer not found", not from the no-recursive-search guard. Add a nested `bridge.id` carrying a real case ID to the fixture.
+
+6. **Consumer-independence test is a grep** â€” `tests:214-217`. It misses `importlib.import_module`, `spec_from_file_location`, and `exec`. Note the consumer is a byte-for-byte copy of the producer's validator rather than an independent implementation; it satisfies "does not import", not "independent".
+
+7. **No run against real inputs recorded.** No test or delivered log shows the consumer passing on the actual contract and sources. The 2 MiB cap (`MAX_BYTES`, line 10) applies to `contexts.json` and `summary.json`; if either exceeds it the real run fails hard.
+
+8. **Open vocabularies.** `required_layers` and `limitation` accept any non-empty string (line 171, 183). A layer typo or an arbitrary layer set passes; the plan asked for differentiated visual/water/terrain/crossing references.
+
+**What is correct and worth keeping:** same bytes hashed and parsed (consumer 249-254, producer 307-313, 323-326); duplicate keys, NaN/Infinity, non-UTF-8 rejected (`strict_loads`); strict bool/int via `type(...) is int` and type-strict `deep_equal`; exclusive `xb` write with read-back; pins must equal exact union of binding paths; root-escape and symlink checks via `resolve()`+`is_relative_to`; all closure/proximity flags pinned false or null; no `NOT_DETECTED`, `PASS`, or `FIXED` reachable; no image is opened, only `/screens` and `/user_screenshot` metadata.
+
+Fix 1 and 2 are code changes in both files; 3 to 6 are test changes; 7 is an execution to record before publication.

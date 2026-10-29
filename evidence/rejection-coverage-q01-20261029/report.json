@@ -1,0 +1,38 @@
+{
+  "schema": "q01-public-result.v1",
+  "status": "VERIFIED_OPEN_HUMAN_REJECTIONS",
+  "scope": "Ledger source/provenance integrity only, no map acceptance",
+  "contract_sha256": "26e07a2e86af330bd4591622d937ef527895b73dcb61f6fcca584a5d84a0e9ce",
+  "ledger_sha256": "1a728ab84413db97e082e827de042e96d7716a97eb2500dd7465a715967f3921",
+  "cases": 9,
+  "resolved": 0,
+  "scope_controls": 4,
+  "source_files": 12,
+  "c1_verdict": "NOT_REVIEWED",
+  "private_tests": {
+    "collected": 26,
+    "passed": 25,
+    "skipped": 1
+  },
+  "code": {
+    "tools/quality/rejection_coverage_ev112.py": "065fb5df3d4a1bce3a53161a7122069278c7235e1b0fdffcac6f26d617b0e1cf",
+    "tools/quality/verify_rejection_coverage_ev112.py": "539ef9e6cc70fd9b58bcf577cebe5afa7fb7e340f154d2f90ddcf309ae34fea8",
+    "tests/test_rejection_coverage_ev112.py": "5ceb79339f55f3f0b3cb6ad046627db4a5a50a3dbd0732106add330fe841136a"
+  },
+  "limits": [
+    "Native localization unconfirmed",
+    "No geometric repair",
+    "No human acceptance inherited",
+    "Symlink test unavailable on this host"
+  ],
+  "public_tests": {
+    "collected": 26,
+    "passed": 25,
+    "skipped": 1,
+    "seconds": 3.484
+  },
+  "public_snapshot_consumer": {
+    "status": "VERIFIED_OPEN_HUMAN_REJECTIONS",
+    "seconds": 0.406
+  }
+}

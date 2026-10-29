@@ -1,6 +1,6 @@
 # Q01: conservar rechazos humanos y separar cobertura automática
 
-Estado: REVISADO_PARA_IMPLEMENTAR. Fable5.1 nativo78.641s SOUND-with-fixes,
+Estado: IMPLEMENTADO_VERIFICADO_COMO_REGISTRO_ABIERTO. Fable5.1 nativo78.641s SOUND-with-fixes,
 adjudicado abajo. Unidad documental ejecutable, sin cambios
 de mapa, build, motor ni umbrales. Traza: council MUSE-01/GROK-01/GROK-17/CG01,
 product-spec P10/P11 y encargo de detectar/reparar todos los casos equivalentes.
@@ -79,7 +79,7 @@ referenciarID de puente anidado, consolidar2lechos como1, promoverC1, convertir
 LOCAL_VISUAL_OK enGLOBAL_PASS, confundir calzada49conrío49, asociar cercanía como
 confirmación, usar otra versión observada, FIELDunknown/NaN/duplicateJSON,
 clasificarSIN_COBERTURA comoPASS, inventar cierre/humanacceptance. El consumidor
-debe rechazar mutantes aunque productor no se ejecute. Revisión humana de tabla
+debe rechazar mutantes aunque productor no se ejecute. Revisión del integrador de tabla
 fuente→ledger antes de publicación. Resultado es cobertura explícita y rechazo
 durable, no un nuevo número de tests como certificado del mapa.
 
@@ -120,5 +120,6 @@ los sustituye ni autoriza reejecutar scripts consumidos.
    leído al preparar contrato; susnearest no son localización. Contexts ysummary
    Q02 son referencias diagnósticas separadas, nunca mecanismo de cierre.
 
-No códigoQ01 todavía. La revisión de plan está consumida; siguiente paso preparar
-contrato con selectores/pins, implementar autor/consumidor y ejecutar negativos.
+Q01 completado como registro abierto; evidencia en evidence/rejection-coverage-q01-20261029.
+Contrato y12fuentes verificadas,9casos/0resueltos.26tests:25PASS/1SKIP. No reparación del mapa.
+Autor/consumidor y revisiones de esta unidad consumidos; no repetirlos por rutina.

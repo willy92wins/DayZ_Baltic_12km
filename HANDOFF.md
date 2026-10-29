@@ -1,3 +1,34 @@
+# Q01 verificado; siguiente descubrimiento de entradas viales RoadB4A — 29-10
+
+Q01 terminado como VERIFIED_OPEN_HUMAN_REJECTIONS:9casos/0resueltos,4controles,
+12JSON fuente. Contrato26e07a2e86af330bd4591622d937ef527895b73dcb61f6fcca584a5d84a0e9ce;
+ledger1a728ab84413db97e082e827de042e96d7716a97eb2500dd7465a715967f3921.
+Productor0.234s/16.3MB yconsumidor0.234s/19.0MB. Fable149.500s ycorrecciónMuse95.609s
+adjudicados; consumidor declarativo independiente.26testscoleccionados,25PASS/1SKIP
+(symlink sin privilegio Windows). No es reparación ni aceptación global; C1sinrevisar.
+Siete fuentes públicas diferían sóloEOL: snapshot exacto de12JSON en evidence/rejection-coverage-q01-20261029/sources,
+sin alterar archivos históricos ni repinar contrato. No repetir autor/consumidor/suites/reviews/freeze.
+
+Siguiente concreto: plans/ev112-road-b4-build-discovery-20261029.md REVISADO_PARA_IMPLEMENTAR_DESCUBRIMIENTO,
+Fable78.047s adjudicado. Aún no código/contrato/extractorB4A. Fijar entradas reales de las3piezas
+deRoadB3, referenciasTODOSLOD desde catálogo guardado, raícesSUBST/junctions y hashes frente a
+instalado. PBO318217469bytes (675405824eraRSS,noarchivo); parserstreamingpbo_table con1GiB/60s,
+sólo3modelos yreferencias. EstadoexplícitoMATCH/DIFFER/FORMAT_DIFFERS/UNRESOLVED_EXTERNAL,
+aggregate nunca buildlisto. No reextraerA/B0/B1/B2/B3 ni tocarP:/vanilla. Futura pareja
+compiladaRoadB4B ynativo necesitanplanpropio; pivote/anchoútil/accesos siguenUNKNOWN.
+
+Council79ideas YAejecutado;Q02A/RoadB3 yaoffline. Q02B/Q03/Q05 siguenenplan,
+nueve rechazos/RH349/350/1425/agua723/Bullet/RAM siguenabiertos. Nav8 conserva607históricos,
+original47FAIL21inciertos. No run/lease/operación propia. No adoptar runsretirados.
+PublicaciónQ01 en preparación; commit final sólo en publish-q01-roadb4a-20261029/result.json.
+Nunca historial privado. Se conserva .gitattributes ajena.
+
+---
+# Publicado 925a777f413a69f9fc2c78f68c94c959e66e7e9e — checkpoint verificado
+
+82 archivos;101 pruebas privadas/públicas. Publicador consumido; remoto comprobado y public-repo limpio. Sin operación propia/run/lease. Siguiente Q01 según plan revisado; council/Q02A/RoadB3 ya ejecutados. No repetir.
+
+---
 # Council ampliado ejecutado; Q02A y RoadB3 validados offline — 29-10
 
 Petición vigente: mejorar revisión y colocación procedimental de todo el mapa, council AHORA y aplicar ideas justificadas. Council terminado con4entregas completas(ChatGPT,Fable5.1,MuseWonder1.0,Grok4.7) yArgon parcial10ideas+fragmento11.79propuestas adjudicadas,63técnicas(12concorrección),8researchaprobadas,4researchdiferidas,3productofuturo,1fragmentono ejecutable. Cobertura/hashes/disensos literales: evidence/council-procedural-quality-20261029. No mayoría ficticia, no repetir council ni sondas fallidas/consumidas. Plan vigente plans/quality-council-procedural-map-20261029.md sustituye el orden antiguo counciltrastrabajoprevio.
@@ -18,10 +49,10 @@ Publicación actual en preparación desdepublic-repo,101tests privados/públicos
 <!-- LIVE-STATE:START -->
 visual_review_current: Visita finalizada; C1 SIN REVISAR. Nueve regresiones abiertas. Censo Visual201 verificado:24m² de lecho sobre H en corredor de carretera de kit118; no reparación física.
 project: DayZ_Baltic_12km
-updated: 2026-10-29 (B3G2 pareja nativa completa; RoadB2 receta offline validada)
+updated: 2026-10-29 (Q01 registro abierto verificado; RoadB4A plan revisado)
 owner: Codex, ejecutor e integrador por petición viva de Guillermo: continuar OT1 y EV112 hasta completar las pruebas autorizadas. Plan aprobado plans/ev112-plan-astra.md; decisiones del picker incorporadas en la sesión canónica.
 status: EV112 abierto. F conserva 59 picos/12 depresiones corregidos y corrige una transición rectangular. Quedan268picos,1144depresiones,4transiciones. Colisión C, bosque muestreado y 11 secciones de carretera pasan motor; vista/cliente/global pendientes.
-plan: B3G2 CONSUMIDO; siguiente plans/ev112-b3g2-followup-20261029.md BORRADOR a revisar. RoadB2 UNIDAD1 completa; plans/ev112-road-b3-wrp-pilot-preparation-20261029.md BORRADOR.
+plan: plans/quality-council-procedural-map-20261029.md; siguiente RoadB4A descubrimiento revisado, Q02B/Q03/Q05 pendientes.
 candidate_f: F mundo4e5f909d2a27e9322299d751d2d54d67f5cc06700499d0498e533b5e1674ef38; terreno33d6f2713800bd07f3e20ca80870423a8a41c16b7408492d6f705f3fbffe9049; mergedcaa5398021399b6e435faf407005f053d58758091371b5b8fbd2e60e53f69cfc. E exacto+94vértices,59árbolesY. 4749controles físicos PASS; F original NM6 conservado, CNav9 validada aparte. Bosque3727/269968 SAMPLED_BOUNDARY_CLEAR; no disco continuo.
 candidate: E:/DayZ-Baltic-Build/shape-repair-20261025/guarded-relief-batch-e: terreno efbf0c18b1144ee401d983e4f64e2a35b489c69ae5f333524fdc66fbbf4714f9; merged705196d69646f2528aa5796d26e90bab36aebd07a5a0ddb861b31b7160f4a33e. StageE WRPfuente85b2d03dded38382d9deaa01cfc1a36b996087ce2d7e8cadeb8f07c135894887. PackageE verifica2578725objetos/62poses; mundo3a285df12e565373d678997aedb9b51f65f11cdbb0f24939da3b8ce77712231a. BaseT y candidatoD preservados.
 pilots: EV111 V2 @DayZ_Baltic_EV111_ForestPilotV2 (mundo ee4bd96eâ€¦, E:/DayZ-Baltic-Build/v31-pond-layer-20261013/ev111/r2/BUILD-EV111-r2.md); EV111 V1; EV110 @DayZ_Baltic_EV110_LatticeShoresV1 mundo 226932e3â€¦, agua 46e63c70â€¦ (terreno ev110/terrain-ev110.npz d25e9428â€¦, cadena evidence/â€¦/ev110/BUILD-EV110.md); EV109 7ad4d6cfâ€¦; EV108 V7 389e27a6â€¦. Build E:/DayZ-Baltic-Build/v31-pond-layer-20261013; trabajo de EV112 en ev112-wip/; relevo en handoff-20261018/ (MANIFEST.json).
@@ -34,13 +65,13 @@ validation: Kit7 fuente2578398objetos y201modelos; G2/G3/G7/G8 y carreteras offl
 cleanup: B3G2 control604b6c47 y candidato65643a85 RETIRADOS orderly_close, release terminal_safe/selfnone/pending0; heartbeat10s. Sin run/lease/operación propia. No adoptar ni repetir.
 performance: Nav8Load1: INCONCLUSIVE_INTERRUPTED_RAM_BLOCK,2/6medidas; Baltic4254.57/4649.21MiB,Chernarus3349.37/3733.76MiB descriptivos. Sincomparaciónagregada. Original12.5 PASSRAMdiagnóstico pero4FAILaltura; Nav8anterior FAILRAM1.265913/1.241333. SinFPS/capacidad.
 bugs: bugs.md una fila por ID: 007 (orillas en escalera; kit EV108), 015 (puentes; EV109), 017, 018, 019, 020. Historia en bugs-history-hasta-2026-10-10.md.
-next: Revisar siguiente atribución/referente independiente de agua y preparación WRP aislada vial. No repetir B3G2 ni RoadB2; no autoría/build/native nueva sin plan revisado y presupuesto.
+next: Implementar RoadB4A según plan revisado, sin build/DayZ; no repetir Q01/Q02A/RoadB3 consumidos.
 git: GitHub público https://github.com/willy92wins/DayZ_Baltic_12km. Historial público saneado independiente en E:/DayZ-Baltic-Build/shape-repair-20261025/public-repo; historial local completo conservado. No publicar ramas locales ni usar --all/--mirror; ver PUBLICATION.md.
 handoff: B3G2 270Q/1080R por brazo, identity_bound ycontract_complete, INCONCLUSIVE_PAIRED_DIAGNOSTIC. RV700/723 alto/bajo PASS3rondas;RH349/350/1425 yagua723 siguenFAIL.40testsPython+11Node. RoadB2 13tests,24huellas offline. No aceptación motor vial.
 deployed: Nav8 funcional conservado; Nav12 af12bfe3ed48c6d436ed2f22bf8057d28a8e96d2de402ef3c36ae09862bfc87d rechazado; NavV9 original a2919a80ae6da6fc90e75b0ac55d1e9dd4ba4a39f6700b9fec237c7e7683b16c restaurado por hash solo para diagnóstico.
 visual_probe: C conserva4749+300físicaPASS; NMpropia CNav9 y45consultas/8rutasF PASS en servidor normal. Ninguna cobertura de actor ni tránsito por25modelosC. Sincliente/vista/CCT/FPS/capacidad. E+Nav9 anterior conservado.
-council: Fable5.1, Grok4.7, Gemini4ArgonHigh, Muse Wonder1.0 CLI nativo, GLM5.3FlashEXL3 y Qwen3.8. Siete informes de seis familias; Glimmer suplementario. Opus sustituido por Fable por el usuario. Adjudicación y recibos en checkpoint actual.
-council_next: plans/quality-council-expanded-after-ev112-20261027.md. Encargo27-10: terminar el trabajo vigente; council ampliado de validadores, mapa y herramientas; consolidar todas las mejoras aprobadas en el plan y ejecutarlas. Núcleo Claude/Fable, ChatGPT, Grok, Muse Wonder CLI y Gemini/Argon; otras familias según sondeo vivo. Estado EN_COLA, no ejecutado.
+council: Council29-10 completado: ChatGPT,Fable5.1,MuseWonder1.0,Grok4.7; Argon parcial.79propuestas adjudicadas, sin mayoría ficticia.
+council_next: Council ya ejecutado. Aplicar plans/quality-council-procedural-map-20261029.md; no repetir council.
 <!-- LIVE-STATE:END -->
 
 ## B3G1 captura fallida; lector B3G2 y carreteras B2 — 29-10

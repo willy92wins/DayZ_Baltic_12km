@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-27",
+  "run_id": "cbcf20d3-72bb-4e4a-8508-207f1e022b63",
+  "site": "road-49",
+  "reference_position_xz": [5295.7, 5999.9],
+  "build_identity_reference": "feedback.json",
+  "user_report": "la carretera bien, faltra pavimentar pero ya, el rio de la derecha fatal, ers todo zigzags, hay que detectar y corregir procedimentalmente convertir todo en curva",
+  "road": {
+    "status": "LOCAL_VISUAL_OK_WITH_PAVING_PENDING",
+    "scope": "Only the road area seen at this stop",
+    "paving": "PENDING",
+    "driving": "NOT_TESTED",
+    "global_road_acceptance": false,
+    "bug_005_closed": false
+  },
+  "river_findings": [
+    {
+      "id": "ROAD49-RIVER-VIS-01",
+      "bug": "007",
+      "observed": "River to the right of the user's view has pervasive zigzags",
+      "status": "VISUAL_REJECTED_BY_USER",
+      "river_source_id": null,
+      "exact_defect_coordinates": "NOT_MEASURED; tour-stop coordinates do not identify the river geometry",
+      "required_action": "Detect artificial zigzags procedurally across the river network and repair generation into continuous natural curves. Preserve intended channels, widths, endpoints, receptors, crossings, water topology and existing protections.",
+      "review_gap": "Map the observed river to the saved pattern census to distinguish a missed detection from an unresolved existing finding. Neither permits visual acceptance."
+    }
+  ],
+  "prior_constraints": "Earlier rejection of overly regular circular arcs remains applicable; smoothing must not turn the whole network into constant-radius arcs or merely round individual staircase elbows.",
+  "dry_bank_candidate_in_game": false,
+  "repair_status": "NOT_IMPLEMENTED_DURING_TOUR",
+  "tolerances": "UNCHANGED"
+}
