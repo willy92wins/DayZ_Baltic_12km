@@ -1,0 +1,602 @@
+REVIEWER externo. Revisa sólo el nuevo corte Q05A1 de consolidación del snapshot cerrado, no repitas investigaciónQ05A ni council. Detecta ampliaciones, falsa aprobación, circularidad, campos inventados y presupuestos. Veredicto SOUND/SOUND-with-fixes/NEEDS-WORK y CONVERGE si procede, <=650palabras. Las trece filas son datos guardados, no medición nueva. No herramientas de shell/escritura/web. No pedir permisos de producto ya dados.
+
+SOURCE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\plans\quality-council-q05a1-saved-research-delivery-20261029.md
+# Q05A1 — consolidar la evidencia vial guardada, sin repetir investigación
+
+Estado: BORRADOR_PENDIENTE_DE_REVISION.
+
+[EXACT] Q05A cerró sin entrega completa dentro120s. session-before-stop.json
+registra20fuentes/8247835B y el último lote completo56.509s. La siguiente llamada
+falló en la comprobación de deadline ANTES de abrir otras fuentes o escribir
+informe. stop.json conserva observación posterior180.834s. No atribuir causa
+de latencia ni llamar a esto timeout de un hijo matado; fue una guarda temporal
+del investigador local. No se abrieron NPZ ni se ejecutaron censos/geometría.
+
+Los13joins y fuentes están en
+E:/DayZ-Baltic-Build/shape-repair-20261025/q05a-saved-bindings-research-20261029,
+con frozen-partial.json. La unidad Q05A está CONSUMIDA. Este corte sólo permite
+consolidar esos bytes guardados, sin reabrir fuentes originales, completar los
+archivos que faltaron ni reanudar el reloj anterior.
+
+## Hipótesis, asientos y resultado [DESIGN]
+
+Los metadatos guardados bastan para un informe parcial útil con identidades
+explícitas y lagunas; no bastan para medir/colocar carreteras. Cambia el mecanismo
+de entrega: Muse Wonder1.0 CLI nativo en asiento RESEARCH/redactor, lectura de
+cápsula cerrada; Codex orquestador prepara cápsula por selectores ya guardados y
+actúa como integrador. Contexto compartido del integrador declarado. No otra
+investigación física ni nuevo censo/lector. No subagente Codex, council o fallback.
+
+Preparación de cápsula30s/64MiB, por archivo16MiB; copiar hashes y recibos del
+snapshot, comprobar13pointers contra4.json y nodos contra7.json. Ningún dato
+faltante se deriva de cercanía. No sintetizar filas ni recalcular geometría.
+Publicar sólo campos de identidad/estación/rol y huecos, no caras vanilla completas.
+
+Una entrega nativa120s, <=1000palabras más tabla. Revisión del plan90s antes de
+la entrega. Sin corrección/reintento automático por noentrega. Informe parcial
+válido: SAVED_BINDINGS_PARTIAL_RECONCILED, measurement_ready=false,
+placement_ready=false, human_resolved=0,C1NOT_REVIEWED. Q05A permanece fallido
+respecto a su entrega temporal. Si falta dictamen o entrega, conservar y retirar
+la ruta para esta unidad; no aprobar por el número de observaciones guardadas.
+
+## Comprobación de salida [DESIGN]
+
+1. Separar chain_index, edge_ordinal_in_chain, flattened_road_row_index,
+   global_edge_indexUNKNOWN, nodes y pointer. Kit118/76:124–129; contacto49/301;
+   Narva71:370–375 son selecciones intencionales. El selector49seco sigueUNKNOWN.
+   Ref[1] de overlay es fila de prototipo; no convertirlo en ordinal bed.
+2. Comprobar que ambos vecinos de cada tramo se conservan como conectividad,
+   sin llamarlos accesos físicos ni fijar longitud/tangente. No suponer que
+   columna nodes vacía o surfaces vacía implica ausencia mundial de objetos.
+3. Distinguir sha_recomputed en Q05A y hash declarado por manifiesto. Hoy sólo
+   se comprueba integridad de copias guardadas, no identidad física actual.
+   Registrar derived_from común: overlay y Q03B6 no son dos marcos independientes.
+4. B0 local y B2/B3 no se mezclan con kit118. Mantener límites de fuentes no
+   leídas: B2 contract.json en la ruta ensayada no existía; falta localizar su
+   esquema por manifiesto, no declarar inexistente el contrato. Q03B6 contrato y
+   resumen sí se leyeron; índice report completo NO se abrió en Q05A.
+5. Dominio A futuro sigue eje mientras no haya polígono guardado de reserva.
+   Dominio B futuro sólo tres modelos B0 bajo cuatro hipótesis. No ancho8m/24m
+   inventado, no huella/visibilidad/pivote/precedencia nativa ni conducciónPASS.
+
+Integrador verifica las afirmaciones contra el snapshot y conserva verbatim
+la salida externa; anota cualquier premisa refutada. No se ejecutan pruebas
+geométricas ni se califica la consolidación como reparación. P5/P6/P9/P10/P11 y
+Q05 del council se mantienen; siguiente contrato geométrico tendrá plan propio.
+
+SOURCE E:\DayZ-Baltic-Build\shape-repair-20261025\q05a-saved-bindings-research-20261029\stop.json
+{
+  "status": "NO_COMPLETE_DELIVERY_WITHIN_RESEARCH_BUDGET",
+  "deadline": 1793304634.0547545,
+  "observed_after_deadline": 1793304694.8889697,
+  "elapsed_at_stop_observation": 180.83421516418457,
+  "last_completed_source_batch_elapsed_s": 56.50899338722229,
+  "bytes_read": 8247835,
+  "files_read": 20,
+  "last_attempt": "deadline assertion before any further source read or report write",
+  "saved_binding_rows": 13,
+  "sources_changed": false,
+  "npz_opened": 0,
+  "measurement_ready": false,
+  "placement_ready": false,
+  "research_consumed": true,
+  "reason_not_claimed": "No claim about model/tool latency cause; no automatic retry."
+}
+
+SOURCE E:\DayZ-Baltic-Build\shape-repair-20261025\q05a-saved-bindings-research-20261029\session-before-stop.json
+{
+  "start": 1793304514.0547545,
+  "seconds": 120,
+  "deadline": 1793304634.0547545,
+  "role": "Codex RESEARCH local explicitly assigned by orchestrator; integrator same context",
+  "per_file": 16777216,
+  "total": 67108864,
+  "used": 8247835,
+  "sources": [
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-surface-overlay-20261028\\artifact-hashes.json",
+      "sha_recomputed": "2aafb0d2eb60dd7c76d80c97a2ba2e7e5eaa8c58573bfd137153636c2f4663f5",
+      "bytes": 2687,
+      "status": "OBSERVED_SAVED"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-water-census-20261028\\inputs.json",
+      "sha_recomputed": "fe36907ac92cd745acfca547057af5170a7813ceebdcac3eadc161f3b86a71f6",
+      "bytes": 1712,
+      "status": "OBSERVED_SAVED"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-surface-overlay-20261028\\report.json",
+      "sha_recomputed": "cddc46f27c2ed10de837f58a9843758d792ec4738638db34a0ca5c7d8195ef2b",
+      "bytes": 1108,
+      "status": "OBSERVED_SAVED"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-surface-overlay-census-20261028\\inputs.json",
+      "sha_recomputed": "497a3f3b454ad1ffb8ae96d29d9e3ccdb01b7b56fc1a84203661e3dd33d24f91",
+      "bytes": 3845,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "3.json"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-surface-overlay-census-20261028\\contacts.json",
+      "sha_recomputed": "2ee5b8933e12843c1b198d4029d86f386ba4408c85513dc4da65cb6aafca457f",
+      "bytes": 7612057,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "4.json"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-surface-overlay-census-20261028\\contexts.json",
+      "sha_recomputed": "044a3b66369d0a43a7518df50a1ef151c0ec47433495c7ed63b5f62c8a909c0b",
+      "bytes": 3474,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "5.json"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-surface-overlay-20261028\\pilot-road-overlaps.json",
+      "sha_recomputed": "c5cb1da29ee08d1c51352b5cf36a99756f67b882e3853b8d81dd6d9191e257cf",
+      "bytes": 2129,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "6.json"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\evidence\\regional-foundation-v1\\road-grade-chains-v6.json",
+      "sha_recomputed": "b31fb7d72398981ee98132ce59eab48c4aa404043718475fbb2725b13de1b824",
+      "bytes": 502844,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "7.json"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-b0-discovery-r1-20261028\\report.json",
+      "sha_recomputed": "6317c4d2be3b6fa285d1ef9d1618c6584e969fa95e76ee742535210ea2e78b8d",
+      "bytes": 12898,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "8.json"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-b0-discovery-r1-20261028\\local-faces-0.json",
+      "sha_recomputed": "f23a8ae1404fa9d8c20aac1c2fba4d04486fbcb5783991b028653ed4286cfc34",
+      "bytes": 5516,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "9.json"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-b0-discovery-r1-20261028\\local-faces-1.json",
+      "sha_recomputed": "6bdabc54a98ca4c9709c29096668455d2575fb51bf5d079a7bb3160143f88a9e",
+      "bytes": 5556,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "10.json"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-b0-discovery-r1-20261028\\local-faces-2.json",
+      "sha_recomputed": "6dd21f333fce4e31c18cf839f31bd212258c7e0ec874471aad11d5d85fae3bd7",
+      "bytes": 28744,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "11.json"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-b2-recipe-20261029\\contract.json",
+      "status": "UNKNOWN",
+      "reason": "path absent"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-b3-source-pilot-20261029\\report.json",
+      "sha_recomputed": "f63dd1aceb63feca6c3b5b3ec160d248ab4a7de412334a5b1ee1025fb4ee2a2b",
+      "bytes": 615,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "13.json"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\selected-scene-index-q03b6-20261029\\summary.json",
+      "sha_recomputed": "cced27c686b5b02f310bf19a2aa37623dbf0748cd2e5c2a3998cbd502a014d51",
+      "bytes": 1030,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "14.json"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-preparation-receipts-20261028\\recovery.json",
+      "sha_recomputed": "4bee64c867f543230968a37d450fd25ae9ac375fc20bed1f7d28968b35117f2c",
+      "bytes": 1193,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "15.json"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\road_surface_overlay_ev112.py",
+      "sha_recomputed": "53510e1a650baaf46a4cf86e8f242d58749e6fc793a5415f3d61a69a32c3271b",
+      "bytes": 23522,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "16.py"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\road_water_contacts_ev112.py",
+      "sha_recomputed": "6853a78f11a065949f0e4ea522fb03c29c7b0e20a576ac9cfc2221e80c69bf74",
+      "bytes": 16056,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "17.py"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tools\\quality\\pilot_visible_exposure_ev112.py",
+      "sha_recomputed": "c5d6ba151b9794173e18f6e0df976770550dfab066d1f458e4e9238ee088343c",
+      "bytes": 15766,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "18.py"
+    },
+    {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-local-author-20261029\\contract.json",
+      "sha_recomputed": "f8f8f6dcd1e3e74029875e5f40e7a2bb6dbfdaab84e892bd5c7457487ad87c9b",
+      "bytes": 5873,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "19.json"
+    },
+    {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-b2-recipe-20261029\\README.md",
+      "sha_recomputed": "dab9792e578a9854a86f4681501f975fafc8b5c28cb6595bceb9b08944823dd2",
+      "bytes": 1210,
+      "status": "OBSERVED_SAVED",
+      "snapshot": "20.md"
+    }
+  ]
+}
+SOURCE E:\DayZ-Baltic-Build\shape-repair-20261025\q05a-saved-bindings-research-20261029\bindings.json
+[
+  {
+    "pointer": "/301",
+    "chain_index": 49,
+    "edge_ordinal_in_chain": 301,
+    "flattened_road_row_index": 12365,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      12371,
+      12372
+    ],
+    "station_m": 882.5100844786467,
+    "length_m": 2.9295896457874866,
+    "previous_nodes": [
+      12370,
+      12371
+    ],
+    "next_nodes": [
+      12372,
+      12373
+    ],
+    "instance_ids": [],
+    "model_indices": []
+  },
+  {
+    "pointer": "/726",
+    "chain_index": 71,
+    "edge_ordinal_in_chain": 370,
+    "flattened_road_row_index": 19823,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      19817,
+      19818
+    ],
+    "station_m": 1109.9521746513535,
+    "length_m": 2.857013476795636,
+    "previous_nodes": [
+      19816,
+      19817
+    ],
+    "next_nodes": [
+      19818,
+      19819
+    ],
+    "instance_ids": [
+      16777218,
+      16818274
+    ],
+    "model_indices": [
+      912,
+      938
+    ]
+  },
+  {
+    "pointer": "/727",
+    "chain_index": 71,
+    "edge_ordinal_in_chain": 371,
+    "flattened_road_row_index": 19824,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      19818,
+      19819
+    ],
+    "station_m": 1112.8091881281491,
+    "length_m": 2.8667281773828965,
+    "previous_nodes": [
+      19817,
+      19818
+    ],
+    "next_nodes": [
+      19819,
+      19820
+    ],
+    "instance_ids": [
+      16777218,
+      16818274
+    ],
+    "model_indices": [
+      912,
+      938
+    ]
+  },
+  {
+    "pointer": "/728",
+    "chain_index": 71,
+    "edge_ordinal_in_chain": 372,
+    "flattened_road_row_index": 19825,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      19819,
+      19820
+    ],
+    "station_m": 1115.675916305532,
+    "length_m": 2.8805354407088357,
+    "previous_nodes": [
+      19818,
+      19819
+    ],
+    "next_nodes": [
+      19820,
+      19821
+    ],
+    "instance_ids": [
+      16777218,
+      16787374,
+      16818274
+    ],
+    "model_indices": [
+      912,
+      938
+    ]
+  },
+  {
+    "pointer": "/729",
+    "chain_index": 71,
+    "edge_ordinal_in_chain": 373,
+    "flattened_road_row_index": 19826,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      19820,
+      19821
+    ],
+    "station_m": 1118.5564517462408,
+    "length_m": 2.8954655103664537,
+    "previous_nodes": [
+      19819,
+      19820
+    ],
+    "next_nodes": [
+      19821,
+      19822
+    ],
+    "instance_ids": [
+      16787374,
+      16818274
+    ],
+    "model_indices": [
+      912,
+      938
+    ]
+  },
+  {
+    "pointer": "/730",
+    "chain_index": 71,
+    "edge_ordinal_in_chain": 374,
+    "flattened_road_row_index": 19827,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      19821,
+      19822
+    ],
+    "station_m": 1121.4519172566072,
+    "length_m": 2.908036747504019,
+    "previous_nodes": [
+      19820,
+      19821
+    ],
+    "next_nodes": [
+      19822,
+      19823
+    ],
+    "instance_ids": [
+      16787374,
+      16818274
+    ],
+    "model_indices": [
+      912,
+      938
+    ]
+  },
+  {
+    "pointer": "/731",
+    "chain_index": 71,
+    "edge_ordinal_in_chain": 375,
+    "flattened_road_row_index": 19828,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      19822,
+      19823
+    ],
+    "station_m": 1124.3599540041112,
+    "length_m": 2.9145547808576944,
+    "previous_nodes": [
+      19821,
+      19822
+    ],
+    "next_nodes": [
+      19823,
+      19824
+    ],
+    "instance_ids": [
+      16787374,
+      16818274
+    ],
+    "model_indices": [
+      912,
+      938
+    ]
+  },
+  {
+    "pointer": "/760",
+    "chain_index": 76,
+    "edge_ordinal_in_chain": 124,
+    "flattened_road_row_index": 20542,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      20533,
+      20534
+    ],
+    "station_m": 350.10752639402307,
+    "length_m": 3.013882900847428,
+    "previous_nodes": [
+      20532,
+      20533
+    ],
+    "next_nodes": [
+      20534,
+      20535
+    ],
+    "instance_ids": [
+      19394363
+    ],
+    "model_indices": [
+      3579
+    ]
+  },
+  {
+    "pointer": "/761",
+    "chain_index": 76,
+    "edge_ordinal_in_chain": 125,
+    "flattened_road_row_index": 20543,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      20534,
+      20535
+    ],
+    "station_m": 353.1214092948705,
+    "length_m": 3.0137449963342515,
+    "previous_nodes": [
+      20533,
+      20534
+    ],
+    "next_nodes": [
+      20535,
+      20536
+    ],
+    "instance_ids": [
+      19394363
+    ],
+    "model_indices": [
+      3579
+    ]
+  },
+  {
+    "pointer": "/762",
+    "chain_index": 76,
+    "edge_ordinal_in_chain": 126,
+    "flattened_road_row_index": 20544,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      20535,
+      20536
+    ],
+    "station_m": 356.13515429120474,
+    "length_m": 3.013521563515637,
+    "previous_nodes": [
+      20534,
+      20535
+    ],
+    "next_nodes": [
+      20536,
+      20537
+    ],
+    "instance_ids": [
+      19394363
+    ],
+    "model_indices": [
+      3579
+    ]
+  },
+  {
+    "pointer": "/763",
+    "chain_index": 76,
+    "edge_ordinal_in_chain": 127,
+    "flattened_road_row_index": 20545,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      20536,
+      20537
+    ],
+    "station_m": 359.14867585472035,
+    "length_m": 3.0131759045152173,
+    "previous_nodes": [
+      20535,
+      20536
+    ],
+    "next_nodes": [
+      20537,
+      20538
+    ],
+    "instance_ids": [
+      19394363
+    ],
+    "model_indices": [
+      3579
+    ]
+  },
+  {
+    "pointer": "/764",
+    "chain_index": 76,
+    "edge_ordinal_in_chain": 128,
+    "flattened_road_row_index": 20546,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      20537,
+      20538
+    ],
+    "station_m": 362.16185175923556,
+    "length_m": 3.012667228319763,
+    "previous_nodes": [
+      20536,
+      20537
+    ],
+    "next_nodes": [
+      20538,
+      20539
+    ],
+    "instance_ids": [
+      19394363
+    ],
+    "model_indices": [
+      3579
+    ]
+  },
+  {
+    "pointer": "/765",
+    "chain_index": 76,
+    "edge_ordinal_in_chain": 129,
+    "flattened_road_row_index": 20547,
+    "global_edge_index": "UNKNOWN",
+    "nodes": [
+      20538,
+      20539
+    ],
+    "station_m": 365.1745189875553,
+    "length_m": 3.0119572032452533,
+    "previous_nodes": [
+      20537,
+      20538
+    ],
+    "next_nodes": [
+      20539,
+      20540
+    ],
+    "instance_ids": [
+      19394363
+    ],
+    "model_indices": [
+      3579
+    ]
+  }
+]
