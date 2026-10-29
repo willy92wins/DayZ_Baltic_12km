@@ -1,5 +1,7 @@
 # Ejecución del council ampliado: validación y colocación procedimental
 
+CheckpointQ03A29-10: investigación guardada nativa40.485s entregada y adjudicada. Reutilizar201modelosVisual/Roadway y17818poses de superficies ya guardadas; no repetir extractores. Hay que ligar épocas3d955/ef229 y preservar winding desconocido frenteMLOD. No geometría reparada. Q03B `quality-council-q03b-saved-scene-binding-20261029.md` revisado Fable70.578s para preparar contrato concreto, todavía sin contrato/código/arrays abiertos. Adjudicación distingue campoProxy.section_index deMETA.section y refuta la supuesta pérdida de instanciaspiloto: coverage_guard exigíauna por modelo. Q03/Q05/Q11 siguen orientados a exposición/huella completa;Q02Bángulos/Q08/Q17 ycarreteras pendientes, council no se repite.
+
 Petición humana vigente del29-10: adelantar council, proponer mejoras y aplicar
 las justificadas a herramientas y mapa. Este plan reemplaza el orden temporal
 «council después de todos los fallos», no sus criterios ni los de EV112.

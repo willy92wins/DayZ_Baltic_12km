@@ -1,3 +1,5 @@
+Investigación CONSUMIDA: Muse40.485s, integración y fuentes en evidence/composed-scene-q03a-20261029. No relanzar. Siguiente Q03B plan revisado para preparar contrato; sin arrays/código todavía.
+
 # Q03A — preparar geometría de escena compuesta para lechos y cruces
 
 Estado: REVISADO_PARA_INVESTIGACION_DE_FUENTES_GUARDADAS. Muse Wonder1.0 nativo25.704s SOUND-with-fixes adjudicado. No autoriza extracción, build, DayZ ni reparación.
