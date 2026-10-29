@@ -1,3 +1,21 @@
+# RoadB4A2 consumido; siguiente recuperación guardada y corpus Q17A — 29-10
+
+Ocho recursos extraídos privados verificados, asphalt_ext eef9f2d7 resuelto en surfaces; tablas501/109/34 y3dobleshashesestables. Padres2.375s INCONCLUSIVE por conversion_stream_missing: runner real stdout/stderr,*_sha; mock/probe inventaban .bin,*_sha256. Primera conversión rc0/.344s con629Btexto; segunda NO lanzada. Reportc9b3dde1 intacto. Literalfix259610->verstream-fix.json,39testsPASS5.625s y5mutantesauditor. No extracción repetida, build ni DayZ. Código corregido probado offline, no captura completa. Leer evidence/road-b4a2-installed-material-20261029. Todos los preparadores, implementaciones, reviews, suites, captura y auditor consumidos.
+
+B4A2R1 plans/ev112-road-b4a2r1-saved-material-recovery-20261029.md REVISADO_PARA_IMPLEMENTAR_RECUPERACION_GUARDADA, Fable51.578s. Aún SIN código/contrato. Fijar snapshot porhash, verificar conversión1 SIN ejecutar (test cero llamadas), una única conversión2 con marcador exclusivo y destino fijado,90s/512MiB total,30s/256MiB hijo. No reabrir PBOs ni relanzarconv1/B4A2. materialclosure/parser aún requiere fase posterior. El texto1 añade nohq/sm;8assets no cierran escena.
+
+Q17A plans/quality-council-q17a-geometric-corpus-20261029.md revisadoFable61.563s y adjudicado. Aún SIN arrays/contrato/código. Prioridad independiente para anti-geometría: fixtures literales/contexto/contrato externo, nueve humanosGEOMETRY_UNBOUND; no etiquetasNATURAL_GOOD ni cobertura falsa; calibration_readyfalse. No repetir council/Q01/Q02A ni sus reviews. Q02B/Q03/Q05 y mapa abiertos.
+
+Sin operación propia/run/lease al cierre. No adoptar runs retirados. Council79 yaadjudicado;9rechazos0resueltos,C1NOT_REVIEWED,original47FAIL21inciertos,Nav8607históricos,RAM/calidadglobal abiertos. Publicación sólo public-repo, preservar .gitattributes ajena. Publicador nuevo en publish-roadb4a2-q17a-20261029/result.json cuando exista.
+
+---
+# Publicado c4e44b37e5141b5d7ab8797c8d77a697573dba7e — fuentes viales verificadas; B4A2 inicial revisado
+
+35 archivos,23tests privados/públicos PASS y5mutantes del auditor guardado rechazados. Remoto main verificado y limpio. Recibo publish-roadb4a1-20261029/result.json. Suite privada3.047s/pública3.031s; captura0.360s. Todos los preparadores, revisiones, suites, captura, auditor, congelación y publicador/add/commit/push deB4A1 CONSUMIDOS. No repetirlos. Sin operación propia/run/lease al cierre.
+
+Siete fuentes STABLE_CAPTURE, dos texturasMATCH, cinco recursos conbytesdistintos alR0 congelado; no equivalencia semántica ni explicación delR0. build_ready=false. evidence/road-b4a1-source-stability-20261029. PlanB4A2 revisado SÓLO descubrimiento inicial de recursos/prefijos/RVMAT; todavía NO código, contrato ni extracción. No ejecutar parser/cierretransitivo ni build antes de revisar las muestras. Q02B/Q03/Q05 siguen pendientes conforme consejo vigente; no repetir council. Detalle abajo.
+
+---
 # RoadB4A1 consumido; B4A2 limitado a descubrimiento inicial — 29-10
 
 STABLE_CAPTURE / DISCOVERY_ONLY de7rutas en0.360s/39,030,784RSS;19predicadosporarchivo y2lecturas mismohandle. DosPAA MATCH, tresmodelos/dosRVMAT bytesdistintos con referenciaformatoUNKNOWN. R0SOURCE_UNSTABLE conserva sus estados sincausa. No P:/vanilla/mapa modificado. Reportprivado0bd8d67c9eb89d280ef2027c1beb632ec55a9b703cd0349de2deafb270cb39ff, contrato0559c769522b3f74d4fe15ae55a46094207f2a7c49972b41c9c41f8629d85ace.23testsPASS y5negativos deauditorcrudo independientes, no repetir captura/suites/reviews.

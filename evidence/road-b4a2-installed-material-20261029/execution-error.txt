@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-b4a2-real-inputs-20261029\driver.py", line 6, in <module>
+    r=ns['run_discovery'](R/'road-b4a2-inputs-20261029/contract.json',a['contract_sha256'],R/'road-b4a2-capture-20261029');print(json.dumps({'status':r['status'],'assets':len(r['assets']),'external':r['external'],'build_ready':r['build_ready']}))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_installed_material_probe_ev112.py", line 364, in run_discovery
+    result = conv(original, decoded, receipt, min(remaining, lim['conversion_seconds']), lim['rss_bytes'])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_installed_material_probe_ev112.py", line 235, in convert
+    stdout_p, stderr_p = receipt_p / 'stdout.bin', receipt_p / 'stderr.bin'; _require(stdout_p.is_file() and stderr_p.is_file(), 'conversion_stream_missing')
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_installed_material_probe_ev112.py", line 23, in _require
+    if not c: raise DiscoveryError(m)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+pinned_real_probe.DiscoveryError: conversion_stream_missing

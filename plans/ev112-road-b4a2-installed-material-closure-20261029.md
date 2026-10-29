@@ -50,3 +50,7 @@ Adoptado para la fase posterior: consumidor recorre originales por vía independ
 Corrección F3: entries.json fija tabla/rangos, pero las referencias de TODOSLOD proceden de models.jsonl. Fijar AMBOS y la procedencia allLOD, no atribuir al inventario de entradas las referencias de los modelos. No reextraer ODOL ni repetir censos.
 
 Pins de contexto medidos: R0 report217d331658cc0af43b984f2bef7138a1320338e55b2d8abd06d425fb6efa1e5d; B4A1 report0bd8d67c9eb89d280ef2027c1beb632ec55a9b703cd0349de2deafb270cb39ff. Approval B4A1 y recibos se fijan por hash en contratoexterno antes del código real. Los PBO surfaces se observan como estado actual, sin retroactividad. La revisión no aprueba el futuro build ni el cierre completo.
+
+## Ejecucion consumida
+
+B4A2 padre INCONCLUSIVE_INITIAL_DISCOVERY2.375s:8extracciones verificadas; primerCfgConvert rc0 pero lector derecibos errado. Corregido contrato de streams,39testsPASS; captura no repetida. Auditor5mutantesrechazados. SiguienteB4A2R1 recuperacion guardada revisada, sin reextraccion/PBO/build. evidence/road-b4a2-installed-material-20261029.

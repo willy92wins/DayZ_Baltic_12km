@@ -1,0 +1,11 @@
+# RoadB4A2 — referencias instaladas localizadas; muestras de materiales incompletas
+
+Ocho recursos extraídos en privado: siete coinciden con los hashes R0 y asphalt_ext.paa se resolvió por ruta/prefijo exactos en surfaces.pbo (eef9f2d7…). Las tablas tienen501/109/34entradas; los tres PBOs conservan los hashes antes/después y la identidad registrada. Los modelos instalados tienen prefijo ODOL56; ambos RVMAT tienen firma raP. Los hashes nuevos de surfaces son observación actual, no identidad retroactiva de B1/B2 ni equivalencia semántica con build.
+
+La ejecución padre terminó con excepción en2.375s/46,559,232bytesRSS: el lector esperaba nombres stdout.bin/stderr.bin y campos *_sha256, mientras el runner fijado produce stdout/stderr y *_sha. El primer CfgConvert había terminado rc0 en0.344s y dejó629bytes de texto. El segundo NO se ejecutó. No hubo crash del motor, DayZ, build, stage ni modificación de P:/mapa. INCONCLUSIVE_INITIAL_DISCOVERY permanece intacto.
+
+Fue también un fallo de revisión: el mock compartía el contrato inventado y38tests pasaban. Se corrigió literalmente contra runner33dad3 y se añadió fixture del recibo real. Ahora39tests pasan; Fable51.578s confirmó el diff literal y la ausencia de relajación. El código corregido no ha vuelto a ejecutar la extracción. Un auditor separado de archivos guardados verifica los ocho hashes, la identidad del primer hijo y las observaciones de PBO; rechaza cinco mutantes. Eso acredita evidencia parcial, no la convierte en captura completa.
+
+El primer texto guardado muestra Stage1/Stage2 y referencias adicionales nohq/sm: ocho recursos no cierran las dependencias de los materiales ni los5509modelos de la escena. Los originales y texto vanilla quedan privados; sólo se publican hashes, metadatos, herramientas propias y pruebas. JSON con rutas sanitizadas tiene hashes separados en publication-source.json; pins originales corresponden a bytes privados.
+
+Siguiente: B4A2R1 revisado recupera el primer recibo sin relanzarlo y autoriza una sola conversión pendiente de RVMAT2 desde el snapshot. No releer PBOs ni consumir preparadores/extractor de B4A2. Sigue sin aprobarse parser/cierre transitivo, pivote, ancho útil, accesos, pavimentado o conducción. Q17A ya tiene plan revisado para fixtures geométricos independientes; ningún defecto humano se ha reparado o cerrado aquí.

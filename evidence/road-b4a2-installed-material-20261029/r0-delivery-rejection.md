@@ -1,0 +1,1 @@
+Entrega R0 conservada, no integrada. El receiver rechazó la sintaxis del test en línea131 antes de escribir cualquiera de los dos archivos. Además pytest no está instalado en PythonGIS, y el test helper contiene `or True` y comprueba otro fixture. Ninguna suite/revisión se ejecutó. Requiere corrección acotada; no hay captura real.

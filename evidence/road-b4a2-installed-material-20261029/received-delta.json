@@ -1,0 +1,46 @@
+{
+  "edits": 24,
+  "postimages": {
+    "tools/quality/road_installed_material_probe_ev112.py": "2596102ea63415352798dbd26e1f96930b0357fecb6c1dcb71a177c6e6ec476b",
+    "tests/test_road_installed_material_probe_ev112.py": "137ffefe4928d9de82400fc508d81d39f1cabbd8d07b0a9d4efcab2b1765c45f"
+  },
+  "notes": "Narrow delta only: contract dc707, status semantics (INITIAL_DISCOVERY_ONLY=complete measurement unit, not closure; UNRESOLVED_EXTERNAL unresolved), input geometry and tolerances unchanged. Catalog is a bare list with relative entry names; R0 binding uses model/entry; all LODs scanned. No third-material test added (3 models/2 materials/2 textures enforced at consumer). Compression fixture catalog mime aligned to PBO mime. Factory tests mock only the runner via patching _verify_runner_import, exercising real receipt/stream validation; no CfgConvert/PBO or converter semantic measurement. Metadata hashes are consistency evidence only, not acceptance. Claims limited to fixture results.",
+  "usage": [
+    {
+      "kind": "run_usage",
+      "command_id": "01a185f7-9b99-7251-b337-626f898d96d5",
+      "run_stream": {
+        "kind": "run",
+        "id": "01a185f7-9b99-7251-b337-626f898d96d5"
+      },
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 41503,
+          "cached_tokens": 0,
+          "output_tokens": 19068,
+          "reasoning_tokens": 12348,
+          "calls": 1
+        }
+      ],
+      "calls": 1,
+      "completed_calls": 1,
+      "failed_calls": 0,
+      "cancelled_calls": 0,
+      "children_included": false,
+      "allowance": {
+        "tier": null,
+        "window": {
+          "used_percent": 12,
+          "resets_at_ms": 1793255100000
+        },
+        "weekly": {
+          "used_percent": 8,
+          "resets_at_ms": 1793577600000
+        },
+        "as_of_ms": 1793249058386,
+        "source": "stream"
+      }
+    }
+  ]
+}
