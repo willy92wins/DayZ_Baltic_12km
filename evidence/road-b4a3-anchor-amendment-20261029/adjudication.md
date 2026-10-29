@@ -1,0 +1,5 @@
+# Corrección de anclas B4A3 antes de autoría
+
+Dos premisas documentales eran falsas: entries.json no tiene offsets ni propiedades, y las cuatro hojas sí tienen hashes previos. La tabla completa YA guardada es evidence/road-catalog-installed-20261028/source-table.json (334aad7c7a192364354148ee94c6dc0fddc00b7ce9c9315a46987bf07d2b2177), con 501 filas físicas y propiedades. road_asset_catalog_ev112.py:119 la escribió; entries.json conserva los SHA de las cuatro hojas.
+
+Adjudicación Codex/integrador sobre fuentes actuales, anterior al código: conservar comparación exacta de la tabla completa usando source-table.json, fijarla externamente junto a entries/models. Las cuatro extracciones deben además coincidir con sus SHA previamente guardados, por tanto read_payload(f, entry, digest) de deployed_surface_inventory_ev112.py:77 sí es aplicable con digest real. No recatalogar, no inventar hashes, no modificar datos ni tolerancias. Esta corrección fortalece identidad y no amplía ámbito/ejecuciones. Presupuestos, revisión de código independiente y todos los negativos originales permanecen.

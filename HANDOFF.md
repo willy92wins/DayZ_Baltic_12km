@@ -1,3 +1,14 @@
+# B4A3 dependencias comprobadas; siguiente núcleo numérico Q02B1 — 29-10
+
+SAVED_PILOT_DEPENDENCIES_RESOLVED_ONLY. Dos textos, ocho recursos guardados y cuatro hojas nuevas; contrato178c6d86, reporte privado d5ce5307f926ead5a6f599da96b336c5b76451372e8ebf3f742a06cc5ce930a5. Captura1.547s/51.83MB, consumidor0.188s sin reabrir PBO,21tests privados1.641s PASS. PBO34c1 estable, tabla501 y hashes de hojas previos coinciden. evidence/road-b4a3-material-dependencies-20261029 contiene resumen y procedencia, no materiales completos. No build/DayZ/mapa modificado ni carretera terminada. Autor118.453s/corrección147.641s Muse; reviewFable116.485s, fixes adjudicados. Se corrigieron fixtures y esquema real LISTA del catálogo, sin cambiar entradas/contrato. Todo B4A3 autorías/reviews/suites/captura/consumidor/freeze CONSUMIDO, no repetir.
+
+Siguiente concreto geométrico: plans/quality-council-q02b1-certified-numeric-kernel-20261029.md REVISADO_PARA_IMPLEMENTAR_NUCLEO_NUMERICO. Fable recuperación77.093s tras timeout120.078s, adjudicada en evidence/q02b1-numeric-plan-review-20261029. NO código/contrato externo/oráculos nuevos aún. Intervalos racionales con raíces testigo entero p48, prefijos sumados, estaciones/bordes inciertos explícitos y dos testigos por raíz de intervalo; ángulos PENDING_CERTIFIED_ANGLE. No censo completo538390 ni naturalidad aprobados. Fijar umbral binario heredado estrictamente<1e-8 sin rebajarlo. Autor240/review180/suite120, kernel30s/256MiB+consumidor30s. No repetir Q02B0/Q17A/Q02A ni council.
+
+Carreteras: subconjunto de tres modelos NO cierra5509modelos de escena. B4B compilado requiere plan propio de precedencia de recursos/WRP, pivotes/huellas/accesos y oclusores, sin tocarP: ni suponer que los12recursos resuelven escena. Ancho útil,pavimentado,conducción abiertos. Nueve rechazos humanos0resueltos,C1SINREVISAR,47FAIL21inciertos/Nav8607históricos,agua723/RH349/350/1425/RAM/global abiertos. Mantener procedimiento para todos los equivalentes y decisión Narva ya autorizada. Sin operación propia/run/lease al cierre funcional.
+
+Publicación sólo public-repo; recibo publish-b4a3-q02b1-20261029/result.json cuando exista. Preservar.gitattributes ajena. Mantener automatización hasta completar tarea global.
+
+---
 # Q02B0 terminado; Road B4A3 listo para implementar — 29-10
 
 15tests privados PASS; una captura0.390s/55.72MB, NUMERIC_DISCOVERY_ONLY. evidence/shore-numeric-q02b0-20261029: contrato513d9848/oráculos08333430, NPZb661 intacto,1030cadenas,107678vérticescore/107641segmentos,2ceros en1degenerada,538390ventanas candidatas. Longitudes positivas7.23963e-5..8.37784m, máximo perímetro38725.342m/max|coord|12282m.30oráculos:24defined/5AC0/1insuficiente; diferencias80→1006.1264e-79m/ref2e-99/float1.13687e-14 NO son cotas. No mapa reparado ni naturalidad aceptada.

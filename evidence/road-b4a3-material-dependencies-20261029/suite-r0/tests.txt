@@ -1,0 +1,75 @@
+.EEE.E..E........
+======================================================================
+ERROR: test_consumer_declarative_matches_producer (__main__.LexerParserTests.test_consumer_declarative_matches_producer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 95, in test_consumer_declarative_matches_producer
+    p = prod.parse_rvmat(data); c = cons.declarative_parse(data)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 242, in parse_rvmat
+    data = bytes(data); tokens = lex_rvmat(data); p = _Parser(tokens, data)
+                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 137, in lex_rvmat
+    raise RvmatError(f"unsupported_syntax at {start}: byte 0x{b:02x}", start)
+road_material_dependencies_ev112.RvmatError: unsupported_syntax at 212: byte 0x5c
+
+======================================================================
+ERROR: test_consumer_rejects_missing_stage_unchanged_text (__main__.LexerParserTests.test_consumer_rejects_missing_stage_unchanged_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 100, in test_consumer_rejects_missing_stage_unchanged_text
+    data = make_text(); p = prod.parse_rvmat(data)
+                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 242, in parse_rvmat
+    data = bytes(data); tokens = lex_rvmat(data); p = _Parser(tokens, data)
+                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 137, in lex_rvmat
+    raise RvmatError(f"unsupported_syntax at {start}: byte 0x{b:02x}", start)
+road_material_dependencies_ev112.RvmatError: unsupported_syntax at 211: byte 0x5c
+
+======================================================================
+ERROR: test_consumer_rejects_tampered_ignored_shifted_duplicate (__main__.LexerParserTests.test_consumer_rejects_tampered_ignored_shifted_duplicate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 106, in test_consumer_rejects_tampered_ignored_shifted_duplicate
+    data = make_text(); p = prod.parse_rvmat(data); c = cons.declarative_parse(data)
+                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 242, in parse_rvmat
+    data = bytes(data); tokens = lex_rvmat(data); p = _Parser(tokens, data)
+                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 137, in lex_rvmat
+    raise RvmatError(f"unsupported_syntax at {start}: byte 0x{b:02x}", start)
+road_material_dependencies_ev112.RvmatError: unsupported_syntax at 211: byte 0x5c
+
+======================================================================
+ERROR: test_literal_backslash_paths_preserved (__main__.LexerParserTests.test_literal_backslash_paths_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 66, in test_literal_backslash_paths_preserved
+    p = prod.parse_rvmat(data)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 242, in parse_rvmat
+    data = bytes(data); tokens = lex_rvmat(data); p = _Parser(tokens, data)
+                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 137, in lex_rvmat
+    raise RvmatError(f"unsupported_syntax at {start}: byte 0x{b:02x}", start)
+road_material_dependencies_ev112.RvmatError: unsupported_syntax at 210: byte 0x5c
+
+======================================================================
+ERROR: test_whitespace_crlf_eof (__main__.LexerParserTests.test_whitespace_crlf_eof)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 57, in test_whitespace_crlf_eof
+    p = prod.parse_rvmat(data)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 242, in parse_rvmat
+    data = bytes(data); tokens = lex_rvmat(data); p = _Parser(tokens, data)
+                                 ^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_material_dependencies_ev112.py", line 137, in lex_rvmat
+    raise RvmatError(f"unsupported_syntax at {start}: byte 0x{b:02x}", start)
+road_material_dependencies_ev112.RvmatError: unsupported_syntax at 220: byte 0x5c
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.022s
+
+FAILED (errors=5)

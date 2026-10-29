@@ -1,0 +1,3 @@
+# Adjudicación Q02B1
+
+Fable5.1 recuperación77.093s SOUND-with-fixes tras120.078s sin entrega. Aceptadas pruebas de raíz/prefijos por dimensión y necesidad de consulta intervalar, dos testigos para sqrt(intervalo) y dominio de h. Plan final cierra estas definiciones. Rechazado h>=P_hi como OUT_OF_RANGE incondicional por igualdad abierta válida; ejemplo de cuadrado inexacto no sirve como oráculo de un cuadrado entero. La supuesta cota de denominadores para floats normales tampoco es garantía general: caps antes de operar. Umbral binario heredado anclado con comparación estricta, no decimal más pequeño. No código, contrato externo ni resultados del kernel todavía. Sólo núcleo sin ángulos/censo, no calidad del mapa.

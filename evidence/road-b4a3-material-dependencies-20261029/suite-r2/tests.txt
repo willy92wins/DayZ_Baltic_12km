@@ -1,0 +1,20 @@
+.F..................
+======================================================================
+FAIL: test_mutants_report_and_contract (__main__.IntegrationTests.test_mutants_report_and_contract)
+----------------------------------------------------------------------
+ValueError: range_copies_not_leaves
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 322, in test_mutants_report_and_contract
+    self._bad("leaf_entry_mismatch_source_table", lambda r: r["leaves"][0]["entry"].update(name="parts/data/wrong.paa"))
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 289, in _bad
+    with self.assertRaisesRegex(ValueError, pattern):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "leaf_entry_mismatch_source_table" does not match "range_copies_not_leaves"
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.347s
+
+FAILED (failures=1)

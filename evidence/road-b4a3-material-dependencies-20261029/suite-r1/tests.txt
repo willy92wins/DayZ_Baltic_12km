@@ -1,0 +1,27 @@
+E..........F......
+======================================================================
+ERROR: setUpClass (__main__.IntegrationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 257, in setUpClass
+    assert len(header) <= header_size
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+======================================================================
+FAIL: test_hash_and_stat_identity_ctime_ignored (__main__.RangeAndPboTests.test_hash_and_stat_identity_ctime_ignored)
+----------------------------------------------------------------------
+ValueError: stat_mismatch:path_handle_after:size
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_dependencies_ev112.py", line 177, in test_hash_and_stat_identity_ctime_ignored
+    with self.assertRaisesRegex(ValueError, "stat_mismatch:path_before_after:size"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "stat_mismatch:path_before_after:size" does not match "stat_mismatch:path_handle_after:size"
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.025s
+
+FAILED (failures=1, errors=1)
