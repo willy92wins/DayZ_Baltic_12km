@@ -43,3 +43,7 @@ Conservar opcionalmente MULTI_SZ crudo, juzgar mapping actual; comparar ambos la
 No adoptada explicación causal de ctime/OneDrive: no la demuestra esta revisión; sólo campos observados. El predicado R0 ya usa ctime dentro del handle, no entre APIs. Conservamos esta limitación y el dictamen INCONCLUSIVE histórico.
 
 Límite aceptado: cambio revertido completamente entre observaciones puede no verse. No afirmar vigilancia continua ni snapshot atómico global. Cualquier referencia externa sigue abierta. R0 no guarda firma de material PBO, así que no inventarla: para comparar formato usar sólo una firma independiente fijada si existe; de lo contrario distinguir igualdad de hash de diferencia de bytes con formato de referencia UNKNOWN. No atribuir diferencias semánticas.
+
+## Ejecucion consumida 29-10
+
+STABLE_CAPTURE de7rutas,19predicadosporarchivo;2texturasMATCH y5diferenciasdebytes conformatoreferenciaUNKNOWN.23testsPASS y5mutantes delauditor rechazados. NoexplicaR0 niacepta build/mapa. Ver evidence/road-b4a1-source-stability-20261029. Revisions,preparadores,suites,captura yaCONSUMIDOS. B4A2 siguiente limitado a descubrimiento inicial revisado, sinparserdecierre aprobado.

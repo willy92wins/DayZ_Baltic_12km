@@ -78,3 +78,5 @@ Q02A completo como diagnostico aditivo validado:48tests; evidence/closed-perimet
 
 
 Q04 RoadB4A ejecutado como INCONCLUSIVE_DISCOVERY, no autoriza build ni coloca carreteras. PBO/catalogo y referenciasTODOSLOD fijados; siete rutasbuild requieren captura de estabilidad B4A1 con plan revisado. Evidence/road-b4a-build-discovery-20261029. Q02B/Q03/Q05 y reparacion siguen pendientes.
+
+Q04 RoadB4A1 consumido STABLE_CAPTURE7/7 de fuentesbuild;2texturas iguales,5recursos bytesdistintos frenteR0. No pivote/build/colocacion aprobados. B4A2 descubrimiento inicial de recursosinstalados revisado; cierretransitivo/parser ybuild requieren fases posteriores. Q02B/Q03/Q05 y nueve reparaciones siguen pendientes.

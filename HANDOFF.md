@@ -1,3 +1,24 @@
+# RoadB4A1 consumido; B4A2 limitado a descubrimiento inicial — 29-10
+
+STABLE_CAPTURE / DISCOVERY_ONLY de7rutas en0.360s/39,030,784RSS;19predicadosporarchivo y2lecturas mismohandle. DosPAA MATCH, tresmodelos/dosRVMAT bytesdistintos con referenciaformatoUNKNOWN. R0SOURCE_UNSTABLE conserva sus estados sincausa. No P:/vanilla/mapa modificado. Reportprivado0bd8d67c9eb89d280ef2027c1beb632ec55a9b703cd0349de2deafb270cb39ff, contrato0559c769522b3f74d4fe15ae55a46094207f2a7c49972b41c9c41f8629d85ace.23testsPASS y5negativos deauditorcrudo independientes, no repetir captura/suites/reviews.
+
+Code90da5a5125d8a3ead4869f8da54033eaaa33d98ac3d032ad2e5d5b00bcf2d1eb. ReviewFableR0TIMEOUT90.188 sinveredicto; recuperación63.531s entregada y adjudicada, Musecorrección60.688s. No aceptar su explicaciónOneDrive ni nuevo límite25s: refutados. Deadlinepropio separado deOSTimeout ytimeout noafirma integridad. Publicación en publish-roadb4a1-20261029/result.json cuandoexista. Sinoperaciónpropia/run/lease al congelar.
+
+Siguiente plans/ev112-road-b4a2-installed-material-closure-20261029.md REVISADO_PARA_IMPLEMENTAR_DESCUBRIMIENTO_INICIAL; Fable59.875s adjudicado. TodavíaNOcódigo/contrato/extractorB4A2. Primeraunidad sólo siete recursosinstalados,RVMAT originales y máximo2conversiones si firma raP, tablas/prefijos de surfaces.pbo(159807224B)/surfaces_bliss.pbo(74984680B), resoluciónliteral asphalt_ext o pendiente. No parser/cierretransitivo/build/stage. Formatos/gramática se revisan después demuestras, no asumirconfig==rvmat. Contrato fijaR0/B4A1 ycatalogmodels+entries; streaming,MIME!=0inconcluso,missingprefix yduplicados failclosed. Implementación240s/codereview180s/suite120s; ejecuciónúnica120s/512MiB,convertidores<=30s cadauno dentrototal. No repetirB4A1 ni censosA/B0/B1/B2/B3. Nocopiar sólo8assets como si resolvieran5509modelos. PrioridadesQ02B/Q03/Q05 abiertas.
+
+Council ya ejecutado79propuestas, no repetir. Nueve rechazos0resueltos,C1sinrevisión; original47FAIL21inciertos,Nav8607históricos,RAM/globalabiertos. Publicar exclusivamente public-repo, preservar .gitattributes ajena. No binarios/geometríavanilla públicos.
+
+---
+# Publicado c43ebff96988aab5d99ac3a2424d261d909ec9a8 — RoadB4A inconcluso; B4A1 listo para implementar
+
+35archivos,39testscoleccionados38PASS/1SKIP en privado y público; remoto verificado limpio.
+Recibo publish-roadb4a-20261029/result.json. Publicador inicial paró antes de commit por
+una línea vacía final del plan; continuación comprobó blobs y corrigió sóloEOF, sin repetir
+suite ni add completo. Commit/push únicos. Todo RoadB4A y reviewB4A1 CONSUMIDO.
+Sin operación propia/run/lease. Siguiente B4A1 revisado, aún sin código/captura.
+No atribuir los siete SOURCE_UNSTABLE a cambio real debytes, nube ni ctime.
+El informe conserva INCONCLUSIVE_DISCOVERY; no build ni colocación aprobados.
+
 # RoadB4A consumido; siguiente captura B4A1 revisada — 29-10
 
 Una ejecución1.203s/47MB INCONCLUSIVE_DISCOVERY. PBO34c1/501entradas y7rangos coinciden con catálogo;5refs de todosLOD, asphalt_ext fueraPBO sinresolver. Siete rutasbuild SOURCE_UNSTABLE sinmetadata causal; sources_stable sólofuentesprimarias. No atribuirlo a cambio debytes/nube ni reinterpretar. Discriminador posterior1modelo conserva7eb9ODOL54 vsinstalado d722ODOL56, metadata estable porAPI; no explicaR0.
