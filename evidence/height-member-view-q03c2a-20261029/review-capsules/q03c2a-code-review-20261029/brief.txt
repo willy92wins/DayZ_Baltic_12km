@@ -1,0 +1,851 @@
+Revisión código Q03C2A read-only nativa Muse Wonder1.0, 180s <=1200palabras. SOUND/SOUND-with-fixes/NEEDS-WORK y CONVERGE/LOOP. Productor/consumidor nuevos con recorridos semánticos separados, I/O NumPy/zlib compartidos. Revisar contrato y oráculos congelados antes de código, fallos concretos de identidad/false-pass/caps/ZIP. No ampliar128MiB ni relanzar Q03C2. Original rechazado por suma expandida, vista únicamente heights con bytes locales/comprimidos exactos, auxiliares sólo metadata y NO certificados. Código Codex executor local, mismo contexto integrador; tú revisión estática independiente, no afirmar ejecución. Antes de ejecución real el coordinador usará marcador exclusivo consumido incluso en fallo y verificará pins de código. Fixture CLI está explícitamente marcado, no resultado real. Plan revisado no repetir revisión de plan. Entrega dictamen incluso parcial antes del presupuesto.
+
+FILE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\plans\quality-council-q03c2a-height-member-view-20261029.md SHA 74eebb7a54f1a6645527a6d64fae5abc306312a6acd0fd51e7049ea894c4885f
+1: # Q03C2A — vista de heights sin ampliar el lector de archivo completo
+2: 
+3: Estado: REVISADO_PARA_VISTA_DE_MIEMBRO_ACOTADA. Codex planner/integrator, executor local
+4: explícito después de revisión. Una lane externa Muse CLI nativo. No nuevo council.
+5: Muse Wonder1.0 nativo46.829s SOUND-with-fixes/CONVERGE adjudicado, siete
+6: precisiones al final. No código, contrato o proyección todavía.
+7: 
+8: ## Motivo y alcance [EXACT]
+9: 
+10: La inspección única Q03C2 paró en0.437s/46043136B con ARCHIVE_CAP en
+11: saved_scene_archive_q03b2.py:163, antes de ZipFile/header NPY/arrays. No se
+12: relanza el script ni se aumenta128MiB. No hubo contrato/código geométrico ni
+13: medición Q03C2. Lectura del código163 demuestra que el rechazo es la suma de
+14: declaraciones expandidas, no RSS, timeout, geometría inválida ni corrupción.
+15: No se guardó esa suma; NO inventarla a partir de la excepción.
+16: 
+17: container-diagnostic.json guardado en river-kit7-merged-20261026 tiene
+18: source_sha815ef8,source_bytes12875883,saved_bytes142613546 y lista histórica de
+19: miembros NPY idénticos entre contenedor comprimido y STORED. saved_bytes incluye
+20: overheadZIP, no se presenta como suma exacta. preserve_kit7_merge_bytes.py:10-23
+21: verificó y preservó el NPZ original comprimido. Ese CLI está consumido.
+22: Los demás miembros son capas auxiliares; esta medición necesita sólo heights.
+23: 
+24: Propuesta técnica: crear una NUEVA vista NPZ de un único miembro `heights.npy`,
+25: conservar sus bytes locales/comprimidos exactos y ligarla al SHA del contenedor
+26: original. No cambiarlo ni aceptar el archivo completo con el lector128MiB.
+27: El rechazo original sigue vigente. La vista sólo certifica ese miembro; los
+28: otros payloads no se decodifican, no adquieren integridad/semántica nueva.
+29: 
+30: ## Contrato externo antes de autoría [DESIGN]
+31: 
+32: Fijar plan/review, original815ef8 completo, tamaño12875883, diagnósticohistórico
+33: y merge-verification, script de inspección/receipt/stderr de Q03C2; helpers
+34: archive79ef/header0514/IOd073 y sus firmas exactas. Congelar la lista literal
+35: de nombres desde el JSON histórico pinado (no desde la nueva captura). Esperar
+36: exactamente uno heights.npy. No basename ni fallback a otro terreno.
+37: 
+38: Un lector estructural acotado verifica directorio y layout ZIP del snapshot
+39: original, ANTES de ZipFile. Límite almacenado16MiB/nombres35/header16384 y
+40: registros de directorio en el mismo snapshot. La suma de expanded se OBSERVA
+41: como enteros de metadata, no reserva ni permiso de descomprimir todos ellos.
+42: Este es un alcance distinto al Session de archivo completo, no ampliar su cap.
+43: No aceptar ZIP64 EOCD, multidisco, duplicados, cifrado, métodos fuera0/8, rutas,
+44: gaps/overlaps/concatenaciones o extensiones no comprobadas. ZIP64local de tamaños
+45: permitido según el subconjunto ya leído en archive:170-195. Nombres/orden exactos
+46: respecto al listado histórico. Guardar todas filas/contabilidad de metadata.
+47: 
+48: El miembro heights seleccionado debe declarar <=33570828bytes expandidos
+49: (32MiB f8 + header16384 + prefijo12) y comprimidos<=16MiB. No usar ese límite para otros
+50: miembros. Su NPY declara f4/f8,2048x2048,Corder; no objeto/pickle. El header de
+51: un f8 requiere overhead10/12 además deldictionary: el tope de miembro lo incluye.
+52: La finitud/valores de heights no se interpretan en esta unidad.
+53: 
+54: ## Construcción y consumo distintos [DESIGN]
+55: 
+56: Productor nuevo: snapshot estable pinado y parser estructural propio. Copiar
+57: EL registro local completo del miembro (header/nombre/extraZIP64local/payload
+58: comprimido) a offset0. Copiar su registro central exacto salvo campo de offset
+59: local sustituido por0; construir EOCD de un miembro con offset/tamaño nuevos,
+60: sin comentario. Comprimir/recrear datos NO es necesario. No modificar hashes
+61: ni bytes internos del NPY para que pase. Si vista>16MiB, rechazo sin ampliación.
+62: 
+63: Sobre la vista nueva, el Session sellado original valida los límites16/128/262MiB,
+64: headers y streamfísicoDEFLATE64KiB/CRC/SHA/eof, sin modificarlo. La reserva de
+65: archivo completo ahora sólo tiene un miembro por la nueva identidad explícita.
+66: Guardar el descriptor observado y hash del payload NPY, no publicar alturas.
+67: 
+68: Consumidor en proceso distinto: releer snapshot original porSHA; parser de
+69: directorio con recorrido por posiciones independiente o stdlibZipFile sólo
+70: DESPUÉS del preguard estructural. No aceptar campos del productor como prueba
+71: de lectura. Leer heights original con máximo declarado+1, chunks64KiB, CRC de
+72: ZipFile y longitud completa, y comparar cada byte NPY contra vista; computar
+73: SHA/longitud propios. Comprobar el stream físico del miembro mediante helper
+74: sellado sobre vista y que comprimidos/localrecord son literalmente iguales a
+75: los del original. No importar la función de proyección del productor. Biblioteca
+76: zlib común declarada; bytecomparación/recorrido independiente, no codec distinto.
+77: 
+78: Orden: fijar esquema de header de heights descubierto dentro de la ejecución,
+79: antes de Session.open que materializa el array. Ese array es un coste de
+80: verificación del contenedor, NO permiso para medir terreno/geometría/finitud.
+81: Contar sus32MiB máximos, snapshot16MiB y buffers, cap256MiB. El futuro Q03C2
+82: debe pinar la vista/recibo verificadas y cerrar su contrato propio; no continuar
+83: automáticamente la captura geométrica ni convertir esta vista en terrain-ready.
+84: 
+85: ## Oráculos, puertas y presupuestos [DESIGN]
+86: 
+87: Antes de código: fixtures ZIP sintéticos con dos miembros, heights literalNPY1/2
+88: [-0,1] y matriz2x2, y auxiliar de declaración expandida>128MiB que NO se abre.
+89: Sólo fixture pequeño conocido, no fabricar128MiB. Proyección esperada por bytes
+90: del miembro, no por el autor. Negativos duplicado/offset/gap/extraZIP64/cifrado/
+91: path/CRC/streamtruncado/bytestrasEOF/headeroversize/tamañoseleccionado/ordennombres,
+92: fuente mutada, comprimidos co-mutados, y vista que pasa Session pero no proviene
+93: del original. Marcador exclusivo de ejecución y no reintentos.
+94: 
+95: Codexexecutor600s contrato/oráculos/código compacto (productor/consumidor/test),
+96: review180s incluye contrato, suite120s256MiB. Una corrección180 por repro cerrado
+97: y una recuperación180 por noentrega. Una proyección60s256MiB y consumidor60s256MiB,
+98: output16MiB más resumen1MiB; no ampliación de Session ni de los presupuestos.
+99: Resultado VERIFIED_SINGLE_HEIGHT_MEMBER_VIEW_ONLY; whole_source_archive_validated
+100: =false, terrain_geometry_evaluated=false, map_repaired=false. Reportar la suma
+101: de metadata observada sin adjudicar retroactivamente payloads no leídos.
+102: 
+103: Esta vista es un derivado nuevo mínimo para la dimensión terreno; Q03C2 sigue
+104: pendiente de contrato/autoría/revisión/suite. No cambia P9/P10/P11, agua/Narva,
+105: colocaciones ni mapa. Q03C1medido y Q03C2rechazo quedan intactos. No copiar/cargar
+106: todas las capas auxiliares ni ampliar límites para conseguir un falsoPASS.
+107: 
+108: ## Precisiones adjudicadas [DESIGN]
+109: 
+110: 1. Contrato previo fija conjunto cerrado dtype{<f4,<f8}, shape[2048,2048],
+111:    Corder. El header observado sólo puede elegir dentro de ese conjunto ya
+112:    declarado; después se pasa su descriptor exacto a Session. No adoptar un
+113:    esquema arbitrario del candidato. La primera frase del hallazgo se aclara
+114:    así, conforme a su alternativa de conjunto cerrado, sin necesitar una
+115:    identidad de dtype histórico que todavía no se observó.
+116: 2. Preguard de TODAS las filas rechaza centinelas centralesZIP64, discos,
+117:    extra/comentarios centrales, EOCDcomment y EOCDsin cierreEOF; layoutlocal
+118:    contiguo0..central y flags sin data-descriptor. El listado histórico tiene
+119:    28miembros; fijar nombres y orden externos. Suma es declaración observada,
+120:    no validación de payloads auxiliares. La nueva vista no cambia ese alcance.
+121: 3. Registro central de vista idéntico salvo offsetlocal0; EOCDconteo1 y offsets
+122:    recalculados. No recomprimir ni mutar registro local/payloadcomprimido.
+123: 4. Hashear/parsear mismo snapshot. Sessionread de vista debe devolver el mismo
+124:    SHA externo antes/después; consumer reabre ambos y comparaNPY chunks64KiB,
+125:    no recibe arrays del productor. No garantía de vigilancia continua.
+126: 5. Reservas previas snapshot16MiB+vista16MiB+array32MiB, buffers64KiB; RSS256MiB
+127:    es cap del runner, no garantía de asignaciones internasNumPy/zlib.
+128: 6. Recibo con filas/declared_expanded_sum_observed, offsetsheights, SHAcomprimido,
+129:    CRC/longitudexpandida, SHANPY, headerobservado y SHA/tamañovista.
+130: 7. Negativos adicionales: NPYigual recomprimido falla PROCEDENCIA aunque CRC y
+131:    valores sean iguales; centinelaZIP64 de auxiliar fallaestructura sin leerse.
+132: 
+133: Integrador adjudica postimagen con contexto compartido, no otra revisiónexterna.
+134: La revisión de código incluye contrato/oráculos antes de ejecutar una sola vista.
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\contract.json SHA 33de008a5f62c60e86bc28ae90be5b35033fd899b0042bb7e15077ce461924ea
+1: {
+2:   "schema": "q03c2a-single-height-view-v1",
+3:   "plan": {
+4:     "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\quality-council-q03c2a-height-member-view-20261029.md",
+5:     "sha256": "74eebb7a54f1a6645527a6d64fae5abc306312a6acd0fd51e7049ea894c4885f",
+6:     "bytes": 8681
+7:   },
+8:   "oracle": {
+9:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c2a-local-author-20261029\\oracle.json",
+10:     "sha256": "5c27ddaf03490f97da0fd6ef1f447613e45295c7d0fa9e7fe8b64c76d8663f25",
+11:     "bytes": 1460
+12:   },
+13:   "source": {
+14:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-byteexact-20261026\\terrain-buried.npz",
+15:     "sha256": "815ef8b772bfa10e9d6886d953878c24ef6819c5667ce4700c91faab992aec40",
+16:     "bytes": 12875883
+17:   },
+18:   "historical_directory": {
+19:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\river-kit7-merged-20261026\\container-diagnostic.json",
+20:     "sha256": "d1c08cbced496000e3522ac8f8ed8a2b270e526cde83b6e0730dbd079d3524df",
+21:     "bytes": 7614
+22:   },
+23:   "expected_names": [
+24:     "heights.npy",
+25:     "cls.npy",
+26:     "level.npy",
+27:     "platform.npy",
+28:     "reserve.npy",
+29:     "narva.npy",
+30:     "water.npy",
+31:     "beach.npy",
+32:     "ev96_bed_raised.npy",
+33:     "ev96_converted_to_sea.npy",
+34:     "ev98_bed_raised.npy",
+35:     "v31_lake_rim_lowered.npy",
+36:     "ev101_sea_bed_smoothed.npy",
+37:     "ev102_raised.npy",
+38:     "v31_lagoon.npy",
+39:     "v31_bridge_cut.npy",
+40:     "v31_kit.npy",
+41:     "v31_bridge_fill.npy",
+42:     "v31_dam.npy",
+43:     "v31_shore_ramp.npy",
+44:     "v31_causeway.npy",
+45:     "v31_despike.npy",
+46:     "v31_relief_general.npy",
+47:     "v31_continuous_pilot.npy",
+48:     "v31_narva_seaward.npy",
+49:     "v31_road_repair.npy",
+50:     "v31_road_mesh_repair.npy",
+51:     "v31_shape_repair.npy"
+52:   ],
+53:   "expected_heights": {
+54:     "dtypes": [
+55:       "<f4",
+56:       "<f8"
+57:     ],
+58:     "shape": [
+59:       2048,
+60:       2048
+61:     ],
+62:     "fortran_order": false
+63:   },
+64:   "index_contract": {
+65:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-local-author-20261029\\contract.json",
+66:     "sha256": "f8f8f6dcd1e3e74029875e5f40e7a2bb6dbfdaab84e892bd5c7457487ad87c9b",
+67:     "bytes": 5873
+68:   },
+69:   "reader": {
+70:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b6-local-author-20261029\\saved_scene_io_q03b6.py",
+71:     "sha256": "d0734c068d59c87a9d35e31e431a0eb864d4e5ce22d29b2ab9c597c62bd15a44",
+72:     "bytes": 6577
+73:   },
+74:   "limits": {
+75:     "source_stored": 16777216,
+76:     "view_stored": 16777216,
+77:     "selected_expanded": 33570828,
+78:     "members": 35,
+79:     "report": 1048576,
+80:     "chunk": 65536,
+81:     "rss": 268435456
+82:   },
+83:   "archive_limits": {
+84:     "stored": 16777216,
+85:     "archive": 134217728,
+86:     "total": 262434599,
+87:     "members": 35
+88:   },
+89:   "claims": {
+90:     "whole_source_archive_validated": false,
+91:     "other_payloads_decoded": false,
+92:     "terrain_geometry_evaluated": false,
+93:     "map_repaired": false
+94:   },
+95:   "output": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c2a-height-view-20261029",
+96:   "consumer_output": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c2a-height-view-consumer-20261029",
+97:   "budgets": {
+98:     "author": 600,
+99:     "review": 180,
+100:     "suite": 120,
+101:     "producer": 60,
+102:     "consumer": 60
+103:   },
+104:   "source_failure": {
+105:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03c2-header-run-20261029\\completion.json",
+106:     "sha256": "9f265d30139dff399673b36cb7c876c0aa1ee272317c62335cefc6bc01dea704",
+107:     "bytes": 458
+108:   }
+109: }
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\oracle.json SHA 5c27ddaf03490f97da0fd6ef1f447613e45295c7d0fa9e7fe8b64c76d8663f25
+1: {
+2:   "schema": "q03c2a-literal-v1",
+3:   "fixtures": [
+4:     {
+5:       "id": "signed_v1",
+6:       "npy_hex": "934e554d5059010076007b276465736372273a20273c6638272c2027666f727472616e5f6f72646572273a2046616c73652c20277368617065273a2028322c292c207d2020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020200a0000000000000080000000000000f03f",
+7:       "dtype": "<f8",
+8:       "shape": [
+9:         2
+10:       ],
+11:       "payload_hex": "0000000000000080000000000000f03f"
+12:     },
+13:     {
+14:       "id": "matrix_v2",
+15:       "npy_hex": "934e554d50590200740000007b276465736372273a20273c6638272c2027666f727472616e5f6f72646572273a2046616c73652c20277368617065273a2028322c2032292c207d20202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020200a0000000000000000000000000000f03f00000000000000400000000000000840",
+16:       "dtype": "<f8",
+17:       "shape": [
+18:         2,
+19:         2
+20:       ],
+21:       "payload_hex": "0000000000000000000000000000f03f00000000000000400000000000000840"
+22:     }
+23:   ],
+24:   "negative_codes": {
+25:     "source_pin": "IDENTITY",
+26:     "recompressed": "PROVENANCE",
+27:     "directory": "ZIP_LAYOUT_UNSUPPORTED",
+28:     "selected_cap": "SELECTED_CAP",
+29:     "schema": "MEMBER_SCHEMA",
+30:     "stream": "ZIP_TRUNCATED"
+31:   },
+32:   "aux_declared_expanded": 134217729,
+33:   "expected_aux_payload_reads": 0,
+34:   "output_member_names": [
+35:     "heights.npy"
+36:   ],
+37:   "eocd_count": 1,
+38:   "view_central_local_offset": 0
+39: }
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_consumer_q03c2a.py SHA 5727a8222afa0b078e7111f3ffe6dcbe2ce8d7703e6f552e4f6a6b464d24d1de
+1: """Saved view verification: field-offset traversal and independent source bytes."""
+2: from pathlib import Path
+3: import sys,types,json,hashlib,io,zipfile,argparse,os,zlib
+4: class Reject(Exception):
+5:  def __init__(self,code):self.code=code;super().__init__(code)
+6: def need(ok,code='ZIP_LAYOUT_UNSUPPORTED'):
+7:  if not ok:raise Reject(code)
+8: def sha(b):return hashlib.sha256(b).hexdigest()
+9: def bootstrap(path,digest):
+10:  b=Path(path).read_bytes();need(sha(b)==digest,'IDENTITY');c=json.loads(b)
+11:  need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']=={'source_stored':16777216,'view_stored':16777216,'selected_expanded':33570828,'members':35,'report':1048576,'chunk':65536,'rss':268435456},'MEMBER_SCHEMA')
+12:  p=c['reader'];b=Path(p['path']).read_bytes();need(sha(b)==p['sha256']=='d0734c068d59c87a9d35e31e431a0eb864d4e5ce22d29b2ab9c597c62bd15a44','IDENTITY')
+13:  I=types.ModuleType('_q03c2a_consumer_io');I.__file__=p['path'];exec(compile(b,p['path'],'exec'),I.__dict__)
+14:  cc=I.parse(I.read_small(c['index_contract']['path'],c['index_contract']));rd=I.Reader(cc);need(rd.session.limits==c['archive_limits'],'IDENTITY')
+15:  hist=I.parse(I.read_small(c['historical_directory']['path'],c['historical_directory']));need(c['expected_names']==[r['name'] for r in hist['zip_entries']],'IDENTITY');return c,I,rd
+16: def directory(data,names,A):
+17:  need(22<=len(data)<=16777216 and 1<=len(names)<=35)
+18:  def u(pos,n):need(0<=pos and pos+n<=len(data));return int.from_bytes(data[pos:pos+n],'little')
+19:  tail=len(data)-22;need(data[tail:tail+4]==b'PK\x05\x06' and u(tail+4,2)==u(tail+6,2)==u(tail+20,2)==0)
+20:  need(u(tail+8,2)==u(tail+10,2)==len(names));start=u(tail+16,4);need(start+u(tail+12,4)==tail)
+21:  cursor=start;rows=[]
+22:  for name in names:
+23:   need(cursor+46<=tail and data[cursor:cursor+4]==b'PK\x01\x02');n=u(cursor+28,2)
+24:   need(u(cursor+30,2)==u(cursor+32,2)==u(cursor+34,2)==0 and cursor+46+n<=tail)
+25:   need(A._name(data[cursor+46:cursor+46+n])==name and name not in [r['name'] for r in rows]);flags=u(cursor+8,2);method=u(cursor+10,2);A._flags(flags,method)
+26:   off,compressed,expanded=u(cursor+42,4),u(cursor+20,4),u(cursor+24,4);need(all(x!=0xffffffff for x in (off,compressed,expanded)) and expanded>0)
+27:   rows.append({'name':name,'central_offset':cursor,'central_stop':cursor+46+n,'offset':off,'flags':flags,'method':method,'crc':u(cursor+16,4),'compressed':compressed,'expanded':expanded});cursor+=46+n
+28:  need(cursor==tail);cursor=0
+29:  for row in sorted(rows,key=lambda r:r['offset']):
+30:   off=row['offset'];need(off==cursor and off+30<=start and data[off:off+4]==b'PK\x03\x04');n=u(off+26,2);extra=u(off+28,2);begin=off+30+n+extra;end=begin+row['compressed'];need(begin<=end<=start)
+31:   need(data[off+30:off+30+n]==row['name'].encode() and (u(off+6,2),u(off+8,2),u(off+14,4))==(row['flags'],row['method'],row['crc']))
+32:   x,y=u(off+18,4),u(off+22,4)
+33:   if x==0xffffffff or y==0xffffffff:
+34:    a=off+30+n;need(x==y==0xffffffff and extra==20 and data[a:a+4]==b'\x01\x00\x10\x00' and u(a+4,8)==row['expanded'] and u(a+12,8)==row['compressed'])
+35:   else:need(extra==0 and (x,y)==(row['compressed'],row['expanded']))
+36:   row['data_start']=begin;row['data_stop']=end;cursor=end
+37:  need(cursor==start and sum(r['name']=='heights.npy' for r in rows)==1);return rows
+38: def run(contract,contract_sha,capture,out,fixture=None,fixture_sha=None,fixture_shape=None):
+39:  c,I,rd=bootstrap(contract,contract_sha);claims={'whole_source_archive_validated':False,'other_payloads_decoded':False,'terrain_geometry_evaluated':False,'map_repaired':False};need(c['claims']==claims,'MEMBER_SCHEMA')
+40:  if fixture:
+41:   need(fixture_shape in ([2],[2,2]),'MEMBER_SCHEMA');pin={'path':fixture,'sha256':fixture_sha};names=['aux.npy','heights.npy'];expected={'dtypes':['<f8'],'shape':fixture_shape,'fortran_order':False}
+42:  else:pin=c['source'];names=c['expected_names'];expected=c['expected_heights']
+43:  source,digest=rd.archive._snapshot(Path(pin['path']),rd.session);need(digest==pin['sha256'] and ('bytes' not in pin or len(source)==pin['bytes']),'IDENTITY')
+44:  rows=directory(source,names,rd.archive);row=next(r for r in rows if r['name']=='heights.npy');need(row['expanded']<=33570828 and row['compressed']<=16777216,'SELECTED_CAP')
+45:  root=Path(capture);report_raw=I.read_small(root/'report.json',limit=1048576);report=I.parse(report_raw);vp=root/'heights-view.npz';view,view_sha=rd.archive._snapshot(vp,rd.session)
+46:  vr,total=rd.archive._central(view,{'heights.npy':None},rd.session.limits);need(total<=33570828,'SELECTED_CAP');vrow=vr[0]
+47:  # Byte provenance, not merely equal inflated data. Central bytes may change only offset.
+48:  n=row['data_stop']-row['offset'];central=source[row['central_offset']:row['central_stop']];expected_central=central[:42]+b'\x00'*4+central[46:]
+49:  need(view[:n]==source[row['offset']:row['data_stop']] and view[n:n+len(central)]==expected_central,'PROVENANCE')
+50:  need(vrow['offset']==0 and len(view)==n+len(central)+22 and view[-2:]==b'\x00\x00','PROVENANCE')
+51:  need(view[vrow['data_start']:vrow['data_stop']]==source[row['data_start']:row['data_stop']],'PROVENANCE')
+52:  raw_hash=hashlib.sha256();count=0
+53:  with zipfile.ZipFile(io.BytesIO(source)) as old,zipfile.ZipFile(io.BytesIO(view)) as new:
+54:   need(old.namelist()==names and new.namelist()==['heights.npy'],'IDENTITY')
+55:   with old.open('heights.npy') as a,new.open('heights.npy') as b:
+56:    while True:
+57:     x=a.read(min(65536,row['expanded']+1-count));y=b.read(len(x));need(x==y,'PROVENANCE');count+=len(x);need(count<=row['expanded'],'ZIP_TRUNCATED');raw_hash.update(x)
+58:     if not x:need(not b.read(1),'ZIP_TRUNCATED');break
+59:   with new.open('heights.npy') as f:desc,header=I.header_candidate(f,total)
+60:  need(count==row['expanded'],'ZIP_TRUNCATED');need(desc['dtype'] in expected['dtypes'] and desc['shape']==expected['shape'] and expected['fortran_order'] is False,'MEMBER_SCHEMA')
+61:  rd.archive.header.inspect_header(io.BytesIO(header),total,desc);need(rd.archive._decoded_extent(view,vrow)==raw_hash.hexdigest(),'ZIP_TRUNCATED')
+62:  with rd.session.open(vp,{'heights.npy':desc}) as got:
+63:   need(got['source_sha256']==view_sha,'SOURCE_CHANGED');payload=got['payloads']['heights.npy']
+64:  I.read_small(vp,{'sha256':view_sha},16777216)
+65:  want={'status':'SINGLE_HEIGHT_MEMBER_VIEW_UNVERIFIED','contract_sha256':contract_sha,'source_sha256':digest,'source_bytes':len(source),'view_sha256':view_sha,'view_bytes':len(view),'declared_expanded_sum_observed':sum(r['expanded'] for r in rows),'metadata_rows':rows,'selected':row,'compressed_sha256':sha(source[row['data_start']:row['data_stop']]),'local_record_sha256':sha(source[row['offset']:row['data_stop']]),'npy_sha256':raw_hash.hexdigest(),'header_sha256':sha(header),'header_observed':desc,'payload':payload,'claims':claims,'fixture':bool(fixture)}
+66:  need(I.exact(report,want),'REPORT');result={'status':'VERIFIED_SINGLE_HEIGHT_MEMBER_VIEW_ONLY','contract_sha256':contract_sha,'report_sha256':sha(report_raw),'view_sha256':view_sha,'npy_sha256':raw_hash.hexdigest(),'source_sha256':digest,'claims':claims}
+67:  p=Path(out);p.mkdir(exist_ok=False);b=(json.dumps(result,sort_keys=True,separators=(',',':'))+'\n').encode()
+68:  with (p/'consumer.json').open('xb') as f:f.write(b);f.flush();os.fsync(f.fileno())
+69:  return result
+70: def main():
+71:  p=argparse.ArgumentParser();p.add_argument('--contract',required=True);p.add_argument('--sha',required=True);p.add_argument('--capture',required=True);p.add_argument('--out',required=True);p.add_argument('--fixture');p.add_argument('--fixture-sha');p.add_argument('--fixture-shape',choices=['signed','matrix']);a=p.parse_args();run(a.contract,a.sha,a.capture,a.out,a.fixture,a.fixture_sha,{'signed':[2],'matrix':[2,2]}.get(a.fixture_shape))
+72: if __name__=='__main__':
+73:  try:main()
+74:  except (zipfile.BadZipFile,EOFError,zlib.error) as e:print(json.dumps({'status':'REJECTED','code':'ZIP_TRUNCATED','detail':str(e)}),file=sys.stderr);sys.exit(1)
+75:  except OSError as e:print(json.dumps({'status':'REJECTED','code':'IO_ERROR','detail':str(e)}),file=sys.stderr);sys.exit(1)
+76:  except Exception as e:print(json.dumps({'status':'REJECTED','code':getattr(e,'code','INTERNAL_ERROR'),'detail':str(e)}),file=sys.stderr);sys.exit(1)
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py SHA 365023ec0926ade588c1a3e967231e0f25af92f6a6def194a0d1c2af63ec9acb
+1: """Single-member provenance projection. Other member payloads are not read."""
+2: from pathlib import Path
+3: import sys,types,json,hashlib,struct,io,zipfile,argparse,os,zlib
+4: LIMITS={'source_stored':16777216,'view_stored':16777216,'selected_expanded':33570828,'members':35,'report':1048576,'chunk':65536,'rss':268435456}
+5: CLAIMS={'whole_source_archive_validated':False,'other_payloads_decoded':False,'terrain_geometry_evaluated':False,'map_repaired':False}
+6: class Reject(Exception):
+7:  def __init__(self,code):self.code=code;super().__init__(code)
+8: def need(ok,code='ZIP_LAYOUT_UNSUPPORTED'):
+9:  if not ok:raise Reject(code)
+10: def sha(b):return hashlib.sha256(b).hexdigest()
+11: def bootstrap(path,digest):
+12:  b=Path(path).read_bytes();need(sha(b)==digest,'IDENTITY');c=json.loads(b)
+13:  need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+14:  p=c['reader'];b=Path(p['path']).read_bytes();need(sha(b)==p['sha256']=='d0734c068d59c87a9d35e31e431a0eb864d4e5ce22d29b2ab9c597c62bd15a44','IDENTITY')
+15:  I=types.ModuleType('_q03c2a_io');I.__file__=p['path'];exec(compile(b,p['path'],'exec'),I.__dict__)
+16:  cc=I.parse(I.read_small(c['index_contract']['path'],c['index_contract']));rd=I.Reader(cc);need(rd.session.limits==c['archive_limits'],'IDENTITY')
+17:  hist=I.parse(I.read_small(c['historical_directory']['path'],c['historical_directory']));need(c['expected_names']==[r['name'] for r in hist['zip_entries']],'IDENTITY')
+18:  return c,I,rd
+19: def metadata(data,names,A):
+20:  need(0<len(data)<=LIMITS['source_stored'] and 1<=len(names)<=35)
+21:  need(len(data)>=22);end=len(data)-22;e=struct.unpack_from('<4s4H2IH',data,end)
+22:  need(e[0]==b'PK\x05\x06' and e[1]==e[2]==e[7]==0 and e[3]==e[4]==len(names) and e[6]+e[5]==end)
+23:  cursor=e[6];rows=[];seen=set()
+24:  for name in names:
+25:   need(cursor+46<=end);t=struct.unpack_from('<4s6H3I5H2I',data,cursor)
+26:   need(t[0]==b'PK\x01\x02' and t[11]==t[12]==t[13]==0 and all(t[k]!=0xffffffff for k in (8,9,16)))
+27:   stop=cursor+46+t[10];need(stop<=end);raw=data[cursor+46:stop];decoded=A._name(raw)
+28:   need(decoded==name and decoded not in seen);seen.add(decoded);A._flags(t[3],t[4]);need(t[9]>0)
+29:   rows.append({'name':decoded,'central_offset':cursor,'central_stop':stop,'offset':t[16],'flags':t[3],'method':t[4],'crc':t[7],'compressed':t[8],'expanded':t[9]});cursor=stop
+30:  need(cursor==end);cursor=0
+31:  for row in sorted(rows,key=lambda r:r['offset']):
+32:   off=row['offset'];need(off==cursor and off+30<=e[6]);h=struct.unpack_from('<4s5H3I2H',data,off)
+33:   start=off+30+h[9]+h[10];stop=start+row['compressed'];need(start<=stop<=e[6] and h[0]==b'PK\x03\x04')
+34:   need(data[off+30:off+30+h[9]]==row['name'].encode() and (h[2],h[3],h[6])==(row['flags'],row['method'],row['crc']))
+35:   extra=data[off+30+h[9]:start]
+36:   if h[7]==0xffffffff or h[8]==0xffffffff:
+37:    need(h[7]==h[8]==0xffffffff and len(extra)==20 and extra[:4]==b'\x01\x00\x10\x00');need(struct.unpack_from('<QQ',extra,4)==(row['expanded'],row['compressed']))
+38:   else:need(not extra and (h[8],h[7])==(row['expanded'],row['compressed']))
+39:   row.update(data_start=start,data_stop=stop);cursor=stop
+40:  need(cursor==e[6]);need(sum(r['name']=='heights.npy' for r in rows)==1)
+41:  return rows
+42: def project(data,rows):
+43:  row=next(r for r in rows if r['name']=='heights.npy');need(row['expanded']<=LIMITS['selected_expanded'] and row['compressed']<=16777216,'SELECTED_CAP')
+44:  n=row['data_stop']-row['offset'];central_len=row['central_stop']-row['central_offset'];need(n+central_len+22<=16777216,'SELECTED_CAP')
+45:  local=data[row['offset']:row['data_stop']];central=bytearray(data[row['central_offset']:row['central_stop']]);struct.pack_into('<I',central,42,0)
+46:  return local+central+struct.pack('<4s4H2IH',b'PK\x05\x06',0,0,1,1,len(central),len(local),0),row
+47: def _inspect_view(view,I,rd,expected):
+48:  rows,expanded=rd.archive._central(view,{'heights.npy':None},rd.session.limits);need(expanded<=LIMITS['selected_expanded'],'SELECTED_CAP')
+49:  with zipfile.ZipFile(io.BytesIO(view)) as z:
+50:   with z.open('heights.npy') as f:desc,header=I.header_candidate(f,expanded)
+51:  need(desc['dtype'] in expected['dtypes'] and desc['shape']==expected['shape'] and expected['fortran_order'] is False,'MEMBER_SCHEMA')
+52:  rd.archive.header.inspect_header(io.BytesIO(header),expanded,desc)
+53:  return desc,header,rd.archive._decoded_extent(view,rows[0])
+54: def inspect_view(view,I,rd,expected):
+55:  try:return _inspect_view(view,I,rd,expected)
+56:  except (zipfile.BadZipFile,EOFError,zlib.error) as e:raise Reject('ZIP_TRUNCATED') from e
+57: 
+58: def emit(path,value,cap=1048576):
+59:  b=(json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False)+'\n').encode();need(len(b)<=cap,'OUTPUT_CAP')
+60:  with Path(path).open('xb') as f:f.write(b);f.flush();os.fsync(f.fileno())
+61: def run(contract,contract_sha,out,fixture=None,fixture_sha=None,fixture_shape=None):
+62:  c,I,rd=bootstrap(contract,contract_sha)
+63:  if fixture:
+64:   need(fixture_shape in ([2],[2,2]),'MEMBER_SCHEMA');pin={'path':fixture,'sha256':fixture_sha};names=['aux.npy','heights.npy'];expected={'dtypes':['<f8'],'shape':fixture_shape,'fortran_order':False}
+65:  else:pin=c['source'];names=c['expected_names'];expected=c['expected_heights']
+66:  data,digest=rd.archive._snapshot(Path(pin['path']),rd.session);need(digest==pin['sha256'] and ('bytes' not in pin or len(data)==pin['bytes']),'IDENTITY')
+67:  rows=metadata(data,names,rd.archive);view,row=project(data,rows);desc,header,npy_sha=inspect_view(view,I,rd,expected)
+68:  output=Path(out);output.mkdir(exist_ok=False);vp=output/'heights-view.npz'
+69:  with vp.open('xb') as f:f.write(view);f.flush();os.fsync(f.fileno())
+70:  with rd.session.open(vp,{'heights.npy':desc}) as got:
+71:   need(got['source_sha256']==sha(view),'SOURCE_CHANGED');payload=got['payloads']['heights.npy']
+72:  need(sha(I.read_small(vp,{'sha256':sha(view)},16777216))==sha(view),'SOURCE_CHANGED')
+73:  report={'status':'SINGLE_HEIGHT_MEMBER_VIEW_UNVERIFIED','contract_sha256':contract_sha,'source_sha256':digest,'source_bytes':len(data),'view_sha256':sha(view),'view_bytes':len(view),'declared_expanded_sum_observed':sum(r['expanded'] for r in rows),'metadata_rows':rows,'selected':row,'compressed_sha256':sha(data[row['data_start']:row['data_stop']]),'local_record_sha256':sha(data[row['offset']:row['data_stop']]),'npy_sha256':npy_sha,'header_sha256':sha(header),'header_observed':desc,'payload':payload,'claims':CLAIMS,'fixture':bool(fixture)}
+74:  emit(output/'report.json',report);return report
+75: def main():
+76:  p=argparse.ArgumentParser();p.add_argument('--contract',required=True);p.add_argument('--sha',required=True);p.add_argument('--out',required=True);p.add_argument('--fixture');p.add_argument('--fixture-sha');p.add_argument('--fixture-shape',choices=['signed','matrix']);a=p.parse_args()
+77:  run(a.contract,a.sha,a.out,a.fixture,a.fixture_sha,{'signed':[2],'matrix':[2,2]}.get(a.fixture_shape))
+78: if __name__=='__main__':
+79:  try:main()
+80:  except (zipfile.BadZipFile,EOFError,zlib.error) as e:print(json.dumps({'status':'REJECTED','code':'ZIP_TRUNCATED','detail':str(e)}),file=sys.stderr);sys.exit(1)
+81:  except OSError as e:print(json.dumps({'status':'REJECTED','code':'IO_ERROR','detail':str(e)}),file=sys.stderr);sys.exit(1)
+82:  except Exception as e:print(json.dumps({'status':'REJECTED','code':getattr(e,'code','INTERNAL_ERROR'),'detail':str(e)}),file=sys.stderr);sys.exit(1)
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py SHA 6d35d9bbf41c4841d18c3799848fe65c4bbeef93d6df1c80aaf32cd7ffcce159
+1: """Literal NPY oracles, independent ZIP fixture assembly and CLI/co-mutants."""
+2: from pathlib import Path
+3: import sys,os,json,hashlib,struct,zlib,tempfile,unittest,subprocess,io,zipfile,copy
+4: sys.path.insert(0,str(Path(__file__).parent))
+5: import height_view_producer_q03c2a as P
+6: import height_view_consumer_q03c2a as C
+7: D=Path(__file__).parent;CONTRACT=D/'contract.json';SHA=P.sha(CONTRACT.read_bytes());c=json.loads(CONTRACT.read_bytes());oracle=json.loads((D/'oracle.json').read_bytes());assert P.sha((D/'oracle.json').read_bytes())==c['oracle']['sha256']
+8: def archive(npy,method=8,level=6,zip64=False,aux_declared=134217729,names=('aux.npy','heights.npy')):
+9:  local=[];central=[];offset=0
+10:  for name in names:
+11:   data=npy if name=='heights.npy' else b'auxiliary intentionally not decoded';rawname=name.encode();declared=len(data) if name=='heights.npy' else aux_declared
+12:   if method==8:
+13:    obj=zlib.compressobj(level,zlib.DEFLATED,-15);packed=obj.compress(data)+obj.flush()
+14:   else:packed=data
+15:   crc=zlib.crc32(data);extra=struct.pack('<HHQQ',1,16,declared,len(packed)) if zip64 else b''
+16:   chunk=struct.pack('<4s5H3I2H',b'PK\x03\x04',45 if zip64 else 20,0,method,0,0,crc,0xffffffff if zip64 else len(packed),0xffffffff if zip64 else declared,len(rawname),len(extra))+rawname+extra+packed
+17:   entry=struct.pack('<4s6H3I5H2I',b'PK\x01\x02',20,45 if zip64 else 20,0,method,0,0,crc,len(packed),declared,len(rawname),0,0,0,0,0,offset)+rawname
+18:   local.append(chunk);central.append(entry);offset+=len(chunk)
+19:  body=b''.join(local);directory=b''.join(central);return body+directory+struct.pack('<4s4H2IH',b'PK\x05\x06',0,0,len(names),len(names),len(directory),len(body),0)
+20: class Tests(unittest.TestCase):
+21:  def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+22:  def tearDown(self):self.tmp.cleanup()
+23:  def raw(self,id=0,**kw):return archive(bytes.fromhex(oracle['fixtures'][id]['npy_hex']),**kw)
+24:  def file(self,data,name='source.npz'):p=self.root/name;p.write_bytes(data);return p
+25:  def reject(self,fn,code=None):
+26:   with self.assertRaises(Exception) as e:fn()
+27:   self.assertTrue(hasattr(e.exception,'code'),repr(e.exception))
+28:   if code:self.assertEqual(e.exception.code,code)
+29:  def checks(self,data,code=None):
+30:   for fn in (P.metadata,C.directory):self.reject(lambda:fn(data,['aux.npy','heights.npy'],self.rd.archive),code)
+31:  def pair(self,data,id=0):
+32:   p=self.file(data);out=self.root/'capture';proof=self.root/'consumer';shape=oracle['fixtures'][id]['shape'];digest=P.sha(data)
+33:   r=P.run(CONTRACT,SHA,out,str(p),digest,shape);v=C.run(CONTRACT,SHA,out,proof,str(p),digest,shape);return r,v,out
+34:  def test_literal_versions_stored_deflated_zip64(self):
+35:   for id,method,z64 in ((0,0,False),(0,8,True),(1,8,False)):
+36:    with self.subTest(id=id,method=method,zip64=z64):
+37:     data=self.raw(id,method=method,zip64=z64);names=['aux.npy','heights.npy'];a=P.metadata(data,names,self.rd.archive);b=C.directory(data,names,self.rd.archive);self.assertEqual(a,b)
+38:     view,row=P.project(data,a);desc,header,h=P.inspect_view(view,self.I,self.rd,{'dtypes':['<f8'],'shape':oracle['fixtures'][id]['shape'],'fortran_order':False})
+39:     self.assertEqual(h,P.sha(bytes.fromhex(oracle['fixtures'][id]['npy_hex'])))
+40:     with zipfile.ZipFile(io.BytesIO(view)) as z:self.assertEqual(z.namelist(),['heights.npy']);self.assertEqual(z.read('heights.npy'),bytes.fromhex(oracle['fixtures'][id]['npy_hex']))
+41:  def test_real_cli_pair_and_no_aux_decoding(self):
+42:   data=self.raw(1,zip64=True);src=self.file(data);out=self.root/'cap';proof=self.root/'proof'
+43:   for mod,extra in (('height_view_producer_q03c2a.py',[]),('height_view_consumer_q03c2a.py',['--capture',str(out)])):
+44:    cmd=[sys.executable,'-I','-X','utf8',str(D/mod),'--contract',str(CONTRACT),'--sha',SHA,'--fixture',str(src),'--fixture-sha',P.sha(data),'--fixture-shape','matrix','--out',str(out if not extra else proof),*extra]
+45:    r=subprocess.run(cmd,capture_output=True,timeout=20);self.assertEqual(r.returncode,0,r.stderr.decode())
+46:   result=json.loads((proof/'consumer.json').read_bytes());self.assertEqual(result['status'],'VERIFIED_SINGLE_HEIGHT_MEMBER_VIEW_ONLY');self.assertFalse(result['claims']['other_payloads_decoded'])
+47:   report=json.loads((out/'report.json').read_bytes());self.assertGreater(report['declared_expanded_sum_observed'],134217728)
+48:   # Deliberately short auxiliary stream cannot satisfy its declared size; pair succeeds only without reading it.
+49:   self.assertEqual(report['metadata_rows'][0]['expanded'],oracle['aux_declared_expanded'])
+50:  def test_recompressed_same_npy_fails_provenance(self):
+51:   data=self.raw();r,v,out=self.pair(data);alternate=self.raw(level=0);view,_=P.project(alternate,P.metadata(alternate,['aux.npy','heights.npy'],self.rd.archive));(out/'heights-view.npz').write_bytes(view)
+52:   with zipfile.ZipFile(io.BytesIO(view)) as z:self.assertEqual(z.read('heights.npy'),bytes.fromhex(oracle['fixtures'][0]['npy_hex']))
+53:   self.reject(lambda:C.run(CONTRACT,SHA,out,self.root/'bad',str(self.root/'source.npz'),P.sha(data),[2]),'PROVENANCE')
+54:  def test_equal_payload_wrong_source_and_report_mutant(self):
+55:   data=self.raw();r,v,out=self.pair(data);r['declared_expanded_sum_observed']-=1;(out/'report.json').write_text(json.dumps(r));self.reject(lambda:C.run(CONTRACT,SHA,out,self.root/'bad',str(self.root/'source.npz'),P.sha(data),[2]),'REPORT')
+56:   self.reject(lambda:P.run(CONTRACT,SHA,self.root/'fail',str(self.root/'source.npz'),'0'*64,[2]),'IDENTITY')
+57:  def test_central_negative_layouts(self):
+58:   raw=self.raw();rows=P.metadata(raw,['aux.npy','heights.npy'],self.rd.archive);c0=rows[0]['central_offset'];c1=rows[1]['central_offset']
+59:   variants=[]
+60:   for off,width,val in [(c0+24,4,0xffffffff),(c0+20,4,0xffffffff),(c0+42,4,0xffffffff),(c0+30,2,1),(c0+32,2,1),(c0+34,2,1),(c1+42,4,0)]:
+61:    b=bytearray(raw);b[off:off+width]=val.to_bytes(width,'little');variants.append(bytes(b))
+62:   variants += [raw[:-1],raw+b'x',b'x'+raw]
+63:   for b in variants:self.checks(b)
+64:  def test_names_flags_methods_and_local_mismatch(self):
+65:   raw=self.raw();rows=P.metadata(raw,['aux.npy','heights.npy'],self.rd.archive);off=rows[1]['offset'];cent=rows[1]['central_offset']
+66:   for pos,width,val in [(off+6,2,8),(cent+8,2,8),(cent+8,2,1),(cent+10,2,99),(off+14,4,123),(off+18,4,0)]:
+67:    b=bytearray(raw);b[pos:pos+width]=val.to_bytes(width,'little');self.checks(bytes(b))
+68:   for names in (('heights.npy','heights.npy'),('aux.npy','../height.npy'),('heights.npy','aux.npy')):self.checks(self.raw(names=names))
+69:  def test_zip64_local_fields(self):
+70:   raw=self.raw(zip64=True);rows=P.metadata(raw,['aux.npy','heights.npy'],self.rd.archive);off=rows[1]['offset'];extra=off+30+len('heights.npy')
+71:   for pos in (extra,extra+4,extra+12):
+72:    b=bytearray(raw);b[pos]^=1;self.checks(bytes(b))
+73:  def test_selected_cap_before_decode(self):
+74:   raw=self.raw();rows=P.metadata(raw,['aux.npy','heights.npy'],self.rd.archive);rows[1]['expanded']=33570829
+75:   self.reject(lambda:P.project(raw,rows),'SELECTED_CAP')
+76:  def test_physical_crc_truncation_and_hidden_tail(self):
+77:   npy=bytes.fromhex(oracle['fixtures'][0]['npy_hex'])
+78:   for contents in (npy+b'EXTRA',npy[:-1]):
+79:    raw=archive(contents);rows=P.metadata(raw,['aux.npy','heights.npy'],self.rd.archive);view,_=P.project(raw,rows)
+80:    self.reject(lambda:P.inspect_view(view,self.I,self.rd,{'dtypes':['<f8'],'shape':[2],'fortran_order':False}))
+81:   raw=self.raw();rows=P.metadata(raw,['aux.npy','heights.npy'],self.rd.archive);b=bytearray(raw);b[rows[1]['data_stop']-1]^=255
+82:   view,_=P.project(bytes(b),rows);self.reject(lambda:P.inspect_view(view,self.I,self.rd,{'dtypes':['<f8'],'shape':[2],'fortran_order':False}))
+83:  def test_unknown_dtype_shape_order_header(self):
+84:   npy=bytes.fromhex(oracle['fixtures'][0]['npy_hex'])
+85:   for payload in (npy.replace(b'<f8',b'<i8'),npy.replace(b'False',b'True '),npy.replace(b'(2,)',b'(3,)')):
+86:    raw=archive(payload);view,_=P.project(raw,P.metadata(raw,['aux.npy','heights.npy'],self.rd.archive));self.reject(lambda:P.inspect_view(view,self.I,self.rd,{'dtypes':['<f8'],'shape':[2],'fortran_order':False}))
+87:  def test_co_mutated_claim_still_rejected(self):
+88:   data=self.raw();r,v,out=self.pair(data);r['claims']['whole_source_archive_validated']=True;(out/'report.json').write_text(json.dumps(r));self.reject(lambda:C.run(CONTRACT,SHA,out,self.root/'bad',str(self.root/'source.npz'),P.sha(data),[2]),'REPORT')
+89:  def test_second_output_not_overwritten(self):
+90:   data=self.raw();src=self.file(data);out=self.root/'out';P.run(CONTRACT,SHA,out,str(src),P.sha(data),[2])
+91:   with self.assertRaises(FileExistsError):P.run(CONTRACT,SHA,out,str(src),P.sha(data),[2])
+92: if __name__=='__main__':unittest.main(verbosity=2)
+
+HELPER C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_archive_q03b2.py SHA 79ef0195ce28648a4c32a0c36cd82d381cc366e06277fac8e0468e7d42a2c369
+30:         with open(path, "rb") as stream:
+31:             data = stream.read(65537)
+32:     except OSError as exc:
+33:         raise ArchiveError("INCONCLUSIVE_SOURCE_IO", "header dependency") from exc
+34:     if len(data) > 65536 or hashlib.sha256(data).hexdigest() != HEADER_SHA:
+35:         fail("MEMBER_SCHEMA", "header dependency hash")
+36:     module = types.ModuleType("_q03b2_pinned_header")
+37:     exec(compile(data, str(path), "exec"), module.__dict__)
+38:     return module
+39: 
+40: 
+41: header = _load_header(Path(__file__).with_name("saved_scene_npy_header_q03b1l.py"))
+42: 
+43: 
+44: def _identity(s):
+45:     return s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns
+46: 
+47: 
+48: def _check_path(path):
+49:     for entry in [path, *path.parents]:
+50:         s = os.lstat(entry)
+51:         if stat.S_ISLNK(s.st_mode) or getattr(s, "st_file_attributes", 0) & 0x400:
+52:             fail("REPARSE")
+53:     return os.lstat(path)
+54: 
+55: 
+56: def _snapshot(path, session):
+57:     if not isinstance(path, (str, Path)):
+58:         fail("MEMBER_SCHEMA", "path type")
+59:     path = Path(path)
+60:     if not path.is_absolute() or ".." in path.parts:
+61:         fail("MEMBER_SCHEMA", "absolute non-traversing path required")
+62:     try:
+63:         before = _check_path(path)
+64:         if not stat.S_ISREG(before.st_mode):
+65:             fail("MEMBER_SCHEMA", "regular file required")
+66:         fd = os.open(path, os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0))
+67:         with os.fdopen(fd, "rb") as f:
+68:             first = os.fstat(f.fileno())
+69:             if _identity(first) != _identity(before):
+70:                 fail("INCONCLUSIVE_SOURCE_CHANGED")
+71:             n = first.st_size
+72:             if not 0 < n <= session.limits["stored"]:
+73:                 fail("STORED_CAP")
+74:             session.live_stored = n  # Logical reservation precedes snapshot read.
+75:             data = f.read(n)
+76:             session.cumulative_stored_actual_bytes_read += len(data)
+77:             after = os.fstat(f.fileno())
+78:             final = _check_path(path)
+79:             if len(data) != n or not (_identity(first) == _identity(after) == _identity(final)):
+80:                 fail("INCONCLUSIVE_SOURCE_CHANGED")
+81:         return data, hashlib.sha256(data).hexdigest()
+82:     except OSError as exc:
+83:         raise ArchiveError("INCONCLUSIVE_SOURCE_IO") from exc
+84: 
+85: 
+86: def _name(raw):
+87:     if raw.endswith(b"/"):
+88:         fail("ZIP_DIRECTORY")
+89:     if (not raw or any(x < 32 or x >= 127 for x in raw)
+90:             or b"/" in raw or b"\\" in raw or b":" in raw or raw in (b".", b"..")):
+91:         fail("ZIP_PATH")
+92:     name = raw.decode("ascii")
+93:     if not name.endswith(".npy"):
+94:         fail("MEMBER_SCHEMA")
+95:     return name
+96: 
+97: 
+98: def _flags(flags, method):
+99:     if flags & (1 | 64):
+100:         fail("ZIP_ENCRYPTED")
+101:     if method not in (zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED):
+102:         fail("ZIP_COMPRESSION")
+103:     allowed = 0x800 | (6 if method == zipfile.ZIP_DEFLATED else 0)
+104:     if flags & ~allowed:
+105:         fail("ZIP_LAYOUT_UNSUPPORTED", "flag mask")
+106: 
+107: 
+108: def _central(data, schemas, limits):
+109:     """Bounded raw-directory preguard. No ZipFile/ZipInfo created here."""
+
+HELPER C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_archive_q03b2.py SHA 79ef0195ce28648a4c32a0c36cd82d381cc366e06277fac8e0468e7d42a2c369
+230:             crc = zlib.crc32(output, crc)
+231:             if decoder.eof:
+232:                 if pending or pos != stop:
+233:                     fail("ZIP_TRUNCATED", "compressed tail")
+234:                 break
+235:             if not output and len(pending) >= size:
+236:                 fail("ZIP_TRUNCATED", "unterminated/no progress")
+237:             # When input ends, one or more bounded empty feeds may drain output.
+238:             # No flush() that could allocate unbounded output is used.
+239:     if count != row["expanded"] or crc != row["crc"]:
+240:         fail("ZIP_TRUNCATED", "decoded count/CRC")
+241:     return digest.hexdigest()
+242: 
+243: 
+244: class _PayloadReader:
+245:     def __init__(self, source, payload_offset):
+246:         self.source, self.offset, self.position = source, payload_offset, 0
+247:         self.digest, self.length = hashlib.sha256(), 0
+248:         self.full_digest = hashlib.sha256()
+249: 
+250:     def read(self, n):
+251:         data = self.source.read(n)
+252:         self.full_digest.update(data)
+253:         skip = max(0, min(len(data), self.offset - self.position))
+254:         self.digest.update(memoryview(data)[skip:])
+255:         self.length += len(data) - skip
+256:         self.position += len(data)
+257:         return data
+258: 
+259: 
+260: class Session:
+261:     def __init__(self, **limits):
+262:         if set(limits) - set(CAPS):
+263:             fail("MEMBER_SCHEMA", "limit keys")
+264:         self.limits = dict(CAPS, **limits)
+265:         if any(type(v) is not int or not 0 < v <= CAPS[k] for k, v in self.limits.items()):
+266:             fail("MEMBER_SCHEMA", "limit values")
+267:         self.active = False
+268:         self.live_stored = self.live_expanded = 0
+269:         self.cumulative_stored_actual_bytes_read = 0
+270:         self.cumulative_expanded_reserved = 0
+271: 
+272:     def _prepare(self, path, schemas):
+273:         try:
+274:             data, digest = _snapshot(path, self)
+275:             rows, expanded = _central(data, schemas, self.limits)
+276:             if expanded > self.limits["total"] - self.cumulative_expanded_reserved:
+277:                 fail("TOTAL_CAP")
+278:             self.live_expanded = expanded
+279:             self.cumulative_expanded_reserved += expanded
+280:             for row in rows:
+281:                 row["decoded_sha256"] = _decoded_extent(data, row)
+282:             with zipfile.ZipFile(io.BytesIO(data), "r") as archive:
+283:                 infos = archive.infolist()
+284:                 if len(infos) != len(rows):
+285:                     fail("ZIP_TRUNCATED")
+286:                 for info, row in zip(infos, rows, strict=True):
+287:                     if (info.filename, info.flag_bits, info.compress_type, info.CRC, info.compress_size, info.file_size, info.header_offset) != (row["name"], row["flags"], row["method"], row["crc"], row["compressed"], row["expanded"], row["offset"]):
+288:                         fail("ZIP_TRUNCATED", "standard metadata mismatch")
+289:                 heads = {}
+290:                 for row in rows:
+291:                     with archive.open(row["name"], "r") as member:
+292:                         heads[row["name"]] = header.inspect_header(member, row["expanded"], schemas[row["name"]])
+293:                 arrays, payloads = {}, {}
+294:                 for row in rows:
+295:                     name = row["name"]
+296:                     with archive.open(name, "r") as member:
+297:                         reader = _PayloadReader(member, heads[name]["payload_offset"])
+298:                         try:
+299:                             array = np.lib.format.read_array(reader, allow_pickle=False, max_header_size=16384)
+300:                         except ValueError as exc:
+301:                             raise ArchiveError("NPY_TRAILING", "array read") from exc
+302:                         if reader.read(1) != b"" or reader.position != row["expanded"]:
+303:                             fail("NPY_TRAILING", "decoded extent")
+304:                     expected = heads[name]["payload_bytes"]
+305:                     if reader.full_digest.hexdigest() != row["decoded_sha256"]:
+306:                         fail("ZIP_TRUNCATED", "decoded/header-reader mismatch")
+307:                     array_hash = hashlib.sha256(memoryview(array).cast("B") if array.nbytes else b"").hexdigest()
+308:                     if reader.length != expected or array.nbytes != expected or array_hash != reader.digest.hexdigest():
+309:                         fail("NPY_TRAILING", "payload/array byte mismatch")
+310:                     array.flags.writeable = False
+311:                     arrays[name] = array
+312:                     payloads[name] = {"sha256": array_hash, "bytes": expected}
+313:             return {"arrays": arrays, "payloads": payloads, "source_sha256": digest,
+314:                     "status": "ARCHIVE_SESSION_FIXTURE_VERIFIED_ONLY", "closed": False}
+315:         except ArchiveError:
+316:             raise
+317:         except header.HeaderError as exc:
+318:             if exc.code == "INTERNAL_ERROR" and isinstance(exc.__cause__, (zipfile.BadZipFile, EOFError, zlib.error)):
+319:                 raise ArchiveError("ZIP_TRUNCATED", "header ZIP cause") from exc
+320:             raise
+321:         except (zipfile.BadZipFile, EOFError, zlib.error) as exc:
+322:             raise ArchiveError("ZIP_TRUNCATED") from exc
+323:         except Exception as exc:
+324:             raise ArchiveError("INTERNAL_ERROR", type(exc).__name__) from exc
+325: 
+326:     @contextmanager
+327:     def open(self, path, schemas):
+328:         if self.active:
+329:             fail("MEMBER_SCHEMA", "session already active")
+330:         self.active = True
+331:         result = None
+332:         try:
+333:             result = self._prepare(path, schemas)
+334:             yield result
+335:         finally:
+336:             if result is not None:
+337:                 result["arrays"].clear()
+338:                 result["closed"] = True
+339:             self.live_stored = self.live_expanded = 0
+340:             self.active = False
+
+HELPER E:\DayZ-Baltic-Build\shape-repair-20261025\q03b6-local-author-20261029\saved_scene_io_q03b6.py SHA d0734c068d59c87a9d35e31e431a0eb864d4e5ce22d29b2ab9c597c62bd15a44
+1: """Pinned I/O only; semantic predicates belong to each caller."""
+2: from pathlib import Path
+3: from contextlib import contextmanager
+4: import hashlib, io, json, os, struct, types, zipfile, math
+5: import numpy as np
+6: 
+7: class Rejected(Exception):
+8:     def __init__(self, code, detail=''):
+9:         self.code=code;super().__init__(code+(':'+detail if detail else ''))
+10: def require(ok,code,detail=''):
+11:     if not ok:raise Rejected(code,detail)
+12: def digest(data):return hashlib.sha256(data).hexdigest()
+13: def pairs(rows):
+14:     out={}
+15:     for k,v in rows:
+16:         require(k not in out,'SCHEMA','duplicate key');out[k]=v
+17:     return out
+18: def bad_number(x):raise Rejected('SCHEMA','nonfinite JSON')
+19: def finite_float(x):
+20:     value=float(x)
+21:     require(math.isfinite(value),'SCHEMA','nonfinite JSON float')
+22:     return value
+23: def parse(data):
+24:     try:return json.loads(data,object_pairs_hook=pairs,parse_constant=bad_number,parse_float=finite_float)
+25:     except (ValueError,RecursionError,UnicodeError) as e:raise Rejected('SCHEMA','JSON') from e
+26: def keys(obj,names):require(type(obj) is dict and set(obj)==set(names),'SCHEMA','keys')
+27: def exact(a,b):
+28:     if type(a) is not type(b):return False
+29:     if isinstance(a,dict):return a.keys()==b.keys() and all(exact(a[k],b[k]) for k in a)
+30:     if isinstance(a,list):return len(a)==len(b) and all(exact(x,y) for x,y in zip(a,b))
+31:     return a==b
+32: def load_module(pin):
+33:     p=Path(pin['path']);b=read_small(p,pin,65536)
+34:     m=types.ModuleType('_sealed_q03b6_archive');m.__file__=str(p)
+35:     exec(compile(b,str(p),'exec'),m.__dict__);return m
+36: def read_small(path,pin=None,limit=16777216):
+37:     p=Path(path)
+38:     require(p.is_absolute() and '..' not in p.parts,'SCHEMA','path')
+39:     for q in [p,*p.parents]:
+40:         s=os.lstat(q);require(not q.is_symlink() and not getattr(s,'st_file_attributes',0)&0x400,'REPARSE')
+41:     before=p.stat();require(0<before.st_size<=limit,'JSON_CAP')
+42:     with p.open('rb') as f:
+43:         start=os.fstat(f.fileno());data=f.read(before.st_size);end=os.fstat(f.fileno());tail=f.read(1)
+44:     identity=lambda s:(s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns)
+45:     require(identity(before)==identity(start)==identity(end)==identity(p.stat()) and len(data)==before.st_size and not tail,'SOURCE_CHANGED')
+46:     if pin:require(digest(data)==pin['sha256'] and ('bytes' not in pin or len(data)==pin['bytes']),'IDENTITY',str(p))
+47:     return data
+48: def load_contract(path,sha):
+49:     data=read_small(path,{'sha256':sha});c=parse(data)
+50:     require(c['schema']=='q03b6-covered-domain-index-v1','SCHEMA')
+51:     b=read_small(c['scene']['path'],c['scene']);s=parse(b)
+52:     require(s['schema']=='q03b-saved-scene-binding-r1','SCHEMA')
+53:     for pin in c['evidence_pins'].values():read_small(pin['path'],pin)
+54:     require(exact(c['claims_delta'],{'scene_geometry_complete':False}),'SCHEMA')
+55:     return c,s
+56: def descriptions(arrays,payloads):
+57:     return {n:{'descriptor':a.dtype.str if a.dtype.fields is None else [list(x) for x in a.dtype.descr],
+58:         'shape':list(a.shape),'data_sha256':payloads[n]['sha256'],'bytes':a.nbytes} for n,a in sorted(arrays.items())}
+59: def header_candidate(member,expanded):
+60:     prefix=member.read(8);require(len(prefix)==8 and prefix[:6]==b'\x93NUMPY','SCHEMA','NPY magic')
+61:     require(prefix[6:] in (b'\x01\x00',b'\x02\x00'),'SCHEMA','NPY version')
+62:     width=2 if prefix[6]==1 else 4;raw=member.read(width);require(len(raw)==width,'SCHEMA')
+63:     n=int.from_bytes(raw,'little');require(n<=16384,'HEADER_LIMIT')
+64:     text=member.read(n);require(len(text)==n,'SCHEMA')
+65:     bounded=io.BytesIO(prefix+raw+text);bounded.seek(8)
+66:     parser=np.lib.format.read_array_header_1_0 if width==2 else np.lib.format.read_array_header_2_0
+67:     shape,order,dt=parser(bounded,max_header_size=16384)
+68:     require(not order and not dt.hasobject and dt.subdtype is None,'SCHEMA','unsafe dtype/order')
+69:     require(len(shape)<=3 and all(type(v) is int and 0<=v<=2000000 for v in shape),'SCHEMA','shape')
+70:     count=1
+71:     for v in shape:
+72:         require(v==0 or count<=134217728//v,'SCHEMA','size');count*=v
+73:     require(dt.itemsize>0 and count<=134217728//dt.itemsize and count*dt.itemsize+8+width+n==expanded,'SCHEMA','extent')
+74:     desc=dt.str if dt.fields is None else [list(x) for x in dt.descr]
+75:     return {'dtype':desc,'shape':list(shape)},prefix+raw+text
+76: class Reader:
+77:     def __init__(self,c):
+78:         self.archive=load_module(c['helpers']['saved_scene_archive_q03b2.py'])
+79:         h=c['helpers']['saved_scene_npy_header_q03b1l.py'];require(self.archive.HEADER_SHA==h['sha256'],'IDENTITY','header')
+80:         lim={k:c['limits'][k] for k in ('stored','archive','total','members')}
+81:         self.session=self.archive.Session(**lim);self.records=[];self.json_bytes=0
+82:     def json(self,label,pin):
+83:         data=read_small(pin['path'],pin);self.json_bytes+=len(data);require(self.json_bytes<=33554432,'JSON_CAP')
+84:         self.records.append({'label':label,'sha256':digest(data),'bytes':len(data),'members':None})
+85:         return parse(data)
+86:     @contextmanager
+87:     def open(self,spec,names,predicate):
+88:         probe=self.archive.Session(**self.session.limits)
+89:         data,sha=self.archive._snapshot(Path(spec['path']),probe)
+90:         require(sha==spec['sha256'] and len(data)==spec['bytes'],'IDENTITY','archive')
+91:         rows,expanded=self.archive._central(data,{x+'.npy':None for x in names},self.session.limits)
+92:         require(expanded<=spec['expanded_bound'],'SCHEMA','expanded bound')
+93:         require(expanded<=self.session.limits['total']-self.session.cumulative_expanded_reserved,'TOTAL_CAP')
+94:         schemas={};heads={}
+95:         with zipfile.ZipFile(io.BytesIO(data)) as z:
+96:             for row in rows:
+97:                 with z.open(row['name']) as f:schemas[row['name']],heads[row['name']]=header_candidate(f,row['expanded'])
+98:         predicate(schemas)
+99:         for row in rows:self.archive.header.inspect_header(io.BytesIO(heads[row['name']]),row['expanded'],schemas[row['name']])
+100:         del data,heads,rows,probe
+101:         with self.session.open(Path(spec['path']),schemas) as result:
+102:             require(result['source_sha256']==sha==spec['sha256'],'SOURCE_CHANGED','inspection/load')
+103:             desc=descriptions(result['arrays'],result['payloads'])
+104:             self.records.append({'label':spec['relative'],'sha256':sha,'bytes':spec['bytes'],'members':desc})
+105:             yield {n[:-4]:a for n,a in result['arrays'].items()},desc
+106: def emit(path,report):
+107:     data=(json.dumps(report,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n').encode()
+108:     require(len(data)<=33554432,'OUTPUT_CAP')
+109:     with Path(path).open('xb') as f:f.write(data);f.flush();os.fsync(f.fileno())

@@ -1,0 +1,14 @@
+{
+  "schema": "q03c2a-closed-repro-v1",
+  "source": "q03c2a-tests-r0-20261029/stderr",
+  "observed": "2 PASS,10 ERROR; after co-mutated-claims test all following bootstrap checks MEMBER_SCHEMA",
+  "mechanism": "producer report aliases module CLAIMS; mutation of returned report changes policy dict in same process",
+  "expected": {
+    "report_mutation_must_not_change_module_claims": true,
+    "all_claims_false_after_report_mutation": true,
+    "source_contract_unchanged": true
+  },
+  "proposed_delta": "copy CLAIMS into report, preserving consumer independent dictionary and exact report equality",
+  "scope": "Closed in-memory alias repro, no input/hash/tolerance change",
+  "external_review_pending": true
+}

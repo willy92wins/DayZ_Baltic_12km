@@ -1,6 +1,6 @@
 # Ejecución del council ampliado: validación y colocación procedimental
 
-CheckpointQ03C1 29-10: relación geométrica water/bed de1520caras completas dekit118 verificada exactamente con dos algoritmos;17tests privados/públicos.37.4574/3.0366/457.8056m² porcara con multiplicidad, no visibilidad ni reparación. Siguiente Q03C2 plan revisadoMuse62.265s: partición conjunta de terreno fuente y agua, nueve slots porcara, identidad/caps/oráculos propios antes de captura. Q03B6 índice histórico válido; Q05 huella/accesos, referentes/ángulos/carreteras y nueve rechazos siguen abiertos. Council ya ejecutado.
+CheckpointQ03C2A29-10: vistaheights nueva verificada desde815ef8, sin ampliar cap ni repetir rechazo original.13tests privados/públicos; no geometría/mapa. Q03C2R1 revisadoMuse37.922s: siguiente contrato+autoría debe medir nueve áreas conjuntas terreno/agua porcara. Q03C1 medición previa intacta; Q05 huellas/accesos, referentes/ángulos/carreteras y nueve rechazos abiertos. Council ya ejecutado.
 
 Petición humana vigente del29-10: adelantar council, proponer mejoras y aplicar
 las justificadas a herramientas y mapa. Este plan reemplaza el orden temporal

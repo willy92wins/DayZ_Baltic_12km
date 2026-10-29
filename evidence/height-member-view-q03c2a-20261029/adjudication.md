@@ -1,0 +1,9 @@
+# Q03C2A — código adjudicado
+
+Muse Wonder1.0 nativo156.500s SOUND-with-fixes/CONVERGE, identidad run.usage guardada. Tres fixes obligatorios aceptados: consumer fixture explícito; SHA de contrato literal externo en tests; códigos concretos de negativos y traducción acotada de SCHEMA sólo al leer cabecera. No traducción genérica de bugs a error de datos. ZIP_PATH/ENCRYPTED/COMPRESSION y HEADER_LIMIT permanecen específicos; CRC/stream físico ZIP_TRUNCATED. NPY de tamaño/header incompatible es MEMBER_SCHEMA. El oráculo original sigue intacto y la extensión fija esos bordes antes de corregir.
+
+Suite R0:12 métodos,2PASS10ERROR. Mecanismo confirmado por código y orden de tests: report devolvía referencia al diccionario global CLAIMS; co-mutante alteró la política de ejecuciones posteriores. Se devuelve copia, el negativo ahora exige política intacta. R0 preservado. Corrección única13.668s dentro180, no inputs/umbrales/caps cambiados. R1:13tests PASS1.281s, sin skips; incluye CLI->JSON->consumidor y auxiliares deliberadamente inválidos NO decodificados. No reapertura NPZ histórico aún.
+
+Integrador Codex adjudica postimagen con contexto de autor, no otra revisión externa ni consenso ficticio. Recorridos metadata struct/manual diferentes, librerías I/O/NumPy/zlib compartidas; no codecs independientes. Fixture CLI no puede confundirse por resultado final. Coordinador fija destinos exactos del contrato, pins y marcador exclusivo antes del único productor, consumidor sólo tras éxito. Runner60s/256MiB por proceso; archivo original rechazado sigue sin validación integral.
+
+Se autoriza sólo proyección de heights original815ef8 y consumidor, no geometría, mapa ni entorno nativo. Otros payloads no leídos. La suma expandida será metadata observada. La vista necesita su propio recibo para futuro contrato Q03C2, que sigue pendiente.

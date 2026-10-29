@@ -1,0 +1,157 @@
+test_central_negative_layouts (__main__.Tests.test_central_negative_layouts) ... ok
+test_co_mutated_claim_still_rejected (__main__.Tests.test_co_mutated_claim_still_rejected) ... ok
+test_equal_payload_wrong_source_and_report_mutant (__main__.Tests.test_equal_payload_wrong_source_and_report_mutant) ... ERROR
+test_literal_versions_stored_deflated_zip64 (__main__.Tests.test_literal_versions_stored_deflated_zip64) ... ERROR
+test_names_flags_methods_and_local_mismatch (__main__.Tests.test_names_flags_methods_and_local_mismatch) ... ERROR
+test_physical_crc_truncation_and_hidden_tail (__main__.Tests.test_physical_crc_truncation_and_hidden_tail) ... ERROR
+test_real_cli_pair_and_no_aux_decoding (__main__.Tests.test_real_cli_pair_and_no_aux_decoding) ... ERROR
+test_recompressed_same_npy_fails_provenance (__main__.Tests.test_recompressed_same_npy_fails_provenance) ... ERROR
+test_second_output_not_overwritten (__main__.Tests.test_second_output_not_overwritten) ... ERROR
+test_selected_cap_before_decode (__main__.Tests.test_selected_cap_before_decode) ... ERROR
+test_unknown_dtype_shape_order_header (__main__.Tests.test_unknown_dtype_shape_order_header) ... ERROR
+test_zip64_local_fields (__main__.Tests.test_zip64_local_fields) ... ERROR
+
+======================================================================
+ERROR: test_equal_payload_wrong_source_and_report_mutant (__main__.Tests.test_equal_payload_wrong_source_and_report_mutant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_literal_versions_stored_deflated_zip64 (__main__.Tests.test_literal_versions_stored_deflated_zip64)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_names_flags_methods_and_local_mismatch (__main__.Tests.test_names_flags_methods_and_local_mismatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_physical_crc_truncation_and_hidden_tail (__main__.Tests.test_physical_crc_truncation_and_hidden_tail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_real_cli_pair_and_no_aux_decoding (__main__.Tests.test_real_cli_pair_and_no_aux_decoding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_recompressed_same_npy_fails_provenance (__main__.Tests.test_recompressed_same_npy_fails_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_second_output_not_overwritten (__main__.Tests.test_second_output_not_overwritten)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_selected_cap_before_decode (__main__.Tests.test_selected_cap_before_decode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_unknown_dtype_shape_order_header (__main__.Tests.test_unknown_dtype_shape_order_header)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+======================================================================
+ERROR: test_zip64_local_fields (__main__.Tests.test_zip64_local_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\test_height_view_q03c2a.py", line 21, in setUp
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03C2A_TEST_ROOT'));self.root=Path(self.tmp.name);self.c,self.I,self.rd=P.bootstrap(CONTRACT,SHA)
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 13, in bootstrap
+    need(c['schema']=='q03c2a-single-height-view-v1' and c['limits']==LIMITS and c['claims']==CLAIMS,'MEMBER_SCHEMA')
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03c2a-local-author-20261029\height_view_producer_q03c2a.py", line 9, in need
+    if not ok:raise Reject(code)
+              ^^^^^^^^^^^^^^^^^^
+height_view_producer_q03c2a.Reject: MEMBER_SCHEMA
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.375s
+
+FAILED (errors=10)
