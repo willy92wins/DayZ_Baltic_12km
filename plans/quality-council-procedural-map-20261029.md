@@ -1,6 +1,6 @@
 # Ejecución del council ampliado: validación y colocación procedimental
 
-Checkpoint RoadC0 29-10: fuentes de laboratorio 0/3 objetos verificadas por autor y consumidor,14tests privados/públicos. El prefijo terreno/materiales y terminador b108 se conservan; se omite deliberadamente la población original sólo en copias aisladas. No cambia mapa ni B3. Esto separa calibración de tres piezas de recompilar5509modelos; no acepta precedencia/oclusores del mapa. Siguiente plan RoadC1 para recursos/stage/config y consumidor compilado0/3; sin build/native aún. Q05A1 mantiene13joins parciales. Nueve humanos0resueltos,C1NOT_REVIEWED, ángulos/referentes/Q03/Q05/carreteras abiertos; council ya ejecutado.
+Checkpoint RoadC1A/C1A1 29-10:4775materiales propios y2048referenciasPNG/8PAA del laboratorio localizadas. Se corrigió en una recuperación nueva el filtro léxico que omitíaPNG, conservando el informe anterior parcial. No build ni cierre de recursos ni decoderOPRW0/3/terreno. Próximo planRoadC1B stage/config aislado; sólo sonda compilada si se revisa explícitamente. Fuentes0/3C0 intactas. Nueve humanos0resueltos,C1NOT_REVIEWED. Q03C/Q05/ángulos/referentes/reparación abiertos; council ya ejecutado.
 
 Petición humana vigente del29-10: adelantar council, proponer mejoras y aplicar
 las justificadas a herramientas y mapa. Este plan reemplaza el orden temporal

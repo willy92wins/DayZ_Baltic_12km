@@ -1,0 +1,40 @@
+{
+  "input": "texture=\"a.png\";\ntexture=\"b.paa\";\ntexture=\"dz\\data\\a.xyz\";\ntexture=\"#(rgb,1,1,1)color(0,0,0,1)\";\nuvSource=\"worldPos\";\n",
+  "expected": [
+    [
+      1,
+      "a.png"
+    ],
+    [
+      2,
+      "b.paa"
+    ],
+    [
+      3,
+      "dz\\data\\a.xyz"
+    ],
+    [
+      4,
+      "#(rgb,1,1,1)color(0,0,0,1)"
+    ],
+    [
+      5,
+      "worldPos"
+    ]
+  ],
+  "negative": [
+    "texture=\"unterminated",
+    "texture=\"dz\\data\\\";"
+  ],
+  "negative_code": "UNKNOWN_QUOTE_GRAMMAR",
+  "literal_counterexample": [
+    [
+      9,
+      "dayz_baltic_12km_dev\\tb\\narva_trial\\data\\layers\\s_000_000_lco.png"
+    ],
+    [
+      14,
+      "dayz_baltic_12km_dev\\tb\\narva_trial\\data\\layers\\m_000_000_lca.png"
+    ]
+  ]
+}

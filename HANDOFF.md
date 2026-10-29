@@ -1,3 +1,35 @@
+# RoadC1A recursos reconciliados; publicación en curso
+
+RoadC1A/C1A1 completados como investigación de recursos, NO build.4776filas de material (una vacía),4775RVMAT propios/10052971B. Recuperación completa de85950usos de strings,2061strings distintas:2048PNG+8PAA localizados sin leer payloads y5literales sin resolver. Los PNG suman140323829B por metadata y losPAA40711646B; no identidad ni formatos certificados. C1A17.688s/42471424B, C1A1 única6.812s/54579200B. Dos controles léxicos negativos ymutante de sufijos rechazado,0testsgeométricos; reconciliación documental sobre snapshots, no lectorRVMATsemántico independiente.
+
+R0exploratorio cap4096 rechazó4776 antes de materiales. C1A leyó4775textos pero omitióPNG por filtro de sufijos; reportef3eb0ab1 intacto, no reinterpretarlo como completo. ContraejemploP_000-000_L00.rvmat líneas9/14. C1A1 releyó sólo esos4775textos porSHA para conservar todas las cadenas, sin WRPs/PBOs/P3Ds/alturas/configsbin/core ni texturas. Contrato22dae243 y oráculo77ac398f completos en evidence/road-c1a-resource-discovery-20261029. No nueva geometría ni censo de población. Scripts inertes/consumidos, no promover ni repetir.
+
+PlanRoadC1 Muse30.860s SOUND-with-fixes, seis precisiones adjudicadas. RecuperaciónplanMuse28.359s NEEDS-WORK adjudicado: refutadoF1,27.7MB incluía control17.3MB yconfigs; textos sólo10.05MB,cap16MiB intacto. F2–F7 concretados antes de autoría, postimagen sólo integradorCodex mismo contexto. No consenso ni aprobaciónexterna nueva inventada. Autores47.075s/49.586s dentro240. 10identidades propias retiradas; sinoperación/run/lease.
+
+Siguiente: diseñar/revisar RoadC1B stage real acotado y configuración aislada usando los4775RVMAT,2048PNG literales,8PAA y12recursos viales B4A3, más referenciasconfig/bin/core que siguen sin cierre. PNG no puede sustituirse por PAA por basename. Binconfig instalado dcf19f27 difiere de P:/bin/config.cpp42b4cf95; P:/core/config.cpp ausente, no prueba core innecesario. Config histórica mantiene requiredAddonsagua/piloto/navmesh ynoesconfiglab. No copiar variantes a ciegas.
+
+Ningún lector localizado certifica OPRW0/3 yterreno/materiales. No afirmar imposibilidad global: Mikero bin enumerado tienepboProject peronoDeWrp/ConvertWrp; referenciawebv29 no prueba formato32local. Si se necesita observar compilado antes de diseñar lector, proponer plan propio COMPILE_PROBE_ONLY conpresupuesto/inputs ysin paquete aceptado/DayZ; jamás convertir escaneo de modelos/hashmagic enlectura de alturas. RoadC0fuentes0/3 intactas, no garantía decontrolvacío compilable. Q03C/Q05 históricos puedencontinuar sin dependencia circular aidentidadactual. Carreteras/ángulos/referentes y nueve humanos0resueltos/C1NOT_REVIEWED siguenabiertos.
+
+Seguir publish-roadc1a-20261029; no repetir investigación.
+
+# RoadC1 plan de recursos en revision
+
+Seguir road-c1-plan-review-20261029/run,120s. C0consumido; sinbuild/DayZ. Lectura exploratoriaR0 paro en cap4096filas; discriminador observo4776, sinmateriales abiertos. PlanC1A nuevo acota lectura; no contrato/build listo ni lectorOPRW completo localizado.
+
+# RoadC0 publicado; siguiente diseño de compilación aislada
+
+Checkpoint publicado 654c034d0cade481e3abf3ba88217dbf355295fb:48 archivos,14 tests privados1.703s y públicos1.453s PASS sin skips. Main remoto verificado limpio. Recibo publish-roadc0-20261029/result.json. Sin operación propia/run/lease;24 identidades observadas retiradas. RoadC0 autores, reviews, suites, fuente/consumidor, freeze, finalizador, publicador/add/commit/push CONSUMIDOS: no repetir.
+
+RoadC0 VERIFIED_ISOLATED_SOURCE_PAIR_ONLY. Se crearon copias 0WZD de laboratorio: control sin objetos f00c3f57ab3660e93c44a1cb612c6338f87db1bfd4c047acf6f7389c61c7e6df (17307685 B) y candidato con tres objetos 2fb3686b6d86888609caeace3be14f8422cfe8c1da9d77db263c86e21ddcb426 (17307968 B). Prefijo terreno/materiales 17307629 B/d16b5139 y terminador56 B exactos de b108; IDs19394564–566, nombres/poses/matrices48B de B3 preservados. Los 2578398 objetos originales se omiten deliberadamente SÓLO en estas copias de laboratorio. El mapa y RoadB3 siguen intactos; no es una reparación.
+
+Autor real único1.329s/69382144 B y consumidor propio0.547s/52281344 B, ambos dentro60s/256MiB. Contrato9296cef4fca5e1e51b154eef920f44ef8a01531ebea894446b83c2ffbc0f746c y oráculo c70cad59d72505d841acce60a3b34a041a2e9ac9dc3d6331f4ce896dc8bac590 fijados antes de código. Leer evidence/road-c0-isolated-sources-20261029. Dos programas recorren fuente por sí mismos; bibliotecas estándar comunes, autor/integrador Codex con contexto compartido. Censo original heredado por SHA/B3, no repetido; snapshots no son vigilancia continua.
+
+Codex executor local233.518s<600, plan Muse43.281s SOUND-with-fixes y código Muse72.625s SOUND/CONVERGE. Cuatro precisiones del plan incorporadas antes de código: matrices48bits, B3original/saneado ligados, dos prefijos nombrados separadamente y terminador exacto.14tests privados1.703s y públicos1.453s PASS sin skips. No corrección ni reintento. 24 identidades observadas retiradas, sin operación propia/run/lease. Autores, reviews, suites, captura y freeze RoadC0 CONSUMIDOS: no repetir.
+
+Siguiente: preparar/revisar RoadC1 de stage reducido y pareja compilada del laboratorio, con contrato/budgets propios. Fuente0/3 NO demuestra que Binarize acepte control vacío. Fijar recursos reales de terreno/materiales/bin/core y tres modelos instalados; no convertir doce recursos B4A3 en cierre de5509. Config histórico stage-kit7-fc/root/dayz_baltic_12km_dev/tb/narva_trial/config.cpp declara BalticTrial, requiredAddons Baltic_Water_V30/Baltic_Stream_Pilot y rutas navmesh propias: revisar explícitamente configuración aislada y dependencias antes de reutilizar. No inferir que quitar objetos quita esos requiredAddons.
+
+El lector OPRW histórico exige ancla baltic_water_v30 y no soporta automáticamente control0; no usarlo como writer ni heredar excepciones de altura. Nuevo consumidor compilado debe tratar0/3 y terreno/materiales antes del paquete. Después RoadC2 nativo necesita identidad de modelos/paquetes, testigos de las cuatro hipótesis y controles de oclusión, FIFO/lease/heartbeat/cierre oficiales. No build, PBO, despliegue ni DayZ autorizados por C0. No tocar P:. Huellas/accesos/pavimentado/conducción, ángulos/referentes y nueve humanos0resueltos/C1NOT_REVIEWED siguen pendientes.
+
 # RoadC0 verificado; publicación en curso
 
 RoadC0 VERIFIED_ISOLATED_SOURCE_PAIR_ONLY. Se crearon copias 0WZD de laboratorio: control sin objetos f00c3f57ab3660e93c44a1cb612c6338f87db1bfd4c047acf6f7389c61c7e6df (17307685 B) y candidato con tres objetos 2fb3686b6d86888609caeace3be14f8422cfe8c1da9d77db263c86e21ddcb426 (17307968 B). Prefijo terreno/materiales 17307629 B/d16b5139 y terminador56 B exactos de b108; IDs19394564–566, nombres/poses/matrices48B de B3 preservados. Los 2578398 objetos originales se omiten deliberadamente SÓLO en estas copias de laboratorio. El mapa y RoadB3 siguen intactos; no es una reparación.

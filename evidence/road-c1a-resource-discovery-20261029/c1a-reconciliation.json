@@ -1,0 +1,33 @@
+{
+  "status": "RECONCILED_MATERIAL_ROWS_INCOMPLETE_REFERENCE_FILTER",
+  "report_sha256": "f3eb0ab1b672ba742a82d6d7fe2114373c75e3604f30db4ddd508880efb4ce6a",
+  "table_sha256": "e1d302432153380c7512bda4fb20ff7b9bd1f894e0e465c2c97c93af485c0873",
+  "rows": 4776,
+  "nonempty_rows": 4775,
+  "unique_material_names": 4775,
+  "table_reconciled": true,
+  "reference_completeness": false,
+  "counterexample": {
+    "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\data\\layers\\P_000-000_L00.rvmat",
+    "sha256": "78d24eba88a6d6a15ecaae73aebfb32544ed6ff085139d329dbc67b5de5d74b7",
+    "bytes": 2103,
+    "omitted_literal_png_lines": [
+      {
+        "line": 9,
+        "text": "texture=\"dayz_baltic_12km_dev\\tb\\narva_trial\\data\\layers\\s_000_000_lco.png\";"
+      },
+      {
+        "line": 14,
+        "text": "texture=\"dayz_baltic_12km_dev\\tb\\narva_trial\\data\\layers\\m_000_000_lca.png\";"
+      }
+    ],
+    "script_filter_line": 56,
+    "cause": "suffix tuple omitted .png, although source materials use .png in Stage0/1"
+  },
+  "total_research_read_bytes": 27766367,
+  "source_sample_reread_bytes": 2103,
+  "seconds": 0.046000000002095476,
+  "build_ready": false,
+  "tests_geometric": 0,
+  "map_changed": false
+}

@@ -1,0 +1,310 @@
+Revisión de plan RoadC1, sólo lectura de esta cápsula, sin herramientas ni cambios. No council nuevo. Muse Wonder nativo como reviewer; Codex planner/integrator. Entrega <=900palabras, SOUND/SOUND-with-fixes/NEEDS-WORK, puntos concretos con ancla y cambio mínimo, CONVERGE/NO_CONVERGE, END_ROADC1_REVIEW. Una entrega120s; recuperación sólo si no entrega, no rondas genéricas.
+El objetivo es avanzar calibración vial. C0 fuente0/3 está verificada; no hay lector OPRW completo localizado para ceroobjetos/terreno. Este plan autoriza sólo investigación C1A de materiales/config y bloquea compile realhasta cerrar consumidor. Revisa si alcance/límites son concretos y no inventan cierre ni aceptación. No pedir prueba nativa para lectura histórica ni repetir catálogos. El lector exploratorio R0 encontrócount>4096 y paró; discriminador56bytes observó4776 enoffset16908312. No código geométrico ni build. Cambio cap explícito para otra investigación, no reparación degeometría ni rerunCLI.
+PLAN:
+# RoadC1 — recursos del laboratorio y puertas para la pareja compilada
+
+Estado: BORRADOR_PENDIENTE_DE_REVISION. Fecha: 29-10-2026.
+Codex planner/orchestrator/integrator; revisión externa Muse nativo. No council nuevo.
+
+## Objetivo y cambio de diseño explícito
+
+P5/P6/P8/P11: calibrar la transformación de tres piezas instaladas antes de extender
+su colocación. P10 sigue vigente: esto no pavimenta la escena poblada. RoadC0 produjo
+fuentes aisladas 0/3, no un WRP compilado. La pareja conserva el mismo terreno fuente;
+no asumir que el control vacío es compilable ni que el compilador preserva alturas.
+
+Hay dos bloqueos reales para autorizar la pareja: referencias del terreno aún no
+ligadas y ningún lector localizado que valide terreno/materiales y objetos 0/3 del
+OPRW DayZ. No ocultarlos con un PASS de magic/hash o un escáner de modelos.
+Por eso esta revisión autoriza solamente C1A, investigación concreta de recursos y
+superficie de herramientas. C1B (stage/config/compilador/consumidor) necesita cerrar
+las anclas y su contrato antes de código o build. No se sustituye por otra fuente
+sintética ni se añaden objetos al control para hacerlo aceptable.
+
+## Hechos anclados
+
+- RoadC0 control f00c3f57..., 17307685 B; candidato 2fb3686b..., 17307968 B.
+  Prefijo terreno/materiales 17307629 B/d16b5139..., terminador56 B. Contrato9296cef4.
+- `tools/quality/road_calibration_source_c0.py:66-78`: material count y cadenas
+  se recorren por longitud; sin interpretación semántica. No ejecutar su CLI otra vez.
+- `tools/terrain/compile_visual_pilot_ev112.ps1:9-29`: el wrapper histórico usa
+  AddonBuilder, junctions DZ/bin/core/agua/piloto y config del mundo. Es evidencia,
+  no entrypoint nuevo; no reusar sus directorios ni sus logs compartidos.
+- Config exacta `stage-kit7-fc-20261026/root/dayz_baltic_12km_dev/tb/narva_trial/config.cpp`:
+  requiredAddons DZ_Data/DZ_Surfaces/Baltic_Water_V30/Baltic_Stream_Pilot (8-12),
+  clase BalticTrial:CAWorld (19), worldName (37), OutsideTerrain (24-36),
+  midDetailTexture (48), cuatro UsedTerrainMaterials (49-55), navmesh (56-212).
+  Quitar objetos NO elimina esos requisitos. No copiarla como configuración aislada.
+- `tools/terrain/package_visual_forest_ev112.py:29-65` busca ancla baltic_water_v30,
+  tabla por heurística y matriz de un objeto. No demuestra control0 ni alturas;
+  tampoco es writer. Los lectores históricos localizados comparten ese límite.
+- B4A3 liga doce recursos de tres modelos, no toda la escena ni el terreno.
+  B0/B2 ya guardan caras, máscaras y24hipótesis de huella: no reextraer ni recalcular.
+
+## Investigación C1A — único corte autorizado aquí
+
+Hipótesis: un stage de laboratorio puede resolverse desde el prefijo/materiales de
+RoadC0 y recursos guardados, sin importar la población original; configuración y
+formato compilado siguen siendo puertas independientes.
+
+La lectura exploratoria R0 del 29-10 se detuvo al comparar material_count con4096,
+antes de abrir materiales. Un discriminador de56 B (24header+32enoffset16908312)
+observó4776filas. No indica4776materiales únicos, corrupción ni capacidad del build.
+Se conserva R0. El cap4096era un límite de investigación arbitrario sobre filas;
+la siguiente lectura tiene otro contrato explícito: exactamente4776filas, dentro
+de los399313 B restantes del prefijo, y como máximo16384rutas distintas. No amplía
+límites geométricos ni convierte R0 en éxito.
+
+Asiento EXECUTOR de investigación asignado explícitamente a Codex local: una
+entrega240s; ejecución read-only60s/256MiB. 64MiB de contenido leído total,
+1MiB por texto (config principal excepcional8MiB),32768referencias,16384rutas únicas.
+No generar un CLI de producción, sólo recibo/script inerte de investigación.
+Revisión externa del plan incluye el algoritmo de lectura; no tests geométricos.
+
+1. Leer el control RoadC0 por hash, saltar alturas/índices por offsets verificados.
+   Recorrer las4776filas con preguard de longitud<=4096 y final exacto17307629;
+   conservar ordinal de fila, cadenas crudas y nombre normalizado de forma explícita.
+   Validar formato de rutas sin fallback de basename. No abrir fuente poblada.
+2. Deduplicar referencias sólo para lectura, conservando las filas originales.
+   Leer RVMAT propios del stage histórico a las rutas literales encontradas.
+   Conservar SHA/tamaño. Extraer cadenas citadas como observación léxica; NO afirmar
+   cierre transitivo, shader válido ni parser semántico. Límites antes de leer.
+3. Para rutas de textura/material observadas, registrar fuente candidata exacta,
+   tamaño y estado LOCATED_NOT_READ/MISSING. Raíz propia y P: sólo lectura; un
+   resultado por ruta no prueba precedencia actual ni identidad del proveedor.
+   Ninguna lectura PBO/P3D, ni nueva copia de los doce recursos ya guardados.
+4. Leer únicamente config histórico, Binarize/bin/config.cpp, P:/bin/config.cpp y
+   P:/core/config.cpp si existen, con hashes e includes literales. Si una raíz es
+   reparse, registrar identidad/link observado; no asumir symlink/cloud ni mutarla.
+   No cerrar transitivamente includes de bin/core aquí ni atribuirlos al hijo.
+5. Enumerar herramientas instaladas por nombre, sin ejecutar help desconocido que
+   pueda lanzar una UI. ConvertWrp/DeWrp no aparecen en el bin Mikero observado;
+   pboProject sí. Esto no prueba ausencia en todo el host. Las fuentes web son pistas
+   de compatibilidad, no certifican el binario instalado ni DayZ32.
+6. Reporte <=4MiB con inventario/lecturas/errores/estado; parcial persistido antes de
+   fase. Un límite o I/O produce INCONCLUSIVE, sin reintentos ni prometer informe
+   final tras kill. Causa de fallos históricos no establecida. No modificar mapas.
+
+Criterio de término C1A: lista completa de filas de material fuente y observaciones
+de rutas dentro de límites, o rechazo explícito. `build_ready=false`,
+`dependency_closure=NOT_EVALUATED`, `compiled_terrain_decoder=NOT_VERIFIED` siempre.
+Reconciliar conteos y muestras con recorrido independiente sobre bytes guardados;
+esto sólo valida el inventario observado, no el formato OPRW ni la compilación.
+
+## Diseño C1B pendiente, no ejecutable en este plan
+
+[DESIGN] Stage exclusivo en E:, sin junction a todo P:/DZ ni configs ajenos. Config
+de laboratorio explícita con clase/prefijo propios y lista cerrada de dependencias:
+conservar mundo/escala/agua fuente, decidir y documentar referencias a navmesh y
+clutter para calibración elevada; no heredarlas accidentalmente. No cambios de
+producto ni mar/Narva/P9/P10/P11. Resolver recursos de terreno y bin/core observados,
+además de los tres modelos instalados por sus SHA y materiales completos.
+
+[DESIGN] Antes del build: contrato externo, oráculos0/3 y negativos; código nuevo
+de preparador y consumidor, revisión/suite. Preflight oficial fresco, copia archivada
+con diff literal si persiste SyntaxError conocido, nunca editar skill gobernada.
+Una pareja, control primero; no candidato si control falla. Carpetas/sellos nuevos,
+presupuestos a fijar con cierre de recursos, sin reintentos internos. Herramientas
+instaladas pinadas no equivalen a hijos observados: guardar PID/birth/argv/streams.
+
+Bloqueo del consumidor: localizar o definir lector capaz de establecer offsets y
+cuentas0/3 y representación de alturas/materiales de la versión real. Necesita
+oráculos y evidencia de versión, no sólo patrón de texto/ID. Si para descubrir el
+formato hace falta una compilación exploratoria previa, proponer otra autorización
+técnica explícita con estado COMPILE_PROBE_ONLY: sin empaquetado aceptado, despliegue,
+motor ni afirmación de preservación semántica. No asumir aquí dicha autorización.
+
+[DESIGN] RoadC2 posterior: paquete/mundo/modelos exactos; sondas que distingan las
+cuatro hipótesis B2, control sin objetos y detección de oclusores. Ni personaje ni
+proximidad eligen pivote. ColaFIFO600, heartbeat10s, adopciónrunpropio y cierre/release
+oficiales. camera_set vetado. Sólo tras esto diseñar huella útil y ambos accesos.
+
+## Referencias y límites de investigación externa
+
+- https://community.bistudio.com/wiki/Binarize (consultado29-10): documenta Arma3,
+  no certifica interfaz DayZ instalada. Sirve para preguntas sobre cwd/recursos.
+- https://github.com/Braini01/bis-file-formats/issues/24 (consultado29-10): reporte
+  primario de incompatibilidadv29, no reproducción local ni evidencia sobrev32.
+- https://mikero.bytex.digital/ (consultado29-10): catálogo de herramientas, no
+  presencia ni licencia local. No instalar ni comprar herramientas en esta unidad.
+
+Nueve rechazos humanos0resueltos/C1NOT_REVIEWED; RoadC0/C1A no son reparaciones.
+Q03C/Q05 pueden seguir midiendo la época histórica sin esperar identidad nativa;
+ángulos/referentes/Q08/Q17 conservan sus pendientes. No publicar vanilla completo.
+
+ANCLAS:
+
+E:\DayZ-Baltic-Build\shape-repair-20261025\stage-kit7-fc-20261026\root\dayz_baltic_12km_dev\tb\narva_trial\config.cpp SHA 7967aa260db97d05ef9896f75d0f9e037e80556bca99d59fa572e5f5262849f6
+1: class CfgPatches
+2: {
+3: 	class BalticTrialWorld
+4: 	{
+5: 		units[]={};
+6: 		weapons[]={};
+7: 		requiredVersion=0.1;
+8: 		requiredAddons[]=
+9: 		{
+10: 			"DZ_Data",
+11: 			"DZ_Surfaces",
+12: 			"Baltic_Water_V30", "Baltic_Stream_Pilot"
+13: 		};
+14: 	};
+15: };
+16: class CfgWorlds
+17: {
+18: 	class CAWorld;
+19: 	class BalticTrial: CAWorld
+20: 	{
+21: 		description="Baltic 12km - V30";
+22: 		MaxTide=1.5;
+23: 		MaxWave=0.1;
+24: 		class OutsideTerrain
+25: 		{
+26: 			satellite="DZ\worlds\chernarusplus\data\outside_sat_co.paa";
+27: 			enableTerrainSynth=1;
+28: 			class Layers
+29: 			{
+30: 				class Layer0
+31: 				{
+32: 					nopx="DZ\surfaces\data\terrain\cp_grass_nopx.paa";
+33: 					texture="DZ\surfaces\data\terrain\cp_grass_ca.paa";
+34: 				};
+35: 			};
+36: 		};
+37: 		worldName="dayz_baltic_12km_dev\tb\narva_trial\baltic_trial.wrp";
+38: 		longitude=30;
+39: 		latitude=-59;
+40: 		startTime="12:00";
+41: 		startDate="29/09/2026";
+42: 		centerPosition[]={6144,6144,100};
+43: 		clutterGrid=1;
+44: 		clutterDist=125;
+45: 		noDetailDist=65;
+46: 		fullDetailDist=10;
+47: 		volFogOffset=0;
+48: 		midDetailTexture="DZ\worlds\chernarusplus\data\middle_sat_mco.paa";
+49: 		class UsedTerrainMaterials
+50: 		{
+51: 			material1="DZ\surfaces\data\terrain\cp_gravel.rvmat";
+52: 			material2="DZ\surfaces\data\terrain\cp_conifer_common1.rvmat";
+53: 			material3="DZ\surfaces\data\terrain\cp_grass.rvmat";
+54: 			material4="DZ\surfaces\data\terrain\cp_grass_tall.rvmat";
+55: 		};
+56: 		class Navmesh
+57: 		{
+58: 			navmeshName="dayz_baltic_12km_dev\tb\narva_trial\navmesh\baltic_trial.nm";
+59: 			filterIsolatedIslandsOnLoad="true";
+
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\road_calibration_source_c0.py SHA 6e1b60b1834ae531e7cf9f19ea8b5912936451a22838af2f8cfcf091f4f130cd
+66:  s=c['source'];p=Path(s['path']);guard_path(p);before=stamp(p.stat());need(before[2]<=MAX_SOURCE,'SOURCE_CAP');need(before[2]==s['bytes'],'SOURCE_HASH')
+67:  prefix=bytearray();h=hashlib.sha256();total=0;tail=b''
+68:  with p.open('rb') as f:
+69:   need(stamp(os.fstat(f.fileno()))==before,'SOURCE_CHANGED')
+70:   while True:
+71:    b=f.read(CHUNK)
+72:    if not b:break
+73:    total+=len(b);need(total<=s['bytes'],'SOURCE_CHANGED');h.update(b)
+74:    remain=s['terrain_material_prefix_bytes']-len(prefix)
+75:    if remain>0:prefix.extend(b[:remain])
+76:    tail=(tail+b)[-56:]
+77:   need(stamp(os.fstat(f.fileno()))==before==stamp(p.stat()),'SOURCE_CHANGED')
+78:  need(total==s['bytes'] and h.hexdigest()==s['sha256'],'SOURCE_HASH');need(digest(prefix)==s['terrain_material_prefix_sha256'],'SOURCE_HASH');need(tail==bytes.fromhex(s['terminator_hex']),'SOURCE_STRUCTURE');parse_prefix(prefix)
+79:  return prefix,before
+
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\terrain\compile_visual_pilot_ev112.ps1 SHA 86d156594d10d77d8c3a961ac999e0356d29dc3d3f0727efbd7fed974c6c39d2
+1: param([Parameter(Mandatory=$true)][string]$Stage,[Parameter(Mandatory=$true)][string]$Pilot)
+2: $ErrorActionPreference='Stop'
+3: $stagePath=(Resolve-Path -LiteralPath $Stage).Path
+4: $pilotPath=(Resolve-Path -LiteralPath $Pilot).Path
+5: $project=Join-Path $stagePath 'root'
+6: $source=Join-Path $project 'dayz_baltic_12km_dev\tb\narva_trial'
+7: $out=Join-Path $stagePath 'out'
+8: $temp=Join-Path $stagePath 'temp'
+9: $builder='C:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin\AddonBuilder\AddonBuilder.exe'
+10: $water='E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\water-prepared-fp49ee\temp\baltic_water_v30'
+11: $pilotModels=Join-Path $pilotPath 'temp\baltic_stream_pilot'
+12: $include='C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\codex-handoff-review-74f290\packages\baltic-road-v29\tools\include.lst'
+13: foreach($required in @($source,$builder,$water,$pilotModels,$include,'P:\DZ','P:\bin','P:\core')) {
+14:     if(!(Test-Path -LiteralPath $required)){throw "Missing dependency: $required"}
+15: }
+16: if((Test-Path -LiteralPath $out) -or (Test-Path -LiteralPath $temp)){throw 'Fresh build directories required'}
+17: New-Item -ItemType Directory -Path $out | Out-Null
+18: foreach($part in @('DZ','bin','core')) {
+19:     New-Item -ItemType Junction -Path (Join-Path $project $part) -Target (Join-Path 'P:\' $part) | Out-Null
+20: }
+21: New-Item -ItemType Junction -Path (Join-Path $project 'baltic_water_v30') -Target $water | Out-Null
+22: New-Item -ItemType Junction -Path (Join-Path $project 'baltic_stream_pilot') -Target $pilotModels | Out-Null
+23: $log=Join-Path $stagePath 'addonbuilder.log'
+24: $ErrorActionPreference='Continue'
+25: & $builder $source $out '-prefix=dayz_baltic_12km_dev\tb\narva_trial' "-project=$project" "-temp=$temp" '-binarizeFullLogs' "-include=$include" > $log 2>&1
+26: $result=$LASTEXITCODE
+27: $ErrorActionPreference='Stop'
+28: if($result -ne 0 -or (Get-Content -Raw -LiteralPath $log) -notmatch 'Build Successful'){throw "Build failed: $log"}
+29: Write-Output "World compiled for readback: $out"
+
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\terrain\package_visual_forest_ev112.py SHA 1b0b46b7124a382d343b9f227053f9ceb5ba46477e178c4f1f9bcb5f781a90cf
+1: """Read every compiled forest object in compact arrays; package only WRP/config.
+2: 
+3: OPRW discovery uses the bounded model-table / anchor / map-info checks of the
+4: technical pilot reader. It is a heuristic object reader, not a height decoder.
+5: """
+6: import argparse,hashlib,json,re,struct,subprocess,sys
+7: from pathlib import Path
+8: import numpy as np
+9: HERE=Path(__file__).resolve().parent
+10: sys.path[:0]=[str(HERE),str(HERE.parent/'vegetation'),str(HERE.parent/'playtest')]
+11: from prune_visual_forest_v31 import prefix,objects
+12: from attach_navmesh import read_pbo
+13: from package_visual_pilot_ev112 import norm,sha
+14: 
+15: 
+16: def source_arrays(path,count):
+17:     ids=np.empty(count,'<u4');mi=np.empty(count,'<u4');mat=np.empty((count,12),'<f4');names=[];index={};n=0
+18:     with path.open('rb') as f:
+19:         pre=prefix(f)
+20:         for ident,name,raw in objects(f):
+21:             assert n<count
+22:             name=norm(name)
+23:             if name not in index:index[name]=len(names);names.append(name)
+24:             ids[n]=ident;mi[n]=index[name];mat[n]=struct.unpack_from('<12f',raw);n+=1
+25:     assert n==count and np.isfinite(mat).all() and len(np.unique(ids))==n
+26:     return dict(ids=ids,mi=mi,mat=mat,names=names,prefix_sha256=sha(pre))
+27: 
+28: 
+29: def compiled_arrays(b,anchor):
+30:     assert b[:4]==b'OPRW';version=struct.unpack_from('<I',b,4)[0];stride={29:60,32:64}[version]
+31:     mark=b.find(b'baltic_water_v30\\');assert mark>=4;possible=[]
+32:     for start in range(max(0,mark-4000),mark-3):
+33:         count=struct.unpack_from('<I',b,start)[0]
+34:         if not 0<count<200000:continue
+35:         p=start+4;names=[]
+36:         try:
+37:             for _ in range(count):
+38:                 end=b.index(b'\0',p,p+300);name=b[p:end].decode('ascii')
+39:                 if not name.lower().endswith('.p3d'):raise ValueError()
+40:                 names.append(norm(name));p=end+1
+41:             if start+4<=mark<p:possible.append((names,p))
+42:         except (ValueError,UnicodeDecodeError):pass
+43:     assert len(possible)==1,('ambiguous model table',len(possible))
+44:     names,mend=possible[0];needle=struct.pack('<2I',anchor['id'],names.index(norm(anchor['name'])));hits=[];p=mend
+45:     while True:
+46:         p=b.find(needle,p)
+47:         if p<0:break
+48:         if p+stride<=len(b) and np.max(np.abs(np.array(struct.unpack_from('<12f',b,p+8))-anchor['matrix']))<=1e-5:hits.append(p)
+49:         p+=1
+50:     assert len(hits)==1,('ambiguous anchor',hits)
+51:     dtype=np.dtype(dict(names=['ids','mi','mat','shape']+(['reserved'] if stride==64 else []),
+52:                         formats=['<u4','<u4',('<f4',12),'<u4']+(['<u4'] if stride==64 else []),
+53:                         offsets=[0,4,8,56]+([60] if stride==64 else []),itemsize=stride))
+54:     def valid(rows):
+55:         mat=rows['mat'];length=np.linalg.norm(mat[:,:9].reshape(-1,3,3),axis=2)
+56:         ok=(rows['ids']>0)&(rows['mi']<len(names))&(rows['shape']<=64)&np.isfinite(mat).all(1)&(np.abs(mat[:,9:]).max(1)<1e6)
+57:         ok&=((length>1e-5).all(1)|(length==0).all(1))&(length<100).all(1)
+58:         if stride==64:ok&=rows['reserved']==0
+59:         return ok
+60:     first=hits[0]
+61:     while first-stride>=mend:
+62:         count=min(65536,(first-mend)//stride);start=first-count*stride
+63:         bad=np.flatnonzero(~valid(np.frombuffer(b,dtype,count=count,offset=start)))
+64:         if len(bad):first=start+(int(bad[-1])+1)*stride;break
+65:         first=start
