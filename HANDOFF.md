@@ -1,3 +1,16 @@
+# Estado vivo — Q03B rechazado; recuperación Q03B1 preparada (29-10)
+
+No hay operación propia, run ni lease. Q03B R0/R1 retirados: suiteR0 3PASS9FAIL3ERROR; R1 6PASS12FAIL5ERROR. Tres repros independientes contradicen cierres del dictamenFable delta (descriptor truncado, NPY2 válido rechazado, proxy hijo incorrecto aceptado). evidence/saved-scene-q03b-rejected-20261029. Cuatro archivos ya fuera de tools/tests; snapshots inertes source/R0/R1. NO ejecutar ningún snapshot como herramienta aprobada. Captura real0 y NPZhistóricosabiertos0; mapa intacto.
+
+ContratoR1e9672092/oráculosb4ba70a4 revisados,204NPZcon cota262434599bytes; no repinar. Plan siguiente quality-council-q03b1-reader-recovery-20261029.md REVISADO_PARA_IMPLEMENTAR_LECTOR_SINTETICO (Muse28.969s). Aún no oráculos nuevos ni códigoQ03B1. Integrador fija oráculos externos; executor recibe sólo lector+tests,120s/review90/suite60 y reservauna corrección120. NPY estándar y prelectura< H2/< I4, formatos y offsets íntegros, snapshotidentidadsinrebaja; caps antesdeasignar. Semántica proxy/productor/consumidor necesitan cortespropios posteriores. No volver a reescribir4archivos masivamente.
+
+Autores125/207.547s, Fablecontrato98.438/code116.141/delta144.922s, suitesR0/R1,3repros, preparadores/freeze/publicación de este checkpoint CONSUMIDOS. No duplicar. Artefactos prueba son diagnóstico de fallos, no reparación ni aceptación. Q03C/Q05, Q02Bángulos y referentes naturales/agua siguen abiertos; carreteras sinpavimento/conducción;9humanos0resueltos,C1NOT_REVIEWED,Nav8607históricos. Council79 yaejecutado, no repetir.
+
+# Publicado b9c0f253105b63eb19df63f6da25f5b94f80f689 — Q03A/Q03B,29-10
+
+18archivos documentales, remoto main verificado limpio. Validación de pins/citas/JSON/blobs;0tests nuevos porque no cambió código/geométría. InvestigaciónMuse40.485s yplanFable70.578s consumidos. Recibo publish-q03a-q03b-20261029/result.json,11identidades observadas retiradas; sin operación propia/run/lease. No repetir investigación/revisión/freeze/publicador/add/commit/push. Siguiente Q03B preparar contrato concreto y revisar120s; aúnSINcontrato/código/captura. Leer bloque siguiente y adjudicaciones. Automatización actualizada, sigueACTIVE30min. .gitattributesajena preservada.
+
+---
 # Q03A consumida; Q03B plan revisado para contrato — 29-10
 
 Investigación Muse Wonder1.0 nativa40.485s,26fuentes/270180bytes en cápsula más lecturas acotadas de integración. DISCOVERY_FOR_COMPOSED_SCENE_CONTRACT; ver evidence/composed-scene-q03a-20261029. Reutilizar201modelosVisual/Roadway y17818poses de superficies; B2Acuatroposes no era toda la evidencia disponible. Paquetes históricos3d955superficies/ef229B2A difieren aun con WRP0daigual: bindingdeépoca antes de composición. Pilotocaraexacta sinorientación no prueba winding; kit118_0000 ID19394363/index3579 sigue correlato fuente-relativo, no cara humana localizada. CeroNPZ/PBO/P3D/WRP abiertos enQ03A, cero pruebasgeométricas o mapa modificado. Investigación/preparador/freeze consumidos.

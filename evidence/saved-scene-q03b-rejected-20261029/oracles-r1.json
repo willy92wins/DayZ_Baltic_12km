@@ -1,0 +1,150 @@
+{
+  "schema": "q03b-literal-oracles-v1",
+  "meaning": "synthetic only, independent expected data before author; not human resolution",
+  "literal_case": {
+    "catalog": [
+      {
+        "index": 0,
+        "name": "test/water.p3d",
+        "instances": 1,
+        "group": "custom_pond"
+      },
+      {
+        "index": 1,
+        "name": "test/tree.p3d",
+        "instances": 2,
+        "group": "vegetation_not_inspected"
+      },
+      {
+        "index": 2,
+        "name": "test/bed.p3d",
+        "instances": 1,
+        "group": "custom_pilot"
+      }
+    ],
+    "ids": [
+      101,
+      102
+    ],
+    "model_index": [
+      0,
+      2
+    ],
+    "matrix12": [
+      [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        10,
+        20,
+        30
+      ],
+      [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        40,
+        50,
+        60
+      ]
+    ],
+    "world_face": [
+      [
+        40,
+        50,
+        60
+      ],
+      [
+        41,
+        50,
+        60
+      ],
+      [
+        40,
+        50,
+        61
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "n": 3,
+    "zero_negative_hex_le64": "0000000000000080",
+    "expected": {
+      "terminal_models": 3,
+      "saved_instances": 2,
+      "water_only_without_geometry_kept": true,
+      "tree_visual": "NOT_SAVED",
+      "pilot_instance": 102,
+      "world_face_is_already_world": true,
+      "ordered_face_bytes_preserved": true,
+      "padding_start": 3,
+      "pose_count_per_pilot": 1,
+      "claims": {
+        "world_frame_certified": false,
+        "exposure_evaluated": false,
+        "native_acceptance": false,
+        "build_ready": false,
+        "map_repaired": false
+      }
+    }
+  },
+  "negative_cases": [
+    "omitted_catalog_model",
+    "duplicate_instance_id",
+    "mismatched_instance_model",
+    "pilot_two_instances",
+    "epoch_wrong_pbo",
+    "epoch_wrong_pose_pin",
+    "unknown_zip_member",
+    "duplicate_zip_member",
+    "inflated_header_size",
+    "object_dtype",
+    "trailing_npy_data",
+    "wrong_shape",
+    "fortran_order",
+    "world_face_transformed_again",
+    "winding_reversed",
+    "negative_zero_lost",
+    "nonzero_padding",
+    "source_face_or_section_out_of_range",
+    "lost_proxy_route",
+    "proxy_route_cycle",
+    "proxy_missing_source",
+    "unknown_metadata_field",
+    "unknown_claim_field",
+    "bool_as_count",
+    "consumer_bypasses_source_open",
+    "npz_start_negative",
+    "caps_remove_body",
+    "source_category_unknown",
+    "category_dtype_not_U9",
+    "n_not_three_or_four",
+    "pilot_count_zero",
+    "zip_directory",
+    "consumer_imports_producer_check",
+    "proxy_count_disagreement"
+  ],
+  "expected_negative_outcome": "REJECTED or INCONCLUSIVE with explicit reason, never VERIFIED; co-mutated reports must still fail against independent source/literal expectations; no broad Exception accepted as targeted guard proof",
+  "notes": {
+    "winding_reversed": "reject mutation of saved ordered vertices/digest, never demand MLOD-vs-compiled orientation equal",
+    "global_npz_start_positive": "valid fixture globalnpz_start1000 with localgrid21rows andcaps8+0; must not fail npz_start+localbody >localn",
+    "header_limit": 16384,
+    "header_boundary": "16384 allowed only if formatvalid+within archive quota;16385 rejects before header allocation",
+    "index_spaces": "literal sparse model indices can exceed prototypecount and sourceproxy may be above5508; use exact sets"
+  }
+}

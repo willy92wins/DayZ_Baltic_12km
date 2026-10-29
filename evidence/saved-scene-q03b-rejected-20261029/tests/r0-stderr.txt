@@ -1,0 +1,182 @@
+test_caps_remove_body (__main__.Q03BTests.test_caps_remove_body) ... FAIL
+test_category_dtype_not_u9 (__main__.Q03BTests.test_category_dtype_not_u9) ... FAIL
+test_duplicate_instance_id (__main__.Q03BTests.test_duplicate_instance_id) ... FAIL
+test_epoch_wrong_pose_pin (__main__.Q03BTests.test_epoch_wrong_pose_pin) ... ok
+test_global_npz_start_not_local (__main__.Q03BTests.test_global_npz_start_not_local) ... ERROR
+test_mismatched_instance_model (__main__.Q03BTests.test_mismatched_instance_model) ... FAIL
+test_negative_zero_and_winding_preserved_by_digest (__main__.Q03BTests.test_negative_zero_and_winding_preserved_by_digest) ... ERROR
+test_nonzero_padding (__main__.Q03BTests.test_nonzero_padding) ... FAIL
+test_npz_start_negative (__main__.Q03BTests.test_npz_start_negative) ... FAIL
+test_pilot_two_instances (__main__.Q03BTests.test_pilot_two_instances) ... FAIL
+test_positive_literal_oracle (__main__.Q03BTests.test_positive_literal_oracle) ... ERROR
+test_source_face_out_of_range (__main__.Q03BTests.test_source_face_out_of_range) ... FAIL
+test_strict_bool_not_int (__main__.Q03BTests.test_strict_bool_not_int) ... ok
+test_unknown_metadata_field (__main__.Q03BTests.test_unknown_metadata_field) ... ok
+test_unknown_zip_member (__main__.Q03BTests.test_unknown_zip_member) ... FAIL
+
+======================================================================
+ERROR: test_global_npz_start_not_local (__main__.Q03BTests.test_global_npz_start_not_local)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 94, in test_global_npz_start_not_local
+    r = self.build(); self.assertEqual(r["pilots"][0]["model_index"], 2)  # npz_start=1000, local grid 10 rows, caps 8+0 passes
+        ^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 82, in build
+    p, s = self.fx.contract_path(); return build_report(str(p), s)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_binding_q03b.py", line 163, in build_report
+    check_pin(data, a, a["relative"])
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 66, in check_pin
+    req_keys(pin, {"path", "sha256", "bytes"}, "REJECTED_PIN_SCHEMA", what)
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 41, in req_keys
+    require(not (keys - set(allowed) - set(optional)), code, f"{what} unknown keys {sorted(keys-set(allowed)-set(optional))}")
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 28, in require
+    if not cond: raise Reject(code, msg)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+tools.quality.saved_scene_io_q03b.Reject: deployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']
+
+======================================================================
+ERROR: test_negative_zero_and_winding_preserved_by_digest (__main__.Q03BTests.test_negative_zero_and_winding_preserved_by_digest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 110, in test_negative_zero_and_winding_preserved_by_digest
+    r = self.build(); src = [x for x in r["sources"] if x["path"].endswith("surface-prototypes.npz")][0]
+        ^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 82, in build
+    p, s = self.fx.contract_path(); return build_report(str(p), s)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_binding_q03b.py", line 163, in build_report
+    check_pin(data, a, a["relative"])
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 66, in check_pin
+    req_keys(pin, {"path", "sha256", "bytes"}, "REJECTED_PIN_SCHEMA", what)
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 41, in req_keys
+    require(not (keys - set(allowed) - set(optional)), code, f"{what} unknown keys {sorted(keys-set(allowed)-set(optional))}")
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 28, in require
+    if not cond: raise Reject(code, msg)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+tools.quality.saved_scene_io_q03b.Reject: deployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']
+
+======================================================================
+ERROR: test_positive_literal_oracle (__main__.Q03BTests.test_positive_literal_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 87, in test_positive_literal_oracle
+    r = self.build()
+        ^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 82, in build
+    p, s = self.fx.contract_path(); return build_report(str(p), s)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_binding_q03b.py", line 163, in build_report
+    check_pin(data, a, a["relative"])
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 66, in check_pin
+    req_keys(pin, {"path", "sha256", "bytes"}, "REJECTED_PIN_SCHEMA", what)
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 41, in req_keys
+    require(not (keys - set(allowed) - set(optional)), code, f"{what} unknown keys {sorted(keys-set(allowed)-set(optional))}")
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 28, in require
+    if not cond: raise Reject(code, msg)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+tools.quality.saved_scene_io_q03b.Reject: deployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']
+
+======================================================================
+FAIL: test_caps_remove_body (__main__.Q03BTests.test_caps_remove_body)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 115, in test_caps_remove_body
+    a = dict(self.fx.pilot_arrays); a["cap_after"] = np.array(8, dtype="<i4"); self.fx.rewrite_npz("pilot-visible-surface-extraction-20261028/models/cs_kit_118_0000.npz", a); self.assertReject("CAPS")
+                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'CAPS' not found in "REJECTED_PIN_SCHEMAdeployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']"
+
+======================================================================
+FAIL: test_category_dtype_not_u9 (__main__.Q03BTests.test_category_dtype_not_u9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 113, in test_category_dtype_not_u9
+    a = dict(self.fx.pilot_arrays); a["source_category"] = np.array(["CAP_START"]+["BODY"]*6, dtype="<U10"); self.fx.rewrite_npz("pilot-visible-surface-extraction-20261028/models/cs_kit_118_0000.npz", a); self.assertReject("CATEGORY_DTYPE")
+                                                                                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'CATEGORY_DTYPE' not found in "REJECTED_PIN_SCHEMAdeployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']"
+
+======================================================================
+FAIL: test_duplicate_instance_id (__main__.Q03BTests.test_duplicate_instance_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 96, in test_duplicate_instance_id
+    a = dict(self.fx.inst_arrays); a["ids"] = np.array([101,101], dtype="<i8"); self.fx.rewrite_npz("deployed-surface-prototypes-20261028/instances.npz", a); self.assertReject("DUPLICATE_INSTANCE")
+                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'DUPLICATE_INSTANCE' not found in 'REJECTED_EPOCH_WRONG_POSE_PINpilot pin link C:\\Users\\guill\\AppData\\Local\\Temp\\tmpawam8kbk\\deployed-surface-prototypes-20261028\\instances.npz'
+
+======================================================================
+FAIL: test_mismatched_instance_model (__main__.Q03BTests.test_mismatched_instance_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 99, in test_mismatched_instance_model
+    s = dict(self.fx.sel_arrays); s["model_index"] = a["model_index"].copy(); self.fx.rewrite_npz("geometry-payload-discovery-resolved-20261028/selected-instances.npz", s); self.assertReject("MISMATCHED_INSTANCE")
+                                                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'MISMATCHED_INSTANCE' not found in 'REJECTED_EPOCH_WRONG_POSE_PINpilot pin link C:\\Users\\guill\\AppData\\Local\\Temp\\tmp7swg7pa1\\deployed-surface-prototypes-20261028\\instances.npz'
+
+======================================================================
+FAIL: test_nonzero_padding (__main__.Q03BTests.test_nonzero_padding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 107, in test_nonzero_padding
+    a = {k: (v.copy() if hasattr(v, "copy") else v) for k, v in self.fx.pilot_arrays.items()}; a["bed"][0,3,0] = 1.0; self.fx.rewrite_npz("pilot-visible-surface-extraction-20261028/models/cs_kit_118_0000.npz", a); self.assertReject("PADDING")
+                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'PADDING' not found in "REJECTED_PIN_SCHEMAdeployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']"
+
+======================================================================
+FAIL: test_npz_start_negative (__main__.Q03BTests.test_npz_start_negative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 117, in test_npz_start_negative
+    a = dict(self.fx.pilot_arrays); a["npz_start"] = np.array(-1, dtype="<i4"); self.fx.rewrite_npz("pilot-visible-surface-extraction-20261028/models/cs_kit_118_0000.npz", a); self.assertReject("NPZ_START")
+                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'NPZ_START' not found in "REJECTED_PIN_SCHEMAdeployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']"
+
+======================================================================
+FAIL: test_pilot_two_instances (__main__.Q03BTests.test_pilot_two_instances)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 101, in test_pilot_two_instances
+    self.fx.spec = dict(self.fx.spec); self.fx.spec["instance_id"] = 999; self.assertReject("PILOT")
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'PILOT' not found in "REJECTED_PIN_SCHEMAdeployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']"
+
+======================================================================
+FAIL: test_source_face_out_of_range (__main__.Q03BTests.test_source_face_out_of_range)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 119, in test_source_face_out_of_range
+    a = {k: v.copy() for k, v in self.fx.proto_arrays.items()}; a["meta"][1]["face"] = 99; self.fx.rewrite_npz("deployed-surface-prototypes-20261028/surface-prototypes.npz", a); self.assertReject("SOURCE_FACE")
+                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'SOURCE_FACE' not found in "REJECTED_PIN_SCHEMAdeployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']"
+
+======================================================================
+FAIL: test_unknown_zip_member (__main__.Q03BTests.test_unknown_zip_member)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 105, in test_unknown_zip_member
+    a = dict(self.fx.proto_arrays); a["bogus"] = np.zeros(1); self.fx.rewrite_npz("deployed-surface-prototypes-20261028/surface-prototypes.npz", a); self.assertReject("ZIP_MEMBERS")
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 85, in assertReject
+    self.assertIn(code_part, cm.exception.code + str(cm.exception))
+AssertionError: 'ZIP_MEMBERS' not found in "REJECTED_PIN_SCHEMAdeployed-surface-prototypes-20261028/surface-prototypes.npz unknown keys ['expanded_bound', 'kind', 'relative']"
+
+----------------------------------------------------------------------
+Ran 15 tests in 2.016s
+
+FAILED (failures=9, errors=3)

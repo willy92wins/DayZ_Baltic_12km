@@ -1,0 +1,266 @@
+test_bed_source_face_not_permutation (__main__.Q03BTests.test_bed_source_face_not_permutation) ... FAIL
+test_caps_remove_body (__main__.Q03BTests.test_caps_remove_body) ... FAIL
+test_category_dtype_not_u9 (__main__.Q03BTests.test_category_dtype_not_u9) ... FAIL
+test_cli_producer_consumer_roundtrip (__main__.Q03BTests.test_cli_producer_consumer_roundtrip) ... FAIL
+test_consumer_report_mismatch_and_unknown_key (__main__.Q03BTests.test_consumer_report_mismatch_and_unknown_key) ... ERROR
+test_duplicate_instance_id (__main__.Q03BTests.test_duplicate_instance_id) ... FAIL
+test_epoch_wrong_editable (__main__.Q03BTests.test_epoch_wrong_editable) ... ok
+test_epoch_wrong_pbo (__main__.Q03BTests.test_epoch_wrong_pbo) ... ok
+test_epoch_wrong_pose_pin (__main__.Q03BTests.test_epoch_wrong_pose_pin) ... ok
+test_global_npz_start_not_local (__main__.Q03BTests.test_global_npz_start_not_local) ... ERROR
+test_instance_count_nonvegetation (__main__.Q03BTests.test_instance_count_nonvegetation) ... FAIL
+test_mismatched_instance_model (__main__.Q03BTests.test_mismatched_instance_model) ... FAIL
+test_negative_zero_preserved_by_digest (__main__.Q03BTests.test_negative_zero_preserved_by_digest) ... ERROR
+test_nonzero_padding (__main__.Q03BTests.test_nonzero_padding) ... FAIL
+test_npz_start_negative (__main__.Q03BTests.test_npz_start_negative) ... FAIL
+test_output_exists (__main__.Q03BTests.test_output_exists) ... ERROR
+test_pilot_archive_exact_path (__main__.Q03BTests.test_pilot_archive_exact_path) ... FAIL
+test_pilot_two_instances (__main__.Q03BTests.test_pilot_two_instances) ... FAIL
+test_positive_literal_oracle (__main__.Q03BTests.test_positive_literal_oracle) ... ERROR
+test_source_face_out_of_range (__main__.Q03BTests.test_source_face_out_of_range) ... FAIL
+test_strict_bool_not_int (__main__.Q03BTests.test_strict_bool_not_int) ... ok
+test_unknown_metadata_field (__main__.Q03BTests.test_unknown_metadata_field) ... ok
+test_unknown_zip_member (__main__.Q03BTests.test_unknown_zip_member) ... ok
+
+======================================================================
+ERROR: test_consumer_report_mismatch_and_unknown_key (__main__.Q03BTests.test_consumer_report_mismatch_and_unknown_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 163, in test_consumer_report_mismatch_and_unknown_key
+    r = json.loads(json.dumps(self.build())); bad = json.loads(json.dumps(r)); bad["coverage"]["instances"] = 999
+                              ^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 83, in build
+    p, s = self.fx.contract_path(); return build_report(str(p), s)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_binding_q03b.py", line 256, in build_report
+    if "descr" in pschema.get("meta", {}): ioq.require(ioq.descr_json(meta_arr.dtype) == [[str(x[0]), str(x[1])] for x in pschema["meta"]["descr"]], "REJECTED_META_DESCR", "contract META descr")
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 26, in require
+    if not cond: raise Reject(code, msg)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+tools.quality.saved_scene_io_q03b.Reject: contract META descr
+
+======================================================================
+ERROR: test_global_npz_start_not_local (__main__.Q03BTests.test_global_npz_start_not_local)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 109, in test_global_npz_start_not_local
+    r = self.build(); self.assertEqual(r["pilots"][0]["model_index"], 2)
+        ^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 83, in build
+    p, s = self.fx.contract_path(); return build_report(str(p), s)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_binding_q03b.py", line 256, in build_report
+    if "descr" in pschema.get("meta", {}): ioq.require(ioq.descr_json(meta_arr.dtype) == [[str(x[0]), str(x[1])] for x in pschema["meta"]["descr"]], "REJECTED_META_DESCR", "contract META descr")
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 26, in require
+    if not cond: raise Reject(code, msg)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+tools.quality.saved_scene_io_q03b.Reject: contract META descr
+
+======================================================================
+ERROR: test_negative_zero_preserved_by_digest (__main__.Q03BTests.test_negative_zero_preserved_by_digest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 145, in test_negative_zero_preserved_by_digest
+    r1 = self.build(); src1 = [x for x in r1["sources"] if x["path"].endswith("surface-prototypes.npz")][0]; d1 = {m["name"]: m["data_sha256"] for m in src1["members"]}["vertices"]
+         ^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 83, in build
+    p, s = self.fx.contract_path(); return build_report(str(p), s)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_binding_q03b.py", line 256, in build_report
+    if "descr" in pschema.get("meta", {}): ioq.require(ioq.descr_json(meta_arr.dtype) == [[str(x[0]), str(x[1])] for x in pschema["meta"]["descr"]], "REJECTED_META_DESCR", "contract META descr")
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 26, in require
+    if not cond: raise Reject(code, msg)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+tools.quality.saved_scene_io_q03b.Reject: contract META descr
+
+======================================================================
+ERROR: test_output_exists (__main__.Q03BTests.test_output_exists)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 105, in test_output_exists
+    subprocess.run([sys.executable, "-m", "tools.quality.saved_scene_binding_q03b", "--contract", str(p), "--contract-sha", s, "--output", str(out)], cwd=str(ROOT), capture_output=True, text=True, check=True)
+  File "C:\Users\guill\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe', '-m', 'tools.quality.saved_scene_binding_q03b', '--contract', 'C:\\Users\\guill\\AppData\\Local\\Temp\\tmp4s8wwjy7\\contract.json', '--contract-sha', 'e70d95210f5ce2005bf014e9f3165e92cd9b43ff1437fbfab6e28f54ee6f2add', '--output', 'C:\\Users\\guill\\AppData\\Local\\Temp\\tmp4s8wwjy7\\cli-out']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_positive_literal_oracle (__main__.Q03BTests.test_positive_literal_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 88, in test_positive_literal_oracle
+    r = json.loads(json.dumps(self.build()))  # JSON-roundtripped report
+                              ^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 83, in build
+    p, s = self.fx.contract_path(); return build_report(str(p), s)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_binding_q03b.py", line 256, in build_report
+    if "descr" in pschema.get("meta", {}): ioq.require(ioq.descr_json(meta_arr.dtype) == [[str(x[0]), str(x[1])] for x in pschema["meta"]["descr"]], "REJECTED_META_DESCR", "contract META descr")
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\saved_scene_io_q03b.py", line 26, in require
+    if not cond: raise Reject(code, msg)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+tools.quality.saved_scene_io_q03b.Reject: contract META descr
+
+======================================================================
+FAIL: test_bed_source_face_not_permutation (__main__.Q03BTests.test_bed_source_face_not_permutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 139, in test_bed_source_face_not_permutation
+    a = dict(self.fx.pilot_arrays); a["bed_source_face"] = np.zeros(7, dtype="<i4"); self.fx.rewrite_npz(PILOTD+"/models/cs_kit_118_0000.npz", a); self.assertReject("REJECTED_BED_SOURCE_FACE_PERMUTATION")
+                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_META_DESCR' != 'REJECTED_BED_SOURCE_FACE_PERMUTATION'
+- REJECTED_META_DESCR
++ REJECTED_BED_SOURCE_FACE_PERMUTATION
+
+
+======================================================================
+FAIL: test_caps_remove_body (__main__.Q03BTests.test_caps_remove_body)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 152, in test_caps_remove_body
+    a = dict(self.fx.pilot_arrays); a["cap_after"] = np.array(8, dtype="<i4"); self.fx.rewrite_npz(PILOTD+"/models/cs_kit_118_0000.npz", a); self.assertReject("REJECTED_CAPS_REMOVE_BODY")
+                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_META_DESCR' != 'REJECTED_CAPS_REMOVE_BODY'
+- REJECTED_META_DESCR
++ REJECTED_CAPS_REMOVE_BODY
+
+
+======================================================================
+FAIL: test_category_dtype_not_u9 (__main__.Q03BTests.test_category_dtype_not_u9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 150, in test_category_dtype_not_u9
+    a = dict(self.fx.pilot_arrays); a["source_category"] = np.array(["CAP_START"]+["BODY"]*6, dtype="<U10"); self.fx.rewrite_npz(PILOTD+"/models/cs_kit_118_0000.npz", a); self.assertReject("REJECTED_CATEGORY_DTYPE")
+                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_META_DESCR' != 'REJECTED_CATEGORY_DTYPE'
+- REJECTED_META_DESCR
++ REJECTED_CATEGORY_DTYPE
+
+
+======================================================================
+FAIL: test_cli_producer_consumer_roundtrip (__main__.Q03BTests.test_cli_producer_consumer_roundtrip)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 98, in test_cli_producer_consumer_roundtrip
+    self.assertEqual(r1.returncode, 0, r1.stdout + r1.stderr)
+AssertionError: 1 != 0 : 
+
+======================================================================
+FAIL: test_duplicate_instance_id (__main__.Q03BTests.test_duplicate_instance_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 111, in test_duplicate_instance_id
+    a = dict(self.fx.inst_arrays); a["ids"] = np.array([101,101], dtype="<i8"); self.fx.rewrite_npz(SURF+"/instances.npz", a); self.assertReject("REJECTED_DUPLICATE_INSTANCE_ID")
+                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_EPOCH_WRONG_POSE_PIN' != 'REJECTED_DUPLICATE_INSTANCE_ID'
+- REJECTED_EPOCH_WRONG_POSE_PIN
++ REJECTED_DUPLICATE_INSTANCE_ID
+
+
+======================================================================
+FAIL: test_instance_count_nonvegetation (__main__.Q03BTests.test_instance_count_nonvegetation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 116, in test_instance_count_nonvegetation
+    pth = self.fx.surf / "model-catalog.json"; o = json.loads(pth.read_text()); o[0]["instances"] = 5; write(pth, o); self.fx.repin(SURF+"/model-catalog.json"); self.assertReject("REJECTED_INSTANCE_COUNT")
+                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_META_DESCR' != 'REJECTED_INSTANCE_COUNT'
+- REJECTED_META_DESCR
++ REJECTED_INSTANCE_COUNT
+
+
+======================================================================
+FAIL: test_mismatched_instance_model (__main__.Q03BTests.test_mismatched_instance_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 114, in test_mismatched_instance_model
+    s = dict(self.fx.sel_arrays); s["model_index"] = a["model_index"].copy(); self.fx.rewrite_npz(GEOD+"/selected-instances.npz", s); self.assertReject("REJECTED_MISMATCHED_INSTANCE_MODEL")
+                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_SELECTED_PIN' != 'REJECTED_MISMATCHED_INSTANCE_MODEL'
+- REJECTED_SELECTED_PIN
++ REJECTED_MISMATCHED_INSTANCE_MODEL
+
+
+======================================================================
+FAIL: test_nonzero_padding (__main__.Q03BTests.test_nonzero_padding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 143, in test_nonzero_padding
+    a = {k: (v.copy() if hasattr(v, "copy") else v) for k, v in self.fx.pilot_arrays.items()}; a["bed"][0,3,0] = 1.0; self.fx.rewrite_npz(PILOTD+"/models/cs_kit_118_0000.npz", a); self.assertReject("REJECTED_NONZERO_PADDING")
+                                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_META_DESCR' != 'REJECTED_NONZERO_PADDING'
+- REJECTED_META_DESCR
++ REJECTED_NONZERO_PADDING
+
+
+======================================================================
+FAIL: test_npz_start_negative (__main__.Q03BTests.test_npz_start_negative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 154, in test_npz_start_negative
+    a = dict(self.fx.pilot_arrays); a["npz_start"] = np.array(-1, dtype="<i4"); self.fx.rewrite_npz(PILOTD+"/models/cs_kit_118_0000.npz", a); self.assertReject("REJECTED_NPZ_START_NEGATIVE")
+                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_META_DESCR' != 'REJECTED_NPZ_START_NEGATIVE'
+- REJECTED_META_DESCR
++ REJECTED_NPZ_START_NEGATIVE
+
+
+======================================================================
+FAIL: test_pilot_archive_exact_path (__main__.Q03BTests.test_pilot_archive_exact_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 137, in test_pilot_archive_exact_path
+    self.assertEqual(cm.exception.code, "REJECTED_PILOT_ARCHIVE")
+AssertionError: 'REJECTED_META_DESCR' != 'REJECTED_PILOT_ARCHIVE'
+- REJECTED_META_DESCR
++ REJECTED_PILOT_ARCHIVE
+
+
+======================================================================
+FAIL: test_pilot_two_instances (__main__.Q03BTests.test_pilot_two_instances)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 124, in test_pilot_two_instances
+    self.assertEqual(cm.exception.code, "REJECTED_PILOT_TWO_INSTANCES")
+AssertionError: 'REJECTED_SELECTED_PIN' != 'REJECTED_PILOT_TWO_INSTANCES'
+- REJECTED_SELECTED_PIN
++ REJECTED_PILOT_TWO_INSTANCES
+
+
+======================================================================
+FAIL: test_source_face_out_of_range (__main__.Q03BTests.test_source_face_out_of_range)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 156, in test_source_face_out_of_range
+    a = {k: v.copy() for k, v in self.fx.proto_arrays.items()}; a["meta"][1]["face"] = 99; self.fx.rewrite_npz(SURF+"/surface-prototypes.npz", a); self.assertReject("REJECTED_SOURCE_FACE_RANGE")
+                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_saved_scene_binding_q03b.py", line 86, in assertReject
+    self.assertEqual(cm.exception.code, code)
+AssertionError: 'REJECTED_META_DESCR' != 'REJECTED_SOURCE_FACE_RANGE'
+- REJECTED_META_DESCR
++ REJECTED_SOURCE_FACE_RANGE
+
+
+----------------------------------------------------------------------
+Ran 23 tests in 12.067s
+
+FAILED (failures=12, errors=5)

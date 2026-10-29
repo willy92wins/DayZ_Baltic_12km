@@ -1,0 +1,38 @@
+{
+  "scope": "synthetic readonly review; no real NPZ",
+  "checks": [
+    {
+      "id": "structured_dtype",
+      "expected": [
+        [
+          "x",
+          "<i4"
+        ]
+      ],
+      "actual": [
+        [
+          "x",
+          "<"
+        ]
+      ],
+      "defect_reproduced": true
+    },
+    {
+      "id": "valid_npy_2_0",
+      "expected": "ACCEPTED",
+      "actual": "Reject:literal_npy_v2/v.npy: error: unpack requires a buffer of 4 bytes",
+      "defect_reproduced": true
+    },
+    {
+      "id": "wrong_literal_proxy_child",
+      "expected": "REJECTED",
+      "actual": "ACCEPTED",
+      "defect_reproduced": true
+    }
+  ],
+  "all_defects_reproduced": true,
+  "source_pins": {
+    "tools\\quality\\saved_scene_io_q03b.py": "d96b014459fa9a542844bdbc46a10c0e1caf514a9900504500227566202973b5",
+    "tools\\quality\\saved_scene_binding_q03b.py": "58512c04a00c039e3ee481ad56fdef6452c011c1c6e073f0349c38ee31a158b1"
+  }
+}
