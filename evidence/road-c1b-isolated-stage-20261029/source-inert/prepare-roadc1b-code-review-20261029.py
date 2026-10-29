@@ -1,0 +1,15 @@
+from pathlib import Path
+import json,hashlib
+R=Path('E:/DayZ-Baltic-Build/shape-repair-20261025');D=R/'road-c1b-local-author-20261029';Q=R/'road-c1b-code-review-20261029';Q.mkdir(exist_ok=False)
+W=Path('C:/Users/guill/OneDrive/Documentos/DayZ Projects/DayZ_Baltic_12km_dev/.claude/worktrees/handoff-astra-map-review-6d301c')
+c=json.loads((D/'contract.json').read_bytes());summary={k:v for k,v in c.items() if k!='files'};summary['files_count']=len(c['files']);summary['first_entries']=c['files'][:2];summary['last_entries']=c['files'][-2:]
+brief='''Revisor Muse Wonder1.0 independiente de autor Codex. SOLO capsula, no herramientas ni escrituras. Codigo real de copia stage sin build. Dictamen max1600palabras SOUND/SOUND-with-fixes/NEEDS-WORK en180s. Encuentra bugs concretos contra contrato/plan y tests, no exigir prueba de runtime ni semantica. Contrato externo y bindings externos tienen pins CLI separados; el co-mutante cambia manifiesto pero no el pin externo de bindings. Misma stdlib IO entre lectores, recorridos separados. Identidad no es vigilancia continua. No repetir council ni reviews previas. Autor local229.387s de600. Preparacion original fallo ANTES de payload por contar58conroot vs57descendientes, continuacion27.719s preserva original. Literal description corregido antes de contrato. Manifest6892comunes223031657B, 2WRP, total4739xxKB aprox; usar cifras exactas contrato y suma. No fuentes vanilla completas en capsula.\n'''
+brief+='\nPLAN ACTUAL\n'+(W/'plans/ev112-road-c1b-isolated-stage-20261029.md').read_text(encoding='utf-8')
+brief+='\nCONTRACT SUMMARY (la lista completa esta pinada, no cabe en capsula):\n'+json.dumps(summary,indent=2)+'\nPREPARED\n'+(D/'prepared.json').read_text()
+for name in ['config.cpp','oracle.json','stage_road_lab_c1b.py','verify_road_lab_c1b.py','test_road_lab_c1b.py']:
+ b=(D/name).read_bytes();brief+='\nFILE '+name+' SHA '+hashlib.sha256(b).hexdigest()+'\n'+''.join(f'{i}: {l}\n' for i,l in enumerate(b.decode().splitlines(),1))
+(Q/'brief.md').write_text(brief,encoding='utf-8')
+exe='C:/Users/guill/AppData/Local/Programs/muse/muse-bin-1.4.14-R7309.1.exe';py='C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Scripts/python.exe'
+jobs=[{'id':'code','command':[exe,'exec','--json','--model','muse-wonder-1.0','--contributor-mode','off','--reasoning-effort','high','--workspace',str(R/'council-expanded-20261029'),'--disable-write','--disable-shell','--disable-web-tools','--disable-reminders','--disable-request-user-input','--no-foreign-personal-context','--no-session-log','--max-model-steps','4','--prompt-file',str(Q/'brief.md')],'input_file':str(Q/'brief.md'),'cwd':str(W),'out':str(Q/'native'),'seconds':180,'max_bytes':2147483648}, {'id':'tests-R0','command':[py,'-I','-X','utf8',str(D/'test_road_lab_c1b.py'),'-v'],'input_file':str(D/'test_road_lab_c1b.py'),'cwd':str(D),'out':str(D/'tests-R0'),'seconds':120,'max_bytes':268435456}]
+(Q/'jobs.json').write_text(json.dumps({'parallel':2,'jobs':jobs},indent=2),encoding='utf-8')
+print(Q)

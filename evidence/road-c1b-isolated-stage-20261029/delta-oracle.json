@@ -1,0 +1,22 @@
+{
+  "schema": "road-c1b-review-delta.v1",
+  "config_orphan": {
+    "raw": "orphan.png",
+    "dest": "orphan.png",
+    "source": "fixture common source",
+    "expected": "CONFIG_REF"
+  },
+  "config_valid": {
+    "raw": "DATA\\A SPACE.PNG",
+    "dest": "data/a space.png",
+    "source": "fixture common source",
+    "expected": "ACCEPT"
+  },
+  "config_wrong_source": "CONFIG_REF",
+  "config_bad_type": "CONFIG_REF",
+  "ancestor": [
+    "a",
+    "a/b"
+  ],
+  "ancestor_expected": "COLLISION"
+}
