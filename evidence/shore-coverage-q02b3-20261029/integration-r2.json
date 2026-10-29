@@ -1,0 +1,22 @@
+{
+  "reason": "Three fixture defects plus substantive regression gaps and consumer resource aggregation defect found by integration; contract and geometry unchanged",
+  "changes": [
+    "padding tuple/list representation only",
+    "fixture core 3+4+3=10 universe50, not55",
+    "identical swapped square roots were no mutation; paired11+9 vs10+10 retains total and changes certificates",
+    "remove invented1e-9 tolerance; exact sign of a+b sqrt(r) via rational squares",
+    "54 saved queries fully recomputed by new consumer, not form only; pinned old30 exact oracles",
+    "manifest producer unverified count gp separate from consumer union gu",
+    "cap manifest.tmp and check output ancestors; test own resource keeps full structural coverage"
+  ],
+  "pins": {
+    "tools/quality/verify_shore_multiscale_coverage_ev112.py": {
+      "before": "f66932798e1ad89fdf61aac3d0986649e01c93574d86982c982df8d0ce2eaf27",
+      "after": "e6809eca483e3ffbb38c702788637a96ae392d6e481119a998c6ef088ec1aaec"
+    },
+    "tests/test_shore_multiscale_coverage_ev112.py": {
+      "before": "bdd5e8cd6eb40174cf555506cb45ebc6b0cd31999eaf555f5572c9b86df217ce",
+      "after": "d915abd556b6c4f86d7f6607b84e1557f3e2afe7e10b6a54a6f71ad610aec089"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "q02b3-checkpoint.v1",
+  "status": "VERIFIED_PARTIAL_NUMERIC_COVERAGE",
+  "producer": {
+    "rc": 1,
+    "reason": null,
+    "seconds": 439.2810000000027,
+    "peak_rss": 89268224,
+    "stderr": "REJECTED:totalbytes",
+    "cap_bytes": 2147483648
+  },
+  "consumer": {
+    "rc": 2,
+    "reason": null,
+    "seconds": 549.656999999992,
+    "peak_rss": 156037120,
+    "report_sha256": "90323e42630a3c1a14f8ae69f9180087068cbe7712a547d9e3713bbce6b99a74",
+    "report": {
+      "bindings": {
+        "contract_sha256": "302216f501d2ae005599d015a97930e5527832f35b9c11a5a160d20db12e4263",
+        "npz_sha256": "b6612009ff531ef2f3932240ea52cf0660bce97f7904b7d667f962ce0fd95847",
+        "oracles_sha256": "b27e332f2713d84afa8609c6a15fd587eff163f2432c2703ff2a2623c08a9059",
+        "selectors_sha256": "25ce960b47cc0a52ba5445dddbf2bb1b276a2d70a171259e5228d083cc9e227f"
+      },
+      "claims": {
+        "angle_state": "PENDING_CERTIFIED_ANGLE",
+        "c1": "NOT_REVIEWED",
+        "calibration_ready": false,
+        "controls": 4,
+        "human_cases": {
+          "count": 9,
+          "resolved": 0,
+          "state": "GEOMETRY_UNBOUND"
+        },
+        "map_repaired": false,
+        "natural_positive_count": 0
+      },
+      "completed_chains": 850,
+      "coverage_complete": false,
+      "covered_universe": 466550,
+      "errors": [],
+      "excluded_count": 26420,
+      "query_count": 440130,
+      "schema": "q02b3-consumer.v1",
+      "state": "VERIFIED_PARTIAL_NUMERIC_COVERAGE",
+      "state_counts": {
+        "DEFINED": 409712,
+        "DEGENERATE": 26420,
+        "INSUFFICIENT_SUPPORT": 30418
+      },
+      "universe": 538390,
+      "unverified_numeric_count": 0,
+      "unverified_tail": {
+        "chain_id": 850,
+        "files": [
+          "cache.json",
+          "queries-0000.ndjson",
+          "queries-0001.ndjson",
+          "queries-0002.ndjson",
+          "queries-0003.ndjson"
+        ]
+      }
+    }
+  },
+  "snapshot": {
+    "status": "BOUNDARY_SNAPSHOTS_IDENTICAL",
+    "inventory_sha256": "c9425c172cd742ffa6675bbdfd21f8e62da123325a3d1e1720c6b75f18dfcfad",
+    "files": 2618,
+    "bytes": 2147479730,
+    "seconds": 2.9219999999913853,
+    "continuous_watch": false
+  },
+  "terminal_metadata_not_a_second_numeric_check": {
+    "count": 850,
+    "last": 849,
+    "query_count": 440130,
+    "excluded_count": 26420
+  },
+  "tests": {
+    "private": 15,
+    "public": 15,
+    "private_seconds": 15.75,
+    "public_seconds": 14.172000000005937,
+    "framework_skips": 0,
+    "symlink_limit": "real symlink case returns when OS privilege absent; simulated reparse negative always exercised"
+  },
+  "claims": {
+    "geometry_changed": false,
+    "map_repaired": false,
+    "natural_positive_count": 0,
+    "calibration_ready": false,
+    "human_rejections_resolved": 0,
+    "c1": "NOT_REVIEWED",
+    "dayz_launched": false,
+    "full_global_coverage": false
+  },
+  "next_geometry": "quality-council-q02b4-serialization-feasibility-20261029.md; reviewed discovery of runtime signatures and external contract only",
+  "next_road": "ev112-road-b4b1-saved-content-identity-20261029.md; reviewed contract49d217, method uncertainty preregistered; code absent"
+}

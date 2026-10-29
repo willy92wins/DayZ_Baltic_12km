@@ -1,0 +1,103 @@
+{
+  "schema": "road-b4b1-oracles.v1",
+  "normalization": [
+    {
+      "raw": "/DZ\\Structures\\Roads/",
+      "expected": "dz/structures/roads"
+    },
+    {
+      "raw": "Parts/Asf1_25.P3D",
+      "expected": "parts/asf1_25.p3d"
+    },
+    {
+      "raw": "part.p3d ",
+      "expected": "part.p3d "
+    }
+  ],
+  "rejected": [
+    "a//b",
+    "a/../b",
+    "C:/a",
+    "a/./b",
+    "a\u0000b",
+    "á/b"
+  ],
+  "grouping": [
+    {
+      "id": "same_content_different_locator_case",
+      "input": [
+        {
+          "package": "E:/A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "DZ/X",
+          "entry": "A.P3D",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "package": "E:\\A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "virtual": "dz/x/a.p3d",
+      "groups": 1,
+      "state": "SAME_PINNED_CONTENT"
+    },
+    {
+      "id": "distinct_packages_equal_model",
+      "input": [
+        {
+          "package": "A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "package": "B.pbo",
+          "package_sha": "3333333333333333333333333333333333333333333333333333333333333333",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      ],
+      "virtual": "dz/x/a.p3d",
+      "groups": 2,
+      "state": "DISTINCT_CONTENT"
+    },
+    {
+      "id": "conflicting_model_same_virtual",
+      "input": [
+        {
+          "package": "A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "package": "A.pbo",
+          "package_sha": "1111111111111111111111111111111111111111111111111111111111111111",
+          "prefix": "dz/x",
+          "entry": "a.p3d",
+          "model_sha": "4444444444444444444444444444444444444444444444444444444444444444"
+        }
+      ],
+      "virtual": "dz/x/a.p3d",
+      "groups": 2,
+      "state": "BLOCKED_SHA_CONFLICT"
+    }
+  ],
+  "required_negatives": [
+    "omit_provenance",
+    "forged_pointer",
+    "duplicate_reference",
+    "changed_instance_count",
+    "receipt_pin_mismatch",
+    "producer_report_comutation",
+    "sha64_invalid",
+    "no_wrp_pbo_open"
+  ]
+}

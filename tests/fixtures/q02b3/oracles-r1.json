@@ -1,0 +1,361 @@
+{
+  "schema": "q02b3-literal-oracles.v1",
+  "natural_positive_count": 0,
+  "calibration_ready": false,
+  "tree_integer_reduction_only": {
+    "leaves": [
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        13,
+        13
+      ]
+    ],
+    "leaf_slots": 8,
+    "useful_nodes": 15,
+    "padding": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "ranges": [
+      {
+        "a": 0,
+        "b": 5,
+        "sum": [
+          39,
+          42
+        ]
+      },
+      {
+        "a": 1,
+        "b": 4,
+        "sum": [
+          23,
+          25
+        ]
+      },
+      {
+        "a": 2,
+        "b": 2,
+        "sum": [
+          0,
+          0
+        ]
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "sum": [
+          13,
+          13
+        ]
+      },
+      {
+        "a": 5,
+        "b": 5,
+        "sum": [
+          0,
+          0
+        ]
+      }
+    ],
+    "directed": [
+      {
+        "closed": true,
+        "center": 1,
+        "direction": -1,
+        "steps": 3,
+        "edges_in_order": [
+          0,
+          4,
+          3
+        ],
+        "sum": [
+          27,
+          29
+        ]
+      },
+      {
+        "closed": true,
+        "center": 4,
+        "direction": 1,
+        "steps": 3,
+        "edges_in_order": [
+          4,
+          0,
+          1
+        ],
+        "sum": [
+          21,
+          22
+        ]
+      },
+      {
+        "closed": false,
+        "center": 3,
+        "direction": -1,
+        "steps": 2,
+        "edges_in_order": [
+          2,
+          1
+        ],
+        "sum": [
+          12,
+          13
+        ]
+      }
+    ],
+    "invalid_ranges": [
+      {
+        "a": 5,
+        "b": 8,
+        "reason": "padding is outside m=5"
+      }
+    ]
+  },
+  "sqrt2": {
+    "q": [
+      2,
+      1
+    ],
+    "p": 48,
+    "lo": 398065729532860,
+    "hi": 398065729532861
+  },
+  "threshold": {
+    "binary_ratio": [
+      3022314549036573,
+      302231454903657293676544
+    ],
+    "floor_scaled": 2814749,
+    "comparison": "q < THR^2, strictly; equality is not degenerate"
+  },
+  "station_literals": [
+    {
+      "id": "open_final_equality",
+      "points": [
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "closed": false,
+      "center": 1,
+      "h": [
+        2,
+        1
+      ],
+      "state": "DEFINED",
+      "a_exact": [
+        -2,
+        0
+      ],
+      "c_exact": [
+        2,
+        0
+      ],
+      "a_segment": 0,
+      "c_segment": 0,
+      "a_t": [
+        1,
+        1
+      ],
+      "c_t": [
+        1,
+        1
+      ],
+      "a_from": [
+        0,
+        0
+      ],
+      "a_to": [
+        -2,
+        0
+      ],
+      "c_from": [
+        0,
+        0
+      ],
+      "c_to": [
+        2,
+        0
+      ]
+    },
+    {
+      "id": "square_seam",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "closed": true,
+      "center": 0,
+      "h": [
+        6,
+        1
+      ],
+      "state": "DEFINED",
+      "a_exact": [
+        0,
+        6
+      ],
+      "c_exact": [
+        6,
+        0
+      ],
+      "a_segment": 0,
+      "c_segment": 0,
+      "a_t": [
+        3,
+        5
+      ],
+      "c_t": [
+        3,
+        5
+      ],
+      "a_from": [
+        0,
+        0
+      ],
+      "a_to": [
+        0,
+        10
+      ],
+      "c_from": [
+        0,
+        0
+      ],
+      "c_to": [
+        10,
+        0
+      ]
+    },
+    {
+      "id": "zero_chord_h0",
+      "points": [
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "closed": false,
+      "center": 1,
+      "h": [
+        0,
+        1
+      ],
+      "state": "UNDEFINED_ZERO_CHORD",
+      "a_exact": [
+        0,
+        0
+      ],
+      "c_exact": [
+        0,
+        0
+      ],
+      "a_segment": 0,
+      "c_segment": 0,
+      "a_t": [
+        0,
+        1
+      ],
+      "c_t": [
+        0,
+        1
+      ],
+      "a_from": [
+        0,
+        0
+      ],
+      "a_to": [
+        -2,
+        0
+      ],
+      "c_from": [
+        0,
+        0
+      ],
+      "c_to": [
+        2,
+        0
+      ]
+    }
+  ],
+  "required_negatives": [
+    "swap_leaf_preserve_total",
+    "corrupt_internal_node",
+    "range_overlap",
+    "range_hole",
+    "cross_prefix_subtraction",
+    "duplicate_chain",
+    "missing_query",
+    "changed_h",
+    "reordered_shard",
+    "extra_shard",
+    "truncated_json_line",
+    "bool_as_int",
+    "forged_full_manifest",
+    "source_cache_comutation",
+    "final_closed_signedzero_mismatch",
+    "resource_claim_without_numerical_verification"
+  ],
+  "station_convention": {
+    "segment": "zero-based directed step offset from center, not global edge index",
+    "a_direction": -1,
+    "c_direction": 1,
+    "t": "from directed source vertex to directed destination vertex"
+  }
+}

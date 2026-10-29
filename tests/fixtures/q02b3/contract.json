@@ -1,0 +1,134 @@
+{
+  "schema": "q02b3.v1",
+  "scope": "NUMERIC_COVERAGE_ONLY",
+  "npz_path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\native-shore-census-20261028\\native-shore.npz",
+  "npz_sha256": "b6612009ff531ef2f3932240ea52cf0660bce97f7904b7d667f962ce0fd95847",
+  "selectors": {
+    "path": "tests/fixtures/q02b3/selectors.json",
+    "sha256": "25ce960b47cc0a52ba5445dddbf2bb1b276a2d70a171259e5228d083cc9e227f"
+  },
+  "oracles": {
+    "path": "tests/fixtures/q02b3/oracles-r1.json",
+    "sha256": "b27e332f2713d84afa8609c6a15fd587eff163f2432c2703ff2a2623c08a9059"
+  },
+  "sources": {
+    "q02b0_report": {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q02b0-numeric-discovery-20261029\\report.json",
+      "sha256": "98adb3e8d83b1b3cef681cd6f3cfe12f5381a3d2355412b973d4699a18b5048f"
+    },
+    "q02a_summary": {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\closed-perimeter-q02a-20261029\\summary.json",
+      "sha256": "d1f48ba4c2128e09d2c4381ab62cc5f18dc08aa0c6103691b6a686718b0aeef5"
+    },
+    "q02b2_report": {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q02b2-pilot-20261029\\report.ndjson",
+      "sha256": "f6d4f44cf5f8ca874d7ea3185b134902036d2e0d80d24a472e9470e332915325"
+    },
+    "q02b2_consumer": {
+      "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q02b2-pilot-20261029\\consumer.json",
+      "sha256": "ca43daf4ea75c870958a1bee31044784d605f19cc0eb117dc1b5ce5d7ccace95"
+    },
+    "q02b1_contract": {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tests\\fixtures\\q02b1\\contract-r1.json",
+      "sha256": "4162c53ee870320d477c3f1a8e91a0a92447619f8c92242109f3a3747df986af"
+    },
+    "old_oracles": {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\tests\\fixtures\\q02b0\\oracles.json",
+      "sha256": "083334300732b33b994dd6d97d063a19db08dd58e64a92cffea806848c4bde1b"
+    },
+    "plan": {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\quality-council-q02b3-full-coverage-design-20261029.md",
+      "sha256": "6548807a079d1839b98d860fa95885971deec51f46e5faf7786e089dbd31eb73"
+    },
+    "derivation": {
+      "path": "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\quality-council-q02b3-tree-derivation-20261029.md",
+      "sha256": "d93c31cb988ff73d154241623607ac6c07ba67719749157bcaf97f01ecccbfb8"
+    }
+  },
+  "helpers": {
+    "tools/quality/certified_shore_kernel_ev112.py": "ef844931862c1aa2d181caa5000b4843a4b1587da7149fb033a8efa5248abe64",
+    "tools/quality/verify_certified_shore_kernel_ev112.py": "ab1977bc1ed283d00cb9aedab56ad1b83d2596a17f49c3558825aeec3ec8f2ca",
+    "tools/quality/shore_numeric_discovery_ev112.py": "3264f82294a2411e4f1d902c42173a01ef1f72244d6b220bba91e49a4596b696",
+    "tools/quality/shore_prefix_pilot_ev112.py": "8154fbe98363a0ce987675178bd2f8084b9cb1e7b8a163559cb424b62cc3bf38",
+    "tools/quality/verify_shore_prefix_pilot_ev112.py": "98cdab4fe6e1cd4c1898cd1e44139a00a79e4fffe934193d4689523b6807c773"
+  },
+  "h": [
+    6,
+    12,
+    24,
+    48,
+    96
+  ],
+  "expected": {
+    "chains": 1030,
+    "closed_chains": 993,
+    "core_vertices": 107678,
+    "edges": 107641,
+    "universe": 538390,
+    "open_chains": 37,
+    "max_core_count": 13421,
+    "max_edges_observed": 13420,
+    "degenerate_chains": 1,
+    "degenerate_chain_ids": [
+      85
+    ]
+  },
+  "p": 48,
+  "threshold_ratio": [
+    3022314549036573,
+    302231454903657293676544
+  ],
+  "max_bits": 4096,
+  "query_ops": 100000,
+  "chain_ops": 4000000,
+  "max_edges": 14000,
+  "read_limits": {
+    "archive_bytes": 67108864,
+    "required_uncompressed_bytes": 8388608,
+    "header_bytes": 16384,
+    "members": 32
+  },
+  "output_limits": {
+    "cache_bytes": 16777216,
+    "shard_bytes": 16777216,
+    "query_bytes": 262144,
+    "terminal_bytes": 1048576,
+    "manifest_bytes": 1048576,
+    "total_bytes": 2147483648
+  },
+  "human_cases": {
+    "count": 9,
+    "state": "GEOMETRY_UNBOUND",
+    "resolved": 0
+  },
+  "controls": 4,
+  "c1": "NOT_REVIEWED",
+  "natural_positive_count": 0,
+  "calibration_ready": false,
+  "angle_state": "PENDING_CERTIFIED_ANGLE",
+  "budgets": {
+    "author_s": 300,
+    "code_review_s": 240,
+    "suite_s": 180,
+    "capture_s": 600,
+    "consumer_s": 900,
+    "rss_bytes": 536870912
+  },
+  "schema_document": "plans/quality-council-q02b3-output-contract-20261029.md",
+  "schema_document_sha256": "81e07ec8214ea8d537a7c8bc57958a372e37d9fade8a21979264cb3d68fe2d77",
+  "map_repaired": false,
+  "roles": {
+    "producer_imports": [
+      "tools/quality/shore_prefix_pilot_ev112.py",
+      "tools/quality/certified_shore_kernel_ev112.py",
+      "tools/quality/shore_numeric_discovery_ev112.py"
+    ],
+    "consumer_imports": [
+      "tools/quality/verify_certified_shore_kernel_ev112.py",
+      "tools/quality/shore_numeric_discovery_ev112.py"
+    ],
+    "regression_only": [
+      "tools/quality/verify_shore_prefix_pilot_ev112.py"
+    ]
+  }
+}
