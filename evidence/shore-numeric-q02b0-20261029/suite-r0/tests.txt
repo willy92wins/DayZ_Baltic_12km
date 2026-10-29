@@ -1,0 +1,43 @@
+test_cli_exclusive_output (test_shore_numeric_discovery_ev112.DiscoveryTests.test_cli_exclusive_output) ... INCONCLUSIVE: output already exists; not overwritten
+ok
+test_closed_mismatch_is_retained_diagnostic (test_shore_numeric_discovery_ev112.DiscoveryTests.test_closed_mismatch_is_retained_diagnostic) ... ok
+test_corrupt_arrays (test_shore_numeric_discovery_ev112.DiscoveryTests.test_corrupt_arrays) ... ok
+test_mutant_interpolation_shows_discrepancy (test_shore_numeric_discovery_ev112.DiscoveryTests.test_mutant_interpolation_shows_discrepancy) ... ok
+test_npz_metadata_and_sources_intact (test_shore_numeric_discovery_ev112.DiscoveryTests.test_npz_metadata_and_sources_intact) ... ok
+test_oracle_anchors_and_census (test_shore_numeric_discovery_ev112.DiscoveryTests.test_oracle_anchors_and_census) ... FAIL
+test_oracle_loss_and_expression_change (test_shore_numeric_discovery_ev112.DiscoveryTests.test_oracle_loss_and_expression_change) ... ok
+test_pin_before_parse_and_strict_json (test_shore_numeric_discovery_ev112.DiscoveryTests.test_pin_before_parse_and_strict_json) ... ok
+test_zip_duplicate_and_declared_oversize (test_shore_numeric_discovery_ev112.DiscoveryTests.test_zip_duplicate_and_declared_oversize) ... C:\Users\guill\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\zipfile\__init__.py:1625: UserWarning: Duplicate name: 'closed.npy'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+ERROR
+
+======================================================================
+ERROR: test_zip_duplicate_and_declared_oversize (test_shore_numeric_discovery_ev112.DiscoveryTests.test_zip_duplicate_and_declared_oversize)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_numeric_discovery_ev112.py", line 180, in test_zip_duplicate_and_declared_oversize
+    bio = io.BytesIO(); npformat.write_magic(bio, (1, 0))
+                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'numpy.lib.format' has no attribute 'write_magic'. Did you mean: 'read_magic'?
+
+======================================================================
+FAIL: test_oracle_anchors_and_census (test_shore_numeric_discovery_ev112.DiscoveryTests.test_oracle_anchors_and_census)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_numeric_discovery_ev112.py", line 111, in test_oracle_anchors_and_census
+    self.assertEqual(left["a_walk_decimal100"], ["-6", "0"])
+AssertionError: Lists differ: ['-6.00', '0.00'] != ['-6', '0']
+
+First differing element 0:
+'-6.00'
+'-6'
+
+- ['-6.00', '0.00']
+?     ---    ---
+
++ ['-6', '0']
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.234s
+
+FAILED (failures=1, errors=1)

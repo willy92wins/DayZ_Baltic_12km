@@ -1,0 +1,18 @@
+# Q02B0 — revisión de integración y cambio de ruta, antes de captura
+
+SOUND-with-fixes aplicadas para DISCOVERY numérico únicamente. Juez/revisor: ChatGPT/Codex en esta sesión; autoría: Muse Wonder1.0. Esta revisión es de otra familia, pero comparte contexto de orquestación: no se presenta como una lane ciega/fresca. Fable R0/R1 (90.187/90.109s) y Grok (90.313s) NO entregaron dictamen; se retiran esas rutas para esta unidad. No opinión inventada ni repetición de sus llamadas. Sus recibos se conservan.
+
+Reevaluación del reparto: CLAUDE.md:G7 líneas53–58 y workflow.md:55–67 asignan el juicio a Codex. El estado preventivo anterior «sin entrega, no captura» se sustituye explícitamente ANTES de ejecutar por esta revisión de integración sobre el código Muse, cuya puerta mecánica está satisfecha. No se amplía captura ni suite ni se baja una tolerancia. No se exige un cuarto modelo para una lectura offline acotada. El plan exige revisión de código, no dictamen de una familia concreta. La cobertura y limitación de contexto son explícitas.
+
+Hallazgos cerrados con fuente/negativos:
+- P1: el autor y su fixture confundían chain_offsets con corecount. Contrato real closed_perimeter_ev112.py:6–7,133: diffco=diffpo-1 para abiertas/cerradas. Ahora _npz_metadata valida por cadena/terminal, no suelda cierres; test_old_corecount_offsets_rejected refuta la implementación antigua y test_closed_mismatch conserva offsets y registra razón.
+- P1: min_segment/positive excluían positivos menores1e-8. El integrador separó contar/medir todos los positivos de marcar segmentos cortos. Nuevo test positivo1e-10 prueba min exacto,2positivos,1corto,degeneración y ausencia de ventanas. No se modifica el umbral heredado.
+- P2: lectura antes del límite, backslash simple, NPY minor/structured object y caps corregidos. Tests de spy, headers y corrupción refutan esos fallos. Definición NumPy _format_impl.py:482 write_array_header_1_0(fp,d), no API write_magic inventada.
+- P2: tests dependían representación Decimal('-6.00') versus '-6' y API inexistente; comparan valores y usan cabecera real. R0 fallido preservado. No cambian referencias congeladas.
+- P2: soporte parcial float podía usar None; ahora ambos lados necesarios, float_state y puntos disponibles conservados. Denominadores AC0→null/AC_ZERO. Cierre2h==perímetro insuficiente; sin extrapolar. Zero/short→DEGENERATE.
+
+Revisión matemática: A/C por caminata no consume a_exact/c_exact. Referente independiente de expresiones congeladas antes del autor. _reference_point sólo evalúa num/den*sqrt; _max_diff se ejecuta dentro de contexto100. Recta/L/cuadrado y escalera cruzando arista se comprueban analíticamente; espigaAC0 y extremo insuficiente conservados. Métricas cross/dot/lados/desviación/curvatura/déficit corresponden al plan; atan2 está etiquetado float64. Los1e-60/1e-80 son checks conservadores de metrología sintética acotada, NO cotas del mapa ni naturalidad. Observaciones no se promueven a cota.
+
+Guardas: contrato y oráculo externamente pinados antes de parseo; NPZ32MiB y sólo4arrays, versiones1/2 exactas, sin pickle; payload/shape/dtype/offsets y finite validados; rawpin antes/después; salida exclusiva. Límites tiempo/RSS pertenecen al runner externo pinado, no se atribuyen al CLI aislado. 15tests sintéticos PASS, sin skip. No cambios a fuentes históricas, geometría, etiquetas, humanos ni tolerancias. Ningún PASS global ni build/DayZ.
+
+Captura autorizada: una sola lectura diagnóstico30s/512MiB usando contrato513d9848, salida nueva. Fallo conserva evidencia y cierra esta tentativa sin retry. No autoriza productor final multiescala, corpus natural ni reparación.

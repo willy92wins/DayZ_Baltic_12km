@@ -1,0 +1,1703 @@
+{
+  "bound_proposals": [],
+  "bound_status": "PENDING_REVIEW_NOT_APPROVED",
+  "calibration_ready": false,
+  "conditioning_notes": [
+    "Observed Decimal80->100 and float64 divergences are diagnostics, not approved bounds.",
+    "No quality threshold is proposed or approved by this discovery."
+  ],
+  "contract_sha256": "513d9848b5f97a8569919842f84ebe4d16407e6b36263661c0ba27a51274f397",
+  "decimal_precisions": [
+    80,
+    100
+  ],
+  "h_set": [
+    6,
+    12,
+    24,
+    48,
+    96
+  ],
+  "natural_positive_count": 0,
+  "no_map_changes": true,
+  "npz": {
+    "arrays": {
+      "chain_offsets": {
+        "dtype": "int64",
+        "member_bytes": 8376,
+        "nbytes": 8248,
+        "shape": [
+          1031
+        ]
+      },
+      "chain_points": {
+        "dtype": "float64",
+        "member_bytes": 1738864,
+        "nbytes": 1738736,
+        "shape": [
+          108671,
+          2
+        ]
+      },
+      "closed": {
+        "dtype": "bool",
+        "member_bytes": 1158,
+        "nbytes": 1030,
+        "shape": [
+          1030
+        ]
+      },
+      "point_offsets": {
+        "dtype": "int64",
+        "member_bytes": 8376,
+        "nbytes": 8248,
+        "shape": [
+          1031
+        ]
+      }
+    },
+    "candidate_window_rows_upper": 538390,
+    "chain_count": 1030,
+    "closed_chain_count": 993,
+    "closure_mismatch_count": 0,
+    "core_vertex_count": 107678,
+    "core_vertices_per_chain_max": 13421,
+    "core_vertices_per_chain_min": 2,
+    "degenerate_chain_count": 1,
+    "degenerate_reason_counts": {
+      "closed_lt3_distinct": 0,
+      "closure_mismatch": 0,
+      "short_segment_lt_1e-8": 1,
+      "stored_lt2": 0,
+      "zero_segment": 1
+    },
+    "length_method": "float64 math.hypot per raw segment, math.fsum per chain; observed range only, not an error bound",
+    "max_abs_coord": 12282.0,
+    "max_perimeter_m": 38725.34203051485,
+    "max_segment_m": 8.377841271278028,
+    "min_perimeter_m": 0.081267655421121,
+    "min_segment_m": 7.239630159764984e-05,
+    "open_chain_count": 37,
+    "other_members_enumerated_only": [
+      "cell",
+      "chain_keys",
+      "chain_order",
+      "key",
+      "lev",
+      "p",
+      "pond",
+      "tri"
+    ],
+    "positive_segment_count": 107639,
+    "segment_count": 107641,
+    "short_segment_count": 2,
+    "short_segment_threshold_m": 1e-08,
+    "short_segment_threshold_note": "diagnostic inherited from Q02A; not a quality threshold",
+    "stored_point_count": 108671,
+    "stored_points_per_chain_max": 13421,
+    "stored_points_per_chain_min": 2,
+    "zero_segment_count": 2
+  },
+  "npz_sha256_after": "b6612009ff531ef2f3932240ea52cf0660bce97f7904b7d667f962ce0fd95847",
+  "npz_sha256_before": "b6612009ff531ef2f3932240ea52cf0660bce97f7904b7d667f962ce0fd95847",
+  "oracle_sha256": "083334300732b33b994dd6d97d063a19db08dd58e64a92cffea806848c4bde1b",
+  "oracles": {
+    "coincident_support_count": 5,
+    "degenerate_count": 0,
+    "fixture_count": 6,
+    "insufficient_support_count": 1,
+    "query_count": 30,
+    "records": [
+      {
+        "a_reference_decimal100": [
+          "-6",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-6.00",
+          "0.00"
+        ],
+        "a_walk_float64": [
+          -6.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "6",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "6.00",
+          "0.00"
+        ],
+        "c_walk_float64": [
+          6.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.00",
+        "expected_state": "DEFINED",
+        "fixture_id": "straight",
+        "float64_to_walk100_max_abs_diff": "0.00",
+        "float_state": "DEFINED",
+        "h": 6,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.0,
+          "chord_deficit": "0.00",
+          "cos": "1",
+          "cross": "0.0000",
+          "curvature_per_m": "0E+2",
+          "deviation_m": "0.00",
+          "dot": "36.0000",
+          "side_ab_m": "6.00",
+          "side_ac_m": "12.00",
+          "side_bc_m": "6.00",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.00",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-12",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-12.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -12.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "12",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "12.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          12.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "straight",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 12,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.0,
+          "chord_deficit": "0.0",
+          "cos": "1",
+          "cross": "0.00",
+          "curvature_per_m": "0E+1",
+          "deviation_m": "0.0",
+          "dot": "144.00",
+          "side_ab_m": "12.0",
+          "side_ac_m": "24.0",
+          "side_bc_m": "12.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-24",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-24.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -24.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "24",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "24.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          24.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "straight",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 24,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.0,
+          "chord_deficit": "0.0",
+          "cos": "1",
+          "cross": "0.00",
+          "curvature_per_m": "0E+1",
+          "deviation_m": "0.0",
+          "dot": "576.00",
+          "side_ab_m": "24.0",
+          "side_ac_m": "48.0",
+          "side_bc_m": "24.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-48",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-48.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -48.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "48",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "48.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          48.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "straight",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 48,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.0,
+          "chord_deficit": "0.0",
+          "cos": "1",
+          "cross": "0.00",
+          "curvature_per_m": "0E+1",
+          "deviation_m": "0.0",
+          "dot": "2304.00",
+          "side_ab_m": "48.0",
+          "side_ac_m": "96.0",
+          "side_bc_m": "48.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-96",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-96.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -96.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "96",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "96.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          96.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "straight",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 96,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.0,
+          "chord_deficit": "0.0",
+          "cos": "1",
+          "cross": "0.00",
+          "curvature_per_m": "0E+1",
+          "deviation_m": "0.0",
+          "dot": "9216.00",
+          "side_ab_m": "96.0",
+          "side_ac_m": "192.0",
+          "side_bc_m": "96.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-6",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-6.00",
+          "0.00"
+        ],
+        "a_walk_float64": [
+          -6.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "0",
+          "6"
+        ],
+        "c_walk_decimal100": [
+          "0.00",
+          "6.00"
+        ],
+        "c_walk_float64": [
+          0.0,
+          6.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.00",
+        "expected_state": "DEFINED",
+        "fixture_id": "right_l",
+        "float64_to_walk100_max_abs_diff": "0.00",
+        "float_state": "DEFINED",
+        "h": 6,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792137",
+          "cos": "0",
+          "cross": "36.0000",
+          "curvature_per_m": "0.2357022603955158414669481207016163464282786458961580121961132896651220797436845064750645890546069288",
+          "deviation_m": "-4.242640687119285146405066172629094235709015626130844219530039213972197435386321116551162602982924718",
+          "dot": "0.0000",
+          "side_ab_m": "6.00",
+          "side_ac_m": "8.485281374238570292810132345258188471418031252261688439060078427944394870772642233102325205965849436",
+          "side_bc_m": "6.00",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.00",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-12",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-12.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -12.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "0",
+          "12"
+        ],
+        "c_walk_decimal100": [
+          "0.0",
+          "12.0"
+        ],
+        "c_walk_float64": [
+          0.0,
+          12.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "right_l",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 12,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792138",
+          "cos": "0",
+          "cross": "144.00",
+          "curvature_per_m": "0.1178511301977579207334740603508081732141393229480790060980566448325610398718422532375322945273034644",
+          "deviation_m": "-8.485281374238570292810132345258188471418031252261688439060078427944394870772642233102325205965849438",
+          "dot": "0.00",
+          "side_ab_m": "12.0",
+          "side_ac_m": "16.97056274847714058562026469051637694283606250452337687812015685588878974154528446620465041193169887",
+          "side_bc_m": "12.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-24",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-24.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -24.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "0",
+          "24"
+        ],
+        "c_walk_decimal100": [
+          "0.0",
+          "24.0"
+        ],
+        "c_walk_float64": [
+          0.0,
+          24.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "right_l",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 24,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792135",
+          "cos": "0",
+          "cross": "576.00",
+          "curvature_per_m": "0.05892556509887896036673703017540408660706966147403950304902832241628051993592112661876614726365173220",
+          "deviation_m": "-16.97056274847714058562026469051637694283606250452337687812015685588878974154528446620465041193169887",
+          "dot": "0.00",
+          "side_ab_m": "24.0",
+          "side_ac_m": "33.94112549695428117124052938103275388567212500904675375624031371177757948309056893240930082386339775",
+          "side_bc_m": "24.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-48",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-48.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -48.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "0",
+          "48"
+        ],
+        "c_walk_decimal100": [
+          "0.0",
+          "48.0"
+        ],
+        "c_walk_float64": [
+          0.0,
+          48.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "right_l",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 48,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792136",
+          "cos": "0",
+          "cross": "2304.00",
+          "curvature_per_m": "0.02946278254943948018336851508770204330353483073701975152451416120814025996796056330938307363182586610",
+          "deviation_m": "-33.94112549695428117124052938103275388567212500904675375624031371177757948309056893240930082386339775",
+          "dot": "0.00",
+          "side_ab_m": "48.0",
+          "side_ac_m": "67.88225099390856234248105876206550777134425001809350751248062742355515896618113786481860164772679549",
+          "side_bc_m": "48.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-96",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-96.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -96.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "0",
+          "96"
+        ],
+        "c_walk_decimal100": [
+          "0.0",
+          "96.0"
+        ],
+        "c_walk_float64": [
+          0.0,
+          96.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "right_l",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 96,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792135",
+          "cos": "0",
+          "cross": "9216.00",
+          "curvature_per_m": "0.01473139127471974009168425754385102165176741536850987576225708060407012998398028165469153681591293304",
+          "deviation_m": "-67.88225099390856234248105876206550777134425001809350751248062742355515896618113786481860164772679548",
+          "dot": "0.00",
+          "side_ab_m": "96.0",
+          "side_ac_m": "135.7645019878171246849621175241310155426885000361870150249612548471103179323622757296372032954535910",
+          "side_bc_m": "96.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "0",
+          "6"
+        ],
+        "a_walk_decimal100": [
+          "0.00",
+          "6.00"
+        ],
+        "a_walk_float64": [
+          0.0,
+          6.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "6",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "6.00",
+          "0.00"
+        ],
+        "c_walk_float64": [
+          6.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.00",
+        "expected_state": "DEFINED",
+        "fixture_id": "square_seam",
+        "float64_to_walk100_max_abs_diff": "0.00",
+        "float_state": "DEFINED",
+        "h": 6,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792137",
+          "cos": "0",
+          "cross": "36.0000",
+          "curvature_per_m": "0.2357022603955158414669481207016163464282786458961580121961132896651220797436845064750645890546069288",
+          "deviation_m": "-4.242640687119285146405066172629094235709015626130844219530039213972197435386321116551162602982924718",
+          "dot": "0.0000",
+          "side_ab_m": "6.00",
+          "side_ac_m": "8.485281374238570292810132345258188471418031252261688439060078427944394870772642233102325205965849436",
+          "side_bc_m": "6.00",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.00",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "0",
+          "12"
+        ],
+        "a_walk_decimal100": [
+          "0.0",
+          "12.0"
+        ],
+        "a_walk_float64": [
+          0.0,
+          12.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "12",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "12.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          12.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "square_seam",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 12,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792138",
+          "cos": "0",
+          "cross": "144.00",
+          "curvature_per_m": "0.1178511301977579207334740603508081732141393229480790060980566448325610398718422532375322945273034644",
+          "deviation_m": "-8.485281374238570292810132345258188471418031252261688439060078427944394870772642233102325205965849438",
+          "dot": "0.00",
+          "side_ab_m": "12.0",
+          "side_ac_m": "16.97056274847714058562026469051637694283606250452337687812015685588878974154528446620465041193169887",
+          "side_bc_m": "12.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "0",
+          "24"
+        ],
+        "a_walk_decimal100": [
+          "0.0",
+          "24.0"
+        ],
+        "a_walk_float64": [
+          0.0,
+          24.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "24",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "24.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          24.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "square_seam",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 24,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792135",
+          "cos": "0",
+          "cross": "576.00",
+          "curvature_per_m": "0.05892556509887896036673703017540408660706966147403950304902832241628051993592112661876614726365173220",
+          "deviation_m": "-16.97056274847714058562026469051637694283606250452337687812015685588878974154528446620465041193169887",
+          "dot": "0.00",
+          "side_ab_m": "24.0",
+          "side_ac_m": "33.94112549695428117124052938103275388567212500904675375624031371177757948309056893240930082386339775",
+          "side_bc_m": "24.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "0",
+          "48"
+        ],
+        "a_walk_decimal100": [
+          "0.0",
+          "48.0"
+        ],
+        "a_walk_float64": [
+          0.0,
+          48.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "48",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "48.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          48.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "square_seam",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 48,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792136",
+          "cos": "0",
+          "cross": "2304.00",
+          "curvature_per_m": "0.02946278254943948018336851508770204330353483073701975152451416120814025996796056330938307363182586610",
+          "deviation_m": "-33.94112549695428117124052938103275388567212500904675375624031371177757948309056893240930082386339775",
+          "dot": "0.00",
+          "side_ab_m": "48.0",
+          "side_ac_m": "67.88225099390856234248105876206550777134425001809350751248062742355515896618113786481860164772679549",
+          "side_bc_m": "48.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "0",
+          "96"
+        ],
+        "a_walk_decimal100": [
+          "0.0",
+          "96.0"
+        ],
+        "a_walk_float64": [
+          0.0,
+          96.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "96",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "96.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          96.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "square_seam",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "DEFINED",
+        "h": 96,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792135",
+          "cos": "0",
+          "cross": "9216.00",
+          "curvature_per_m": "0.01473139127471974009168425754385102165176741536850987576225708060407012998398028165469153681591293304",
+          "deviation_m": "-67.88225099390856234248105876206550777134425001809350751248062742355515896618113786481860164772679548",
+          "dot": "0.00",
+          "side_ab_m": "96.0",
+          "side_ac_m": "135.7645019878171246849621175241310155426885000361870150249612548471103179323622757296372032954535910",
+          "side_bc_m": "96.0",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-6",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-6.00",
+          "0.00"
+        ],
+        "a_walk_float64": [
+          -6.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "-6",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "-6.00",
+          "0.00"
+        ],
+        "c_walk_float64": [
+          -6.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.00",
+        "expected_state": "COINCIDENT_SUPPORT",
+        "fixture_id": "spike",
+        "float64_to_walk100_max_abs_diff": "0.00",
+        "float_state": "COINCIDENT_SUPPORT",
+        "h": 6,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 3.141592653589793,
+          "chord_deficit": "1",
+          "cos": "-1",
+          "cross": "0.0000",
+          "curvature_per_m": null,
+          "deviation_m": null,
+          "dot": "-36.0000",
+          "side_ab_m": "6.00",
+          "side_ac_m": "0",
+          "side_bc_m": "6.00",
+          "undefined_reasons": [
+            "AC_ZERO"
+          ]
+        },
+        "reference_to_walk100_max_abs_diff": "0.00",
+        "state": "COINCIDENT_SUPPORT",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-12",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-12.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -12.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "-12",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "-12.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          -12.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "COINCIDENT_SUPPORT",
+        "fixture_id": "spike",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "COINCIDENT_SUPPORT",
+        "h": 12,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 3.141592653589793,
+          "chord_deficit": "1",
+          "cos": "-1",
+          "cross": "0.00",
+          "curvature_per_m": null,
+          "deviation_m": null,
+          "dot": "-144.00",
+          "side_ab_m": "12.0",
+          "side_ac_m": "0",
+          "side_bc_m": "12.0",
+          "undefined_reasons": [
+            "AC_ZERO"
+          ]
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "COINCIDENT_SUPPORT",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-24",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-24.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -24.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "-24",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "-24.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          -24.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "COINCIDENT_SUPPORT",
+        "fixture_id": "spike",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "COINCIDENT_SUPPORT",
+        "h": 24,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 3.141592653589793,
+          "chord_deficit": "1",
+          "cos": "-1",
+          "cross": "0.00",
+          "curvature_per_m": null,
+          "deviation_m": null,
+          "dot": "-576.00",
+          "side_ab_m": "24.0",
+          "side_ac_m": "0",
+          "side_bc_m": "24.0",
+          "undefined_reasons": [
+            "AC_ZERO"
+          ]
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "COINCIDENT_SUPPORT",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-48",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-48.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -48.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "-48",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "-48.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          -48.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "COINCIDENT_SUPPORT",
+        "fixture_id": "spike",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "COINCIDENT_SUPPORT",
+        "h": 48,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 3.141592653589793,
+          "chord_deficit": "1",
+          "cos": "-1",
+          "cross": "0.00",
+          "curvature_per_m": null,
+          "deviation_m": null,
+          "dot": "-2304.00",
+          "side_ab_m": "48.0",
+          "side_ac_m": "0",
+          "side_bc_m": "48.0",
+          "undefined_reasons": [
+            "AC_ZERO"
+          ]
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "COINCIDENT_SUPPORT",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-96",
+          "0"
+        ],
+        "a_walk_decimal100": [
+          "-96.0",
+          "0.0"
+        ],
+        "a_walk_float64": [
+          -96.0,
+          0.0
+        ],
+        "b_decimal100": [
+          "0",
+          "0"
+        ],
+        "c_reference_decimal100": [
+          "-96",
+          "0"
+        ],
+        "c_walk_decimal100": [
+          "-96.0",
+          "0.0"
+        ],
+        "c_walk_float64": [
+          -96.0,
+          0.0
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "COINCIDENT_SUPPORT",
+        "fixture_id": "spike",
+        "float64_to_walk100_max_abs_diff": "0.0",
+        "float_state": "COINCIDENT_SUPPORT",
+        "h": 96,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 3.141592653589793,
+          "chord_deficit": "1",
+          "cos": "-1",
+          "cross": "0.00",
+          "curvature_per_m": null,
+          "deviation_m": null,
+          "dot": "-9216.00",
+          "side_ab_m": "96.0",
+          "side_ac_m": "0",
+          "side_bc_m": "96.0",
+          "undefined_reasons": [
+            "AC_ZERO"
+          ]
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "COINCIDENT_SUPPORT",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "62.68328157299974763569100840247753148252874203153383086912507669449262511076536587929729729005453873",
+          "74.63343685400050472861798319504493703494251593693233826174984661101474977846926824140540541989092254"
+        ],
+        "a_walk_decimal100": [
+          "62.68328157299974763569100840247753148252874203153383086912507669449262511076536587929729729005453873",
+          "74.63343685400050472861798319504493703494251593693233826174984661101474977846926824140540541989092254"
+        ],
+        "a_walk_float64": [
+          62.683281572999746,
+          74.63343685400051
+        ],
+        "b_decimal100": [
+          "60",
+          "80"
+        ],
+        "c_reference_decimal100": [
+          "54.30790021169691720240199162002110663930480074921460971165649126497333001044937120158035340491725947",
+          "81.89736659610102759919933612665963112023173308359513009611450291167555666318354293280654886502758018"
+        ],
+        "c_walk_decimal100": [
+          "54.30790021169691720240199162002110663930480074921460971165649126497333001044937120158035340491725947",
+          "81.89736659610102759919933612665963112023173308359513009611450291167555666318354293280654886502758018"
+        ],
+        "c_walk_float64": [
+          54.30790021169692,
+          81.89736659610102
+        ],
+        "decimal80_to_100_max_abs_diff": "2.4140540541989092254E-79",
+        "expected_state": "DEFINED",
+        "fixture_id": "rational_arc",
+        "float64_to_walk100_max_abs_diff": "4.94814409046641421257164774870859513009611450291167555666318354293280654886502758018E-15",
+        "float_state": "DEFINED",
+        "h": 6,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.7853981633974483,
+          "chord_deficit": "0.07612046748871324387181681060321171317758337413635751388490226871946499249889764128516006514965540417",
+          "cos": "0.7071067811865475244008443621048490392848359376884740365883398689953662392310535194251937671638207869",
+          "cross": "25.45584412271571087843039703577456541425409375678506531718023528383318461231792669930697561789754829",
+          "curvature_per_m": "0.1275611441216965905761533280101329555871148541618756804779335452091820113200298974123379284474278490",
+          "deviation_m": "-2.296100594190538630370759904182393200568067374913762248602803813765276203760538153422082712053701282",
+          "dot": "25.45584412271571087843039703577456541425409375678506531718023528383318461231792669930697561789754832",
+          "side_ab_m": "6.0000000000000000000000000000000000000000000000000",
+          "side_ac_m": "11.08655439013544107353819827276145944186899951036370983338117277536642009001322830457807921820413515",
+          "side_bc_m": "5.999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0E-98",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "65.36656314599949527138201680495506296505748406306766173825015338898525022153073175859459458010907746",
+          "69.26687370800100945723596639008987406988503187386467652349969322202949955693853648281081083978184508"
+        ],
+        "a_walk_decimal100": [
+          "65.36656314599949527138201680495506296505748406306766173825015338898525022153073175859459458010907746",
+          "69.26687370800100945723596639008987406988503187386467652349969322202949955693853648281081083978184508"
+        ],
+        "a_walk_float64": [
+          65.36656314599949,
+          69.26687370800101
+        ],
+        "b_decimal100": [
+          "60",
+          "80"
+        ],
+        "c_reference_decimal100": [
+          "48.61580042339383440480398324004221327860960149842921942331298252994666002089874240316070680983451894",
+          "83.79473319220205519839867225331926224046346616719026019222900582335111332636708586561309773005516035"
+        ],
+        "c_walk_decimal100": [
+          "48.61580042339383440480398324004221327860960149842921942331298252994666002089874240316070680983451894",
+          "83.79473319220205519839867225331926224046346616719026019222900582335111332636708586561309773005516035"
+        ],
+        "c_walk_float64": [
+          48.615800423393836,
+          83.79473319220206
+        ],
+        "decimal80_to_100_max_abs_diff": "5.9683929319016548106E-79",
+        "expected_state": "DEFINED",
+        "fixture_id": "rational_arc",
+        "float64_to_walk100_max_abs_diff": "5.16285882652728092213372824937613532347650030677797050044306146351718918916021815492E-15",
+        "float_state": "DEFINED",
+        "h": 12,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.7853981633974483,
+          "chord_deficit": "0.07612046748871324387181681060321171317758337413635751388490226871946499249889764128516006514965540417",
+          "cos": "0.7071067811865475244008443621048490392848359376884740365883398689953662392310535194251937671638207861",
+          "cross": "101.8233764908628435137215881430982616570163750271402612687209411353327384492717067972279024715901933",
+          "curvature_per_m": "0.06378057206084829528807666400506647779355742708093784023896677260459100566001494870616896422371392459",
+          "deviation_m": "-4.592201188381077260741519808364786401136134749827524497205607627530552407521076306844165424107402570",
+          "dot": "101.8233764908628435137215881430982616570163750271402612687209411353327384492717067972279024715901932",
+          "side_ab_m": "12.0000000000000000000000000000000000000000000000000",
+          "side_ac_m": "22.17310878027088214707639654552291888373799902072741966676234555073284018002645660915615843640827030",
+          "side_bc_m": "12.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0E-98",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "70.73312629199899054276403360991012593011496812613532347650030677797050044306146351718918916021815492",
+          "58.53374741600201891447193278017974813977006374772935304699938644405899911387707296562162167956369016"
+        ],
+        "a_walk_decimal100": [
+          "70.73312629199899054276403360991012593011496812613532347650030677797050044306146351718918916021815492",
+          "58.53374741600201891447193278017974813977006374772935304699938644405899911387707296562162167956369016"
+        ],
+        "a_walk_float64": [
+          70.73312629199899,
+          58.53374741600202
+        ],
+        "b_decimal100": [
+          "60",
+          "80"
+        ],
+        "c_reference_decimal100": [
+          "37.23160084678766880960796648008442655721920299685843884662596505989332004179748480632141361966903788",
+          "87.58946638440411039679734450663852448092693233438052038445801164670222665273417173122619546011032071"
+        ],
+        "c_walk_decimal100": [
+          "37.23160084678766880960796648008442655721920299685843884662596505989332004179748480632141361966903788",
+          "87.58946638440411039679734450663852448092693233438052038445801164670222665273417173122619546011032071"
+        ],
+        "c_walk_float64": [
+          37.23160084678767,
+          87.5894663844041
+        ],
+        "decimal80_to_100_max_abs_diff": "4.8281081083978184508E-79",
+        "expected_state": "DEFINED",
+        "fixture_id": "rational_arc",
+        "float64_to_walk100_max_abs_diff": "5.58172164666365313286410564327188052038445801164670222665273417173122619546011032071E-15",
+        "float_state": "DEFINED",
+        "h": 24,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.7853981633974483,
+          "chord_deficit": "0.07612046748871324387181681060321171317758337413635751388490226871946499249889764128516006514965540396",
+          "cos": "0.7071067811865475244008443621048490392848359376884740365883398689953662392310535194251937671638207863",
+          "cross": "407.2935059634513740548863525723930466280655001085610450748837645413309537970868271889116098863607728",
+          "curvature_per_m": "0.03189028603042414764403833200253323889677871354046892011948338630229550283000747435308448211185696225",
+          "deviation_m": "-9.184402376762154521483039616729572802272269499655048994411215255061104815042152613688330848214805129",
+          "dot": "407.2935059634513740548863525723930466280655001085610450748837645413309537970868271889116098863607729",
+          "side_ab_m": "24.0000000000000000000000000000000000000000000000000",
+          "side_ac_m": "44.34621756054176429415279309104583776747599804145483933352469110146568036005291321831231687281654061",
+          "side_bc_m": "24.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0E-98",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "81.46625258399798108552806721982025186022993625227064695300061355594100088612292703437837832043630984",
+          "37.06749483200403782894386556035949627954012749545870609399877288811799822775414593124324335912738032"
+        ],
+        "a_walk_decimal100": [
+          "81.46625258399798108552806721982025186022993625227064695300061355594100088612292703437837832043630984",
+          "37.06749483200403782894386556035949627954012749545870609399877288811799822775414593124324335912738032"
+        ],
+        "a_walk_float64": [
+          81.46625258399797,
+          37.067494832004044
+        ],
+        "b_decimal100": [
+          "60",
+          "80"
+        ],
+        "c_reference_decimal100": [
+          "14.46320169357533761921593296016885311443840599371687769325193011978664008359496961264282723933807575",
+          "95.17893276880822079359468901327704896185386466876104076891602329340445330546834346245239092022064142"
+        ],
+        "c_walk_decimal100": [
+          "14.46320169357533761921593296016885311443840599371687769325193011978664008359496961264282723933807575",
+          "95.17893276880822079359468901327704896185386466876104076891602329340445330546834346245239092022064142"
+        ],
+        "c_walk_float64": [
+          14.463201693575336,
+          95.17893276880822
+        ],
+        "decimal80_to_100_max_abs_diff": "6.1264282723933807575E-79",
+        "expected_state": "DEFINED",
+        "fixture_id": "rational_arc",
+        "float64_to_walk100_max_abs_diff": "1.032571765305456184426745649875227064695300061355594100088612292703437837832043630984E-14",
+        "float_state": "DEFINED",
+        "h": 48,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": 0.7853981633974483,
+          "chord_deficit": "0.07612046748871324387181681060321171317758337413635751388490226871946499249889764128516006514965540385",
+          "cos": "0.7071067811865475244008443621048490392848359376884740365883398689953662392310535194251937671638207865",
+          "cross": "1629.174023853805496219545410289572186512262000434244180299535058165323815188347308755646439545443092",
+          "curvature_per_m": "0.01594514301521207382201916600126661944838935677023446005974169315114775141500373717654224105592848113",
+          "deviation_m": "-18.36880475352430904296607923345914560454453899931009798882243051012220963008430522737666169642961026",
+          "dot": "1629.174023853805496219545410289572186512262000434244180299535058165323815188347308755646439545443092",
+          "side_ab_m": "48.000000000000000000000000000000000000000000000000",
+          "side_ac_m": "88.69243512108352858830558618209167553495199608290967866704938220293136072010582643662463374563308123",
+          "side_bc_m": "48.000000000000000000000000000000000000000000000000",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0E-98",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": null,
+        "a_walk_decimal100": null,
+        "a_walk_float64": null,
+        "b_decimal100": [
+          "60",
+          "80"
+        ],
+        "c_reference_decimal100": null,
+        "c_walk_decimal100": null,
+        "c_walk_float64": null,
+        "decimal80_to_100_max_abs_diff": null,
+        "expected_state": "INSUFFICIENT_SUPPORT",
+        "fixture_id": "rational_arc",
+        "float64_to_walk100_max_abs_diff": null,
+        "float_state": "INSUFFICIENT_SUPPORT",
+        "h": 96,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": null,
+          "chord_deficit": null,
+          "cos": null,
+          "cross": null,
+          "curvature_per_m": null,
+          "deviation_m": null,
+          "dot": null,
+          "side_ab_m": null,
+          "side_ac_m": null,
+          "side_bc_m": null,
+          "undefined_reasons": [
+            "INSUFFICIENT_SUPPORT"
+          ]
+        },
+        "reference_to_walk100_max_abs_diff": null,
+        "state": "INSUFFICIENT_SUPPORT",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-3.6",
+          "145.2"
+        ],
+        "a_walk_decimal100": [
+          "-3.600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "145.2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "a_walk_float64": [
+          -3.6,
+          145.2
+        ],
+        "b_decimal100": [
+          "0",
+          "150"
+        ],
+        "c_reference_decimal100": [
+          "4.8",
+          "146.4"
+        ],
+        "c_walk_decimal100": [
+          "4.800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "146.4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "c_walk_float64": [
+          4.8,
+          146.4
+        ],
+        "decimal80_to_100_max_abs_diff": "0E-99",
+        "expected_state": "DEFINED",
+        "fixture_id": "oblique_stair",
+        "float64_to_walk100_max_abs_diff": "1.13686837721616029739379882812500000000000000000000000000000000000000000000000000000E-14",
+        "float_state": "DEFINED",
+        "h": 6,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": -1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792137",
+          "cos": "0",
+          "cross": "-36.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "curvature_per_m": "-0.2357022603955158414669481207016163464282786458961580121961132896651220797436845064750645890546069288",
+          "deviation_m": "4.242640687119285146405066172629094235709015626130844219530039213972197435386321116551162602982924718",
+          "dot": "0E-98",
+          "side_ab_m": "6.0000000000000000000000000000000000000000000000000",
+          "side_ac_m": "8.485281374238570292810132345258188471418031252261688439060078427944394870772642233102325205965849436",
+          "side_bc_m": "6.0000000000000000000000000000000000000000000000000",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0E-99",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-7.2",
+          "140.4"
+        ],
+        "a_walk_decimal100": [
+          "-7.199999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999998",
+          "140.4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "a_walk_float64": [
+          -7.2,
+          140.4
+        ],
+        "b_decimal100": [
+          "0",
+          "150"
+        ],
+        "c_reference_decimal100": [
+          "9.6",
+          "142.8"
+        ],
+        "c_walk_decimal100": [
+          "9.599999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999998",
+          "142.8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "c_walk_float64": [
+          9.6,
+          142.8
+        ],
+        "decimal80_to_100_max_abs_diff": "1.99999999999999999998E-79",
+        "expected_state": "DEFINED",
+        "fixture_id": "oblique_stair",
+        "float64_to_walk100_max_abs_diff": "1.13686837721616029739379882812500000000000000000000000000000000000000000000000000000E-14",
+        "float_state": "DEFINED",
+        "h": 12,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": -1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792138",
+          "cos": "-2.083333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333E-100",
+          "cross": "-144.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "curvature_per_m": "-0.1178511301977579207334740603508081732141393229480790060980566448325610398718422532375322945273034644",
+          "deviation_m": "8.485281374238570292810132345258188471418031252261688439060078427944394870772642233102325205965849438",
+          "dot": "-3E-98",
+          "side_ab_m": "12.0000000000000000000000000000000000000000000000000",
+          "side_ac_m": "16.97056274847714058562026469051637694283606250452337687812015685588878974154528446620465041193169887",
+          "side_bc_m": "12.0000000000000000000000000000000000000000000000000",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "2E-99",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-14.4",
+          "130.8"
+        ],
+        "a_walk_decimal100": [
+          "-14.40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "130.8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "a_walk_float64": [
+          -14.4,
+          130.8
+        ],
+        "b_decimal100": [
+          "0",
+          "150"
+        ],
+        "c_reference_decimal100": [
+          "19.2",
+          "135.6"
+        ],
+        "c_walk_decimal100": [
+          "19.20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "135.6000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "c_walk_float64": [
+          19.2,
+          135.6
+        ],
+        "decimal80_to_100_max_abs_diff": "0E-98",
+        "expected_state": "DEFINED",
+        "fixture_id": "oblique_stair",
+        "float64_to_walk100_max_abs_diff": "1.13686837721616029739379882812500000000000000000000000000000000000000000000000000000E-14",
+        "float_state": "DEFINED",
+        "h": 24,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": -1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792135",
+          "cos": "0",
+          "cross": "-576.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "curvature_per_m": "-0.05892556509887896036673703017540408660706966147403950304902832241628051993592112661876614726365173220",
+          "deviation_m": "16.97056274847714058562026469051637694283606250452337687812015685588878974154528446620465041193169887",
+          "dot": "0E-97",
+          "side_ab_m": "24.0000000000000000000000000000000000000000000000000",
+          "side_ac_m": "33.94112549695428117124052938103275388567212500904675375624031371177757948309056893240930082386339775",
+          "side_bc_m": "24.0000000000000000000000000000000000000000000000000",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0E-98",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-28.8",
+          "111.6"
+        ],
+        "a_walk_decimal100": [
+          "-28.80000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "111.6000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "a_walk_float64": [
+          -28.8,
+          111.6
+        ],
+        "b_decimal100": [
+          "0",
+          "150"
+        ],
+        "c_reference_decimal100": [
+          "38.4",
+          "121.2"
+        ],
+        "c_walk_decimal100": [
+          "38.40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "121.2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "c_walk_float64": [
+          38.4,
+          121.2
+        ],
+        "decimal80_to_100_max_abs_diff": "0E-98",
+        "expected_state": "DEFINED",
+        "fixture_id": "oblique_stair",
+        "float64_to_walk100_max_abs_diff": "5.6843418860808014869689941406250000000000000000000000000000000000000000000000000000E-15",
+        "float_state": "DEFINED",
+        "h": 48,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": -1.5707963267948966,
+          "chord_deficit": "0.2928932188134524755991556378951509607151640623115259634116601310046337607689464805748062328361792136",
+          "cos": "0",
+          "cross": "-2304.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "curvature_per_m": "-0.02946278254943948018336851508770204330353483073701975152451416120814025996796056330938307363182586610",
+          "deviation_m": "33.94112549695428117124052938103275388567212500904675375624031371177757948309056893240930082386339775",
+          "dot": "0E-96",
+          "side_ab_m": "48.000000000000000000000000000000000000000000000000",
+          "side_ac_m": "67.88225099390856234248105876206550777134425001809350751248062742355515896618113786481860164772679549",
+          "side_bc_m": "48.000000000000000000000000000000000000000000000000",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0E-98",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      },
+      {
+        "a_reference_decimal100": [
+          "-57.6",
+          "73.2"
+        ],
+        "a_walk_decimal100": [
+          "-57.6",
+          "73.2"
+        ],
+        "a_walk_float64": [
+          -57.6,
+          73.2
+        ],
+        "b_decimal100": [
+          "0",
+          "150"
+        ],
+        "c_reference_decimal100": [
+          "76.8",
+          "99.6"
+        ],
+        "c_walk_decimal100": [
+          "76.8",
+          "99.6"
+        ],
+        "c_walk_float64": [
+          76.8,
+          99.6
+        ],
+        "decimal80_to_100_max_abs_diff": "0.0",
+        "expected_state": "DEFINED",
+        "fixture_id": "oblique_stair",
+        "float64_to_walk100_max_abs_diff": "5.684341886080801486968994140625E-15",
+        "float_state": "DEFINED",
+        "h": 96,
+        "metrics_decimal100": {
+          "angle_precision": "float64 math.atan2 when present",
+          "angle_rad_float": -1.5080515715692826,
+          "chord_deficit": "0.2866233463309862423038810943443374073158995642959027220076387671999134010379999562616051939577231625",
+          "cos": "0.06270359331277969901924082748817732823753458205853478917592821160735679714058728147014520945589346662",
+          "cross": "-8801.28",
+          "curvature_per_m": "-0.01457318322581152441855447793540324684175222206632610776720770633106950063665064123432999628688794094",
+          "deviation_m": "64.25777990383806575924365368917275676735973270651680780727263402946214493616079976413733945884525928",
+          "dot": "552.96",
+          "side_ab_m": "96.0",
+          "side_ac_m": "136.9683175044506414776548298858872177953472836551866773745333566976166270007040083977718027601171528",
+          "side_bc_m": "91.86076420322225906318781227017978586798816271575346614273483000477770781096036735376273185288392861",
+          "undefined_reasons": []
+        },
+        "reference_to_walk100_max_abs_diff": "0.0",
+        "state": "DEFINED",
+        "state_matches_expected": true
+      }
+    ],
+    "reference_divergences_nonzero": [
+      "oblique_stair:12"
+    ],
+    "state_mismatches": []
+  },
+  "physical_hypothesis": "NOT_EVALUATED",
+  "status": "NUMERIC_DISCOVERY_ONLY"
+}

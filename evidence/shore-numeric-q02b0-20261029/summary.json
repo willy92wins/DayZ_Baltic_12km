@@ -1,0 +1,101 @@
+{
+  "status": "NUMERIC_DISCOVERY_ONLY",
+  "report_sha256": "98adb3e8d83b1b3cef681cd6f3cfe12f5381a3d2355412b973d4699a18b5048f",
+  "source_pins": {
+    "tools/quality/shore_numeric_discovery_ev112.py": "3264f82294a2411e4f1d902c42173a01ef1f72244d6b220bba91e49a4596b696",
+    "tests/test_shore_numeric_discovery_ev112.py": "d85918223eb5aac0339bb43ddf8c1eb449a11b5c0d43e3e7cb2964b11ba38969",
+    "tests/fixtures/q02b0/oracles.json": "083334300732b33b994dd6d97d063a19db08dd58e64a92cffea806848c4bde1b"
+  },
+  "npz": {
+    "arrays": {
+      "chain_offsets": {
+        "dtype": "int64",
+        "member_bytes": 8376,
+        "nbytes": 8248,
+        "shape": [
+          1031
+        ]
+      },
+      "chain_points": {
+        "dtype": "float64",
+        "member_bytes": 1738864,
+        "nbytes": 1738736,
+        "shape": [
+          108671,
+          2
+        ]
+      },
+      "closed": {
+        "dtype": "bool",
+        "member_bytes": 1158,
+        "nbytes": 1030,
+        "shape": [
+          1030
+        ]
+      },
+      "point_offsets": {
+        "dtype": "int64",
+        "member_bytes": 8376,
+        "nbytes": 8248,
+        "shape": [
+          1031
+        ]
+      }
+    },
+    "candidate_window_rows_upper": 538390,
+    "chain_count": 1030,
+    "closed_chain_count": 993,
+    "closure_mismatch_count": 0,
+    "core_vertex_count": 107678,
+    "core_vertices_per_chain_max": 13421,
+    "core_vertices_per_chain_min": 2,
+    "degenerate_chain_count": 1,
+    "degenerate_reason_counts": {
+      "closed_lt3_distinct": 0,
+      "closure_mismatch": 0,
+      "short_segment_lt_1e-8": 1,
+      "stored_lt2": 0,
+      "zero_segment": 1
+    },
+    "length_method": "float64 math.hypot per raw segment, math.fsum per chain; observed range only, not an error bound",
+    "max_abs_coord": 12282.0,
+    "max_perimeter_m": 38725.34203051485,
+    "max_segment_m": 8.377841271278028,
+    "min_perimeter_m": 0.081267655421121,
+    "min_segment_m": 7.239630159764984e-05,
+    "open_chain_count": 37,
+    "other_members_enumerated_only": [
+      "cell",
+      "chain_keys",
+      "chain_order",
+      "key",
+      "lev",
+      "p",
+      "pond",
+      "tri"
+    ],
+    "positive_segment_count": 107639,
+    "segment_count": 107641,
+    "short_segment_count": 2,
+    "short_segment_threshold_m": 1e-08,
+    "short_segment_threshold_note": "diagnostic inherited from Q02A; not a quality threshold",
+    "stored_point_count": 108671,
+    "stored_points_per_chain_max": 13421,
+    "stored_points_per_chain_min": 2,
+    "zero_segment_count": 2
+  },
+  "oracle_maxima_observed_not_bounds": {
+    "decimal80_to_100_max_abs_diff": "6.1264282723933807575E-79",
+    "reference_to_walk100_max_abs_diff": "2E-99",
+    "float64_to_walk100_max_abs_diff": "1.13686837721616029739379882812500000000000000000000000000000000000000000000000000000E-14"
+  },
+  "capture_seconds": 0.3899999999994179,
+  "capture_peak_rss": 55721984,
+  "external_review_verdicts_received": 0,
+  "reviewer": "ChatGPT/Codex integrator",
+  "review_fresh_blind_context": false,
+  "tests_passed": 15,
+  "natural_positive_count": 0,
+  "calibration_ready": false,
+  "map_repaired": false
+}

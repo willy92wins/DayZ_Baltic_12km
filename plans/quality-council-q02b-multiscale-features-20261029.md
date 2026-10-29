@@ -1,3 +1,5 @@
+Estado actual29-10: discovery Q02B0 COMPLETADO_NUMERIC_DISCOVERY_ONLY, evidence/shore-numeric-q02b0-20261029. Contrato513d9848, oráculos08333430,15tests. No productor completo autorizado; falta contrato numérico por campo y referentes naturales. Discovery y revisiones consumidos, no relanzar. El plan histórico siguiente conserva su alcance.
+
 # Q02B — rasgos de orilla por longitud de arco
 
 Estado: REVISADO_PARA_DESCUBRIMIENTO_NUMERICO_PREVIO. Fable5.1 nativo97.265s SOUND-with-fixes; adjudicación al final prevalece. Todavía no autoriza productor completo ni reparación: falta cerrar contrato numérico. Petición humana29-10 y council Q02B/Q17; product-spec.md:20 P14 exige contorno suave preservando canales, islas, humedales y reserva. Q02A mide teselación cruda; Q17A verifica datos analíticos. Ninguno detecta todavía naturalidad, lenguas, arcos regulares ni escaleras redondeadas.

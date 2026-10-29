@@ -1,3 +1,16 @@
+# Q02B0 terminado; Road B4A3 listo para implementar — 29-10
+
+15tests privados PASS; una captura0.390s/55.72MB, NUMERIC_DISCOVERY_ONLY. evidence/shore-numeric-q02b0-20261029: contrato513d9848/oráculos08333430, NPZb661 intacto,1030cadenas,107678vérticescore/107641segmentos,2ceros en1degenerada,538390ventanas candidatas. Longitudes positivas7.23963e-5..8.37784m, máximo perímetro38725.342m/max|coord|12282m.30oráculos:24defined/5AC0/1insuficiente; diferencias80→1006.1264e-79m/ref2e-99/float1.13687e-14 NO son cotas. No mapa reparado ni naturalidad aceptada.
+
+Muse autor/corrección consumidos. FableR0/R1 y Grok agotaron90s sin dictamen: no repetir esas llamadas ni inventar aprobación. Codex hizo revisión de integración cruzada respecto autor Muse, con contexto compartido explicitado en review.md, ANTES de captura; no lane ciega. Bugs offsetcompartido/positivoscortos/NPY/lectura corregidos y negativos15PASS. Código3264f822/testd8591822. Todos los autores/reviews/suites/captura/preparadores CONSUMIDOS; no rerun. Sin operación propia/run/lease.
+
+Siguiente geométrico: preparar contrato numérico por dimensión y condicionamiento con magnitudes guardadas, revisarlo antes de productor completo; evitar32ULP/1e-9/10x observado sin prueba. Referentes naturales y agua independientes pendientes. No recalcularQ02A/Q17A/council. Nueve humanos0resueltos,C1SINREVISAR,47FAIL21inciertos/Nav8607históricos,agua723/RH349/350/1425/RAM/global abiertos.
+
+Siguiente vial ejecutable: plans/ev112-road-b4a3-material-dependencies-20261029.md REVISADO_PARA_IMPLEMENTAR_SUBCONJUNTO_GUARDADO, Fable61.609s. Dos textosR1 porhash, cuatrohojasPAA nuevas desde roads34c1; parser de gramática observada y consumidor independiente, inventario20asignaciones/4clases/6strings/13arrays/UNescalar/24semicolons. No copiar error de revisor2escalares. Todas referencias/pathbytes,prefix/tabla501,4rangospositivos16MiB/64total; provider_ambiguityNOT_TESTED/modelsevidenceheredada porhash. Código/contrato NO existen todavía. Autor240/review180/suite120/extracción120s512MiB, consumidor60s. No CfgConvert ni PBO/WRPbuild/DayZ; no repetirB4A2R1.
+
+Publicar sólo public-repo; recibo publish-q02b0-roadb4a3-20261029/result.json cuando exista. .gitattributes ajena intacta. Mantener seguimiento y siguiente plan, no cerrar tarea global.
+
+---
 # B4A2R1 recuperado; Q02B preparado para discovery numérico — 29-10
 
 16tests privados PASS; recuperación0.813s, conv2 única0.203s, consumidor guardado0.203s. Contratoe233 y textos privadosc95b31a9/7d10096f. MATERIAL_SAMPLES_RECOVERED_ONLY; NO build ni carretera acabada. Conv1 nunca relanzada, PBOs no reabiertos, B4A2c9b3 inconcluso histórico intacto. Evidence/road-b4a2r1-saved-material-recovery-20261029. Autores/reviews/suites/recuperador/conv2/consumidor/preparadores CONSUMIDOS. Sin operación propia/run/lease.
