@@ -1,3 +1,15 @@
+# Q03B2 completo sólofixtures; pendiente publicación
+
+ARCHIVE_SESSION_FIXTURE_VERIFIED_ONLY. Código79ef0195/tests b2c8c649, contrato72d3011b/extensión848c4442.10métodos privados9PASS1SKIPsymlinkreal, reparse simulado sí; dos checks adicionales64KiB. CRC y EOF físico corregidos sin modificar helper051436d9 ni caps. Fable180.063s noentrega; recuperaciónMuse105.953s SOUND-with-fixes, postimagen final comprobada por integrador con contexto compartido. SourceR0 preservada. No NPZhistórico/run/lease/mapa; todas las operaciones de autoría/review/corrección/suite privadas consumidas.
+
+Siguiente: preparar/revisar corte semántico productor/consumidor independiente con contratoescenae967 y casos reales de identidad/proxy; aún no autoriza abrir204NPZ. Q03C/Q05/ángulos/referentes y carreteras siguen pendientes;9humanos0resueltos,C1NOT_REVIEWED. No repetir council/unidades anteriores. Publicación en publish-q03b2-20261029 debe seguir recibo, no duplicar.
+
+## Checkpoint público confirmado — 29-10
+
+a84404b642ec7e570d02c88224f66d0b6dacad43 publicado:33archivos,7métodos privados0.469s/públicos0.531s PASS sin skips; remoto main verificado limpio. Receipt publish-q03b1l-header-20261029/result.json. NPY_HEADER_FIXTURE_VERIFIED_ONLY, no lectorNPZ completo ni escena/mapa.26identidades observadas retiradas, sin operación/run/lease. Automatización actualizada ACTIVE.
+
+Todos autores/reviews/recuperación/corrección/repros/suites/freeze/stage/publicador/add/commit/push de este checkpoint CONSUMIDOS; no repetir. Siguiente: preparar/revisar wrapper sintético snapshot/ZIP/budget de sesión usando header051436d9, sin datos históricos aún. No hay plan ejecutable nuevo ni código wrapper. Mantener oráculos, identidad y caps; comprobar APIs reales antes de diseño. No dejar Q03C/Q05/referentes/ángulos/carreteras fuera del objetivo. .gitattributes ajena preservada.
+
 # Estado vivo — Q03B1L cabecera NPY validada,29-10
 
 NPY_HEADER_FIXTURE_VERIFIED_ONLY. Codex executor local187.177s; corrección puntual31.480s por hallazgo Fable reproducido. Módulo051436d9/tests c9077266 promovidos,7métodos privados PASS0.469s/50.92MB;26negativos originales+2schema. Oráculo79b946/contratode2afee0 intactos, extensión177d117f. Muse revisión código90.110s sin dictamen, recuperación Fable74.938s SOUND-with-fixes adjudicada; no postimagen externa adicional, integrador verificó delta propuesto. Evidence/npy-header-q03b1l-20261029.

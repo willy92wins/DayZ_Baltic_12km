@@ -110,3 +110,5 @@ Q03B29-10: contrato revisado, códigoR0/R1 REJECTED antesdecaptura. Tres repros 
 Q03B1/Q03B1A: dos noentregas dentro120s,0archivos completos/0suite/0capturas; rutas de intentos retiradas. Cambio a corte de cabecera no produjo código. Ocho fixtures literales verificadas por NumPy estándar no equivalen a lector validado. Evidence/q03b1-delivery-budget-20261029; siguiente reevaluación de reparto y mecanismo antes de autoría, no nueva ronda automática. Q03/Q05 y reparaciones siguen abiertas.
 
 Q03B1L cabecera NPY funcional validada con7métodos/26negativos+2schema; ejecución local asignada y revisión Fable completa con corrección reproducida. NPY_HEADER_FIXTURE_VERIFIED_ONLY; snapshot/ZIP/globalbudget/proxy y escena pendientes. Evidence/npy-header-q03b1l-20261029. Oráculos/contratos históricos intactos,0mapa/0humanos resueltos.
+
+Q03B2: snapshot/ZIP/budget sólofixtures completo;9PASS1SKIP y2checks64KiB. CRC y terminación físicaDEFLATE corregidos, caps yheader intactos. No204NPZ reales/índice/semánticaproxy ni exposición/reparación. Evidence/archive-session-q03b2-20261029. Siguiente corte semántico propio antes de Q03C/Q05, sin repetir council ni censos.

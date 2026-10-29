@@ -1,0 +1,10 @@
+# Adjudicación de código Q03B2
+
+Muse Wonder1.0 nativo105.953s SOUND-with-fixes entregado después de Fable180.063s sin dictamen. Recuperación única consumida; no consenso externo. Codex autor/integrador comparten contexto. El revisor no ejecutó las pruebas ni releyó la postimagen final; la integración comprobó el delta propuesto y ejecutó las regresiones.
+
+1. Aceptado: helper fijado envuelve BadZipFile/EOFError/zlib.error como HeaderError(INTERNAL_ERROR). SuiteR0 reprodujo CRC->INTERNAL_ERROR. Nuevo wrapper traduce sólo ese código y causa DIRECTA de tiposZIP: la definición real inspect_header:180-185 añade una sola capa; no necesita recorrer arbitrariamente cadenas. El negativo con RuntimeError conserva INTERNAL_ERROR. Helper051436d9 intacto.
+2. Aceptado y reproducido antes de corregir: ZipExtFile recorta bytes a file_size en zipfile:1094-1097. Dos archivos coherentemente comutados con144bytes declarados y150decodificados (STORED/DEFLATED) eran aceptados porR0. No se redujo la afirmación: el wrapper ahora valida STORED csize==usize y DEFLATE crudo completo con chunks64KiB, max_length65536, progreso, eof/no colas/tamaño/CRC/SHA antes de ZipFile, después de reserva. Nunca flushdecoder ni payload gigante duplicado; presupuesto lógico noRSS. El hash total decodificado se contrasta además con bytes suministrados a NumPy.
+
+Extensión externa848c4442 congelada ANTES de corregir; seis expectativas nuevas. Corrección única47.399s dentro180s, código79ef0195/tests b2c8c649. R1:10métodos,9PASS/1SKIPsymlinkreal por privilegioWindows; reparse simulado sí ejecutado. Suite0.606s interna/1.531s parent. Checks adicionales con dos patrones literales196608/262144bytes verifican los nuevos bucles64KiB, una ejecución0.547s sin modificar implementación ni repetir suite; no sirven como cota general de datos históricos.
+
+Límites16MiB/128MiB/262434599/35 intactos. Verificación lógica de memoria no certifica asignaciones internas exactas de zlib/NumPy. Decoder crudo y ZipFile usan la MISMA biblioteca zlib; no se declara implementación independiente. Fuentes/ZIP históricos0, semántica/proxy/época/marco mundial/exposición/reparación no evaluados.

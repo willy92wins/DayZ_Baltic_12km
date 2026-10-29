@@ -1,0 +1,15 @@
+{
+  "schema": "q03b2-review-correction-oracles-v1",
+  "cases": {
+    "stored_hidden": "ZIP_TRUNCATED",
+    "deflate_hidden": "ZIP_TRUNCATED",
+    "deflate_no_final": "ZIP_TRUNCATED",
+    "deflate_unused": "ZIP_TRUNCATED",
+    "header_wrapped_crc": "ZIP_TRUNCATED",
+    "header_internal_retained": "INTERNAL_ERROR"
+  },
+  "reference": "repro-q03b2-decoded-extent-20261029.py and Muse completed review105.953s",
+  "source_sha256": "be383a94f8250b02f2133ec233cf4f8ce9c5aefdc405510a209d758e08a9eebd",
+  "test_sha256": "2f7745930df644338c71a4505f67752c336c134847671e5abe75e927202d56fa",
+  "design": "Accept both findings. Narrow mapping only INTERNAL_ERROR HeaderError direct cause BadZipFile/EOFError/zlib.error (verified helper has one wrapping layer); retain other codes. Before ZipFile after expanded reservation, require STORED csize==usize; DEFLATED raw zlib.decompressobj(-15) chunks64KiB/max_length64KiB positive, no flush, exact eof/no unused/no unconsumed/exactcount+CRC+SHA. Fixed workspace reserve note128KiB per member before decoder; logical reservations are notRSS. Each loop consumes input or produces output or rejects. Raw totaldeclared and memory caps unchanged. Compare decoded SHA to full bytes delivered in array read, not only payload. No extra full payload copy. Single180s local correction + suite120s256MiB; reviewer proposed guard, integrator implements/tests, no postimage external review claim."
+}

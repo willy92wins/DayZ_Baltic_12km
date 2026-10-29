@@ -1,0 +1,27 @@
+test_caps_exact_boundary_reservations_and_two_phase (__main__.ArchiveTests.test_caps_exact_boundary_reservations_and_two_phase) ... ok
+test_flags_layout_and_local_header_mutants (__main__.ArchiveTests.test_flags_layout_and_local_header_mutants) ... 
+  test_flags_layout_and_local_header_mutants (__main__.ArchiveTests.test_flags_layout_and_local_header_mutants) (case='crc') ... FAIL
+test_frozen_numpy_local_zip64 (__main__.ArchiveTests.test_frozen_numpy_local_zip64) ... ok
+test_literals_versions_compressions_and_release (__main__.ArchiveTests.test_literals_versions_compressions_and_release) ... ok
+test_member_names_and_actual_count_before_constructor (__main__.ArchiveTests.test_member_names_and_actual_count_before_constructor) ... ok
+test_real_symlink_when_privileged (__main__.ArchiveTests.test_real_symlink_when_privileged) ... skipped 'Windows symlink privilege unavailable: 1314'
+test_snapshot_identity_io_and_reparse (__main__.ArchiveTests.test_snapshot_identity_io_and_reparse) ... ok
+test_state_hash_and_internal_errors (__main__.ArchiveTests.test_state_hash_and_internal_errors) ... ok
+
+======================================================================
+FAIL: test_flags_layout_and_local_header_mutants (__main__.ArchiveTests.test_flags_layout_and_local_header_mutants) (case='crc')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03b2-local-author-20261029\test_saved_scene_archive_q03b2.py", line 159, in test_flags_layout_and_local_header_mutants
+    self.reject(case, data, preflight=case != "crc")
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\q03b2-local-author-20261029\test_saved_scene_archive_q03b2.py", line 83, in reject
+    self.assertEqual(cm.exception.code, C["cases"][case])
+AssertionError: 'INTERNAL_ERROR' != 'ZIP_TRUNCATED'
+- INTERNAL_ERROR
++ ZIP_TRUNCATED
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.536s
+
+FAILED (failures=1, skipped=1)
