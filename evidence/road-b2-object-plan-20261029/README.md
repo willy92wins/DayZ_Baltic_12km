@@ -1,0 +1,1 @@
+Plan revisado por Fable5.1 y adjudicado en la sección final del plan. Sólo fase offline autorizada antes de revisión de código y prueba nativa separada. No representa colocación, reparación ni aceptación global.

@@ -1,0 +1,15 @@
+Log C:\temp\DayZ_MCP_130_dev\_server\profiles-130\script_2026-10-29_01-20-35.log started at 2026-10-29 01:20:37 (2026-10-29 00:20:37 UTC)
+01:20:46.268  SCRIPT       : string s =    'Module PluginConfigDebugProfile is not Registred in PluginManager.c!'
+01:20:46.268  SCRIPT    (E):    -- Stack trace --
+01:20:46.268  SCRIPT    (E):    GetPlugin() scripts/4_World/plugins/pluginmanager.c : 341
+01:20:46.268  SCRIPT    (E):    OnInit() scripts/4_World/plugins/pluginbase/pluginitemdiagnostic.c : 94
+01:20:46.268  SCRIPT    (E):    PluginsInit() scripts/4_World/plugins/pluginmanager.c : 136
+01:20:46.268  SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30
+01:20:46.268  SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins/pluginmanager.c : 304
+01:20:46.268  SCRIPT    (E):    MissionBase() scripts/5_Mission/mission/missionbase.c : 21
+01:20:46.268  SCRIPT    (E):    CreateCustomMission() C:\temp\DayZ_MCP_130_dev\mpmissions\BalticContactB3G1.BalticTrial\init.c : 244
+01:20:46.268  SCRIPT    (E):    -----------------
+01:21:00.647   SCRIPT    (E): Leaked 'MCPPollCallback' script instance (1x)!
+01:21:00.647   SCRIPT    (E): ==== Total Leaks (1x)! ====
+01:21:00.817   SCRIPT    (E): Leaked 'BunkerBroadcastManager' script instance (1x)!
+01:21:00.817   SCRIPT    (E): ==== Total Leaks (1x)! ====

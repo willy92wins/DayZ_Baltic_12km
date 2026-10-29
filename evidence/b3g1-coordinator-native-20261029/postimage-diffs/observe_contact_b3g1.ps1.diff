@@ -1,0 +1,18 @@
+--- reviewed/observe_contact_b3g1.ps1
++++ adjudicated/observe_contact_b3g1.ps1
+@@ -1,5 +1,6 @@
+ param([Parameter(Mandatory=$true)][string]$Directory,[Parameter(Mandatory=$true)][string]$ReadyUtc)
+ $ErrorActionPreference='Stop'
++$env:PSModulePath=(Join-Path $PSHOME 'Modules')+';'+$env:PSModulePath
+ $hostRecord=Get-Content -LiteralPath (Join-Path $Directory 'host-identity.json') -Raw | ConvertFrom-Json
+ $ready=[DateTimeOffset]::Parse($ReadyUtc).UtcDateTime
+ $deadline=$ready.AddSeconds(180)
+@@ -48,7 +49,7 @@
+  $scriptFile=Get-Item -LiteralPath $scriptFile.FullName
+  if($scriptFile.Length -gt 20971520){throw 'Script log size budget'}
+  $scriptRaw=[IO.File]::ReadAllBytes($scriptFile.FullName)
+- $scriptText=[Text.UTF8Encoding]::new($false,$true).GetString($scriptRaw)
++ $scriptText=[Text.Encoding]::UTF8.GetString($scriptRaw)
+  $scriptSha=HashBytes $scriptRaw
+  $checked=[DateTime]::UtcNow
+  if($scriptText -match 'SCRIPT\s*\(E\)|Can.t compile mission init script'){

@@ -1,0 +1,10 @@
+--- reviewed/capture_contact_b3g1_identity.ps1
++++ adjudicated/capture_contact_b3g1_identity.ps1
+@@ -6,6 +6,7 @@
+  [Parameter(Mandatory=$true)][string]$OutputPath
+ )
+ $ErrorActionPreference='Stop'
++$env:PSModulePath=(Join-Path $PSHOME 'Modules')+';'+$env:PSModulePath
+ if(Test-Path -LiteralPath $OutputPath){throw 'Fresh identity output required'}
+ $process=Get-Process -Id $ServerProcessId -ErrorAction Stop
+ $created=$process.StartTime.ToUniversalTime()

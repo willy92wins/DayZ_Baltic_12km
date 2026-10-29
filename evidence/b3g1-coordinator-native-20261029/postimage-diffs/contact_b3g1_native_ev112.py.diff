@@ -1,0 +1,21 @@
+--- reviewed/contact_b3g1_native_ev112.py
++++ adjudicated/contact_b3g1_native_ev112.py
+@@ -12,7 +12,7 @@
+                 and re.fullmatch(r'script_\d{4}-\d\d-\d\d_\d\d-\d\d-\d\d\.log',ntpath.basename(source)), 'script_location')
+     birth=delta.utc(host['created_utc']);c=delta.utc(created);m=delta.utc(written);t=delta.utc(checked)
+     old.require(birth<=c<=m<=t,'script_freshness')
+-    text=raw.decode('utf-8-sig',errors='strict')
++    text=raw.decode('utf-8-sig',errors='replace')
+     match=re.search(r'started at .*\((\d{4}-\d\d-\d\d \d\d:\d\d:\d\d) UTC\)',text)
+     old.require(match is not None,'script_header')
+     stamp=datetime.strptime(match[1],'%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc)
+@@ -29,6 +29,9 @@
+     host,after,mcp,capture,cleanup=[old.read(root/n) for n in names]
+     window=old.read(root/'capture-window.json');post=old.read(root/'script-at-capture.json')
+     readiness=old.read(root/'readiness.json');adoption=old.read(root/'adoption.json');heartbeats=old.read(root/'heartbeats.json')
++    preflight=old.read(root/'preflight.json')
++    old.require(preflight['status']=='succeeded' and preflight['preflight'] is True and not preflight['error_code'],'preflight_result')
++    old.require(preflight['request']=={**launch['request'],'preflight':True} and delta.utc(preflight['at'])<=delta.utc(adoption['at']),'preflight_binding')
+     continuity(launch,window,readiness,adoption,heartbeats,cleanup,old.read(root/'outcome.json'))
+     old.require(old.sha(root/'script-before.log')==window['script_log_sha256'],'script_before_hash')
+     old.require(old.sha(root/'script-at-capture.log')==post['sha256'],'script_post_hash')

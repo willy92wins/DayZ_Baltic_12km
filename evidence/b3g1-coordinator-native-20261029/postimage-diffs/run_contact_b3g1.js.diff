@@ -1,0 +1,47 @@
+--- reviewed/run_contact_b3g1.js
++++ adjudicated/run_contact_b3g1.js
+@@ -18,6 +18,7 @@
+       await api.gate(spec);
+       await api.preflight(request);
+       const launched=await api.launch(request);
++      run=launched.run_id||null;
+       await api.save('launch.json',{...launched,request,accepted_sha256:spec.seal,readiness_budget_s:300,capture_budget_s:180});
+       assert(launched.status==='succeeded' && launched.run_id,'launch_not_succeeded');
+       run=launched.run_id;
+@@ -29,7 +30,7 @@
+         while(!stopped){
+           try {await api.heartbeat(token);heartbeats.push({at:api.now(),ok:true});}
+           catch {hbError='heartbeat_failed';heartbeats.push({at:api.now(),ok:false});break;}
+-          await Promise.race([api.sleep(15000),stopSignal]);
++          await Promise.race([api.sleep(10000),stopSignal]);
+         }
+       })();
+       await api.save('adoption.json',{run_id:run,status:'OWN_RUN_ADOPTED',at:api.now()});
+@@ -69,16 +70,22 @@
+       stopped=true;resolveStop();if(hb)await hb;
+       cleanup.heartbeat_ended_utc=api.now();
+       if(token){try{cleanup.release=await api.release(token);}catch(e){cleanup.cleanup_error=String(e.message||e);}}
++      // close requires adoption. Official stop queues its own exact-run adoption;
++      // never close the unrelated run returned by a failed/wrong adoption.
++      if(run && cleanup.close?.run_retired!==true){
++        try{cleanup.stop=await api.stop(run);assert(cleanup.stop.run_id===run && cleanup.stop.status==='succeeded','stop_failed');}
++        catch(e){cleanup.cleanup_error=String(e.message||e);}
++      }
+       try {
+         const terminal=(run||token)?await api.status():{};cleanup.self=terminal.self;cleanup.pending_commands=terminal.pending_commands;cleanup.cleanup_degraded=terminal.cleanup_degraded;
+         // Retirement is demonstrated by close, never inferred from absent status fields.
+-        cleanup.own_run_present=adopted ? cleanup.close?.run_retired!==true : null;
++        cleanup.own_run_present=run ? !(cleanup.close?.run_retired===true || cleanup.stop?.status==='succeeded') : null;
+       }catch(e){cleanup.cleanup_error=String(e.message||e);}
+-      await api.save('heartbeats.json',{events:heartbeats,failure:hbError});
+-      await api.save('cleanup.json',cleanup);
++      try{await api.save('heartbeats.json',{events:heartbeats,failure:hbError});await api.save('cleanup.json',cleanup);}
++      catch(e){cleanup.cleanup_error='receipt_write_failed';}
+     }
+-    if(cleanup.cleanup_error || hbError || (adopted && (!cleanup.release?.released || cleanup.self?.state!=='none' || cleanup.pending_commands!==0 || cleanup.cleanup_degraded?.length)))outcome={status:'FAILED_CLEANUP',run_id:run,error:error||hbError||cleanup.cleanup_error};
+-    await api.save('outcome.json',outcome);
++    if(cleanup.cleanup_error || hbError || ((run||token) && (cleanup.own_run_present || (token&&!cleanup.release?.released) || cleanup.self?.state!=='none' || cleanup.pending_commands!==0 || cleanup.cleanup_degraded?.length)))outcome={status:'FAILED_CLEANUP',run_id:run,error:error||hbError||cleanup.cleanup_error};
++    try{await api.save('outcome.json',outcome);}catch{outcome={status:'FAILED_RECEIPTS',run_id:run};}
+     return outcome;
+   }
+   return {runArm};

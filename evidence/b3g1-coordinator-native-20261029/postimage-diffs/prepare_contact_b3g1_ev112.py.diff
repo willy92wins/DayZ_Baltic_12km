@@ -1,0 +1,10 @@
+--- reviewed/prepare_contact_b3g1_ev112.py
++++ adjudicated/prepare_contact_b3g1_ev112.py
+@@ -23,6 +23,7 @@
+     b.require(a['status']=='REVIEWED_B3G1_COORDINATOR_READY','review_required');b.verify(a['inputs'])
+     required=[Path(__file__),W/'tools/quality/contact_pair_b3g_ev112.py',W/'tools/quality/contact_pair_b3g_binding_ev112.py',W/'missions/BalticContactB3G1.BalticTrial/init.c',SOURCE/'files.json']
+     required += [W/'tools/quality'/n for n in ('capture_contact_b3g1_identity.ps1','observe_contact_b3g1.ps1','contact_b3g1_native_ev112.py','contact_pair_b3g1_receipts_ev112.py','run_contact_b3g1.js','contact_b3g1_tools.js')]
++    required += [W/'evidence/collision-native-b2-20261028/native/deployment.json']
+     b.require(all(str(p) in a['inputs'] for p in required),'approval_scope')
+     b.verify({str(PROOF):PROOF_SHA,str(MANIFEST):MANIFEST_SHA})
+     rows=b.read(SOURCE/'files.json');pins={r['path']:r['sha256'] for r in rows};b.verify(pins)
