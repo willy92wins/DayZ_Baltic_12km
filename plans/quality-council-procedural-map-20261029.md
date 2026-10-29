@@ -1,6 +1,6 @@
 # Ejecución del council ampliado: validación y colocación procedimental
 
-CheckpointQ05A129-10:13joins viales guardados consolidados, sin tests geométricos ni mapa cambiado. Q05A no entregó dentro120s; recuperación documental Muse18.563s sobre seis copias, original preservado. Identidad actual/pivote/ancho útil/accesos pendientes. B0 ya guarda polígonos/máscaras; evitar otra extracción duplicada. Siguiente plan propio de piloto compilado/nativo reanclará recetaB2/posesB3/recursos; no captura autorizada todavía. Q03C2R1 conserva1520particiones fuente, no visibilidad. Nueve humanos0resueltos,C1NOT_REVIEWED, referentes/ángulos/carreteras abiertos; council no se repite.
+Checkpoint RoadC0 29-10: fuentes de laboratorio 0/3 objetos verificadas por autor y consumidor,14tests privados/públicos. El prefijo terreno/materiales y terminador b108 se conservan; se omite deliberadamente la población original sólo en copias aisladas. No cambia mapa ni B3. Esto separa calibración de tres piezas de recompilar5509modelos; no acepta precedencia/oclusores del mapa. Siguiente plan RoadC1 para recursos/stage/config y consumidor compilado0/3; sin build/native aún. Q05A1 mantiene13joins parciales. Nueve humanos0resueltos,C1NOT_REVIEWED, ángulos/referentes/Q03/Q05/carreteras abiertos; council ya ejecutado.
 
 Petición humana vigente del29-10: adelantar council, proponer mejoras y aplicar
 las justificadas a herramientas y mapa. Este plan reemplaza el orden temporal

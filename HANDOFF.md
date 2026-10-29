@@ -1,3 +1,45 @@
+# RoadC0 verificado; publicación en curso
+
+RoadC0 VERIFIED_ISOLATED_SOURCE_PAIR_ONLY. Se crearon copias 0WZD de laboratorio: control sin objetos f00c3f57ab3660e93c44a1cb612c6338f87db1bfd4c047acf6f7389c61c7e6df (17307685 B) y candidato con tres objetos 2fb3686b6d86888609caeace3be14f8422cfe8c1da9d77db263c86e21ddcb426 (17307968 B). Prefijo terreno/materiales 17307629 B/d16b5139 y terminador56 B exactos de b108; IDs19394564–566, nombres/poses/matrices48B de B3 preservados. Los 2578398 objetos originales se omiten deliberadamente SÓLO en estas copias de laboratorio. El mapa y RoadB3 siguen intactos; no es una reparación.
+
+Autor real único1.329s/69382144 B y consumidor propio0.547s/52281344 B, ambos dentro60s/256MiB. Contrato9296cef4fca5e1e51b154eef920f44ef8a01531ebea894446b83c2ffbc0f746c y oráculo c70cad59d72505d841acce60a3b34a041a2e9ac9dc3d6331f4ce896dc8bac590 fijados antes de código. Leer evidence/road-c0-isolated-sources-20261029. Dos programas recorren fuente por sí mismos; bibliotecas estándar comunes, autor/integrador Codex con contexto compartido. Censo original heredado por SHA/B3, no repetido; snapshots no son vigilancia continua.
+
+Codex executor local233.518s<600, plan Muse43.281s SOUND-with-fixes y código Muse72.625s SOUND/CONVERGE. Cuatro precisiones del plan incorporadas antes de código: matrices48bits, B3original/saneado ligados, dos prefijos nombrados separadamente y terminador exacto.14tests privados1.703s y públicos1.453s PASS sin skips. No corrección ni reintento. 24 identidades observadas retiradas, sin operación propia/run/lease. Autores, reviews, suites, captura y freeze RoadC0 CONSUMIDOS: no repetir.
+
+Siguiente: preparar/revisar RoadC1 de stage reducido y pareja compilada del laboratorio, con contrato/budgets propios. Fuente0/3 NO demuestra que Binarize acepte control vacío. Fijar recursos reales de terreno/materiales/bin/core y tres modelos instalados; no convertir doce recursos B4A3 en cierre de5509. Config histórico stage-kit7-fc/root/dayz_baltic_12km_dev/tb/narva_trial/config.cpp declara BalticTrial, requiredAddons Baltic_Water_V30/Baltic_Stream_Pilot y rutas navmesh propias: revisar explícitamente configuración aislada y dependencias antes de reutilizar. No inferir que quitar objetos quita esos requiredAddons.
+
+El lector OPRW histórico exige ancla baltic_water_v30 y no soporta automáticamente control0; no usarlo como writer ni heredar excepciones de altura. Nuevo consumidor compilado debe tratar0/3 y terreno/materiales antes del paquete. Después RoadC2 nativo necesita identidad de modelos/paquetes, testigos de las cuatro hipótesis y controles de oclusión, FIFO/lease/heartbeat/cierre oficiales. No build, PBO, despliegue ni DayZ autorizados por C0. No tocar P:. Huellas/accesos/pavimentado/conducción, ángulos/referentes y nueve humanos0resueltos/C1NOT_REVIEWED siguen pendientes.
+
+Seguir publish-roadc0-20261029 sin duplicar.
+
+# RoadC0 gates verdes; par fuente unico activo
+
+Seguir run-roadc0-isolated-pair-20261029 y road-c0-ready-20261029/result.json.14testsR0PASS y Musecode72.625s SOUND. Control0/candidato3 de laboratorio, no build/native/mapa. No duplicar autor ni consumidor.
+
+# RoadC0 autor entregado; review/suite activas
+
+Seguir road-c0-code-review-20261029/run y road-c0-tests-r0-20261029 sin duplicar. Contrato/oraculos externos intactos. No fuente real abierta ni build/DayZ/mapa; gates antes de0/3copiasaisladas.
+
+# RoadC0 executor local600s activo
+
+Plan revisado Muse43.281s; contrato/oraculo antes de codigo en road-c0-local-author-20261029. Fuente0/3 laboratorio solamente; no build/native/mapa. Review180/suite120 antes de autor+consumidor60s. Seguir deadline start.json, no repetir B2/B3.
+
+# RoadC0 revision del plan de laboratorio activa
+
+Seguir road-c0-plan-review-20261029/run, una entrega120s. Propone fuentes aisladas0/3objetos sin cambiar mapa; no build/DayZ. Q05A/Q05A1 consumidos. No codigo nuevo aun.
+
+# Q05A1 publicado; siguiente plan de piloto vial
+
+Checkpoint publicado bd54d46c3853c6811bd62c8598ee6d9f5da7d601:29archivos documentales,13filas cotejadas literalmente,0tests geométricos. Main remoto verificado limpio. Recibo publish-q05a1-20261029/result.json. Sin operación propia/run/lease;cuatroidentidades observadas retiradas. Q05A/Q05A1, preparadores/review/entrega/freeze/finalizador/publicador/add/commit/push CONSUMIDOS: no repetir.
+
+Q05A1 SAVED_BINDINGS_PARTIAL_RECONCILED:13selectores guardados49/301,71/370–375 y76/124–129 con chain/ordinal/nodos/vecinos/roles. Para76: nodos20533–20539, instance19394363/model3579 y vecinos exteriores20532→20533/20539→20540. global_edge_index y49secoUNKNOWN. Nodos vecinos son conectividad, no accesos físicos; surfaces vacío no prueba ausencia mundial de puente. No nuevo ancho/pivote/huella/colocación/medición.
+
+Q05A original NO_COMPLETE_DELIVERY_WITHIN_RESEARCH_BUDGET:20archivos/8247835B y una ruta ausente; último lote completo56.509s, próxima llamada paró antes de nuevas lecturas/redacción. Observación cierre180.834s, no timeout de hijo ni causa de latencia demostrada. Q05A1 cambió a cápsula cerrada de seis copias: preparación0.062s/8133105B, planMuse32.625s y entregaMuse18.563s completos, identidadmuse-wonder-1.0. Trece filas cotejadas literalmente;0testsgeométricos,0arrays,0mapa. Es autocontrol documental, no verificación geométrica independiente. Cuatroidentidades observadas retiradas; sin operación/run/lease.
+
+Leer evidence/road-footprint-bindings-q05a1-20261029. Cápsulad201f977 y reporte7e38791b; frozen original e1df521c intacto. Informe externo preservado con defecto Markdown8separadores/9columnas; datos13filas coinciden. Su secuencia rígida de exigir identidad actual/pivote para cualquier análisis histórico se rechaza: sí son necesarios para aceptación nativa, no para toda lectura de superficies ya mundiales. Q05A y recuperaciónQ05A1, reviews, preparación, entrega y freeze CONSUMIDOS; no repetir.
+
+Siguiente acción: reanclar receta/24huellasB2 por manifiesto y tresIDs/posesB3, después preparar/revisar piloto compilado/nativo de pivote con recursos/precedencia/oclusores propios. Aún no plan ejecutable nuevo ni captura. B0 YA contiene projection_wkt/material_masks/caras: no nueva extracción duplicada de bordes. La ruta contract.json ensayada ausente no demuestra contrato inexistente. No tocarP:, no catálogo/censo repetido, no interpretar12recursos como cierre5509. Análisis históricoQ03C/Q05 puede continuar sin imponer una dependencia circular de identidad actual a toda medida. Nueve humanos0resueltos,C1NOT_REVIEWED; ángulos/referentes/reparación siguen abiertos.
+
 # Q05A1 cerrado; publicación documental en curso
 
 Q05A1 SAVED_BINDINGS_PARTIAL_RECONCILED:13selectores guardados49/301,71/370–375 y76/124–129 con chain/ordinal/nodos/vecinos/roles. Para76: nodos20533–20539, instance19394363/model3579 y vecinos exteriores20532→20533/20539→20540. global_edge_index y49secoUNKNOWN. Nodos vecinos son conectividad, no accesos físicos; surfaces vacío no prueba ausencia mundial de puente. No nuevo ancho/pivote/huella/colocación/medición.

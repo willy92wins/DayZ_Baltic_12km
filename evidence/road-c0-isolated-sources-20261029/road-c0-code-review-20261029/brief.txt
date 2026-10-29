@@ -1,0 +1,540 @@
+Revisión de código RoadC0, familia externa. Una entrega180s <=1000palabras. Sólo esta cápsula, sin herramientas/cambios/shell/NPZ/WRP real. Codex autor/integrador con mismo contexto declarado. Muse Wonder1.0 nativo REVIEW. No council. Dictamen SOUND/SOUND-with-fixes/NEEDS-WORK, hallazgos con línea y repro cerrado, CONVERGE/NO_CONVERGE, límites y END_ROADC0_CODE. Evalúa cero falsosPASS: prefijo real preservado,3registros exactos,0objetos control, terminador, sourceidentity/bounds, consumidor reconstruye desde fuente/contrato, no invoca autor. CensoB3 se hereda sólo por fuentespinadas, no se repite. I/O stdlib común declarado; no build ni pivote. No exigir compilabilidad ni escena5509 en este corte de fuente aislada. Tests aún no ejecutados, no asumir resultado. Contract/oracle congelados antes de estos archivos. Sugerencias de nueva dimensión van backlog, no expansión de producto.
+
+FILE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\plans\ev112-road-c0-isolated-calibration-sources-20261029.md SHA 1d6b2ea7e884fd39f83e604bdc99772b0ab59f53abe1589cd1955b6db381dba9
+1: # RoadC0 — aislar la calibración de las tres piezas de carretera
+2: 
+3: Estado: REVISADO_PARA_AUTORIA_DE_FUENTES_DE_LABORATORIO. Consumidor de esta unidad: futuro build
+4: RoadC1 del laboratorio vial; no es una reparación ni candidato de producción.
+5: Trazabilidad: Q04 del council, P5/P10/P11 y petición humana de preparar carreteras.
+6: Codex planner/orchestrator/integrator; si pasa review, Codex EXECUTOR local
+7: explícitamente asignado para el corte acotado. Review externa nativa; no council.
+8: 
+9: ## Decisión técnica [DESIGN]
+10: 
+11: Separar un laboratorio de calibración de la recompilación de la escena completa.
+12: Crear dos archivos 0WZD nuevos en una carpeta exclusiva: control sin objetos y
+13: candidato con sólo los tres registros literales de RoadB3. Ambos copian exactamente
+14: el prefijo terreno/materiales y el terminador de la fuente histórica b108.
+15: Los 2.578.398 objetos originales se omiten deliberadamente EN ESTAS COPIAS DE
+16: LABORATORIO; fuente, candidato RoadB3, mapa y paquetes publicados no se modifican.
+17: La ausencia de objetos en el laboratorio no repara ni oculta fallos del mapa.
+18: 
+19: La compilación posterior resolverá tres modelos y materiales de terreno, no
+20: simulará que doce recursos B4A3 cierran 5.509 modelos. No transfiere el resultado
+21: de laboratorio a precedencia/oclusores/colocación del mapa completo. Las cuatro
+22: hipótesis raw/origin × fila/columna siguen abiertas. Los originales B2/B3 se
+23: reutilizan por hash y no se vuelven a ejecutar.
+24: 
+25: Alternativa considerada y descartada aquí: insertar objetos directamente en
+26: OPRW compilado. package_visual_forest_ev112.py:29–64 tiene un lector HEURÍSTICO,
+27: ancla baltic_water_v30 y tablas auxiliares no decodificadas; no autoriza un writer
+28: OPRW ni saltar Binarize. El lector tampoco sirve automáticamente al control0.
+29: 
+30: ## Anclas [EXACT, leídas el 29-10]
+31: 
+32: - evidence/road-b2-recipe-20261029/manifest.json enlaza receta R1 af3ee395 y
+33:   world-faces-private48666b12 a través del contratoB3. No había un contract.json
+34:   en la raíz B2 consultada porQ05A; el contrato NO se declara inexistente.
+35: - B2: tres poses (100,200,300), (200,200,300), (300,200,300); primera identidad,
+36:   otras90grados; 24huellas ya guardadas, no recalcularlas. 0.03m/10ULP y
+37:   separación10.7703296m pertenecen a esa receta, no son aceptación nativa.
+38: - evidence/road-b3-source-pilot-20261029/contract.json (copia pública saneada)
+39:   tiene objetos19394564–566, nombres exactos asf1_25/asf2_25/asf1_10 100.p3d y
+40:   matrix12. Contrato original7454f8b7 debe fijarse desde ruta de export-manifest.
+41: - road-b3-input-discovery/report.json: prefijo terreno/materiales17307629B,
+42:   SHA d16b513978ba9b98c222d0dee4b80e8f519713140394406517c99da3fa0287a5.
+43:   Fuente b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee,
+44:   286261435B. No confundir con prefix_bytes286261379 del contratoB3.
+45: - tools/quality/author_road_object_pilot_ev112.py:159–196 describe prefijo0WZD;
+46:   :199–228 recorre registros de48B matriz+IDu32+longitudu32+nombreASCII, y
+47:   terminador56B con longitud0 alEOF. verify_road_object_pilot_ev112.py:159–225
+48:   lo recorre por cursor. Se leen definiciones, no ejecutar esos CLIs/suites.
+49: - El terminador opaco exacto sigue siendo dato heredado; no se supone que la
+50:   aceptación sintáctica de una escena vacía demuestre que Binarize la acepte.
+51:   Holgura196.427m guardada sólo frente a terreno fuente, no espacio libre motor.
+52: 
+53: ## Corte ejecutable después de review [DESIGN]
+54: 
+55: Primero congelar contrato y oráculos externos antes de código: pins de recetaB2,
+56: contratoB3 original/export, descubrimiento de prefijo, source_sha/size/prefix y
+57: terminador; lista de tres IDs/nombres y 48bytesfloat32 literales. El contrato
+58: nuevo describe dominio LAB_ONLY,0/3objetos y negaciones de aceptación, y fija
+59: outputs/marker exclusivos. No abrir NPZ/PBO/P3D ni extraer caras.
+60: 
+61: Autor nuevo pequeño: abrir fuente sólo lectura, comprobar reparse/identidad
+62: path/handle dev/ino/size/mtime, SHA completo por chunks<=1MiB, longitud exacta,
+63: prefijoSHA y terminador heredado; parseo acotado del prefijo para que offset no
+64: sea una cifra arbitraria. No recenso del stream de2.5Mobjetos: su identidad y
+65: censo se heredan explícitamente deB3 pinado. Verificar bits de tres matrices,
+66: nombres/IDs/longitudes antes de escribir. Copiar el mismo prefijo a ambas salidas
+67: y después terminador o tresregistros+terminador. Reserva de salida antes de
+68: escribir, carpeta/marker exclusivos incluso en fallo, archivos incompletos
+69: jamás marcados aceptados. Fuente inmutable comprobada al finalizar; no afirmar
+70: vigilancia continua de cambios revertidos. Preservar cualquier parcial.
+71: 
+72: Consumidor nuevo separado: no importa autor ni parser del autor. Carga contrato
+73: porSHAexterno y fuente propia; recorre prefijo con cursor, compara cada rango de
+74: ambas salidas contra fuente mediante chunks; decodifica registros con lectura
+75: exacta secuencial. Exige control0, candidato3, nombresraw/IDs/matriz48B exactos,
+76: terminador56B idéntico alEOF, ninguna cola/objeto adicional y conservación del
+77: prefijo completo. Verifica reporte completo y hashes/longitudes, no sólo claims
+78: del productor. El consumidor no prueba otra vez unicidad de los2.5Mobjetos que
+79: no están en estas copias; herencia declarada. Errores I/O, identidad, contrato,
+80: estructura y bug interno separados; no catch general convertido enPASS.
+81: 
+82: Límites: fuente<=512MiB, prefijo<=32MiB, salida conjunta<=64MiB,3registros,
+83: nombres<=4096BASCII sin traversal, dimensiones/productos dentro del archivo
+84: antes de avanzar, materiales/strings acotados por bytes restantes. Memoria
+85: 256MiB por proceso; no cargar286MiB fuente completa. JSON<=1MiB/reporte<=1MiB.
+86: No nuevos helpers genéricos, ni modificar módulos sellados.
+87: 
+88: ## Validación y parada [DESIGN]
+89: 
+90: Oráculos literales previos: prefijo0WZD pequeño con alturas/materiales, fuentes
+91: con objetos y terminadoropaco, expected control/candidato hex completo; signed
+92: zero en matriz, nombre con espacio. Expectativas no generadas por el autor.
+93: Positivo end-to-end autorCLI→consumerCLI con contratoSHAexterno.
+94: Negativos cerrados: fuenteSHAincorrecto; offsetprefijoincorrecto; alturas/material
+95: truncados; prefijo mutado enuna salida; ID/nombre/matriz/orden mutados; objeto
+96: extra/control no vacío; cola tras terminador; terminador cambiado; duplicadoID;
+97: nombretraversal/noASCII; límite512MiB/64MiB/4096B antes de lectura/asignación;
+98: reparse/identidad cambiada simulados; outputexistente; reporte+hash co-mutados
+99: sin poder engañar comparación contra fuente. No contar skips como pruebas.
+100: 
+101: Presupuesto antes de ronda1: autor local600s para contrato/oráculos/código;
+102: review180s incluye contrato; suite120s/256MiB; única corrección180s por repro
+103: del conjunto cerrado y una recuperación180s de dictamen no entregado. Una
+104: autoría real60s/256MiB y consumidor60s/256MiB sólo tras gates; sin retries.
+105: Plan una revisión120s, no bucle genérico. Si hipótesis de prefijo/código falla,
+106: preservar y retirar esta unidad; no ampliar caps ni llamarla build listo.
+107: Fuente única de parada: gates-ledger §Cuándo para un bucle.
+108: 
+109: Resultado: VERIFIED_ISOLATED_SOURCE_PAIR_ONLY o rechazo/inconcluso concreto.
+110: Cero build, PBO, deployment, DayZ, lease, conducción o selección de pivote.
+111: No emitir resultado si ambas salidas y consumidor no están íntegros.
+112: 
+113: ## Después: RoadC1/RoadC2, aún no autorizados por este plan [DESIGN]
+114: 
+115: RoadC1 necesita preflight fresco, stage privado de recursos de3modelos y
+116: terreno/materiales/bin/core con identidad/precedencia y destino exactos; nada
+117: de enlaces globales DZ incidentales ni tocarP:. Revisar contrato de compilación
+118: control/candidato y consumidor OPRW capaz de0/3objetos antes de ejecutar pareja.
+119: RoadC2 liga modelos/paquetes instalados y transformaciones a testigos separados
+120: de las4hipótesis; sondeo físico con identidad propia y controles de oclusión,
+121: sin cámara_set. Ni un raycast ni ordinalBUILDING demuestran semántica global.
+122: FIFO600s, lease/adopción exacta, heartbeat10s y cierres oficiales en plan propio.
+123: 
+124: La calibración permite después Q05/Q06/Q07 sobre huella completa y dosaccesos.
+125: El mapa completo seguirá necesitando recursos/oclusores/agua y P9/P11; no
+126: suprimir esos gates por el éxito de laboratorio. Humanos0resueltos,C1NOT_REVIEWED.
+127: 
+128: ## Adjudicación Muse43.281s, previa a código
+129: 
+130: SOUND-with-fixes/CONVERGE. F1: fijar matrix48_hex y record_bytes, conservando bits;
+131: el contratoB3 real usa números representablesf32 y su evidencia se hereda, no
+132: se inventa un pin de lectura binaria nueva. F2: original localizado mediante
+133: export-manifest en road-b3-source-inputs-20261029/contract.json; fijar ambosSHA
+134: original7454 y saneadofdee más enlace. F3: nombres distintos para prefijo
+135: terreno/materiales y preterminador. F4: igualdad de56bytes exacta en ambos
+136: caminantes, nunca sólo longitudcero. Se integran sin cambiar tolerancias.
+137: La supresión de objetos sólo define laboratorio: no cierra5509recursos ni
+138: aceptación del mapa. Futuro rechazo del control no aislaría causa deBinarize.
+139: Revisión de cápsula; postimagen editorial Codex, sin otra revisión externa.
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c0-local-author-20261029\contract.json SHA 9296cef4fca5e1e51b154eef920f44ef8a01531ebea894446b83c2ffbc0f746c
+1: {
+2:   "schema": "road-calibration-source-pair.v1",
+3:   "domain": "ISOLATED_LAB_ONLY",
+4:   "source": {
+5:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\stage-kit7-fc-20261026\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\baltic_trial.wrp",
+6:     "sha256": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+7:     "bytes": 286261435,
+8:     "terrain_material_prefix_bytes": 17307629,
+9:     "terrain_material_prefix_sha256": "d16b513978ba9b98c222d0dee4b80e8f519713140394406517c99da3fa0287a5",
+10:     "source_pre_terminator_bytes": 286261379,
+11:     "terminator_hex": "887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f40ef9f0100000000"
+12:   },
+13:   "objects": [
+14:     {
+15:       "id": 19394564,
+16:       "raw_name_hex": "647a5c737472756374757265735c726f6164735c70617274735c617366315f32352e703364",
+17:       "matrix48_hex": "0000803f0000000000000000000000000000803f0000000000000000000000000000803f0000c8420000484300009643",
+18:       "record_bytes": 93
+19:     },
+20:     {
+21:       "id": 19394565,
+22:       "raw_name_hex": "647a5c737472756374757265735c726f6164735c70617274735c617366325f32352e703364",
+23:       "matrix48_hex": "00000000000000000000803f000000000000803f00000000000080bf0000000000000000000048430000484300009643",
+24:       "record_bytes": 93
+25:     },
+26:     {
+27:       "id": 19394566,
+28:       "raw_name_hex": "647a5c737472756374757265735c726f6164735c70617274735c617366315f3130203130302e703364",
+29:       "matrix48_hex": "00000000000000000000803f000000000000803f00000000000080bf0000000000000000000096430000484300009643",
+30:       "record_bytes": 97
+31:     }
+32:   ],
+33:   "output": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c0-isolated-sources-20261029",
+34:   "consumer_result": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c0-real-consumer-20261029\\verified.json",
+35:   "pins": {
+36:     "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-b3-source-inputs-20261029\\contract.json": "7454f8b742818ea721a001a6cb8cd6d87b5ae4abd399ab3a49456d6bcc1f9382",
+37:     "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-b3-input-discovery-20261029\\report.json": "edf7f5e470748947e98e39453a0e61f999085fbd67f28fc8e34802fd917ff820",
+38:     "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-b3-source-pilot-20261029\\export-manifest.json": "cf03e317359b1edfadd6915dfcf6446c56218e8e2f572ab0dbfa8fdf8e80590d",
+39:     "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\evidence\\road-b3-source-pilot-20261029\\contract.json": "fdee65cbc9dba204c9cb56041925553736397c6c7c15f1405a6db59390869948",
+40:     "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-b2-recipe-inputs-r1-20261029\\recipe.json": "af3ee39595c6b0f96d799a54de95833151eb97df99e50bb5e33ffb2332c8c210",
+41:     "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-b2-recipe-20261029\\report.json": "a91d50278dd224bd9b6980df5a6f881b2a0de9e1f92540c4157d25dd206c2f27",
+42:     "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\plans\\ev112-road-c0-isolated-calibration-sources-20261029.md": "1d6b2ea7e884fd39f83e604bdc99772b0ab59f53abe1589cd1955b6db381dba9"
+43:   }
+44: }
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c0-local-author-20261029\oracle.json SHA c70cad59d72505d841acce60a3b34a041a2e9ac9dc3d6331f4ce896dc8bac590
+1: {
+2:   "schema": "road-c0-literal-oracle.v1",
+3:   "prefix_hex": "30575a440100000001000000020000000200000000004042000000000000803f0000004000004040000001000000070000006d2e72766d617400000000",
+4:   "terminator_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006300000000000000",
+5:   "source_hex": "30575a440100000001000000020000000200000000004042000000000000803f0000004000004040000001000000070000006d2e72766d6174000000000000803f0000000000000000000000000000803f0000000000000000000000000000803f0000c84200004843000096430100000005000000612e7033640000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006300000000000000",
+6:   "expected_control_hex": "30575a440100000001000000020000000200000000004042000000000000803f0000004000004040000001000000070000006d2e72766d6174000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006300000000000000",
+7:   "expected_candidate_hex": "30575a440100000001000000020000000200000000004042000000000000803f0000004000004040000001000000070000006d2e72766d6174000000000000803f0000008000000000000000000000803f0000000000000000000000000000803f0000c84200004843000096430b00000005000000612e70336400000000000000000000803f000000000000803f00000000000080bf00000000000000000000484300004843000096430c00000005000000622e7033640000803f0000000000000000000000000000803f0000000000000000000000000000803f0000c84200004843000096430d000000070000006320782e7033640000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006300000000000000",
+8:   "record_hex": [
+9:     "0000803f0000008000000000000000000000803f0000000000000000000000000000803f0000c84200004843000096430b00000005000000612e703364",
+10:     "00000000000000000000803f000000000000803f00000000000080bf00000000000000000000484300004843000096430c00000005000000622e703364",
+11:     "0000803f0000000000000000000000000000803f0000000000000000000000000000803f0000c84200004843000096430d000000070000006320782e703364"
+12:   ],
+13:   "record_ids": [
+14:     11,
+15:     12,
+16:     13
+17:   ],
+18:   "record_names_hex": [
+19:     "612e703364",
+20:     "622e703364",
+21:     "6320782e703364"
+22:   ],
+23:   "matrix_hex": [
+24:     "0000803f0000008000000000000000000000803f0000000000000000000000000000803f0000c8420000484300009643",
+25:     "00000000000000000000803f000000000000803f00000000000080bf0000000000000000000048430000484300009643",
+26:     "0000803f0000000000000000000000000000803f0000000000000000000000000000803f0000c8420000484300009643"
+27:   ],
+28:   "expected_counts": [
+29:     0,
+30:     3
+31:   ],
+32:   "negative_codes": [
+33:     "CONTRACT",
+34:     "SOURCE_HASH",
+35:     "SOURCE_STRUCTURE",
+36:     "SOURCE_CHANGED",
+37:     "REPARSE",
+38:     "SOURCE_CAP",
+39:     "OUTPUT_EXISTS",
+40:     "PAIR_STRUCTURE",
+41:     "REPORT_MISMATCH",
+42:     "IO_ERROR",
+43:     "INTERNAL_ERROR"
+44:   ]
+45: }
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c0-local-author-20261029\road_calibration_source_c0.py SHA 6e1b60b1834ae531e7cf9f19ea8b5912936451a22838af2f8cfcf091f4f130cd
+1: """Create a 0/3-object laboratory source pair; never edit the production WRP."""
+2: from pathlib import Path
+3: import argparse,hashlib,json,math,os,stat,struct,sys
+4: MAX_SOURCE=512*1024**2
+5: MAX_PREFIX=32*1024**2
+6: MAX_OUTPUT=64*1024**2
+7: CHUNK=1024**2
+8: class Error(Exception):
+9:  def __init__(self,code):super().__init__(code);self.code=code
+10: def need(ok,code):
+11:  if not ok:raise Error(code)
+12: def digest(b):return hashlib.sha256(b).hexdigest()
+13: def stamp(s):return [s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns]
+14: def guard_path(p):
+15:  for q in (p,*p.parents):
+16:   try:s=q.lstat()
+17:   except FileNotFoundError:continue
+18:   need(not stat.S_ISLNK(s.st_mode) and not getattr(s,'st_file_attributes',0)&1024,'REPARSE')
+19: def bounded_json(p,expected):
+20:  guard_path(p);need(p.stat().st_size<=CHUNK,'CONTRACT')
+21:  with p.open('rb') as f:
+22:   first=stamp(os.fstat(f.fileno()));b=f.read(CHUNK+1);need(stamp(os.fstat(f.fileno()))==first==stamp(p.stat()),'SOURCE_CHANGED')
+23:  need(len(b)<=CHUNK and len(b)==first[2] and digest(b)==expected,'CONTRACT')
+24:  try:return json.loads(b,parse_constant=lambda _:(_ for _ in ()).throw(ValueError()))
+25:  except (ValueError,UnicodeError):raise Error('CONTRACT')
+26: def unpack_hex(s,n=None):
+27:  need(type(s) is str and len(s)%2==0 and all(c in '0123456789abcdef' for c in s),'CONTRACT')
+28:  b=bytes.fromhex(s);need(n is None or len(b)==n,'CONTRACT');return b
+29: def contract(path,pin):
+30:  c=bounded_json(Path(path),pin)
+31:  need(type(c) is dict and set(c)=={'schema','domain','source','objects','output','consumer_result','pins'},'CONTRACT')
+32:  need(c['schema']=='road-calibration-source-pair.v1' and c['domain']=='ISOLATED_LAB_ONLY','CONTRACT')
+33:  s=c['source'];need(type(s) is dict and set(s)=={'path','sha256','bytes','terrain_material_prefix_bytes','terrain_material_prefix_sha256','source_pre_terminator_bytes','terminator_hex'},'CONTRACT')
+34:  for k in ('bytes','terrain_material_prefix_bytes','source_pre_terminator_bytes'):need(type(s[k]) is int and s[k]>=0,'CONTRACT')
+35:  need(s['bytes']<=MAX_SOURCE,'SOURCE_CAP');need(24<=s['terrain_material_prefix_bytes']<=MAX_PREFIX and s['terrain_material_prefix_bytes']+56<=s['bytes'] and s['source_pre_terminator_bytes']==s['bytes']-56,'CONTRACT')
+36:  for k in ('sha256','terrain_material_prefix_sha256'):unpack_hex(s[k],32)
+37:  term=unpack_hex(s['terminator_hex'],56);need(term[-4:]==b'\0'*4,'CONTRACT')
+38:  need(type(c['objects']) is list and len(c['objects'])==3,'CONTRACT');records=[];ids=set()
+39:  for o in c['objects']:
+40:   need(type(o) is dict and set(o)=={'id','raw_name_hex','matrix48_hex','record_bytes'},'CONTRACT')
+41:   need(type(o['id']) is int and 0<o['id']<=0xffffffff and o['id'] not in ids,'CONTRACT');ids.add(o['id'])
+42:   name=unpack_hex(o['raw_name_hex']);need(0<len(name)<=4096 and all(32<=b<127 for b in name),'CONTRACT')
+43:   text=name.decode('ascii').replace('\\','/');need(':' not in text and all(p not in ('','.','..') for p in text.split('/')) and text.lower().endswith('.p3d'),'CONTRACT')
+44:   mat=unpack_hex(o['matrix48_hex'],48);need(all(math.isfinite(x) for x in struct.unpack('<12f',mat)),'CONTRACT')
+45:   need(type(o['record_bytes']) is int and o['record_bytes']==56+len(name),'CONTRACT');records.append(mat+struct.pack('<II',o['id'],len(name))+name)
+46:  need(2*(s['terrain_material_prefix_bytes']+56)+sum(map(len,records))<=MAX_OUTPUT,'CONTRACT')
+47:  for key in ('output','consumer_result'):
+48:   need(type(c[key]) is str and Path(c[key]).is_absolute(),'CONTRACT')
+49:  need(type(s['path']) is str and Path(s['path']).is_absolute(),'CONTRACT')
+50:  need(Path(c['output'])!=Path(s['path']) and Path(c['consumer_result']).parent!=Path(c['output']),'CONTRACT')
+51:  need(type(c['pins']) is dict and len(c['pins'])<=32,'CONTRACT')
+52:  for p,h in c['pins'].items():
+53:   need(type(p) is str and Path(p).is_absolute(),'CONTRACT');unpack_hex(h,32);guard_path(Path(p));need(Path(p).stat().st_size<=CHUNK,'CONTRACT');need(digest(Path(p).read_bytes())==h,'CONTRACT')
+54:  return c,records,term
+55: def parse_prefix(b):
+56:  need(len(b)>=24,'SOURCE_STRUCTURE');magic,tx,tz,nx,nz,cell=struct.unpack_from('<4s4If',b)
+57:  need(magic==b'0WZD' and min(tx,tz,nx,nz)>0 and math.isfinite(cell) and cell>0,'SOURCE_STRUCTURE')
+58:  at=24+nx*nz*4+tx*tz*2;need(at+4<=len(b),'SOURCE_STRUCTURE');count=struct.unpack_from('<I',b,at)[0];at+=4;need(count<=(len(b)-at)//4,'SOURCE_STRUCTURE')
+59:  for _ in range(count):
+60:   while True:
+61:    need(at+4<=len(b),'SOURCE_STRUCTURE');n=struct.unpack_from('<I',b,at)[0];at+=4
+62:    if n==0:break
+63:    need(at+n<=len(b),'SOURCE_STRUCTURE');at+=n
+64:  need(at==len(b),'SOURCE_STRUCTURE')
+65: def source(c):
+66:  s=c['source'];p=Path(s['path']);guard_path(p);before=stamp(p.stat());need(before[2]<=MAX_SOURCE,'SOURCE_CAP');need(before[2]==s['bytes'],'SOURCE_HASH')
+67:  prefix=bytearray();h=hashlib.sha256();total=0;tail=b''
+68:  with p.open('rb') as f:
+69:   need(stamp(os.fstat(f.fileno()))==before,'SOURCE_CHANGED')
+70:   while True:
+71:    b=f.read(CHUNK)
+72:    if not b:break
+73:    total+=len(b);need(total<=s['bytes'],'SOURCE_CHANGED');h.update(b)
+74:    remain=s['terrain_material_prefix_bytes']-len(prefix)
+75:    if remain>0:prefix.extend(b[:remain])
+76:    tail=(tail+b)[-56:]
+77:   need(stamp(os.fstat(f.fileno()))==before==stamp(p.stat()),'SOURCE_CHANGED')
+78:  need(total==s['bytes'] and h.hexdigest()==s['sha256'],'SOURCE_HASH');need(digest(prefix)==s['terrain_material_prefix_sha256'],'SOURCE_HASH');need(tail==bytes.fromhex(s['terminator_hex']),'SOURCE_STRUCTURE');parse_prefix(prefix)
+79:  return prefix,before
+80: def report_value(c,pin,identity,files):
+81:  return {'status':'ISOLATED_SOURCE_PAIR_ONLY','contract_sha256':pin,'source_sha256':c['source']['sha256'],'source_identity':identity,'terrain_material_prefix_bytes':c['source']['terrain_material_prefix_bytes'],'terrain_material_prefix_sha256':c['source']['terrain_material_prefix_sha256'],'files':files,'control_objects':0,'candidate_objects':3,'original_object_census':'INHERITED_B3_NOT_REPEATED','build_ready':False,'native_pivot':'UNKNOWN','map_changed':False}
+82: def create(path,pin):
+83:  c,records,term=contract(path,pin);root=Path(c['output']);guard_path(root);need(not root.exists(),'OUTPUT_EXISTS');root.mkdir();(root/'CONSUMED').write_bytes(b'one isolated source pair attempt\n')
+84:  prefix,identity=source(c);files={}
+85:  for name,parts in [('control.wrp',[prefix,term]),('candidate.wrp',[prefix,*records,term])]:
+86:   h=hashlib.sha256();n=0
+87:   with (root/name).open('xb') as f:
+88:    for b in parts:
+89:     need(n+len(b)<=MAX_OUTPUT,'CONTRACT');f.write(b);h.update(b);n+=len(b)
+90:    f.flush();os.fsync(f.fileno())
+91:   files[name]={'sha256':h.hexdigest(),'bytes':n}
+92:  # A second bounded source hash is a final snapshot, not continuous surveillance.
+93:  _,after=source(c);need(after==identity,'SOURCE_CHANGED')
+94:  report=report_value(c,pin,identity,files);b=(json.dumps(report,indent=2,sort_keys=True)+'\n').encode();need(len(b)<=CHUNK,'CONTRACT')
+95:  with (root/'report.json').open('xb') as f:f.write(b);f.flush();os.fsync(f.fileno())
+96:  return report
+97: def main():
+98:  p=argparse.ArgumentParser();p.add_argument('--contract',required=True);p.add_argument('--contract-sha256',required=True);a=p.parse_args()
+99:  try:r=create(a.contract,a.contract_sha256);code=0
+100:  except Error as e:r={'status':'REJECTED','code':e.code};code=1
+101:  except OSError as e:r={'status':'REJECTED','code':'IO_ERROR','error_type':type(e).__name__};code=2
+102:  except Exception as e:r={'status':'REJECTED','code':'INTERNAL_ERROR','error_type':type(e).__name__};code=3
+103:  print(json.dumps(r));return code
+104: if __name__=='__main__':sys.exit(main())
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c0-local-author-20261029\verify_road_calibration_source_c0.py SHA ac85b6b4a836cf31c1a56b9d3ae5f1ad17d1cf5f1201923e47f61fc434257667
+1: """Independent cursor readback of an isolated 0/3-object source pair."""
+2: import argparse,hashlib,io,json,math,os,stat,struct,sys
+3: from pathlib import Path
+4: LIMIT=512*1024**2;BLOCK=1024**2
+5: class Error(Exception):
+6:  def __init__(self,code):super().__init__(code);self.code=code
+7: def check(test,code):
+8:  if not test:raise Error(code)
+9: def signature(s):return [s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns]
+10: def no_links(p):
+11:  q=p
+12:  while True:
+13:   try:s=q.lstat()
+14:   except FileNotFoundError:s=None
+15:   if s:check(not stat.S_ISLNK(s.st_mode) and not getattr(s,'st_file_attributes',0)&0x400,'REPARSE')
+16:   if q.parent==q:break
+17:   q=q.parent
+18: def small(p):
+19:  no_links(p);s=p.stat();check(s.st_size<=BLOCK,'CONTRACT')
+20:  with p.open('rb') as f:
+21:   start=signature(os.fstat(f.fileno()));b=f.read(BLOCK+1);check(start==signature(s)==signature(os.fstat(f.fileno()))==signature(p.stat()),'SOURCE_CHANGED')
+22:  check(len(b)==s.st_size and len(b)<=BLOCK,'SOURCE_CHANGED');return b
+23: def dec(b):
+24:  try:return json.loads(b,parse_constant=lambda x:(_ for _ in ()).throw(ValueError()))
+25:  except (ValueError,UnicodeError):raise Error('CONTRACT')
+26: def hx(t,n=None):
+27:  check(type(t) is str and len(t)%2==0 and all(c in '0123456789abcdef' for c in t),'CONTRACT');b=bytes.fromhex(t);check(n is None or len(b)==n,'CONTRACT');return b
+28: def settings(path,pin):
+29:  raw=small(Path(path));check(hashlib.sha256(raw).hexdigest()==pin,'CONTRACT');c=dec(raw)
+30:  check(type(c) is dict and set(c)=={'schema','domain','source','objects','output','consumer_result','pins'} and c['schema']=='road-calibration-source-pair.v1' and c['domain']=='ISOLATED_LAB_ONLY','CONTRACT')
+31:  s=c['source'];check(type(s) is dict and set(s)=={'path','sha256','bytes','terrain_material_prefix_bytes','terrain_material_prefix_sha256','source_pre_terminator_bytes','terminator_hex'},'CONTRACT')
+32:  check(all(type(s[k]) is int for k in ('bytes','terrain_material_prefix_bytes','source_pre_terminator_bytes')),'CONTRACT');check(0<=s['bytes']<=LIMIT,'SOURCE_CAP')
+33:  check(24<=s['terrain_material_prefix_bytes']<=32*BLOCK and s['terrain_material_prefix_bytes']+56<=s['bytes'] and s['source_pre_terminator_bytes']==s['bytes']-56,'CONTRACT')
+34:  hx(s['sha256'],32);hx(s['terrain_material_prefix_sha256'],32);check(hx(s['terminator_hex'],56)[52:]==b'\0'*4,'CONTRACT')
+35:  check(type(c['objects']) is list and len(c['objects'])==3,'CONTRACT');ids=[];nbytes=0
+36:  for o in c['objects']:
+37:   check(type(o) is dict and set(o)=={'id','raw_name_hex','matrix48_hex','record_bytes'},'CONTRACT');check(type(o['id']) is int and 0<o['id']<2**32 and o['id'] not in ids,'CONTRACT');ids.append(o['id'])
+38:   name=hx(o['raw_name_hex']);check(0<len(name)<=4096 and all(32<=x<127 for x in name),'CONTRACT');v=name.decode('ascii').replace('\\','/');check(':' not in v and v.lower().endswith('.p3d') and all(x not in ('','.','..') for x in v.split('/')),'CONTRACT')
+39:   check(all(math.isfinite(x) for x in struct.unpack('<12f',hx(o['matrix48_hex'],48))),'CONTRACT');check(type(o['record_bytes']) is int and o['record_bytes']==56+len(name),'CONTRACT');nbytes+=o['record_bytes']
+40:  check(2*(s['terrain_material_prefix_bytes']+56)+nbytes<=64*BLOCK,'CONTRACT')
+41:  check(type(s['path']) is str and Path(s['path']).is_absolute(),'CONTRACT')
+42:  for k in ('output','consumer_result'):check(type(c[k]) is str and Path(c[k]).is_absolute(),'CONTRACT')
+43:  check(Path(c['output'])!=Path(s['path']) and Path(c['consumer_result']).parent!=Path(c['output']),'CONTRACT')
+44:  check(type(c['pins']) is dict and len(c['pins'])<=32,'CONTRACT')
+45:  for p,h in c['pins'].items():check(type(p) is str and Path(p).is_absolute(),'CONTRACT');hx(h,32);check(hashlib.sha256(small(Path(p))).hexdigest()==h,'CONTRACT')
+46:  return c
+47: class Cursor:
+48:  def __init__(self,b):self.f=io.BytesIO(b);self.n=len(b)
+49:  def read(self,n):
+50:   check(type(n) is int and 0<=n<=self.n-self.f.tell(),'SOURCE_STRUCTURE');v=self.f.read(n);check(len(v)==n,'SOURCE_STRUCTURE');return v
+51:  def skip(self,n):
+52:   check(0<=n<=self.n-self.f.tell(),'SOURCE_STRUCTURE');self.f.seek(n,1)
+53:  def u32(self):return int.from_bytes(self.read(4),'little')
+54: def prefix_cursor(b):
+55:  r=Cursor(b);check(r.read(4)==b'0WZD','SOURCE_STRUCTURE');tx=r.u32();tz=r.u32();nx=r.u32();nz=r.u32();cell=struct.unpack('<f',r.read(4))[0]
+56:  check(min(tx,tz,nx,nz)>0 and math.isfinite(cell) and cell>0,'SOURCE_STRUCTURE');r.skip(4*nx*nz);r.skip(2*tx*tz);count=r.u32();check(count<=(r.n-r.f.tell())//4,'SOURCE_STRUCTURE')
+57:  for _ in range(count):
+58:   while True:
+59:    n=r.u32()
+60:    if n==0:break
+61:    r.skip(n)
+62:  check(r.f.tell()==r.n,'SOURCE_STRUCTURE')
+63: def load_source(c):
+64:  s=c['source'];p=Path(s['path']);no_links(p);before=signature(p.stat());check(before[2]<=LIMIT,'SOURCE_CAP');check(before[2]==s['bytes'],'SOURCE_HASH');h=hashlib.sha256()
+65:  with p.open('rb') as f:
+66:   check(signature(os.fstat(f.fileno()))==before,'SOURCE_CHANGED');pre=f.read(s['terrain_material_prefix_bytes']);check(len(pre)==s['terrain_material_prefix_bytes'],'SOURCE_STRUCTURE');h.update(pre);remaining=s['bytes']-len(pre)
+67:   while remaining:
+68:    chunk=f.read(min(BLOCK,remaining));check(bool(chunk),'SOURCE_HASH');h.update(chunk);remaining-=len(chunk)
+69:   check(f.read(1)==b'','SOURCE_CHANGED');f.seek(s['source_pre_terminator_bytes']);tail=f.read(56);check(signature(os.fstat(f.fileno()))==before==signature(p.stat()),'SOURCE_CHANGED')
+70:  check(h.hexdigest()==s['sha256'] and hashlib.sha256(pre).hexdigest()==s['terrain_material_prefix_sha256'],'SOURCE_HASH');check(tail==hx(s['terminator_hex'],56),'SOURCE_STRUCTURE');prefix_cursor(pre)
+71:  return pre,before
+72: def inspect_file(p,pre,objects,term):
+73:  no_links(p);ss=signature(p.stat());expected_size=len(pre)+56+sum(o['record_bytes'] for o in objects);check(ss[2]==expected_size<=64*BLOCK,'PAIR_STRUCTURE');h=hashlib.sha256()
+74:  with p.open('rb') as f:
+75:   check(signature(os.fstat(f.fileno()))==ss,'SOURCE_CHANGED')
+76:   for at in range(0,len(pre),BLOCK):
+77:    b=f.read(min(BLOCK,len(pre)-at));check(b==pre[at:at+len(b)] and len(b)==min(BLOCK,len(pre)-at),'PAIR_STRUCTURE');h.update(b)
+78:   for o in objects:
+79:    mat=f.read(48);nums=f.read(8);check(len(mat)==48 and len(nums)==8,'PAIR_STRUCTURE');ident,n=struct.unpack('<II',nums);check(ident==o['id'] and n==len(hx(o['raw_name_hex'])) and mat==hx(o['matrix48_hex'],48),'PAIR_STRUCTURE');name=f.read(n);check(name==hx(o['raw_name_hex']),'PAIR_STRUCTURE');h.update(mat);h.update(nums);h.update(name)
+80:   tail=f.read(56);check(tail==term and f.read(1)==b'','PAIR_STRUCTURE');h.update(tail);check(signature(os.fstat(f.fileno()))==ss==signature(p.stat()),'SOURCE_CHANGED')
+81:  return {'sha256':h.hexdigest(),'bytes':expected_size}
+82: def verify(path,pin):
+83:  c=settings(path,pin);out=Path(c['consumer_result']);no_links(out);check(not out.exists(),'OUTPUT_EXISTS');out.parent.mkdir(parents=True,exist_ok=True)
+84:  with (out.parent/'CONSUMED').open('xb') as f:f.write(b'one readback attempt\n')
+85:  pre,identity=load_source(c);root=Path(c['output']);no_links(root);term=hx(c['source']['terminator_hex'],56)
+86:  check({p.name for p in root.iterdir()}=={'CONSUMED','control.wrp','candidate.wrp','report.json'},'PAIR_STRUCTURE');check(small(root/'CONSUMED')==b'one isolated source pair attempt\n','PAIR_STRUCTURE')
+87:  files={'control.wrp':inspect_file(root/'control.wrp',pre,[],term),'candidate.wrp':inspect_file(root/'candidate.wrp',pre,c['objects'],term)}
+88:  expected={'status':'ISOLATED_SOURCE_PAIR_ONLY','contract_sha256':pin,'source_sha256':c['source']['sha256'],'source_identity':identity,'terrain_material_prefix_bytes':len(pre),'terrain_material_prefix_sha256':hashlib.sha256(pre).hexdigest(),'files':files,'control_objects':0,'candidate_objects':3,'original_object_census':'INHERITED_B3_NOT_REPEATED','build_ready':False,'native_pivot':'UNKNOWN','map_changed':False}
+89:  observed=dec(small(root/'report.json'));check(json.dumps(observed,sort_keys=True)==json.dumps(expected,sort_keys=True),'REPORT_MISMATCH')
+90:  check(signature(Path(c['source']['path']).stat())==identity,'SOURCE_CHANGED')
+91:  result={'status':'VERIFIED_ISOLATED_SOURCE_PAIR_ONLY','contract_sha256':pin,'source_sha256':c['source']['sha256'],'report_sha256':hashlib.sha256(small(root/'report.json')).hexdigest(),'files':files,'control_objects':0,'candidate_objects':3,'build_ready':False,'map_changed':False,'native_pivot':'UNKNOWN','independence':'Own source read, cursor prefix and sequential record traversal; common Python standard libraries'}
+92:  data=(json.dumps(result,indent=2)+'\n').encode();check(len(data)<=BLOCK,'CONTRACT')
+93:  with out.open('xb') as f:f.write(data);f.flush();os.fsync(f.fileno())
+94:  return result
+95: def main():
+96:  p=argparse.ArgumentParser();p.add_argument('--contract',required=True);p.add_argument('--contract-sha256',required=True);a=p.parse_args()
+97:  try:r=verify(a.contract,a.contract_sha256);code=0
+98:  except Error as e:r={'status':'REJECTED','code':e.code};code=1
+99:  except OSError as e:r={'status':'REJECTED','code':'IO_ERROR','error_type':type(e).__name__};code=2
+100:  except Exception as e:r={'status':'REJECTED','code':'INTERNAL_ERROR','error_type':type(e).__name__};code=3
+101:  print(json.dumps(r));return code
+102: if __name__=='__main__':sys.exit(main())
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c0-local-author-20261029\test_road_calibration_source_c0.py SHA 6f772e6e585c49a60388f396f4afcdf4a8190d11641f200c5afe5839ae6f0f08
+1: import copy,hashlib,json,os,struct,subprocess,sys,tempfile,unittest
+2: from pathlib import Path
+3: from unittest import mock
+4: TOOLS=Path(os.environ['ROADC0_TOOL_DIR']);sys.path.insert(0,str(TOOLS))
+5: import road_calibration_source_c0 as author
+6: import verify_road_calibration_source_c0 as consumer
+7: RAW=Path(os.environ['ROADC0_ORACLE']).read_bytes()
+8: assert hashlib.sha256(RAW).hexdigest()=='c70cad59d72505d841acce60a3b34a041a2e9ac9dc3d6331f4ce896dc8bac590'
+9: O=json.loads(RAW)
+10: def sha(b):return hashlib.sha256(b).hexdigest()
+11: class TestPair(unittest.TestCase):
+12:  def setUp(self):
+13:   base=Path(os.environ['ROADC0_TEST_ROOT']).resolve();base.mkdir(parents=True,exist_ok=True)
+14:   self.tmp=tempfile.TemporaryDirectory(dir=base);self.root=Path(self.tmp.name).resolve();assert self.root.is_relative_to(base)
+15:   self.addCleanup(self.tmp.cleanup);self.serial=0
+16:  def fixture(self):
+17:   self.serial+=1;r=self.root/str(self.serial);r.mkdir();src=r/'original.wrp';src.write_bytes(bytes.fromhex(O['source_hex']));pre=bytes.fromhex(O['prefix_hex'])
+18:   c={'schema':'road-calibration-source-pair.v1','domain':'ISOLATED_LAB_ONLY','source':{'path':str(src),'sha256':sha(src.read_bytes()),'bytes':src.stat().st_size,'terrain_material_prefix_bytes':len(pre),'terrain_material_prefix_sha256':sha(pre),'source_pre_terminator_bytes':src.stat().st_size-56,'terminator_hex':O['terminator_hex']},'objects':[{'id':i,'raw_name_hex':n,'matrix48_hex':m,'record_bytes':len(bytes.fromhex(x))} for i,n,m,x in zip(O['record_ids'],O['record_names_hex'],O['matrix_hex'],O['record_hex'])],'output':str(r/'pair'),'consumer_result':str(r/'consumer/result.json'),'pins':{}}
+19:   p=r/'contract.json';self.save(p,c);return p,c
+20:  def save(self,p,c):p.write_text(json.dumps(c),encoding='utf-8');return sha(p.read_bytes())
+21:  def create(self,p):return author.create(p,sha(p.read_bytes()))
+22:  def verify(self,p):return consumer.verify(p,sha(p.read_bytes()))
+23:  def fail(self,code,fn,*a):
+24:   with self.assertRaises((author.Error,consumer.Error)) as cm:fn(*a)
+25:   self.assertEqual(cm.exception.code,code)
+26:  def test_literal_pair_and_separate_reader(self):
+27:   p,c=self.fixture();src=Path(c['source']['path']).read_bytes();self.create(p);q=Path(c['output'])
+28:   self.assertEqual((q/'control.wrp').read_bytes(),bytes.fromhex(O['expected_control_hex']))
+29:   self.assertEqual((q/'candidate.wrp').read_bytes(),bytes.fromhex(O['expected_candidate_hex']))
+30:   self.assertEqual(Path(c['source']['path']).read_bytes(),src);self.assertEqual(self.verify(p)['status'],'VERIFIED_ISOLATED_SOURCE_PAIR_ONLY')
+31:   self.assertEqual(bytes.fromhex(O['matrix_hex'][0])[4:8],b'\0\0\0\x80')
+32:  def test_cli_producer_and_consumer(self):
+33:   p,c=self.fixture();pin=sha(p.read_bytes())
+34:   for script in ('road_calibration_source_c0.py','verify_road_calibration_source_c0.py'):
+35:    q=subprocess.run([sys.executable,'-I',str(TOOLS/script),'--contract',str(p),'--contract-sha256',pin],capture_output=True,timeout=15)
+36:    self.assertEqual(q.returncode,0,q.stdout+q.stderr);self.assertIn('status',json.loads(q.stdout))
+37:  def test_wrong_source_hash_and_external_contract_pin(self):
+38:   p,c=self.fixture();self.fail('CONTRACT',author.create,p,'0'*64);self.fail('CONTRACT',consumer.verify,p,'0'*64)
+39:   c['source']['sha256']='0'*64;self.save(p,c);self.fail('SOURCE_HASH',self.create,p)
+40:   self.assertTrue((Path(c['output'])/'CONSUMED').exists());self.assertFalse((Path(c['output'])/'report.json').exists())
+41:  def test_prefix_boundary_and_truncated_material(self):
+42:   pre=bytes.fromhex(O['prefix_hex'])
+43:   for b in (pre[:-1],pre[:25],pre[:-4]+b'\xff'*4,pre[:4]+b'\xff'*16+pre[20:]):
+44:    self.fail('SOURCE_STRUCTURE',author.parse_prefix,b);self.fail('SOURCE_STRUCTURE',consumer.prefix_cursor,b)
+45:   p,c=self.fixture();c['source']['terrain_material_prefix_bytes']-=1;c['source']['terrain_material_prefix_sha256']=sha(pre[:-1]);self.save(p,c);self.fail('SOURCE_STRUCTURE',self.create,p)
+46:  def test_exact_output_mutations(self):
+47:   prelen=len(bytes.fromhex(O['prefix_hex']))
+48:   for file,offset in [('control.wrp',10),('candidate.wrp',prelen+4),('candidate.wrp',prelen+48),('candidate.wrp',prelen+56),('candidate.wrp',-12)]:
+49:    with self.subTest(file=file,offset=offset):
+50:     p,c=self.fixture();self.create(p);v=Path(c['output'])/file;b=bytearray(v.read_bytes());b[offset]^=1;v.write_bytes(b);self.fail('PAIR_STRUCTURE',self.verify,p)
+51:  def test_extra_object_control_and_tail(self):
+52:   for file,kind in [('control.wrp','object'),('candidate.wrp','tail'),('candidate.wrp','order')]:
+53:    p,c=self.fixture();self.create(p);q=Path(c['output'])/file;b=q.read_bytes();n=len(bytes.fromhex(O['prefix_hex']))
+54:    if kind=='object':b=b[:-56]+bytes.fromhex(O['record_hex'][0])+b[-56:]
+55:    elif kind=='tail':b+=b'X'
+56:    else:b=b[:n]+bytes.fromhex(O['record_hex'][1]+O['record_hex'][0]+O['record_hex'][2])+b[-56:]
+57:    q.write_bytes(b);self.fail('PAIR_STRUCTURE',self.verify,p)
+58:  def test_co_mutated_candidate_and_report(self):
+59:   p,c=self.fixture();self.create(p);root=Path(c['output']);q=root/'candidate.wrp';b=bytearray(q.read_bytes());b[len(bytes.fromhex(O['prefix_hex']))+48]^=2;q.write_bytes(b)
+60:   rp=root/'report.json';r=json.loads(rp.read_bytes());r['files']['candidate.wrp']['sha256']=sha(b);rp.write_text(json.dumps(r));self.fail('PAIR_STRUCTURE',self.verify,p)
+61:  def test_report_type_claim_and_extra_fields(self):
+62:   for key,value in [('control_objects',False),('build_ready',True),('bogus','value')]:
+63:    p,c=self.fixture();self.create(p);rp=Path(c['output'])/'report.json';r=json.loads(rp.read_bytes());r[key]=value;rp.write_text(json.dumps(r));self.fail('REPORT_MISMATCH',self.verify,p)
+64:  def test_contract_names_ids_and_matrix(self):
+65:   for field,value in [('id',True),('id',12),('raw_name_hex',b'../a.p3d'.hex()),('raw_name_hex',b'a\xff.p3d'.hex()),('raw_name_hex',(b'a'*4097).hex()),('matrix48_hex','0000807f'+O['matrix_hex'][0][8:]),('record_bytes',True)]:
+66:    p,c=self.fixture();c['objects'][0][field]=value;self.save(p,c)
+67:    self.fail('CONTRACT',author.contract,p,sha(p.read_bytes()));self.fail('CONTRACT',consumer.settings,p,sha(p.read_bytes()))
+68:  def test_caps_before_source_read(self):
+69:   p,c=self.fixture();c['source']['bytes']=512*1024**2+1;self.save(p,c)
+70:   self.fail('SOURCE_CAP',author.contract,p,sha(p.read_bytes()));self.fail('SOURCE_CAP',consumer.settings,p,sha(p.read_bytes()))
+71:   p,c=self.fixture();c['source']['terrain_material_prefix_bytes']=32*1024**2;c['source']['bytes']=32*1024**2+56;c['source']['source_pre_terminator_bytes']=32*1024**2;self.save(p,c)
+72:   self.fail('CONTRACT',author.contract,p,sha(p.read_bytes()));self.fail('CONTRACT',consumer.settings,p,sha(p.read_bytes()))
+73:  def test_source_terminator_pin_and_reparse_simulation(self):
+74:   p,c=self.fixture();src=Path(c['source']['path']);b=bytearray(src.read_bytes());b[-10]^=1;src.write_bytes(b);c['source']['sha256']=sha(b);self.save(p,c);self.fail('SOURCE_STRUCTURE',self.create,p)
+75:   fake=type('Stat',(),{'st_mode':0,'st_file_attributes':1024})()
+76:   with mock.patch.object(Path,'lstat',return_value=fake):
+77:    self.fail('REPARSE',author.guard_path,Path(c['source']['path']));self.fail('REPARSE',consumer.no_links,Path(c['source']['path']))
+78:  def test_changed_identity_and_exclusive_outputs(self):
+79:   p,c=self.fixture();real=author.stamp;count=[0]
+80:   def changing(s):
+81:    count[0]+=1;x=real(s)
+82:    if count[0]>1:x[-1]+=1
+83:    return x
+84:   with mock.patch.object(author,'stamp',side_effect=changing):self.fail('SOURCE_CHANGED',author.source,c)
+85:   p,c=self.fixture();self.create(p);self.fail('OUTPUT_EXISTS',self.create,p);self.verify(p);self.fail('OUTPUT_EXISTS',self.verify,p)
+86:  def test_pins_and_wrong_contract_schema(self):
+87:   p,c=self.fixture();c['pins']={str(p.parent/'x.json'):'0'*64};(p.parent/'x.json').write_bytes(b'{}');self.save(p,c);self.fail('CONTRACT',author.contract,p,sha(p.read_bytes()));self.fail('CONTRACT',consumer.settings,p,sha(p.read_bytes()))
+88:   p,c=self.fixture();c['source']['bytes']=True;self.save(p,c);self.fail('CONTRACT',author.contract,p,sha(p.read_bytes()));self.fail('CONTRACT',consumer.settings,p,sha(p.read_bytes()))
+89:  def test_missing_io_and_internal_errors_stay_errors(self):
+90:   p,c=self.fixture();Path(c['source']['path']).unlink()
+91:   q=subprocess.run([sys.executable,'-I',str(TOOLS/'road_calibration_source_c0.py'),'--contract',str(p),'--contract-sha256',sha(p.read_bytes())],capture_output=True,timeout=15)
+92:   self.assertEqual(q.returncode,2);self.assertEqual(json.loads(q.stdout)['code'],'IO_ERROR')
+93: if __name__=='__main__':unittest.main()

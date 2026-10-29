@@ -1,0 +1,445 @@
+Revisión única de plan RoadC0. Sólo lectura de esta cápsula; no herramientas, archivos externos, cambios ni ejecución. Asiento REVIEW Muse nativo Wonder1.0; Codex planner/integrator con contexto compartido. No council ni voto.
+Entrega <=900palabras: SOUND/SOUND-with-fixes/NEEDS-WORK; hallazgos concretos y anclas; CONVERGE/NO_CONVERGE; limitaciones; END_ROADC0_REVIEW. Presupuesto120s, una entrega. No pedir ampliar caps ni reconstruir toda la escena para esta fuente de laboratorio. Evalúa si el cambio explícito de diseño (control0+3 en copias aisladas) resuelve dependencia5509 para CALIBRACION, sin saltar aceptación del mapa. No afirmar compilabilidad, recursos cerrados ni pivote nativo. Primer corte sólo0WZD, futurobuild separado. Examina preservación del prefijo, terminadoropaco, independencia de consumidor, bounds, sentido de controles y riesgos. No demuestres defectos por hipótesis Windows sin mecanismo. La verdad de fuenteB3 permite heredar censo, no fingir recenso.
+PLAN:
+# RoadC0 — aislar la calibración de las tres piezas de carretera
+
+Estado: BORRADOR_PENDIENTE_DE_REVISION. Consumidor de esta unidad: futuro build
+RoadC1 del laboratorio vial; no es una reparación ni candidato de producción.
+Trazabilidad: Q04 del council, P5/P10/P11 y petición humana de preparar carreteras.
+Codex planner/orchestrator/integrator; si pasa review, Codex EXECUTOR local
+explícitamente asignado para el corte acotado. Review externa nativa; no council.
+
+## Decisión técnica [DESIGN]
+
+Separar un laboratorio de calibración de la recompilación de la escena completa.
+Crear dos archivos 0WZD nuevos en una carpeta exclusiva: control sin objetos y
+candidato con sólo los tres registros literales de RoadB3. Ambos copian exactamente
+el prefijo terreno/materiales y el terminador de la fuente histórica b108.
+Los 2.578.398 objetos originales se omiten deliberadamente EN ESTAS COPIAS DE
+LABORATORIO; fuente, candidato RoadB3, mapa y paquetes publicados no se modifican.
+La ausencia de objetos en el laboratorio no repara ni oculta fallos del mapa.
+
+La compilación posterior resolverá tres modelos y materiales de terreno, no
+simulará que doce recursos B4A3 cierran 5.509 modelos. No transfiere el resultado
+de laboratorio a precedencia/oclusores/colocación del mapa completo. Las cuatro
+hipótesis raw/origin × fila/columna siguen abiertas. Los originales B2/B3 se
+reutilizan por hash y no se vuelven a ejecutar.
+
+Alternativa considerada y descartada aquí: insertar objetos directamente en
+OPRW compilado. package_visual_forest_ev112.py:29–64 tiene un lector HEURÍSTICO,
+ancla baltic_water_v30 y tablas auxiliares no decodificadas; no autoriza un writer
+OPRW ni saltar Binarize. El lector tampoco sirve automáticamente al control0.
+
+## Anclas [EXACT, leídas el 29-10]
+
+- evidence/road-b2-recipe-20261029/manifest.json enlaza receta R1 af3ee395 y
+  world-faces-private48666b12 a través del contratoB3. No había un contract.json
+  en la raíz B2 consultada porQ05A; el contrato NO se declara inexistente.
+- B2: tres poses (100,200,300), (200,200,300), (300,200,300); primera identidad,
+  otras90grados; 24huellas ya guardadas, no recalcularlas. 0.03m/10ULP y
+  separación10.7703296m pertenecen a esa receta, no son aceptación nativa.
+- evidence/road-b3-source-pilot-20261029/contract.json (copia pública saneada)
+  tiene objetos19394564–566, nombres exactos asf1_25/asf2_25/asf1_10 100.p3d y
+  matrix12. Contrato original7454f8b7 debe fijarse desde ruta de export-manifest.
+- road-b3-input-discovery/report.json: prefijo terreno/materiales17307629B,
+  SHA d16b513978ba9b98c222d0dee4b80e8f519713140394406517c99da3fa0287a5.
+  Fuente b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee,
+  286261435B. No confundir con prefix_bytes286261379 del contratoB3.
+- tools/quality/author_road_object_pilot_ev112.py:159–196 describe prefijo0WZD;
+  :199–228 recorre registros de48B matriz+IDu32+longitudu32+nombreASCII, y
+  terminador56B con longitud0 alEOF. verify_road_object_pilot_ev112.py:159–225
+  lo recorre por cursor. Se leen definiciones, no ejecutar esos CLIs/suites.
+- El terminador opaco exacto sigue siendo dato heredado; no se supone que la
+  aceptación sintáctica de una escena vacía demuestre que Binarize la acepte.
+  Holgura196.427m guardada sólo frente a terreno fuente, no espacio libre motor.
+
+## Corte ejecutable después de review [DESIGN]
+
+Primero congelar contrato y oráculos externos antes de código: pins de recetaB2,
+contratoB3 original/export, descubrimiento de prefijo, source_sha/size/prefix y
+terminador; lista de tres IDs/nombres y 48bytesfloat32 literales. El contrato
+nuevo describe dominio LAB_ONLY,0/3objetos y negaciones de aceptación, y fija
+outputs/marker exclusivos. No abrir NPZ/PBO/P3D ni extraer caras.
+
+Autor nuevo pequeño: abrir fuente sólo lectura, comprobar reparse/identidad
+path/handle dev/ino/size/mtime, SHA completo por chunks<=1MiB, longitud exacta,
+prefijoSHA y terminador heredado; parseo acotado del prefijo para que offset no
+sea una cifra arbitraria. No recenso del stream de2.5Mobjetos: su identidad y
+censo se heredan explícitamente deB3 pinado. Verificar bits de tres matrices,
+nombres/IDs/longitudes antes de escribir. Copiar el mismo prefijo a ambas salidas
+y después terminador o tresregistros+terminador. Reserva de salida antes de
+escribir, carpeta/marker exclusivos incluso en fallo, archivos incompletos
+jamás marcados aceptados. Fuente inmutable comprobada al finalizar; no afirmar
+vigilancia continua de cambios revertidos. Preservar cualquier parcial.
+
+Consumidor nuevo separado: no importa autor ni parser del autor. Carga contrato
+porSHAexterno y fuente propia; recorre prefijo con cursor, compara cada rango de
+ambas salidas contra fuente mediante chunks; decodifica registros con lectura
+exacta secuencial. Exige control0, candidato3, nombresraw/IDs/matriz48B exactos,
+terminador56B idéntico alEOF, ninguna cola/objeto adicional y conservación del
+prefijo completo. Verifica reporte completo y hashes/longitudes, no sólo claims
+del productor. El consumidor no prueba otra vez unicidad de los2.5Mobjetos que
+no están en estas copias; herencia declarada. Errores I/O, identidad, contrato,
+estructura y bug interno separados; no catch general convertido enPASS.
+
+Límites: fuente<=512MiB, prefijo<=32MiB, salida conjunta<=64MiB,3registros,
+nombres<=4096BASCII sin traversal, dimensiones/productos dentro del archivo
+antes de avanzar, materiales/strings acotados por bytes restantes. Memoria
+256MiB por proceso; no cargar286MiB fuente completa. JSON<=1MiB/reporte<=1MiB.
+No nuevos helpers genéricos, ni modificar módulos sellados.
+
+## Validación y parada [DESIGN]
+
+Oráculos literales previos: prefijo0WZD pequeño con alturas/materiales, fuentes
+con objetos y terminadoropaco, expected control/candidato hex completo; signed
+zero en matriz, nombre con espacio. Expectativas no generadas por el autor.
+Positivo end-to-end autorCLI→consumerCLI con contratoSHAexterno.
+Negativos cerrados: fuenteSHAincorrecto; offsetprefijoincorrecto; alturas/material
+truncados; prefijo mutado enuna salida; ID/nombre/matriz/orden mutados; objeto
+extra/control no vacío; cola tras terminador; terminador cambiado; duplicadoID;
+nombretraversal/noASCII; límite512MiB/64MiB/4096B antes de lectura/asignación;
+reparse/identidad cambiada simulados; outputexistente; reporte+hash co-mutados
+sin poder engañar comparación contra fuente. No contar skips como pruebas.
+
+Presupuesto antes de ronda1: autor local600s para contrato/oráculos/código;
+review180s incluye contrato; suite120s/256MiB; única corrección180s por repro
+del conjunto cerrado y una recuperación180s de dictamen no entregado. Una
+autoría real60s/256MiB y consumidor60s/256MiB sólo tras gates; sin retries.
+Plan una revisión120s, no bucle genérico. Si hipótesis de prefijo/código falla,
+preservar y retirar esta unidad; no ampliar caps ni llamarla build listo.
+Fuente única de parada: gates-ledger §Cuándo para un bucle.
+
+Resultado: VERIFIED_ISOLATED_SOURCE_PAIR_ONLY o rechazo/inconcluso concreto.
+Cero build, PBO, deployment, DayZ, lease, conducción o selección de pivote.
+No emitir resultado si ambas salidas y consumidor no están íntegros.
+
+## Después: RoadC1/RoadC2, aún no autorizados por este plan [DESIGN]
+
+RoadC1 necesita preflight fresco, stage privado de recursos de3modelos y
+terreno/materiales/bin/core con identidad/precedencia y destino exactos; nada
+de enlaces globales DZ incidentales ni tocarP:. Revisar contrato de compilación
+control/candidato y consumidor OPRW capaz de0/3objetos antes de ejecutar pareja.
+RoadC2 liga modelos/paquetes instalados y transformaciones a testigos separados
+de las4hipótesis; sondeo físico con identidad propia y controles de oclusión,
+sin cámara_set. Ni un raycast ni ordinalBUILDING demuestran semántica global.
+FIFO600s, lease/adopción exacta, heartbeat10s y cierres oficiales en plan propio.
+
+La calibración permite después Q05/Q06/Q07 sobre huella completa y dosaccesos.
+El mapa completo seguirá necesitando recursos/oclusores/agua y P9/P11; no
+suprimir esos gates por el éxito de laboratorio. Humanos0resueltos,C1NOT_REVIEWED.
+
+ANCLAS:
+{
+  "B3_original_contract_sha256": "7454f8b742818ea721a001a6cb8cd6d87b5ae4abd399ab3a49456d6bcc1f9382",
+  "sanitized_public_contract_sha256": "fdee65cbc9dba204c9cb56041925553736397c6c7c15f1405a6db59390869948",
+  "objects": [
+    {
+      "name": "dz\\structures\\roads\\parts\\asf1_25.p3d",
+      "raw_name_hex": "647a5c737472756374757265735c726f6164735c70617274735c617366315f32352e703364",
+      "id": 19394564,
+      "matrix12": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        100,
+        200,
+        300
+      ]
+    },
+    {
+      "name": "dz\\structures\\roads\\parts\\asf2_25.p3d",
+      "raw_name_hex": "647a5c737472756374757265735c726f6164735c70617274735c617366325f32352e703364",
+      "id": 19394565,
+      "matrix12": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0,
+        200,
+        200,
+        300
+      ]
+    },
+    {
+      "name": "dz\\structures\\roads\\parts\\asf1_10 100.p3d",
+      "raw_name_hex": "647a5c737472756374757265735c726f6164735c70617274735c617366315f3130203130302e703364",
+      "id": 19394566,
+      "matrix12": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0,
+        300,
+        200,
+        300
+      ]
+    }
+  ],
+  "source_sha256": "b108352fc648ba36dbbf1fd5e7def8cb26fd1b226cd22d19a3e6d08c364678ee",
+  "source_bytes": 286261435,
+  "terrain_prefix_bytes": 17307629,
+  "terrain_prefix_sha256": "d16b513978ba9b98c222d0dee4b80e8f519713140394406517c99da3fa0287a5",
+  "terminator_hex": "887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f887fc87f40ef9f0100000000",
+  "lab_control_objects": 0,
+  "lab_candidate_objects": 3
+}
+
+tools/quality/author_road_object_pilot_ev112.py
+159: def _parse_prefix(data):
+160:     if len(data) < 24:
+161:         raise ValueError("truncated WRP header")
+162:     view = memoryview(data)
+163:     magic, tx, tz, nx, nz, cell = struct.unpack_from("<4s4If", view, 0)
+164:     if magic != b"0WZD":
+165:         raise ValueError("bad WRP magic")
+166:     if tx <= 0 or tz <= 0 or nx <= 0 or nz <= 0:
+167:         raise ValueError("WRP dimensions must be positive")
+168:     if not math.isfinite(cell) or cell <= 0:
+169:         raise ValueError("WRP cell size must be positive finite")
+170:     offset = 24
+171:     heights_end = offset + nx * nz * 4
+172:     if heights_end > len(data):
+173:         raise ValueError("truncated heights")
+174:     offset = heights_end
+175:     mats_end = offset + tx * tz * 2
+176:     if mats_end > len(data):
+177:         raise ValueError("truncated material indices")
+178:     offset = mats_end
+179:     if offset + 4 > len(data):
+180:         raise ValueError("truncated material count")
+181:     count = struct.unpack_from("<I", view, offset)[0]
+182:     offset += 4
+183:     if count > (len(data) - offset) // 4:
+184:         raise ValueError("material count out of file bounds")
+185:     for _ in range(count):
+186:         while True:
+187:             if offset + 4 > len(data):
+188:                 raise ValueError("truncated material entry")
+189:             length = struct.unpack_from("<I", view, offset)[0]
+190:             offset += 4
+191:             if length == 0:
+192:                 break
+193:             if offset + length > len(data):
+194:                 raise ValueError("material bytes out of file bounds")
+195:             offset += length
+196:     return offset
+197: 
+198: 
+199: def _parse_census(data):
+200:     objects_start = _parse_prefix(data)
+201:     offset = objects_start
+202:     view = memoryview(data)
+203:     ids = set()
+204:     count = 0
+205:     max_id = 0
+206:     while True:
+207:         if offset + 56 > len(data):
+208:             raise ValueError("truncated object or terminator")
+209:         ident, length = struct.unpack_from("<II", view, offset + 48)
+210:         if length == 0:
+211:             if offset + 56 != len(data):
+212:                 raise ValueError("terminator not at EOF")
+213:             terminator = bytes(view[offset:offset + 56])
+214:             term_offset = offset
+215:             break
+216:         if ident == 0:
+217:             raise ValueError("object id must be positive")
+218:         if ident in ids:
+219:             raise ValueError("duplicate object id in WRP")
+220:         ids.add(ident)
+221:         count += 1
+222:         if ident > max_id:
+223:             max_id = ident
+224:         name_start = offset + 56
+225:         if name_start + length > len(data):
+226:             raise ValueError("object name out of file bounds")
+227:         offset = name_start + length
+228:     return {"objects_start": objects_start, "term_offset": term_offset, "count": count, "max_id": max_id, "ids": ids, "terminator": terminator}
+
+tools/quality/verify_road_object_pilot_ev112.py
+159: 
+160: class _CursorReader:
+161:     def __init__(self, payload):
+162:         if len(payload) > MAX_SOURCE_BYTES:
+163:             raise ValueError("WRP exceeds 512 MiB")
+164:         self._stream = io.BytesIO(payload)
+165:         self._total = len(payload)
+166: 
+167:     def _remaining(self):
+168:         return self._total - self._stream.tell()
+169: 
+170:     def _read_exact(self, amount, what):
+171:         if amount < 0 or amount > self._remaining():
+172:             raise ValueError("truncated " + what)
+173:         chunk = self._stream.read(amount)
+174:         if len(chunk) != amount:
+175:             raise ValueError("truncated " + what)
+176:         return chunk
+177: 
+178:     def _seek_forward(self, amount, what):
+179:         if amount < 0 or amount > self._remaining():
+180:             raise ValueError("truncated " + what)
+181:         here = self._stream.tell()
+182:         moved = self._stream.seek(here + amount, io.SEEK_SET)
+183:         if moved != here + amount:
+184:             raise ValueError("truncated " + what)
+185: 
+186:     def _read_u32(self, what):
+187:         return struct.unpack("<I", self._read_exact(4, what))[0]
+188: 
+189:     def _objects_begin(self):
+190:         opening = self._read_exact(24, "WRP header")
+191:         magic, tx, tz, nx, nz, cell = struct.unpack("<4s4If", opening)
+192:         if magic != b"0WZD":
+193:             raise ValueError("bad WRP magic")
+194:         if tx <= 0 or tz <= 0 or nx <= 0 or nz <= 0:
+195:             raise ValueError("WRP dimensions must be positive")
+196:         if not math.isfinite(cell) or cell <= 0:
+197:             raise ValueError("WRP cell size must be positive finite")
+198:         self._seek_forward(nx * nz * 4, "heights")
+199:         self._seek_forward(tx * tz * 2, "material indices")
+200:         total_materials = self._read_u32("material count")
+201:         if total_materials > self._remaining() // 4:
+202:             raise ValueError("material count out of file bounds")
+203:         for _ in range(total_materials):
+204:             while True:
+205:                 size = self._read_u32("material string length")
+206:                 if size == 0:
+207:                     break
+208:                 self._seek_forward(size, "material string bytes")
+209:         return self._stream.tell()
+210: 
+211:     def census(self):
+212:         begin = self._objects_begin()
+213:         seen = set()
+214:         tally = 0
+215:         highest = 0
+216:         while True:
+217:             start_here = self._stream.tell()
+218:             if self._remaining() < 56:
+219:                 raise ValueError("truncated object or terminator")
+220:             fixed = self._read_exact(56, "object record")
+221:             ident, name_len = struct.unpack_from("<II", fixed, 48)
+222:             if name_len == 0:
+223:                 if self._stream.tell() != self._total:
+224:                     raise ValueError("terminator not at EOF")
+225:                 return {"objects_start": begin, "term_offset": start_here, "count": tally, "max_id": highest, "ids": seen, "terminator": fixed}
+226:             if ident == 0:
+227:                 raise ValueError("object id must be positive")
+228:             if ident in seen:
+229:                 raise ValueError("duplicate object id in WRP")
+230:             seen.add(ident)
+
+tools/terrain/package_visual_forest_ev112.py
+1: """Read every compiled forest object in compact arrays; package only WRP/config.
+2: 
+3: OPRW discovery uses the bounded model-table / anchor / map-info checks of the
+4: technical pilot reader. It is a heuristic object reader, not a height decoder.
+5: """
+6: import argparse,hashlib,json,re,struct,subprocess,sys
+7: from pathlib import Path
+8: import numpy as np
+9: HERE=Path(__file__).resolve().parent
+10: sys.path[:0]=[str(HERE),str(HERE.parent/'vegetation'),str(HERE.parent/'playtest')]
+11: from prune_visual_forest_v31 import prefix,objects
+12: from attach_navmesh import read_pbo
+13: from package_visual_pilot_ev112 import norm,sha
+14: 
+15: 
+16: def source_arrays(path,count):
+17:     ids=np.empty(count,'<u4');mi=np.empty(count,'<u4');mat=np.empty((count,12),'<f4');names=[];index={};n=0
+18:     with path.open('rb') as f:
+19:         pre=prefix(f)
+20:         for ident,name,raw in objects(f):
+21:             assert n<count
+22:             name=norm(name)
+23:             if name not in index:index[name]=len(names);names.append(name)
+24:             ids[n]=ident;mi[n]=index[name];mat[n]=struct.unpack_from('<12f',raw);n+=1
+25:     assert n==count and np.isfinite(mat).all() and len(np.unique(ids))==n
+26:     return dict(ids=ids,mi=mi,mat=mat,names=names,prefix_sha256=sha(pre))
+27: 
+28: 
+29: def compiled_arrays(b,anchor):
+30:     assert b[:4]==b'OPRW';version=struct.unpack_from('<I',b,4)[0];stride={29:60,32:64}[version]
+31:     mark=b.find(b'baltic_water_v30\\');assert mark>=4;possible=[]
+32:     for start in range(max(0,mark-4000),mark-3):
+33:         count=struct.unpack_from('<I',b,start)[0]
+34:         if not 0<count<200000:continue
+35:         p=start+4;names=[]
+36:         try:
+37:             for _ in range(count):
+38:                 end=b.index(b'\0',p,p+300);name=b[p:end].decode('ascii')
+39:                 if not name.lower().endswith('.p3d'):raise ValueError()
+40:                 names.append(norm(name));p=end+1
+41:             if start+4<=mark<p:possible.append((names,p))
+42:         except (ValueError,UnicodeDecodeError):pass
+43:     assert len(possible)==1,('ambiguous model table',len(possible))
+44:     names,mend=possible[0];needle=struct.pack('<2I',anchor['id'],names.index(norm(anchor['name'])));hits=[];p=mend
+45:     while True:
+46:         p=b.find(needle,p)
+47:         if p<0:break
+48:         if p+stride<=len(b) and np.max(np.abs(np.array(struct.unpack_from('<12f',b,p+8))-anchor['matrix']))<=1e-5:hits.append(p)
+49:         p+=1
+50:     assert len(hits)==1,('ambiguous anchor',hits)
+51:     dtype=np.dtype(dict(names=['ids','mi','mat','shape']+(['reserved'] if stride==64 else []),
+52:                         formats=['<u4','<u4',('<f4',12),'<u4']+(['<u4'] if stride==64 else []),
+53:                         offsets=[0,4,8,56]+([60] if stride==64 else []),itemsize=stride))
+54:     def valid(rows):
+55:         mat=rows['mat'];length=np.linalg.norm(mat[:,:9].reshape(-1,3,3),axis=2)
+56:         ok=(rows['ids']>0)&(rows['mi']<len(names))&(rows['shape']<=64)&np.isfinite(mat).all(1)&(np.abs(mat[:,9:]).max(1)<1e6)
+57:         ok&=((length>1e-5).all(1)|(length==0).all(1))&(length<100).all(1)
+58:         if stride==64:ok&=rows['reserved']==0
+59:         return ok
+60:     first=hits[0]
+61:     while first-stride>=mend:
+62:         count=min(65536,(first-mend)//stride);start=first-count*stride
+63:         bad=np.flatnonzero(~valid(np.frombuffer(b,dtype,count=count,offset=start)))
+64:         if len(bad):first=start+(int(bad[-1])+1)*stride;break
+65:         first=start
+
+tools/terrain/compile_visual_pilot_ev112.ps1
+1: param([Parameter(Mandatory=$true)][string]$Stage,[Parameter(Mandatory=$true)][string]$Pilot)
+2: $ErrorActionPreference='Stop'
+3: $stagePath=(Resolve-Path -LiteralPath $Stage).Path
+4: $pilotPath=(Resolve-Path -LiteralPath $Pilot).Path
+5: $project=Join-Path $stagePath 'root'
+6: $source=Join-Path $project 'dayz_baltic_12km_dev\tb\narva_trial'
+7: $out=Join-Path $stagePath 'out'
+8: $temp=Join-Path $stagePath 'temp'
+9: $builder='C:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin\AddonBuilder\AddonBuilder.exe'
+10: $water='E:\DayZ-Baltic-Build\v31-pond-layer-20261013\ev112-build-20261018\water-prepared-fp49ee\temp\baltic_water_v30'
+11: $pilotModels=Join-Path $pilotPath 'temp\baltic_stream_pilot'
+12: $include='C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\codex-handoff-review-74f290\packages\baltic-road-v29\tools\include.lst'
+13: foreach($required in @($source,$builder,$water,$pilotModels,$include,'P:\DZ','P:\bin','P:\core')) {
+14:     if(!(Test-Path -LiteralPath $required)){throw "Missing dependency: $required"}
+15: }
+16: if((Test-Path -LiteralPath $out) -or (Test-Path -LiteralPath $temp)){throw 'Fresh build directories required'}
+17: New-Item -ItemType Directory -Path $out | Out-Null
+18: foreach($part in @('DZ','bin','core')) {
+19:     New-Item -ItemType Junction -Path (Join-Path $project $part) -Target (Join-Path 'P:\' $part) | Out-Null
+20: }
+21: New-Item -ItemType Junction -Path (Join-Path $project 'baltic_water_v30') -Target $water | Out-Null
+22: New-Item -ItemType Junction -Path (Join-Path $project 'baltic_stream_pilot') -Target $pilotModels | Out-Null
+23: $log=Join-Path $stagePath 'addonbuilder.log'
+24: $ErrorActionPreference='Continue'
+25: & $builder $source $out '-prefix=dayz_baltic_12km_dev\tb\narva_trial' "-project=$project" "-temp=$temp" '-binarizeFullLogs' "-include=$include" > $log 2>&1
+26: $result=$LASTEXITCODE
+27: $ErrorActionPreference='Stop'
+28: if($result -ne 0 -or (Get-Content -Raw -LiteralPath $log) -notmatch 'Build Successful'){throw "Build failed: $log"}
+29: Write-Output "World compiled for readback: $out"
