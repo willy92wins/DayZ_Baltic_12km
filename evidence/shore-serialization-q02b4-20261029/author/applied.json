@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "path": "tools/quality/shore_serialization_io_ev112.py",
+      "sha256": "a4b814b137c501c4b8746b1b5fae41fe7a7f9552ba1b961e7e7b53fb3f337731",
+      "bytes": 24942
+    },
+    {
+      "path": "tools/quality/measure_shore_serialization_ev112.py",
+      "sha256": "ae7d94db1d52624f64674edbbc1a4884c45dcb5eb080ab82270f308e7dd31b2b",
+      "bytes": 14138
+    },
+    {
+      "path": "tools/quality/verify_shore_serialization_ev112.py",
+      "sha256": "5aa83af53b2a6c75cec8c2c7612f739bc20d2dd7b94b8a755fa9d723daea319c",
+      "bytes": 11009
+    },
+    {
+      "path": "tests/test_shore_serialization_ev112.py",
+      "sha256": "4bdc9c1b5778f511fd517950f7ba8ebb057979c822a12cd86656b043e951ea3e",
+      "bytes": 16047
+    }
+  ],
+  "notes": [
+    "executor: Muse Wonder1.0 native route; term: single delivery, no execution, no capture read, no file writes performed by author",
+    "No tests executed or asserted as run; code designed for Python 3.12.14 stdlib unittest and -I CLI invocation",
+    "Producer is the audited isolated CLI child (preload, module hash recording, audit hook, selftests); consumer shares only IO/pinning/JSON from shore_serialization_io_ev112 and independently derives receipt totals without opening capture or running codec",
+    "numeric_guard_source is only read as pinned bytes for SHA via load_metadata, never imported"
+  ],
+  "usage": [
+    {
+      "schema_version": 1,
+      "id": "019e8ff1-0d43-7fa4-affd-951eb7fe24bf",
+      "stream": {
+        "kind": "exec.usage",
+        "id": "01a18771-42aa-7681-97c3-915143d4f075"
+      },
+      "sequence": 1,
+      "recorded_at": 1780531400003586,
+      "record_type": "status",
+      "durability": "ephemeral",
+      "causation_id": "01a18771-48b1-76b0-bd93-4049ec6f235e",
+      "payload_type": "run.usage",
+      "payload_schema_version": 1,
+      "payload": {
+        "kind": "run_usage",
+        "command_id": "01a18771-48b1-76b0-bd93-4049ec6f235e",
+        "run_stream": {
+          "kind": "run",
+          "id": "01a18771-48b1-76b0-bd93-4049ec6f235e"
+        },
+        "models": [
+          {
+            "model": "muse-wonder-1.0",
+            "input_tokens": 39767,
+            "cached_tokens": 0,
+            "output_tokens": 30969,
+            "reasoning_tokens": 10768,
+            "calls": 1
+          }
+        ],
+        "calls": 1,
+        "completed_calls": 1,
+        "failed_calls": 0,
+        "cancelled_calls": 0,
+        "children_included": false,
+        "allowance": {
+          "tier": null,
+          "window": {
+            "used_percent": 6,
+            "resets_at_ms": 1793274152000
+          },
+          "weekly": {
+            "used_percent": 12,
+            "resets_at_ms": 1793577600000
+          },
+          "as_of_ms": 1793273856399,
+          "source": "stream"
+        }
+      }
+    }
+  ],
+  "seconds": 148.5
+}

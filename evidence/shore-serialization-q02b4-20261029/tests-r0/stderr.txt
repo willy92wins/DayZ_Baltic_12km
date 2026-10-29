@@ -1,0 +1,53 @@
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:76: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\guill\\Documents\\Codex\\2026-09-29\\vamos\\work\\gis-env\\Scripts\\python.exe'>
+  exe_bytes = open(sys.executable, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:178: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpu8uwds71\\capture\\chain-0000\\extra.txt'>
+  open(os.path.join(fx["capture"], "chain-0000", "extra.txt"), "wb").write(b"x")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:183: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpmks7p6xu\\capture\\header.json'>
+  open(os.path.join(fx["capture"], "header.json"), "wb").write(b"changed\n")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:163: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpcwgllq_7\\prod\\receipts.ndjson'>
+  data = open(receipts, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:164: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpcwgllq_7\\trunc.ndjson'>
+  trunc = os.path.join(td, "trunc.ndjson"); open(trunc, "wb").write(data[:-3])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:167: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpcwgllq_7\\partial.ndjson'>
+  parts = data.split(b"\n"); partial = b"\n".join(parts[:3]) + b"\n"; ppath = os.path.join(td, "partial.ndjson"); open(ppath, "wb").write(partial)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:170: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpcwgllq_7\\c2\\consumer.json' mode='r' encoding='utf-8'>
+  c = json.loads(open(os.path.join(td, "c2", "consumer.json")).read()); self.assertFalse(c["complete"]); self.assertEqual(c["state"], "PARTIAL_SERIALIZATION_DIAGNOSTIC")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:172: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpcwgllq_7\\bad.ndjson'>
+  bpath = os.path.join(td, "bad.ndjson"); open(bpath, "wb").write(bad)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:132: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpg8xg8wb5\\prod\\receipts.ndjson'>
+  lines = open(receipts, "rb").read().splitlines()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:134: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpg8xg8wb5\\prod\\audit.json' mode='r' encoding='utf-8'>
+  a = json.loads(open(audit).read()); self.assertTrue(a["selftests"]["forbidden_open_denied"]); self.assertTrue(a["selftests"]["forbidden_import_denied"]); self.assertGreaterEqual(a["counters"]["capture_open_allowed"], 4)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py:137: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\guill\\AppData\\Local\\Temp\\tmpg8xg8wb5\\cons\\consumer.json' mode='r' encoding='utf-8'>
+  c = json.loads(open(os.path.join(fx["cout"], "consumer.json")).read())
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+....E
+======================================================================
+ERROR: test_literals (__main__.Oracles.test_literals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_serialization_ev112.py", line 94, in test_literals
+    r = measure.roundtrip_bytes(data, exp)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\measure_shore_serialization_ev112.py", line 106, in roundtrip_bytes
+    rt.feed_chunk(data[i:i + 65536])
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\measure_shore_serialization_ev112.py", line 85, in feed_chunk
+    self.decoder.feed(piece, self.reservation)
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\measure_shore_serialization_ev112.py", line 39, in feed
+    raise io.Reject("REJECTED_INTEGRITY", "decoder_no_progress")
+shore_serialization_io_ev112.Reject: REJECTED_INTEGRITY:decoder_no_progress
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.301s
+
+FAILED (errors=1)

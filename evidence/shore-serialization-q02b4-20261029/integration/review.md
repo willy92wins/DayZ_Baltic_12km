@@ -1,0 +1,7 @@
+# Revisión de integración Q02B4 — Codex, contexto compartido
+
+Fable R0 y recuperación agotaron 120.031/120.032 s sin dictamen. Ruta retirada para esta revisión; no tercera petición ni aprobación atribuida. Muse autor y corrector entregaron; Codex ejerce revisión de otra familia con contexto compartido, NO lane ciega. No medición real hasta finalizar negativos y aprobación explícita ligada a postimagen.
+
+NEEDS-WORK en la entrega correctora: mantenía comparaciones ctime entre APIs pese al plan; aceptaba esquemas desconocidos y claims opcionales; clasificación prefijo no comprobaba cadena; falso negativo al morir tras último archivo sin terminal; test confundía contador previo con posterior; fake de compresión descartaba el input. Todos corregidos aquí con anclas de fuentes reales. Sin cambio del contrato c814, datos, cotas, nivel, consultas ni tolerancias.
+
+Audit startup fsync y terminal sobre mismo handle xb, sin reapertura; terminal ligado por SHA a recibos. Metadatos siguen siendo verificación del testimonio guardado, no replay independiente de codec. El hook no es sandbox de seguridad. Runtime loaded es observación histórica pinada, no prueba de procedencia upstream. Un prefijo sin final nunca FULL, aunque incluya todos los archivos. Revisados código IO, codec, CLI productor/consumidor y suite completa; root integra cambios acotados de revisión y comparte contexto, límite explícito.

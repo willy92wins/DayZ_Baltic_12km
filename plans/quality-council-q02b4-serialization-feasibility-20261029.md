@@ -1,3 +1,5 @@
+Estado vigente: CONSUMIDO_SAVED_SERIALIZATION_FEASIBILITY_ONLY. Resultado y límites en evidence/shore-serialization-q02b4-20261029. No repetir medición ni CLIs. El contrato externo c814 y el texto de diseño histórico se preservan abajo.
+
 # Q02B4 — coste de serialización guardada, sin repetir el censo
 
 Estado: REVISADO_PARA_AUTORIA_DE_MEDICION_GUARDADA. Contrato final en tests/fixtures/q02b4/contract.json; revisión recuperada66.985s adjudicada, primer intento120.078s sin entrega. Todavía sin código ni medición. Estado histórico de descubrimiento sigue documentado abajo.

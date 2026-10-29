@@ -1,0 +1,3 @@
+# Q03A — adjudicación Codex
+
+SOUND-with-fixes incorporado. Aceptadas separación observado/localizado, estados cerrados, prioridad y entrega parcial, mutantes sólo diseñados. Refutado hallazgo3 y su denominador propuesto: bucleB2A411-420 añade TODOS los modelos antes del filtro de vértices; B4B0 revalida el universo fuente5509. No hay sesgo de nombres causado por Geometry. Cuentas de nombres no son geometría/poses completas, límite conservado. Refutada puerta implícita de calibración antes de cualquier extracción local por circularidad innecesaria; aceptación mundial sí requiere marco acreditado. extraction_ready=false en TODA esta investigación, contrato propio posterior. Sin réplica de revisión, sin ejecutar investigación, sin código nuevo de escena ni mapa tocado.

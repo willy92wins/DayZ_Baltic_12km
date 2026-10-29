@@ -1,0 +1,79 @@
+{
+  "files": [
+    {
+      "path": "tools/quality/shore_serialization_io_ev112.py",
+      "sha256": "34a255146572e0dfec0d15d4a4ac746223ae929c059737e2fa471a6c0d983740",
+      "bytes": 37012
+    },
+    {
+      "path": "tools/quality/measure_shore_serialization_ev112.py",
+      "sha256": "593ba26bfa52630783b3d028c923f46765d5a6c553cde1923afb11ecccf3b7cb",
+      "bytes": 14603
+    },
+    {
+      "path": "tools/quality/verify_shore_serialization_ev112.py",
+      "sha256": "0fcd6908d0e990e6f25cd3ae231c75db68a14f09824594858a74dcfd32536aac",
+      "bytes": 11774
+    },
+    {
+      "path": "tests/test_shore_serialization_ev112.py",
+      "sha256": "e583a4d6f67064e71fa841af81229dd89fdc038d3943b09a1415f2130e3c7511",
+      "bytes": 25769
+    }
+  ],
+  "notes": "Corrección acotada sin ejecutar pruebas ni afirmar medición: 1) Decoder.feed acepta pieza vacía intermedia y solo rechaza no-progress con trabajo pendiente, drenando unconsumed_tail hasta agotar; truncado/corrupto/concatenado/exceso intactos. 2) Delta de implementación documentado: audit.json pasa a NDJSON exclusivo de 2 registros en la misma ruta (startup inmutable fsync antes de cualquier capture open, ligada a contrato/runtime/preloads/selftests; terminal opcional append+fsync ligada a SHA/bytes de receipts y contadores). Presupuesto 2MiB incluye ambos registros y receipts. Consumidor acepta startup+prefijo sin terminal/final solo como PARTIAL, nunca FULL; FULL exige final+terminal consistentes; línea de audit truncada se rechaza sin recortar. Requiere revisión externa posterior antes de captura, no prometido final tras kill. 3) load_metadata valida literales reales (consumer q02b3-consumer.v1/VERIFIED_PARTIAL_NUMERIC_COVERAGE/errors[]/unverified_numeric_count=0), bindings npz/selectors/oracles desde campos reales del numeric_contract, claims desde numeric_contract, tail exacto contra classification y completed_chains, identidad running/completion por PID/birth y ventana; no se afirma input_sha==guard (running real aca7414e no es 3990 guard). Sin inventar valores de schema inventory/classification: se exigen claves literales y strings no vacíos porque las fuentes adjuntas solo fijan claves. 4) stat_tuple con dev/ino/size/mtime_ns/ctime_ns por API y fstat final en read_limited/read_pinned/measure; entre APIs solo campos comparables; ancestro lstat ilegible rechaza. 5) JSON rechaza NaN/Infinity/overflow, igualdad tipada canónica (True!=1) en codec/claims/totals/bindings/audit, validación estricta de audit (unknown keys, tipos, contadores, preloads, selftests, runtime_checks todo-True booleano) y binding audit-receipts anti-stale. 6) Caps de inventario y metadata_total en preflight antes de leer; preloads fail-closed en rutas declaradas ilegibles/caps, registrando builtin/frozen sin archivo; check_runtime exige sys._base_executable real y etiquetas zlib runtime/compile corregidas. 7) Tests stdlib unittest con fixture de estructura real, negativos explícitos (missing/reparse/duplicate/classfalse/completionforged/mtime/nohook/booltotals/falseaudit/noFULLpartial/noNPZWRPPBOopen/noNumericImports/consumerNOcapture, decoder empty chunk y buffered boundary), metamórficos con re-pin por hash para que falle la guarda deseada y oráculos desde el pin de oracles. Contrato c814 y scripts consumidos no modificados; ningún cap ampliado.",
+  "usage": [
+    {
+      "schema_version": 1,
+      "id": "019e8ff1-0d44-74aa-bbe9-d6f555313e28",
+      "stream": {
+        "kind": "exec.usage",
+        "id": "01a18778-e88a-7121-a1df-dbb37055ca18"
+      },
+      "sequence": 1,
+      "recorded_at": 1780531400004182,
+      "record_type": "status",
+      "durability": "ephemeral",
+      "causation_id": "01a18778-eb82-7211-a587-92a56a183708",
+      "payload_type": "run.usage",
+      "payload_schema_version": 1,
+      "payload": {
+        "kind": "run_usage",
+        "command_id": "01a18778-eb82-7211-a587-92a56a183708",
+        "run_stream": {
+          "kind": "run",
+          "id": "01a18778-eb82-7211-a587-92a56a183708"
+        },
+        "models": [
+          {
+            "model": "muse-wonder-1.0",
+            "input_tokens": 54484,
+            "cached_tokens": 0,
+            "output_tokens": 33887,
+            "reasoning_tokens": 6407,
+            "calls": 1
+          }
+        ],
+        "calls": 1,
+        "completed_calls": 1,
+        "failed_calls": 0,
+        "cancelled_calls": 0,
+        "children_included": false,
+        "allowance": {
+          "tier": null,
+          "window": {
+            "used_percent": 7,
+            "resets_at_ms": 1793274152000
+          },
+          "weekly": {
+            "used_percent": 12,
+            "resets_at_ms": 1793577600000
+          },
+          "as_of_ms": 1793274326789,
+          "source": "stream"
+        }
+      }
+    }
+  ],
+  "seconds": 116.54699999999139
+}
