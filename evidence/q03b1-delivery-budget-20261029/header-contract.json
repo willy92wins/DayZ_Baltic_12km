@@ -1,0 +1,39 @@
+{
+  "schema": "q03b1a-header-v1",
+  "created_utc": "2026-10-29T13:44:01.392465+00:00",
+  "oracle": {
+    "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\q03b1-reader-inputs-20261029\\oracle.json",
+    "sha256": "79b946237ff06dfc414cb47fbee38063a6eedf66af784a0ea2b769fc7d8e18f9"
+  },
+  "cases": {
+    "bad_member_bool": "MEMBER_SCHEMA",
+    "bad_member_negative": "MEMBER_SCHEMA",
+    "bad_member_limit": "MEMBER_SCHEMA",
+    "schema_keys": "MEMBER_SCHEMA",
+    "schema_bool_shape": "MEMBER_SCHEMA",
+    "header_eof": "NPY_TRAILING",
+    "magic": "NPY_MAGIC",
+    "version3": "NPY_VERSION",
+    "minor1": "NPY_VERSION",
+    "header16385": "HEADER_LIMIT",
+    "dictionary": "MEMBER_SCHEMA",
+    "extra_key": "MEMBER_SCHEMA",
+    "fortran": "NPY_ORDER",
+    "shape_bool": "NPY_SHAPE",
+    "shape_negative": "NPY_SHAPE",
+    "shape_mismatch": "NPY_SHAPE",
+    "shape_product": "NPY_SHAPE",
+    "dtype_object": "NPY_DTYPE",
+    "dtype_endian": "NPY_DTYPE",
+    "dtype_mismatch": "NPY_DTYPE",
+    "dtype_field": "NPY_DTYPE",
+    "dtype_title": "NPY_DTYPE",
+    "dtype_subarray": "NPY_DTYPE",
+    "trailing": "NPY_TRAILING",
+    "stream_oserror": "INCONCLUSIVE_SOURCE_IO",
+    "stream_bug": "INTERNAL_ERROR"
+  },
+  "adjudication": "Muse52.578s SOUND-with-fixes. Aceptados contrato de stream, tipos/códigos, prioridad, offsets, prohibición de arrays y tabla externa. Refutada frase «NumPy no impone cap»: _format_impl.py629-638 sí comprueba max_header_size después de leer header; la prelectura propia debe comprobar ANTES. El límite16384 artesanal es aceptable para lectura estándar, no afirmación de alineación del writer. No se cambia oráculo79b9 ni Q03Bcontract. Contexto compartido del integrador explícito; no lane ciega.\n\nContrato cerrado: stream.read(n) devuelve bytes; lectura corta se acumula hasta n, b'' confirma EOF. En éxito consume exactamente prefijo+header y queda al comienzo del payload. member_bytes es tamaño exacto atestado por futuro llamador: sólo valida concordancia aritmética, NO presencia real de payload. No seek/tell requerido ni array/np.load dentro del inspector; copia máxima prefix12+header16384. dtype/shape/metadata no son payload.\nPrecedencia: schema y member_bytes mal tipados -> MEMBER_SCHEMA (bool prohibido, rango0..128MiB). Schema keys exactamente dtype/shape; shape lista0..3dimensiones, enteros no bool 0..2M; scalar[] producto1, cero dimensión producto0. Schema shape inválida MEMBER_SCHEMA; shape de cabecera inválida o distinta NPY_SHAPE. EOF en MAGIC/version/length/header -> NPY_TRAILING; magic completa incorrecta NPY_MAGIC; versión no1.0/2.0 NPY_VERSION; headerlen>16384 HEADER_LIMIT antes de solicitar header. AST/sintaxis/dict/claves extraausentes MEMBER_SCHEMA. fortran no boolFalse NPY_ORDER. Shapevalidación antes de producto, dtype exacta después. dtype malformada/diferente/object/bigendian/títulos/subarray/fields NPY_DTYPE. Producto o producto*itemsize fuera128MiB NPY_SHAPE mediante división previa. prefix+header+payload distinto member_bytes NPY_TRAILING. OSErrorread SOURCE_IO; inesperado INTERNAL_ERROR con causa. Descriptor conserva pares completos, offsets META son offsets dtype (no posiciones mundiales); payload_offset10/12+header_len. Schema[\"dtype\"] scalar string o lista exacta pares. NumPy públicas read_array_header_1_0/read_array_header_2_0 con max_header_size=16384 sobre BytesIO(prefix+header) pos8, nunca privatehelpers.\nTests fijan NumPy2.5.3 y la tabla externa. Negativos contra códigos literales propios, no contra parserNumPy. Solo positivos leen payload estándar DESPUÉS de inspección para probar bytes. Truncamiento payload físicamente no leído queda alcance posterior; no afirmar detectarlo. No ZIP/budget/identidad cerrados.",
+  "result": "NPY_HEADER_FIXTURE_VERIFIED_ONLY",
+  "real_npz_authorized": false
+}

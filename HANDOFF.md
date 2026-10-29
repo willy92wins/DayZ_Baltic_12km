@@ -1,3 +1,15 @@
+# Estado vivo — Q03B1 y Q03B1A sin entrega completa,29-10
+
+No operación propia/run/lease. Muse120.063s dejó7958caracteres parciales, ningún archivo completo; Fable120.204s en el corte de cabecera tampoco entregó texto/resultado. Ambas rutas de esos intentos retiradas, no relanzar autores ni continuar streams. Plan Q03B1A revisado Muse52.578s y oráculo79b946/contrato de2afee0 congelados. Sólo ocho lecturas de oráculos NumPy estándar verificadas0.844s; suite de implementación0, código promovido0, NPZhistóricos0, mapa intacto. evidence/q03b1-delivery-budget-20261029.
+
+Siguiente decisión técnica autónoma: reevaluar mecanismo y asignación de ejecución antes de otro código. Una función compacta con executor local explícitamente asignado y revisión externa es alternativa a estudiar; cerrar reparto/presupuesto antes de lanzar. No reintento disfrazado, aumento de los presupuestos consumidos ni permiso para rebajar guardas. Q03B1 ZIP/snapshot/budget y semántica/proxy siguen pendientes. Los parciales privados son inertes, no entrypoints. Q03B anterior rechazado; nueve humanos0resueltos/C1NOT_REVIEWED. Council ya ejecutado, no repetir. Q03C/Q05/ángulos/referentes/carretaras continúan abiertos.
+
+## Checkpoint público confirmado — 29-10
+
+4b700989b1b5e253e6b7ea344cba73f7c5704456 publicado:43archivos,mainremoto verificado limpio. Receipt E:/DayZ-Baltic-Build/shape-repair-20261025/publish-q03b-rejection-20261029/result.json. Unidad de rechazo de código validada por3repros privados/públicos idénticos; NO suiteaprobada ni mapa cambiado. Captura real0.70identidades de procesos propios retiradas; no operación/run/lease. Automatización actualizada ACTIVE. Todos publicadores/stage/add/commit/push y validaciónpública CONSUMIDOS, no repetir.
+
+Siguiente: Q03B1 lector+tests sintéticos con planrevisado; preparar oráculo externo pequeño y ejecutar corte acotado. No hay códigoQ03B1 ni trabajo delegadoen curso. ContratoescenaR1 intacto, R0/R1 retirados noaprobados. No se publicó historialprivado ni geometríavanilla. Whitespace de dos líneas históricas (snapshotR0 y stderrR1) se preserva con adjudicación en recibo; no se normalizó evidencia paraforzarPASS.
+
 # Estado vivo — Q03B rechazado; recuperación Q03B1 preparada (29-10)
 
 No hay operación propia, run ni lease. Q03B R0/R1 retirados: suiteR0 3PASS9FAIL3ERROR; R1 6PASS12FAIL5ERROR. Tres repros independientes contradicen cierres del dictamenFable delta (descriptor truncado, NPY2 válido rechazado, proxy hijo incorrecto aceptado). evidence/saved-scene-q03b-rejected-20261029. Cuatro archivos ya fuera de tools/tests; snapshots inertes source/R0/R1. NO ejecutar ningún snapshot como herramienta aprobada. Captura real0 y NPZhistóricosabiertos0; mapa intacto.
