@@ -1,0 +1,580 @@
+{
+  "schema": "q17a-contract.v1",
+  "unit": "m",
+  "plane": "XZ",
+  "natural_positive_count": 0,
+  "calibration_ready": false,
+  "q01": {
+    "ledger_path": "evidence/rejection-coverage-q01-20261029/ledger.json",
+    "ledger_sha256": "1a728ab84413db97e082e827de042e96d7716a97eb2500dd7465a715967f3921",
+    "sources_root": "evidence/rejection-coverage-q01-20261029/sources",
+    "source_pins": {
+      "evidence/closed-perimeter-q02a-20261029/summary.json": "d1f48ba4c2128e09d2c4381ab62cc5f18dc08aa0c6103691b6a686718b0aeef5",
+      "evidence/native-shore-census-20261028/observations.json": "8cf522d19945a8e7d305870b1576cb5a290e938a36e761a2d24e25bc4045a32c",
+      "evidence/road-water-census-20261028/contexts.json": "dbcb03734d1d56cf4b879ee29f7efa9664e4893a258d403aae89007fa8389588",
+      "evidence/visual-tour-20261027/additional-crossing-feedback.json": "192c167a8cb8c4e0c588f72967e7b703f7f7c48fa582eff3d31898dc9b0cee90",
+      "evidence/visual-tour-20261027/causeway-c0-feedback.json": "40d52e3aee406e0afe66ea6ce48d252e5ea9d0eff583fb631527d09c741cade3",
+      "evidence/visual-tour-20261027/continuous65-feedback.json": "350f73f729cf26d4d4c6a4fd2e5c05455edc755ce9b0148b3d4745027d622c0f",
+      "evidence/visual-tour-20261027/feedback.json": "68948542b6e149d9e0a140b5f5dff71989ef21ac5afa150e13ee0184d3084af9",
+      "evidence/visual-tour-20261027/forest-feedback.json": "01369ecef0b76cbdd3cd760d4d654f8c193fbf62d164cac9d5a2c75fdcb2c4f0",
+      "evidence/visual-tour-20261027/kit118-feedback.json": "0f6b815bf0bab6f2d97bc8790a943a39159db55626f3b77e5d7f6f02c1a1ecfb",
+      "evidence/visual-tour-20261027/relief-east-feedback.json": "62d84f6392fed5140f7b25c8a3deec92018fec63726b28f69af5f607a0b59f56",
+      "evidence/visual-tour-20261027/road49-feedback.json": "26a049200c59bac35bb37e889d379b893e51dc2bffaa28434bd86386fc70e3a9",
+      "evidence/visual-tour-20261027/tour-ended-20261028.json": "be33a1cb4c22115fb89af764bccd8bee7da28c598f241b7a6776e42368e5c374"
+    },
+    "case_ids": [
+      "NARVA-VIS-01",
+      "NARVA-VIS-02",
+      "NARVA-VIS-03",
+      "KIT118-VIS-01",
+      "KIT118-VIS-02",
+      "CONT65-VIS-01",
+      "ROAD49-RIVER-VIS-01",
+      "CROSSING-VIS-01",
+      "RELIEF-EAST-VIS-01"
+    ],
+    "control_ids": [
+      "forest-dense",
+      "causeway-c0",
+      "road-49",
+      "causeway-c1"
+    ]
+  },
+  "fixtures": [
+    {
+      "id": "open_l",
+      "closed": false,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "open_polyline",
+        "single_right_angle_turn"
+      ],
+      "limitation": "Synthetic fixture only; no source or human coverage claimed.",
+      "expected": {
+        "vertex_count": 3,
+        "edge_squared_lengths": [
+          "16",
+          "9"
+        ],
+        "nonzero_turns": [
+          [
+            1,
+            1
+          ]
+        ],
+        "twice_signed_area": null,
+        "circle": null
+      },
+      "points_file": "tests/fixtures/q17a/open_l.json",
+      "points_sha256": "e46aa738c5c7f84f087771de46e81531ddc700f37fddebd26c348b0a2be6d74d"
+    },
+    {
+      "id": "closed_l",
+      "closed": true,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "closed_polyline",
+        "orthogonal",
+        "single_reflex_vertex"
+      ],
+      "limitation": "Synthetic fixture only; no source or human coverage claimed.",
+      "expected": {
+        "vertex_count": 6,
+        "edge_squared_lengths": [
+          "36",
+          "4",
+          "16",
+          "16",
+          "4",
+          "36"
+        ],
+        "nonzero_turns": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "twice_signed_area": "40",
+        "circle": null
+      },
+      "points_file": "tests/fixtures/q17a/closed_l.json",
+      "points_sha256": "05bf254e5efca511e7edcbfb13f6a1fc2f4aa3e72447faeb7aa68234bc313312"
+    },
+    {
+      "id": "rectangular_tongue",
+      "closed": true,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "closed_polyline",
+        "orthogonal",
+        "rectangular_protrusion",
+        "two_reflex_vertices"
+      ],
+      "limitation": "Synthetic fixture only; no source or human coverage claimed.",
+      "expected": {
+        "vertex_count": 8,
+        "edge_squared_lengths": [
+          "64",
+          "16",
+          "9",
+          "16",
+          "4",
+          "16",
+          "9",
+          "16"
+        ],
+        "nonzero_turns": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            -1
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "twice_signed_area": "80",
+        "circle": null
+      },
+      "points_file": "tests/fixtures/q17a/rectangular_tongue.json",
+      "points_sha256": "6efa56f6f2f2fa622c7d314e7211033be52558384f0535b813c5cb869fdf659b"
+    },
+    {
+      "id": "oblique_zigzag",
+      "closed": false,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "open_polyline",
+        "oblique_segments",
+        "alternating_turns",
+        "equal_squared_edge_lengths"
+      ],
+      "limitation": "Synthetic fixture only; no source or human coverage claimed.",
+      "expected": {
+        "vertex_count": 5,
+        "edge_squared_lengths": [
+          "13",
+          "13",
+          "13",
+          "13"
+        ],
+        "nonzero_turns": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "twice_signed_area": null,
+        "circle": null
+      },
+      "points_file": "tests/fixtures/q17a/oblique_zigzag.json",
+      "points_sha256": "03dd87ee75d4896f0af07c604274c82922c451840c79aadce22df91a6c902cf0"
+    },
+    {
+      "id": "chamfer_stair",
+      "closed": false,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "open_polyline",
+        "stair_profile",
+        "declared_chamfers"
+      ],
+      "limitation": "Chamfers are declared by construction; synthetic fixture only.",
+      "expected": {
+        "vertex_count": 8,
+        "edge_squared_lengths": [
+          "9",
+          "2",
+          "4",
+          "2",
+          "4",
+          "2",
+          "9"
+        ],
+        "nonzero_turns": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ]
+        ],
+        "twice_signed_area": null,
+        "circle": null
+      },
+      "points_file": "tests/fixtures/q17a/chamfer_stair.json",
+      "points_sha256": "26eb13d951be10dc805f18be47043622fec9b206721f25b6ae0dd3808eae8a76"
+    },
+    {
+      "id": "long_straight",
+      "closed": false,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "open_polyline",
+        "collinear_points",
+        "unequal_segment_lengths"
+      ],
+      "limitation": "Synthetic fixture only; no source or human coverage claimed.",
+      "expected": {
+        "vertex_count": 3,
+        "edge_squared_lengths": [
+          "625",
+          "5625"
+        ],
+        "nonzero_turns": [],
+        "twice_signed_area": null,
+        "circle": null
+      },
+      "points_file": "tests/fixtures/q17a/long_straight.json",
+      "points_sha256": "0ff123e68d7adbc595bb300d26dd14442c8a967ebd22efa9e4c6b6c21f6fa178"
+    },
+    {
+      "id": "rational_arc",
+      "closed": false,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "open_polyline",
+        "points_on_exact_circle",
+        "nonuniform_angular_spacing"
+      ],
+      "limitation": "Exact circle membership only; angular regularity is not claimed.",
+      "expected": {
+        "vertex_count": 5,
+        "edge_squared_lengths": [
+          "20",
+          "10",
+          "10",
+          "20"
+        ],
+        "nonzero_turns": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "twice_signed_area": null,
+        "circle": {
+          "center": [
+            0,
+            0
+          ],
+          "radius_squared": "25"
+        }
+      },
+      "points_file": "tests/fixtures/q17a/rational_arc.json",
+      "points_sha256": "b564b56f18ca7805b965c2a16da02b122c3ec532fc90c123716f5f2473018a90"
+    },
+    {
+      "id": "circle_shore",
+      "closed": true,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "closed_polyline",
+        "points_on_exact_circle",
+        "nonuniform_angular_spacing"
+      ],
+      "limitation": "Exact circle membership only; context does not certify origin or classification.",
+      "expected": {
+        "vertex_count": 8,
+        "edge_squared_lengths": [
+          "20",
+          "10",
+          "10",
+          "20",
+          "20",
+          "10",
+          "10",
+          "20"
+        ],
+        "nonzero_turns": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "twice_signed_area": "140",
+        "circle": {
+          "center": [
+            0,
+            0
+          ],
+          "radius_squared": "25"
+        }
+      },
+      "points_file": "tests/fixtures/q17a/circle_shore.json",
+      "points_sha256": "84bc5f7fac61db53bdac03401417f80e57f06739a12daf50792b98f2dbf974a0"
+    },
+    {
+      "id": "circle_designed",
+      "closed": true,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "DESIGNED_STRUCTURE",
+      "features": [
+        "closed_polyline",
+        "points_on_exact_circle",
+        "nonuniform_angular_spacing",
+        "same_geometry_as_circle_shore"
+      ],
+      "limitation": "Exact circle membership only; context does not certify origin or classification.",
+      "expected": {
+        "vertex_count": 8,
+        "edge_squared_lengths": [
+          "20",
+          "10",
+          "10",
+          "20",
+          "20",
+          "10",
+          "10",
+          "20"
+        ],
+        "nonzero_turns": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "twice_signed_area": "140",
+        "circle": {
+          "center": [
+            0,
+            0
+          ],
+          "radius_squared": "25"
+        }
+      },
+      "points_file": "tests/fixtures/q17a/circle_designed.json",
+      "points_sha256": "84bc5f7fac61db53bdac03401417f80e57f06739a12daf50792b98f2dbf974a0"
+    },
+    {
+      "id": "straight_arc",
+      "closed": false,
+      "role": "SYNTHETIC_ENGINEERING",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "open_polyline",
+        "straight_segment_followed_by_circular_points",
+        "sampled_union"
+      ],
+      "limitation": "Circle is null because the first point is outside it; sampled union only, tangent continuity not demonstrated.",
+      "expected": {
+        "vertex_count": 5,
+        "edge_squared_lengths": [
+          "25",
+          "20",
+          "10",
+          "10"
+        ],
+        "nonzero_turns": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "twice_signed_area": null,
+        "circle": null
+      },
+      "points_file": "tests/fixtures/q17a/straight_arc.json",
+      "points_sha256": "3c35939ddf63e187540844ca8fa983d8d8074565b44116c5fbacaeb77e75747b"
+    },
+    {
+      "id": "irregular_reference",
+      "closed": false,
+      "role": "SYNTHETIC_SMOOTH_REFERENCE",
+      "context": "UNCLASSIFIED_SHORE",
+      "features": [
+        "open_polyline",
+        "irregular_spacing",
+        "gradual_direction_changes"
+      ],
+      "limitation": "Synthetic smooth reference only; natural smoothness is not certified.",
+      "expected": {
+        "vertex_count": 7,
+        "edge_squared_lengths": [
+          "5",
+          "8",
+          "10",
+          "16",
+          "10",
+          "8"
+        ],
+        "nonzero_turns": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            5,
+            -1
+          ]
+        ],
+        "twice_signed_area": null,
+        "circle": null
+      },
+      "points_file": "tests/fixtures/q17a/irregular_reference.json",
+      "points_sha256": "d1cdfa5c1fa1e0533834b5ee3a13b98cd2e89ab92916f0ae3e8a8bbdeef20df0"
+    }
+  ]
+}

@@ -1,3 +1,8 @@
+# Resultado Q17A — 29-10
+
+COMPLETADO_CORPUS_INCOMPLETO. evidence/geometric-corpus-q17a-20261029: 11fixtures/66vértices, 26tests privados, consumidor independiente0.203s. Contrato5416dbef inmutable, cero positivos naturales, nueve humanos GEOMETRY_UNBOUND/abiertos. No reparación ni calibración de naturalidad. Autoría/revisión/suite/producción consumidas. El plan y su revisión originales se conservan debajo y en evidence/q17a-plan-review-20261029; la frase histórica sin código deja de describir el estado actual.
+
+---
 # Q17A — corpus independiente para detectar contornos artificiales
 
 Estado: REVISADO_PARA_IMPLEMENTAR_CORPUS_INCOMPLETO. Revisión Fable5.1 nativa61.563s y adjudicación en evidence/q17a-plan-review-20261029. Todavía sin arrays, contrato ni código. Primera unidad de Q17 que habilita Q02B; puede avanzar separada de Q04/carreteras. No cambia mapa, etiquetas físicas ni umbrales de aceptación.

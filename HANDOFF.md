@@ -1,3 +1,19 @@
+# Q17A validado; siguiente recuperación vial y rasgos multiescala — 29-10
+
+Corpus externo5416dbef:11fixtures/10geometrías/66vértices. Productor/consumidor separados0.203s cadauno/16.31MB,26tests privados PASS sin skips. evidence/geometric-corpus-q17a-20261029. Código d6549099/c78cf897 y suite bdd87cfc fijados en applied.json. Fable169.829s SOUND-with-fixes, Muse213.502s total; correcciones adjudicadas, no alias de fuentes ni inversiones colineales silenciosas. Nueve humanos GEOMETRY_UNBOUND/0resueltos, cuatro controles intactos, C1NOT_REVIEWED, naturalpositive0/calibrationfalse. No detector naturalidad aprobado ni mapa reparado. No repetir Q17A autores/delta/reviews/suites/producción/freeze.
+
+Siguiente autónomo concreto: B4A2R1 plans/ev112-road-b4a2r1-saved-material-recovery-20261029.md ya revisado, aún SIN código/contrato. Recuperar sólo snapshot; conv1 cero llamadas, una conv2 con marcador exclusivo/salida fijada90s/512MiB total,30s/256MiB hijo. No reabrir PBO ni repetirB4A2. Q02B/Q03/Q05 siguen pendientes; preparar plan de rasgos multiescala independiente usando Q17A sin inventar positivos naturales ni convertir documentación en reparación. Mantener prioridad anti-geometría junto a carreteras.
+
+Sin operación propia/run/lease al cierre funcional. Publicador nuevo publish-q17a-20261029/result.json cuando exista. Último remoto54d5078 hasta nuevo recibo. Original47FAIL21inciertos,Nav8607históricos,RAM/calidadglobal abiertos. Preservar.gitattributes ajena. Publicación sólo desdepublic-repo, no historia privada ni vanilla.
+
+---
+# Publicado 54d5078b7f5c080023939bee19102c64e2d9ab60 — recursos viales y corpus geométrico preparado
+
+54archivos,39tests privados/públicos finales PASS sin skips y5mutantes del auditor rechazados. Remoto main verificado limpio. Recibo publish-roadb4a2-q17a-20261029/result.json. Código final922ad3592a0fc42b97e6ae08e483abfc04934829bf3ce4e3b7cb80c84e85a543 tras quitar un espacio final (AST idéntico, suites finales repetidas por identidad). Tests137... anterior sustituido: consultar copied-final.json para hashes exactos actuales. B4A2 extractor/correcciones/revisiones/suites/auditor/freeze/stage/publicador/add/commit/push CONSUMIDOS. No repetición. Sin operación propia/run/lease al cierre.
+
+B4A2 permanece INCONCLUSIVE,8extracciones verificadas y asphalt_ext resuelto, conversión1 rc0 con texto629B pero lector de recibos falló; segunda no lanzada. Error y mocks de contrato corregidos, no rerun real. Siguientes planes revisados: Q17A corpus de geometría independiente (aún sin arrays/contrato/código) y B4A2R1 recuperación guardada (aún sin código/contrato). No perder Q17A/Q02B por la preparación vial. Revisión R1 exige cero llamadas para conv1 y marcador exclusivo/destino fijo para única conv2. No PBO reread, mapa reparado ni build aprobado.
+
+---
 # RoadB4A2 consumido; siguiente recuperación guardada y corpus Q17A — 29-10
 
 Ocho recursos extraídos privados verificados, asphalt_ext eef9f2d7 resuelto en surfaces; tablas501/109/34 y3dobleshashesestables. Padres2.375s INCONCLUSIVE por conversion_stream_missing: runner real stdout/stderr,*_sha; mock/probe inventaban .bin,*_sha256. Primera conversión rc0/.344s con629Btexto; segunda NO lanzada. Reportc9b3dde1 intacto. Literalfix259610->verstream-fix.json,39testsPASS5.625s y5mutantesauditor. No extracción repetida, build ni DayZ. Código corregido probado offline, no captura completa. Leer evidence/road-b4a2-installed-material-20261029. Todos los preparadores, implementaciones, reviews, suites, captura y auditor consumidos.
