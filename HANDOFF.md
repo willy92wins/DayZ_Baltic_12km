@@ -1,3 +1,15 @@
+# Q03B3 código sintético completo; publicación en curso
+
+FIXTURE_FACE_ROUTE_IDENTITY_ONLY.4modelos/3rutas/5caras,10tests privados PASS1.157s sin skips. Código fda1a85f/tests49e8bc9f, contratoR18173cc1e/oráculo17667706. Muse150.296s SOUND R0, integración detectó falsoPASS del cargador prefijo7/14bytes y corrigió21.230s con extensión9802d6d7; núcleoproxy sin cambios. Postimagen final no releída externamente. ContratoR0 corregido sóloschemaID antes de código y sin resetdeadline.
+
+Operaciones propias de autor/review/suite/repro consumidas; seguir publicador publish-q03b3-20261029 sin duplicar. No run/lease/NPZhistórico/mapa. Próximo productorsemántico+consumidor independiente necesita plan propio y referencias existentes; no generar expected real con el propio productor. Q03C/Q05/carretaras/referentes/ángulos y nueve rechazos abiertos. Council ya ejecutado; última conversación humana fue comentar council, no cambio de permisos ni pausa.
+
+# Publicación y cierre confirmados — Q03B2 + plan Q03B3
+
+Código/evidencia d7d4731e32073479329530cf04f1d05353821802 (55archivos) y plan7adaa235d4cc05e8e52192dba5762b044ddaa68b (7archivos) publicados, remoto main verificado limpio. Recibos publish-q03b2-20261029/result.json y publish-q03b3-plan-20261029/result.json.31identidades observadas retiradas entre ambasunidades. Sin operación propia/run/lease. Todos publicadores/reviews/suites/repros/autores/correcciones/stage/add/commit/push CONSUMIDOS. No repetir.
+
+Siguiente Q03B3: plan revisado para anclas/oráculos ANTES de código; límites y adjudicación en evidence/q03b3-proxy-plan-review-20261029. Aún no contrato nuevo ni implementación ni captura204NPZ. Q03B2 wrapper sólofixtures probado; ver detalle debajo. Sin cambios de mapa,9humanos0resueltos/C1NOT_REVIEWED. Automatización mantiene tarea completa activa; .gitattributes ajena preservada.
+
 # Checkpoint Q03B2 publicado; Q03B3 listo para anclas/oráculo
 
 d7d4731e32073479329530cf04f1d05353821802 publicado:55archivos,10métodos privados1.531s/públicos2.422s,9PASS1SKIPprivilegio symlink en cada suite; reparse simulado ejecutado. Dos checks de salida64KiB privados0.547s/públicos2.031s.29identidades delcheckpoint retiradas. Recibo publish-q03b2-20261029/result.json. Publicador original paró antesdecommit por espacio auténtico del stderrR0; continuación conservóbytes y55blobs, sin repetiradd/suites. Código79ef0195/tests b2c8c649/contrato72d3011b/extensión848c4442.

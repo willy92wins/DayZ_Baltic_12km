@@ -114,3 +114,5 @@ Q03B1L cabecera NPY funcional validada con7métodos/26negativos+2schema; ejecuci
 Q03B2: snapshot/ZIP/budget sólofixtures completo;9PASS1SKIP y2checks64KiB. CRC y terminación físicaDEFLATE corregidos, caps yheader intactos. No204NPZ reales/índice/semánticaproxy ni exposición/reparación. Evidence/archive-session-q03b2-20261029. Siguiente corte semántico propio antes de Q03C/Q05, sin repetir council ni censos.
 
 Q03B3 plan proxy/faceidentities revisadoMuse48.985s para anclas/oráculoantesdecódigo. Secciones guardadas sólocuentas: pertenenciacaraNOT_SAVED, semánticakindNOT_EVALUATED. Ruta debe seguir hijo literal y todosordinales, expectedmulticonjunto completo. Sin código ni datos reales. Q03B2 ya publicado d7d4731e; no repetir sus operaciones.
+
+Q03B3 identidad proxy/face sólofixtures completada:4modelos/3rutas/5caras,10testsPASS; hijo literal equivocado rechazado. Cargador de fixture corregido tras falsoPASS7/14bytes. No escena histórica/semánticakind/face-sectionmembership ni reparaciones. Próximo productor/consumidor propio; expected sintético no es oráculo para datos reales. Evidence/proxy-identity-q03b3-20261029.

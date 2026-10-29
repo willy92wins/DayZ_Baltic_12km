@@ -1,0 +1,32 @@
+{
+  "schema": "Top model keys index/name/center/lods/proxies; all nested keys exact observed structure. Finite numeric center3/matrix12 and resolution, no bool. Faces/counts/indices exact integers. LOD sections counts sum to declared faces but no face membership proof. Ordinal route slots never model index. Normalize ASCII slash/case/outer slash without suffix insertion; all model/proxy names must end .p3d. Expected model/route/face rows strict; compare complete face multiset including duplicates and route ordinal/order, preserve input order in returned rows. Output includes exact limitations from oracle, status FIXTURE_FACE_ROUTE_IDENTITY_ONLY. No JSON fields silently ignored.",
+  "status": "READY_FOR_ASSIGNED_SYNTHETIC_EXECUTOR",
+  "oracle_sha256": "17667706d7bd0faf641f5e2e53cb2ed15bf620f75a483598d3cd6b8c32343f8c",
+  "anchor_sha256": "c6570846ff1c5e8428c6562756a1088138cc46a1df5a18cc1c9f40e01a2658be",
+  "scene_contract_sha256": "e9672092ce285f5e59802bc3f4faa2341d67a11965551702e7adabcf3173ee65",
+  "source_anchor": "deployed_surface_inventory_ev112.py:115-198 and saved root587->child5509 suffix sample",
+  "caps": {
+    "models": 64,
+    "routes": 64,
+    "faces": 512,
+    "fixture_bytes": 1048576,
+    "lods_per_model": 64,
+    "sections_per_lod": 256,
+    "proxies_per_model": 64,
+    "route_hops": 16,
+    "string_chars": 4096
+  },
+  "API": "validate_face_routes(sections,routes,face_records,expected); load_fixture(path,expected_sha256). load_fixture is synthetic loader only: cap before parse, duplicate keys/nonfinite rejected, complete SHA required; no historical file identity claim.",
+  "role": "Codex explicitly assigned local executor, same-context integrator; native Muse reviewer",
+  "budget": {
+    "author_seconds": 600,
+    "review_seconds": 180,
+    "suite_seconds": 120,
+    "suite_rss": 268435456,
+    "correction_seconds": 180,
+    "no_delivery_recovery": 180,
+    "maximum_corrections": 1,
+    "maximum_review_recoveries": 1
+  },
+  "real_npz_authorized": false
+}

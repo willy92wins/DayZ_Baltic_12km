@@ -1,0 +1,10 @@
+{
+  "schema": "q03b3-fixture-growth-regression-v1",
+  "case": "fixture_grows_after_initial_fstat",
+  "expected": "FIXTURE_IO",
+  "repro": "q03b3-fixture-growth-repro-20261029/report.json",
+  "before": 7,
+  "after": 14,
+  "fix": "After bounded read require EOF lookahead and final handle size equal initial before hashing/parsing. This is not a continuous identity or historical archive guarantee. Pure route/face kernel unchanged.",
+  "budget_seconds": 180
+}

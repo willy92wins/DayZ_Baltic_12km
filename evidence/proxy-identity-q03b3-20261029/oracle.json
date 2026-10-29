@@ -1,0 +1,415 @@
+{
+  "schema": "q03b3-literal-oracle-v1",
+  "sections": [
+    {
+      "index": 0,
+      "name": "test/root.p3d",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "lods": [
+        {
+          "index": 7,
+          "resolution": 0,
+          "faces": 3,
+          "sections": [
+            {
+              "index": 9,
+              "material_raw": "",
+              "material": "",
+              "texture_raw": "",
+              "texture": "",
+              "faces": 3
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "resolution": 0,
+          "faces": 3,
+          "sections": [
+            {
+              "index": 9,
+              "material_raw": "",
+              "material": "",
+              "texture_raw": "",
+              "texture": "",
+              "faces": 3
+            }
+          ]
+        }
+      ],
+      "proxies": [
+        {
+          "model": "test/child.p3d",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "model": "test/unrelated.p3d",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "test/child.p3d",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "lods": [
+        {
+          "index": 7,
+          "resolution": 0,
+          "faces": 3,
+          "sections": [
+            {
+              "index": 9,
+              "material_raw": "",
+              "material": "",
+              "texture_raw": "",
+              "texture": "",
+              "faces": 3
+            }
+          ]
+        }
+      ],
+      "proxies": [
+        {
+          "model": "TEST\\GRAND.P3D",
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "test/unrelated.p3d",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "lods": [
+        {
+          "index": 7,
+          "resolution": 0,
+          "faces": 3,
+          "sections": [
+            {
+              "index": 9,
+              "material_raw": "",
+              "material": "",
+              "texture_raw": "",
+              "texture": "",
+              "faces": 3
+            }
+          ]
+        }
+      ],
+      "proxies": []
+    },
+    {
+      "index": 5,
+      "name": "test/grand.p3d",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "lods": [
+        {
+          "index": 7,
+          "resolution": 0,
+          "faces": 3,
+          "sections": [
+            {
+              "index": 9,
+              "material_raw": "",
+              "material": "",
+              "texture_raw": "",
+              "texture": "",
+              "faces": 3
+            }
+          ]
+        }
+      ],
+      "proxies": []
+    }
+  ],
+  "routes": [
+    {
+      "root_model": 0,
+      "slots": [
+        [
+          0,
+          0
+        ]
+      ],
+      "source_model": 2
+    },
+    {
+      "root_model": 0,
+      "slots": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "source_model": 5
+    },
+    {
+      "root_model": 0,
+      "slots": [
+        [
+          0,
+          1
+        ]
+      ],
+      "source_model": 3
+    }
+  ],
+  "faces": [
+    {
+      "model": 0,
+      "source_model": 0,
+      "face": 1,
+      "section": 9,
+      "lod": 7,
+      "kind": 0,
+      "proxy": -1
+    },
+    {
+      "model": 0,
+      "source_model": 0,
+      "face": 1,
+      "section": 9,
+      "lod": 19,
+      "kind": 1,
+      "proxy": -1
+    },
+    {
+      "model": 0,
+      "source_model": 2,
+      "face": 2,
+      "section": 9,
+      "lod": 7,
+      "kind": 2,
+      "proxy": 0
+    },
+    {
+      "model": 0,
+      "source_model": 2,
+      "face": 2,
+      "section": 9,
+      "lod": 7,
+      "kind": 2,
+      "proxy": 0
+    },
+    {
+      "model": 0,
+      "source_model": 5,
+      "face": 0,
+      "section": 9,
+      "lod": 7,
+      "kind": 2,
+      "proxy": 1
+    }
+  ],
+  "expected": {
+    "models": [
+      {
+        "index": 0,
+        "name": "test/root.p3d",
+        "canonical": "test/root.p3d"
+      },
+      {
+        "index": 2,
+        "name": "test/child.p3d",
+        "canonical": "test/child.p3d"
+      },
+      {
+        "index": 3,
+        "name": "test/unrelated.p3d",
+        "canonical": "test/unrelated.p3d"
+      },
+      {
+        "index": 5,
+        "name": "test/grand.p3d",
+        "canonical": "test/grand.p3d"
+      }
+    ],
+    "routes": [
+      {
+        "ordinal": 0,
+        "root_model": 0,
+        "slots": [
+          [
+            0,
+            0
+          ]
+        ],
+        "source_model": 2
+      },
+      {
+        "ordinal": 1,
+        "root_model": 0,
+        "slots": [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "source_model": 5
+      },
+      {
+        "ordinal": 2,
+        "root_model": 0,
+        "slots": [
+          [
+            0,
+            1
+          ]
+        ],
+        "source_model": 3
+      }
+    ],
+    "faces": [
+      {
+        "model": 0,
+        "source_model": 0,
+        "face": 1,
+        "section": 9,
+        "lod": 7,
+        "kind": 0,
+        "proxy": -1
+      },
+      {
+        "model": 0,
+        "source_model": 0,
+        "face": 1,
+        "section": 9,
+        "lod": 19,
+        "kind": 1,
+        "proxy": -1
+      },
+      {
+        "model": 0,
+        "source_model": 2,
+        "face": 2,
+        "section": 9,
+        "lod": 7,
+        "kind": 2,
+        "proxy": 0
+      },
+      {
+        "model": 0,
+        "source_model": 2,
+        "face": 2,
+        "section": 9,
+        "lod": 7,
+        "kind": 2,
+        "proxy": 0
+      },
+      {
+        "model": 0,
+        "source_model": 5,
+        "face": 0,
+        "section": 9,
+        "lod": 7,
+        "kind": 2,
+        "proxy": 1
+      }
+    ]
+  },
+  "cases": {
+    "wrong_literal_proxy_child": "ROUTE_CHILD",
+    "wrong_root": "ROUTE_CONTINUITY",
+    "discontinuous": "ROUTE_CONTINUITY",
+    "ordinal_outside": "ROUTE_SLOT",
+    "ordinal_bool": "SCHEMA",
+    "unknown_child": "ROUTE_CHILD",
+    "wrong_final_source": "ROUTE_CHILD",
+    "cycle": "ROUTE_CYCLE",
+    "missing_route": "FACE_BINDING",
+    "root_face_proxy": "FACE_BINDING",
+    "wrong_face_root": "FACE_BINDING",
+    "section_outside": "FACE_SECTION",
+    "face_outside": "FACE_INDEX",
+    "lod_outside": "FACE_LOD",
+    "canonical_collision": "NAME_COLLISION",
+    "name_traversal": "NAME",
+    "no_suffix": "NAME",
+    "unknown_key": "SCHEMA",
+    "empty_slots": "ROUTE_CONTINUITY",
+    "omitted_face": "EXPECTED_MISMATCH",
+    "compensated_omission": "EXPECTED_MISMATCH",
+    "reordered_routes": "FACE_BINDING",
+    "expected_bool": "SCHEMA",
+    "unreferenced_bad_route": "ROUTE_CHILD",
+    "oversized_json": "FIXTURE_LIMIT",
+    "duplicate_json_key": "SCHEMA",
+    "json_nonfinite": "SCHEMA",
+    "fixture_sha": "FIXTURE_HASH",
+    "unexpected_programming": "INTERNAL_ERROR"
+  },
+  "limitations": {
+    "face_section_membership": "NOT_SAVED",
+    "kind_semantics": "NOT_EVALUATED",
+    "global_proxy_graph": "NOT_EVALUATED",
+    "world_frame_certified": false,
+    "exposure_evaluated": false,
+    "map_repaired": false,
+    "engine_proxy_binding": "UNKNOWN"
+  },
+  "scene_contract_sha256": "e9672092ce285f5e59802bc3f4faa2341d67a11965551702e7adabcf3173ee65"
+}
