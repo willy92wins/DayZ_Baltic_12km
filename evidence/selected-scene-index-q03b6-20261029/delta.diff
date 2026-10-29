@@ -1,0 +1,303 @@
+--- base/saved_scene_io_q03b4.py
++++ new/saved_scene_io_q03b6.py
+@@ -31,7 +31,7 @@
+     return a==b
+ def load_module(pin):
+     p=Path(pin['path']);b=read_small(p,pin,65536)
+-    m=types.ModuleType('_sealed_q03b4_archive');m.__file__=str(p)
++    m=types.ModuleType('_sealed_q03b6_archive');m.__file__=str(p)
+     exec(compile(b,str(p),'exec'),m.__dict__);return m
+ def read_small(path,pin=None,limit=16777216):
+     p=Path(path)
+@@ -47,9 +47,11 @@
+     return data
+ def load_contract(path,sha):
+     data=read_small(path,{'sha256':sha});c=parse(data)
+-    require(c['schema']=='q03b4-semantic-index-v1','SCHEMA')
++    require(c['schema']=='q03b6-covered-domain-index-v1','SCHEMA')
+     b=read_small(c['scene']['path'],c['scene']);s=parse(b)
+     require(s['schema']=='q03b-saved-scene-binding-r1','SCHEMA')
++    for pin in c['evidence_pins'].values():read_small(pin['path'],pin)
++    require(exact(c['claims_delta'],{'scene_geometry_complete':False}),'SCHEMA')
+     return c,s
+ def descriptions(arrays,payloads):
+     return {n:{'descriptor':a.dtype.str if a.dtype.fields is None else [list(x) for x in a.dtype.descr],
+--- base/saved_scene_producer_q03b4.py
++++ new/saved_scene_producer_q03b6.py
+@@ -4,7 +4,7 @@
+ from pathlib import Path
+ from collections import Counter
+ import numpy as np
+-import saved_scene_io_q03b4 as I
++import saved_scene_io_q03b6 as I
+ R=I.require
+ GROUPS=('bed','water','unknown','road_bed','road_water','road_unknown')
+ EXTRAS=('source_grid','source_triangles','body_row_min','body_row_max','body_col_min','body_col_max','source_category','bed_source_face','npz_start','cap_before','cap_after')
+@@ -102,6 +102,27 @@
+     for spec in s['arrays']:
+         manifest=j['pilot_manifest'] if spec['kind']=='pilot' else j['surface_manifest'] if spec['kind']!='selected' else old['discovery_artifacts']
+         rel=spec['relative'];entry=manifest.get(rel);R(type(entry) is dict and entry.get('sha256')==spec['sha256'] and entry.get('bytes')==spec['bytes'],'EPOCH')
++def domain_partition(c,catalog,section_rows,routes,seen_models,seen_sources):
++    roots={x['index'] for x in catalog if x['group']!='vegetation_not_inspected'}
++    all_sources={x['index'] for x in section_rows};empty=set();witnesses=c['empty_witnesses']
++    R(type(witnesses) is list,'EMPTY_DOMAIN')
++    for w in witnesses:
++        I.keys(w,['model_index','name','catalog_row_position','section_row_position'])
++        for k in ('model_index','catalog_row_position','section_row_position'):R(type(w[k]) is int and w[k]>=0,'EMPTY_DOMAIN')
++        i=w['model_index'];R(i not in empty and i in roots and i in all_sources,'EMPTY_DOMAIN');empty.add(i)
++        cr,sr=w['catalog_row_position'],w['section_row_position'];R(cr<len(catalog) and sr<len(section_rows),'EMPTY_DOMAIN')
++        a,b=catalog[cr],section_rows[sr]
++        R(a['index']==b['index']==i and norm(a['name'])==norm(b['name'])==norm(w['name']),'EMPTY_DOMAIN')
++        visual=[l for l in b['lods'] if 0<=l['resolution']<1000];R(visual,'EMPTY_DOMAIN')
++        minimum=min(l['resolution'] for l in visual);chosen=[l for l in visual if l['resolution']==minimum];R(len(chosen)==1,'EMPTY_DOMAIN')
++        R(all(s['material'] not in ('dz/water/streams/data/water_streambed.rvmat','dz/water/ponds/data/pond_moss_1.rvmat') for s in chosen[0]['sections']),'EMPTY_DOMAIN')
++        roadway=[l for l in b['lods'] if l['resolution']==3000000028082176.0]
++        R(len(roadway)<=1 and all(l['faces']==0 for l in roadway) and b['proxies']==[],'EMPTY_DOMAIN')
++        R(all(r['source_model']!=i for r in routes),'EMPTY_DOMAIN')
++    R([w['model_index'] for w in witnesses]==sorted(empty),'EMPTY_DOMAIN')
++    R(seen_models==roots-empty and seen_sources==all_sources-empty,'COVERAGE')
++    return {'model':{'with_rows':sorted(seen_models),'empty':sorted(empty)},'source_model':{'with_rows':sorted(seen_sources),'empty':sorted(empty)},'witnesses':witnesses,'ordinary_visual_geometry':'NOT_SAVED'}
++
+ def produce(c,s,contract_sha):
+     reader=I.Reader(c);j={k:reader.json(k,p) for k,p in s['pins'].items()};e=s['expected'];epoch(c,s,j)
+     catalog=j['deployed-surface-prototypes-20261028/model-catalog.json'];models=index_sections(j['deployed-surface-prototypes-20261028/model-sections.json']);routes=j['deployed-surface-prototypes-20261028/proxy-paths.json'];routes_check(routes,models)
+@@ -126,7 +147,7 @@
+             if runs and runs[-1]['key']==key:runs[-1]['end']=pos+1
+             else:runs.append({'key':key,'start':pos,'end':pos+1})
+             count[kind]+=1;count['ambiguous']+=bool(int(row['flags'])&2);count['degenerate']+=bool(int(row['flags'])&4)
+-        R(model_set==nonveg and source_set==set(models),'COVERAGE')
++        partition=domain_partition(c,catalog,j['deployed-surface-prototypes-20261028/model-sections.json'],routes,model_set,source_set)
+     del a
+     for k,label in [(0,'roadway'),(1,'water_visual'),(2,'conditional_proxy'),('ambiguous','ambiguous'),('degenerate','degenerate')]:R(count[k]==e[label],'COVERAGE')
+     with reader.open(lookup['selected'],names('selected'),lambda x:shape_rules(x,'selected',e)) as (a,selected_desc):pass
+@@ -155,7 +176,7 @@
+         m=cat[i] if i in cat else {'name':models[i]['name'],'group':'proxy_only','instances':0};rr=[r for r in runs if r['key'][0]==i];kinds={r['key'][3] for r in rr}
+         result.append({'index':i,'name':m['name'],'group':m['group'],'catalog_instance_count':m['instances'],'pose_rows':[v[0] for v in poses.get(i,[])],'runs':rr,'layers':{'roadway':'RAW_UNCERTIFIED' if 0 in kinds else 'NOT_SAVED','water_visual':'RAW_UNCERTIFIED' if 1 in kinds else 'NOT_SAVED','conditional_proxy':'CONDITIONAL' if 2 in kinds else 'NOT_SAVED','visual_bed':'ALREADY_WORLD_UNCERTIFIED' if i in used else 'NOT_SAVED'}})
+     coverage=dict(e,npz_files=len(s['arrays']),npz_members=sum(len(r['members']) for r in reader.records if r['members'] is not None))
+-    return {'schema':'q03b4-report-v1','contract_sha256':contract_sha,'status':c['status'],'claims':s['claims'],'coverage':coverage,'sources':sorted(reader.records,key=lambda r:r['label']),'models':result,'pilots':sorted(pilots,key=lambda p:p['model_index']),'proxy_routes':routes,'limitations':c['historical_claims']}
++    return {'schema':'q03b6-report-v1','contract_sha256':contract_sha,'status':c['status'],'claims':dict(s['claims'],**c['claims_delta']),'coverage':coverage,'domain_partition':partition,'sources':sorted(reader.records,key=lambda r:r['label']),'models':result,'pilots':sorted(pilots,key=lambda p:p['model_index']),'proxy_routes':routes,'limitations':c['historical_claims']}
+ def main():
+     import argparse
+     ap=argparse.ArgumentParser();ap.add_argument('contract');ap.add_argument('sha');ap.add_argument('output');args=ap.parse_args()
+--- base/saved_scene_consumer_q03b4.py
++++ new/saved_scene_consumer_q03b6.py
+@@ -4,7 +4,7 @@
+ from pathlib import Path
+ from collections import Counter
+ import numpy as np
+-import saved_scene_io_q03b4 as IO
++import saved_scene_io_q03b6 as IO
+ G=('bed','water','unknown','road_bed','road_water','road_unknown')
+ X=('source_grid','source_triangles','body_row_min','body_row_max','body_col_min','body_col_max','source_category','bed_source_face','npz_start','cap_before','cap_after')
+ M=[['model','<i4'],['source_model','<i4'],['face','<i4'],['section','<i4'],['lod','<i4'],['kind','|u1'],['vertices','|u1'],['flags','|u1'],['proxy','<i4'],['planarity_m','<f8']]
+@@ -72,8 +72,37 @@
+         if a['kind']=='selected':ensure(pin.get(a['path'])==a['sha256'],'EPOCH')
+         manifest=src['discovery_artifacts'] if a['kind']=='selected' else j['pilot_manifest' if a['kind']=='pilot' else 'surface_manifest']
+         ensure(a['relative'] in manifest,'EPOCH');b=manifest[a['relative']];ensure(b['sha256']==a['sha256'] and b['bytes']==a['bytes'],'EPOCH')
++def verify_empty_domain(c,raw_catalog,raw_sections,routes,observed_models,observed_sources):
++    root_ids=sorted(x['index'] for x in raw_catalog if x['group']!='vegetation_not_inspected')
++    source_ids=sorted(x['index'] for x in raw_sections);records=c['empty_witnesses'];empties=[]
++    ensure(type(records) is list,'EMPTY_DOMAIN')
++    for rec in records:
++        IO.keys(rec,('model_index','name','catalog_row_position','section_row_position'))
++        i=rec['model_index'];ci=rec['catalog_row_position'];si=rec['section_row_position']
++        ensure(all(type(z) is int and z>=0 for z in (i,ci,si)),'EMPTY_DOMAIN')
++        ensure(i in root_ids and i in source_ids and i not in empties and ci<len(raw_catalog) and si<len(raw_sections),'EMPTY_DOMAIN')
++        left=raw_catalog[ci];right=raw_sections[si]
++        ensure(left['index']==i and right['index']==i and canonical(left['name'])==canonical(rec['name']) and canonical(right['name'])==canonical(rec['name']),'EMPTY_DOMAIN')
++        lowest=None;visuals=[];roads=[]
++        for lod in right['lods']:
++            res=lod['resolution']
++            if 0<=res<1000:
++                if lowest is None or res<lowest:lowest=res;visuals=[lod]
++                elif res==lowest:visuals.append(lod)
++            if res==3000000028082176.0:roads.append(lod)
++        ensure(len(visuals)==1 and len(roads)<=1,'EMPTY_DOMAIN')
++        for sec in visuals[0]['sections']:ensure(sec['material'] not in {'dz/water/ponds/data/pond_moss_1.rvmat','dz/water/streams/data/water_streambed.rvmat'},'EMPTY_DOMAIN')
++        for road in roads:ensure(road['faces']==0,'EMPTY_DOMAIN')
++        ensure(right['proxies']==[],'EMPTY_DOMAIN')
++        for route in routes:ensure(route['source_model']!=i,'EMPTY_DOMAIN')
++        empties.append(i)
++    ensure(empties==sorted(empties),'EMPTY_DOMAIN')
++    want_root=[i for i in root_ids if i not in empties];want_source=[i for i in source_ids if i not in empties]
++    ensure(sorted(observed_models)==want_root and sorted(observed_sources)==want_source,'COVERAGE')
++    return {'model':{'with_rows':want_root,'empty':empties},'source_model':{'with_rows':want_source,'empty':list(empties)},'witnesses':records,'ordinary_visual_geometry':'NOT_SAVED'}
++
+ def consume(c,s,sha,report):
+-    IO.keys(report,c['report_keys']);ensure(report['schema']=='q03b4-report-v1' and report['contract_sha256']==sha and report['status']==c['status']);ensure(IO.exact(report['claims'],s['claims']) and IO.exact(report['limitations'],c['historical_claims']))
++    IO.keys(report,c['report_keys']);ensure(report['schema']=='q03b6-report-v1' and report['contract_sha256']==sha and report['status']==c['status']);ensure(IO.exact(report['claims'],dict(s['claims'],**c['claims_delta'])) and IO.exact(report['limitations'],c['historical_claims']))
+     reader=IO.Reader(c);j={k:reader.json(k,v) for k,v in s['pins'].items()};verify_epoch(s,j);expected=s['expected']
+     cat,models,names=catalogs(j['deployed-surface-prototypes-20261028/model-catalog.json'],j['deployed-surface-prototypes-20261028/model-sections.json'])
+     roots={i for i,v in cat.items() if v['group']!='vegetation_not_inspected'};extras=set(models)-set(cat)
+@@ -89,7 +118,8 @@
+     archives=s['arrays'];base={x['kind']:x for x in archives if x['kind']!='pilot'};ensure(len(base)==3,'COVERAGE')
+     counts=Counter();all_ranges=[]
+     with reader.open(base['prototypes'],member_list('prototypes'),lambda h:validate_headers(h,'prototypes',expected)) as (a,d):
+-        meta=a['meta'];ensure(set(map(int,meta['model']))==roots and set(map(int,meta['source_model']))==set(models),'COVERAGE')
++        meta=a['meta'];partition=verify_empty_domain(c,j['deployed-surface-prototypes-20261028/model-catalog.json'],j['deployed-surface-prototypes-20261028/model-sections.json'],routes,set(map(int,meta['model'])),set(map(int,meta['source_model'])))
++        ensure(IO.exact(report['domain_partition'],partition))
+         ensure(np.isfinite(a['vertices']).all() and np.isfinite(meta['planarity_m']).all() and (meta['planarity_m']>=0).all(),'FACE')
+         ensure(np.isin(meta['vertices'],[3,4]).all(),'FACE');ensure(not a['vertices'][meta['vertices']==3,3,:].view(np.uint64).any(),'PADDING')
+         for mi in sorted(set(cat)|extras):
+@@ -140,7 +170,7 @@
+         kk={r['key'][3] for r in row['runs']};layers={'roadway':'RAW_UNCERTIFIED' if 0 in kk else 'NOT_SAVED','water_visual':'RAW_UNCERTIFIED' if 1 in kk else 'NOT_SAVED','conditional_proxy':'CONDITIONAL' if 2 in kk else 'NOT_SAVED','visual_bed':'ALREADY_WORLD_UNCERTIFIED' if mi in specs else 'NOT_SAVED'};ensure(IO.exact(row['layers'],layers))
+     ensure(len(reader.records)==len(j)+len(archives) and len(archives)==expected['pilot_models']+3,'COVERAGE')
+     coverage=dict(expected,npz_files=len(archives),npz_members=sum(len(x['members']) for x in reader.records if x['members'] is not None));ensure(IO.exact(report['coverage'],coverage));ensure(IO.exact(report['sources'],sorted(reader.records,key=lambda r:r['label'])))
+-    return {'status':'VERIFIED_SAVED_SCENE_INDEX_ONLY','contract_sha256':sha,'files_read':len(archives),'exposure_evaluated':False,'map_repaired':False}
++    return {'status':'VERIFIED_SAVED_SELECTED_SURFACE_INDEX_ONLY','contract_sha256':sha,'files_read':len(archives),'exposure_evaluated':False,'map_repaired':False,'scene_geometry_complete':False}
+ def main():
+     import argparse
+     ap=argparse.ArgumentParser();ap.add_argument('contract');ap.add_argument('sha');ap.add_argument('report');ap.add_argument('output');x=ap.parse_args();out=Path(x.output);out.mkdir(exist_ok=False)
+--- base/test_saved_scene_q03b4.py
++++ new/test_saved_scene_q03b6.py
+@@ -4,17 +4,20 @@
+ from unittest.mock import patch
+ sys.path.insert(0,str(Path(__file__).parent))
+ import numpy as np
+-import saved_scene_io_q03b4 as I
+-import saved_scene_producer_q03b4 as P
+-import saved_scene_consumer_q03b4 as C
++import saved_scene_io_q03b6 as I
++import saved_scene_producer_q03b6 as P
++import saved_scene_consumer_q03b6 as C
+ D=Path(__file__).parent
+ O=json.loads((D/'oracle.json').read_bytes());ORIGINAL=json.loads((D/'contract.json').read_bytes())
+ EXT=json.loads((D/'oracle-extension-r1.json').read_bytes())
+ assert hashlib.sha256((D/'oracle-extension-r1.json').read_bytes()).hexdigest()=='eb7f6d62e4793bf98a61487ae3a67ca1ae8d20b84d8e3c786a3603bf7e09b1b0'
+ HIST=json.loads(Path(ORIGINAL['scene']['path']).read_bytes())
++DOMAIN=json.loads((D/'domain-oracle.json').read_bytes())
++assert hashlib.sha256((D/'domain-oracle.json').read_bytes()).hexdigest()==ORIGINAL['domain_oracle_sha256']
++
+ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ def write(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2)+'\n',encoding='utf-8',newline='\n');return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size}
+-def fixture(root,itype='<i4',ftype='<f8',ttype='<i8',wide=False,mutate=None,capped=False):
++def fixture(root,itype='<i4',ftype='<f8',ttype='<i8',wide=False,mutate=None,capped=False,empty=False):
+     root=Path(root);root.mkdir(exist_ok=True);o=copy.deepcopy(O);b=18 if capped else 8 if wide else 2
+     grid=np.array(EXT['grid'] if capped else o['grid_2x5' if wide else 'grid_2x2'],dtype='<f8');tri=np.array(EXT['triangles'] if capped else o['triangles_2x5' if wide else 'triangles_2x2'],dtype=ttype)
+     bed=np.zeros((b,4,3),'<f8');bed[:,:3]=grid.reshape(-1,3)[tri]
+@@ -30,6 +33,12 @@
+     pilot.update(source_grid=grid,source_triangles=tri,source_category=np.array(EXT['categories'],'<U9') if capped else np.full(b,'BODY','<U9'),bed_source_face=np.arange(b,dtype='<i4'),npz_start=np.array(7,'<i4'),cap_before=np.array(8 if capped else 0,'<i4'),cap_after=np.array(0,'<i4'))
+     for k,v in (EXT['extrema'] if capped else o['extrema_2x5' if wide else 'extrema_2x2']).items():pilot[k]=np.array(v,dtype=ttype)
+     arrays['pilot']=pilot
++    if empty:
++        o['catalog'].append(copy.deepcopy(DOMAIN['catalog_add']));o['sections'].append(copy.deepcopy(DOMAIN['section_add']))
++        o['expected_coverage']=copy.deepcopy(DOMAIN['expected_coverage_empty']);o['expected_models'].append(copy.deepcopy(DOMAIN['expected_empty_record']))
++        item=DOMAIN['instance_add'];inst=arrays['instances']
++        for key,value in [('ids',[item['id']]),('model_index',[item['model_index']]),('matrix',[item['matrix']]),('norm',[[1,1,1]]),('determinant',[1]),('nonorthogonality',[0])]:inst[key]=np.concatenate((inst[key],np.array(value,dtype=inst[key].dtype)))
++        arrays['selected']={k:val.copy() for k,val in inst.items() if k in ('ids','model_index','matrix')}
+     sections=o['sections']
+     if wide or capped:
+         for lod in sections[0]['lods']:lod['faces']=b+1;lod['sections'][0]['faces']=b
+@@ -55,7 +64,7 @@
+     pins['surface_manifest']=write(root/'surface-manifest.json',{a['relative']:record(a) for a in archives if a['kind'] in ('instances','prototypes')})
+     pins['pilot_manifest']=write(root/'pilot-manifest.json',{by['pilot']['relative']:record(by['pilot'])})
+     scene=copy.deepcopy(HIST);scene.update(source_root=str(root),pins=pins,arrays=archives,pilot_specs=[spec],expected=expected,epoch={'wrp_compiled':'c'*64,'wrp_editable':'e'*64,'pilot_pbo':'p'*64,'kind':'HISTORICAL_PIN_CHAIN_NOT_CURRENT_FILES'})
+-    contract=copy.deepcopy(ORIGINAL);contract['scene']=write(root/'scene.json',scene);cp=root/'contract.json';write(cp,contract)
++    contract=copy.deepcopy(ORIGINAL);contract['empty_witnesses']=[copy.deepcopy(DOMAIN['witness'])] if empty else [];contract['scene']=write(root/'scene.json',scene);cp=root/'contract.json';write(cp,contract)
+     # Expected payload facts are made from fixture bytes, never report or readers.
+     observed={}
+     for a in archives:
+@@ -65,29 +74,29 @@
+         observed[a['relative']]={'label':a['relative'],'sha256':a['sha256'],'bytes':a['bytes'],'members':members}
+     records=[{'label':k,'sha256':p['sha256'],'bytes':p['bytes'],'members':None} for k,p in pins.items()]+list(observed.values())
+     ep=copy.deepcopy(O['expected_pilot_static']);ep['archive']=by['pilot']['relative'];ep['arraydigestmap']=observed[by['pilot']['relative']]['members'];ep['categories']=copy.deepcopy(spec['source_regions'])
+-    literal={'schema':'q03b4-report-v1','contract_sha256':sha(cp),'status':'VERIFIED_SAVED_SCENE_INDEX_ONLY','claims':scene['claims'],'coverage':O['expected_coverage'],'sources':sorted(records,key=lambda x:x['label']),'models':O['expected_models'],'pilots':[ep],'proxy_routes':O['routes'],'limitations':ORIGINAL['historical_claims']}
++    literal={'schema':'q03b6-report-v1','contract_sha256':sha(cp),'status':'VERIFIED_SAVED_SELECTED_SURFACE_INDEX_ONLY','claims':dict(scene['claims'],**contract['claims_delta']),'coverage':o['expected_coverage'],'domain_partition':DOMAIN['expected_partition_empty' if empty else 'expected_partition_base'],'sources':sorted(records,key=lambda x:x['label']),'models':o['expected_models'],'pilots':[ep],'proxy_routes':O['routes'],'limitations':ORIGINAL['historical_claims']}
+     write(root/'literal-expected.json',literal)
+     return contract,scene,sha(cp),cp
+ class Tests(unittest.TestCase):
+-    def setUp(self):self.temp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03B4_TEST_ROOT'));self.root=Path(self.temp.name)
++    def setUp(self):self.temp=tempfile.TemporaryDirectory(dir=os.environ.get('Q03B6_TEST_ROOT'));self.root=Path(self.temp.name)
+     def tearDown(self):self.temp.cleanup()
+     def make(self,**kw):return fixture(self.root/str(len(list(self.root.iterdir()))),**kw)
+     def reject(self,fn,code):
+         with self.assertRaises(Exception) as x:fn()
+         self.assertEqual(getattr(x.exception,'code',None),code,str(x.exception))
+     def test_literal_cli_and_full_fields(self):
+-        c,s,h,path=self.make();out=self.root/'out';subprocess.run([sys.executable,'-I',str(D/'saved_scene_producer_q03b4.py'),str(path),h,str(out)],check=True,capture_output=True)
++        c,s,h,path=self.make();out=self.root/'out';subprocess.run([sys.executable,'-I',str(D/'saved_scene_producer_q03b6.py'),str(path),h,str(out)],check=True,capture_output=True)
+         report=json.loads((out/'report.json').read_bytes());self.assertEqual(report['models'],O['expected_models']);self.assertEqual(report['coverage'],O['expected_coverage']);self.assertEqual(report['proxy_routes'],O['routes'])
+         static=copy.deepcopy(O['expected_pilot_static']);static['archive']='pilot-visible-surface-extraction-20261028/models/'+static['archive'];got=dict(report['pilots'][0]);got.pop('arraydigestmap');self.assertEqual(got,static)
+-        self.assertEqual(set(report),set(c['report_keys']));self.assertEqual(report['claims'],s['claims']);self.assertEqual(report['limitations'],c['historical_claims'])
++        self.assertEqual(set(report),set(c['report_keys']));self.assertEqual(report['claims'],dict(s['claims'],**c['claims_delta']));self.assertEqual(report['limitations'],c['historical_claims'])
+         self.assertTrue(I.exact(report,json.loads((path.parent/'literal-expected.json').read_bytes())))
+-        q=subprocess.run([sys.executable,'-I',str(D/'saved_scene_consumer_q03b4.py'),str(path),h,str(out/'report.json'),str(self.root/'consumed')],capture_output=True)
++        q=subprocess.run([sys.executable,'-I',str(D/'saved_scene_consumer_q03b6.py'),str(path),h,str(out/'report.json'),str(self.root/'consumed')],capture_output=True)
+         self.assertEqual(q.returncode,0,q.stderr.decode());self.assertEqual(len(report['sources']),14)
+     def test_positive_variants_N18(self):
+         for i in O['positive_types']['integer']:
+             for f in O['positive_types']['matrix']:
+                 for t in ('<i4','<i8'):
+-                    c,s,h,_=self.make(itype=i,ftype=f,ttype=t,wide=True);r=P.produce(c,s,h);self.assertEqual(C.consume(c,s,h,r)['status'],'VERIFIED_SAVED_SCENE_INDEX_ONLY')
++                    c,s,h,_=self.make(itype=i,ftype=f,ttype=t,wide=True);r=P.produce(c,s,h);self.assertEqual(C.consume(c,s,h,r)['status'],'VERIFIED_SAVED_SELECTED_SURFACE_INDEX_ONLY')
+     def test_N01_header_then_changed_snapshot(self):
+         c,s,h,_=self.make();reader=I.Reader(c);spec=s['arrays'][0]
+         with np.load(spec['path'],allow_pickle=False) as z:replacement={k:z[k].copy() for k in z.files}
+@@ -135,7 +144,7 @@
+     def test_consumer_actually_rereads(self):
+         c,s,h,_=self.make();r=P.produce(c,s,h);p=Path(s['arrays'][0]['path']);p.write_bytes(p.read_bytes()+b'X');self.reject(lambda:C.consume(c,s,h,r),'IDENTITY')
+     def test_N09_permutation_equal_counts(self):
+-        c,s,h,_=self.make(capped=True);r=P.produce(c,s,h);self.assertEqual(C.consume(c,s,h,r)['status'],'VERIFIED_SAVED_SCENE_INDEX_ONLY');self.assertEqual(r['pilots'][0]['categories'],EXT['counts'])
++        c,s,h,_=self.make(capped=True);r=P.produce(c,s,h);self.assertEqual(C.consume(c,s,h,r)['status'],'VERIFIED_SAVED_SELECTED_SURFACE_INDEX_ONLY');self.assertEqual(r['pilots'][0]['categories'],EXT['counts'])
+         def permute(a,j,p):
+             first,last=EXT['swap'];v=a['pilot']['source_category'];v[first],v[last]=v[last],v[first]
+             self.assertEqual(dict(zip(*np.unique(v,return_counts=True))),EXT['counts'])
+@@ -151,4 +160,58 @@
+         # Zero exists in Visual LOD, and is position zero in Roadway, but not its index.
+         self.reject(lambda:P.face_check(model,3,0,0),'FACE');self.reject(lambda:C.check_face(model,3,0,0),'FACE')
+         P.face_check(model,3,70,0);C.check_face(model,3,70,0)
++    def test_empty_domain_literal_cli_complete_report(self):
++        c,s,h,path=self.make(empty=True);out=self.root/'empty-output';consumed=self.root/'empty-consumed'
++        p=subprocess.run([sys.executable,'-I',str(D/'saved_scene_producer_q03b6.py'),str(path),h,str(out)],capture_output=True)
++        self.assertEqual(p.returncode,0,p.stderr.decode());report=json.loads((out/'report.json').read_bytes())
++        self.assertTrue(I.exact(report,json.loads((path.parent/'literal-expected.json').read_bytes())))
++        self.assertEqual(report['domain_partition'],DOMAIN['expected_partition_empty'])
++        self.assertEqual(report['models'][-1],DOMAIN['expected_empty_record'])
++        q=subprocess.run([sys.executable,'-I',str(D/'saved_scene_consumer_q03b6.py'),str(path),h,str(out/'report.json'),str(consumed)],capture_output=True)
++        self.assertEqual(q.returncode,0,q.stderr.decode());self.assertIs(json.loads((consumed/'consumer.json').read_bytes())['scene_geometry_complete'],False)
++    def test_partition_closed_universes_both_walkers(self):
++        c,s,h,p=self.make(empty=True);j={k:json.loads(Path(v['path']).read_bytes()) for k,v in s['pins'].items()}
++        cat=j['deployed-surface-prototypes-20261028/model-catalog.json'];sec=j['deployed-surface-prototypes-20261028/model-sections.json'];routes=j['deployed-surface-prototypes-20261028/proxy-paths.json']
++        for fn in (P.domain_partition,C.verify_empty_domain):
++            self.assertEqual(fn(c,cat,sec,routes,{10,11},{10,11,20}),DOMAIN['expected_partition_empty'])
++            for roots,sources,label in [({10},{10,11,20},'additional_missing'),({10,11,31},{10,11,20},'unexpected'),({10,11},{10,20},'additional_missing')]:
++                self.reject(lambda:fn(c,cat,sec,routes,roots,sources),DOMAIN['negative_codes'][label])
++    def test_empty_predicates_and_identity_both_walkers(self):
++        c,s,h,p=self.make(empty=True);cat=copy.deepcopy(O['catalog'])+[copy.deepcopy(DOMAIN['catalog_add'])];sec=copy.deepcopy(O['sections'])+[copy.deepcopy(DOMAIN['section_add'])]
++        def road(ss):
++            z=copy.deepcopy(ss[-1]['lods'][0]);z['index']=9;z['resolution']=3000000028082176.0;ss[-1]['lods'].append(z)
++        def duplicate_visual(ss):
++            z=copy.deepcopy(ss[-1]['lods'][0]);z['index']=9;ss[-1]['lods'].append(z)
++        def duplicate_road(ss):
++            for k in (8,9):ss[-1]['lods'].append({'index':k,'resolution':3000000028082176.0,'faces':0,'sections':[]})
++        def water(ss):ss[-1]['lods'][0]['sections'][0]['material']='dz/water/streams/data/water_streambed.rvmat'
++        def proxy(ss):ss[-1]['proxies']=[{'model':'a/child.p3d','matrix':[1,0,0,0,1,0,0,0,1,0,0,0]}]
++        for label,mut in [('road_faces',road),('visual_water',water),('proxy',proxy),('visual_duplicate',duplicate_visual),('road_duplicate',duplicate_road)]:
++            altered=copy.deepcopy(sec);mut(altered)
++            for fn in (P.domain_partition,C.verify_empty_domain):self.reject(lambda:fn(c,cat,altered,O['routes'],{10,11},{10,11,20}),DOMAIN['negative_codes'][label])
++        for field,value,label in [('model_index',11,'wrong_id'),('name','a/other.p3d','wrong_name'),('catalog_row_position',0,'wrong_catalog_position'),('section_row_position',0,'wrong_section_position')]:
++            altered=copy.deepcopy(c);altered['empty_witnesses'][0][field]=value
++            for fn in (P.domain_partition,C.verify_empty_domain):self.reject(lambda:fn(altered,cat,sec,O['routes'],{10,11},{10,11,20}),DOMAIN['negative_codes'][label])
++        routes=copy.deepcopy(O['routes']);routes[0]['source_model']=31
++        for fn in (P.domain_partition,C.verify_empty_domain):self.reject(lambda:fn(c,cat,sec,routes,{10,11},{10,11,20}),DOMAIN['negative_codes']['incoming_route'])
++    def test_empty_boundary_positives_cli_semantics(self):
++        def zero_road(a,j,p):j['sections'][-1]['lods'].append({'index':8,'resolution':3000000028082176.0,'faces':0,'sections':[]})
++        def other_water(a,j,p):
++            z=copy.deepcopy(j['sections'][-1]['lods'][0]);z['index']=9;z['resolution']=1.0;z['sections'][0]['material']='dz/water/ponds/data/pond_moss_1.rvmat';j['sections'][-1]['lods'].append(z)
++        for mutate in (zero_road,other_water):
++            c,s,h,p=self.make(empty=True,mutate=mutate);report=P.produce(c,s,h)
++            self.assertEqual(report['domain_partition'],DOMAIN['expected_partition_empty']);self.assertEqual(C.consume(c,s,h,report)['status'],c['status'])
++    def test_empty_report_co_mutants_preserve_universes(self):
++        c,s,h,p=self.make(empty=True);report=P.produce(c,s,h)
++        changes=[('one_role',lambda r:r['domain_partition']['source_model'].update(empty=[])),('hidden_record',lambda r:r['models'].pop()),('complete_claim',lambda r:r['claims'].update(scene_geometry_complete=True)),('complete_claim',lambda r:r['models'][-1]['layers'].update(visual_bed='ALREADY_WORLD_UNCERTIFIED')),('missing_pose',lambda r:r['models'][-1].update(pose_rows=[]))]
++        for label,mut in changes:
++            bad=copy.deepcopy(report);mut(bad)
++            # Report-level pose omission is REPORT; source-pose mismatch has separate test below.
++            self.reject(lambda:C.consume(c,s,h,bad),'REPORT')
++        bad=copy.deepcopy(report);bad['domain_partition']['model']['empty']=[True];self.reject(lambda:C.consume(c,s,h,bad),'REPORT')
++    def test_empty_pose_source_not_dropped(self):
++        def mutate(a,j,p):
++            a['instances']['model_index'][2]=11;a['selected']['model_index'][2]=11
++        c,s,h,p=self.make(empty=True,mutate=mutate)
++        self.reject(lambda:P.produce(c,s,h),DOMAIN['negative_codes']['missing_pose'])
+ if __name__=='__main__':unittest.main(verbosity=2)

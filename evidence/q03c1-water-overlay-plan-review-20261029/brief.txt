@@ -1,0 +1,158 @@
+REVIEWER externo único Muse Wonder1.0 CLI nativo; no council nuevo. Read-only, no herramientas/shell/escritura/web ni NPZ/PBO/WRP/P3D. Codex planner/integrator, contexto compartido autor/integrador declarado. Revisa plan Q03C1 específico de medición de cobertura de agua sobre lecho entero después de índice Q03B6 real verificado. 120s, <=1100 palabras. SOUND/SOUND-with-fixes/NEEDS-WORK con fallos concretos/anclas, impacto, cambio mínimo y CONVERGE/LOOP. No confundir relación geométrica de capas seleccionadas con exposición real ni proponer bajar guardas por rendimiento. No inventar tamaño/triangularidad/pivote/semántica del motor. Valora viabilidad y verificabilidad del algoritmo dual, unión sin duplicación, contacto/fronteras/caps/prefijo y oráculos. Si falta especificación necesaria al contrato, nómbrala y distingue de error de diseño. No otra fase genérica de infraestructura. No ejecutar el plan. Una recuperación120s sólo si no entrega. Modelo servido se registra desde run.usage; no hay aprobación de código ni captura aún.
+
+PLAN
+# Q03C1 — medir cobertura vertical de agua guardada sobre un lecho completo
+
+Estado: BORRADOR_PENDIENTE_DE_REVISION. Unidad geométrica concreta después del
+índice Q03B6; no nueva infraestructura genérica. Planner/integrator Codex,
+executor local Codex explícito para contrato/oráculos/código una vez revisado.
+Una lane externa Muse Wonder1.0 CLI nativo; no nuevo council.
+
+## Intención y evidencia [EXACT]
+
+Q03/Q11 del plan quality-council-procedural-map-20261029 exigen distinguir lecho,
+agua y oclusión antes de cambiar modelos/terreno. Q05 añadirá toda huella vial y
+ambos accesos; el corredor histórico8m no sustituye piezas12/9m ni ancho útil.
+Este corte entrega áreas y testigos geométricos de DOS capas históricas. No
+denomina «visible» a un lecho que podría estar oculto por terreno u otro modelo.
+
+Q03B6 report aa8d3ace483967ac5dec430f6a0e6e99cc7fed27196b16ac480040433454b060
+y consumer verificado ligan los204NPZ/7046miembros. El JSON guardado contiene:
+201 pilotos,4760 caras water en total; el modelo exacto
+`baltic_stream_pilot/cs_kit_118_0000.p3d`, index3579, instance19394363,
+pose_row13844, tiene1520 bed y24 water. Archivo relativo
+`pilot-visible-surface-extraction-20261028/models/cs_kit_118_0000.npz`.
+Todos los pilotos ya están en ALREADY_WORLD_UNCERTIFIED; no transformar de nuevo.
+Época3d955, no instalado actual/candidatoB3/sonda nativa. El vínculo es por ID,
+nombre e índice; no se vincula una fotografía a esta pieza por cercanía. Cont65
+permanece sin geometría humana enlazada. Nueve rechazos abiertos, C1NOT_REVIEWED.
+
+Anclas leídas: pilot_visible_surface_ev112.py:172-234 guarda grupos mundiales,
+counts/flags/IDs y source_category; pilot_visible_exposure_ev112.py:68-121
+separa footprint de agua y relación vertical, y usa unión para no duplicar
+áreas; su corredor:28-47 es8m. pilot_surface_refinement_ev112.py:71-97 compara
+contra terreno/agua nominal pero no certifica oclusores completos. Sus CLIs
+consumidos NO se relanzan y sus tolerancias float no se trasladan a este corte.
+
+Lectura aprobada disponible: saved_scene_archive_q03b2.py:260-352,
+Session(**limits).open(path,schemas); source Q03B6 saved_scene_io_q03b6.py:74-110,
+Reader.open(spec,names,predicate), sobre snapshot/hash y esquemas estrictos.
+Estos helpers sellados se usan como primitivas pinadas, sin modificar ni
+invocar CLIs anteriores. I/O/NumPy/zlib compartidos declarados.
+
+## Alcance, contrato previo y lectura [DESIGN]
+
+Congelar contrato/oráculos literales ANTES de código; revisión de código incluye
+contrato. No otra investigación de contenedores ni lectura libre de204NPZ.
+Pins externos: e967 escena, f8f8f6dc Q03B6, report+consumer+receipts; 201 specs
+piloto exactas del contrato original, manifest/inputs/catalog rows necesarios,
+Reader/Session/header y fuentes de las anclas. No derivar expectativa del
+informe que producirá esta unidad ni cambiar pins para PASS.
+
+Una Session acumulativa por caminante,201NPZ piloto, no prototipos/instancias
+releídos innecesariamente. Verificar todos sus descriptores/digests contra el
+índice verificado y SHA físico original; máximo16MiB stored porarchivo,
+128MiB expandido porarchivo/262434599 acumulado/35miembros. No mmap/pickle.
+Retener sólo copias de water/IDs de201pilotos y bed/IDs/category del seleccionado;
+reservar copias antes de asignar y contabilizar memoria retenida. Memoria del
+helper y de la escena no se confunde con reservas lógicas.
+
+Gate de geometría: finite, n==3 y flags==0 para caras utilizadas; cuarto slot
+de padding intacto y observado, no nueva triangulación de quads. Si se refuta
+triangularidad o aparecen flags, REJECTED_GEOMETRY y no se triangula por cuenta
+propia. Comprobar IDs fuente y cardinalidades1520/4760 mediante índices exactos,
+no nombres parciales. Categorías sólo como anotación histórica; no semántica
+render. AABB para descartar pares imposibles, nunca como huella ni ancho útil.
+
+## Medición exacta [DESIGN]
+
+Objetivo por cada cara bed: área proyectadaXZ total, cubierta por al menos una
+cara water seleccionada con altura W>=B en el mismoXZ, y su complemento. También
+área con footprint de agua sin condición de altura y área de footprint con agua
+estrictamente inferior aB en TODOS los water que la cubren. De aquí:
+total = covered_at_or_above + footprint_only_below + no_water_footprint.
+No suma de áreas por pareja, ni suma por caras bed llamada unión mundial: bed
+pueden superponerse. Informe conserva resultados porcara y, si suma, la etiqueta
+FACE_AREA_SUM_WITH_MULTIPLICITY. Contacto W==B cuenta cubierto en esta medición,
+sin certificar agua física, render, profundidad navegable ni oleaje.
+
+Convertir cadafloat binario finito a racional exacto, sin redondear/soldar ni
+epsilon. Determinantes XZ, planos afines, intersecciones y áreas racionales.
+Proyección con área0: DEGENERATE_PROJECTION porcara, sin dividir ni aceptar área
+visible0. Triángulo water degenerado que podría cruzar elbed deja estado
+INCONCLUSIVE_GEOMETRY, no se omite como transparente. No atan2 ni raíces.
+
+Productor: lista de pares candidata por bounding boxes exactas (sweep/buckets
+puede ordenar, no alterar extremos). Para cada bed, intersectar cada triángulo
+water y recortar por semiplano W-B>=0. Estos recortes convexos se unen mediante
+sustracción incremental de polígonos convexos: partir cada resto por los lados
+del recorte, emitir las piezas exteriores disjuntas y continuar con interior.
+Repetir aparte sin condición de altura para footprint. Áreas racionales y
+extremos W-B porpareja de intersección; testigos IDs/modelo/cara/XYZ condicional
+en evidencia privada. Orden determinista por (model_index,face_index).
+
+Consumidor propio: recarga fuentes y recorre cada bed contra TODOS los4760 water
+con AABB independiente; enumera las líneas de las caras candidatas y W-B=0,
+subdivide elbed en celdas convexas. Clasifica punto interior racional de cada
+celda contra el conjunto de water; calcula por separado las tres áreas. Las
+fronteras tienen área0; una región W-B idénticamente0 se clasifica contacto.
+Compara valores/estados/pares/IDs y cobertura completos. No importa funciones
+geométricas del productor ni acepta su lista de candidatos como denominador.
+I/O compartido sí; sustracción frente a arreglo de líneas son recorridos distintos.
+
+No certificar exposición final: terreno/agua nativa/modelosVisual ordinarios/
+vegetación/oclusores NO evaluados. Water de otros modelos fuera201pilotos tampoco.
+La ausencia aquí se llama NO_SELECTED_WATER_FOOTPRINT, nunca «sin agua mundial».
+Esto localiza una relación geométrica reproducible para Q03C2, no decide reparación.
+
+## Oráculos y rechazos [DESIGN]
+
+Congelar arrays y resultados racionales calculables a mano antes de código:
+triánguloXZ(0,0),(12,0),(0,12) área72; water completo superior=72/0/0,
+inferior=0/72/0, contacto=72/0/0, media cobertura=36/0/36; dos capas duplicadas
+superiores conservan72; capa inferior y superior concurrentes no duplican.
+Plano cruzado W-B corta triángulo en proporción literal derivada en contrato.
+Agua sólo de OTRO piloto debe cubrir; dos mitades con costura exacta suman72;
+cara repetida bed aparece dos veces con IDs distintos, nunca unión mundial.
+Invariantes tras permutación de water, inversión winding, traslación exacta y
+subdivisión de water sin mover superficie, firmados con resultados independientes.
+
+Negativos: NaN/infinito, n4, flag no0, ID omitido/duplicado, digest/epoch distinto,
+dobletransformación, candidato AABB omitido, water debajo contado como superior,
+unión duplicada, igualdad clasificada debajo, racional malformado/bool comoint,
+denominador0, bitcap/opcap/piececap, salida parcial marcada completa, fuente o
+informe co-mutados. CLI productor→JSON→consumidor con positivos y negativos reales.
+Helpers antiguos/suites viejas no se repiten.
+
+## Presupuestos y terminales [DESIGN]
+
+Codexexecutor local900s contrato/oráculos+delta geométrico acotado,3módulos como
+máximo más test; code review externa180s, suite120s/256MiB; una corrección180s
+por repro cerrado y una recuperación180s de dictamen ausente. No bucle interno.
+Una producción120s/512MiB y un consumidor120s/512MiB. Salida32MiB; evidencia
+geométrica completa privada, público sólo métricas/IDs/digests/resumen.
+
+Caps porcara100000 operaciones racionales/4096bits poroperando,1024fragmentos
+vivos/8192vértices vivos; reservar antes de operar o materializar. El contador
+de AABB independiente cubre exactamente1520*4760=7235200pares como máximo por
+caminante; no es presupuesto racional compartido. No subir caps si no termina.
+Estos son límites de recursos del corte, no tolerancias geométricas. Contrato
+debe fijar cota conservadora de resultados/intermedios ANTES de cada operación.
+
+Cada cara emite terminal íntegro fsync con estado y tiempos. FULL sólo si1520
+terminales definidos y comprobados por consumidor; si una cara agota recursos,
+RESOURCE_INCONCLUSIVE y no aceptar esa cara. Timeout conserva sólo terminales
+ya íntegros, sin prometer resumen final. Consumidor puede verificar prefijo
+guardado completo sin promoverlo a FULL. SOURCE_CHANGED/I/O/BUG diferenciados.
+Estados finales MEASURED_SELECTED_WATER_OVERLAY_ONLY o VERIFIED_PARTIAL_OVERLAY,
+siempre terrain_evaluated=false, exposure_evaluated=false, native_acceptance=false,
+map_repaired=false, human_resolved=0, C1NOT_REVIEWED.
+
+Después: usar testigos para plan Q03C2 terreno/oclusores y Q05 huellas completas,
+sin repetir este corte ni buscar permisos de producto ya dados. Carreteras,
+ángulos certificados/Q08/Q17 siguen en backlog activo; nada de P:/build/DayZ.
+
+INDICE GUARDADO RESUMIDO
+{"coverage": {"source_models": 5509, "vegetation_models_not_saved": 72, "prototype_models": 5443, "proxy_only_models": 6, "instances": 17818, "prototype_faces": 539009, "roadway": 362554, "water_visual": 176390, "conditional_proxy": 65, "ambiguous": 43, "degenerate": 0, "proxy_paths": 7, "pilot_models": 201, "human_resolved": 0, "C1": "NOT_REVIEWED", "npz_files": 204, "npz_members": 7046}, "claims": {"world_frame_certified": false, "exposure_evaluated": false, "native_acceptance": false, "build_ready": false, "map_repaired": false, "scene_geometry_complete": false}, "water_faces_pilot_total": 4760, "pilot": {"model": "baltic_stream_pilot/cs_kit_118_0000.p3d", "model_index": 3579, "instance_id": 19394363, "site": "kit-118", "archive": "pilot-visible-surface-extraction-20261028/models/cs_kit_118_0000.npz", "pose_row": 13844, "world_frame": "ALREADY_WORLD_UNCERTIFIED", "arraydigestmap": {"bed.npy": {"descriptor": "<f8", "shape": [1520, 4, 3], "data_sha256": "a2e25a2816c34a0db79c40db377c275d3b71bd8a28120fdbae6575cfde87bc4b", "bytes": 145920}, "bed_flags.npy": {"descriptor": "|u1", "shape": [1520], "data_sha256": "be3f3d5517d4a3b8c7e9c08513aeb806cf86832bdc452d8f06a29fdc11ff695c", "bytes": 1520}, "bed_n.npy": {"descriptor": "|u1", "shape": [1520], "data_sha256": "0ce07a198f155183926d6ad540c719fbf0d549975c99be93b9c92ababbad9a77", "bytes": 1520}, "bed_source_face.npy": {"descriptor": "<i4", "shape": [1520], "data_sha256": "8f60d430654f1513c98a9f7b843915d70fe36e501a4de351464b491391d12501", "bytes": 6080}, "bed_source_ids.npy": {"descriptor": "<i4", "shape": [1520, 2], "data_sha256": "9527d606ef618c98420300740ea95e28da24219f25abc0a8c54ea5ca775eea89", "bytes": 12160}, "body_col_max.npy": {"descriptor": "<i8", "shape": [1520], "data_sha256": "b0be6180632b43dd1497f124a6776596108610e87d918b863240009991296303", "bytes": 12160}, "body_col_min.npy": {"descriptor": "<i8", "shape": [1520], "data_sha256": "c64aec870c3aca20a84a607a701a46f23abd7e6f1fd2f6f2d491134f60caccb2", "bytes": 12160}, "body_row_max.npy": {"descriptor": "<i8", "shape": [1520], "data_sha256": "e66844bab5491a57c7d1fb23fc303b8fafaf39312a0971ffaf071fbacda3cf9c", "bytes": 12160}, "body_row_min.npy": {"descriptor": "<i8", "shape": [1520], "data_sha256": "2feef777d56635bd76b85c19d23cc6af8919fcfc4cd0c54c2127879fae3a4d4a", "bytes": 12160}, "cap_after.npy": {"descriptor": "<i4", "shape": [], "data_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119", "bytes": 4}, "cap_before.npy": {"descriptor": "<i4", "shape": [], "data_sha256": "dc765660b06ee03dd16fd7ca5b957e8c805161ac2c4af28c5a100ab2ab432ca1", "bytes": 4}, "npz_start.npy": {"descriptor": "<i4", "shape": [], "data_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119", "bytes": 4}, "road_bed.npy": {"descriptor": "<f8", "shape": [1520, 4, 3], "data_sha256": "a2e25a2816c34a0db79c40db377c275d3b71bd8a28120fdbae6575cfde87bc4b", "bytes": 145920}, "road_bed_flags.npy": {"descriptor": "|u1", "shape": [1520], "data_sha256": "be3f3d5517d4a3b8c7e9c08513aeb806cf86832bdc452d8f06a29fdc11ff695c", "bytes": 1520}, "road_bed_n.npy": {"descriptor": "|u1", "shape": [1520], "data_sha256": "0ce07a198f155183926d6ad540c719fbf0d549975c99be93b9c92ababbad9a77", "bytes": 1520}, "road_bed_source_ids.npy": {"descriptor": "<i4", "shape": [1520, 2], "data_sha256": "9527d606ef618c98420300740ea95e28da24219f25abc0a8c54ea5ca775eea89", "bytes": 12160}, "road_unknown.npy": {"descriptor": "<f8", "shape": [0, 4, 3], "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "bytes": 0}, "road_unknown_flags.npy": {"descriptor": "|u1", "shape": [0], "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "bytes": 0}, "road_unknown_n.npy": {"descriptor": "|u1", "shape": [0], "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "bytes": 0}, "road_unknown_source_ids.npy": {"descriptor": "<i4", "shape": [0, 2], "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "bytes": 0}, "road_water.npy": {"descriptor": "<f8", "shape": [24, 4, 3], "data_sha256": "113995d22ee2c4f03811a367603969f2084bd6530e53a6cff983f141873c5984", "bytes": 2304}, "road_water_flags.npy": {"descriptor": "|u1", "shape": [24], "data_sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0", "bytes": 24}, "road_water_n.npy": {"descriptor": "|u1", "shape": [24], "data_sha256": "254b952041ef8f317d97aaa26188de0e0edb8bba4819cd3467d4bfcd3d61a411", "bytes": 24}, "road_water_source_ids.npy": {"descriptor": "<i4", "shape": [24, 2], "data_sha256": "cd0891f3ff6ed4f907cba34d3c3928779666646722bba4ba3d80ed5bff10f098", "bytes": 192}, "source_category.npy": {"descriptor": "<U9", "shape": [1520], "data_sha256": "4e16548c28d25ab58a6d8d24437e4349b7497de18f2c166d8cbfc48a47970145", "bytes": 54720}, "source_grid.npy": {"descriptor": "<f8", "shape": [21, 39, 3], "data_sha256": "53de1c25f85aea8ca455828007e9adb9611f4c01447bb8e4fa08657a2b33a456", "bytes": 19656}, "source_triangles.npy": {"descriptor": "<i8", "shape": [1520, 3], "data_sha256": "73c8486f51e9b43e2e5efca70b78870056a749ec5c0646a574a6898bb7d41616", "bytes": 36480}, "unknown.npy": {"descriptor": "<f8", "shape": [0, 4, 3], "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "bytes": 0}, "unknown_flags.npy": {"descriptor": "|u1", "shape": [0], "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "bytes": 0}, "unknown_n.npy": {"descriptor": "|u1", "shape": [0], "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "bytes": 0}, "unknown_source_ids.npy": {"descriptor": "<i4", "shape": [0, 2], "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "bytes": 0}, "water.npy": {"descriptor": "<f8", "shape": [24, 4, 3], "data_sha256": "a1679c89b6c6c842afc64b58af90d8e8aebd07b929bc5f8616d59b21ebb4c8b9", "bytes": 2304}, "water_flags.npy": {"descriptor": "|u1", "shape": [24], "data_sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0", "bytes": 24}, "water_n.npy": {"descriptor": "|u1", "shape": [24], "data_sha256": "254b952041ef8f317d97aaa26188de0e0edb8bba4819cd3467d4bfcd3d61a411", "bytes": 24}, "water_source_ids.npy": {"descriptor": "<i4", "shape": [24, 2], "data_sha256": "cd0891f3ff6ed4f907cba34d3c3928779666646722bba4ba3d80ed5bff10f098", "bytes": 192}}, "categories": {"CAP_START": 608, "BODY": 912}, "historical_checks": {"bed": {"exact_faces": true, "exact_oriented_faces": false, "left_only_faces": 0, "right_only_faces": 0, "left_duplicate_faces": 0, "right_duplicate_faces": 0}, "water": {"exact_faces": true, "exact_oriented_faces": false, "left_only_faces": 0, "right_only_faces": 0, "left_duplicate_faces": 0, "right_duplicate_faces": 0}, "unknown": {"exact_faces": true, "exact_oriented_faces": true, "left_only_faces": 0, "right_only_faces": 0, "left_duplicate_faces": 0, "right_duplicate_faces": 0}, "visual_vs_roadway": {"exact_faces": true, "exact_oriented_faces": true, "left_only_faces": 0, "right_only_faces": 0, "left_duplicate_faces": 0, "right_duplicate_faces": 0}}}}
+ANCLAS LEIDAS
+{"tools/quality/pilot_visible_surface_ev112.py": {"sha256": "b23949483aec0e370a3df3b92acabe5cfe7d3fc8c1a57d314145bf47da09455d", "lines": "188:     for inst in author['instances']:\n189:         name=norm(inst['model']); mi=selected[name]['index']\n190:         pos=int(np.flatnonzero(poses['model_index']==mi)[0]); matrix=poses['matrix'][pos]\n191:         b=binding[name]; package=packages[b['package']]; path=Path(package['path'])\n192:         if str(path) not in package_cache:\n193:             with path.open('rb') as f: props,entries=helper.pbo_table(f,path.stat().st_size)\n194:             require(norm(props['prefix'])==package['prefix'],'package_prefix')\n195:             package_cache[str(path)]={x['name']:x for x in entries}\n196:         require(package['prefix']+'/'+b['entry']==name,'binding_path')\n197:         with path.open('rb') as f: data=helper.read_payload(f,package_cache[str(path)][b['entry']],b['sha256'])\n198:         groups,face_ids,sections=odol_faces(ODOL.from_bytes(data,strict=True),helper,matrix)\n199:         mlod=root/'pilot-kit7-fc-20261026/source'/name\n200:         require(meter.sha(mlod)==inst['sha256'],'mlod_changed')\n201:         with mlod.open('rb') as f: model=py3d.P3D(f)\n202:         source,points,tris,wp=source_faces(model,np.asarray(inst['origin']))\n203:         checks={k:equivalence(groups[k],source[k]) for k in ('bed','water','unknown')}\n204:         checks['visual_vs_roadway']=equivalence(groups['bed'],groups['road_bed'])\n205:         a=arrays[inst['site']]\n206:         try:\n207:             grid,rmin,rmax,cmin,cmax,category,caps,start,before,after=strip_mapping(points,tris,a['station'],a['bed'],a['water'],wp,inst['station'])\n208:         except ValueError as e:\n209:             raise ValueError(str(e)+':'+name) from e\n210:         lookup=collections.defaultdict(list)\n211:         for i,f in enumerate(source['bed']): lookup[key(f)].append(i)\n212:         mapped=np.full(len(groups['bed']),-1,np.int32)\n213:         for i,f in enumerate(groups['bed']):\n214:             match=lookup.get(key(f),[])\n215:             if len(match)==1: mapped[i]=match[0]\n216:         payload={}; ambiguity={}\n217:         for kind in groups:\n218:             faces=groups[kind]; v=np.zeros((len(faces),4,3)); count=np.array([len(f) for f in faces],np.uint8)\n219:             flags=np.empty(len(faces),np.uint8)\n220:             for i,face in enumerate(faces): v[i,:len(face)]=face; flags[i]=helper.face_flag(face)\n221:             payload[kind]=v; payload[kind+'_n']=count; payload[kind+'_flags']=flags\n222:             payload[kind+'_source_ids']=np.asarray(face_ids[kind],np.int32).reshape(-1,2)\n223:             ambiguity[kind]=int((flags!=0).sum())\n224:         payload.update(source_grid=grid,source_triangles=tris,body_row_min=rmin,body_row_max=rmax,\n225:                        body_col_min=cmin,body_col_max=cmax,source_category=category,bed_source_face=mapped,\n226:                        npz_start=np.int32(start),cap_before=np.int32(before),cap_after=np.int32(after))\n227:         basename=Path(name).stem+'.npz'; np.savez_compressed(output/'models'/basename,**payload)\n228:         reports.append(dict(model=name,model_index=mi,instance_id=int(poses['ids'][pos]),site=inst['site'],\n229:           station=inst['station'],file='models/'+basename,sha256=meter.sha(output/'models'/basename),\n230:           checks=checks,sections=sections,faces={k:len(v) for k,v in groups.items()},ambiguous_faces=ambiguity,\n231:           unmapped_bed_faces=int((mapped<0).sum()),cap_rows=caps,source_regions=dict(collections.Counter(category.tolist()))))\n232:     for p,digest in pins.items(): require(meter.sha(p)==digest,'input_changed_during_extraction:'+p)\n233:     require(len(reports)==201,'incomplete_production'); meter.dump(output/'models.json',reports)\n234:     return dict(status='EXTRACTED_DIAGNOSTIC_ONLY',models=len(reports),sites=SITES,"}, "tools/quality/pilot_visible_exposure_ev112.py": {"sha256": "c5d6ba151b9794173e18f6e0df976770550dfab066d1f458e4e9238ee088343c", "lines": "68: def regions_for_face(tri,h,wp,wf,water,water_tree,rects,rect_tree,inners,outers,disc_tree):\n69:     parts=g.refine(tri,h,wp,wf);foot=polygon(tri[:,(0,2)])\n70:     wids=[int(i) for i in water_tree.query(foot) if incidence.positive_pair(tri[:,(0,2)],water[int(i)][:,(0,2)])]\n71:     rids=rect_tree.query(foot);dids=disc_tree.query(foot)\n72:     road=shapely.union_all([rects[i] for i in rids])\n73:     # Disc contributions outside rectangles are conservative joint/end additions.\n74:     inner=shapely.difference(shapely.union_all([inners[i] for i in dids]),road)\n75:     outer=shapely.difference(shapely.union_all([outers[i] for i in dids]),road)\n76:     uncertain=shapely.difference(outer,inner)\n77:     metrics=dict.fromkeys(NAMES,0.)\n78:     metrics.update(min_B_H=math.inf,max_B_H=-math.inf,min_B_nominal_W=math.inf,max_B_nominal_W=-math.inf,\n79:                    nominal_visual_water_min_delta=math.inf,nominal_visual_water_max_delta=-math.inf)\n80:     exposed=[];peaks=[];layer_refs=set()\n81:     for p in parts:\n82:         rr=g.sign_regions(p,'terrain');wr=g.sign_regions(p,'water')\n83:         metrics['area']+=p['area'];metrics['above_H_area']+=rr['above_area']\n84:         metrics['below_H_area']+=rr['below_area'];metrics['contact_H_area']+=rr['contact_area']\n85:         metrics['min_B_H']=min(metrics['min_B_H'],rr['minimum']);metrics['max_B_H']=max(metrics['max_B_H'],rr['maximum'])\n86:         metrics['min_B_nominal_W']=min(metrics['min_B_nominal_W'],wr['minimum']);metrics['max_B_nominal_W']=max(metrics['max_B_nominal_W'],wr['maximum'])\n87:         j=int(np.argmax(p['bed']-p['terrain']))\n88:         peaks.append((rr['maximum'],p['polygon'][j].tolist(),p['cell']))\n89:         ep=rr['above_polygon'] if rr['above_area'] else np.empty((0,2))\n90:         eg=polygon(ep)\n91:         if not eg.is_empty:exposed.append(eg)\n92:         if len(ep):\n93:             diff=g.evaluate(p['bed_plane'],ep)-g.evaluate(p['water_coeff'],ep)\n94:             metrics['above_H_at_or_below_nominal_W_area']+=g.area(g.clip(ep,diff,False))\n95:         actual_footprints=[];under=[]\n96:         for wi in wids:\n97:             wt=water[int(wi)]\n98:             cut=g.triangle_intersection(p['polygon'],wt[:,(0,2)])\n99:             cut,used_exact,exact_positive=incidence.guarded_intersection(tri[:,(0,2)],p['native_triangle'],wt[:,(0,2)],cut,g.area(cut))\n100:             if (used_exact and not exact_positive) or (not used_exact and g.area(cut)==0):continue\n101:             coeff=g.plane(wt[:,(0,2)],wt[:,1]);layer_refs.add(int(wi))\n102:             actual_footprints.append(polygon(cut))\n103:             delta=g.evaluate(coeff,cut)-g.evaluate(p['water_coeff'],cut)\n104:             metrics['nominal_visual_water_min_delta']=min(metrics['nominal_visual_water_min_delta'],float(delta.min()))\n105:             metrics['nominal_visual_water_max_delta']=max(metrics['nominal_visual_water_max_delta'],float(delta.max()))\n106:             if len(ep):\n107:                 ce=g.triangle_intersection(ep,wt[:,(0,2)])\n108:                 if g.area(ce)>0:\n109:                     d=g.evaluate(p['bed_plane'],ce)-g.evaluate(coeff,ce)\n110:                     under.append(polygon(g.clip(ce,d,False)))\n111:         ug=shapely.union_all(under);wg=shapely.union_all(actual_footprints)\n112:         metrics['above_H_at_or_below_visual_W_area']+=float(ug.area)\n113:         metrics['above_H_without_visual_W_footprint_area']+=float(shapely.difference(eg,wg).area)\n114:         metrics['corridor_rectangle_above_H_area']+=float(shapely.intersection(eg,road).area)\n115:         metrics['corridor_rectangle_at_or_below_visual_W_area']+=float(shapely.intersection(ug,road).area)\n116:         metrics['corridor_disc_inner_above_H_area']+=float(shapely.intersection(eg,inner).area)\n117:         metrics['corridor_disc_uncertain_above_H_area']+=float(shapely.intersection(eg,uncertain).area)\n118:     metrics['intersecting_visual_water_faces']=len(layer_refs)\n119:     for k in ('nominal_visual_water_min_delta','nominal_visual_water_max_delta'):\n120:         if not math.isfinite(metrics[k]):metrics[k]=float('nan')\n121:     return metrics,exposed,max(peaks),len(parts),sorted(layer_refs)"}, "tools/quality/saved_scene_archive_q03b2.py": {"sha256": "79ef0195ce28648a4c32a0c36cd82d381cc366e06277fac8e0468e7d42a2c369", "lines": "260: class Session:\n261:     def __init__(self, **limits):\n262:         if set(limits) - set(CAPS):\n263:             fail(\"MEMBER_SCHEMA\", \"limit keys\")\n264:         self.limits = dict(CAPS, **limits)\n265:         if any(type(v) is not int or not 0 < v <= CAPS[k] for k, v in self.limits.items()):\n266:             fail(\"MEMBER_SCHEMA\", \"limit values\")\n267:         self.active = False\n268:         self.live_stored = self.live_expanded = 0\n269:         self.cumulative_stored_actual_bytes_read = 0\n270:         self.cumulative_expanded_reserved = 0\n271: \n272:     def _prepare(self, path, schemas):\n273:         try:\n274:             data, digest = _snapshot(path, self)\n275:             rows, expanded = _central(data, schemas, self.limits)\n276:             if expanded > self.limits[\"total\"] - self.cumulative_expanded_reserved:\n277:                 fail(\"TOTAL_CAP\")\n278:             self.live_expanded = expanded\n279:             self.cumulative_expanded_reserved += expanded\n280:             for row in rows:\n281:                 row[\"decoded_sha256\"] = _decoded_extent(data, row)\n282:             with zipfile.ZipFile(io.BytesIO(data), \"r\") as archive:\n283:                 infos = archive.infolist()\n284:                 if len(infos) != len(rows):\n285:                     fail(\"ZIP_TRUNCATED\")\n286:                 for info, row in zip(infos, rows, strict=True):\n287:                     if (info.filename, info.flag_bits, info.compress_type, info.CRC, info.compress_size, info.file_size, info.header_offset) != (row[\"name\"], row[\"flags\"], row[\"method\"], row[\"crc\"], row[\"compressed\"], row[\"expanded\"], row[\"offset\"]):\n288:                         fail(\"ZIP_TRUNCATED\", \"standard metadata mismatch\")\n289:                 heads = {}\n290:                 for row in rows:\n291:                     with archive.open(row[\"name\"], \"r\") as member:\n292:                         heads[row[\"name\"]] = header.inspect_header(member, row[\"expanded\"], schemas[row[\"name\"]])\n293:                 arrays, payloads = {}, {}\n294:                 for row in rows:\n295:                     name = row[\"name\"]\n296:                     with archive.open(name, \"r\") as member:\n297:                         reader = _PayloadReader(member, heads[name][\"payload_offset\"])\n298:                         try:\n299:                             array = np.lib.format.read_array(reader, allow_pickle=False, max_header_size=16384)\n300:                         except ValueError as exc:\n301:                             raise ArchiveError(\"NPY_TRAILING\", \"array read\") from exc\n302:                         if reader.read(1) != b\"\" or reader.position != row[\"expanded\"]:\n303:                             fail(\"NPY_TRAILING\", \"decoded extent\")\n304:                     expected = heads[name][\"payload_bytes\"]\n305:                     if reader.full_digest.hexdigest() != row[\"decoded_sha256\"]:\n306:                         fail(\"ZIP_TRUNCATED\", \"decoded/header-reader mismatch\")\n307:                     array_hash = hashlib.sha256(memoryview(array).cast(\"B\") if array.nbytes else b\"\").hexdigest()\n308:                     if reader.length != expected or array.nbytes != expected or array_hash != reader.digest.hexdigest():\n309:                         fail(\"NPY_TRAILING\", \"payload/array byte mismatch\")\n310:                     array.flags.writeable = False\n311:                     arrays[name] = array\n312:                     payloads[name] = {\"sha256\": array_hash, \"bytes\": expected}\n313:             return {\"arrays\": arrays, \"payloads\": payloads, \"source_sha256\": digest,\n314:                     \"status\": \"ARCHIVE_SESSION_FIXTURE_VERIFIED_ONLY\", \"closed\": False}\n315:         except ArchiveError:\n316:             raise\n317:         except header.HeaderError as exc:\n318:             if exc.code == \"INTERNAL_ERROR\" and isinstance(exc.__cause__, (zipfile.BadZipFile, EOFError, zlib.error)):\n319:                 raise ArchiveError(\"ZIP_TRUNCATED\", \"header ZIP cause\") from exc\n320:             raise\n321:         except (zipfile.BadZipFile, EOFError, zlib.error) as exc:\n322:             raise ArchiveError(\"ZIP_TRUNCATED\") from exc\n323:         except Exception as exc:\n324:             raise ArchiveError(\"INTERNAL_ERROR\", type(exc).__name__) from exc\n325: \n326:     @contextmanager\n327:     def open(self, path, schemas):\n328:         if self.active:\n329:             fail(\"MEMBER_SCHEMA\", \"session already active\")\n330:         self.active = True\n331:         result = None\n332:         try:\n333:             result = self._prepare(path, schemas)\n334:             yield result\n335:         finally:\n336:             if result is not None:\n337:                 result[\"arrays\"].clear()\n338:                 result[\"closed\"] = True\n339:             self.live_stored = self.live_expanded = 0\n340:             self.active = False"}}

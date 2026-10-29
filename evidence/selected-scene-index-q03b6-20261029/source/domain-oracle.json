@@ -1,0 +1,167 @@
+{
+  "schema": "q03b6-domain-oracle-v1",
+  "catalog_add": {
+    "index": 31,
+    "name": "a/stone.p3d",
+    "instances": 1,
+    "group": "streambed_family"
+  },
+  "section_add": {
+    "index": 31,
+    "name": "a/stone.p3d",
+    "lods": [
+      {
+        "index": 0,
+        "resolution": 0.0,
+        "faces": 2,
+        "sections": [
+          {
+            "index": 0,
+            "faces": 2,
+            "material": "a/stone.rvmat",
+            "material_raw": "a/stone.rvmat",
+            "texture": "a/stone.paa",
+            "texture_raw": "a/stone.paa"
+          }
+        ]
+      }
+    ],
+    "proxies": [],
+    "center": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "instance_add": {
+    "id": 102,
+    "model_index": 31,
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "witness": {
+    "model_index": 31,
+    "name": "a/stone.p3d",
+    "catalog_row_position": 2,
+    "section_row_position": 3
+  },
+  "expected_empty_record": {
+    "index": 31,
+    "name": "a/stone.p3d",
+    "group": "streambed_family",
+    "catalog_instance_count": 1,
+    "pose_rows": [
+      2
+    ],
+    "runs": [],
+    "layers": {
+      "roadway": "NOT_SAVED",
+      "water_visual": "NOT_SAVED",
+      "conditional_proxy": "NOT_SAVED",
+      "visual_bed": "NOT_SAVED"
+    }
+  },
+  "expected_partition_empty": {
+    "model": {
+      "with_rows": [
+        10,
+        11
+      ],
+      "empty": [
+        31
+      ]
+    },
+    "source_model": {
+      "with_rows": [
+        10,
+        11,
+        20
+      ],
+      "empty": [
+        31
+      ]
+    },
+    "witnesses": [
+      {
+        "model_index": 31,
+        "name": "a/stone.p3d",
+        "catalog_row_position": 2,
+        "section_row_position": 3
+      }
+    ],
+    "ordinary_visual_geometry": "NOT_SAVED"
+  },
+  "expected_partition_base": {
+    "model": {
+      "with_rows": [
+        10,
+        11
+      ],
+      "empty": []
+    },
+    "source_model": {
+      "with_rows": [
+        10,
+        11,
+        20
+      ],
+      "empty": []
+    },
+    "witnesses": [],
+    "ordinary_visual_geometry": "NOT_SAVED"
+  },
+  "expected_coverage_empty": {
+    "source_models": 3,
+    "vegetation_models_not_saved": 0,
+    "prototype_models": 4,
+    "proxy_only_models": 1,
+    "instances": 3,
+    "prototype_faces": 4,
+    "roadway": 3,
+    "water_visual": 0,
+    "conditional_proxy": 1,
+    "ambiguous": 0,
+    "degenerate": 0,
+    "proxy_paths": 1,
+    "pilot_models": 1,
+    "human_resolved": 0,
+    "C1": "NOT_REVIEWED",
+    "npz_files": 4,
+    "npz_members": 46
+  },
+  "negative_codes": {
+    "additional_missing": "COVERAGE",
+    "unexpected": "COVERAGE",
+    "one_role": "REPORT",
+    "road_faces": "EMPTY_DOMAIN",
+    "visual_water": "EMPTY_DOMAIN",
+    "proxy": "EMPTY_DOMAIN",
+    "visual_duplicate": "EMPTY_DOMAIN",
+    "road_duplicate": "EMPTY_DOMAIN",
+    "wrong_name": "EMPTY_DOMAIN",
+    "wrong_id": "EMPTY_DOMAIN",
+    "wrong_catalog_position": "EMPTY_DOMAIN",
+    "wrong_section_position": "EMPTY_DOMAIN",
+    "missing_pose": "POSE",
+    "hidden_record": "REPORT",
+    "complete_claim": "REPORT",
+    "incoming_route": "EMPTY_DOMAIN"
+  },
+  "boundary_positive": [
+    "roadway_present_zero_faces",
+    "water_material_only_nonselected_lod"
+  ],
+  "cause": "NOT_ESTABLISHED"
+}

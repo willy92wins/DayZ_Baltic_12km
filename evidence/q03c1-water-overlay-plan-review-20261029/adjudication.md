@@ -1,0 +1,9 @@
+# Q03C1 — adjudicación de plan
+
+Muse Wonder1.0 CLI nativo104.031s, identidad de run.usage, SOUND-with-fixes/CONVERGE. No nueva revisión externa de postimagen; Codex planner/integrator con contexto compartido. Se aceptan siete precisiones y la codificación racional sugerida, como especificaciones previas al contrato/código.
+
+1. Miembros canónicos bed/water, sin duplicar road_ aliases; identidad ordinal+source_ids completo opaco. 2. EjesXZ/Y y área absoluta, padding+0 por writer218-221, signedzero fuente preservado. 3. Tabla de degenerados conservadora por AABB cerrada: no se afirma intersección real de segmento degenerado; cualquier no medido impide FULL. 4. Invariantes de resta convexa disjunta y positivos hueco/resto no convexo/fronteras. 5. Pares área positiva, fronteras aparte, punto interior racional, líneas normalizadas y metamórficos de área sin exigir identidad de pares subdivididos. 6. Payload+recibo por secuencia/SHA/longitud, prefijo contiguo y racionales enteros canónicos. 7. Contabilidad distinta de arreglos/restas, caps previos y oráculo multicapa; no promesa de terminar FULL.
+
+La sugerencia de revisión contractual se satisface con la revisión de código180s que incluye el contrato congelado antes de código, como prevé el plan; no una nueva revisión del mismo plan ni apertura libre de fuentes. Anclas extra comprobadas en writer norm/strip_mapping/payload y exposure.inputs, sin relanzarlos. Trazado P9/P10/P11 en product-spec15-17. Ningún cambio de producto/tolerancias/NPZ ni permiso nuevo solicitado.
+
+REVISADO_PARA_CONTRATO_Y_MEDICION_GEOMETRICA_ACOTADA. Aún sin contrato Q03C1, oráculos nuevos, código ni captura. El algoritmo mide relación vertical de las4760 caras water seleccionadas de201pilotos frente a1520bed de ID19394363, no terreno/oclusores/exposición real. El consumidor futuro recarga fuentes y usa recorrido geométrico diferente, I/O compartido. Q03C2/Q05 siguen pendientes.
