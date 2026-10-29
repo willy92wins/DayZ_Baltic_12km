@@ -120,3 +120,8 @@ Revisión consumida. Código/extractor/contrato aún ausentes. La implementació
 tendrá negativos de precedencia de estados, formato distinto, referencia en un
 LOD no Visual, enlace no autorizado y PBO comprimido. Un éxito documental no
 resuelve pivotes ni coloca pavimento.
+
+
+## Ejecucion consumida 29-10
+
+RoadB4A completado INCONCLUSIVE_DISCOVERY;39testscoleccionados38PASS/1SKIP. Fuentes/PBO fijados; siete rutas build SOURCE_UNSTABLE sin metadata suficiente para causa. No buildlisto. Ver evidence/road-b4a-build-discovery-20261029. Continuacion nueva instrumentada B4A1 revisada; no repetir este extractor.

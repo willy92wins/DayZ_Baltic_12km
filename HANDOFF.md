@@ -1,3 +1,27 @@
+# RoadB4A consumido; siguiente captura B4A1 revisada — 29-10
+
+Una ejecución1.203s/47MB INCONCLUSIVE_DISCOVERY. PBO34c1/501entradas y7rangos coinciden con catálogo;5refs de todosLOD, asphalt_ext fueraPBO sinresolver. Siete rutasbuild SOURCE_UNSTABLE sinmetadata causal; sources_stable sólofuentesprimarias. No atribuirlo a cambio debytes/nube ni reinterpretar. Discriminador posterior1modelo conserva7eb9ODOL54 vsinstalado d722ODOL56, metadata estable porAPI; no explicaR0.
+
+Código2053b3c8 ysuitecc3447e8;39coleccionados38PASS/1SKIPWindows, reparse simulado cubierto. Fable129.688s ycorreccionesMuse adjudicados. Contrato87a1 inmutable. Sin build/PBOautoría/DayZ/run/lease/operaciónpropia. Fuentes evidence/road-b4a-build-discovery-20261029. Preparadores,extractor,reviews,suites CONSUMIDOS.
+
+Siguiente plans/ev112-road-b4a1-source-stability-20261029.md REVISADO_PARA_IMPLEMENTAR; Fable79.766s adjudicado. AúnNOcódigo/contrato/ejecuciónB4A1. Preservar predicadosR0 más doblehash y n==st_size, rawobservaciones/razonesporfase, rutasexactasR0; una captura30s/256MiB después de implementación120s/review90s/suite60s. Referente instalado esR0fijado; no recatalogar ni repetirCLI/PBO. QueryDosDevice firststringactual, siguienteshistóricos no soncausa deFAIL. No inventar firmaRVMAT de referencia ni causa dectime. Parcial+TIMEOUT inconcluso.
+
+Council yaejecutado;Q01/Q02A/RoadB3 no repetir. Nueve rechazos, C1sinrevisar, original47FAIL21inciertos, Nav8607históricos,RAM/global siguenabiertos. Sólopublicar desdepublic-repo. Publicación actual en publish-roadb4a-20261029/result.json cuando exista.
+
+---
+# Publicado cc535b3fbc817d17410c157841f448dc48d63841 — Q01 y plan vial verificados
+
+53archivos; suiteprivada/pública26coleccionados,25PASS y1SKIP(symlink sin privilegio).
+Consumidor público del snapshot exacto VERIFIED_OPEN_HUMAN_REJECTIONS en0.406s.
+Remote main comprobado ypublic-repo limpio. Recibo publish-q01-roadb4a-20261029/result.json.
+Publicador/add/commit/push, preparadores, revisiones, suites y ejecuciones Q01 CONSUMIDOS.
+Sin operación propia/run/lease. Siguiente RoadB4A revisado, todavía sin extractor.
+La lectura metadata P:/DZ,structures,roads,parts mostró ReparsePoint sinLinkType/Target:
+no tratar todo reparse como junction ni seguir cadenas silenciosamente; descubrir tag real
+antes de diseñar resolución. No cambia código ni autoriza mutar P:.
+No repetir council/Q01/Q02A/RoadB3. Nueve rechazos y C1/RAM/global abiertos.
+
+---
 # Q01 verificado; siguiente descubrimiento de entradas viales RoadB4A — 29-10
 
 Q01 terminado como VERIFIED_OPEN_HUMAN_REJECTIONS:9casos/0resueltos,4controles,

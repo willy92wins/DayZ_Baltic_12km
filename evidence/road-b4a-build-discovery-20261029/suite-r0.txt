@@ -1,0 +1,14 @@
+.......s......F..
+======================================================================
+FAIL: test_source_mutation (__main__.RoadB4ATests.test_source_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_build_discovery_ev112.py", line 89, in test_source_mutation
+    s=make_scenario(self.td.name); s.receipt.write_bytes(b'mutated'); r=run(s); self.assertIn('DIFFER',statuses(r,'pin')); self.assertNotEqual(r['status'],'INPUTS_MATCH')
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'DIFFER' not found in ['MATCH', 'MATCH', 'SOURCE_UNSTABLE']
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.633s
+
+FAILED (failures=1, skipped=1)

@@ -1,0 +1,67 @@
+{
+  "schema": "road-build-discovery.v1",
+  "pbo": {
+    "path": "E:/SteamLibrary/steamapps/common/DayZ Exp/Addons/structures_roads.pbo",
+    "sha256": "34c1cabe608823dc09ec25dd62c3738a84075a7187484fc99dbdf4e1c2ed2f5f",
+    "bytes": 318217469,
+    "prefix": "DZ\\structures\\roads"
+  },
+  "catalog_models": "${PROJECT_ROOT}\\evidence\\road-catalog-installed-20261028\\models.jsonl",
+  "catalog_entries": "${PROJECT_ROOT}\\evidence\\road-catalog-installed-20261028\\entries.json",
+  "pins": {
+    "${BUILD_ROOT}\\road-b3-source-inputs-20261029\\contract.json": "7454f8b742818ea721a001a6cb8cd6d87b5ae4abd399ab3a49456d6bcc1f9382",
+    "${PROJECT_ROOT}\\evidence\\road-b3-source-pilot-20261029\\report.json": "f63dd1aceb63feca6c3b5b3ec160d248ab4a7de412334a5b1ee1025fb4ee2a2b",
+    "${BUILD_ROOT}\\road-b0-discovery-r1-20261028\\report.json": "6317c4d2be3b6fa285d1ef9d1618c6584e969fa95e76ee742535210ea2e78b8d",
+    "${BUILD_ROOT}\\road-b0-discovery-r1-20261028\\local-faces-0.json": "f23a8ae1404fa9d8c20aac1c2fba4d04486fbcb5783991b028653ed4286cfc34",
+    "${BUILD_ROOT}\\road-b0-discovery-r1-20261028\\local-faces-1.json": "6bdabc54a98ca4c9709c29096668455d2575fb51bf5d079a7bb3160143f88a9e",
+    "${BUILD_ROOT}\\road-b0-discovery-r1-20261028\\local-faces-2.json": "6dd21f333fce4e31c18cf839f31bd212258c7e0ec874471aad11d5d85fae3bd7",
+    "${PROJECT_ROOT}\\evidence\\road-catalog-installed-20261028\\models.jsonl": "84c3aafb4e2285cee91ecae7f2f5a71b080877c4b61865b4bc7d1e65bac25879",
+    "${PROJECT_ROOT}\\evidence\\road-catalog-installed-20261028\\entries.json": "465aa3549b35403d88f222f6e6f8bb3e3eb1c4951e06770d159b8508ec308119",
+    "${PROJECT_ROOT}\\tools\\quality\\deployed_surface_inventory_ev112.py": "b7a17598c68294622b4bf2ba8bb36afe74d91b24876b8451e10ab0425651bcb6"
+  },
+  "models": [
+    {
+      "name": "dz/structures/roads/parts/asf1_25.p3d",
+      "entry": "parts/asf1_25.p3d"
+    },
+    {
+      "name": "dz/structures/roads/parts/asf2_25.p3d",
+      "entry": "parts/asf2_25.p3d"
+    },
+    {
+      "name": "dz/structures/roads/parts/asf1_10 100.p3d",
+      "entry": "parts/asf1_10 100.p3d"
+    }
+  ],
+  "build_alias": "P:/",
+  "build_root": "${WORKDRIVE_ROOT}",
+  "prerequisites": [
+    {
+      "path": "${BUILD_ROOT}\\stage-kit7-fc-20261026\\root\\dayz_baltic_12km_dev\\tb\\narva_trial\\config.cpp",
+      "sha256": "7967aa260db97d05ef9896f75d0f9e037e80556bca99d59fa572e5f5262849f6"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\tools\\terrain\\compile_visual_pilot_ev112.ps1",
+      "sha256": "86d156594d10d77d8c3a961ac999e0356d29dc3d3f0727efbd7fed974c6c39d2"
+    },
+    {
+      "path": "${WORKDRIVE_ROOT}\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\codex-handoff-review-74f290\\packages\\baltic-road-v29\\tools\\include.lst",
+      "sha256": "7b1b270afdd6a21b8ef44b979353ef06350b1a75ff2be6f4b84e129b9baf3b00"
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\AddonBuilder.exe",
+      "sha256": "c113de9cab5e91d27ca0630e360db0a3eca190ec797e1dcad9cdfa70466b45e1"
+    }
+  ],
+  "stage_paths": [
+    "${BUILD_ROOT}\\stage-kit7-fc-20261026\\root\\DZ",
+    "${BUILD_ROOT}\\stage-kit7-fc-20261026\\root\\bin",
+    "${BUILD_ROOT}\\stage-kit7-fc-20261026\\root\\core",
+    "${BUILD_ROOT}\\stage-kit7-fc-20261026\\root\\baltic_water_v30",
+    "${BUILD_ROOT}\\stage-kit7-fc-20261026\\root\\baltic_stream_pilot"
+  ],
+  "limits": {
+    "seconds": 60,
+    "bytes": 1073741824
+  }
+}
