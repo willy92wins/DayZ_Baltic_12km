@@ -1,0 +1,14 @@
+{
+  "before": {
+    "tests/test_shore_prefix_pilot_ev112.py": "baf4d3a60f454baf59cc758134f0476f92ae35c1d3a7e86b22852d2ae1d9dfeb",
+    "tools/quality/shore_prefix_pilot_ev112.py": "3aa29279242ad81fe47e1a35dcd7ed5599d4958f929986fbdc5fe05a201ed8c0",
+    "tools/quality/verify_shore_prefix_pilot_ev112.py": "97565171fb07910f11221b8bb5e533d99e414bad9f253a1d7e76497a3e9aa8fa"
+  },
+  "after": {
+    "tests/test_shore_prefix_pilot_ev112.py": "6a6b2e4c2d5cdd7ba8cc46af7e2d39c5036ada4bb9c1d8c873559a8d3517aa53",
+    "tools/quality/shore_prefix_pilot_ev112.py": "46f6f75a49a23969b0953e4e510201614f93bfbdadd14d7cb3f0bf6a6b9311d6",
+    "tools/quality/verify_shore_prefix_pilot_ev112.py": "029cce800c8e2e682857adb5367786f950602d562f755b3c8d864a37519a6350"
+  },
+  "patches": 48,
+  "notes": "Bounded cohesive fixes only in the 3 allowed files; external contract/NPZ/sealed helpers untouched. Closed NPZ now uses Nx2 stored points with exact point/segment offsets, core_count=stored-(closed?1:0), diff(segment)=diff(points)-1, validated repeated endpoint removed before core hash/points. Producer uses one sealed global 4M ChainBudget (subclass of K.Budget) for dx/dz/q/THR\u00b2/sqrt/prefix with integer pre-tick/bit checks; consumer uses one sealed global 4M CapB subclass for q/witness/prefix/degeneracy and removes redundant main degeneracy scan. Prepared cache objects replace JSON _checked trust; raw dicts are verified once explicitly, underscore fields rejected, CLI mains use source-bound prepared caches. Query walk shares one 100000 CapB between integer walk and sealed metrics. _load_mod executes compile() of the same hash-verified bytes with __file__ preserved and reloads on root change. Strict contract/cache/counter/ops schemas, label/chain uniqueness, positive capped limits, pre-concatenation total-size and pre-parse query-line checks added. Tests: h0 now UNDEFINED_ZERO_CHORD, fake self-throw removed for a real >4096-bit Resource guard, synthetic NPZ stores closed repeat with co+=len(stored)-1, added literal analytic 30-query oracle, closed/forged/counter/prefix tests, 2000-edge cache phase, shared query-budget reject, and unittest full collection instead of stop-first runner. Not executed per no-shell/tools instruction, so no runtime pass is claimed."
+}

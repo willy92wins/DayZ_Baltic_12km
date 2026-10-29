@@ -1,3 +1,16 @@
+# Q02B2 completado; RoadB4B0 revisado — 29-10
+
+VERIFIED_REAL_NUMERIC_PILOT_ONLY:4cadenas/18943aristas,54consultas (13DEFINED,9UNDEFINED_ZERO_CHORD,32INSUFFICIENT_SUPPORT),degenerada85sinventanas. Productor1.000s/70.72MB yconsumidorindependiente2.484s/97.98MB;14testsprivados2.890sPASS. Reportprivadof6d4f44cf5f8ca874d7ea3185b134902036d2e0d80d24a472e9470e332915325 de3768836bytes; contrato84534d48. Umbralbinario1e-8/cap100000query/4Mcadena/4096bits/p48 intactos. No fullcensus538390,ángulos ni naturalidad. Nueve humanos GEOMETRY_UNBOUND0resueltos,C1NOT_REVIEWED. Evidence/shore-prefix-pilot-q02b2-20261029.
+
+AutorMuse172.063s/corrección119.860s consumidos. FablecodeR0timeout180.047s sin dictamen; recuperación117.718s SOUND-with-fixes adjudicada. Codexfixes compartidos: corecerrado, h0, caps, encodingbool/int, cierrebitexacto ycontextoreset; suitesR0/R1 fallidaspreservadas. R2/finalverdestrasdeltas. Captura/consumidor/preparadores/freezeCONSUMIDOS: no repetir. Sin operación propia/run/lease al cierre devalidación.
+
+Siguiente ejecutable vial plans/ev112-road-b4b-scene-resolution-20261029.md REVISADO_PARA_IMPLEMENTAR_B4B0_INDICE_DE_REFERENCIAS, Fable89.781s adjudicado. AúnSINcódigo/contrato/captura. Leer evidence/road-b4b0-plan-review-20261029: correspondencia fuente0WZD b108/candidato46063 concatálogosguardados5509; doslectoresstreamingnuevos independientes,normrealconstrip('/') yaliasesexplícitos,deltaINSTANCIAS+3,nombresdesdecontratoB3. No reabrirPBO ni recensosprevios, tocarP: ni build. Shaautodeclarado no prueba lectura: consumidor relee fuente por parserindependiente. Budget autor240/review180/suite120/extracción120s1GiB/consumidor60s256MiB. Resultadoíndicehistórico solamente, no precedencia/materiales5509/buildready/pivote/huella/accesos.
+
+Próximo geométrico: plan propio deproducción acotada multiescala/cobertura completa y ángulos certificados; estos54puntos no calibran naturalidad ni asignan fotos. ReferentesindependientesQ08/Q17, Q03/Q05 y reparaciones siguenpendientes, no apartarlos por vías. Councilyaejecutado no repetir. RoadB4A3sólo12recursos3modelos, RoadB3añade3objetos; no carreteraterminada. Nav8607históricos/original47FAIL21inciertos/RH/agua723/Bullet/RAM/globalabiertos. MarpieNarva/apoyoslaterales yaautorizado. .gitattributesajena conservada.
+
+Publicaciónúnica desdepublic-repo; recibo publish-q02b2-roadb4b-20261029/result.json cuandoexista. No publicarhistorialprivado/textosogeometríavanilla. Automatizaciónmantenerhastaobjetivoglobal, sinreplicarejecucionesconsumidas.
+
+---
 # Q02B1 completo en oráculos — 29-10
 
 VERIFIED_NUMERIC_KERNEL_ONLY,53consultas,21tests privados8.218s PASS. Productor0.250s/18.57MB,consumidor0.360s/41.64MB. Report16502f8c481a04653854eef2d331318d8b3b1fb8c9bdc4f7dd277af75e732750,contratoR1 4162c53e. Certificados racionales p48 y caps4096bits/100000ops; un control deliberado de recursos identificado, no todo numéricamente definido. Nueve humanos0resueltos,C1NOT_REVIEWED,ángulos/naturalidad/censo real pendientes. Evidence/certified-shore-kernel-q02b1-20261029. Autor parcial240s y cola47.891s; Fable164.781s NEEDS-WORK corregido Muse149.766s+integrador, delta82.890s adjudicada. R0/R1fallidos preservados, sin relajar umbral ni tolerancias. No mapa/build/DayZ/run/lease.

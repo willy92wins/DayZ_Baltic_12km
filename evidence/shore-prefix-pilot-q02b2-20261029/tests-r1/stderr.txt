@@ -1,0 +1,28 @@
+test_boundary_uncertainty (__main__._All.test_boundary_uncertainty) ... ok
+test_cache_mutations_hit_guards (__main__._All.test_cache_mutations_hit_guards) ... ok
+test_closed_core_forged_and_counters (__main__._All.test_closed_core_forged_and_counters) ... ok
+test_diamond_wrap_reverse_and_h0 (__main__._All.test_diamond_wrap_reverse_and_h0) ... ok
+test_old_oracle30_and_2000_edge_cachephase (__main__._All.test_old_oracle30_and_2000_edge_cachephase) ... ok
+test_open_final_and_spike_ac0 (__main__._All.test_open_final_and_spike_ac0) ... ok
+test_query_shared_budget_reject (__main__._All.test_query_shared_budget_reject) ... ok
+test_small_root_and_bigbits (__main__._All.test_small_root_and_bigbits) ... ok
+test_straight_old_oracle (__main__._All.test_straight_old_oracle) ... ok
+test_synthetic_cli_and_report_mutations (__main__._All.test_synthetic_cli_and_report_mutations) ... FAIL
+
+======================================================================
+FAIL: test_synthetic_cli_and_report_mutations (__main__._All.test_synthetic_cli_and_report_mutations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_prefix_pilot_ev112.py", line 106, in <lambda>
+    if _n.startswith('test_'): setattr(_All,_n,lambda self,f=_f: f())
+                                                                 ^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_shore_prefix_pilot_ev112.py", line 71, in test_synthetic_cli_and_report_mutations
+    r=_run(W/'tools/quality/shore_prefix_pilot_ev112.py',['--root',str(W),'--contract',str(cpath),'--contract-sha',sha,'--output',str(out)]);assert r.returncode==0,r.stderr
+                                                                                                                                                    ^^^^^^^^^^^^^^^
+AssertionError: INCONCLUSIVE:core
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.553s
+
+FAILED (failures=1)

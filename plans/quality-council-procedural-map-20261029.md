@@ -92,3 +92,5 @@ Q02B0: discovery numérico completado,15tests y captura0.390s. 1030cadenas/53839
 Q04/B4A3 completado como subconjunto guardado:2materiales+4hojas nuevas/8assets conservados,21tests y consumidor independiente. No build/colocación/conducción. Próximo Q02B1 núcleo de intervalos racionales revisado Fable77.093s; todavía sin implementación, ángulos/censo completo/naturalidad pendientes. Nueve rechazos humanos abiertos.
 
 Q02B1 completo: núcleo certificado sobre53consultas propias,21tests, límites/degeneración/certificados verificados; no censo del mapa ni naturalidad. Nueve humanos siguen abiertos. Q02B2 prefijos compartidos y piloto real en borrador pendiente de revisión; RoadB4B/Q03/Q05 y referentes siguen pendientes.
+
+Q02B2 completado como piloto numérico real:4cadenas/18943aristas/54consultas,14tests;13DEFINED,9cuerda0,32soporteinsuficiente. No censo global ni naturalidad/reparación. RoadB4B0 tiene plan revisado89.781s de correspondencia de referencias fuente/catálogos con consumo independiente; implementación pendiente. Q02Bproducción/ángulos,Q03/Q05/Q08/Q17 y nueve rechazos siguen abiertos.

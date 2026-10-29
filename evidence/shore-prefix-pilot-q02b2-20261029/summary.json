@@ -1,0 +1,119 @@
+{
+  "status": "VERIFIED_REAL_NUMERIC_PILOT_ONLY",
+  "contract_sha256": "84534d48ce33e849130cc0e1390ef034391d935d7f7617838f85451bb09204a2",
+  "private_report_sha256": "f6d4f44cf5f8ca874d7ea3185b134902036d2e0d80d24a472e9470e332915325",
+  "private_report_bytes": 3768836,
+  "consumer_sha256": "ca43daf4ea75c870958a1bee31044784d605f19cc0eb117dc1b5ce5d7ccace95",
+  "queries": 54,
+  "query_states": {
+    "UNDEFINED_ZERO_CHORD": 9,
+    "INSUFFICIENT_SUPPORT": 32,
+    "DEFINED": 13
+  },
+  "chains": [
+    {
+      "label": "longest",
+      "chain_id": 1,
+      "core_vertices": 13421,
+      "edges": 13420,
+      "degenerate_indices": [],
+      "producer_reported_counters": {
+        "edges": 13420,
+        "max_bits": 107,
+        "ops": 536803
+      }
+    },
+    {
+      "label": "first_open",
+      "chain_id": 0,
+      "core_vertices": 234,
+      "edges": 233,
+      "degenerate_indices": [],
+      "producer_reported_counters": {
+        "edges": 233,
+        "max_bits": 88,
+        "ops": 9323
+      }
+    },
+    {
+      "label": "short_closed",
+      "chain_id": 43,
+      "core_vertices": 6,
+      "edges": 6,
+      "degenerate_indices": [],
+      "producer_reported_counters": {
+        "edges": 6,
+        "max_bits": 83,
+        "ops": 243
+      }
+    },
+    {
+      "label": "degenerate",
+      "chain_id": 85,
+      "core_vertices": 5284,
+      "edges": 5284,
+      "degenerate_indices": [
+        4610,
+        4611
+      ],
+      "producer_reported_counters": {
+        "edges": 5284,
+        "max_bits": 86,
+        "ops": 211363
+      }
+    }
+  ],
+  "total_edges": 18943,
+  "producer_max_reported_query_ops": 1158,
+  "counter_semantics": "bounded producer counters, not a verified operations transcript or a claim of consumer operation equality",
+  "private_tests": 14,
+  "p": 48,
+  "max_bits": 4096,
+  "max_ops_query": 100000,
+  "max_ops_chain": 4000000,
+  "producer": {
+    "id": "q02b2-producer",
+    "rc": 0,
+    "reason": null,
+    "seconds": 1.0,
+    "peak_rss": 70721536,
+    "started": 1793262753.3173115,
+    "finished": 1793262754.3190603,
+    "identities": {
+      "34404": 1793262753.3184493,
+      "103496": 1793262753.3245955,
+      "104072": 1793262753.3388553
+    },
+    "stdout_sha": "7a277be49e7bac4e8ca84866d82d0cc4697ab9b2dd1a0a6357b4af7fdc353339",
+    "stderr_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "consumer": {
+    "id": "q02b2-consumer",
+    "rc": 0,
+    "reason": null,
+    "seconds": 2.4839999999967404,
+    "peak_rss": 97980416,
+    "started": 1793262754.3251271,
+    "finished": 1793262756.7973266,
+    "identities": {
+      "103908": 1793262754.326583,
+      "99320": 1793262754.3325095,
+      "55488": 1793262754.3459797
+    },
+    "stdout_sha": "3a29e56b49dd287c912ee088ab953407e8b86765cfbebad666d31fa3195d8a20",
+    "stderr_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "human_cases": {
+    "count": 9,
+    "resolved": 0,
+    "state": "GEOMETRY_UNBOUND"
+  },
+  "controls": 4,
+  "c1": "NOT_REVIEWED",
+  "natural_positive_count": 0,
+  "calibration_ready": false,
+  "angle_state": "PENDING_CERTIFIED_ANGLE",
+  "full_map_census": false,
+  "map_repaired": false,
+  "build_run_lease": false
+}

@@ -1,0 +1,142 @@
+{
+  "schema": "q02b2.v1",
+  "scope": "REAL_CONTOUR_NUMERIC_PILOT_ONLY",
+  "plan_sha256": "a15a46f523e951e9e263f6eee4ab5812a5947fc2466af0b883dfe8d27f931ca2",
+  "npz_path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\native-shore-census-20261028\\native-shore.npz",
+  "npz_sha256": "b6612009ff531ef2f3932240ea52cf0660bce97f7904b7d667f962ce0fd95847",
+  "q02a_sha256": "3fc0b5079ed4bd5f475263ba223bd3139bcc7e159fe9adb37736e5c3fb8465d7",
+  "selectors": [
+    {
+      "label": "longest",
+      "chain_id": 1,
+      "closed": false,
+      "point_offset": [
+        234,
+        13655
+      ],
+      "segment_offset": [
+        233,
+        13653
+      ],
+      "core_count": 13421,
+      "core_float64_le_sha256": "bf2f14afe8bec522833ae5d583d76e8d722017a8db06e260f895335e352038e2",
+      "anchors": [
+        0,
+        6710,
+        13420
+      ],
+      "prior_degenerate_reason": null
+    },
+    {
+      "label": "first_open",
+      "chain_id": 0,
+      "closed": false,
+      "point_offset": [
+        0,
+        234
+      ],
+      "segment_offset": [
+        0,
+        233
+      ],
+      "core_count": 234,
+      "core_float64_le_sha256": "5f895ed627287bb5bcb86253f3162499b092f157b2c22bb8134d31b05a2e843f",
+      "anchors": [
+        0,
+        117,
+        233
+      ],
+      "prior_degenerate_reason": null
+    },
+    {
+      "label": "short_closed",
+      "chain_id": 43,
+      "closed": true,
+      "point_offset": [
+        19914,
+        19921
+      ],
+      "segment_offset": [
+        19871,
+        19877
+      ],
+      "core_count": 6,
+      "core_float64_le_sha256": "1e560d7e875bcb4f3318cfb15cf6f7dd05e435757141c280c0a1de7eba49ee2d",
+      "anchors": [
+        0,
+        3,
+        5
+      ],
+      "prior_degenerate_reason": null
+    },
+    {
+      "label": "degenerate",
+      "chain_id": 85,
+      "closed": true,
+      "point_offset": [
+        23012,
+        28297
+      ],
+      "segment_offset": [
+        22927,
+        28211
+      ],
+      "core_count": 5284,
+      "core_float64_le_sha256": "8492c008352f8e6ee458a4749054d21c1147a6284e7daa1f9fee664d19cb8d21",
+      "anchors": [],
+      "prior_degenerate_reason": "short_segment"
+    }
+  ],
+  "h": [
+    0,
+    6,
+    12,
+    24,
+    48,
+    96
+  ],
+  "queries": 54,
+  "p": 48,
+  "threshold_ratio": [
+    3022314549036573,
+    302231454903657293676544
+  ],
+  "max_bits": 4096,
+  "query_ops": 100000,
+  "chain_ops": 4000000,
+  "max_edges": 14000,
+  "read_limits": {
+    "archive_bytes": 67108864,
+    "required_uncompressed_bytes": 8388608,
+    "header_bytes": 16384,
+    "members": 32
+  },
+  "output_limits": {
+    "line_bytes": 16777216,
+    "query_bytes": 262144,
+    "total_bytes": 67108864
+  },
+  "helpers": {
+    "tools/quality/certified_shore_kernel_ev112.py": "ef844931862c1aa2d181caa5000b4843a4b1587da7149fb033a8efa5248abe64",
+    "tools/quality/verify_certified_shore_kernel_ev112.py": "ab1977bc1ed283d00cb9aedab56ad1b83d2596a17f49c3558825aeec3ec8f2ca",
+    "tools/quality/shore_numeric_discovery_ev112.py": "3264f82294a2411e4f1d902c42173a01ef1f72244d6b220bba91e49a4596b696"
+  },
+  "human_cases": {
+    "count": 9,
+    "state": "GEOMETRY_UNBOUND",
+    "resolved": 0
+  },
+  "controls": 4,
+  "c1": "NOT_REVIEWED",
+  "natural_positive_count": 0,
+  "calibration_ready": false,
+  "angle_state": "PENDING_CERTIFIED_ANGLE",
+  "budgets": {
+    "author_s": 240,
+    "review_s": 180,
+    "suite_s": 120,
+    "capture_s": 120,
+    "consumer_s": 120,
+    "bytes": 536870912
+  }
+}
