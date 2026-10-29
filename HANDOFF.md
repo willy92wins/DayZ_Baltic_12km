@@ -1,3 +1,19 @@
+# B4A2R1 recuperado; Q02B preparado para discovery numérico — 29-10
+
+16tests privados PASS; recuperación0.813s, conv2 única0.203s, consumidor guardado0.203s. Contratoe233 y textos privadosc95b31a9/7d10096f. MATERIAL_SAMPLES_RECOVERED_ONLY; NO build ni carretera acabada. Conv1 nunca relanzada, PBOs no reabiertos, B4A2c9b3 inconcluso histórico intacto. Evidence/road-b4a2r1-saved-material-recovery-20261029. Autores/reviews/suites/recuperador/conv2/consumidor/preparadores CONSUMIDOS. Sin operación propia/run/lease.
+
+Siguiente principal: plans/quality-council-q02b-multiscale-features-20261029.md REVISADO_PARA_DESCUBRIMIENTO_NUMERICO_PREVIO, Fable97.265s adjudicado. Todavía sin código/captura/contrato numérico. Implementar discovery acotado de magnitudes/ventanas analíticas antes de cotas;30s/512MiB tras autor120/review90/suite60. No rerunQ02A/Q17A/council. Rechazada propuesta mmapNPZ y fijar tolerancias por máximo observado10x; referencias naturales pendientes. Después productor/consumidor multiescala con plan numérico completo, manteniendo nueve casos abiertos.
+
+Vial siguiente requiere plan propio de parser/cierre transitivo sobre las DOS muestras reales guardadas, sin repetir conversión/extracción. Stage1/2→nohq/sm;8recursos no cierran5509modelos, no build-ready. Q03/Q05/agua/RAM/calidadglobal siguen abiertos;47FAIL21inciertos,Nav8607históricos,C1SINREVISAR. Publicación únicamente public-repo; recibo publish-b4a2r1-q02b-20261029/result.json cuando exista. Respeta.gitattributes ajena.
+
+---
+# Publicado 49b94e48ee3d7c986e96b29254d8d59ee78f6359 — Q17A verificado
+
+43 archivos,26 tests privados1.672s/públicos1.812s PASS sin skips, remoto main verificado limpio. Recibo publish-q17a-20261029/result.json. Contrato5416dbef y corpus8c62a8ac; 11fixtures/10geometrías/66vértices, VERIFIED_CORPUS_INCOMPLETE_CALIBRATION. Productor/consumidor0.203s cadauno. Nueve rechazos humanos GEOMETRY_UNBOUND/0resueltos, C1NOT_REVIEWED ycalibration_readyfalse; no reparación ni aceptación del mapa. Sin operación propia/run/lease.
+
+Todo Q17A autorías/review/delta/suites/ejecución/freeze/stage/publicador/add/commit/push CONSUMIDO. No repetir. Siguiente B4A2R1 recuperación guardada ya revisada, aún sin código/contrato; cero llamadas conv1, una conv2 con marcador exclusivo y destino fijado. Después preparar/revisar Q02B multiescala usando corpus, sin inventar referentes naturales. Council ya ejecutado; no repetir. El detalle bajo este bloque conserva historia, no operaciones activas.
+
+---
 # Q17A validado; siguiente recuperación vial y rasgos multiescala — 29-10
 
 Corpus externo5416dbef:11fixtures/10geometrías/66vértices. Productor/consumidor separados0.203s cadauno/16.31MB,26tests privados PASS sin skips. evidence/geometric-corpus-q17a-20261029. Código d6549099/c78cf897 y suite bdd87cfc fijados en applied.json. Fable169.829s SOUND-with-fixes, Muse213.502s total; correcciones adjudicadas, no alias de fuentes ni inversiones colineales silenciosas. Nueve humanos GEOMETRY_UNBOUND/0resueltos, cuatro controles intactos, C1NOT_REVIEWED, naturalpositive0/calibrationfalse. No detector naturalidad aprobado ni mapa reparado. No repetir Q17A autores/delta/reviews/suites/producción/freeze.

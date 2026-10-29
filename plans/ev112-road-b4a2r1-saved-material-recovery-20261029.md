@@ -1,3 +1,5 @@
+Estado actual29-10: COMPLETADO_MATERIAL_SAMPLES_RECOVERED_ONLY; evidence/road-b4a2r1-saved-material-recovery-20261029. Recuperación y revisiones consumidas; no repetir. El plan histórico siguiente conserva el alcance, no una ejecución pendiente.
+
 # RoadB4A2R1 — completar muestras desde la captura guardada
 
 Estado: REVISADO_PARA_IMPLEMENTAR_RECUPERACION_GUARDADA. Fable51.578s adjudicado en evidence/road-b4a2r1-plan-review-20261029. Código y contrato nuevos aún ausentes. No repetir extractor, tablas ni PBOs de B4A2.

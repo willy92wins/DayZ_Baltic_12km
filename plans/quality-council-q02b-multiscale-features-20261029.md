@@ -1,0 +1,54 @@
+# Q02B — rasgos de orilla por longitud de arco
+
+Estado: REVISADO_PARA_DESCUBRIMIENTO_NUMERICO_PREVIO. Fable5.1 nativo97.265s SOUND-with-fixes; adjudicación al final prevalece. Todavía no autoriza productor completo ni reparación: falta cerrar contrato numérico. Petición humana29-10 y council Q02B/Q17; product-spec.md:20 P14 exige contorno suave preservando canales, islas, humedales y reserva. Q02A mide teselación cruda; Q17A verifica datos analíticos. Ninguno detecta todavía naturalidad, lenguas, arcos regulares ni escaleras redondeadas.
+
+## Anclas comprobadas
+
+- tools/quality/closed_perimeter_ev112.py:3-17 y :96-120 documentan/validan point_offsets, chain_offsets, chain_points float64 Nx2, closed booleano. NPZ guardado `E:/DayZ-Baltic-Build/shape-repair-20261025/native-shore-census-20261028/native-shore.npz`, SHA b6612009ff531ef2f3932240ea52cf0660bce97f7904b7d667f962ce0fd95847, indicado en el recibo q02-author-job.json. No regenerar ese censo ni ejecutar Q02A.
+- closed_perimeter_ev112.py:69-83 fija giros crudos45 y degeneración de segmentos cortos; shape_patterns_ev112.py:38-72 simplifica antes del screen abierto. Son antecedentes sellados, no se modifican ni se importa su cálculo para validar este nuevo resultado.
+- tests/fixtures/q17a/contract.json SHA5416dbef4547a5dad0fa40c0da90337ec003ebdd73dc61f149a9c8174ed5394a fija once fixtures, diez geometrías distintas. Sus cerradas NO repiten endpoint; el NPZ sí. Adaptación explícita, no soldado ni tolerancia de coincidencia. Los nueve casos humanos siguen GEOMETRY_UNBOUND y C1 NOT_REVIEWED.
+- Plan general Q02B: rasgos multiescala y calibración natural/diseñada antes de decidir umbrales. Q17A natural_positive_count=0. Un círculo diseñado y una orilla circular pueden tener geometría idéntica e intención distinta.
+
+## Unidad1 propuesta [DESIGN]: medidas, sin clasificador de naturalidad
+
+Hipótesis: medir ventanas físicas a ambos lados de cada vértice distingue el giro de una celda del cambio de dirección persistente. La hipótesis se prueba mediante rasgos analíticos y equivalencia de ventanas; no por hacer desaparecer alertas ni por añadir ruido a las orillas.
+
+Contrato externo nuevo, congelado antes del consumidor: pin NPZ, Q17A/arrays, código/lector cuando exista, esquema cerrado, ventanas h={6,12,24,48,96}m y presupuestos. Esas distancias son escalas de observación experimentales, NO tolerancias de calidad ni afirmación de resolución de terreno. Sólo se lee el NPZ fijado, no PBO, modelos, WRP ni fotos.
+
+Por cada cadena y cada vértice original guardar el punto, índice, abscisa curvilínea y estaciones a distancia h hacia atrás/adelante sobre la polilínea real. Cerradas: recorrido modular completo, incluida estación0; ventanas con 2h>=perímetro quedan INSUFFICIENT_SUPPORT para evitar recorridos repetidos. Abiertas: no extrapolar extremos; falta de longitud a un lado se registra. Conservar cadenas degeneradas con razón y todas las ventanas no evaluables; nunca convertirlas en ausencia de fallo. No RDP, soldadura, suavizado, recorte de extremos ni cambio de coordenadas.
+
+Cada estación interpolada lleva segmento original, fracción y longitud recorrida. Si cae exactamente en un vértice, elegir representación canónica y documentada; el consumidor verifica la posición geométrica, sin exigir índices equivalentes de segmentos de longitud cero (éstos ya degeneran). Distancia sobre aristas por hypot y sumas compensadas; acotar búsquedas mediante prefijos, sin O(N²) sobre toda la cadena.
+
+Rasgos continuos por terna A=P(s-h), B=P(s), C=P(s+h): giro firmado atan2(cross,dot), longitudes de las tres cuerdas, déficit de cuerda (2h-|C-A|)/(2h), desviación firmada de B respecto a AC y curvatura de tres puntos 2cross/(|B-A||C-B||C-A|). Cuerda nula o denominador nulo => rasgo UNDEFINED con motivo, no cero inventado. Registrar también sumas de giros positivos/negativos en cada ventana y balance, contando vértices interiores con una convención única en la frontera. Esto permite investigar L/U/lenguas y zigzags oblicuos sin depender de ejes cardinales. Periodicidad, ajuste de círculos y clasificación persistente quedan para calibración posterior: no afirmar que estas cinco medidas ya los detectan todos.
+
+Reporte completo con exactamente todas las cadenas/vértices/ventanas, estados y procedencia; resumen de cobertura por escala y valores descriptivos, sin PASS/NATURAL/REPAIRED. Global MULTISCALE_FEATURES_DIAGNOSTIC_ONLY, calibration_ready=false, natural_positive_count=0. No ligar cadenas a fotografías por cercanía. No comparar conteos nuevos con11921giros crudos como si fueran la misma medida.
+
+## Consumidor y pruebas independientes [DESIGN]
+
+Módulo separado sin importar productor ni validadoresQ02A/Q17A. Releer bytes fijados y esquema; reconstruir cada ventana caminando aristas a partir de su vértice en ambas direcciones, diferente al prefijo/búsqueda del productor. Verificar cobertura completa, puntos/procedencia/estados y medidas. Concordancia numérica declarada por campo antes de código: posiciones y longitudes máximo32ULP del cálculo de referencia; ángulos/curvatura/desviación con error absoluto más relativo especificado y justificado contra fixtures, nunca una banda para decidir etiquetas. Si no se puede justificar una cota, el plan de código debe resolverla antes de ejecutar; no ajustarla tras ver el mapa.
+
+Oráculos literales: recta, L de brazos de longitud conocida, cuadrado cerrado con ventana sobre costura, curva poligonal racionalQ17A, U con cuerda nula y escalera oblicua. No asumir que un polígono inscrito tiene curvatura continua de círculo. Expectativas nuevas congeladas independientemente antes de consumidor. Probar giro/área algebraicos donde sean exactos, coordenadas interpoladas analíticas en segmentos3-4-5 y longitudes enteras. Caso fuera de extremos, ventana igual/justo menor que semiperímetro, degenerado y segmento casi nulo.
+
+Metamórficos: rotación90, traslación entera, reversión y cambio de índice inicial cerrado. Subdivisión colineal exacta conserva medidas en estaciones originales emparejadas, NO número de estaciones añadidas. Negativos: falta/cambio de ventana, costura omitida, estación desplazada, signo invertido, confundir h con cuerda, NPZ malformado/pin roto, bool como número, NaN, ID duplicado/omitido, estado humano o calibración promovidos. Validar el consumidor también con reportes co-mutados, no sólo contra su productor.
+
+## Calibración y reparación posteriores
+
+Unidad2 requiere discovery y plan propios: localizar un referente de contornos naturales independiente del generador/candidato, registrar fuente/licencia/transformación, escala y aceptación por dimensión. Chernarus u OSM son candidatos de investigación, NO positivos certificados por nombre. Los once sintéticos y un aspecto irregular no proporcionan ese referente. Sin él no hay umbral natural/artificial ni sensibilidad real. Antes de Q09/Q10, ligar casos humanos a geometría mediante evidencia de escena/pose, conservar restricciones de agua/extremos y ejecutar contraste compuestoQ03/Q05. Esto no pospone el trabajo: separa una medida verificable de una aceptación que hoy carece de referente.
+
+## Presupuesto y puertas
+
+Revisión de plan120s; autoría240s; review código180s; suite120s. Antes de censo real: contrato numérico completo, revisión adjudicada y positivos/negativos verdes. Una ejecución productor180s/1GiB y consumidor180s/1GiB, salidas exclusivas, sin reintentos internos. Medir cada proceso y verificar hashes antes/después. Fallo conserva parcial/recibo, no relaja límites. Publicar sólo herramientas propias/fixtures sintéticos/resumen y procedencia; NPZ/reporte completo privados. No modificar mapa, máscaras, etiquetas previas,47FAIL/21inciertos/607históricos ni promover Q01. Código nuevo y resultados sólo tras revisión, commit/push público de unidad validada.
+
+## Adjudicación y siguiente unidad acotada
+
+F1 aceptado:32ULP del resultado cero no sirve como cota para cálculos independientes. No se adopta automáticamente el1e-9m sugerido: depende de magnitudes/operaciones que aún no se han medido, y el margen10x de una discrepancia observada no es prueba de cota. Se requiere discovery numérico separado ANTES de autoría de rasgos. Leer sólo arrays fijados de entrada para obtener shapes/dtypes/bytes, número de estaciones, max|coordenada| y rango de longitudes/perímetros; contrastar con presupuestos. No recalcular clasificación ni giros Q02A. Preparar seis oráculos literales escalados y cálculos de referencia de mayor precisión (Decimal80 y80→100 como diagnóstico de convergencia, no certeza formal) para ventanas de recta/L/cuadrado/espiga/arco poligonal/escalera. Proponer cotas por dimensión y condicionamiento a partir de operaciones y escala; someter ese contrato a revisión antes de medir el mapa. Alcance del discovery: reporte NUMERIC_DISCOVERY_ONLY, sin umbrales de calidad ni cambio de mapa. Código delegado120s/review90s/suite60s y una captura30s/512MiB; no muestreos/reintentos internos. Esta revisión no aprueba todavía ninguna cota concreta.
+
+F2 aceptado: los fixtures Q17A son pequeños para h6..96. Crear NUEVOS oráculos literales escalados por entero, sin alterar Q17A; probar h1/2/3 en fixtures sólo como configuración de test y mantener producción6..96 explícita. Sustituir «U con cuerda nula» por espiga abierta(0,0),(6,0),(0,0); una U simple no tiene esa cuerda nula. Ningún positivo natural se deduce de ello.
+
+F3 aceptado: giros de vértices estrictamente interiores s-h<s_v<s+h; B incluido, fronteras excluidas. Si estación coincide exactamente con vértice usar segmento que empieza allí/fracción0, modular en cerrada; extremo final abierto se representa por último segmento/fracción1. El consumidor compara geometría y procedencia válida con esta convención.
+
+F4 parcialmente aceptado: estimar filas/bytes y emitir NDJSON por cadena/vértice/escala, resumen cerrado con hash, evitando retener JSON anidado entero. Se rechaza que mmap_mode en np.load haga mmap del contenido comprimido NPZ: fuente local `C:/Users/guill/Documents/Codex/2026-09-29/vamos/work/gis-env/Lib/site-packages/numpy/lib/_npyio_impl.py:239-262` abre miembro ZIP y llama format.read_array. Leer cabeceras ZIP/NPY acotadas, validar tamaño declarado y después sólo los arrays requeridos, con allow_pickle=False. Los conteos guardados ya existen, pero comprobar dimensiones no repite el censo de giros.
+
+F5 aceptado: closure_mismatch, short_segment y demás degeneraciones quedan DEGENERATE, sin ventanas, con cobertura explícita. Las abiertas insuficientes conservan estados por ventana. Reversión invierte signos de giro/desviación/curvatura; subdivisión sólo compara estaciones originales emparejadas.
+
+La hipótesis física/naturalidad queda NO_EVALUADA. La próxima unidad es el discovery numérico descrito, no un clasificador ni aceptación del mapa. El dictamen Fable se conserva literal en evidence/q02b-multiscale-plan-review-20261029.

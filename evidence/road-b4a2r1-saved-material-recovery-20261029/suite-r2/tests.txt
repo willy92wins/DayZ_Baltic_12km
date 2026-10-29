@@ -1,0 +1,42 @@
+test_failure_marker_consumed (test_road_material_recovery_ev112.T.test_failure_marker_consumed) ... ok
+test_golden_real_receipt_mandatory (test_road_material_recovery_ev112.T.test_golden_real_receipt_mandatory) ... ok
+test_hash_before_parse_duplicate_and_wrong_pin (test_road_material_recovery_ev112.T.test_hash_before_parse_duplicate_and_wrong_pin) ... ok
+test_marker_inside_output_rejected (test_road_material_recovery_ev112.T.test_marker_inside_output_rejected) ... ok
+test_no_rss_self_check_api (test_road_material_recovery_ev112.T.test_no_rss_self_check_api) ... ok
+test_output_sentinel_byteidentical_zero_calls_marker_consumed (test_road_material_recovery_ev112.T.test_output_sentinel_byteidentical_zero_calls_marker_consumed) ... ok
+test_receipt_negatives_literal (test_road_material_recovery_ev112.T.test_receipt_negatives_literal) ... ok
+test_recover_success_one_call_and_final_consumer (test_road_material_recovery_ev112.T.test_recover_success_one_call_and_final_consumer) ... ok
+test_rejected_final_report_preserved (test_road_material_recovery_ev112.T.test_rejected_final_report_preserved) ... ok
+test_runner_return_mismatch (test_road_material_recovery_ev112.T.test_runner_return_mismatch) ... ok
+test_selected_duplicate_and_asset_duplicate_repinned (test_road_material_recovery_ev112.T.test_selected_duplicate_and_asset_duplicate_repinned) ... ok
+test_snapshot_byte_change_tool_change_missing_text (test_road_material_recovery_ev112.T.test_snapshot_byte_change_tool_change_missing_text) ... ok
+test_tables_malformed_repinned (test_road_material_recovery_ev112.T.test_tables_malformed_repinned) ... ok
+test_verify_recovery_corruptions (test_road_material_recovery_ev112.T.test_verify_recovery_corruptions) ... ERROR
+test_verify_recovery_stale_text2_mocked_mtime (test_road_material_recovery_ev112.T.test_verify_recovery_stale_text2_mocked_mtime) ... ok
+test_verify_snapshot_no_runner (test_road_material_recovery_ev112.T.test_verify_snapshot_no_runner) ... ok
+
+======================================================================
+ERROR: test_verify_recovery_corruptions (test_road_material_recovery_ev112.T.test_verify_recovery_corruptions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_recovery_ev112.py", line 171, in test_verify_recovery_corruptions
+    b=fresh('c2'); rep=json.loads((b.output/'report.json').read_text()); rep['texts'][1]['path']=rep['texts'][0]['path']; (b.output/'report.json').write_bytes(js(rep))
+      ^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tests\test_road_material_recovery_ev112.py", line 166, in fresh
+    b=Builder(self.b.tmp/name); calls=[]; R.recover(str(b.contract),b.hash,runner_call=b.fake(calls)); return b
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\recover_road_material_samples_ev112.py", line 78, in recover
+    validated=V.verify_recovery(contract_path,sha)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\verify_road_material_snapshot_ev112.py", line 269, in verify_recovery
+    if not (float(meta['started'])<=float(mt)<=float(meta['finished'])): _err('text2_stale_or_future')
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\verify_road_material_snapshot_ev112.py", line 14, in _err
+    def _err(m): raise SnapshotError(m)
+                 ^^^^^^^^^^^^^^^^^^^^^^
+verify_road_material_snapshot_ev112.SnapshotError: text2_stale_or_future
+
+----------------------------------------------------------------------
+Ran 16 tests in 4.124s
+
+FAILED (errors=1)
