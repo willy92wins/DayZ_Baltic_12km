@@ -1,3 +1,35 @@
+# Q03B5 verificado; Q03B6 revisado, publicación en cierre
+
+Q03B5 VERIFIED_META_COVERAGE_DIAGNOSTIC:539009 filas, model5434/5437/source5440/5443, ambos faltan sólo216/226/238 sin inesperados. Tres stones_leaf_group con969 instancias conservadas, no objetos físicamente ausentes. Productor3.234s/162631680B; consumidor propio por offsets1.890s/173985792B. Report13e24bf88d5de1c069d89f8c96b6c93bd67bb80e28bdf9776dd4e9e19247c11b, contrato8b5b2476baf8963304e2ed285b161db39ea936828384184dfddb6bb964b5a1cc.9tests privadosR2 3.328s y públicos9.703sPASS sin skips; suiteR1 nueve errores por raíz temporal ausente preservada. Museo120.203s sin dictamen, Fable113.859s SOUND-with-fixes adjudicado. Corrección de código completada antesdeadline; recibo tardío120.611s conservado within_budget=false; no ampliar código por ese recibo. Contexto compartido, postimagen no rerevisada externamente. No causa global ni reparación, Q03B4e967 intactos.
+
+Toda autoría/corrección/review/recuperación/suite/producción/consumo/freezeQ03B5 consumida. No repetir. Sin operación propia/run/lease; identidad cierre en evidence/meta-coverage-q03b5-20261029/owned-processes-closed.json. Publicación nueva publish-q03b5-q03b6-20261029/result.json: seguir estado si pendiente, no relanzar publicador/add/commit sin inspeccionar.
+
+Siguiente: plans/quality-council-q03b6-covered-domain-index-20261029.md REVISADO_PARA_CONTRATO_Y_DELTA_ACOTADO, MuseWonder1.0 nativo62.734s adjudicado. Todavía sin contrato/código/captura. Nueva partición exacta por roles con testigos metadata vacíos preregistrados216/226/238; no subset ni ignore-list. Preservar969 poses/instancias y marcar Visual ordinaria NOT_SAVED. sections_index auxiliar es posición JSON, no ID distinto: usar model_index/nombre/catalog_row_position/section_row_position. F1 sobre proxy del revisor parcialmente refutado; añadir guarda defensiva de source_model/rutas. Visual mínimo único, material sólo allí y Roadway exacto ausente/vacío; negativos y positivos frontera en plan. Codexexecutor600s contrato/oráculos+delta sobre snapshotsQ03B4R1 sin mutarlos; review180/suite120, corrección180 y recuperación180. Captura204NPZ120s512MiB+consumer120s512MiB sólo tras gates,32MiB. No otra review de este plan ni rerunQ03B4. Resultado futuro sólo índice, Q03C/Q05 deben medir luego; nueve humanos0resueltos,C1NOT_REVIEWED. No tocarP:/DayZ/mapa. Carreteras/ángulos/referentes siguen abiertos.
+
+# Q03B5 recuperación única activa
+
+Muse120.203s sin dictamen; seguir Fable120s q03b5-code-review-recovery-20261029 sobre mismos archivos.7tests privadosPASS1.719s no autorizan NPZ. Autor296.138s<300, sin corrección consumida todavía. No duplicar; segunda noentrega retira ruta, sin aprobación inventada.
+
+# Q03B5 código entregado; revisión y suiteR0 activas
+
+Seguir q03b5-code-review-20261029 y q03b5-private-suite-r0-20261029 sin duplicar. Autor local entregado dentro300s; contratos/oráculos externos previos, snapshotR0. Ningún NPZ histórico aún, no run/lease/mapa.
+
+# Q03B5 autor local300s activo
+
+Contrato/oráculos congelados antes de código en q03b5-local-author-20261029; start.json fija deadline. Seguir sin duplicar. Code review120/suite60 antes de cualquier NPZ real. No run/lease/mapa.
+
+# Q03B4 publicado; siguiente testigo Q03B5
+
+Checkpoint Q03B4 publicado 7e51791fd21684f8760079197d54bea23b55ea93:65archivos,13tests privados5.453s/públicos6.250s PASS sin skips, remoto main verificado limpio. Recibo publish-q03b4-q03b5-20261029/result.json.30identidades observadas propias retiradas; sin operación/run/lease. Autores,corrección,reviews/recuperación,suites,captura,freeze,publicador/add/commit/push CONSUMIDOS: no repetir.
+
+Leer evidence/semantic-scene-q03b4-20261029. Productor real único4.907s/153653248B REJECTED:COVERAGE en model_set==nonveg and source_set==set(models), línea129. El fallo no guardó qué mitad ni IDs distintos; no inventar causa ni ampliar igualdad. Se abrió NPZ prototipos4c976c5f, no se completó el índice204NPZ. Consumer real NO lanzó. Ningún mapa modificado. Trece tests sintéticos verdes no corrigen el rechazo real. source/R0 y source/R1 son snapshots inertes, NO entrypoints promovidos a tools/tests.
+
+Autor local853.932s<900; Muse240.141s sin dictamen, recuperación Fable5.1 nativo169.656s NEEDS-WORK adjudicada. R0suite8PASS2FAIL1ERROR: cat sombreado destruía catálogo dict en consumidor. Corrección116.832s y suiteR1 resuelven sombra y complementan N01 con bytes reales, N09 permutación/caps, N05/N11/N15/N18 y comparación de informe completo literal. Contrato9deba0d9/oráculo5afd45bd/e967 intactos; extensión literal eb7f6d62 fijada antes de corrección. N11SCHEMA es descriptor; miembroextra conserva MEMBER_SCHEMA, sin repinar paraPASS. Integrador revisó delta final con contexto compartido, no otra revisiónexterna de postimagen ni consenso.
+
+Siguiente ejecutable: plans/quality-council-q03b5-meta-coverage-witness-20261029.md REVISADO_PARA_CONTRATO_Y_AUTORIA_DIAGNOSTICA, MuseWonder1.0 nativo30.703s SOUND-with-fixes adjudicado en evidence/q03b5-meta-coverage-plan-review-20261029. TodavíaSIN contrato/oráculos/código/capturaQ03B5. Congelar oráculos por(ID,rol) y dos universos antes de executor local300s; code review120/suite60s256MiB; una corrección120 por repro cerrado y una recuperación120. Producción/consumidor UNA vez60s256MiB cadauno sólo tras gates, salida4MiB completa o rechazo.
+
+Sólo NPZprototipos/catalogo/model-sections fijados. Comparar model contra catálogo no vegetación y source_model contra índices de model-sections separadamente, ambas direcciones. Estados OBSERVED_SAVED/NO_META_ROWS_IN_ROLE/UNEXPECTED_META_ID; causaNOT_ESTABLISHED. Desgloses(kind,lod,proxy) y dosroles; proxy-only no se presume raíz. Consumidor propio por offsetsMETA35 a partir de su propia carga/hash; no usa agrupación/np.unique del productor. I/O NumPy/zlib compartidos declarados. Coste de vertices impuesto porSession cuenta en256MiB pero no autoriza interpretar geometría. Conservar Q03B4rechazado y e967; no bajarigualdad a subconjunto. Si procede cambio de contrato, propuesta propia después de testigos. No repetir Q03B4 ni revisiónQ03B5. Q03C/Q05 esperan índice válido; carreteras/ángulos/referentes y nueve rechazos siguen abiertos.
+
 # Q03B4 cerrado con rechazo real; Q03B5 revisado
 
 Q03B4 REJECTED:COVERAGE tras productor real4.907s/153653248B. Falló la conjunción model_set==nonveg y source_set==set(models); no se guardaron diferencias, no atribuir cuál mitad ni causa. Consumer real no lanzado.13tests privados5.453s/públicos6.250s PASS sin skips; snapshots R0/R1 inertes en evidence/semantic-scene-q03b4-20261029, nada promovido a tools/tests. Autor853.932s, corrección116.832s; Muse240.141s sin dictamen y recuperación Fable169.656s NEEDS-WORK adjudicada. Postimagen final revisada sólo por integrador con contexto compartido. Contrato9deba0d9/oráculo5afd45bd/e967 intactos. 30identidades propias observadas retiradas; sin operación/run/lease/mapa.

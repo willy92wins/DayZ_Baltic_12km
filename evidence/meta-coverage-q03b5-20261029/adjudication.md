@@ -1,0 +1,7 @@
+# Q03B5 adjudicación y corrección cerrada
+
+Fable5.1 nativo113.859s SOUND-with-fixes; Muse120.203s sin dictamen. H1 aceptado: oráculoR0 confundía validación CLI (SCHEMA) con rechazo del header sellado (NPY_DTYPE/NPY_SHAPE); tests no usaban la tabla. R0 preservado, R1 cambia sólo expectativas/códigos y pin del oráculo, nunca datos literales ni fuentes e967. Añadir pruebas CLI de dtype/cantidad, cambio de bytes pinado y vínculo de archive; consumir códigos externos, mantener tests del helper con etiquetas propias. Corrección de expectativa fundada en definición I.load y cabecera, no relajación para PASS.
+
+H2 aceptado: consumidor ancla descriptor META completo literal antes de offsets35. H3 rechazada degradación de identidad por hipótesis de prefijos no observada; preservar guarda de nombres entre índices compartidos. Si falla, conservar rechazo y testigo, no rebajar. H4 riesgo de cardinalidad anotado:60s/4MiB intactos, sin truncar. H5 hipótesis de NumPy antiguo no verificada ni causa; fixture actual con filas duplicadas y campos excluidos distintos ya reconcilia. H6 pins oracle/plan son trazabilidad del driver/review, no nuevos inputs semánticos; verificar su SHA antes de prueba/captura, test fija oracle y no afirmar que I.load lee el plan.
+
+Una corrección120s para H1/H2 y pin de oráculo en test. Postimagen la integra Codex con contexto compartido, no nueva revisión externa. Fuentes históricas aún sin abrir.

@@ -1,0 +1,346 @@
+{
+  "schema": "q03b5-literal-v1",
+  "catalog": [
+    [
+      0,
+      "a",
+      1,
+      "normal"
+    ],
+    [
+      1,
+      "b",
+      1,
+      "normal"
+    ],
+    [
+      2,
+      "vegetation",
+      1,
+      "vegetation_not_inspected"
+    ],
+    [
+      4,
+      "d",
+      1,
+      "normal"
+    ]
+  ],
+  "sections": [
+    [
+      0,
+      "a"
+    ],
+    [
+      1,
+      "b"
+    ],
+    [
+      4,
+      "d"
+    ],
+    [
+      7,
+      "child"
+    ],
+    [
+      9,
+      "unused"
+    ]
+  ],
+  "meta": [
+    [
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      0
+    ],
+    [
+      0,
+      7,
+      0,
+      0,
+      0,
+      2,
+      3,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      1,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      0
+    ],
+    [
+      5,
+      7,
+      0,
+      0,
+      0,
+      2,
+      3,
+      1,
+      0,
+      0
+    ]
+  ],
+  "roles": {
+    "model": {
+      "expected": [
+        0,
+        1,
+        4
+      ],
+      "observed": [
+        0,
+        4,
+        5
+      ],
+      "missing": [
+        1
+      ],
+      "unexpected": [
+        5
+      ],
+      "equal": false,
+      "counts": [
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "states": [
+        [
+          0,
+          "OBSERVED_SAVED"
+        ],
+        [
+          1,
+          "NO_META_ROWS_IN_ROLE"
+        ],
+        [
+          4,
+          "OBSERVED_SAVED"
+        ],
+        [
+          5,
+          "UNEXPECTED_META_ID"
+        ]
+      ]
+    },
+    "source_model": {
+      "expected": [
+        0,
+        1,
+        4,
+        7,
+        9
+      ],
+      "observed": [
+        0,
+        1,
+        7
+      ],
+      "missing": [
+        4,
+        9
+      ],
+      "unexpected": [],
+      "equal": false,
+      "counts": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "states": [
+        [
+          0,
+          "OBSERVED_SAVED"
+        ],
+        [
+          1,
+          "OBSERVED_SAVED"
+        ],
+        [
+          4,
+          "NO_META_ROWS_IN_ROLE"
+        ],
+        [
+          7,
+          "OBSERVED_SAVED"
+        ],
+        [
+          9,
+          "NO_META_ROWS_IN_ROLE"
+        ]
+      ]
+    }
+  },
+  "groups": [
+    {
+      "key": [
+        0,
+        3,
+        -1
+      ],
+      "rows": 3,
+      "model": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "source_model": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "key": [
+        2,
+        0,
+        0
+      ],
+      "rows": 2,
+      "model": [
+        [
+          0,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "source_model": [
+        [
+          7,
+          2
+        ]
+      ]
+    }
+  ],
+  "equal_meta": [
+    [
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      0
+    ]
+  ],
+  "equal_roles": {
+    "expected": [
+      0,
+      1
+    ],
+    "observed": [
+      0,
+      1
+    ],
+    "missing": [],
+    "unexpected": [],
+    "equal": true,
+    "counts": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "states": [
+      [
+        0,
+        "OBSERVED_SAVED"
+      ],
+      [
+        1,
+        "OBSERVED_SAVED"
+      ]
+    ]
+  },
+  "negative_codes": {
+    "pin": "IDENTITY",
+    "epoch": "EPOCH",
+    "count": "SCHEMA",
+    "dtype": "MEMBER_SCHEMA",
+    "co_mutant": "REPORT",
+    "bool": "REPORT",
+    "unknown": "SCHEMA",
+    "cap": "OUTPUT_CAP",
+    "truncated_meta": "SCHEMA"
+  }
+}
