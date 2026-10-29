@@ -1,0 +1,138 @@
+{
+  "status": "INCONCLUSIVE_DIAGNOSTIC",
+  "contract_complete": true,
+  "identity_bound": true,
+  "rows": 270,
+  "rays": 1080,
+  "water_groups": 270,
+  "original_fail_points": 47,
+  "original_uncertain_points": 21,
+  "coverage": {
+    "ground": {
+      "PASS": 30
+    },
+    "roadway": {
+      "PASS": 30
+    },
+    "water": {
+      "PASS": 27,
+      "FAIL": 3
+    },
+    "rv_high": {
+      "FAIL": 15,
+      "PASS": 15
+    },
+    "rv_low": {
+      "PASS": 24,
+      "FAIL": 6
+    },
+    "bullet_high": {
+      "INCONCLUSIVE": 30
+    },
+    "bullet_low": {
+      "INCONCLUSIVE": 30
+    }
+  },
+  "adapter": {
+    "normalized_text_sha256": "9985b3e4de2d913bf96e5413433e7749bc01a4355f358e359d51cfa90fadf31b",
+    "adapted_sha256": "d50aad192df66a208a2a3554a9a4c1a521f26a825048f6916e1b63ef3662cf7c",
+    "transformation": "Validated B3G header, removed exactly one W immediately after every Q, replaced header by fixed B2 syntax header; no other record transformed.",
+    "raw_file_sha256": "f01e39e9769252a333094f65b288bfdff2a932554c501ccc9e1a1d9d71d2ca7b"
+  },
+  "limits": [
+    "Channel states compare only the frozen product contract; no independent water design reference.",
+    "Offsets have no inherited central water/road/bed expectations.",
+    "No pose or geometry match inferred from proximity; no empty hit list identifies terrain.",
+    "No native/global/visual/driving/RAM acceptance. Fresh Bullet calibration remains required."
+  ],
+  "run_id": "604b6c47-b7af-4ab0-b6cb-3ebc0e7f06c3",
+  "arm": "control",
+  "deployment_sha256": "b5bdea43d8998fb5deec314c6761572a8b04fe1a3f716f024527942496077b58",
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\host-identity.json": "2b41c32a3bb80d4a65fb33cd543847bbbc484ed2d4274906185cc5c35e67934b",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\host-after.json": "2b41c32a3bb80d4a65fb33cd543847bbbc484ed2d4274906185cc5c35e67934b",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\mcp-identity.json": "a034fc4b30ef88ee75cfc15810be10dc825b1e58d7743d4ae257fd5d2b93a24e",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\log-capture.json": "ca163bbdcccd2e0172fcc6f7159374d2df6e3339c6113a745d7dedc5b1988fc7",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\cleanup.json": "50de10451108730195a3793efb2423d8a0894d79a24093d410d907248ff34641",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\capture-window.json": "025f30f97fbbc5bba12376c30754536aa8d7e7a1ba47399e539ff539f46273d9",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\script-at-capture.json": "bcc54c66ac7c456be34e17f91729d30f16985c15f99fab11d7453363269f065d",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\script-before.json": "527b77ebc905ab008ce4e7bddb14958ea80b0afd1ca27135f214b657d600b434",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\script-before.log": "f5760f2668bd9f76959cab6ee79277891b7ec093a421185f5d9d60421600f0c1",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\script-at-capture.log": "f5760f2668bd9f76959cab6ee79277891b7ec093a421185f5d9d60421600f0c1",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\script-before-diagnostic.json": "34d5b993d912d9780d11e93796c4eeafa496be69698fc8efbb84d4c400d58ecb",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\script-at-capture-diagnostic.json": "34d5b993d912d9780d11e93796c4eeafa496be69698fc8efbb84d4c400d58ecb",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\native-first.json": "2ac0f7b213ed08328e76f7048b3883013b2455125073c5c98231e766e1a2292d",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\native-snapshots.json": "bb9f673257d532bef6f77192335c64a4cb218650033e9a0eb96f91b95e8c0d66",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\native-second.log": "f01e39e9769252a333094f65b288bfdff2a932554c501ccc9e1a1d9d71d2ca7b",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\launch.json": "2849feb4b74c0211288485696c4bdcbbc21e5db2c2d5038a98916fcad659ab12",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\native.log": "f01e39e9769252a333094f65b288bfdff2a932554c501ccc9e1a1d9d71d2ca7b",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\accepted.json": "7b9cf26fb30c3caf221231a4f5f3dce64535672017dce588ecfcaf67e1a8ccde",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\deployment.json": "b5bdea43d8998fb5deec314c6761572a8b04fe1a3f716f024527942496077b58",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\readiness.json": "098f7bcc4910729a478378aa8f2396a1626dbec4f6d119e0d3bff06f0f708727",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\adoption.json": "2c46fcb75309266963dc3c34d1a88cdd5e9c888dbbe7573f72911db0c9954d03",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\heartbeats.json": "e4f62c2843716fd45935b7487405fd848199c01960af790cbd364798f978a397",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\outcome.json": "206c9d31f8430c97437a68d1f3713ed1d0164ed47bc7331aee1e670313cb61b3",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\contact-b3g2-native-20261029\\control\\preflight.json": "64def4b32effe0fecf8ab9ec38bbac157125a7b77aa6948e6790797924064aa5"
+  },
+  "script_diagnostics": [
+    {
+      "known_diagnostics": [
+        {
+          "kind": "KNOWN_OPTIONAL_DEBUG_PROFILE_DUMPSTACK",
+          "timestamp": "01:57:19.940",
+          "line": 20,
+          "golden_sha256": "4759e501fd70653ba675ef6c320a13362a98493e40aa2c9812edbf004f18da63"
+        }
+      ],
+      "warnings": [
+        "01:57:09.369 SCRIPT    (W): @\"scripts/3_Game/human.c,17\": Missing script declaration for method 'HumanInputController.DisableCrouchCameraHorizontalRotation'",
+        "01:57:09.369 SCRIPT    (W): @\"scripts/3_Game/human.c,241\": Method not linked 'HumanInputController.DisableCrouchCameratHorizontalRotation'",
+        "01:57:09.369 SCRIPT    (W): @\"scripts/3_Game/human.c,240\": Method not linked 'HumanInputController.DisableErectCameratHorizontalRotation'",
+        "01:57:09.369 SCRIPT    (W): @\"scripts/3_Game/human.c,17\": Missing script declaration for method 'HumanInputController.DisableErectHorizontalRotation'",
+        "01:57:10.564 SCRIPT    (W): @\"scripts/4_World/entities/building/underground/entrance/land_underground_entrance.c,149\": 'UpdatePathgraphDoorByAnimationSourceName' is obsolete: 1.30: Use UpdatePathgraphEntityState",
+        "01:57:19.740  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpclientbridge.c,5612\": 'IsVitalCarBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+        "01:57:19.740  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpclientbridge.c,5612\": 'IsVitalTruckBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+        "01:57:19.811  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,2161\": 'ForceUpdateLightsStart' is obsolete: 1.30: no replacement",
+        "01:57:19.815  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,4376\": 'IsVitalCarBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+        "01:57:19.815  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,4376\": 'IsVitalTruckBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+        "01:57:19.946  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:139 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder",
+        "01:57:19.947  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:139 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json",
+        "01:57:19.948  SCRIPT    (W): scripts/5_Mission/mission/missionserver.c:104 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder",
+        "01:57:19.948  SCRIPT    (W): scripts/5_Mission/mission/missionserver.c:104 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json"
+      ],
+      "status": "NO_BLOCKING_SCRIPT_ERRORS"
+    },
+    {
+      "known_diagnostics": [
+        {
+          "kind": "KNOWN_OPTIONAL_DEBUG_PROFILE_DUMPSTACK",
+          "timestamp": "01:57:19.940",
+          "line": 20,
+          "golden_sha256": "4759e501fd70653ba675ef6c320a13362a98493e40aa2c9812edbf004f18da63"
+        }
+      ],
+      "warnings": [
+        "01:57:09.369 SCRIPT    (W): @\"scripts/3_Game/human.c,17\": Missing script declaration for method 'HumanInputController.DisableCrouchCameraHorizontalRotation'",
+        "01:57:09.369 SCRIPT    (W): @\"scripts/3_Game/human.c,241\": Method not linked 'HumanInputController.DisableCrouchCameratHorizontalRotation'",
+        "01:57:09.369 SCRIPT    (W): @\"scripts/3_Game/human.c,240\": Method not linked 'HumanInputController.DisableErectCameratHorizontalRotation'",
+        "01:57:09.369 SCRIPT    (W): @\"scripts/3_Game/human.c,17\": Missing script declaration for method 'HumanInputController.DisableErectHorizontalRotation'",
+        "01:57:10.564 SCRIPT    (W): @\"scripts/4_World/entities/building/underground/entrance/land_underground_entrance.c,149\": 'UpdatePathgraphDoorByAnimationSourceName' is obsolete: 1.30: Use UpdatePathgraphEntityState",
+        "01:57:19.740  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpclientbridge.c,5612\": 'IsVitalCarBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+        "01:57:19.740  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpclientbridge.c,5612\": 'IsVitalTruckBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+        "01:57:19.811  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,2161\": 'ForceUpdateLightsStart' is obsolete: 1.30: no replacement",
+        "01:57:19.815  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,4376\": 'IsVitalCarBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+        "01:57:19.815  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,4376\": 'IsVitalTruckBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+        "01:57:19.946  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:139 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder",
+        "01:57:19.947  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:139 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json",
+        "01:57:19.948  SCRIPT    (W): scripts/5_Mission/mission/missionserver.c:104 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder",
+        "01:57:19.948  SCRIPT    (W): scripts/5_Mission/mission/missionserver.c:104 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json"
+      ],
+      "status": "NO_BLOCKING_SCRIPT_ERRORS"
+    }
+  ],
+  "limitations": [
+    "Known optional debug-profile DumpStack retained when present; no global causal or visual acceptance."
+  ],
+  "projection": "Full details retained privately; raw native capture and complete comparison published.",
+  "full_result_sha256": "f1e91f2bd5acd524eb4b52a94eb37e4a2ba27c1df31f8581135c10a72dcc0507"
+}

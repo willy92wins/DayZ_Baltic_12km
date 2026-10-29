@@ -1,0 +1,27 @@
+{
+  "known_diagnostics": [
+    {
+      "kind": "KNOWN_OPTIONAL_DEBUG_PROFILE_DUMPSTACK",
+      "timestamp": "01:59:24.915",
+      "line": 20,
+      "golden_sha256": "4759e501fd70653ba675ef6c320a13362a98493e40aa2c9812edbf004f18da63"
+    }
+  ],
+  "warnings": [
+    "01:59:14.301 SCRIPT    (W): @\"scripts/3_Game/human.c,17\": Missing script declaration for method 'HumanInputController.DisableCrouchCameraHorizontalRotation'",
+    "01:59:14.301 SCRIPT    (W): @\"scripts/3_Game/human.c,241\": Method not linked 'HumanInputController.DisableCrouchCameratHorizontalRotation'",
+    "01:59:14.301 SCRIPT    (W): @\"scripts/3_Game/human.c,240\": Method not linked 'HumanInputController.DisableErectCameratHorizontalRotation'",
+    "01:59:14.301 SCRIPT    (W): @\"scripts/3_Game/human.c,17\": Missing script declaration for method 'HumanInputController.DisableErectHorizontalRotation'",
+    "01:59:15.672 SCRIPT    (W): @\"scripts/4_World/entities/building/underground/entrance/land_underground_entrance.c,149\": 'UpdatePathgraphDoorByAnimationSourceName' is obsolete: 1.30: Use UpdatePathgraphEntityState",
+    "01:59:24.702  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpclientbridge.c,5612\": 'IsVitalCarBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+    "01:59:24.702  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpclientbridge.c,5612\": 'IsVitalTruckBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+    "01:59:24.762  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,2161\": 'ForceUpdateLightsStart' is obsolete: 1.30: no replacement",
+    "01:59:24.766  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,4376\": 'IsVitalCarBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+    "01:59:24.766  SCRIPT    (W): @\"DayZ_MCP/scripts/5_Mission/mcpbridge.c,4376\": 'IsVitalTruckBattery' is obsolete: 1.30: use Transport.NeedElectricitySourceDevice",
+    "01:59:24.926  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:139 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] :: file not found in MISSION folder, your path is $mission:cfgundergroundtriggers.json Attempting DATA folder",
+    "01:59:24.926  SCRIPT    (W): scripts/3_Game/undergroundarealoader.c:139 | SpawnAllTriggerCarriers | [WARNING] :: [UndergroundAreaLoader GetData()] ::file not found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgundergroundtriggers.json",
+    "01:59:24.928  SCRIPT    (W): scripts/5_Mission/mission/missionserver.c:104 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is $mission:cfgeffectarea.json Attempting DATA folder",
+    "01:59:24.928  SCRIPT    (W): scripts/5_Mission/mission/missionserver.c:104 | OnMissionStart | [WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is dz/worlds/BalticTrial/ce/cfgeffectarea.json"
+  ],
+  "status": "NO_BLOCKING_SCRIPT_ERRORS"
+}

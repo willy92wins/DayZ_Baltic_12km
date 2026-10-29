@@ -1,0 +1,50 @@
+test_clean_and_warning (test_shared_log_b3g2_ev112.Classifier.test_clean_and_warning) ... ok
+test_compile (test_shared_log_b3g2_ev112.Classifier.test_compile) ... ok
+test_duplicate (test_shared_log_b3g2_ev112.Classifier.test_duplicate) ... ok
+test_each_frame_missing (test_shared_log_b3g2_ev112.Classifier.test_each_frame_missing) ... ok
+test_every_frame_mutation (test_shared_log_b3g2_ev112.Classifier.test_every_frame_mutation) ... ok
+test_extra_frame (test_shared_log_b3g2_ev112.Classifier.test_extra_frame) ... ok
+test_foreign_mission (test_shared_log_b3g2_ev112.Classifier.test_foreign_mission) ... ok
+test_golden_from_archive (test_shared_log_b3g2_ev112.Classifier.test_golden_from_archive) ... ok
+test_golden_tampering (test_shared_log_b3g2_ev112.Classifier.test_golden_tampering) ... ok
+test_timestamp_mismatch (test_shared_log_b3g2_ev112.Classifier.test_timestamp_mismatch) ... ok
+test_unknown_error (test_shared_log_b3g2_ev112.Classifier.test_unknown_error) ... ok
+test_compile_error_archived (test_shared_log_b3g2_ev112.Observer.test_compile_error_archived) ... ok
+test_complete_first_poll_consumer (test_shared_log_b3g2_ev112.Observer.test_complete_first_poll_consumer) ... ok
+test_consumer_ids (test_shared_log_b3g2_ev112.Observer.test_consumer_ids) ... ok
+test_consumer_reclassifies (test_shared_log_b3g2_ev112.Observer.test_consumer_reclassifies) ... ok
+test_expired (test_shared_log_b3g2_ev112.Observer.test_expired) ... ok
+test_growing_no_end (test_shared_log_b3g2_ev112.Observer.test_growing_no_end) ... ok
+test_known_diagnostic_preserved (test_shared_log_b3g2_ev112.Observer.test_known_diagnostic_preserved) ... ok
+test_missing_native (test_shared_log_b3g2_ev112.Observer.test_missing_native) ... ok
+test_old_header (test_shared_log_b3g2_ev112.Observer.test_old_header) ... ok
+test_pid_foreign (test_shared_log_b3g2_ev112.Observer.test_pid_foreign) ... ok
+test_reused_capture (test_shared_log_b3g2_ev112.Observer.test_reused_capture) ... ok
+test_second_snapshot_changed (test_shared_log_b3g2_ev112.Observer.test_second_snapshot_changed) ... ok
+test_append_between (test_shared_log_b3g2_ev112.SharedFiles.test_append_between) ... ok
+test_append_during (test_shared_log_b3g2_ev112.SharedFiles.test_append_during) ... ok
+test_empty (test_shared_log_b3g2_ev112.SharedFiles.test_empty) ... ok
+test_exclusive_writer (test_shared_log_b3g2_ev112.SharedFiles.test_exclusive_writer) ... ok
+test_oversize (test_shared_log_b3g2_ev112.SharedFiles.test_oversize) ... ok
+test_replace_between (test_shared_log_b3g2_ev112.SharedFiles.test_replace_between) ... ok
+test_shared_writer_remains_open (test_shared_log_b3g2_ev112.SharedFiles.test_shared_writer_remains_open) ... ERROR
+test_shrink_during (test_shared_log_b3g2_ev112.SharedFiles.test_shrink_during) ... ok
+test_stable (test_shared_log_b3g2_ev112.SharedFiles.test_stable) ... ok
+
+======================================================================
+ERROR: test_shared_writer_remains_open (test_shared_log_b3g2_ev112.SharedFiles.test_shared_writer_remains_open)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\test_shared_log_b3g2_ev112.py", line 56, in test_shared_writer_remains_open
+    raw,m=s.snapshot(self.p);self.assertEqual(raw,b'42');s.metadata(raw,m)
+                                                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\shared_log_b3g2_ev112.py", line 62, in metadata
+    require(utc(meta['created_utc'])<=utc(meta['last_write_utc'])<=utc(meta['checked_utc']),'snapshot_times')
+  File "C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\tools\quality\water_query_diag_b1_ev112.py", line 19, in require
+    raise ValueError(why)
+ValueError: snapshot_times
+
+----------------------------------------------------------------------
+Ran 32 tests in 1.335s
+
+FAILED (errors=1)

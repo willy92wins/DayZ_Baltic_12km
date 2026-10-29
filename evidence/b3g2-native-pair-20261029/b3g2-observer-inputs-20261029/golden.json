@@ -1,0 +1,56 @@
+{
+  "archive": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g1-failure-discovery-20261029\\script_2026-10-29_01-20-35.log",
+  "archived_mission": "C:\\temp\\DayZ_MCP_130_dev\\mpmissions\\BalticContactB3G1.BalticTrial",
+  "lines": [
+    "SCRIPT       : string s =    'Module PluginConfigDebugProfile is not Registred in PluginManager.c!'",
+    "SCRIPT    (E):    -- Stack trace --",
+    "SCRIPT    (E):    GetPlugin() scripts/4_World/plugins/pluginmanager.c : 341",
+    "SCRIPT    (E):    OnInit() scripts/4_World/plugins/pluginbase/pluginitemdiagnostic.c : 94",
+    "SCRIPT    (E):    PluginsInit() scripts/4_World/plugins/pluginmanager.c : 136",
+    "SCRIPT    (E):    PluginsInit() DayZ_MCP/scripts/4_World/mcp_diagplugins.c : 30",
+    "SCRIPT    (E):    PluginManagerInit() scripts/4_World/plugins/pluginmanager.c : 304",
+    "SCRIPT    (E):    MissionBase() scripts/5_Mission/mission/missionbase.c : 21",
+    "SCRIPT    (E):    CreateCustomMission() $MISSION\\init.c : 244",
+    "SCRIPT    (E):    -----------------"
+  ],
+  "sources": [
+    {
+      "package": "P:\\Mods\\@DayZ_MCP\\Addons\\DayZ_MCP.pbo",
+      "package_sha256": "7078c2e4ac2231976d7afd4a0b0ee677f9822c371f3faa927b2ea356212e600a",
+      "entry": "scripts/4_World/MCP_DiagPlugins.c",
+      "entry_sha256": "a37838f39764848f7e49f216a47e8275a5b3355e7a16d06cc6d8c1d508ea855b",
+      "local": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g1-failure-discovery-20261029\\MCP_DiagPlugins.c"
+    },
+    {
+      "package": "E:\\SteamLibrary\\steamapps\\common\\DayZ Exp\\dta\\scripts.pbo",
+      "package_sha256": "ff0ad7ee5297c75da74364569a830bc0223315c0131579a0c11a7875d64cb2e2",
+      "entry": "4_World/Plugins/PluginBase/PluginItemDiagnostic.c",
+      "entry_sha256": "18b1abea401e37ef8aa10a97ba92a673b82f2c15d911c8e89af4bcf112da25bd",
+      "local": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g1-failure-discovery-20261029\\PluginItemDiagnostic.c"
+    },
+    {
+      "package": "E:\\SteamLibrary\\steamapps\\common\\DayZ Exp\\dta\\scripts.pbo",
+      "package_sha256": "ff0ad7ee5297c75da74364569a830bc0223315c0131579a0c11a7875d64cb2e2",
+      "entry": "4_World/Plugins/PluginManager.c",
+      "entry_sha256": "86751f973210851ae7726461fa77d0f451813e167e37d7a97162ff9ad6f529c1",
+      "local": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g1-failure-discovery-20261029\\PluginManager.c"
+    },
+    {
+      "package": "E:\\SteamLibrary\\steamapps\\common\\DayZ Exp\\dta\\scripts.pbo",
+      "package_sha256": "ff0ad7ee5297c75da74364569a830bc0223315c0131579a0c11a7875d64cb2e2",
+      "entry": "5_Mission/mission/missionBase.c",
+      "entry_sha256": "c1a181d4ace00e018fe926f1238aa1249d3c4b75da91010849e43350ca2c2c41",
+      "local": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g2-observer-inputs-20261029\\MissionBase.c"
+    }
+  ],
+  "inputs": {
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g1-failure-discovery-20261029\\script_2026-10-29_01-20-35.log": "99df8cd592333b5978cb1ba870720592be1607b35099bbaea3f67d5fb2238c0b",
+    "C:\\Users\\guill\\OneDrive\\Documentos\\DayZ Projects\\DayZ_Baltic_12km_dev\\.claude\\worktrees\\handoff-astra-map-review-6d301c\\missions\\BalticContactB3G1.BalticTrial\\init.c": "cbb4f4a3b5049650b53443af3828995388572a5cd24e175295dad4dae095d236",
+    "P:\\Mods\\@DayZ_MCP\\Addons\\DayZ_MCP.pbo": "7078c2e4ac2231976d7afd4a0b0ee677f9822c371f3faa927b2ea356212e600a",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g1-failure-discovery-20261029\\MCP_DiagPlugins.c": "a37838f39764848f7e49f216a47e8275a5b3355e7a16d06cc6d8c1d508ea855b",
+    "E:\\SteamLibrary\\steamapps\\common\\DayZ Exp\\dta\\scripts.pbo": "ff0ad7ee5297c75da74364569a830bc0223315c0131579a0c11a7875d64cb2e2",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g1-failure-discovery-20261029\\PluginItemDiagnostic.c": "18b1abea401e37ef8aa10a97ba92a673b82f2c15d911c8e89af4bcf112da25bd",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g1-failure-discovery-20261029\\PluginManager.c": "86751f973210851ae7726461fa77d0f451813e167e37d7a97162ff9ad6f529c1",
+    "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\b3g2-observer-inputs-20261029\\MissionBase.c": "c1a181d4ace00e018fe926f1238aa1249d3c4b75da91010849e43350ca2c2c41"
+  }
+}

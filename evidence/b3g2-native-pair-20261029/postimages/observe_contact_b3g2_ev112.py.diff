@@ -1,0 +1,19 @@
+--- reviewed
++++ adjudicated
+@@ -24,6 +24,8 @@
+     require(norm(meta['source'])==norm(ntpath.join(host['profiles'],'baltic_contact_b3g.log')),'native_location')
+     require(utc(meta['last_write_utc'])>=utc(host['created_utc']),'stale_native')
+     lines=raw.decode('utf-8-sig').splitlines()
++    if not lines:return None
++    if len(lines)==1 and not raw.endswith(b'\n') and 'BALTIC_CONTACT_B3G;BalticTrial'.startswith(lines[0]):return None
+     require(lines and lines[0]=='BALTIC_CONTACT_B3G;BalticTrial','native_header')
+     require(not any(x.startswith('FAIL;') for x in lines),'producer_failed')
+     if lines[-1]!='END;270':return None
+@@ -32,6 +34,7 @@
+ 
+ def observe(root,ready):
+     root=Path(root);require(not (root/'native.log').exists(),'capture_consumed')
++    require(not (root/'script-failure.json').exists(),'script_failure_present')
+     host=read(root/'host-identity.json');dep=read(root/'deployment.json')
+     golden=s.load_golden(dep['golden']);require(s.digest(Path(dep['golden']).read_bytes())==dep['inputs'][dep['golden']],'golden_pin')
+     deadline=utc(ready)+timedelta(seconds=180)
