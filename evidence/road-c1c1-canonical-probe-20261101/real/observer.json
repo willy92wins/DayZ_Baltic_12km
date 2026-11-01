@@ -1,0 +1,56 @@
+{
+  "status": "INCONCLUSIVE_PROBE_DIAGNOSTIC",
+  "arms": {
+    "control": {
+      "status": "NOT_LAUNCHED"
+    },
+    "candidate": {
+      "status": "NOT_LAUNCHED"
+    }
+  },
+  "inputs": [
+    {
+      "kind": "SEALED_SOURCE",
+      "arm": "control",
+      "files": 6893,
+      "state": "MATCH"
+    },
+    {
+      "kind": "SEALED_SOURCE",
+      "arm": "candidate",
+      "files": 6893,
+      "state": "MATCH"
+    },
+    {
+      "kind": "WORK",
+      "arm": "control",
+      "files": 6893,
+      "state": "MATCH"
+    },
+    {
+      "kind": "WORK",
+      "arm": "candidate",
+      "files": 6893,
+      "state": "MATCH"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "LAUNCH_PREREQUISITES",
+      "error": "[WinError 3] El sistema no puede encontrar la ruta especificada: 'E:\\\\DayZ-Baltic-Build\\\\shape-repair-20261025\\\\road-c1c1-probe-20261101\\\\fixed\\\\include.lst'"
+    }
+  ],
+  "producer_status": "PROBE_STOPPED",
+  "producer_reason": "BUDGET",
+  "claims": {
+    "build_ready": false,
+    "decoder_verified": false,
+    "map_changed": false,
+    "native_acceptance": false
+  },
+  "decoder": "NOT_IMPLEMENTED",
+  "continuous_identity": false,
+  "report_sha256": "80a60369ad18f457e1a882497c22febd5c24a45ca5a1524f4ccc72dfbee9142d",
+  "contract_sha256": "3d7f5b6ad2630107dfa1b2643c1b0d0da3170c1a04192580809c17ad6f0cd075",
+  "seconds": 85.09400000000005
+}

@@ -1,0 +1,8 @@
+from pathlib import Path
+import json,hashlib
+R=Path('E:/DayZ-Baltic-Build/shape-repair-20261025');D=R/'road-c1c1-local-author-20261101';exe=Path('C:/Users/guill/AppData/Local/Programs/muse/muse-bin-1.4.14-R7309.1.exe')
+h=hashlib.file_digest(exe.open('rb'),'sha256').hexdigest();assert h=='20d18c426cc26e9e4b3cc07008ec07ec97e12e466a2be8cd2797b2e0e2018382'
+(D/'muse-route.json').write_text(json.dumps({'executable':str(exe),'bytes':exe.stat().st_size,'sha256':h,'version_file':'1.4.14-R7309.1','day':'2026-11-01','native_help_observed':True,'model_requested':'muse-wonder-1.0'},indent=2))
+with (D/'review-brief.txt').open('a',encoding='utf-8') as f:f.write('\nFIRST NEW SUITE RESULT, not green: 29 methods, 28 PASS 1 ERROR. Test_original_logger_before_launch lacks bytes in its synthetic executable pin (fixture bug); production manifest has bytes. Fix reserved until review.\n'+(R/'road-c1c1-suite-r0-20261101/stderr').read_text())
+cmd=[str(exe),'exec','--json','--model','muse-wonder-1.0','--contributor-mode','off','--reasoning-effort','high','--workspace',str(R/'council-expanded-20261029'),'--disable-write','--disable-shell','--disable-web-tools','--disable-reminders','--disable-request-user-input','--no-foreign-personal-context','--no-session-log','--max-model-steps','4','--prompt-file',str(D/'review-brief.txt')]
+(D/'review-config.json').write_text(json.dumps({'parallel':1,'jobs':[{'id':'code-review','command':cmd,'cwd':str(R/'council-expanded-20261029'),'out':str(R/'road-c1c1-code-review-20261101'),'seconds':180,'max_bytes':2147483648,'input_file':str(D/'review-brief.txt')}]},indent=2))

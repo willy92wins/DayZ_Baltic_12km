@@ -1,0 +1,156 @@
+"""Read only artifact and input observer; not a terrain decoder."""
+from pathlib import Path
+import argparse,hashlib,json,os,re,stat,sys,time,xml.etree.ElementTree as ET
+class Reject(Exception):pass
+def require(x,s):
+    if not x:raise Reject(s)
+def pathcheck(p):
+    p=Path(p)
+    while True:
+        s=p.lstat();require(not stat.S_ISLNK(s.st_mode) and not(getattr(s,'st_file_attributes',0)&1024),'REPARSE')
+        if p.parent==p:break
+        p=p.parent
+def fileid(s):return (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns)
+def checkfile(p,expected=None,cap=134217728,until=float('inf')):
+    p=Path(p);pathcheck(p);before=fileid(p.stat());require(before[2]<=cap,'SIZE');h=hashlib.sha256();size=0
+    with p.open('rb') as f:
+        require(fileid(os.fstat(f.fileno()))==before,'IDENTITY')
+        while True:
+            require(time.monotonic()<until,'BUDGET');b=f.read(min(524288,cap-size+1))
+            if not b:break
+            size+=len(b);require(size<=cap,'SIZE');h.update(b)
+        require(fileid(os.fstat(f.fileno()))==before,'IDENTITY')
+    pathcheck(p);require(fileid(p.stat())==before and size==before[2],'IDENTITY');digest=h.hexdigest()
+    if expected is not None:
+        require(isinstance(expected,dict) and type(expected.get('bytes')) is int and expected['bytes']>=0 and isinstance(expected.get('sha256'),str) and re.fullmatch('[0-9a-f]{64}',expected['sha256']) is not None,'PIN_SCHEMA');require((size,digest)==(expected['bytes'],expected['sha256']),'ARTIFACT_PIN')
+    return {'bytes':size,'sha256':digest,'mtime':before[3]/1e9}
+def readjson(p,pin):
+    r=checkfile(p,cap=33554432);require(r['sha256']==pin,'PIN');b=Path(p).read_bytes();require(hashlib.sha256(b).hexdigest()==pin,'PIN');return json.loads(b)
+def stage_check(base,expected,until):
+    base=Path(base);pathcheck(base);files=set();dirs=set()
+    for folder,subdirs,names in os.walk(base,followlinks=False):
+        for name in subdirs:pathcheck(Path(folder)/name);dirs.add((Path(folder)/name).relative_to(base).as_posix())
+        for name in names:
+            p=Path(folder)/name;rel=p.relative_to(base).as_posix();require(rel in expected,'EXTRA');size,digest=expected[rel];checkfile(p,{'bytes':size,'sha256':digest},size,until);files.add(rel)
+    require(files==set(expected),'MISSING');allowed=set()
+    for key in files:
+        p=Path(key).parent
+        while str(p)!='.':allowed.add(p.as_posix());p=p.parent
+    require(dirs==allowed,'EXTRA');return len(files)
+def canonical(c):
+    spec=c['canonical_preflight'];link=spec['alias'];p=Path(link['path']);a=p.lstat();require((a.st_dev,a.st_ino,getattr(a,'st_reparse_tag',0),os.readlink(p))==(link['dev'],link['ino'],link['tag'],link['target']),'ALIAS_CHANGED');require(p.resolve()==Path(spec['file']['path']).parent,'ALIAS_CHANGED')
+    for item in spec['ancestors']:
+        q=Path(item['path']);pathcheck(q);z=q.lstat();require((z.st_dev,z.st_ino,q.is_dir())==(item['dev'],item['ino'],item['is_dir']),'CANONICAL_IDENTITY')
+    checkfile(spec['file']['path'],spec['file'],16384);require(list(fileid(Path(spec['file']['path']).stat()))==spec['file']['identity'],'CANONICAL_IDENTITY')
+    for item in spec['ancestors']:
+        q=Path(item['path']);pathcheck(q);z=q.lstat();require((z.st_dev,z.st_ino)==(item['dev'],item['ino']),'CANONICAL_IDENTITY')
+    a=p.lstat();require((a.st_dev,a.st_ino,getattr(a,'st_reparse_tag',0),os.readlink(p))==(link['dev'],link['ino'],link['tag'],link['target']),'ALIAS_CHANGED')
+def process_tree(c,r):
+    rows=r['observed_processes'];byid={p['pid']:p for p in rows};root=r['root_pid'];require(root in byid and byid[root]['birth']==r['root_birth'],'PROCESS_PARENT')
+    for p in rows:
+        cursor=p;visited=set()
+        while cursor['pid']!=root:
+            require(cursor['pid'] not in visited,'PROCESS_PARENT');visited.add(cursor['pid']);parent=byid.get(cursor.get('parent_pid'));require(parent is not None and parent['birth']==cursor.get('parent_birth') and parent['birth']<=cursor['birth'],'PROCESS_PARENT');cursor=parent
+        h=c.get('os_helper')
+        if h and p['image_path_sha256']==h['sha256']:
+            require(p.get('image_identity')==h['identity'] and list(fileid(Path(h['path']).stat()))==h['identity'],'OS_HELPER_IDENTITY');args=p['argv'];require(p['pid']!=root and p['exe'].casefold()==h['path'].casefold(),'PROCESS_PARENT');require(len(args)==2 and args[0].replace('\\??\\','',1).casefold()==h['path'].casefold() and re.fullmatch('0x[0-9a-fA-F]+',args[1]) is not None,'OS_HELPER_ARGV')
+def phase_state(c,r,name):
+    folder=Path(c['root'])/'phases';a=folder/(name+'.started.json');b=folder/(name+'.closed.json');entry=r['phases'].get(name)
+    if not a.exists() and not b.exists() and entry is None:return 'NOT_LAUNCHED'
+    require(a.is_file() and b.is_file() and entry is not None and entry['state']=='CLOSED','INCOMPLETE_PHASE')
+    for p in [a,b]:checkfile(p,cap=33554432)
+    start=json.loads(a.read_bytes());end=json.loads(b.read_bytes());require(start==entry['start'] and end==entry and start['state']=='STARTED' and start['phase']==name,'PHASE_BINDING')
+    receipt=entry if name=='preflight' else entry['receipt'];require(start.get('command')==receipt.get('command') and type(start.get('time')) in (int,float) and start['time']<=receipt['started'],'PHASE_BINDING')
+    if name!='preflight':require(start.get('logger_sha256')==entry.get('logger_sha256')==hashlib.sha256(phase_logger(c,name)).hexdigest(),'LOGGER_DELTA')
+    return 'CLOSED'
+def verify_invocation(c,r,arm):
+    root=Path(c['root']);exe=root/'tools/AddonBuilder/AddonBuilder.exe';project=root/'work'/arm/'root';out=root/'output'/arm
+    if arm=='help':args=['-help','-toolsDirectory='+c['tool_root']]
+    else:args=[str(project/c['prefix']),str(out/'out'),'-prefix='+c['prefix'].replace('/','\\'),'-project='+str(project),'-temp='+str(out/'temp'),'-include='+str(root/'fixed/include.lst'),'-exclude='+str(root/'fixed/exclude.lst'),'-binarizeFullLogs','-toolsDirectory='+c['tool_root']]+['-'+k+'='+c['tools'][k]['path'] for k in ['binarize','cfgConvert','fileBank','dsSignFile']]
+    require(r['command']==[str(exe),*args] and r['cwd']==str(exe.parent),'ARG_BINDING')
+    roots=[p for p in r['observed_processes'] if p['exe'].lower()==str(exe).lower()];require(len(roots)==1 and roots[0]['argv']==r['command'] and roots[0]['pid']==r['root_pid'],'ARG_BINDING');process_tree(c,r)
+def phase_logger(c,phase):
+    row=next(x for x in c['tool_files'] if x['dest']=='logger.xml');checkfile(row['path'],row,67108864);raw=Path(row['path']).read_bytes();require(hashlib.sha256(raw).hexdigest()==row['sha256'],'LOGGER_DELTA')
+    if phase is None:return raw
+    original=ET.fromstring(raw);nodes=original.findall('./appender/file');require(len(nodes)==3,'LOGGER_DELTA');values=[n.attrib['value'].encode() for n in nodes];require(len(set(values))==3 and all(raw.count(v)==1 for v in values),'LOGGER_DELTA')
+    replacements={value:str(Path(c['root'])/'logs'/phase/name).encode() for value,name in zip(values,['AddonBuilder.rpt','AddonBuilderProcess.rpt','AddonBuilder.User.rpt'])}
+    expression=re.compile(b'|'.join(re.escape(v) for v in sorted(values,key=len,reverse=True)));candidate=expression.sub(lambda m:replacements[m.group()],raw);tree=ET.fromstring(candidate)
+    for n,value in zip(tree.findall('./appender/file'),values):n.attrib['value']=value.decode()
+    require(ET.tostring(tree)==ET.tostring(original),'LOGGER_DELTA');return candidate
+
+def portable(c,phase):
+    folder=Path(c['root'])/'tools/AddonBuilder'
+    for row in c['tool_files']:
+        if row['dest']!='logger.xml':checkfile(folder/row['dest'],row,67108864)
+        else:require(phase_logger(c,phase)==(folder/'logger.xml').read_bytes(),'LOGGER_DELTA')
+    for k in ['include','exclude']:checkfile(Path(c['root'])/'fixed'/(k+'.lst'),c[k],33554432)
+
+def receipt_limits(r,seconds,rss):
+    for k in ['seconds','peak_rss','observed_disk_peak']:require(type(r.get(k)) in (float,int) and r[k]>=0,'RECEIPT_CAP')
+    require(r['seconds']<=seconds+5 and r['peak_rss']<=rss and r['observed_disk_peak']<=2147483648,'RECEIPT_CAP')
+
+def preflight_check(c,r):
+    require(r['command']==[sys.executable,'-I','-X','utf8',c['preflight']['path']] and r['cwd']==c['root'],'ARG_BINDING');require(r['reason'] is None and r['rc']==0,'PREFLIGHT');receipt_limits(r,60,268435456);process_tree(c,r)
+    nodes={p['pid']:p for p in r['observed_processes']};require({str(k) for k in nodes}==set(r['identities']),'PROCESS_PARENT');root=nodes[r['root_pid']];require(root['exe'].casefold()==sys.executable.casefold() and root['argv']==r['command'],'ARG_BINDING')
+    for p in nodes.values():
+        require(r['identities'].get(str(p['pid']))==p['birth'] and r['started']<=p['birth']<=p['observed_at']<=r['finished'],'PROCESS_WINDOW');q=checkfile(p['exe'],cap=67108864);require(q['sha256']==p['image_path_sha256'] and list(fileid(Path(p['exe']).stat()))==p['image_identity'],'IMAGE_CHANGED')
+    # Preflight descendant images are observed/pinned to receipts, not a native-tool allowlist.
+
+def prerequisite_check(c,r,states):
+    require(all(states[x]=='CLOSED' for x in ['preflight','help','control','candidate']),'PREREQUISITE_INCOMPLETE');require(type(r.get('copy_seconds')) in (int,float) and 0<=r['copy_seconds']<=180 and type(r.get('seconds')) in (int,float) and 0<=r['seconds']<=930,'RECEIPT_CAP')
+    preflight_check(c,r['phases']['preflight'])
+    before=r.get('profile_before');after=r.get('profile_after');require(isinstance(before,list) and isinstance(after,list),'PROFILE_CHANGED')
+    require([(x['path'],x['bytes'],x['sha256']) for x in before]==[(x['path'],x['bytes'],x['sha256']) for x in after] and 'profile_after_error' not in r,'PROFILE_CHANGED')
+    for row in after:checkfile(row['path'],row,4194304)
+
+def arm_check(c,phase,arm='control'):
+    r=phase['receipt'];receipt_limits(r,30 if arm=='help' else 300,536870912 if arm=='help' else 2147483648);verify_invocation(c,r,arm);require(r['reason'] is None and r['rc']==0,'PROCESS_REJECTED');allowed={v['sha256'] for k,v in c['tools'].items() if k in ('binarize','cfgConvert','fileBank')};allowed.add(next(v['sha256'] for v in c['tool_files'] if v['dest']=='AddonBuilder.exe'));allowed.update([c['os_helper']['sha256']] if c.get('os_helper') else [])
+    processes=r['observed_processes'];require({str(p['pid']) for p in processes}==set(r['identities']),'PROBE_INCONCLUSIVE_NOT_OBSERVED');require(all(p['image_path_sha256'] in allowed for p in processes),'UNEXPECTED_CHILD');require(arm=='help' or any(p['image_path_sha256']==c['tools']['binarize']['sha256'] for p in processes),'PROBE_INCONCLUSIVE_NOT_OBSERVED')
+    if arm=='help':require(all(p['image_path_sha256']in ({next(v['sha256'] for v in c['tool_files'] if v['dest']=='AddonBuilder.exe')}|({c['os_helper']['sha256']} if c.get('os_helper') else set())) for p in processes),'UNEXPECTED_CHILD')
+    for p in processes:
+        require(str(p['pid']) in r['identities'] and r['identities'][str(p['pid'])]==p['birth'] and r['started']<=p['birth']<=p['observed_at']<=r['finished'],'PROCESS_WINDOW')
+        q=checkfile(p['exe'],cap=67108864);require(q['sha256']==p['image_path_sha256'],'IMAGE_CHANGED')
+    marker=False;private=False;syntax=False;tools_flag=False;root=Path(c['root']);allowed_logs={root/'process'/arm/n for n in ['stdout','stderr']};logdir=root/'logs'/arm;actual_logs={p for p in logdir.iterdir() if p.is_file()} if logdir.exists() else set();require(len(actual_logs)<=62,'LOG_COUNT');require(all(re.fullmatch(r'AddonBuilder(?:Process|\.User)?\.rpt(?:\.\d+)?',p.name) for p in actual_logs),'LOG_BINDING');allowed_logs|=actual_logs
+    require({Path(log['path']) for log in phase['logs']}==allowed_logs,'LOG_BINDING')
+    for log in phase['logs']:
+        now=checkfile(log['path'],log,33554432);require(r['started']<=now['mtime']<=r['finished'],'LOG_WINDOW');private=private or Path(log['path']).suffix=='.rpt';text=Path(log['path']).read_text(encoding='utf-8',errors='replace');require(not re.search(r'\b(ERROR|FATAL)\b',text,re.I),'LOG_ERROR');marker=marker or ('Build Successful' in text and Path(log['path']) in actual_logs);syntax=syntax or 'SYNTAX' in text;tools_flag=tools_flag or '-toolsDirectory' in text
+    require(private,'LOG_NOT_OBSERVED')
+    if arm=='help':require(syntax and tools_flag,'NO_HELP');return {'status':'HELP_OBSERVED'}
+    require(marker,'NO_MARKER');require(type(phase.get('envelope_seconds')) in (int,float) and r['seconds']<=phase['envelope_seconds']<=300,'RECEIPT_CAP');require(len(phase['artifacts'])==1,'WRP_COUNT');a=phase['artifacts'][0]
+    wrps=list((root/'output'/arm/'temp').rglob('*.wrp'));require(len(wrps)==1 and Path(a['path'])==wrps[0],'WRP_COUNT')
+    q=checkfile(a['path'],a);require(r['started']<=q['mtime']<=r['finished'],'ARTIFACT_WINDOW')
+    with open(a['path'],'rb') as f:header=f.read(8)
+    require(len(header)==8 and header[:4]==b'OPRW','WRP_MAGIC');require(header.hex()==a['header_hex'],'ARTIFACT_PIN')
+    return {'path':a['path'],'sha256':q['sha256'],'bytes':q['bytes'],'raw_header_hex':header.hex(),'semantic_status':'NOT_EVALUATED'}
+def observe(c,r,until):
+    findings=[];arms={};input_rows=[];canonical(c);old=readjson(c['c1b']['path'],c['c1b']['sha256']);root=Path(c['root'])
+    for role,target in [('SEALED_SOURCE',Path(c['source_stage'])),('WORK',root/'work')]:
+        for arm in ['control','candidate']:
+            expected={x['dest']:(x['bytes'],x['sha256']) for x in old['files'] if x['scope'] in ('common',arm)}
+            try:input_rows.append({'kind':role,'arm':arm,'files':stage_check(target/arm/'root',expected,until),'state':'MATCH'})
+            except (Reject,OSError) as e:findings.append({'kind':role,'arm':arm,'error':str(e)});input_rows.append({'kind':role,'arm':arm,'state':'NOT_MATCHED'})
+    for item in [*c['tool_files'],*c['tools'].values(),c['include'],c['exclude'],c['preflight_original'],c['preflight'],c['c1b_consumer'],c['os_helper']]:
+        try:checkfile(item['path'],item,67108864,until)
+        except (Reject,OSError) as e:findings.append({'kind':'INSTALLED_OR_FIXED_INPUT','path':item['path'],'error':str(e)})
+    try:
+        states={a:phase_state(c,r,a) for a in ['preflight','help','control','candidate']};phase=next((a for a in ['candidate','control','help'] if states[a]!='NOT_LAUNCHED'),None);portable(c,phase)
+        if states['help']=='CLOSED':arm_check(c,r['phases']['help'],'help')
+        if states['preflight']=='CLOSED':preflight_check(c,r['phases']['preflight'])
+        if any(states[a]!='NOT_LAUNCHED' for a in ['control','candidate']):prerequisite_check(c,r,states)
+    except (Reject,OSError,KeyError) as e:findings.append({'kind':'LAUNCH_PREREQUISITES','error':str(e)})
+    for arm in ['control','candidate']:
+        if arm not in r['phases'] and not (root/'phases'/(arm+'.started.json')).exists():arms[arm]={'status':'NOT_LAUNCHED'};continue
+        if r['phases'].get(arm,{}).get('state')!='CLOSED':arms[arm]={'status':'INCOMPLETE_PHASE'};continue
+        try:arms[arm]={'status':'ARTIFACT_OBSERVED_ONLY','artifact':arm_check(c,r['phases'][arm],arm)}
+        except (Reject,OSError) as e:arms[arm]={'status':'NOT_VERIFIED','reason':str(e)}
+    complete=not findings and all(x['status']=='ARTIFACT_OBSERVED_ONLY' for x in arms.values())
+    require(not complete or r['status']=='COMPILE_PROBE_OBSERVED_ONLY','REPORT_STATUS')
+    return {'status':'VERIFIED_COMPILE_PROBE_ONLY' if complete else 'INCONCLUSIVE_PROBE_DIAGNOSTIC','arms':arms,'inputs':input_rows,'findings':findings,'producer_status':r['status'],'producer_reason':r.get('reason'),'claims':c['claims'],'decoder':'NOT_IMPLEMENTED','continuous_identity':False}
+def main():
+    p=argparse.ArgumentParser();p.add_argument('--contract',required=True);p.add_argument('--sha',required=True);p.add_argument('--report',required=True);p.add_argument('--report-sha',required=True);p.add_argument('--out',required=True);a=p.parse_args();start=time.monotonic()
+    try:
+        c=readjson(a.contract,a.sha);r=readjson(a.report,a.report_sha);require(r['contract_sha256']==a.sha,'BINDING');result=observe(c,r,start+120);result['report_sha256']=a.report_sha;result['contract_sha256']=a.sha;result['seconds']=time.monotonic()-start;b=json.dumps(result,indent=2).encode();require(len(b)<=33554432,'OUTPUT_CAP')
+        with open(a.out,'xb') as f:f.write(b);f.flush();os.fsync(f.fileno())
+        print(json.dumps({'status':result['status'],'arms':result['arms']}));return 0 if result['status'].startswith('VERIFIED') else 2
+    except (Reject,OSError) as e:print('REJECTED:'+str(e));return 3
+if __name__=='__main__':sys.exit(main())
