@@ -1,0 +1,749 @@
+Review the proposed RoadC1C2 plan, not previous consumed experiments. Independent Anthropic reviewer, Codex planner/integrator. Return SOUND / SOUND-with-fixes / NEEDS-WORK plus CONVERGE / NO CONVERGE and concrete blocking issues with source anchors and executable-counterexample design. One round,180seconds; <=1200words. No tools, writes, code execution, or council fan-out. No caller coordination to avoid overlapping findings.
+The user explicitly authorized continued procedural/map/roads work but forbids rerunning consumed scripts or silently weakening guards. This request is a NEW plan for separation of materialization/verification/native probe; it explicitly proposes new preparation budgets and new folders, not changing old receipts. Critique whether preserved checks and schema/state transitions are complete before authoring. Phase A alone is initial implementation; B remains conditional with its own contract/code review. Do not demand a new product permission already supplied. No map/P:/DayZ mutations. Check scope, APIs shown, budgets and all edge cases, measured vs inferred claims. Existing four stage trees matched despite BUDGET before fixed/include.lst; no Binarize failure. Need not speculate about OneDrive/cache/OS cause. The contract is future; missing pins must be required before code, not invented today.
+
+FILE C:\Users\guill\OneDrive\Documentos\DayZ Projects\DayZ_Baltic_12km_dev\.claude\worktrees\handoff-astra-map-review-6d301c\plans\ev112-road-c1c2-separated-preparation-20261101.md
+1: # RoadC1C2: preparación verificable separada de la sonda
+2: 
+3: Estado: BORRADOR_PENDIENTE_DE_REVISION. Consumidor: futura sonda RoadC1C2B del
+4: laboratorio0/3 de Q04, previa al pivote/huella del producto Q05/Q07 y P10/P11.
+5: Esta unidad inicial C1C2A prepara sus entradas completas; no lanza herramientas
+6: nativas. C1C1 consumido no se reanuda, modifica ni reclasifica.
+7: 
+8: ## 1. Evidencia y decisión
+9: 
+10: Anclas [EXACT], relativas al worktree salvo prefijo R:
+11: - `evidence/road-c1c1-canonical-probe-20261101/probe/report.json`: BUDGET antes
+12:   de preflight/help/brazos, source_checked70.299s y copy_complete173.549s desde
+13:   consumed.started. Intervalo103.250s. No fixed_inputs. No suboperación causal.
+14: - `.../real/observer.json`: cuatro árboles6893files MATCH; falta fixed/include.lst.
+15:   Observador110.313s de proceso,85.094s interno. No son dos mediciones independientes
+16:   del mismo reloj ni predicción del tiempo de una corrida futura.
+17: - `.../source-final/probe_road_compile_c1c1.py:214-229`: la fuente se coteja,
+18:   cada copia se lee y vuelve a leer, después herramientas/fijos y un recorrido
+19:   completo del árbol work, todo bajo un único180. No eliminar esa segunda lectura.
+20: - `.../source-final/observe_road_compile_c1c1.py:144-157`: caminante separado
+21:   de los cuatro árboles e inputs. Es lectura de bytes; no decoder de terreno.
+22: - R=`E:/DayZ-Baltic-Build/shape-repair-20261025`. ContratoC1B b7d33588,
+23:   reciboconsumidor4c52ddae; contratoC1C1 3d7f5b6a/report80a60369, completos en
+24:   evidencia. Fuente6892comunes+1WRP por brazo,480678967B la pareja.
+25: 
+26: Hipótesis verificable: separar la materialización y su consumo de la ejecución
+27: nativa permite comprobar PREPARED_PAIR sin que una ayuda/build consuma o dependa
+28: de una preparación inconclusa. No se afirma que separar acelere el disco.
+29: Se descartan: relanzar C1C1 con más tiempo; reutilizar sus work; saltar hashes o
+30: guardar sólo cuentas; atribuir el coste a OneDrive/cache/antivirus sin aislarlo.
+31: 
+32: Se propone un NUEVO presupuesto de preparación y nuevos outputs. Aumenta la
+33: asignación frente al intento180, se declara explícitamente y se revisa antes de
+34: autoría; nunca cambia el recibo consumido. Los tiempos guardados motivan separar
+35: los trabajos, no demuestran una cota suficiente ni garantizan éxito.
+36: 
+37: ## 2. Contrato externo antes del código [DESIGN]
+38: 
+39: Crear `road-c1c2a-preparation-inputs-20261101` y salida exclusiva
+40: `road-c1c2a-prepared-20261101`. Contrato fija referencias completas con SHA/bytes,
+41: no abre WRP/PBO/P3D semánticamente ni recensa modelos. Reutiliza manifiestoC1B,
+42: sus0/3WRP,configc054 y los12archivos de distribución AddonBuilder enumerados en
+43: C1C1; preserve PNG/PAA/RVMAT literalmente. No generar catálogo nuevo.
+44: 
+45: Fija contratoC1C1, su aprobación/código final y rechazo como evidencia inerte;
+46: también observador/report, originales9f8786a5/rawfix812e68aa, logger1d24d7d4,
+47: include/exclude, herramientas ya enumeradas, binconfig y OShelper. No rederivar
+48: el rawfix ni su SyntaxError. Revalidar anclas actuales exactas al congelar el
+49: nuevo contrato: diferencia bloquea, no repinar para que pase. Firma observada
+50: AuthenticodeValid/chainBuiltfalse conserva época; no nueva afirmación de cadena.
+51: Ancla canónica/alias/tag/target/devino y ancestros exactos; no atravesar alias
+52: en el lector regular ni tocar skills/P:. Cada hash identifica bytes leídos.
+53: 
+54: El contrato enumera DESTINOS: work/control/root, work/candidate/root,
+55: tools/AddonBuilder con12archivos, fixed/include.lst, fixed/exclude.lst y copia
+56: privada preflight-local.py. Metadatos fuera de esos subárboles. Debe definir
+57: todos los directorios permitidos, incluidos vacíos; no permitir extras bajo
+58: work/tools/fixed. No requerir sólo que los archivos esperados estén presentes.
+59: El runner Python y dependencias se fijan para atribuir la suite/procesos; no
+60: declarar procedencia upstream ni loaded-image attestation.
+61: 
+62: ## 3. Preparador y consumidor [DESIGN]
+63: 
+64: Dos módulos nuevos compactos en carpeta exclusiva, sin importar CLIs consumidas.
+65: Se permite extraer funciones revisadas a la nueva unidad, con delta explícito;
+66: no reescritura de lectores WRP ni nueva biblioteca genérica. Producer y consumer
+67: recorren por separado manifiestos/fuentes/destinos; bibliotecas estándar comunes.
+68: 
+69: Preparador crea marker exclusivo antes de operar. Una sola ejecución; marker
+70: consumido incluso en fallo. Tres fases ordenadas, cada STARTED fsync antes de
+71: operar y DONE sólo tras cierre de todas sus guardas:
+72: 1. SOURCE_CHECK120s: canónico/alias, recursos/herramientas fijados, consumidorC1B,
+73:    inventario exacto y hash de ambos brazos fuente. Perfil actual guardado.
+74: 2. COPY150s: cada archivo se abre con guardas path/handle y read+write+rehash
+75:    del destino, misma fuente/mismos bytes. Copia nueva, sin hardlinks/junctions
+76:    ni carpetas C1C/C1C1 reutilizadas. No cambia objetos ni geometría.
+77: 3. FIXED_AND_VERIFY90s: copias exactas tools/fixed, loggeroriginal, verificación
+78:    completa work, tools y fixed, fuentes de herramientas y anclas al cierre.
+79:    Conserva identidad path/handle dev/ino/size/mtime, reparse y controles reales
+80:    antes/después. Inventario completo y directorios exactos. No cache de hashes.
+81: 
+82: El sobre total del escritor es360s/512MiB; cada subfase aplica su propio techo
+83: y el restante global. No prestar tiempo entre subfases ni extender al fallar.
+84: Copias/rehashes/diarios están dentro de los sobres; timeout puede dejar sólo
+85: STARTED/prefijo y no promete informe final. Disco2GiB, ficheroWRP128MiB,
+86: otros inputs64MiB y JSON32MiB, según límites heredados; tablaC1B5.18MB permitida.
+87: 
+88: Un consumidor180s/256MiB relee su contrato externo por SHA y fuentes/destinos;
+89: comprueba cuatro árboles, tools/fixed, anclas, report+journals y perfiles.
+90: No usa como prueba un hash autodeclarado por productor. El SHA del report se
+91: congela fuera del productor antes de consumidor. Su lectura no ejecuta preflight,
+92: AddonBuilder ni Binarize. Salida máxima32MiB, hashes y listas de faltas completas
+93: o rechazo por cap; no truncar silenciosamente.
+94: 
+95: VERIFIED_PREPARED_PAIR_BYTES_ONLY exige todas las fases cerradas en orden,
+96: contrato exacto, inventarios exactos, bytes/identidades contrastados, ausencia de
+97: mutación observada y límites de recibos. Si falta cualquier puerta: INCONCLUSIVE
+98: o REJECTED con fase/path, sin autorización nativa. RSS de recibos es observado,
+99: no medición propia del consumidor. No demostrar vigilancia continua.
+100: 
+101: ## 4. Unión futura con sonda C1C2B [DESIGN, no ejecutable todavía]
+102: 
+103: La pareja C1C2A creada aquí será la ÚNICA carpeta sacrificable de una futura
+104: sonda, expresamente designada por su contratoB, si A tiene consumidor válido.
+105: Antes de mutarla, B debe comprobar nuevamente todas sus entradas por hash,
+106: anclas actuales, perfil y diariosA; un resultado histórico A no reemplaza esta
+107: validación fresca. B no hace otra copia ni muta C1B/C1C/C1C1. Registrar baseline
+108: A completo fuera del work sacrificable; sus bytes originales siguen enC1B.
+109: 
+110: Contrato/código/review propios de B después de medir A. MarkerB separado y
+111: exclusivo; no reanudar un intentoB. Empezar con comprobación fresca y preflight,
+112: ayuda aislada, control0 y candidato3 condicionado a TODOS los gates de control.
+113: Preservar argv/OShelper/parentPIDbirth, STARTED/fsync antes de logger/Popen,
+114: loggerfase exacto, errores/logs privados, Binarize observado, OPRWúnico y
+115: verificación de fuentes/work antes de siguiente brazo. No reducir estas puertas
+116: para aprovechar tiempo. PresupuestoB se fijará con datosA, no hereda360 ni180.
+117: No asignar ahora techo ejecutableB ni prometer que Binarize acepte control0.
+118: 
+119: No paquete aceptado/DayZ ni decoderOPRW0/3/terreno/materiales. MáximoB futuro
+120: COMPILE_PROBE_OBSERVED_ONLY; pivote/huella/oclusores/accesos requieren datos reales.
+121: 
+122: ## 5. Oráculos, revisión y cierre
+123: 
+124: Antes de código fijar literales externos: miniárbol0/3 (bytes, no generación del
+125: expected desde productor), directorio vacío permitido/prohibido, includevacío,
+126: loggeroriginal y fases. Negativos cerrados N01-N12: inputcambiado; archivoextra;
+127: directorioextra; reparse/aliascambiado; destinoexistente; fuente que cambia durante
+128: lectura; copia truncada; fixed omitido; DONE sinSTARTED/fasefueraorden; journal o
+129: report co-mutado; consumidorfalseverde ante hashdeclarado; timeout/cap sin READY.
+130: CLI a consumidor real con oráculos; no sólo funciones mockeadas. La copia final
+131: pública corre la misma suite y exactamente los mismos bytes de código/fixtures.
+132: 
+133: Asientos propuestos para A: Codex executor local600s explícito para contrato,
+134: oráculos y delta; revisión externa Anthropic180s (incluye contrato); suite120s
+135: 256MiB; una corrección180s por repro cerrado y una recuperación180s sólo si falta
+136: dictamen. No bajar a Qwen/OpenCode consumidos ni repetir council. Revisión de
+137: este plan180s, una ronda según gates-ledger; NO CONVERGE lo retira. Codex integra
+138: con contexto compartido declarado; revisor no se coordina para evitar solaparse.
+139: 
+140: Sólo después de contrato externo y código revisados/suite verde: UNA preparación
+141: 360s y UN consumo180s,540s total, sin retries internos. Esta revisión de plan no
+142: autoriza por sí sola materializar ni lanzar B. Fallo nuevo exige evidencia y
+143: decisión técnica, no permiso de producto ya concedido. C1C1 se conserva BUDGET.
+144: Q03C/Q05 históricos, ángulos y referentes no dependen de este stage. Nueve casos
+145: humanos siguen0resueltos, C1NOT_REVIEWED, mapa intacto.
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c1-local-author-20261101\contract.json
+1: {
+2:   "schema": "road-c1c1-probe.v1",
+3:   "root": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c1c1-probe-20261101",
+4:   "source_stage": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c1b-stage-20261029",
+5:   "c1b": {
+6:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c1b-local-author-20261029\\contract.json",
+7:     "sha256": "b7d335883f33629f8e9fc1f1b98018dadb2cb95541a33a643f6805a3bcb3d1c6",
+8:     "bytes": 5175166
+9:   },
+10:   "c1b_consumer": {
+11:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c1b-real-20261029\\consumer.json",
+12:     "sha256": "4c52ddae367fd53e860d8b3cf3a31bbada3e5510715f89ab85a4b7543c0586c2",
+13:     "bytes": 474
+14:   },
+15:   "tool_root": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools",
+16:   "tool_files": [
+17:     {
+18:       "dest": "AddonBuilder.exe",
+19:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\AddonBuilder.exe",
+20:       "sha256": "c113de9cab5e91d27ca0630e360db0a3eca190ec797e1dcad9cdfa70466b45e1",
+21:       "bytes": 1479600
+22:     },
+23:     {
+24:       "dest": "AddonBuilder.exe.config",
+25:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\AddonBuilder.exe.config",
+26:       "sha256": "e614fcb04d8e3429fab70466261f36383de3bfcd230a058bc196ac0727482bbe",
+27:       "bytes": 5211
+28:     },
+29:     {
+30:       "dest": "logger.xml",
+31:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\logger.xml",
+32:       "sha256": "1d24d7d4afb5249efbef3435195bbea4d1a2d6317292637c7f834b69f8470005",
+33:       "bytes": 2546
+34:     },
+35:     {
+36:       "dest": "NDesk.Options.dll",
+37:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\NDesk.Options.dll",
+38:       "sha256": "800c0ae0f2acc15be2c89528fe78cea7400799d44ff14cb5a1251371f20c8982",
+39:       "bytes": 22016
+40:     },
+41:     {
+42:       "dest": "log4net.dll",
+43:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\log4net.dll",
+44:       "sha256": "ce6ee4fdc783a5bf905f240178ac96eaeb7ede22ffe06a06ba179cd1a0442bd3",
+45:       "bytes": 301056
+46:     },
+47:     {
+48:       "dest": "Utils.dll",
+49:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\Utils.dll",
+50:       "sha256": "9203f56eec2ed93193a784ca4ae24b0a172b06f3b981eed14698a7db68548b02",
+51:       "bytes": 265728
+52:     },
+53:     {
+54:       "dest": "SteamLayerWrap.dll",
+55:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\SteamLayerWrap.dll",
+56:       "sha256": "d7ef37958e117e29162b0a76baaf4bb47fd0a42b00a0bf3925987ab4ce55e538",
+57:       "bytes": 540160
+58:     },
+59:     {
+60:       "dest": "SteamHelper.dll",
+61:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\SteamHelper.dll",
+62:       "sha256": "1a1737e02298a77c8228344558ecfc0820dc5addb7d054882997d2173b50a8b4",
+63:       "bytes": 40448
+64:     },
+65:     {
+66:       "dest": "SharedResources.dll",
+67:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\SharedResources.dll",
+68:       "sha256": "90b6d7962e2caa73c7877f051c858a4385660a1e026de306f303604f62f4ddf4",
+69:       "bytes": 170496
+70:     },
+71:     {
+72:       "dest": "steam_api.dll",
+73:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\steam_api.dll",
+74:       "sha256": "af17df745250d1814eaa274fff7b0faeb43381e6762e026267e5859778477abd",
+75:       "bytes": 225056
+76:     },
+77:     {
+78:       "dest": "steam_appid.txt",
+79:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\steam_appid.txt",
+80:       "sha256": "2e1839933e3283362a7c247f642ff9b78df06df4e3ae0004a3e2bc6abad9cd4c",
+81:       "bytes": 6
+82:     },
+83:     {
+84:       "dest": "en-US/SharedResources.resources.dll",
+85:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\AddonBuilder\\en-US\\SharedResources.resources.dll",
+86:       "sha256": "8687d5fa786794025a681a7dda1e9002402da43832adddb78375140523ed1660",
+87:       "bytes": 127488
+88:     }
+89:   ],
+90:   "tools": {
+91:     "binarize": {
+92:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\Binarize\\binarize.exe",
+93:       "sha256": "1998db17d8eb7b633413855d28af8483d30baafcc0e9a45f992d83f23766b03e",
+94:       "bytes": 24805944
+95:     },
+96:     "cfgConvert": {
+97:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\CfgConvert\\CfgConvert.exe",
+98:       "sha256": "4c4fc15ef9773b42b4191155d4e243d8c95d3156cf7b6f24e7d84dea7cd15a4c",
+99:       "bytes": 1246712
+100:     },
+101:     "fileBank": {
+102:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\PboUtils\\FileBank.exe",
+103:       "sha256": "f89aaeb22421b9158fbbf173f75d52b6f3de69986cb462e58956c78da82c4caf",
+104:       "bytes": 194480
+105:     },
+106:     "dsSignFile": {
+107:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\DsUtils\\DSSignFile.exe",
+108:       "sha256": "098f28b46bfe40ad4cf5c60dd3e570e984fe74ae423090b6d3f2da8d7c4e1e78",
+109:       "bytes": 9467312
+110:     },
+111:     "bin_config": {
+112:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\Binarize\\bin\\config.cpp",
+113:       "sha256": "dcf19f271d6537e6ba45fe6af47cc0865d52768bca05ecc9abc1b0314bc1f4ea",
+114:       "bytes": 199732
+115:     },
+116:     "binarize_steam": {
+117:       "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ Tools\\Bin\\Binarize\\steam_api64.dll",
+118:       "sha256": "a44e5537939ae4eebc69000589aa9b2437a667813a1657cc779198bae9b815a9",
+119:       "bytes": 298856
+120:     }
+121:   },
+122:   "include": {
+123:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c1c1-local-author-20261101\\include.lst",
+124:     "sha256": "b8f99a686b2888bd57cc2ceb541eded32ec6c489920c7316172892cbd7047976",
+125:     "bytes": 34,
+126:     "identity": [
+127:       1736162863918533152,
+128:       281474983309849,
+129:       34,
+130:       1793570782125548900
+131:     ]
+132:   },
+133:   "exclude": {
+134:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c1c1-local-author-20261101\\exclude.lst",
+135:     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+136:     "bytes": 0,
+137:     "identity": [
+138:       1736162863918533152,
+139:       281474983309850,
+140:       0,
+141:       1793570782126551200
+142:     ]
+143:   },
+144:   "preflight": {
+145:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c1c1-local-author-20261101\\preflight-local.py",
+146:     "sha256": "812e68aa2744428b3fce1b8016b552252e13244fa37eec7084e42763ab446646",
+147:     "bytes": 10744,
+148:     "identity": [
+149:       1736162863918533152,
+150:       281474983309846,
+151:       10744,
+152:       1793570782111033800
+153:     ]
+154:   },
+155:   "preflight_original": {
+156:     "path": "C:\\Users\\guill\\.claude\\skills\\dayz-preflight\\preflight.py",
+157:     "sha256": "9f8786a5f37b6b2abbd206bce51d4cad44d58536e766b97fd93bae692804c9a7",
+158:     "bytes": 10743,
+159:     "identity": [
+160:       14582687742868402597,
+161:       3659174698994461,
+162:       10743,
+163:       1789562377596058000
+164:     ]
+165:   },
+166:   "profile_roots": [
+167:     "C:\\Users\\guill\\AppData\\Local\\Bohemia_Interactive",
+168:     "C:\\Users\\guill\\AppData\\Local\\Bohemia Interactive"
+169:   ],
+170:   "caps": {
+171:     "copy_seconds": 180,
+172:     "preflight_seconds": 60,
+173:     "help_seconds": 30,
+174:     "arm_seconds": 300,
+175:     "observe_seconds": 120,
+176:     "total_seconds": 1050,
+177:     "rss": 2147483648,
+178:     "disk": 2147483648,
+179:     "log": 33554432,
+180:     "wrp": 134217728,
+181:     "metadata": 33554432,
+182:     "drain_seconds": 5
+183:   },
+184:   "claims": {
+185:     "build_ready": false,
+186:     "decoder_verified": false,
+187:     "map_changed": false,
+188:     "native_acceptance": false
+189:   },
+190:   "prefix": "dayz_baltic_12km_dev/tb/narva_trial",
+191:   "canonical_preflight": {
+192:     "file": {
+193:       "path": "C:\\Users\\guill\\.claude\\skills\\dayz-preflight\\preflight.py",
+194:       "sha256": "9f8786a5f37b6b2abbd206bce51d4cad44d58536e766b97fd93bae692804c9a7",
+195:       "bytes": 10743,
+196:       "identity": [
+197:         14582687742868402597,
+198:         3659174698994461,
+199:         10743,
+200:         1789562377596058000
+201:       ]
+202:     },
+203:     "ancestors": [
+204:       {
+205:         "path": "C:\\Users\\guill\\.claude\\skills\\dayz-preflight\\preflight.py",
+206:         "dev": 14582687742868402597,
+207:         "ino": 3659174698994461,
+208:         "attributes": 32,
+209:         "is_dir": false
+210:       },
+211:       {
+212:         "path": "C:\\Users\\guill\\.claude\\skills\\dayz-preflight",
+213:         "dev": 14582687742868402597,
+214:         "ino": 3659174698994459,
+215:         "attributes": 16,
+216:         "is_dir": true
+217:       },
+218:       {
+219:         "path": "C:\\Users\\guill\\.claude\\skills",
+220:         "dev": 14582687742868402597,
+221:         "ino": 76279718688825210,
+222:         "attributes": 16,
+223:         "is_dir": true
+224:       },
+225:       {
+226:         "path": "C:\\Users\\guill\\.claude",
+227:         "dev": 14582687742868402597,
+228:         "ino": 60517119993053178,
+229:         "attributes": 16,
+230:         "is_dir": true
+231:       },
+232:       {
+233:         "path": "C:\\Users\\guill",
+234:         "dev": 14582687742868402597,
+235:         "ino": 1688849860384430,
+236:         "attributes": 16,
+237:         "is_dir": true
+238:       },
+239:       {
+240:         "path": "C:\\Users",
+241:         "dev": 14582687742868402597,
+242:         "ino": 281474976712907,
+243:         "attributes": 17,
+244:         "is_dir": true
+245:       },
+246:       {
+247:         "path": "C:\\",
+248:         "dev": 14582687742868402597,
+249:         "ino": 1407374883553285,
+250:         "attributes": 22,
+251:         "is_dir": true
+252:       }
+253:     ],
+254:     "alias": {
+255:       "path": "C:\\Users\\guill\\.agents\\skills\\dayz-preflight",
+256:       "target": "\\\\?\\C:\\Users\\guill\\.claude\\skills\\dayz-preflight",
+257:       "dev": 14582687742868402597,
+258:       "ino": 1407374884801015,
+259:       "tag": 2684354563
+260:     }
+261:   },
+262:   "os_helper": {
+263:     "path": "C:\\Windows\\System32\\conhost.exe",
+264:     "sha256": "2266b396ef92534a2a2844438df043d4069a2ec47d4e464f55e8c1cd47124a98",
+265:     "bytes": 1044480,
+266:     "identity": [
+267:       14582687742868402597,
+268:       2814749768091299,
+269:       1044480,
+270:       1749636695487627800
+271:     ],
+272:     "signature": {
+273:       "signer": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+274:       "path": "C:\\Windows\\System32\\conhost.exe",
+275:       "chain": [
+276:         {
+277:           "notBefore": "2025-06-19T18:11:44.0000000Z",
+278:           "serial": "3300000519DADDAA8BDC44B292000000000519",
+279:           "issuer": "CN=Microsoft Windows Production PCA 2011, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+280:           "subject": "CN=Microsoft Windows, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+281:           "notAfter": "2026-06-17T18:11:44.0000000Z",
+282:           "thumbprint": "3B77DB29AC72AA6B5880ECB2ED5EC1EC6601D847"
+283:         },
+284:         {
+285:           "notBefore": "2011-10-19T18:41:42.0000000Z",
+286:           "serial": "61077656000000000008",
+287:           "issuer": "CN=Microsoft Root Certificate Authority 2010, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+288:           "subject": "CN=Microsoft Windows Production PCA 2011, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+289:           "notAfter": "2026-10-19T18:51:42.0000000Z",
+290:           "thumbprint": "580A6F4CC4E4B669B9EBDC1B2B3E087B80D0678D"
+291:         },
+292:         {
+293:           "notBefore": "2010-06-23T21:57:24.0000000Z",
+294:           "serial": "28CC3A25BFBA44AC449A9B586B4339AA",
+295:           "issuer": "CN=Microsoft Root Certificate Authority 2010, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+296:           "subject": "CN=Microsoft Root Certificate Authority 2010, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+297:           "notAfter": "2035-06-23T22:04:01.0000000Z",
+298:           "thumbprint": "3B1EFD3A66EA28B16697394703A72CA340A05BD5"
+299:         }
+300:       ],
+301:       "signerThumbprint": "3B77DB29AC72AA6B5880ECB2ED5EC1EC6601D847",
+302:       "chainBuilt": false,
+303:       "message": "Signature verified.",
+304:       "status": "Valid",
+305:       "revocationMode": "NoCheck"
+306:     },
+307:     "signature_stdout_sha": "631f029065f7a7bae5789b0209bb6d813257696b585fb6dc5f73b07841c005ef",
+308:     "argv_pattern": "exact image path (optional NT prefix), followed by one hexadecimal 0x handle; exactly 2 arguments",
+309:     "role": "OS_HOST_HELPER"
+310:   },
+311:   "prior_contract": {
+312:     "path": "E:\\DayZ-Baltic-Build\\shape-repair-20261025\\road-c1c-local-author-20261029\\contract.json",
+313:     "sha256": "e88e345a2e88a6c47b05091a40c1bdfbaab34353ad000f7b7b80d52b6104f1b6",
+314:     "bytes": 7011,
+315:     "identity": [
+316:       1736162863918533152,
+317:       281474983295300,
+318:       7011,
+319:       1793312307662675500
+320:     ]
+321:   }
+322: }
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c1-probe-20261101\report.json
+1: {
+2:   "contract_sha256": "3d7f5b6ad2630107dfa1b2643c1b0d0da3170c1a04192580809c17ad6f0cd075",
+3:   "status": "PROBE_STOPPED",
+4:   "claims": {
+5:     "build_ready": false,
+6:     "decoder_verified": false,
+7:     "map_changed": false,
+8:     "native_acceptance": false
+9:   },
+10:   "phases": {},
+11:   "profile_before": [
+12:     {
+13:       "path": "C:\\Users\\guill\\AppData\\Local\\Bohemia_Interactive\\AddonBuilder.exe_Url_myxhpdtrqqyh0jdoi0zvwpzj3xlqlbel\\1.0.240.639\\user.config",
+14:       "bytes": 5427,
+15:       "sha256": "dcb40526e2333c777237b8b5538655cea93a11e53b26b02bf814044fe2552990",
+16:       "identity": [
+17:         14582687742868402597,
+18:         562949960259585,
+19:         5427,
+20:         1793218541612529900
+21:       ]
+22:     }
+23:   ],
+24:   "checkpoints": {
+25:     "source_checked": 1793571531.7912354,
+26:     "copy_complete": 1793571635.0413334
+27:   },
+28:   "reason": "BUDGET",
+29:   "profile_after": [
+30:     {
+31:       "path": "C:\\Users\\guill\\AppData\\Local\\Bohemia_Interactive\\AddonBuilder.exe_Url_myxhpdtrqqyh0jdoi0zvwpzj3xlqlbel\\1.0.240.639\\user.config",
+32:       "bytes": 5427,
+33:       "sha256": "dcb40526e2333c777237b8b5538655cea93a11e53b26b02bf814044fe2552990",
+34:       "identity": [
+35:         14582687742868402597,
+36:         562949960259585,
+37:         5427,
+38:         1793218541612529900
+39:       ]
+40:     }
+41:   ],
+42:   "seconds": 180.01599999999985
+43: }
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c1-real-20261101\observer.json
+1: {
+2:   "status": "INCONCLUSIVE_PROBE_DIAGNOSTIC",
+3:   "arms": {
+4:     "control": {
+5:       "status": "NOT_LAUNCHED"
+6:     },
+7:     "candidate": {
+8:       "status": "NOT_LAUNCHED"
+9:     }
+10:   },
+11:   "inputs": [
+12:     {
+13:       "kind": "SEALED_SOURCE",
+14:       "arm": "control",
+15:       "files": 6893,
+16:       "state": "MATCH"
+17:     },
+18:     {
+19:       "kind": "SEALED_SOURCE",
+20:       "arm": "candidate",
+21:       "files": 6893,
+22:       "state": "MATCH"
+23:     },
+24:     {
+25:       "kind": "WORK",
+26:       "arm": "control",
+27:       "files": 6893,
+28:       "state": "MATCH"
+29:     },
+30:     {
+31:       "kind": "WORK",
+32:       "arm": "candidate",
+33:       "files": 6893,
+34:       "state": "MATCH"
+35:     }
+36:   ],
+37:   "findings": [
+38:     {
+39:       "kind": "LAUNCH_PREREQUISITES",
+40:       "error": "[WinError 3] El sistema no puede encontrar la ruta especificada: 'E:\\\\DayZ-Baltic-Build\\\\shape-repair-20261025\\\\road-c1c1-probe-20261101\\\\fixed\\\\include.lst'"
+41:     }
+42:   ],
+43:   "producer_status": "PROBE_STOPPED",
+44:   "producer_reason": "BUDGET",
+45:   "claims": {
+46:     "build_ready": false,
+47:     "decoder_verified": false,
+48:     "map_changed": false,
+49:     "native_acceptance": false
+50:   },
+51:   "decoder": "NOT_IMPLEMENTED",
+52:   "continuous_identity": false,
+53:   "report_sha256": "80a60369ad18f457e1a882497c22febd5c24a45ca5a1524f4ccc72dfbee9142d",
+54:   "contract_sha256": "3d7f5b6ad2630107dfa1b2643c1b0d0da3170c1a04192580809c17ad6f0cd075",
+55:   "seconds": 85.09400000000005
+56: }
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c1-local-author-20261101\probe_road_compile_c1c1.py
+1: """One consumed compile probe, no semantic WRP acceptance."""
+2: from pathlib import Path
+3: import argparse,hashlib,json,os,re,shutil,stat,subprocess,sys,time,xml.etree.ElementTree as ET
+4: sys.path.insert(0,'E:/DayZ-Baltic-Build/shape-repair-20261025/dry-road-build-dependencies-20261028')
+5: import psutil
+6: 
+7: class Stop(Exception):pass
+8: def need(x,code):
+9:     if not x:raise Stop(code)
+10: def dump(p,v):
+11:     p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);b=json.dumps(v,indent=2).encode();need(len(b)<=33554432,'METADATA_CAP')
+12:     with p.open('wb') as f:f.write(b);f.flush();os.fsync(f.fileno())
+13: def guard(p):
+14:     p=Path(p)
+15:     for q in [p,*p.parents]:
+16:         s=q.lstat();need(not stat.S_ISLNK(s.st_mode) and not getattr(s,'st_file_attributes',0)&1024,'REPARSE:'+str(q))
+17: def ident(s):return [s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns]
+18: def read_hash(p,cap=67108864,deadline=float('inf'),copy=None):
+19:     p=Path(p);guard(p);pre=ident(p.stat());need(pre[2]<=cap,'FILE_CAP');h=hashlib.sha256();n=0;out=None
+20:     try:
+21:         if copy is not None:copy.parent.mkdir(parents=True,exist_ok=True);guard(copy.parent);out=copy.open('xb')
+22:         with p.open('rb') as f:
+23:             need(ident(os.fstat(f.fileno()))==pre,'IDENTITY')
+24:             while True:
+25:                 need(time.monotonic()<deadline,'BUDGET');b=f.read(min(1048576,cap-n+1))
+26:                 if not b:break
+27:                 n+=len(b);need(n<=cap,'FILE_CAP');h.update(b)
+28:                 if out:need(out.write(b)==len(b),'WRITE')
+29:             need(ident(os.fstat(f.fileno()))==pre,'IDENTITY')
+30:         guard(p);need(ident(p.stat())==pre and n==pre[2],'IDENTITY')
+155:     old=load(c['c1b']['path'],c['c1b']['sha256']);return {arm:{e['dest']:(e['bytes'],e['sha256']) for e in old['files'] if e['scope'] in ('common',arm)} for arm in ['control','candidate']}
+156: def trees(c,targets,deadline):
+157:     ex=expected(c);rows=[]
+158:     for target in targets:
+159:         for arm in ['control','candidate']:
+160:             base=Path(target)/arm/'root';seen=set();seen_dirs=set();guard(base)
+161:             for p in base.rglob('*'):
+162:                 need(time.monotonic()<deadline,'BUDGET');guard(p)
+163:                 if p.is_file():
+164:                     rel=p.relative_to(base).as_posix();need(rel in ex[arm],'EXTRA');r=read_hash(p,ex[arm][rel][0],deadline);need((r['bytes'],r['sha256'])==ex[arm][rel],'SOURCE_CHANGED');seen.add(rel)
+165:                 elif p.is_dir():seen_dirs.add(p.relative_to(base).as_posix())
+166:             need(seen==set(ex[arm]),'MISSING');rows.append({'tree':str(base),'files':len(seen)})
+167:             wanted_dirs={p.as_posix() for name in ex[arm] for p in Path(name).parents if str(p)!='.'};need(seen_dirs==wanted_dirs,'EXTRA')
+168:     return rows
+169: def portable_check(c,portable,raw,phase):
+170:     paths=[Path(c['root'])/'logs'/phase/n for n in ['AddonBuilder.rpt','AddonBuilderProcess.rpt','AddonBuilder.User.rpt']]
+171:     for row in c['tool_files']:
+172:         p=Path(portable)/row['dest']
+173:         if row['dest']=='logger.xml':verify_logger(raw,p.read_bytes(),paths)
+174:         else:pincheck({**row,'path':str(p)})
+210: def mainrun(c,pin):
+211:     root=Path(c['root']);need(not root.exists(),'EXISTS');guard(root.parent);need(shutil.disk_usage(root.parent).free>3221225472,'DISK_FREE');root.mkdir();dump(root/'consumed.json',{'contract_sha256':pin,'started':time.time(),'no_retries':True});begin=time.monotonic();deadline=begin+c['caps']['total_seconds']-c['caps']['observe_seconds'];report={'contract_sha256':pin,'status':'IN_PROGRESS','claims':c['claims'],'phases':{}}
+212:     def save():dump(root/'report.json',report)
+213:     try:
+214:         canonical_check(c);need(pincheck(c['os_helper'])['identity']==c['os_helper']['identity'],'OS_HELPER_IDENTITY');report['profile_before']=profile_snapshot(c['profile_roots']);until=time.monotonic()+180;work=root/'work';pincheck(c['c1b_consumer']);trees(c,[c['source_stage']],until);report['checkpoints']={'source_checked':time.time()};save()
+215:         for arm,files in expected(c).items():
+216:             for rel,(size,h) in files.items():
+217:                 source=Path(c['source_stage'])/arm/'root'/rel;dest=work/arm/'root'/rel;r=read_hash(source,size,until,dest);need(r['sha256']==h,'SOURCE_CHANGED');need(read_hash(dest,size,until)['sha256']==h,'WRITE')
+218:         report['checkpoints']['copy_complete']=time.time();save()
+219:         portable=root/'tools/AddonBuilder'
+220:         for row in c['tool_files']:
+221:             pincheck(row,until);r=read_hash(row['path'],67108864,until,portable/row['dest']);need(r['sha256']==row['sha256'],'PIN')
+222:         for row in c['tools'].values():pincheck(row,until)
+223:         for k in ['include','exclude','preflight','preflight_original']:pincheck(c[k],until)
+224:         trees(c,[work],until)
+225:         for k in ['include','exclude']:read_hash(c[k]['path'],max(c[k]['bytes'],1),until,root/'fixed'/(k+'.lst'))
+226:         report['copy_seconds']=time.monotonic()-begin;need(report['copy_seconds']<=180,'BUDGET');save()
+227:         report['checkpoints']['fixed_inputs']=time.time();save();canonical_check(c)
+228:         py=sys.executable;pre_cmd=[py,'-I','-X','utf8',c['preflight']['path']];mark={'state':'STARTED','phase':'preflight','command':pre_cmd,'time':time.time()};dump(root/'phases/preflight.started.json',mark);report['phases']['preflight']={'state':'STARTED','start':mark};save()
+229:         pre=proc_run(pre_cmd,root,root/'preflight',60,268435456);pre['state']='CLOSED';pre['start']=mark;dump(root/'phases/preflight.closed.json',pre);report['phases']['preflight']=pre;save();need(pre['rc']==0 and pre['reason'] is None,'PREFLIGHT')
+230:         exe=portable/'AddonBuilder.exe';raw=(portable/'logger.xml').read_bytes();need(hashlib.sha256(raw).hexdigest()==next(x['sha256'] for x in c['tool_files'] if x['dest']=='logger.xml'),'PIN')
+231:         def launch(phase,args,seconds,rss,output=None):
+232:             canonical_check(c);need(pincheck(c['os_helper'])['identity']==c['os_helper']['identity'],'OS_HELPER_IDENTITY');logdir=root/'logs'/phase;logdir.mkdir(parents=True);paths=[logdir/n for n in ['AddonBuilder.rpt','AddonBuilderProcess.rpt','AddonBuilder.User.rpt']];lb=logger_bytes(raw,paths)
+233:             mark={'state':'STARTED','phase':phase,'command':[str(exe),*args],'logger_sha256':hashlib.sha256(lb).hexdigest(),'time':time.time()};dump(root/'phases'/(phase+'.started.json'),mark);report['phases'][phase]={'state':'STARTED','start':mark};save();(portable/'logger.xml').write_bytes(lb)
+234:             env={n:str(root/'profile'/phase/n) for n in ['APPDATA','LOCALAPPDATA','TEMP','TMP']}
+235:             for v in env.values():Path(v).mkdir(parents=True)
+236:             portable_check(c,portable,raw,phase)
+237:             for k in ['include','exclude']:pincheck({**c[k],'path':str(root/'fixed'/(k+'.lst'))})
+238:             remain=deadline-time.monotonic();need(remain>=seconds,'TOTAL_BUDGET')
+239:             receipt=proc_run([str(exe),*args],portable,root/'process'/phase,seconds,rss,[output,logdir] if output else [logdir],env);logs=snapshot_logs(logdir,receipt);portable_check(c,portable,raw,phase);command_check(c,receipt,phase);return receipt,logs,hashlib.sha256(lb).hexdigest(),mark
+240:         helper,logs,lh,mark=launch('help',['-help','-toolsDirectory='+c['tool_root']],30,536870912);st=gate(helper,logs,[],c['tools']['binarize']['sha256'],{next(x['sha256'] for x in c['tool_files'] if x['dest']=='AddonBuilder.exe'),c['os_helper']['sha256']},True);report['phases']['help']={'state':'CLOSED','start':mark,'receipt':helper,'logs':logs,'logger_sha256':lh,'status':st};dump(root/'phases/help.closed.json',report['phases']['help']);save();need(st=='HELP_OBSERVED',st)
+241:         allowed={row['sha256'] for key,row in c['tools'].items() if key in ['binarize','cfgConvert','fileBank']}|{next(x['sha256'] for x in c['tool_files'] if x['dest']=='AddonBuilder.exe'),c['os_helper']['sha256']}
+242:         for arm in ['control','candidate']:
+243:             tick=time.monotonic();out=root/'output'/arm;out.mkdir(parents=True);(out/'out').mkdir();project=work/arm/'root';src=project/c['prefix']
+244:             args=args_for(c,arm)
+245:             receipt,logs,lh,mark=launch(arm,args,300,2147483648,out);wrps=list((out/'temp').rglob('*.wrp')) if (out/'temp').exists() else [];st=gate(receipt,logs,wrps,c['tools']['binarize']['sha256'],allowed)
+246:             artifacts=[]
+247:             for p in wrps[:2]:
+248:                 a=read_hash(p,134217728)
+249:                 with p.open('rb') as f:a['header_hex']=f.read(8).hex()
+250:                 artifacts.append(a)
+251:             report['phases'][arm]={'state':'CLOSED','start':mark,'status':st,'receipt':receipt,'logs':logs,'logger_sha256':lh,'artifacts':artifacts,'argv_binding':'OBSERVED_NOT_INTERPRETED'};dump(root/'phases'/(arm+'.closed.json'),report['phases'][arm]);save()
+252:             need(st=='ARTIFACT_OBSERVED_ONLY',st)
+253:             # Full gates are inside the arm envelope, before authorizing the next arm.
+254:             trees(c,[c['source_stage']],min(tick+300,deadline))
+255:             try:trees(c,[work],min(tick+300,deadline))
+256:             except Stop as e:raise Stop('WORK_INPUT_MUTATED:'+str(e))
+257:             for row in c['tools'].values():pincheck(row,min(tick+300,deadline))
+258:             for row in c['tool_files']:pincheck(row,min(tick+300,deadline))
+259:             need(time.monotonic()-tick<=300,'ARM_BUDGET');report['phases'][arm]['envelope_seconds']=time.monotonic()-tick;dump(root/'phases'/(arm+'.closed.json'),report['phases'][arm]);save()
+260:         report['status']='COMPILE_PROBE_OBSERVED_ONLY'
+261:     except (Stop,OSError) as e:report['status']='PROBE_STOPPED';report['reason']=str(e)
+262:     finally:
+263:         try:report['profile_after']=profile_snapshot(c['profile_roots'])
+264:         except Exception as e:report['profile_after_error']=type(e).__name__
+265:         report['seconds']=time.monotonic()-begin;save()
+266:     return report
+267: def main():
+268:     a=argparse.ArgumentParser();a.add_argument('--contract',required=True);a.add_argument('--sha',required=True);x=a.parse_args();c=load(x.contract,x.sha);need(c['schema']=='road-c1c1-probe.v1','SCHEMA');r=mainrun(c,x.sha);print(json.dumps({'status':r['status'],'reason':r.get('reason'),'seconds':r['seconds']}));return 0 if r['status']=='COMPILE_PROBE_OBSERVED_ONLY' else 2
+269: if __name__=='__main__':sys.exit(main())
+
+FILE E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c1-local-author-20261101\observe_road_compile_c1c1.py
+1: """Read only artifact and input observer; not a terrain decoder."""
+2: from pathlib import Path
+3: import argparse,hashlib,json,os,re,stat,sys,time,xml.etree.ElementTree as ET
+4: class Reject(Exception):pass
+5: def require(x,s):
+6:     if not x:raise Reject(s)
+7: def pathcheck(p):
+8:     p=Path(p)
+9:     while True:
+10:         s=p.lstat();require(not stat.S_ISLNK(s.st_mode) and not(getattr(s,'st_file_attributes',0)&1024),'REPARSE')
+11:         if p.parent==p:break
+12:         p=p.parent
+13: def fileid(s):return (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns)
+14: def checkfile(p,expected=None,cap=134217728,until=float('inf')):
+15:     p=Path(p);pathcheck(p);before=fileid(p.stat());require(before[2]<=cap,'SIZE');h=hashlib.sha256();size=0
+16:     with p.open('rb') as f:
+17:         require(fileid(os.fstat(f.fileno()))==before,'IDENTITY')
+18:         while True:
+19:             require(time.monotonic()<until,'BUDGET');b=f.read(min(524288,cap-size+1))
+20:             if not b:break
+21:             size+=len(b);require(size<=cap,'SIZE');h.update(b)
+22:         require(fileid(os.fstat(f.fileno()))==before,'IDENTITY')
+23:     pathcheck(p);require(fileid(p.stat())==before and size==before[2],'IDENTITY');digest=h.hexdigest()
+24:     if expected is not None:
+25:         require(isinstance(expected,dict) and type(expected.get('bytes')) is int and expected['bytes']>=0 and isinstance(expected.get('sha256'),str) and re.fullmatch('[0-9a-f]{64}',expected['sha256']) is not None,'PIN_SCHEMA');require((size,digest)==(expected['bytes'],expected['sha256']),'ARTIFACT_PIN')
+26:     return {'bytes':size,'sha256':digest,'mtime':before[3]/1e9}
+27: def readjson(p,pin):
+28:     r=checkfile(p,cap=33554432);require(r['sha256']==pin,'PIN');b=Path(p).read_bytes();require(hashlib.sha256(b).hexdigest()==pin,'PIN');return json.loads(b)
+29: def stage_check(base,expected,until):
+30:     base=Path(base);pathcheck(base);files=set();dirs=set()
+31:     for folder,subdirs,names in os.walk(base,followlinks=False):
+32:         for name in subdirs:pathcheck(Path(folder)/name);dirs.add((Path(folder)/name).relative_to(base).as_posix())
+33:         for name in names:
+34:             p=Path(folder)/name;rel=p.relative_to(base).as_posix();require(rel in expected,'EXTRA');size,digest=expected[rel];checkfile(p,{'bytes':size,'sha256':digest},size,until);files.add(rel)
+35:     require(files==set(expected),'MISSING');allowed=set()
+36:     for key in files:
+37:         p=Path(key).parent
+38:         while str(p)!='.':allowed.add(p.as_posix());p=p.parent
+39:     require(dirs==allowed,'EXTRA');return len(files)
+40: def canonical(c):
+41:     spec=c['canonical_preflight'];link=spec['alias'];p=Path(link['path']);a=p.lstat();require((a.st_dev,a.st_ino,getattr(a,'st_reparse_tag',0),os.readlink(p))==(link['dev'],link['ino'],link['tag'],link['target']),'ALIAS_CHANGED');require(p.resolve()==Path(spec['file']['path']).parent,'ALIAS_CHANGED')
+42:     for item in spec['ancestors']:
+140:     except (Reject,OSError,KeyError) as e:findings.append({'kind':'LAUNCH_PREREQUISITES','error':str(e)})
+141:     for arm in ['control','candidate']:
+142:         if arm not in r['phases'] and not (root/'phases'/(arm+'.started.json')).exists():arms[arm]={'status':'NOT_LAUNCHED'};continue
+143:         if r['phases'].get(arm,{}).get('state')!='CLOSED':arms[arm]={'status':'INCOMPLETE_PHASE'};continue
+144:         try:arms[arm]={'status':'ARTIFACT_OBSERVED_ONLY','artifact':arm_check(c,r['phases'][arm],arm)}
+145:         except (Reject,OSError) as e:arms[arm]={'status':'NOT_VERIFIED','reason':str(e)}
+146:     complete=not findings and all(x['status']=='ARTIFACT_OBSERVED_ONLY' for x in arms.values())
+147:     require(not complete or r['status']=='COMPILE_PROBE_OBSERVED_ONLY','REPORT_STATUS')
+148:     return {'status':'VERIFIED_COMPILE_PROBE_ONLY' if complete else 'INCONCLUSIVE_PROBE_DIAGNOSTIC','arms':arms,'inputs':input_rows,'findings':findings,'producer_status':r['status'],'producer_reason':r.get('reason'),'claims':c['claims'],'decoder':'NOT_IMPLEMENTED','continuous_identity':False}
+149: def main():
+150:     p=argparse.ArgumentParser();p.add_argument('--contract',required=True);p.add_argument('--sha',required=True);p.add_argument('--report',required=True);p.add_argument('--report-sha',required=True);p.add_argument('--out',required=True);a=p.parse_args();start=time.monotonic()
+151:     try:
+152:         c=readjson(a.contract,a.sha);r=readjson(a.report,a.report_sha);require(r['contract_sha256']==a.sha,'BINDING');result=observe(c,r,start+120);result['report_sha256']=a.report_sha;result['contract_sha256']=a.sha;result['seconds']=time.monotonic()-start;b=json.dumps(result,indent=2).encode();require(len(b)<=33554432,'OUTPUT_CAP')
+153:         with open(a.out,'xb') as f:f.write(b);f.flush();os.fsync(f.fileno())
+154:         print(json.dumps({'status':result['status'],'arms':result['arms']}));return 0 if result['status'].startswith('VERIFIED') else 2
+155:     except (Reject,OSError) as e:print('REJECTED:'+str(e));return 3
+156: if __name__=='__main__':sys.exit(main())
