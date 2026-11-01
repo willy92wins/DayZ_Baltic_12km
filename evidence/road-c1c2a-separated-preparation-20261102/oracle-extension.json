@@ -1,0 +1,16 @@
+{
+  "schema": "c1c2a-correction-oracles.v1",
+  "unchanged_original_oracles_sha256": "f5f85b1d4cca939afc5a29c5e8539a9ebe77a099c16f44228be1bdf96d2806c1",
+  "negatives": {
+    "report_elapsed_bool": "JOURNAL",
+    "finalize_plus20s": "JOURNAL",
+    "rc_bool": "RECEIPT_SCHEMA",
+    "report_extra": "SCHEMA",
+    "row_extra": "SCHEMA",
+    "manifest_pin": "PIN",
+    "interpreter_pin": "PIN"
+  },
+  "driver_positive": "VERIFIED_PREPARED_PAIR_BYTES_ONLY",
+  "supervisor_error": "fail-closed, never count unreadable files as zero or skip RSS uncertainty",
+  "source": "two executed local co-mutants and Fable recovery91.907s; hypotheses distinguished"
+}

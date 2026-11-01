@@ -1,0 +1,53 @@
+....................F.FFF.
+======================================================================
+FAIL: test_manifest_pin_code (__main__.Suite.test_manifest_pin_code)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c2a-local-author-20261102\test_pair_c1c2a.py", line 113, in test_manifest_pin_code
+    self.produce();Path(self.c['c1b']['path']).write_bytes(b'{}');self.bad(EXT['negatives']['manifest_pin'])
+    ^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c2a-local-author-20261102\test_pair_c1c2a.py", line 31, in produce
+    start=time.monotonic();r=subprocess.run(self.cmd,capture_output=True,timeout=20);self.assertEqual(r.returncode,0,r.stdout+r.stderr);self.stdout=self.base/'stdout';self.stderr=self.base/'stderr';self.stdout.write_bytes(r.stdout);self.stderr.write_bytes(r.stderr);self.elapsed=time.monotonic()-start;return r
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b'{"status": "PREPARATION_STOPPED", "reason": "PIN"}\r\n'
+
+======================================================================
+FAIL: test_negative_sequence_even_repinned (__main__.Suite.test_negative_sequence_even_repinned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c2a-local-author-20261102\test_pair_c1c2a.py", line 101, in test_negative_sequence_even_repinned
+    self.produce();p=self.root/'meta/copy.done.json';r=json.loads(p.read_bytes());r['sequence']=True;put(p,r);rp=self.root/'meta/report.json';q=json.loads(rp.read_bytes());q['journals']['copy.done.json']=row(p);put(rp,q);self.bad('JOURNAL')
+    ^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c2a-local-author-20261102\test_pair_c1c2a.py", line 31, in produce
+    start=time.monotonic();r=subprocess.run(self.cmd,capture_output=True,timeout=20);self.assertEqual(r.returncode,0,r.stdout+r.stderr);self.stdout=self.base/'stdout';self.stderr=self.base/'stderr';self.stdout.write_bytes(r.stdout);self.stderr.write_bytes(r.stderr);self.elapsed=time.monotonic()-start;return r
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b'{"status": "PREPARATION_STOPPED", "reason": "PIN"}\r\n'
+
+======================================================================
+FAIL: test_rc_bool (__main__.Suite.test_rc_bool)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c2a-local-author-20261102\test_pair_c1c2a.py", line 109, in test_rc_bool
+    self.produce();obs=self.observe();obs['completion']['rc']=False;self.bad(EXT['negatives']['rc_bool'],obs)
+    ^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c2a-local-author-20261102\test_pair_c1c2a.py", line 31, in produce
+    start=time.monotonic();r=subprocess.run(self.cmd,capture_output=True,timeout=20);self.assertEqual(r.returncode,0,r.stdout+r.stderr);self.stdout=self.base/'stdout';self.stderr=self.base/'stderr';self.stdout.write_bytes(r.stdout);self.stderr.write_bytes(r.stderr);self.elapsed=time.monotonic()-start;return r
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b'{"status": "PREPARATION_STOPPED", "reason": "PIN"}\r\n'
+
+======================================================================
+FAIL: test_report_and_row_extra (__main__.Suite.test_report_and_row_extra)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c2a-local-author-20261102\test_pair_c1c2a.py", line 111, in test_report_and_row_extra
+    self.produce();p=self.root/'meta/report.json';r=json.loads(p.read_bytes());q=copy.deepcopy(r);q['extra']=0;put(p,q);self.bad(EXT['negatives']['report_extra']);r['rows']['extra']=0;put(p,r);self.bad(EXT['negatives']['row_extra'])
+    ^^^^^^^^^^^^^^
+  File "E:\DayZ-Baltic-Build\shape-repair-20261025\road-c1c2a-local-author-20261102\test_pair_c1c2a.py", line 31, in produce
+    start=time.monotonic();r=subprocess.run(self.cmd,capture_output=True,timeout=20);self.assertEqual(r.returncode,0,r.stdout+r.stderr);self.stdout=self.base/'stdout';self.stderr=self.base/'stderr';self.stdout.write_bytes(r.stdout);self.stderr.write_bytes(r.stderr);self.elapsed=time.monotonic()-start;return r
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b'{"status": "PREPARATION_STOPPED", "reason": "PIN"}\r\n'
+
+----------------------------------------------------------------------
+Ran 26 tests in 10.714s
+
+FAILED (failures=4)
